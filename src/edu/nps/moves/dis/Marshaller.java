@@ -12,22 +12,38 @@ import java.nio.ByteBuffer;
  */
 public interface Marshaller
 {
+    /**
+     * @return the size in bytes of the serialized object
+     */
     public int getMarshalledSize();
     
+    /**
+     * Serializes an object into a DataOutputStream.
+     * @param dos the DataOutputStream to write
+     * @see java.io.DataOutputStream
+     */
     public void marshal(DataOutputStream dos);
+    
+    /**
+     * Unserializes an object from a DataInputStream
+     * @param dis the DataInputStream to read
+     * @see java.io.DataInputStream
+     * @return number of bytes unmarshalled
+     */
     public int unmarshal(DataInputStream dis);
 
     /**
-     * Packs a Pdu into the ByteBuffer.
-     * @see java.nio.ByteBuffer
+     * Serializes an object into a ByteBuffer.
      * @param buff The ByteBuffer at the position to begin writing
+     * @see java.nio.ByteBuffer
      */
     public void marshal(ByteBuffer buff);
     
     /**
-     * Unpacks a Pdu from the underlying data.
-     * @see java.nio.ByteBuffer
+     * Unserializes an object from a ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
+     * @see java.nio.ByteBuffer
+     * @return unmarshalled size
      */
     public int unmarshal(ByteBuffer buff);
 }

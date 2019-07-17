@@ -257,10 +257,10 @@ public class PduFactory
         return rt;
     }
         
-    /*******************************************************/   
-    /*******************************************************/   
+    //*******************************************************/   
+    //*******************************************************/   
 
-    /* Pdu construction methods */
+    // Pdu construction methods
     public EntityStatePdu makeEntityStatePdu()
     {
         EntityStatePdu pdu = new EntityStatePdu()/*
@@ -1017,7 +1017,7 @@ public class PduFactory
      * PDU factory. Pass in an array of bytes, get the correct type of pdu back,
      * based on the PDU type field contained in the byte array.
      *
-     * @param data
+     * @param data array of bytes
      * @return A PDU of the appropriate concrete subclass of PDU
      */
     public Pdu createPdu(byte data[])
@@ -1029,7 +1029,7 @@ public class PduFactory
      * PDU factory. Pass in an array of bytes, get the correct type of pdu back,
      * based on the PDU type field contained in the byte buffer.
      *
-     * @param buff
+     * @param buff array of bytes
      * @return null if there was an error creating the Pdu
      */
     public Pdu createPdu(java.nio.ByteBuffer buff)
@@ -1381,7 +1381,7 @@ public class PduFactory
      * a lot that can go wrong. If something blows up, we return all the decoded
      * PDUs we can.<p>
      *
-     * @param data
+     * @param data array of bytes
      * @return List of PDUs decoded
      */
     public List<Pdu> getPdusFromBundle(byte data[])

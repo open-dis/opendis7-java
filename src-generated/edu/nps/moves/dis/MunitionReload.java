@@ -146,6 +146,7 @@ public void marshal(DataOutputStream dos)
  * Unserializes an object from a DataInputStream.
  * @see java.io.DataInputStream
  * @param dis The DataInputStream
+ * @return marshalled size
  */
 public int unmarshal(DataInputStream dis)
 {
@@ -177,6 +178,7 @@ public int unmarshal(DataInputStream dis)
  * @throws java.nio.ReadOnlyBufferException if buff is read only
  * @see java.nio.ByteBuffer
  * @param buff The ByteBuffer at the position to begin writing
+ * @throws Exception ByteBuffer-generated exception
  */
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
@@ -193,6 +195,8 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  * @throws java.nio.BufferUnderflowException if buff is too small
  * @see java.nio.ByteBuffer
  * @param buff The ByteBuffer at the position to begin reading
+ * @return marshalled size
+ * @throws Exception ByteBuffer-generated exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
