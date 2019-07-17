@@ -1,0 +1,102 @@
+package edu.nps.moves.dis.enumerations;
+
+import java.nio.ByteBuffer;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+
+import edu.nps.moves.dis.*;
+
+/**
+ * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * UID 193 marshal size 4<br>
+ * Minefield-Sensor Types
+ */
+public enum MinefieldSensorTypes 
+{
+    /** Other */
+    OTHER (0, "Other"),
+    /** MinefieldSensorTypesOptical */    OPTICAL (1, "Optical"),
+    /** MinefieldSensorTypesFLIR */    FLIR (2, "FLIR"),
+    /** MinefieldSensorTypesRADAR */    RADAR (3, "RADAR"),
+    /** MinefieldSensorTypesMagnetic */    MAGNETIC (4, "Magnetic"),
+    /** MinefieldSensorTypesLaser */    LASER (5, "Laser"),
+    /** MinefieldSensorTypesSONAR */    SONAR (6, "SONAR"),
+    /** MinefieldSensorTypesPhysical */    PHYSICAL (7, "Physical"),
+    /** MinefieldSensorTypesMultispectral */    MULTISPECTRAL (8, "Multispectral");
+
+    private int value;
+    private final String description;
+
+    MinefieldSensorTypes(int value, String description)
+    {
+        this.value = value;
+        this.description = description;
+    }
+
+    public int getValue()
+    {
+        return value;
+    }
+
+    public String getDescription()
+    {
+        return description;
+    }
+    
+    public static int getEnumBitWidth()
+    {
+      return 4;
+    }
+
+    public static MinefieldSensorTypes getEnumForValue(int i)
+    {
+       for(MinefieldSensorTypes val: MinefieldSensorTypes.values()) {
+          if(val.getValue()==i)
+              return val;
+       }
+       System.err.println("No enumeration found for value " + i + " of enumeration MinefieldSensorTypes");
+       return null;
+    }
+
+
+    public void marshal(DataOutputStream dos) throws IOException
+    {
+        dos.writeByte(getValue());
+    }
+    
+    public void marshal(ByteBuffer buff) throws Exception
+    {
+        buff.put((byte)getValue());
+    }
+
+    public static MinefieldSensorTypes unmarshalEnum (DataInputStream dis) throws Exception
+    {
+       /* try {
+            value = dis.readUnsignedByte();
+        }
+        catch(IOException ex) {
+            showError(ex);
+        } */
+        
+        return getEnumForValue((int)dis.readByte());
+    } 
+
+    public static MinefieldSensorTypes unmarshalEnum(ByteBuffer buff) throws Exception
+    {
+        /*
+        try {
+            value = (int)buff.get();
+        }
+        catch(Exception ex) {
+            showError(ex);
+        }
+        */
+        return getEnumForValue((int)buff.get());
+    }
+
+    public int getMarshalledSize()
+    {
+        return 1; // 8 bits
+    }
+}
