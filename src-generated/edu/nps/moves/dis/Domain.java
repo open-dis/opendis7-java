@@ -47,13 +47,13 @@ public class Domain
     Class c = enumInst.getClass();
     try {
       //@formatter:off
-      marshalBuff =   c.getDeclaredMethod("marshal",   new Class[]{ByteBuffer.class});
-      marshalDos =    c.getDeclaredMethod("marshal",   new Class[]{DataOutputStream.class});
+      marshalBuff =   c.getDeclaredMethod("marshal",       new Class[]{ByteBuffer.class});
+      marshalDos =    c.getDeclaredMethod("marshal",       new Class[]{DataOutputStream.class});
       unmarshalBuff = c.getDeclaredMethod("unmarshalEnum", new Class[]{ByteBuffer.class});
       unmarshalDis =  c.getDeclaredMethod("unmarshalEnum", new Class[]{DataInputStream.class});
-      mSize =         c.getDeclaredMethod("getMarshalSize", (Class[]) null);
-      getValue =              c.getMethod("getValue",       (Class[]) null);
-      getDescription =        c.getMethod("getDescription", (Class[]) null);
+      mSize =         c.getDeclaredMethod("getMarshalledSize", (Class[]) null);
+      getValue =      c.getDeclaredMethod("getValue",          (Class[]) null);
+      getDescription =c.getDeclaredMethod("getDescription",    (Class[]) null);
       //@formatter:on
     }
     catch (NoSuchMethodException ex) {
@@ -109,6 +109,11 @@ public class Domain
     catch (Exception ex) {
       throw new RuntimeException("bad " + m.getName());
     }
+  }
+
+  public String toString()
+  {
+    return getDescription();
   }
 }
 
