@@ -1,17 +1,17 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+
 package edu.nps.moves.dis;
 
 import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis.enumerations.*;
 
-
 /**
- * Section 5.3.9.1 informationa bout aggregating entities anc communicating information about the aggregated entities. requires manual intervention to fix the padding between entityID lists and silent aggregate sysem lists this padding  is dependent on how many entityIDs there are, and needs to be on a 32 bit word boundary. UNFINISHED
- *
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
- * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
- *
- * @author DMcG
+ * 5.9.2.2 The Aggregate State PDU shall be used to communicate the state and other pertinent information about an aggregated unit.
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
 public class AggregateStatePdu extends EntityManagementFamilyPdu implements Serializable
 {

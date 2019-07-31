@@ -1,19 +1,19 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+
 package edu.nps.moves.dis;
 
 import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis.enumerations.*;
 
-
 /**
- * abstract superclass for fire and detonation pdus that have shared information. Section 7.3
- *
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
- * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
- *
- * @author DMcG
+ * Abstract superclass for fire and detonation pdus that have shared information. Section 7.3
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
-public class WarfareFamilyPdu extends PduBase implements Serializable
+public abstract class WarfareFamilyPdu extends PduBase implements Serializable
 {
 
 /** Constructor */

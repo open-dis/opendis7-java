@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
 
 package edu.nps.moves.dis;
 
@@ -16,10 +20,6 @@ import java.util.Arrays;
  */
 public class Align
 {
-  /**
-   * @param buff ByteBuffer to write data until 2-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to16bits(ByteBuffer buff)
   {
       int pad = (2 - buff.position() % 2) % 2;
@@ -27,10 +27,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param dos DataOutputStream to write data until 2-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to16bits(DataOutputStream dos)
   {
       int pad = (2 - dos.size() % 2) % 2;
@@ -38,10 +34,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param buff ByteBuffer to write data until 4-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to32bits(ByteBuffer buff)
   {
       int pad = (4 - buff.position() % 4) % 4;
@@ -49,10 +41,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param dos DataOutputStream to write data until 4-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to32bits(DataOutputStream dos)
   {
       int pad = (4 - dos.size() % 4) % 4;
@@ -60,10 +48,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param buff ByteBuffer to write data until 8-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to64bits(ByteBuffer buff)
   {
       int pad = (8 - buff.position() % 8) % 8;
@@ -71,10 +55,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param dos DataOutputStream to write data until 8-byte boundary
-   * @return number of padding bytes written
-   */
   static public int to64bits(DataOutputStream dos)
   {
       int pad = (8 - dos.size() % 8) % 8;
@@ -83,10 +63,6 @@ public class Align
   }
   
   /********* Unmarshaling **************/
-  /**
-   * @param buff ByteBuffer to read data until 2-byte boundary
-   * @return number of padding bytes read
-   */
   static public int from16bits(ByteBuffer buff)
   {
       int pad = (2 - buff.position() % 2) % 2;
@@ -94,11 +70,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param position input position in DataInputStream
-   * @param dis DataInputStream to read bytes until 2-byte boundary
-   * @return number of padding bytes read
-   */
   static public int from16bits(int position, DataInputStream dis)
   {
       int pad = (2 - position % 2) % 2;
@@ -106,10 +77,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param buff ByteBuffer to read bytes until 4-byte boundary
-   * @return number of padding bytes read
-   */
   static public int from32bits(ByteBuffer buff)
   {
       int pad = (4 - buff.position() % 4) % 4;
@@ -117,11 +84,6 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param position input position in DataInputStream
-   * @param dis DataInputStream to read bytes until 2-byte boundary
-   * @return number of padding bytes read
-   */
   static public int from32bits(int position, DataInputStream dis)
   {
       int pad = (4 - position % 4) % 4;
@@ -129,22 +91,13 @@ public class Align
       return pad;
   }
   
-  /**
-   * @param buff ByteBuffer to read bytes until 8-byte boundary
-   * @return number of padding bytes read
-   */
-   static public int from64bits(ByteBuffer buff)
+  static public int from64bits(ByteBuffer buff)
   {
       int pad = (8 - buff.position() % 8) % 8;
       Arrays.stream(new int[pad]).forEach(x->buff.get());
       return pad;
   }
   
-  /**
-   * @param position input position in DataInputStream
-   * @param dis DataInputStream to read bytes until 8-byte boundary
-   * @return number of padding bytes read
-   */
   static public int from64bits(int position, DataInputStream dis)
   {
       int pad = (8 - position % 8) % 8;

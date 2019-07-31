@@ -1,19 +1,19 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+
 package edu.nps.moves.dis;
 
 import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis.enumerations.*;
 
-
 /**
  * The superclass for all PDUs except LiveEntitys. This incorporates the PduHeader record, section 7.2.2
- *
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
- * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
- *
- * @author DMcG
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
-public class PduBase extends Pdu implements Serializable
+public abstract class PduBase extends Pdu implements Serializable
 {
    /** PDU Status Record. Described in 6.2.67. This field is not present in earlier DIS versions  */
    protected PduStatus  pduStatus = new PduStatus(); 

@@ -1,19 +1,19 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+
 package edu.nps.moves.dis;
 
 import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis.enumerations.*;
 
-
 /**
  * The live entity PDUs have a slightly different header
- *
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
- * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
- *
- * @author DMcG
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
-public class LiveEntityPdu extends Pdu implements Serializable
+public abstract class LiveEntityPdu extends Pdu implements Serializable
 {
    /** Subprotocol used to decode the PDU. Section 13 of EBV. uid 417 */
    protected DISLiveEntitySubprotocolNumber subprotocolNumber = DISLiveEntitySubprotocolNumber.values()[0];

@@ -1,13 +1,18 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+
 package edu.nps.moves.dis;
 
 import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis.enumerations.*;
 
-
 /**
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
-public class SimulationManagementWithReliabilityFamilyPdu extends PduBase implements Serializable
+public abstract class SimulationManagementWithReliabilityFamilyPdu extends PduBase implements Serializable
 {
    /** IDs the simulation or entity, either a simulation or an entity. Either 6.2.80 or 6.2.28 */
    protected SimulationIdentifier  originatingID = new SimulationIdentifier(); 
