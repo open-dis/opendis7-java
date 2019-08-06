@@ -1044,6 +1044,11 @@ public class PduFactory
     return createPdu(pduType, null);
   }
 
+  public DISPDUType getTypeFromByteArray(byte[] ba)
+  {
+    return DISPDUType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
+  }
+  
   private Pdu createPdu(DISPDUType pduType, ByteBuffer buff)
   {
     Pdu aPdu = null;
