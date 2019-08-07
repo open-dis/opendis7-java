@@ -9,6 +9,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
+import java.lang.reflect.InvocationTargetException;
 
 import edu.nps.moves.dis.enumerations.*;
 
@@ -111,11 +112,12 @@ public class Domain
     try {
       return m.invoke(enumInst, oa);
     }
-    catch (Exception ex) {
+    catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
       throw new RuntimeException("bad " + m.getName());
     }
   }
 
+  @Override
   public String toString()
   {
     return getDescription();
