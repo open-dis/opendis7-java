@@ -25,7 +25,7 @@ public class ObjectType extends Object implements Serializable
    protected byte  category;
 
    /** subcategory of entity */
-   protected byte  subcategory;
+   protected byte  subCategory;
 
 
 /** Constructor */
@@ -40,7 +40,7 @@ public int getMarshalledSize()
    marshalSize += domain.getMarshalledSize();
    marshalSize += objectKind.getMarshalledSize();
    marshalSize += 1;  // category
-   marshalSize += 1;  // subcategory
+   marshalSize += 1;  // subCategory
 
    return marshalSize;
 }
@@ -79,15 +79,15 @@ public byte getCategory()
     return category; 
 }
 
-public ObjectType setSubcategory(byte pSubcategory)
+public ObjectType setSubCategory(byte pSubCategory)
 {
-    subcategory = pSubcategory;
+    subCategory = pSubCategory;
     return this;
 }
 
-public byte getSubcategory()
+public byte getSubCategory()
 {
-    return subcategory; 
+    return subCategory; 
 }
 
 /**
@@ -102,7 +102,7 @@ public void marshal(DataOutputStream dos)
        domain.marshal(dos);
        objectKind.marshal(dos);
        dos.writeByte( (byte)category);
-       dos.writeByte( (byte)subcategory);
+       dos.writeByte( (byte)subCategory);
     }
     catch(Exception e)
     {
@@ -127,7 +127,7 @@ public int unmarshal(DataInputStream dis)
         uPosition += objectKind.getMarshalledSize();
         category = (byte)dis.readUnsignedByte();
         uPosition += 1;
-        subcategory = (byte)dis.readUnsignedByte();
+        subCategory = (byte)dis.readUnsignedByte();
         uPosition += 1;
     }
     catch(Exception e)
@@ -150,7 +150,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    domain.marshal(buff);
    objectKind.marshal(buff);
    buff.put( (byte)category);
-   buff.put( (byte)subcategory);
+   buff.put( (byte)subCategory);
 }
 
 /**
@@ -166,7 +166,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     domain = PlatformDomain.unmarshalEnum(buff);
     objectKind = ObjectKind.unmarshalEnum(buff);
     category = (byte)(buff.get() & 0xFF);
-    subcategory = (byte)(buff.get() & 0xFF);
+    subCategory = (byte)(buff.get() & 0xFF);
     return getMarshalledSize();
 }
 
@@ -206,7 +206,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (domain == rhs.domain)) ivarsEqual = false;
      if( ! (objectKind == rhs.objectKind)) ivarsEqual = false;
      if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subcategory == rhs.subcategory)) ivarsEqual = false;
+     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
     return ivarsEqual;
  }
 } // end of class

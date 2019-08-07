@@ -15,13 +15,13 @@ import edu.nps.moves.dis.enumerations.*;
  */
 public class JammingTechnique extends Object implements Serializable
 {
-   protected JammerKind  kind =  edu.nps.moves.dis.jammers.JammerKind.DECEPTIONANDNOISE; 
+   protected byte  kind;
 
-   protected JammerCategory  category =  edu.nps.moves.dis.jammers.DeceptionandNoise.Category.GATESTEALERANDNOISE; 
+   protected byte  category;
 
-   protected JammerSubCategory  subcategory =  edu.nps.moves.dis.jammers.DeceptionandNoise.GateStealerandNoise.SubCategory.NOISEANDVGPO; 
+   protected byte  subCategory;
 
-   protected JammerSpecific  specific =  edu.nps.moves.dis.jammers.DeceptionandNoise.GateStealerandNoise.NoiseandVGPO.Specific.LOWLEVELNOISEANDVGPO; 
+   protected byte  specific;
 
 
 /** Constructor */
@@ -33,55 +33,55 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += kind.getMarshalledSize();
-   marshalSize += category.getMarshalledSize();
-   marshalSize += subcategory.getMarshalledSize();
-   marshalSize += specific.getMarshalledSize();
+   marshalSize += 1;  // kind
+   marshalSize += 1;  // category
+   marshalSize += 1;  // subCategory
+   marshalSize += 1;  // specific
 
    return marshalSize;
 }
 
 
-public JammingTechnique setKind(JammerKind pKind)
+public JammingTechnique setKind(byte pKind)
 {
     kind = pKind;
     return this;
 }
 
-public JammerKind getKind()
+public byte getKind()
 {
     return kind; 
 }
 
-public JammingTechnique setCategory(JammerCategory pCategory)
+public JammingTechnique setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
-public JammerCategory getCategory()
+public byte getCategory()
 {
     return category; 
 }
 
-public JammingTechnique setSubcategory(JammerSubCategory pSubcategory)
+public JammingTechnique setSubCategory(byte pSubCategory)
 {
-    subcategory = pSubcategory;
+    subCategory = pSubCategory;
     return this;
 }
 
-public JammerSubCategory getSubcategory()
+public byte getSubCategory()
 {
-    return subcategory; 
+    return subCategory; 
 }
 
-public JammingTechnique setSpecific(JammerSpecific pSpecific)
+public JammingTechnique setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
-public JammerSpecific getSpecific()
+public byte getSpecific()
 {
     return specific; 
 }
@@ -95,10 +95,10 @@ public void marshal(DataOutputStream dos)
 {
     try 
     {
-       kind.marshal(dos);
-       category.marshal(dos);
-       subcategory.marshal(dos);
-       specific.marshal(dos);
+       dos.writeByte( (byte)kind);
+       dos.writeByte( (byte)category);
+       dos.writeByte( (byte)subCategory);
+       dos.writeByte( (byte)specific);
     }
     catch(Exception e)
     {
@@ -117,10 +117,14 @@ public int unmarshal(DataInputStream dis)
     int uPosition = 0;
     try 
     {
-        uPosition += kind.unmarshal(dis);
-        uPosition += category.unmarshal(dis);
-        uPosition += subcategory.unmarshal(dis);
-        uPosition += specific.unmarshal(dis);
+        kind = (byte)dis.readUnsignedByte();
+        uPosition += 1;
+        category = (byte)dis.readUnsignedByte();
+        uPosition += 1;
+        subCategory = (byte)dis.readUnsignedByte();
+        uPosition += 1;
+        specific = (byte)dis.readUnsignedByte();
+        uPosition += 1;
     }
     catch(Exception e)
     { 
@@ -139,10 +143,10 @@ public int unmarshal(DataInputStream dis)
  */
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
-   kind.marshal(buff);
-   category.marshal(buff);
-   subcategory.marshal(buff);
-   specific.marshal(buff);
+   buff.put( (byte)kind);
+   buff.put( (byte)category);
+   buff.put( (byte)subCategory);
+   buff.put( (byte)specific);
 }
 
 /**
@@ -155,10 +159,10 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
-    kind.unmarshal(buff);
-    category.unmarshal(buff);
-    subcategory.unmarshal(buff);
-    specific.unmarshal(buff);
+    kind = (byte)(buff.get() & 0xFF);
+    category = (byte)(buff.get() & 0xFF);
+    subCategory = (byte)(buff.get() & 0xFF);
+    specific = (byte)(buff.get() & 0xFF);
     return getMarshalledSize();
 }
 
@@ -195,10 +199,10 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 
      final JammingTechnique rhs = (JammingTechnique)obj;
 
-     if( ! (kind.equals( rhs.kind) )) ivarsEqual = false;
-     if( ! (category.equals( rhs.category) )) ivarsEqual = false;
-     if( ! (subcategory.equals( rhs.subcategory) )) ivarsEqual = false;
-     if( ! (specific.equals( rhs.specific) )) ivarsEqual = false;
+     if( ! (kind == rhs.kind)) ivarsEqual = false;
+     if( ! (category == rhs.category)) ivarsEqual = false;
+     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
+     if( ! (specific == rhs.specific)) ivarsEqual = false;
     return ivarsEqual;
  }
 } // end of class
