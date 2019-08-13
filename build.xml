@@ -70,4 +70,34 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <target name="jar-javadoc">
+        <jar destfile="${basedir}/dist/open-dis7-javadoc.jar" basedir="${basedir}/dist/javadoc">            
+            <manifest>
+                <attribute name="Built-By" value="open-dis-7-java"/>
+                <attribute name="Specification-Title" value="DIS 7 Javadoc"/>
+                <attribute name="Specification-Version" value="7.0"/>
+                <attribute name="Specification-Vendor" value="Naval Postgraduate School"/>
+                <attribute name="Implementation-Title" value="edu.nps.moves.dis7"/>
+                <attribute name="Implementation-Version" value="build01"/>
+                <attribute name="Implementation-Vendor" value="Naval Postgraduate School"/>
+            </manifest>
+        </jar>
+        <delete dir="${basedir}/dist/javadoc"/>
+    </target>
+    
+    <target name="jar-source">
+        <jar destfile="${basedir}/dist/open-dis7-source.jar">
+            <fileset dir="${basedir}/src" includes="**/*.java"/>
+            <fileset dir="${basedir}/src-generated" includes="**/*.java"/>
+            <manifest>
+                <attribute name="Built-By" value="open-dis-7-java"/>
+                <attribute name="Specification-Title" value="DIS 7 Source"/>
+                <attribute name="Specification-Version" value="7.0"/>
+                <attribute name="Specification-Vendor" value="Naval Postgraduate School"/>
+                <attribute name="Implementation-Title" value="edu.nps.moves.dis7"/>
+                <attribute name="Implementation-Version" value="build01"/>
+                <attribute name="Implementation-Vendor" value="Naval Postgraduate School"/>
+            </manifest>
+        </jar>        
+    </target>
 </project>
