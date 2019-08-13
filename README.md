@@ -32,7 +32,7 @@ Not all entities are of value to specific DIS applications.  Since the number of
 9. `open-dis7-entities-rus.jar`
 10. `open-dis7-entities-all.jar`
 
-Jar number 10 includes all entities from all countrys.
+Jar number 10 includes all entities from all countries.
 
 `open-dis7-entities-javadoc.jar` is javadoc describing all entities from all countries.
 
