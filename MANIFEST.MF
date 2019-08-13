@@ -8,4 +8,16 @@ Specification-Vendor: Naval Postgraduate School
 Implementation-Title: edu.nps.moves.dis7
 Implementation-Version: build01
 Implementation-Vendor: Naval Postgraduate School
+Sealed: false
 
+Name: edu/nps/moves/dis7
+Sealed: true
+
+Name: edu/nps/moves/dis7/enumerations
+Sealed: true
+
+Name: edu/nps/moves/dis7/jammers
+Sealed: true
+
+Name: edu/nps/moves/dis7/objecttypes
+Sealed: true
