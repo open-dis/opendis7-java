@@ -43,13 +43,12 @@ public class Recorder implements PduReceiver
   @Override
   public void receivePdu(byte[] buff, int len)
   {
-    //Pdu pdu = makePdu(type,buff,len);
     long packetRcvNanoTime = System.nanoTime();
     if (startNanoTime == null)
       startNanoTime = packetRcvNanoTime;
 
     byte[] timeAr = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
-    System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
+    //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
     sb.setLength(0);
     sb.append(encdr.encodeToString(timeAr));
@@ -86,7 +85,12 @@ public class Recorder implements PduReceiver
       System.out.println("IOException closing file: " + ex.getMessage());
     }
   }
-
+  
+  public String getLogFile()
+  {
+    return logFile.getAbsolutePath();
+  }
+  
   private void writeHeader() throws IOException
   {
     String template = "Beginning of DIS capture file, %s.";

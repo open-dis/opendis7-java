@@ -97,7 +97,7 @@ public class Player
           }
 
           byte[] buffer = decdr.decode(sa[1]);
-          //Pdu pdu = pduFactory.createPdu(buffer);
+
           DatagramPacket packet = new DatagramPacket(buffer, buffer.length, addr, port);
           dsock.send(packet);
 
