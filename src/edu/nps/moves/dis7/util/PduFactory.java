@@ -1168,7 +1168,7 @@ public class PduFactory
         aPdu = new ReceiverPdu();
         break;
 
-      case IFF:
+      case IDENTIFICATION_FRIEND_OR_FOE:
         aPdu = new IFFPdu();
         break;
 
@@ -1240,7 +1240,7 @@ public class PduFactory
         aPdu = new ArealObjectStatePdu();
         break;
 
-      case TSPI:
+      case TIME_SPACE_POSITION_INFORMATION:
         aPdu = new TSPIPdu();
         break;
 
@@ -1252,71 +1252,71 @@ public class PduFactory
         aPdu = new ArticulatedPartsPdu();
         break;
 
-      case LE_FIRE:
+      case LIVE_ENTITY_FIRE:
         aPdu = new LEFirePdu();
         break;
 
-      case LE_DETONATION:
+      case LIVE_ENTITY_DETONATION:
         aPdu = new LEDetonationPdu();
         break;
 
-      case CREATE_ENTITY_R:
+      case CREATE_ENTITY_RELIABLE:
         aPdu = new CreateEntityReliablePdu();
         break;
 
-      case REMOVE_ENTITY_R:
+      case REMOVE_ENTITY_RELIABLE:
         aPdu = new RemoveEntityReliablePdu();
         break;
 
-      case START_RESUME_R:
+      case START_RESUME_RELIABLE:
         aPdu = new StartResumeReliablePdu();
         break;
 
-      case STOP_FREEZE_R:
+      case STOP_FREEZE_RELIABLE:
         aPdu = new StopFreezeReliablePdu();
         break;
 
-      case ACKNOWLEDGE_R:
+      case ACKNOWLEDGE_RELIABLE:
         aPdu = new AcknowledgeReliablePdu();
         break;
 
-      case ACTION_REQUEST_R:
+      case ACTION_REQUEST_RELIABLE:
         aPdu = new ActionRequestReliablePdu();
         break;
 
-      case ACTION_RESPONSE_R:
+      case ACTION_RESPONSE_RELIABLE:
         aPdu = new ActionResponseReliablePdu();
         break;
 
-      case DATA_QUERY_R:
+      case DATA_QUERY_RELIABLE:
         aPdu = new DataQueryReliablePdu();
         break;
 
-      case SET_DATA_R:
+      case SET_DATA_RELIABLE:
         aPdu = new SetDataReliablePdu();
         break;
 
-      case DATA_R:
+      case DATA_RELIABLE:
         aPdu = new DataReliablePdu();
         break;
 
-      case EVENT_REPORT_R:
+      case EVENT_REPORT_RELIABLE:
         aPdu = new EventReportReliablePdu();
         break;
 
-      case COMMENT_R:
+      case COMMENT_RELIABLE:
         aPdu = new CommentReliablePdu();
         break;
 
-      case RECORD_R:
+      case RECORD_RELIABLE:
         aPdu = new RecordReliablePdu();
         break;
 
-      case SET_RECORD_R:
+      case SET_RECORD_RELIABLE:
         aPdu = new SetRecordReliablePdu();
         break;
 
-      case RECORD_QUERY_R:
+      case RECORD_QUERY_RELIABLE:
         aPdu = new RecordQueryReliablePdu();
         break;
 
@@ -1381,7 +1381,7 @@ public class PduFactory
    * @param data
    * @return List of PDUs decoded
    */
-  public List<Pdu> getPdusFromBundle(byte data[])
+  public List<Pdu> getPdusFromBundle(byte data[], int length)
   {
     // All the PDUs in this bundle we were able to decode
     ArrayList<Pdu> pdus = new ArrayList<Pdu>();
@@ -1394,7 +1394,7 @@ public class PduFactory
       // data array from where the last PDU left off to the end of the original
       // data array. This lets us reuse a bunch of old code.
 
-      byte remaining[] = Arrays.copyOfRange(data, pduStartPointInData, data.length);
+      byte remaining[] = Arrays.copyOfRange(data, pduStartPointInData, length);
 
       try {
         // Decode one PDU
@@ -1412,13 +1412,14 @@ public class PduFactory
         }
 
         // Advance the index to the start of the next PDU
-        int pduLength = pdu.getMarshalledSize(); //getLength();
+        int pduLength = pdu.getMarshalledSize();
+
         pduStartPointInData = pduStartPointInData + pduLength;
 
-        //System.out.println("PDUStartPOint:" + pduStartPointInData + " data: " + data.length);
+        //System.out.println("PDUStartPoint:" + pduStartPointInData + " data: " + length);
         // Have we read all the data?
-        if (pduStartPointInData >= data.length) {
-          //System.out.println("Out of data to read" + pduStartPointInData + " data length:" + data.length);
+        if (pduStartPointInData >= length) {
+          //System.out.println("Out of data to read" + pduStartPointInData + " data length:" + length);
           break;
         }
 
