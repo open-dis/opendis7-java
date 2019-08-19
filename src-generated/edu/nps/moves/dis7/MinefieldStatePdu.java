@@ -71,6 +71,7 @@ public int getMarshalledSize()
    marshalSize += 2;  // numberOfMineTypes
    marshalSize += minefieldLocation.getMarshalledSize();
    marshalSize += minefieldOrientation.getMarshalledSize();
+   marshalSize += appearance.getMarshalledSize();
    marshalSize += protocolMode.getMarshalledSize();
    for(int idx=0; idx < perimeterPoints.size(); idx++)
    {

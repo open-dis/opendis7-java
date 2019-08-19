@@ -46,7 +46,7 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
 /** Constructor */
  public ActionRequestRPdu()
  {
-    setPduType( DISPDUType.ACTION_REQUEST_R );
+    setPduType( DISPDUType.ACTION_REQUEST_RELIABLE );
  }
 
 public int getMarshalledSize()

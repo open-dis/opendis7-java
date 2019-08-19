@@ -29,7 +29,7 @@ public class RemoveEntityRPdu extends SimulationManagementWithReliabilityFamilyP
 /** Constructor */
  public RemoveEntityRPdu()
  {
-    setPduType( DISPDUType.REMOVE_ENTITY_R );
+    setPduType( DISPDUType.REMOVE_ENTITY_RELIABLE );
  }
 
 public int getMarshalledSize()

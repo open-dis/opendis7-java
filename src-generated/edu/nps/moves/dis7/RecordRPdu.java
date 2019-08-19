@@ -36,7 +36,7 @@ public class RecordRPdu extends SimulationManagementWithReliabilityFamilyPdu imp
 /** Constructor */
  public RecordRPdu()
  {
-    setPduType( DISPDUType.RECORD_R );
+    setPduType( DISPDUType.RECORD_RELIABLE );
  }
 
 public int getMarshalledSize()

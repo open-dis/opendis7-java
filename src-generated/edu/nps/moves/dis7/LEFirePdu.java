@@ -38,7 +38,7 @@ public class LEFirePdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public LEFirePdu()
  {
-    setPduType( DISPDUType.LE_FIRE );
+    setPduType( DISPDUType.LIVE_ENTITY_FIRE );
  }
 
 public int getMarshalledSize()

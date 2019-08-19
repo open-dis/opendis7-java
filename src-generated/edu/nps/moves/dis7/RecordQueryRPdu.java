@@ -40,7 +40,7 @@ public class RecordQueryRPdu extends SimulationManagementWithReliabilityFamilyPd
 /** Constructor */
  public RecordQueryRPdu()
  {
-    setPduType( DISPDUType.RECORD_QUERY_R );
+    setPduType( DISPDUType.RECORD_QUERY_RELIABLE );
  }
 
 public int getMarshalledSize()

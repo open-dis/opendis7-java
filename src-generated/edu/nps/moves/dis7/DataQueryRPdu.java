@@ -46,7 +46,7 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
 /** Constructor */
  public DataQueryRPdu()
  {
-    setPduType( DISPDUType.DATA_QUERY_R );
+    setPduType( DISPDUType.DATA_QUERY_RELIABLE );
  }
 
 public int getMarshalledSize()

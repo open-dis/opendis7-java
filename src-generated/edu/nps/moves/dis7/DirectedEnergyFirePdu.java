@@ -86,6 +86,7 @@ public int getMarshalledSize()
    marshalSize += 4;  // pad1
    marshalSize += 4;  // pulseRepititionFrequency
    marshalSize += 4;  // pulseWidth
+   marshalSize += flags.getMarshalledSize();
    marshalSize += pulseShape.getMarshalledSize();
    marshalSize += 1;  // pad2
    marshalSize += 4;  // pad3

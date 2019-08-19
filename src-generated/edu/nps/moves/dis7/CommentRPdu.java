@@ -31,7 +31,7 @@ public class CommentRPdu extends SimulationManagementWithReliabilityFamilyPdu im
 /** Constructor */
  public CommentRPdu()
  {
-    setPduType( DISPDUType.COMMENT_R );
+    setPduType( DISPDUType.COMMENT_RELIABLE );
  }
 
 public int getMarshalledSize()

@@ -37,7 +37,7 @@ public class ActionResponseRPdu extends SimulationManagementWithReliabilityFamil
 /** Constructor */
  public ActionResponseRPdu()
  {
-    setPduType( DISPDUType.ACTION_RESPONSE_R );
+    setPduType( DISPDUType.ACTION_RESPONSE_RELIABLE );
  }
 
 public int getMarshalledSize()

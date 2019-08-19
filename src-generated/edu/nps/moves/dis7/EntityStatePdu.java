@@ -76,6 +76,7 @@ public int getMarshalledSize()
    marshalSize += 4;  // entityAppearance
    marshalSize += deadReckoningParameters.getMarshalledSize();
    marshalSize += marking.getMarshalledSize();
+   marshalSize += capabilities.getMarshalledSize();
    for(int idx=0; idx < variableParameters.size(); idx++)
    {
         VariableParameter listElement = variableParameters.get(idx);

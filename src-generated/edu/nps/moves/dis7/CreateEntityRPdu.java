@@ -29,7 +29,7 @@ public class CreateEntityRPdu extends SimulationManagementWithReliabilityFamilyP
 /** Constructor */
  public CreateEntityRPdu()
  {
-    setPduType( DISPDUType.CREATE_ENTITY_R );
+    setPduType( DISPDUType.CREATE_ENTITY_RELIABLE );
  }
 
 public int getMarshalledSize()

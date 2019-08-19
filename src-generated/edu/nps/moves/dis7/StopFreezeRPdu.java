@@ -37,7 +37,7 @@ public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu
 /** Constructor */
  public StopFreezeRPdu()
  {
-    setPduType( DISPDUType.STOP_FREEZE_R );
+    setPduType( DISPDUType.STOP_FREEZE_RELIABLE );
  }
 
 public int getMarshalledSize()
@@ -47,6 +47,7 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    marshalSize += realWorldTime.getMarshalledSize();
    marshalSize += reason.getMarshalledSize();
+   marshalSize += frozenBehavior.getMarshalledSize();
    marshalSize += requiredReliablityService.getMarshalledSize();
    marshalSize += 1;  // pad1
    marshalSize += 4;  // requestID

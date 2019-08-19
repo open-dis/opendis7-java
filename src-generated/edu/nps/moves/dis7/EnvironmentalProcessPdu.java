@@ -51,6 +51,7 @@ public int getMarshalledSize()
    marshalSize += environementalProcessID.getMarshalledSize();
    marshalSize += environmentType.getMarshalledSize();
    marshalSize += modelType.getMarshalledSize();
+   marshalSize += environmentStatus.getMarshalledSize();
    marshalSize += 2;  // numberOfEnvironmentRecords
    marshalSize += 2;  // sequenceNumber
    for(int idx=0; idx < environmentRecords.size(); idx++)

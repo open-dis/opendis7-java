@@ -44,6 +44,7 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    marshalSize += realWorldTime.getMarshalledSize();
    marshalSize += reason.getMarshalledSize();
+   marshalSize += frozenBehavior.getMarshalledSize();
    marshalSize += 2;  // padding1
    marshalSize += 4;  // requestID
 

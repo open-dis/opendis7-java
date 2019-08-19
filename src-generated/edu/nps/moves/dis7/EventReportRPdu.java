@@ -37,7 +37,7 @@ public class EventReportRPdu extends SimulationManagementWithReliabilityFamilyPd
 /** Constructor */
  public EventReportRPdu()
  {
-    setPduType( DISPDUType.EVENT_REPORT_R );
+    setPduType( DISPDUType.EVENT_REPORT_RELIABLE );
  }
 
 public int getMarshalledSize()

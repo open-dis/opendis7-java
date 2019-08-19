@@ -71,15 +71,11 @@ public enum DISPDUType
     /** Receiver */
     RECEIVER (27, "Receiver"),
     /** IFF */
-    IFF (28, "IFF"),
-    /** IFF */
     IDENTIFICATION_FRIEND_OR_FOE (28, "IFF"),
     /** Underwater Acoustic */
     UNDERWATER_ACOUSTIC (29, "Underwater Acoustic"),
     /** Supplemental Emission / Entity State */
     SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Supplemental Emission / Entity State"),
-    /** Supplemental Emission / Entity State */
-    SEES (30, "Supplemental Emission / Entity State"),
     /** Intercom Signal */
     INTERCOM_SIGNAL (31, "Intercom Signal"),
     /** Intercom Control */
@@ -111,79 +107,43 @@ public enum DISPDUType
     /** Areal Object State */
     AREAL_OBJECT_STATE (45, "Areal Object State"),
     /** TSPI */
-    TSPI (46, "TSPI"),
-    /** TSPI */
     TIME_SPACE_POSITION_INFORMATION (46, "TSPI"),
     /** Appearance */
     APPEARANCE (47, "Appearance"),
     /** Articulated Parts */
     ARTICULATED_PARTS (48, "Articulated Parts"),
     /** LE Fire */
-    LE_FIRE (49, "LE Fire"),
-    /** LE Fire */
     LIVE_ENTITY_FIRE (49, "LE Fire"),
-    /** LE Detonation */
-    LE_DETONATION (50, "LE Detonation"),
     /** LE Detonation */
     LIVE_ENTITY_DETONATION (50, "LE Detonation"),
     /** Create Entity-R */
-    CREATE_ENTITY_R (51, "Create Entity-R"),
-    /** Create Entity-R */
     CREATE_ENTITY_RELIABLE (51, "Create Entity-R"),
-    /** Remove Entity-R */
-    REMOVE_ENTITY_R (52, "Remove Entity-R"),
     /** Remove Entity-R */
     REMOVE_ENTITY_RELIABLE (52, "Remove Entity-R"),
     /** Start/Resume-R */
-    START_RESUME_R (53, "Start/Resume-R"),
-    /** Start/Resume-R */
     START_RESUME_RELIABLE (53, "Start/Resume-R"),
-    /** Stop/Freeze-R */
-    STOP_FREEZE_R (54, "Stop/Freeze-R"),
     /** Stop/Freeze-R */
     STOP_FREEZE_RELIABLE (54, "Stop/Freeze-R"),
     /** Acknowledge-R */
-    ACKNOWLEDGE_R (55, "Acknowledge-R"),
-    /** Acknowledge-R */
     ACKNOWLEDGE_RELIABLE (55, "Acknowledge-R"),
-    /** Action Request-R */
-    ACTION_REQUEST_R (56, "Action Request-R"),
     /** Action Request-R */
     ACTION_REQUEST_RELIABLE (56, "Action Request-R"),
     /** Action Response-R */
-    ACTION_RESPONSE_R (57, "Action Response-R"),
-    /** Action Response-R */
     ACTION_RESPONSE_RELIABLE (57, "Action Response-R"),
-    /** Data Query-R */
-    DATA_QUERY_R (58, "Data Query-R"),
     /** Data Query-R */
     DATA_QUERY_RELIABLE (58, "Data Query-R"),
     /** Set Data-R */
-    SET_DATA_R (59, "Set Data-R"),
-    /** Set Data-R */
     SET_DATA_RELIABLE (59, "Set Data-R"),
-    /** Data-R */
-    DATA_R (60, "Data-R"),
     /** Data-R */
     DATA_RELIABLE (60, "Data-R"),
     /** Event Report-R */
-    EVENT_REPORT_R (61, "Event Report-R"),
-    /** Event Report-R */
     EVENT_REPORT_RELIABLE (61, "Event Report-R"),
-    /** Comment-R */
-    COMMENT_R (62, "Comment-R"),
     /** Comment-R */
     COMMENT_RELIABLE (62, "Comment-R"),
     /** Record-R */
-    RECORD_R (63, "Record-R"),
-    /** Record-R */
     RECORD_RELIABLE (63, "Record-R"),
     /** Set Record-R */
-    SET_RECORD_R (64, "Set Record-R"),
-    /** Set Record-R */
     SET_RECORD_RELIABLE	 (64, "Set Record-R"),
-    /** Record Query-R */
-    RECORD_QUERY_R (65, "Record Query-R"),
     /** Record Query-R */
     RECORD_QUERY_RELIABLE (65, "Record Query-R"),
     /** Collision-Elastic */

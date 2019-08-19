@@ -69,6 +69,7 @@ public int getMarshalledSize()
    marshalSize += 4;  // temperature
    marshalSize += componentIdentification.getMarshalledSize();
    marshalSize += componentDamageStatus.getMarshalledSize();
+   marshalSize += componentVisualDamageStatus.getMarshalledSize();
    marshalSize += componentVisualSmokeColor.getMarshalledSize();
    marshalSize += fireEventID.getMarshalledSize();
    marshalSize += 2;  // padding2

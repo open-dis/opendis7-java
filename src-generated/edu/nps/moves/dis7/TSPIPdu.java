@@ -42,7 +42,7 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public TSPIPdu()
  {
-    setPduType( DISPDUType.TSPI );
+    setPduType( DISPDUType.TIME_SPACE_POSITION_INFORMATION );
  }
 
 public int getMarshalledSize()

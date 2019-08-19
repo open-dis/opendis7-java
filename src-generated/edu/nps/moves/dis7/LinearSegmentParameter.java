@@ -59,6 +59,8 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 1;  // segmentNumber
+   marshalSize += segmentModification.getMarshalledSize();
+   marshalSize += generalSegmentAppearance.getMarshalledSize();
    marshalSize += 4;  // specificSegmentAppearance
    marshalSize += segmentLocation.getMarshalledSize();
    marshalSize += segmentOrientation.getMarshalledSize();

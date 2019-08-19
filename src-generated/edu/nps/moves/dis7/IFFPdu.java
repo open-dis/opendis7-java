@@ -37,7 +37,7 @@ public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializabl
 /** Constructor */
  public IFFPdu()
  {
-    setPduType( DISPDUType.IFF );
+    setPduType( DISPDUType.IDENTIFICATION_FRIEND_OR_FOE );
  }
 
 public int getMarshalledSize()

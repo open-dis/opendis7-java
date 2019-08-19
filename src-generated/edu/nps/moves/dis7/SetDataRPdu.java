@@ -43,7 +43,7 @@ public class SetDataRPdu extends SimulationManagementWithReliabilityFamilyPdu im
 /** Constructor */
  public SetDataRPdu()
  {
-    setPduType( DISPDUType.SET_DATA_R );
+    setPduType( DISPDUType.SET_DATA_RELIABLE );
  }
 
 public int getMarshalledSize()

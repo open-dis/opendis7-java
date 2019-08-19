@@ -67,6 +67,7 @@ public int getMarshalledSize()
    marshalSize += referencedObjectID.getMarshalledSize();
    marshalSize += 2;  // updateNumber
    marshalSize += forceID.getMarshalledSize();
+   marshalSize += modifications.getMarshalledSize();
    marshalSize += objectType.getMarshalledSize();
    marshalSize += 4;  // specificObjectAppearance
    marshalSize += 2;  // generalObjectAppearance
