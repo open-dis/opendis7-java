@@ -38,6 +38,7 @@ public class ArticulatedPartVP extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -53,67 +54,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ArticulatedPartVP#recordType}*/
 public ArticulatedPartVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link ArticulatedPartVP#changeIndicator}*/
 public ArticulatedPartVP setChangeIndicator(byte pChangeIndicator)
 {
     changeIndicator = pChangeIndicator;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#changeIndicator}*/
 public byte getChangeIndicator()
 {
     return changeIndicator; 
 }
 
+/** Setter for {@link ArticulatedPartVP#partAttachedTo}*/
 public ArticulatedPartVP setPartAttachedTo(short pPartAttachedTo)
 {
     partAttachedTo = pPartAttachedTo;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#partAttachedTo}*/
 public short getPartAttachedTo()
 {
     return partAttachedTo; 
 }
 
+/** Setter for {@link ArticulatedPartVP#parameterType}*/
 public ArticulatedPartVP setParameterType(int pParameterType)
 {
     parameterType = pParameterType;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#parameterType}*/
 public int getParameterType()
 {
     return parameterType; 
 }
 
+/** Setter for {@link ArticulatedPartVP#parameterValue}*/
 public ArticulatedPartVP setParameterValue(float pParameterValue)
 {
     parameterValue = pParameterValue;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#parameterValue}*/
 public float getParameterValue()
 {
     return parameterValue; 
 }
 
+/** Setter for {@link ArticulatedPartVP#padding}*/
 public ArticulatedPartVP setPadding(int pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartVP#padding}*/
 public int getPadding()
 {
     return padding; 

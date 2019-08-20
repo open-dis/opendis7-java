@@ -31,6 +31,7 @@ public class VariableTransmitterParameters extends Object implements Serializabl
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -44,34 +45,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link VariableTransmitterParameters#recordType}*/
 public VariableTransmitterParameters setRecordType(VariableRecordTypes pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link VariableTransmitterParameters#recordType}*/
 public VariableRecordTypes getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link VariableTransmitterParameters#recordLength}*/
 public VariableTransmitterParameters setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link VariableTransmitterParameters#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link VariableTransmitterParameters#recordSpecificFields}*/
 public VariableTransmitterParameters setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 
+/** Getter for {@link VariableTransmitterParameters#recordSpecificFields}*/
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

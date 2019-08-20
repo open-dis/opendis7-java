@@ -29,6 +29,7 @@ public class LiveEntityRelativeWorldCoordinates extends Object implements Serial
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,45 +43,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}*/
 public LiveEntityRelativeWorldCoordinates setReferencePoint(short pReferencePoint)
 {
     referencePoint = pReferencePoint;
     return this;
 }
 
+/** Getter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}*/
 public short getReferencePoint()
 {
     return referencePoint; 
 }
 
+/** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaX}*/
 public LiveEntityRelativeWorldCoordinates setDeltaX(short pDeltaX)
 {
     deltaX = pDeltaX;
     return this;
 }
 
+/** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaX}*/
 public short getDeltaX()
 {
     return deltaX; 
 }
 
+/** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaY}*/
 public LiveEntityRelativeWorldCoordinates setDeltaY(short pDeltaY)
 {
     deltaY = pDeltaY;
     return this;
 }
 
+/** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaY}*/
 public short getDeltaY()
 {
     return deltaY; 
 }
 
+/** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}*/
 public LiveEntityRelativeWorldCoordinates setDeltaZ(short pDeltaZ)
 {
     deltaZ = pDeltaZ;
     return this;
 }
 
+/** Getter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}*/
 public short getDeltaZ()
 {
     return deltaZ; 

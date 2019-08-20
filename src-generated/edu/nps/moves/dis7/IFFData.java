@@ -31,6 +31,7 @@ public class IFFData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -44,34 +45,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IFFData#recordType}*/
 public IFFData setRecordType(VariableRecordTypes pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link IFFData#recordType}*/
 public VariableRecordTypes getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link IFFData#recordLength}*/
 public IFFData setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link IFFData#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link IFFData#recordSpecificFields}*/
 public IFFData setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 
+/** Getter for {@link IFFData#recordSpecificFields}*/
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

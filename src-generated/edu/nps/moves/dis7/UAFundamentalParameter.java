@@ -39,6 +39,7 @@ public class UAFundamentalParameter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UAFundamentalParameter#activeEmissionParameterIndex}*/
 public UAFundamentalParameter setActiveEmissionParameterIndex(UAActiveEmissionParameterIndex pActiveEmissionParameterIndex)
 {
     activeEmissionParameterIndex = pActiveEmissionParameterIndex;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#activeEmissionParameterIndex}*/
 public UAActiveEmissionParameterIndex getActiveEmissionParameterIndex()
 {
     return activeEmissionParameterIndex; 
 }
 
+/** Setter for {@link UAFundamentalParameter#scanPattern}*/
 public UAFundamentalParameter setScanPattern(UAScanPattern pScanPattern)
 {
     scanPattern = pScanPattern;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#scanPattern}*/
 public UAScanPattern getScanPattern()
 {
     return scanPattern; 
 }
 
+/** Setter for {@link UAFundamentalParameter#beamCenterAzimuthHorizontal}*/
 public UAFundamentalParameter setBeamCenterAzimuthHorizontal(float pBeamCenterAzimuthHorizontal)
 {
     beamCenterAzimuthHorizontal = pBeamCenterAzimuthHorizontal;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#beamCenterAzimuthHorizontal}*/
 public float getBeamCenterAzimuthHorizontal()
 {
     return beamCenterAzimuthHorizontal; 
 }
 
+/** Setter for {@link UAFundamentalParameter#azimuthalBeamwidthHorizontal}*/
 public UAFundamentalParameter setAzimuthalBeamwidthHorizontal(float pAzimuthalBeamwidthHorizontal)
 {
     azimuthalBeamwidthHorizontal = pAzimuthalBeamwidthHorizontal;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#azimuthalBeamwidthHorizontal}*/
 public float getAzimuthalBeamwidthHorizontal()
 {
     return azimuthalBeamwidthHorizontal; 
 }
 
+/** Setter for {@link UAFundamentalParameter#beamCenterDepressionElevation}*/
 public UAFundamentalParameter setBeamCenterDepressionElevation(float pBeamCenterDepressionElevation)
 {
     beamCenterDepressionElevation = pBeamCenterDepressionElevation;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#beamCenterDepressionElevation}*/
 public float getBeamCenterDepressionElevation()
 {
     return beamCenterDepressionElevation; 
 }
 
+/** Setter for {@link UAFundamentalParameter#depressionElevationBeamWidth}*/
 public UAFundamentalParameter setDepressionElevationBeamWidth(float pDepressionElevationBeamWidth)
 {
     depressionElevationBeamWidth = pDepressionElevationBeamWidth;
     return this;
 }
 
+/** Getter for {@link UAFundamentalParameter#depressionElevationBeamWidth}*/
 public float getDepressionElevationBeamWidth()
 {
     return depressionElevationBeamWidth; 

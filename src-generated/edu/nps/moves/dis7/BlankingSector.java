@@ -48,6 +48,7 @@ public class BlankingSector extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -70,144 +71,170 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link BlankingSector#recordType}*/
 public BlankingSector setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link BlankingSector#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link BlankingSector#recordLength}*/
 public BlankingSector setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link BlankingSector#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link BlankingSector#padding}*/
 public BlankingSector setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link BlankingSector#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link BlankingSector#emitterNumber}*/
 public BlankingSector setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
 }
 
+/** Getter for {@link BlankingSector#emitterNumber}*/
 public byte getEmitterNumber()
 {
     return emitterNumber; 
 }
 
+/** Setter for {@link BlankingSector#beamNumber}*/
 public BlankingSector setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link BlankingSector#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 
 }
 
+/** Setter for {@link BlankingSector#stateIndicator}*/
 public BlankingSector setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
 }
 
+/** Getter for {@link BlankingSector#stateIndicator}*/
 public EEAttributeStateIndicator getStateIndicator()
 {
     return stateIndicator; 
 }
 
+/** Setter for {@link BlankingSector#padding2}*/
 public BlankingSector setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link BlankingSector#padding2}*/
 public byte getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link BlankingSector#leftAzimuth}*/
 public BlankingSector setLeftAzimuth(float pLeftAzimuth)
 {
     leftAzimuth = pLeftAzimuth;
     return this;
 }
 
+/** Getter for {@link BlankingSector#leftAzimuth}*/
 public float getLeftAzimuth()
 {
     return leftAzimuth; 
 }
 
+/** Setter for {@link BlankingSector#rightAzimuth}*/
 public BlankingSector setRightAzimuth(float pRightAzimuth)
 {
     rightAzimuth = pRightAzimuth;
     return this;
 }
 
+/** Getter for {@link BlankingSector#rightAzimuth}*/
 public float getRightAzimuth()
 {
     return rightAzimuth; 
 }
 
+/** Setter for {@link BlankingSector#lowerElevation}*/
 public BlankingSector setLowerElevation(float pLowerElevation)
 {
     lowerElevation = pLowerElevation;
     return this;
 }
 
+/** Getter for {@link BlankingSector#lowerElevation}*/
 public float getLowerElevation()
 {
     return lowerElevation; 
 }
 
+/** Setter for {@link BlankingSector#upperElevation}*/
 public BlankingSector setUpperElevation(float pUpperElevation)
 {
     upperElevation = pUpperElevation;
     return this;
 }
 
+/** Getter for {@link BlankingSector#upperElevation}*/
 public float getUpperElevation()
 {
     return upperElevation; 
 }
 
+/** Setter for {@link BlankingSector#residualPower}*/
 public BlankingSector setResidualPower(float pResidualPower)
 {
     residualPower = pResidualPower;
     return this;
 }
 
+/** Getter for {@link BlankingSector#residualPower}*/
 public float getResidualPower()
 {
     return residualPower; 
 }
 
+/** Setter for {@link BlankingSector#padding3}*/
 public BlankingSector setPadding3(long pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link BlankingSector#padding3}*/
 public long getPadding3()
 {
     return padding3; 

@@ -27,6 +27,7 @@ public class EventIdentifierLiveEntity extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EventIdentifierLiveEntity#siteNumber}*/
 public EventIdentifierLiveEntity setSiteNumber(byte pSiteNumber)
 {
     siteNumber = pSiteNumber;
     return this;
 }
 
+/** Getter for {@link EventIdentifierLiveEntity#siteNumber}*/
 public byte getSiteNumber()
 {
     return siteNumber; 
 }
 
+/** Setter for {@link EventIdentifierLiveEntity#applicationNumber}*/
 public EventIdentifierLiveEntity setApplicationNumber(byte pApplicationNumber)
 {
     applicationNumber = pApplicationNumber;
     return this;
 }
 
+/** Getter for {@link EventIdentifierLiveEntity#applicationNumber}*/
 public byte getApplicationNumber()
 {
     return applicationNumber; 
 }
 
+/** Setter for {@link EventIdentifierLiveEntity#eventNumber}*/
 public EventIdentifierLiveEntity setEventNumber(short pEventNumber)
 {
     eventNumber = pEventNumber;
     return this;
 }
 
+/** Getter for {@link EventIdentifierLiveEntity#eventNumber}*/
 public short getEventNumber()
 {
     return eventNumber; 

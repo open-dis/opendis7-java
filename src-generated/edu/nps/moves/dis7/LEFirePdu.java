@@ -41,6 +41,7 @@ public class LEFirePdu extends LiveEntityFamilyPdu implements Serializable
     setPduType( DISPDUType.LIVE_ENTITY_FIRE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -60,100 +61,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LEFirePdu#firingLiveEntityId}*/
 public LEFirePdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
 {
     firingLiveEntityId = pFiringLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#firingLiveEntityId}*/
 public EntityID getFiringLiveEntityId()
 {
     return firingLiveEntityId; 
 }
 
+/** Setter for {@link LEFirePdu#flags}*/
 public LEFirePdu setFlags(byte pFlags)
 {
     flags = pFlags;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#flags}*/
 public byte getFlags()
 {
     return flags; 
 }
 
+/** Setter for {@link LEFirePdu#targetLiveEntityId}*/
 public LEFirePdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
 {
     targetLiveEntityId = pTargetLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#targetLiveEntityId}*/
 public EntityID getTargetLiveEntityId()
 {
     return targetLiveEntityId; 
 }
 
+/** Setter for {@link LEFirePdu#munitionLiveEntityId}*/
 public LEFirePdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
 {
     munitionLiveEntityId = pMunitionLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#munitionLiveEntityId}*/
 public EntityID getMunitionLiveEntityId()
 {
     return munitionLiveEntityId; 
 }
 
+/** Setter for {@link LEFirePdu#eventId}*/
 public LEFirePdu setEventId(EventIdentifier pEventId)
 {
     eventId = pEventId;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#eventId}*/
 public EventIdentifier getEventId()
 {
     return eventId; 
 }
 
+/** Setter for {@link LEFirePdu#location}*/
 public LEFirePdu setLocation(LiveEntityRelativeWorldCoordinates pLocation)
 {
     location = pLocation;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#location}*/
 public LiveEntityRelativeWorldCoordinates getLocation()
 {
     return location; 
 }
 
+/** Setter for {@link LEFirePdu#munitionDescriptor}*/
 public LEFirePdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
 {
     munitionDescriptor = pMunitionDescriptor;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#munitionDescriptor}*/
 public MunitionDescriptor getMunitionDescriptor()
 {
     return munitionDescriptor; 
 }
 
+/** Setter for {@link LEFirePdu#velocity}*/
 public LEFirePdu setVelocity(LiveEntityLinearVelocity pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#velocity}*/
 public LiveEntityLinearVelocity getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link LEFirePdu#range}*/
 public LEFirePdu setRange(short pRange)
 {
     range = pRange;
     return this;
 }
 
+/** Getter for {@link LEFirePdu#range}*/
 public short getRange()
 {
     return range; 

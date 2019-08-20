@@ -30,6 +30,7 @@ public class AngularVelocityVector extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AngularVelocityVector#x}*/
 public AngularVelocityVector setX(float pX)
 {
     x = pX;
     return this;
 }
 
+/** Getter for {@link AngularVelocityVector#x}*/
 public float getX()
 {
     return x; 
 }
 
+/** Setter for {@link AngularVelocityVector#y}*/
 public AngularVelocityVector setY(float pY)
 {
     y = pY;
     return this;
 }
 
+/** Getter for {@link AngularVelocityVector#y}*/
 public float getY()
 {
     return y; 
 }
 
+/** Setter for {@link AngularVelocityVector#z}*/
 public AngularVelocityVector setZ(float pZ)
 {
     z = pZ;
     return this;
 }
 
+/** Getter for {@link AngularVelocityVector#z}*/
 public float getZ()
 {
     return z; 

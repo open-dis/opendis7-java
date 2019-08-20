@@ -30,6 +30,7 @@ public class LEVector3FixedByte extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LEVector3FixedByte#x}*/
 public LEVector3FixedByte setX(byte pX)
 {
     x = pX;
     return this;
 }
 
+/** Getter for {@link LEVector3FixedByte#x}*/
 public byte getX()
 {
     return x; 
 }
 
+/** Setter for {@link LEVector3FixedByte#y}*/
 public LEVector3FixedByte setY(byte pY)
 {
     y = pY;
     return this;
 }
 
+/** Getter for {@link LEVector3FixedByte#y}*/
 public byte getY()
 {
     return y; 
 }
 
+/** Setter for {@link LEVector3FixedByte#z}*/
 public LEVector3FixedByte setZ(byte pZ)
 {
     z = pZ;
     return this;
 }
 
+/** Getter for {@link LEVector3FixedByte#z}*/
 public byte getZ()
 {
     return z; 

@@ -29,6 +29,7 @@ public class Appearance extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,45 +43,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Appearance#visual}*/
 public Appearance setVisual(int pVisual)
 {
     visual = pVisual;
     return this;
 }
 
+/** Getter for {@link Appearance#visual}*/
 public int getVisual()
 {
     return visual; 
 }
 
+/** Setter for {@link Appearance#ir}*/
 public Appearance setIr(int pIr)
 {
     ir = pIr;
     return this;
 }
 
+/** Getter for {@link Appearance#ir}*/
 public int getIr()
 {
     return ir; 
 }
 
+/** Setter for {@link Appearance#em}*/
 public Appearance setEm(int pEm)
 {
     em = pEm;
     return this;
 }
 
+/** Getter for {@link Appearance#em}*/
 public int getEm()
 {
     return em; 
 }
 
+/** Setter for {@link Appearance#audio}*/
 public Appearance setAudio(int pAudio)
 {
     audio = pAudio;
     return this;
 }
 
+/** Getter for {@link Appearance#audio}*/
 public int getAudio()
 {
     return audio; 

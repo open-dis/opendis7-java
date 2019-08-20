@@ -35,6 +35,7 @@ public class GridAxisDescriptor extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -49,56 +50,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridAxisDescriptor#domainInitialXi}*/
 public GridAxisDescriptor setDomainInitialXi(double pDomainInitialXi)
 {
     domainInitialXi = pDomainInitialXi;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptor#domainInitialXi}*/
 public double getDomainInitialXi()
 {
     return domainInitialXi; 
 }
 
+/** Setter for {@link GridAxisDescriptor#domainFinalXi}*/
 public GridAxisDescriptor setDomainFinalXi(double pDomainFinalXi)
 {
     domainFinalXi = pDomainFinalXi;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptor#domainFinalXi}*/
 public double getDomainFinalXi()
 {
     return domainFinalXi; 
 }
 
+/** Setter for {@link GridAxisDescriptor#domainPointsXi}*/
 public GridAxisDescriptor setDomainPointsXi(short pDomainPointsXi)
 {
     domainPointsXi = pDomainPointsXi;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptor#domainPointsXi}*/
 public short getDomainPointsXi()
 {
     return domainPointsXi; 
 }
 
+/** Setter for {@link GridAxisDescriptor#interleafFactor}*/
 public GridAxisDescriptor setInterleafFactor(byte pInterleafFactor)
 {
     interleafFactor = pInterleafFactor;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptor#interleafFactor}*/
 public byte getInterleafFactor()
 {
     return interleafFactor; 
 }
 
+/** Setter for {@link GridAxisDescriptor#axisType}*/
 public GridAxisDescriptor setAxisType(GridAxisDescriptorAxisType pAxisType)
 {
     axisType = pAxisType;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptor#axisType}*/
 public GridAxisDescriptorAxisType getAxisType()
 {
     return axisType; 

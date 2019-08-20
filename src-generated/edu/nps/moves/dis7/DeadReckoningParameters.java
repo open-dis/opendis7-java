@@ -33,6 +33,7 @@ public class DeadReckoningParameters extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DeadReckoningParameters#deadReckoningAlgorithm}*/
 public DeadReckoningParameters setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
     deadReckoningAlgorithm = pDeadReckoningAlgorithm;
     return this;
 }
 
+/** Getter for {@link DeadReckoningParameters#deadReckoningAlgorithm}*/
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     return deadReckoningAlgorithm; 
 }
 
+/** Setter for {@link DeadReckoningParameters#parameters}*/
 public DeadReckoningParameters setParameters(byte[] pParameters)
 {
     parameters = Arrays.copyOf(pParameters, parameters.length);
     return this;
 }
 
+/** Getter for {@link DeadReckoningParameters#parameters}*/
 public byte[] getParameters()
 {
     return parameters; 
 }
 
+/** Setter for {@link DeadReckoningParameters#entityLinearAcceleration}*/
 public DeadReckoningParameters setEntityLinearAcceleration(Vector3Float pEntityLinearAcceleration)
 {
     entityLinearAcceleration = pEntityLinearAcceleration;
     return this;
 }
 
+/** Getter for {@link DeadReckoningParameters#entityLinearAcceleration}*/
 public Vector3Float getEntityLinearAcceleration()
 {
     return entityLinearAcceleration; 
 }
 
+/** Setter for {@link DeadReckoningParameters#entityAngularVelocity}*/
 public DeadReckoningParameters setEntityAngularVelocity(Vector3Float pEntityAngularVelocity)
 {
     entityAngularVelocity = pEntityAngularVelocity;
     return this;
 }
 
+/** Getter for {@link DeadReckoningParameters#entityAngularVelocity}*/
 public Vector3Float getEntityAngularVelocity()
 {
     return entityAngularVelocity; 

@@ -22,6 +22,7 @@ public abstract class EntityInformationFamilyPdu extends PduBase implements Seri
     setProtocolFamily( DISProtocolFamily.ENTITY_INFORMATION_INTERACTION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

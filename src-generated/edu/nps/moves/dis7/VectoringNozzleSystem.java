@@ -27,6 +27,7 @@ public class VectoringNozzleSystem extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link VectoringNozzleSystem#horizontalDeflectionAngle}*/
 public VectoringNozzleSystem setHorizontalDeflectionAngle(float pHorizontalDeflectionAngle)
 {
     horizontalDeflectionAngle = pHorizontalDeflectionAngle;
     return this;
 }
 
+/** Getter for {@link VectoringNozzleSystem#horizontalDeflectionAngle}*/
 public float getHorizontalDeflectionAngle()
 {
     return horizontalDeflectionAngle; 
 }
 
+/** Setter for {@link VectoringNozzleSystem#verticalDeflectionAngle}*/
 public VectoringNozzleSystem setVerticalDeflectionAngle(float pVerticalDeflectionAngle)
 {
     verticalDeflectionAngle = pVerticalDeflectionAngle;
     return this;
 }
 
+/** Getter for {@link VectoringNozzleSystem#verticalDeflectionAngle}*/
 public float getVerticalDeflectionAngle()
 {
     return verticalDeflectionAngle; 

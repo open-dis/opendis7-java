@@ -26,6 +26,7 @@ public class ShaftRPM extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,34 +39,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ShaftRPM#currentRPM}*/
 public ShaftRPM setCurrentRPM(short pCurrentRPM)
 {
     currentRPM = pCurrentRPM;
     return this;
 }
 
+/** Getter for {@link ShaftRPM#currentRPM}*/
 public short getCurrentRPM()
 {
     return currentRPM; 
 }
 
+/** Setter for {@link ShaftRPM#orderedRPM}*/
 public ShaftRPM setOrderedRPM(short pOrderedRPM)
 {
     orderedRPM = pOrderedRPM;
     return this;
 }
 
+/** Getter for {@link ShaftRPM#orderedRPM}*/
 public short getOrderedRPM()
 {
     return orderedRPM; 
 }
 
+/** Setter for {@link ShaftRPM#RPMrateOfChange}*/
 public ShaftRPM setRPMrateOfChange(int pRPMrateOfChange)
 {
     RPMrateOfChange = pRPMrateOfChange;
     return this;
 }
 
+/** Getter for {@link ShaftRPM#RPMrateOfChange}*/
 public int getRPMrateOfChange()
 {
     return RPMrateOfChange; 

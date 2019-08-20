@@ -39,6 +39,7 @@ public abstract class Pdu extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Pdu#protocolVersion}*/
 public Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
 {
     protocolVersion = pProtocolVersion;
     return this;
 }
 
+/** Getter for {@link Pdu#protocolVersion}*/
 public DISProtocolVersion getProtocolVersion()
 {
     return protocolVersion; 
 }
 
+/** Setter for {@link Pdu#exerciseID}*/
 public Pdu setExerciseID(byte pExerciseID)
 {
     exerciseID = pExerciseID;
     return this;
 }
 
+/** Getter for {@link Pdu#exerciseID}*/
 public byte getExerciseID()
 {
     return exerciseID; 
 }
 
+/** Setter for {@link Pdu#pduType}*/
 public Pdu setPduType(DISPDUType pPduType)
 {
     pduType = pPduType;
     return this;
 }
 
+/** Getter for {@link Pdu#pduType}*/
 public DISPDUType getPduType()
 {
     return pduType; 
 }
 
+/** Setter for {@link Pdu#protocolFamily}*/
 public Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
 {
     protocolFamily = pProtocolFamily;
     return this;
 }
 
+/** Getter for {@link Pdu#protocolFamily}*/
 public DISProtocolFamily getProtocolFamily()
 {
     return protocolFamily; 
 }
 
+/** Setter for {@link Pdu#timestamp}*/
 public Pdu setTimestamp(int pTimestamp)
 {
     timestamp = pTimestamp;
     return this;
 }
 
+/** Getter for {@link Pdu#timestamp}*/
 public int getTimestamp()
 {
     return timestamp; 
 }
 
+/** Setter for {@link Pdu#length}*/
 public Pdu setLength(short pLength)
 {
     length = pLength;
     return this;
 }
 
+/** Getter for {@link Pdu#length}*/
 public short getLength()
 {
     return length; 

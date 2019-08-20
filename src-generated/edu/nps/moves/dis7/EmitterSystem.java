@@ -30,6 +30,7 @@ public class EmitterSystem extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EmitterSystem#emitterName}*/
 public EmitterSystem setEmitterName(EmitterName pEmitterName)
 {
     emitterName = pEmitterName;
     return this;
 }
 
+/** Getter for {@link EmitterSystem#emitterName}*/
 public EmitterName getEmitterName()
 {
     return emitterName; 
 }
 
+/** Setter for {@link EmitterSystem#emitterFunction}*/
 public EmitterSystem setEmitterFunction(EmitterSystemFunction pEmitterFunction)
 {
     emitterFunction = pEmitterFunction;
     return this;
 }
 
+/** Getter for {@link EmitterSystem#emitterFunction}*/
 public EmitterSystemFunction getEmitterFunction()
 {
     return emitterFunction; 
 }
 
+/** Setter for {@link EmitterSystem#emitterIDNumber}*/
 public EmitterSystem setEmitterIDNumber(byte pEmitterIDNumber)
 {
     emitterIDNumber = pEmitterIDNumber;
     return this;
 }
 
+/** Getter for {@link EmitterSystem#emitterIDNumber}*/
 public byte getEmitterIDNumber()
 {
     return emitterIDNumber; 

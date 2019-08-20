@@ -33,6 +33,7 @@ public class ExplosionDescriptor extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ExplosionDescriptor#explodingObject}*/
 public ExplosionDescriptor setExplodingObject(EntityType pExplodingObject)
 {
     explodingObject = pExplodingObject;
     return this;
 }
 
+/** Getter for {@link ExplosionDescriptor#explodingObject}*/
 public EntityType getExplodingObject()
 {
     return explodingObject; 
 }
 
+/** Setter for {@link ExplosionDescriptor#explosiveMaterial}*/
 public ExplosionDescriptor setExplosiveMaterial(ExplosiveMaterialCategories pExplosiveMaterial)
 {
     explosiveMaterial = pExplosiveMaterial;
     return this;
 }
 
+/** Getter for {@link ExplosionDescriptor#explosiveMaterial}*/
 public ExplosiveMaterialCategories getExplosiveMaterial()
 {
     return explosiveMaterial; 
 }
 
+/** Setter for {@link ExplosionDescriptor#padding}*/
 public ExplosionDescriptor setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link ExplosionDescriptor#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link ExplosionDescriptor#explosiveForce}*/
 public ExplosionDescriptor setExplosiveForce(float pExplosiveForce)
 {
     explosiveForce = pExplosiveForce;
     return this;
 }
 
+/** Getter for {@link ExplosionDescriptor#explosiveForce}*/
 public float getExplosiveForce()
 {
     return explosiveForce; 

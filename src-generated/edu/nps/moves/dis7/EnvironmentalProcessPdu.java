@@ -43,6 +43,7 @@ public class EnvironmentalProcessPdu extends SyntheticEnvironmentFamilyPdu imple
     setPduType( DISPDUType.ENVIRONMENTAL_PROCESS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,67 +65,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EnvironmentalProcessPdu#environementalProcessID}*/
 public EnvironmentalProcessPdu setEnvironementalProcessID(ObjectIdentifier pEnvironementalProcessID)
 {
     environementalProcessID = pEnvironementalProcessID;
     return this;
 }
 
+/** Getter for {@link EnvironmentalProcessPdu#environementalProcessID}*/
 public ObjectIdentifier getEnvironementalProcessID()
 {
     return environementalProcessID; 
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#environmentType}*/
 public EnvironmentalProcessPdu setEnvironmentType(EntityType pEnvironmentType)
 {
     environmentType = pEnvironmentType;
     return this;
 }
 
+/** Getter for {@link EnvironmentalProcessPdu#environmentType}*/
 public EntityType getEnvironmentType()
 {
     return environmentType; 
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#modelType}*/
 public EnvironmentalProcessPdu setModelType(EnvironmentalProcessModelType pModelType)
 {
     modelType = pModelType;
     return this;
 }
 
+/** Getter for {@link EnvironmentalProcessPdu#modelType}*/
 public EnvironmentalProcessModelType getModelType()
 {
     return modelType; 
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#environmentStatus}*/
 public EnvironmentalProcessPdu setEnvironmentStatus(EnvironmentalProcessEnvironmentStatus pEnvironmentStatus)
 {
     environmentStatus = pEnvironmentStatus;
     return this;
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#environmentStatus}*/
 public EnvironmentalProcessEnvironmentStatus getEnvironmentStatus()
 {
     return environmentStatus; 
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#sequenceNumber}*/
 public EnvironmentalProcessPdu setSequenceNumber(short pSequenceNumber)
 {
     sequenceNumber = pSequenceNumber;
     return this;
 }
 
+/** Getter for {@link EnvironmentalProcessPdu#sequenceNumber}*/
 public short getSequenceNumber()
 {
     return sequenceNumber; 
 }
 
+/** Setter for {@link EnvironmentalProcessPdu#environmentRecords}*/
 public EnvironmentalProcessPdu setEnvironmentRecords(List<Environment> pEnvironmentRecords)
 {
     environmentRecords = pEnvironmentRecords;
     return this;
 }
 
+/** Getter for {@link EnvironmentalProcessPdu#environmentRecords}*/
 public List<Environment> getEnvironmentRecords()
 {
     return environmentRecords; 

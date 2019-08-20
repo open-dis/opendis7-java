@@ -26,6 +26,7 @@ public class RadioCommsHeader extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -37,23 +38,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RadioCommsHeader#radioReferenceID}*/
 public RadioCommsHeader setRadioReferenceID(EntityID pRadioReferenceID)
 {
     radioReferenceID = pRadioReferenceID;
     return this;
 }
 
+/** Getter for {@link RadioCommsHeader#radioReferenceID}*/
 public EntityID getRadioReferenceID()
 {
     return radioReferenceID; 
 }
 
+/** Setter for {@link RadioCommsHeader#radioNumber}*/
 public RadioCommsHeader setRadioNumber(short pRadioNumber)
 {
     radioNumber = pRadioNumber;
     return this;
 }
 
+/** Getter for {@link RadioCommsHeader#radioNumber}*/
 public short getRadioNumber()
 {
     return radioNumber; 

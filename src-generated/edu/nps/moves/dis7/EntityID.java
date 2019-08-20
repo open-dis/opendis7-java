@@ -30,6 +30,7 @@ public class EntityID extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityID#siteID}*/
 public EntityID setSiteID(short pSiteID)
 {
     siteID = pSiteID;
     return this;
 }
 
+/** Getter for {@link EntityID#siteID}*/
 public short getSiteID()
 {
     return siteID; 
 }
 
+/** Setter for {@link EntityID#applicationID}*/
 public EntityID setApplicationID(short pApplicationID)
 {
     applicationID = pApplicationID;
     return this;
 }
 
+/** Getter for {@link EntityID#applicationID}*/
 public short getApplicationID()
 {
     return applicationID; 
 }
 
+/** Setter for {@link EntityID#entityID}*/
 public EntityID setEntityID(short pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link EntityID#entityID}*/
 public short getEntityID()
 {
     return entityID; 

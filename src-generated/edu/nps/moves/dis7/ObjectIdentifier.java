@@ -27,6 +27,7 @@ public class ObjectIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ObjectIdentifier#simulationAddress}*/
 public ObjectIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link ObjectIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link ObjectIdentifier#objectNumber}*/
 public ObjectIdentifier setObjectNumber(short pObjectNumber)
 {
     objectNumber = pObjectNumber;
     return this;
 }
 
+/** Getter for {@link ObjectIdentifier#objectNumber}*/
 public short getObjectNumber()
 {
     return objectNumber; 

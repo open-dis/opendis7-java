@@ -39,6 +39,7 @@ public class Sensor extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Sensor#sensorTypeSource}*/
 public Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSource)
 {
     sensorTypeSource = pSensorTypeSource;
     return this;
 }
 
+/** Getter for {@link Sensor#sensorTypeSource}*/
 public SensorTypeSource getSensorTypeSource()
 {
     return sensorTypeSource; 
 }
 
+/** Setter for {@link Sensor#sensorOnOffStatus}*/
 public Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffStatus)
 {
     sensorOnOffStatus = pSensorOnOffStatus;
     return this;
 }
 
+/** Getter for {@link Sensor#sensorOnOffStatus}*/
 public SensorOnOffStatus getSensorOnOffStatus()
 {
     return sensorOnOffStatus; 
 }
 
+/** Setter for {@link Sensor#sensorType}*/
 public Sensor setSensorType(short pSensorType)
 {
     sensorType = pSensorType;
     return this;
 }
 
+/** Getter for {@link Sensor#sensorType}*/
 public short getSensorType()
 {
     return sensorType; 
 }
 
+/** Setter for {@link Sensor#station}*/
 public Sensor setStation(int pStation)
 {
     station = pStation;
     return this;
 }
 
+/** Getter for {@link Sensor#station}*/
 public int getStation()
 {
     return station; 
 }
 
+/** Setter for {@link Sensor#quantity}*/
 public Sensor setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
 }
 
+/** Getter for {@link Sensor#quantity}*/
 public short getQuantity()
 {
     return quantity; 
 }
 
+/** Setter for {@link Sensor#padding}*/
 public Sensor setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link Sensor#padding}*/
 public short getPadding()
 {
     return padding; 

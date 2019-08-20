@@ -25,6 +25,7 @@ public class APA extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -36,23 +37,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link APA#parameterIndex}*/
 public APA setParameterIndex(short pParameterIndex)
 {
     parameterIndex = pParameterIndex;
     return this;
 }
 
+/** Getter for {@link APA#parameterIndex}*/
 public short getParameterIndex()
 {
     return parameterIndex; 
 }
 
+/** Setter for {@link APA#value}*/
 public APA setValue(short pValue)
 {
     value = pValue;
     return this;
 }
 
+/** Getter for {@link APA#value}*/
 public short getValue()
 {
     return value; 

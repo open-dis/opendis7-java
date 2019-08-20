@@ -27,6 +27,7 @@ public class GroupID extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GroupID#simulationAddress}*/
 public GroupID setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link GroupID#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link GroupID#groupNumber}*/
 public GroupID setGroupNumber(short pGroupNumber)
 {
     groupNumber = pGroupNumber;
     return this;
 }
 
+/** Getter for {@link GroupID#groupNumber}*/
 public short getGroupNumber()
 {
     return groupNumber; 

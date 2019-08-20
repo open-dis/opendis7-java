@@ -44,6 +44,7 @@ public class IOEffectRecord extends IORecord implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -63,100 +64,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IOEffectRecord#recordType}*/
 public IOEffectRecord setRecordType(VariableRecordTypes pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#recordType}*/
 public VariableRecordTypes getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link IOEffectRecord#recordLength}*/
 public IOEffectRecord setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link IOEffectRecord#ioStatus}*/
 public IOEffectRecord setIoStatus(IOEffectsRecordIOStatus pIoStatus)
 {
     ioStatus = pIoStatus;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioStatus}*/
 public IOEffectsRecordIOStatus getIoStatus()
 {
     return ioStatus; 
 }
 
+/** Setter for {@link IOEffectRecord#ioLinkType}*/
 public IOEffectRecord setIoLinkType(IOEffectsRecordIOLinkType pIoLinkType)
 {
     ioLinkType = pIoLinkType;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioLinkType}*/
 public IOEffectsRecordIOLinkType getIoLinkType()
 {
     return ioLinkType; 
 }
 
+/** Setter for {@link IOEffectRecord#ioEffect}*/
 public IOEffectRecord setIoEffect(IOEffectsRecordIOEffect pIoEffect)
 {
     ioEffect = pIoEffect;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioEffect}*/
 public IOEffectsRecordIOEffect getIoEffect()
 {
     return ioEffect; 
 }
 
+/** Setter for {@link IOEffectRecord#ioEffectDutyCycle}*/
 public IOEffectRecord setIoEffectDutyCycle(byte pIoEffectDutyCycle)
 {
     ioEffectDutyCycle = pIoEffectDutyCycle;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioEffectDutyCycle}*/
 public byte getIoEffectDutyCycle()
 {
     return ioEffectDutyCycle; 
 }
 
+/** Setter for {@link IOEffectRecord#ioEffectDuration}*/
 public IOEffectRecord setIoEffectDuration(short pIoEffectDuration)
 {
     ioEffectDuration = pIoEffectDuration;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioEffectDuration}*/
 public short getIoEffectDuration()
 {
     return ioEffectDuration; 
 }
 
+/** Setter for {@link IOEffectRecord#ioProcess}*/
 public IOEffectRecord setIoProcess(IOEffectsRecordIOProcess pIoProcess)
 {
     ioProcess = pIoProcess;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#ioProcess}*/
 public IOEffectsRecordIOProcess getIoProcess()
 {
     return ioProcess; 
 }
 
+/** Setter for {@link IOEffectRecord#padding}*/
 public IOEffectRecord setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link IOEffectRecord#padding}*/
 public short getPadding()
 {
     return padding; 

@@ -29,6 +29,7 @@ public class IntercomIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,45 +43,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IntercomIdentifier#siteNumber}*/
 public IntercomIdentifier setSiteNumber(short pSiteNumber)
 {
     siteNumber = pSiteNumber;
     return this;
 }
 
+/** Getter for {@link IntercomIdentifier#siteNumber}*/
 public short getSiteNumber()
 {
     return siteNumber; 
 }
 
+/** Setter for {@link IntercomIdentifier#applicationNumber}*/
 public IntercomIdentifier setApplicationNumber(short pApplicationNumber)
 {
     applicationNumber = pApplicationNumber;
     return this;
 }
 
+/** Getter for {@link IntercomIdentifier#applicationNumber}*/
 public short getApplicationNumber()
 {
     return applicationNumber; 
 }
 
+/** Setter for {@link IntercomIdentifier#referenceNumber}*/
 public IntercomIdentifier setReferenceNumber(short pReferenceNumber)
 {
     referenceNumber = pReferenceNumber;
     return this;
 }
 
+/** Getter for {@link IntercomIdentifier#referenceNumber}*/
 public short getReferenceNumber()
 {
     return referenceNumber; 
 }
 
+/** Setter for {@link IntercomIdentifier#intercomNumber}*/
 public IntercomIdentifier setIntercomNumber(short pIntercomNumber)
 {
     intercomNumber = pIntercomNumber;
     return this;
 }
 
+/** Getter for {@link IntercomIdentifier#intercomNumber}*/
 public short getIntercomNumber()
 {
     return intercomNumber; 

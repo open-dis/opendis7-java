@@ -40,6 +40,7 @@ public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializabl
     setPduType( DISPDUType.IDENTIFICATION_FRIEND_OR_FOE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -57,78 +58,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IFFPdu#emittingEntityId}*/
 public IFFPdu setEmittingEntityId(EntityID pEmittingEntityId)
 {
     emittingEntityId = pEmittingEntityId;
     return this;
 }
 
+/** Getter for {@link IFFPdu#emittingEntityId}*/
 public EntityID getEmittingEntityId()
 {
     return emittingEntityId; 
 }
 
+/** Setter for {@link IFFPdu#eventID}*/
 public IFFPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link IFFPdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link IFFPdu#location}*/
 public IFFPdu setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
 }
 
+/** Getter for {@link IFFPdu#location}*/
 public Vector3Float getLocation()
 {
     return location; 
 }
 
+/** Setter for {@link IFFPdu#systemID}*/
 public IFFPdu setSystemID(SystemIdentifier pSystemID)
 {
     systemID = pSystemID;
     return this;
 }
 
+/** Getter for {@link IFFPdu#systemID}*/
 public SystemIdentifier getSystemID()
 {
     return systemID; 
 }
 
+/** Setter for {@link IFFPdu#systemDesignator}*/
 public IFFPdu setSystemDesignator(byte pSystemDesignator)
 {
     systemDesignator = pSystemDesignator;
     return this;
 }
 
+/** Getter for {@link IFFPdu#systemDesignator}*/
 public byte getSystemDesignator()
 {
     return systemDesignator; 
 }
 
+/** Setter for {@link IFFPdu#systemSpecificData}*/
 public IFFPdu setSystemSpecificData(byte pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
 }
 
+/** Getter for {@link IFFPdu#systemSpecificData}*/
 public byte getSystemSpecificData()
 {
     return systemSpecificData; 
 }
 
+/** Setter for {@link IFFPdu#fundamentalParameters}*/
 public IFFPdu setFundamentalParameters(FundamentalOperationalData pFundamentalParameters)
 {
     fundamentalParameters = pFundamentalParameters;
     return this;
 }
 
+/** Getter for {@link IFFPdu#fundamentalParameters}*/
 public FundamentalOperationalData getFundamentalParameters()
 {
     return fundamentalParameters; 

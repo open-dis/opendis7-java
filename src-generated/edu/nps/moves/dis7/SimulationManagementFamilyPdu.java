@@ -28,6 +28,7 @@ public abstract class SimulationManagementFamilyPdu extends PduBase implements S
     setProtocolFamily( DISProtocolFamily.SIMULATION_MANAGEMENT );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -40,23 +41,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SimulationManagementFamilyPdu#originatingID}*/
 public SimulationManagementFamilyPdu setOriginatingID(SimulationIdentifier pOriginatingID)
 {
     originatingID = pOriginatingID;
     return this;
 }
 
+/** Getter for {@link SimulationManagementFamilyPdu#originatingID}*/
 public SimulationIdentifier getOriginatingID()
 {
     return originatingID; 
 }
 
+/** Setter for {@link SimulationManagementFamilyPdu#receivingID}*/
 public SimulationManagementFamilyPdu setReceivingID(SimulationIdentifier pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
 }
 
+/** Getter for {@link SimulationManagementFamilyPdu#receivingID}*/
 public SimulationIdentifier getReceivingID()
 {
     return receivingID; 

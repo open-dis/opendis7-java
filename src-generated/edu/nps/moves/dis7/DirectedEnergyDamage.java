@@ -57,6 +57,7 @@ public class DirectedEnergyDamage extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -78,133 +79,157 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DirectedEnergyDamage#recordType}*/
 public DirectedEnergyDamage setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#recordLength}*/
 public DirectedEnergyDamage setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#padding}*/
 public DirectedEnergyDamage setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#damageLocation}*/
 public DirectedEnergyDamage setDamageLocation(Vector3Float pDamageLocation)
 {
     damageLocation = pDamageLocation;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#damageLocation}*/
 public Vector3Float getDamageLocation()
 {
     return damageLocation; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#damageDiameter}*/
 public DirectedEnergyDamage setDamageDiameter(float pDamageDiameter)
 {
     damageDiameter = pDamageDiameter;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#damageDiameter}*/
 public float getDamageDiameter()
 {
     return damageDiameter; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#temperature}*/
 public DirectedEnergyDamage setTemperature(float pTemperature)
 {
     temperature = pTemperature;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#temperature}*/
 public float getTemperature()
 {
     return temperature; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#componentIdentification}*/
 public DirectedEnergyDamage setComponentIdentification(EntityDamageStatusComponentIdentification pComponentIdentification)
 {
     componentIdentification = pComponentIdentification;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#componentIdentification}*/
 public EntityDamageStatusComponentIdentification getComponentIdentification()
 {
     return componentIdentification; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#componentDamageStatus}*/
 public DirectedEnergyDamage setComponentDamageStatus(DEDamageDescriptionComponentDamageStatus pComponentDamageStatus)
 {
     componentDamageStatus = pComponentDamageStatus;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#componentDamageStatus}*/
 public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 {
     return componentDamageStatus; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#componentVisualDamageStatus}*/
 public DirectedEnergyDamage setComponentVisualDamageStatus(DEDamageDescriptionComponentVisualDamageStatus pComponentVisualDamageStatus)
 {
     componentVisualDamageStatus = pComponentVisualDamageStatus;
     return this;
 }
 
+/** Setter for {@link DirectedEnergyDamage#componentVisualDamageStatus}*/
 public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageStatus()
 {
     return componentVisualDamageStatus; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#componentVisualSmokeColor}*/
 public DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor)
 {
     componentVisualSmokeColor = pComponentVisualSmokeColor;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#componentVisualSmokeColor}*/
 public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor()
 {
     return componentVisualSmokeColor; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#fireEventID}*/
 public DirectedEnergyDamage setFireEventID(EventIdentifier pFireEventID)
 {
     fireEventID = pFireEventID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#fireEventID}*/
 public EventIdentifier getFireEventID()
 {
     return fireEventID; 
 }
 
+/** Setter for {@link DirectedEnergyDamage#padding2}*/
 public DirectedEnergyDamage setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyDamage#padding2}*/
 public short getPadding2()
 {
     return padding2; 

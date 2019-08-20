@@ -43,6 +43,7 @@ public class RecordQueryRPdu extends SimulationManagementWithReliabilityFamilyPd
     setPduType( DISPDUType.RECORD_QUERY_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,67 +65,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RecordQueryRPdu#requestID}*/
 public RecordQueryRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link RecordQueryRPdu#requiredReliabilityService}*/
 public RecordQueryRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link RecordQueryRPdu#pad1}*/
 public RecordQueryRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link RecordQueryRPdu#eventType}*/
 public RecordQueryRPdu setEventType(RecordQueryREventType pEventType)
 {
     eventType = pEventType;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#eventType}*/
 public RecordQueryREventType getEventType()
 {
     return eventType; 
 }
 
+/** Setter for {@link RecordQueryRPdu#time}*/
 public RecordQueryRPdu setTime(int pTime)
 {
     time = pTime;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#time}*/
 public int getTime()
 {
     return time; 
 }
 
+/** Setter for {@link RecordQueryRPdu#recordIDs}*/
 public RecordQueryRPdu setRecordIDs(List<RecordQuerySpecification> pRecordIDs)
 {
     recordIDs = pRecordIDs;
     return this;
 }
 
+/** Getter for {@link RecordQueryRPdu#recordIDs}*/
 public List<RecordQuerySpecification> getRecordIDs()
 {
     return recordIDs; 

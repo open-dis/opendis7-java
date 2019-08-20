@@ -27,6 +27,7 @@ public class LiveEntityLinearVelocity extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityLinearVelocity#xComponent}*/
 public LiveEntityLinearVelocity setXComponent(short pXComponent)
 {
     xComponent = pXComponent;
     return this;
 }
 
+/** Getter for {@link LiveEntityLinearVelocity#xComponent}*/
 public short getXComponent()
 {
     return xComponent; 
 }
 
+/** Setter for {@link LiveEntityLinearVelocity#yComponent}*/
 public LiveEntityLinearVelocity setYComponent(short pYComponent)
 {
     yComponent = pYComponent;
     return this;
 }
 
+/** Getter for {@link LiveEntityLinearVelocity#yComponent}*/
 public short getYComponent()
 {
     return yComponent; 
 }
 
+/** Setter for {@link LiveEntityLinearVelocity#zComponent}*/
 public LiveEntityLinearVelocity setZComponent(short pZComponent)
 {
     zComponent = pZComponent;
     return this;
 }
 
+/** Getter for {@link LiveEntityLinearVelocity#zComponent}*/
 public short getZComponent()
 {
     return zComponent; 

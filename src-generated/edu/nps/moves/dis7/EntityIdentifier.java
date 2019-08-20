@@ -27,6 +27,7 @@ public class EntityIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityIdentifier#simulationAddress}*/
 public EntityIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link EntityIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link EntityIdentifier#entityNumber}*/
 public EntityIdentifier setEntityNumber(short pEntityNumber)
 {
     entityNumber = pEntityNumber;
     return this;
 }
 
+/** Getter for {@link EntityIdentifier#entityNumber}*/
 public short getEntityNumber()
 {
     return entityNumber; 

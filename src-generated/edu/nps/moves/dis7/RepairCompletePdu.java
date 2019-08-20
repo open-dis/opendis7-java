@@ -34,6 +34,7 @@ public class RepairCompletePdu extends LogisticsFamilyPdu implements Serializabl
     setPduType( DISPDUType.REPAIR_COMPLETE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -48,45 +49,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RepairCompletePdu#receivingEntityID}*/
 public RepairCompletePdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link RepairCompletePdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link RepairCompletePdu#repairingEntityID}*/
 public RepairCompletePdu setRepairingEntityID(EntityID pRepairingEntityID)
 {
     repairingEntityID = pRepairingEntityID;
     return this;
 }
 
+/** Getter for {@link RepairCompletePdu#repairingEntityID}*/
 public EntityID getRepairingEntityID()
 {
     return repairingEntityID; 
 }
 
+/** Setter for {@link RepairCompletePdu#repair}*/
 public RepairCompletePdu setRepair(RepairCompleteRepair pRepair)
 {
     repair = pRepair;
     return this;
 }
 
+/** Getter for {@link RepairCompletePdu#repair}*/
 public RepairCompleteRepair getRepair()
 {
     return repair; 
 }
 
+/** Setter for {@link RepairCompletePdu#padding4}*/
 public RepairCompletePdu setPadding4(short pPadding4)
 {
     padding4 = pPadding4;
     return this;
 }
 
+/** Getter for {@link RepairCompletePdu#padding4}*/
 public short getPadding4()
 {
     return padding4; 

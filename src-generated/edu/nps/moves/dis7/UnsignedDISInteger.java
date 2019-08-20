@@ -24,6 +24,7 @@ public class UnsignedDISInteger extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -34,12 +35,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UnsignedDISInteger#val}*/
 public UnsignedDISInteger setVal(int pVal)
 {
     val = pVal;
     return this;
 }
 
+/** Getter for {@link UnsignedDISInteger#val}*/
 public int getVal()
 {
     return val; 

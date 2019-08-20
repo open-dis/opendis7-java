@@ -137,6 +137,7 @@ public class FastEntityStatePdu extends EntityInformationFamilyPdu implements Se
     setPduType( DISPDUType.ENTITY_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -191,430 +192,508 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link FastEntityStatePdu#site}*/
 public FastEntityStatePdu setSite(short pSite)
 {
     site = pSite;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#site}*/
 public short getSite()
 {
     return site; 
 }
 
+/** Setter for {@link FastEntityStatePdu#application}*/
 public FastEntityStatePdu setApplication(short pApplication)
 {
     application = pApplication;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#application}*/
 public short getApplication()
 {
     return application; 
 }
 
+/** Setter for {@link FastEntityStatePdu#entity}*/
 public FastEntityStatePdu setEntity(short pEntity)
 {
     entity = pEntity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#entity}*/
 public short getEntity()
 {
     return entity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#forceId}*/
 public FastEntityStatePdu setForceId(byte pForceId)
 {
     forceId = pForceId;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#forceId}*/
 public byte getForceId()
 {
     return forceId; 
 }
 
+/** Setter for {@link FastEntityStatePdu#entityKind}*/
 public FastEntityStatePdu setEntityKind(byte pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#entityKind}*/
 public byte getEntityKind()
 {
     return entityKind; 
 }
 
+/** Setter for {@link FastEntityStatePdu#domain}*/
 public FastEntityStatePdu setDomain(byte pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#domain}*/
 public byte getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link FastEntityStatePdu#country}*/
 public FastEntityStatePdu setCountry(short pCountry)
 {
     country = pCountry;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#country}*/
 public short getCountry()
 {
     return country; 
 }
 
+/** Setter for {@link FastEntityStatePdu#category}*/
 public FastEntityStatePdu setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link FastEntityStatePdu#subcategory}*/
 public FastEntityStatePdu setSubcategory(byte pSubcategory)
 {
     subcategory = pSubcategory;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#subcategory}*/
 public byte getSubcategory()
 {
     return subcategory; 
 }
 
+/** Setter for {@link FastEntityStatePdu#specific}*/
 public FastEntityStatePdu setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#specific}*/
 public byte getSpecific()
 {
     return specific; 
 }
 
+/** Setter for {@link FastEntityStatePdu#extra}*/
 public FastEntityStatePdu setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#extra}*/
 public byte getExtra()
 {
     return extra; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altEntityKind}*/
 public FastEntityStatePdu setAltEntityKind(byte pAltEntityKind)
 {
     altEntityKind = pAltEntityKind;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altEntityKind}*/
 public byte getAltEntityKind()
 {
     return altEntityKind; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altDomain}*/
 public FastEntityStatePdu setAltDomain(byte pAltDomain)
 {
     altDomain = pAltDomain;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altDomain}*/
 public byte getAltDomain()
 {
     return altDomain; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altCountry}*/
 public FastEntityStatePdu setAltCountry(short pAltCountry)
 {
     altCountry = pAltCountry;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altCountry}*/
 public short getAltCountry()
 {
     return altCountry; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altCategory}*/
 public FastEntityStatePdu setAltCategory(byte pAltCategory)
 {
     altCategory = pAltCategory;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altCategory}*/
 public byte getAltCategory()
 {
     return altCategory; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altSubcategory}*/
 public FastEntityStatePdu setAltSubcategory(byte pAltSubcategory)
 {
     altSubcategory = pAltSubcategory;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altSubcategory}*/
 public byte getAltSubcategory()
 {
     return altSubcategory; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altSpecific}*/
 public FastEntityStatePdu setAltSpecific(byte pAltSpecific)
 {
     altSpecific = pAltSpecific;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altSpecific}*/
 public byte getAltSpecific()
 {
     return altSpecific; 
 }
 
+/** Setter for {@link FastEntityStatePdu#altExtra}*/
 public FastEntityStatePdu setAltExtra(byte pAltExtra)
 {
     altExtra = pAltExtra;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#altExtra}*/
 public byte getAltExtra()
 {
     return altExtra; 
 }
 
+/** Setter for {@link FastEntityStatePdu#xVelocity}*/
 public FastEntityStatePdu setXVelocity(float pXVelocity)
 {
     xVelocity = pXVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#xVelocity}*/
 public float getXVelocity()
 {
     return xVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#yVelocity}*/
 public FastEntityStatePdu setYVelocity(float pYVelocity)
 {
     yVelocity = pYVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#yVelocity}*/
 public float getYVelocity()
 {
     return yVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#zVelocity}*/
 public FastEntityStatePdu setZVelocity(float pZVelocity)
 {
     zVelocity = pZVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#zVelocity}*/
 public float getZVelocity()
 {
     return zVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#xLocation}*/
 public FastEntityStatePdu setXLocation(double pXLocation)
 {
     xLocation = pXLocation;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#xLocation}*/
 public double getXLocation()
 {
     return xLocation; 
 }
 
+/** Setter for {@link FastEntityStatePdu#yLocation}*/
 public FastEntityStatePdu setYLocation(double pYLocation)
 {
     yLocation = pYLocation;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#yLocation}*/
 public double getYLocation()
 {
     return yLocation; 
 }
 
+/** Setter for {@link FastEntityStatePdu#zLocation}*/
 public FastEntityStatePdu setZLocation(double pZLocation)
 {
     zLocation = pZLocation;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#zLocation}*/
 public double getZLocation()
 {
     return zLocation; 
 }
 
+/** Setter for {@link FastEntityStatePdu#psi}*/
 public FastEntityStatePdu setPsi(float pPsi)
 {
     psi = pPsi;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#psi}*/
 public float getPsi()
 {
     return psi; 
 }
 
+/** Setter for {@link FastEntityStatePdu#theta}*/
 public FastEntityStatePdu setTheta(float pTheta)
 {
     theta = pTheta;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#theta}*/
 public float getTheta()
 {
     return theta; 
 }
 
+/** Setter for {@link FastEntityStatePdu#phi}*/
 public FastEntityStatePdu setPhi(float pPhi)
 {
     phi = pPhi;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#phi}*/
 public float getPhi()
 {
     return phi; 
 }
 
+/** Setter for {@link FastEntityStatePdu#entityAppearance}*/
 public FastEntityStatePdu setEntityAppearance(int pEntityAppearance)
 {
     entityAppearance = pEntityAppearance;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#entityAppearance}*/
 public int getEntityAppearance()
 {
     return entityAppearance; 
 }
 
+/** Setter for {@link FastEntityStatePdu#deadReckoningAlgorithm}*/
 public FastEntityStatePdu setDeadReckoningAlgorithm(byte pDeadReckoningAlgorithm)
 {
     deadReckoningAlgorithm = pDeadReckoningAlgorithm;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#deadReckoningAlgorithm}*/
 public byte getDeadReckoningAlgorithm()
 {
     return deadReckoningAlgorithm; 
 }
 
+/** Setter for {@link FastEntityStatePdu#otherParameters}*/
 public FastEntityStatePdu setOtherParameters(byte[] pOtherParameters)
 {
     otherParameters = Arrays.copyOf(pOtherParameters, otherParameters.length);
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#otherParameters}*/
 public byte[] getOtherParameters()
 {
     return otherParameters; 
 }
 
+/** Setter for {@link FastEntityStatePdu#xAcceleration}*/
 public FastEntityStatePdu setXAcceleration(float pXAcceleration)
 {
     xAcceleration = pXAcceleration;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#xAcceleration}*/
 public float getXAcceleration()
 {
     return xAcceleration; 
 }
 
+/** Setter for {@link FastEntityStatePdu#yAcceleration}*/
 public FastEntityStatePdu setYAcceleration(float pYAcceleration)
 {
     yAcceleration = pYAcceleration;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#yAcceleration}*/
 public float getYAcceleration()
 {
     return yAcceleration; 
 }
 
+/** Setter for {@link FastEntityStatePdu#zAcceleration}*/
 public FastEntityStatePdu setZAcceleration(float pZAcceleration)
 {
     zAcceleration = pZAcceleration;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#zAcceleration}*/
 public float getZAcceleration()
 {
     return zAcceleration; 
 }
 
+/** Setter for {@link FastEntityStatePdu#xAngularVelocity}*/
 public FastEntityStatePdu setXAngularVelocity(float pXAngularVelocity)
 {
     xAngularVelocity = pXAngularVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#xAngularVelocity}*/
 public float getXAngularVelocity()
 {
     return xAngularVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#yAngularVelocity}*/
 public FastEntityStatePdu setYAngularVelocity(float pYAngularVelocity)
 {
     yAngularVelocity = pYAngularVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#yAngularVelocity}*/
 public float getYAngularVelocity()
 {
     return yAngularVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#zAngularVelocity}*/
 public FastEntityStatePdu setZAngularVelocity(float pZAngularVelocity)
 {
     zAngularVelocity = pZAngularVelocity;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#zAngularVelocity}*/
 public float getZAngularVelocity()
 {
     return zAngularVelocity; 
 }
 
+/** Setter for {@link FastEntityStatePdu#marking}*/
 public FastEntityStatePdu setMarking(byte[] pMarking)
 {
     marking = Arrays.copyOf(pMarking, marking.length);
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#marking}*/
 public byte[] getMarking()
 {
     return marking; 
 }
 
+/** Setter for {@link FastEntityStatePdu#capabilities}*/
 public FastEntityStatePdu setCapabilities(short pCapabilities)
 {
     capabilities = pCapabilities;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#capabilities}*/
 public short getCapabilities()
 {
     return capabilities; 
 }
 
+/** Setter for {@link FastEntityStatePdu#variableParameters}*/
 public FastEntityStatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 
+/** Getter for {@link FastEntityStatePdu#variableParameters}*/
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

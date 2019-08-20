@@ -95,6 +95,7 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
     setPduType( DISPDUType.MINEFIELD_DATA );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -158,265 +159,313 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldDataPdu#minefieldID}*/
 public MinefieldDataPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#minefieldID}*/
 public MinefieldIdentifier getMinefieldID()
 {
     return minefieldID; 
 }
 
+/** Setter for {@link MinefieldDataPdu#requestingEntityID}*/
 public MinefieldDataPdu setRequestingEntityID(SimulationIdentifier pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#requestingEntityID}*/
 public SimulationIdentifier getRequestingEntityID()
 {
     return requestingEntityID; 
 }
 
+/** Setter for {@link MinefieldDataPdu#minefieldSequenceNumbeer}*/
 public MinefieldDataPdu setMinefieldSequenceNumbeer(short pMinefieldSequenceNumbeer)
 {
     minefieldSequenceNumbeer = pMinefieldSequenceNumbeer;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#minefieldSequenceNumbeer}*/
 public short getMinefieldSequenceNumbeer()
 {
     return minefieldSequenceNumbeer; 
 }
 
+/** Setter for {@link MinefieldDataPdu#requestID}*/
 public MinefieldDataPdu setRequestID(byte pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#requestID}*/
 public byte getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link MinefieldDataPdu#pduSequenceNumber}*/
 public MinefieldDataPdu setPduSequenceNumber(byte pPduSequenceNumber)
 {
     pduSequenceNumber = pPduSequenceNumber;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#pduSequenceNumber}*/
 public byte getPduSequenceNumber()
 {
     return pduSequenceNumber; 
 }
 
+/** Setter for {@link MinefieldDataPdu#numberOfPdus}*/
 public MinefieldDataPdu setNumberOfPdus(byte pNumberOfPdus)
 {
     numberOfPdus = pNumberOfPdus;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#numberOfPdus}*/
 public byte getNumberOfPdus()
 {
     return numberOfPdus; 
 }
 
+/** Setter for {@link MinefieldDataPdu#padding}*/
 public MinefieldDataPdu setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#padding}*/
 public byte getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link MinefieldDataPdu#dataFilter}*/
 public MinefieldDataPdu setDataFilter(DataFilterRecord pDataFilter)
 {
     dataFilter = pDataFilter;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#dataFilter}*/
 public DataFilterRecord getDataFilter()
 {
     return dataFilter; 
 }
 
+/** Setter for {@link MinefieldDataPdu#mineType}*/
 public MinefieldDataPdu setMineType(EntityType pMineType)
 {
     mineType = pMineType;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#mineType}*/
 public EntityType getMineType()
 {
     return mineType; 
 }
 
+/** Setter for {@link MinefieldDataPdu#sensorTypes}*/
 public MinefieldDataPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
 {
     sensorTypes = pSensorTypes;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#sensorTypes}*/
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 
 }
 
+/** Setter for {@link MinefieldDataPdu#mineLocation}*/
 public MinefieldDataPdu setMineLocation(List<Vector3Float> pMineLocation)
 {
     mineLocation = pMineLocation;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#mineLocation}*/
 public List<Vector3Float> getMineLocation()
 {
     return mineLocation; 
 }
 
+/** Setter for {@link MinefieldDataPdu#groundBurialDepthOffset}*/
 public MinefieldDataPdu setGroundBurialDepthOffset(float[] pGroundBurialDepthOffset)
 {
     groundBurialDepthOffset = pGroundBurialDepthOffset;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#groundBurialDepthOffset}*/
 public float[] getGroundBurialDepthOffset()
 {
     return groundBurialDepthOffset; 
 }
 
+/** Setter for {@link MinefieldDataPdu#waterBurialDepthOffset}*/
 public MinefieldDataPdu setWaterBurialDepthOffset(float[] pWaterBurialDepthOffset)
 {
     waterBurialDepthOffset = pWaterBurialDepthOffset;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#waterBurialDepthOffset}*/
 public float[] getWaterBurialDepthOffset()
 {
     return waterBurialDepthOffset; 
 }
 
+/** Setter for {@link MinefieldDataPdu#snowBurialDepthOffset}*/
 public MinefieldDataPdu setSnowBurialDepthOffset(float[] pSnowBurialDepthOffset)
 {
     snowBurialDepthOffset = pSnowBurialDepthOffset;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#snowBurialDepthOffset}*/
 public float[] getSnowBurialDepthOffset()
 {
     return snowBurialDepthOffset; 
 }
 
+/** Setter for {@link MinefieldDataPdu#mineOrientation}*/
 public MinefieldDataPdu setMineOrientation(List<EulerAngles> pMineOrientation)
 {
     mineOrientation = pMineOrientation;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#mineOrientation}*/
 public List<EulerAngles> getMineOrientation()
 {
     return mineOrientation; 
 }
 
+/** Setter for {@link MinefieldDataPdu#thermalContrast}*/
 public MinefieldDataPdu setThermalContrast(float[] pThermalContrast)
 {
     thermalContrast = pThermalContrast;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#thermalContrast}*/
 public float[] getThermalContrast()
 {
     return thermalContrast; 
 }
 
+/** Setter for {@link MinefieldDataPdu#reflectance}*/
 public MinefieldDataPdu setReflectance(float[] pReflectance)
 {
     reflectance = pReflectance;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#reflectance}*/
 public float[] getReflectance()
 {
     return reflectance; 
 }
 
+/** Setter for {@link MinefieldDataPdu#mineEmplacementTime}*/
 public MinefieldDataPdu setMineEmplacementTime(List<MineEmplacementTime> pMineEmplacementTime)
 {
     mineEmplacementTime = pMineEmplacementTime;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#mineEmplacementTime}*/
 public List<MineEmplacementTime> getMineEmplacementTime()
 {
     return mineEmplacementTime; 
 }
 
+/** Setter for {@link MinefieldDataPdu#mineEntityNumber}*/
 public MinefieldDataPdu setMineEntityNumber(short[] pMineEntityNumber)
 {
     mineEntityNumber = pMineEntityNumber;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#mineEntityNumber}*/
 public short[] getMineEntityNumber()
 {
     return mineEntityNumber; 
 }
 
+/** Setter for {@link MinefieldDataPdu#fusing}*/
 public MinefieldDataPdu setFusing(List<MinefieldDataFusing> pFusing)
 {
     fusing = pFusing;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#fusing}*/
 public List<MinefieldDataFusing> getFusing()
 {
     return fusing; 
 }
 
+/** Setter for {@link MinefieldDataPdu#scalarDetectionCoefficient}*/
 public MinefieldDataPdu setScalarDetectionCoefficient(byte[] pScalarDetectionCoefficient)
 {
     scalarDetectionCoefficient = pScalarDetectionCoefficient;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#scalarDetectionCoefficient}*/
 public byte[] getScalarDetectionCoefficient()
 {
     return scalarDetectionCoefficient; 
 }
 
+/** Setter for {@link MinefieldDataPdu#paintScheme}*/
 public MinefieldDataPdu setPaintScheme(List<MinefieldDataPaintScheme> pPaintScheme)
 {
     paintScheme = pPaintScheme;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#paintScheme}*/
 public List<MinefieldDataPaintScheme> getPaintScheme()
 {
     return paintScheme; 
 }
 
+/** Setter for {@link MinefieldDataPdu#numberOfTripDetonationWires}*/
 public MinefieldDataPdu setNumberOfTripDetonationWires(byte[] pNumberOfTripDetonationWires)
 {
     numberOfTripDetonationWires = pNumberOfTripDetonationWires;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#numberOfTripDetonationWires}*/
 public byte[] getNumberOfTripDetonationWires()
 {
     return numberOfTripDetonationWires; 
 }
 
+/** Setter for {@link MinefieldDataPdu#numberOfVertices}*/
 public MinefieldDataPdu setNumberOfVertices(byte[] pNumberOfVertices)
 {
     numberOfVertices = pNumberOfVertices;
     return this;
 }
 
+/** Getter for {@link MinefieldDataPdu#numberOfVertices}*/
 public byte[] getNumberOfVertices()
 {
     return numberOfVertices; 

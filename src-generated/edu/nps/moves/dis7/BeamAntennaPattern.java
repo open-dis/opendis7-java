@@ -47,6 +47,7 @@ public class BeamAntennaPattern extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -66,111 +67,131 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link BeamAntennaPattern#beamDirection}*/
 public BeamAntennaPattern setBeamDirection(EulerAngles pBeamDirection)
 {
     beamDirection = pBeamDirection;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#beamDirection}*/
 public EulerAngles getBeamDirection()
 {
     return beamDirection; 
 }
 
+/** Setter for {@link BeamAntennaPattern#azimuthBeamwidth}*/
 public BeamAntennaPattern setAzimuthBeamwidth(float pAzimuthBeamwidth)
 {
     azimuthBeamwidth = pAzimuthBeamwidth;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#azimuthBeamwidth}*/
 public float getAzimuthBeamwidth()
 {
     return azimuthBeamwidth; 
 }
 
+/** Setter for {@link BeamAntennaPattern#elevationBeamwidth}*/
 public BeamAntennaPattern setElevationBeamwidth(float pElevationBeamwidth)
 {
     elevationBeamwidth = pElevationBeamwidth;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#elevationBeamwidth}*/
 public float getElevationBeamwidth()
 {
     return elevationBeamwidth; 
 }
 
+/** Setter for {@link BeamAntennaPattern#referenceSystem}*/
 public BeamAntennaPattern setReferenceSystem(TransmitterAntennaPatternReferenceSystem pReferenceSystem)
 {
     referenceSystem = pReferenceSystem;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#referenceSystem}*/
 public TransmitterAntennaPatternReferenceSystem getReferenceSystem()
 {
     return referenceSystem; 
 }
 
+/** Setter for {@link BeamAntennaPattern#padding1}*/
 public BeamAntennaPattern setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link BeamAntennaPattern#padding2}*/
 public BeamAntennaPattern setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link BeamAntennaPattern#ez}*/
 public BeamAntennaPattern setEz(float pEz)
 {
     ez = pEz;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#ez}*/
 public float getEz()
 {
     return ez; 
 }
 
+/** Setter for {@link BeamAntennaPattern#ex}*/
 public BeamAntennaPattern setEx(float pEx)
 {
     ex = pEx;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#ex}*/
 public float getEx()
 {
     return ex; 
 }
 
+/** Setter for {@link BeamAntennaPattern#phase}*/
 public BeamAntennaPattern setPhase(float pPhase)
 {
     phase = pPhase;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#phase}*/
 public float getPhase()
 {
     return phase; 
 }
 
+/** Setter for {@link BeamAntennaPattern#padding3}*/
 public BeamAntennaPattern setPadding3(int pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link BeamAntennaPattern#padding3}*/
 public int getPadding3()
 {
     return padding3; 

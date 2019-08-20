@@ -23,6 +23,7 @@ public class ChangeOptions extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -33,12 +34,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ChangeOptions#value}*/
 public ChangeOptions setValue(byte pValue)
 {
     value = pValue;
     return this;
 }
 
+/** Getter for {@link ChangeOptions#value}*/
 public byte getValue()
 {
     return value; 

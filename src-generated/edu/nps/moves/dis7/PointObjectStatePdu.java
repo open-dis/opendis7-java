@@ -63,6 +63,7 @@ public class PointObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
     setPduType( DISPDUType.POINT_OBJECT_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -87,155 +88,183 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link PointObjectStatePdu#objectID}*/
 public PointObjectStatePdu setObjectID(EntityID pObjectID)
 {
     objectID = pObjectID;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#objectID}*/
 public EntityID getObjectID()
 {
     return objectID; 
 }
 
+/** Setter for {@link PointObjectStatePdu#referencedObjectID}*/
 public PointObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#referencedObjectID}*/
 public ObjectIdentifier getReferencedObjectID()
 {
     return referencedObjectID; 
 }
 
+/** Setter for {@link PointObjectStatePdu#updateNumber}*/
 public PointObjectStatePdu setUpdateNumber(int pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#updateNumber}*/
 public int getUpdateNumber()
 {
     return updateNumber; 
 }
 
+/** Setter for {@link PointObjectStatePdu#forceID}*/
 public PointObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#forceID}*/
 public ForceID getForceID()
 {
     return forceID; 
 }
 
+/** Setter for {@link PointObjectStatePdu#modifications}*/
 public PointObjectStatePdu setModifications(ObjectStateModificationPointObject pModifications)
 {
     modifications = pModifications;
     return this;
 }
 
+/** Setter for {@link PointObjectStatePdu#modifications}*/
 public ObjectStateModificationPointObject getModifications()
 {
     return modifications; 
 }
 
+/** Setter for {@link PointObjectStatePdu#objectType}*/
 public PointObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#objectType}*/
 public ObjectType getObjectType()
 {
     return objectType; 
 }
 
+/** Setter for {@link PointObjectStatePdu#objectLocation}*/
 public PointObjectStatePdu setObjectLocation(Vector3Double pObjectLocation)
 {
     objectLocation = pObjectLocation;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#objectLocation}*/
 public Vector3Double getObjectLocation()
 {
     return objectLocation; 
 }
 
+/** Setter for {@link PointObjectStatePdu#objectOrientation}*/
 public PointObjectStatePdu setObjectOrientation(EulerAngles pObjectOrientation)
 {
     objectOrientation = pObjectOrientation;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#objectOrientation}*/
 public EulerAngles getObjectOrientation()
 {
     return objectOrientation; 
 }
 
+/** Setter for {@link PointObjectStatePdu#specificObjectAppearance}*/
 public PointObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
 {
     specificObjectAppearance = pSpecificObjectAppearance;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#specificObjectAppearance}*/
 public int getSpecificObjectAppearance()
 {
     return specificObjectAppearance; 
 }
 
+/** Setter for {@link PointObjectStatePdu#generObjectAppearance}*/
 public PointObjectStatePdu setGenerObjectAppearance(ObjectStateAppearanceGeneral pGenerObjectAppearance)
 {
     generObjectAppearance = pGenerObjectAppearance;
     return this;
 }
 
+/** Setter for {@link PointObjectStatePdu#generObjectAppearance}*/
 public ObjectStateAppearanceGeneral getGenerObjectAppearance()
 {
     return generObjectAppearance; 
 }
 
+/** Setter for {@link PointObjectStatePdu#padding1}*/
 public PointObjectStatePdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#padding1}*/
 public short getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link PointObjectStatePdu#requesterID}*/
 public PointObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#requesterID}*/
 public SimulationAddress getRequesterID()
 {
     return requesterID; 
 }
 
+/** Setter for {@link PointObjectStatePdu#receivingID}*/
 public PointObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#receivingID}*/
 public SimulationAddress getReceivingID()
 {
     return receivingID; 
 }
 
+/** Setter for {@link PointObjectStatePdu#pad2}*/
 public PointObjectStatePdu setPad2(int pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link PointObjectStatePdu#pad2}*/
 public int getPad2()
 {
     return pad2; 

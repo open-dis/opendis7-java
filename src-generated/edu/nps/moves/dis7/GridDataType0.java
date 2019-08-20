@@ -27,6 +27,7 @@ public class GridDataType0 extends GridData implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -40,12 +41,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridDataType0#dataValues}*/
 public GridDataType0 setDataValues(byte[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 
+/** Getter for {@link GridDataType0#dataValues}*/
 public byte[] getDataValues()
 {
     return dataValues; 

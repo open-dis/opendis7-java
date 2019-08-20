@@ -27,6 +27,7 @@ public class GridAxisDescriptorFixed extends GridAxisDescriptor implements Seria
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,23 +40,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridAxisDescriptorFixed#numberOfPointsOnXiAxis}*/
 public GridAxisDescriptorFixed setNumberOfPointsOnXiAxis(short pNumberOfPointsOnXiAxis)
 {
     numberOfPointsOnXiAxis = pNumberOfPointsOnXiAxis;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorFixed#numberOfPointsOnXiAxis}*/
 public short getNumberOfPointsOnXiAxis()
 {
     return numberOfPointsOnXiAxis; 
 }
 
+/** Setter for {@link GridAxisDescriptorFixed#initialIndex}*/
 public GridAxisDescriptorFixed setInitialIndex(short pInitialIndex)
 {
     initialIndex = pInitialIndex;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorFixed#initialIndex}*/
 public short getInitialIndex()
 {
     return initialIndex; 

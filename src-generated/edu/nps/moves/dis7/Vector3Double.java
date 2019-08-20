@@ -30,6 +30,7 @@ public class Vector3Double extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Vector3Double#x}*/
 public Vector3Double setX(double pX)
 {
     x = pX;
     return this;
 }
 
+/** Getter for {@link Vector3Double#x}*/
 public double getX()
 {
     return x; 
 }
 
+/** Setter for {@link Vector3Double#y}*/
 public Vector3Double setY(double pY)
 {
     y = pY;
     return this;
 }
 
+/** Getter for {@link Vector3Double#y}*/
 public double getY()
 {
     return y; 
 }
 
+/** Setter for {@link Vector3Double#z}*/
 public Vector3Double setZ(double pZ)
 {
     z = pZ;
     return this;
 }
 
+/** Getter for {@link Vector3Double#z}*/
 public double getZ()
 {
     return z; 

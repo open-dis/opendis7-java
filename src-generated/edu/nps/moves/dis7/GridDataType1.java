@@ -31,6 +31,7 @@ public class GridDataType1 extends GridData implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,34 +47,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridDataType1#fieldScale}*/
 public GridDataType1 setFieldScale(float pFieldScale)
 {
     fieldScale = pFieldScale;
     return this;
 }
 
+/** Getter for {@link GridDataType1#fieldScale}*/
 public float getFieldScale()
 {
     return fieldScale; 
 }
 
+/** Setter for {@link GridDataType1#fieldOffset}*/
 public GridDataType1 setFieldOffset(float pFieldOffset)
 {
     fieldOffset = pFieldOffset;
     return this;
 }
 
+/** Getter for {@link GridDataType1#fieldOffset}*/
 public float getFieldOffset()
 {
     return fieldOffset; 
 }
 
+/** Setter for {@link GridDataType1#dataValues}*/
 public GridDataType1 setDataValues(short[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 
+/** Getter for {@link GridDataType1#dataValues}*/
 public short[] getDataValues()
 {
     return dataValues; 

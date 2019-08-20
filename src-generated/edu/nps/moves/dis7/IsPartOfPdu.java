@@ -40,6 +40,7 @@ public class IsPartOfPdu extends EntityManagementFamilyPdu implements Serializab
     setPduType( DISPDUType.ISPARTOF );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,67 +57,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IsPartOfPdu#orginatingEntityID}*/
 public IsPartOfPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
 {
     orginatingEntityID = pOrginatingEntityID;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#orginatingEntityID}*/
 public EntityID getOrginatingEntityID()
 {
     return orginatingEntityID; 
 }
 
+/** Setter for {@link IsPartOfPdu#receivingEntityID}*/
 public IsPartOfPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link IsPartOfPdu#relationship}*/
 public IsPartOfPdu setRelationship(Relationship pRelationship)
 {
     relationship = pRelationship;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#relationship}*/
 public Relationship getRelationship()
 {
     return relationship; 
 }
 
+/** Setter for {@link IsPartOfPdu#partLocation}*/
 public IsPartOfPdu setPartLocation(Vector3Float pPartLocation)
 {
     partLocation = pPartLocation;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#partLocation}*/
 public Vector3Float getPartLocation()
 {
     return partLocation; 
 }
 
+/** Setter for {@link IsPartOfPdu#namedLocationID}*/
 public IsPartOfPdu setNamedLocationID(NamedLocationIdentification pNamedLocationID)
 {
     namedLocationID = pNamedLocationID;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#namedLocationID}*/
 public NamedLocationIdentification getNamedLocationID()
 {
     return namedLocationID; 
 }
 
+/** Setter for {@link IsPartOfPdu#partEntityType}*/
 public IsPartOfPdu setPartEntityType(EntityType pPartEntityType)
 {
     partEntityType = pPartEntityType;
     return this;
 }
 
+/** Getter for {@link IsPartOfPdu#partEntityType}*/
 public EntityType getPartEntityType()
 {
     return partEntityType; 

@@ -27,6 +27,7 @@ public class VariableParameter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link VariableParameter#recordType}*/
 public VariableParameter setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link VariableParameter#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link VariableParameter#recordSpecificFields}*/
 public VariableParameter setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = Arrays.copyOf(pRecordSpecificFields, recordSpecificFields.length);
     return this;
 }
 
+/** Getter for {@link VariableParameter#recordSpecificFields}*/
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

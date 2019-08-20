@@ -47,6 +47,7 @@ public class LEDetonationPdu extends LiveEntityFamilyPdu implements Serializable
     setPduType( DISPDUType.LIVE_ENTITY_DETONATION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -69,133 +70,157 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LEDetonationPdu#firingLiveEntityId}*/
 public LEDetonationPdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
 {
     firingLiveEntityId = pFiringLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#firingLiveEntityId}*/
 public EntityID getFiringLiveEntityId()
 {
     return firingLiveEntityId; 
 }
 
+/** Setter for {@link LEDetonationPdu#detonationFlag1}*/
 public LEDetonationPdu setDetonationFlag1(byte pDetonationFlag1)
 {
     detonationFlag1 = pDetonationFlag1;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#detonationFlag1}*/
 public byte getDetonationFlag1()
 {
     return detonationFlag1; 
 }
 
+/** Setter for {@link LEDetonationPdu#detonationFlag2}*/
 public LEDetonationPdu setDetonationFlag2(byte pDetonationFlag2)
 {
     detonationFlag2 = pDetonationFlag2;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#detonationFlag2}*/
 public byte getDetonationFlag2()
 {
     return detonationFlag2; 
 }
 
+/** Setter for {@link LEDetonationPdu#targetLiveEntityId}*/
 public LEDetonationPdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
 {
     targetLiveEntityId = pTargetLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#targetLiveEntityId}*/
 public EntityID getTargetLiveEntityId()
 {
     return targetLiveEntityId; 
 }
 
+/** Setter for {@link LEDetonationPdu#munitionLiveEntityId}*/
 public LEDetonationPdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
 {
     munitionLiveEntityId = pMunitionLiveEntityId;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#munitionLiveEntityId}*/
 public EntityID getMunitionLiveEntityId()
 {
     return munitionLiveEntityId; 
 }
 
+/** Setter for {@link LEDetonationPdu#eventId}*/
 public LEDetonationPdu setEventId(EventIdentifier pEventId)
 {
     eventId = pEventId;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#eventId}*/
 public EventIdentifier getEventId()
 {
     return eventId; 
 }
 
+/** Setter for {@link LEDetonationPdu#worldLocation}*/
 public LEDetonationPdu setWorldLocation(LiveEntityRelativeWorldCoordinates pWorldLocation)
 {
     worldLocation = pWorldLocation;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#worldLocation}*/
 public LiveEntityRelativeWorldCoordinates getWorldLocation()
 {
     return worldLocation; 
 }
 
+/** Setter for {@link LEDetonationPdu#velocity}*/
 public LEDetonationPdu setVelocity(LiveEntityLinearVelocity pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#velocity}*/
 public LiveEntityLinearVelocity getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link LEDetonationPdu#munitionOrientation}*/
 public LEDetonationPdu setMunitionOrientation(LiveEntityOrientation16 pMunitionOrientation)
 {
     munitionOrientation = pMunitionOrientation;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#munitionOrientation}*/
 public LiveEntityOrientation16 getMunitionOrientation()
 {
     return munitionOrientation; 
 }
 
+/** Setter for {@link LEDetonationPdu#munitionDescriptor}*/
 public LEDetonationPdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
 {
     munitionDescriptor = pMunitionDescriptor;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#munitionDescriptor}*/
 public MunitionDescriptor getMunitionDescriptor()
 {
     return munitionDescriptor; 
 }
 
+/** Setter for {@link LEDetonationPdu#entityLocation}*/
 public LEDetonationPdu setEntityLocation(LiveEntityLinearVelocity pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#entityLocation}*/
 public LiveEntityLinearVelocity getEntityLocation()
 {
     return entityLocation; 
 }
 
+/** Setter for {@link LEDetonationPdu#detonationResult}*/
 public LEDetonationPdu setDetonationResult(byte pDetonationResult)
 {
     detonationResult = pDetonationResult;
     return this;
 }
 
+/** Getter for {@link LEDetonationPdu#detonationResult}*/
 public byte getDetonationResult()
 {
     return detonationResult; 

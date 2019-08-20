@@ -31,6 +31,7 @@ public class StartResumePdu extends SimulationManagementFamilyPdu implements Ser
     setPduType( DISPDUType.START_RESUME );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -44,34 +45,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link StartResumePdu#realWorldTime}*/
 public StartResumePdu setRealWorldTime(ClockTime pRealWorldTime)
 {
     realWorldTime = pRealWorldTime;
     return this;
 }
 
+/** Getter for {@link StartResumePdu#realWorldTime}*/
 public ClockTime getRealWorldTime()
 {
     return realWorldTime; 
 }
 
+/** Setter for {@link StartResumePdu#simulationTime}*/
 public StartResumePdu setSimulationTime(ClockTime pSimulationTime)
 {
     simulationTime = pSimulationTime;
     return this;
 }
 
+/** Getter for {@link StartResumePdu#simulationTime}*/
 public ClockTime getSimulationTime()
 {
     return simulationTime; 
 }
 
+/** Setter for {@link StartResumePdu#requestID}*/
 public StartResumePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link StartResumePdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

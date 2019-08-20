@@ -39,6 +39,7 @@ public class RecordRPdu extends SimulationManagementWithReliabilityFamilyPdu imp
     setPduType( DISPDUType.RECORD_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -59,56 +60,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RecordRPdu#requestID}*/
 public RecordRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link RecordRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link RecordRPdu#requiredReliabilityService}*/
 public RecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link RecordRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link RecordRPdu#pad1}*/
 public RecordRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link RecordRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link RecordRPdu#eventType}*/
 public RecordRPdu setEventType(RecordREventType pEventType)
 {
     eventType = pEventType;
     return this;
 }
 
+/** Getter for {@link RecordRPdu#eventType}*/
 public RecordREventType getEventType()
 {
     return eventType; 
 }
 
+/** Setter for {@link RecordRPdu#recordSets}*/
 public RecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
 }
 
+/** Getter for {@link RecordRPdu#recordSets}*/
 public List<RecordSpecification> getRecordSets()
 {
     return recordSets; 

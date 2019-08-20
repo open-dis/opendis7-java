@@ -37,6 +37,7 @@ public class MinefieldResponseNACKPdu extends MinefieldFamilyPdu implements Seri
     setPduType( DISPDUType.MINEFIELD_RESPONSE_NACK );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -52,45 +53,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldResponseNACKPdu#minefieldID}*/
 public MinefieldResponseNACKPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
 }
 
+/** Getter for {@link MinefieldResponseNACKPdu#minefieldID}*/
 public MinefieldIdentifier getMinefieldID()
 {
     return minefieldID; 
 }
 
+/** Setter for {@link MinefieldResponseNACKPdu#requestingEntityID}*/
 public MinefieldResponseNACKPdu setRequestingEntityID(SimulationIdentifier pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
 }
 
+/** Getter for {@link MinefieldResponseNACKPdu#requestingEntityID}*/
 public SimulationIdentifier getRequestingEntityID()
 {
     return requestingEntityID; 
 }
 
+/** Setter for {@link MinefieldResponseNACKPdu#requestID}*/
 public MinefieldResponseNACKPdu setRequestID(byte pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link MinefieldResponseNACKPdu#requestID}*/
 public byte getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}*/
 public MinefieldResponseNACKPdu setMissingPduSequenceNumbers(byte[] pMissingPduSequenceNumbers)
 {
     missingPduSequenceNumbers = pMissingPduSequenceNumbers;
     return this;
 }
 
+/** Getter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}*/
 public byte[] getMissingPduSequenceNumbers()
 {
     return missingPduSequenceNumbers; 

@@ -49,6 +49,7 @@ public class FirePdu extends WarfareFamilyPdu implements Serializable
     setPduType( DISPDUType.FIRE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -68,100 +69,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link FirePdu#firingEntityID}*/
 public FirePdu setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
 }
 
+/** Getter for {@link FirePdu#firingEntityID}*/
 public EntityID getFiringEntityID()
 {
     return firingEntityID; 
 }
 
+/** Setter for {@link FirePdu#targetEntityID}*/
 public FirePdu setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
 }
 
+/** Getter for {@link FirePdu#targetEntityID}*/
 public EntityID getTargetEntityID()
 {
     return targetEntityID; 
 }
 
+/** Setter for {@link FirePdu#munitionExpendibleID}*/
 public FirePdu setMunitionExpendibleID(EntityID pMunitionExpendibleID)
 {
     munitionExpendibleID = pMunitionExpendibleID;
     return this;
 }
 
+/** Getter for {@link FirePdu#munitionExpendibleID}*/
 public EntityID getMunitionExpendibleID()
 {
     return munitionExpendibleID; 
 }
 
+/** Setter for {@link FirePdu#eventID}*/
 public FirePdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link FirePdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link FirePdu#fireMissionIndex}*/
 public FirePdu setFireMissionIndex(int pFireMissionIndex)
 {
     fireMissionIndex = pFireMissionIndex;
     return this;
 }
 
+/** Getter for {@link FirePdu#fireMissionIndex}*/
 public int getFireMissionIndex()
 {
     return fireMissionIndex; 
 }
 
+/** Setter for {@link FirePdu#locationInWorldCoordinates}*/
 public FirePdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
 {
     locationInWorldCoordinates = pLocationInWorldCoordinates;
     return this;
 }
 
+/** Getter for {@link FirePdu#locationInWorldCoordinates}*/
 public Vector3Double getLocationInWorldCoordinates()
 {
     return locationInWorldCoordinates; 
 }
 
+/** Setter for {@link FirePdu#descriptor}*/
 public FirePdu setDescriptor(MunitionDescriptor pDescriptor)
 {
     descriptor = pDescriptor;
     return this;
 }
 
+/** Getter for {@link FirePdu#descriptor}*/
 public MunitionDescriptor getDescriptor()
 {
     return descriptor; 
 }
 
+/** Setter for {@link FirePdu#velocity}*/
 public FirePdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link FirePdu#velocity}*/
 public Vector3Float getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link FirePdu#range}*/
 public FirePdu setRange(float pRange)
 {
     range = pRange;
     return this;
 }
 
+/** Getter for {@link FirePdu#range}*/
 public float getRange()
 {
     return range; 

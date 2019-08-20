@@ -46,6 +46,7 @@ public class EntityStateUpdatePdu extends EntityInformationFamilyPdu implements 
     setPduType( DISPDUType.ENTITY_STATE_UPDATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -68,78 +69,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityStateUpdatePdu#entityID}*/
 public EntityStateUpdatePdu setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#entityID}*/
 public EntityID getEntityID()
 {
     return entityID; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#padding1}*/
 public EntityStateUpdatePdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#entityLinearVelocity}*/
 public EntityStateUpdatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#entityLinearVelocity}*/
 public Vector3Float getEntityLinearVelocity()
 {
     return entityLinearVelocity; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#entityLocation}*/
 public EntityStateUpdatePdu setEntityLocation(Vector3Double pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#entityLocation}*/
 public Vector3Double getEntityLocation()
 {
     return entityLocation; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#entityOrientation}*/
 public EntityStateUpdatePdu setEntityOrientation(EulerAngles pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#entityOrientation}*/
 public EulerAngles getEntityOrientation()
 {
     return entityOrientation; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#entityAppearance}*/
 public EntityStateUpdatePdu setEntityAppearance(int pEntityAppearance)
 {
     entityAppearance = pEntityAppearance;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#entityAppearance}*/
 public int getEntityAppearance()
 {
     return entityAppearance; 
 }
 
+/** Setter for {@link EntityStateUpdatePdu#variableParameters}*/
 public EntityStateUpdatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 
+/** Getter for {@link EntityStateUpdatePdu#variableParameters}*/
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

@@ -40,6 +40,7 @@ public class ActionResponsePdu extends SimulationManagementFamilyPdu implements 
     setPduType( DISPDUType.ACTION_RESPONSE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ActionResponsePdu#requestID}*/
 public ActionResponsePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link ActionResponsePdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link ActionResponsePdu#requestStatus}*/
 public ActionResponsePdu setRequestStatus(ActionResponseRequestStatus pRequestStatus)
 {
     requestStatus = pRequestStatus;
     return this;
 }
 
+/** Getter for {@link ActionResponsePdu#requestStatus}*/
 public ActionResponseRequestStatus getRequestStatus()
 {
     return requestStatus; 
 }
 
+/** Setter for {@link ActionResponsePdu#fixedDatums}*/
 public ActionResponsePdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 
+/** Getter for {@link ActionResponsePdu#fixedDatums}*/
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
 }
 
+/** Setter for {@link ActionResponsePdu#variableDatums}*/
 public ActionResponsePdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 
+/** Getter for {@link ActionResponsePdu#variableDatums}*/
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

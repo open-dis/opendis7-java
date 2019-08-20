@@ -40,6 +40,7 @@ public class RadioType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,78 +57,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RadioType#entityKind}*/
 public RadioType setEntityKind(EntityKind pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
 }
 
+/** Getter for {@link RadioType#entityKind}*/
 public EntityKind getEntityKind()
 {
     return entityKind; 
 }
 
+/** Setter for {@link RadioType#domain}*/
 public RadioType setDomain(byte pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link RadioType#domain}*/
 public byte getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link RadioType#country}*/
 public RadioType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
 }
 
+/** Getter for {@link RadioType#country}*/
 public Country getCountry()
 {
     return country; 
 }
 
+/** Setter for {@link RadioType#category}*/
 public RadioType setCategory(RadioCategory pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link RadioType#category}*/
 public RadioCategory getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link RadioType#subcategory}*/
 public RadioType setSubcategory(RadioSubcategory pSubcategory)
 {
     subcategory = pSubcategory;
     return this;
 }
 
+/** Getter for {@link RadioType#subcategory}*/
 public RadioSubcategory getSubcategory()
 {
     return subcategory; 
 }
 
+/** Setter for {@link RadioType#specific}*/
 public RadioType setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
+/** Getter for {@link RadioType#specific}*/
 public byte getSpecific()
 {
     return specific; 
 }
 
+/** Setter for {@link RadioType#extra}*/
 public RadioType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
 }
 
+/** Getter for {@link RadioType#extra}*/
 public byte getExtra()
 {
     return extra; 

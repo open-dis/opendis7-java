@@ -26,6 +26,7 @@ public class AttributeRecordSet extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,23 +43,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AttributeRecordSet#entityId}*/
 public AttributeRecordSet setEntityId(EntityID pEntityId)
 {
     entityId = pEntityId;
     return this;
 }
 
+/** Getter for {@link AttributeRecordSet#entityId}*/
 public EntityID getEntityId()
 {
     return entityId; 
 }
 
+/** Setter for {@link AttributeRecordSet#attributeRecords}*/
 public AttributeRecordSet setAttributeRecords(List<Attribute> pAttributeRecords)
 {
     attributeRecords = pAttributeRecords;
     return this;
 }
 
+/** Getter for {@link AttributeRecordSet#attributeRecords}*/
 public List<Attribute> getAttributeRecords()
 {
     return attributeRecords; 

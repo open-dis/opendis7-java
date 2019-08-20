@@ -32,6 +32,7 @@ public class Association extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -45,45 +46,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Association#associationType}*/
 public Association setAssociationType(EntityAssociationAssociationType pAssociationType)
 {
     associationType = pAssociationType;
     return this;
 }
 
+/** Getter for {@link Association#associationType}*/
 public EntityAssociationAssociationType getAssociationType()
 {
     return associationType; 
 }
 
+/** Setter for {@link Association#padding}*/
 public Association setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link Association#padding}*/
 public byte getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link Association#associatedEntityID}*/
 public Association setAssociatedEntityID(EntityIdentifier pAssociatedEntityID)
 {
     associatedEntityID = pAssociatedEntityID;
     return this;
 }
 
+/** Getter for {@link Association#associatedEntityID}*/
 public EntityIdentifier getAssociatedEntityID()
 {
     return associatedEntityID; 
 }
 
+/** Setter for {@link Association#associatedLocation}*/
 public Association setAssociatedLocation(Vector3Double pAssociatedLocation)
 {
     associatedLocation = pAssociatedLocation;
     return this;
 }
 
+/** Getter for {@link Association#associatedLocation}*/
 public Vector3Double getAssociatedLocation()
 {
     return associatedLocation; 

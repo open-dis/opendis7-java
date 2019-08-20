@@ -33,6 +33,7 @@ public class IOCommsNodeRecord extends IORecord implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -48,56 +49,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IOCommsNodeRecord#recordType}*/
 public IOCommsNodeRecord setRecordType(VariableRecordTypes pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link IOCommsNodeRecord#recordType}*/
 public VariableRecordTypes getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link IOCommsNodeRecord#recordLength}*/
 public IOCommsNodeRecord setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link IOCommsNodeRecord#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link IOCommsNodeRecord#commsNodeType}*/
 public IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNodeType pCommsNodeType)
 {
     commsNodeType = pCommsNodeType;
     return this;
 }
 
+/** Getter for {@link IOCommsNodeRecord#commsNodeType}*/
 public IOCommsNodeRecordCommsNodeType getCommsNodeType()
 {
     return commsNodeType; 
 }
 
+/** Setter for {@link IOCommsNodeRecord#padding}*/
 public IOCommsNodeRecord setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link IOCommsNodeRecord#padding}*/
 public byte getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link IOCommsNodeRecord#commsNodeId}*/
 public IOCommsNodeRecord setCommsNodeId(CommunicationsNodeID pCommsNodeId)
 {
     commsNodeId = pCommsNodeId;
     return this;
 }
 
+/** Getter for {@link IOCommsNodeRecord#commsNodeId}*/
 public CommunicationsNodeID getCommsNodeId()
 {
     return commsNodeId; 

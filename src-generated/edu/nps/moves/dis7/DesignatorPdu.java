@@ -58,6 +58,7 @@ public class DesignatorPdu extends DistributedEmissionsFamilyPdu implements Seri
     setPduType( DISPDUType.DESIGNATOR );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -80,133 +81,157 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DesignatorPdu#designatingEntityID}*/
 public DesignatorPdu setDesignatingEntityID(EntityID pDesignatingEntityID)
 {
     designatingEntityID = pDesignatingEntityID;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatingEntityID}*/
 public EntityID getDesignatingEntityID()
 {
     return designatingEntityID; 
 }
 
+/** Setter for {@link DesignatorPdu#codeName}*/
 public DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
 {
     codeName = pCodeName;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#codeName}*/
 public DesignatorSystemName getCodeName()
 {
     return codeName; 
 }
 
+/** Setter for {@link DesignatorPdu#designatedEntityID}*/
 public DesignatorPdu setDesignatedEntityID(EntityID pDesignatedEntityID)
 {
     designatedEntityID = pDesignatedEntityID;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatedEntityID}*/
 public EntityID getDesignatedEntityID()
 {
     return designatedEntityID; 
 }
 
+/** Setter for {@link DesignatorPdu#designatorCode}*/
 public DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDesignatorCode)
 {
     designatorCode = pDesignatorCode;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatorCode}*/
 public DesignatorDesignatorCode getDesignatorCode()
 {
     return designatorCode; 
 }
 
+/** Setter for {@link DesignatorPdu#designatorPower}*/
 public DesignatorPdu setDesignatorPower(float pDesignatorPower)
 {
     designatorPower = pDesignatorPower;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatorPower}*/
 public float getDesignatorPower()
 {
     return designatorPower; 
 }
 
+/** Setter for {@link DesignatorPdu#designatorWavelength}*/
 public DesignatorPdu setDesignatorWavelength(float pDesignatorWavelength)
 {
     designatorWavelength = pDesignatorWavelength;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatorWavelength}*/
 public float getDesignatorWavelength()
 {
     return designatorWavelength; 
 }
 
+/** Setter for {@link DesignatorPdu#designatorSpotWrtDesignated}*/
 public DesignatorPdu setDesignatorSpotWrtDesignated(Vector3Float pDesignatorSpotWrtDesignated)
 {
     designatorSpotWrtDesignated = pDesignatorSpotWrtDesignated;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatorSpotWrtDesignated}*/
 public Vector3Float getDesignatorSpotWrtDesignated()
 {
     return designatorSpotWrtDesignated; 
 }
 
+/** Setter for {@link DesignatorPdu#designatorSpotLocation}*/
 public DesignatorPdu setDesignatorSpotLocation(Vector3Double pDesignatorSpotLocation)
 {
     designatorSpotLocation = pDesignatorSpotLocation;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#designatorSpotLocation}*/
 public Vector3Double getDesignatorSpotLocation()
 {
     return designatorSpotLocation; 
 }
 
+/** Setter for {@link DesignatorPdu#deadReckoningAlgorithm}*/
 public DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
     deadReckoningAlgorithm = pDeadReckoningAlgorithm;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#deadReckoningAlgorithm}*/
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     return deadReckoningAlgorithm; 
 }
 
+/** Setter for {@link DesignatorPdu#padding1}*/
 public DesignatorPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link DesignatorPdu#padding2}*/
 public DesignatorPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link DesignatorPdu#entityLinearAcceleration}*/
 public DesignatorPdu setEntityLinearAcceleration(Vector3Float pEntityLinearAcceleration)
 {
     entityLinearAcceleration = pEntityLinearAcceleration;
     return this;
 }
 
+/** Getter for {@link DesignatorPdu#entityLinearAcceleration}*/
 public Vector3Float getEntityLinearAcceleration()
 {
     return entityLinearAcceleration; 

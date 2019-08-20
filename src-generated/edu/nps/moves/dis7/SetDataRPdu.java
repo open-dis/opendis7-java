@@ -46,6 +46,7 @@ public class SetDataRPdu extends SimulationManagementWithReliabilityFamilyPdu im
     setPduType( DISPDUType.SET_DATA_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -72,67 +73,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SetDataRPdu#requiredReliabilityService}*/
 public SetDataRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link SetDataRPdu#pad1}*/
 public SetDataRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link SetDataRPdu#pad2}*/
 public SetDataRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link SetDataRPdu#requestID}*/
 public SetDataRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link SetDataRPdu#fixedDatumRecords}*/
 public SetDataRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link SetDataRPdu#variableDatumRecords}*/
 public SetDataRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link SetDataRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

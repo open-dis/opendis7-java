@@ -27,6 +27,7 @@ public class UnattachedIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UnattachedIdentifier#simulationAddress}*/
 public UnattachedIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link UnattachedIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link UnattachedIdentifier#referenceNumber}*/
 public UnattachedIdentifier setReferenceNumber(short pReferenceNumber)
 {
     referenceNumber = pReferenceNumber;
     return this;
 }
 
+/** Getter for {@link UnattachedIdentifier#referenceNumber}*/
 public short getReferenceNumber()
 {
     return referenceNumber; 

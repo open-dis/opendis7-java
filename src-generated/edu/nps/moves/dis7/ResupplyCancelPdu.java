@@ -28,6 +28,7 @@ public class ResupplyCancelPdu extends LogisticsFamilyPdu implements Serializabl
     setPduType( DISPDUType.RESUPPLY_CANCEL );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -40,23 +41,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ResupplyCancelPdu#receivingEntityID}*/
 public ResupplyCancelPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link ResupplyCancelPdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link ResupplyCancelPdu#supplyingEntityID}*/
 public ResupplyCancelPdu setSupplyingEntityID(EntityID pSupplyingEntityID)
 {
     supplyingEntityID = pSupplyingEntityID;
     return this;
 }
 
+/** Getter for {@link ResupplyCancelPdu#supplyingEntityID}*/
 public EntityID getSupplyingEntityID()
 {
     return supplyingEntityID; 

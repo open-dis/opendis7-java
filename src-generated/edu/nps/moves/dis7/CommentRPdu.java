@@ -34,6 +34,7 @@ public class CommentRPdu extends SimulationManagementWithReliabilityFamilyPdu im
     setPduType( DISPDUType.COMMENT_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,23 +57,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CommentRPdu#fixedDatumRecords}*/
 public CommentRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link CommentRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link CommentRPdu#variableDatumRecords}*/
 public CommentRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link CommentRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

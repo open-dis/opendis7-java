@@ -54,6 +54,7 @@ public class AngleDeception extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -79,177 +80,209 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AngleDeception#recordType}*/
 public AngleDeception setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link AngleDeception#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link AngleDeception#recordLength}*/
 public AngleDeception setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link AngleDeception#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link AngleDeception#padding}*/
 public AngleDeception setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link AngleDeception#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link AngleDeception#emitterNumber}*/
 public AngleDeception setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
 }
 
+/** Getter for {@link AngleDeception#emitterNumber}*/
 public byte getEmitterNumber()
 {
     return emitterNumber; 
 }
 
+/** Setter for {@link AngleDeception#beamNumber}*/
 public AngleDeception setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link AngleDeception#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 
 }
 
+/** Setter for {@link AngleDeception#stateIndicator}*/
 public AngleDeception setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
 }
 
+/** Getter for {@link AngleDeception#stateIndicator}*/
 public EEAttributeStateIndicator getStateIndicator()
 {
     return stateIndicator; 
 }
 
+/** Setter for {@link AngleDeception#padding2}*/
 public AngleDeception setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link AngleDeception#padding2}*/
 public byte getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link AngleDeception#azimuthOffset}*/
 public AngleDeception setAzimuthOffset(float pAzimuthOffset)
 {
     azimuthOffset = pAzimuthOffset;
     return this;
 }
 
+/** Getter for {@link AngleDeception#azimuthOffset}*/
 public float getAzimuthOffset()
 {
     return azimuthOffset; 
 }
 
+/** Setter for {@link AngleDeception#azimuthWidth}*/
 public AngleDeception setAzimuthWidth(float pAzimuthWidth)
 {
     azimuthWidth = pAzimuthWidth;
     return this;
 }
 
+/** Getter for {@link AngleDeception#azimuthWidth}*/
 public float getAzimuthWidth()
 {
     return azimuthWidth; 
 }
 
+/** Setter for {@link AngleDeception#azimuthPullRate}*/
 public AngleDeception setAzimuthPullRate(float pAzimuthPullRate)
 {
     azimuthPullRate = pAzimuthPullRate;
     return this;
 }
 
+/** Getter for {@link AngleDeception#azimuthPullRate}*/
 public float getAzimuthPullRate()
 {
     return azimuthPullRate; 
 }
 
+/** Setter for {@link AngleDeception#azimuthPullAcceleration}*/
 public AngleDeception setAzimuthPullAcceleration(float pAzimuthPullAcceleration)
 {
     azimuthPullAcceleration = pAzimuthPullAcceleration;
     return this;
 }
 
+/** Getter for {@link AngleDeception#azimuthPullAcceleration}*/
 public float getAzimuthPullAcceleration()
 {
     return azimuthPullAcceleration; 
 }
 
+/** Setter for {@link AngleDeception#elevationOffset}*/
 public AngleDeception setElevationOffset(float pElevationOffset)
 {
     elevationOffset = pElevationOffset;
     return this;
 }
 
+/** Getter for {@link AngleDeception#elevationOffset}*/
 public float getElevationOffset()
 {
     return elevationOffset; 
 }
 
+/** Setter for {@link AngleDeception#elevationWidth}*/
 public AngleDeception setElevationWidth(float pElevationWidth)
 {
     elevationWidth = pElevationWidth;
     return this;
 }
 
+/** Getter for {@link AngleDeception#elevationWidth}*/
 public float getElevationWidth()
 {
     return elevationWidth; 
 }
 
+/** Setter for {@link AngleDeception#elevationPullRate}*/
 public AngleDeception setElevationPullRate(float pElevationPullRate)
 {
     elevationPullRate = pElevationPullRate;
     return this;
 }
 
+/** Getter for {@link AngleDeception#elevationPullRate}*/
 public float getElevationPullRate()
 {
     return elevationPullRate; 
 }
 
+/** Setter for {@link AngleDeception#elevationPullAcceleration}*/
 public AngleDeception setElevationPullAcceleration(float pElevationPullAcceleration)
 {
     elevationPullAcceleration = pElevationPullAcceleration;
     return this;
 }
 
+/** Getter for {@link AngleDeception#elevationPullAcceleration}*/
 public float getElevationPullAcceleration()
 {
     return elevationPullAcceleration; 
 }
 
+/** Setter for {@link AngleDeception#padding3}*/
 public AngleDeception setPadding3(int pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link AngleDeception#padding3}*/
 public int getPadding3()
 {
     return padding3; 

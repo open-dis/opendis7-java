@@ -27,6 +27,7 @@ public class Relationship extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Relationship#nature}*/
 public Relationship setNature(IsPartOfNature pNature)
 {
     nature = pNature;
     return this;
 }
 
+/** Getter for {@link Relationship#nature}*/
 public IsPartOfNature getNature()
 {
     return nature; 
 }
 
+/** Setter for {@link Relationship#position}*/
 public Relationship setPosition(IsPartOfPosition pPosition)
 {
     position = pPosition;
     return this;
 }
 
+/** Getter for {@link Relationship#position}*/
 public IsPartOfPosition getPosition()
 {
     return position; 

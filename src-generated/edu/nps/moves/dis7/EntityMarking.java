@@ -27,6 +27,7 @@ public class EntityMarking extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityMarking#characterSet}*/
 public EntityMarking setCharacterSet(EntityMarkingCharacterSet pCharacterSet)
 {
     characterSet = pCharacterSet;
     return this;
 }
 
+/** Getter for {@link EntityMarking#characterSet}*/
 public EntityMarkingCharacterSet getCharacterSet()
 {
     return characterSet; 
 }
 
+/** Setter for {@link EntityMarking#characters}*/
 public EntityMarking setCharacters(byte[] pCharacters)
 {
     characters = Arrays.copyOf(pCharacters, characters.length);
     return this;
 }
 
+/** Getter for {@link EntityMarking#characters}*/
 public byte[] getCharacters()
 {
     return characters; 

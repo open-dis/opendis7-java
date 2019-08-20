@@ -58,6 +58,7 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
     setPduType( DISPDUType.AREAL_OBJECT_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -84,122 +85,144 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ArealObjectStatePdu#objectID}*/
 public ArealObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
 {
     objectID = pObjectID;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#objectID}*/
 public ObjectIdentifier getObjectID()
 {
     return objectID; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#referencedObjectID}*/
 public ArealObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#referencedObjectID}*/
 public ObjectIdentifier getReferencedObjectID()
 {
     return referencedObjectID; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#updateNumber}*/
 public ArealObjectStatePdu setUpdateNumber(short pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#updateNumber}*/
 public short getUpdateNumber()
 {
     return updateNumber; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#forceID}*/
 public ArealObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#forceID}*/
 public ForceID getForceID()
 {
     return forceID; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#modifications}*/
 public ArealObjectStatePdu setModifications(ObjectStateModificationArealObject pModifications)
 {
     modifications = pModifications;
     return this;
 }
 
+/** Setter for {@link ArealObjectStatePdu#modifications}*/
 public ObjectStateModificationArealObject getModifications()
 {
     return modifications; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#objectType}*/
 public ArealObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#objectType}*/
 public ObjectType getObjectType()
 {
     return objectType; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#specificObjectAppearance}*/
 public ArealObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
 {
     specificObjectAppearance = pSpecificObjectAppearance;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#specificObjectAppearance}*/
 public int getSpecificObjectAppearance()
 {
     return specificObjectAppearance; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#generalObjectAppearance}*/
 public ArealObjectStatePdu setGeneralObjectAppearance(short pGeneralObjectAppearance)
 {
     generalObjectAppearance = pGeneralObjectAppearance;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#generalObjectAppearance}*/
 public short getGeneralObjectAppearance()
 {
     return generalObjectAppearance; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#requesterID}*/
 public ArealObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#requesterID}*/
 public SimulationAddress getRequesterID()
 {
     return requesterID; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#receivingID}*/
 public ArealObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#receivingID}*/
 public SimulationAddress getReceivingID()
 {
     return receivingID; 
 }
 
+/** Setter for {@link ArealObjectStatePdu#objectLocation}*/
 public ArealObjectStatePdu setObjectLocation(List<Vector3Double> pObjectLocation)
 {
     objectLocation = pObjectLocation;
     return this;
 }
 
+/** Getter for {@link ArealObjectStatePdu#objectLocation}*/
 public List<Vector3Double> getObjectLocation()
 {
     return objectLocation; 

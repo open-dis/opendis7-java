@@ -60,6 +60,7 @@ public class EntityStatePdu extends EntityInformationFamilyPdu implements Serial
     setPduType( DISPDUType.ENTITY_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -87,133 +88,157 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityStatePdu#entityID}*/
 public EntityStatePdu setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityID}*/
 public EntityID getEntityID()
 {
     return entityID; 
 }
 
+/** Setter for {@link EntityStatePdu#forceId}*/
 public EntityStatePdu setForceId(ForceID pForceId)
 {
     forceId = pForceId;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#forceId}*/
 public ForceID getForceId()
 {
     return forceId; 
 }
 
+/** Setter for {@link EntityStatePdu#entityType}*/
 public EntityStatePdu setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityType}*/
 public EntityType getEntityType()
 {
     return entityType; 
 }
 
+/** Setter for {@link EntityStatePdu#alternativeEntityType}*/
 public EntityStatePdu setAlternativeEntityType(EntityType pAlternativeEntityType)
 {
     alternativeEntityType = pAlternativeEntityType;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#alternativeEntityType}*/
 public EntityType getAlternativeEntityType()
 {
     return alternativeEntityType; 
 }
 
+/** Setter for {@link EntityStatePdu#entityLinearVelocity}*/
 public EntityStatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityLinearVelocity}*/
 public Vector3Float getEntityLinearVelocity()
 {
     return entityLinearVelocity; 
 }
 
+/** Setter for {@link EntityStatePdu#entityLocation}*/
 public EntityStatePdu setEntityLocation(Vector3Double pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityLocation}*/
 public Vector3Double getEntityLocation()
 {
     return entityLocation; 
 }
 
+/** Setter for {@link EntityStatePdu#entityOrientation}*/
 public EntityStatePdu setEntityOrientation(EulerAngles pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityOrientation}*/
 public EulerAngles getEntityOrientation()
 {
     return entityOrientation; 
 }
 
+/** Setter for {@link EntityStatePdu#entityAppearance}*/
 public EntityStatePdu setEntityAppearance(int pEntityAppearance)
 {
     entityAppearance = pEntityAppearance;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#entityAppearance}*/
 public int getEntityAppearance()
 {
     return entityAppearance; 
 }
 
+/** Setter for {@link EntityStatePdu#deadReckoningParameters}*/
 public EntityStatePdu setDeadReckoningParameters(DeadReckoningParameters pDeadReckoningParameters)
 {
     deadReckoningParameters = pDeadReckoningParameters;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#deadReckoningParameters}*/
 public DeadReckoningParameters getDeadReckoningParameters()
 {
     return deadReckoningParameters; 
 }
 
+/** Setter for {@link EntityStatePdu#marking}*/
 public EntityStatePdu setMarking(EntityMarking pMarking)
 {
     marking = pMarking;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#marking}*/
 public EntityMarking getMarking()
 {
     return marking; 
 }
 
+/** Setter for {@link EntityStatePdu#capabilities}*/
 public EntityStatePdu setCapabilities(EntityCapabilities pCapabilities)
 {
     capabilities = pCapabilities;
     return this;
 }
 
+/** Setter for {@link EntityStatePdu#capabilities}*/
 public EntityCapabilities getCapabilities()
 {
     return capabilities; 
 }
 
+/** Setter for {@link EntityStatePdu#variableParameters}*/
 public EntityStatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 
+/** Getter for {@link EntityStatePdu#variableParameters}*/
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

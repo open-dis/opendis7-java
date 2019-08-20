@@ -70,6 +70,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
     setPduType( DISPDUType.DIRECTED_ENERGY_FIRE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -102,188 +103,222 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DirectedEnergyFirePdu#firingEntityID}*/
 public DirectedEnergyFirePdu setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#firingEntityID}*/
 public EntityID getFiringEntityID()
 {
     return firingEntityID; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#eventID}*/
 public DirectedEnergyFirePdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#munitionType}*/
 public DirectedEnergyFirePdu setMunitionType(EntityType pMunitionType)
 {
     munitionType = pMunitionType;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#munitionType}*/
 public EntityType getMunitionType()
 {
     return munitionType; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#shotStartTime}*/
 public DirectedEnergyFirePdu setShotStartTime(ClockTime pShotStartTime)
 {
     shotStartTime = pShotStartTime;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#shotStartTime}*/
 public ClockTime getShotStartTime()
 {
     return shotStartTime; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#commulativeShotTime}*/
 public DirectedEnergyFirePdu setCommulativeShotTime(float pCommulativeShotTime)
 {
     commulativeShotTime = pCommulativeShotTime;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#commulativeShotTime}*/
 public float getCommulativeShotTime()
 {
     return commulativeShotTime; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#apertureEmitterLocation}*/
 public DirectedEnergyFirePdu setApertureEmitterLocation(Vector3Float pApertureEmitterLocation)
 {
     apertureEmitterLocation = pApertureEmitterLocation;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#apertureEmitterLocation}*/
 public Vector3Float getApertureEmitterLocation()
 {
     return apertureEmitterLocation; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#apertureDiameter}*/
 public DirectedEnergyFirePdu setApertureDiameter(float pApertureDiameter)
 {
     apertureDiameter = pApertureDiameter;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#apertureDiameter}*/
 public float getApertureDiameter()
 {
     return apertureDiameter; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#wavelength}*/
 public DirectedEnergyFirePdu setWavelength(float pWavelength)
 {
     wavelength = pWavelength;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#wavelength}*/
 public float getWavelength()
 {
     return wavelength; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pad1}*/
 public DirectedEnergyFirePdu setPad1(int pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pad1}*/
 public int getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pulseRepititionFrequency}*/
 public DirectedEnergyFirePdu setPulseRepititionFrequency(float pPulseRepititionFrequency)
 {
     pulseRepititionFrequency = pPulseRepititionFrequency;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pulseRepititionFrequency}*/
 public float getPulseRepititionFrequency()
 {
     return pulseRepititionFrequency; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pulseWidth}*/
 public DirectedEnergyFirePdu setPulseWidth(float pPulseWidth)
 {
     pulseWidth = pPulseWidth;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pulseWidth}*/
 public float getPulseWidth()
 {
     return pulseWidth; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#flags}*/
 public DirectedEnergyFirePdu setFlags(DEFireFlags pFlags)
 {
     flags = pFlags;
     return this;
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#flags}*/
 public DEFireFlags getFlags()
 {
     return flags; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pulseShape}*/
 public DirectedEnergyFirePdu setPulseShape(DEFirePulseShape pPulseShape)
 {
     pulseShape = pPulseShape;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pulseShape}*/
 public DEFirePulseShape getPulseShape()
 {
     return pulseShape; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pad2}*/
 public DirectedEnergyFirePdu setPad2(byte pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pad2}*/
 public byte getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pad3}*/
 public DirectedEnergyFirePdu setPad3(int pPad3)
 {
     pad3 = pPad3;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pad3}*/
 public int getPad3()
 {
     return pad3; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#pad4}*/
 public DirectedEnergyFirePdu setPad4(short pPad4)
 {
     pad4 = pPad4;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#pad4}*/
 public short getPad4()
 {
     return pad4; 
 }
 
+/** Setter for {@link DirectedEnergyFirePdu#dERecords}*/
 public DirectedEnergyFirePdu setDERecords(List<StandardVariableSpecification> pDERecords)
 {
     dERecords = pDERecords;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyFirePdu#dERecords}*/
 public List<StandardVariableSpecification> getDERecords()
 {
     return dERecords; 

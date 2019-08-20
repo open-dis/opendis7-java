@@ -36,6 +36,7 @@ public class AttachedPartVP extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AttachedPartVP#recordType}*/
 public AttachedPartVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link AttachedPartVP#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link AttachedPartVP#detachedIndicator}*/
 public AttachedPartVP setDetachedIndicator(AttachedPartDetachedIndicator pDetachedIndicator)
 {
     detachedIndicator = pDetachedIndicator;
     return this;
 }
 
+/** Getter for {@link AttachedPartVP#detachedIndicator}*/
 public AttachedPartDetachedIndicator getDetachedIndicator()
 {
     return detachedIndicator; 
 }
 
+/** Setter for {@link AttachedPartVP#partAttachedTo}*/
 public AttachedPartVP setPartAttachedTo(short pPartAttachedTo)
 {
     partAttachedTo = pPartAttachedTo;
     return this;
 }
 
+/** Getter for {@link AttachedPartVP#partAttachedTo}*/
 public short getPartAttachedTo()
 {
     return partAttachedTo; 
 }
 
+/** Setter for {@link AttachedPartVP#parameterType}*/
 public AttachedPartVP setParameterType(AttachedParts pParameterType)
 {
     parameterType = pParameterType;
     return this;
 }
 
+/** Getter for {@link AttachedPartVP#parameterType}*/
 public AttachedParts getParameterType()
 {
     return parameterType; 
 }
 
+/** Setter for {@link AttachedPartVP#attachedPartType}*/
 public AttachedPartVP setAttachedPartType(EntityType pAttachedPartType)
 {
     attachedPartType = pAttachedPartType;
     return this;
 }
 
+/** Getter for {@link AttachedPartVP#attachedPartType}*/
 public EntityType getAttachedPartType()
 {
     return attachedPartType; 

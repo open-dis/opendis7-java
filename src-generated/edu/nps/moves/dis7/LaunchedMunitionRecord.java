@@ -35,6 +35,7 @@ public class LaunchedMunitionRecord extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -51,78 +52,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LaunchedMunitionRecord#fireEventID}*/
 public LaunchedMunitionRecord setFireEventID(EventIdentifier pFireEventID)
 {
     fireEventID = pFireEventID;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#fireEventID}*/
 public EventIdentifier getFireEventID()
 {
     return fireEventID; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#padding}*/
 public LaunchedMunitionRecord setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#firingEntityID}*/
 public LaunchedMunitionRecord setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#firingEntityID}*/
 public EntityID getFiringEntityID()
 {
     return firingEntityID; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#padding2}*/
 public LaunchedMunitionRecord setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#targetEntityID}*/
 public LaunchedMunitionRecord setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#targetEntityID}*/
 public EntityID getTargetEntityID()
 {
     return targetEntityID; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#padding3}*/
 public LaunchedMunitionRecord setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#padding3}*/
 public short getPadding3()
 {
     return padding3; 
 }
 
+/** Setter for {@link LaunchedMunitionRecord#targetLocation}*/
 public LaunchedMunitionRecord setTargetLocation(Vector3Double pTargetLocation)
 {
     targetLocation = pTargetLocation;
     return this;
 }
 
+/** Getter for {@link LaunchedMunitionRecord#targetLocation}*/
 public Vector3Double getTargetLocation()
 {
     return targetLocation; 

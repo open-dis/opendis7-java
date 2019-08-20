@@ -58,6 +58,7 @@ public class MinefieldStatePdu extends MinefieldFamilyPdu implements Serializabl
     setPduType( DISPDUType.MINEFIELD_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -88,111 +89,131 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldStatePdu#minefieldID}*/
 public MinefieldStatePdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#minefieldID}*/
 public MinefieldIdentifier getMinefieldID()
 {
     return minefieldID; 
 }
 
+/** Setter for {@link MinefieldStatePdu#minefieldSequence}*/
 public MinefieldStatePdu setMinefieldSequence(short pMinefieldSequence)
 {
     minefieldSequence = pMinefieldSequence;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#minefieldSequence}*/
 public short getMinefieldSequence()
 {
     return minefieldSequence; 
 }
 
+/** Setter for {@link MinefieldStatePdu#forceID}*/
 public MinefieldStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#forceID}*/
 public ForceID getForceID()
 {
     return forceID; 
 }
 
+/** Setter for {@link MinefieldStatePdu#minefieldType}*/
 public MinefieldStatePdu setMinefieldType(EntityType pMinefieldType)
 {
     minefieldType = pMinefieldType;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#minefieldType}*/
 public EntityType getMinefieldType()
 {
     return minefieldType; 
 }
 
+/** Setter for {@link MinefieldStatePdu#minefieldLocation}*/
 public MinefieldStatePdu setMinefieldLocation(Vector3Double pMinefieldLocation)
 {
     minefieldLocation = pMinefieldLocation;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#minefieldLocation}*/
 public Vector3Double getMinefieldLocation()
 {
     return minefieldLocation; 
 }
 
+/** Setter for {@link MinefieldStatePdu#minefieldOrientation}*/
 public MinefieldStatePdu setMinefieldOrientation(EulerAngles pMinefieldOrientation)
 {
     minefieldOrientation = pMinefieldOrientation;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#minefieldOrientation}*/
 public EulerAngles getMinefieldOrientation()
 {
     return minefieldOrientation; 
 }
 
+/** Setter for {@link MinefieldStatePdu#appearance}*/
 public MinefieldStatePdu setAppearance(MinefieldStateAppearanceBitMap pAppearance)
 {
     appearance = pAppearance;
     return this;
 }
 
+/** Setter for {@link MinefieldStatePdu#appearance}*/
 public MinefieldStateAppearanceBitMap getAppearance()
 {
     return appearance; 
 }
 
+/** Setter for {@link MinefieldStatePdu#protocolMode}*/
 public MinefieldStatePdu setProtocolMode(ProtocolMode pProtocolMode)
 {
     protocolMode = pProtocolMode;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#protocolMode}*/
 public ProtocolMode getProtocolMode()
 {
     return protocolMode; 
 }
 
+/** Setter for {@link MinefieldStatePdu#perimeterPoints}*/
 public MinefieldStatePdu setPerimeterPoints(List<Vector2Float> pPerimeterPoints)
 {
     perimeterPoints = pPerimeterPoints;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#perimeterPoints}*/
 public List<Vector2Float> getPerimeterPoints()
 {
     return perimeterPoints; 
 }
 
+/** Setter for {@link MinefieldStatePdu#mineType}*/
 public MinefieldStatePdu setMineType(List<EntityType> pMineType)
 {
     mineType = pMineType;
     return this;
 }
 
+/** Getter for {@link MinefieldStatePdu#mineType}*/
 public List<EntityType> getMineType()
 {
     return mineType; 

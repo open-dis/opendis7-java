@@ -30,6 +30,7 @@ public class Vector3Float extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Vector3Float#x}*/
 public Vector3Float setX(float pX)
 {
     x = pX;
     return this;
 }
 
+/** Getter for {@link Vector3Float#x}*/
 public float getX()
 {
     return x; 
 }
 
+/** Setter for {@link Vector3Float#y}*/
 public Vector3Float setY(float pY)
 {
     y = pY;
     return this;
 }
 
+/** Getter for {@link Vector3Float#y}*/
 public float getY()
 {
     return y; 
 }
 
+/** Setter for {@link Vector3Float#z}*/
 public Vector3Float setZ(float pZ)
 {
     z = pZ;
     return this;
 }
 
+/** Getter for {@link Vector3Float#z}*/
 public float getZ()
 {
     return z; 

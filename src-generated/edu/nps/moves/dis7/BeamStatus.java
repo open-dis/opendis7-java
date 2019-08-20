@@ -24,6 +24,7 @@ public class BeamStatus extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -34,12 +35,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link BeamStatus#beamState}*/
 public BeamStatus setBeamState(BeamStatusBeamState pBeamState)
 {
     beamState = pBeamState;
     return this;
 }
 
+/** Getter for {@link BeamStatus#beamState}*/
 public BeamStatusBeamState getBeamState()
 {
     return beamState; 

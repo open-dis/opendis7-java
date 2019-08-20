@@ -49,6 +49,7 @@ public class LinearObjectStatePdu extends SyntheticEnvironmentFamilyPdu implemen
     setPduType( DISPDUType.LINEAR_OBJECT_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -72,89 +73,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LinearObjectStatePdu#objectID}*/
 public LinearObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
 {
     objectID = pObjectID;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#objectID}*/
 public ObjectIdentifier getObjectID()
 {
     return objectID; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#referencedObjectID}*/
 public LinearObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#referencedObjectID}*/
 public ObjectIdentifier getReferencedObjectID()
 {
     return referencedObjectID; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#updateNumber}*/
 public LinearObjectStatePdu setUpdateNumber(short pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#updateNumber}*/
 public short getUpdateNumber()
 {
     return updateNumber; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#forceID}*/
 public LinearObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#forceID}*/
 public ForceID getForceID()
 {
     return forceID; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#requesterID}*/
 public LinearObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#requesterID}*/
 public SimulationAddress getRequesterID()
 {
     return requesterID; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#receivingID}*/
 public LinearObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#receivingID}*/
 public SimulationAddress getReceivingID()
 {
     return receivingID; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#objectType}*/
 public LinearObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#objectType}*/
 public ObjectType getObjectType()
 {
     return objectType; 
 }
 
+/** Setter for {@link LinearObjectStatePdu#linearSegmentParameters}*/
 public LinearObjectStatePdu setLinearSegmentParameters(List<LinearSegmentParameter> pLinearSegmentParameters)
 {
     linearSegmentParameters = pLinearSegmentParameters;
     return this;
 }
 
+/** Getter for {@link LinearObjectStatePdu#linearSegmentParameters}*/
 public List<LinearSegmentParameter> getLinearSegmentParameters()
 {
     return linearSegmentParameters; 

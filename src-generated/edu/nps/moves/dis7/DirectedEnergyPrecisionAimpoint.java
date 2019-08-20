@@ -66,6 +66,7 @@ public class DirectedEnergyPrecisionAimpoint extends Object implements Serializa
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -90,166 +91,196 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#recordType}*/
 public DirectedEnergyPrecisionAimpoint setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#recordLength}*/
 public DirectedEnergyPrecisionAimpoint setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#padding}*/
 public DirectedEnergyPrecisionAimpoint setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotLocation}*/
 public DirectedEnergyPrecisionAimpoint setTargetSpotLocation(Vector3Double pTargetSpotLocation)
 {
     targetSpotLocation = pTargetSpotLocation;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetSpotLocation}*/
 public Vector3Double getTargetSpotLocation()
 {
     return targetSpotLocation; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotEntityLocation}*/
 public DirectedEnergyPrecisionAimpoint setTargetSpotEntityLocation(Vector3Float pTargetSpotEntityLocation)
 {
     targetSpotEntityLocation = pTargetSpotEntityLocation;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetSpotEntityLocation}*/
 public Vector3Float getTargetSpotEntityLocation()
 {
     return targetSpotEntityLocation; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotVelocity}*/
 public DirectedEnergyPrecisionAimpoint setTargetSpotVelocity(Vector3Float pTargetSpotVelocity)
 {
     targetSpotVelocity = pTargetSpotVelocity;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetSpotVelocity}*/
 public Vector3Float getTargetSpotVelocity()
 {
     return targetSpotVelocity; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotAcceleration}*/
 public DirectedEnergyPrecisionAimpoint setTargetSpotAcceleration(Vector3Float pTargetSpotAcceleration)
 {
     targetSpotAcceleration = pTargetSpotAcceleration;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetSpotAcceleration}*/
 public Vector3Float getTargetSpotAcceleration()
 {
     return targetSpotAcceleration; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetEntityID}*/
 public DirectedEnergyPrecisionAimpoint setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetEntityID}*/
 public EntityID getTargetEntityID()
 {
     return targetEntityID; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}*/
 public DirectedEnergyPrecisionAimpoint setTargetComponentID(byte pTargetComponentID)
 {
     targetComponentID = pTargetComponentID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}*/
 public byte getTargetComponentID()
 {
     return targetComponentID; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}*/
 public DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionAimpointBeamSpotType pBeamSpotType)
 {
     beamSpotType = pBeamSpotType;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}*/
 public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 {
     return beamSpotType; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMajorAxis}*/
 public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMajorAxis(float pBeamSpotCrossSectionSemiMajorAxis)
 {
     beamSpotCrossSectionSemiMajorAxis = pBeamSpotCrossSectionSemiMajorAxis;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMajorAxis}*/
 public float getBeamSpotCrossSectionSemiMajorAxis()
 {
     return beamSpotCrossSectionSemiMajorAxis; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}*/
 public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMinorAxis(float pBeamSpotCrossSectionSemiMinorAxis)
 {
     beamSpotCrossSectionSemiMinorAxis = pBeamSpotCrossSectionSemiMinorAxis;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}*/
 public float getBeamSpotCrossSectionSemiMinorAxis()
 {
     return beamSpotCrossSectionSemiMinorAxis; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}*/
 public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionOrientationAngle(float pBeamSpotCrossSectionOrientationAngle)
 {
     beamSpotCrossSectionOrientationAngle = pBeamSpotCrossSectionOrientationAngle;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}*/
 public float getBeamSpotCrossSectionOrientationAngle()
 {
     return beamSpotCrossSectionOrientationAngle; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}*/
 public DirectedEnergyPrecisionAimpoint setPeakIrradiance(float pPeakIrradiance)
 {
     peakIrradiance = pPeakIrradiance;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}*/
 public float getPeakIrradiance()
 {
     return peakIrradiance; 
 }
 
+/** Setter for {@link DirectedEnergyPrecisionAimpoint#padding2}*/
 public DirectedEnergyPrecisionAimpoint setPadding2(int pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyPrecisionAimpoint#padding2}*/
 public int getPadding2()
 {
     return padding2; 

@@ -26,6 +26,7 @@ public class RecordQuerySpecification extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -41,12 +42,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RecordQuerySpecification#recordIDs}*/
 public RecordQuerySpecification setRecordIDs(List<VariableRecordTypes> pRecordIDs)
 {
     recordIDs = pRecordIDs;
     return this;
 }
 
+/** Getter for {@link RecordQuerySpecification#recordIDs}*/
 public List<VariableRecordTypes> getRecordIDs()
 {
     return recordIDs; 

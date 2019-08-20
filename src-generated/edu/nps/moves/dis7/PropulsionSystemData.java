@@ -27,6 +27,7 @@ public class PropulsionSystemData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link PropulsionSystemData#powerSetting}*/
 public PropulsionSystemData setPowerSetting(float pPowerSetting)
 {
     powerSetting = pPowerSetting;
     return this;
 }
 
+/** Getter for {@link PropulsionSystemData#powerSetting}*/
 public float getPowerSetting()
 {
     return powerSetting; 
 }
 
+/** Setter for {@link PropulsionSystemData#engineRpm}*/
 public PropulsionSystemData setEngineRpm(float pEngineRpm)
 {
     engineRpm = pEngineRpm;
     return this;
 }
 
+/** Getter for {@link PropulsionSystemData#engineRpm}*/
 public float getEngineRpm()
 {
     return engineRpm; 

@@ -36,6 +36,7 @@ public class IFFLayer2Pdu extends IFFPdu implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,56 +57,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IFFLayer2Pdu#layerHeader}*/
 public IFFLayer2Pdu setLayerHeader(LayerHeader pLayerHeader)
 {
     layerHeader = pLayerHeader;
     return this;
 }
 
+/** Getter for {@link IFFLayer2Pdu#layerHeader}*/
 public LayerHeader getLayerHeader()
 {
     return layerHeader; 
 }
 
+/** Setter for {@link IFFLayer2Pdu#beamData}*/
 public IFFLayer2Pdu setBeamData(BeamData pBeamData)
 {
     beamData = pBeamData;
     return this;
 }
 
+/** Getter for {@link IFFLayer2Pdu#beamData}*/
 public BeamData getBeamData()
 {
     return beamData; 
 }
 
+/** Setter for {@link IFFLayer2Pdu#secondaryOpParameter1}*/
 public IFFLayer2Pdu setSecondaryOpParameter1(byte pSecondaryOpParameter1)
 {
     secondaryOpParameter1 = pSecondaryOpParameter1;
     return this;
 }
 
+/** Getter for {@link IFFLayer2Pdu#secondaryOpParameter1}*/
 public byte getSecondaryOpParameter1()
 {
     return secondaryOpParameter1; 
 }
 
+/** Setter for {@link IFFLayer2Pdu#secondaryOpParameter2}*/
 public IFFLayer2Pdu setSecondaryOpParameter2(byte pSecondaryOpParameter2)
 {
     secondaryOpParameter2 = pSecondaryOpParameter2;
     return this;
 }
 
+/** Getter for {@link IFFLayer2Pdu#secondaryOpParameter2}*/
 public byte getSecondaryOpParameter2()
 {
     return secondaryOpParameter2; 
 }
 
+/** Setter for {@link IFFLayer2Pdu#fundamentalIFFParameters}*/
 public IFFLayer2Pdu setFundamentalIFFParameters(List<IFFFundamentalParameterData> pFundamentalIFFParameters)
 {
     fundamentalIFFParameters = pFundamentalIFFParameters;
     return this;
 }
 
+/** Getter for {@link IFFLayer2Pdu#fundamentalIFFParameters}*/
 public List<IFFFundamentalParameterData> getFundamentalIFFParameters()
 {
     return fundamentalIFFParameters; 

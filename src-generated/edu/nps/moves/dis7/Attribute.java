@@ -29,6 +29,7 @@ public class Attribute extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Attribute#recordType}*/
 public Attribute setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link Attribute#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link Attribute#recordLength}*/
 public Attribute setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link Attribute#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link Attribute#recordSpecificFields}*/
 public Attribute setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 
+/** Getter for {@link Attribute#recordSpecificFields}*/
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

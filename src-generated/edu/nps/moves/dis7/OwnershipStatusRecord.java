@@ -30,6 +30,7 @@ public class OwnershipStatusRecord extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link OwnershipStatusRecord#entityId}*/
 public OwnershipStatusRecord setEntityId(EntityID pEntityId)
 {
     entityId = pEntityId;
     return this;
 }
 
+/** Getter for {@link OwnershipStatusRecord#entityId}*/
 public EntityID getEntityId()
 {
     return entityId; 
 }
 
+/** Setter for {@link OwnershipStatusRecord#ownershipStatus}*/
 public OwnershipStatusRecord setOwnershipStatus(OwnershipStatus pOwnershipStatus)
 {
     ownershipStatus = pOwnershipStatus;
     return this;
 }
 
+/** Getter for {@link OwnershipStatusRecord#ownershipStatus}*/
 public OwnershipStatus getOwnershipStatus()
 {
     return ownershipStatus; 
 }
 
+/** Setter for {@link OwnershipStatusRecord#padding}*/
 public OwnershipStatusRecord setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link OwnershipStatusRecord#padding}*/
 public byte getPadding()
 {
     return padding; 

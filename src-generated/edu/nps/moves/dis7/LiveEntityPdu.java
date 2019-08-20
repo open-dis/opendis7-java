@@ -27,6 +27,7 @@ public abstract class LiveEntityPdu extends Pdu implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,23 +40,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityPdu#subprotocolNumber}*/
 public LiveEntityPdu setSubprotocolNumber(DISLiveEntitySubprotocolNumber pSubprotocolNumber)
 {
     subprotocolNumber = pSubprotocolNumber;
     return this;
 }
 
+/** Getter for {@link LiveEntityPdu#subprotocolNumber}*/
 public DISLiveEntitySubprotocolNumber getSubprotocolNumber()
 {
     return subprotocolNumber; 
 }
 
+/** Setter for {@link LiveEntityPdu#padding}*/
 public LiveEntityPdu setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link LiveEntityPdu#padding}*/
 public byte getPadding()
 {
     return padding; 

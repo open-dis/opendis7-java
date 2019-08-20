@@ -24,6 +24,7 @@ public abstract class InformationOperationsFamilyPdu extends PduBase implements 
     setProtocolFamily( DISProtocolFamily.INFORMATION_OPERATIONS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -35,12 +36,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link InformationOperationsFamilyPdu#originatingSimID}*/
 public InformationOperationsFamilyPdu setOriginatingSimID(EntityID pOriginatingSimID)
 {
     originatingSimID = pOriginatingSimID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsFamilyPdu#originatingSimID}*/
 public EntityID getOriginatingSimID()
 {
     return originatingSimID; 

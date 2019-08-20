@@ -36,6 +36,7 @@ public class EngineFuel extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EngineFuel#fuelQuantity}*/
 public EngineFuel setFuelQuantity(int pFuelQuantity)
 {
     fuelQuantity = pFuelQuantity;
     return this;
 }
 
+/** Getter for {@link EngineFuel#fuelQuantity}*/
 public int getFuelQuantity()
 {
     return fuelQuantity; 
 }
 
+/** Setter for {@link EngineFuel#fuelMeasurementUnits}*/
 public EngineFuel setFuelMeasurementUnits(FuelMeasurementUnits pFuelMeasurementUnits)
 {
     fuelMeasurementUnits = pFuelMeasurementUnits;
     return this;
 }
 
+/** Getter for {@link EngineFuel#fuelMeasurementUnits}*/
 public FuelMeasurementUnits getFuelMeasurementUnits()
 {
     return fuelMeasurementUnits; 
 }
 
+/** Setter for {@link EngineFuel#fuelType}*/
 public EngineFuel setFuelType(SupplyFuelType pFuelType)
 {
     fuelType = pFuelType;
     return this;
 }
 
+/** Getter for {@link EngineFuel#fuelType}*/
 public SupplyFuelType getFuelType()
 {
     return fuelType; 
 }
 
+/** Setter for {@link EngineFuel#fuelLocation}*/
 public EngineFuel setFuelLocation(FuelLocation pFuelLocation)
 {
     fuelLocation = pFuelLocation;
     return this;
 }
 
+/** Getter for {@link EngineFuel#fuelLocation}*/
 public FuelLocation getFuelLocation()
 {
     return fuelLocation; 
 }
 
+/** Setter for {@link EngineFuel#padding}*/
 public EngineFuel setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link EngineFuel#padding}*/
 public byte getPadding()
 {
     return padding; 

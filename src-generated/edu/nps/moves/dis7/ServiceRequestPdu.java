@@ -38,6 +38,7 @@ public class ServiceRequestPdu extends LogisticsFamilyPdu implements Serializabl
     setPduType( DISPDUType.SERVICE_REQUEST );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -58,56 +59,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ServiceRequestPdu#requestingEntityID}*/
 public ServiceRequestPdu setRequestingEntityID(EntityID pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
 }
 
+/** Getter for {@link ServiceRequestPdu#requestingEntityID}*/
 public EntityID getRequestingEntityID()
 {
     return requestingEntityID; 
 }
 
+/** Setter for {@link ServiceRequestPdu#servicingEntityID}*/
 public ServiceRequestPdu setServicingEntityID(EntityID pServicingEntityID)
 {
     servicingEntityID = pServicingEntityID;
     return this;
 }
 
+/** Getter for {@link ServiceRequestPdu#servicingEntityID}*/
 public EntityID getServicingEntityID()
 {
     return servicingEntityID; 
 }
 
+/** Setter for {@link ServiceRequestPdu#serviceTypeRequested}*/
 public ServiceRequestPdu setServiceTypeRequested(ServiceRequestServiceTypeRequested pServiceTypeRequested)
 {
     serviceTypeRequested = pServiceTypeRequested;
     return this;
 }
 
+/** Getter for {@link ServiceRequestPdu#serviceTypeRequested}*/
 public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 {
     return serviceTypeRequested; 
 }
 
+/** Setter for {@link ServiceRequestPdu#padding1}*/
 public ServiceRequestPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link ServiceRequestPdu#padding1}*/
 public short getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link ServiceRequestPdu#supplies}*/
 public ServiceRequestPdu setSupplies(List<SupplyQuantity> pSupplies)
 {
     supplies = pSupplies;
     return this;
 }
 
+/** Getter for {@link ServiceRequestPdu#supplies}*/
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

@@ -40,6 +40,7 @@ public class ActionResponseRPdu extends SimulationManagementWithReliabilityFamil
     setPduType( DISPDUType.ACTION_RESPONSE_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ActionResponseRPdu#requestID}*/
 public ActionResponseRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link ActionResponseRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link ActionResponseRPdu#responseStatus}*/
 public ActionResponseRPdu setResponseStatus(ActionResponseRequestStatus pResponseStatus)
 {
     responseStatus = pResponseStatus;
     return this;
 }
 
+/** Getter for {@link ActionResponseRPdu#responseStatus}*/
 public ActionResponseRequestStatus getResponseStatus()
 {
     return responseStatus; 
 }
 
+/** Setter for {@link ActionResponseRPdu#fixedDatumRecords}*/
 public ActionResponseRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link ActionResponseRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link ActionResponseRPdu#variableDatumRecords}*/
 public ActionResponseRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link ActionResponseRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

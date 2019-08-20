@@ -82,6 +82,7 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
     setPduType( DISPDUType.TRANSMITTER );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -121,210 +122,248 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link TransmitterPdu#header}*/
 public TransmitterPdu setHeader(RadioCommsHeader pHeader)
 {
     header = pHeader;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#header}*/
 public RadioCommsHeader getHeader()
 {
     return header; 
 }
 
+/** Setter for {@link TransmitterPdu#radioNumber}*/
 public TransmitterPdu setRadioNumber(short pRadioNumber)
 {
     radioNumber = pRadioNumber;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#radioNumber}*/
 public short getRadioNumber()
 {
     return radioNumber; 
 }
 
+/** Setter for {@link TransmitterPdu#radioEntityType}*/
 public TransmitterPdu setRadioEntityType(RadioType pRadioEntityType)
 {
     radioEntityType = pRadioEntityType;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#radioEntityType}*/
 public RadioType getRadioEntityType()
 {
     return radioEntityType; 
 }
 
+/** Setter for {@link TransmitterPdu#transmitState}*/
 public TransmitterPdu setTransmitState(TransmitterTransmitState pTransmitState)
 {
     transmitState = pTransmitState;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#transmitState}*/
 public TransmitterTransmitState getTransmitState()
 {
     return transmitState; 
 }
 
+/** Setter for {@link TransmitterPdu#inputSource}*/
 public TransmitterPdu setInputSource(TransmitterInputSource pInputSource)
 {
     inputSource = pInputSource;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#inputSource}*/
 public TransmitterInputSource getInputSource()
 {
     return inputSource; 
 }
 
+/** Setter for {@link TransmitterPdu#variableTransmitterParameterCount}*/
 public TransmitterPdu setVariableTransmitterParameterCount(short pVariableTransmitterParameterCount)
 {
     variableTransmitterParameterCount = pVariableTransmitterParameterCount;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#variableTransmitterParameterCount}*/
 public short getVariableTransmitterParameterCount()
 {
     return variableTransmitterParameterCount; 
 }
 
+/** Setter for {@link TransmitterPdu#antennaLocation}*/
 public TransmitterPdu setAntennaLocation(Vector3Double pAntennaLocation)
 {
     antennaLocation = pAntennaLocation;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#antennaLocation}*/
 public Vector3Double getAntennaLocation()
 {
     return antennaLocation; 
 }
 
+/** Setter for {@link TransmitterPdu#relativeAntennaLocation}*/
 public TransmitterPdu setRelativeAntennaLocation(Vector3Float pRelativeAntennaLocation)
 {
     relativeAntennaLocation = pRelativeAntennaLocation;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#relativeAntennaLocation}*/
 public Vector3Float getRelativeAntennaLocation()
 {
     return relativeAntennaLocation; 
 }
 
+/** Setter for {@link TransmitterPdu#antennaPatternType}*/
 public TransmitterPdu setAntennaPatternType(TransmitterAntennaPatternType pAntennaPatternType)
 {
     antennaPatternType = pAntennaPatternType;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#antennaPatternType}*/
 public TransmitterAntennaPatternType getAntennaPatternType()
 {
     return antennaPatternType; 
 }
 
+/** Setter for {@link TransmitterPdu#frequency}*/
 public TransmitterPdu setFrequency(long pFrequency)
 {
     frequency = pFrequency;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#frequency}*/
 public long getFrequency()
 {
     return frequency; 
 }
 
+/** Setter for {@link TransmitterPdu#transmitFrequencyBandwidth}*/
 public TransmitterPdu setTransmitFrequencyBandwidth(float pTransmitFrequencyBandwidth)
 {
     transmitFrequencyBandwidth = pTransmitFrequencyBandwidth;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#transmitFrequencyBandwidth}*/
 public float getTransmitFrequencyBandwidth()
 {
     return transmitFrequencyBandwidth; 
 }
 
+/** Setter for {@link TransmitterPdu#power}*/
 public TransmitterPdu setPower(float pPower)
 {
     power = pPower;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#power}*/
 public float getPower()
 {
     return power; 
 }
 
+/** Setter for {@link TransmitterPdu#modulationType}*/
 public TransmitterPdu setModulationType(ModulationType pModulationType)
 {
     modulationType = pModulationType;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#modulationType}*/
 public ModulationType getModulationType()
 {
     return modulationType; 
 }
 
+/** Setter for {@link TransmitterPdu#cryptoSystem}*/
 public TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryptoSystem)
 {
     cryptoSystem = pCryptoSystem;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#cryptoSystem}*/
 public TransmitterCryptoSystem getCryptoSystem()
 {
     return cryptoSystem; 
 }
 
+/** Setter for {@link TransmitterPdu#cryptoKeyId}*/
 public TransmitterPdu setCryptoKeyId(short pCryptoKeyId)
 {
     cryptoKeyId = pCryptoKeyId;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#cryptoKeyId}*/
 public short getCryptoKeyId()
 {
     return cryptoKeyId; 
 }
 
+/** Setter for {@link TransmitterPdu#padding1}*/
 public TransmitterPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link TransmitterPdu#padding2}*/
 public TransmitterPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link TransmitterPdu#modulationParametersList}*/
 public TransmitterPdu setModulationParametersList(List<ModulationParameters> pModulationParametersList)
 {
     modulationParametersList = pModulationParametersList;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#modulationParametersList}*/
 public List<ModulationParameters> getModulationParametersList()
 {
     return modulationParametersList; 
 }
 
+/** Setter for {@link TransmitterPdu#antennaPatternList}*/
 public TransmitterPdu setAntennaPatternList(List<VariableTransmitterParameters> pAntennaPatternList)
 {
     antennaPatternList = pAntennaPatternList;
     return this;
 }
 
+/** Getter for {@link TransmitterPdu#antennaPatternList}*/
 public List<VariableTransmitterParameters> getAntennaPatternList()
 {
     return antennaPatternList; 

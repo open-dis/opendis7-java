@@ -40,6 +40,7 @@ public class EventReportPdu extends SimulationManagementFamilyPdu implements Ser
     setPduType( DISPDUType.EVENT_REPORT );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EventReportPdu#eventType}*/
 public EventReportPdu setEventType(EventReportEventType pEventType)
 {
     eventType = pEventType;
     return this;
 }
 
+/** Getter for {@link EventReportPdu#eventType}*/
 public EventReportEventType getEventType()
 {
     return eventType; 
 }
 
+/** Setter for {@link EventReportPdu#padding1}*/
 public EventReportPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link EventReportPdu#padding1}*/
 public int getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link EventReportPdu#fixedDatums}*/
 public EventReportPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 
+/** Getter for {@link EventReportPdu#fixedDatums}*/
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
 }
 
+/** Setter for {@link EventReportPdu#variableDatums}*/
 public EventReportPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 
+/** Getter for {@link EventReportPdu#variableDatums}*/
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

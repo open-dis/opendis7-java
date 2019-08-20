@@ -27,6 +27,7 @@ public abstract class SimulationManagementWithReliabilityFamilyPdu extends PduBa
     setProtocolFamily( DISProtocolFamily.SIMULATION_MANAGEMENT_WITH_RELIABILITY );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,23 +40,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SimulationManagementWithReliabilityFamilyPdu#originatingID}*/
 public SimulationManagementWithReliabilityFamilyPdu setOriginatingID(SimulationIdentifier pOriginatingID)
 {
     originatingID = pOriginatingID;
     return this;
 }
 
+/** Getter for {@link SimulationManagementWithReliabilityFamilyPdu#originatingID}*/
 public SimulationIdentifier getOriginatingID()
 {
     return originatingID; 
 }
 
+/** Setter for {@link SimulationManagementWithReliabilityFamilyPdu#receivingID}*/
 public SimulationManagementWithReliabilityFamilyPdu setReceivingID(SimulationIdentifier pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
 }
 
+/** Getter for {@link SimulationManagementWithReliabilityFamilyPdu#receivingID}*/
 public SimulationIdentifier getReceivingID()
 {
     return receivingID; 

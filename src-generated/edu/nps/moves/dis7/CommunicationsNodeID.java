@@ -25,6 +25,7 @@ public class CommunicationsNodeID extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -36,23 +37,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CommunicationsNodeID#entityID}*/
 public CommunicationsNodeID setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link CommunicationsNodeID#entityID}*/
 public EntityID getEntityID()
 {
     return entityID; 
 }
 
+/** Setter for {@link CommunicationsNodeID#elementID}*/
 public CommunicationsNodeID setElementID(short pElementID)
 {
     elementID = pElementID;
     return this;
 }
 
+/** Getter for {@link CommunicationsNodeID#elementID}*/
 public short getElementID()
 {
     return elementID; 

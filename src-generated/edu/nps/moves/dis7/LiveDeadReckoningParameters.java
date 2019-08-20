@@ -28,6 +28,7 @@ public class LiveDeadReckoningParameters extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -40,34 +41,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveDeadReckoningParameters#deadReckoningAlgorithm}*/
 public LiveDeadReckoningParameters setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
     deadReckoningAlgorithm = pDeadReckoningAlgorithm;
     return this;
 }
 
+/** Getter for {@link LiveDeadReckoningParameters#deadReckoningAlgorithm}*/
 public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 {
     return deadReckoningAlgorithm; 
 }
 
+/** Setter for {@link LiveDeadReckoningParameters#entityLinearAcceleration}*/
 public LiveDeadReckoningParameters setEntityLinearAcceleration(LEVector3FixedByte pEntityLinearAcceleration)
 {
     entityLinearAcceleration = pEntityLinearAcceleration;
     return this;
 }
 
+/** Getter for {@link LiveDeadReckoningParameters#entityLinearAcceleration}*/
 public LEVector3FixedByte getEntityLinearAcceleration()
 {
     return entityLinearAcceleration; 
 }
 
+/** Setter for {@link LiveDeadReckoningParameters#entityAngularVelocity}*/
 public LiveDeadReckoningParameters setEntityAngularVelocity(LEVector3FixedByte pEntityAngularVelocity)
 {
     entityAngularVelocity = pEntityAngularVelocity;
     return this;
 }
 
+/** Getter for {@link LiveDeadReckoningParameters#entityAngularVelocity}*/
 public LEVector3FixedByte getEntityAngularVelocity()
 {
     return entityAngularVelocity; 

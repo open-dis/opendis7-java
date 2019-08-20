@@ -27,6 +27,7 @@ public class ExpendableDescriptor extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ExpendableDescriptor#expendableType}*/
 public ExpendableDescriptor setExpendableType(EntityType pExpendableType)
 {
     expendableType = pExpendableType;
     return this;
 }
 
+/** Getter for {@link ExpendableDescriptor#expendableType}*/
 public EntityType getExpendableType()
 {
     return expendableType; 
 }
 
+/** Setter for {@link ExpendableDescriptor#padding}*/
 public ExpendableDescriptor setPadding(long pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link ExpendableDescriptor#padding}*/
 public long getPadding()
 {
     return padding; 

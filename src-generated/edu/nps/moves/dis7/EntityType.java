@@ -41,6 +41,7 @@ public class EntityType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -57,78 +58,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityType#entityKind}*/
 public EntityType setEntityKind(EntityKind pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
 }
 
+/** Getter for {@link EntityType#entityKind}*/
 public EntityKind getEntityKind()
 {
     return entityKind; 
 }
 
+/** Setter for {@link EntityType#domain}*/
 public EntityType setDomain(Domain pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link EntityType#domain}*/
 public Domain getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link EntityType#country}*/
 public EntityType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
 }
 
+/** Getter for {@link EntityType#country}*/
 public Country getCountry()
 {
     return country; 
 }
 
+/** Setter for {@link EntityType#category}*/
 public EntityType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link EntityType#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link EntityType#subCategory}*/
 public EntityType setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
 }
 
+/** Getter for {@link EntityType#subCategory}*/
 public byte getSubCategory()
 {
     return subCategory; 
 }
 
+/** Setter for {@link EntityType#specific}*/
 public EntityType setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
+/** Getter for {@link EntityType#specific}*/
 public byte getSpecific()
 {
     return specific; 
 }
 
+/** Setter for {@link EntityType#extra}*/
 public EntityType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
 }
 
+/** Getter for {@link EntityType#extra}*/
 public byte getExtra()
 {
     return extra; 

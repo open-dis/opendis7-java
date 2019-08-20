@@ -40,6 +40,7 @@ public class DataPdu extends SimulationManagementFamilyPdu implements Serializab
     setPduType( DISPDUType.DATA );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataPdu#requestID}*/
 public DataPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link DataPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link DataPdu#padding1}*/
 public DataPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link DataPdu#padding1}*/
 public int getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link DataPdu#fixedDatums}*/
 public DataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 
+/** Getter for {@link DataPdu#fixedDatums}*/
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
 }
 
+/** Setter for {@link DataPdu#variableDatums}*/
 public DataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 
+/** Getter for {@link DataPdu#variableDatums}*/
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

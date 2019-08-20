@@ -31,6 +31,7 @@ public class AcknowledgePdu extends SimulationManagementFamilyPdu implements Ser
     setPduType( DISPDUType.ACKNOWLEDGE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -44,34 +45,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AcknowledgePdu#acknowledgeFlag}*/
 public AcknowledgePdu setAcknowledgeFlag(AcknowledgeAcknowledgeFlag pAcknowledgeFlag)
 {
     acknowledgeFlag = pAcknowledgeFlag;
     return this;
 }
 
+/** Getter for {@link AcknowledgePdu#acknowledgeFlag}*/
 public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
     return acknowledgeFlag; 
 }
 
+/** Setter for {@link AcknowledgePdu#responseFlag}*/
 public AcknowledgePdu setResponseFlag(AcknowledgeResponseFlag pResponseFlag)
 {
     responseFlag = pResponseFlag;
     return this;
 }
 
+/** Getter for {@link AcknowledgePdu#responseFlag}*/
 public AcknowledgeResponseFlag getResponseFlag()
 {
     return responseFlag; 
 }
 
+/** Setter for {@link AcknowledgePdu#requestID}*/
 public AcknowledgePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link AcknowledgePdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

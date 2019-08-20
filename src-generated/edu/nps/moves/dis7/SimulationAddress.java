@@ -27,6 +27,7 @@ public class SimulationAddress extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SimulationAddress#site}*/
 public SimulationAddress setSite(short pSite)
 {
     site = pSite;
     return this;
 }
 
+/** Getter for {@link SimulationAddress#site}*/
 public short getSite()
 {
     return site; 
 }
 
+/** Setter for {@link SimulationAddress#application}*/
 public SimulationAddress setApplication(short pApplication)
 {
     application = pApplication;
     return this;
 }
 
+/** Getter for {@link SimulationAddress#application}*/
 public short getApplication()
 {
     return application; 

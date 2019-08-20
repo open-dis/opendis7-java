@@ -44,6 +44,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
     setPduType( DISPDUType.SIGNAL );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -62,78 +63,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SignalPdu#header}*/
 public SignalPdu setHeader(RadioCommsHeader pHeader)
 {
     header = pHeader;
     return this;
 }
 
+/** Getter for {@link SignalPdu#header}*/
 public RadioCommsHeader getHeader()
 {
     return header; 
 }
 
+/** Setter for {@link SignalPdu#encodingScheme}*/
 public SignalPdu setEncodingScheme(short pEncodingScheme)
 {
     encodingScheme = pEncodingScheme;
     return this;
 }
 
+/** Getter for {@link SignalPdu#encodingScheme}*/
 public short getEncodingScheme()
 {
     return encodingScheme; 
 }
 
+/** Setter for {@link SignalPdu#tdlType}*/
 public SignalPdu setTdlType(SignalTDLType pTdlType)
 {
     tdlType = pTdlType;
     return this;
 }
 
+/** Getter for {@link SignalPdu#tdlType}*/
 public SignalTDLType getTdlType()
 {
     return tdlType; 
 }
 
+/** Setter for {@link SignalPdu#sampleRate}*/
 public SignalPdu setSampleRate(int pSampleRate)
 {
     sampleRate = pSampleRate;
     return this;
 }
 
+/** Getter for {@link SignalPdu#sampleRate}*/
 public int getSampleRate()
 {
     return sampleRate; 
 }
 
+/** Setter for {@link SignalPdu#dataLength}*/
 public SignalPdu setDataLength(short pDataLength)
 {
     dataLength = pDataLength;
     return this;
 }
 
+/** Getter for {@link SignalPdu#dataLength}*/
 public short getDataLength()
 {
     return dataLength; 
 }
 
+/** Setter for {@link SignalPdu#samples}*/
 public SignalPdu setSamples(short pSamples)
 {
     samples = pSamples;
     return this;
 }
 
+/** Getter for {@link SignalPdu#samples}*/
 public short getSamples()
 {
     return samples; 
 }
 
+/** Setter for {@link SignalPdu#data}*/
 public SignalPdu setData(byte[] pData)
 {
     data = pData;
     return this;
 }
 
+/** Getter for {@link SignalPdu#data}*/
 public byte[] getData()
 {
     return data; 

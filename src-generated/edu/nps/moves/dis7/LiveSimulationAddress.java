@@ -27,6 +27,7 @@ public class LiveSimulationAddress extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveSimulationAddress#liveSiteNumber}*/
 public LiveSimulationAddress setLiveSiteNumber(byte pLiveSiteNumber)
 {
     liveSiteNumber = pLiveSiteNumber;
     return this;
 }
 
+/** Getter for {@link LiveSimulationAddress#liveSiteNumber}*/
 public byte getLiveSiteNumber()
 {
     return liveSiteNumber; 
 }
 
+/** Setter for {@link LiveSimulationAddress#liveApplicationNumber}*/
 public LiveSimulationAddress setLiveApplicationNumber(byte pLiveApplicationNumber)
 {
     liveApplicationNumber = pLiveApplicationNumber;
     return this;
 }
 
+/** Getter for {@link LiveSimulationAddress#liveApplicationNumber}*/
 public byte getLiveApplicationNumber()
 {
     return liveApplicationNumber; 

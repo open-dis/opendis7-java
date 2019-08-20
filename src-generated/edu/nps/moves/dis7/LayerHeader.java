@@ -29,6 +29,7 @@ public class LayerHeader extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -41,34 +42,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LayerHeader#layerNumber}*/
 public LayerHeader setLayerNumber(byte pLayerNumber)
 {
     layerNumber = pLayerNumber;
     return this;
 }
 
+/** Getter for {@link LayerHeader#layerNumber}*/
 public byte getLayerNumber()
 {
     return layerNumber; 
 }
 
+/** Setter for {@link LayerHeader#layerSpecificInformation}*/
 public LayerHeader setLayerSpecificInformation(byte pLayerSpecificInformation)
 {
     layerSpecificInformation = pLayerSpecificInformation;
     return this;
 }
 
+/** Getter for {@link LayerHeader#layerSpecificInformation}*/
 public byte getLayerSpecificInformation()
 {
     return layerSpecificInformation; 
 }
 
+/** Setter for {@link LayerHeader#length}*/
 public LayerHeader setLength(short pLength)
 {
     length = pLength;
     return this;
 }
 
+/** Getter for {@link LayerHeader#length}*/
 public short getLength()
 {
     return length; 

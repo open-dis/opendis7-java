@@ -30,6 +30,7 @@ public class AcousticEmitter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AcousticEmitter#acousticSystemName}*/
 public AcousticEmitter setAcousticSystemName(UAAcousticSystemName pAcousticSystemName)
 {
     acousticSystemName = pAcousticSystemName;
     return this;
 }
 
+/** Getter for {@link AcousticEmitter#acousticSystemName}*/
 public UAAcousticSystemName getAcousticSystemName()
 {
     return acousticSystemName; 
 }
 
+/** Setter for {@link AcousticEmitter#acousticFunction}*/
 public AcousticEmitter setAcousticFunction(UAAcousticEmitterSystemFunction pAcousticFunction)
 {
     acousticFunction = pAcousticFunction;
     return this;
 }
 
+/** Getter for {@link AcousticEmitter#acousticFunction}*/
 public UAAcousticEmitterSystemFunction getAcousticFunction()
 {
     return acousticFunction; 
 }
 
+/** Setter for {@link AcousticEmitter#acousticIDNumber}*/
 public AcousticEmitter setAcousticIDNumber(byte pAcousticIDNumber)
 {
     acousticIDNumber = pAcousticIDNumber;
     return this;
 }
 
+/** Getter for {@link AcousticEmitter#acousticIDNumber}*/
 public byte getAcousticIDNumber()
 {
     return acousticIDNumber; 

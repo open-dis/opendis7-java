@@ -48,6 +48,7 @@ public class EntityAssociationVP extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -66,100 +67,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityAssociationVP#recordType}*/
 public EntityAssociationVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link EntityAssociationVP#changeIndicator}*/
 public EntityAssociationVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
     changeIndicator = pChangeIndicator;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#changeIndicator}*/
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     return changeIndicator; 
 }
 
+/** Setter for {@link EntityAssociationVP#associationStatus}*/
 public EntityAssociationVP setAssociationStatus(EntityAssociationAssociationType pAssociationStatus)
 {
     associationStatus = pAssociationStatus;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#associationStatus}*/
 public EntityAssociationAssociationType getAssociationStatus()
 {
     return associationStatus; 
 }
 
+/** Setter for {@link EntityAssociationVP#associationType}*/
 public EntityAssociationVP setAssociationType(EntityAssociationPhysicalAssociationType pAssociationType)
 {
     associationType = pAssociationType;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#associationType}*/
 public EntityAssociationPhysicalAssociationType getAssociationType()
 {
     return associationType; 
 }
 
+/** Setter for {@link EntityAssociationVP#entityID}*/
 public EntityAssociationVP setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#entityID}*/
 public EntityID getEntityID()
 {
     return entityID; 
 }
 
+/** Setter for {@link EntityAssociationVP#ownStationLocation}*/
 public EntityAssociationVP setOwnStationLocation(IsPartOfStationName pOwnStationLocation)
 {
     ownStationLocation = pOwnStationLocation;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#ownStationLocation}*/
 public IsPartOfStationName getOwnStationLocation()
 {
     return ownStationLocation; 
 }
 
+/** Setter for {@link EntityAssociationVP#physicalConnectionType}*/
 public EntityAssociationVP setPhysicalConnectionType(EntityAssociationPhysicalConnectionType pPhysicalConnectionType)
 {
     physicalConnectionType = pPhysicalConnectionType;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#physicalConnectionType}*/
 public EntityAssociationPhysicalConnectionType getPhysicalConnectionType()
 {
     return physicalConnectionType; 
 }
 
+/** Setter for {@link EntityAssociationVP#groupMemberType}*/
 public EntityAssociationVP setGroupMemberType(EntityAssociationGroupMemberType pGroupMemberType)
 {
     groupMemberType = pGroupMemberType;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#groupMemberType}*/
 public EntityAssociationGroupMemberType getGroupMemberType()
 {
     return groupMemberType; 
 }
 
+/** Setter for {@link EntityAssociationVP#groupNumber}*/
 public EntityAssociationVP setGroupNumber(short pGroupNumber)
 {
     groupNumber = pGroupNumber;
     return this;
 }
 
+/** Getter for {@link EntityAssociationVP#groupNumber}*/
 public short getGroupNumber()
 {
     return groupNumber; 

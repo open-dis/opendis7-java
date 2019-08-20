@@ -38,6 +38,7 @@ public class GridAxisDescriptorVariable extends GridAxisDescriptor implements Se
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,56 +55,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}*/
 public GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(short pNumberOfPointsOnXiAxis)
 {
     numberOfPointsOnXiAxis = pNumberOfPointsOnXiAxis;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}*/
 public short getNumberOfPointsOnXiAxis()
 {
     return numberOfPointsOnXiAxis; 
 }
 
+/** Setter for {@link GridAxisDescriptorVariable#initialIndex}*/
 public GridAxisDescriptorVariable setInitialIndex(short pInitialIndex)
 {
     initialIndex = pInitialIndex;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorVariable#initialIndex}*/
 public short getInitialIndex()
 {
     return initialIndex; 
 }
 
+/** Setter for {@link GridAxisDescriptorVariable#coordinateScaleXi}*/
 public GridAxisDescriptorVariable setCoordinateScaleXi(double pCoordinateScaleXi)
 {
     coordinateScaleXi = pCoordinateScaleXi;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorVariable#coordinateScaleXi}*/
 public double getCoordinateScaleXi()
 {
     return coordinateScaleXi; 
 }
 
+/** Setter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}*/
 public GridAxisDescriptorVariable setCoordinateOffsetXi(double pCoordinateOffsetXi)
 {
     coordinateOffsetXi = pCoordinateOffsetXi;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}*/
 public double getCoordinateOffsetXi()
 {
     return coordinateOffsetXi; 
 }
 
+/** Setter for {@link GridAxisDescriptorVariable#xiValues}*/
 public GridAxisDescriptorVariable setXiValues(short[] pXiValues)
 {
     xiValues = pXiValues;
     return this;
 }
 
+/** Getter for {@link GridAxisDescriptorVariable#xiValues}*/
 public short[] getXiValues()
 {
     return xiValues; 

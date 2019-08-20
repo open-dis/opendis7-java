@@ -51,6 +51,7 @@ public class MinefieldQueryPdu extends MinefieldFamilyPdu implements Serializabl
     setPduType( DISPDUType.MINEFIELD_QUERY );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -79,89 +80,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldQueryPdu#minefieldID}*/
 public MinefieldQueryPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#minefieldID}*/
 public MinefieldIdentifier getMinefieldID()
 {
     return minefieldID; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#requestingEntityID}*/
 public MinefieldQueryPdu setRequestingEntityID(EntityID pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#requestingEntityID}*/
 public EntityID getRequestingEntityID()
 {
     return requestingEntityID; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#requestID}*/
 public MinefieldQueryPdu setRequestID(byte pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#requestID}*/
 public byte getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#padding}*/
 public MinefieldQueryPdu setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#padding}*/
 public byte getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#dataFilter}*/
 public MinefieldQueryPdu setDataFilter(DataFilterRecord pDataFilter)
 {
     dataFilter = pDataFilter;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#dataFilter}*/
 public DataFilterRecord getDataFilter()
 {
     return dataFilter; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#requestedMineType}*/
 public MinefieldQueryPdu setRequestedMineType(EntityType pRequestedMineType)
 {
     requestedMineType = pRequestedMineType;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#requestedMineType}*/
 public EntityType getRequestedMineType()
 {
     return requestedMineType; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#requestedPerimeterPoints}*/
 public MinefieldQueryPdu setRequestedPerimeterPoints(List<Vector2Float> pRequestedPerimeterPoints)
 {
     requestedPerimeterPoints = pRequestedPerimeterPoints;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#requestedPerimeterPoints}*/
 public List<Vector2Float> getRequestedPerimeterPoints()
 {
     return requestedPerimeterPoints; 
 }
 
+/** Setter for {@link MinefieldQueryPdu#sensorTypes}*/
 public MinefieldQueryPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
 {
     sensorTypes = pSensorTypes;
     return this;
 }
 
+/** Getter for {@link MinefieldQueryPdu#sensorTypes}*/
 public List<MinefieldSensorType> getSensorTypes()
 {
     return sensorTypes; 

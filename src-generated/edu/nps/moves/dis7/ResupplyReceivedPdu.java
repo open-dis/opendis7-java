@@ -40,6 +40,7 @@ public class ResupplyReceivedPdu extends LogisticsFamilyPdu implements Serializa
     setPduType( DISPDUType.RESUPPLY_RECEIVED );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -60,56 +61,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ResupplyReceivedPdu#receivingEntityID}*/
 public ResupplyReceivedPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link ResupplyReceivedPdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link ResupplyReceivedPdu#supplyingEntityID}*/
 public ResupplyReceivedPdu setSupplyingEntityID(EntityID pSupplyingEntityID)
 {
     supplyingEntityID = pSupplyingEntityID;
     return this;
 }
 
+/** Getter for {@link ResupplyReceivedPdu#supplyingEntityID}*/
 public EntityID getSupplyingEntityID()
 {
     return supplyingEntityID; 
 }
 
+/** Setter for {@link ResupplyReceivedPdu#padding1}*/
 public ResupplyReceivedPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link ResupplyReceivedPdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link ResupplyReceivedPdu#padding2}*/
 public ResupplyReceivedPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link ResupplyReceivedPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link ResupplyReceivedPdu#supplies}*/
 public ResupplyReceivedPdu setSupplies(List<SupplyQuantity> pSupplies)
 {
     supplies = pSupplies;
     return this;
 }
 
+/** Getter for {@link ResupplyReceivedPdu#supplies}*/
 public List<SupplyQuantity> getSupplies()
 {
     return supplies; 

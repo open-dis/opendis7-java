@@ -30,6 +30,7 @@ public class SecondaryOperationalData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SecondaryOperationalData#operationalData1}*/
 public SecondaryOperationalData setOperationalData1(byte pOperationalData1)
 {
     operationalData1 = pOperationalData1;
     return this;
 }
 
+/** Getter for {@link SecondaryOperationalData#operationalData1}*/
 public byte getOperationalData1()
 {
     return operationalData1; 
 }
 
+/** Setter for {@link SecondaryOperationalData#operationalData2}*/
 public SecondaryOperationalData setOperationalData2(byte pOperationalData2)
 {
     operationalData2 = pOperationalData2;
     return this;
 }
 
+/** Getter for {@link SecondaryOperationalData#operationalData2}*/
 public byte getOperationalData2()
 {
     return operationalData2; 
 }
 
+/** Setter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}*/
 public SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(short pNumberOfIFFFundamentalParameterRecords)
 {
     numberOfIFFFundamentalParameterRecords = pNumberOfIFFFundamentalParameterRecords;
     return this;
 }
 
+/** Getter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}*/
 public short getNumberOfIFFFundamentalParameterRecords()
 {
     return numberOfIFFFundamentalParameterRecords; 

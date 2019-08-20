@@ -36,6 +36,7 @@ public class Munition extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Munition#munitionType}*/
 public Munition setMunitionType(EntityType pMunitionType)
 {
     munitionType = pMunitionType;
     return this;
 }
 
+/** Getter for {@link Munition#munitionType}*/
 public EntityType getMunitionType()
 {
     return munitionType; 
 }
 
+/** Setter for {@link Munition#station}*/
 public Munition setStation(int pStation)
 {
     station = pStation;
     return this;
 }
 
+/** Getter for {@link Munition#station}*/
 public int getStation()
 {
     return station; 
 }
 
+/** Setter for {@link Munition#quantity}*/
 public Munition setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
 }
 
+/** Getter for {@link Munition#quantity}*/
 public short getQuantity()
 {
     return quantity; 
 }
 
+/** Setter for {@link Munition#munitionStatus}*/
 public Munition setMunitionStatus(MunitionExpendableStatus pMunitionStatus)
 {
     munitionStatus = pMunitionStatus;
     return this;
 }
 
+/** Getter for {@link Munition#munitionStatus}*/
 public MunitionExpendableStatus getMunitionStatus()
 {
     return munitionStatus; 
 }
 
+/** Setter for {@link Munition#padding}*/
 public Munition setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link Munition#padding}*/
 public byte getPadding()
 {
     return padding; 

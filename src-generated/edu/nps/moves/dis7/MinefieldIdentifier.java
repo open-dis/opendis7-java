@@ -27,6 +27,7 @@ public class MinefieldIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldIdentifier#simulationAddress}*/
 public MinefieldIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link MinefieldIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link MinefieldIdentifier#minefieldNumber}*/
 public MinefieldIdentifier setMinefieldNumber(short pMinefieldNumber)
 {
     minefieldNumber = pMinefieldNumber;
     return this;
 }
 
+/** Getter for {@link MinefieldIdentifier#minefieldNumber}*/
 public short getMinefieldNumber()
 {
     return minefieldNumber; 

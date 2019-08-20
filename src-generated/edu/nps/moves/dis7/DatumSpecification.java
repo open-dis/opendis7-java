@@ -33,6 +33,7 @@ public class DatumSpecification extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,23 +55,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DatumSpecification#fixedDatumIDList}*/
 public DatumSpecification setFixedDatumIDList(List<FixedDatum> pFixedDatumIDList)
 {
     fixedDatumIDList = pFixedDatumIDList;
     return this;
 }
 
+/** Getter for {@link DatumSpecification#fixedDatumIDList}*/
 public List<FixedDatum> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
 }
 
+/** Setter for {@link DatumSpecification#variableDatumIDList}*/
 public DatumSpecification setVariableDatumIDList(List<VariableDatum> pVariableDatumIDList)
 {
     variableDatumIDList = pVariableDatumIDList;
     return this;
 }
 
+/** Getter for {@link DatumSpecification#variableDatumIDList}*/
 public List<VariableDatum> getVariableDatumIDList()
 {
     return variableDatumIDList; 

@@ -34,6 +34,7 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
     setPduType( DISPDUType.COMMENT );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,23 +57,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CommentPdu#fixedDatums}*/
 public CommentPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 
+/** Getter for {@link CommentPdu#fixedDatums}*/
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
 }
 
+/** Setter for {@link CommentPdu#variableDatums}*/
 public CommentPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 
+/** Getter for {@link CommentPdu#variableDatums}*/
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

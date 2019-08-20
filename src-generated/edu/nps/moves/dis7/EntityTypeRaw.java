@@ -41,6 +41,7 @@ public class EntityTypeRaw extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -57,78 +58,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityTypeRaw#entityKind}*/
 public EntityTypeRaw setEntityKind(EntityKind pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#entityKind}*/
 public EntityKind getEntityKind()
 {
     return entityKind; 
 }
 
+/** Setter for {@link EntityTypeRaw#domain}*/
 public EntityTypeRaw setDomain(byte pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#domain}*/
 public byte getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link EntityTypeRaw#country}*/
 public EntityTypeRaw setCountry(short pCountry)
 {
     country = pCountry;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#country}*/
 public short getCountry()
 {
     return country; 
 }
 
+/** Setter for {@link EntityTypeRaw#category}*/
 public EntityTypeRaw setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link EntityTypeRaw#subCategory}*/
 public EntityTypeRaw setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#subCategory}*/
 public byte getSubCategory()
 {
     return subCategory; 
 }
 
+/** Setter for {@link EntityTypeRaw#specific}*/
 public EntityTypeRaw setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#specific}*/
 public byte getSpecific()
 {
     return specific; 
 }
 
+/** Setter for {@link EntityTypeRaw#extra}*/
 public EntityTypeRaw setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
 }
 
+/** Getter for {@link EntityTypeRaw#extra}*/
 public byte getExtra()
 {
     return extra; 

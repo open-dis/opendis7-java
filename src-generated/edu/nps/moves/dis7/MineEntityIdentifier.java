@@ -27,6 +27,7 @@ public class MineEntityIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MineEntityIdentifier#simulationAddress}*/
 public MineEntityIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link MineEntityIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link MineEntityIdentifier#mineEntityNumber}*/
 public MineEntityIdentifier setMineEntityNumber(short pMineEntityNumber)
 {
     mineEntityNumber = pMineEntityNumber;
     return this;
 }
 
+/** Getter for {@link MineEntityIdentifier#mineEntityNumber}*/
 public short getMineEntityNumber()
 {
     return mineEntityNumber; 

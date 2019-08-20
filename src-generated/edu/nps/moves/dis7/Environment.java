@@ -38,6 +38,7 @@ public class Environment extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -53,56 +54,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Environment#environmentType}*/
 public Environment setEnvironmentType(EnvironmentalProcessRecordType pEnvironmentType)
 {
     environmentType = pEnvironmentType;
     return this;
 }
 
+/** Getter for {@link Environment#environmentType}*/
 public EnvironmentalProcessRecordType getEnvironmentType()
 {
     return environmentType; 
 }
 
+/** Setter for {@link Environment#length}*/
 public Environment setLength(short pLength)
 {
     length = pLength;
     return this;
 }
 
+/** Getter for {@link Environment#length}*/
 public short getLength()
 {
     return length; 
 }
 
+/** Setter for {@link Environment#index}*/
 public Environment setIndex(byte pIndex)
 {
     index = pIndex;
     return this;
 }
 
+/** Getter for {@link Environment#index}*/
 public byte getIndex()
 {
     return index; 
 }
 
+/** Setter for {@link Environment#padding1}*/
 public Environment setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link Environment#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link Environment#geometry}*/
 public Environment setGeometry(byte[] pGeometry)
 {
     geometry = pGeometry;
     return this;
 }
 
+/** Getter for {@link Environment#geometry}*/
 public byte[] getGeometry()
 {
     return geometry; 

@@ -37,6 +37,7 @@ public class RepairResponsePdu extends LogisticsFamilyPdu implements Serializabl
     setPduType( DISPDUType.REPAIR_RESPONSE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -52,56 +53,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RepairResponsePdu#receivingEntityID}*/
 public RepairResponsePdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link RepairResponsePdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link RepairResponsePdu#repairingEntityID}*/
 public RepairResponsePdu setRepairingEntityID(EntityID pRepairingEntityID)
 {
     repairingEntityID = pRepairingEntityID;
     return this;
 }
 
+/** Getter for {@link RepairResponsePdu#repairingEntityID}*/
 public EntityID getRepairingEntityID()
 {
     return repairingEntityID; 
 }
 
+/** Setter for {@link RepairResponsePdu#repairResult}*/
 public RepairResponsePdu setRepairResult(RepairResponseRepairResult pRepairResult)
 {
     repairResult = pRepairResult;
     return this;
 }
 
+/** Getter for {@link RepairResponsePdu#repairResult}*/
 public RepairResponseRepairResult getRepairResult()
 {
     return repairResult; 
 }
 
+/** Setter for {@link RepairResponsePdu#padding1}*/
 public RepairResponsePdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link RepairResponsePdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link RepairResponsePdu#padding2}*/
 public RepairResponsePdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link RepairResponsePdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 

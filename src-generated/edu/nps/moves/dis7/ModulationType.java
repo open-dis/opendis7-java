@@ -33,6 +33,7 @@ public class ModulationType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ModulationType#spreadSpectrum}*/
 public ModulationType setSpreadSpectrum(short pSpreadSpectrum)
 {
     spreadSpectrum = pSpreadSpectrum;
     return this;
 }
 
+/** Getter for {@link ModulationType#spreadSpectrum}*/
 public short getSpreadSpectrum()
 {
     return spreadSpectrum; 
 }
 
+/** Setter for {@link ModulationType#majorModulation}*/
 public ModulationType setMajorModulation(TransmitterMajorModulation pMajorModulation)
 {
     majorModulation = pMajorModulation;
     return this;
 }
 
+/** Getter for {@link ModulationType#majorModulation}*/
 public TransmitterMajorModulation getMajorModulation()
 {
     return majorModulation; 
 }
 
+/** Setter for {@link ModulationType#detail}*/
 public ModulationType setDetail(short pDetail)
 {
     detail = pDetail;
     return this;
 }
 
+/** Getter for {@link ModulationType#detail}*/
 public short getDetail()
 {
     return detail; 
 }
 
+/** Setter for {@link ModulationType#radioSystem}*/
 public ModulationType setRadioSystem(TransmitterModulationTypeSystem pRadioSystem)
 {
     radioSystem = pRadioSystem;
     return this;
 }
 
+/** Getter for {@link ModulationType#radioSystem}*/
 public TransmitterModulationTypeSystem getRadioSystem()
 {
     return radioSystem; 

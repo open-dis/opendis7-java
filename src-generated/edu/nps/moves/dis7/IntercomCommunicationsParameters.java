@@ -32,6 +32,7 @@ public class IntercomCommunicationsParameters extends Object implements Serializ
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -45,34 +46,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IntercomCommunicationsParameters#recordType}*/
 public IntercomCommunicationsParameters setRecordType(IntercomControlRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link IntercomCommunicationsParameters#recordType}*/
 public IntercomControlRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link IntercomCommunicationsParameters#recordLength}*/
 public IntercomCommunicationsParameters setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link IntercomCommunicationsParameters#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link IntercomCommunicationsParameters#recordSpecificField}*/
 public IntercomCommunicationsParameters setRecordSpecificField(byte[] pRecordSpecificField)
 {
     recordSpecificField = pRecordSpecificField;
     return this;
 }
 
+/** Getter for {@link IntercomCommunicationsParameters#recordSpecificField}*/
 public byte[] getRecordSpecificField()
 {
     return recordSpecificField; 

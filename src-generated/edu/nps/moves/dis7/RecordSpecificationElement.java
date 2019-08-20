@@ -40,6 +40,7 @@ public class RecordSpecificationElement extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,67 +57,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RecordSpecificationElement#recordID}*/
 public RecordSpecificationElement setRecordID(VariableRecordTypes pRecordID)
 {
     recordID = pRecordID;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#recordID}*/
 public VariableRecordTypes getRecordID()
 {
     return recordID; 
 }
 
+/** Setter for {@link RecordSpecificationElement#recordSetSerialNumber}*/
 public RecordSpecificationElement setRecordSetSerialNumber(int pRecordSetSerialNumber)
 {
     recordSetSerialNumber = pRecordSetSerialNumber;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#recordSetSerialNumber}*/
 public int getRecordSetSerialNumber()
 {
     return recordSetSerialNumber; 
 }
 
+/** Setter for {@link RecordSpecificationElement#padding}*/
 public RecordSpecificationElement setPadding(int pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#padding}*/
 public int getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link RecordSpecificationElement#recordLength}*/
 public RecordSpecificationElement setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link RecordSpecificationElement#recordCount}*/
 public RecordSpecificationElement setRecordCount(short pRecordCount)
 {
     recordCount = pRecordCount;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#recordCount}*/
 public short getRecordCount()
 {
     return recordCount; 
 }
 
+/** Setter for {@link RecordSpecificationElement#recordValues}*/
 public RecordSpecificationElement setRecordValues(byte[] pRecordValues)
 {
     recordValues = pRecordValues;
     return this;
 }
 
+/** Getter for {@link RecordSpecificationElement#recordValues}*/
 public byte[] getRecordValues()
 {
     return recordValues; 

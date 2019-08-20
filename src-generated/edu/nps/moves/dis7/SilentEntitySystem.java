@@ -33,6 +33,7 @@ public class SilentEntitySystem extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,34 +47,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SilentEntitySystem#numberOfEntities}*/
 public SilentEntitySystem setNumberOfEntities(short pNumberOfEntities)
 {
     numberOfEntities = pNumberOfEntities;
     return this;
 }
 
+/** Getter for {@link SilentEntitySystem#numberOfEntities}*/
 public short getNumberOfEntities()
 {
     return numberOfEntities; 
 }
 
+/** Setter for {@link SilentEntitySystem#entityType}*/
 public SilentEntitySystem setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
 }
 
+/** Getter for {@link SilentEntitySystem#entityType}*/
 public EntityType getEntityType()
 {
     return entityType; 
 }
 
+/** Setter for {@link SilentEntitySystem#appearanceRecordList}*/
 public SilentEntitySystem setAppearanceRecordList(int[] pAppearanceRecordList)
 {
     appearanceRecordList = pAppearanceRecordList;
     return this;
 }
 
+/** Getter for {@link SilentEntitySystem#appearanceRecordList}*/
 public int[] getAppearanceRecordList()
 {
     return appearanceRecordList; 

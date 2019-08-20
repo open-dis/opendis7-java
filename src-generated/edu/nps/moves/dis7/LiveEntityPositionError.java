@@ -25,6 +25,7 @@ public class LiveEntityPositionError extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -36,23 +37,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityPositionError#horizontalError}*/
 public LiveEntityPositionError setHorizontalError(short pHorizontalError)
 {
     horizontalError = pHorizontalError;
     return this;
 }
 
+/** Getter for {@link LiveEntityPositionError#horizontalError}*/
 public short getHorizontalError()
 {
     return horizontalError; 
 }
 
+/** Setter for {@link LiveEntityPositionError#verticalError}*/
 public LiveEntityPositionError setVerticalError(short pVerticalError)
 {
     verticalError = pVerticalError;
     return this;
 }
 
+/** Getter for {@link LiveEntityPositionError#verticalError}*/
 public short getVerticalError()
 {
     return verticalError; 

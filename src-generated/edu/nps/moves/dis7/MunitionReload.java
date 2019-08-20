@@ -39,6 +39,7 @@ public class MunitionReload extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MunitionReload#munitionType}*/
 public MunitionReload setMunitionType(EntityType pMunitionType)
 {
     munitionType = pMunitionType;
     return this;
 }
 
+/** Getter for {@link MunitionReload#munitionType}*/
 public EntityType getMunitionType()
 {
     return munitionType; 
 }
 
+/** Setter for {@link MunitionReload#station}*/
 public MunitionReload setStation(int pStation)
 {
     station = pStation;
     return this;
 }
 
+/** Getter for {@link MunitionReload#station}*/
 public int getStation()
 {
     return station; 
 }
 
+/** Setter for {@link MunitionReload#standardQuantity}*/
 public MunitionReload setStandardQuantity(short pStandardQuantity)
 {
     standardQuantity = pStandardQuantity;
     return this;
 }
 
+/** Getter for {@link MunitionReload#standardQuantity}*/
 public short getStandardQuantity()
 {
     return standardQuantity; 
 }
 
+/** Setter for {@link MunitionReload#maximumQuantity}*/
 public MunitionReload setMaximumQuantity(short pMaximumQuantity)
 {
     maximumQuantity = pMaximumQuantity;
     return this;
 }
 
+/** Getter for {@link MunitionReload#maximumQuantity}*/
 public short getMaximumQuantity()
 {
     return maximumQuantity; 
 }
 
+/** Setter for {@link MunitionReload#standardQuantityReloadTime}*/
 public MunitionReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
 {
     standardQuantityReloadTime = pStandardQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link MunitionReload#standardQuantityReloadTime}*/
 public int getStandardQuantityReloadTime()
 {
     return standardQuantityReloadTime; 
 }
 
+/** Setter for {@link MunitionReload#maximumQuantityReloadTime}*/
 public MunitionReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
 {
     maximumQuantityReloadTime = pMaximumQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link MunitionReload#maximumQuantityReloadTime}*/
 public int getMaximumQuantityReloadTime()
 {
     return maximumQuantityReloadTime; 

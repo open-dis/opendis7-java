@@ -27,6 +27,7 @@ public class EulerAngles extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EulerAngles#psi}*/
 public EulerAngles setPsi(float pPsi)
 {
     psi = pPsi;
     return this;
 }
 
+/** Getter for {@link EulerAngles#psi}*/
 public float getPsi()
 {
     return psi; 
 }
 
+/** Setter for {@link EulerAngles#theta}*/
 public EulerAngles setTheta(float pTheta)
 {
     theta = pTheta;
     return this;
 }
 
+/** Getter for {@link EulerAngles#theta}*/
 public float getTheta()
 {
     return theta; 
 }
 
+/** Setter for {@link EulerAngles#phi}*/
 public EulerAngles setPhi(float pPhi)
 {
     phi = pPhi;
     return this;
 }
 
+/** Getter for {@link EulerAngles#phi}*/
 public float getPhi()
 {
     return phi; 

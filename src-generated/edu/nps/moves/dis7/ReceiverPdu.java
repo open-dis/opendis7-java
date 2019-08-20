@@ -38,6 +38,7 @@ public class ReceiverPdu extends RadioCommunicationsFamilyPdu implements Seriali
     setPduType( DISPDUType.RECEIVER );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ReceiverPdu#header}*/
 public ReceiverPdu setHeader(RadioCommsHeader pHeader)
 {
     header = pHeader;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#header}*/
 public RadioCommsHeader getHeader()
 {
     return header; 
 }
 
+/** Setter for {@link ReceiverPdu#receiverState}*/
 public ReceiverPdu setReceiverState(ReceiverReceiverState pReceiverState)
 {
     receiverState = pReceiverState;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#receiverState}*/
 public ReceiverReceiverState getReceiverState()
 {
     return receiverState; 
 }
 
+/** Setter for {@link ReceiverPdu#padding1}*/
 public ReceiverPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#padding1}*/
 public short getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link ReceiverPdu#receivedPower}*/
 public ReceiverPdu setReceivedPower(float pReceivedPower)
 {
     receivedPower = pReceivedPower;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#receivedPower}*/
 public float getReceivedPower()
 {
     return receivedPower; 
 }
 
+/** Setter for {@link ReceiverPdu#transmitterEntityId}*/
 public ReceiverPdu setTransmitterEntityId(EntityID pTransmitterEntityId)
 {
     transmitterEntityId = pTransmitterEntityId;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#transmitterEntityId}*/
 public EntityID getTransmitterEntityId()
 {
     return transmitterEntityId; 
 }
 
+/** Setter for {@link ReceiverPdu#transmitterRadioId}*/
 public ReceiverPdu setTransmitterRadioId(short pTransmitterRadioId)
 {
     transmitterRadioId = pTransmitterRadioId;
     return this;
 }
 
+/** Getter for {@link ReceiverPdu#transmitterRadioId}*/
 public short getTransmitterRadioId()
 {
     return transmitterRadioId; 

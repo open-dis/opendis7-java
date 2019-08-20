@@ -32,6 +32,7 @@ public class VariableDatum extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -45,34 +46,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link VariableDatum#variableDatumID}*/
 public VariableDatum setVariableDatumID(VariableRecordTypes pVariableDatumID)
 {
     variableDatumID = pVariableDatumID;
     return this;
 }
 
+/** Getter for {@link VariableDatum#variableDatumID}*/
 public VariableRecordTypes getVariableDatumID()
 {
     return variableDatumID; 
 }
 
+/** Setter for {@link VariableDatum#variableDatumLength}*/
 public VariableDatum setVariableDatumLength(int pVariableDatumLength)
 {
     variableDatumLength = pVariableDatumLength;
     return this;
 }
 
+/** Getter for {@link VariableDatum#variableDatumLength}*/
 public int getVariableDatumLength()
 {
     return variableDatumLength; 
 }
 
+/** Setter for {@link VariableDatum#variableDatumValue}*/
 public VariableDatum setVariableDatumValue(byte[] pVariableDatumValue)
 {
     variableDatumValue = pVariableDatumValue;
     return this;
 }
 
+/** Getter for {@link VariableDatum#variableDatumValue}*/
 public byte[] getVariableDatumValue()
 {
     return variableDatumValue; 

@@ -35,6 +35,7 @@ public class DataFilterRecord extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -45,12 +46,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataFilterRecord#bitFlags}*/
 public DataFilterRecord setBitFlags(int pBitFlags)
 {
     bitFlags = pBitFlags;
     return this;
 }
 
+/** Getter for {@link DataFilterRecord#bitFlags}*/
 public int getBitFlags()
 {
     return bitFlags; 

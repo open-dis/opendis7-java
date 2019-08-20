@@ -26,6 +26,7 @@ public class IntercomReferenceID extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,34 +39,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IntercomReferenceID#siteNumber}*/
 public IntercomReferenceID setSiteNumber(short pSiteNumber)
 {
     siteNumber = pSiteNumber;
     return this;
 }
 
+/** Getter for {@link IntercomReferenceID#siteNumber}*/
 public short getSiteNumber()
 {
     return siteNumber; 
 }
 
+/** Setter for {@link IntercomReferenceID#applicationNumber}*/
 public IntercomReferenceID setApplicationNumber(short pApplicationNumber)
 {
     applicationNumber = pApplicationNumber;
     return this;
 }
 
+/** Getter for {@link IntercomReferenceID#applicationNumber}*/
 public short getApplicationNumber()
 {
     return applicationNumber; 
 }
 
+/** Setter for {@link IntercomReferenceID#referenceNumber}*/
 public IntercomReferenceID setReferenceNumber(short pReferenceNumber)
 {
     referenceNumber = pReferenceNumber;
     return this;
 }
 
+/** Getter for {@link IntercomReferenceID#referenceNumber}*/
 public short getReferenceNumber()
 {
     return referenceNumber; 

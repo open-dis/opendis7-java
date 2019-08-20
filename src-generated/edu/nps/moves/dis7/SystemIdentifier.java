@@ -33,6 +33,7 @@ public class SystemIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SystemIdentifier#systemType}*/
 public SystemIdentifier setSystemType(IFFSystemType pSystemType)
 {
     systemType = pSystemType;
     return this;
 }
 
+/** Getter for {@link SystemIdentifier#systemType}*/
 public IFFSystemType getSystemType()
 {
     return systemType; 
 }
 
+/** Setter for {@link SystemIdentifier#systemName}*/
 public SystemIdentifier setSystemName(IFFSystemName pSystemName)
 {
     systemName = pSystemName;
     return this;
 }
 
+/** Getter for {@link SystemIdentifier#systemName}*/
 public IFFSystemName getSystemName()
 {
     return systemName; 
 }
 
+/** Setter for {@link SystemIdentifier#systemMode}*/
 public SystemIdentifier setSystemMode(IFFSystemMode pSystemMode)
 {
     systemMode = pSystemMode;
     return this;
 }
 
+/** Getter for {@link SystemIdentifier#systemMode}*/
 public IFFSystemMode getSystemMode()
 {
     return systemMode; 
 }
 
+/** Setter for {@link SystemIdentifier#changeOptions}*/
 public SystemIdentifier setChangeOptions(ChangeOptions pChangeOptions)
 {
     changeOptions = pChangeOptions;
     return this;
 }
 
+/** Getter for {@link SystemIdentifier#changeOptions}*/
 public ChangeOptions getChangeOptions()
 {
     return changeOptions; 

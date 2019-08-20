@@ -30,6 +30,7 @@ public class TrackJamData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link TrackJamData#entityID}*/
 public TrackJamData setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
 }
 
+/** Getter for {@link TrackJamData#entityID}*/
 public EntityID getEntityID()
 {
     return entityID; 
 }
 
+/** Setter for {@link TrackJamData#emitterNumber}*/
 public TrackJamData setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
 }
 
+/** Getter for {@link TrackJamData#emitterNumber}*/
 public byte getEmitterNumber()
 {
     return emitterNumber; 
 }
 
+/** Setter for {@link TrackJamData#beamNumber}*/
 public TrackJamData setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link TrackJamData#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 

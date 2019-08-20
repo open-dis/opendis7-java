@@ -40,6 +40,7 @@ public class DataQueryPdu extends SimulationManagementFamilyPdu implements Seria
     setPduType( DISPDUType.DATA_QUERY );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataQueryPdu#requestID}*/
 public DataQueryPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link DataQueryPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link DataQueryPdu#timeInterval}*/
 public DataQueryPdu setTimeInterval(int pTimeInterval)
 {
     timeInterval = pTimeInterval;
     return this;
 }
 
+/** Getter for {@link DataQueryPdu#timeInterval}*/
 public int getTimeInterval()
 {
     return timeInterval; 
 }
 
+/** Setter for {@link DataQueryPdu#fixedDatums}*/
 public DataQueryPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
 }
 
+/** Getter for {@link DataQueryPdu#fixedDatums}*/
 public List<FixedDatum> getFixedDatums()
 {
     return fixedDatums; 
 }
 
+/** Setter for {@link DataQueryPdu#variableDatums}*/
 public DataQueryPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
 }
 
+/** Getter for {@link DataQueryPdu#variableDatums}*/
 public List<VariableDatum> getVariableDatums()
 {
     return variableDatums; 

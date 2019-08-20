@@ -70,6 +70,7 @@ public class GriddedDataPdu extends SyntheticEnvironmentFamilyPdu implements Ser
     setPduType( DISPDUType.GRIDDED_DATA );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -104,166 +105,196 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GriddedDataPdu#environmentalSimulationApplicationID}*/
 public GriddedDataPdu setEnvironmentalSimulationApplicationID(SimulationIdentifier pEnvironmentalSimulationApplicationID)
 {
     environmentalSimulationApplicationID = pEnvironmentalSimulationApplicationID;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#environmentalSimulationApplicationID}*/
 public SimulationIdentifier getEnvironmentalSimulationApplicationID()
 {
     return environmentalSimulationApplicationID; 
 }
 
+/** Setter for {@link GriddedDataPdu#fieldNumber}*/
 public GriddedDataPdu setFieldNumber(short pFieldNumber)
 {
     fieldNumber = pFieldNumber;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#fieldNumber}*/
 public short getFieldNumber()
 {
     return fieldNumber; 
 }
 
+/** Setter for {@link GriddedDataPdu#pduNumber}*/
 public GriddedDataPdu setPduNumber(short pPduNumber)
 {
     pduNumber = pPduNumber;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#pduNumber}*/
 public short getPduNumber()
 {
     return pduNumber; 
 }
 
+/** Setter for {@link GriddedDataPdu#pduTotal}*/
 public GriddedDataPdu setPduTotal(short pPduTotal)
 {
     pduTotal = pPduTotal;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#pduTotal}*/
 public short getPduTotal()
 {
     return pduTotal; 
 }
 
+/** Setter for {@link GriddedDataPdu#coordinateSystem}*/
 public GriddedDataPdu setCoordinateSystem(GriddedDataCoordinateSystem pCoordinateSystem)
 {
     coordinateSystem = pCoordinateSystem;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#coordinateSystem}*/
 public GriddedDataCoordinateSystem getCoordinateSystem()
 {
     return coordinateSystem; 
 }
 
+/** Setter for {@link GriddedDataPdu#constantGrid}*/
 public GriddedDataPdu setConstantGrid(GriddedDataConstantGrid pConstantGrid)
 {
     constantGrid = pConstantGrid;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#constantGrid}*/
 public GriddedDataConstantGrid getConstantGrid()
 {
     return constantGrid; 
 }
 
+/** Setter for {@link GriddedDataPdu#environmentType}*/
 public GriddedDataPdu setEnvironmentType(EntityType pEnvironmentType)
 {
     environmentType = pEnvironmentType;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#environmentType}*/
 public EntityType getEnvironmentType()
 {
     return environmentType; 
 }
 
+/** Setter for {@link GriddedDataPdu#orientation}*/
 public GriddedDataPdu setOrientation(EulerAngles pOrientation)
 {
     orientation = pOrientation;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#orientation}*/
 public EulerAngles getOrientation()
 {
     return orientation; 
 }
 
+/** Setter for {@link GriddedDataPdu#sampleTime}*/
 public GriddedDataPdu setSampleTime(ClockTime pSampleTime)
 {
     sampleTime = pSampleTime;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#sampleTime}*/
 public ClockTime getSampleTime()
 {
     return sampleTime; 
 }
 
+/** Setter for {@link GriddedDataPdu#totalValues}*/
 public GriddedDataPdu setTotalValues(int pTotalValues)
 {
     totalValues = pTotalValues;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#totalValues}*/
 public int getTotalValues()
 {
     return totalValues; 
 }
 
+/** Setter for {@link GriddedDataPdu#vectorDimension}*/
 public GriddedDataPdu setVectorDimension(byte pVectorDimension)
 {
     vectorDimension = pVectorDimension;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#vectorDimension}*/
 public byte getVectorDimension()
 {
     return vectorDimension; 
 }
 
+/** Setter for {@link GriddedDataPdu#padding1}*/
 public GriddedDataPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link GriddedDataPdu#padding2}*/
 public GriddedDataPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link GriddedDataPdu#gridAxisDescriptors}*/
 public GriddedDataPdu setGridAxisDescriptors(List<GridAxisDescriptor> pGridAxisDescriptors)
 {
     gridAxisDescriptors = pGridAxisDescriptors;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#gridAxisDescriptors}*/
 public List<GridAxisDescriptor> getGridAxisDescriptors()
 {
     return gridAxisDescriptors; 
 }
 
+/** Setter for {@link GriddedDataPdu#gridDataRecords}*/
 public GriddedDataPdu setGridDataRecords(List<GridData> pGridDataRecords)
 {
     gridDataRecords = pGridDataRecords;
     return this;
 }
 
+/** Getter for {@link GriddedDataPdu#gridDataRecords}*/
 public List<GridData> getGridDataRecords()
 {
     return gridDataRecords; 

@@ -33,6 +33,7 @@ public class DataQueryDatumSpecification extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,23 +55,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataQueryDatumSpecification#fixedDatumIDList}*/
 public DataQueryDatumSpecification setFixedDatumIDList(List<UnsignedDISInteger> pFixedDatumIDList)
 {
     fixedDatumIDList = pFixedDatumIDList;
     return this;
 }
 
+/** Getter for {@link DataQueryDatumSpecification#fixedDatumIDList}*/
 public List<UnsignedDISInteger> getFixedDatumIDList()
 {
     return fixedDatumIDList; 
 }
 
+/** Setter for {@link DataQueryDatumSpecification#variableDatumIDList}*/
 public DataQueryDatumSpecification setVariableDatumIDList(List<UnsignedDISInteger> pVariableDatumIDList)
 {
     variableDatumIDList = pVariableDatumIDList;
     return this;
 }
 
+/** Getter for {@link DataQueryDatumSpecification#variableDatumIDList}*/
 public List<UnsignedDISInteger> getVariableDatumIDList()
 {
     return variableDatumIDList; 

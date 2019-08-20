@@ -27,6 +27,7 @@ public class NamedLocationIdentification extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link NamedLocationIdentification#stationName}*/
 public NamedLocationIdentification setStationName(IsPartOfStationName pStationName)
 {
     stationName = pStationName;
     return this;
 }
 
+/** Getter for {@link NamedLocationIdentification#stationName}*/
 public IsPartOfStationName getStationName()
 {
     return stationName; 
 }
 
+/** Setter for {@link NamedLocationIdentification#stationNumber}*/
 public NamedLocationIdentification setStationNumber(short pStationNumber)
 {
     stationNumber = pStationNumber;
     return this;
 }
 
+/** Getter for {@link NamedLocationIdentification#stationNumber}*/
 public short getStationNumber()
 {
     return stationNumber; 

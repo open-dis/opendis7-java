@@ -27,6 +27,7 @@ public class LiveEntityOrientationError extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityOrientationError#azimuthError}*/
 public LiveEntityOrientationError setAzimuthError(short pAzimuthError)
 {
     azimuthError = pAzimuthError;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientationError#azimuthError}*/
 public short getAzimuthError()
 {
     return azimuthError; 
 }
 
+/** Setter for {@link LiveEntityOrientationError#elevationError}*/
 public LiveEntityOrientationError setElevationError(short pElevationError)
 {
     elevationError = pElevationError;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientationError#elevationError}*/
 public short getElevationError()
 {
     return elevationError; 
 }
 
+/** Setter for {@link LiveEntityOrientationError#rotationError}*/
 public LiveEntityOrientationError setRotationError(short pRotationError)
 {
     rotationError = pRotationError;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientationError#rotationError}*/
 public short getRotationError()
 {
     return rotationError; 

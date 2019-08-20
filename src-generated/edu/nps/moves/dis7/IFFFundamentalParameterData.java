@@ -42,6 +42,7 @@ public class IFFFundamentalParameterData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -58,78 +59,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IFFFundamentalParameterData#erp}*/
 public IFFFundamentalParameterData setErp(float pErp)
 {
     erp = pErp;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#erp}*/
 public float getErp()
 {
     return erp; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#frequency}*/
 public IFFFundamentalParameterData setFrequency(float pFrequency)
 {
     frequency = pFrequency;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#frequency}*/
 public float getFrequency()
 {
     return frequency; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#pgrf}*/
 public IFFFundamentalParameterData setPgrf(float pPgrf)
 {
     pgrf = pPgrf;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#pgrf}*/
 public float getPgrf()
 {
     return pgrf; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#pulseWidth}*/
 public IFFFundamentalParameterData setPulseWidth(float pPulseWidth)
 {
     pulseWidth = pPulseWidth;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#pulseWidth}*/
 public float getPulseWidth()
 {
     return pulseWidth; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#burstLength}*/
 public IFFFundamentalParameterData setBurstLength(int pBurstLength)
 {
     burstLength = pBurstLength;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#burstLength}*/
 public int getBurstLength()
 {
     return burstLength; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#applicableModes}*/
 public IFFFundamentalParameterData setApplicableModes(IFFApplicableModes pApplicableModes)
 {
     applicableModes = pApplicableModes;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#applicableModes}*/
 public IFFApplicableModes getApplicableModes()
 {
     return applicableModes; 
 }
 
+/** Setter for {@link IFFFundamentalParameterData#systemSpecificData}*/
 public IFFFundamentalParameterData setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
 }
 
+/** Getter for {@link IFFFundamentalParameterData#systemSpecificData}*/
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

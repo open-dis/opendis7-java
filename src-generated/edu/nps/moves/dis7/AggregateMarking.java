@@ -27,6 +27,7 @@ public class AggregateMarking extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AggregateMarking#characterSet}*/
 public AggregateMarking setCharacterSet(EntityMarkingCharacterSet pCharacterSet)
 {
     characterSet = pCharacterSet;
     return this;
 }
 
+/** Getter for {@link AggregateMarking#characterSet}*/
 public EntityMarkingCharacterSet getCharacterSet()
 {
     return characterSet; 
 }
 
+/** Setter for {@link AggregateMarking#characters}*/
 public AggregateMarking setCharacters(byte[] pCharacters)
 {
     characters = pCharacters;
     return this;
 }
 
+/** Getter for {@link AggregateMarking#characters}*/
 public byte[] getCharacters()
 {
     return characters; 

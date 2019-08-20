@@ -32,6 +32,7 @@ public class CreateEntityRPdu extends SimulationManagementWithReliabilityFamilyP
     setPduType( DISPDUType.CREATE_ENTITY_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CreateEntityRPdu#requiredReliabilityService}*/
 public CreateEntityRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link CreateEntityRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link CreateEntityRPdu#pad1}*/
 public CreateEntityRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link CreateEntityRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link CreateEntityRPdu#pad2}*/
 public CreateEntityRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link CreateEntityRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link CreateEntityRPdu#requestID}*/
 public CreateEntityRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link CreateEntityRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

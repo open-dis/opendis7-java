@@ -34,6 +34,7 @@ public class ExpendableReload extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -49,67 +50,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ExpendableReload#expendable}*/
 public ExpendableReload setExpendable(EntityType pExpendable)
 {
     expendable = pExpendable;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#expendable}*/
 public EntityType getExpendable()
 {
     return expendable; 
 }
 
+/** Setter for {@link ExpendableReload#station}*/
 public ExpendableReload setStation(int pStation)
 {
     station = pStation;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#station}*/
 public int getStation()
 {
     return station; 
 }
 
+/** Setter for {@link ExpendableReload#standardQuantity}*/
 public ExpendableReload setStandardQuantity(short pStandardQuantity)
 {
     standardQuantity = pStandardQuantity;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#standardQuantity}*/
 public short getStandardQuantity()
 {
     return standardQuantity; 
 }
 
+/** Setter for {@link ExpendableReload#maximumQuantity}*/
 public ExpendableReload setMaximumQuantity(short pMaximumQuantity)
 {
     maximumQuantity = pMaximumQuantity;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#maximumQuantity}*/
 public short getMaximumQuantity()
 {
     return maximumQuantity; 
 }
 
+/** Setter for {@link ExpendableReload#standardQuantityReloadTime}*/
 public ExpendableReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
 {
     standardQuantityReloadTime = pStandardQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#standardQuantityReloadTime}*/
 public int getStandardQuantityReloadTime()
 {
     return standardQuantityReloadTime; 
 }
 
+/** Setter for {@link ExpendableReload#maximumQuantityReloadTime}*/
 public ExpendableReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
 {
     maximumQuantityReloadTime = pMaximumQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link ExpendableReload#maximumQuantityReloadTime}*/
 public int getMaximumQuantityReloadTime()
 {
     return maximumQuantityReloadTime; 

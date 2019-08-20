@@ -54,6 +54,7 @@ public class LinearSegmentParameter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -74,122 +75,144 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LinearSegmentParameter#segmentNumber}*/
 public LinearSegmentParameter setSegmentNumber(byte pSegmentNumber)
 {
     segmentNumber = pSegmentNumber;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentNumber}*/
 public byte getSegmentNumber()
 {
     return segmentNumber; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentModification}*/
 public LinearSegmentParameter setSegmentModification(ObjectStateModificationLinearObject pSegmentModification)
 {
     segmentModification = pSegmentModification;
     return this;
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentModification}*/
 public ObjectStateModificationLinearObject getSegmentModification()
 {
     return segmentModification; 
 }
 
+/** Setter for {@link LinearSegmentParameter#generalSegmentAppearance}*/
 public LinearSegmentParameter setGeneralSegmentAppearance(ObjectStateAppearanceGeneral pGeneralSegmentAppearance)
 {
     generalSegmentAppearance = pGeneralSegmentAppearance;
     return this;
 }
 
+/** Setter for {@link LinearSegmentParameter#generalSegmentAppearance}*/
 public ObjectStateAppearanceGeneral getGeneralSegmentAppearance()
 {
     return generalSegmentAppearance; 
 }
 
+/** Setter for {@link LinearSegmentParameter#specificSegmentAppearance}*/
 public LinearSegmentParameter setSpecificSegmentAppearance(int pSpecificSegmentAppearance)
 {
     specificSegmentAppearance = pSpecificSegmentAppearance;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#specificSegmentAppearance}*/
 public int getSpecificSegmentAppearance()
 {
     return specificSegmentAppearance; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentLocation}*/
 public LinearSegmentParameter setSegmentLocation(Vector3Double pSegmentLocation)
 {
     segmentLocation = pSegmentLocation;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentLocation}*/
 public Vector3Double getSegmentLocation()
 {
     return segmentLocation; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentOrientation}*/
 public LinearSegmentParameter setSegmentOrientation(EulerAngles pSegmentOrientation)
 {
     segmentOrientation = pSegmentOrientation;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentOrientation}*/
 public EulerAngles getSegmentOrientation()
 {
     return segmentOrientation; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentLength}*/
 public LinearSegmentParameter setSegmentLength(float pSegmentLength)
 {
     segmentLength = pSegmentLength;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentLength}*/
 public float getSegmentLength()
 {
     return segmentLength; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentWidth}*/
 public LinearSegmentParameter setSegmentWidth(float pSegmentWidth)
 {
     segmentWidth = pSegmentWidth;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentWidth}*/
 public float getSegmentWidth()
 {
     return segmentWidth; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentHeight}*/
 public LinearSegmentParameter setSegmentHeight(float pSegmentHeight)
 {
     segmentHeight = pSegmentHeight;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentHeight}*/
 public float getSegmentHeight()
 {
     return segmentHeight; 
 }
 
+/** Setter for {@link LinearSegmentParameter#segmentDepth}*/
 public LinearSegmentParameter setSegmentDepth(float pSegmentDepth)
 {
     segmentDepth = pSegmentDepth;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#segmentDepth}*/
 public float getSegmentDepth()
 {
     return segmentDepth; 
 }
 
+/** Setter for {@link LinearSegmentParameter#padding}*/
 public LinearSegmentParameter setPadding(int pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link LinearSegmentParameter#padding}*/
 public int getPadding()
 {
     return padding; 

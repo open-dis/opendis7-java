@@ -51,6 +51,7 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
     setPduType( DISPDUType.ATTRIBUTE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -75,100 +76,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AttributePdu#originatingSimulationAddress}*/
 public AttributePdu setOriginatingSimulationAddress(SimulationAddress pOriginatingSimulationAddress)
 {
     originatingSimulationAddress = pOriginatingSimulationAddress;
     return this;
 }
 
+/** Getter for {@link AttributePdu#originatingSimulationAddress}*/
 public SimulationAddress getOriginatingSimulationAddress()
 {
     return originatingSimulationAddress; 
 }
 
+/** Setter for {@link AttributePdu#padding1}*/
 public AttributePdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link AttributePdu#padding1}*/
 public int getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link AttributePdu#padding2}*/
 public AttributePdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link AttributePdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link AttributePdu#attributeRecordPduType}*/
 public AttributePdu setAttributeRecordPduType(DISPDUType pAttributeRecordPduType)
 {
     attributeRecordPduType = pAttributeRecordPduType;
     return this;
 }
 
+/** Getter for {@link AttributePdu#attributeRecordPduType}*/
 public DISPDUType getAttributeRecordPduType()
 {
     return attributeRecordPduType; 
 }
 
+/** Setter for {@link AttributePdu#attributeRecordProtocolVersion}*/
 public AttributePdu setAttributeRecordProtocolVersion(DISProtocolFamily pAttributeRecordProtocolVersion)
 {
     attributeRecordProtocolVersion = pAttributeRecordProtocolVersion;
     return this;
 }
 
+/** Getter for {@link AttributePdu#attributeRecordProtocolVersion}*/
 public DISProtocolFamily getAttributeRecordProtocolVersion()
 {
     return attributeRecordProtocolVersion; 
 }
 
+/** Setter for {@link AttributePdu#masterAttributeRecordType}*/
 public AttributePdu setMasterAttributeRecordType(VariableRecordTypes pMasterAttributeRecordType)
 {
     masterAttributeRecordType = pMasterAttributeRecordType;
     return this;
 }
 
+/** Getter for {@link AttributePdu#masterAttributeRecordType}*/
 public VariableRecordTypes getMasterAttributeRecordType()
 {
     return masterAttributeRecordType; 
 }
 
+/** Setter for {@link AttributePdu#actionCode}*/
 public AttributePdu setActionCode(DISAttributeActionCode pActionCode)
 {
     actionCode = pActionCode;
     return this;
 }
 
+/** Getter for {@link AttributePdu#actionCode}*/
 public DISAttributeActionCode getActionCode()
 {
     return actionCode; 
 }
 
+/** Setter for {@link AttributePdu#padding3}*/
 public AttributePdu setPadding3(byte pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link AttributePdu#padding3}*/
 public byte getPadding3()
 {
     return padding3; 
 }
 
+/** Setter for {@link AttributePdu#attributeRecordSets}*/
 public AttributePdu setAttributeRecordSets(List<AttributeRecordSet> pAttributeRecordSets)
 {
     attributeRecordSets = pAttributeRecordSets;
     return this;
 }
 
+/** Getter for {@link AttributePdu#attributeRecordSets}*/
 public List<AttributeRecordSet> getAttributeRecordSets()
 {
     return attributeRecordSets; 

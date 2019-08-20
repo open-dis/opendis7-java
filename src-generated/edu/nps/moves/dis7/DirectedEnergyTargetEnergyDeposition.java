@@ -30,6 +30,7 @@ public class DirectedEnergyTargetEnergyDeposition extends Object implements Seri
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,34 +43,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DirectedEnergyTargetEnergyDeposition#targetEntityID}*/
 public DirectedEnergyTargetEnergyDeposition setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyTargetEnergyDeposition#targetEntityID}*/
 public EntityID getTargetEntityID()
 {
     return targetEntityID; 
 }
 
+/** Setter for {@link DirectedEnergyTargetEnergyDeposition#padding}*/
 public DirectedEnergyTargetEnergyDeposition setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyTargetEnergyDeposition#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link DirectedEnergyTargetEnergyDeposition#peakIrradiance}*/
 public DirectedEnergyTargetEnergyDeposition setPeakIrradiance(float pPeakIrradiance)
 {
     peakIrradiance = pPeakIrradiance;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyTargetEnergyDeposition#peakIrradiance}*/
 public float getPeakIrradiance()
 {
     return peakIrradiance; 

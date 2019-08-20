@@ -36,6 +36,7 @@ public class EEFundamentalParameterData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EEFundamentalParameterData#frequency}*/
 public EEFundamentalParameterData setFrequency(float pFrequency)
 {
     frequency = pFrequency;
     return this;
 }
 
+/** Getter for {@link EEFundamentalParameterData#frequency}*/
 public float getFrequency()
 {
     return frequency; 
 }
 
+/** Setter for {@link EEFundamentalParameterData#frequencyRange}*/
 public EEFundamentalParameterData setFrequencyRange(float pFrequencyRange)
 {
     frequencyRange = pFrequencyRange;
     return this;
 }
 
+/** Getter for {@link EEFundamentalParameterData#frequencyRange}*/
 public float getFrequencyRange()
 {
     return frequencyRange; 
 }
 
+/** Setter for {@link EEFundamentalParameterData#effectiveRadiatedPower}*/
 public EEFundamentalParameterData setEffectiveRadiatedPower(float pEffectiveRadiatedPower)
 {
     effectiveRadiatedPower = pEffectiveRadiatedPower;
     return this;
 }
 
+/** Getter for {@link EEFundamentalParameterData#effectiveRadiatedPower}*/
 public float getEffectiveRadiatedPower()
 {
     return effectiveRadiatedPower; 
 }
 
+/** Setter for {@link EEFundamentalParameterData#pulseRepetitionFrequency}*/
 public EEFundamentalParameterData setPulseRepetitionFrequency(float pPulseRepetitionFrequency)
 {
     pulseRepetitionFrequency = pPulseRepetitionFrequency;
     return this;
 }
 
+/** Getter for {@link EEFundamentalParameterData#pulseRepetitionFrequency}*/
 public float getPulseRepetitionFrequency()
 {
     return pulseRepetitionFrequency; 
 }
 
+/** Setter for {@link EEFundamentalParameterData#pulseWidth}*/
 public EEFundamentalParameterData setPulseWidth(float pPulseWidth)
 {
     pulseWidth = pPulseWidth;
     return this;
 }
 
+/** Getter for {@link EEFundamentalParameterData#pulseWidth}*/
 public float getPulseWidth()
 {
     return pulseWidth; 

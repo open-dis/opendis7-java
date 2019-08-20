@@ -24,6 +24,7 @@ public class MineEmplacementTime extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -35,23 +36,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MineEmplacementTime#hour}*/
 public MineEmplacementTime setHour(int pHour)
 {
     hour = pHour;
     return this;
 }
 
+/** Getter for {@link MineEmplacementTime#hour}*/
 public int getHour()
 {
     return hour; 
 }
 
+/** Setter for {@link MineEmplacementTime#timePastTheHour}*/
 public MineEmplacementTime setTimePastTheHour(int pTimePastTheHour)
 {
     timePastTheHour = pTimePastTheHour;
     return this;
 }
 
+/** Getter for {@link MineEmplacementTime#timePastTheHour}*/
 public int getTimePastTheHour()
 {
     return timePastTheHour; 

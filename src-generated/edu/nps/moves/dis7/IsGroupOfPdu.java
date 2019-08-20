@@ -43,6 +43,7 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
     setPduType( DISPDUType.ISGROUPOF );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,67 +65,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IsGroupOfPdu#groupEntityID}*/
 public IsGroupOfPdu setGroupEntityID(EntityID pGroupEntityID)
 {
     groupEntityID = pGroupEntityID;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#groupEntityID}*/
 public EntityID getGroupEntityID()
 {
     return groupEntityID; 
 }
 
+/** Setter for {@link IsGroupOfPdu#groupedEntityCategory}*/
 public IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntityCategory pGroupedEntityCategory)
 {
     groupedEntityCategory = pGroupedEntityCategory;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#groupedEntityCategory}*/
 public IsGroupOfGroupedEntityCategory getGroupedEntityCategory()
 {
     return groupedEntityCategory; 
 }
 
+/** Setter for {@link IsGroupOfPdu#pad}*/
 public IsGroupOfPdu setPad(int pPad)
 {
     pad = pPad;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#pad}*/
 public int getPad()
 {
     return pad; 
 }
 
+/** Setter for {@link IsGroupOfPdu#latitude}*/
 public IsGroupOfPdu setLatitude(double pLatitude)
 {
     latitude = pLatitude;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#latitude}*/
 public double getLatitude()
 {
     return latitude; 
 }
 
+/** Setter for {@link IsGroupOfPdu#longitude}*/
 public IsGroupOfPdu setLongitude(double pLongitude)
 {
     longitude = pLongitude;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#longitude}*/
 public double getLongitude()
 {
     return longitude; 
 }
 
+/** Setter for {@link IsGroupOfPdu#groupedEntityDescriptions}*/
 public IsGroupOfPdu setGroupedEntityDescriptions(List<VariableDatum> pGroupedEntityDescriptions)
 {
     groupedEntityDescriptions = pGroupedEntityDescriptions;
     return this;
 }
 
+/** Getter for {@link IsGroupOfPdu#groupedEntityDescriptions}*/
 public List<VariableDatum> getGroupedEntityDescriptions()
 {
     return groupedEntityDescriptions; 

@@ -49,6 +49,7 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
     setPduType( DISPDUType.ACTION_REQUEST_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -76,78 +77,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ActionRequestRPdu#requiredReliabilityService}*/
 public ActionRequestRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link ActionRequestRPdu#pad1}*/
 public ActionRequestRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link ActionRequestRPdu#pad2}*/
 public ActionRequestRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link ActionRequestRPdu#requestID}*/
 public ActionRequestRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link ActionRequestRPdu#actionID}*/
 public ActionRequestRPdu setActionID(ActionRequestActionID pActionID)
 {
     actionID = pActionID;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#actionID}*/
 public ActionRequestActionID getActionID()
 {
     return actionID; 
 }
 
+/** Setter for {@link ActionRequestRPdu#fixedDatumRecords}*/
 public ActionRequestRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link ActionRequestRPdu#variableDatumRecords}*/
 public ActionRequestRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link ActionRequestRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

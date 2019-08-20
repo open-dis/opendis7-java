@@ -29,6 +29,7 @@ public class JammingTechnique extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -42,45 +43,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link JammingTechnique#kind}*/
 public JammingTechnique setKind(byte pKind)
 {
     kind = pKind;
     return this;
 }
 
+/** Getter for {@link JammingTechnique#kind}*/
 public byte getKind()
 {
     return kind; 
 }
 
+/** Setter for {@link JammingTechnique#category}*/
 public JammingTechnique setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link JammingTechnique#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link JammingTechnique#subCategory}*/
 public JammingTechnique setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
 }
 
+/** Getter for {@link JammingTechnique#subCategory}*/
 public byte getSubCategory()
 {
     return subCategory; 
 }
 
+/** Setter for {@link JammingTechnique#specific}*/
 public JammingTechnique setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
 }
 
+/** Getter for {@link JammingTechnique#specific}*/
 public byte getSpecific()
 {
     return specific; 

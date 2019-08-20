@@ -84,6 +84,7 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
     setPduType( DISPDUType.AGGREGATE_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -135,166 +136,196 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AggregateStatePdu#aggregateID}*/
 public AggregateStatePdu setAggregateID(AggregateIdentifier pAggregateID)
 {
     aggregateID = pAggregateID;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#aggregateID}*/
 public AggregateIdentifier getAggregateID()
 {
     return aggregateID; 
 }
 
+/** Setter for {@link AggregateStatePdu#forceID}*/
 public AggregateStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#forceID}*/
 public ForceID getForceID()
 {
     return forceID; 
 }
 
+/** Setter for {@link AggregateStatePdu#aggregateState}*/
 public AggregateStatePdu setAggregateState(AggregateStateAggregateState pAggregateState)
 {
     aggregateState = pAggregateState;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#aggregateState}*/
 public AggregateStateAggregateState getAggregateState()
 {
     return aggregateState; 
 }
 
+/** Setter for {@link AggregateStatePdu#aggregateType}*/
 public AggregateStatePdu setAggregateType(AggregateType pAggregateType)
 {
     aggregateType = pAggregateType;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#aggregateType}*/
 public AggregateType getAggregateType()
 {
     return aggregateType; 
 }
 
+/** Setter for {@link AggregateStatePdu#formation}*/
 public AggregateStatePdu setFormation(AggregateStateFormation pFormation)
 {
     formation = pFormation;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#formation}*/
 public AggregateStateFormation getFormation()
 {
     return formation; 
 }
 
+/** Setter for {@link AggregateStatePdu#aggregateMarking}*/
 public AggregateStatePdu setAggregateMarking(AggregateMarking pAggregateMarking)
 {
     aggregateMarking = pAggregateMarking;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#aggregateMarking}*/
 public AggregateMarking getAggregateMarking()
 {
     return aggregateMarking; 
 }
 
+/** Setter for {@link AggregateStatePdu#dimensions}*/
 public AggregateStatePdu setDimensions(Vector3Float pDimensions)
 {
     dimensions = pDimensions;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#dimensions}*/
 public Vector3Float getDimensions()
 {
     return dimensions; 
 }
 
+/** Setter for {@link AggregateStatePdu#orientation}*/
 public AggregateStatePdu setOrientation(Vector3Float pOrientation)
 {
     orientation = pOrientation;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#orientation}*/
 public Vector3Float getOrientation()
 {
     return orientation; 
 }
 
+/** Setter for {@link AggregateStatePdu#centerOfMass}*/
 public AggregateStatePdu setCenterOfMass(Vector3Double pCenterOfMass)
 {
     centerOfMass = pCenterOfMass;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#centerOfMass}*/
 public Vector3Double getCenterOfMass()
 {
     return centerOfMass; 
 }
 
+/** Setter for {@link AggregateStatePdu#velocity}*/
 public AggregateStatePdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#velocity}*/
 public Vector3Float getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link AggregateStatePdu#aggregateIDList}*/
 public AggregateStatePdu setAggregateIDList(List<AggregateIdentifier> pAggregateIDList)
 {
     aggregateIDList = pAggregateIDList;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#aggregateIDList}*/
 public List<AggregateIdentifier> getAggregateIDList()
 {
     return aggregateIDList; 
 }
 
+/** Setter for {@link AggregateStatePdu#entityIDList}*/
 public AggregateStatePdu setEntityIDList(List<EntityID> pEntityIDList)
 {
     entityIDList = pEntityIDList;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#entityIDList}*/
 public List<EntityID> getEntityIDList()
 {
     return entityIDList; 
 }
 
+/** Setter for {@link AggregateStatePdu#silentAggregateSystemList}*/
 public AggregateStatePdu setSilentAggregateSystemList(List<EntityType> pSilentAggregateSystemList)
 {
     silentAggregateSystemList = pSilentAggregateSystemList;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#silentAggregateSystemList}*/
 public List<EntityType> getSilentAggregateSystemList()
 {
     return silentAggregateSystemList; 
 }
 
+/** Setter for {@link AggregateStatePdu#silentEntitySystemList}*/
 public AggregateStatePdu setSilentEntitySystemList(List<EntityType> pSilentEntitySystemList)
 {
     silentEntitySystemList = pSilentEntitySystemList;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#silentEntitySystemList}*/
 public List<EntityType> getSilentEntitySystemList()
 {
     return silentEntitySystemList; 
 }
 
+/** Setter for {@link AggregateStatePdu#variableDatumList}*/
 public AggregateStatePdu setVariableDatumList(List<VariableDatum> pVariableDatumList)
 {
     variableDatumList = pVariableDatumList;
     return this;
 }
 
+/** Getter for {@link AggregateStatePdu#variableDatumList}*/
 public List<VariableDatum> getVariableDatumList()
 {
     return variableDatumList; 

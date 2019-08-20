@@ -41,6 +41,7 @@ public class AggregateType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -57,78 +58,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AggregateType#aggregateKind}*/
 public AggregateType setAggregateKind(AggregateStateAggregateKind pAggregateKind)
 {
     aggregateKind = pAggregateKind;
     return this;
 }
 
+/** Getter for {@link AggregateType#aggregateKind}*/
 public AggregateStateAggregateKind getAggregateKind()
 {
     return aggregateKind; 
 }
 
+/** Setter for {@link AggregateType#domain}*/
 public AggregateType setDomain(PlatformDomain pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link AggregateType#domain}*/
 public PlatformDomain getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link AggregateType#country}*/
 public AggregateType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
 }
 
+/** Getter for {@link AggregateType#country}*/
 public Country getCountry()
 {
     return country; 
 }
 
+/** Setter for {@link AggregateType#category}*/
 public AggregateType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link AggregateType#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link AggregateType#subcategory}*/
 public AggregateType setSubcategory(AggregateStateSubcategory pSubcategory)
 {
     subcategory = pSubcategory;
     return this;
 }
 
+/** Getter for {@link AggregateType#subcategory}*/
 public AggregateStateSubcategory getSubcategory()
 {
     return subcategory; 
 }
 
+/** Setter for {@link AggregateType#specificInfo}*/
 public AggregateType setSpecificInfo(AggregateStateSpecific pSpecificInfo)
 {
     specificInfo = pSpecificInfo;
     return this;
 }
 
+/** Getter for {@link AggregateType#specificInfo}*/
 public AggregateStateSpecific getSpecificInfo()
 {
     return specificInfo; 
 }
 
+/** Setter for {@link AggregateType#extra}*/
 public AggregateType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
 }
 
+/** Getter for {@link AggregateType#extra}*/
 public byte getExtra()
 {
     return extra; 

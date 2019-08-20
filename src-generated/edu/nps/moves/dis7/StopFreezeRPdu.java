@@ -40,6 +40,7 @@ public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu
     setPduType( DISPDUType.STOP_FREEZE_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -56,67 +57,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link StopFreezeRPdu#realWorldTime}*/
 public StopFreezeRPdu setRealWorldTime(ClockTime pRealWorldTime)
 {
     realWorldTime = pRealWorldTime;
     return this;
 }
 
+/** Getter for {@link StopFreezeRPdu#realWorldTime}*/
 public ClockTime getRealWorldTime()
 {
     return realWorldTime; 
 }
 
+/** Setter for {@link StopFreezeRPdu#reason}*/
 public StopFreezeRPdu setReason(StopFreezeReason pReason)
 {
     reason = pReason;
     return this;
 }
 
+/** Getter for {@link StopFreezeRPdu#reason}*/
 public StopFreezeReason getReason()
 {
     return reason; 
 }
 
+/** Setter for {@link StopFreezeRPdu#frozenBehavior}*/
 public StopFreezeRPdu setFrozenBehavior(StopFreezeFrozenBehavior pFrozenBehavior)
 {
     frozenBehavior = pFrozenBehavior;
     return this;
 }
 
+/** Setter for {@link StopFreezeRPdu#frozenBehavior}*/
 public StopFreezeFrozenBehavior getFrozenBehavior()
 {
     return frozenBehavior; 
 }
 
+/** Setter for {@link StopFreezeRPdu#requiredReliablityService}*/
 public StopFreezeRPdu setRequiredReliablityService(RequiredReliabilityService pRequiredReliablityService)
 {
     requiredReliablityService = pRequiredReliablityService;
     return this;
 }
 
+/** Getter for {@link StopFreezeRPdu#requiredReliablityService}*/
 public RequiredReliabilityService getRequiredReliablityService()
 {
     return requiredReliablityService; 
 }
 
+/** Setter for {@link StopFreezeRPdu#pad1}*/
 public StopFreezeRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link StopFreezeRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link StopFreezeRPdu#requestID}*/
 public StopFreezeRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link StopFreezeRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

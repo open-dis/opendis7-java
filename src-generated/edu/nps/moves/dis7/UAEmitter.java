@@ -36,6 +36,7 @@ public class UAEmitter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -55,56 +56,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UAEmitter#systemDataLength}*/
 public UAEmitter setSystemDataLength(byte pSystemDataLength)
 {
     systemDataLength = pSystemDataLength;
     return this;
 }
 
+/** Getter for {@link UAEmitter#systemDataLength}*/
 public byte getSystemDataLength()
 {
     return systemDataLength; 
 }
 
+/** Setter for {@link UAEmitter#padding}*/
 public UAEmitter setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link UAEmitter#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link UAEmitter#acousticEmitter}*/
 public UAEmitter setAcousticEmitter(AcousticEmitter pAcousticEmitter)
 {
     acousticEmitter = pAcousticEmitter;
     return this;
 }
 
+/** Getter for {@link UAEmitter#acousticEmitter}*/
 public AcousticEmitter getAcousticEmitter()
 {
     return acousticEmitter; 
 }
 
+/** Setter for {@link UAEmitter#location}*/
 public UAEmitter setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
 }
 
+/** Getter for {@link UAEmitter#location}*/
 public Vector3Float getLocation()
 {
     return location; 
 }
 
+/** Setter for {@link UAEmitter#beams}*/
 public UAEmitter setBeams(List<UABeam> pBeams)
 {
     beams = pBeams;
     return this;
 }
 
+/** Getter for {@link UAEmitter#beams}*/
 public List<UABeam> getBeams()
 {
     return beams; 

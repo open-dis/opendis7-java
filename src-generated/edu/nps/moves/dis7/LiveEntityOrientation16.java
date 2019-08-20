@@ -27,6 +27,7 @@ public class LiveEntityOrientation16 extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityOrientation16#psi}*/
 public LiveEntityOrientation16 setPsi(short pPsi)
 {
     psi = pPsi;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation16#psi}*/
 public short getPsi()
 {
     return psi; 
 }
 
+/** Setter for {@link LiveEntityOrientation16#theta}*/
 public LiveEntityOrientation16 setTheta(short pTheta)
 {
     theta = pTheta;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation16#theta}*/
 public short getTheta()
 {
     return theta; 
 }
 
+/** Setter for {@link LiveEntityOrientation16#phi}*/
 public LiveEntityOrientation16 setPhi(short pPhi)
 {
     phi = pPhi;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation16#phi}*/
 public short getPhi()
 {
     return phi; 

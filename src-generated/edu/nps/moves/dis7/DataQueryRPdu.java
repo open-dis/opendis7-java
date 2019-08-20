@@ -49,6 +49,7 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
     setPduType( DISPDUType.DATA_QUERY_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -76,78 +77,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataQueryRPdu#requiredReliabilityService}*/
 public DataQueryRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link DataQueryRPdu#pad1}*/
 public DataQueryRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link DataQueryRPdu#pad2}*/
 public DataQueryRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link DataQueryRPdu#requestID}*/
 public DataQueryRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link DataQueryRPdu#timeInterval}*/
 public DataQueryRPdu setTimeInterval(int pTimeInterval)
 {
     timeInterval = pTimeInterval;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#timeInterval}*/
 public int getTimeInterval()
 {
     return timeInterval; 
 }
 
+/** Setter for {@link DataQueryRPdu#fixedDatumRecords}*/
 public DataQueryRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link DataQueryRPdu#variableDatumRecords}*/
 public DataQueryRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link DataQueryRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

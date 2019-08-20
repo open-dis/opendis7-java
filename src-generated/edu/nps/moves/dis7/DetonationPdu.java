@@ -58,6 +58,7 @@ public class DetonationPdu extends WarfareFamilyPdu implements Serializable
     setPduType( DISPDUType.DETONATION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -84,122 +85,144 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DetonationPdu#sourceEntityID}*/
 public DetonationPdu setSourceEntityID(EntityID pSourceEntityID)
 {
     sourceEntityID = pSourceEntityID;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#sourceEntityID}*/
 public EntityID getSourceEntityID()
 {
     return sourceEntityID; 
 }
 
+/** Setter for {@link DetonationPdu#targetEntityID}*/
 public DetonationPdu setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#targetEntityID}*/
 public EntityID getTargetEntityID()
 {
     return targetEntityID; 
 }
 
+/** Setter for {@link DetonationPdu#explodingEntityID}*/
 public DetonationPdu setExplodingEntityID(EntityID pExplodingEntityID)
 {
     explodingEntityID = pExplodingEntityID;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#explodingEntityID}*/
 public EntityID getExplodingEntityID()
 {
     return explodingEntityID; 
 }
 
+/** Setter for {@link DetonationPdu#eventID}*/
 public DetonationPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link DetonationPdu#velocity}*/
 public DetonationPdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#velocity}*/
 public Vector3Float getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link DetonationPdu#locationInWorldCoordinates}*/
 public DetonationPdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
 {
     locationInWorldCoordinates = pLocationInWorldCoordinates;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#locationInWorldCoordinates}*/
 public Vector3Double getLocationInWorldCoordinates()
 {
     return locationInWorldCoordinates; 
 }
 
+/** Setter for {@link DetonationPdu#descriptor}*/
 public DetonationPdu setDescriptor(MunitionDescriptor pDescriptor)
 {
     descriptor = pDescriptor;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#descriptor}*/
 public MunitionDescriptor getDescriptor()
 {
     return descriptor; 
 }
 
+/** Setter for {@link DetonationPdu#locationOfEntityCoordinates}*/
 public DetonationPdu setLocationOfEntityCoordinates(Vector3Float pLocationOfEntityCoordinates)
 {
     locationOfEntityCoordinates = pLocationOfEntityCoordinates;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#locationOfEntityCoordinates}*/
 public Vector3Float getLocationOfEntityCoordinates()
 {
     return locationOfEntityCoordinates; 
 }
 
+/** Setter for {@link DetonationPdu#detonationResult}*/
 public DetonationPdu setDetonationResult(DetonationResult pDetonationResult)
 {
     detonationResult = pDetonationResult;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#detonationResult}*/
 public DetonationResult getDetonationResult()
 {
     return detonationResult; 
 }
 
+/** Setter for {@link DetonationPdu#pad}*/
 public DetonationPdu setPad(short pPad)
 {
     pad = pPad;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#pad}*/
 public short getPad()
 {
     return pad; 
 }
 
+/** Setter for {@link DetonationPdu#variableParameters}*/
 public DetonationPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 
+/** Getter for {@link DetonationPdu#variableParameters}*/
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

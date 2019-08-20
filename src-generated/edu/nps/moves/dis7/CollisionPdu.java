@@ -46,6 +46,7 @@ public class CollisionPdu extends EntityInformationFamilyPdu implements Serializ
     setPduType( DISPDUType.COLLISION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,89 +65,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CollisionPdu#issuingEntityID}*/
 public CollisionPdu setIssuingEntityID(EntityID pIssuingEntityID)
 {
     issuingEntityID = pIssuingEntityID;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#issuingEntityID}*/
 public EntityID getIssuingEntityID()
 {
     return issuingEntityID; 
 }
 
+/** Setter for {@link CollisionPdu#collidingEntityID}*/
 public CollisionPdu setCollidingEntityID(EntityID pCollidingEntityID)
 {
     collidingEntityID = pCollidingEntityID;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#collidingEntityID}*/
 public EntityID getCollidingEntityID()
 {
     return collidingEntityID; 
 }
 
+/** Setter for {@link CollisionPdu#eventID}*/
 public CollisionPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link CollisionPdu#collisionType}*/
 public CollisionPdu setCollisionType(CollisionType pCollisionType)
 {
     collisionType = pCollisionType;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#collisionType}*/
 public CollisionType getCollisionType()
 {
     return collisionType; 
 }
 
+/** Setter for {@link CollisionPdu#pad}*/
 public CollisionPdu setPad(byte pPad)
 {
     pad = pPad;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#pad}*/
 public byte getPad()
 {
     return pad; 
 }
 
+/** Setter for {@link CollisionPdu#velocity}*/
 public CollisionPdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#velocity}*/
 public Vector3Float getVelocity()
 {
     return velocity; 
 }
 
+/** Setter for {@link CollisionPdu#mass}*/
 public CollisionPdu setMass(float pMass)
 {
     mass = pMass;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#mass}*/
 public float getMass()
 {
     return mass; 
 }
 
+/** Setter for {@link CollisionPdu#location}*/
 public CollisionPdu setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
 }
 
+/** Getter for {@link CollisionPdu#location}*/
 public Vector3Float getLocation()
 {
     return location; 

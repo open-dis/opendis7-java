@@ -52,6 +52,7 @@ public class InformationOperationsActionPdu extends InformationOperationsFamilyP
     setPduType( DISPDUType.INFORMATION_OPERATIONS_ACTION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -78,122 +79,144 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link InformationOperationsActionPdu#receivingSimID}*/
 public InformationOperationsActionPdu setReceivingSimID(EntityID pReceivingSimID)
 {
     receivingSimID = pReceivingSimID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#receivingSimID}*/
 public EntityID getReceivingSimID()
 {
     return receivingSimID; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#requestID}*/
 public InformationOperationsActionPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#IOWarfareType}*/
 public InformationOperationsActionPdu setIOWarfareType(IOActionIOWarfareType pIOWarfareType)
 {
     IOWarfareType = pIOWarfareType;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#IOWarfareType}*/
 public IOActionIOWarfareType getIOWarfareType()
 {
     return IOWarfareType; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#IOSimulationSource}*/
 public InformationOperationsActionPdu setIOSimulationSource(IOActionIOSimulationSource pIOSimulationSource)
 {
     IOSimulationSource = pIOSimulationSource;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#IOSimulationSource}*/
 public IOActionIOSimulationSource getIOSimulationSource()
 {
     return IOSimulationSource; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#IOActionType}*/
 public InformationOperationsActionPdu setIOActionType(IOActionIOActionType pIOActionType)
 {
     IOActionType = pIOActionType;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#IOActionType}*/
 public IOActionIOActionType getIOActionType()
 {
     return IOActionType; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#IOActionPhase}*/
 public InformationOperationsActionPdu setIOActionPhase(IOActionIOActionPhase pIOActionPhase)
 {
     IOActionPhase = pIOActionPhase;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#IOActionPhase}*/
 public IOActionIOActionPhase getIOActionPhase()
 {
     return IOActionPhase; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#padding1}*/
 public InformationOperationsActionPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#padding1}*/
 public int getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#ioAttackerID}*/
 public InformationOperationsActionPdu setIoAttackerID(EntityID pIoAttackerID)
 {
     ioAttackerID = pIoAttackerID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#ioAttackerID}*/
 public EntityID getIoAttackerID()
 {
     return ioAttackerID; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#ioPrimaryTargetID}*/
 public InformationOperationsActionPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
 {
     ioPrimaryTargetID = pIoPrimaryTargetID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#ioPrimaryTargetID}*/
 public EntityID getIoPrimaryTargetID()
 {
     return ioPrimaryTargetID; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#padding2}*/
 public InformationOperationsActionPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link InformationOperationsActionPdu#ioRecords}*/
 public InformationOperationsActionPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
 }
 
+/** Getter for {@link InformationOperationsActionPdu#ioRecords}*/
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

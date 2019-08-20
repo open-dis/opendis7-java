@@ -27,6 +27,7 @@ public class GridDataType2 extends GridData implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -40,23 +41,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link GridDataType2#padding}*/
 public GridDataType2 setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link GridDataType2#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link GridDataType2#dataValues}*/
 public GridDataType2 setDataValues(float[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
 }
 
+/** Getter for {@link GridDataType2#dataValues}*/
 public float[] getDataValues()
 {
     return dataValues; 

@@ -27,6 +27,7 @@ public class TotalRecordSets extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link TotalRecordSets#totalRecordSets}*/
 public TotalRecordSets setTotalRecordSets(short pTotalRecordSets)
 {
     totalRecordSets = pTotalRecordSets;
     return this;
 }
 
+/** Getter for {@link TotalRecordSets#totalRecordSets}*/
 public short getTotalRecordSets()
 {
     return totalRecordSets; 
 }
 
+/** Setter for {@link TotalRecordSets#padding}*/
 public TotalRecordSets setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link TotalRecordSets#padding}*/
 public short getPadding()
 {
     return padding; 

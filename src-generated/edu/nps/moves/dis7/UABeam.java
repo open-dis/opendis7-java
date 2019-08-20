@@ -28,6 +28,7 @@ public class UABeam extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -41,45 +42,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UABeam#beamDataLength}*/
 public UABeam setBeamDataLength(byte pBeamDataLength)
 {
     beamDataLength = pBeamDataLength;
     return this;
 }
 
+/** Getter for {@link UABeam#beamDataLength}*/
 public byte getBeamDataLength()
 {
     return beamDataLength; 
 }
 
+/** Setter for {@link UABeam#beamNumber}*/
 public UABeam setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link UABeam#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 
 }
 
+/** Setter for {@link UABeam#padding}*/
 public UABeam setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link UABeam#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link UABeam#fundamentalParameterData}*/
 public UABeam setFundamentalParameterData(UAFundamentalParameter pFundamentalParameterData)
 {
     fundamentalParameterData = pFundamentalParameterData;
     return this;
 }
 
+/** Getter for {@link UABeam#fundamentalParameterData}*/
 public UAFundamentalParameter getFundamentalParameterData()
 {
     return fundamentalParameterData; 

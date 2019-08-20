@@ -45,6 +45,7 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
     setPduType( DISPDUType.TIME_SPACE_POSITION_INFORMATION );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -66,111 +67,131 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link TSPIPdu#liveEntityId}*/
 public TSPIPdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#liveEntityId}*/
 public EntityID getLiveEntityId()
 {
     return liveEntityId; 
 }
 
+/** Setter for {@link TSPIPdu#TSPIFlag}*/
 public TSPIPdu setTSPIFlag(byte pTSPIFlag)
 {
     TSPIFlag = pTSPIFlag;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#TSPIFlag}*/
 public byte getTSPIFlag()
 {
     return TSPIFlag; 
 }
 
+/** Setter for {@link TSPIPdu#entityLocation}*/
 public TSPIPdu setEntityLocation(LiveEntityRelativeWorldCoordinates pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#entityLocation}*/
 public LiveEntityRelativeWorldCoordinates getEntityLocation()
 {
     return entityLocation; 
 }
 
+/** Setter for {@link TSPIPdu#entityLinearVelocity}*/
 public TSPIPdu setEntityLinearVelocity(LiveEntityLinearVelocity pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#entityLinearVelocity}*/
 public LiveEntityLinearVelocity getEntityLinearVelocity()
 {
     return entityLinearVelocity; 
 }
 
+/** Setter for {@link TSPIPdu#entityOrientation}*/
 public TSPIPdu setEntityOrientation(LiveEntityOrientation pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#entityOrientation}*/
 public LiveEntityOrientation getEntityOrientation()
 {
     return entityOrientation; 
 }
 
+/** Setter for {@link TSPIPdu#positionError}*/
 public TSPIPdu setPositionError(LiveEntityPositionError pPositionError)
 {
     positionError = pPositionError;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#positionError}*/
 public LiveEntityPositionError getPositionError()
 {
     return positionError; 
 }
 
+/** Setter for {@link TSPIPdu#orientationError}*/
 public TSPIPdu setOrientationError(LiveEntityOrientationError pOrientationError)
 {
     orientationError = pOrientationError;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#orientationError}*/
 public LiveEntityOrientationError getOrientationError()
 {
     return orientationError; 
 }
 
+/** Setter for {@link TSPIPdu#deadReckoningParameters}*/
 public TSPIPdu setDeadReckoningParameters(LiveDeadReckoningParameters pDeadReckoningParameters)
 {
     deadReckoningParameters = pDeadReckoningParameters;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#deadReckoningParameters}*/
 public LiveDeadReckoningParameters getDeadReckoningParameters()
 {
     return deadReckoningParameters; 
 }
 
+/** Setter for {@link TSPIPdu#measuredSpeed}*/
 public TSPIPdu setMeasuredSpeed(short pMeasuredSpeed)
 {
     measuredSpeed = pMeasuredSpeed;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#measuredSpeed}*/
 public short getMeasuredSpeed()
 {
     return measuredSpeed; 
 }
 
+/** Setter for {@link TSPIPdu#systemSpecificData}*/
 public TSPIPdu setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
 }
 
+/** Getter for {@link TSPIPdu#systemSpecificData}*/
 public byte[] getSystemSpecificData()
 {
     return systemSpecificData; 

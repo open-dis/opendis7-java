@@ -67,6 +67,7 @@ public class CollisionElasticPdu extends EntityInformationFamilyPdu implements S
     setPduType( DISPDUType.COLLISION_ELASTIC );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -92,166 +93,196 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CollisionElasticPdu#issuingEntityID}*/
 public CollisionElasticPdu setIssuingEntityID(EntityID pIssuingEntityID)
 {
     issuingEntityID = pIssuingEntityID;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#issuingEntityID}*/
 public EntityID getIssuingEntityID()
 {
     return issuingEntityID; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collidingEntityID}*/
 public CollisionElasticPdu setCollidingEntityID(EntityID pCollidingEntityID)
 {
     collidingEntityID = pCollidingEntityID;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collidingEntityID}*/
 public EntityID getCollidingEntityID()
 {
     return collidingEntityID; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionEventID}*/
 public CollisionElasticPdu setCollisionEventID(EventIdentifier pCollisionEventID)
 {
     collisionEventID = pCollisionEventID;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionEventID}*/
 public EventIdentifier getCollisionEventID()
 {
     return collisionEventID; 
 }
 
+/** Setter for {@link CollisionElasticPdu#pad}*/
 public CollisionElasticPdu setPad(short pPad)
 {
     pad = pPad;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#pad}*/
 public short getPad()
 {
     return pad; 
 }
 
+/** Setter for {@link CollisionElasticPdu#contactVelocity}*/
 public CollisionElasticPdu setContactVelocity(Vector3Float pContactVelocity)
 {
     contactVelocity = pContactVelocity;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#contactVelocity}*/
 public Vector3Float getContactVelocity()
 {
     return contactVelocity; 
 }
 
+/** Setter for {@link CollisionElasticPdu#mass}*/
 public CollisionElasticPdu setMass(float pMass)
 {
     mass = pMass;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#mass}*/
 public float getMass()
 {
     return mass; 
 }
 
+/** Setter for {@link CollisionElasticPdu#locationOfImpact}*/
 public CollisionElasticPdu setLocationOfImpact(Vector3Float pLocationOfImpact)
 {
     locationOfImpact = pLocationOfImpact;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#locationOfImpact}*/
 public Vector3Float getLocationOfImpact()
 {
     return locationOfImpact; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXX}*/
 public CollisionElasticPdu setCollisionIntermediateResultXX(float pCollisionIntermediateResultXX)
 {
     collisionIntermediateResultXX = pCollisionIntermediateResultXX;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXX}*/
 public float getCollisionIntermediateResultXX()
 {
     return collisionIntermediateResultXX; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXY}*/
 public CollisionElasticPdu setCollisionIntermediateResultXY(float pCollisionIntermediateResultXY)
 {
     collisionIntermediateResultXY = pCollisionIntermediateResultXY;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXY}*/
 public float getCollisionIntermediateResultXY()
 {
     return collisionIntermediateResultXY; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}*/
 public CollisionElasticPdu setCollisionIntermediateResultXZ(float pCollisionIntermediateResultXZ)
 {
     collisionIntermediateResultXZ = pCollisionIntermediateResultXZ;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}*/
 public float getCollisionIntermediateResultXZ()
 {
     return collisionIntermediateResultXZ; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYY}*/
 public CollisionElasticPdu setCollisionIntermediateResultYY(float pCollisionIntermediateResultYY)
 {
     collisionIntermediateResultYY = pCollisionIntermediateResultYY;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYY}*/
 public float getCollisionIntermediateResultYY()
 {
     return collisionIntermediateResultYY; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}*/
 public CollisionElasticPdu setCollisionIntermediateResultYZ(float pCollisionIntermediateResultYZ)
 {
     collisionIntermediateResultYZ = pCollisionIntermediateResultYZ;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}*/
 public float getCollisionIntermediateResultYZ()
 {
     return collisionIntermediateResultYZ; 
 }
 
+/** Setter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}*/
 public CollisionElasticPdu setCollisionIntermediateResultZZ(float pCollisionIntermediateResultZZ)
 {
     collisionIntermediateResultZZ = pCollisionIntermediateResultZZ;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}*/
 public float getCollisionIntermediateResultZZ()
 {
     return collisionIntermediateResultZZ; 
 }
 
+/** Setter for {@link CollisionElasticPdu#unitSurfaceNormal}*/
 public CollisionElasticPdu setUnitSurfaceNormal(Vector3Float pUnitSurfaceNormal)
 {
     unitSurfaceNormal = pUnitSurfaceNormal;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#unitSurfaceNormal}*/
 public Vector3Float getUnitSurfaceNormal()
 {
     return unitSurfaceNormal; 
 }
 
+/** Setter for {@link CollisionElasticPdu#coefficientOfRestitution}*/
 public CollisionElasticPdu setCoefficientOfRestitution(float pCoefficientOfRestitution)
 {
     coefficientOfRestitution = pCoefficientOfRestitution;
     return this;
 }
 
+/** Getter for {@link CollisionElasticPdu#coefficientOfRestitution}*/
 public float getCoefficientOfRestitution()
 {
     return coefficientOfRestitution; 

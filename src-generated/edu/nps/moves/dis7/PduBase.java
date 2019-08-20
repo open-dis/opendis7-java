@@ -27,6 +27,7 @@ public abstract class PduBase extends Pdu implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,23 +40,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link PduBase#pduStatus}*/
 public PduBase setPduStatus(PduStatus pPduStatus)
 {
     pduStatus = pPduStatus;
     return this;
 }
 
+/** Getter for {@link PduBase#pduStatus}*/
 public PduStatus getPduStatus()
 {
     return pduStatus; 
 }
 
+/** Setter for {@link PduBase#padding}*/
 public PduBase setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link PduBase#padding}*/
 public byte getPadding()
 {
     return padding; 

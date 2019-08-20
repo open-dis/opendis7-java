@@ -47,6 +47,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
     setPduType( DISPDUType.INTERCOM_SIGNAL );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -66,78 +67,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IntercomSignalPdu#intercomReferenceID}*/
 public IntercomSignalPdu setIntercomReferenceID(IntercomReferenceID pIntercomReferenceID)
 {
     intercomReferenceID = pIntercomReferenceID;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#intercomReferenceID}*/
 public IntercomReferenceID getIntercomReferenceID()
 {
     return intercomReferenceID; 
 }
 
+/** Setter for {@link IntercomSignalPdu#intercomNumber}*/
 public IntercomSignalPdu setIntercomNumber(short pIntercomNumber)
 {
     intercomNumber = pIntercomNumber;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#intercomNumber}*/
 public short getIntercomNumber()
 {
     return intercomNumber; 
 }
 
+/** Setter for {@link IntercomSignalPdu#encodingScheme}*/
 public IntercomSignalPdu setEncodingScheme(short pEncodingScheme)
 {
     encodingScheme = pEncodingScheme;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#encodingScheme}*/
 public short getEncodingScheme()
 {
     return encodingScheme; 
 }
 
+/** Setter for {@link IntercomSignalPdu#tdlType}*/
 public IntercomSignalPdu setTdlType(SignalTDLType pTdlType)
 {
     tdlType = pTdlType;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#tdlType}*/
 public SignalTDLType getTdlType()
 {
     return tdlType; 
 }
 
+/** Setter for {@link IntercomSignalPdu#sampleRate}*/
 public IntercomSignalPdu setSampleRate(int pSampleRate)
 {
     sampleRate = pSampleRate;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#sampleRate}*/
 public int getSampleRate()
 {
     return sampleRate; 
 }
 
+/** Setter for {@link IntercomSignalPdu#samples}*/
 public IntercomSignalPdu setSamples(short pSamples)
 {
     samples = pSamples;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#samples}*/
 public short getSamples()
 {
     return samples; 
 }
 
+/** Setter for {@link IntercomSignalPdu#data}*/
 public IntercomSignalPdu setData(byte[] pData)
 {
     data = pData;
     return this;
 }
 
+/** Getter for {@link IntercomSignalPdu#data}*/
 public byte[] getData()
 {
     return data; 

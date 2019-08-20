@@ -22,6 +22,7 @@ public abstract class LogisticsFamilyPdu extends PduBase implements Serializable
     setProtocolFamily( DISProtocolFamily.LOGISTICS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

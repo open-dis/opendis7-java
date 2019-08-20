@@ -52,6 +52,7 @@ public class FalseTargetsAttribute extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -76,166 +77,196 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link FalseTargetsAttribute#recordType}*/
 public FalseTargetsAttribute setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#recordLength}*/
 public FalseTargetsAttribute setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#padding}*/
 public FalseTargetsAttribute setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#emitterNumber}*/
 public FalseTargetsAttribute setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#emitterNumber}*/
 public byte getEmitterNumber()
 {
     return emitterNumber; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#beamNumber}*/
 public FalseTargetsAttribute setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#stateIndicator}*/
 public FalseTargetsAttribute setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#stateIndicator}*/
 public EEAttributeStateIndicator getStateIndicator()
 {
     return stateIndicator; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#padding2}*/
 public FalseTargetsAttribute setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#padding2}*/
 public byte getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#padding3}*/
 public FalseTargetsAttribute setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#padding3}*/
 public short getPadding3()
 {
     return padding3; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#falseTargetCount}*/
 public FalseTargetsAttribute setFalseTargetCount(short pFalseTargetCount)
 {
     falseTargetCount = pFalseTargetCount;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#falseTargetCount}*/
 public short getFalseTargetCount()
 {
     return falseTargetCount; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#walkSpeed}*/
 public FalseTargetsAttribute setWalkSpeed(float pWalkSpeed)
 {
     walkSpeed = pWalkSpeed;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#walkSpeed}*/
 public float getWalkSpeed()
 {
     return walkSpeed; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#walkAcceleration}*/
 public FalseTargetsAttribute setWalkAcceleration(float pWalkAcceleration)
 {
     walkAcceleration = pWalkAcceleration;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#walkAcceleration}*/
 public float getWalkAcceleration()
 {
     return walkAcceleration; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#maximumWalkDistance}*/
 public FalseTargetsAttribute setMaximumWalkDistance(float pMaximumWalkDistance)
 {
     maximumWalkDistance = pMaximumWalkDistance;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#maximumWalkDistance}*/
 public float getMaximumWalkDistance()
 {
     return maximumWalkDistance; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#keepTime}*/
 public FalseTargetsAttribute setKeepTime(float pKeepTime)
 {
     keepTime = pKeepTime;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#keepTime}*/
 public float getKeepTime()
 {
     return keepTime; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#echoSpacing}*/
 public FalseTargetsAttribute setEchoSpacing(float pEchoSpacing)
 {
     echoSpacing = pEchoSpacing;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#echoSpacing}*/
 public float getEchoSpacing()
 {
     return echoSpacing; 
 }
 
+/** Setter for {@link FalseTargetsAttribute#firstTargetOffset}*/
 public FalseTargetsAttribute setFirstTargetOffset(float pFirstTargetOffset)
 {
     firstTargetOffset = pFirstTargetOffset;
     return this;
 }
 
+/** Getter for {@link FalseTargetsAttribute#firstTargetOffset}*/
 public float getFirstTargetOffset()
 {
     return firstTargetOffset; 

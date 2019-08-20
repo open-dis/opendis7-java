@@ -36,6 +36,7 @@ public class BeamData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link BeamData#beamAzimuthCenter}*/
 public BeamData setBeamAzimuthCenter(float pBeamAzimuthCenter)
 {
     beamAzimuthCenter = pBeamAzimuthCenter;
     return this;
 }
 
+/** Getter for {@link BeamData#beamAzimuthCenter}*/
 public float getBeamAzimuthCenter()
 {
     return beamAzimuthCenter; 
 }
 
+/** Setter for {@link BeamData#beamAzimuthSweep}*/
 public BeamData setBeamAzimuthSweep(float pBeamAzimuthSweep)
 {
     beamAzimuthSweep = pBeamAzimuthSweep;
     return this;
 }
 
+/** Getter for {@link BeamData#beamAzimuthSweep}*/
 public float getBeamAzimuthSweep()
 {
     return beamAzimuthSweep; 
 }
 
+/** Setter for {@link BeamData#beamElevationCenter}*/
 public BeamData setBeamElevationCenter(float pBeamElevationCenter)
 {
     beamElevationCenter = pBeamElevationCenter;
     return this;
 }
 
+/** Getter for {@link BeamData#beamElevationCenter}*/
 public float getBeamElevationCenter()
 {
     return beamElevationCenter; 
 }
 
+/** Setter for {@link BeamData#beamElevationSweep}*/
 public BeamData setBeamElevationSweep(float pBeamElevationSweep)
 {
     beamElevationSweep = pBeamElevationSweep;
     return this;
 }
 
+/** Getter for {@link BeamData#beamElevationSweep}*/
 public float getBeamElevationSweep()
 {
     return beamElevationSweep; 
 }
 
+/** Setter for {@link BeamData#beamSweepSync}*/
 public BeamData setBeamSweepSync(float pBeamSweepSync)
 {
     beamSweepSync = pBeamSweepSync;
     return this;
 }
 
+/** Getter for {@link BeamData#beamSweepSync}*/
 public float getBeamSweepSync()
 {
     return beamSweepSync; 

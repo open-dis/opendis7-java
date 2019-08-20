@@ -41,6 +41,7 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsFamilyPdu im
     setPaddingForEmissionsPdu( (short)0 );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -61,56 +62,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ElectromagneticEmissionPdu#emittingEntityID}*/
 public ElectromagneticEmissionPdu setEmittingEntityID(EntityID pEmittingEntityID)
 {
     emittingEntityID = pEmittingEntityID;
     return this;
 }
 
+/** Getter for {@link ElectromagneticEmissionPdu#emittingEntityID}*/
 public EntityID getEmittingEntityID()
 {
     return emittingEntityID; 
 }
 
+/** Setter for {@link ElectromagneticEmissionPdu#eventID}*/
 public ElectromagneticEmissionPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link ElectromagneticEmissionPdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}*/
 public ElectromagneticEmissionPdu setStateUpdateIndicator(ElectromagneticEmissionStateUpdateIndicator pStateUpdateIndicator)
 {
     stateUpdateIndicator = pStateUpdateIndicator;
     return this;
 }
 
+/** Getter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}*/
 public ElectromagneticEmissionStateUpdateIndicator getStateUpdateIndicator()
 {
     return stateUpdateIndicator; 
 }
 
+/** Setter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}*/
 public ElectromagneticEmissionPdu setPaddingForEmissionsPdu(short pPaddingForEmissionsPdu)
 {
     paddingForEmissionsPdu = pPaddingForEmissionsPdu;
     return this;
 }
 
+/** Getter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}*/
 public short getPaddingForEmissionsPdu()
 {
     return paddingForEmissionsPdu; 
 }
 
+/** Setter for {@link ElectromagneticEmissionPdu#systems}*/
 public ElectromagneticEmissionPdu setSystems(List<ElectronicEmitter> pSystems)
 {
     systems = pSystems;
     return this;
 }
 
+/** Getter for {@link ElectromagneticEmissionPdu#systems}*/
 public List<ElectronicEmitter> getSystems()
 {
     return systems; 

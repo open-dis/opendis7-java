@@ -44,6 +44,7 @@ public class DirectedEnergyAreaAimpoint extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -69,56 +70,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DirectedEnergyAreaAimpoint#recordType}*/
 public DirectedEnergyAreaAimpoint setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyAreaAimpoint#recordType}*/
 public int getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link DirectedEnergyAreaAimpoint#recordLength}*/
 public DirectedEnergyAreaAimpoint setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyAreaAimpoint#recordLength}*/
 public short getRecordLength()
 {
     return recordLength; 
 }
 
+/** Setter for {@link DirectedEnergyAreaAimpoint#padding}*/
 public DirectedEnergyAreaAimpoint setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyAreaAimpoint#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}*/
 public DirectedEnergyAreaAimpoint setBeamAntennaParameterList(List<BeamAntennaPattern> pBeamAntennaParameterList)
 {
     beamAntennaParameterList = pBeamAntennaParameterList;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}*/
 public List<BeamAntennaPattern> getBeamAntennaParameterList()
 {
     return beamAntennaParameterList; 
 }
 
+/** Setter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}*/
 public DirectedEnergyAreaAimpoint setDirectedEnergyTargetEnergyDepositionRecordList(List<DirectedEnergyTargetEnergyDeposition> pDirectedEnergyTargetEnergyDepositionRecordList)
 {
     directedEnergyTargetEnergyDepositionRecordList = pDirectedEnergyTargetEnergyDepositionRecordList;
     return this;
 }
 
+/** Getter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}*/
 public List<DirectedEnergyTargetEnergyDeposition> getDirectedEnergyTargetEnergyDepositionRecordList()
 {
     return directedEnergyTargetEnergyDepositionRecordList; 

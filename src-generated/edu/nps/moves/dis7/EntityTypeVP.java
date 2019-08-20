@@ -36,6 +36,7 @@ public class EntityTypeVP extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityTypeVP#recordType}*/
 public EntityTypeVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link EntityTypeVP#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link EntityTypeVP#changeIndicator}*/
 public EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
     changeIndicator = pChangeIndicator;
     return this;
 }
 
+/** Getter for {@link EntityTypeVP#changeIndicator}*/
 public EntityVPRecordChangeIndicator getChangeIndicator()
 {
     return changeIndicator; 
 }
 
+/** Setter for {@link EntityTypeVP#entityType}*/
 public EntityTypeVP setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
 }
 
+/** Getter for {@link EntityTypeVP#entityType}*/
 public EntityType getEntityType()
 {
     return entityType; 
 }
 
+/** Setter for {@link EntityTypeVP#padding}*/
 public EntityTypeVP setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link EntityTypeVP#padding}*/
 public short getPadding()
 {
     return padding; 
 }
 
+/** Setter for {@link EntityTypeVP#padding1}*/
 public EntityTypeVP setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link EntityTypeVP#padding1}*/
 public int getPadding1()
 {
     return padding1; 

@@ -42,6 +42,7 @@ public class SeparationVP extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -58,78 +59,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SeparationVP#recordType}*/
 public SeparationVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link SeparationVP#recordType}*/
 public VariableParameterRecordType getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link SeparationVP#reasonForSeparation}*/
 public SeparationVP setReasonForSeparation(SeparationVPReasonforSeparation pReasonForSeparation)
 {
     reasonForSeparation = pReasonForSeparation;
     return this;
 }
 
+/** Getter for {@link SeparationVP#reasonForSeparation}*/
 public SeparationVPReasonforSeparation getReasonForSeparation()
 {
     return reasonForSeparation; 
 }
 
+/** Setter for {@link SeparationVP#preEntityIndicator}*/
 public SeparationVP setPreEntityIndicator(SeparationVPPreEntityIndicator pPreEntityIndicator)
 {
     preEntityIndicator = pPreEntityIndicator;
     return this;
 }
 
+/** Getter for {@link SeparationVP#preEntityIndicator}*/
 public SeparationVPPreEntityIndicator getPreEntityIndicator()
 {
     return preEntityIndicator; 
 }
 
+/** Setter for {@link SeparationVP#padding1}*/
 public SeparationVP setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link SeparationVP#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link SeparationVP#parentEntityID}*/
 public SeparationVP setParentEntityID(EntityID pParentEntityID)
 {
     parentEntityID = pParentEntityID;
     return this;
 }
 
+/** Getter for {@link SeparationVP#parentEntityID}*/
 public EntityID getParentEntityID()
 {
     return parentEntityID; 
 }
 
+/** Setter for {@link SeparationVP#padding2}*/
 public SeparationVP setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link SeparationVP#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link SeparationVP#stationLocation}*/
 public SeparationVP setStationLocation(NamedLocationIdentification pStationLocation)
 {
     stationLocation = pStationLocation;
     return this;
 }
 
+/** Getter for {@link SeparationVP#stationLocation}*/
 public NamedLocationIdentification getStationLocation()
 {
     return stationLocation; 

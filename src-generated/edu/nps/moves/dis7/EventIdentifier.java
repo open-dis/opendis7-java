@@ -26,6 +26,7 @@ public class EventIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -37,23 +38,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EventIdentifier#simulationAddress}*/
 public EventIdentifier setSimulationAddress(SimulationAddress pSimulationAddress)
 {
     simulationAddress = pSimulationAddress;
     return this;
 }
 
+/** Getter for {@link EventIdentifier#simulationAddress}*/
 public SimulationAddress getSimulationAddress()
 {
     return simulationAddress; 
 }
 
+/** Setter for {@link EventIdentifier#eventNumber}*/
 public EventIdentifier setEventNumber(short pEventNumber)
 {
     eventNumber = pEventNumber;
     return this;
 }
 
+/** Getter for {@link EventIdentifier#eventNumber}*/
 public short getEventNumber()
 {
     return eventNumber; 

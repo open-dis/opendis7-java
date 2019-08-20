@@ -25,6 +25,7 @@ public class CreateEntityPdu extends SimulationManagementFamilyPdu implements Se
     setPduType( DISPDUType.CREATE_ENTITY );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -36,12 +37,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link CreateEntityPdu#requestID}*/
 public CreateEntityPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link CreateEntityPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

@@ -28,6 +28,7 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
     setPduType( DISPDUType.ARTICULATED_PARTS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -45,23 +46,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ArticulatedPartsPdu#liveEntityId}*/
 public ArticulatedPartsPdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartsPdu#liveEntityId}*/
 public EntityID getLiveEntityId()
 {
     return liveEntityId; 
 }
 
+/** Setter for {@link ArticulatedPartsPdu#variableParameters}*/
 public ArticulatedPartsPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
 }
 
+/** Getter for {@link ArticulatedPartsPdu#variableParameters}*/
 public List<VariableParameter> getVariableParameters()
 {
     return variableParameters; 

@@ -44,6 +44,7 @@ public class EmitterBeam extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -68,111 +69,131 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EmitterBeam#beamDataLength}*/
 public EmitterBeam setBeamDataLength(byte pBeamDataLength)
 {
     beamDataLength = pBeamDataLength;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamDataLength}*/
 public byte getBeamDataLength()
 {
     return beamDataLength; 
 }
 
+/** Setter for {@link EmitterBeam#beamNumber}*/
 public EmitterBeam setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamNumber}*/
 public byte getBeamNumber()
 {
     return beamNumber; 
 }
 
+/** Setter for {@link EmitterBeam#beamParameterIndex}*/
 public EmitterBeam setBeamParameterIndex(short pBeamParameterIndex)
 {
     beamParameterIndex = pBeamParameterIndex;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamParameterIndex}*/
 public short getBeamParameterIndex()
 {
     return beamParameterIndex; 
 }
 
+/** Setter for {@link EmitterBeam#fundamentalParameterData}*/
 public EmitterBeam setFundamentalParameterData(EEFundamentalParameterData pFundamentalParameterData)
 {
     fundamentalParameterData = pFundamentalParameterData;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#fundamentalParameterData}*/
 public EEFundamentalParameterData getFundamentalParameterData()
 {
     return fundamentalParameterData; 
 }
 
+/** Setter for {@link EmitterBeam#beamData}*/
 public EmitterBeam setBeamData(BeamData pBeamData)
 {
     beamData = pBeamData;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamData}*/
 public BeamData getBeamData()
 {
     return beamData; 
 }
 
+/** Setter for {@link EmitterBeam#beamFunction}*/
 public EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunction pBeamFunction)
 {
     beamFunction = pBeamFunction;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamFunction}*/
 public ElectromagneticEmissionBeamFunction getBeamFunction()
 {
     return beamFunction; 
 }
 
+/** Setter for {@link EmitterBeam#highDensityTrackJam}*/
 public EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHighDensityTrackJam)
 {
     highDensityTrackJam = pHighDensityTrackJam;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#highDensityTrackJam}*/
 public HighDensityTrackJam getHighDensityTrackJam()
 {
     return highDensityTrackJam; 
 }
 
+/** Setter for {@link EmitterBeam#beamStatus}*/
 public EmitterBeam setBeamStatus(BeamStatus pBeamStatus)
 {
     beamStatus = pBeamStatus;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#beamStatus}*/
 public BeamStatus getBeamStatus()
 {
     return beamStatus; 
 }
 
+/** Setter for {@link EmitterBeam#jammingTechnique}*/
 public EmitterBeam setJammingTechnique(JammingTechnique pJammingTechnique)
 {
     jammingTechnique = pJammingTechnique;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#jammingTechnique}*/
 public JammingTechnique getJammingTechnique()
 {
     return jammingTechnique; 
 }
 
+/** Setter for {@link EmitterBeam#trackJamData}*/
 public EmitterBeam setTrackJamData(List<TrackJamData> pTrackJamData)
 {
     trackJamData = pTrackJamData;
     return this;
 }
 
+/** Getter for {@link EmitterBeam#trackJamData}*/
 public List<TrackJamData> getTrackJamData()
 {
     return trackJamData; 

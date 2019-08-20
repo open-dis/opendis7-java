@@ -27,6 +27,7 @@ public class LiveEntityIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityIdentifier#liveSimulationAddress}*/
 public LiveEntityIdentifier setLiveSimulationAddress(LiveSimulationAddress pLiveSimulationAddress)
 {
     liveSimulationAddress = pLiveSimulationAddress;
     return this;
 }
 
+/** Getter for {@link LiveEntityIdentifier#liveSimulationAddress}*/
 public LiveSimulationAddress getLiveSimulationAddress()
 {
     return liveSimulationAddress; 
 }
 
+/** Setter for {@link LiveEntityIdentifier#entityNumber}*/
 public LiveEntityIdentifier setEntityNumber(short pEntityNumber)
 {
     entityNumber = pEntityNumber;
     return this;
 }
 
+/** Getter for {@link LiveEntityIdentifier#entityNumber}*/
 public short getEntityNumber()
 {
     return entityNumber; 

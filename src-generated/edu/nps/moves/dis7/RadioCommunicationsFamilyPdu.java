@@ -22,6 +22,7 @@ public abstract class RadioCommunicationsFamilyPdu extends PduBase implements Se
     setProtocolFamily( DISProtocolFamily.RADIO_COMMUNICATIONS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

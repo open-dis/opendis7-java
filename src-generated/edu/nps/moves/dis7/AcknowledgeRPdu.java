@@ -31,6 +31,7 @@ public class AcknowledgeRPdu extends SimulationManagementWithReliabilityFamilyPd
     setPduType( DISPDUType.ACKNOWLEDGE_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -44,34 +45,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AcknowledgeRPdu#acknowledgeFlag}*/
 public AcknowledgeRPdu setAcknowledgeFlag(AcknowledgeAcknowledgeFlag pAcknowledgeFlag)
 {
     acknowledgeFlag = pAcknowledgeFlag;
     return this;
 }
 
+/** Getter for {@link AcknowledgeRPdu#acknowledgeFlag}*/
 public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 {
     return acknowledgeFlag; 
 }
 
+/** Setter for {@link AcknowledgeRPdu#responseFlag}*/
 public AcknowledgeRPdu setResponseFlag(AcknowledgeResponseFlag pResponseFlag)
 {
     responseFlag = pResponseFlag;
     return this;
 }
 
+/** Getter for {@link AcknowledgeRPdu#responseFlag}*/
 public AcknowledgeResponseFlag getResponseFlag()
 {
     return responseFlag; 
 }
 
+/** Setter for {@link AcknowledgeRPdu#requestID}*/
 public AcknowledgeRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link AcknowledgeRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

@@ -22,6 +22,7 @@ public abstract class EntityManagementFamilyPdu extends PduBase implements Seria
     setProtocolFamily( DISProtocolFamily.ENTITY_MANAGEMENT );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

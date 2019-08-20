@@ -30,6 +30,7 @@ public class StandardVariableRecord extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -43,23 +44,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link StandardVariableRecord#recordType}*/
 public StandardVariableRecord setRecordType(VariableRecordTypes pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
+/** Getter for {@link StandardVariableRecord#recordType}*/
 public VariableRecordTypes getRecordType()
 {
     return recordType; 
 }
 
+/** Setter for {@link StandardVariableRecord#recordSpecificFields}*/
 public StandardVariableRecord setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
     recordSpecificFields = pRecordSpecificFields;
     return this;
 }
 
+/** Getter for {@link StandardVariableRecord#recordSpecificFields}*/
 public byte[] getRecordSpecificFields()
 {
     return recordSpecificFields; 

@@ -57,6 +57,7 @@ public class UnderwaterAcousticPdu extends DistributedEmissionsFamilyPdu impleme
     setPduType( DISPDUType.UNDERWATER_ACOUSTIC );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -91,100 +92,118 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link UnderwaterAcousticPdu#emittingEntityID}*/
 public UnderwaterAcousticPdu setEmittingEntityID(EntityID pEmittingEntityID)
 {
     emittingEntityID = pEmittingEntityID;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#emittingEntityID}*/
 public EntityID getEmittingEntityID()
 {
     return emittingEntityID; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#eventID}*/
 public UnderwaterAcousticPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#eventID}*/
 public EventIdentifier getEventID()
 {
     return eventID; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#stateChangeIndicator}*/
 public UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeUpdateIndicator pStateChangeIndicator)
 {
     stateChangeIndicator = pStateChangeIndicator;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#stateChangeIndicator}*/
 public UAStateChangeUpdateIndicator getStateChangeIndicator()
 {
     return stateChangeIndicator; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#pad}*/
 public UnderwaterAcousticPdu setPad(byte pPad)
 {
     pad = pPad;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#pad}*/
 public byte getPad()
 {
     return pad; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#passiveParameterIndex}*/
 public UnderwaterAcousticPdu setPassiveParameterIndex(UAPassiveParameterIndex pPassiveParameterIndex)
 {
     passiveParameterIndex = pPassiveParameterIndex;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#passiveParameterIndex}*/
 public UAPassiveParameterIndex getPassiveParameterIndex()
 {
     return passiveParameterIndex; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}*/
 public UnderwaterAcousticPdu setPropulsionPlantConfiguration(byte pPropulsionPlantConfiguration)
 {
     propulsionPlantConfiguration = pPropulsionPlantConfiguration;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}*/
 public byte getPropulsionPlantConfiguration()
 {
     return propulsionPlantConfiguration; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#shaftRPMs}*/
 public UnderwaterAcousticPdu setShaftRPMs(List<ShaftRPM> pShaftRPMs)
 {
     shaftRPMs = pShaftRPMs;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#shaftRPMs}*/
 public List<ShaftRPM> getShaftRPMs()
 {
     return shaftRPMs; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#apaData}*/
 public UnderwaterAcousticPdu setApaData(List<APA> pApaData)
 {
     apaData = pApaData;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#apaData}*/
 public List<APA> getApaData()
 {
     return apaData; 
 }
 
+/** Setter for {@link UnderwaterAcousticPdu#emitterSystems}*/
 public UnderwaterAcousticPdu setEmitterSystems(List<UAEmitter> pEmitterSystems)
 {
     emitterSystems = pEmitterSystems;
     return this;
 }
 
+/** Getter for {@link UnderwaterAcousticPdu#emitterSystems}*/
 public List<UAEmitter> getEmitterSystems()
 {
     return emitterSystems; 

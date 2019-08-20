@@ -36,6 +36,7 @@ public class MunitionDescriptor extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -50,56 +51,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MunitionDescriptor#munitionType}*/
 public MunitionDescriptor setMunitionType(EntityType pMunitionType)
 {
     munitionType = pMunitionType;
     return this;
 }
 
+/** Getter for {@link MunitionDescriptor#munitionType}*/
 public EntityType getMunitionType()
 {
     return munitionType; 
 }
 
+/** Setter for {@link MunitionDescriptor#warhead}*/
 public MunitionDescriptor setWarhead(MunitionDescriptorWarhead pWarhead)
 {
     warhead = pWarhead;
     return this;
 }
 
+/** Getter for {@link MunitionDescriptor#warhead}*/
 public MunitionDescriptorWarhead getWarhead()
 {
     return warhead; 
 }
 
+/** Setter for {@link MunitionDescriptor#fuse}*/
 public MunitionDescriptor setFuse(MunitionDescriptorFuse pFuse)
 {
     fuse = pFuse;
     return this;
 }
 
+/** Getter for {@link MunitionDescriptor#fuse}*/
 public MunitionDescriptorFuse getFuse()
 {
     return fuse; 
 }
 
+/** Setter for {@link MunitionDescriptor#quantity}*/
 public MunitionDescriptor setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
 }
 
+/** Getter for {@link MunitionDescriptor#quantity}*/
 public short getQuantity()
 {
     return quantity; 
 }
 
+/** Setter for {@link MunitionDescriptor#rate}*/
 public MunitionDescriptor setRate(short pRate)
 {
     rate = pRate;
     return this;
 }
 
+/** Getter for {@link MunitionDescriptor#rate}*/
 public short getRate()
 {
     return rate; 

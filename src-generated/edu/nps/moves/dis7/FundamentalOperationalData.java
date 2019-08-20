@@ -51,6 +51,7 @@ public class FundamentalOperationalData extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -70,111 +71,131 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link FundamentalOperationalData#systemStatus}*/
 public FundamentalOperationalData setSystemStatus(byte pSystemStatus)
 {
     systemStatus = pSystemStatus;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#systemStatus}*/
 public byte getSystemStatus()
 {
     return systemStatus; 
 }
 
+/** Setter for {@link FundamentalOperationalData#dataField1}*/
 public FundamentalOperationalData setDataField1(byte pDataField1)
 {
     dataField1 = pDataField1;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#dataField1}*/
 public byte getDataField1()
 {
     return dataField1; 
 }
 
+/** Setter for {@link FundamentalOperationalData#informationLayers}*/
 public FundamentalOperationalData setInformationLayers(byte pInformationLayers)
 {
     informationLayers = pInformationLayers;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#informationLayers}*/
 public byte getInformationLayers()
 {
     return informationLayers; 
 }
 
+/** Setter for {@link FundamentalOperationalData#dataField2}*/
 public FundamentalOperationalData setDataField2(byte pDataField2)
 {
     dataField2 = pDataField2;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#dataField2}*/
 public byte getDataField2()
 {
     return dataField2; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter1}*/
 public FundamentalOperationalData setParameter1(short pParameter1)
 {
     parameter1 = pParameter1;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter1}*/
 public short getParameter1()
 {
     return parameter1; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter2}*/
 public FundamentalOperationalData setParameter2(short pParameter2)
 {
     parameter2 = pParameter2;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter2}*/
 public short getParameter2()
 {
     return parameter2; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter3}*/
 public FundamentalOperationalData setParameter3(short pParameter3)
 {
     parameter3 = pParameter3;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter3}*/
 public short getParameter3()
 {
     return parameter3; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter4}*/
 public FundamentalOperationalData setParameter4(short pParameter4)
 {
     parameter4 = pParameter4;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter4}*/
 public short getParameter4()
 {
     return parameter4; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter5}*/
 public FundamentalOperationalData setParameter5(short pParameter5)
 {
     parameter5 = pParameter5;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter5}*/
 public short getParameter5()
 {
     return parameter5; 
 }
 
+/** Setter for {@link FundamentalOperationalData#parameter6}*/
 public FundamentalOperationalData setParameter6(short pParameter6)
 {
     parameter6 = pParameter6;
     return this;
 }
 
+/** Getter for {@link FundamentalOperationalData#parameter6}*/
 public short getParameter6()
 {
     return parameter6; 

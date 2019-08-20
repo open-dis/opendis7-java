@@ -33,6 +33,7 @@ public class Expendable extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -47,56 +48,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Expendable#expendable}*/
 public Expendable setExpendable(EntityType pExpendable)
 {
     expendable = pExpendable;
     return this;
 }
 
+/** Getter for {@link Expendable#expendable}*/
 public EntityType getExpendable()
 {
     return expendable; 
 }
 
+/** Setter for {@link Expendable#station}*/
 public Expendable setStation(int pStation)
 {
     station = pStation;
     return this;
 }
 
+/** Getter for {@link Expendable#station}*/
 public int getStation()
 {
     return station; 
 }
 
+/** Setter for {@link Expendable#quantity}*/
 public Expendable setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
 }
 
+/** Getter for {@link Expendable#quantity}*/
 public short getQuantity()
 {
     return quantity; 
 }
 
+/** Setter for {@link Expendable#expendableStatus}*/
 public Expendable setExpendableStatus(MunitionExpendableStatus pExpendableStatus)
 {
     expendableStatus = pExpendableStatus;
     return this;
 }
 
+/** Getter for {@link Expendable#expendableStatus}*/
 public MunitionExpendableStatus getExpendableStatus()
 {
     return expendableStatus; 
 }
 
+/** Setter for {@link Expendable#padding}*/
 public Expendable setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link Expendable#padding}*/
 public byte getPadding()
 {
     return padding; 

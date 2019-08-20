@@ -46,6 +46,7 @@ public class DataRPdu extends SimulationManagementWithReliabilityFamilyPdu imple
     setPduType( DISPDUType.DATA_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -72,67 +73,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link DataRPdu#requestID}*/
 public DataRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link DataRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link DataRPdu#requiredReliabilityService}*/
 public DataRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link DataRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link DataRPdu#pad1}*/
 public DataRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link DataRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link DataRPdu#pad2}*/
 public DataRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link DataRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link DataRPdu#fixedDatumRecords}*/
 public DataRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link DataRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link DataRPdu#variableDatumRecords}*/
 public DataRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link DataRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

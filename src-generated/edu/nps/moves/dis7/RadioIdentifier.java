@@ -33,6 +33,7 @@ public class RadioIdentifier extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link RadioIdentifier#siteNumber}*/
 public RadioIdentifier setSiteNumber(short pSiteNumber)
 {
     siteNumber = pSiteNumber;
     return this;
 }
 
+/** Getter for {@link RadioIdentifier#siteNumber}*/
 public short getSiteNumber()
 {
     return siteNumber; 
 }
 
+/** Setter for {@link RadioIdentifier#applicationNumber}*/
 public RadioIdentifier setApplicationNumber(short pApplicationNumber)
 {
     applicationNumber = pApplicationNumber;
     return this;
 }
 
+/** Getter for {@link RadioIdentifier#applicationNumber}*/
 public short getApplicationNumber()
 {
     return applicationNumber; 
 }
 
+/** Setter for {@link RadioIdentifier#referenceNumber}*/
 public RadioIdentifier setReferenceNumber(short pReferenceNumber)
 {
     referenceNumber = pReferenceNumber;
     return this;
 }
 
+/** Getter for {@link RadioIdentifier#referenceNumber}*/
 public short getReferenceNumber()
 {
     return referenceNumber; 
 }
 
+/** Setter for {@link RadioIdentifier#radioNumber}*/
 public RadioIdentifier setRadioNumber(short pRadioNumber)
 {
     radioNumber = pRadioNumber;
     return this;
 }
 
+/** Getter for {@link RadioIdentifier#radioNumber}*/
 public short getRadioNumber()
 {
     return radioNumber; 

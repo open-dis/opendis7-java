@@ -59,6 +59,7 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
     setPduType( DISPDUType.INTERCOM_CONTROL );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -86,133 +87,157 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link IntercomControlPdu#controlType}*/
 public IntercomControlPdu setControlType(IntercomControlControlType pControlType)
 {
     controlType = pControlType;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#controlType}*/
 public IntercomControlControlType getControlType()
 {
     return controlType; 
 }
 
+/** Setter for {@link IntercomControlPdu#communicationsChannelType}*/
 public IntercomControlPdu setCommunicationsChannelType(byte pCommunicationsChannelType)
 {
     communicationsChannelType = pCommunicationsChannelType;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#communicationsChannelType}*/
 public byte getCommunicationsChannelType()
 {
     return communicationsChannelType; 
 }
 
+/** Setter for {@link IntercomControlPdu#sourceEntityID}*/
 public IntercomControlPdu setSourceEntityID(EntityID pSourceEntityID)
 {
     sourceEntityID = pSourceEntityID;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#sourceEntityID}*/
 public EntityID getSourceEntityID()
 {
     return sourceEntityID; 
 }
 
+/** Setter for {@link IntercomControlPdu#sourceIntercomNumber}*/
 public IntercomControlPdu setSourceIntercomNumber(short pSourceIntercomNumber)
 {
     sourceIntercomNumber = pSourceIntercomNumber;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#sourceIntercomNumber}*/
 public short getSourceIntercomNumber()
 {
     return sourceIntercomNumber; 
 }
 
+/** Setter for {@link IntercomControlPdu#sourceLineID}*/
 public IntercomControlPdu setSourceLineID(byte pSourceLineID)
 {
     sourceLineID = pSourceLineID;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#sourceLineID}*/
 public byte getSourceLineID()
 {
     return sourceLineID; 
 }
 
+/** Setter for {@link IntercomControlPdu#transmitPriority}*/
 public IntercomControlPdu setTransmitPriority(byte pTransmitPriority)
 {
     transmitPriority = pTransmitPriority;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#transmitPriority}*/
 public byte getTransmitPriority()
 {
     return transmitPriority; 
 }
 
+/** Setter for {@link IntercomControlPdu#transmitLineState}*/
 public IntercomControlPdu setTransmitLineState(IntercomControlTransmitLineState pTransmitLineState)
 {
     transmitLineState = pTransmitLineState;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#transmitLineState}*/
 public IntercomControlTransmitLineState getTransmitLineState()
 {
     return transmitLineState; 
 }
 
+/** Setter for {@link IntercomControlPdu#command}*/
 public IntercomControlPdu setCommand(IntercomControlCommand pCommand)
 {
     command = pCommand;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#command}*/
 public IntercomControlCommand getCommand()
 {
     return command; 
 }
 
+/** Setter for {@link IntercomControlPdu#masterIntercomReferenceID}*/
 public IntercomControlPdu setMasterIntercomReferenceID(EntityID pMasterIntercomReferenceID)
 {
     masterIntercomReferenceID = pMasterIntercomReferenceID;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#masterIntercomReferenceID}*/
 public EntityID getMasterIntercomReferenceID()
 {
     return masterIntercomReferenceID; 
 }
 
+/** Setter for {@link IntercomControlPdu#masterIntercomNumber}*/
 public IntercomControlPdu setMasterIntercomNumber(short pMasterIntercomNumber)
 {
     masterIntercomNumber = pMasterIntercomNumber;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#masterIntercomNumber}*/
 public short getMasterIntercomNumber()
 {
     return masterIntercomNumber; 
 }
 
+/** Setter for {@link IntercomControlPdu#masterChannelID}*/
 public IntercomControlPdu setMasterChannelID(short pMasterChannelID)
 {
     masterChannelID = pMasterChannelID;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#masterChannelID}*/
 public short getMasterChannelID()
 {
     return masterChannelID; 
 }
 
+/** Setter for {@link IntercomControlPdu#intercomParameters}*/
 public IntercomControlPdu setIntercomParameters(List<IntercomCommunicationsParameters> pIntercomParameters)
 {
     intercomParameters = pIntercomParameters;
     return this;
 }
 
+/** Getter for {@link IntercomControlPdu#intercomParameters}*/
 public List<IntercomCommunicationsParameters> getIntercomParameters()
 {
     return intercomParameters; 

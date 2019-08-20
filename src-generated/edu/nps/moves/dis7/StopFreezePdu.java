@@ -37,6 +37,7 @@ public class StopFreezePdu extends SimulationManagementFamilyPdu implements Seri
     setPduType( DISPDUType.STOP_FREEZE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -52,56 +53,66 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link StopFreezePdu#realWorldTime}*/
 public StopFreezePdu setRealWorldTime(ClockTime pRealWorldTime)
 {
     realWorldTime = pRealWorldTime;
     return this;
 }
 
+/** Getter for {@link StopFreezePdu#realWorldTime}*/
 public ClockTime getRealWorldTime()
 {
     return realWorldTime; 
 }
 
+/** Setter for {@link StopFreezePdu#reason}*/
 public StopFreezePdu setReason(StopFreezeReason pReason)
 {
     reason = pReason;
     return this;
 }
 
+/** Getter for {@link StopFreezePdu#reason}*/
 public StopFreezeReason getReason()
 {
     return reason; 
 }
 
+/** Setter for {@link StopFreezePdu#frozenBehavior}*/
 public StopFreezePdu setFrozenBehavior(StopFreezeFrozenBehavior pFrozenBehavior)
 {
     frozenBehavior = pFrozenBehavior;
     return this;
 }
 
+/** Setter for {@link StopFreezePdu#frozenBehavior}*/
 public StopFreezeFrozenBehavior getFrozenBehavior()
 {
     return frozenBehavior; 
 }
 
+/** Setter for {@link StopFreezePdu#padding1}*/
 public StopFreezePdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link StopFreezePdu#padding1}*/
 public short getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link StopFreezePdu#requestID}*/
 public StopFreezePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link StopFreezePdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

@@ -27,6 +27,7 @@ public class FixedDatum extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link FixedDatum#fixedDatumID}*/
 public FixedDatum setFixedDatumID(VariableRecordTypes pFixedDatumID)
 {
     fixedDatumID = pFixedDatumID;
     return this;
 }
 
+/** Getter for {@link FixedDatum#fixedDatumID}*/
 public VariableRecordTypes getFixedDatumID()
 {
     return fixedDatumID; 
 }
 
+/** Setter for {@link FixedDatum#fixedDatumValue}*/
 public FixedDatum setFixedDatumValue(int pFixedDatumValue)
 {
     fixedDatumValue = pFixedDatumValue;
     return this;
 }
 
+/** Getter for {@link FixedDatum#fixedDatumValue}*/
 public int getFixedDatumValue()
 {
     return fixedDatumValue; 

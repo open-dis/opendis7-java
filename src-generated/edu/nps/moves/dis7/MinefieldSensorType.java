@@ -24,6 +24,7 @@ public class MinefieldSensorType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -34,12 +35,14 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link MinefieldSensorType#sensorType}*/
 public MinefieldSensorType setSensorType(short pSensorType)
 {
     sensorType = pSensorType;
     return this;
 }
 
+/** Getter for {@link MinefieldSensorType#sensorType}*/
 public short getSensorType()
 {
     return sensorType; 

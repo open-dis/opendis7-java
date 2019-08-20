@@ -42,6 +42,7 @@ public class TransferOwnershipPdu extends EntityManagementFamilyPdu implements S
     setPduType( DISPDUType.TRANSFER_OWNERSHIP );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -59,78 +60,92 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link TransferOwnershipPdu#originatingEntityID}*/
 public TransferOwnershipPdu setOriginatingEntityID(EntityID pOriginatingEntityID)
 {
     originatingEntityID = pOriginatingEntityID;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#originatingEntityID}*/
 public EntityID getOriginatingEntityID()
 {
     return originatingEntityID; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#receivingEntityID}*/
 public TransferOwnershipPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#receivingEntityID}*/
 public EntityID getReceivingEntityID()
 {
     return receivingEntityID; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#requestID}*/
 public TransferOwnershipPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#requiredReliabilityService}*/
 public TransferOwnershipPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#transferType}*/
 public TransferOwnershipPdu setTransferType(TransferControlTransferType pTransferType)
 {
     transferType = pTransferType;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#transferType}*/
 public TransferControlTransferType getTransferType()
 {
     return transferType; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#transferEntityID}*/
 public TransferOwnershipPdu setTransferEntityID(EntityID pTransferEntityID)
 {
     transferEntityID = pTransferEntityID;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#transferEntityID}*/
 public EntityID getTransferEntityID()
 {
     return transferEntityID; 
 }
 
+/** Setter for {@link TransferOwnershipPdu#recordSets}*/
 public TransferOwnershipPdu setRecordSets(RecordSpecification pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
 }
 
+/** Getter for {@link TransferOwnershipPdu#recordSets}*/
 public RecordSpecification getRecordSets()
 {
     return recordSets; 

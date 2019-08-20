@@ -27,6 +27,7 @@ public class AntennaLocation extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AntennaLocation#antennaLocation}*/
 public AntennaLocation setAntennaLocation(Vector3Double pAntennaLocation)
 {
     antennaLocation = pAntennaLocation;
     return this;
 }
 
+/** Getter for {@link AntennaLocation#antennaLocation}*/
 public Vector3Double getAntennaLocation()
 {
     return antennaLocation; 
 }
 
+/** Setter for {@link AntennaLocation#relativeAntennaLocation}*/
 public AntennaLocation setRelativeAntennaLocation(Vector3Float pRelativeAntennaLocation)
 {
     relativeAntennaLocation = pRelativeAntennaLocation;
     return this;
 }
 
+/** Getter for {@link AntennaLocation#relativeAntennaLocation}*/
 public Vector3Float getRelativeAntennaLocation()
 {
     return relativeAntennaLocation; 

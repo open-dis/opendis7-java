@@ -35,6 +35,7 @@ public class ElectronicEmitter extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -53,45 +54,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ElectronicEmitter#systemDataLength}*/
 public ElectronicEmitter setSystemDataLength(byte pSystemDataLength)
 {
     systemDataLength = pSystemDataLength;
     return this;
 }
 
+/** Getter for {@link ElectronicEmitter#systemDataLength}*/
 public byte getSystemDataLength()
 {
     return systemDataLength; 
 }
 
+/** Setter for {@link ElectronicEmitter#emitterSystem}*/
 public ElectronicEmitter setEmitterSystem(EmitterSystem pEmitterSystem)
 {
     emitterSystem = pEmitterSystem;
     return this;
 }
 
+/** Getter for {@link ElectronicEmitter#emitterSystem}*/
 public EmitterSystem getEmitterSystem()
 {
     return emitterSystem; 
 }
 
+/** Setter for {@link ElectronicEmitter#location}*/
 public ElectronicEmitter setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
 }
 
+/** Getter for {@link ElectronicEmitter#location}*/
 public Vector3Float getLocation()
 {
     return location; 
 }
 
+/** Setter for {@link ElectronicEmitter#beams}*/
 public ElectronicEmitter setBeams(List<EmitterBeam> pBeams)
 {
     beams = pBeams;
     return this;
 }
 
+/** Getter for {@link ElectronicEmitter#beams}*/
 public List<EmitterBeam> getBeams()
 {
     return beams; 

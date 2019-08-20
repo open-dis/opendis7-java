@@ -27,6 +27,7 @@ public class Vector2Float extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link Vector2Float#x}*/
 public Vector2Float setX(float pX)
 {
     x = pX;
     return this;
 }
 
+/** Getter for {@link Vector2Float#x}*/
 public float getX()
 {
     return x; 
 }
 
+/** Setter for {@link Vector2Float#y}*/
 public Vector2Float setY(float pY)
 {
     y = pY;
     return this;
 }
 
+/** Getter for {@link Vector2Float#y}*/
 public float getY()
 {
     return y; 

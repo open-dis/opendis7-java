@@ -42,6 +42,7 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
     setPduType( DISPDUType.INFORMATION_OPERATIONS_REPORT );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -65,89 +66,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link InformationOperationsReportPdu#ioSimSource}*/
 public InformationOperationsReportPdu setIoSimSource(IOActionIOSimulationSource pIoSimSource)
 {
     ioSimSource = pIoSimSource;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#ioSimSource}*/
 public IOActionIOSimulationSource getIoSimSource()
 {
     return ioSimSource; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#ioReportType}*/
 public InformationOperationsReportPdu setIoReportType(IOReportIOReportType pIoReportType)
 {
     ioReportType = pIoReportType;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#ioReportType}*/
 public IOReportIOReportType getIoReportType()
 {
     return ioReportType; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#padding1}*/
 public InformationOperationsReportPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#padding1}*/
 public byte getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#ioAttackerID}*/
 public InformationOperationsReportPdu setIoAttackerID(EntityID pIoAttackerID)
 {
     ioAttackerID = pIoAttackerID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#ioAttackerID}*/
 public EntityID getIoAttackerID()
 {
     return ioAttackerID; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#ioPrimaryTargetID}*/
 public InformationOperationsReportPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
 {
     ioPrimaryTargetID = pIoPrimaryTargetID;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#ioPrimaryTargetID}*/
 public EntityID getIoPrimaryTargetID()
 {
     return ioPrimaryTargetID; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#padding2}*/
 public InformationOperationsReportPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#padding3}*/
 public InformationOperationsReportPdu setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#padding3}*/
 public short getPadding3()
 {
     return padding3; 
 }
 
+/** Setter for {@link InformationOperationsReportPdu#ioRecords}*/
 public InformationOperationsReportPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
 }
 
+/** Getter for {@link InformationOperationsReportPdu#ioRecords}*/
 public List<IORecord> getIoRecords()
 {
     return ioRecords; 

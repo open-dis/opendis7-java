@@ -35,6 +35,7 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
     setPduType( DISPDUType.ENTITY_DAMAGE_STATUS );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,45 +55,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EntityDamageStatusPdu#damagedEntityID}*/
 public EntityDamageStatusPdu setDamagedEntityID(EntityID pDamagedEntityID)
 {
     damagedEntityID = pDamagedEntityID;
     return this;
 }
 
+/** Getter for {@link EntityDamageStatusPdu#damagedEntityID}*/
 public EntityID getDamagedEntityID()
 {
     return damagedEntityID; 
 }
 
+/** Setter for {@link EntityDamageStatusPdu#padding1}*/
 public EntityDamageStatusPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
 }
 
+/** Getter for {@link EntityDamageStatusPdu#padding1}*/
 public short getPadding1()
 {
     return padding1; 
 }
 
+/** Setter for {@link EntityDamageStatusPdu#padding2}*/
 public EntityDamageStatusPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
 }
 
+/** Getter for {@link EntityDamageStatusPdu#padding2}*/
 public short getPadding2()
 {
     return padding2; 
 }
 
+/** Setter for {@link EntityDamageStatusPdu#damageDescriptionRecords}*/
 public EntityDamageStatusPdu setDamageDescriptionRecords(List<DirectedEnergyDamage> pDamageDescriptionRecords)
 {
     damageDescriptionRecords = pDamageDescriptionRecords;
     return this;
 }
 
+/** Getter for {@link EntityDamageStatusPdu#damageDescriptionRecords}*/
 public List<DirectedEnergyDamage> getDamageDescriptionRecords()
 {
     return damageDescriptionRecords; 

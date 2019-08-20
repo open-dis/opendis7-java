@@ -45,6 +45,7 @@ public class EngineFuelReload extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -62,89 +63,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EngineFuelReload#standardQuantity}*/
 public EngineFuelReload setStandardQuantity(int pStandardQuantity)
 {
     standardQuantity = pStandardQuantity;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#standardQuantity}*/
 public int getStandardQuantity()
 {
     return standardQuantity; 
 }
 
+/** Setter for {@link EngineFuelReload#maximumQuantity}*/
 public EngineFuelReload setMaximumQuantity(int pMaximumQuantity)
 {
     maximumQuantity = pMaximumQuantity;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#maximumQuantity}*/
 public int getMaximumQuantity()
 {
     return maximumQuantity; 
 }
 
+/** Setter for {@link EngineFuelReload#standardQuantityReloadTime}*/
 public EngineFuelReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
 {
     standardQuantityReloadTime = pStandardQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#standardQuantityReloadTime}*/
 public int getStandardQuantityReloadTime()
 {
     return standardQuantityReloadTime; 
 }
 
+/** Setter for {@link EngineFuelReload#maximumQuantityReloadTime}*/
 public EngineFuelReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
 {
     maximumQuantityReloadTime = pMaximumQuantityReloadTime;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#maximumQuantityReloadTime}*/
 public int getMaximumQuantityReloadTime()
 {
     return maximumQuantityReloadTime; 
 }
 
+/** Setter for {@link EngineFuelReload#fuelMeasurmentUnits}*/
 public EngineFuelReload setFuelMeasurmentUnits(FuelMeasurementUnits pFuelMeasurmentUnits)
 {
     fuelMeasurmentUnits = pFuelMeasurmentUnits;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#fuelMeasurmentUnits}*/
 public FuelMeasurementUnits getFuelMeasurmentUnits()
 {
     return fuelMeasurmentUnits; 
 }
 
+/** Setter for {@link EngineFuelReload#fuelType}*/
 public EngineFuelReload setFuelType(SupplyFuelType pFuelType)
 {
     fuelType = pFuelType;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#fuelType}*/
 public SupplyFuelType getFuelType()
 {
     return fuelType; 
 }
 
+/** Setter for {@link EngineFuelReload#fuelLocation}*/
 public EngineFuelReload setFuelLocation(FuelLocation pFuelLocation)
 {
     fuelLocation = pFuelLocation;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#fuelLocation}*/
 public FuelLocation getFuelLocation()
 {
     return fuelLocation; 
 }
 
+/** Setter for {@link EngineFuelReload#padding}*/
 public EngineFuelReload setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
 }
 
+/** Getter for {@link EngineFuelReload#padding}*/
 public byte getPadding()
 {
     return padding; 

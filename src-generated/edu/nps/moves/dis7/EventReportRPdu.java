@@ -40,6 +40,7 @@ public class EventReportRPdu extends SimulationManagementWithReliabilityFamilyPd
     setPduType( DISPDUType.EVENT_REPORT_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -64,45 +65,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link EventReportRPdu#eventType}*/
 public EventReportRPdu setEventType(EventReportEventType pEventType)
 {
     eventType = pEventType;
     return this;
 }
 
+/** Getter for {@link EventReportRPdu#eventType}*/
 public EventReportEventType getEventType()
 {
     return eventType; 
 }
 
+/** Setter for {@link EventReportRPdu#pad1}*/
 public EventReportRPdu setPad1(int pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link EventReportRPdu#pad1}*/
 public int getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link EventReportRPdu#fixedDatumRecords}*/
 public EventReportRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
 }
 
+/** Getter for {@link EventReportRPdu#fixedDatumRecords}*/
 public List<FixedDatum> getFixedDatumRecords()
 {
     return fixedDatumRecords; 
 }
 
+/** Setter for {@link EventReportRPdu#variableDatumRecords}*/
 public EventReportRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
 }
 
+/** Getter for {@link EventReportRPdu#variableDatumRecords}*/
 public List<VariableDatum> getVariableDatumRecords()
 {
     return variableDatumRecords; 

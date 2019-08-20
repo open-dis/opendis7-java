@@ -38,6 +38,7 @@ public class StartResumeRPdu extends SimulationManagementWithReliabilityFamilyPd
     setPduType( DISPDUType.START_RESUME_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -54,67 +55,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link StartResumeRPdu#realWorldTime}*/
 public StartResumeRPdu setRealWorldTime(ClockTime pRealWorldTime)
 {
     realWorldTime = pRealWorldTime;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#realWorldTime}*/
 public ClockTime getRealWorldTime()
 {
     return realWorldTime; 
 }
 
+/** Setter for {@link StartResumeRPdu#simulationTime}*/
 public StartResumeRPdu setSimulationTime(ClockTime pSimulationTime)
 {
     simulationTime = pSimulationTime;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#simulationTime}*/
 public ClockTime getSimulationTime()
 {
     return simulationTime; 
 }
 
+/** Setter for {@link StartResumeRPdu#requiredReliabilityService}*/
 public StartResumeRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link StartResumeRPdu#pad1}*/
 public StartResumeRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link StartResumeRPdu#pad2}*/
 public StartResumeRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link StartResumeRPdu#requestID}*/
 public StartResumeRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link StartResumeRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 

@@ -27,6 +27,7 @@ public class LiveEntityOrientation extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -39,34 +40,40 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link LiveEntityOrientation#psi}*/
 public LiveEntityOrientation setPsi(byte pPsi)
 {
     psi = pPsi;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation#psi}*/
 public byte getPsi()
 {
     return psi; 
 }
 
+/** Setter for {@link LiveEntityOrientation#theta}*/
 public LiveEntityOrientation setTheta(byte pTheta)
 {
     theta = pTheta;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation#theta}*/
 public byte getTheta()
 {
     return theta; 
 }
 
+/** Setter for {@link LiveEntityOrientation#phi}*/
 public LiveEntityOrientation setPhi(byte pPhi)
 {
     phi = pPhi;
     return this;
 }
 
+/** Getter for {@link LiveEntityOrientation#phi}*/
 public byte getPhi()
 {
     return phi; 

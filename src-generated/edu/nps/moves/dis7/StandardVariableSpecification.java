@@ -27,6 +27,7 @@ public class StandardVariableSpecification extends Object implements Serializabl
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -57,12 +58,14 @@ public StandardVariableSpecification setNumberOfStandardVariableRecords(short pN
     return this;
 }
 
+/** Setter for {@link StandardVariableSpecification#standardVariables}*/
 public StandardVariableSpecification setStandardVariables(List<StandardVariableRecord> pStandardVariables)
 {
     standardVariables = pStandardVariables;
     return this;
 }
 
+/** Getter for {@link StandardVariableSpecification#standardVariables}*/
 public List<StandardVariableRecord> getStandardVariables()
 {
     return standardVariables; 

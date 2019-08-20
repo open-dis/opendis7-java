@@ -27,6 +27,7 @@ public class ClockTime extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ClockTime#hour}*/
 public ClockTime setHour(int pHour)
 {
     hour = pHour;
     return this;
 }
 
+/** Getter for {@link ClockTime#hour}*/
 public int getHour()
 {
     return hour; 
 }
 
+/** Setter for {@link ClockTime#timePastHour}*/
 public ClockTime setTimePastHour(int pTimePastHour)
 {
     timePastHour = pTimePastHour;
     return this;
 }
 
+/** Getter for {@link ClockTime#timePastHour}*/
 public int getTimePastHour()
 {
     return timePastHour; 

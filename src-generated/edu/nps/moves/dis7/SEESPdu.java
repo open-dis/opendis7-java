@@ -46,6 +46,7 @@ public class SEESPdu extends DistributedEmissionsFamilyPdu implements Serializab
     setPduType( DISPDUType.SUPPLEMENTAL_EMISSION_ENTITY_STATE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -72,67 +73,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SEESPdu#orginatingEntityID}*/
 public SEESPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
 {
     orginatingEntityID = pOrginatingEntityID;
     return this;
 }
 
+/** Getter for {@link SEESPdu#orginatingEntityID}*/
 public EntityID getOrginatingEntityID()
 {
     return orginatingEntityID; 
 }
 
+/** Setter for {@link SEESPdu#infraredSignatureRepresentationIndex}*/
 public SEESPdu setInfraredSignatureRepresentationIndex(short pInfraredSignatureRepresentationIndex)
 {
     infraredSignatureRepresentationIndex = pInfraredSignatureRepresentationIndex;
     return this;
 }
 
+/** Getter for {@link SEESPdu#infraredSignatureRepresentationIndex}*/
 public short getInfraredSignatureRepresentationIndex()
 {
     return infraredSignatureRepresentationIndex; 
 }
 
+/** Setter for {@link SEESPdu#acousticSignatureRepresentationIndex}*/
 public SEESPdu setAcousticSignatureRepresentationIndex(short pAcousticSignatureRepresentationIndex)
 {
     acousticSignatureRepresentationIndex = pAcousticSignatureRepresentationIndex;
     return this;
 }
 
+/** Getter for {@link SEESPdu#acousticSignatureRepresentationIndex}*/
 public short getAcousticSignatureRepresentationIndex()
 {
     return acousticSignatureRepresentationIndex; 
 }
 
+/** Setter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}*/
 public SEESPdu setRadarCrossSectionSignatureRepresentationIndex(short pRadarCrossSectionSignatureRepresentationIndex)
 {
     radarCrossSectionSignatureRepresentationIndex = pRadarCrossSectionSignatureRepresentationIndex;
     return this;
 }
 
+/** Getter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}*/
 public short getRadarCrossSectionSignatureRepresentationIndex()
 {
     return radarCrossSectionSignatureRepresentationIndex; 
 }
 
+/** Setter for {@link SEESPdu#propulsionSystemData}*/
 public SEESPdu setPropulsionSystemData(List<PropulsionSystemData> pPropulsionSystemData)
 {
     propulsionSystemData = pPropulsionSystemData;
     return this;
 }
 
+/** Getter for {@link SEESPdu#propulsionSystemData}*/
 public List<PropulsionSystemData> getPropulsionSystemData()
 {
     return propulsionSystemData; 
 }
 
+/** Setter for {@link SEESPdu#vectoringSystemData}*/
 public SEESPdu setVectoringSystemData(List<VectoringNozzleSystem> pVectoringSystemData)
 {
     vectoringSystemData = pVectoringSystemData;
     return this;
 }
 
+/** Getter for {@link SEESPdu#vectoringSystemData}*/
 public List<VectoringNozzleSystem> getVectoringSystemData()
 {
     return vectoringSystemData; 

@@ -40,6 +40,7 @@ public class SetRecordRPdu extends SimulationManagementWithReliabilityFamilyPdu 
     setPduType( DISPDUType.SET_RECORD_RELIABLE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -61,67 +62,79 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SetRecordRPdu#requestID}*/
 public SetRecordRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#requestID}*/
 public int getRequestID()
 {
     return requestID; 
 }
 
+/** Setter for {@link SetRecordRPdu#requiredReliabilityService}*/
 public SetRecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#requiredReliabilityService}*/
 public RequiredReliabilityService getRequiredReliabilityService()
 {
     return requiredReliabilityService; 
 }
 
+/** Setter for {@link SetRecordRPdu#pad1}*/
 public SetRecordRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#pad1}*/
 public byte getPad1()
 {
     return pad1; 
 }
 
+/** Setter for {@link SetRecordRPdu#pad2}*/
 public SetRecordRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#pad2}*/
 public short getPad2()
 {
     return pad2; 
 }
 
+/** Setter for {@link SetRecordRPdu#pad3}*/
 public SetRecordRPdu setPad3(int pPad3)
 {
     pad3 = pPad3;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#pad3}*/
 public int getPad3()
 {
     return pad3; 
 }
 
+/** Setter for {@link SetRecordRPdu#recordSets}*/
 public SetRecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
 }
 
+/** Getter for {@link SetRecordRPdu#recordSets}*/
 public List<RecordSpecification> getRecordSets()
 {
     return recordSets; 

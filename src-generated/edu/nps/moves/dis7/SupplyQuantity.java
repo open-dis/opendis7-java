@@ -27,6 +27,7 @@ public class SupplyQuantity extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -38,23 +39,27 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link SupplyQuantity#supplyType}*/
 public SupplyQuantity setSupplyType(EntityType pSupplyType)
 {
     supplyType = pSupplyType;
     return this;
 }
 
+/** Getter for {@link SupplyQuantity#supplyType}*/
 public EntityType getSupplyType()
 {
     return supplyType; 
 }
 
+/** Setter for {@link SupplyQuantity#quantity}*/
 public SupplyQuantity setQuantity(float pQuantity)
 {
     quantity = pQuantity;
     return this;
 }
 
+/** Getter for {@link SupplyQuantity#quantity}*/
 public float getQuantity()
 {
     return quantity; 

@@ -40,6 +40,7 @@ public class AppearancePdu extends LiveEntityFamilyPdu implements Serializable
     setPduType( DISPDUType.APPEARANCE );
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -58,89 +59,105 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link AppearancePdu#liveEntityId}*/
 public AppearancePdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#liveEntityId}*/
 public EntityID getLiveEntityId()
 {
     return liveEntityId; 
 }
 
+/** Setter for {@link AppearancePdu#appearanceFlags}*/
 public AppearancePdu setAppearanceFlags(short pAppearanceFlags)
 {
     appearanceFlags = pAppearanceFlags;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#appearanceFlags}*/
 public short getAppearanceFlags()
 {
     return appearanceFlags; 
 }
 
+/** Setter for {@link AppearancePdu#forceId}*/
 public AppearancePdu setForceId(ForceID pForceId)
 {
     forceId = pForceId;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#forceId}*/
 public ForceID getForceId()
 {
     return forceId; 
 }
 
+/** Setter for {@link AppearancePdu#entityType}*/
 public AppearancePdu setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#entityType}*/
 public EntityType getEntityType()
 {
     return entityType; 
 }
 
+/** Setter for {@link AppearancePdu#alternateEntityType}*/
 public AppearancePdu setAlternateEntityType(EntityType pAlternateEntityType)
 {
     alternateEntityType = pAlternateEntityType;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#alternateEntityType}*/
 public EntityType getAlternateEntityType()
 {
     return alternateEntityType; 
 }
 
+/** Setter for {@link AppearancePdu#entityMarking}*/
 public AppearancePdu setEntityMarking(EntityMarking pEntityMarking)
 {
     entityMarking = pEntityMarking;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#entityMarking}*/
 public EntityMarking getEntityMarking()
 {
     return entityMarking; 
 }
 
+/** Setter for {@link AppearancePdu#capabilities}*/
 public AppearancePdu setCapabilities(EntityCapabilities pCapabilities)
 {
     capabilities = pCapabilities;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#capabilities}*/
 public EntityCapabilities getCapabilities()
 {
     return capabilities; 
 }
 
+/** Setter for {@link AppearancePdu#appearanceFields}*/
 public AppearancePdu setAppearanceFields(Appearance pAppearanceFields)
 {
     appearanceFields = pAppearanceFields;
     return this;
 }
 
+/** Getter for {@link AppearancePdu#appearanceFields}*/
 public Appearance getAppearanceFields()
 {
     return appearanceFields; 

@@ -33,6 +33,7 @@ public class ObjectType extends Object implements Serializable
  {
  }
 
+/** Returns the size of this serialized object in bytes*/
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
@@ -46,45 +47,53 @@ public int getMarshalledSize()
 }
 
 
+/** Setter for {@link ObjectType#domain}*/
 public ObjectType setDomain(PlatformDomain pDomain)
 {
     domain = pDomain;
     return this;
 }
 
+/** Getter for {@link ObjectType#domain}*/
 public PlatformDomain getDomain()
 {
     return domain; 
 }
 
+/** Setter for {@link ObjectType#objectKind}*/
 public ObjectType setObjectKind(ObjectKind pObjectKind)
 {
     objectKind = pObjectKind;
     return this;
 }
 
+/** Getter for {@link ObjectType#objectKind}*/
 public ObjectKind getObjectKind()
 {
     return objectKind; 
 }
 
+/** Setter for {@link ObjectType#category}*/
 public ObjectType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
 }
 
+/** Getter for {@link ObjectType#category}*/
 public byte getCategory()
 {
     return category; 
 }
 
+/** Setter for {@link ObjectType#subCategory}*/
 public ObjectType setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
 }
 
+/** Getter for {@link ObjectType#subCategory}*/
 public byte getSubCategory()
 {
     return subCategory; 
