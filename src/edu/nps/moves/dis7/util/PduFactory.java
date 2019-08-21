@@ -21,7 +21,8 @@ import java.util.List;
  * A class to 1) create new Pdus (for sending purposes) and 2) create Pdus from byte streams
  * received from the net.
  * <p>
- * For the first use case, this the pdus will be initialized with country, exerciseId
+ * For the first use case, pdus will be initialized with country, exerciseId, siteId, applicationId and timestamp format,
+ * matching the parameters passed to the constructor.  For no arg constructor, the defaults of USA, 1, 2, 3, and absolute timestamp are used.
  *
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
@@ -42,7 +43,6 @@ public class PduFactory
   {
     this.disTime = new DisTime();
     getTimeStampMethod();
-
   }
 
   public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, boolean useAbsoluteTimestamp)
