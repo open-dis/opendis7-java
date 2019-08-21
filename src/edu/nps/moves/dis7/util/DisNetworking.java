@@ -54,30 +54,44 @@ public class DisNetworking
     return MCAST_GROUP;
   }
 
+  public void stop()
+  {
+    if(rsocket != null) {
+      rsocket.close();
+      rsocket = null;
+    }
+    
+    if(ssocket != null) {
+      ssocket.close();
+      ssocket = null;
+    }
+  }
+  
   public Pdu receivePdu() throws IOException
   {
     PduFactory pduFactory = new PduFactory();
     BuffAndLength blen = receiveRawPdu();
     return pduFactory.createPdu(blen.buff);
   }
-
+  
+  private MulticastSocket rsocket;
   public BuffAndLength receiveRawPdu() throws IOException
   {
-    MulticastSocket socket;
     DatagramPacket packet;
 
-    socket = new MulticastSocket(DIS_PORT);
+    rsocket = new MulticastSocket(DIS_PORT);
     InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
-    socket.setNetworkInterface(findIp4Interface());
-    socket.joinGroup(maddr);
+    rsocket.setNetworkInterface(findIp4Interface());
+    rsocket.joinGroup(maddr);
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
     //System.out.println("Listening on " + MCAST_GROUP + ":" + DIS_PORT + " if:" + socket.getNetworkInterface().getDisplayName());
-    socket.receive(packet);   //blocks here waiting for next DIS pdu to be received on broadcast IP and specified port 
+    rsocket.receive(packet);   //blocks here waiting for next DIS pdu to be received on broadcast IP and specified port 
     //System.out.println("packet received from " + packet.getSocketAddress());
     
-    socket.close();
+    rsocket.close();
+    rsocket = null;
     return new BuffAndLength(packet.getData(), packet.getLength());
   }
 
@@ -91,17 +105,19 @@ public class DisNetworking
     sendRawPdu(baos.toByteArray());
   }
 
+  MulticastSocket ssocket;
   public void sendRawPdu(byte[] data) throws IOException
   {
-    MulticastSocket msocket = new MulticastSocket();
+    ssocket = new MulticastSocket();
     InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
     
     // load byte buffer into packet and send
     DatagramPacket packet = new DatagramPacket(data, data.length, maddr, DIS_PORT);
-    msocket.setNetworkInterface(findIp4Interface());
-    msocket.send(packet);
+    ssocket.setNetworkInterface(findIp4Interface());
+    ssocket.send(packet);
 
-    msocket.close();
+    ssocket.close();
+    ssocket = null;
     //System.out.println("sent to " + maddr.getHostAddress() + ":" + DIS_PORT);
   }
 
