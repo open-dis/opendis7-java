@@ -18,6 +18,11 @@ import java.util.Base64;
 
 public class Recorder implements PduReceiver
 {
+  static String DEFAULT_OUTDIR = "./pdulog";
+  static String DEFAULT_FILEPREFIX = "Pdusave";
+  static String DEFAULT_MCAST = "230.0.0.0";
+  static int    DEFAULT_PORT = 3000;
+  
   static String DISLOG_FILE_TAIL = ".dislog";
 
   public static String COMMENT_MARKER = "!";
@@ -25,24 +30,88 @@ public class Recorder implements PduReceiver
   static String STOP_COMMENT_MARKER = COMMENT_MARKER + "End" + COMMENT_MARKER;
 
   private BufferedWriter bwr;
-
   private File logFile;
-
-  public Recorder(Path outputDir, String filename) throws IOException
+  private DisNetworking disnet;
+  private Thread receiverThrd;
+  
+  public Recorder() throws IOException
   {
-    logFile = makeFile(outputDir, filename + DISLOG_FILE_TAIL);
-    bwr = new BufferedWriter(new FileWriter(logFile));
+    this(DEFAULT_OUTDIR,DEFAULT_MCAST,DEFAULT_PORT);
   }
+  
+  public Recorder(String outputDir, String mcastaddr, int port) throws IOException
+  {
+    logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_TAIL );
+    bwr = new BufferedWriter(new FileWriter(logFile));
+    
+    disnet = new DisNetworking(port, mcastaddr);
+    // Start a thread to receive and record pdus
 
+    receiverThrd = new Thread(()->{
+      int count = 1;
+      while(!Thread.interrupted()){
+        try {
+          BuffAndLength blen = disnet.receiveRawPdu();
+          //System.out.println(""+ count++ +" Got pdu from DisNetworking");
+          receivePdu(blen.buff,blen.length);
+        }
+        catch(IOException ex) {
+          // this is the normal exception if you do disnet.stop()  System.err.println("Exception receiving Pdu: "+ex.getLocalizedMessage());
+        }
+      }
+    });
+    receiverThrd.setPriority(Thread.NORM_PRIORITY);
+    receiverThrd.setDaemon(true);
+    receiverThrd.start();
+  }
+  
+  public void startResume()
+  {
+    dosave = true;
+  }
+  
+  public void stopPause()
+  {
+    dosave = false;
+  }
+  
+  public String getOutputFile()
+  {
+    if(logFile != null)
+      return logFile.getAbsolutePath();
+    return null;
+  }
+  
+  public void end()
+  {
+    disnet.stop();
+    receiverThrd.interrupt();
+    
+     try {
+      writeFooter();
+      bwr.flush();
+      bwr.close();
+      System.out.println();
+      System.out.println("Recorder log file closed");
+    }
+    catch (IOException ex) {
+      System.out.println("IOException closing file: " + ex.getMessage());
+    }
+  }
+  
   Long startNanoTime = null;
   StringBuilder sb = new StringBuilder();
   Base64.Encoder encdr = Base64.getEncoder();
   int pduCount = 0;
   boolean headerWritten = false;
-
+  boolean dosave = true;
+  
   @Override
   public void receivePdu(byte[] buff, int len)
   {
+    if(!dosave)
+      return;
+    
     long packetRcvNanoTime = System.nanoTime();
     if (startNanoTime == null)
       startNanoTime = packetRcvNanoTime;
@@ -71,19 +140,6 @@ public class Recorder implements PduReceiver
 
     //bwr.flush();
     sb.setLength(0);
-  }
-
-  public void stopAndClose()
-  {
-    try {
-      writeFooter();
-      bwr.flush();
-      bwr.close();
-      System.out.println("Recorder log file closed");
-    }
-    catch (IOException ex) {
-      System.out.println("IOException closing file: " + ex.getMessage());
-    }
   }
   
   public String getLogFile()
@@ -132,7 +188,7 @@ public class Recorder implements PduReceiver
     return f;
   }
   
-  /* Example usage */
+  /* Example test usage */
   public static void main(String[] args)
   {
     PduFactory factory = new PduFactory(); //default appid, country, etc.
@@ -142,31 +198,11 @@ public class Recorder implements PduReceiver
     String filename = "Pdusave";
     
     Recorder recorder;
-    try{recorder = new Recorder(path, filename);} catch(IOException ex) {
+    try{recorder = new Recorder();} catch(IOException ex) {
       System.err.println("Exception creating recorder: "+ex.getLocalizedMessage());
       return;
     }
-    
-    // Start a thread to receive and record pdus
-
-    Thread receiverThrd = new Thread(()->{
-      int count = 1;
-      while(true){
-      try {
-        BuffAndLength blen = disnet.receiveRawPdu();
-        System.out.println(""+ count++ +" Got pdu from DisNetworking");
-        recorder.receivePdu(blen.buff,blen.length);
-      }
-      catch(IOException ex) {
-        System.err.println("Exception receiving Pdu: "+ex.getLocalizedMessage());
-      }
-      }
-    });
-    receiverThrd.setPriority(Thread.NORM_PRIORITY);
-    receiverThrd.setDaemon(true);
-    receiverThrd.start();
-    
-    
+     
     DISPDUType all[] = DISPDUType.values();
     Arrays.stream(all).forEach(typ-> {
       if(typ != DISPDUType.OTHER) {
@@ -182,8 +218,7 @@ public class Recorder implements PduReceiver
       });
     sleep(2000);
     
-    receiverThrd.interrupt();
-    recorder.stopAndClose();
+    recorder.end();
   }
   
   private static void sleep(long ms)
