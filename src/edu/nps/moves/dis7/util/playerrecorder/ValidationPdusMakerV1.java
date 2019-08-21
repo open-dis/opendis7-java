@@ -38,6 +38,12 @@ public class ValidationPdusMakerV1
   public static final boolean USEABSOLUTETIME_V1 = true;
   //@formatter:on
 
+  public ValidationPdusMakerV1()
+  {
+    throw new UnsupportedOperationException("Not supported yet.");
+    // need to confirm usage with new Recorder
+  }
+  
   PduFactory factory;
   DisNetworking disnet;
   Recorder recorder;
@@ -63,10 +69,10 @@ public class ValidationPdusMakerV1
      */
     factory = new PduFactory(COUNTRY_V1, EXERCISEID_V1, SITEID_V1, APPLICATIONID_V1, USEABSOLUTETIME_V1);
     disnet = new DisNetworking();
-    recorder = new Recorder(dirpath,fn);
+    recorder = new Recorder(); //dirpath,fn);
     
      // Start a thread to receive and record pdus; this is a datagram socket and is non-interruptible; thread will go away on Sys exit
-    Thread receiverThrd = new Thread(() -> {
+    /*Thread receiverThrd = new Thread(() -> {
       int count = 1;
       System.out.println("Packet reception count");
       while (true) {
@@ -84,7 +90,7 @@ public class ValidationPdusMakerV1
     receiverThrd.setPriority(Thread.NORM_PRIORITY);
     receiverThrd.setDaemon(true);
     receiverThrd.start();
-    
+    */
     /* The standard validation log consists of one of each defined pdu from 1, ENTITY_STATE, to 72, ATTRIBUTE.  There is no pdu of type 0.
      This sequence of statements unnecessarily creates 72 instance variables.  Those are intended to make it easy to customize the contents of
      the created pdus.  It would be advisable to fill out more content in the pdus to ensure the correctness of the pdu in the net packet.
@@ -243,7 +249,7 @@ public class ValidationPdusMakerV1
 
     System.out.println();
 
-    recorder.stopAndClose();
+    recorder.end();
     
     System.out.println("Successful run");
     System.out.println("Pdus logged to "+recorder.getLogFile());
