@@ -2,7 +2,6 @@
  * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
  * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
  */
-
 package edu.nps.moves.dis7.util;
 
 import edu.nps.moves.dis7.Pdu;
@@ -17,7 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /**
  * DisThreadedNetIF.java created on Jul 29, 2019
  * This is a thread-safe, multicast DIS network interface class.
- * It is a singleton, meaning one instance per VM.  If a DIS needs to send and receive over
+ * It is a singleton, meaning one instance per VM. If a DIS needs to send and receive over
  * more than one network address, this class can be modified to be multiply instanciated;
  * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
@@ -31,31 +30,30 @@ public class DisThreadedNetIF
   {
     void incomingPdu(Pdu pdu);
   }
-  
+
   /* ********** singleton plumbing *************** */
   private static DisThreadedNetIF instance;
-  
+
   public static DisThreadedNetIF inst()
   {
-    if(instance == null)
+    if (instance == null)
       instance = new DisThreadedNetIF();
     return instance;
   }
- 
+
   public static DisThreadedNetIF inst(int port, String mcastgroup)
   {
-    if(instance == null)
-      instance = new DisThreadedNetIF(port,mcastgroup);
+    if (instance == null)
+      instance = new DisThreadedNetIF(port, mcastgroup);
     return instance;
   }
 
   /* *********** class instanciation ************* */
-  
   private int DIS_PORT = 3000;
   private String MCAST_GROUP = "225.4.5.6";
   private static final int MAX_DIS_PDU_SIZE = 8192;
   private boolean killed = false;
-  
+
   private DisThreadedNetIF()
   {
     this(3000, "225.4.5.6");
@@ -67,32 +65,31 @@ public class DisThreadedNetIF
     MCAST_GROUP = mcastgroup;
     init();
   }
-  
+
   /* *********** queues and lists  and public methods ************** */
-  
   private final ArrayList<PduListener> everyTypeListeners = new ArrayList<>();
   private final HashMap<DISPDUType, ArrayList<PduListener>> typeListeners = new HashMap<>();
   private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
   public void addListener(PduListener lis, DISPDUType typ)
   {
-    if(typ == null)
+    if (typ == null)
       addListener(lis);
     else {
       ArrayList<PduListener> arLis = typeListeners.get(typ);
-      if(arLis == null) {
+      if (arLis == null) {
         arLis = new ArrayList<>();
         typeListeners.put(typ, arLis);
       }
       arLis.add(lis);
     }
   }
-  
+
   public void addListener(PduListener lis)
   {
     everyTypeListeners.add(lis);
   }
-  
+
   public void removeListener(PduListener lis)
   {
     everyTypeListeners.remove(lis);
@@ -103,28 +100,28 @@ public class DisThreadedNetIF
         arLis.remove(lis);
     });
   }
-  
+
   public void send(Pdu pdu)
   {
     pdus2send.add(pdu);
   }
-  
+
   /* *************** networking i/o ************* */
   private PduFactory pduFactory = new PduFactory();
-  
+
   private Thread sender;
   private Thread receiver;
 
   private MulticastSocket socket = null;
-  
+
   private void init()
   {
-    receiver = new Thread(receiveThread,"DisThreadedNetIF receive thread");
+    receiver = new Thread(receiveThread, "DisThreadedNetIF receive thread");
     receiver.setDaemon(true);
     receiver.setPriority(Thread.NORM_PRIORITY);
     receiver.start();
 
-    sender = new Thread(sendThread,"DisThreadedNetIF send thread");
+    sender = new Thread(sendThread, "DisThreadedNetIF send thread");
     sender.setDaemon(true);
     sender.setPriority(Thread.NORM_PRIORITY);
     sender.start();
@@ -153,7 +150,7 @@ public class DisThreadedNetIF
           socket.close();
           socket = null;
         }
-        System.err.println("Exception in DISThreadedNetIF receive thread: "+ex.getLocalizedMessage());
+        System.err.println("Exception in DISThreadedNetIF receive thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 5 seconds");
 
       }
@@ -180,18 +177,18 @@ public class DisThreadedNetIF
           socket.send(packet);
         }
       }
-      catch (IOException ex) {
+
+      catch (InterruptedException ex) {
+        // probably killed
+      }
+      catch (Exception ex) {
         if (socket != null) {
           socket.close();
           socket = null;
         }
-        System.err.println("Exception in DISThreadedNetIF send thread: "+ex.getLocalizedMessage());
+        System.err.println("Exception in DISThreadedNetIF send thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 5 seconds");
       }
-      catch(InterruptedException ex) {
-        // probably killed
-      }
-
       if (!killed)
         sleep(5000);
     }
@@ -200,24 +197,28 @@ public class DisThreadedNetIF
   private void toListeners(Pdu pdu)
   {
     everyTypeListeners.stream().forEach(lis -> lis.incomingPdu(pdu));
-    
+
     ArrayList<PduListener> arLis = typeListeners.get(pdu.getPduType());
-    if(arLis != null)
-       arLis.stream().forEach(lis -> lis.incomingPdu(pdu));
+    if (arLis != null)
+      arLis.stream().forEach(lis -> lis.incomingPdu(pdu));
   }
-  
+
   public void kill()
   {
     killed = true;
     sender.interrupt();
     receiver.interrupt();
   }
-  
+
   private void sleep(long ms)
   {
-    try{Thread.sleep(ms);}catch(InterruptedException ex) {}
+    try {
+      Thread.sleep(ms);
+    }
+    catch (InterruptedException ex) {
+    }
   }
-  
+
   /* find proper interface */
   private static NetworkInterface findIp4Interface() throws SocketException
   {
@@ -251,8 +252,5 @@ public class DisThreadedNetIF
       netif.send(factory.createPdu(typ));
     });
   }
-  */
+   */
 }
-
-
-
