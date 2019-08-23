@@ -224,7 +224,7 @@ public List<EntityType> getMineType()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -266,7 +266,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -386,7 +386,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -408,17 +408,12 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof MinefieldStatePdu))
-        return false;
-
      final MinefieldStatePdu rhs = (MinefieldStatePdu)obj;
 
      if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
      if( ! (minefieldSequence == rhs.minefieldSequence)) ivarsEqual = false;
      if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (numberOfPerimeterPoints == rhs.numberOfPerimeterPoints)) ivarsEqual = false;
      if( ! (minefieldType.equals( rhs.minefieldType) )) ivarsEqual = false;
-     if( ! (numberOfMineTypes == rhs.numberOfMineTypes)) ivarsEqual = false;
      if( ! (minefieldLocation.equals( rhs.minefieldLocation) )) ivarsEqual = false;
      if( ! (minefieldOrientation.equals( rhs.minefieldOrientation) )) ivarsEqual = false;
      if( ! (protocolMode.equals( rhs.protocolMode) )) ivarsEqual = false;

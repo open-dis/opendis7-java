@@ -91,14 +91,14 @@ public short[] getDataValues()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
     {
        dos.writeFloat( (float)fieldScale);
        dos.writeFloat( (float)fieldOffset);
-       dos.writeShort( (short)numberOfValues);
+       dos.writeShort( (short)dataValues.length);
 
        for(int idx = 0; idx < dataValues.length; idx++)
            dos.writeShort(dataValues[idx]);
@@ -117,7 +117,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -131,8 +131,8 @@ public int unmarshal(DataInputStream dis)
         numberOfValues = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < dataValues.length; idx++)
-            dataValues[idx] = dis.readShort(); // mike check
-        uPosition += dataValues.length; // todo, multiply by prim size mike
+            dataValues[idx] = dis.readShort();
+        uPosition += (dataValues.length * 2);
         padding = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padding.length;
     }
@@ -156,7 +156,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    super.marshal(buff);
    buff.putFloat( (float)fieldScale);
    buff.putFloat( (float)fieldOffset);
-   buff.putShort( (short)numberOfValues);
+   buff.putShort( (short)dataValues.length);
 
    for(int idx = 0; idx < dataValues.length; idx++)
        buff.putShort((short)dataValues[idx]);
@@ -186,7 +186,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -208,14 +208,10 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof GridDataType1))
-        return false;
-
      final GridDataType1 rhs = (GridDataType1)obj;
 
      if( ! (fieldScale == rhs.fieldScale)) ivarsEqual = false;
      if( ! (fieldOffset == rhs.fieldOffset)) ivarsEqual = false;
-     if( ! (numberOfValues == rhs.numberOfValues)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

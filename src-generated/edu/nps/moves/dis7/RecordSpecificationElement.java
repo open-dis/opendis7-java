@@ -10,13 +10,13 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * Synthetic record, made up from section 6.2.72. This is used to acheive a repeating variable list element.
+ * Synthetic record, made up from section 6.2.73. This is used to achieve a repeating variable list element.<p>recordLength, recordCount and recordValues must be set by hand so the.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
 public class RecordSpecificationElement extends Object implements Serializable
 {
    /** the data structure used to convey the parameter values of the record for each record. 32 bit enumeration. uid = 66 */
-   protected VariableRecordTypes recordID = VariableRecordTypes.values()[0];
+   protected VariableRecordType recordID = VariableRecordType.values()[0];
 
    /** the serial number of the first record in the block of records */
    protected int  recordSetSerialNumber;
@@ -32,7 +32,8 @@ public class RecordSpecificationElement extends Object implements Serializable
    /** the concatenated records of the format specified by the Record ID field. The length of this field is the Record Length multiplied by the Record Count, in units of bits. */
    protected byte[]  recordValues = new byte[0]; 
 
-   private byte[] padTo64 = new byte[0]; // pad to 64-bit boundary
+   /** used if required to make entire record size an even multiple of 8 bytes */
+   protected byte[]  padTo64 = new byte[0]; 
 
 
 /** Constructor */
@@ -51,21 +52,21 @@ public int getMarshalledSize()
    marshalSize += 2;  // recordLength
    marshalSize += 2;  // recordCount
    marshalSize += recordValues.length * 1;
-   marshalSize += padTo64.length;
+   marshalSize += padTo64.length * 1;
 
    return marshalSize;
 }
 
 
 /** Setter for {@link RecordSpecificationElement#recordID}*/
-public RecordSpecificationElement setRecordID(VariableRecordTypes pRecordID)
+public RecordSpecificationElement setRecordID(VariableRecordType pRecordID)
 {
     recordID = pRecordID;
     return this;
 }
 
 /** Getter for {@link RecordSpecificationElement#recordID}*/
-public VariableRecordTypes getRecordID()
+public VariableRecordType getRecordID()
 {
     return recordID; 
 }
@@ -135,12 +136,25 @@ public byte[] getRecordValues()
     return recordValues; 
 }
 
+/** Setter for {@link RecordSpecificationElement#padTo64}*/
+public RecordSpecificationElement setPadTo64(byte[] pPadTo64)
+{
+    padTo64 = pPadTo64;
+    return this;
+}
+
+/** Getter for {@link RecordSpecificationElement#padTo64}*/
+public byte[] getPadTo64()
+{
+    return padTo64; 
+}
+
 /**
  * Serializes an object to a DataOutputStream.
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -153,7 +167,10 @@ public void marshal(DataOutputStream dos)
        for(int idx = 0; idx < recordValues.length; idx++)
            dos.writeByte(recordValues[idx]);
 
-       padTo64 = new byte[Align.to64bits(dos)];
+
+       for(int idx = 0; idx < padTo64.length; idx++)
+           dos.writeByte(padTo64[idx]);
+
     }
     catch(Exception e)
     {
@@ -167,12 +184,12 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
     {
-        recordID = VariableRecordTypes.unmarshalEnum(dis);
+        recordID = VariableRecordType.unmarshalEnum(dis);
         uPosition += recordID.getMarshalledSize();
         recordSetSerialNumber = dis.readInt();
         uPosition += 4;
@@ -183,10 +200,11 @@ public int unmarshal(DataInputStream dis)
         recordCount = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < recordValues.length; idx++)
-            recordValues[idx] = dis.readByte(); // mike check
-        uPosition += recordValues.length; // todo, multiply by prim size mike
-        padTo64 = new byte[Align.from64bits(uPosition,dis)];
-        uPosition += padTo64.length;
+            recordValues[idx] = dis.readByte();
+        uPosition += (recordValues.length * 1);
+        for(int idx = 0; idx < padTo64.length; idx++)
+            padTo64[idx] = dis.readByte();
+        uPosition += (padTo64.length * 1);
     }
     catch(Exception e)
     { 
@@ -214,7 +232,10 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    for(int idx = 0; idx < recordValues.length; idx++)
        buff.put((byte)recordValues[idx]);
 
-   padTo64 = new byte[Align.to64bits(buff)];
+
+   for(int idx = 0; idx < padTo64.length; idx++)
+       buff.put((byte)padTo64[idx]);
+
 }
 
 /**
@@ -227,19 +248,20 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
-    recordID = VariableRecordTypes.unmarshalEnum(buff);
+    recordID = VariableRecordType.unmarshalEnum(buff);
     recordSetSerialNumber = buff.getInt();
     padding = buff.getInt();
     recordLength = (short)(buff.getShort() & 0xFFFF);
     recordCount = (short)(buff.getShort() & 0xFFFF);
     for(int idx = 0; idx < recordValues.length; idx++)
         recordValues[idx] = buff.get();
-    padTo64 = new byte[Align.from64bits(buff)];
+    for(int idx = 0; idx < padTo64.length; idx++)
+        padTo64[idx] = buff.get();
     return getMarshalledSize();
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -266,9 +288,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof RecordSpecificationElement))
-        return false;
-
      final RecordSpecificationElement rhs = (RecordSpecificationElement)obj;
 
      if( ! (recordID == rhs.recordID)) ivarsEqual = false;
@@ -280,6 +299,12 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      for(int idx = 0; idx < 0; idx++)
      {
           if(!(recordValues[idx] == rhs.recordValues[idx])) ivarsEqual = false;
+     }
+
+
+     for(int idx = 0; idx < 0; idx++)
+     {
+          if(!(padTo64[idx] == rhs.padTo64[idx])) ivarsEqual = false;
      }
 
     return ivarsEqual;

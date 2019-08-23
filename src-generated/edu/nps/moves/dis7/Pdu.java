@@ -13,7 +13,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * Base class of PduBase and LiveEntityPdu
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
  */
-public abstract class Pdu extends Object implements Serializable
+public abstract class Pdu extends Object implements Serializable,Marshaller
 {
    /** The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2012 uid 3 */
    protected DISProtocolVersion protocolVersion = DISProtocolVersion.IEEE_12781_2012;
@@ -138,7 +138,7 @@ public short getLength()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -161,7 +161,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -238,7 +238,7 @@ public byte[] marshal() throws Exception
     return data;
 }
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -264,9 +264,6 @@ public byte[] marshal() throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof Pdu))
-        return false;
 
      final Pdu rhs = (Pdu)obj;
 

@@ -258,6 +258,7 @@ public class CreateAllObjectTypesTest
 
   private void dumpObjectType(ObjectType ot)
   {
+    actualDumpObjectType(ot);
   }
 
   private void actualDumpObjectType(ObjectType ot)
@@ -268,4 +269,8 @@ public class CreateAllObjectTypesTest
     System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
   }
 
+  public static void main(String[] args)
+  {
+    new CreateAllObjectTypesTest().testCreateAllObjectTypes();
+  }
 }

@@ -70,7 +70,7 @@ public byte[] getCharacters()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -92,7 +92,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -100,8 +100,8 @@ public int unmarshal(DataInputStream dis)
         characterSet = EntityMarkingCharacterSet.unmarshalEnum(dis);
         uPosition += characterSet.getMarshalledSize();
         for(int idx = 0; idx < characters.length; idx++)
-            characters[idx] = dis.readByte(); // mike check
-        uPosition += characters.length; // todo, multiply by prim size mike
+            characters[idx] = dis.readByte();
+        uPosition += (characters.length * 1);
     }
     catch(Exception e)
     { 
@@ -144,7 +144,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -170,9 +170,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof AggregateMarking))
-        return false;
 
      final AggregateMarking rhs = (AggregateMarking)obj;
 

@@ -140,7 +140,7 @@ public int getRequestID()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -164,7 +164,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -251,9 +251,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof StopFreezeRPdu))
-        return false;
 
      final StopFreezeRPdu rhs = (StopFreezeRPdu)obj;
 

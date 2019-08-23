@@ -124,7 +124,7 @@ public byte[] getGeometry()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -150,7 +150,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -164,8 +164,8 @@ public int unmarshal(DataInputStream dis)
         padding1 = (byte)dis.readUnsignedByte();
         uPosition += 1;
         for(int idx = 0; idx < geometry.length; idx++)
-            geometry[idx] = dis.readByte(); // mike check
-        uPosition += geometry.length; // todo, multiply by prim size mike
+            geometry[idx] = dis.readByte();
+        uPosition += (geometry.length * 1);
         padding2 = new byte[Align.from64bits(uPosition,dis)];
         uPosition += padding2.length;
     }
@@ -218,7 +218,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -244,9 +244,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof Environment))
-        return false;
 
      final Environment rhs = (Environment)obj;
 

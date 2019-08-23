@@ -211,7 +211,7 @@ public class Recorder implements PduReceiver
           disnet.sendPdu(pdu);
           sleep(100);
         }
-        catch(IOException ex) {
+        catch(Exception ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
         }
       }

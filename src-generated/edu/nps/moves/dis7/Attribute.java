@@ -56,19 +56,6 @@ public int getRecordType()
     return recordType; 
 }
 
-/** Setter for {@link Attribute#recordLength}*/
-public Attribute setRecordLength(short pRecordLength)
-{
-    recordLength = pRecordLength;
-    return this;
-}
-
-/** Getter for {@link Attribute#recordLength}*/
-public short getRecordLength()
-{
-    return recordLength; 
-}
-
 /** Setter for {@link Attribute#recordSpecificFields}*/
 public Attribute setRecordSpecificFields(byte[] pRecordSpecificFields)
 {
@@ -87,12 +74,12 @@ public byte[] getRecordSpecificFields()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
        dos.writeInt( (int)recordType);
-       dos.writeShort( (short)recordLength);
+       dos.writeShort( (short)recordSpecificFields.length);
 
        for(int idx = 0; idx < recordSpecificFields.length; idx++)
            dos.writeByte(recordSpecificFields[idx]);
@@ -111,7 +98,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -121,8 +108,8 @@ public int unmarshal(DataInputStream dis)
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < recordSpecificFields.length; idx++)
-            recordSpecificFields[idx] = dis.readByte(); // mike check
-        uPosition += recordSpecificFields.length; // todo, multiply by prim size mike
+            recordSpecificFields[idx] = dis.readByte();
+        uPosition += (recordSpecificFields.length * 1);
         padding = new byte[Align.from64bits(uPosition,dis)];
         uPosition += padding.length;
     }
@@ -144,7 +131,7 @@ public int unmarshal(DataInputStream dis)
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    buff.putInt( (int)recordType);
-   buff.putShort( (short)recordLength);
+   buff.putShort( (short)recordSpecificFields.length);
 
    for(int idx = 0; idx < recordSpecificFields.length; idx++)
        buff.put((byte)recordSpecificFields[idx]);
@@ -171,7 +158,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -198,13 +185,9 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof Attribute))
-        return false;
-
      final Attribute rhs = (Attribute)obj;
 
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

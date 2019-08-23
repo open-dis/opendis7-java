@@ -31,7 +31,7 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
    protected DISProtocolFamily attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
 
    /** This field shall contain the Attribute record type of the Attribute records in the PDU if they all have the same Attribute record type. It shall be represented by a 32-bit enumeration. uid 66 */
-   protected VariableRecordTypes masterAttributeRecordType = VariableRecordTypes.values()[0];
+   protected VariableRecordType masterAttributeRecordType = VariableRecordType.values()[0];
 
    /** This field shall identify the action code applicable to this Attribute PDU. The Action Code shall apply to all Attribute records contained in the PDU. It shall be represented by an 8-bit enumeration. uid 295 */
    protected DISAttributeActionCode actionCode = DISAttributeActionCode.values()[0];
@@ -142,14 +142,14 @@ public DISProtocolFamily getAttributeRecordProtocolVersion()
 }
 
 /** Setter for {@link AttributePdu#masterAttributeRecordType}*/
-public AttributePdu setMasterAttributeRecordType(VariableRecordTypes pMasterAttributeRecordType)
+public AttributePdu setMasterAttributeRecordType(VariableRecordType pMasterAttributeRecordType)
 {
     masterAttributeRecordType = pMasterAttributeRecordType;
     return this;
 }
 
 /** Getter for {@link AttributePdu#masterAttributeRecordType}*/
-public VariableRecordTypes getMasterAttributeRecordType()
+public VariableRecordType getMasterAttributeRecordType()
 {
     return masterAttributeRecordType; 
 }
@@ -198,7 +198,7 @@ public List<AttributeRecordSet> getAttributeRecordSets()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -232,7 +232,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -248,7 +248,7 @@ public int unmarshal(DataInputStream dis)
         uPosition += attributeRecordPduType.getMarshalledSize();
         attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(dis);
         uPosition += attributeRecordProtocolVersion.getMarshalledSize();
-        masterAttributeRecordType = VariableRecordTypes.unmarshalEnum(dis);
+        masterAttributeRecordType = VariableRecordType.unmarshalEnum(dis);
         uPosition += masterAttributeRecordType.getMarshalledSize();
         actionCode = DISAttributeActionCode.unmarshalEnum(dis);
         uPosition += actionCode.getMarshalledSize();
@@ -317,7 +317,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     padding2 = buff.getShort();
     attributeRecordPduType = DISPDUType.unmarshalEnum(buff);
     attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(buff);
-    masterAttributeRecordType = VariableRecordTypes.unmarshalEnum(buff);
+    masterAttributeRecordType = VariableRecordType.unmarshalEnum(buff);
     actionCode = DISAttributeActionCode.unmarshalEnum(buff);
     padding3 = (byte)(buff.get() & 0xFF);
     numberAttributeRecordSet = (short)(buff.getShort() & 0xFFFF);
@@ -332,7 +332,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -354,9 +354,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof AttributePdu))
-        return false;
-
      final AttributePdu rhs = (AttributePdu)obj;
 
      if( ! (originatingSimulationAddress.equals( rhs.originatingSimulationAddress) )) ivarsEqual = false;
@@ -367,7 +364,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (masterAttributeRecordType == rhs.masterAttributeRecordType)) ivarsEqual = false;
      if( ! (actionCode == rhs.actionCode)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-     if( ! (numberAttributeRecordSet == rhs.numberAttributeRecordSet)) ivarsEqual = false;
 
      for(int idx = 0; idx < attributeRecordSets.size(); idx++)
         if( ! ( attributeRecordSets.get(idx).equals(rhs.attributeRecordSets.get(idx)))) ivarsEqual = false;

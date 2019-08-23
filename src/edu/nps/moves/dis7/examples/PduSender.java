@@ -311,7 +311,7 @@ public class PduSender
       //container.setPdus(generatedPdus);
       //container.marshallToXml("examplePdus.xml");
     }
-    catch (IOException e) {
+    catch (Exception e) {
       System.out.println(e);
     }
   }

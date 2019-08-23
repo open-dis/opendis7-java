@@ -72,7 +72,7 @@ public class EntityUse
    * Using two methods, create and send an EntityState PDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
    * @throws IOException 
    */
-  public static void exampleUse() throws IOException
+  public static void exampleUse() throws Exception
   {
     PduFactory pduFactory = new PduFactory();  // uses defaults: usa, exercise id 1, site id 2, app id 3, absolute time
 

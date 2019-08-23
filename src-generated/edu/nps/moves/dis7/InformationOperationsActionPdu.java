@@ -227,7 +227,7 @@ public List<IORecord> getIoRecords()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -263,7 +263,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -369,7 +369,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -391,9 +391,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof InformationOperationsActionPdu))
-        return false;
-
      final InformationOperationsActionPdu rhs = (InformationOperationsActionPdu)obj;
 
      if( ! (receivingSimID.equals( rhs.receivingSimID) )) ivarsEqual = false;
@@ -406,7 +403,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (ioAttackerID.equals( rhs.ioAttackerID) )) ivarsEqual = false;
      if( ! (ioPrimaryTargetID.equals( rhs.ioPrimaryTargetID) )) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (numberOfIORecords == rhs.numberOfIORecords)) ivarsEqual = false;
 
      for(int idx = 0; idx < ioRecords.size(); idx++)
         if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;

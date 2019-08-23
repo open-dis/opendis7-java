@@ -329,7 +329,7 @@ public List<StandardVariableSpecification> getDERecords()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -371,7 +371,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -498,7 +498,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -520,9 +520,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof DirectedEnergyFirePdu))
-        return false;
-
      final DirectedEnergyFirePdu rhs = (DirectedEnergyFirePdu)obj;
 
      if( ! (firingEntityID.equals( rhs.firingEntityID) )) ivarsEqual = false;
@@ -540,7 +537,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
      if( ! (pad3 == rhs.pad3)) ivarsEqual = false;
      if( ! (pad4 == rhs.pad4)) ivarsEqual = false;
-     if( ! (numberOfDERecords == rhs.numberOfDERecords)) ivarsEqual = false;
 
      for(int idx = 0; idx < dERecords.size(); idx++)
         if( ! ( dERecords.get(idx).equals(rhs.dERecords.get(idx)))) ivarsEqual = false;

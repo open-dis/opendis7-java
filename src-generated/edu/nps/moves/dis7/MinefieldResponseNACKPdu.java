@@ -110,7 +110,7 @@ public byte[] getMissingPduSequenceNumbers()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -118,7 +118,7 @@ public void marshal(DataOutputStream dos)
        minefieldID.marshal(dos);
        requestingEntityID.marshal(dos);
        dos.writeByte( (byte)requestID);
-       dos.writeByte( (byte)numberOfMissingPdus);
+       dos.writeByte( (byte)missingPduSequenceNumbers.length);
 
        for(int idx = 0; idx < missingPduSequenceNumbers.length; idx++)
            dos.writeByte(missingPduSequenceNumbers[idx]);
@@ -136,7 +136,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -150,8 +150,8 @@ public int unmarshal(DataInputStream dis)
         numberOfMissingPdus = (byte)dis.readUnsignedByte();
         uPosition += 1;
         for(int idx = 0; idx < missingPduSequenceNumbers.length; idx++)
-            missingPduSequenceNumbers[idx] = dis.readByte(); // mike check
-        uPosition += missingPduSequenceNumbers.length; // todo, multiply by prim size mike
+            missingPduSequenceNumbers[idx] = dis.readByte();
+        uPosition += (missingPduSequenceNumbers.length * 1);
     }
     catch(Exception e)
     { 
@@ -174,7 +174,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    minefieldID.marshal(buff);
    requestingEntityID.marshal(buff);
    buff.put( (byte)requestID);
-   buff.put( (byte)numberOfMissingPdus);
+   buff.put( (byte)missingPduSequenceNumbers.length);
 
    for(int idx = 0; idx < missingPduSequenceNumbers.length; idx++)
        buff.put((byte)missingPduSequenceNumbers[idx]);
@@ -203,7 +203,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -225,15 +225,11 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof MinefieldResponseNACKPdu))
-        return false;
-
      final MinefieldResponseNACKPdu rhs = (MinefieldResponseNACKPdu)obj;
 
      if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
      if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
      if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (numberOfMissingPdus == rhs.numberOfMissingPdus)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

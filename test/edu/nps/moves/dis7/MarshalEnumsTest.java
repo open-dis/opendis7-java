@@ -441,7 +441,7 @@ public class MarshalEnumsTest
             marshalOne(UAScanPattern.values()[0]);
             marshalOne(UAStateChangeUpdateIndicator.values()[0]);
             marshalOne(VariableParameterRecordType.values()[0]);
-            marshalOne(VariableRecordTypes.values()[0]);
+            marshalOne(VariableRecordType.values()[0]);
             marshalOne(VariantsforAirCategory200Bird.values()[0]);
             marshalOne(VariantsforLandCategoriesReptilesAmphibiansInsectsandArachnids.values()[0]);
             marshalOne(VariantsforSubsurfaceCategory201Mammal.values()[0]);

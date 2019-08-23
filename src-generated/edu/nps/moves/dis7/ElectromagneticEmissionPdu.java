@@ -132,7 +132,7 @@ public List<ElectronicEmitter> getSystems()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -162,7 +162,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -245,7 +245,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -267,15 +267,11 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof ElectromagneticEmissionPdu))
-        return false;
-
      final ElectromagneticEmissionPdu rhs = (ElectromagneticEmissionPdu)obj;
 
      if( ! (emittingEntityID.equals( rhs.emittingEntityID) )) ivarsEqual = false;
      if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
      if( ! (stateUpdateIndicator == rhs.stateUpdateIndicator)) ivarsEqual = false;
-     if( ! (numberOfSystems == rhs.numberOfSystems)) ivarsEqual = false;
      if( ! (paddingForEmissionsPdu == rhs.paddingForEmissionsPdu)) ivarsEqual = false;
 
      for(int idx = 0; idx < systems.size(); idx++)

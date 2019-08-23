@@ -16,7 +16,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public class IOCommsNodeRecord extends IORecord implements Serializable
 {
    /**  uid 66 */
-   protected VariableRecordTypes recordType = VariableRecordTypes.IO_COMMUNICATIONS_NODE;
+   protected VariableRecordType recordType = VariableRecordType.IO_COMMUNICATIONS_NODE;
 
    protected short  recordLength;
 
@@ -50,14 +50,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link IOCommsNodeRecord#recordType}*/
-public IOCommsNodeRecord setRecordType(VariableRecordTypes pRecordType)
+public IOCommsNodeRecord setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
 /** Getter for {@link IOCommsNodeRecord#recordType}*/
-public VariableRecordTypes getRecordType()
+public VariableRecordType getRecordType()
 {
     return recordType; 
 }
@@ -119,7 +119,7 @@ public CommunicationsNodeID getCommsNodeId()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -142,14 +142,14 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
 
     try 
     {
-        recordType = VariableRecordTypes.unmarshalEnum(dis);
+        recordType = VariableRecordType.unmarshalEnum(dis);
         uPosition += recordType.getMarshalledSize();
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
@@ -196,7 +196,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
     super.unmarshal(buff);
 
-    recordType = VariableRecordTypes.unmarshalEnum(buff);
+    recordType = VariableRecordType.unmarshalEnum(buff);
     recordLength = (short)(buff.getShort() & 0xFFFF);
     commsNodeType = IOCommsNodeRecordCommsNodeType.unmarshalEnum(buff);
     padding = (byte)(buff.get() & 0xFF);
@@ -205,7 +205,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -226,9 +226,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof IOCommsNodeRecord))
-        return false;
 
      final IOCommsNodeRecord rhs = (IOCommsNodeRecord)obj;
 

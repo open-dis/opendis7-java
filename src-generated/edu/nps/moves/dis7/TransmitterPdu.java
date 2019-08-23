@@ -374,7 +374,7 @@ public List<VariableTransmitterParameters> getAntennaPatternList()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -425,7 +425,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -582,7 +582,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -604,9 +604,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof TransmitterPdu))
-        return false;
-
      final TransmitterPdu rhs = (TransmitterPdu)obj;
 
      if( ! (header.equals( rhs.header) )) ivarsEqual = false;
@@ -618,14 +615,12 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (antennaLocation.equals( rhs.antennaLocation) )) ivarsEqual = false;
      if( ! (relativeAntennaLocation.equals( rhs.relativeAntennaLocation) )) ivarsEqual = false;
      if( ! (antennaPatternType == rhs.antennaPatternType)) ivarsEqual = false;
-     if( ! (antennaPatternCount == rhs.antennaPatternCount)) ivarsEqual = false;
      if( ! (frequency == rhs.frequency)) ivarsEqual = false;
      if( ! (transmitFrequencyBandwidth == rhs.transmitFrequencyBandwidth)) ivarsEqual = false;
      if( ! (power == rhs.power)) ivarsEqual = false;
      if( ! (modulationType.equals( rhs.modulationType) )) ivarsEqual = false;
      if( ! (cryptoSystem == rhs.cryptoSystem)) ivarsEqual = false;
      if( ! (cryptoKeyId == rhs.cryptoKeyId)) ivarsEqual = false;
-     if( ! (modulationParameterCount == rhs.modulationParameterCount)) ivarsEqual = false;
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 

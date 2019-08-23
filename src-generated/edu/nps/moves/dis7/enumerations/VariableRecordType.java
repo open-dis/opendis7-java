@@ -12,7 +12,7 @@ import edu.nps.moves.dis7.*;
  * UID 66 marshal size 32<br>
  * Variable Record Types
  */
-public enum VariableRecordTypes 
+public enum VariableRecordType 
 {
     /** DDCP Join Transaction Join Request Message */
     DDCP_JOIN_TRANSACTION_JOIN_REQUEST_MESSAGE (1001, "DDCP Join Transaction Join Request Message"),
@@ -2331,7 +2331,7 @@ public enum VariableRecordTypes
     private int value;
     private final String description;
 
-    VariableRecordTypes(int value, String description)
+    VariableRecordType(int value, String description)
     {
         this.value = value;
         this.description = description;
@@ -2352,13 +2352,13 @@ public enum VariableRecordTypes
       return 32;
     }
 
-    public static VariableRecordTypes getEnumForValue(int i)
+    public static VariableRecordType getEnumForValue(int i)
     {
-       for(VariableRecordTypes val: VariableRecordTypes.values()) {
+       for(VariableRecordType val: VariableRecordType.values()) {
           if(val.getValue()==i)
               return val;
        }
-       System.err.println("No enumeration found for value " + i + " of enumeration VariableRecordTypes");
+       System.err.println("No enumeration found for value " + i + " of enumeration VariableRecordType");
        return null;
     }
 
@@ -2373,12 +2373,12 @@ public enum VariableRecordTypes
         buff.putInt(getValue());
     }
 
-    public static VariableRecordTypes unmarshalEnum (DataInputStream dis) throws Exception
+    public static VariableRecordType unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readInt());
     } 
 
-    public static VariableRecordTypes unmarshalEnum (ByteBuffer buff)
+    public static VariableRecordType unmarshalEnum (ByteBuffer buff)
     {
         return getEnumForValue(buff.getInt());
     }

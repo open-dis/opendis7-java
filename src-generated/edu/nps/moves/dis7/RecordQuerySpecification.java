@@ -18,7 +18,7 @@ public class RecordQuerySpecification extends Object implements Serializable
    protected int  numberOfRecords;
 
    /** variable length list of 32 bit record types uid = 66 */
-   protected List< VariableRecordTypes > recordIDs = new ArrayList< VariableRecordTypes >();
+   protected List< VariableRecordType > recordIDs = new ArrayList< VariableRecordType >();
  
 
 /** Constructor */
@@ -34,7 +34,7 @@ public int getMarshalledSize()
    marshalSize += 4;  // numberOfRecords
    for(int idx=0; idx < recordIDs.size(); idx++)
    {
-        VariableRecordTypes listElement = recordIDs.get(idx);
+        VariableRecordType listElement = recordIDs.get(idx);
         marshalSize += listElement.getMarshalledSize();
    }
 
@@ -43,14 +43,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link RecordQuerySpecification#recordIDs}*/
-public RecordQuerySpecification setRecordIDs(List<VariableRecordTypes> pRecordIDs)
+public RecordQuerySpecification setRecordIDs(List<VariableRecordType> pRecordIDs)
 {
     recordIDs = pRecordIDs;
     return this;
 }
 
 /** Getter for {@link RecordQuerySpecification#recordIDs}*/
-public List<VariableRecordTypes> getRecordIDs()
+public List<VariableRecordType> getRecordIDs()
 {
     return recordIDs; 
 }
@@ -60,7 +60,7 @@ public List<VariableRecordTypes> getRecordIDs()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -68,8 +68,8 @@ public void marshal(DataOutputStream dos)
 
        for(int idx = 0; idx < recordIDs.size(); idx++)
        {
-            VariableRecordTypes aVariableRecordTypes = recordIDs.get(idx);
-            aVariableRecordTypes.marshal(dos);
+            VariableRecordType aVariableRecordType = recordIDs.get(idx);
+            aVariableRecordType.marshal(dos);
        }
 
     }
@@ -85,7 +85,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -94,7 +94,7 @@ public int unmarshal(DataInputStream dis)
         uPosition += 4;
         for(int idx = 0; idx < numberOfRecords; idx++)
         {
-            VariableRecordTypes anX = VariableRecordTypes.unmarshalEnum(dis);
+            VariableRecordType anX = VariableRecordType.unmarshalEnum(dis);
             recordIDs.add(anX);
             uPosition += anX.getMarshalledSize();
         }
@@ -121,8 +121,8 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < recordIDs.size(); idx++)
    {
-        VariableRecordTypes aVariableRecordTypes = (VariableRecordTypes)recordIDs.get(idx);
-        aVariableRecordTypes.marshal(buff);
+        VariableRecordType aVariableRecordType = (VariableRecordType)recordIDs.get(idx);
+        aVariableRecordType.marshal(buff);
    }
 
 }
@@ -140,7 +140,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     numberOfRecords = buff.getInt();
     for(int idx = 0; idx < numberOfRecords; idx++)
     {
-    VariableRecordTypes anX = VariableRecordTypes.unmarshalEnum(buff);
+    VariableRecordType anX = VariableRecordType.unmarshalEnum(buff);
     recordIDs.add(anX);
     }
 
@@ -148,7 +148,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -175,12 +175,8 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof RecordQuerySpecification))
-        return false;
-
      final RecordQuerySpecification rhs = (RecordQuerySpecification)obj;
 
-     if( ! (numberOfRecords == rhs.numberOfRecords)) ivarsEqual = false;
 
      for(int idx = 0; idx < recordIDs.size(); idx++)
         if( ! ( recordIDs.get(idx).equals(rhs.recordIDs.get(idx)))) ivarsEqual = false;

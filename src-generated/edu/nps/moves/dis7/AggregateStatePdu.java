@@ -336,7 +336,7 @@ public List<VariableDatum> getVariableDatumList()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -405,7 +405,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -611,7 +611,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -633,9 +633,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof AggregateStatePdu))
-        return false;
-
      final AggregateStatePdu rhs = (AggregateStatePdu)obj;
 
      if( ! (aggregateID.equals( rhs.aggregateID) )) ivarsEqual = false;
@@ -648,10 +645,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (orientation.equals( rhs.orientation) )) ivarsEqual = false;
      if( ! (centerOfMass.equals( rhs.centerOfMass) )) ivarsEqual = false;
      if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (numberOfDisAggregates == rhs.numberOfDisAggregates)) ivarsEqual = false;
-     if( ! (numberOfDisEntities == rhs.numberOfDisEntities)) ivarsEqual = false;
-     if( ! (numberOfSilentAggregateTypes == rhs.numberOfSilentAggregateTypes)) ivarsEqual = false;
-     if( ! (numberOfSilentEntityTypes == rhs.numberOfSilentEntityTypes)) ivarsEqual = false;
 
      for(int idx = 0; idx < aggregateIDList.size(); idx++)
         if( ! ( aggregateIDList.get(idx).equals(rhs.aggregateIDList.get(idx)))) ivarsEqual = false;
@@ -668,7 +661,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      for(int idx = 0; idx < silentEntitySystemList.size(); idx++)
         if( ! ( silentEntitySystemList.get(idx).equals(rhs.silentEntitySystemList.get(idx)))) ivarsEqual = false;
 
-     if( ! (numberOfVariableDatumRecords == rhs.numberOfVariableDatumRecords)) ivarsEqual = false;
 
      for(int idx = 0; idx < variableDatumList.size(); idx++)
         if( ! ( variableDatumList.get(idx).equals(rhs.variableDatumList.get(idx)))) ivarsEqual = false;

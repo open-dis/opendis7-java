@@ -32,6 +32,7 @@ public class ObjectTypeMarshallTest
         try {
             _2_Roll roll2 = new _2_Roll();
             common(roll2);
+            System.out.println("testGoodMarshal successful");
         }
         catch (Throwable t) {
             thr = t;
@@ -46,6 +47,7 @@ public class ObjectTypeMarshallTest
         try {
             Tracks_Tire tracksTire = new Tracks_Tire();
             common(tracksTire);
+            System.out.println("TestNoSubCategory successful");
         }
         catch (Throwable t) {
             thr = t;
@@ -77,5 +79,12 @@ public class ObjectTypeMarshallTest
         System.out.println("ObjectType object kind: " + ot.getObjectKind());
         System.out.println("ObjectType category: " + ot.getCategory());
         System.out.println("ObjectType subcategory: " + ot.getSubCategory());
+    }
+    
+    public static void main(String[] args)
+    {
+      ObjectTypeMarshallTest inst = new ObjectTypeMarshallTest();
+      inst.testGoodMarshall();
+      inst.testNoSubCategory();
     }
 }

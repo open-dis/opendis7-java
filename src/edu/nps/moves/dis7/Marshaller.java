@@ -16,20 +16,20 @@ public interface Marshaller
 {
     public int getMarshalledSize();
     
-    public void marshal(DataOutputStream dos);
-    public int unmarshal(DataInputStream dis);
+    public void marshal(DataOutputStream dos) throws Exception;
+    public int unmarshal(DataInputStream dis) throws Exception;
 
     /**
      * Packs a Pdu into the ByteBuffer.
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin writing
      */
-    public void marshal(ByteBuffer buff);
+    public void marshal(ByteBuffer buff) throws Exception;
     
     /**
      * Unpacks a Pdu from the underlying data.
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
      */
-    public int unmarshal(ByteBuffer buff);
+    public int unmarshal(ByteBuffer buff) throws Exception;
 }

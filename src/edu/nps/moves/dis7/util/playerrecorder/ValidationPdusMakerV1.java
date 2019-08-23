@@ -256,7 +256,7 @@ public class ValidationPdusMakerV1
     return 0; // no error
   }
   
-  private void sendPdu(Pdu pdu) throws IOException
+  private void sendPdu(Pdu pdu) throws Exception
   {
     disnet.sendPdu(pdu);
     sleep(100L); // Necessary because reading is asynchronous from the writing and DisNetworking is inefficiently

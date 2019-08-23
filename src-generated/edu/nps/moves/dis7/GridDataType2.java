@@ -72,12 +72,12 @@ public float[] getDataValues()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
     {
-       dos.writeShort( (short)numberOfValues);
+       dos.writeShort( (short)dataValues.length);
        dos.writeShort( (short)padding);
 
        for(int idx = 0; idx < dataValues.length; idx++)
@@ -96,7 +96,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -108,8 +108,8 @@ public int unmarshal(DataInputStream dis)
         padding = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < dataValues.length; idx++)
-            dataValues[idx] = dis.readFloat(); // mike check
-        uPosition += dataValues.length; // todo, multiply by prim size mike
+            dataValues[idx] = dis.readFloat();
+        uPosition += (dataValues.length * 4);
     }
     catch(Exception e)
     { 
@@ -129,7 +129,7 @@ public int unmarshal(DataInputStream dis)
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    super.marshal(buff);
-   buff.putShort( (short)numberOfValues);
+   buff.putShort( (short)dataValues.length);
    buff.putShort( (short)padding);
 
    for(int idx = 0; idx < dataValues.length; idx++)
@@ -157,7 +157,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -179,12 +179,8 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof GridDataType2))
-        return false;
-
      final GridDataType2 rhs = (GridDataType2)obj;
 
-     if( ! (numberOfValues == rhs.numberOfValues)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)

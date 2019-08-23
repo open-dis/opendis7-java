@@ -16,7 +16,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public class FixedDatum extends Object implements Serializable
 {
    /** ID of the fixed datum, an enumeration uid 66 */
-   protected VariableRecordTypes fixedDatumID = VariableRecordTypes.values()[0];
+   protected VariableRecordType fixedDatumID = VariableRecordType.values()[0];
 
    /** Value for the fixed datum */
    protected int  fixedDatumValue;
@@ -40,14 +40,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link FixedDatum#fixedDatumID}*/
-public FixedDatum setFixedDatumID(VariableRecordTypes pFixedDatumID)
+public FixedDatum setFixedDatumID(VariableRecordType pFixedDatumID)
 {
     fixedDatumID = pFixedDatumID;
     return this;
 }
 
 /** Getter for {@link FixedDatum#fixedDatumID}*/
-public VariableRecordTypes getFixedDatumID()
+public VariableRecordType getFixedDatumID()
 {
     return fixedDatumID; 
 }
@@ -70,7 +70,7 @@ public int getFixedDatumValue()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -89,12 +89,12 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
     {
-        fixedDatumID = VariableRecordTypes.unmarshalEnum(dis);
+        fixedDatumID = VariableRecordType.unmarshalEnum(dis);
         uPosition += fixedDatumID.getMarshalledSize();
         fixedDatumValue = dis.readInt();
         uPosition += 4;
@@ -130,13 +130,13 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
-    fixedDatumID = VariableRecordTypes.unmarshalEnum(buff);
+    fixedDatumID = VariableRecordType.unmarshalEnum(buff);
     fixedDatumValue = buff.getInt();
     return getMarshalledSize();
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -162,9 +162,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof FixedDatum))
-        return false;
 
      final FixedDatum rhs = (FixedDatum)obj;
 

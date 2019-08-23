@@ -140,7 +140,7 @@ public List<DirectedEnergyTargetEnergyDeposition> getDirectedEnergyTargetEnergyD
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -177,7 +177,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -282,7 +282,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -309,16 +309,11 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof DirectedEnergyAreaAimpoint))
-        return false;
-
      final DirectedEnergyAreaAimpoint rhs = (DirectedEnergyAreaAimpoint)obj;
 
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
      if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (beamAntennaPatternRecordCount == rhs.beamAntennaPatternRecordCount)) ivarsEqual = false;
-     if( ! (directedEnergyTargetEnergyDepositionRecordCount == rhs.directedEnergyTargetEnergyDepositionRecordCount)) ivarsEqual = false;
 
      for(int idx = 0; idx < beamAntennaParameterList.size(); idx++)
         if( ! ( beamAntennaParameterList.get(idx).equals(rhs.beamAntennaParameterList.get(idx)))) ivarsEqual = false;

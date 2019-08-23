@@ -704,7 +704,7 @@ public List<VariableParameter> getVariableParameters()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -774,7 +774,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -842,8 +842,8 @@ public int unmarshal(DataInputStream dis)
         deadReckoningAlgorithm = (byte)dis.readUnsignedByte();
         uPosition += 1;
         for(int idx = 0; idx < otherParameters.length; idx++)
-            otherParameters[idx] = dis.readByte(); // mike check
-        uPosition += otherParameters.length; // todo, multiply by prim size mike
+            otherParameters[idx] = dis.readByte();
+        uPosition += (otherParameters.length * 1);
         xAcceleration = dis.readFloat();
         uPosition += 4;
         yAcceleration = dis.readFloat();
@@ -857,8 +857,8 @@ public int unmarshal(DataInputStream dis)
         zAngularVelocity = dis.readFloat();
         uPosition += 4;
         for(int idx = 0; idx < marking.length; idx++)
-            marking[idx] = dis.readByte(); // mike check
-        uPosition += marking.length; // todo, multiply by prim size mike
+            marking[idx] = dis.readByte();
+        uPosition += (marking.length * 1);
         capabilities = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < numberOfVariableParameters; idx++)
@@ -1005,7 +1005,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -1027,16 +1027,12 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof FastEntityStatePdu))
-        return false;
-
      final FastEntityStatePdu rhs = (FastEntityStatePdu)obj;
 
      if( ! (site == rhs.site)) ivarsEqual = false;
      if( ! (application == rhs.application)) ivarsEqual = false;
      if( ! (entity == rhs.entity)) ivarsEqual = false;
      if( ! (forceId == rhs.forceId)) ivarsEqual = false;
-     if( ! (numberOfVariableParameters == rhs.numberOfVariableParameters)) ivarsEqual = false;
      if( ! (entityKind == rhs.entityKind)) ivarsEqual = false;
      if( ! (domain == rhs.domain)) ivarsEqual = false;
      if( ! (country == rhs.country)) ivarsEqual = false;

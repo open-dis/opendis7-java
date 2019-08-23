@@ -16,7 +16,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public class IOEffectRecord extends IORecord implements Serializable
 {
    /**  uid 66 */
-   protected VariableRecordTypes recordType = VariableRecordTypes.IO_EFFECT;
+   protected VariableRecordType recordType = VariableRecordType.IO_EFFECT;
 
    protected short  recordLength;
 
@@ -65,14 +65,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link IOEffectRecord#recordType}*/
-public IOEffectRecord setRecordType(VariableRecordTypes pRecordType)
+public IOEffectRecord setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
 /** Getter for {@link IOEffectRecord#recordType}*/
-public VariableRecordTypes getRecordType()
+public VariableRecordType getRecordType()
 {
     return recordType; 
 }
@@ -186,7 +186,7 @@ public short getPadding()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -213,14 +213,14 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
 
     try 
     {
-        recordType = VariableRecordTypes.unmarshalEnum(dis);
+        recordType = VariableRecordType.unmarshalEnum(dis);
         uPosition += recordType.getMarshalledSize();
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
@@ -280,7 +280,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
     super.unmarshal(buff);
 
-    recordType = VariableRecordTypes.unmarshalEnum(buff);
+    recordType = VariableRecordType.unmarshalEnum(buff);
     recordLength = (short)(buff.getShort() & 0xFFFF);
     ioStatus = IOEffectsRecordIOStatus.unmarshalEnum(buff);
     ioLinkType = IOEffectsRecordIOLinkType.unmarshalEnum(buff);
@@ -293,7 +293,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -314,9 +314,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof IOEffectRecord))
-        return false;
 
      final IOEffectRecord rhs = (IOEffectRecord)obj;
 

@@ -476,7 +476,7 @@ public byte[] getNumberOfVertices()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -487,7 +487,7 @@ public void marshal(DataOutputStream dos)
        dos.writeByte( (byte)requestID);
        dos.writeByte( (byte)pduSequenceNumber);
        dos.writeByte( (byte)numberOfPdus);
-       dos.writeByte( (byte)paintScheme.size());
+       dos.writeByte( (byte)numberOfVertices.length);
        dos.writeByte( (byte)sensorTypes.size());
        dos.writeByte( (byte)padding);
        dataFilter.marshal(dos);
@@ -586,7 +586,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -628,14 +628,14 @@ public int unmarshal(DataInputStream dis)
         }
 
         for(int idx = 0; idx < groundBurialDepthOffset.length; idx++)
-            groundBurialDepthOffset[idx] = dis.readFloat(); // mike check
-        uPosition += groundBurialDepthOffset.length; // todo, multiply by prim size mike
+            groundBurialDepthOffset[idx] = dis.readFloat();
+        uPosition += (groundBurialDepthOffset.length * 4);
         for(int idx = 0; idx < waterBurialDepthOffset.length; idx++)
-            waterBurialDepthOffset[idx] = dis.readFloat(); // mike check
-        uPosition += waterBurialDepthOffset.length; // todo, multiply by prim size mike
+            waterBurialDepthOffset[idx] = dis.readFloat();
+        uPosition += (waterBurialDepthOffset.length * 4);
         for(int idx = 0; idx < snowBurialDepthOffset.length; idx++)
-            snowBurialDepthOffset[idx] = dis.readFloat(); // mike check
-        uPosition += snowBurialDepthOffset.length; // todo, multiply by prim size mike
+            snowBurialDepthOffset[idx] = dis.readFloat();
+        uPosition += (snowBurialDepthOffset.length * 4);
         for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             EulerAngles anX = new EulerAngles();
@@ -644,11 +644,11 @@ public int unmarshal(DataInputStream dis)
         }
 
         for(int idx = 0; idx < thermalContrast.length; idx++)
-            thermalContrast[idx] = dis.readFloat(); // mike check
-        uPosition += thermalContrast.length; // todo, multiply by prim size mike
+            thermalContrast[idx] = dis.readFloat();
+        uPosition += (thermalContrast.length * 4);
         for(int idx = 0; idx < reflectance.length; idx++)
-            reflectance[idx] = dis.readFloat(); // mike check
-        uPosition += reflectance.length; // todo, multiply by prim size mike
+            reflectance[idx] = dis.readFloat();
+        uPosition += (reflectance.length * 4);
         for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MineEmplacementTime anX = new MineEmplacementTime();
@@ -657,8 +657,8 @@ public int unmarshal(DataInputStream dis)
         }
 
         for(int idx = 0; idx < mineEntityNumber.length; idx++)
-            mineEntityNumber[idx] = dis.readShort(); // mike check
-        uPosition += mineEntityNumber.length; // todo, multiply by prim size mike
+            mineEntityNumber[idx] = dis.readShort();
+        uPosition += (mineEntityNumber.length * 2);
         for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataFusing anX = new MinefieldDataFusing();
@@ -667,8 +667,8 @@ public int unmarshal(DataInputStream dis)
         }
 
         for(int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
-            scalarDetectionCoefficient[idx] = dis.readByte(); // mike check
-        uPosition += scalarDetectionCoefficient.length; // todo, multiply by prim size mike
+            scalarDetectionCoefficient[idx] = dis.readByte();
+        uPosition += (scalarDetectionCoefficient.length * 1);
         for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
@@ -679,13 +679,13 @@ public int unmarshal(DataInputStream dis)
         padTo32_2 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32_2.length;
         for(int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
-            numberOfTripDetonationWires[idx] = dis.readByte(); // mike check
-        uPosition += numberOfTripDetonationWires.length; // todo, multiply by prim size mike
+            numberOfTripDetonationWires[idx] = dis.readByte();
+        uPosition += (numberOfTripDetonationWires.length * 1);
         padTo32_3 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32_3.length;
         for(int idx = 0; idx < numberOfVertices.length; idx++)
-            numberOfVertices[idx] = dis.readByte(); // mike check
-        uPosition += numberOfVertices.length; // todo, multiply by prim size mike
+            numberOfVertices[idx] = dis.readByte();
+        uPosition += (numberOfVertices.length * 1);
     }
     catch(Exception e)
     { 
@@ -711,7 +711,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    buff.put( (byte)requestID);
    buff.put( (byte)pduSequenceNumber);
    buff.put( (byte)numberOfPdus);
-   buff.put( (byte)paintScheme.size());
+   buff.put( (byte)numberOfVertices.length);
    buff.put( (byte)sensorTypes.size());
    buff.put( (byte)padding);
    dataFilter.marshal(buff);
@@ -889,7 +889,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -911,9 +911,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof MinefieldDataPdu))
-        return false;
-
      final MinefieldDataPdu rhs = (MinefieldDataPdu)obj;
 
      if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
@@ -922,8 +919,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (requestID == rhs.requestID)) ivarsEqual = false;
      if( ! (pduSequenceNumber == rhs.pduSequenceNumber)) ivarsEqual = false;
      if( ! (numberOfPdus == rhs.numberOfPdus)) ivarsEqual = false;
-     if( ! (numberOfMinesInThisPdu == rhs.numberOfMinesInThisPdu)) ivarsEqual = false;
-     if( ! (numberOfSensorTypes == rhs.numberOfSensorTypes)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
      if( ! (dataFilter.equals( rhs.dataFilter) )) ivarsEqual = false;
      if( ! (mineType.equals( rhs.mineType) )) ivarsEqual = false;

@@ -59,12 +59,12 @@ public byte[] getDataValues()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
     {
-       dos.writeShort( (short)numberOfBytes);
+       dos.writeShort( (short)dataValues.length);
 
        for(int idx = 0; idx < dataValues.length; idx++)
            dos.writeByte(dataValues[idx]);
@@ -83,7 +83,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -93,8 +93,8 @@ public int unmarshal(DataInputStream dis)
         numberOfBytes = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < dataValues.length; idx++)
-            dataValues[idx] = dis.readByte(); // mike check
-        uPosition += dataValues.length; // todo, multiply by prim size mike
+            dataValues[idx] = dis.readByte();
+        uPosition += (dataValues.length * 1);
         padding = new byte[Align.from16bits(uPosition,dis)];
         uPosition += padding.length;
     }
@@ -116,7 +116,7 @@ public int unmarshal(DataInputStream dis)
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    super.marshal(buff);
-   buff.putShort( (short)numberOfBytes);
+   buff.putShort( (short)dataValues.length);
 
    for(int idx = 0; idx < dataValues.length; idx++)
        buff.put((byte)dataValues[idx]);
@@ -144,7 +144,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -166,12 +166,8 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof GridDataType0))
-        return false;
-
      final GridDataType0 rhs = (GridDataType0)obj;
 
-     if( ! (numberOfBytes == rhs.numberOfBytes)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

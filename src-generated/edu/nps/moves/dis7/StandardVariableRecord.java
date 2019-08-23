@@ -16,7 +16,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public class StandardVariableRecord extends Object implements Serializable
 {
    /**  uid 66 */
-   protected VariableRecordTypes recordType = VariableRecordTypes.values()[0];
+   protected VariableRecordType recordType = VariableRecordType.values()[0];
 
    protected short  recordLength;
 
@@ -45,14 +45,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link StandardVariableRecord#recordType}*/
-public StandardVariableRecord setRecordType(VariableRecordTypes pRecordType)
+public StandardVariableRecord setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
 /** Getter for {@link StandardVariableRecord#recordType}*/
-public VariableRecordTypes getRecordType()
+public VariableRecordType getRecordType()
 {
     return recordType; 
 }
@@ -75,12 +75,12 @@ public byte[] getRecordSpecificFields()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
        recordType.marshal(dos);
-       dos.writeShort( (short)recordLength);
+       dos.writeShort( (short)recordSpecificFields.length);
 
        for(int idx = 0; idx < recordSpecificFields.length; idx++)
            dos.writeByte(recordSpecificFields[idx]);
@@ -99,18 +99,18 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
     {
-        recordType = VariableRecordTypes.unmarshalEnum(dis);
+        recordType = VariableRecordType.unmarshalEnum(dis);
         uPosition += recordType.getMarshalledSize();
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < recordSpecificFields.length; idx++)
-            recordSpecificFields[idx] = dis.readByte(); // mike check
-        uPosition += recordSpecificFields.length; // todo, multiply by prim size mike
+            recordSpecificFields[idx] = dis.readByte();
+        uPosition += (recordSpecificFields.length * 1);
         padding = new byte[Align.from64bits(uPosition,dis)];
         uPosition += padding.length;
     }
@@ -132,7 +132,7 @@ public int unmarshal(DataInputStream dis)
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    recordType.marshal(buff);
-   buff.putShort( (short)recordLength);
+   buff.putShort( (short)recordSpecificFields.length);
 
    for(int idx = 0; idx < recordSpecificFields.length; idx++)
        buff.put((byte)recordSpecificFields[idx]);
@@ -150,7 +150,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
-    recordType = VariableRecordTypes.unmarshalEnum(buff);
+    recordType = VariableRecordType.unmarshalEnum(buff);
     recordLength = (short)(buff.getShort() & 0xFFFF);
     for(int idx = 0; idx < recordSpecificFields.length; idx++)
         recordSpecificFields[idx] = buff.get();
@@ -159,7 +159,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -186,13 +186,9 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof StandardVariableRecord))
-        return false;
-
      final StandardVariableRecord rhs = (StandardVariableRecord)obj;
 
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

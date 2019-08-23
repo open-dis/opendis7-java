@@ -95,7 +95,7 @@ public class DisNetworking
     return new BuffAndLength(packet.getData(), packet.getLength());
   }
 
-  public void sendPdu(Pdu pdu) throws IOException
+  public void sendPdu(Pdu pdu) throws Exception
   {
     // turn object into byte stream
     ByteArrayOutputStream baos = new ByteArrayOutputStream();

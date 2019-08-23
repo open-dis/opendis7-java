@@ -165,7 +165,7 @@ public List<VariableParameter> getVariableParameters()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -197,7 +197,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -286,7 +286,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -308,14 +308,10 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof EntityStateUpdatePdu))
-        return false;
-
      final EntityStateUpdatePdu rhs = (EntityStateUpdatePdu)obj;
 
      if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (numberOfVariableParameters == rhs.numberOfVariableParameters)) ivarsEqual = false;
      if( ! (entityLinearVelocity.equals( rhs.entityLinearVelocity) )) ivarsEqual = false;
      if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
      if( ! (entityOrientation.equals( rhs.entityOrientation) )) ivarsEqual = false;

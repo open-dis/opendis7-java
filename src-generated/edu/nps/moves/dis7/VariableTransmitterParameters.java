@@ -16,7 +16,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public class VariableTransmitterParameters extends Object implements Serializable
 {
    /** Type of VTP uid 66 */
-   protected VariableRecordTypes recordType = VariableRecordTypes.values()[0];
+   protected VariableRecordType recordType = VariableRecordType.values()[0];
 
    /** Length, in bytes */
    protected short  recordLength;
@@ -46,14 +46,14 @@ public int getMarshalledSize()
 
 
 /** Setter for {@link VariableTransmitterParameters#recordType}*/
-public VariableTransmitterParameters setRecordType(VariableRecordTypes pRecordType)
+public VariableTransmitterParameters setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
 }
 
 /** Getter for {@link VariableTransmitterParameters#recordType}*/
-public VariableRecordTypes getRecordType()
+public VariableRecordType getRecordType()
 {
     return recordType; 
 }
@@ -89,7 +89,7 @@ public byte[] getRecordSpecificFields()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -113,18 +113,18 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
     {
-        recordType = VariableRecordTypes.unmarshalEnum(dis);
+        recordType = VariableRecordType.unmarshalEnum(dis);
         uPosition += recordType.getMarshalledSize();
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
         for(int idx = 0; idx < recordSpecificFields.length; idx++)
-            recordSpecificFields[idx] = dis.readByte(); // mike check
-        uPosition += recordSpecificFields.length; // todo, multiply by prim size mike
+            recordSpecificFields[idx] = dis.readByte();
+        uPosition += (recordSpecificFields.length * 1);
         padding = new byte[Align.from64bits(uPosition,dis)];
         uPosition += padding.length;
     }
@@ -164,7 +164,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 {
-    recordType = VariableRecordTypes.unmarshalEnum(buff);
+    recordType = VariableRecordType.unmarshalEnum(buff);
     recordLength = (short)(buff.getShort() & 0xFFFF);
     for(int idx = 0; idx < recordSpecificFields.length; idx++)
         recordSpecificFields[idx] = buff.get();
@@ -173,7 +173,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -199,9 +199,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
-
-    if(!(obj instanceof VariableTransmitterParameters))
-        return false;
 
      final VariableTransmitterParameters rhs = (VariableTransmitterParameters)obj;
 

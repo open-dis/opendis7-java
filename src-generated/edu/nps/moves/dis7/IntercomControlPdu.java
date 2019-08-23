@@ -248,7 +248,7 @@ public List<IntercomCommunicationsParameters> getIntercomParameters()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -285,7 +285,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -396,7 +396,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -418,9 +418,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof IntercomControlPdu))
-        return false;
-
      final IntercomControlPdu rhs = (IntercomControlPdu)obj;
 
      if( ! (controlType == rhs.controlType)) ivarsEqual = false;
@@ -434,7 +431,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (masterIntercomReferenceID.equals( rhs.masterIntercomReferenceID) )) ivarsEqual = false;
      if( ! (masterIntercomNumber == rhs.masterIntercomNumber)) ivarsEqual = false;
      if( ! (masterChannelID == rhs.masterChannelID)) ivarsEqual = false;
-     if( ! (intercomParametersLength == rhs.intercomParametersLength)) ivarsEqual = false;
 
      for(int idx = 0; idx < intercomParameters.size(); idx++)
         if( ! ( intercomParameters.get(idx).equals(rhs.intercomParameters.get(idx)))) ivarsEqual = false;

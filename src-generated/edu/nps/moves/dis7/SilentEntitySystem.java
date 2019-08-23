@@ -91,12 +91,12 @@ public int[] getAppearanceRecordList()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
        dos.writeShort( (short)numberOfEntities);
-       dos.writeShort( (short)numberOfAppearanceRecords);
+       dos.writeShort( (short)appearanceRecordList.length);
        entityType.marshal(dos);
 
        for(int idx = 0; idx < appearanceRecordList.length; idx++)
@@ -115,7 +115,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -126,8 +126,8 @@ public int unmarshal(DataInputStream dis)
         uPosition += 2;
         uPosition += entityType.unmarshal(dis);
         for(int idx = 0; idx < appearanceRecordList.length; idx++)
-            appearanceRecordList[idx] = dis.readInt(); // mike check
-        uPosition += appearanceRecordList.length; // todo, multiply by prim size mike
+            appearanceRecordList[idx] = dis.readInt();
+        uPosition += (appearanceRecordList.length * 4);
     }
     catch(Exception e)
     { 
@@ -147,7 +147,7 @@ public int unmarshal(DataInputStream dis)
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    buff.putShort( (short)numberOfEntities);
-   buff.putShort( (short)numberOfAppearanceRecords);
+   buff.putShort( (short)appearanceRecordList.length);
    entityType.marshal(buff);
 
    for(int idx = 0; idx < appearanceRecordList.length; idx++)
@@ -174,7 +174,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -201,13 +201,9 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof SilentEntitySystem))
-        return false;
-
      final SilentEntitySystem rhs = (SilentEntitySystem)obj;
 
      if( ! (numberOfEntities == rhs.numberOfEntities)) ivarsEqual = false;
-     if( ! (numberOfAppearanceRecords == rhs.numberOfAppearanceRecords)) ivarsEqual = false;
      if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)

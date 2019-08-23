@@ -46,8 +46,10 @@ public class NullFieldsMarshallTest
             dumpET(lav105);
             lav105.marshal(bb);
             dumpBb(bb);
+            System.out.println("Test complete, no exception");
         }
         catch(Exception e) {
+          System.err.println(e.getClass().getSimpleName()+": "+e.getLocalizedMessage());
             ex = e;
         }
    //temp     assertNull(ex,"Exception should be null if successful marshal");
@@ -91,5 +93,12 @@ public class NullFieldsMarshallTest
         System.out.println("LAV_105 subcategory: "+et.getSubCategory());
         System.out.println("LAV_105 specific: "+et.getSpecific());
         System.out.println("LAV_105 extra: "+et.getExtra());
+    }
+    
+    public static void main(String[] args)
+    {
+      NullFieldsMarshallTest inst = new NullFieldsMarshallTest();
+      inst.setUp();
+      inst.testNoSpecificNoExtraMarshal();
     }
 }

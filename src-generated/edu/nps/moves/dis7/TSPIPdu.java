@@ -202,7 +202,7 @@ public byte[] getSystemSpecificData()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -216,7 +216,7 @@ public void marshal(DataOutputStream dos)
        orientationError.marshal(dos);
        deadReckoningParameters.marshal(dos);
        dos.writeShort( (short)measuredSpeed);
-       dos.writeByte( (byte)systemSpecificDataLength);
+       dos.writeByte( (byte)systemSpecificData.length);
 
        for(int idx = 0; idx < systemSpecificData.length; idx++)
            dos.writeByte(systemSpecificData[idx]);
@@ -234,7 +234,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -255,8 +255,8 @@ public int unmarshal(DataInputStream dis)
         systemSpecificDataLength = (byte)dis.readUnsignedByte();
         uPosition += 1;
         for(int idx = 0; idx < systemSpecificData.length; idx++)
-            systemSpecificData[idx] = dis.readByte(); // mike check
-        uPosition += systemSpecificData.length; // todo, multiply by prim size mike
+            systemSpecificData[idx] = dis.readByte();
+        uPosition += (systemSpecificData.length * 1);
     }
     catch(Exception e)
     { 
@@ -285,7 +285,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
    orientationError.marshal(buff);
    deadReckoningParameters.marshal(buff);
    buff.putShort( (short)measuredSpeed);
-   buff.put( (byte)systemSpecificDataLength);
+   buff.put( (byte)systemSpecificData.length);
 
    for(int idx = 0; idx < systemSpecificData.length; idx++)
        buff.put((byte)systemSpecificData[idx]);
@@ -320,7 +320,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -342,9 +342,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof TSPIPdu))
-        return false;
-
      final TSPIPdu rhs = (TSPIPdu)obj;
 
      if( ! (liveEntityId.equals( rhs.liveEntityId) )) ivarsEqual = false;
@@ -356,7 +353,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (orientationError.equals( rhs.orientationError) )) ivarsEqual = false;
      if( ! (deadReckoningParameters.equals( rhs.deadReckoningParameters) )) ivarsEqual = false;
      if( ! (measuredSpeed == rhs.measuredSpeed)) ivarsEqual = false;
-     if( ! (systemSpecificDataLength == rhs.systemSpecificDataLength)) ivarsEqual = false;
 
      for(int idx = 0; idx < 0; idx++)
      {

@@ -156,7 +156,7 @@ public List<VariableDatum> getVariableDatumRecords()
  * @see java.io.DataOutputStream
  * @param dos The DataOutputStream
  */
-public void marshal(DataOutputStream dos)
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -194,7 +194,7 @@ public void marshal(DataOutputStream dos)
  * @param dis The DataInputStream
  * @return marshalled size
  */
-public int unmarshal(DataInputStream dis)
+public int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -304,7 +304,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 }
 
  /*
-  * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
+  * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
  public boolean equals(Object obj)
@@ -326,17 +326,12 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  {
      boolean ivarsEqual = true;
 
-    if(!(obj instanceof SetDataRPdu))
-        return false;
-
      final SetDataRPdu rhs = (SetDataRPdu)obj;
 
      if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
      if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
      if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
      if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (numberOfFixedDatumRecords == rhs.numberOfFixedDatumRecords)) ivarsEqual = false;
-     if( ! (numberOfVariableDatumRecords == rhs.numberOfVariableDatumRecords)) ivarsEqual = false;
 
      for(int idx = 0; idx < fixedDatumRecords.size(); idx++)
         if( ! ( fixedDatumRecords.get(idx).equals(rhs.fixedDatumRecords.get(idx)))) ivarsEqual = false;
