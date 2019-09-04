@@ -4,7 +4,6 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>open-dis7-java</name>
-            <explicit-platform explicit-source-supported="true"/>
             <source-roots>
                 <root id="src.src-generated.dir"/>
                 <root id="src.dir"/>
