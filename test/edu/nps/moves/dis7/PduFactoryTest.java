@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
 package edu.nps.moves.dis7;
 
 /**
@@ -8,17 +12,17 @@ package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.util.PduFactory;
-import java.util.Arrays;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-@DisplayName("PduFactory All Pdus Create")
+@DisplayName("Pdu Factory Test")
 
-public class TestPduFactory1
+public class PduFactoryTest
 {
     @BeforeAll
     public static void beforeAllTests()
     {
+      System.out.println("PduFactoryTest");
     }
 
     @AfterAll

@@ -1,19 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.util.DisNetworking;
 import edu.nps.moves.dis7.util.PduFactory;
 import java.io.IOException;
-import java.lang.reflect.Method;
-import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Signal Pdus Test")
 public class SignalPdusTest
@@ -21,6 +16,7 @@ public class SignalPdusTest
   @BeforeAll
   public static void setUpClass()
   {
+    System.out.println("SignalPdusTest");
   }
 
   @AfterAll
@@ -62,14 +58,14 @@ public class SignalPdusTest
     setUpReceiver();
 
     try {
-      Thread.sleep(250l); // make sure receiver is listening
+      Thread.sleep(2000l); //250l); // make sure receiver is listening
       DisNetworking disnet = new DisNetworking();
       disnet.sendPdu(sigPdu);
       disnet.sendPdu(sigPdu2);
       disnet.sendPdu(isig);
       disnet.sendPdu(isig2);
       
-      Thread.sleep(1000l); //(180*1000l));//waiter.wait();
+      Thread.sleep(3000l); //1000l); //(180*1000l));//waiter.wait();
     }
     catch (Exception ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
@@ -78,10 +74,10 @@ public class SignalPdusTest
 
     // Compare
     // If we made it this far, we've sent and received.  Now compare.
-    if (receivedPdu.equals(sigPdu))
-      System.out.println("passed test");
-    else
-      System.err.println("failed test");
+    assertTrue(receivedPdu != null, "No response from network");
+    assertTrue(receivedPdu.equals(sigPdu),"Sent and received pdus not identical");
+    
+    System.out.println("SignalPdusTest finished");
   }
 
   private void setUpReceiver()

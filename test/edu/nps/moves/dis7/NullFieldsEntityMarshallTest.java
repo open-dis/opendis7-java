@@ -1,4 +1,8 @@
 /**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
+/**
  * NullFieldsMarshallTest()); created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
  * @author Mike Bailey, jmbailey@edu.nps.edu
@@ -11,14 +15,16 @@ import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Null Fields Entity Marshal")
-public class NullFieldsMarshallTest
+@DisplayName("Null Fields Entity Marshall Test")
+public class NullFieldsEntityMarshallTest
 {
     LAV_105 lav105;
 
     @BeforeAll
     public static void beforeAllTests()
-    {}
+    {
+      System.out.println("NullFieldsEntityMarshallTest");
+    }
     
     @AfterAll
     public static void afterAllTests()
@@ -39,21 +45,19 @@ public class NullFieldsMarshallTest
     @Test
     public void testNoSpecificNoExtraMarshal()
     {
-        System.out.println("Test no specific, no extra marshal");
         Exception ex=null;
         ByteBuffer bb = ByteBuffer.allocate(100);
         try {
-            dumpET(lav105);
+            //dumpET(lav105);
             lav105.marshal(bb);
-            dumpBb(bb);
-            System.out.println("Test complete, no exception");
+            //dumpBb(bb);
         }
         catch(Exception e) {
           System.err.println(e.getClass().getSimpleName()+": "+e.getLocalizedMessage());
             ex = e;
         }
-   //temp     assertNull(ex,"Exception should be null if successful marshal");
-   //temp     assertEquals(8, bb.position(), "Marshalled array should be 8 bytes long");
+        assertNull(ex,"Exception should be null if successful marshal");
+        assertEquals(8, bb.position(), "Marshalled array should be 8 bytes long");
     }
     
     @Test
@@ -97,7 +101,7 @@ public class NullFieldsMarshallTest
     
     public static void main(String[] args)
     {
-      NullFieldsMarshallTest inst = new NullFieldsMarshallTest();
+      NullFieldsEntityMarshallTest inst = new NullFieldsEntityMarshallTest();
       inst.setUp();
       inst.testNoSpecificNoExtraMarshal();
     }
