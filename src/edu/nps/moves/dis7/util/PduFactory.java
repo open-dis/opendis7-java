@@ -207,7 +207,7 @@ public class PduFactory
   /* Pdu construction methods */
   
   /**
-   * Create an Entity State PDU<br/>
+   * Create an Entity State PDU<br>
    * IEEE Std 1278.1-2012, 5.3.2
    * @return pdu
    */
@@ -230,7 +230,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Fire PDU<br/>
+   * Create a Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.3
    * @return pdu
    */  
@@ -249,7 +249,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Detonation PDU<br/>
+   * Create a Detonation PDU<br>
    * IEEE Std 1278.1-2012, 5.4.4
    * @return pdu
    */  
@@ -265,7 +265,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Collision PDU<br/>
+   * Create a Collision PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
    * @return pdu
    */  
@@ -284,7 +284,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Service Request PDU<br/>
+   * Create a Service Request PDU<br>
    * IEEE Std 1278.1-2012, 5.5.5
    * @return pdu
    */  
@@ -301,7 +301,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Offer PDU<br/>
+   * Create a Resupply Offer PDU<br>
    * IEEE Std 1278.1-2012, 5.5.6
    * @return pdu
    */  
@@ -315,7 +315,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Received PDU<br/>
+   * Create a Resupply Received PDU<br>
    * IEEE Std 1278.1-2012, 5.5.7
    * @return pdu
    */  
@@ -329,7 +329,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Cancel PDU<br/>
+   * Create a Resupply Cancel PDU<br>
    * IEEE Std 1278.1-2012, 5.5.8
    * @return pdu
    */  
@@ -343,7 +343,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Repair Complete PDU<br/>
+   * Create a Repair Complete PDU<br>
    * IEEE Std 1278.1-2012, 5.5.10
    * @return pdu
    */  
@@ -360,7 +360,7 @@ public class PduFactory
   }
 
    /**
-   * Create a Repair Response PDU<br/>
+   * Create a Repair Response PDU<br>
    * IEEE Std 1278.1-2012, 5.5.11
    * @return pdu
    */  
@@ -377,7 +377,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Create Entity PDU<br/>
+   * Create a Create Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.2
    * @return pdu
    */  
@@ -389,7 +389,7 @@ public class PduFactory
   }
 
    /**
-   * Create a Remove Entity PDU<br/>
+   * Create a Remove Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.3
    * @return pdu
    */  
@@ -403,7 +403,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Start Resume PDU<br/>
+   * Create a Start Resume PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.4
    * @return pdu
    */  
@@ -415,7 +415,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Stop Freeze PDU<br/>
+   * Create a Stop Freeze PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.5
    * @return pdu
    */  
@@ -431,7 +431,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Acknowledge PDU<br/>
+   * Create an Acknowledge PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.6
    * @return pdu
    */  
@@ -448,7 +448,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Request PDU<br/>
+   * Create an Action Request PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.7
    * @return pdu
    */  
@@ -462,7 +462,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Response PDU<br/>
+   * Create an Action Response PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.8
    * @return pdu
    */  
@@ -476,7 +476,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data Query PDU<br/>
+   * Create a Data Query PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.9
    * @return pdu
    */  
@@ -488,7 +488,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Set DataPDU<br/>
+   * Create a Set DataPDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.10
    * @return pdu
    */  
@@ -500,7 +500,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data PDU<br/>
+   * Create a Data PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.11
    * @return pdu
    */  
@@ -512,7 +512,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Event Report PDU<br/>
+   * Create an Event Report PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.12
    * @return pdu
    */  
@@ -526,7 +526,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment PDU<br/>
+   * Create a Comment PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.13
    * @return pdu
    */  
@@ -568,7 +568,7 @@ public class PduFactory
   }
   
   /**
-   * Create a Electromagnetic Emission (EE) PDU<br/>
+   * Create a Electromagnetic Emission (EE) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.3
    * @return pdu
    */  
