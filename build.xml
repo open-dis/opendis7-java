@@ -70,6 +70,30 @@
     nbproject/build-impl.xml file. 
 
     -->
+    
+    <!--
+    JUnit 5 is not perfectly supported in Netbeans 11 at this time.  This technique
+    will all the "Test Project" choice in the "Run" menu to properly run junit 5
+    test.  Running in other ways, such as individually, doesn't seem to work.
+    https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and
+    -->
+    
+    <target name="test" depends="compile-test,-pre-test-run">
+        <java dir="${work.dir}" 
+              classpath="${run.test.classpath}"  
+              classname="org.junit.platform.console.ConsoleLauncher">
+            <arg value="--scan-classpath"/>
+            <arg line="--reports-dir build/test/results"/>
+        </java>
+        <junitreport todir="build/test/results">
+            <fileset dir="build/test/results">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="build/test/results/html"/>
+        </junitreport>
+    </target>
+    
+    
     <target name="jar-javadoc" depends="javadoc">
         <mkdir dir="${basedir}/dist/javadoc"/>
         <jar destfile="${basedir}/dist/open-dis7-javadoc.jar" basedir="${basedir}/dist/javadoc">            
