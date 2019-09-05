@@ -54,7 +54,7 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
    /** number of silent aggregate types */
    protected short  numberOfSilentAggregateTypes;
 
-   /** number of silent entity types */
+   /** Number of silent entity types, handled automatically by marshaller at run time (and not modifiable by end-user programmers) */
    protected short  numberOfSilentEntityTypes;
 
    /** aggregates  list */
@@ -71,7 +71,7 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
    /** silent entity types */
    protected List< EntityType > silentEntitySystemList = new ArrayList< EntityType >();
  
-   /** number of variable datum records */
+   /** Number of variable datum records, handled automatically by marshaller at run time (and not modifiable by end-user programmers) */
    protected int  numberOfVariableDatumRecords;
 
    /** variableDatums */
