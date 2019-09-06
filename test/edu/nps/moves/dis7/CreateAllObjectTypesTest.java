@@ -1,3 +1,7 @@
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
+ */
 package edu.nps.moves.dis7;
 
 /**
@@ -16,6 +20,7 @@ public class CreateAllObjectTypesTest
   @BeforeAll
   public static void beforeAllTests()
   {
+    System.out.println("CreateAllObjectTypesTest");
   }
 
   @AfterAll
@@ -251,7 +256,7 @@ public class CreateAllObjectTypesTest
       ex = t;
     }
 
-    //temp assertNull(ex, "Exception should be null if successful creation of all objects");
+    assertNull(ex, "Exception should be null if successful creation of all objects");
   }
 
   String formatStr = "Name: %s\tDomain: %s\tKind: %s\tCategory: %s\tSubcategory: %s";
@@ -266,7 +271,7 @@ public class CreateAllObjectTypesTest
     String dom = ot.getDomain().toString();
     String kind = ot.getObjectKind().toString();;
     String nm = ot.getClass().getName();
-    System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
+    //System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
   }
 
   public static void main(String[] args)

@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * PduFactory.java created on Jun 14, 2019
@@ -39,12 +40,25 @@ public class PduFactory
   private Method getTime;
   private boolean useFastPdu = false;
 
+  /**
+   * Create a PduFactory using defaults for country (USA), exerciseId (2), application (3) and absolute timestamps.
+   */
   public PduFactory()
   {
     this.disTime = new DisTime();
     getTimeStampMethod();
   }
-
+  
+  /**
+   * Create a PduFactory which creates pdus using the specified default values.
+   * @param country used in EntityType and RadioType objects
+   * @param exerciseId used in standard Pdu header
+   * @param siteId used in standard Pdu header
+   * @param applicationId used instandard Pdu header
+   * @param useAbsoluteTimestamp boolean to specify absolute time stamps (IEEE Std 1278.1-2012, 4.6)
+   * @see   edu.nps.moves.dis7.EntityType
+   * @see   edu.nps.moves.dis7.RadioType
+   */
   public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, boolean useAbsoluteTimestamp)
   {
     this.disTime = new DisTime();
@@ -70,6 +84,10 @@ public class PduFactory
     }
   }
 
+  /**
+   * Use the default or fast method to create EntityState pdus from input byte streams.
+   * @param tf true if fast method
+   */
   public void useFastEspdu(boolean tf)
   {
     useFastPdu = tf;
@@ -193,7 +211,13 @@ public class PduFactory
   }
 
   /* ********************************** */
- /* Pdu construction methods */
+  /* Pdu construction methods */
+  
+  /**
+   * Create an Entity State PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.2
+   * @return the pdu
+   */
   public EntityStatePdu makeEntityStatePdu()
   {
     EntityStatePdu pdu = new EntityStatePdu()
@@ -212,6 +236,11 @@ public class PduFactory
     return (EntityStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Fire PDU<br>
+   * IEEE Std 1278.1-2012, 5.4.3
+   * @return the pdu
+   */  
   public FirePdu makeFirePdu()
   {
     FirePdu pdu = new FirePdu()
@@ -226,6 +255,11 @@ public class PduFactory
     return (FirePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Detonation PDU<br>
+   * IEEE Std 1278.1-2012, 5.4.4
+   * @return the pdu
+   */  
   public DetonationPdu makeDetonationPdu()
   {
     DetonationPdu pdu = new DetonationPdu()
@@ -237,6 +271,11 @@ public class PduFactory
     return (DetonationPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Collision PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.3
+   * @return the pdu
+   */  
   public CollisionPdu makeCollisionPdu()
   {
     CollisionPdu pdu = new CollisionPdu()
@@ -251,6 +290,11 @@ public class PduFactory
     return (CollisionPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Service Request PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.5
+   * @return the pdu
+   */  
   public ServiceRequestPdu makeServiceRequestPdu()
   {
     ServiceRequestPdu pdu = new ServiceRequestPdu()
@@ -263,6 +307,11 @@ public class PduFactory
     return (ServiceRequestPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Resupply Offer PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.6
+   * @return the pdu
+   */  
   public ResupplyOfferPdu makeResupplyOfferPdu()
   {
     ResupplyOfferPdu pdu = new ResupplyOfferPdu()
@@ -272,6 +321,11 @@ public class PduFactory
     return (ResupplyOfferPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Resupply Received PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.7
+   * @return the pdu
+   */  
   public ResupplyReceivedPdu makeResupplyReceivedPdu()
   {
     ResupplyReceivedPdu pdu = new ResupplyReceivedPdu()
@@ -281,6 +335,11 @@ public class PduFactory
     return (ResupplyReceivedPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Resupply Cancel PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.8
+   * @return the pdu
+   */  
   public ResupplyCancelPdu makeResupplyCancelPdu()
   {
     ResupplyCancelPdu pdu = new ResupplyCancelPdu()
@@ -290,6 +349,11 @@ public class PduFactory
     return (ResupplyCancelPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Repair Complete PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.10
+   * @return the pdu
+   */  
   public RepairCompletePdu makeRepairCompletePdu()
   {
     RepairCompletePdu pdu = new RepairCompletePdu()
@@ -302,7 +366,12 @@ public class PduFactory
     return (RepairCompletePdu) addBoilerPlate(pdu);
   }
 
-  public RepairResponsePdu makeRepairResponsePdu()
+   /**
+   * Create a Repair Response PDU<br>
+   * IEEE Std 1278.1-2012, 5.5.11
+   * @return the pdu
+   */  
+ public RepairResponsePdu makeRepairResponsePdu()
   {
     RepairResponsePdu pdu = new RepairResponsePdu()
       .setReceivingEntityID(newEntityID())
@@ -314,6 +383,11 @@ public class PduFactory
     return (RepairResponsePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Create Entity PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.2
+   * @return the pdu
+   */  
   public CreateEntityPdu makeCreateEntityPdu()
   {
     CreateEntityPdu pdu = new CreateEntityPdu();
@@ -321,7 +395,12 @@ public class PduFactory
     return (CreateEntityPdu) addBoilerPlate(pdu);
   }
 
-  public RemoveEntityPdu makeRemoveEntityPdu()
+   /**
+   * Create a Remove Entity PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.3
+   * @return the pdu
+   */  
+ public RemoveEntityPdu makeRemoveEntityPdu()
   {
     RemoveEntityPdu pdu = new RemoveEntityPdu();
     pdu.setOriginatingID(newSimulationIdentifier());
@@ -330,6 +409,11 @@ public class PduFactory
     return (RemoveEntityPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Start Resume PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.4
+   * @return the pdu
+   */  
   public StartResumePdu makeStartResumePdu()
   {
     StartResumePdu pdu = new StartResumePdu();
@@ -337,6 +421,11 @@ public class PduFactory
     return (StartResumePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Stop Freeze PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.5
+   * @return the pdu
+   */  
   public StopFreezePdu makeStopFreezePdu()
   {
     StopFreezePdu pdu = new StopFreezePdu();
@@ -348,6 +437,11 @@ public class PduFactory
     return (StopFreezePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Acknowledge PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.6
+   * @return the pdu
+   */  
   public AcknowledgePdu makeAcknowledgePdu()
   {
     AcknowledgePdu pdu = new AcknowledgePdu();
@@ -360,6 +454,11 @@ public class PduFactory
     return (AcknowledgePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Action Request PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.7
+   * @return the pdu
+   */  
   public ActionRequestPdu makeActionRequestPdu()
   {
     ActionRequestPdu pdu = new ActionRequestPdu();
@@ -369,6 +468,11 @@ public class PduFactory
     return (ActionRequestPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Action Response PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.8
+   * @return the pdu
+   */  
   public ActionResponsePdu makeActionResponsePdu()
   {
     ActionResponsePdu pdu = new ActionResponsePdu();
@@ -378,6 +482,11 @@ public class PduFactory
     return (ActionResponsePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Data Query PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.9
+   * @return the pdu
+   */  
   public DataQueryPdu makeDataQueryPdu()
   {
     DataQueryPdu pdu = new DataQueryPdu();
@@ -385,6 +494,11 @@ public class PduFactory
     return (DataQueryPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Set DataPDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.10
+   * @return the pdu
+   */  
   public SetDataPdu makeSetDataPdu()
   {
     SetDataPdu pdu = new SetDataPdu();
@@ -392,6 +506,11 @@ public class PduFactory
     return (SetDataPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Data PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.11
+   * @return the pdu
+   */  
   public DataPdu makeDataPdu()
   {
     DataPdu pdu = new DataPdu();
@@ -399,6 +518,11 @@ public class PduFactory
     return (DataPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Event Report PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.12
+   * @return the pdu
+   */  
   public EventReportPdu makeEventReportPdu()
   {
     EventReportPdu pdu = new EventReportPdu();
@@ -408,13 +532,53 @@ public class PduFactory
     return (EventReportPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Comment PDU<br>
+   * IEEE Std 1278.1-2012, 5.6.5.13
+   * @return the pdu
+   */  
   public CommentPdu makeCommentPdu()
   {
     CommentPdu pdu = new CommentPdu();
 
     return (CommentPdu) addBoilerPlate(pdu);
   }
+  
+  /**
+   * Create a Comment PDU containing the given String(s), variable record type = "OTHER"
+   * @param comments 
+   * @return the pdu
+   */
+  public CommentPdu makeCommentPdu(String ... comments)
+  {
+    return makeCommentPdu(VariableRecordType.OTHER, comments);
+  }
+  
+  /**
+   * Create a Comment PDU containing the given String(s) and variable record type
+   * @param typ VariableRecordType
+   * @param comments 
+   * @return the pdu
+   */
+  public CommentPdu makeCommentPdu(VariableRecordType typ, String... comments)
+  {
+    CommentPdu pdu = makeCommentPdu();
+    List<VariableDatum> list = pdu.getVariableDatums();
+    Stream.of(comments).forEach(s -> {
+      VariableDatum vardat = new VariableDatum();
+      vardat.setVariableDatumID(typ);
+      vardat.setVariableDatumValue(s.getBytes());
+      list.add(vardat);
+    });
 
+    return pdu;
+  }
+  
+  /**
+   * Create a Electromagnetic Emission (EE) PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.3
+   * @return the pdu
+   */  
   public ElectromagneticEmissionPdu makeElectronicEmissionsPdu()
   {
     ElectromagneticEmissionPdu pdu = new ElectromagneticEmissionPdu()
@@ -426,6 +590,11 @@ public class PduFactory
     return (ElectromagneticEmissionPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Designator PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.4
+   * @return the pdu
+   */
   public DesignatorPdu makeDesignatorPdu()
   {
     DesignatorPdu pdu = new DesignatorPdu()
@@ -442,6 +611,11 @@ public class PduFactory
     return (DesignatorPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Transmitter PDU<br>
+   * IEEE Std 1278.1-2012, 5.8.3
+   * @return the pdu
+   */
   public TransmitterPdu makeTransmitterPdu()
   {
     TransmitterPdu pdu = new TransmitterPdu()
@@ -459,6 +633,11 @@ public class PduFactory
     return (TransmitterPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Signal PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.4
+   * @return the pdu
+   */
   public SignalPdu makeSignalPdu()
   {
     SignalPdu pdu = new SignalPdu()
@@ -469,6 +648,11 @@ public class PduFactory
     return (SignalPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Receiver PDU<br>
+   * IEEE Std 1278.1-2012, 5.8.5
+   * @return the pdu
+   */
   public ReceiverPdu makeReceiverPdu()
   {
     ReceiverPdu pdu = new ReceiverPdu()
@@ -480,6 +664,11 @@ public class PduFactory
     return (ReceiverPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a an Identification Friend or Foe (IFF) PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.6
+   * @return the pdu
+   */
   public IFFPdu makeIffPdu()
   {
     IFFPdu pdu = new IFFPdu()
@@ -494,6 +683,11 @@ public class PduFactory
     return (IFFPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Designator PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.4
+   * @return the pdu
+   */
   public UnderwaterAcousticPdu makeUnderwaterAcousticPdu()
   {
     UnderwaterAcousticPdu pdu = new UnderwaterAcousticPdu()
@@ -506,6 +700,11 @@ public class PduFactory
     return (UnderwaterAcousticPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Supplemental Emission/Entity State (SEES) PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.7
+   * @return the pdu
+   */
   public SEESPdu makeSeesPdu()
   {
     SEESPdu pdu = new SEESPdu();
@@ -513,6 +712,11 @@ public class PduFactory
     return (SEESPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Intercom Signal PDU<br>
+   * IEEE Std 1278.1-2012, 5.8.6
+   * @return the pdu
+   */
   public IntercomSignalPdu makeIntercomSignalPdu()
   {
     IntercomSignalPdu pdu = new IntercomSignalPdu();
@@ -520,6 +724,11 @@ public class PduFactory
     return (IntercomSignalPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Intercom Control PDU<br>
+   * IEEE Std 1278.1-2012, 5.8.7
+   * @return the pdu
+   */
   public IntercomControlPdu makeIntercomControlPdu()
   {
     IntercomControlPdu pdu = new IntercomControlPdu()
@@ -532,6 +741,11 @@ public class PduFactory
     return (IntercomControlPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Designator PDU<br>
+   * IEEE Std 1278.1-2012, 5.7.4
+   * @return the pdu
+   */
   public AggregateStatePdu makeAggregateStatePdu()
   {
     AggregateStatePdu pdu = new AggregateStatePdu();
@@ -545,6 +759,11 @@ public class PduFactory
     return (AggregateStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an IsGroupOf PDU<br>
+   * IEEE Std 1278.1-2012, 5.9.3
+   * @return the pdu
+   */
   public IsGroupOfPdu makeIsGroupOfPdu()
   {
     IsGroupOfPdu pdu = new IsGroupOfPdu()
@@ -555,6 +774,11 @@ public class PduFactory
     return (IsGroupOfPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Transfer Ownership PDU<br>
+   * IEEE Std 1278.1-2012, 5.9.4
+   * @return the pdu
+   */
   public TransferOwnershipPdu makeTransferOwnershipPdu()
   {
     TransferOwnershipPdu pdu = new TransferOwnershipPdu()
@@ -569,6 +793,11 @@ public class PduFactory
     return (TransferOwnershipPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an IsPartOf PDU<br>
+   * IEEE Std 1278.1-2012, 5.9.5
+   * @return the pdu
+   */
   public IsPartOfPdu makeIsPartOfPdu()
   {
     IsPartOfPdu pdu = new IsPartOfPdu()
@@ -583,6 +812,11 @@ public class PduFactory
     return (IsPartOfPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Minefield State PDU<br>
+   * IEEE Std 1278.1-2012, 5.10.2
+   * @return the pdu
+   */
   public MinefieldStatePdu makeMinefieldStatePdu()
   {
     MinefieldStatePdu pdu = new MinefieldStatePdu();
@@ -598,6 +832,11 @@ public class PduFactory
     return (MinefieldStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Minefield Query PDU<br>
+   * IEEE Std 1278.1-2012, 5.10.3
+   * @return the pdu
+   */
   public MinefieldQueryPdu makeMinefieldQueryPdu()
   {
     MinefieldQueryPdu pdu = new MinefieldQueryPdu()
@@ -610,6 +849,11 @@ public class PduFactory
     return (MinefieldQueryPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Minefield Data PDU<br>
+   * IEEE Std 1278.1-2012, 5.10.4
+   * @return the pdu
+   */
   public MinefieldDataPdu makeMinefieldDataPdu()
   {
     MinefieldDataPdu pdu = new MinefieldDataPdu()
@@ -625,6 +869,11 @@ public class PduFactory
     return (MinefieldDataPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Minefield Response Negative Acknowledgment (NACK) PDU<br>
+   * IEEE Std 1278.1-2012, 5.10.5
+   * @return the pdu
+   */
   public MinefieldResponseNACKPdu makeMinefieldResponseNackPdu()
   {
     MinefieldResponseNACKPdu pdu = new MinefieldResponseNACKPdu();
@@ -632,6 +881,11 @@ public class PduFactory
     return (MinefieldResponseNACKPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Environmental Process PDU<br>
+   * IEEE Std 1278.1-2012, 5.11.2.2
+   * @return the pdu
+   */
   public EnvironmentalProcessPdu makeEnvironmentalProcessPdu()
   {
     EnvironmentalProcessPdu pdu = new EnvironmentalProcessPdu()
@@ -644,6 +898,11 @@ public class PduFactory
     return (EnvironmentalProcessPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Gridded Data PDU<br>
+   * IEEE Std 1278.1-2012, 5.11.2.3
+   * @return the pdu
+   */
   public GriddedDataPdu makeGriddedDataPdu()
   {
     GriddedDataPdu pdu = new GriddedDataPdu()
@@ -658,6 +917,11 @@ public class PduFactory
     return (GriddedDataPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Point Object State PDU<br>
+   * IEEE Std 1278.1-2012, 5.11.3.2
+   * @return the pdu
+   */
   public PointObjectStatePdu makePointObjectStatePdu()
   {
     PointObjectStatePdu pdu = new PointObjectStatePdu()
@@ -674,6 +938,11 @@ public class PduFactory
     return (PointObjectStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Linear Object State PDU<br>
+   * IEEE Std 1278.1-2012, 5.11.3.3
+   * @return the pdu
+   */
   public LinearObjectStatePdu makeLinearObjectStatePdu()
   {
     LinearObjectStatePdu pdu = new LinearObjectStatePdu()
@@ -688,6 +957,11 @@ public class PduFactory
     return (LinearObjectStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Areal Object State PDU<br>
+   * IEEE Std 1278.1-2012, 5.11.3.4
+   * @return the pdu
+   */
   public ArealObjectStatePdu makeArealObjectStatePdu()
   {
     ArealObjectStatePdu pdu = new ArealObjectStatePdu()
@@ -700,6 +974,11 @@ public class PduFactory
     return (ArealObjectStatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Time Space Position Information (TSPI) PDU<br>
+   * IEEE Std 1278.1-2012, 9.4.2
+   * @return the pdu
+   */
   public TSPIPdu makeTspiPdu()
   {
     TSPIPdu pdu = new TSPIPdu()
@@ -715,6 +994,11 @@ public class PduFactory
     return (TSPIPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Appearance PDU<br>
+   * IEEE Std 1278.1-2012, 9.4.3
+   * @return the pdu
+   */
   public AppearancePdu makeAppearancePdu()
   {
     AppearancePdu pdu = new AppearancePdu()
@@ -730,6 +1014,11 @@ public class PduFactory
     return (AppearancePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Articulated Parts PDU<br>
+   * IEEE Std 1278.1-2012, 9.4.4
+   * @return the pdu
+   */
   public ArticulatedPartsPdu makeArticulatedPartsPdu()
   {
     ArticulatedPartsPdu pdu = new ArticulatedPartsPdu()
@@ -738,6 +1027,11 @@ public class PduFactory
     return (ArticulatedPartsPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Live Entity (LE) Fire PDU<br>
+   * IEEE Std 1278.1-2012, 9.4.5
+   * @return the pdu
+   */
   public LEFirePdu makeLEFirePdu()
   {
     LEFirePdu pdu = new LEFirePdu()
@@ -754,6 +1048,11 @@ public class PduFactory
     return (LEFirePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Live Entity (LE) Detonation PDU<br>
+   * IEEE Std 1278.1-2012, 9.4.6
+   * @return the pdu
+   */
   public LEDetonationPdu makeLEDetonationPdu()
   {
     LEDetonationPdu pdu = new LEDetonationPdu()
@@ -772,6 +1071,11 @@ public class PduFactory
     return (LEDetonationPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Create Entity-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.2
+   * @return the pdu
+   */
   public CreateEntityReliablePdu makeCreateEntityReliablePdu()
   {
     CreateEntityReliablePdu pdu = new CreateEntityReliablePdu();
@@ -783,6 +1087,11 @@ public class PduFactory
     return (CreateEntityReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Remove Entity-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.3
+   * @return the pdu
+   */
   public RemoveEntityReliablePdu makeRemoveEntityReliablePdu()
   {
     RemoveEntityReliablePdu pdu = new RemoveEntityReliablePdu();
@@ -792,6 +1101,11 @@ public class PduFactory
     return (RemoveEntityReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Start/Resume-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.4
+   * @return the pdu
+   */
   public StartResumeReliablePdu makeStartResumeReliablePdu()
   {
     StartResumeReliablePdu pdu = new StartResumeReliablePdu();
@@ -803,6 +1117,11 @@ public class PduFactory
     return (StartResumeReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Stop/Freeze-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.5
+   * @return the pdu
+   */
   public StopFreezeReliablePdu makeStopFreezeReliablePdu()
   {
     StopFreezeReliablePdu pdu = new StopFreezeReliablePdu();
@@ -815,6 +1134,11 @@ public class PduFactory
     return (StopFreezeReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Acknowledge-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.6
+   * @return the pdu
+   */
   public AcknowledgeReliablePdu makeAcknowledgeReliablePdu()
   {
     AcknowledgeReliablePdu pdu = new AcknowledgeReliablePdu();
@@ -827,6 +1151,11 @@ public class PduFactory
     return (AcknowledgeReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Action Request-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.7
+   * @return the pdu
+   */
   public ActionRequestReliablePdu makeActionRequestReliablePdu()
   {
     ActionRequestReliablePdu pdu = new ActionRequestReliablePdu();
@@ -837,6 +1166,11 @@ public class PduFactory
     return (ActionRequestReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Action Response-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.8
+   * @return the pdu
+   */
   public ActionResponseReliablePdu makeActionResponseReliablePdu()
   {
     ActionResponseReliablePdu pdu = new ActionResponseReliablePdu();
@@ -846,6 +1180,11 @@ public class PduFactory
     return (ActionResponseReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Data Query-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.9
+   * @return the pdu
+   */
   public DataQueryReliablePdu makeDataQueryReliablePdu()
   {
     DataQueryReliablePdu pdu = new DataQueryReliablePdu();
@@ -857,6 +1196,11 @@ public class PduFactory
     return (DataQueryReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Set Data-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.10
+   * @return the pdu
+   */
   public SetDataReliablePdu makeSetDataReliablePdu()
   {
     SetDataReliablePdu pdu = new SetDataReliablePdu();
@@ -868,6 +1212,11 @@ public class PduFactory
     return (SetDataReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Data-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.11
+   * @return the pdu
+   */
   public DataReliablePdu makeDataReliablePdu()
   {
     DataReliablePdu pdu = new DataReliablePdu();
@@ -879,6 +1228,11 @@ public class PduFactory
     return (DataReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Event Report-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.12
+   * @return the pdu
+   */
   public EventReportReliablePdu makeEventReportReliablePdu()
   {
     EventReportReliablePdu pdu = new EventReportReliablePdu();
@@ -888,6 +1242,11 @@ public class PduFactory
     return (EventReportReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Comment-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.13
+   * @return the pdu
+   */
   public CommentReliablePdu makeCommentReliablePdu()
   {
     CommentReliablePdu pdu = new CommentReliablePdu();
@@ -895,6 +1254,41 @@ public class PduFactory
     return (CommentReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Comment-R PDU containing the given String(s), variable record type = "OTHER"
+   * @param comments 
+   * @return the pdu
+   */
+  public CommentReliablePdu makeCommentReliablePdu(String ... comments)
+  {
+    return makeCommentReliablePdu(VariableRecordType.OTHER, comments);
+  }
+  
+  /**
+   * Create a CommentR PDU containing the given String(s) and variable record type
+   * @param typ VariableRecordType
+   * @param comments 
+   * @return the pdu
+   */
+  public CommentReliablePdu makeCommentReliablePdu(VariableRecordType typ, String... comments)
+  {
+    CommentReliablePdu pdu = makeCommentReliablePdu();
+    List<VariableDatum> list = pdu.getVariableDatumRecords();
+    Stream.of(comments).forEach(s -> {
+      VariableDatum vardat = new VariableDatum();
+      vardat.setVariableDatumID(typ);
+      vardat.setVariableDatumValue(s.getBytes());
+      list.add(vardat);
+    });
+
+    return pdu;
+  }
+  
+  /**
+   * Create a Record-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.16
+   * @return the pdu
+   */
   public RecordReliablePdu makeRecordReliablePdu()
   {
     RecordReliablePdu pdu = new RecordReliablePdu();
@@ -905,6 +1299,11 @@ public class PduFactory
     return (RecordReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Set Record-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.15
+   * @return the pdu
+   */
   public SetRecordReliablePdu makeSetRecordReliablePdu()
   {
     SetRecordReliablePdu pdu = new SetRecordReliablePdu();
@@ -914,6 +1313,11 @@ public class PduFactory
     return (SetRecordReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Record Query-R (Reliable) PDU<br>
+   * IEEE Std 1278.1-2012, 5.12.4.14
+   * @return the pdu
+   */
   public RecordQueryReliablePdu makeRecordQueryReliablePdu()
   {
     RecordQueryReliablePdu pdu = new RecordQueryReliablePdu();
@@ -924,12 +1328,22 @@ public class PduFactory
     return (RecordQueryReliablePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Collision-Elastic PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.4
+   * @return the pdu
+   */
   public CollisionElasticPdu makeCollisionElasticPdu()
   {
     CollisionElasticPdu pdu = new CollisionElasticPdu();
     return (CollisionElasticPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Entity State Update PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.5
+   * @return the pdu
+   */
   public EntityStateUpdatePdu makeEntityStateUpdatePdu()
   {
     EntityStateUpdatePdu pdu = new EntityStateUpdatePdu()
@@ -942,6 +1356,11 @@ public class PduFactory
     return (EntityStateUpdatePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Directed Energy (DE) Fire PDU<br>
+   * IEEE Std 1278.1-2012, 5.4.5
+   * @return the pdu
+   */
   public DirectedEnergyFirePdu makeDirectedEnergyFirePdu()
   {
     DirectedEnergyFirePdu pdu = new DirectedEnergyFirePdu()
@@ -956,12 +1375,22 @@ public class PduFactory
     return (DirectedEnergyFirePdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create a Collision-Elastic PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.3
+   * @return the pdu
+   */
   public EntityDamageStatusPdu makeEntityDamageStatusPdu()
   {
     EntityDamageStatusPdu pdu = new EntityDamageStatusPdu();
     return (EntityDamageStatusPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Information Operations (IO) Action PDU<br>
+   * IEEE Std 1278.1-2012, 5.13.3
+   * @return the pdu
+   */
   public InformationOperationsActionPdu makeInformationOperationsActionPdu()
   {
     InformationOperationsActionPdu pdu = new InformationOperationsActionPdu()
@@ -977,6 +1406,11 @@ public class PduFactory
     return (InformationOperationsActionPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Information Operations (IO) Report PDU<br>
+   * IEEE Std 1278.1-2012, 5.13.4
+   * @return the pdu
+   */
   public InformationOperationsReportPdu makeInformationOperationsReportPdu()
   {
     InformationOperationsReportPdu pdu = new InformationOperationsReportPdu()
@@ -991,6 +1425,11 @@ public class PduFactory
     return (InformationOperationsReportPdu) addBoilerPlate(pdu);
   }
 
+  /**
+   * Create an Attribute PDU<br>
+   * IEEE Std 1278.1-2012, 5.3.6
+   * @return the pdu
+   */
   public AttributePdu makeAttributePdu()
   {
     AttributePdu pdu = new AttributePdu()
@@ -1006,11 +1445,11 @@ public class PduFactory
   }
 
   /**
-   * PDU factory. Pass in an array of bytes, get the correct type of pdu back,
+   * PDU builder. Pass in an array of bytes, get the correct type of pdu back,
    * based on the PDU type field contained in the byte array.
    *
    * @param data
-   * @return A PDU of the appropriate concrete subclass of PDU
+   * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
    */
   public Pdu createPdu(byte data[])
   {
@@ -1018,11 +1457,11 @@ public class PduFactory
   }
 
   /**
-   * PDU factory. Pass in an array of bytes, get the correct type of pdu back,
+   * PDU builder. Pass in an array of bytes, get the correct type of pdu back,
    * based on the PDU type field contained in the byte buffer.
    *
    * @param buff
-   * @return null if there was an error creating the Pdu
+   * @return the pdu or null if there was an error creating the Pdu
    */
   public Pdu createPdu(java.nio.ByteBuffer buff)
   {
@@ -1039,11 +1478,21 @@ public class PduFactory
     return createPdu(pduType, buff);
   }
 
+  /**
+   * Create an empty PDU of the given type
+   * @param pduType
+   * @return the pdu
+   */
   public Pdu createPdu(DISPDUType pduType)
   {
     return createPdu(pduType, null);
   }
 
+  /**
+   * Return the enumerated pdu type from a byte array, typically received from the network
+   * @param ba byte array
+   * @return the type
+   */
   public DISPDUType getTypeFromByteArray(byte[] ba)
   {
     return DISPDUType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte

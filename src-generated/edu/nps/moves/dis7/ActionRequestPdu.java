@@ -24,7 +24,7 @@ public class ActionRequestPdu extends SimulationManagementFamilyPdu implements S
    /** Number of fixed datum records */
    protected int  numberOfFixedDatumRecords;
 
-   /** Number of variable datum records */
+   /** Number of variable datum records, handled automatically by marshaller at run time (and not modifiable by end-user programmers) */
    protected int  numberOfVariableDatumRecords;
 
    /** variable length list of fixed datums */

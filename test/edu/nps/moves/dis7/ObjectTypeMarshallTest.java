@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * This work is licensed under the BSD open source license, available at https://www.movesinstitute.org/licenses/bsd.html
  */
 package edu.nps.moves.dis7;
 
-//import edu.nps.moves.dis.ObjectType;
 import edu.nps.moves.dis7.objecttypes.LinearObject.Culturalfeature.Tracks_Tire.Tracks_Tire;
 import edu.nps.moves.dis7.objecttypes.LinearObject.Obstacle.ConcertinaWire._2_Roll._2_Roll;
 import java.nio.ByteBuffer;
@@ -17,7 +15,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class ObjectTypeMarshallTest
 {
     @BeforeAll
-    public static void setUpClass(){}
+    public static void setUpClass()
+    {
+      System.out.println("ObjectTypeMarshallTest");
+    }
     @AfterAll
     public static void tearDownClass(){}
     @BeforeEach
@@ -32,7 +33,6 @@ public class ObjectTypeMarshallTest
         try {
             _2_Roll roll2 = new _2_Roll();
             common(roll2);
-            System.out.println("testGoodMarshal successful");
         }
         catch (Throwable t) {
             thr = t;
@@ -47,7 +47,6 @@ public class ObjectTypeMarshallTest
         try {
             Tracks_Tire tracksTire = new Tracks_Tire();
             common(tracksTire);
-            System.out.println("TestNoSubCategory successful");
         }
         catch (Throwable t) {
             thr = t;

@@ -22,6 +22,7 @@ public class UAEmitter extends Object implements Serializable
 
    protected short  padding;
 
+   /** TODO */
    protected AcousticEmitter  acousticEmitter = new AcousticEmitter(); 
 
    /** the location of the antenna beam source with respect to the emitting entity's coordinate system. This location shall be the origin of the emitter coordinate system that shall have the same orientation as the entity coordinate system. This field shall be represented by an Entity Coordinate Vector record see 6.2.95  */

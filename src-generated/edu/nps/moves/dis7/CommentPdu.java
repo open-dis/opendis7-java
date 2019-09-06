@@ -15,15 +15,12 @@ import edu.nps.moves.dis7.enumerations.*;
  */
 public class CommentPdu extends SimulationManagementFamilyPdu implements Serializable
 {
-   /** Number of fixed datum records */
+   /** Number of fixed datum records, not used in this Pdu */
    protected int  numberOfFixedDatumRecords;
 
-   /** Number of variable datum records */
+   /** Number of variable datum records, handled automatically by marshaller at run time (and not modifiable by end-user programmers) */
    protected int  numberOfVariableDatumRecords;
 
-   /** variable length list of fixed datums */
-   protected List< FixedDatum > fixedDatums = new ArrayList< FixedDatum >();
- 
    /** variable length list of variable length datums */
    protected List< VariableDatum > variableDatums = new ArrayList< VariableDatum >();
  
@@ -42,11 +39,6 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    marshalSize += 4;  // numberOfFixedDatumRecords
    marshalSize += 4;  // numberOfVariableDatumRecords
-   for(int idx=0; idx < fixedDatums.size(); idx++)
-   {
-        FixedDatum listElement = fixedDatums.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
    for(int idx=0; idx < variableDatums.size(); idx++)
    {
         VariableDatum listElement = variableDatums.get(idx);
@@ -56,19 +48,6 @@ public int getMarshalledSize()
    return marshalSize;
 }
 
-
-/** Setter for {@link CommentPdu#fixedDatums}*/
-public CommentPdu setFixedDatums(List<FixedDatum> pFixedDatums)
-{
-    fixedDatums = pFixedDatums;
-    return this;
-}
-
-/** Getter for {@link CommentPdu#fixedDatums}*/
-public List<FixedDatum> getFixedDatums()
-{
-    return fixedDatums; 
-}
 
 /** Setter for {@link CommentPdu#variableDatums}*/
 public CommentPdu setVariableDatums(List<VariableDatum> pVariableDatums)
@@ -93,15 +72,8 @@ public void marshal(DataOutputStream dos) throws Exception
     super.marshal(dos);
     try 
     {
-       dos.writeInt( (int)fixedDatums.size());
+       dos.writeInt( (int)numberOfFixedDatumRecords);
        dos.writeInt( (int)variableDatums.size());
-
-       for(int idx = 0; idx < fixedDatums.size(); idx++)
-       {
-            FixedDatum aFixedDatum = fixedDatums.get(idx);
-            aFixedDatum.marshal(dos);
-       }
-
 
        for(int idx = 0; idx < variableDatums.size(); idx++)
        {
@@ -133,13 +105,6 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
-        {
-            FixedDatum anX = new FixedDatum();
-            uPosition += anX.unmarshal(dis);
-            fixedDatums.add(anX);
-        }
-
         for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
@@ -166,15 +131,8 @@ public int unmarshal(DataInputStream dis) throws Exception
 public void marshal(java.nio.ByteBuffer buff) throws Exception
 {
    super.marshal(buff);
-   buff.putInt( (int)fixedDatums.size());
+   buff.putInt( (int)numberOfFixedDatumRecords);
    buff.putInt( (int)variableDatums.size());
-
-   for(int idx = 0; idx < fixedDatums.size(); idx++)
-   {
-        FixedDatum aFixedDatum = (FixedDatum)fixedDatums.get(idx);
-        aFixedDatum.marshal(buff);
-   }
-
 
    for(int idx = 0; idx < variableDatums.size(); idx++)
    {
@@ -198,13 +156,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 
     numberOfFixedDatumRecords = buff.getInt();
     numberOfVariableDatumRecords = buff.getInt();
-    for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
-    {
-    FixedDatum anX = new FixedDatum();
-    anX.unmarshal(buff);
-    fixedDatums.add(anX);
-    }
-
     for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
     {
     VariableDatum anX = new VariableDatum();
@@ -239,10 +190,6 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      boolean ivarsEqual = true;
 
      final CommentPdu rhs = (CommentPdu)obj;
-
-
-     for(int idx = 0; idx < fixedDatums.size(); idx++)
-        if( ! ( fixedDatums.get(idx).equals(rhs.fixedDatums.get(idx)))) ivarsEqual = false;
 
 
      for(int idx = 0; idx < variableDatums.size(); idx++)

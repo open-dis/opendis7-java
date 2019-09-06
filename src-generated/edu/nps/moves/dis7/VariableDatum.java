@@ -260,7 +260,7 @@ public class VariableDatum extends Object implements Serializable
 
     if (!(variableDatumID == rhs.variableDatumID))
       ivarsEqual = false;
-    if (!(variableDatumLength == rhs.variableDatumLength))
+    if (!(variableDatumLength.equals(rhs.variableDatumLength)))
       ivarsEqual = false;
     for (int idx = 0; idx < 0; idx++) {
       if (!(variableDatumValue[idx] == rhs.variableDatumValue[idx]))
