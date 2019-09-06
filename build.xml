@@ -95,7 +95,6 @@
     
     
     <target name="jar-javadoc" depends="javadoc">
-        <mkdir dir="${basedir}/dist/javadoc"/>
         <jar destfile="${basedir}/dist/open-dis7-javadoc.jar" basedir="${basedir}/dist/javadoc">            
             <manifest>
                 <attribute name="Built-By" value="open-dis-7-java"/>
@@ -107,7 +106,6 @@
                 <attribute name="Implementation-Vendor" value="Naval Postgraduate School"/>
             </manifest>
         </jar>
-        <delete dir="${basedir}/dist/javadoc"/>
     </target>
     
     <target name="jar-source">
