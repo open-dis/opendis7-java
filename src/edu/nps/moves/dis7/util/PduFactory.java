@@ -9,6 +9,7 @@ import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -1458,21 +1459,26 @@ public class PduFactory
 
   /**
    * PDU builder. Pass in an array of bytes, get the correct type of pdu back,
-   * based on the PDU type field contained in the byte buffer.
+   * based on the PDU type field contained in the byte buffer.  (Implementation note: includes
+   * workaround code for a jdk8 bytecode bug.)
    *
    * @param buff
    * @return the pdu or null if there was an error creating the Pdu
    */
   public Pdu createPdu(java.nio.ByteBuffer buff)
   {
-
-    int pos = buff.position();          // Save buffer's position
+    // The (unnecessary) casts around the position() calls are a workaround for an apparent bytecode bug with
+    // javac involving jdk 8.  Google "java bytebuffer no such method position" and see https://github.com/eclipse/jetty.project/issues/3244
+    // specifically for the workaround used in three places below.
+    
+    int pos = ((Buffer)buff).position();          // Save buffer's position
     if (pos + 2 > buff.limit()) {       // Make sure there's enough space in buffer
       return null;                    // Else return null
     }   // end if: buffer too short
-    buff.position(pos + 2);             // Advance to third byte
+    
+    ((Buffer)buff).position(pos + 2);             // Advance to third byte
     final int pduIdx = Byte.toUnsignedInt(buff.get());    // Read Pdu type
-    buff.position(pos);                 // Reset buffer
+    ((Buffer)buff).position(pos);                 // Reset buffer
 
     DISPDUType pduType = DISPDUType.getEnumForValue(pduIdx);
     return createPdu(pduType, buff);
