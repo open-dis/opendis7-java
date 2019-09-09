@@ -49,20 +49,23 @@ public class DisThreadedNetIF
   }
 
   /* *********** class instanciation ************* */
-  private int DIS_PORT = 3000;
-  private String MCAST_GROUP = "225.4.5.6";
+  public static int DEFAULT_DIS_PORT = 3000;
+  public static String DEFAULT_MCAST_GROUP = "225.4.5.6";
   private static final int MAX_DIS_PDU_SIZE = 8192;
+  
+  private int disPort;
+  private String mcastGroup;
   private boolean killed = false;
 
   private DisThreadedNetIF()
   {
-    this(3000, "225.4.5.6");
+    this(DEFAULT_DIS_PORT, DEFAULT_MCAST_GROUP);
   }
 
   private DisThreadedNetIF(int port, String mcastgroup)
   {
-    DIS_PORT = port;
-    MCAST_GROUP = mcastgroup;
+    disPort = port;
+    mcastGroup = mcastgroup;
     init();
   }
 
@@ -101,6 +104,16 @@ public class DisThreadedNetIF
     });
   }
 
+  public int getDisPort()
+  {
+    return disPort;
+  }
+
+  public String getMcastGroup()
+  {
+    return mcastGroup;
+  }
+
   public void send(Pdu pdu)
   {
     pdus2send.add(pdu);
@@ -131,8 +144,8 @@ public class DisThreadedNetIF
     DatagramPacket packet;
     while (!killed) { // keep trying on error
       try {
-        socket = new MulticastSocket(DIS_PORT);
-        InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
+        socket = new MulticastSocket(disPort);
+        InetAddress maddr = InetAddress.getByName(mcastGroup);
         socket.setNetworkInterface(findIp4Interface());
         socket.joinGroup(maddr);
         while (!killed) {
@@ -162,7 +175,7 @@ public class DisThreadedNetIF
   private final Runnable sendThread = () -> {
     while (!killed) {
       try {
-        InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
+        InetAddress maddr = InetAddress.getByName(mcastGroup);
 
         while (!killed) {
           Pdu pdu = pdus2send.take();
@@ -173,7 +186,7 @@ public class DisThreadedNetIF
           pdu.marshal(dos);
           byte[] data = baos.toByteArray();
           // load byte buffer into packet and send
-          DatagramPacket packet = new DatagramPacket(data, data.length, maddr, DIS_PORT);
+          DatagramPacket packet = new DatagramPacket(data, data.length, maddr, disPort);
           socket.send(packet);
         }
       }
