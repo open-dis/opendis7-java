@@ -25,30 +25,32 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class DisThreadedNetIF
 {
-  /* ********** listener interface *********** */
+  /* ********** Pdu listener interface *********** */
   public interface PduListener
   {
     void incomingPdu(Pdu pdu);
   }
 
-  /* ********** singleton plumbing *************** */
-  private static DisThreadedNetIF instance;
-
-  public static DisThreadedNetIF inst()
+  /* ***** Raw pdu listener class and interface ******** */
+  public class BuffAndLength
   {
-    if (instance == null)
-      instance = new DisThreadedNetIF();
-    return instance;
-  }
+    public byte[] buff;
+    public int length;
 
-  public static DisThreadedNetIF inst(int port, String mcastgroup)
+    public BuffAndLength(byte[] buff, int length)
+    {
+      this.buff = buff;
+      this.length = length;
+    }
+  }
+  
+  public interface RawPduListener
   {
-    if (instance == null)
-      instance = new DisThreadedNetIF(port, mcastgroup);
-    return instance;
+    void incomingPdu(BuffAndLength bAndL);
   }
-
-  /* *********** class instanciation ************* */
+  
+  /************ Begin class ***************/
+  
   public static int DEFAULT_DIS_PORT = 3000;
   public static String DEFAULT_MCAST_GROUP = "225.4.5.6";
   private static final int MAX_DIS_PDU_SIZE = 8192;
@@ -57,12 +59,12 @@ public class DisThreadedNetIF
   private String mcastGroup;
   private boolean killed = false;
 
-  private DisThreadedNetIF()
+  public DisThreadedNetIF()
   {
     this(DEFAULT_DIS_PORT, DEFAULT_MCAST_GROUP);
   }
 
-  private DisThreadedNetIF(int port, String mcastgroup)
+  public DisThreadedNetIF(int port, String mcastgroup)
   {
     disPort = port;
     mcastGroup = mcastgroup;
@@ -72,8 +74,16 @@ public class DisThreadedNetIF
   /* *********** queues and lists  and public methods ************** */
   private final ArrayList<PduListener> everyTypeListeners = new ArrayList<>();
   private final HashMap<DISPDUType, ArrayList<PduListener>> typeListeners = new HashMap<>();
+  
+  private final ArrayList<RawPduListener> rawListeners = new ArrayList<>();
+
   private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
+  /**
+   * Add a listener to accept only pdus of the given typ
+   * @param lis instance of PduListener
+   * @param typ Pdu type
+   */
   public void addListener(PduListener lis, DISPDUType typ)
   {
     if (typ == null)
@@ -87,12 +97,20 @@ public class DisThreadedNetIF
       arLis.add(lis);
     }
   }
-
+  
+  /**
+   * Add a listener to accept all pdu types
+   * @param lis instance implementing the PduListener interface
+   */
   public void addListener(PduListener lis)
   {
     everyTypeListeners.add(lis);
   }
 
+  /**
+   * Remove previously added listener
+   * @param lis instance implementing the PduListener interface
+   */
   public void removeListener(PduListener lis)
   {
     everyTypeListeners.remove(lis);
@@ -103,7 +121,25 @@ public class DisThreadedNetIF
         arLis.remove(lis);
     });
   }
-
+  
+  /**
+   * Add a listener to accept pdus of all types in the form of a byte array
+   * @param lis instance implementing the RawPduListener interface
+   */
+  public void addRawListener(RawPduListener lis)
+  {
+    rawListeners.add(lis);
+  }
+  
+  /**
+   * Remove previously add raw listener
+   * @param lis 
+   */
+  public void removeRawListener(RawPduListener lis)
+  {
+    rawListeners.remove(lis);
+  }
+  
   public int getDisPort()
   {
     return disPort;
@@ -114,6 +150,10 @@ public class DisThreadedNetIF
     return mcastGroup;
   }
 
+  /**
+   * Sent the given pdu to the network, using the ip and port given to the constructor
+   * @param pdu 
+   */
   public void send(Pdu pdu)
   {
     pdus2send.add(pdu);
@@ -139,7 +179,7 @@ public class DisThreadedNetIF
     sender.setPriority(Thread.NORM_PRIORITY);
     sender.start();
   }
-
+  
   private Runnable receiveThread = () -> {
     DatagramPacket packet;
     while (!killed) { // keep trying on error
@@ -148,11 +188,14 @@ public class DisThreadedNetIF
         InetAddress maddr = InetAddress.getByName(mcastGroup);
         socket.setNetworkInterface(findIp4Interface());
         socket.joinGroup(maddr);
+        
         while (!killed) {
           byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
           packet = new DatagramPacket(buffer, buffer.length);
 
           socket.receive(packet);   //blocks here waiting for next DIS pdu to be received on multicast IP and specified port
+          toRawListeners(packet.getData(), packet.getLength());
+          
           Pdu pdu = pduFactory.createPdu(packet.getData());
           if (pdu != null)
             toListeners(pdu);
@@ -210,12 +253,22 @@ public class DisThreadedNetIF
   private void toListeners(Pdu pdu)
   {
     everyTypeListeners.stream().forEach(lis -> lis.incomingPdu(pdu));
-
-    ArrayList<PduListener> arLis = typeListeners.get(pdu.getPduType());
-    if (arLis != null)
-      arLis.stream().forEach(lis -> lis.incomingPdu(pdu));
+    if (pdu != null) {
+      ArrayList<PduListener> arLis = typeListeners.get(pdu.getPduType());
+      if (arLis != null)
+        arLis.stream().forEach(lis -> lis.incomingPdu(pdu));
+    }
   }
-
+  
+  private void toRawListeners(byte[]data, int len)
+  {
+    if(rawListeners.isEmpty())
+      return;
+    
+    BuffAndLength bl = new BuffAndLength(data,len);
+    rawListeners.forEach(lis->lis.incomingPdu(bl));
+  }
+  
   public void kill()
   {
     killed = true;
