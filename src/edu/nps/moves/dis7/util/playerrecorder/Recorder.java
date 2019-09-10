@@ -4,7 +4,7 @@ import com.google.common.primitives.Longs;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.util.DisNetworking;
-import edu.nps.moves.dis7.util.DisNetworking.BuffAndLength;
+import edu.nps.moves.dis7.util.DisThreadedNetIF;
 import edu.nps.moves.dis7.util.PduFactory;
 import org.apache.commons.io.FilenameUtils;
 
@@ -31,8 +31,8 @@ public class Recorder implements PduReceiver
 
   private BufferedWriter bwr;
   private File logFile;
-  private DisNetworking disnet;
-  private Thread receiverThrd;
+  
+  private DisThreadedNetIF disnetworking;
   
   public Recorder() throws IOException
   {
@@ -44,25 +44,8 @@ public class Recorder implements PduReceiver
     logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_TAIL );
     bwr = new BufferedWriter(new FileWriter(logFile));
     
-    disnet = new DisNetworking(port, mcastaddr);
-    // Start a thread to receive and record pdus
-
-    receiverThrd = new Thread(()->{
-      int count = 1;
-      while(!Thread.interrupted()){
-        try {
-          BuffAndLength blen = disnet.receiveRawPdu();
-          //System.out.println(""+ count++ +" Got pdu from DisNetworking");
-          receivePdu(blen.buff,blen.length);
-        }
-        catch(IOException ex) {
-          // this is the normal exception if you do disnet.stop()  System.err.println("Exception receiving Pdu: "+ex.getLocalizedMessage());
-        }
-      }
-    });
-    receiverThrd.setPriority(Thread.NORM_PRIORITY);
-    receiverThrd.setDaemon(true);
-    receiverThrd.start();
+    disnetworking = new DisThreadedNetIF(port, mcastaddr);
+    disnetworking.addRawListener(bAndL->receivePdu(bAndL.buff,bAndL.length));
   }
   
   public void startResume()
@@ -82,23 +65,18 @@ public class Recorder implements PduReceiver
     return null;
   }
   
-  public void end()
+  public File end() throws IOException
   {
-    disnet.stop();
-    receiverThrd.interrupt();
-    
-     try {
-      writeFooter();
-      bwr.flush();
-      bwr.close();
-      System.out.println();
-      System.out.println("Recorder log file closed");
-    }
-    catch (IOException ex) {
-      System.out.println("IOException closing file: " + ex.getMessage());
-    }
+    disnetworking.kill();
+
+    writeFooter();
+    bwr.flush();
+    bwr.close();
+    System.out.println();
+    System.out.println("Recorder log file closed");
+    return logFile;
   }
-  
+ 
   Long startNanoTime = null;
   StringBuilder sb = new StringBuilder();
   Base64.Encoder encdr = Base64.getEncoder();
@@ -136,9 +114,8 @@ public class Recorder implements PduReceiver
       System.err.println("Fatal exception writing DIS log file in Recorder.start()");
       throw new RuntimeException(ex);
     }
-    System.out.print(++pduCount + "\r");
+    //System.out.println("Recorder: "+ ++pduCount);
 
-    //bwr.flush();
     sb.setLength(0);
   }
   
@@ -218,7 +195,12 @@ public class Recorder implements PduReceiver
       });
     sleep(2000);
     
-    recorder.end();
+    try {
+      recorder.end();
+    }
+    catch(Exception ex) {
+      System.err.println("Exception closing recorder: "+ex.getClass().getSimpleName()+": "+ex.getLocalizedMessage());
+    }
   }
   
   private static void sleep(long ms)
