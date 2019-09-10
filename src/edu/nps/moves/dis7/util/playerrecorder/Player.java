@@ -19,6 +19,9 @@ import static edu.nps.moves.dis7.util.playerrecorder.Recorder.*;
 
 public class Player
 {
+  public interface RawListener {
+    void receiveBytes(byte[] ba);
+  }
   private Path disLogDirectory;
   private String ip;
   private int port;
@@ -44,7 +47,17 @@ public class Player
   private BufferedReader brdr;
   private Long startNanoTime = null;
   private boolean paused = false;
+  private boolean netSend = true;
+  private RawListener rawListener = null;
   
+  public void sendToNet(boolean tf)
+  {
+    netSend = tf;
+  }
+  public void addRawListener(RawListener lis)
+  {
+    rawListener = lis;
+  }
   @SuppressWarnings("StatementWithEmptyBody")
   public void begin()
   {
@@ -63,7 +76,8 @@ public class Player
       });
       //Arrays.sort(fs, Comparator.comparing(File::getName));
 
-      dsock = new DatagramSocket();
+      if(netSend)
+        dsock = new DatagramSocket();
       Base64.Decoder decdr = Base64.getDecoder();
       
       for (File f : fs) {
@@ -110,9 +124,13 @@ public class Player
             
             byte[] buffer = decdr.decode(sa[1]);
             
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, addr, port);
-            dsock.send(packet);
-            
+            if(netSend) {
+              DatagramPacket packet = new DatagramPacket(buffer, buffer.length, addr, port);
+              dsock.send(packet);
+            }
+            if(rawListener != null) {
+              rawListener.receiveBytes(buffer);
+            }
             pduCount++;
             if (scenarioPduCount != null)
               scenarioPduCount++;
@@ -125,6 +143,8 @@ public class Player
         }
         brdr.close();
       }
+      if(rawListener != null)
+        rawListener.receiveBytes(null); // indicate the end
     }
     catch (Exception ex) {
       System.err.println("Exception reading/writing pdus: "+ex.getClass().getSimpleName()+": "+ex.getLocalizedMessage());
