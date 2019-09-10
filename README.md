@@ -4,7 +4,7 @@ Type-safe java implementation of the DIS Protocol v. 7, IEE 1278.1-2012
 **IMPORTANT!**  This project is not complete and is in a testing phase.  Until this notice is removed, use the DIS libraries under the **open-dis-java** and **Enumerations** projects.
 
 <H2>Building the release</H2>
-This source is organized as a Netbeans Ant project.  It includes the necessary support files required by Netbeans, specifically, the `netbproject` directory and `build.xml`.
+This source is organized as a Netbeans Ant project.  It includes the necessary support files required by Netbeans, specifically, the `nbproject` directory and `build.xml`.
 
 After downloading or cloning the project from the Git repository, a simple `Run->Build Project` from the Netbeans menu should compile the source, as well as produce `open-dis7-java.jar` in then `dist` directory.
 
