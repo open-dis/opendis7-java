@@ -255,7 +255,8 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    //if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass()))
         return false;
 
     return equalsImpl(obj);

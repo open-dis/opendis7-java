@@ -424,6 +424,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (entityAppearance == rhs.entityAppearance)) ivarsEqual = false;
      if( ! (deadReckoningParameters.equals( rhs.deadReckoningParameters) )) ivarsEqual = false;
      if( ! (marking.equals( rhs.marking) )) ivarsEqual = false;
+     if( ! (capabilities.equals( rhs.capabilities) )) ivarsEqual = false;
 
      for(int idx = 0; idx < variableParameters.size(); idx++)
         if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
