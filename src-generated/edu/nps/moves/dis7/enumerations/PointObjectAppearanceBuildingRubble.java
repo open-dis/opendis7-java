@@ -74,4 +74,10 @@ public class PointObjectAppearanceBuildingRubble extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "PointObjectAppearanceBuildingRubble: " + super.toString();
+  }
 }

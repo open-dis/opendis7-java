@@ -97,4 +97,10 @@ public enum IOEffectsRecordIOLinkType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOEffectsRecordIOLinkType: " + name() + ": " + getValue(); 
+    }
 }

@@ -246,7 +246,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -272,5 +272,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
      if( ! (targetLocation.equals( rhs.targetLocation) )) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" fireEventID: ").append(fireEventID).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" firingEntityID: ").append(firingEntityID).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" targetEntityID: ").append(targetEntityID).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+    sb.append(" targetLocation: ").append(targetLocation).append("\n");
+
+   return sb.toString();
  }
 } // end of class

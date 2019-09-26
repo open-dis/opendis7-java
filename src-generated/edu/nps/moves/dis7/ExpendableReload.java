@@ -229,7 +229,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -254,5 +254,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) ivarsEqual = false;
      if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" expendable: ").append(expendable).append("\n");
+    sb.append(" station: ").append(station).append("\n");
+    sb.append(" standardQuantity: ").append(standardQuantity).append("\n");
+    sb.append(" maximumQuantity: ").append(maximumQuantity).append("\n");
+    sb.append(" standardQuantityReloadTime: ").append(standardQuantityReloadTime).append("\n");
+    sb.append(" maximumQuantityReloadTime: ").append(maximumQuantityReloadTime).append("\n");
+
+   return sb.toString();
  }
 } // end of class

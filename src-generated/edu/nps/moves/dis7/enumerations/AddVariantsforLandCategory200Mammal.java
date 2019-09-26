@@ -101,4 +101,10 @@ public enum AddVariantsforLandCategory200Mammal
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AddVariantsforLandCategory200Mammal: " + name() + ": " + getValue(); 
+    }
 }

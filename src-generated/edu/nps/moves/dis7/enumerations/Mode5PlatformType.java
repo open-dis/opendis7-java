@@ -93,4 +93,10 @@ public enum Mode5PlatformType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Mode5PlatformType: " + name() + ": " + getValue(); 
+    }
 }

@@ -81,4 +81,10 @@ public class PointObjectAppearancePothole extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "PointObjectAppearancePothole: " + super.toString();
+  }
 }

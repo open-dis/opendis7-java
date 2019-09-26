@@ -167,4 +167,10 @@ public enum LifeFormExtraPersonalData
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormExtraPersonalData: " + name() + ": " + getValue(); 
+    }
 }

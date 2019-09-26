@@ -93,4 +93,10 @@ public enum AppearancePaintScheme
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearancePaintScheme: " + name() + ": " + getValue(); 
+    }
 }

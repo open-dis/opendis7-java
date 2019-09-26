@@ -91,4 +91,10 @@ public enum Class6SupplyCategoryPersonnelDemandItems implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class6SupplyCategoryPersonnelDemandItems: " + name() + ": " + getValue(); 
+    }
 }

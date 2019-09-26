@@ -82,4 +82,10 @@ public enum GriddedDataCoordinateSystem
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "GriddedDataCoordinateSystem: " + name() + ": " + getValue(); 
+    }
 }

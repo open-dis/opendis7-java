@@ -81,4 +81,10 @@ public class DEFireFlags extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "DEFireFlags: " + super.toString();
+  }
 }

@@ -93,4 +93,10 @@ public enum VariantsforSubsurfaceCategory201Mammal
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "VariantsforSubsurfaceCategory201Mammal: " + name() + ": " + getValue(); 
+    }
 }

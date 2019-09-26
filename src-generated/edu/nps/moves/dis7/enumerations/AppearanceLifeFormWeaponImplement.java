@@ -97,4 +97,10 @@ public enum AppearanceLifeFormWeaponImplement
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceLifeFormWeaponImplement: " + name() + ": " + getValue(); 
+    }
 }

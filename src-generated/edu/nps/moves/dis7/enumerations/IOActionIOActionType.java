@@ -80,4 +80,10 @@ public enum IOActionIOActionType
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOActionIOActionType: " + name() + ": " + getValue(); 
+    }
 }

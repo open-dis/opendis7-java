@@ -97,4 +97,10 @@ public enum SubcategoriesforLandCategory202Amphibian implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory202Amphibian: " + name() + ": " + getValue(); 
+    }
 }

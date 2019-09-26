@@ -97,4 +97,10 @@ public enum NavigationSource
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "NavigationSource: " + name() + ": " + getValue(); 
+    }
 }

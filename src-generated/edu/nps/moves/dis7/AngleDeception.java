@@ -440,7 +440,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -475,5 +475,31 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (elevationPullAcceleration == rhs.elevationPullAcceleration)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" emitterNumber: ").append(emitterNumber).append("\n");
+    sb.append(" beamNumber: ").append(beamNumber).append("\n");
+    sb.append(" stateIndicator: ").append(stateIndicator).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" azimuthOffset: ").append(azimuthOffset).append("\n");
+    sb.append(" azimuthWidth: ").append(azimuthWidth).append("\n");
+    sb.append(" azimuthPullRate: ").append(azimuthPullRate).append("\n");
+    sb.append(" azimuthPullAcceleration: ").append(azimuthPullAcceleration).append("\n");
+    sb.append(" elevationOffset: ").append(elevationOffset).append("\n");
+    sb.append(" elevationWidth: ").append(elevationWidth).append("\n");
+    sb.append(" elevationPullRate: ").append(elevationPullRate).append("\n");
+    sb.append(" elevationPullAcceleration: ").append(elevationPullAcceleration).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+
+   return sb.toString();
  }
 } // end of class

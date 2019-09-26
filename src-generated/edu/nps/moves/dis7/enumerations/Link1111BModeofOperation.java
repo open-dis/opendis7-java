@@ -86,4 +86,10 @@ public enum Link1111BModeofOperation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Link1111BModeofOperation: " + name() + ": " + getValue(); 
+    }
 }

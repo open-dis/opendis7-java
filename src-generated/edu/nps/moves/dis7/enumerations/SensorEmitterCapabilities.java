@@ -89,4 +89,10 @@ public class SensorEmitterCapabilities extends DisBitSet implements EntityCapabi
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SensorEmitterCapabilities: " + super.toString();
+  }
 }

@@ -97,4 +97,10 @@ public enum IOCommsNodeRecordCommsNodeType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOCommsNodeRecordCommsNodeType: " + name() + ": " + getValue(); 
+    }
 }

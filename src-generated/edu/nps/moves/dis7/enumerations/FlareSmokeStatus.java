@@ -95,4 +95,10 @@ public enum FlareSmokeStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "FlareSmokeStatus: " + name() + ": " + getValue(); 
+    }
 }

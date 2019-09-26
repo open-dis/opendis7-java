@@ -123,4 +123,10 @@ public enum SensorEmitterCategory implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SensorEmitterCategory: " + name() + ": " + getValue(); 
+    }
 }

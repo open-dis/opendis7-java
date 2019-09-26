@@ -900,7 +900,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -1001,5 +1001,57 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      }
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" minefieldID: ").append(minefieldID).append("\n");
+    sb.append(" requestingEntityID: ").append(requestingEntityID).append("\n");
+    sb.append(" minefieldSequenceNumbeer: ").append(minefieldSequenceNumbeer).append("\n");
+    sb.append(" requestID: ").append(requestID).append("\n");
+    sb.append(" pduSequenceNumber: ").append(pduSequenceNumber).append("\n");
+    sb.append(" numberOfPdus: ").append(numberOfPdus).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" dataFilter: ").append(dataFilter).append("\n");
+    sb.append(" mineType: ").append(mineType).append("\n");
+    sb.append(" padTo32: ").append(padTo32).append("\n");
+    sb.append(" groundBurialDepthOffset: ").append("\n");
+    sb.append(Arrays.toString(groundBurialDepthOffset)).append("\n");
+    sb.append(" waterBurialDepthOffset: ").append("\n");
+    sb.append(Arrays.toString(waterBurialDepthOffset)).append("\n");
+    sb.append(" snowBurialDepthOffset: ").append("\n");
+    sb.append(Arrays.toString(snowBurialDepthOffset)).append("\n");
+    sb.append(" thermalContrast: ").append("\n");
+    sb.append(Arrays.toString(thermalContrast)).append("\n");
+    sb.append(" reflectance: ").append("\n");
+    sb.append(Arrays.toString(reflectance)).append("\n");
+    sb.append(" mineEntityNumber: ").append("\n");
+    sb.append(Arrays.toString(mineEntityNumber)).append("\n");
+    sb.append(" scalarDetectionCoefficient: ").append("\n");
+    sb.append(Arrays.toString(scalarDetectionCoefficient)).append("\n");
+    sb.append(" padTo32_2: ").append(padTo32_2).append("\n");
+    sb.append(" numberOfTripDetonationWires: ").append("\n");
+    sb.append(Arrays.toString(numberOfTripDetonationWires)).append("\n");
+    sb.append(" padTo32_3: ").append(padTo32_3).append("\n");
+    sb.append(" numberOfVertices: ").append("\n");
+    sb.append(Arrays.toString(numberOfVertices)).append("\n");
+    sb.append(" sensorTypes: ").append("\n");
+    sensorTypes.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" mineLocation: ").append("\n");
+    mineLocation.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" mineOrientation: ").append("\n");
+    mineOrientation.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" mineEmplacementTime: ").append("\n");
+    mineEmplacementTime.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" fusing: ").append("\n");
+    fusing.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" paintScheme: ").append("\n");
+    paintScheme.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

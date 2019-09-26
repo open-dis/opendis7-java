@@ -97,4 +97,10 @@ public enum DEFirePulseShape
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DEFirePulseShape: " + name() + ": " + getValue(); 
+    }
 }

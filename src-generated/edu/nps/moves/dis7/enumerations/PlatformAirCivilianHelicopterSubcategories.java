@@ -105,4 +105,10 @@ public enum PlatformAirCivilianHelicopterSubcategories implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformAirCivilianHelicopterSubcategories: " + name() + ": " + getValue(); 
+    }
 }

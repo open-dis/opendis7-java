@@ -103,4 +103,10 @@ public enum SubcategoriesforLandCategory203Insect implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory203Insect: " + name() + ": " + getValue(); 
+    }
 }

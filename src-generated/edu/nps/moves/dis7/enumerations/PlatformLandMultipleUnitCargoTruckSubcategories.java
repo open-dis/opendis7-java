@@ -97,4 +97,10 @@ public enum PlatformLandMultipleUnitCargoTruckSubcategories implements SubCatego
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandMultipleUnitCargoTruckSubcategories: " + name() + ": " + getValue(); 
+    }
 }

@@ -77,4 +77,10 @@ public class PointObjectAppearanceLogCribAbatisEtAl extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "PointObjectAppearanceLogCribAbatisEtAl: " + super.toString();
+  }
 }

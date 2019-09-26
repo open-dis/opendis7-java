@@ -97,4 +97,10 @@ public enum AppearanceLifeformHealth
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceLifeformHealth: " + name() + ": " + getValue(); 
+    }
 }

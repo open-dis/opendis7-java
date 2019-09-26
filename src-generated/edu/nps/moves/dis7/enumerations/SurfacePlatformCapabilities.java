@@ -105,4 +105,10 @@ public class SurfacePlatformCapabilities extends DisBitSet implements EntityCapa
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SurfacePlatformCapabilities: " + super.toString();
+  }
 }

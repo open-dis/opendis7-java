@@ -142,4 +142,10 @@ public enum PlatformAirCategory implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformAirCategory: " + name() + ": " + getValue(); 
+    }
 }

@@ -101,4 +101,10 @@ public enum AppearanceHatch
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceHatch: " + name() + ": " + getValue(); 
+    }
 }

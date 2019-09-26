@@ -80,4 +80,10 @@ public enum GriddedDataDataRepresentation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "GriddedDataDataRepresentation: " + name() + ": " + getValue(); 
+    }
 }

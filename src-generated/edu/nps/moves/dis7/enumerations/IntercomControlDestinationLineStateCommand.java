@@ -97,4 +97,10 @@ public enum IntercomControlDestinationLineStateCommand
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IntercomControlDestinationLineStateCommand: " + name() + ": " + getValue(); 
+    }
 }

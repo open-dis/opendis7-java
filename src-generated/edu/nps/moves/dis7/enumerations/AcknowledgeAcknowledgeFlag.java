@@ -84,4 +84,10 @@ public enum AcknowledgeAcknowledgeFlag
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AcknowledgeAcknowledgeFlag: " + name() + ": " + getValue(); 
+    }
 }

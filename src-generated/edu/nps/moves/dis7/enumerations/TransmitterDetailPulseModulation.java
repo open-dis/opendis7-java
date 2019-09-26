@@ -82,4 +82,10 @@ public enum TransmitterDetailPulseModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterDetailPulseModulation: " + name() + ": " + getValue(); 
+    }
 }

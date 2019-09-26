@@ -93,4 +93,10 @@ public enum RequiredReliabilityService
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "RequiredReliabilityService: " + name() + ": " + getValue(); 
+    }
 }

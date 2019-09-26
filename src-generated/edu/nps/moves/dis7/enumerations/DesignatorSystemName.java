@@ -250,4 +250,10 @@ public enum DesignatorSystemName
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DesignatorSystemName: " + name() + ": " + getValue(); 
+    }
 }

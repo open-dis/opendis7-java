@@ -622,7 +622,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -666,5 +666,36 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( variableDatumList.get(idx).equals(rhs.variableDatumList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" aggregateID: ").append(aggregateID).append("\n");
+    sb.append(" forceID: ").append(forceID).append("\n");
+    sb.append(" aggregateState: ").append(aggregateState).append("\n");
+    sb.append(" aggregateType: ").append(aggregateType).append("\n");
+    sb.append(" formation: ").append(formation).append("\n");
+    sb.append(" aggregateMarking: ").append(aggregateMarking).append("\n");
+    sb.append(" dimensions: ").append(dimensions).append("\n");
+    sb.append(" orientation: ").append(orientation).append("\n");
+    sb.append(" centerOfMass: ").append(centerOfMass).append("\n");
+    sb.append(" velocity: ").append(velocity).append("\n");
+    sb.append(" padTo32: ").append(padTo32).append("\n");
+    sb.append(" aggregateIDList: ").append("\n");
+    aggregateIDList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" entityIDList: ").append("\n");
+    entityIDList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" silentAggregateSystemList: ").append("\n");
+    silentAggregateSystemList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" silentEntitySystemList: ").append("\n");
+    silentEntitySystemList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" variableDatumList: ").append("\n");
+    variableDatumList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

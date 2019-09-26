@@ -95,4 +95,10 @@ public enum DISPDUStatusRadioAttachedIndicatorRAI
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISPDUStatusRadioAttachedIndicatorRAI: " + name() + ": " + getValue(); 
+    }
 }

@@ -77,4 +77,10 @@ public class LinearObjectAppearanceMinefieldLaneMarker extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LinearObjectAppearanceMinefieldLaneMarker: " + super.toString();
+  }
 }

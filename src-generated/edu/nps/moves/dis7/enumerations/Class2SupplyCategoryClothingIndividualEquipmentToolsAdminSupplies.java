@@ -105,4 +105,10 @@ public enum Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies im
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies: " + name() + ": " + getValue(); 
+    }
 }

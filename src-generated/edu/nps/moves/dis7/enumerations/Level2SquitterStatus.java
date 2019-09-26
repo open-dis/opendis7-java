@@ -93,4 +93,10 @@ public enum Level2SquitterStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Level2SquitterStatus: " + name() + ": " + getValue(); 
+    }
 }

@@ -355,7 +355,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -381,5 +381,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
      if( ! (detonationResult == rhs.detonationResult)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" firingLiveEntityId: ").append(firingLiveEntityId).append("\n");
+    sb.append(" detonationFlag1: ").append(detonationFlag1).append("\n");
+    sb.append(" detonationFlag2: ").append(detonationFlag2).append("\n");
+    sb.append(" targetLiveEntityId: ").append(targetLiveEntityId).append("\n");
+    sb.append(" munitionLiveEntityId: ").append(munitionLiveEntityId).append("\n");
+    sb.append(" eventId: ").append(eventId).append("\n");
+    sb.append(" worldLocation: ").append(worldLocation).append("\n");
+    sb.append(" velocity: ").append(velocity).append("\n");
+    sb.append(" munitionOrientation: ").append(munitionOrientation).append("\n");
+    sb.append(" munitionDescriptor: ").append(munitionDescriptor).append("\n");
+    sb.append(" entityLocation: ").append(entityLocation).append("\n");
+    sb.append(" detonationResult: ").append(detonationResult).append("\n");
+
+   return sb.toString();
  }
 } // end of class

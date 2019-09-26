@@ -93,4 +93,10 @@ public enum AppearanceLauncherOperational
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceLauncherOperational: " + name() + ": " + getValue(); 
+    }
 }

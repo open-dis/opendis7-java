@@ -81,4 +81,10 @@ public class EnvironmentalCapabilities extends DisBitSet implements EntityCapabi
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "EnvironmentalCapabilities: " + super.toString();
+  }
 }

@@ -143,4 +143,10 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforSubsurfaceCategory200Fish: " + name() + ": " + getValue(); 
+    }
 }

@@ -76,4 +76,10 @@ public enum UAAdditionalPassiveActivityParameterIndex
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "UAAdditionalPassiveActivityParameterIndex: " + name() + ": " + getValue(); 
+    }
 }

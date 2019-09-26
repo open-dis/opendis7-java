@@ -136,7 +136,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -156,5 +156,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
 
      if( ! (bitFlags == rhs.bitFlags)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" bitFlags: ").append(bitFlags).append("\n");
+    sb.append(" GROUND_BURIAL_DEPTH_OFFSET_BIT: ").append(GROUND_BURIAL_DEPTH_OFFSET_BIT).append("\n");
+    sb.append(" WATER_BURIAL_DEPTH_OFFSET_BIT: ").append(WATER_BURIAL_DEPTH_OFFSET_BIT).append("\n");
+    sb.append(" SNOW_BURIAL_DEPTH_OFFSET_BIT: ").append(SNOW_BURIAL_DEPTH_OFFSET_BIT).append("\n");
+    sb.append(" MINE_ORIENTATION_BIT: ").append(MINE_ORIENTATION_BIT).append("\n");
+    sb.append(" THERMAL_CONSTRAST_BIT: ").append(THERMAL_CONSTRAST_BIT).append("\n");
+    sb.append(" REFLECTANCE_BIT: ").append(REFLECTANCE_BIT).append("\n");
+    sb.append(" MINE_EMPLACEMENT_TIME_BIT: ").append(MINE_EMPLACEMENT_TIME_BIT).append("\n");
+    sb.append(" TRIP_DETONATION_WIRE_BIT: ").append(TRIP_DETONATION_WIRE_BIT).append("\n");
+    sb.append(" FUSING_BIT: ").append(FUSING_BIT).append("\n");
+    sb.append(" SCALAR_DETECTION_COEFFICIENT_BIT: ").append(SCALAR_DETECTION_COEFFICIENT_BIT).append("\n");
+    sb.append(" PAINT_SCHEME_BIT: ").append(PAINT_SCHEME_BIT).append("\n");
+
+   return sb.toString();
  }
 } // end of class

@@ -117,4 +117,10 @@ public class MunitionAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "MunitionAppearance: " + super.toString();
+  }
 }

@@ -93,4 +93,10 @@ public enum AppearanceConcealedMovement
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceConcealedMovement: " + name() + ": " + getValue(); 
+    }
 }

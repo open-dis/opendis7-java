@@ -235,7 +235,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -260,5 +260,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (quantity == rhs.quantity)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" sensorTypeSource: ").append(sensorTypeSource).append("\n");
+    sb.append(" sensorOnOffStatus: ").append(sensorOnOffStatus).append("\n");
+    sb.append(" sensorType: ").append(sensorType).append("\n");
+    sb.append(" station: ").append(station).append("\n");
+    sb.append(" quantity: ").append(quantity).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

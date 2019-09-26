@@ -97,4 +97,10 @@ public enum TransmissionIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmissionIndicator: " + name() + ": " + getValue(); 
+    }
 }

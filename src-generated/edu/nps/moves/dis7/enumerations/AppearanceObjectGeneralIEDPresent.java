@@ -97,4 +97,10 @@ public enum AppearanceObjectGeneralIEDPresent
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceObjectGeneralIEDPresent: " + name() + ": " + getValue(); 
+    }
 }

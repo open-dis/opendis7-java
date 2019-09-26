@@ -109,4 +109,10 @@ public enum DeadReckoningAlgorithm
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DeadReckoningAlgorithm: " + name() + ": " + getValue(); 
+    }
 }

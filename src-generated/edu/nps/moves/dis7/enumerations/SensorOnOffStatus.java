@@ -93,4 +93,10 @@ public enum SensorOnOffStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SensorOnOffStatus: " + name() + ": " + getValue(); 
+    }
 }

@@ -85,4 +85,10 @@ public class MinefieldDataFusing extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "MinefieldDataFusing: " + super.toString();
+  }
 }

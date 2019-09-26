@@ -151,4 +151,10 @@ public enum ForceID
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ForceID: " + name() + ": " + getValue(); 
+    }
 }

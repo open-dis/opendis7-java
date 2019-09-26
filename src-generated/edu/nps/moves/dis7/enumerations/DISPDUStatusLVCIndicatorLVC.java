@@ -97,4 +97,10 @@ public enum DISPDUStatusLVCIndicatorLVC
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISPDUStatusLVCIndicatorLVC: " + name() + ": " + getValue(); 
+    }
 }

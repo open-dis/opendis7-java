@@ -131,4 +131,10 @@ public enum LifeFormCategoriesUS
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormCategoriesUS: " + name() + ": " + getValue(); 
+    }
 }

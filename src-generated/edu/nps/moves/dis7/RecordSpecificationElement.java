@@ -272,7 +272,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -308,5 +308,24 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      }
 
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordID: ").append(recordID).append("\n");
+    sb.append(" recordSetSerialNumber: ").append(recordSetSerialNumber).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" recordCount: ").append(recordCount).append("\n");
+    sb.append(" recordValues: ").append("\n");
+    sb.append(Arrays.toString(recordValues)).append("\n");
+    sb.append(" padTo64: ").append("\n");
+    sb.append(Arrays.toString(padTo64)).append("\n");
+
+   return sb.toString();
  }
 } // end of class

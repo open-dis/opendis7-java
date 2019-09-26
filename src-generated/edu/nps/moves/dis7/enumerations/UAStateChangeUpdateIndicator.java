@@ -93,4 +93,10 @@ public enum UAStateChangeUpdateIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "UAStateChangeUpdateIndicator: " + name() + ": " + getValue(); 
+    }
 }

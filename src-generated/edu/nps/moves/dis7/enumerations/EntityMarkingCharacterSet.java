@@ -97,4 +97,10 @@ public enum EntityMarkingCharacterSet
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityMarkingCharacterSet: " + name() + ": " + getValue(); 
+    }
 }

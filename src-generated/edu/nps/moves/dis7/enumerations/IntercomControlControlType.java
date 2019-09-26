@@ -101,4 +101,10 @@ public enum IntercomControlControlType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IntercomControlControlType: " + name() + ": " + getValue(); 
+    }
 }

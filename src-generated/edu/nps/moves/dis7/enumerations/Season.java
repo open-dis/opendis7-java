@@ -97,4 +97,10 @@ public enum Season
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Season: " + name() + ": " + getValue(); 
+    }
 }

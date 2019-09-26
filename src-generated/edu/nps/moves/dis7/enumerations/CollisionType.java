@@ -95,4 +95,10 @@ public enum CollisionType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "CollisionType: " + name() + ": " + getValue(); 
+    }
 }

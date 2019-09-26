@@ -105,4 +105,10 @@ public class SubsurfacePlatformCapabilities extends DisBitSet implements EntityC
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SubsurfacePlatformCapabilities: " + super.toString();
+  }
 }

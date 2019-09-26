@@ -149,4 +149,10 @@ public enum SubcategoriesforLandCategory200Mammal implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory200Mammal: " + name() + ": " + getValue(); 
+    }
 }

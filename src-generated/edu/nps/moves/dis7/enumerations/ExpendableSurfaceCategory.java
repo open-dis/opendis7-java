@@ -99,4 +99,10 @@ public enum ExpendableSurfaceCategory implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ExpendableSurfaceCategory: " + name() + ": " + getValue(); 
+    }
 }

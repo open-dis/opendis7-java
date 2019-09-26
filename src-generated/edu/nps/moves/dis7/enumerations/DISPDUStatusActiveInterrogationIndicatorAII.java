@@ -93,4 +93,10 @@ public enum DISPDUStatusActiveInterrogationIndicatorAII
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISPDUStatusActiveInterrogationIndicatorAII: " + name() + ": " + getValue(); 
+    }
 }

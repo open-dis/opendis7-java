@@ -168,7 +168,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -190,5 +190,18 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (layerSpecificInformation == rhs.layerSpecificInformation)) ivarsEqual = false;
      if( ! (length == rhs.length)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" layerNumber: ").append(layerNumber).append("\n");
+    sb.append(" layerSpecificInformation: ").append(layerSpecificInformation).append("\n");
+    sb.append(" length: ").append(length).append("\n");
+
+   return sb.toString();
  }
 } // end of class

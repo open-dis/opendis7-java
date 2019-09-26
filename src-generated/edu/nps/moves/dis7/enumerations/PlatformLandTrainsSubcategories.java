@@ -107,4 +107,10 @@ public enum PlatformLandTrainsSubcategories implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandTrainsSubcategories: " + name() + ": " + getValue(); 
+    }
 }

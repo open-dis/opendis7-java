@@ -370,7 +370,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -396,5 +396,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
      if( ! (entityLinearAcceleration.equals( rhs.entityLinearAcceleration) )) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" designatingEntityID: ").append(designatingEntityID).append("\n");
+    sb.append(" codeName: ").append(codeName).append("\n");
+    sb.append(" designatedEntityID: ").append(designatedEntityID).append("\n");
+    sb.append(" designatorCode: ").append(designatorCode).append("\n");
+    sb.append(" designatorPower: ").append(designatorPower).append("\n");
+    sb.append(" designatorWavelength: ").append(designatorWavelength).append("\n");
+    sb.append(" designatorSpotWrtDesignated: ").append(designatorSpotWrtDesignated).append("\n");
+    sb.append(" designatorSpotLocation: ").append(designatorSpotLocation).append("\n");
+    sb.append(" deadReckoningAlgorithm: ").append(deadReckoningAlgorithm).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" entityLinearAcceleration: ").append(entityLinearAcceleration).append("\n");
+
+   return sb.toString();
  }
 } // end of class

@@ -109,4 +109,10 @@ public enum EntityDamageStatusComponentIdentification
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityDamageStatusComponentIdentification: " + name() + ": " + getValue(); 
+    }
 }

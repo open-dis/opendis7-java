@@ -147,7 +147,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -168,5 +168,17 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (totalRecordSets == rhs.totalRecordSets)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" totalRecordSets: ").append(totalRecordSets).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

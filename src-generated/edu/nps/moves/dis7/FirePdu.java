@@ -302,7 +302,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -325,5 +325,24 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
      if( ! (range == rhs.range)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" firingEntityID: ").append(firingEntityID).append("\n");
+    sb.append(" targetEntityID: ").append(targetEntityID).append("\n");
+    sb.append(" munitionExpendibleID: ").append(munitionExpendibleID).append("\n");
+    sb.append(" eventID: ").append(eventID).append("\n");
+    sb.append(" fireMissionIndex: ").append(fireMissionIndex).append("\n");
+    sb.append(" locationInWorldCoordinates: ").append(locationInWorldCoordinates).append("\n");
+    sb.append(" descriptor: ").append(descriptor).append("\n");
+    sb.append(" velocity: ").append(velocity).append("\n");
+    sb.append(" range: ").append(range).append("\n");
+
+   return sb.toString();
  }
 } // end of class

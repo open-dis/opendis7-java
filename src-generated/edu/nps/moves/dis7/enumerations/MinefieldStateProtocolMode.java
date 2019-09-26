@@ -93,4 +93,10 @@ public enum MinefieldStateProtocolMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldStateProtocolMode: " + name() + ": " + getValue(); 
+    }
 }

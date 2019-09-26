@@ -95,4 +95,10 @@ public enum AircraftIdentificationType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AircraftIdentificationType: " + name() + ": " + getValue(); 
+    }
 }

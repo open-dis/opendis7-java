@@ -93,4 +93,10 @@ public enum TransmitterAntennaPatternReferenceSystem
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterAntennaPatternReferenceSystem: " + name() + ": " + getValue(); 
+    }
 }

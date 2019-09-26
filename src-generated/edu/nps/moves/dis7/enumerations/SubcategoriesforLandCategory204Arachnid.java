@@ -99,4 +99,10 @@ public enum SubcategoriesforLandCategory204Arachnid implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory204Arachnid: " + name() + ": " + getValue(); 
+    }
 }

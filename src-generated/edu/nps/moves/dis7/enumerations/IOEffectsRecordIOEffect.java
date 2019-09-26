@@ -99,4 +99,10 @@ public enum IOEffectsRecordIOEffect
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOEffectsRecordIOEffect: " + name() + ": " + getValue(); 
+    }
 }

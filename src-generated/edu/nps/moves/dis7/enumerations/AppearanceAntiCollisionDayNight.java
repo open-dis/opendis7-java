@@ -93,4 +93,10 @@ public enum AppearanceAntiCollisionDayNight
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceAntiCollisionDayNight: " + name() + ": " + getValue(); 
+    }
 }

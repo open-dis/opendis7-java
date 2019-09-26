@@ -97,4 +97,10 @@ public enum JTIDSMIDSModulationParametersSynchronizationState
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "JTIDSMIDSModulationParametersSynchronizationState: " + name() + ": " + getValue(); 
+    }
 }

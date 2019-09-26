@@ -237,4 +237,10 @@ public enum LifeFormHumanSpecificAntiTankMissiles
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificAntiTankMissiles: " + name() + ": " + getValue(); 
+    }
 }

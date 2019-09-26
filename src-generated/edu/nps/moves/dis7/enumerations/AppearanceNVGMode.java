@@ -93,4 +93,10 @@ public enum AppearanceNVGMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceNVGMode: " + name() + ": " + getValue(); 
+    }
 }

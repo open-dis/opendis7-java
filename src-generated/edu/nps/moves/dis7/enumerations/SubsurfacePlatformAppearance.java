@@ -117,4 +117,10 @@ public class SubsurfacePlatformAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SubsurfacePlatformAppearance: " + super.toString();
+  }
 }

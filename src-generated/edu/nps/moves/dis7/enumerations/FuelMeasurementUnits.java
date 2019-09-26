@@ -95,4 +95,10 @@ public enum FuelMeasurementUnits
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "FuelMeasurementUnits: " + name() + ": " + getValue(); 
+    }
 }

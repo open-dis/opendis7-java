@@ -93,4 +93,10 @@ public enum EntityVPRecordChangeIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityVPRecordChangeIndicator: " + name() + ": " + getValue(); 
+    }
 }

@@ -81,4 +81,10 @@ public class PointObjectAppearanceTree extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "PointObjectAppearanceTree: " + super.toString();
+  }
 }

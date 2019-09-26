@@ -93,4 +93,10 @@ public class SupplyCapabilities extends DisBitSet implements EntityCapabilities
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SupplyCapabilities: " + super.toString();
+  }
 }

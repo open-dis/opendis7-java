@@ -102,4 +102,10 @@ public enum TransmitterModulationTypeSystem
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterModulationTypeSystem: " + name() + ": " + getValue(); 
+    }
 }

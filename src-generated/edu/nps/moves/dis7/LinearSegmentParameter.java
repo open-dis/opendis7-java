@@ -341,7 +341,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -360,6 +360,8 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      final LinearSegmentParameter rhs = (LinearSegmentParameter)obj;
 
      if( ! (segmentNumber == rhs.segmentNumber)) ivarsEqual = false;
+     if( ! (segmentModification.equals( rhs.segmentModification) )) ivarsEqual = false;
+     if( ! (generalSegmentAppearance.equals( rhs.generalSegmentAppearance) )) ivarsEqual = false;
      if( ! (specificSegmentAppearance == rhs.specificSegmentAppearance)) ivarsEqual = false;
      if( ! (segmentLocation.equals( rhs.segmentLocation) )) ivarsEqual = false;
      if( ! (segmentOrientation.equals( rhs.segmentOrientation) )) ivarsEqual = false;
@@ -369,5 +371,26 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (segmentDepth == rhs.segmentDepth)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" segmentNumber: ").append(segmentNumber).append("\n");
+    sb.append(" segmentModification: ").append(segmentModification).append("\n");
+    sb.append(" generalSegmentAppearance: ").append(generalSegmentAppearance).append("\n");
+    sb.append(" specificSegmentAppearance: ").append(specificSegmentAppearance).append("\n");
+    sb.append(" segmentLocation: ").append(segmentLocation).append("\n");
+    sb.append(" segmentOrientation: ").append(segmentOrientation).append("\n");
+    sb.append(" segmentLength: ").append(segmentLength).append("\n");
+    sb.append(" segmentWidth: ").append(segmentWidth).append("\n");
+    sb.append(" segmentHeight: ").append(segmentHeight).append("\n");
+    sb.append(" segmentDepth: ").append(segmentDepth).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

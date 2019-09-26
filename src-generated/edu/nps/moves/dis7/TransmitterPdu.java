@@ -593,7 +593,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -632,5 +632,36 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( antennaPatternList.get(idx).equals(rhs.antennaPatternList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" header: ").append(header).append("\n");
+    sb.append(" radioNumber: ").append(radioNumber).append("\n");
+    sb.append(" radioEntityType: ").append(radioEntityType).append("\n");
+    sb.append(" transmitState: ").append(transmitState).append("\n");
+    sb.append(" inputSource: ").append(inputSource).append("\n");
+    sb.append(" variableTransmitterParameterCount: ").append(variableTransmitterParameterCount).append("\n");
+    sb.append(" antennaLocation: ").append(antennaLocation).append("\n");
+    sb.append(" relativeAntennaLocation: ").append(relativeAntennaLocation).append("\n");
+    sb.append(" antennaPatternType: ").append(antennaPatternType).append("\n");
+    sb.append(" frequency: ").append(frequency).append("\n");
+    sb.append(" transmitFrequencyBandwidth: ").append(transmitFrequencyBandwidth).append("\n");
+    sb.append(" power: ").append(power).append("\n");
+    sb.append(" modulationType: ").append(modulationType).append("\n");
+    sb.append(" cryptoSystem: ").append(cryptoSystem).append("\n");
+    sb.append(" cryptoKeyId: ").append(cryptoKeyId).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" modulationParametersList: ").append("\n");
+    modulationParametersList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" antennaPatternList: ").append("\n");
+    antennaPatternList.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

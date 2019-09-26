@@ -4078,4 +4078,10 @@ public enum EmitterName
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EmitterName: " + name() + ": " + getValue(); 
+    }
 }

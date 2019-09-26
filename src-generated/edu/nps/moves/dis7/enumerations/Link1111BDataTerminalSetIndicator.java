@@ -105,4 +105,10 @@ public enum Link1111BDataTerminalSetIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Link1111BDataTerminalSetIndicator: " + name() + ": " + getValue(); 
+    }
 }

@@ -1016,7 +1016,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -1082,5 +1082,57 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" site: ").append(site).append("\n");
+    sb.append(" application: ").append(application).append("\n");
+    sb.append(" entity: ").append(entity).append("\n");
+    sb.append(" forceId: ").append(forceId).append("\n");
+    sb.append(" entityKind: ").append(entityKind).append("\n");
+    sb.append(" domain: ").append(domain).append("\n");
+    sb.append(" country: ").append(country).append("\n");
+    sb.append(" category: ").append(category).append("\n");
+    sb.append(" subcategory: ").append(subcategory).append("\n");
+    sb.append(" specific: ").append(specific).append("\n");
+    sb.append(" extra: ").append(extra).append("\n");
+    sb.append(" altEntityKind: ").append(altEntityKind).append("\n");
+    sb.append(" altDomain: ").append(altDomain).append("\n");
+    sb.append(" altCountry: ").append(altCountry).append("\n");
+    sb.append(" altCategory: ").append(altCategory).append("\n");
+    sb.append(" altSubcategory: ").append(altSubcategory).append("\n");
+    sb.append(" altSpecific: ").append(altSpecific).append("\n");
+    sb.append(" altExtra: ").append(altExtra).append("\n");
+    sb.append(" xVelocity: ").append(xVelocity).append("\n");
+    sb.append(" yVelocity: ").append(yVelocity).append("\n");
+    sb.append(" zVelocity: ").append(zVelocity).append("\n");
+    sb.append(" xLocation: ").append(xLocation).append("\n");
+    sb.append(" yLocation: ").append(yLocation).append("\n");
+    sb.append(" zLocation: ").append(zLocation).append("\n");
+    sb.append(" psi: ").append(psi).append("\n");
+    sb.append(" theta: ").append(theta).append("\n");
+    sb.append(" phi: ").append(phi).append("\n");
+    sb.append(" entityAppearance: ").append(entityAppearance).append("\n");
+    sb.append(" deadReckoningAlgorithm: ").append(deadReckoningAlgorithm).append("\n");
+    sb.append(" otherParameters: ").append("\n");
+    sb.append(Arrays.toString(otherParameters)).append("\n");
+    sb.append(" xAcceleration: ").append(xAcceleration).append("\n");
+    sb.append(" yAcceleration: ").append(yAcceleration).append("\n");
+    sb.append(" zAcceleration: ").append(zAcceleration).append("\n");
+    sb.append(" xAngularVelocity: ").append(xAngularVelocity).append("\n");
+    sb.append(" yAngularVelocity: ").append(yAngularVelocity).append("\n");
+    sb.append(" zAngularVelocity: ").append(zAngularVelocity).append("\n");
+    sb.append(" marking: ").append("\n");
+    sb.append(Arrays.toString(marking)).append("\n");
+    sb.append(" capabilities: ").append(capabilities).append("\n");
+    sb.append(" variableParameters: ").append("\n");
+    variableParameters.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

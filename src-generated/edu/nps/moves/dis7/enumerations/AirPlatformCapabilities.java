@@ -113,4 +113,10 @@ public class AirPlatformCapabilities extends DisBitSet implements EntityCapabili
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "AirPlatformCapabilities: " + super.toString();
+  }
 }

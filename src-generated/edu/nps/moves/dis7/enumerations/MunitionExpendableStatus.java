@@ -95,4 +95,10 @@ public enum MunitionExpendableStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MunitionExpendableStatus: " + name() + ": " + getValue(); 
+    }
 }

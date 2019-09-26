@@ -91,4 +91,10 @@ public enum BuildingPaintScheme
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "BuildingPaintScheme: " + name() + ": " + getValue(); 
+    }
 }

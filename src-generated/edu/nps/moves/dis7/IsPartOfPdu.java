@@ -237,7 +237,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -257,5 +257,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (namedLocationID.equals( rhs.namedLocationID) )) ivarsEqual = false;
      if( ! (partEntityType.equals( rhs.partEntityType) )) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" orginatingEntityID: ").append(orginatingEntityID).append("\n");
+    sb.append(" receivingEntityID: ").append(receivingEntityID).append("\n");
+    sb.append(" relationship: ").append(relationship).append("\n");
+    sb.append(" partLocation: ").append(partLocation).append("\n");
+    sb.append(" namedLocationID: ").append(namedLocationID).append("\n");
+    sb.append(" partEntityType: ").append(partEntityType).append("\n");
+
+   return sb.toString();
  }
 } // end of class

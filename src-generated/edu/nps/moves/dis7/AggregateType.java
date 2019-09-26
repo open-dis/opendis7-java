@@ -256,7 +256,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -282,5 +282,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (specificInfo == rhs.specificInfo)) ivarsEqual = false;
      if( ! (extra == rhs.extra)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" aggregateKind: ").append(aggregateKind).append("\n");
+    sb.append(" domain: ").append(domain).append("\n");
+    sb.append(" country: ").append(country).append("\n");
+    sb.append(" category: ").append(category).append("\n");
+    sb.append(" subcategory: ").append(subcategory).append("\n");
+    sb.append(" specificInfo: ").append(specificInfo).append("\n");
+    sb.append(" extra: ").append(extra).append("\n");
+
+   return sb.toString();
  }
 } // end of class

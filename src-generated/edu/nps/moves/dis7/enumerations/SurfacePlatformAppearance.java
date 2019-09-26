@@ -125,4 +125,10 @@ public class SurfacePlatformAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "SurfacePlatformAppearance: " + super.toString();
+  }
 }

@@ -93,4 +93,10 @@ public enum DISPDUStatusFireTypeIndicatorFTI
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISPDUStatusFireTypeIndicatorFTI: " + name() + ": " + getValue(); 
+    }
 }

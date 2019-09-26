@@ -107,4 +107,10 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforAirCategory201Insect: " + name() + ": " + getValue(); 
+    }
 }

@@ -93,4 +93,10 @@ public enum ElectromagneticEmissionStateUpdateIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ElectromagneticEmissionStateUpdateIndicator: " + name() + ": " + getValue(); 
+    }
 }

@@ -99,4 +99,10 @@ public enum VariableParameterRecordType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "VariableParameterRecordType: " + name() + ": " + getValue(); 
+    }
 }

@@ -95,4 +95,10 @@ public enum DEPrecisionAimpointBeamSpotType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DEPrecisionAimpointBeamSpotType: " + name() + ": " + getValue(); 
+    }
 }

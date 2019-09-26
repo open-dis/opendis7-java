@@ -103,4 +103,10 @@ public enum SpecificDimensionEnumerationsforLandAreaSize
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SpecificDimensionEnumerationsforLandAreaSize: " + name() + ": " + getValue(); 
+    }
 }

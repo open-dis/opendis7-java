@@ -179,4 +179,10 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandSingleUnitUtilityEmergencyTruckSubcategories: " + name() + ": " + getValue(); 
+    }
 }

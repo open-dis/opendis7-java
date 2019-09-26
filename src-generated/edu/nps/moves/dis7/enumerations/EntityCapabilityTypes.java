@@ -87,4 +87,10 @@ public enum EntityCapabilityTypes
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityCapabilityTypes: " + name() + ": " + getValue();
+    }
 }

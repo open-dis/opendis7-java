@@ -101,4 +101,10 @@ public enum PlatformSurfaceFishingVesselSubcategories implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformSurfaceFishingVesselSubcategories: " + name() + ": " + getValue(); 
+    }
 }

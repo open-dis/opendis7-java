@@ -187,7 +187,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -210,5 +210,19 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (em == rhs.em)) ivarsEqual = false;
      if( ! (audio == rhs.audio)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" visual: ").append(visual).append("\n");
+    sb.append(" ir: ").append(ir).append("\n");
+    sb.append(" em: ").append(em).append("\n");
+    sb.append(" audio: ").append(audio).append("\n");
+
+   return sb.toString();
  }
 } // end of class

@@ -93,4 +93,10 @@ public enum IFFSimulationMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IFFSimulationMode: " + name() + ": " + getValue(); 
+    }
 }

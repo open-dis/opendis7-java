@@ -105,4 +105,10 @@ public enum AddVariantsforSubsurfaceCategoriesFishMolluskCrustaceanandInsect
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AddVariantsforSubsurfaceCategoriesFishMolluskCrustaceanandInsect: " + name() + ": " + getValue(); 
+    }
 }

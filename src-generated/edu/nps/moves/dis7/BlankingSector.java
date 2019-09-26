@@ -377,7 +377,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -409,5 +409,28 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (residualPower == rhs.residualPower)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" emitterNumber: ").append(emitterNumber).append("\n");
+    sb.append(" beamNumber: ").append(beamNumber).append("\n");
+    sb.append(" stateIndicator: ").append(stateIndicator).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" leftAzimuth: ").append(leftAzimuth).append("\n");
+    sb.append(" rightAzimuth: ").append(rightAzimuth).append("\n");
+    sb.append(" lowerElevation: ").append(lowerElevation).append("\n");
+    sb.append(" upperElevation: ").append(upperElevation).append("\n");
+    sb.append(" residualPower: ").append(residualPower).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+
+   return sb.toString();
  }
 } // end of class

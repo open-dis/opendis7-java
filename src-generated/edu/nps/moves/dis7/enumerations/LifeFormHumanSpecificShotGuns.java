@@ -367,4 +367,10 @@ public enum LifeFormHumanSpecificShotGuns
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificShotGuns: " + name() + ": " + getValue(); 
+    }
 }

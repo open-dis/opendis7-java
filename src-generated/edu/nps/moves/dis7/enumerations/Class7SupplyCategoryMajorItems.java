@@ -135,4 +135,10 @@ public enum Class7SupplyCategoryMajorItems implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class7SupplyCategoryMajorItems: " + name() + ": " + getValue(); 
+    }
 }

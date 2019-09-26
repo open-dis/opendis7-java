@@ -81,4 +81,10 @@ public class UAPropulsionPlantConfiguration extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "UAPropulsionPlantConfiguration: " + super.toString();
+  }
 }

@@ -112,4 +112,10 @@ public enum IFFSystemName
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IFFSystemName: " + name() + ": " + getValue(); 
+    }
 }

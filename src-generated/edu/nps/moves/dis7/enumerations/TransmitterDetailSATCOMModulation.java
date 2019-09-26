@@ -78,4 +78,10 @@ public enum TransmitterDetailSATCOMModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterDetailSATCOMModulation: " + name() + ": " + getValue(); 
+    }
 }

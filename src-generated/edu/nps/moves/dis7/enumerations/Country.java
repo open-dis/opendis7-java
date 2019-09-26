@@ -632,4 +632,10 @@ public enum Country
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Country: " + name() + ": " + getValue(); 
+    }
 }

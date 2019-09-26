@@ -407,7 +407,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -436,5 +436,28 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( intercomParameters.get(idx).equals(rhs.intercomParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" controlType: ").append(controlType).append("\n");
+    sb.append(" communicationsChannelType: ").append(communicationsChannelType).append("\n");
+    sb.append(" sourceEntityID: ").append(sourceEntityID).append("\n");
+    sb.append(" sourceIntercomNumber: ").append(sourceIntercomNumber).append("\n");
+    sb.append(" sourceLineID: ").append(sourceLineID).append("\n");
+    sb.append(" transmitPriority: ").append(transmitPriority).append("\n");
+    sb.append(" transmitLineState: ").append(transmitLineState).append("\n");
+    sb.append(" command: ").append(command).append("\n");
+    sb.append(" masterIntercomReferenceID: ").append(masterIntercomReferenceID).append("\n");
+    sb.append(" masterIntercomNumber: ").append(masterIntercomNumber).append("\n");
+    sb.append(" masterChannelID: ").append(masterChannelID).append("\n");
+    sb.append(" intercomParameters: ").append("\n");
+    intercomParameters.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

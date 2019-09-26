@@ -123,4 +123,10 @@ public enum ArticulatedPartsTypeMetric
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ArticulatedPartsTypeMetric: " + name() + ": " + getValue(); 
+    }
 }

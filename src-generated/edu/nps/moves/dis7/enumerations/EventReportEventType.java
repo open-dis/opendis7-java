@@ -112,4 +112,10 @@ public enum EventReportEventType
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EventReportEventType: " + name() + ": " + getValue();
+    }
 }

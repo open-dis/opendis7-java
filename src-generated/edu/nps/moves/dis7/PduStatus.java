@@ -116,4 +116,10 @@ public class PduStatus
   {
     return obj instanceof PduStatus && ((PduStatus) obj).getValue() == getValue();
   }
+  
+  @Override
+  public String toString()
+  {
+    return "PduStatus: "+ Integer.toBinaryString(getValue()+256).substring(1); // dont want to lose leading zeros
+  }
 }

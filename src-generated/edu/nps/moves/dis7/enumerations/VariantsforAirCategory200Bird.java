@@ -97,4 +97,10 @@ public enum VariantsforAirCategory200Bird
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "VariantsforAirCategory200Bird: " + name() + ": " + getValue(); 
+    }
 }

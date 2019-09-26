@@ -85,4 +85,10 @@ public class StopFreezeFrozenBehavior extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "StopFreezeFrozenBehavior: " + super.toString();
+  }
 }

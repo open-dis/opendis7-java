@@ -121,4 +121,10 @@ public enum LifeFormHumanSubcategoryEquipmentClass
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSubcategoryEquipmentClass: " + name() + ": " + getValue(); 
+    }
 }

@@ -109,4 +109,10 @@ public enum RepairGroups
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "RepairGroups: " + name() + ": " + getValue(); 
+    }
 }

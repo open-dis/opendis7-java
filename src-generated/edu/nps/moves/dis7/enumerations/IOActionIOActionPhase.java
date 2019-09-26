@@ -88,4 +88,10 @@ public enum IOActionIOActionPhase
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOActionIOActionPhase: " + name() + ": " + getValue(); 
+    }
 }

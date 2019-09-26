@@ -95,4 +95,10 @@ public enum TurnRateSource
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TurnRateSource: " + name() + ": " + getValue(); 
+    }
 }

@@ -279,7 +279,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -306,5 +306,23 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (fuelLocation == rhs.fuelLocation)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" standardQuantity: ").append(standardQuantity).append("\n");
+    sb.append(" maximumQuantity: ").append(maximumQuantity).append("\n");
+    sb.append(" standardQuantityReloadTime: ").append(standardQuantityReloadTime).append("\n");
+    sb.append(" maximumQuantityReloadTime: ").append(maximumQuantityReloadTime).append("\n");
+    sb.append(" fuelMeasurementUnits: ").append(fuelMeasurementUnits).append("\n");
+    sb.append(" fuelType: ").append(fuelType).append("\n");
+    sb.append(" fuelLocation: ").append(fuelLocation).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

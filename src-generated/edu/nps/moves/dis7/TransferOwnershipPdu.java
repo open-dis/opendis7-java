@@ -260,7 +260,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -281,5 +281,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (transferEntityID.equals( rhs.transferEntityID) )) ivarsEqual = false;
      if( ! (recordSets.equals( rhs.recordSets) )) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" originatingEntityID: ").append(originatingEntityID).append("\n");
+    sb.append(" receivingEntityID: ").append(receivingEntityID).append("\n");
+    sb.append(" requestID: ").append(requestID).append("\n");
+    sb.append(" requiredReliabilityService: ").append(requiredReliabilityService).append("\n");
+    sb.append(" transferType: ").append(transferType).append("\n");
+    sb.append(" transferEntityID: ").append(transferEntityID).append("\n");
+    sb.append(" recordSets: ").append(recordSets).append("\n");
+
+   return sb.toString();
  }
 } // end of class
