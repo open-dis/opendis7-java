@@ -75,11 +75,11 @@ public class FixedAndVariableDatumRoundTripTest
 
     variableDatum1.setVariableDatumID(variableDatum1Type);
     variableDatum1.setVariableDatumValue(variableDatum1Value);
-    variableDatum1.setVariableDatumLength(variableDatum1LengthInBits);
+    //variableDatum1.setVariableDatumLength(variableDatum1LengthInBits);
 
     variableDatum2.setVariableDatumID(variableDatum2Type);
     variableDatum2.setVariableDatumValue(variableDatum2Value);
-    variableDatum2.setVariableDatumLength(variableDatum2Value.length * 8); //in bits
+    //variableDatum2.setVariableDatumLength(variableDatum2Value.length * 8); //in bits
   }
 
   private Pdu receivedPdu;
