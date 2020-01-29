@@ -76,4 +76,10 @@ public enum MinefieldSensorTypesSONAR
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldSensorTypesSONAR: " + name() + ": " + getValue(); 
+    }
 }

@@ -212,7 +212,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -236,5 +236,20 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (interleafFactor == rhs.interleafFactor)) ivarsEqual = false;
      if( ! (axisType == rhs.axisType)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" domainInitialXi: ").append(domainInitialXi).append("\n");
+    sb.append(" domainFinalXi: ").append(domainFinalXi).append("\n");
+    sb.append(" domainPointsXi: ").append(domainPointsXi).append("\n");
+    sb.append(" interleafFactor: ").append(interleafFactor).append("\n");
+    sb.append(" axisType: ").append(axisType).append("\n");
+
+   return sb.toString();
  }
 } // end of class

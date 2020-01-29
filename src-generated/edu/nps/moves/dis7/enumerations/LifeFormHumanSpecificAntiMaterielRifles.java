@@ -95,4 +95,10 @@ public enum LifeFormHumanSpecificAntiMaterielRifles
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificAntiMaterielRifles: " + name() + ": " + getValue(); 
+    }
 }

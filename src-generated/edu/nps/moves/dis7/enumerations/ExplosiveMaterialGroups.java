@@ -103,4 +103,10 @@ public enum ExplosiveMaterialGroups
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ExplosiveMaterialGroups: " + name() + ": " + getValue(); 
+    }
 }

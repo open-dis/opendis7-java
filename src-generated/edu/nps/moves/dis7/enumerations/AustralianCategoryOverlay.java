@@ -101,4 +101,10 @@ public enum AustralianCategoryOverlay
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AustralianCategoryOverlay: " + name() + ": " + getValue(); 
+    }
 }

@@ -76,4 +76,10 @@ public enum SensorRecordSensorTypeOtherActiveSensors
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SensorRecordSensorTypeOtherActiveSensors: " + name() + ": " + getValue(); 
+    }
 }

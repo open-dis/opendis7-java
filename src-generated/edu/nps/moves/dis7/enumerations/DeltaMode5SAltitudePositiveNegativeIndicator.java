@@ -93,4 +93,10 @@ public enum DeltaMode5SAltitudePositiveNegativeIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DeltaMode5SAltitudePositiveNegativeIndicator: " + name() + ": " + getValue(); 
+    }
 }

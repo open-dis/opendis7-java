@@ -121,4 +121,10 @@ public class ExpendableAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ExpendableAppearance: " + super.toString();
+  }
 }

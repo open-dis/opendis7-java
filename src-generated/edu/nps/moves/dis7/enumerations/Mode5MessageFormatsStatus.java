@@ -93,4 +93,10 @@ public enum Mode5MessageFormatsStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Mode5MessageFormatsStatus: " + name() + ": " + getValue(); 
+    }
 }

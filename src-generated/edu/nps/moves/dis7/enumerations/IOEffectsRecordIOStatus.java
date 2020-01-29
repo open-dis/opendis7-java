@@ -105,4 +105,10 @@ public enum IOEffectsRecordIOStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOEffectsRecordIOStatus: " + name() + ": " + getValue(); 
+    }
 }

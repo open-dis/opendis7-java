@@ -251,4 +251,10 @@ public enum EmitterSystemFunction
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EmitterSystemFunction: " + name() + ": " + getValue(); 
+    }
 }

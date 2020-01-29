@@ -101,4 +101,10 @@ public class ObjectStateAppearanceGeneral extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ObjectStateAppearanceGeneral: " + super.toString();
+  }
 }

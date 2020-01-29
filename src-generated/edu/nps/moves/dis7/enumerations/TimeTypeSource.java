@@ -95,4 +95,10 @@ public enum TimeTypeSource
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TimeTypeSource: " + name() + ": " + getValue(); 
+    }
 }

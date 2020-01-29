@@ -93,4 +93,10 @@ public enum CCTTSINCGARSStartofMessage
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "CCTTSINCGARSStartofMessage: " + name() + ": " + getValue(); 
+    }
 }

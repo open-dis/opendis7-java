@@ -112,4 +112,10 @@ public enum EnvironmentalProcessRecordType
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EnvironmentalProcessRecordType: " + name() + ": " + getValue();
+    }
 }

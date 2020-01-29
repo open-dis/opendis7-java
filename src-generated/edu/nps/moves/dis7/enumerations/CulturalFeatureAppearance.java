@@ -109,4 +109,10 @@ public class CulturalFeatureAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "CulturalFeatureAppearance: " + super.toString();
+  }
 }

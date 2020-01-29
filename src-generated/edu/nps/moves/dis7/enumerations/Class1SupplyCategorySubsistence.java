@@ -101,4 +101,10 @@ public enum Class1SupplyCategorySubsistence implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class1SupplyCategorySubsistence: " + name() + ": " + getValue(); 
+    }
 }

@@ -278,7 +278,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -301,5 +301,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( groupedEntityDescriptions.get(idx).equals(rhs.groupedEntityDescriptions.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" groupEntityID: ").append(groupEntityID).append("\n");
+    sb.append(" groupedEntityCategory: ").append(groupedEntityCategory).append("\n");
+    sb.append(" pad: ").append(pad).append("\n");
+    sb.append(" latitude: ").append(latitude).append("\n");
+    sb.append(" longitude: ").append(longitude).append("\n");
+    sb.append(" groupedEntityDescriptions: ").append("\n");
+    groupedEntityDescriptions.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

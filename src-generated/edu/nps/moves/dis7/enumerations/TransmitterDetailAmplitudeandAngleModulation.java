@@ -78,4 +78,10 @@ public enum TransmitterDetailAmplitudeandAngleModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterDetailAmplitudeandAngleModulation: " + name() + ": " + getValue(); 
+    }
 }

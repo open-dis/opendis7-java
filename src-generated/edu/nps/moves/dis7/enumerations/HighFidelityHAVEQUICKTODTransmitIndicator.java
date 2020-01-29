@@ -93,4 +93,10 @@ public enum HighFidelityHAVEQUICKTODTransmitIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "HighFidelityHAVEQUICKTODTransmitIndicator: " + name() + ": " + getValue(); 
+    }
 }

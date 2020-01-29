@@ -276,7 +276,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -292,11 +292,29 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (environementalProcessID.equals( rhs.environementalProcessID) )) ivarsEqual = false;
      if( ! (environmentType.equals( rhs.environmentType) )) ivarsEqual = false;
      if( ! (modelType == rhs.modelType)) ivarsEqual = false;
+     if( ! (environmentStatus.equals( rhs.environmentStatus) )) ivarsEqual = false;
      if( ! (sequenceNumber == rhs.sequenceNumber)) ivarsEqual = false;
 
      for(int idx = 0; idx < environmentRecords.size(); idx++)
         if( ! ( environmentRecords.get(idx).equals(rhs.environmentRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" environementalProcessID: ").append(environementalProcessID).append("\n");
+    sb.append(" environmentType: ").append(environmentType).append("\n");
+    sb.append(" modelType: ").append(modelType).append("\n");
+    sb.append(" environmentStatus: ").append(environmentStatus).append("\n");
+    sb.append(" sequenceNumber: ").append(sequenceNumber).append("\n");
+    sb.append(" environmentRecords: ").append("\n");
+    environmentRecords.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

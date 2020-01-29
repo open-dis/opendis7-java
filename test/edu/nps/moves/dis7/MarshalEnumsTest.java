@@ -536,14 +536,14 @@ public class MarshalEnumsTest
 
   private void marshalIt(Enum en, ByteBuffer bb) throws Throwable
   {
-    Class c = en.getClass();
+    Class<?> c = en.getClass();
     Method meth = c.getDeclaredMethod("marshal", new Class[]{ByteBuffer.class});
     meth.invoke(en, bb);
   }
 
   private int getMarshalSize(Enum en) throws Throwable
   {
-    Class c = en.getClass();
+    Class<?> c = en.getClass();
     Method meth = c.getDeclaredMethod("getMarshalledSize", (Class[]) null);
     return (Integer) meth.invoke(en, (Object[]) null);
   }

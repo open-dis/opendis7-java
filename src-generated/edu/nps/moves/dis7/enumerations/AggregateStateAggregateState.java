@@ -101,4 +101,10 @@ public enum AggregateStateAggregateState
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AggregateStateAggregateState: " + name() + ": " + getValue(); 
+    }
 }

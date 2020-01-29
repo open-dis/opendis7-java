@@ -93,4 +93,10 @@ public enum GridAxisDescriptorAxisType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "GridAxisDescriptorAxisType: " + name() + ": " + getValue(); 
+    }
 }

@@ -81,4 +81,10 @@ public class MunitionCapabilities extends DisBitSet implements EntityCapabilitie
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "MunitionCapabilities: " + super.toString();
+  }
 }

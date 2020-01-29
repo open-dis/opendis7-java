@@ -235,7 +235,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -260,5 +260,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (beamCenterDepressionElevation == rhs.beamCenterDepressionElevation)) ivarsEqual = false;
      if( ! (depressionElevationBeamWidth == rhs.depressionElevationBeamWidth)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" activeEmissionParameterIndex: ").append(activeEmissionParameterIndex).append("\n");
+    sb.append(" scanPattern: ").append(scanPattern).append("\n");
+    sb.append(" beamCenterAzimuthHorizontal: ").append(beamCenterAzimuthHorizontal).append("\n");
+    sb.append(" azimuthalBeamwidthHorizontal: ").append(azimuthalBeamwidthHorizontal).append("\n");
+    sb.append(" beamCenterDepressionElevation: ").append(beamCenterDepressionElevation).append("\n");
+    sb.append(" depressionElevationBeamWidth: ").append(depressionElevationBeamWidth).append("\n");
+
+   return sb.toString();
  }
 } // end of class

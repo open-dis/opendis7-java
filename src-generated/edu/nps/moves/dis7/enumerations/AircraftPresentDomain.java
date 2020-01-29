@@ -95,4 +95,10 @@ public enum AircraftPresentDomain
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AircraftPresentDomain: " + name() + ": " + getValue(); 
+    }
 }

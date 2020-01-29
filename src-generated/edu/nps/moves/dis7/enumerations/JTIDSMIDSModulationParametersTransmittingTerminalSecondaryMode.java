@@ -97,4 +97,10 @@ public enum JTIDSMIDSModulationParametersTransmittingTerminalSecondaryMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "JTIDSMIDSModulationParametersTransmittingTerminalSecondaryMode: " + name() + ": " + getValue(); 
+    }
 }

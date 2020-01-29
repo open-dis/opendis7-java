@@ -500,7 +500,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -535,5 +535,32 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( gridDataRecords.get(idx).equals(rhs.gridDataRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" environmentalSimulationApplicationID: ").append(environmentalSimulationApplicationID).append("\n");
+    sb.append(" fieldNumber: ").append(fieldNumber).append("\n");
+    sb.append(" pduNumber: ").append(pduNumber).append("\n");
+    sb.append(" pduTotal: ").append(pduTotal).append("\n");
+    sb.append(" coordinateSystem: ").append(coordinateSystem).append("\n");
+    sb.append(" constantGrid: ").append(constantGrid).append("\n");
+    sb.append(" environmentType: ").append(environmentType).append("\n");
+    sb.append(" orientation: ").append(orientation).append("\n");
+    sb.append(" sampleTime: ").append(sampleTime).append("\n");
+    sb.append(" totalValues: ").append(totalValues).append("\n");
+    sb.append(" vectorDimension: ").append(vectorDimension).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" gridAxisDescriptors: ").append("\n");
+    gridAxisDescriptors.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" gridDataRecords: ").append("\n");
+    gridDataRecords.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

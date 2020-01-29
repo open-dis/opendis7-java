@@ -97,4 +97,10 @@ public enum MinefieldPaintSchemeAlgae
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldPaintSchemeAlgae: " + name() + ": " + getValue(); 
+    }
 }

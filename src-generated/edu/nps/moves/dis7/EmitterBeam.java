@@ -345,7 +345,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -377,5 +377,26 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( trackJamData.get(idx).equals(rhs.trackJamData.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" beamDataLength: ").append(beamDataLength).append("\n");
+    sb.append(" beamNumber: ").append(beamNumber).append("\n");
+    sb.append(" beamParameterIndex: ").append(beamParameterIndex).append("\n");
+    sb.append(" fundamentalParameterData: ").append(fundamentalParameterData).append("\n");
+    sb.append(" beamData: ").append(beamData).append("\n");
+    sb.append(" beamFunction: ").append(beamFunction).append("\n");
+    sb.append(" highDensityTrackJam: ").append(highDensityTrackJam).append("\n");
+    sb.append(" beamStatus: ").append(beamStatus).append("\n");
+    sb.append(" jammingTechnique: ").append(jammingTechnique).append("\n");
+    sb.append(" trackJamData: ").append("\n");
+    trackJamData.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

@@ -397,7 +397,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -416,6 +416,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (minefieldType.equals( rhs.minefieldType) )) ivarsEqual = false;
      if( ! (minefieldLocation.equals( rhs.minefieldLocation) )) ivarsEqual = false;
      if( ! (minefieldOrientation.equals( rhs.minefieldOrientation) )) ivarsEqual = false;
+     if( ! (appearance.equals( rhs.appearance) )) ivarsEqual = false;
      if( ! (protocolMode.equals( rhs.protocolMode) )) ivarsEqual = false;
 
      for(int idx = 0; idx < perimeterPoints.size(); idx++)
@@ -426,5 +427,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( mineType.get(idx).equals(rhs.mineType.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" minefieldID: ").append(minefieldID).append("\n");
+    sb.append(" minefieldSequence: ").append(minefieldSequence).append("\n");
+    sb.append(" forceID: ").append(forceID).append("\n");
+    sb.append(" minefieldType: ").append(minefieldType).append("\n");
+    sb.append(" minefieldLocation: ").append(minefieldLocation).append("\n");
+    sb.append(" minefieldOrientation: ").append(minefieldOrientation).append("\n");
+    sb.append(" appearance: ").append(appearance).append("\n");
+    sb.append(" protocolMode: ").append(protocolMode).append("\n");
+    sb.append(" perimeterPoints: ").append("\n");
+    perimeterPoints.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" mineType: ").append("\n");
+    mineType.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

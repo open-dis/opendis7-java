@@ -78,4 +78,10 @@ public enum TransmitterDetailUnmodulatedModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterDetailUnmodulatedModulation: " + name() + ": " + getValue(); 
+    }
 }

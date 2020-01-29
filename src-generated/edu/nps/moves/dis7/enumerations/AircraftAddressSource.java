@@ -93,4 +93,10 @@ public enum AircraftAddressSource
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AircraftAddressSource: " + name() + ": " + getValue(); 
+    }
 }

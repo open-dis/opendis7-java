@@ -528,4 +528,10 @@ public enum ArticulatedPartsTypeClass
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ArticulatedPartsTypeClass: " + name() + ": " + getValue();
+    }
 }

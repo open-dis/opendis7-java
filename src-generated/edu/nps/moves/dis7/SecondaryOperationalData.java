@@ -169,7 +169,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -191,5 +191,18 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (operationalData2 == rhs.operationalData2)) ivarsEqual = false;
      if( ! (numberOfIFFFundamentalParameterRecords == rhs.numberOfIFFFundamentalParameterRecords)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" operationalData1: ").append(operationalData1).append("\n");
+    sb.append(" operationalData2: ").append(operationalData2).append("\n");
+    sb.append(" numberOfIFFFundamentalParameterRecords: ").append(numberOfIFFFundamentalParameterRecords).append("\n");
+
+   return sb.toString();
  }
 } // end of class

@@ -91,4 +91,10 @@ public enum AircraftTypeWake
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AircraftTypeWake: " + name() + ": " + getValue(); 
+    }
 }

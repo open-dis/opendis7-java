@@ -74,4 +74,10 @@ public class LinearObjectAppearanceBreach extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LinearObjectAppearanceBreach: " + super.toString();
+  }
 }

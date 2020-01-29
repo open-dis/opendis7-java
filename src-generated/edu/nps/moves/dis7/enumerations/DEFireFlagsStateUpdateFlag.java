@@ -93,4 +93,10 @@ public enum DEFireFlagsStateUpdateFlag
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DEFireFlagsStateUpdateFlag: " + name() + ": " + getValue(); 
+    }
 }

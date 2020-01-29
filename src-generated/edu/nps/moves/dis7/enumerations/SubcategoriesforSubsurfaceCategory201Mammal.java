@@ -207,4 +207,10 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforSubsurfaceCategory201Mammal: " + name() + ": " + getValue(); 
+    }
 }

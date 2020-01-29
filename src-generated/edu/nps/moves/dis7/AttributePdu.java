@@ -343,7 +343,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -369,5 +369,25 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( attributeRecordSets.get(idx).equals(rhs.attributeRecordSets.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" originatingSimulationAddress: ").append(originatingSimulationAddress).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" attributeRecordPduType: ").append(attributeRecordPduType).append("\n");
+    sb.append(" attributeRecordProtocolVersion: ").append(attributeRecordProtocolVersion).append("\n");
+    sb.append(" masterAttributeRecordType: ").append(masterAttributeRecordType).append("\n");
+    sb.append(" actionCode: ").append(actionCode).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+    sb.append(" attributeRecordSets: ").append("\n");
+    attributeRecordSets.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

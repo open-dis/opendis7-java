@@ -86,4 +86,10 @@ public enum AggregateStateFormation
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AggregateStateFormation: " + name() + ": " + getValue();
+    }
 }

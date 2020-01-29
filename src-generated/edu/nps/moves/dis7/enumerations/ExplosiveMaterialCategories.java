@@ -164,4 +164,10 @@ public enum ExplosiveMaterialCategories
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ExplosiveMaterialCategories: " + name() + ": " + getValue(); 
+    }
 }

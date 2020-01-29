@@ -93,4 +93,10 @@ public enum IFFDataRecordAvailable
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IFFDataRecordAvailable: " + name() + ": " + getValue(); 
+    }
 }

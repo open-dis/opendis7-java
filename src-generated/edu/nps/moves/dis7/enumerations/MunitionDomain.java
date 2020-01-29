@@ -115,4 +115,10 @@ public enum MunitionDomain
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MunitionDomain: " + name() + ": " + getValue(); 
+    }
 }

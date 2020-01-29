@@ -84,4 +84,10 @@ public enum TransmitterMajorModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterMajorModulation: " + name() + ": " + getValue(); 
+    }
 }

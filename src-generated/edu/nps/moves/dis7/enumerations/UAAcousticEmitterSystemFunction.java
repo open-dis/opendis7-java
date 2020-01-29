@@ -99,4 +99,10 @@ public enum UAAcousticEmitterSystemFunction
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "UAAcousticEmitterSystemFunction: " + name() + ": " + getValue(); 
+    }
 }

@@ -78,4 +78,10 @@ public enum MinefieldSensorTypesLaser
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldSensorTypesLaser: " + name() + ": " + getValue(); 
+    }
 }

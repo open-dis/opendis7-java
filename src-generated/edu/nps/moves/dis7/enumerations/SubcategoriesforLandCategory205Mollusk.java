@@ -93,4 +93,10 @@ public enum SubcategoriesforLandCategory205Mollusk implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory205Mollusk: " + name() + ": " + getValue(); 
+    }
 }

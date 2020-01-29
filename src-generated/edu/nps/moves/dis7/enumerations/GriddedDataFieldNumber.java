@@ -76,4 +76,10 @@ public enum GriddedDataFieldNumber
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "GriddedDataFieldNumber: " + name() + ": " + getValue(); 
+    }
 }

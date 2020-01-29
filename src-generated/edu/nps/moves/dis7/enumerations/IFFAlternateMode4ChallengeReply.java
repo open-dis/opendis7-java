@@ -99,4 +99,10 @@ public enum IFFAlternateMode4ChallengeReply
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IFFAlternateMode4ChallengeReply: " + name() + ": " + getValue(); 
+    }
 }

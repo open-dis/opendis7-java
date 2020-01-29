@@ -304,7 +304,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -327,5 +327,24 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (ioProcess == rhs.ioProcess)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" ioStatus: ").append(ioStatus).append("\n");
+    sb.append(" ioLinkType: ").append(ioLinkType).append("\n");
+    sb.append(" ioEffect: ").append(ioEffect).append("\n");
+    sb.append(" ioEffectDutyCycle: ").append(ioEffectDutyCycle).append("\n");
+    sb.append(" ioEffectDuration: ").append(ioEffectDuration).append("\n");
+    sb.append(" ioProcess: ").append(ioProcess).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

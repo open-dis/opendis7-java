@@ -137,4 +137,10 @@ public enum ElectromagneticEmissionBeamFunction
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ElectromagneticEmissionBeamFunction: " + name() + ": " + getValue(); 
+    }
 }

@@ -93,4 +93,10 @@ public enum PlatformSubsurfaceCivilianSubmersibleSubcategories implements SubCat
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformSubsurfaceCivilianSubmersibleSubcategories: " + name() + ": " + getValue(); 
+    }
 }

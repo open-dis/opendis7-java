@@ -88,4 +88,10 @@ public enum IOActionIOWarfareType
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOActionIOWarfareType: " + name() + ": " + getValue(); 
+    }
 }

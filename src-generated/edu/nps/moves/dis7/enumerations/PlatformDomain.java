@@ -101,4 +101,10 @@ public enum PlatformDomain
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformDomain: " + name() + ": " + getValue(); 
+    }
 }

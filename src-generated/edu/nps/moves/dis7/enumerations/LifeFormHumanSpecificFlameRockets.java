@@ -103,4 +103,10 @@ public enum LifeFormHumanSpecificFlameRockets
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificFlameRockets: " + name() + ": " + getValue(); 
+    }
 }

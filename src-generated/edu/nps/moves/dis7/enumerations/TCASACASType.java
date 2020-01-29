@@ -95,4 +95,10 @@ public enum TCASACASType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TCASACASType: " + name() + ": " + getValue(); 
+    }
 }

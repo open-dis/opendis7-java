@@ -93,4 +93,10 @@ public enum AppearanceEntityorObjectState
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceEntityorObjectState: " + name() + ": " + getValue(); 
+    }
 }

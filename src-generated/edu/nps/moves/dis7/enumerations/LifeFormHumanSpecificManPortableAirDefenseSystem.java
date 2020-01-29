@@ -133,4 +133,10 @@ public enum LifeFormHumanSpecificManPortableAirDefenseSystem
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificManPortableAirDefenseSystem: " + name() + ": " + getValue(); 
+    }
 }

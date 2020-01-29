@@ -103,4 +103,10 @@ public enum OwnershipStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "OwnershipStatus: " + name() + ": " + getValue(); 
+    }
 }

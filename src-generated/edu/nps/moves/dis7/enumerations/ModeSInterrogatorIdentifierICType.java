@@ -93,4 +93,10 @@ public enum ModeSInterrogatorIdentifierICType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ModeSInterrogatorIdentifierICType: " + name() + ": " + getValue(); 
+    }
 }

@@ -99,4 +99,10 @@ public enum IntercomControlCommunicationsType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IntercomControlCommunicationsType: " + name() + ": " + getValue(); 
+    }
 }

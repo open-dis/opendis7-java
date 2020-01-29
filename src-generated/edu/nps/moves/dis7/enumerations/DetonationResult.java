@@ -157,4 +157,10 @@ public enum DetonationResult
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DetonationResult: " + name() + ": " + getValue(); 
+    }
 }

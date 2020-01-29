@@ -76,4 +76,10 @@ public enum GriddedDataSampleType
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "GriddedDataSampleType: " + name() + ": " + getValue(); 
+    }
 }

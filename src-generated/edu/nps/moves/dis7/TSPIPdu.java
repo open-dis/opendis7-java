@@ -331,7 +331,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -360,5 +360,26 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      }
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" liveEntityId: ").append(liveEntityId).append("\n");
+    sb.append(" TSPIFlag: ").append(TSPIFlag).append("\n");
+    sb.append(" entityLocation: ").append(entityLocation).append("\n");
+    sb.append(" entityLinearVelocity: ").append(entityLinearVelocity).append("\n");
+    sb.append(" entityOrientation: ").append(entityOrientation).append("\n");
+    sb.append(" positionError: ").append(positionError).append("\n");
+    sb.append(" orientationError: ").append(orientationError).append("\n");
+    sb.append(" deadReckoningParameters: ").append(deadReckoningParameters).append("\n");
+    sb.append(" measuredSpeed: ").append(measuredSpeed).append("\n");
+    sb.append(" systemSpecificData: ").append("\n");
+    sb.append(Arrays.toString(systemSpecificData)).append("\n");
+
+   return sb.toString();
  }
 } // end of class

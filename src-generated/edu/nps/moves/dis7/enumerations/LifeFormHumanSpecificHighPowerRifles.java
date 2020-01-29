@@ -109,4 +109,10 @@ public enum LifeFormHumanSpecificHighPowerRifles
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificHighPowerRifles: " + name() + ": " + getValue(); 
+    }
 }

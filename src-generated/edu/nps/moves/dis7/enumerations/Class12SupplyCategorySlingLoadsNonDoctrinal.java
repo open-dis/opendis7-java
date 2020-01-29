@@ -111,4 +111,10 @@ public enum Class12SupplyCategorySlingLoadsNonDoctrinal implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class12SupplyCategorySlingLoadsNonDoctrinal: " + name() + ": " + getValue(); 
+    }
 }

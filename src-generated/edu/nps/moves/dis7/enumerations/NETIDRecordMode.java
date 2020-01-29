@@ -95,4 +95,10 @@ public enum NETIDRecordMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "NETIDRecordMode: " + name() + ": " + getValue(); 
+    }
 }

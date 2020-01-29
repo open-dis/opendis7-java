@@ -93,4 +93,10 @@ public enum TCASIIIType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TCASIIIType: " + name() + ": " + getValue(); 
+    }
 }

@@ -146,7 +146,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -167,5 +167,17 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (simulationAddress.equals( rhs.simulationAddress) )) ivarsEqual = false;
      if( ! (objectNumber == rhs.objectNumber)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" simulationAddress: ").append(simulationAddress).append("\n");
+    sb.append(" objectNumber: ").append(objectNumber).append("\n");
+
+   return sb.toString();
  }
 } // end of class

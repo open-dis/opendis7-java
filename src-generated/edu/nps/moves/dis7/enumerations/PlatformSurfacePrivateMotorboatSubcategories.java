@@ -99,4 +99,10 @@ public enum PlatformSurfacePrivateMotorboatSubcategories implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformSurfacePrivateMotorboatSubcategories: " + name() + ": " + getValue(); 
+    }
 }

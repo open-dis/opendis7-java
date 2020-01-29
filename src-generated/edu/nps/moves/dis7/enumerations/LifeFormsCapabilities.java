@@ -93,4 +93,10 @@ public class LifeFormsCapabilities extends DisBitSet implements EntityCapabiliti
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LifeFormsCapabilities: " + super.toString();
+  }
 }

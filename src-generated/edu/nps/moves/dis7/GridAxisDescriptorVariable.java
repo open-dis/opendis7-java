@@ -236,7 +236,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -260,5 +260,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      }
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" numberOfPointsOnXiAxis: ").append(numberOfPointsOnXiAxis).append("\n");
+    sb.append(" initialIndex: ").append(initialIndex).append("\n");
+    sb.append(" coordinateScaleXi: ").append(coordinateScaleXi).append("\n");
+    sb.append(" coordinateOffsetXi: ").append(coordinateOffsetXi).append("\n");
+    sb.append(" xiValues: ").append("\n");
+    sb.append(Arrays.toString(xiValues)).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+
+   return sb.toString();
  }
 } // end of class

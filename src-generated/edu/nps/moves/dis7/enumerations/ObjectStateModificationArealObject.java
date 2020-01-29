@@ -77,4 +77,10 @@ public class ObjectStateModificationArealObject extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ObjectStateModificationArealObject: " + super.toString();
+  }
 }

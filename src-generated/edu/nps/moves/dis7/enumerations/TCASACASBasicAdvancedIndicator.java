@@ -93,4 +93,10 @@ public enum TCASACASBasicAdvancedIndicator
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TCASACASBasicAdvancedIndicator: " + name() + ": " + getValue(); 
+    }
 }

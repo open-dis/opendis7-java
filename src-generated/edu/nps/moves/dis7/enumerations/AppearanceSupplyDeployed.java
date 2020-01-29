@@ -97,4 +97,10 @@ public enum AppearanceSupplyDeployed
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceSupplyDeployed: " + name() + ": " + getValue(); 
+    }
 }

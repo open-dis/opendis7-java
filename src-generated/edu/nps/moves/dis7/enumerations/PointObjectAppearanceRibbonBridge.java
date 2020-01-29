@@ -77,4 +77,10 @@ public class PointObjectAppearanceRibbonBridge extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "PointObjectAppearanceRibbonBridge: " + super.toString();
+  }
 }

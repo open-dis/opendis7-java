@@ -93,4 +93,10 @@ public enum PlatformSubsurfaceCivilianSemiSubmersiblesSubcategories implements S
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformSubsurfaceCivilianSemiSubmersiblesSubcategories: " + name() + ": " + getValue(); 
+    }
 }

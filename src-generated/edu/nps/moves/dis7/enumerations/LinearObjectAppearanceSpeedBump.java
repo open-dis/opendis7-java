@@ -85,4 +85,10 @@ public class LinearObjectAppearanceSpeedBump extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LinearObjectAppearanceSpeedBump: " + super.toString();
+  }
 }

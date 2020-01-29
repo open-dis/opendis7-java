@@ -107,4 +107,10 @@ public enum PlatformAirCivilianFixedWingAircraftSubcategories implements SubCate
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformAirCivilianFixedWingAircraftSubcategories: " + name() + ": " + getValue(); 
+    }
 }

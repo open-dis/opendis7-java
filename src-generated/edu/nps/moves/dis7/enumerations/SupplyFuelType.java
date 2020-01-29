@@ -113,4 +113,10 @@ public enum SupplyFuelType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SupplyFuelType: " + name() + ": " + getValue(); 
+    }
 }

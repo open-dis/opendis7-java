@@ -81,4 +81,10 @@ public class EnvironmentalProcessEnvironmentStatus extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "EnvironmentalProcessEnvironmentStatus: " + super.toString();
+  }
 }

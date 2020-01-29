@@ -318,7 +318,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -347,5 +347,25 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (phase == rhs.phase)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" beamDirection: ").append(beamDirection).append("\n");
+    sb.append(" azimuthBeamwidth: ").append(azimuthBeamwidth).append("\n");
+    sb.append(" elevationBeamwidth: ").append(elevationBeamwidth).append("\n");
+    sb.append(" referenceSystem: ").append(referenceSystem).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" ez: ").append(ez).append("\n");
+    sb.append(" ex: ").append(ex).append("\n");
+    sb.append(" phase: ").append(phase).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+
+   return sb.toString();
  }
 } // end of class

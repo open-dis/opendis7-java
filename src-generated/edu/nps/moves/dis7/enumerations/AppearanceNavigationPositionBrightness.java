@@ -93,4 +93,10 @@ public enum AppearanceNavigationPositionBrightness
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceNavigationPositionBrightness: " + name() + ": " + getValue(); 
+    }
 }

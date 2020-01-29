@@ -314,7 +314,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -340,5 +340,23 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( vectoringSystemData.get(idx).equals(rhs.vectoringSystemData.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" orginatingEntityID: ").append(orginatingEntityID).append("\n");
+    sb.append(" infraredSignatureRepresentationIndex: ").append(infraredSignatureRepresentationIndex).append("\n");
+    sb.append(" acousticSignatureRepresentationIndex: ").append(acousticSignatureRepresentationIndex).append("\n");
+    sb.append(" radarCrossSectionSignatureRepresentationIndex: ").append(radarCrossSectionSignatureRepresentationIndex).append("\n");
+    sb.append(" propulsionSystemData: ").append("\n");
+    propulsionSystemData.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" vectoringSystemData: ").append("\n");
+    vectoringSystemData.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

@@ -107,4 +107,10 @@ public enum LifeFormsSubcategoryGermanWeapons implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormsSubcategoryGermanWeapons: " + name() + ": " + getValue(); 
+    }
 }

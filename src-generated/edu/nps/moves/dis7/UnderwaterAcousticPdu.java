@@ -414,7 +414,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -446,5 +446,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( emitterSystems.get(idx).equals(rhs.emitterSystems.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" emittingEntityID: ").append(emittingEntityID).append("\n");
+    sb.append(" eventID: ").append(eventID).append("\n");
+    sb.append(" stateChangeIndicator: ").append(stateChangeIndicator).append("\n");
+    sb.append(" pad: ").append(pad).append("\n");
+    sb.append(" passiveParameterIndex: ").append(passiveParameterIndex).append("\n");
+    sb.append(" propulsionPlantConfiguration: ").append(propulsionPlantConfiguration).append("\n");
+    sb.append(" shaftRPMs: ").append("\n");
+    shaftRPMs.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" apaData: ").append("\n");
+    apaData.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+    sb.append(" emitterSystems: ").append("\n");
+    emitterSystems.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

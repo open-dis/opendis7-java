@@ -91,4 +91,10 @@ public enum IFFSystemType1OperationalParameter1
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IFFSystemType1OperationalParameter1: " + name() + ": " + getValue(); 
+    }
 }

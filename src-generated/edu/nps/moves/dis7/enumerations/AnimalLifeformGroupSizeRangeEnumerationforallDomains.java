@@ -119,4 +119,10 @@ public enum AnimalLifeformGroupSizeRangeEnumerationforallDomains
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AnimalLifeformGroupSizeRangeEnumerationforallDomains: " + name() + ": " + getValue(); 
+    }
 }

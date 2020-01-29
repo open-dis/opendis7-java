@@ -103,4 +103,10 @@ public enum Mode5IFFMission
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Mode5IFFMission: " + name() + ": " + getValue(); 
+    }
 }

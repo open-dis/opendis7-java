@@ -193,4 +193,10 @@ public enum LifeFormsSubcategoryCISWeapons implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormsSubcategoryCISWeapons: " + name() + ": " + getValue(); 
+    }
 }

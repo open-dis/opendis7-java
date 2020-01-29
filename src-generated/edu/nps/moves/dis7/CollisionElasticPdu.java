@@ -435,7 +435,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -464,5 +464,30 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (unitSurfaceNormal.equals( rhs.unitSurfaceNormal) )) ivarsEqual = false;
      if( ! (coefficientOfRestitution == rhs.coefficientOfRestitution)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" issuingEntityID: ").append(issuingEntityID).append("\n");
+    sb.append(" collidingEntityID: ").append(collidingEntityID).append("\n");
+    sb.append(" collisionEventID: ").append(collisionEventID).append("\n");
+    sb.append(" pad: ").append(pad).append("\n");
+    sb.append(" contactVelocity: ").append(contactVelocity).append("\n");
+    sb.append(" mass: ").append(mass).append("\n");
+    sb.append(" locationOfImpact: ").append(locationOfImpact).append("\n");
+    sb.append(" collisionIntermediateResultXX: ").append(collisionIntermediateResultXX).append("\n");
+    sb.append(" collisionIntermediateResultXY: ").append(collisionIntermediateResultXY).append("\n");
+    sb.append(" collisionIntermediateResultXZ: ").append(collisionIntermediateResultXZ).append("\n");
+    sb.append(" collisionIntermediateResultYY: ").append(collisionIntermediateResultYY).append("\n");
+    sb.append(" collisionIntermediateResultYZ: ").append(collisionIntermediateResultYZ).append("\n");
+    sb.append(" collisionIntermediateResultZZ: ").append(collisionIntermediateResultZZ).append("\n");
+    sb.append(" unitSurfaceNormal: ").append(unitSurfaceNormal).append("\n");
+    sb.append(" coefficientOfRestitution: ").append(coefficientOfRestitution).append("\n");
+
+   return sb.toString();
  }
 } // end of class

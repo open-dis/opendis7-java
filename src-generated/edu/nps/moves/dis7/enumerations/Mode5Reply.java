@@ -97,4 +97,10 @@ public enum Mode5Reply
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Mode5Reply: " + name() + ": " + getValue(); 
+    }
 }

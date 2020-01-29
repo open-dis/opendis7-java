@@ -97,4 +97,10 @@ public enum AppearanceCamouflageType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceCamouflageType: " + name() + ": " + getValue(); 
+    }
 }

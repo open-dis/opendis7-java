@@ -93,4 +93,10 @@ public enum DISPDUStatusCoupledExtensionIndicatorCEI
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISPDUStatusCoupledExtensionIndicatorCEI: " + name() + ": " + getValue(); 
+    }
 }

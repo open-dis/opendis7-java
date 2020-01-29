@@ -105,4 +105,10 @@ public class LandPlatformCapabilities extends DisBitSet implements EntityCapabil
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LandPlatformCapabilities: " + super.toString();
+  }
 }

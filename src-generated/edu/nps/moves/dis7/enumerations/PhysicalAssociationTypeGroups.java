@@ -99,4 +99,10 @@ public enum PhysicalAssociationTypeGroups
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PhysicalAssociationTypeGroups: " + name() + ": " + getValue(); 
+    }
 }

@@ -97,4 +97,10 @@ public enum Parachute
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Parachute: " + name() + ": " + getValue(); 
+    }
 }

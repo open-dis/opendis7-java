@@ -109,4 +109,10 @@ public enum EntityKind
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityKind: " + name() + ": " + getValue(); 
+    }
 }

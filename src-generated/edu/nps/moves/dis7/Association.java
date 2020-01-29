@@ -188,7 +188,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -211,5 +211,19 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (associatedEntityID.equals( rhs.associatedEntityID) )) ivarsEqual = false;
      if( ! (associatedLocation.equals( rhs.associatedLocation) )) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" associationType: ").append(associationType).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" associatedEntityID: ").append(associatedEntityID).append("\n");
+    sb.append(" associatedLocation: ").append(associatedLocation).append("\n");
+
+   return sb.toString();
  }
 } // end of class

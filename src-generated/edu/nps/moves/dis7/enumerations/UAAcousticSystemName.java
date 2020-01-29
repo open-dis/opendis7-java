@@ -94,4 +94,10 @@ public enum UAAcousticSystemName
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "UAAcousticSystemName: " + name() + ": " + getValue(); 
+    }
 }

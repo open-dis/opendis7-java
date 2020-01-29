@@ -84,4 +84,10 @@ public enum TransmitterAntennaPatternType
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterAntennaPatternType: " + name() + ": " + getValue(); 
+    }
 }

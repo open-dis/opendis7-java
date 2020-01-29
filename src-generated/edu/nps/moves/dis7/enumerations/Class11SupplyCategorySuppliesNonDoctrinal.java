@@ -99,4 +99,10 @@ public enum Class11SupplyCategorySuppliesNonDoctrinal implements Category
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class11SupplyCategorySuppliesNonDoctrinal: " + name() + ": " + getValue(); 
+    }
 }

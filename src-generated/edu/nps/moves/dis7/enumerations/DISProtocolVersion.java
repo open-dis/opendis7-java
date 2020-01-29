@@ -105,4 +105,10 @@ public enum DISProtocolVersion
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DISProtocolVersion: " + name() + ": " + getValue(); 
+    }
 }

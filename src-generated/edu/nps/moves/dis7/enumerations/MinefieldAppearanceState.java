@@ -93,4 +93,10 @@ public enum MinefieldAppearanceState
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldAppearanceState: " + name() + ": " + getValue(); 
+    }
 }

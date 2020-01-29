@@ -103,4 +103,10 @@ public enum PlatformLandUtilityEmergencyCarSubcategories implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandUtilityEmergencyCarSubcategories: " + name() + ": " + getValue(); 
+    }
 }

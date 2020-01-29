@@ -117,4 +117,10 @@ public enum FormatType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "FormatType: " + name() + ": " + getValue(); 
+    }
 }

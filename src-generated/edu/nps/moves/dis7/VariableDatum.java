@@ -72,16 +72,32 @@ public class VariableDatum extends Object implements Serializable
    * Setter for {@link VariableDatum#variableDatumLength}
    * <p>
    * This value is the size IN BITS of the {@link VariableDatum#variableDatumValue} field. Since that field
-   * is a byte array, its size must be large enough to contain the specified number of bits. If this size is NOT
-   * set and this pdu is issued (marshaled), the value used for this field will be the size of the byte
-   * array times 8.
+   * is a byte array, its size must be large enough to contain the specified number of bits. If
+   * {@link VariableDatum#variableDatumValue} is NOT
+   * set and this pdu is issued (marshaled), the value used when marshaling this field will be
+   * the size of the byte array times 8.
    */
-  public VariableDatum setVariableDatumLength(int pVariableDatumLength)
+  public VariableDatum setVariableDatumLengthInBits(int bitLength)
   {
-    variableDatumLength = pVariableDatumLength;
+    variableDatumLength = bitLength;
     return this;
   }
 
+ /**
+   * Setter for {@link VariableDatum#variableDatumLength}
+   * <p>
+   * This value is the size in bytes of the {@link VariableDatum#variableDatumValue} field. Since that field
+   * is a byte array, its size must be large enough to contain the value specified here. If
+   * {@link VariableDatum#variableDatumValue} is NOT
+   * set and this pdu is issued (marshaled), the value used when marshaling this field will be
+   * the size of the byte array times 8.
+   */
+  public VariableDatum setVariableDatumLengthInBytes(int byteLength)
+  {
+    variableDatumLength = byteLength * Byte.SIZE;
+    return this;
+  }
+  
   /**
    * Getter for {@link VariableDatum#variableDatumLength}
    */

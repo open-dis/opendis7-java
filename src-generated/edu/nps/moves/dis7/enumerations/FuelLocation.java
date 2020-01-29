@@ -91,4 +91,10 @@ public enum FuelLocation
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "FuelLocation: " + name() + ": " + getValue(); 
+    }
 }

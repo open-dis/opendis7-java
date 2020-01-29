@@ -95,4 +95,10 @@ public enum AddVariantsforAirCategory201Insect
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AddVariantsforAirCategory201Insect: " + name() + ": " + getValue(); 
+    }
 }

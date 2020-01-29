@@ -91,4 +91,10 @@ public enum Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms implements
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms: " + name() + ": " + getValue(); 
+    }
 }

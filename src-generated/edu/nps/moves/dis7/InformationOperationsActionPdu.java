@@ -380,7 +380,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -408,5 +408,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" receivingSimID: ").append(receivingSimID).append("\n");
+    sb.append(" requestID: ").append(requestID).append("\n");
+    sb.append(" IOWarfareType: ").append(IOWarfareType).append("\n");
+    sb.append(" IOSimulationSource: ").append(IOSimulationSource).append("\n");
+    sb.append(" IOActionType: ").append(IOActionType).append("\n");
+    sb.append(" IOActionPhase: ").append(IOActionPhase).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" ioAttackerID: ").append(ioAttackerID).append("\n");
+    sb.append(" ioPrimaryTargetID: ").append(ioPrimaryTargetID).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" ioRecords: ").append("\n");
+    ioRecords.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

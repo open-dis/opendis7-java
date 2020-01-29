@@ -203,4 +203,10 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandConstructionSpecialtyVehicleSubcategories: " + name() + ": " + getValue(); 
+    }
 }

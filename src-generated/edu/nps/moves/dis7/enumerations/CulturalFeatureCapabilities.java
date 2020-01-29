@@ -85,4 +85,10 @@ public class CulturalFeatureCapabilities extends DisBitSet implements EntityCapa
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "CulturalFeatureCapabilities: " + super.toString();
+  }
 }

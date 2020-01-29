@@ -239,7 +239,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -259,5 +259,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (transmitterEntityId.equals( rhs.transmitterEntityId) )) ivarsEqual = false;
      if( ! (transmitterRadioId == rhs.transmitterRadioId)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" header: ").append(header).append("\n");
+    sb.append(" receiverState: ").append(receiverState).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" receivedPower: ").append(receivedPower).append("\n");
+    sb.append(" transmitterEntityId: ").append(transmitterEntityId).append("\n");
+    sb.append(" transmitterRadioId: ").append(transmitterRadioId).append("\n");
+
+   return sb.toString();
  }
 } // end of class

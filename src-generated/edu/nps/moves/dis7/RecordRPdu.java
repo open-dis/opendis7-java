@@ -256,7 +256,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -278,5 +278,21 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( recordSets.get(idx).equals(rhs.recordSets.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" requestID: ").append(requestID).append("\n");
+    sb.append(" requiredReliabilityService: ").append(requiredReliabilityService).append("\n");
+    sb.append(" pad1: ").append(pad1).append("\n");
+    sb.append(" eventType: ").append(eventType).append("\n");
+    sb.append(" recordSets: ").append("\n");
+    recordSets.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

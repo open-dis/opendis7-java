@@ -255,7 +255,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -281,5 +281,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
      if( ! (stationLocation.equals( rhs.stationLocation) )) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" reasonForSeparation: ").append(reasonForSeparation).append("\n");
+    sb.append(" preEntityIndicator: ").append(preEntityIndicator).append("\n");
+    sb.append(" padding1: ").append(padding1).append("\n");
+    sb.append(" parentEntityID: ").append(parentEntityID).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" stationLocation: ").append(stationLocation).append("\n");
+
+   return sb.toString();
  }
 } // end of class

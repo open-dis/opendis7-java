@@ -96,4 +96,10 @@ public enum TransmitterDetailAmplitudeModulation
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterDetailAmplitudeModulation: " + name() + ": " + getValue(); 
+    }
 }

@@ -16,10 +16,11 @@ import edu.nps.moves.dis7.enumerations.*;
  * An example approximating a Java enum "superclass". Can't use an interface, because we need the two
  * static methods, which can't go into an interface
  */
-//@formatter:off
 public class Domain
 {
-  private Domain() { }
+  private Domain()
+  {
+  }
 
   private Object enumInst;
 
@@ -32,11 +33,20 @@ public class Domain
   private Method getDescription;
 
   //@formatter:off
-  public static Domain inst(PlatformDomain d) { return _inst(d); }  //  uid 8
+  public static Domain inst(PlatformDomain d)
+  {
+    return _inst(d);
+  }  //  uid 8
 
-  public static Domain inst(MunitionDomain d) { return _inst(d); }  //  uid 14
+  public static Domain inst(MunitionDomain d)
+  {
+    return _inst(d);
+  }  //  uid 14
 
-  public static Domain inst(SupplyDomain d) { return _inst(d); }  //  uid 600
+  public static Domain inst(SupplyDomain d)
+  {
+    return _inst(d);
+  }  //  uid 600
 
   //@formatter:on
   private static Domain _inst(Object o)
@@ -46,19 +56,19 @@ public class Domain
     d.init();
     return d;
   }
-  
+
   private void init()
   {
     Class<?> c = enumInst.getClass();
     try {
       //@formatter:off
-      marshalBuff =    c.getDeclaredMethod("marshal",       new Class[]{ByteBuffer.class});
-      marshalDos =     c.getDeclaredMethod("marshal",       new Class[]{DataOutputStream.class});
-      unmarshalBuff =  c.getDeclaredMethod("unmarshalEnum", new Class[]{ByteBuffer.class});
-      unmarshalDis =   c.getDeclaredMethod("unmarshalEnum", new Class[]{DataInputStream.class});
-      mSize =          c.getDeclaredMethod("getMarshalledSize", (Class[]) null);
-      getValue =       c.getDeclaredMethod("getValue",          (Class[]) null);
-      getDescription = c.getDeclaredMethod("getDescription",    (Class[]) null);
+      marshalBuff = c.getDeclaredMethod("marshal", new Class[]{ByteBuffer.class});
+      marshalDos = c.getDeclaredMethod("marshal", new Class[]{DataOutputStream.class});
+      unmarshalBuff = c.getDeclaredMethod("unmarshalEnum", new Class[]{ByteBuffer.class});
+      unmarshalDis = c.getDeclaredMethod("unmarshalEnum", new Class[]{DataInputStream.class});
+      mSize = c.getDeclaredMethod("getMarshalledSize", (Class[]) null);
+      getValue = c.getDeclaredMethod("getValue", (Class[]) null);
+      getDescription = c.getDeclaredMethod("getDescription", (Class[]) null);
       //@formatter:on
     }
     catch (NoSuchMethodException ex) {
@@ -153,5 +163,4 @@ public class Domain
     final Domain rhs = (Domain) obj;
     return enumInst.equals(rhs.enumInst);
   }
-  //@formatter:on
 }

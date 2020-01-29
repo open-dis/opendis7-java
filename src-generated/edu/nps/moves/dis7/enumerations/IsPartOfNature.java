@@ -96,4 +96,10 @@ public enum IsPartOfNature
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IsPartOfNature: " + name() + ": " + getValue(); 
+    }
 }

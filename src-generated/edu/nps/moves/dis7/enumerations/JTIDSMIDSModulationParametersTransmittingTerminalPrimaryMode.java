@@ -93,4 +93,10 @@ public enum JTIDSMIDSModulationParametersTransmittingTerminalPrimaryMode
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "JTIDSMIDSModulationParametersTransmittingTerminalPrimaryMode: " + name() + ": " + getValue(); 
+    }
 }

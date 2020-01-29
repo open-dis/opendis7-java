@@ -89,4 +89,10 @@ public class EnvironmentalAppearance extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "EnvironmentalAppearance: " + super.toString();
+  }
 }

@@ -135,4 +135,10 @@ public enum SubcategoriesforLandCategory201Reptile implements SubCategory
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory201Reptile: " + name() + ": " + getValue(); 
+    }
 }

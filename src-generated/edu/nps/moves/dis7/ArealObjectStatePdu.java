@@ -383,7 +383,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -400,6 +400,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (referencedObjectID.equals( rhs.referencedObjectID) )) ivarsEqual = false;
      if( ! (updateNumber == rhs.updateNumber)) ivarsEqual = false;
      if( ! (forceID == rhs.forceID)) ivarsEqual = false;
+     if( ! (modifications.equals( rhs.modifications) )) ivarsEqual = false;
      if( ! (objectType.equals( rhs.objectType) )) ivarsEqual = false;
      if( ! (specificObjectAppearance == rhs.specificObjectAppearance)) ivarsEqual = false;
      if( ! (generalObjectAppearance == rhs.generalObjectAppearance)) ivarsEqual = false;
@@ -410,5 +411,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( objectLocation.get(idx).equals(rhs.objectLocation.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" objectID: ").append(objectID).append("\n");
+    sb.append(" referencedObjectID: ").append(referencedObjectID).append("\n");
+    sb.append(" updateNumber: ").append(updateNumber).append("\n");
+    sb.append(" forceID: ").append(forceID).append("\n");
+    sb.append(" modifications: ").append(modifications).append("\n");
+    sb.append(" objectType: ").append(objectType).append("\n");
+    sb.append(" specificObjectAppearance: ").append(specificObjectAppearance).append("\n");
+    sb.append(" generalObjectAppearance: ").append(generalObjectAppearance).append("\n");
+    sb.append(" requesterID: ").append(requesterID).append("\n");
+    sb.append(" receivingID: ").append(receivingID).append("\n");
+    sb.append(" objectLocation: ").append("\n");
+    objectLocation.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

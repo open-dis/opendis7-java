@@ -115,4 +115,10 @@ public enum SubcategoriesforLandCategory206Marsupial
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforLandCategory206Marsupial: " + name() + ": " + getValue(); 
+    }
 }

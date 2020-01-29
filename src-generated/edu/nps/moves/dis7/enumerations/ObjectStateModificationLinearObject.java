@@ -81,4 +81,10 @@ public class ObjectStateModificationLinearObject extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ObjectStateModificationLinearObject: " + super.toString();
+  }
 }

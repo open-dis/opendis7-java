@@ -77,4 +77,10 @@ public class ExpendableCapabilities extends DisBitSet implements EntityCapabilit
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ExpendableCapabilities: " + super.toString();
+  }
 }

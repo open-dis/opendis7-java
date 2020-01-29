@@ -509,7 +509,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -533,6 +533,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
      if( ! (pulseRepititionFrequency == rhs.pulseRepititionFrequency)) ivarsEqual = false;
      if( ! (pulseWidth == rhs.pulseWidth)) ivarsEqual = false;
+     if( ! (flags.equals( rhs.flags) )) ivarsEqual = false;
      if( ! (pulseShape == rhs.pulseShape)) ivarsEqual = false;
      if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
      if( ! (pad3 == rhs.pad3)) ivarsEqual = false;
@@ -542,5 +543,33 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( dERecords.get(idx).equals(rhs.dERecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" firingEntityID: ").append(firingEntityID).append("\n");
+    sb.append(" eventID: ").append(eventID).append("\n");
+    sb.append(" munitionType: ").append(munitionType).append("\n");
+    sb.append(" shotStartTime: ").append(shotStartTime).append("\n");
+    sb.append(" commulativeShotTime: ").append(commulativeShotTime).append("\n");
+    sb.append(" apertureEmitterLocation: ").append(apertureEmitterLocation).append("\n");
+    sb.append(" apertureDiameter: ").append(apertureDiameter).append("\n");
+    sb.append(" wavelength: ").append(wavelength).append("\n");
+    sb.append(" pad1: ").append(pad1).append("\n");
+    sb.append(" pulseRepititionFrequency: ").append(pulseRepititionFrequency).append("\n");
+    sb.append(" pulseWidth: ").append(pulseWidth).append("\n");
+    sb.append(" flags: ").append(flags).append("\n");
+    sb.append(" pulseShape: ").append(pulseShape).append("\n");
+    sb.append(" pad2: ").append(pad2).append("\n");
+    sb.append(" pad3: ").append(pad3).append("\n");
+    sb.append(" pad4: ").append(pad4).append("\n");
+    sb.append(" dERecords: ").append("\n");
+    dERecords.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

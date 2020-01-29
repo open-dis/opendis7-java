@@ -115,4 +115,10 @@ public enum EntityAssociationPhysicalConnectionType
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "EntityAssociationPhysicalConnectionType: " + name() + ": " + getValue(); 
+    }
 }

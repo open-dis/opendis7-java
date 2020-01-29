@@ -85,4 +85,10 @@ public class LinearObjectAppearanceWire extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LinearObjectAppearanceWire: " + super.toString();
+  }
 }

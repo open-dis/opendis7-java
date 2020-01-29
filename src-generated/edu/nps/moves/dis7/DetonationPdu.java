@@ -381,7 +381,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -409,5 +409,27 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
         if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" sourceEntityID: ").append(sourceEntityID).append("\n");
+    sb.append(" targetEntityID: ").append(targetEntityID).append("\n");
+    sb.append(" explodingEntityID: ").append(explodingEntityID).append("\n");
+    sb.append(" eventID: ").append(eventID).append("\n");
+    sb.append(" velocity: ").append(velocity).append("\n");
+    sb.append(" locationInWorldCoordinates: ").append(locationInWorldCoordinates).append("\n");
+    sb.append(" descriptor: ").append(descriptor).append("\n");
+    sb.append(" locationOfEntityCoordinates: ").append(locationOfEntityCoordinates).append("\n");
+    sb.append(" detonationResult: ").append(detonationResult).append("\n");
+    sb.append(" pad: ").append(pad).append("\n");
+    sb.append(" variableParameters: ").append("\n");
+    variableParameters.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});
+
+   return sb.toString();
  }
 } // end of class

@@ -115,4 +115,10 @@ public enum LifeFormHumanSpecificSubMachineGun
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificSubMachineGun: " + name() + ": " + getValue(); 
+    }
 }

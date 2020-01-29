@@ -706,4 +706,10 @@ public enum Acronyms
     {
         return description;
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Acronyms: " + name();
+    }
 }

@@ -102,4 +102,10 @@ public enum TransmitterCryptoSystem
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "TransmitterCryptoSystem: " + name() + ": " + getValue(); 
+    }
 }

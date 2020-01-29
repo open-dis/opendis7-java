@@ -95,4 +95,10 @@ public enum Link1111BFidelityLevel
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "Link1111BFidelityLevel: " + name() + ": " + getValue(); 
+    }
 }

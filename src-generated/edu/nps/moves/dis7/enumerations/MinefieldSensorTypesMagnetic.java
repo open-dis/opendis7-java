@@ -82,4 +82,10 @@ public enum MinefieldSensorTypesMagnetic
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldSensorTypesMagnetic: " + name() + ": " + getValue(); 
+    }
 }

@@ -96,4 +96,10 @@ public enum AttachedParts
     {
         return 4; // 32 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AttachedParts: " + name() + ": " + getValue();
+    }
 }

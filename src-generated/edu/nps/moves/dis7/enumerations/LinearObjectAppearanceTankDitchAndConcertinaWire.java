@@ -85,4 +85,10 @@ public class LinearObjectAppearanceTankDitchAndConcertinaWire extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "LinearObjectAppearanceTankDitchAndConcertinaWire: " + super.toString();
+  }
 }

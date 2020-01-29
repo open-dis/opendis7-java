@@ -364,7 +364,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -390,9 +390,32 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (temperature == rhs.temperature)) ivarsEqual = false;
      if( ! (componentIdentification == rhs.componentIdentification)) ivarsEqual = false;
      if( ! (componentDamageStatus == rhs.componentDamageStatus)) ivarsEqual = false;
+     if( ! (componentVisualDamageStatus.equals( rhs.componentVisualDamageStatus) )) ivarsEqual = false;
      if( ! (componentVisualSmokeColor == rhs.componentVisualSmokeColor)) ivarsEqual = false;
      if( ! (fireEventID.equals( rhs.fireEventID) )) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" damageLocation: ").append(damageLocation).append("\n");
+    sb.append(" damageDiameter: ").append(damageDiameter).append("\n");
+    sb.append(" temperature: ").append(temperature).append("\n");
+    sb.append(" componentIdentification: ").append(componentIdentification).append("\n");
+    sb.append(" componentDamageStatus: ").append(componentDamageStatus).append("\n");
+    sb.append(" componentVisualDamageStatus: ").append(componentVisualDamageStatus).append("\n");
+    sb.append(" componentVisualSmokeColor: ").append(componentVisualSmokeColor).append("\n");
+    sb.append(" fireEventID: ").append(fireEventID).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+
+   return sb.toString();
  }
 } // end of class

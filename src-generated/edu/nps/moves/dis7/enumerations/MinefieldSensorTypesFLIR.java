@@ -94,4 +94,10 @@ public enum MinefieldSensorTypesFLIR
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "MinefieldSensorTypesFLIR: " + name() + ": " + getValue(); 
+    }
 }

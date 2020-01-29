@@ -428,7 +428,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -462,5 +462,30 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (peakIrradiance == rhs.peakIrradiance)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" targetSpotLocation: ").append(targetSpotLocation).append("\n");
+    sb.append(" targetSpotEntityLocation: ").append(targetSpotEntityLocation).append("\n");
+    sb.append(" targetSpotVelocity: ").append(targetSpotVelocity).append("\n");
+    sb.append(" targetSpotAcceleration: ").append(targetSpotAcceleration).append("\n");
+    sb.append(" targetEntityID: ").append(targetEntityID).append("\n");
+    sb.append(" targetComponentID: ").append(targetComponentID).append("\n");
+    sb.append(" beamSpotType: ").append(beamSpotType).append("\n");
+    sb.append(" beamSpotCrossSectionSemiMajorAxis: ").append(beamSpotCrossSectionSemiMajorAxis).append("\n");
+    sb.append(" beamSpotCrossSectionSemiMinorAxis: ").append(beamSpotCrossSectionSemiMinorAxis).append("\n");
+    sb.append(" beamSpotCrossSectionOrientationAngle: ").append(beamSpotCrossSectionOrientationAngle).append("\n");
+    sb.append(" peakIrradiance: ").append(peakIrradiance).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+
+   return sb.toString();
  }
 } // end of class

@@ -81,4 +81,10 @@ public class ObjectStateModificationPointObject extends DisBitSet
       setbits(start,length,val);
       return this;
   }
+  
+  @Override
+  public String toString()
+  {
+      return "ObjectStateModificationPointObject: " + super.toString();
+  }
 }

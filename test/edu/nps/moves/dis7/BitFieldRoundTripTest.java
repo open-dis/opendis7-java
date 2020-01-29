@@ -7,7 +7,6 @@ package edu.nps.moves.dis7;
 import edu.nps.moves.dis7.enumerations.AppearanceCamouflageType;
 import edu.nps.moves.dis7.enumerations.ForceID;
 import edu.nps.moves.dis7.enumerations.LandPlatformAppearance;
-import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.util.DisNetworking;
 import edu.nps.moves.dis7.util.PduFactory;
 import java.io.IOException;
@@ -48,7 +47,7 @@ public class BitFieldRoundTripTest
   private Object waiter = new Object();
 
   @Test
-  public void testRoundTrip()
+  public void testBitFieldRoundTrip()
   {
     PduFactory factory = new PduFactory();
 
@@ -114,27 +113,27 @@ public class BitFieldRoundTripTest
     System.out.println(s);
     System.out.println("Alternative EntityType: "+espdu.alternativeEntityType.toString());
     System.out.println("Entity Capabilities: "+espdu.capabilities.toString());
-    System.out.println(""+ espdu.getDeadReckoningParameters().toString());
-    System.out.println(""+ espdu.getEntityAppearance());
-    System.out.println(""+ espdu.getEntityID().toString());
-    System.out.println(""+ espdu.getEntityLinearVelocity().toString());
-    System.out.println(""+ espdu.getEntityLocation().toString());
-    System.out.println(""+ espdu.getEntityOrientation().toString());
-    System.out.println(""+ espdu.getEntityType().toString());
-    System.out.println(""+ espdu.getExerciseID());
-    System.out.println(""+ espdu.getForceId().toString());
-    System.out.println(""+ espdu.getLength());
-    System.out.println(""+ espdu.getMarking().toString());
-    System.out.println(""+ espdu.getPduStatus().toString());
-    System.out.println(""+ espdu.getPduType().toString());
-    System.out.println(""+ espdu.getProtocolFamily().toString());
-    System.out.println(""+ espdu.getProtocolVersion());
-    System.out.println(""+ espdu.getTimestamp());
-    System.out.println(""+ espdu.getVariableParameters().toString());
+    System.out.println("Dead Reckoning Parameters: "+ espdu.getDeadReckoningParameters().toString());
+    System.out.println("Entity Appearance: "+ espdu.getEntityAppearance());
+    System.out.println("Entity ID: "+ espdu.getEntityID().toString());
+    System.out.println("Entity Linear Velocity: "+ espdu.getEntityLinearVelocity().toString());
+    System.out.println("Entity Location: "+ espdu.getEntityLocation().toString());
+    System.out.println("Entity Orientation: "+ espdu.getEntityOrientation().toString());
+    System.out.println("Entity Type: "+ espdu.getEntityType().toString());
+    System.out.println("Exercise ID: "+ espdu.getExerciseID());
+    System.out.println("Force ID: "+ espdu.getForceId().toString());
+    System.out.println("Length: "+ espdu.getLength());
+    System.out.println("Marking: "+ espdu.getMarking().toString());
+    System.out.println("Pdu Status: "+ espdu.getPduStatus().toString());
+    System.out.println("Pdu Type: "+ espdu.getPduType().toString());
+    System.out.println("Protocol Family: "+ espdu.getProtocolFamily().toString());
+    System.out.println("Protocol Version: "+ espdu.getProtocolVersion());
+    System.out.println("Timestamp: "+ espdu.getTimestamp());
+    System.out.println("Variable Parameters: "+ espdu.getVariableParameters().toString());
     System.out.println();
  }
   public static void main(String[] args)
   {
-    new BitFieldRoundTripTest().testRoundTrip();
+    new BitFieldRoundTripTest().testBitFieldRoundTrip();
   }
 }

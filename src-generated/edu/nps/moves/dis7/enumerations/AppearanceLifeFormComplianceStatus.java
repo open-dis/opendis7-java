@@ -121,4 +121,10 @@ public enum AppearanceLifeFormComplianceStatus
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceLifeFormComplianceStatus: " + name() + ": " + getValue(); 
+    }
 }

@@ -129,4 +129,10 @@ public enum PlatformLandBusSubcategories
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "PlatformLandBusSubcategories: " + name() + ": " + getValue(); 
+    }
 }

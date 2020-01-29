@@ -95,4 +95,10 @@ public enum AppearanceSubsurfaceHatch
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "AppearanceSubsurfaceHatch: " + name() + ": " + getValue(); 
+    }
 }

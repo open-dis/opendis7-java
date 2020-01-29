@@ -97,4 +97,10 @@ public enum ReplyAmplification
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "ReplyAmplification: " + name() + ": " + getValue(); 
+    }
 }

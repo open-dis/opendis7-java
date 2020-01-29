@@ -99,4 +99,10 @@ public enum SubcategoriesforSubsurfaceCategory203Crustacean implements SubCatego
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "SubcategoriesforSubsurfaceCategory203Crustacean: " + name() + ": " + getValue(); 
+    }
 }

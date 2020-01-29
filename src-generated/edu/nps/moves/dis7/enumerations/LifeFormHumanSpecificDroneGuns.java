@@ -95,4 +95,10 @@ public enum LifeFormHumanSpecificDroneGuns
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "LifeFormHumanSpecificDroneGuns: " + name() + ": " + getValue(); 
+    }
 }

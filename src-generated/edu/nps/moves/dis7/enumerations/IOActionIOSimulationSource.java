@@ -78,4 +78,10 @@ public enum IOActionIOSimulationSource
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "IOActionIOSimulationSource: " + name() + ": " + getValue(); 
+    }
 }

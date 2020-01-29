@@ -97,4 +97,10 @@ public enum DEDamageDescriptionComponentVisualSmokeColor
     {
         return 1; // 8 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "DEDamageDescriptionComponentVisualSmokeColor: " + name() + ": " + getValue(); 
+    }
 }

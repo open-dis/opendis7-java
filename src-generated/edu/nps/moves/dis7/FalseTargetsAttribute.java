@@ -419,7 +419,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -453,5 +453,30 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (echoSpacing == rhs.echoSpacing)) ivarsEqual = false;
      if( ! (firstTargetOffset == rhs.firstTargetOffset)) ivarsEqual = false;
     return ivarsEqual;
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" recordType: ").append(recordType).append("\n");
+    sb.append(" recordLength: ").append(recordLength).append("\n");
+    sb.append(" padding: ").append(padding).append("\n");
+    sb.append(" emitterNumber: ").append(emitterNumber).append("\n");
+    sb.append(" beamNumber: ").append(beamNumber).append("\n");
+    sb.append(" stateIndicator: ").append(stateIndicator).append("\n");
+    sb.append(" padding2: ").append(padding2).append("\n");
+    sb.append(" padding3: ").append(padding3).append("\n");
+    sb.append(" falseTargetCount: ").append(falseTargetCount).append("\n");
+    sb.append(" walkSpeed: ").append(walkSpeed).append("\n");
+    sb.append(" walkAcceleration: ").append(walkAcceleration).append("\n");
+    sb.append(" maximumWalkDistance: ").append(maximumWalkDistance).append("\n");
+    sb.append(" keepTime: ").append(keepTime).append("\n");
+    sb.append(" echoSpacing: ").append(echoSpacing).append("\n");
+    sb.append(" firstTargetOffset: ").append(firstTargetOffset).append("\n");
+
+   return sb.toString();
  }
 } // end of class

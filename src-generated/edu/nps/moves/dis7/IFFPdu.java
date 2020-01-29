@@ -257,7 +257,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
     if(obj == null)
        return false;
 
-    if(getClass() != obj.getClass())
+    if(!getClass().isAssignableFrom(obj.getClass())) //if(getClass() != obj.getClass())
         return false;
 
     return equalsImpl(obj);
@@ -278,5 +278,22 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
      if( ! (systemSpecificData == rhs.systemSpecificData)) ivarsEqual = false;
      if( ! (fundamentalParameters.equals( rhs.fundamentalParameters) )) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
+ }
+
+ @Override
+ public String toString()
+ {
+    StringBuilder sb = new StringBuilder();
+    sb.append(getClass().getSimpleName()+":\n");
+
+    sb.append(" emittingEntityId: ").append(emittingEntityId).append("\n");
+    sb.append(" eventID: ").append(eventID).append("\n");
+    sb.append(" location: ").append(location).append("\n");
+    sb.append(" systemID: ").append(systemID).append("\n");
+    sb.append(" systemDesignator: ").append(systemDesignator).append("\n");
+    sb.append(" systemSpecificData: ").append(systemSpecificData).append("\n");
+    sb.append(" fundamentalParameters: ").append(fundamentalParameters).append("\n");
+
+   return sb.toString();
  }
 } // end of class

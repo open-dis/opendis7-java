@@ -86,4 +86,10 @@ public enum UAScanPattern
     {
         return 2; // 16 bits
     }
+    
+    @Override
+    public String toString()
+    {
+        return "UAScanPattern: " + name() + ": " + getValue(); 
+    }
 }
