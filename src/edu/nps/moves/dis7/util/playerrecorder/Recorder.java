@@ -27,10 +27,10 @@ public class Recorder implements PduReceiver
 
   public static String COMMENT_MARKER = "!";
   static String START_COMMENT_MARKER = COMMENT_MARKER + "Begin" + COMMENT_MARKER;
-  static String STOP_COMMENT_MARKER = COMMENT_MARKER + "End" + COMMENT_MARKER;
+  static String STOP_COMMENT_MARKER  = COMMENT_MARKER + "End"   + COMMENT_MARKER;
 
-  private BufferedWriter bwr;
-  private File logFile;
+  private BufferedWriter bufferedWriter;
+  private File           logFile;
   
   private DisThreadedNetIF disnetworking;
   
@@ -42,7 +42,7 @@ public class Recorder implements PduReceiver
   public Recorder(String outputDir, String mcastaddr, int port) throws IOException
   {
     logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_TAIL );
-    bwr = new BufferedWriter(new FileWriter(logFile));
+    bufferedWriter = new BufferedWriter(new FileWriter(logFile));
     
     disnetworking = new DisThreadedNetIF(port, mcastaddr);
     disnetworking.addRawListener(bAndL->receivePdu(bAndL.buff,bAndL.length));
@@ -50,12 +50,12 @@ public class Recorder implements PduReceiver
   
   public void startResume()
   {
-    dosave = true;
+    doSave = true;
   }
   
   public void stopPause()
   {
-    dosave = false;
+    doSave = false;
   }
   
   public String getOutputFile()
@@ -70,8 +70,8 @@ public class Recorder implements PduReceiver
     disnetworking.kill();
 
     writeFooter();
-    bwr.flush();
-    bwr.close();
+    bufferedWriter.flush();
+    bufferedWriter.close();
     System.out.println();
     System.out.println("Recorder log file closed");
     return logFile;
@@ -79,36 +79,36 @@ public class Recorder implements PduReceiver
  
   Long startNanoTime = null;
   StringBuilder sb = new StringBuilder();
-  Base64.Encoder encdr = Base64.getEncoder();
+  Base64.Encoder base64Encoder = Base64.getEncoder();
   int pduCount = 0;
   boolean headerWritten = false;
-  boolean dosave = true;
+  boolean doSave = true;
   
   @Override
   public void receivePdu(byte[] buff, int len)
   {
-    if(!dosave)
+    if(!doSave)
       return;
     
     long packetRcvNanoTime = System.nanoTime();
     if (startNanoTime == null)
-      startNanoTime = packetRcvNanoTime;
+        startNanoTime = packetRcvNanoTime;
 
-    byte[] timeAr = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
+    byte[] timeByteArray = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
     //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
     sb.setLength(0);
-    sb.append(encdr.encodeToString(timeAr));
+    sb.append(base64Encoder.encodeToString(timeByteArray));
     sb.append(',');
     byte[] buffsized = Arrays.copyOf(buff, len);
-    sb.append(encdr.encodeToString(buffsized));
+    sb.append(base64Encoder.encodeToString(buffsized));
     try {
       if (!headerWritten) {
         writeHeader();
         headerWritten = true;
       }
-      bwr.write(sb.toString());
-      bwr.newLine();
+      bufferedWriter.write(sb.toString());
+      bufferedWriter.newLine();
     }
     catch (IOException ex) {
       System.err.println("Fatal exception writing DIS log file in Recorder.start()");
@@ -128,16 +128,16 @@ public class Recorder implements PduReceiver
   {
     String template = "Beginning of DIS capture file, %s.";
     String startComment = String.format(template, logFile.getName());
-    bwr.write(START_COMMENT_MARKER + startComment);
-    bwr.newLine();
+    bufferedWriter.write(START_COMMENT_MARKER + startComment);
+    bufferedWriter.newLine();
   }
 
   private void writeFooter() throws IOException
   {
     String template = "End of DIS capture file, %s.";
     String endComment = String.format(template, logFile.getName());
-    bwr.write(STOP_COMMENT_MARKER + endComment);
-    bwr.newLine();
+    bufferedWriter.write(STOP_COMMENT_MARKER + endComment);
+    bufferedWriter.newLine();
   }
 
   private File makeFile(Path outputDir, String filename) throws IOException
