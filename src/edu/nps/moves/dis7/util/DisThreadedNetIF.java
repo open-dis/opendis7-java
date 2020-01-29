@@ -17,7 +17,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * DisThreadedNetIF.java created on Jul 29, 2019
  * This is a thread-safe, multicast DIS network interface class.
  * It is a singleton, meaning one instance per VM. If a DIS needs to send and receive over
- * more than one network address, this class can be modified to be multiply instanciated;
+ * more than one network address, this class can be modified to be multiply instantiated;
  * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
  * @author Mike Bailey, jmbailey@nps.edu
