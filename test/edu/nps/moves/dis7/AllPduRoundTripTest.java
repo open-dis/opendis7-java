@@ -139,12 +139,18 @@ public class AllPduRoundTripTest
       sendOne(fact.makeTspiPdu());
       sendOne(fact.makeUnderwaterAcousticPdu());
 
-      sleep(1000L);
+      sleep(1000L); // go sender/receiver go!  is this enough time to receive?
+      
+      // TODO is there a more reliable way to determine whether receiver is complete?
 
-      assertTrue(pduReceivedMap.size() == pduSentMap.size(),"No pdus, or not all sent pdus, received");
-
-      shutDownReceiver();
+      shutDownReceiver(); // TODO hopefully this finishes reading the pending buffer before shutting down
       shutDownRecorder();
+      
+      System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
+           ", match=" + (pduReceivedMap.size() == pduSentMap.size()));
+           
+
+      assertTrue(pduReceivedMap.size() == pduSentMap.size(),"No pdus, or not all sent pdus, received"); // TODO debugger fails??
 
       testForEquals();
       
@@ -207,6 +213,8 @@ public class AllPduRoundTripTest
     assertEquals(pduSentMap.size(), pduReceivedMap.size(), "Different number of pdus received than sent");
 
     pduSentMap.keySet().forEach(typ -> assertTrue(pduSentMap.get(typ).equals(pduReceivedMap.get(typ)), "Sent and received pdus not identical"));
+    
+    // TODO is this sufficient?  has each PDU value been compared as well?
   }
 
   private void getAllFromRecorder(Semaphore sem) throws Exception
@@ -233,6 +241,8 @@ public class AllPduRoundTripTest
     assertEquals(pduSentMap.size(), pduReadMap.size(), "Different number of pdus sent than read");
 
     pduSentMap.keySet().forEach(typ -> assertTrue(pduSentMap.get(typ).equals(pduReadMap.get(typ)), "Sent and read pdus not identical"));
+    
+    // TODO is this sufficient?  has each PDU value been compared as well?
   }
   
 //@formatter:off
