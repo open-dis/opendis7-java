@@ -87,7 +87,7 @@ public class Player
         String line = brdr.readLine();
         while (line != null && !Thread.interrupted()) {
           while (paused) {
-            sleep(500l); // half sec
+            sleep(1000l); // TODO confirm: full second, was half second
           }
           if (line.length() <= 0)
           ; // blank lines ok
