@@ -179,6 +179,7 @@ public class DisThreadedNetIF
     sender.setPriority(Thread.NORM_PRIORITY);
     sender.start();
   }
+  int counter = 0;
   
   private Runnable receiveThread = () -> {
     DatagramPacket packet;
@@ -198,7 +199,11 @@ public class DisThreadedNetIF
           
           Pdu pdu = pduFactory.createPdu(packet.getData());
           if (pdu != null)
+          {
+            counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
+            System.err.println(counter + ". received " + pdu.getPduType().name());
             toListeners(pdu);
+          }
         }
       }
       catch (IOException ex) {
