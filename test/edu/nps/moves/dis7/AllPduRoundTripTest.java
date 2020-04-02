@@ -63,10 +63,15 @@ public class AllPduRoundTripTest
     try {
       setupReceiver();
       setupRecorder();
+        try {
+            Thread.sleep(250L); // these have to be fully setup before continuing
+        } 
+        catch (InterruptedException ex2) {
+        }
       
       fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
-      sendOne(fact.makeAcknowledgePdu());
+      sendOne(fact.makeAcknowledgePdu()); // TODO never received ??!!
       sendOne(fact.makeAcknowledgeReliablePdu());
       sendOne(fact.makeActionRequestPdu());
       sendOne(fact.makeActionRequestReliablePdu());
@@ -139,8 +144,13 @@ public class AllPduRoundTripTest
       sendOne(fact.makeTspiPdu());
       sendOne(fact.makeUnderwaterAcousticPdu());
 
-      sleep(1000L); // go sender/receiver go!  is this enough time to receive?
-      
+      //sleep(100L); // go sender/receiver go!  is this enough time to receive?
+        try {
+            Thread.sleep(250L); // TODO shouldn't this kind of delay timing be in a DIS sender class?
+        } 
+        catch (InterruptedException ex2) {
+        }
+                    
       // TODO is there a more reliable way to determine whether receiver is complete?
 
       shutDownReceiver(); // TODO hopefully this finishes reading the pending buffer before shutting down
@@ -193,7 +203,10 @@ public class AllPduRoundTripTest
   private void sendOne(Pdu pdu)
   {
     pduSentMap.put(pdu.getPduType(), pdu);
+    if (pdu.getPduType() == DISPDUType.OTHER)
+        System.out.println ("*** Note: DISPDUType.OTHER not supported");
     disnetworking.send(pdu);
+    sleep(100L); // TODO debugging
   }
 
   private void setupRecorder() throws Exception
