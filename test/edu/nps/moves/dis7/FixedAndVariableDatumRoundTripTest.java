@@ -86,7 +86,7 @@ public class FixedAndVariableDatumRoundTripTest
   private Object waiter = new Object();
 
   @Test
-  public void TestRoundTrip()
+  public void testRoundTrip()
   {
     PduFactory factory = new PduFactory();
     ActionResponsePdu sentPdu = factory.makeActionResponsePdu();
@@ -136,6 +136,6 @@ public class FixedAndVariableDatumRoundTripTest
 
   public static void main(String[] args)
   {
-    new FixedAndVariableDatumRoundTripTest().TestRoundTrip();
+    new FixedAndVariableDatumRoundTripTest().testRoundTrip();
   }
 }
