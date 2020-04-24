@@ -72,6 +72,7 @@
     -->
     
     <!--
+    TODO Terry please confirm or improve this comment block
     JUnit 5 is not perfectly supported in Netbeans 11 at this time.  This technique
     will all the "Test Project" choice in the "Run" menu to properly run junit 5
     test.  Running in other ways, such as individually, doesn't seem to work.
@@ -79,6 +80,8 @@
     -->
     
     <target name="test" depends="compile-test,-pre-test-run">
+        <echo message="$work.dir=${work.dir}"/>
+        <echo message="$run.test.classpath=${run.test.classpath}"/>
         <java dir="${work.dir}" 
               classpath="${run.test.classpath}"  
               classname="org.junit.platform.console.ConsoleLauncher">
