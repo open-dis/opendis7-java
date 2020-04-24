@@ -127,7 +127,7 @@ public class Recorder implements PduReceiver
   private void writeHeader() throws IOException
   {
     String template = "Beginning of DIS capture file, %s.";
-    String startComment = String.format(template, logFile.getName());
+    String startComment = String.format(template, logFile.getName() + " (show transient progressing PDU count, then final total)");
     bufferedWriter.write(START_COMMENT_MARKER + startComment);
     bufferedWriter.newLine();
   }

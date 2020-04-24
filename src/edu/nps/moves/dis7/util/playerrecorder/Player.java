@@ -164,8 +164,10 @@ public class Player
   
   private void showCounts()
   {
+    // use carriage return \r for transient display output as a run-time developer diagnostic
+    // (possibly as part of earlier diagnosis of threading-related problems with dropped packets)
     if (scenarioPduCount != null)
-      System.out.print(pduCount + " " + ++scenarioPduCount + "\r");
+      System.out.print(pduCount + " " + ++scenarioPduCount + "..." + "\r"); // TODO where are the ... ? not appearing in output
     else
       System.out.print(pduCount + "\r");
     showPduCountsOneTime = false;
@@ -205,6 +207,7 @@ public class Player
       showPduCountsOneTime = true;  // get the first one in there
     }
     else if (s.startsWith(STOP_COMMENT_MARKER)) {
+      System.out.print("Total PDUs: ");
       showCounts();
       System.out.println();
       System.out.println("End of replay from " + f.getName());
