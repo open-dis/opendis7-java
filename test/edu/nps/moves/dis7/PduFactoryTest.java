@@ -11,7 +11,7 @@ package edu.nps.moves.dis7;
  */
 
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 

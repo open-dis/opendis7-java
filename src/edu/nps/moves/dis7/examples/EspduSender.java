@@ -6,7 +6,7 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.*;
-import edu.nps.moves.dis7.util.CoordinateConversions;
+import edu.nps.moves.dis7.utilities.CoordinateConversions;
 import java.io.*;
 import java.net.*;
 import java.util.*;

@@ -6,8 +6,8 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.util.DisThreadedNetIF;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.PduFactory;
 
 /**
  * ThreadedNetExample.java created on Sep 9, 2019

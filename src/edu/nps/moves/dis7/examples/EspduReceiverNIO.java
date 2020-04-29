@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
@@ -38,6 +38,7 @@ public class EspduReceiverNIO
       // Specify the socket to receive data
       socket = new MulticastSocket(EspduSender.DIS_DESTINATION_PORT);
       address = InetAddress.getByName(EspduSender.DEFAULT_MULTICAST_GROUP);
+      // TODO fix deprecation by adding NetworkInterface (hopefully DisThreadedNetworkInterface)
       socket.joinGroup(address);
 
       // Loop infinitely, receiving datagrams

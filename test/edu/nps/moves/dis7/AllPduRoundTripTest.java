@@ -19,10 +19,10 @@ package edu.nps.moves.dis7;
 import com.google.common.io.Files;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
-import edu.nps.moves.dis7.util.DisThreadedNetIF;
-import edu.nps.moves.dis7.util.PduFactory;
-import edu.nps.moves.dis7.util.playerrecorder.Player;
-import edu.nps.moves.dis7.util.playerrecorder.Recorder;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.PduFactory;
+import edu.nps.moves.dis7.utilities.stream.PduPlayer;
+import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.File;
 import java.util.HashMap;
 import java.util.concurrent.Semaphore;
@@ -185,7 +185,7 @@ public class AllPduRoundTripTest
   private HashMap<DISPDUType, Pdu> pduReadMap = new HashMap<>();
 
   DisThreadedNetIF disnetworking;
-  Recorder recorder;
+  PduRecorder recorder;
 
   private void setupReceiver()
   {
@@ -212,7 +212,7 @@ public class AllPduRoundTripTest
   private void setupRecorder() throws Exception
   {
     recorderDirectory = Files.createTempDir();
-    recorder = new Recorder(recorderDirectory.getAbsolutePath(), disnetworking.getMcastGroup(), disnetworking.getDisPort());
+    recorder = new PduRecorder(recorderDirectory.getAbsolutePath(), disnetworking.getMcastGroup(), disnetworking.getDisPort());
     System.out.println("Recorder log at " + recorderDirectory.getAbsolutePath());
   }
 
@@ -233,7 +233,7 @@ public class AllPduRoundTripTest
   private void getAllFromRecorder(Semaphore sem) throws Exception
   {
     sem.acquire();
-    Player player = new Player(disnetworking.getMcastGroup(), disnetworking.getDisPort(), recorderDirectory.toPath());
+    PduPlayer player = new PduPlayer(disnetworking.getMcastGroup(), disnetworking.getDisPort(), recorderDirectory.toPath());
     player.sendToNet(false);
     player.addRawListener(ba -> {
       if (ba != null) {

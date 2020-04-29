@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.util.playerrecorder.Recorder;
+import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -51,7 +51,7 @@ public class PduListenerSaver
 
     System.out.println("Beginning pdu save to directory " + outDir);
     try {
-      Recorder recorder = new Recorder(outDir, mcast, port);
+      PduRecorder recorder = new PduRecorder(outDir, mcast, port);
 
       recorder.startResume();
       mystate state = mystate.RUNNING;

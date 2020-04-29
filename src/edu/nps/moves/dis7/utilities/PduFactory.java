@@ -3,7 +3,7 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-package edu.nps.moves.dis7.util;
+package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.*;

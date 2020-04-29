@@ -1,8 +1,8 @@
-package edu.nps.moves.dis7.util.playerrecorder;
+package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.Pdu;
-import edu.nps.moves.dis7.util.PduFactory;
-import static edu.nps.moves.dis7.util.playerrecorder.Recorder.COMMENT_MARKER;
+import edu.nps.moves.dis7.utilities.PduFactory;
+import static edu.nps.moves.dis7.utilities.stream.PduRecorder.COMMENT_MARKER;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -17,16 +17,24 @@ import java.util.Base64;
  */
 public class LogCompare
 {
+    /**
+     * filepath1 and filepath2
+     */
   private static String[] paths = {
-    "/Users/mike/NetbeansProjects/open-dis7-java/examples/pdulog/Pdusave.dislog",
-    "/Users/mike/NetbeansProjects/open-dis7-java/examples/pdulog/Pdusave1.dislog"};
+    "Pdusave.dislog", // TODO 1
+    "Pdusave1.dislog" // TODO 2
+  };
 
+  
+  /** Invocation
+    * @param args filepath1 filepath2
+   */
   public static void main(String[] args)
   {
     if (args.length > 0)
-      paths[0] = args[0];
+      paths[0] = args[0]; // filepath1
     if (args.length > 1)
-      paths[1] = args[1];
+      paths[1] = args[1]; // filepath1
     main2(paths);
   }
 
@@ -35,7 +43,7 @@ public class LogCompare
   // Not same sequence of Pdus
   // Not same number of Pdus
   // Pdu content difference
-  public static void main2(String[] args)
+  public static void main2(String[] args) // TODO rename or remove middlemen
   {
     if (args.length < 2) {
       System.out.println("Usage: java LogCompare filepath1 filepath2");

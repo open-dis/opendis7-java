@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.nps.moves.dis7.util.playerrecorder;
+package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.util.DisNetworking;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.*;
 import java.io.File;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class ValidationPdusMakerV1
   
   PduFactory factory;
   DisNetworking disnet;
-  Recorder recorder;
+  PduRecorder recorder;
   /**
    *
    * @param dir directory to save pdu log file
@@ -69,7 +69,7 @@ public class ValidationPdusMakerV1
      */
     factory = new PduFactory(COUNTRY_V1, EXERCISEID_V1, SITEID_V1, APPLICATIONID_V1, USEABSOLUTETIME_V1);
     disnet = new DisNetworking();
-    recorder = new Recorder(); //dirpath,fn);
+    recorder = new PduRecorder(); //dirpath,fn);
     
      // Start a thread to receive and record pdus; this is a datagram socket and is non-interruptible; thread will go away on Sys exit
     /*Thread receiverThrd = new Thread(() -> {

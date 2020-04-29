@@ -3,7 +3,7 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-package edu.nps.moves.dis7.util.playerrecorder;
+package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
 
@@ -15,9 +15,9 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Base64;
 
-import static edu.nps.moves.dis7.util.playerrecorder.Recorder.*;
+import static edu.nps.moves.dis7.utilities.stream.PduRecorder.*;
 
-public class Player
+public class PduPlayer
 {
   public interface RawListener {
     void receiveBytes(byte[] ba);
@@ -27,7 +27,7 @@ public class Player
   private int port;
   private Thread thrd;
   
-  public Player(String ip, int port, Path disLogDirectory) throws IOException
+  public PduPlayer(String ip, int port, Path disLogDirectory) throws IOException
   {
     this.disLogDirectory = disLogDirectory;
     this.ip = ip;
@@ -65,7 +65,7 @@ public class Player
       System.out.println("Replaying DIS logs.");
       InetAddress addr = InetAddress.getByName(ip);
       
-      FilenameFilter filter = (dir, name) -> name.endsWith(Recorder.DISLOG_FILE_TAIL) && !name.startsWith(".");
+      FilenameFilter filter = (dir, name) -> name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
       
       File[] fs = disLogDirectory.toFile().listFiles(filter);
       if (fs == null)
@@ -146,7 +146,7 @@ public class Player
       if(rawListener != null)
         rawListener.receiveBytes(null); // indicate the end
     }
-    catch (Exception ex) {
+    catch (IOException ex) {
       System.err.println("Exception reading/writing pdus: "+ex.getClass().getSimpleName()+": "+ex.getLocalizedMessage());
       thrd = null;
       closer();
@@ -192,7 +192,7 @@ public class Player
         brdr = null;
       }
     }
-    catch (Exception ioex) {
+    catch (IOException ioex) {
       System.err.println("IOException closing reader in Player");
     }
   }
@@ -206,12 +206,12 @@ public class Player
       System.out.println(s + "  ");
       showPduCountsOneTime = true;  // get the first one in there
     }
-    else if (s.startsWith(STOP_COMMENT_MARKER)) {
+    else if (s.startsWith(FINISH_COMMENT_MARKER)) {
       System.out.print("Total PDUs: ");
       showCounts();
       System.out.println();
       System.out.println("End of replay from " + f.getName());
-      System.out.println(s.substring(STOP_COMMENT_MARKER.length()));
+      System.out.println(s.substring(FINISH_COMMENT_MARKER.length()));
       
       scenarioPduCount = 0;
       startNanoTime = null;
@@ -236,13 +236,16 @@ public class Player
     closer();
   }
   
+  /** Invocation
+    * @param args none supported
+   */
   public static void main(String[] args)
   {
     try {
       //new Player("230.0.0.0", 3000, new File("./pdulog").toPath()).startResume();
-      new Player("230.0.0.0", 3000, new File("/Users/mike/NetbeansProjects/open-dis7-java/examples/pdulog").toPath());
+      new PduPlayer("230.0.0.0", 3000, new File("./pdulog").toPath());
     }
-    catch (Exception ex) {
+    catch (IOException ex) {
       ex.printStackTrace();
     }
   }

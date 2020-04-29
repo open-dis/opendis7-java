@@ -7,8 +7,8 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.EntityType;
-import edu.nps.moves.dis7.util.DisNetworking;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.entities.EntityTypeFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import java.io.IOException;

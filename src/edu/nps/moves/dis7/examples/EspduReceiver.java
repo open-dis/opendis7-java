@@ -9,7 +9,7 @@ import edu.nps.moves.dis7.EntityID;
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.Vector3Double;
-import edu.nps.moves.dis7.util.PduFactory;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import java.net.DatagramPacket;
 import java.net.MulticastSocket;
 import java.util.Iterator;

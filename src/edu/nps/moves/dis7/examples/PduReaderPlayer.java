@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.util.playerrecorder.Player;
+import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
@@ -52,7 +52,7 @@ public class PduReaderPlayer
 
     System.out.println("Beginning pdu playback from directory " + outDir);
     try {
-      Player player = new Player(mcast, port, new File(outDir).toPath());
+      PduPlayer player = new PduPlayer(mcast, port, new File(outDir).toPath());
       player.startResume();
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);

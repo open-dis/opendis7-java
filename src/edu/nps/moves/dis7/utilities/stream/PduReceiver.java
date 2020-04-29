@@ -1,4 +1,4 @@
-package edu.nps.moves.dis7.util.playerrecorder;
+package edu.nps.moves.dis7.utilities.stream;
 
 public interface PduReceiver
 {
