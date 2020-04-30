@@ -101,7 +101,7 @@ public class PduRecorder implements PduReceiver
     sb.append(base64Encoder.encodeToString(timeByteArray));
     sb.append(',');
     byte[] buffsized = Arrays.copyOf(buff, len);
-    sb.append(base64Encoder.encodeToString(buffsized));
+    sb.append(base64Encoder.encodeToString(buffsized)); // TODO offer alternative encodings
     try {
       if (!headerWritten) {
         writeHeader();
