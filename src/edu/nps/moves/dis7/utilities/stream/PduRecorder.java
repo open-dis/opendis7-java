@@ -28,6 +28,33 @@ public class PduRecorder implements PduReceiver
   public static final String COMMENT_MARKER = "#";
   static String  START_COMMENT_MARKER = COMMENT_MARKER + " Start,  ";
   static String FINISH_COMMENT_MARKER = COMMENT_MARKER + " Finish, ";
+  
+  static final String ENCODING_BASE64                = "ENCODING_BASE64";
+  static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
+  static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
+  static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
+  static final String ENCODING_EXI                   = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
+  static final String ENCODING_JSON                  = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
+  static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
+  static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
+  static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
+  
+  private static       String pduLogEncoding  = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
+
+    /**
+     * TODO change this to enumeration type for strictness
+     * @return the pduLogEncoding
+     */
+    public static String getEncoding() {
+        return pduLogEncoding;
+    }
+
+    /**
+     * @param aEncoding the pduLogEncoding to set
+     */
+    public static void setEncoding(String aEncoding) {
+        pduLogEncoding = aEncoding;
+    }
 
   private BufferedWriter bufferedWriter;
   private File           logFile;
@@ -79,7 +106,7 @@ public class PduRecorder implements PduReceiver
  
   Long startNanoTime = null;
   StringBuilder sb = new StringBuilder();
-  Base64.Encoder base64Encoder = Base64.getEncoder();
+  java.util.Base64.Encoder base64Encoder = Base64.getEncoder();
   int pduCount = 0;
   boolean headerWritten = false;
   boolean doSave = true;
@@ -98,10 +125,31 @@ public class PduRecorder implements PduReceiver
     //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
     sb.setLength(0);
-    sb.append(base64Encoder.encodeToString(timeByteArray));
-    sb.append(',');
-    byte[] buffsized = Arrays.copyOf(buff, len);
-    sb.append(base64Encoder.encodeToString(buffsized)); // TODO offer alternative encodings
+    byte[] buffsized;
+    
+    switch (pduLogEncoding)
+    {
+        case ENCODING_BASE64:
+            sb.append(base64Encoder.encodeToString(timeByteArray));
+            sb.append(',');
+            buffsized = Arrays.copyOf(buff, len);
+            sb.append(base64Encoder.encodeToString(buffsized)); 
+            break;
+            
+        case ENCODING_PLAINTEXT:
+            // by Tobias Brennenstuhl SPring 2020
+            //sb.append(encdr.encodeToString(timeAr));
+            sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
+            sb.append(',');
+            buffsized = Arrays.copyOf(buff, len);
+            sb.append(Arrays.toString(buffsized).replace(" ", ""));
+            
+            sb.append(" # " + "TODO PDU type (number and name)");
+            break;
+        
+        default:
+            System.err.println ("Encoding'" + pduLogEncoding + " not recognized or supported");
+    }
     try {
       if (!headerWritten) {
         writeHeader();
