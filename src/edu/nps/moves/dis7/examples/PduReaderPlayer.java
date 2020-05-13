@@ -52,8 +52,8 @@ public class PduReaderPlayer
 
     System.out.println("Beginning pdu playback from directory " + outDir);
     try {
-      PduPlayer player = new PduPlayer(mcast, port, new File(outDir).toPath());
-      player.startResume();
+      PduPlayer pduPlayer = new PduPlayer(mcast, port, new File(outDir).toPath());
+      pduPlayer.startResume();
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
 
@@ -61,15 +61,15 @@ public class PduReaderPlayer
         System.out.println("Type p/enter to pause, r/enter to resume, q/enter to quit");
         String line = scan.nextLine();
         if (line.equalsIgnoreCase("p") && state == mystate.RUNNING) {
-          player.stopPause();
+          pduPlayer.stopPause();
           state = mystate.PAUSED;
         }
         else if (line.equalsIgnoreCase("r") && state == mystate.PAUSED) {
-          player.startResume();
+          pduPlayer.startResume();
           state = mystate.RUNNING;
         }
         else if (line.equalsIgnoreCase("q")) {
-          player.end();
+          pduPlayer.end();
           break;
         }
       }
