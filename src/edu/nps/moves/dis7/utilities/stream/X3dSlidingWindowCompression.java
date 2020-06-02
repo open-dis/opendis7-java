@@ -47,12 +47,19 @@ public class X3dSlidingWindowCompression {
 
             if (slidingWindow.size() >= 3) {
 
-                List<Double> tList = new ArrayList<>();
+                /** List of Times in Seconds */
+                List<Double> timestampList = new ArrayList<>();
+                /** List of x coordinates in meters*/
                 List<Double> xList = new ArrayList<>();
+                /** List of y coordinates in meters*/
                 List<Double> yList = new ArrayList<>();
+                /** List of z coordinates in meters*/
                 List<Double> zList = new ArrayList<>();
+                /** List of angle phi in radians*/ 
                 List<Double> phiList = new ArrayList<>();
+                /** List of angle psi in radians*/ 
                 List<Double> psiList = new ArrayList<>();
+                /** List of angle theta in radians*/ 
                 List<Double> thetaList = new ArrayList<>();
 
                 Double[] k = new Double[slidingWindowKeys.size()];
@@ -60,7 +67,7 @@ public class X3dSlidingWindowCompression {
 
                 for (int i = 0; i < slidingWindow.size(); i++) {
 
-                    tList.add(i, k[i]);
+                    timestampList.add(i, k[i]);
 
                     phiList.add(i, slidingWindow.get(k[i]).getPhi());
                     psiList.add(i, slidingWindow.get(k[i]).getPsi());
@@ -81,7 +88,8 @@ public class X3dSlidingWindowCompression {
                     double s = (a + b + c) / 2;
                     double areaA = sqrt(s * (s - a) * (s - b) * (s - c));
 
-                    if ((areaA >= 0.1) || (tList.get(i) - tList.get(0) >= 4.0)) {
+                    //Threshold can be adjusted (areaA)
+                    if ((areaA >= 0.1) || (timestampList.get(i) - timestampList.get(0) >= 4.0)) {
                         //grab the first and the last point from the sliding window and push it to the returnMap
                         X3dCoordinates firstPoint = new X3dCoordinates();
                         firstPoint.setX(xList.get(0));
@@ -93,12 +101,12 @@ public class X3dSlidingWindowCompression {
 
                         X3dCoordinates lastPoint = new X3dCoordinates(xList.get(i), yList.get(i), zList.get(i), phiList.get(i), psiList.get(i), thetaList.get(i));
 
-                        returnMap.put(tList.get(0), firstPoint);
-                        returnMap.put(tList.get(i), lastPoint);
+                        returnMap.put(timestampList.get(0), firstPoint);
+                        returnMap.put(timestampList.get(i), lastPoint);
 
                         slidingWindow.clear();
 
-                        tList.clear();
+                        timestampList.clear();
                         xList.clear();
                         yList.clear();
                         zList.clear();
@@ -109,18 +117,18 @@ public class X3dSlidingWindowCompression {
                         break;
                     }
 
-                    if ((areaA <= 0.1) && (tList.get(i) - tList.get(0) <= 4.0) && streamMap.size() == 0) {
+                    else if ((areaA < 0.1) && (timestampList.get(i) - timestampList.get(0) < 4.0) && streamMap.isEmpty()) {
 
                         //System.out.println("StreamMap empty. All points left will be added. Break");
                         //grab the first and the last point from the siding window and push it to the returnMap
                         for (int j = 0; j < slidingWindow.size(); j++) {
                             X3dCoordinates leftPoints = new X3dCoordinates(xList.get(j), yList.get(j), zList.get(j), phiList.get(j), psiList.get(j), thetaList.get(j));
-                            returnMap.put(tList.get(j), leftPoints);
+                            returnMap.put(timestampList.get(j), leftPoints);
                         }
 
                         break;
                     }
-                    //System.out.println("Area of Triangle: " + areaA);
+                    //System.out.println("Area of Triangle: " + areaA); //Debug
                 }
 
             }
@@ -130,6 +138,6 @@ public class X3dSlidingWindowCompression {
         return returnMap;
 
     }
-;
+
 
 }

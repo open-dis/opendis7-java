@@ -169,11 +169,11 @@ public class X3dCreateInterpolators {
         }
 
         //Normalize all times in the set
-        LinkedHashMap keyKeyValueSetPositionInterpolator = new LinkedHashMap<Double, String>();
+        LinkedHashMap<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
 
-        LinkedHashMap keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<Double, String>();
-        LinkedHashMap keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<Double, String>();
-        LinkedHashMap keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<Double, String>();
+        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
+        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
+        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
 
         for (Double k : keys) {
 
