@@ -180,7 +180,7 @@ public class PduRecorder implements PduReceiver
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
-    bufferedWriter.write( START_COMMENT_MARKER + timeStamp + ", DIS capture file, " + logFile.getPath());
+    bufferedWriter.write( START_COMMENT_MARKER + pduLogEncoding + ", " +  timeStamp + ", DIS capture file, " + logFile.getPath());
     bufferedWriter.newLine();
   }
 
@@ -192,7 +192,7 @@ public class PduRecorder implements PduReceiver
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
-    bufferedWriter.write(FINISH_COMMENT_MARKER + timeStamp + ", DIS capture file, " + logFile.getPath());
+    bufferedWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
     bufferedWriter.newLine();
   }
 
