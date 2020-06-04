@@ -6,6 +6,7 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
@@ -30,10 +31,13 @@ public class EspduReceiverNIO
   public static void main(String args[])
   {
     MulticastSocket socket;
-    DatagramPacket packet;
     InetAddress address;
     PduFactory pduFactory = new PduFactory();
-
+    byte buffer[] = new byte[MAX_PDU_SIZE];
+    DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+    ByteBuffer byteBuffer;
+    Pdu pdu;
+    
     try {
       // Specify the socket to receive data
       socket = new MulticastSocket(EspduSender.DIS_DESTINATION_PORT);
@@ -43,22 +47,20 @@ public class EspduReceiverNIO
 
       // Loop infinitely, receiving datagrams
       while (true) {
-        byte buffer[] = new byte[MAX_PDU_SIZE];
-        packet = new DatagramPacket(buffer, buffer.length);
-
+        
         socket.receive(packet);
 
         // Uses the NIO byte buffer class--wrap a ByteBuffer instance around
         // the data we get from the packet
-        ByteBuffer byteBuffer = ByteBuffer.wrap(packet.getData());
-        Pdu pdu = pduFactory.createPdu(byteBuffer);
+        byteBuffer = ByteBuffer.wrap(packet.getData());
+        pdu = pduFactory.createPdu(byteBuffer);
 
         System.out.println("got PDU of type: " + pdu.getClass().getSimpleName());
 
       } // end while
     } // End try
-    catch (Exception e) {
-      System.out.println(e);
+    catch (IOException e) {
+      System.err.println(e);
     }
 
   } // end main
