@@ -34,10 +34,10 @@ public class EspduSenderNIO
 
   public static void main(String args[])
   {
-    EntityStatePdu espdu = new EntityStatePdu();
     MulticastSocket socket;
     InetAddress address;
 
+    EntityStatePdu espdu = new EntityStatePdu();
     espdu.setExerciseID((byte) 0);
 
     // The EID is the unique identifier for objects in the world. This 
@@ -52,6 +52,12 @@ public class EspduSenderNIO
       socket = new MulticastSocket(PORT);
       address = InetAddress.getByName(MULTICAST_GROUP);
       socket.joinGroup(address);
+      
+      Vector3Double location;
+      EulerAngles orientation;
+      float psi;
+      byte[] data = new byte[144];
+      DatagramPacket packet = new DatagramPacket(data, data.length, address, PORT);
 
       while (true) {
         for (int idx = 0; idx < 100; idx++) {
@@ -65,13 +71,13 @@ public class EspduSenderNIO
           espdu.setTimestamp(timestamp);
 
           // Modify the x-axis position of the object
-          Vector3Double location = espdu.getEntityLocation();
+          location = espdu.getEntityLocation();
           location.setX(idx);
           location.setY(idx);
 
           // Do some rotation to make sure that works
-          EulerAngles orientation = espdu.getEntityOrientation();
-          float psi = orientation.getPsi();
+          orientation = espdu.getEntityOrientation();
+          psi = orientation.getPsi();
           psi = psi + idx;
           orientation.setPsi(psi);
           orientation.setTheta((float) (orientation.getTheta() + idx / 2.0));
@@ -79,8 +85,8 @@ public class EspduSenderNIO
           // Marshal out the object to a byte array, then send a datagram
           // packet with that data in it. This uses Robert Harder's NIO
           // code for marshalling.
-          byte data[] = espdu.marshal();
-          DatagramPacket packet = new DatagramPacket(data, data.length, address, PORT);
+          data = espdu.marshal();
+          packet.setData(data);
 
           socket.send(packet);
 
@@ -88,12 +94,12 @@ public class EspduSenderNIO
           // slows down the send rate so the receiver has enough time to process it
           Thread.sleep(1000);
 
-          System.out.println("Sending espdu");
+          System.out.println("Sending " + espdu.getClass().getName());
         }
       }
     }
     catch (Exception e) {
-      System.out.println(e);
+      System.err.println(e);
     }
   }
 
