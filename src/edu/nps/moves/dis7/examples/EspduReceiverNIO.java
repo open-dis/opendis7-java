@@ -5,10 +5,12 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.nio.ByteBuffer;
 
@@ -31,7 +33,8 @@ public class EspduReceiverNIO
   public static void main(String args[])
   {
     MulticastSocket socket;
-    InetAddress address;
+    InetAddress maddr;
+    InetSocketAddress group;
     PduFactory pduFactory = new PduFactory();
     byte buffer[] = new byte[MAX_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
@@ -39,11 +42,12 @@ public class EspduReceiverNIO
     Pdu pdu;
     
     try {
+        
       // Specify the socket to receive data
-      socket = new MulticastSocket(EspduSender.DIS_DESTINATION_PORT);
-      address = InetAddress.getByName(EspduSender.DEFAULT_MULTICAST_GROUP);
-      // TODO fix deprecation by adding NetworkInterface (hopefully DisThreadedNetworkInterface)
-      socket.joinGroup(address);
+      socket = new MulticastSocket(EspduSenderNIO.PORT);
+      maddr = InetAddress.getByName(EspduSenderNIO.MULTICAST_GROUP);
+      group = new InetSocketAddress(maddr, EspduSenderNIO.PORT);
+      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
 
       // Loop infinitely, receiving datagrams
       while (true) {

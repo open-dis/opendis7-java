@@ -8,8 +8,10 @@ import edu.nps.moves.dis7.EntityID;
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.EulerAngles;
 import edu.nps.moves.dis7.Vector3Double;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 
 /**
@@ -35,7 +37,8 @@ public class EspduSenderNIO
   public static void main(String args[])
   {
     MulticastSocket socket;
-    InetAddress address;
+    InetAddress maddr;
+    InetSocketAddress group;
 
     EntityStatePdu espdu = new EntityStatePdu();
     espdu.setExerciseID((byte) 0);
@@ -50,14 +53,15 @@ public class EspduSenderNIO
 
     try {
       socket = new MulticastSocket(PORT);
-      address = InetAddress.getByName(MULTICAST_GROUP);
-      socket.joinGroup(address);
+      maddr = InetAddress.getByName(MULTICAST_GROUP);
+      group = new InetSocketAddress(maddr, PORT);
+      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
       
       Vector3Double location;
       EulerAngles orientation;
       float psi;
       byte[] data = new byte[144];
-      DatagramPacket packet = new DatagramPacket(data, data.length, address, PORT);
+      DatagramPacket packet = new DatagramPacket(data, data.length, maddr, PORT);
 
       while (true) {
         for (int idx = 0; idx < 100; idx++) {
