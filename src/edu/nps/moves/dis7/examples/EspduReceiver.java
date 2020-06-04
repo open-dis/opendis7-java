@@ -10,6 +10,7 @@ import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.Vector3Double;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.MulticastSocket;
 import java.util.Iterator;
@@ -34,8 +35,10 @@ public class EspduReceiver
   public static void main(String args[])
   {
     MulticastSocket socket;
-    DatagramPacket packet;
+    byte buffer[] = new byte[MAX_PDU_SIZE];
+    DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     PduFactory pduFactory = new PduFactory();
+    List<Pdu> pduBundle;
 
     try {
       // Specify the socket to receive data
@@ -45,25 +48,24 @@ public class EspduReceiver
       //InetAddress address = InetAddress.getByName(EspduSender.DEFAULT_MULTICAST_GROUP);
       //socket.joinGroup(address);
       // Loop infinitely, receiving datagrams
+      EntityID eid;
+      Vector3Double position;
+      
       while (true) {
-        byte buffer[] = new byte[MAX_PDU_SIZE];
-
-        packet = new DatagramPacket(buffer, buffer.length);
-
         socket.receive(packet);
 
-        List<Pdu> pduBundle = pduFactory.getPdusFromBundle(packet.getData(),packet.getLength());
+        pduBundle = pduFactory.getPdusFromBundle(packet.getData(),packet.getLength());
         //System.out.println("Bundle size is " + pduBundle.size());
 
-        Iterator it = pduBundle.iterator();
+        Iterator<Pdu> it = pduBundle.iterator();
 
         while (it.hasNext()) {
-          Pdu aPdu = (Pdu) it.next();
+          Pdu aPdu = it.next();
 
           System.out.print("got PDU of type: " + aPdu.getClass().getName());
           if (aPdu instanceof EntityStatePdu) {
-            EntityID eid = ((EntityStatePdu) aPdu).getEntityID();
-            Vector3Double position = ((EntityStatePdu) aPdu).getEntityLocation();
+            eid = ((EntityStatePdu) aPdu).getEntityID();
+            position = ((EntityStatePdu) aPdu).getEntityLocation();
             System.out.print(" EID:[" + eid.getSiteID() + ", " + eid.getApplicationID() + ", " + eid.getEntityID() + "] ");
             System.out.print(" Location in DIS coordinates: [" + position.getX() + ", " + position.getY() + ", " + position.getZ() + "]");
           }
@@ -71,8 +73,8 @@ public class EspduReceiver
         } // end trop through PDU bundle
       } // end while
     } // End try
-    catch (Exception e) {
-      System.out.println(e);
+    catch (IOException e) {
+      System.err.println(e);
     }
   } // end main
 } // end class
