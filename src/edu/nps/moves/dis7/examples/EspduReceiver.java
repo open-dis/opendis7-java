@@ -50,17 +50,19 @@ public class EspduReceiver
       // Loop infinitely, receiving datagrams
       EntityID eid;
       Vector3Double position;
+      Iterator<Pdu> it;
+      Pdu aPdu;
       
       while (true) {
         socket.receive(packet);
 
-        pduBundle = pduFactory.getPdusFromBundle(packet.getData(),packet.getLength());
+        pduBundle = pduFactory.getPdusFromBundle(packet.getData(), packet.getLength());
         //System.out.println("Bundle size is " + pduBundle.size());
 
-        Iterator<Pdu> it = pduBundle.iterator();
+        it = pduBundle.iterator();
 
         while (it.hasNext()) {
-          Pdu aPdu = it.next();
+          aPdu = it.next();
 
           System.out.print("got PDU of type: " + aPdu.getClass().getName());
           if (aPdu instanceof EntityStatePdu) {
