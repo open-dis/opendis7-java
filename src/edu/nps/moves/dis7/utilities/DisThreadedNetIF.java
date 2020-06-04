@@ -311,7 +311,7 @@ public class DisThreadedNetIF
   }
 
   /* find proper interface */
-  private static NetworkInterface findIp4Interface() throws SocketException
+  public static NetworkInterface findIp4Interface() throws SocketException
   {
     Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
     NetworkInterface nif;
