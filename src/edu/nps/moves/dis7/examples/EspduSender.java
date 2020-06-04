@@ -202,7 +202,7 @@ public class EspduSender
         // The x and y values will change, but the z value should not.
         //lon = lon + (double)((double)idx / 100000.0);
         //System.out.println("lla=" + lat + "," + lon + ", 0.0");
-        double direction = Math.pow((double) (-1.0), (double) (idx));
+        double direction = Math.pow(-1.0, idx);
         lon = lon + (direction * 0.00006);
         System.out.println(lon);
 
@@ -236,17 +236,17 @@ public class EspduSender
         // The byte array here is the packet in DIS format. We put that into a 
         // datagram and send it.
         byte[] data = baos.toByteArray();
-
+        
         broadcastAddresses = getBroadcastAddresses();
-        Iterator it = broadcastAddresses.iterator();
-        while (it.hasNext()) {
-          InetAddress broadcast = (InetAddress) it.next();
-          System.out.println("Sending broadcast datagram packet to " + broadcast);
-          DatagramPacket packet = new DatagramPacket(data, data.length, broadcast, 3000);
-          socket.send(packet);
-          // TODO experiment with these!  8)
-          packet = new DatagramPacket(fireArray, fireArray.length, broadcast, 3000); // alternate
-          socket.send(packet);
+        DatagramPacket packet;
+        
+        for (InetAddress broadcast : broadcastAddresses) {
+            System.out.println("Sending broadcast datagram packet to " + broadcast);
+            packet = new DatagramPacket(data, data.length, broadcast, 3000);
+            socket.send(packet);
+            // TODO experiment with these!  8)
+            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, 3000); // alternate
+            socket.send(packet);
         }
 
         // Send every 1 sec. Otherwise this will be all over in a fraction of a second.
@@ -281,22 +281,25 @@ public class EspduSender
   public static Set<InetAddress> getBroadcastAddresses()
   {
     Set<InetAddress> broadcastAddresses = new HashSet<>();
-    Enumeration interfaces;
+    Enumeration<NetworkInterface> interfaces;
 
     try {
       interfaces = NetworkInterface.getNetworkInterfaces();
+      Iterator<InterfaceAddress> it;
+      InterfaceAddress anAddress;
+      InetAddress broadcastAddress;
       while (interfaces.hasMoreElements()) {
-        NetworkInterface anInterface = (NetworkInterface) interfaces.nextElement();
+        NetworkInterface anInterface = interfaces.nextElement();
 
         if (anInterface.isUp()) {
-          Iterator it = anInterface.getInterfaceAddresses().iterator();
+          it = anInterface.getInterfaceAddresses().iterator();
           while (it.hasNext()) {
-            InterfaceAddress anAddress = (InterfaceAddress) it.next();
+            anAddress = it.next();
             if ((anAddress == null || anAddress.getAddress().isLinkLocalAddress()))
               continue;
 
             //System.out.println("Getting broadcast address for " + anAddress);
-            InetAddress broadcastAddress = anAddress.getBroadcast();
+            broadcastAddress = anAddress.getBroadcast();
             if (broadcastAddress != null)
               broadcastAddresses.add(broadcastAddress);
           }
@@ -304,8 +307,8 @@ public class EspduSender
       }
     }
     catch (SocketException e) {
-      e.printStackTrace();
-      System.out.println(e);
+      e.printStackTrace(System.err);
+      System.err.println(e);
     }
     return broadcastAddresses;
   }
