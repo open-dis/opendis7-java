@@ -167,6 +167,7 @@ public class DisThreadedNetIF
   private Thread receiver;
 
   private MulticastSocket socket = null;
+  private InetAddress maddr;
 
   private void init()
   {
@@ -186,8 +187,7 @@ public class DisThreadedNetIF
       
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-    InetAddress maddr;
-    InetSocketAddress group = null;
+    InetSocketAddress group;
     Pdu pdu;
     ByteBuffer byteBuffer;
     
@@ -232,16 +232,13 @@ public class DisThreadedNetIF
 
   private final Runnable sendThread = () -> {
       
-      InetAddress maddr;
       Pdu pdu;
       byte[] data;
       DatagramPacket packet;
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);
       
-    while (!killed) {
       try {
-        maddr = InetAddress.getByName(mcastGroup);
 
         while (!killed) {
           pdu = pdus2send.take();
@@ -272,7 +269,6 @@ public class DisThreadedNetIF
       }
       if (!killed)
         sleep(5000);
-    }
   };
 
   private void toListeners(Pdu pdu)
