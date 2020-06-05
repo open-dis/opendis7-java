@@ -1814,6 +1814,7 @@ public class PduFactory
         }
         catch (Exception ex) {
           System.err.println("error unmarshalling " + pduType);
+          System.err.println(ex);
         }
         buff.position(pos);         // Reset buffer
       }
