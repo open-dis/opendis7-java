@@ -20,7 +20,6 @@ import java.util.regex.Pattern;
 public class PduPlayer {
 
     public interface RawListener {
-
         void receiveBytes(byte[] ba);
     }
     private Path disLogDirectory;
@@ -218,7 +217,7 @@ public class PduPlayer {
                             sleep(sleepTime / 1000000L, (int) (sleepTime % 1000000L));
                         }
 
-                        byte[] buffer = null;
+                        byte[] buffer;
 
                         switch (pduLogEncoding) {
                             case "ENCODING_BASE64":
@@ -294,7 +293,7 @@ public class PduPlayer {
                                 break;
 
                             default:
-
+                                break;
                         }
 
                         //ToDo: Is this also necessary for buffershort? If yes, put it inside the switch/Case statement
@@ -408,13 +407,12 @@ public class PduPlayer {
     }
 
     /**
-     * Invocation
+     * Invocation. Nothing happens, just object creation, then JVM exit
      *
      * @param args none supported
      */
     public static void main(String[] args) {
         try {
-//            new PduPlayer("230.1.2.3", 3000, new File("./pdulog").toPath()).startResume();
             new PduPlayer("230.1.2.3", 3000, new File("./pdulog").toPath());
         } catch (IOException ex) {
             ex.printStackTrace(System.err);

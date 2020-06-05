@@ -79,15 +79,6 @@
     https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and
     -->
 
-    <target name="pduRecord" depends="compile-test,-pre-test-run">
-        <echo message="$work.dir=${work.dir}"/>
-        <java dir="." 
-              classpath="${run.classpath}"  
-              classname="edu.nps.moves.dis7.util.playerrecorder.Recorder">
-        <!--  <arg line="*insert filename*"/> TODO in Recorder -->
-        </java>
-    </target>
-    
     <target name="test" depends="compile-test,-pre-test-run">
         <echo message="$work.dir=${work.dir}"/>
         <echo message="$run.test.classpath=${run.test.classpath}"/>
@@ -104,7 +95,6 @@
             <report format="frames" todir="build/test/results/html"/>
         </junitreport>
     </target>
-    
     
     <target name="jar-javadoc" depends="javadoc">
         <jar destfile="${basedir}/dist/open-dis7-javadoc.jar" basedir="${basedir}/dist/javadoc">            

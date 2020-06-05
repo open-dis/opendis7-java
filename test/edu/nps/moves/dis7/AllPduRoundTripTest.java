@@ -62,7 +62,7 @@ public class AllPduRoundTripTest
   {
     Throwable ex = null;
     try {
-      setupReceiver();
+      setupSender();
       setupRecorder();
         try {
             Thread.sleep(250L); // these have to be fully setup before continuing
@@ -154,7 +154,7 @@ public class AllPduRoundTripTest
                     
       // TODO is there a more reliable way to determine whether receiver is complete?
 
-      shutDownReceiver(); // TODO hopefully this finishes reading the pending buffer before shutting down
+      shutDownSender(); // TODO hopefully this finishes reading the pending buffer before shutting down
       shutDownRecorder();
       
       System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
@@ -187,7 +187,7 @@ public class AllPduRoundTripTest
   DisThreadedNetIF disnetworking;
   PduRecorder recorder;
 
-  private void setupReceiver()
+  private void setupSender()
   {
     disnetworking = new DisThreadedNetIF();
     disnetworking.addListener(pdu -> {
@@ -195,7 +195,7 @@ public class AllPduRoundTripTest
     });
   }
 
-  private void shutDownReceiver()
+  private void shutDownSender()
   {
     disnetworking.kill();
   }

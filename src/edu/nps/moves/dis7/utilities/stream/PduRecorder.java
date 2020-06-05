@@ -1,12 +1,10 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
-import edu.nps.moves.dis7.Pdu;
+
 import edu.nps.moves.dis7.enumerations.DISPDUType;
-import edu.nps.moves.dis7.utilities.DisNetworking;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import org.apache.commons.io.FilenameUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Calendar;
+
+import org.apache.commons.io.FilenameUtils;
 
 public class PduRecorder implements PduReceiver
 {
@@ -223,45 +223,38 @@ public class PduRecorder implements PduReceiver
     return f;
   }
   
-  /** Invocation
-    * @param args none supported, TODO offer path/filename
+  /** Entry point invocation. Saves a PDU output log to ./pduLog. Invoking the
+   *  edu.nps.moves.dis7.examples.PduReaderPlayer will pay these logs back
+   * 
+   * @param args none supported, TODO offer path/filename
    */
   public static void main(String[] args)
   {
     PduFactory factory = new PduFactory(); //default appid, country, etc.
-    DisNetworking disnet = new DisNetworking(); // default ip and port
-    
-    Path path = new File("./pdulog").toPath();
-    String filename = "Pdusave";
-    
+
     PduRecorder recorder;
     try {
-        recorder = new PduRecorder();
+        recorder = new PduRecorder(); // default addr, port, output dir
+        recorder.startResume();
     } 
     catch(IOException ex) {
       System.err.println("Exception creating recorder: "+ex.getLocalizedMessage());
       return;
     }
      
-    // self test
     DISPDUType all[] = DISPDUType.values();
     Arrays.stream(all).forEach(typ-> {
       if(typ != DISPDUType.OTHER) {
         try {
-          Pdu pdu = factory.createPdu(typ);
-          disnet.sendPdu(pdu);
+          recorder.disnetworking.send(factory.createPdu(typ));
 //          sleep(100);
         }
         catch(Exception ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
         }
       }
-      });
+    });
 
-    System.out.println("Record for 10 seconds..."); // TODO arrrrgh this is awful
-    sleep(10000);
-    System.out.println("Recording complete."); 
-    
     try {
       recorder.end();
     }
