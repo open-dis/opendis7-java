@@ -250,7 +250,7 @@ public class PduRecorder implements PduReceiver
         try {
           Pdu pdu = factory.createPdu(typ);
           disnet.sendPdu(pdu);
-          sleep(100);
+//          sleep(100);
         }
         catch(Exception ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
