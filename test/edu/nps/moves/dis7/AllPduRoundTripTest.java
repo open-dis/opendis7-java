@@ -72,7 +72,7 @@ public class AllPduRoundTripTest
       
       fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
-      sendOne(fact.makeAcknowledgePdu()); // TODO never received ??!!
+      sendOne(fact.makeAcknowledgePdu());
       sendOne(fact.makeAcknowledgeReliablePdu());
       sendOne(fact.makeActionRequestPdu());
       sendOne(fact.makeActionRequestReliablePdu());
@@ -146,11 +146,11 @@ public class AllPduRoundTripTest
       sendOne(fact.makeUnderwaterAcousticPdu());
 
       //sleep(100L); // go sender/receiver go!  is this enough time to receive?
-        try {
-            Thread.sleep(250L); // TODO shouldn't this kind of delay timing be in a DIS sender class?
-        } 
-        catch (InterruptedException ex2) {
-        }
+//        try {
+//            Thread.sleep(250L); // TODO shouldn't this kind of delay timing be in a DIS sender class?
+//        } 
+//        catch (InterruptedException ex2) {
+//        }
                     
       // TODO is there a more reliable way to determine whether receiver is complete?
 
@@ -160,7 +160,6 @@ public class AllPduRoundTripTest
       System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
            ", match=" + (pduReceivedMap.size() == pduSentMap.size()));
            
-
       assertTrue(pduReceivedMap.size() == pduSentMap.size(),"No pdus, or not all sent pdus, received"); // TODO debugger fails??
 
       testForEquals();
@@ -207,7 +206,7 @@ public class AllPduRoundTripTest
     if (pdu.getPduType() == DISPDUType.OTHER)
         System.out.println ("*** Note: DISPDUType.OTHER not supported");
     disnetworking.send(pdu);
-    sleep(100L); // TODO debugging
+//    sleep(100L); // TODO debugging
   }
 
   private void setupRecorder() throws Exception
