@@ -46,14 +46,14 @@ public class SignalPdusTest
     sigPdu2.setEncodingScheme((short) 0x1111);
     sigPdu2.setSampleRate(0x22222222);
     sigPdu2.setSamples((short) 0x3333);
-    sigPdu2.setData(new String("SignalPdu-testdata").getBytes());
+    sigPdu2.setData("SignalPdu-testdata".getBytes());
 
     IntercomSignalPdu isig = factory.makeIntercomSignalPdu();
     IntercomSignalPdu isig2 = factory.makeIntercomSignalPdu();
     isig2.setEncodingScheme((short) 0x1111);
     isig2.setSampleRate(0x22222222);
     isig2.setSamples((short) 0x3333);
-    isig2.setData(new String("IntercomSignalPdu-testdata").getBytes());
+    isig2.setData("IntercomSignalPdu-testdata".getBytes());
     
     setUpReceiver();
 

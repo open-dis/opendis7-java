@@ -123,8 +123,8 @@ public class PduFactoryTest
         }
         catch (Throwable t) {
             ex = t;
-            System.out.println(t.getLocalizedMessage());
-            t.printStackTrace();
+            System.err.println(t.getLocalizedMessage());
+            t.printStackTrace(System.err);
         }
 
         assertNull(ex, "Exception should be null if successful creation of all objects");
@@ -139,9 +139,14 @@ public class PduFactoryTest
     private void actualDumpObjectType(ObjectType ot)
     {
         String dom = ot.getDomain().toString();
-        String kind = ot.getObjectKind().toString();;
+        String kind = ot.getObjectKind().toString();
         String nm = ot.getClass().getName();
         System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
     }
+    
+    public static void main(String[] args)
+  {
+    new PduFactoryTest().testCreateAllPdus();
+  }
 
 }

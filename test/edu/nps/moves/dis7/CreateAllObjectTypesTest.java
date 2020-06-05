@@ -269,7 +269,7 @@ public class CreateAllObjectTypesTest
   private void actualDumpObjectType(ObjectType ot)
   {
     String dom = ot.getDomain().toString();
-    String kind = ot.getObjectKind().toString();;
+    String kind = ot.getObjectKind().toString();
     String nm = ot.getClass().getName();
     //System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
   }

@@ -140,14 +140,14 @@ public class CreateAllPduTypesTest
           ((Marshaller) ob).marshal(dos);
           //System.out.println("marshalled " + ob.getClass().getSimpleName());
         }
-        catch (Throwable t) {
+        catch (Exception t) {
           throw new RuntimeException(t);
         }
       });
     }
     catch (Throwable t) {
       throwable = t;
-      t.printStackTrace();
+      t.printStackTrace(System.err);
     }
     assertNull(throwable, "Exception should be null if successful marshal");
   }

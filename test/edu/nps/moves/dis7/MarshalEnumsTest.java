@@ -517,7 +517,7 @@ public class MarshalEnumsTest
       thr = t;
     }
     if (thr != null)
-      thr.printStackTrace();
+      thr.printStackTrace(System.err);
     assertNull(thr, "Exception should be null if successful marshal");
     //System.out.println(""+count+" enums and disbitsets tested");
   }
@@ -585,6 +585,11 @@ public class MarshalEnumsTest
       System.out.print(String.format("%02X ", bb.array()[i]));
     }
     System.out.println();
+  }
+  
+  public static void main(String[] args)
+  {
+    new MarshalEnumsTest().testGoodMarshall();
   }
 
 }

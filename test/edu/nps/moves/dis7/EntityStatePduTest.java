@@ -45,4 +45,9 @@ public class EntityStatePduTest
     }
     assertNull(thr, "Exception indicates error creating EntityStatePdu");
   }
+  
+  public static void main(String[] args)
+  {
+    new EntityStatePduTest().testEntityCapabilities();
+  }
 }
