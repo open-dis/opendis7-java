@@ -2,10 +2,13 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -287,22 +290,27 @@ public class PduSender
       Collections.sort(generatedPdus, new ClassNameComparator());
 
       // Send the PDUs we created
+      DatagramPacket packet;
       InetAddress localMulticastAddress = InetAddress.getByName(MULTICAST_ADDRESS);
       MulticastSocket socket = new MulticastSocket(PORT);
-      socket.joinGroup(localMulticastAddress);
+      InetSocketAddress group = new InetSocketAddress(localMulticastAddress, PORT);
+      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
 
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      DataOutputStream dos = new DataOutputStream(baos);
+      byte[] buffer;
+      Pdu aPdu;
+      
       for (int idx = 0; idx < generatedPdus.size(); idx++) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        DataOutputStream dos = new DataOutputStream(baos);
-        byte[] buffer;
 
-        Pdu aPdu = generatedPdus.get(idx);
+        aPdu = generatedPdus.get(idx);
         aPdu.marshal(dos);
 
         buffer = baos.toByteArray();
-        DatagramPacket packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, PORT);
+        packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, PORT);
         socket.send(packet);
         System.out.println("Sent PDU of type " + aPdu.getClass().getSimpleName() + " ("+aPdu.getPduType().getValue()+")");
+        baos.reset();
       }
 
       // write the PDUs out to an XML file.
@@ -311,7 +319,7 @@ public class PduSender
       //container.marshallToXml("examplePdus.xml");
     }
     catch (Exception e) {
-      System.out.println(e);
+      System.err.println(e);
     }
   }
 
