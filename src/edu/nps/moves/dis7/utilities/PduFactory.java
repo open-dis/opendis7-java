@@ -9,7 +9,6 @@ import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,7 +54,7 @@ public class PduFactory
    * @param country used in EntityType and RadioType objects
    * @param exerciseId used in standard Pdu header
    * @param siteId used in standard Pdu header
-   * @param applicationId used instandard Pdu header
+   * @param applicationId used in standard Pdu header
    * @param useAbsoluteTimestamp boolean to specify absolute time stamps (IEEE Std 1278.1-2012, 4.6)
    * @see   edu.nps.moves.dis7.EntityType
    * @see   edu.nps.moves.dis7.RadioType
@@ -286,7 +285,7 @@ public class PduFactory
     /*
             .setCollisionType(CollisionType.INELASTIC)
             .setLocation(new Vector3Float())
-            .setVelocity(new Vector3Float())*/;
+            .setVelocity(new Vector3Float())*/
 
     return (CollisionPdu) addBoilerPlate(pdu);
   }
@@ -303,7 +302,7 @@ public class PduFactory
       .setServicingEntityID(newEntityID());
     /*
             .setServiceTypeRequested(ServiceRequestServiceTypeRequested.OTHER)
-     */;
+     */
 
     return (ServiceRequestPdu) addBoilerPlate(pdu);
   }
@@ -362,7 +361,7 @@ public class PduFactory
       .setRepairingEntityID(newEntityID());
     /* 
             .setRepair(RepairCompleteRepair.AIRFRAME)
-     */;
+     */
 
     return (RepairCompletePdu) addBoilerPlate(pdu);
   }
@@ -990,7 +989,7 @@ public class PduFactory
             .setEntityLocation(new LiveEntityRelativeWorldCoordinates())
             .setEntityOrientation(new LiveEntityOrientation())
             .setOrientationError(new LiveEntityOrientationError())
-            .setPositionError(new LiveEntityPositionError())*/;
+            .setPositionError(new LiveEntityPositionError())*/
     pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
     return (TSPIPdu) addBoilerPlate(pdu);
   }
@@ -1010,7 +1009,7 @@ public class PduFactory
             .setCapabilities(new SurfacePlatformCapabilities())
             .setAppearanceFields(new Appearance())
             .setEntityMarking(newEntityMarking())
-            .setForceId(ForceID.OTHER)*/;
+            .setForceId(ForceID.OTHER)*/
     pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
     return (AppearancePdu) addBoilerPlate(pdu);
   }
@@ -1471,14 +1470,14 @@ public class PduFactory
     // javac involving jdk 8.  Google "java bytebuffer no such method position" and see https://github.com/eclipse/jetty.project/issues/3244
     // specifically for the workaround used in three places below.
     
-    int pos = ((Buffer)buff).position();          // Save buffer's position
-    if (pos + 2 > buff.limit()) {       // Make sure there's enough space in buffer
+    int pos = buff.position();        // Save buffer's position
+    if (pos + 2 > buff.limit()) {     // Make sure there's enough space in buffer
       return null;                    // Else return null
-    }   // end if: buffer too short
+    } // end if: buffer too short
     
-    ((Buffer)buff).position(pos + 2);             // Advance to third byte
+    buff = buff.position(pos + 2);    // Advance to third byte
     final int pduIdx = Byte.toUnsignedInt(buff.get());    // Read Pdu type
-    ((Buffer)buff).position(pos);                 // Reset buffer
+    buff = buff.position(pos);        // Reset buffer
 
     DISPDUType pduType = DISPDUType.getEnumForValue(pduIdx);
     return createPdu(pduType, buff);
@@ -1823,68 +1822,70 @@ public class PduFactory
     return aPdu;
   }
 
-  /**
-   * Decodes datagram contents with bundled PDUs. As a performance hack DIS
-   * may include several PDUs in one datagram. Typically the max datagram
-   * size is 8K (above that it runs into some issues with the default
-   * incoming socket buffer size) but it may be more. The PDUs may be of
-   * multiple types and different lengths, so we have to step through the
-   * buffer and depend on the reported PDU length in the header. There's
-   * a lot that can go wrong. If something blows up, we return all the decoded
-   * PDUs we can.<p>
-   *
-   * @param data
-   * @return List of PDUs decoded
-   */
-  public List<Pdu> getPdusFromBundle(byte data[], int length)
-  {
-    // All the PDUs in this bundle we were able to decode
-    ArrayList<Pdu> pdus = new ArrayList<Pdu>();
-    // The start point of a PDU in the data. We advance this by the size
-    // of each PDU as we read it.
-    int pduStartPointInData = 0;
+    /**
+     * Decodes datagram contents with bundled PDUs.As a performance hack DIS may
+     * include several PDUs in one datagram. Typically the max datagram size is
+     * 8K (above that it runs into some issues with the default incoming socket
+     * buffer size) but it may be more. The PDUs may be of multiple types and
+     * different lengths, so we have to step through the buffer and depend on
+     * the reported PDU length in the header. There's a lot that can go wrong.
+     * If something blows up, we return all the decoded PDUs we can.<p>
+     *
+     * @param data
+     * @param length
+     * @return List of PDUs decoded
+     */
+    public List<Pdu> getPdusFromBundle(byte data[], int length) {
+        
+        // All the PDUs in this bundle we were able to decode
+        List<Pdu> pdus = new ArrayList<>();
+        
+        // The start point of a PDU in the data. We advance this by the size
+        // of each PDU as we read it.
+        int pduStartPointInData = 0;
+        byte remaining[];
+        Pdu pdu;
+        int pduLength;
 
-    while (true) {
-      // This is inefficient, but screw it. Give the GC a workout. Create a new
-      // data array from where the last PDU left off to the end of the original
-      // data array. This lets us reuse a bunch of old code.
+        while (true) {
+            // This is inefficient, but screw it. Give the GC a workout. Create a new
+            // data array from where the last PDU left off to the end of the original
+            // data array. This lets us reuse a bunch of old code.
 
-      byte remaining[] = Arrays.copyOfRange(data, pduStartPointInData, length);
+            remaining = Arrays.copyOfRange(data, pduStartPointInData, length);
 
-      try {
-        // Decode one PDU
-        Pdu pdu = this.createPdu(remaining);
+            try {
+                // Decode one PDU
+                pdu = this.createPdu(remaining);
 
-        // If the read is muffed somehow, give up on decoding the rest of
-        // the data
-        if (pdu == null) {
-          //System.out.println("Stopped reading bundled PDU due to bad PDU");
-          break;
-        }
-        else // otherwise add it to the list of PDUs we have decoded from this UDP packet
-        {
-          pdus.add(pdu);
-        }
+                // If the read is muffed somehow, give up on decoding the rest of
+                // the data
+                if (pdu == null) {
+                    //System.out.println("Stopped reading bundled PDU due to bad PDU");
+                    break;
+                } else // otherwise add it to the list of PDUs we have decoded from this UDP packet
+                {
+                    pdus.add(pdu);
+                }
 
-        // Advance the index to the start of the next PDU
-        int pduLength = pdu.getMarshalledSize();
+                // Advance the index to the start of the next PDU
+                pduLength = pdu.getMarshalledSize();
 
-        pduStartPointInData = pduStartPointInData + pduLength;
+                pduStartPointInData = pduStartPointInData + pduLength;
 
-        //System.out.println("PDUStartPoint:" + pduStartPointInData + " data: " + length);
-        // Have we read all the data?
-        if (pduStartPointInData >= length) {
-          //System.out.println("Out of data to read" + pduStartPointInData + " data length:" + length);
-          break;
-        }
+                //System.out.println("PDUStartPoint:" + pduStartPointInData + " data: " + length);
+                // Have we read all the data?
+                if (pduStartPointInData >= length) {
+                    //System.out.println("Out of data to read" + pduStartPointInData + " data length:" + length);
+                    break;
+                }
 
-      }
-      catch (Exception e) {
-        System.out.println("Problems decoding multiple PDUs in datagram; decoded as may as possible");
-        break;
-      }
-    } // end while
+            } catch (Exception e) {
+                System.err.println("Problems decoding multiple PDUs in datagram; decoded as may as possible");
+                break;
+            }
+        } // end while
 
-    return pdus;
-  }
+        return pdus;
+    }
 }
