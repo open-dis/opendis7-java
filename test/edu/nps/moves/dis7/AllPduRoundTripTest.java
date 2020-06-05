@@ -34,7 +34,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class AllPduRoundTripTest
 {
-  private PduFactory fact;
+  private PduFactory pduFactory;
 
   @BeforeAll
   public static void beforeAllTests()
@@ -70,80 +70,80 @@ public class AllPduRoundTripTest
         catch (InterruptedException ex2) {
         }
       
-      fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
+      pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
-      sendOne(fact.makeAcknowledgePdu());
-      sendOne(fact.makeAcknowledgeReliablePdu());
-      sendOne(fact.makeActionRequestPdu());
-      sendOne(fact.makeActionRequestReliablePdu());
-      sendOne(fact.makeActionResponsePdu());
-      sendOne(fact.makeActionResponseReliablePdu());
-      sendOne(fact.makeAggregateStatePdu());
-      sendOne(fact.makeAppearancePdu());
-      sendOne(fact.makeArealObjectStatePdu());
-      sendOne(fact.makeArticulatedPartsPdu());
-      sendOne(fact.makeAttributePdu());
-      sendOne(fact.makeCollisionElasticPdu());
-      sendOne(fact.makeCollisionPdu());
-      sendOne(fact.makeCommentPdu());
-      sendOne(fact.makeCommentReliablePdu());
-      sendOne(fact.makeCreateEntityPdu());
-      sendOne(fact.makeCreateEntityReliablePdu());
-      sendOne(fact.makeDataPdu());
-      sendOne(fact.makeDataQueryPdu());
-      sendOne(fact.makeDataQueryReliablePdu());
-      sendOne(fact.makeDataReliablePdu());
-      sendOne(fact.makeDesignatorPdu());
-      sendOne(fact.makeDetonationPdu());
-      sendOne(fact.makeDirectedEnergyFirePdu());
-      sendOne(fact.makeElectronicEmissionsPdu());
-      sendOne(fact.makeEntityDamageStatusPdu());
-      sendOne(fact.makeEntityStatePdu());
-      sendOne(fact.makeEntityStateUpdatePdu());
-      sendOne(fact.makeEnvironmentalProcessPdu());
-      sendOne(fact.makeEventReportPdu());
-      sendOne(fact.makeEventReportReliablePdu());
-      sendOne(fact.makeFirePdu());
-      sendOne(fact.makeGriddedDataPdu());
-      sendOne(fact.makeIffPdu());
-      sendOne(fact.makeInformationOperationsReportPdu());
-      sendOne(fact.makeInformationOperationsActionPdu());
-      sendOne(fact.makeIntercomControlPdu());
-      sendOne(fact.makeIntercomSignalPdu());
-      sendOne(fact.makeIsGroupOfPdu());
-      sendOne(fact.makeIsPartOfPdu());
-      sendOne(fact.makeLEDetonationPdu());
-      sendOne(fact.makeLEFirePdu());
-      sendOne(fact.makeLinearObjectStatePdu());
-      sendOne(fact.makeMinefieldDataPdu());
-      sendOne(fact.makeMinefieldQueryPdu());
-      sendOne(fact.makeMinefieldResponseNackPdu());
-      sendOne(fact.makeMinefieldStatePdu());
-      sendOne(fact.makePointObjectStatePdu());
-      sendOne(fact.makeReceiverPdu());
-      sendOne(fact.makeRecordQueryReliablePdu());
-      sendOne(fact.makeRecordReliablePdu());
-      sendOne(fact.makeRemoveEntityPdu());
-      sendOne(fact.makeRemoveEntityReliablePdu());
-      sendOne(fact.makeRepairCompletePdu());
-      sendOne(fact.makeRepairResponsePdu());
-      sendOne(fact.makeResupplyCancelPdu());
-      sendOne(fact.makeResupplyOfferPdu());
-      sendOne(fact.makeResupplyReceivedPdu());
-      sendOne(fact.makeSeesPdu());
-      sendOne(fact.makeServiceRequestPdu());
-      sendOne(fact.makeSetDataPdu());
-      sendOne(fact.makeSetDataReliablePdu());
-      sendOne(fact.makeSetRecordReliablePdu());
-      sendOne(fact.makeSignalPdu());
-      sendOne(fact.makeStartResumePdu());
-      sendOne(fact.makeStartResumeReliablePdu());
-      sendOne(fact.makeStopFreezePdu());
-      sendOne(fact.makeStopFreezeReliablePdu());
-      sendOne(fact.makeTransferOwnershipPdu());
-      sendOne(fact.makeTransmitterPdu());
-      sendOne(fact.makeTspiPdu());
-      sendOne(fact.makeUnderwaterAcousticPdu());
+      sendOnePdu(pduFactory.makeAcknowledgePdu());
+      sendOnePdu(pduFactory.makeAcknowledgeReliablePdu());
+      sendOnePdu(pduFactory.makeActionRequestPdu());
+      sendOnePdu(pduFactory.makeActionRequestReliablePdu());
+      sendOnePdu(pduFactory.makeActionResponsePdu());
+      sendOnePdu(pduFactory.makeActionResponseReliablePdu());
+      sendOnePdu(pduFactory.makeAggregateStatePdu());
+      sendOnePdu(pduFactory.makeAppearancePdu());
+      sendOnePdu(pduFactory.makeArealObjectStatePdu());
+      sendOnePdu(pduFactory.makeArticulatedPartsPdu());
+      sendOnePdu(pduFactory.makeAttributePdu());
+      sendOnePdu(pduFactory.makeCollisionElasticPdu());
+      sendOnePdu(pduFactory.makeCollisionPdu());
+      sendOnePdu(pduFactory.makeCommentPdu());
+      sendOnePdu(pduFactory.makeCommentReliablePdu());
+      sendOnePdu(pduFactory.makeCreateEntityPdu());
+      sendOnePdu(pduFactory.makeCreateEntityReliablePdu());
+      sendOnePdu(pduFactory.makeDataPdu());
+      sendOnePdu(pduFactory.makeDataQueryPdu());
+      sendOnePdu(pduFactory.makeDataQueryReliablePdu());
+      sendOnePdu(pduFactory.makeDataReliablePdu());
+      sendOnePdu(pduFactory.makeDesignatorPdu());
+      sendOnePdu(pduFactory.makeDetonationPdu());
+      sendOnePdu(pduFactory.makeDirectedEnergyFirePdu());
+      sendOnePdu(pduFactory.makeElectronicEmissionsPdu());
+      sendOnePdu(pduFactory.makeEntityDamageStatusPdu());
+      sendOnePdu(pduFactory.makeEntityStatePdu());
+      sendOnePdu(pduFactory.makeEntityStateUpdatePdu());
+      sendOnePdu(pduFactory.makeEnvironmentalProcessPdu());
+      sendOnePdu(pduFactory.makeEventReportPdu());
+      sendOnePdu(pduFactory.makeEventReportReliablePdu());
+      sendOnePdu(pduFactory.makeFirePdu());
+      sendOnePdu(pduFactory.makeGriddedDataPdu());
+      sendOnePdu(pduFactory.makeIffPdu());
+      sendOnePdu(pduFactory.makeInformationOperationsReportPdu());
+      sendOnePdu(pduFactory.makeInformationOperationsActionPdu());
+      sendOnePdu(pduFactory.makeIntercomControlPdu());
+      sendOnePdu(pduFactory.makeIntercomSignalPdu());
+      sendOnePdu(pduFactory.makeIsGroupOfPdu());
+      sendOnePdu(pduFactory.makeIsPartOfPdu());
+      sendOnePdu(pduFactory.makeLEDetonationPdu());
+      sendOnePdu(pduFactory.makeLEFirePdu());
+      sendOnePdu(pduFactory.makeLinearObjectStatePdu());
+      sendOnePdu(pduFactory.makeMinefieldDataPdu());
+      sendOnePdu(pduFactory.makeMinefieldQueryPdu());
+      sendOnePdu(pduFactory.makeMinefieldResponseNackPdu());
+      sendOnePdu(pduFactory.makeMinefieldStatePdu());
+      sendOnePdu(pduFactory.makePointObjectStatePdu());
+      sendOnePdu(pduFactory.makeReceiverPdu());
+      sendOnePdu(pduFactory.makeRecordQueryReliablePdu());
+      sendOnePdu(pduFactory.makeRecordReliablePdu());
+      sendOnePdu(pduFactory.makeRemoveEntityPdu());
+      sendOnePdu(pduFactory.makeRemoveEntityReliablePdu());
+      sendOnePdu(pduFactory.makeRepairCompletePdu());
+      sendOnePdu(pduFactory.makeRepairResponsePdu());
+      sendOnePdu(pduFactory.makeResupplyCancelPdu());
+      sendOnePdu(pduFactory.makeResupplyOfferPdu());
+      sendOnePdu(pduFactory.makeResupplyReceivedPdu());
+      sendOnePdu(pduFactory.makeSeesPdu());
+      sendOnePdu(pduFactory.makeServiceRequestPdu());
+      sendOnePdu(pduFactory.makeSetDataPdu());
+      sendOnePdu(pduFactory.makeSetDataReliablePdu());
+      sendOnePdu(pduFactory.makeSetRecordReliablePdu());
+      sendOnePdu(pduFactory.makeSignalPdu());
+      sendOnePdu(pduFactory.makeStartResumePdu());
+      sendOnePdu(pduFactory.makeStartResumeReliablePdu());
+      sendOnePdu(pduFactory.makeStopFreezePdu());
+      sendOnePdu(pduFactory.makeStopFreezeReliablePdu());
+      sendOnePdu(pduFactory.makeTransferOwnershipPdu());
+      sendOnePdu(pduFactory.makeTransmitterPdu());
+      sendOnePdu(pduFactory.makeTspiPdu());
+      sendOnePdu(pduFactory.makeUnderwaterAcousticPdu());
 
       //sleep(100L); // go sender/receiver go!  is this enough time to receive?
 //        try {
@@ -200,7 +200,7 @@ public class AllPduRoundTripTest
     disnetworking.kill();
   }
 
-  private void sendOne(Pdu pdu)
+  private void sendOnePdu(Pdu pdu)
   {
     pduSentMap.put(pdu.getPduType(), pdu);
     if (pdu.getPduType() == DISPDUType.OTHER)
@@ -237,7 +237,7 @@ public class AllPduRoundTripTest
     player.sendToNet(false);
     player.addRawListener(ba -> {
       if (ba != null) {
-        Pdu pdu = fact.createPdu(ba);
+        Pdu pdu = pduFactory.createPdu(ba);
         pduReadMap.put(pdu.getPduType(), pdu);
       }
       else {
