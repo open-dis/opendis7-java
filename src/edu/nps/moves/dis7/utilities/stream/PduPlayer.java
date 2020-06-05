@@ -10,15 +10,11 @@ import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Base64;
-
-import static edu.nps.moves.dis7.utilities.stream.PduRecorder.*;
-import java.nio.ByteBuffer;
-import java.nio.IntBuffer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class PduPlayer {
@@ -116,14 +112,14 @@ public class PduPlayer {
                     }
                     if (line.length() <= 0)
                         ; // blank lines ok
-                    else if (line.trim().startsWith(COMMENT_MARKER)) {
+                    else if (line.trim().startsWith(PduRecorder.COMMENT_MARKER)) {
                         if (handleComment(line, f)) {
                             break;
                         }
                     } else {
                         String[] sa = null;
-                        String REGEX = "";
-                        Pattern pattern = null;
+                        String REGEX;
+                        Pattern pattern;
 
                         switch (pduLogEncoding) {
                             case "ENCODING_BASE64":
@@ -151,7 +147,7 @@ public class PduPlayer {
                                 System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
                         }
 
-                        if (sa.length != 2) {
+                        if (sa != null && sa.length != 2) {
                             System.err.println("Error: parsing error.  Line follows.");
                             System.err.println(line);
                             byebye();
@@ -161,10 +157,10 @@ public class PduPlayer {
                             startNanoTime = System.nanoTime();
                         }
                         byte[] pduTimeBytes = null;
-                        String[] splitString = null;
-                        int[] arr = null;
-                        String tempString = "";
-                        IntBuffer intBuffer = null;
+                        String[] splitString;
+                        int[] arr;
+                        String tempString;
+                        IntBuffer intBuffer;
                         byte[] bufferShort = null;
 
                         switch (pduLogEncoding) {
@@ -174,7 +170,7 @@ public class PduPlayer {
 
                             case "ENCODING_PLAINTEXT":
 
-                                pduTimeBytes = null;
+//                                pduTimeBytes = null;
 
                                 //Split first String into multiple Strings cotaining integers
                                 REGEX = ",";
@@ -187,7 +183,7 @@ public class PduPlayer {
                                 //Define an array to store the in values from the string and initalize it to a value drifferent from NULL
                                 arr = new int[splitString.length];
 
-                                tempString = "";
+//                                tempString = "";
 
                                 //Test
                                 for (int x = 0; x < splitString.length; x++) {
@@ -237,8 +233,8 @@ public class PduPlayer {
                             case "ENCODING_PLAINTEXT":
 
                                 //---Code Tobi for Plain Text---
-                                //Handle the second String
-                                // Split second String into multiple Strings cotaining integers
+                                // Handle the second String
+                                // Split second String into multiple Strings containing integers
                                 REGEX = ",";
                                 pattern = Pattern.compile(REGEX);
 
@@ -250,7 +246,7 @@ public class PduPlayer {
                                 arr = new int[splitString.length];
 
                                 //trim spaces, if any
-                                tempString = "";
+//                                tempString = "";
 
                                 //Test
                                 for (int x = 0; x < splitString.length; x++) {
@@ -270,7 +266,7 @@ public class PduPlayer {
 
                                 buffer = byteBuffer2.array();
 
-                                //When the byteBuffer stores the arry of Integers into the byte array it store a 7 as 0 0 0 7.
+                                //When the byteBuffer stores the arry of Integers into the byte array it stores a 7 as 0 0 0 7.
                                 //Therefore a shortBuffer is created where only every forth value is stored.
                                 //it must be done with modulo instead of testing for "0" because a "0" could be there as value and not as padding
                                 bufferShort = new byte[byteBuffer2.array().length / 4];
@@ -303,7 +299,7 @@ public class PduPlayer {
 
                         //ToDo: Is this also necessary for buffershort? If yes, put it inside the switch/Case statement
                         if (rawListener != null) {
-                            rawListener.receiveBytes(buffer);
+                            rawListener.receiveBytes(bufferShort);
                         }
                         pduCount++;
                         if (scenarioPduCount != null) {
@@ -325,7 +321,6 @@ public class PduPlayer {
             }
             if (rawListener != null) {
                 rawListener.receiveBytes(null); // indicate the end
-
             }
         } catch (IOException ex) {
             System.err.println("Exception reading/writing pdus: " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
@@ -376,21 +371,21 @@ public class PduPlayer {
     private boolean handleComment(String line, File f) //true if we're done
     {
         boolean returnValue = false;
-        if (line.trim().startsWith(START_COMMENT_MARKER)) {
+        if (line.trim().startsWith(PduRecorder.START_COMMENT_MARKER)) {
             //System.out.println();
             //Read Encoding from FileHeader
             String[] sa = line.split(",", 3);
             System.err.println(sa[1].trim());
             pduLogEncoding = sa[1].trim();
-            line = line.substring(START_COMMENT_MARKER.length());
+            line = line.substring(PduRecorder.START_COMMENT_MARKER.length());
             System.out.println(line + "  ");
             showPduCountsOneTime = true;  // get the first one in there
-        } else if (line.trim().startsWith(FINISH_COMMENT_MARKER)) {
+        } else if (line.trim().startsWith(PduRecorder.FINISH_COMMENT_MARKER)) {
             System.out.print("Total PDUs: ");
             showCounts();
             System.out.println();
             System.out.println("End of replay from " + f.getName());
-            System.out.println(line.substring(FINISH_COMMENT_MARKER.length()));
+            System.out.println(line.substring(PduRecorder.FINISH_COMMENT_MARKER.length()));
 
             scenarioPduCount = 0;
             startNanoTime = null;
@@ -419,10 +414,10 @@ public class PduPlayer {
      */
     public static void main(String[] args) {
         try {
-            //new Player("230.0.0.0", 3000, new File("./pdulog").toPath()).startResume();
-            new PduPlayer("230.0.0.0", 3000, new File("./pdulog").toPath());
+//            new PduPlayer("230.1.2.3", 3000, new File("./pdulog").toPath()).startResume();
+            new PduPlayer("230.1.2.3", 3000, new File("./pdulog").toPath());
         } catch (IOException ex) {
-            ex.printStackTrace();
+            ex.printStackTrace(System.err);
         }
     }
 
