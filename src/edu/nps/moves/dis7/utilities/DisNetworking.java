@@ -9,7 +9,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
-import java.util.Enumeration;
 
 /**
  * DisNetworking.java created on Jul 29, 2019
@@ -75,32 +74,36 @@ public class DisNetworking
   }
   
   private MulticastSocket rsocket;
+  InetSocketAddress group;
+  InetAddress maddr;
+  byte buffer[];
+  DatagramPacket packet;
   public BuffAndLength receiveRawPdu() throws IOException
   {
-    DatagramPacket packet;
-
     rsocket = new MulticastSocket(DIS_PORT);
-    InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
-    InetSocketAddress group = new InetSocketAddress(maddr, DIS_PORT);
-    rsocket.joinGroup(group, findIp4Interface());
-    byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
+    maddr = InetAddress.getByName(MCAST_GROUP);
+    group = new InetSocketAddress(maddr, DIS_PORT);
+    rsocket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+    buffer = new byte[MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
     //System.out.println("Listening on " + MCAST_GROUP + ":" + DIS_PORT + " if:" + socket.getNetworkInterface().getDisplayName());
     rsocket.receive(packet);   //blocks here waiting for next DIS pdu to be received on broadcast IP and specified port 
     //System.out.println("packet received from " + packet.getSocketAddress());
     
-    rsocket.leaveGroup(group, findIp4Interface());
+    rsocket.leaveGroup(group, DisThreadedNetIF.findIp4Interface());
     rsocket.close();
     rsocket = null;
     return new BuffAndLength(packet.getData(), packet.getLength());
   }
 
+  ByteArrayOutputStream baos;
+  DataOutputStream dos;
   public void sendPdu(Pdu pdu) throws Exception
   {
     // turn object into byte stream
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    DataOutputStream dos = new DataOutputStream(baos);
+    baos = new ByteArrayOutputStream();
+    dos = new DataOutputStream(baos);
     pdu.marshal(dos);
     
     sendRawPdu(baos.toByteArray());
@@ -110,33 +113,14 @@ public class DisNetworking
   public void sendRawPdu(byte[] data) throws IOException
   {
     ssocket = new MulticastSocket();
-    InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
+    maddr = InetAddress.getByName(MCAST_GROUP);
     
     // load byte buffer into packet and send
-    DatagramPacket packet = new DatagramPacket(data, data.length, maddr, DIS_PORT);
-    ssocket.setNetworkInterface(findIp4Interface());
+    packet = new DatagramPacket(data, data.length, maddr, DIS_PORT);
     ssocket.send(packet);
 
     ssocket.close();
     ssocket = null;
     //System.out.println("sent to " + maddr.getHostAddress() + ":" + DIS_PORT);
-  }
-
-  /* find proper interface */
-  private static NetworkInterface findIp4Interface() throws SocketException
-  {
-    Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
-    while (ifaces.hasMoreElements()) {
-      NetworkInterface nif = ifaces.nextElement();
-      Enumeration<InetAddress> addresses = nif.getInetAddresses();
-      while (addresses.hasMoreElements()) {
-        InetAddress addr = addresses.nextElement();
-        if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
-          //System.out.println("Using network interface " + nif.getDisplayName());
-          return nif;
-        }
-      }
-    }
-    return null;
   }
 }
