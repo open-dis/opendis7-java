@@ -265,8 +265,8 @@ public class PduPlayer {
 
                                 buffer = byteBuffer2.array();
 
-                                //When the byteBuffer stores the arry of Integers into the byte array it stores a 7 as 0 0 0 7.
-                                //Therefore a shortBuffer is created where only every forth value is stored.
+                                //When the byteBuffer stores the array of Integers into the byte array it stores a 7 as 0 0 0 7.
+                                //Therefore a shortBuffer is created where only every fourth value is stored.
                                 //it must be done with modulo instead of testing for "0" because a "0" could be there as value and not as padding
                                 bufferShort = new byte[byteBuffer2.array().length / 4];
 
