@@ -73,7 +73,7 @@ public enum LifeFormsSubcategoryIranianWeapons implements SubCategory
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static LifeFormsSubcategoryIranianWeapons unmarshalEnum(ByteBuffer buff) throws Exception
@@ -86,7 +86,7 @@ public enum LifeFormsSubcategoryIranianWeapons implements SubCategory
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

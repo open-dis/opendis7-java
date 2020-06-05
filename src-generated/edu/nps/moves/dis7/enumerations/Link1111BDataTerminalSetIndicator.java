@@ -85,7 +85,7 @@ public enum Link1111BDataTerminalSetIndicator
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Link1111BDataTerminalSetIndicator unmarshalEnum(ByteBuffer buff) throws Exception
@@ -98,7 +98,7 @@ public enum Link1111BDataTerminalSetIndicator
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

@@ -85,7 +85,7 @@ public enum Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies im
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies unmarshalEnum(ByteBuffer buff) throws Exception
@@ -98,7 +98,7 @@ public enum Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies im
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

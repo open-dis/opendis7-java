@@ -207,7 +207,7 @@ public enum LifeFormHumanSpecificAntiTankRockets
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static LifeFormHumanSpecificAntiTankRockets unmarshalEnum(ByteBuffer buff) throws Exception
@@ -220,7 +220,7 @@ public enum LifeFormHumanSpecificAntiTankRockets
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

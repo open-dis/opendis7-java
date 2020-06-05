@@ -77,7 +77,7 @@ public enum ReplyAmplification
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static ReplyAmplification unmarshalEnum(ByteBuffer buff) throws Exception
@@ -90,7 +90,7 @@ public enum ReplyAmplification
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -179,8 +179,9 @@ public List<LinearSegmentParameter> getLinearSegmentParameters()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -189,9 +190,9 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        objectID.marshal(dos);
        referencedObjectID.marshal(dos);
-       dos.writeShort( (short)updateNumber);
+       dos.writeShort(updateNumber);
        forceID.marshal(dos);
-       dos.writeByte( (byte)linearSegmentParameters.size());
+       dos.writeByte(linearSegmentParameters.size());
        requesterID.marshal(dos);
        receivingID.marshal(dos);
        objectType.marshal(dos);
@@ -211,9 +212,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -243,7 +245,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -270,7 +272,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < linearSegmentParameters.size(); idx++)
    {
-        LinearSegmentParameter aLinearSegmentParameter = (LinearSegmentParameter)linearSegmentParameters.get(idx);
+        LinearSegmentParameter aLinearSegmentParameter = linearSegmentParameters.get(idx);
         aLinearSegmentParameter.marshal(buff);
    }
 
@@ -349,7 +351,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" objectID: ").append(objectID).append("\n");
     sb.append(" referencedObjectID: ").append(referencedObjectID).append("\n");

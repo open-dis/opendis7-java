@@ -79,7 +79,7 @@ public enum IFFAlternateMode4ChallengeReply
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static IFFAlternateMode4ChallengeReply unmarshalEnum(ByteBuffer buff) throws Exception
@@ -92,7 +92,7 @@ public enum IFFAlternateMode4ChallengeReply
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

@@ -620,12 +620,12 @@ public enum Country
 
     public static Country unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue((int)dis.readUnsignedShort());
+        return getEnumForValue(dis.readUnsignedShort());
     } 
 
     public static Country unmarshalEnum (ByteBuffer buff) throws Exception
     {
-        return getEnumForValue((int)buff.getShort());
+        return getEnumForValue(buff.getShort());
     }   
 
     public int getMarshalledSize()

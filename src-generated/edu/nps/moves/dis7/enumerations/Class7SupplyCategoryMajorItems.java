@@ -115,7 +115,7 @@ public enum Class7SupplyCategoryMajorItems implements Category
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class7SupplyCategoryMajorItems unmarshalEnum(ByteBuffer buff) throws Exception
@@ -128,7 +128,7 @@ public enum Class7SupplyCategoryMajorItems implements Category
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

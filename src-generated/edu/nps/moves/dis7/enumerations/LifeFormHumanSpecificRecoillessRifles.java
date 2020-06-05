@@ -127,7 +127,7 @@ public enum LifeFormHumanSpecificRecoillessRifles
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static LifeFormHumanSpecificRecoillessRifles unmarshalEnum(ByteBuffer buff) throws Exception
@@ -140,7 +140,7 @@ public enum LifeFormHumanSpecificRecoillessRifles
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

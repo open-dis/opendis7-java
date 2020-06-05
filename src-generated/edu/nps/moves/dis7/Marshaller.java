@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -14,22 +14,41 @@ import java.nio.ByteBuffer;
  */
 public interface Marshaller
 {
-    public int getMarshalledSize();
+    /**
+     * 
+     * @return the size in bytes of a value from a stream
+     */
+    int getMarshalledSize();
     
-    public void marshal(DataOutputStream dos) throws Exception;
-    public int unmarshal(DataInputStream dis) throws Exception;
+    /**
+     * 
+     * @param dos the output stream to marshal to
+     * @throws Exception 
+     */
+    void marshal(DataOutputStream dos) throws Exception;
+    
+    /**
+     * 
+     * @param dis the input stream to unmarshal from
+     * @return the size of the PDU
+     * @throws Exception 
+     */
+    int unmarshal(DataInputStream dis) throws Exception;
 
     /**
      * Packs a Pdu into the ByteBuffer.
+     * @throws java.lang.Exception
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin writing
      */
-    public void marshal(ByteBuffer buff) throws Exception;
+    void marshal(ByteBuffer buff) throws Exception;
     
     /**
      * Unpacks a Pdu from the underlying data.
+     * @return the size of the PDU
+     * @throws java.lang.Exception
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
      */
-    public int unmarshal(ByteBuffer buff) throws Exception;
+    int unmarshal(ByteBuffer buff) throws Exception;
 }

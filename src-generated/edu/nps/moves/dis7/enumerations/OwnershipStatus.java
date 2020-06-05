@@ -83,7 +83,7 @@ public enum OwnershipStatus
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static OwnershipStatus unmarshalEnum(ByteBuffer buff) throws Exception
@@ -96,7 +96,7 @@ public enum OwnershipStatus
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

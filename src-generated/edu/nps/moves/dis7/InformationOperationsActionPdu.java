@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -224,8 +224,9 @@ public List<IORecord> getIoRecords()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -233,16 +234,16 @@ public void marshal(DataOutputStream dos) throws Exception
     try 
     {
        receivingSimID.marshal(dos);
-       dos.writeInt( (int)requestID);
+       dos.writeInt(requestID);
        IOWarfareType.marshal(dos);
        IOSimulationSource.marshal(dos);
        IOActionType.marshal(dos);
        IOActionPhase.marshal(dos);
-       dos.writeInt( (int)padding1);
+       dos.writeInt(padding1);
        ioAttackerID.marshal(dos);
        ioPrimaryTargetID.marshal(dos);
-       dos.writeShort( (short)padding2);
-       dos.writeShort( (short)ioRecords.size());
+       dos.writeShort(padding2);
+       dos.writeShort(ioRecords.size());
 
        for(int idx = 0; idx < ioRecords.size(); idx++)
        {
@@ -259,9 +260,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -299,7 +301,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -329,7 +331,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < ioRecords.size(); idx++)
    {
-        IORecord aIORecord = (IORecord)ioRecords.get(idx);
+        IORecord aIORecord = ioRecords.get(idx);
         aIORecord.marshal(buff);
    }
 
@@ -414,7 +416,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" receivingSimID: ").append(receivingSimID).append("\n");
     sb.append(" requestID: ").append(requestID).append("\n");

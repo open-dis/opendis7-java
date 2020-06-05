@@ -115,7 +115,7 @@ public enum AggregateStateSubcategory implements SubCategory
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static AggregateStateSubcategory unmarshalEnum(ByteBuffer buff) throws Exception
@@ -128,7 +128,7 @@ public enum AggregateStateSubcategory implements SubCategory
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -245,8 +245,9 @@ public List<IntercomCommunicationsParameters> getIntercomParameters()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -254,17 +255,17 @@ public void marshal(DataOutputStream dos) throws Exception
     try 
     {
        controlType.marshal(dos);
-       dos.writeByte( (byte)communicationsChannelType);
+       dos.writeByte(communicationsChannelType);
        sourceEntityID.marshal(dos);
-       dos.writeShort( (short)sourceIntercomNumber);
-       dos.writeByte( (byte)sourceLineID);
-       dos.writeByte( (byte)transmitPriority);
+       dos.writeShort(sourceIntercomNumber);
+       dos.writeByte(sourceLineID);
+       dos.writeByte(transmitPriority);
        transmitLineState.marshal(dos);
        command.marshal(dos);
        masterIntercomReferenceID.marshal(dos);
-       dos.writeShort( (short)masterIntercomNumber);
-       dos.writeShort( (short)masterChannelID);
-       dos.writeInt( (int)intercomParameters.size());
+       dos.writeShort(masterIntercomNumber);
+       dos.writeShort(masterChannelID);
+       dos.writeInt(intercomParameters.size());
 
        for(int idx = 0; idx < intercomParameters.size(); idx++)
        {
@@ -281,9 +282,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -324,7 +326,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -355,7 +357,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < intercomParameters.size(); idx++)
    {
-        IntercomCommunicationsParameters aIntercomCommunicationsParameters = (IntercomCommunicationsParameters)intercomParameters.get(idx);
+        IntercomCommunicationsParameters aIntercomCommunicationsParameters = intercomParameters.get(idx);
         aIntercomCommunicationsParameters.marshal(buff);
    }
 
@@ -442,7 +444,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" controlType: ").append(controlType).append("\n");
     sb.append(" communicationsChannelType: ").append(communicationsChannelType).append("\n");

@@ -95,7 +95,7 @@ public enum SupplyDomain
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static SupplyDomain unmarshalEnum(ByteBuffer buff) throws Exception
@@ -108,7 +108,7 @@ public enum SupplyDomain
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

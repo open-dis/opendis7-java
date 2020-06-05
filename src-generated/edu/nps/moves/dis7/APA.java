@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -65,15 +65,16 @@ public short getValue()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
-       dos.writeShort( (short)parameterIndex);
-       dos.writeShort( (short)value);
+       dos.writeShort(parameterIndex);
+       dos.writeShort(value);
     }
     catch(Exception e)
     {
@@ -83,9 +84,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -99,7 +101,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -172,7 +174,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" parameterIndex: ").append(parameterIndex).append("\n");
     sb.append(" value: ").append(value).append("\n");

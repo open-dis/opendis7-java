@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -201,20 +201,21 @@ public List<TrackJamData> getTrackJamData()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
-       dos.writeByte( (byte)beamDataLength);
-       dos.writeByte( (byte)beamNumber);
-       dos.writeShort( (short)beamParameterIndex);
+       dos.writeByte(beamDataLength);
+       dos.writeByte(beamNumber);
+       dos.writeShort(beamParameterIndex);
        fundamentalParameterData.marshal(dos);
        beamData.marshal(dos);
        beamFunction.marshal(dos);
-       dos.writeByte( (byte)trackJamData.size());
+       dos.writeByte(trackJamData.size());
        highDensityTrackJam.marshal(dos);
        beamStatus.marshal(dos);
        jammingTechnique.marshal(dos);
@@ -234,9 +235,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -269,7 +271,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -297,7 +299,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < trackJamData.size(); idx++)
    {
-        TrackJamData aTrackJamData = (TrackJamData)trackJamData.get(idx);
+        TrackJamData aTrackJamData = trackJamData.get(idx);
         aTrackJamData.marshal(buff);
    }
 
@@ -383,7 +385,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" beamDataLength: ").append(beamDataLength).append("\n");
     sb.append(" beamNumber: ").append(beamNumber).append("\n");

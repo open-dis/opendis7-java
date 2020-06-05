@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -333,8 +333,9 @@ public List<VariableDatum> getVariableDatumList()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -351,10 +352,10 @@ public void marshal(DataOutputStream dos) throws Exception
        orientation.marshal(dos);
        centerOfMass.marshal(dos);
        velocity.marshal(dos);
-       dos.writeShort( (short)aggregateIDList.size());
-       dos.writeShort( (short)entityIDList.size());
-       dos.writeShort( (short)silentAggregateSystemList.size());
-       dos.writeShort( (short)silentEntitySystemList.size());
+       dos.writeShort(aggregateIDList.size());
+       dos.writeShort(entityIDList.size());
+       dos.writeShort(silentAggregateSystemList.size());
+       dos.writeShort(silentEntitySystemList.size());
 
        for(int idx = 0; idx < aggregateIDList.size(); idx++)
        {
@@ -384,7 +385,7 @@ public void marshal(DataOutputStream dos) throws Exception
             aEntityType.marshal(dos);
        }
 
-       dos.writeInt( (int)variableDatumList.size());
+       dos.writeInt(variableDatumList.size());
 
        for(int idx = 0; idx < variableDatumList.size(); idx++)
        {
@@ -401,9 +402,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -475,7 +477,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -508,14 +510,14 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < aggregateIDList.size(); idx++)
    {
-        AggregateIdentifier aAggregateIdentifier = (AggregateIdentifier)aggregateIDList.get(idx);
+        AggregateIdentifier aAggregateIdentifier = aggregateIDList.get(idx);
         aAggregateIdentifier.marshal(buff);
    }
 
 
    for(int idx = 0; idx < entityIDList.size(); idx++)
    {
-        EntityID aEntityID = (EntityID)entityIDList.get(idx);
+        EntityID aEntityID = entityIDList.get(idx);
         aEntityID.marshal(buff);
    }
 
@@ -523,14 +525,14 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < silentAggregateSystemList.size(); idx++)
    {
-        EntityType aEntityType = (EntityType)silentAggregateSystemList.get(idx);
+        EntityType aEntityType = silentAggregateSystemList.get(idx);
         aEntityType.marshal(buff);
    }
 
 
    for(int idx = 0; idx < silentEntitySystemList.size(); idx++)
    {
-        EntityType aEntityType = (EntityType)silentEntitySystemList.get(idx);
+        EntityType aEntityType = silentEntitySystemList.get(idx);
         aEntityType.marshal(buff);
    }
 
@@ -538,7 +540,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < variableDatumList.size(); idx++)
    {
-        VariableDatum aVariableDatum = (VariableDatum)variableDatumList.get(idx);
+        VariableDatum aVariableDatum = variableDatumList.get(idx);
         aVariableDatum.marshal(buff);
    }
 
@@ -672,7 +674,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" aggregateID: ").append(aggregateID).append("\n");
     sb.append(" forceID: ").append(forceID).append("\n");

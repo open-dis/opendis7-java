@@ -87,7 +87,7 @@ public enum PlatformAirCivilianFixedWingAircraftSubcategories implements SubCate
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformAirCivilianFixedWingAircraftSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
@@ -100,7 +100,7 @@ public enum PlatformAirCivilianFixedWingAircraftSubcategories implements SubCate
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

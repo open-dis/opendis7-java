@@ -91,7 +91,7 @@ public enum Class12SupplyCategorySlingLoadsNonDoctrinal implements Category
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class12SupplyCategorySlingLoadsNonDoctrinal unmarshalEnum(ByteBuffer buff) throws Exception
@@ -104,7 +104,7 @@ public enum Class12SupplyCategorySlingLoadsNonDoctrinal implements Category
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

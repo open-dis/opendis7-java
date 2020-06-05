@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -237,25 +237,26 @@ public short getPadding2()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
-       dos.writeInt( (int)recordType);
-       dos.writeShort( (short)recordLength);
-       dos.writeShort( (short)padding);
+       dos.writeInt(recordType);
+       dos.writeShort(recordLength);
+       dos.writeShort(padding);
        damageLocation.marshal(dos);
-       dos.writeFloat( (float)damageDiameter);
-       dos.writeFloat( (float)temperature);
+       dos.writeFloat(damageDiameter);
+       dos.writeFloat(temperature);
        componentIdentification.marshal(dos);
        componentDamageStatus.marshal(dos);
        componentVisualDamageStatus.marshal(dos);
        componentVisualSmokeColor.marshal(dos);
        fireEventID.marshal(dos);
-       dos.writeShort( (short)padding2);
+       dos.writeShort(padding2);
     }
     catch(Exception e)
     {
@@ -265,9 +266,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -298,7 +300,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -401,7 +403,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" recordType: ").append(recordType).append("\n");
     sb.append(" recordLength: ").append(recordLength).append("\n");

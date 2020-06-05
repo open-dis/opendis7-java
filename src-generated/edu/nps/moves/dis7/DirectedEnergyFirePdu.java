@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -326,8 +326,9 @@ public List<StandardVariableSpecification> getDERecords()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -338,19 +339,19 @@ public void marshal(DataOutputStream dos) throws Exception
        eventID.marshal(dos);
        munitionType.marshal(dos);
        shotStartTime.marshal(dos);
-       dos.writeFloat( (float)commulativeShotTime);
+       dos.writeFloat(commulativeShotTime);
        apertureEmitterLocation.marshal(dos);
-       dos.writeFloat( (float)apertureDiameter);
-       dos.writeFloat( (float)wavelength);
-       dos.writeInt( (int)pad1);
-       dos.writeFloat( (float)pulseRepititionFrequency);
-       dos.writeFloat( (float)pulseWidth);
+       dos.writeFloat(apertureDiameter);
+       dos.writeFloat(wavelength);
+       dos.writeInt(pad1);
+       dos.writeFloat(pulseRepititionFrequency);
+       dos.writeFloat(pulseWidth);
        flags.marshal(dos);
        pulseShape.marshal(dos);
-       dos.writeByte( (byte)pad2);
-       dos.writeInt( (int)pad3);
-       dos.writeShort( (short)pad4);
-       dos.writeShort( (short)dERecords.size());
+       dos.writeByte(pad2);
+       dos.writeInt(pad3);
+       dos.writeShort(pad4);
+       dos.writeShort(dERecords.size());
 
        for(int idx = 0; idx < dERecords.size(); idx++)
        {
@@ -367,9 +368,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -416,7 +418,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -452,7 +454,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < dERecords.size(); idx++)
    {
-        StandardVariableSpecification aStandardVariableSpecification = (StandardVariableSpecification)dERecords.get(idx);
+        StandardVariableSpecification aStandardVariableSpecification = dERecords.get(idx);
         aStandardVariableSpecification.marshal(buff);
    }
 
@@ -549,7 +551,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" firingEntityID: ").append(firingEntityID).append("\n");
     sb.append(" eventID: ").append(eventID).append("\n");

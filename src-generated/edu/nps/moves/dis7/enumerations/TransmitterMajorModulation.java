@@ -72,12 +72,12 @@ public enum TransmitterMajorModulation
 
     public static TransmitterMajorModulation unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue((int)dis.readUnsignedShort());
+        return getEnumForValue(dis.readUnsignedShort());
     } 
 
     public static TransmitterMajorModulation unmarshalEnum (ByteBuffer buff) throws Exception
     {
-        return getEnumForValue((int)buff.getShort());
+        return getEnumForValue(buff.getShort());
     }   
 
     public int getMarshalledSize()

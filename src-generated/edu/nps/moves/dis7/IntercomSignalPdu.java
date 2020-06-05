@@ -1,10 +1,9 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7;
 
-import java.util.*;
 import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
@@ -14,7 +13,11 @@ import edu.nps.moves.dis7.enumerations.*;
  */
 public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements Serializable
 {
-  protected IntercomReferenceID intercomReferenceID = new IntercomReferenceID();
+
+    /**
+     *
+     */
+    protected IntercomReferenceID intercomReferenceID = new IntercomReferenceID();
 
   /**
    * ID of communications device
@@ -63,12 +66,12 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Returns the size of this serialized object in bytes
+   * @return 
    */
+  @Override
   public int getMarshalledSize()
   {
-    int marshalSize = 0;
-
-    marshalSize = super.getMarshalledSize();
+    int marshalSize = super.getMarshalledSize();
     marshalSize += intercomReferenceID.getMarshalledSize();
     marshalSize += 2;  // intercomNumber
     marshalSize += 2;  // encodingScheme
@@ -84,6 +87,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#intercomReferenceID}
+   * @param pIntercomReferenceID
+   * @return 
    */
   public IntercomSignalPdu setIntercomReferenceID(IntercomReferenceID pIntercomReferenceID)
   {
@@ -93,6 +98,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#intercomReferenceID}
+   * @return 
    */
   public IntercomReferenceID getIntercomReferenceID()
   {
@@ -101,6 +107,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#intercomNumber}
+   * @param pIntercomNumber
+   * @return 
    */
   public IntercomSignalPdu setIntercomNumber(short pIntercomNumber)
   {
@@ -110,6 +118,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#intercomNumber}
+   * @return 
    */
   public short getIntercomNumber()
   {
@@ -118,6 +127,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#encodingScheme}
+   * @param pEncodingScheme
+   * @return 
    */
   public IntercomSignalPdu setEncodingScheme(short pEncodingScheme)
   {
@@ -127,6 +138,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#encodingScheme}
+   * @return 
    */
   public short getEncodingScheme()
   {
@@ -135,6 +147,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#tdlType}
+   * @param pTdlType
+   * @return 
    */
   public IntercomSignalPdu setTdlType(SignalTDLType pTdlType)
   {
@@ -144,6 +158,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#tdlType}
+   * @return 
    */
   public SignalTDLType getTdlType()
   {
@@ -152,6 +167,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#sampleRate}
+   * @param pSampleRate
+   * @return 
    */
   public IntercomSignalPdu setSampleRate(int pSampleRate)
   {
@@ -161,6 +178,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#sampleRate}
+   * @return 
    */
   public int getSampleRate()
   {
@@ -196,6 +214,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#samples}
+   * @param pSamples
+   * @return 
    */
   public IntercomSignalPdu setSamples(short pSamples)
   {
@@ -205,6 +225,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#samples}
+   * @return 
    */
   public short getSamples()
   {
@@ -213,6 +234,8 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Setter for {@link IntercomSignalPdu#data}
+   * @param pData
+   * @return 
    */
   public IntercomSignalPdu setData(byte[] pData)
   {
@@ -222,6 +245,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Getter for {@link IntercomSignalPdu#data}
+   * @return 
    */
   public byte[] getData()
   {
@@ -229,30 +253,33 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
   }
 
   /* *************************** */
- /* Marshal / unmarshal methods */
- /* *************************** */
+  /* Marshal / unmarshal methods */
+  /* *************************** */
+  
   /**
    * Serializes an object to a DataOutputStream.
    *
+     * @throws java.lang.Exception
    * @see java.io.DataOutputStream
    * @param dos The DataOutputStream
    */
+  @Override
   public void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
     try {
       intercomReferenceID.marshal(dos);
-      dos.writeShort((short) intercomNumber);
-      dos.writeShort((short) encodingScheme);
+      dos.writeShort(intercomNumber);
+      dos.writeShort(encodingScheme);
       tdlType.marshal(dos);
-      dos.writeInt((int) sampleRate);
+      dos.writeInt(sampleRate);
 
       if (dataLength != null)
-        dos.writeShort((short) dataLength);
+        dos.writeShort(dataLength);
       else
-        dos.writeShort((short) (dataLength = calculateDataLength()));
+        dos.writeShort((dataLength = calculateDataLength()));
 
-      dos.writeShort((short) samples);
+      dos.writeShort(samples);
 
       for (int idx = 0; idx < data.length; idx++) {
         dos.writeByte(data[idx]);
@@ -268,10 +295,12 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
   /**
    * Unserializes an object from a DataInputStream.
    *
+   * @throws java.lang.Exception
    * @see java.io.DataInputStream
    * @param dis The DataInputStream
    * @return marshalled size
    */
+  @Override
   public int unmarshal(DataInputStream dis) throws Exception
   {
     int uPosition = 0;
@@ -313,24 +342,25 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param buff The ByteBuffer at the position to begin writing
    * @throws Exception ByteBuffer-generated exception
    */
+  @Override
   public void marshal(java.nio.ByteBuffer buff) throws Exception
   {
     super.marshal(buff);
     intercomReferenceID.marshal(buff);
-    buff.putShort((short) intercomNumber);
-    buff.putShort((short) encodingScheme);
+    buff.putShort(intercomNumber);
+    buff.putShort(encodingScheme);
     tdlType.marshal(buff);
-    buff.putInt((int) sampleRate);
+    buff.putInt(sampleRate);
 
     if (dataLength != null)
-      buff.putShort((short) dataLength);
+      buff.putShort(dataLength);
     else
-      buff.putShort((short) (dataLength = calculateDataLength()));
+      buff.putShort((dataLength = calculateDataLength()));
 
-    buff.putShort((short) samples);
+    buff.putShort(samples);
 
     for (int idx = 0; idx < data.length; idx++) {
-      buff.put((byte) data[idx]);
+      buff.put(data[idx]);
     }
 
     padTo32 = new byte[Align.to32bits(buff)];
@@ -345,6 +375,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @return marshalled size
    * @throws Exception ByteBuffer-generated exception
    */
+  @Override
   public int unmarshal(java.nio.ByteBuffer buff) throws Exception
   {
     super.unmarshal(buff);

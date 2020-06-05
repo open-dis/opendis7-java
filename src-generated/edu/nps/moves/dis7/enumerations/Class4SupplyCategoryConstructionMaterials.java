@@ -75,7 +75,7 @@ public enum Class4SupplyCategoryConstructionMaterials implements Category
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class4SupplyCategoryConstructionMaterials unmarshalEnum(ByteBuffer buff) throws Exception
@@ -88,7 +88,7 @@ public enum Class4SupplyCategoryConstructionMaterials implements Category
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

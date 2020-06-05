@@ -135,7 +135,7 @@ public enum PlatformLandSingleUnitCargoTruckSubcategories implements SubCategory
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformLandSingleUnitCargoTruckSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
@@ -148,7 +148,7 @@ public enum PlatformLandSingleUnitCargoTruckSubcategories implements SubCategory
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

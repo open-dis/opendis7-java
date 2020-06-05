@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -274,28 +274,29 @@ public float getFirstTargetOffset()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
-       dos.writeInt( (int)recordType);
-       dos.writeShort( (short)recordLength);
-       dos.writeShort( (short)padding);
-       dos.writeByte( (byte)emitterNumber);
-       dos.writeByte( (byte)beamNumber);
+       dos.writeInt(recordType);
+       dos.writeShort(recordLength);
+       dos.writeShort(padding);
+       dos.writeByte(emitterNumber);
+       dos.writeByte(beamNumber);
        stateIndicator.marshal(dos);
-       dos.writeByte( (byte)padding2);
-       dos.writeShort( (short)padding3);
-       dos.writeShort( (short)falseTargetCount);
-       dos.writeFloat( (float)walkSpeed);
-       dos.writeFloat( (float)walkAcceleration);
-       dos.writeFloat( (float)maximumWalkDistance);
-       dos.writeFloat( (float)keepTime);
-       dos.writeFloat( (float)echoSpacing);
-       dos.writeFloat( (float)firstTargetOffset);
+       dos.writeByte(padding2);
+       dos.writeShort(padding3);
+       dos.writeShort(falseTargetCount);
+       dos.writeFloat(walkSpeed);
+       dos.writeFloat(walkAcceleration);
+       dos.writeFloat(maximumWalkDistance);
+       dos.writeFloat(keepTime);
+       dos.writeFloat(echoSpacing);
+       dos.writeFloat(firstTargetOffset);
     }
     catch(Exception e)
     {
@@ -305,9 +306,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -347,7 +349,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -459,7 +461,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" recordType: ").append(recordType).append("\n");
     sb.append(" recordLength: ").append(recordLength).append("\n");

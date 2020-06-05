@@ -70,12 +70,12 @@ public enum MinefieldSensorTypesMagnetic
 
     public static MinefieldSensorTypesMagnetic unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue((int)dis.readUnsignedShort());
+        return getEnumForValue(dis.readUnsignedShort());
     } 
 
     public static MinefieldSensorTypesMagnetic unmarshalEnum (ByteBuffer buff) throws Exception
     {
-        return getEnumForValue((int)buff.getShort());
+        return getEnumForValue(buff.getShort());
     }   
 
     public int getMarshalledSize()

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -145,8 +145,9 @@ public List<Environment> getEnvironmentRecords()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -157,8 +158,8 @@ public void marshal(DataOutputStream dos) throws Exception
        environmentType.marshal(dos);
        modelType.marshal(dos);
        environmentStatus.marshal(dos);
-       dos.writeShort( (short)environmentRecords.size());
-       dos.writeShort( (short)sequenceNumber);
+       dos.writeShort(environmentRecords.size());
+       dos.writeShort(sequenceNumber);
 
        for(int idx = 0; idx < environmentRecords.size(); idx++)
        {
@@ -175,9 +176,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -205,7 +207,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -230,7 +232,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < environmentRecords.size(); idx++)
    {
-        Environment aEnvironment = (Environment)environmentRecords.get(idx);
+        Environment aEnvironment = environmentRecords.get(idx);
         aEnvironment.marshal(buff);
    }
 
@@ -305,7 +307,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" environementalProcessID: ").append(environementalProcessID).append("\n");
     sb.append(" environmentType: ").append(environmentType).append("\n");

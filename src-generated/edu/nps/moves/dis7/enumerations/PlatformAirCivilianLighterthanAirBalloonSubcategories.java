@@ -81,7 +81,7 @@ public enum PlatformAirCivilianLighterthanAirBalloonSubcategories implements Sub
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformAirCivilianLighterthanAirBalloonSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
@@ -94,7 +94,7 @@ public enum PlatformAirCivilianLighterthanAirBalloonSubcategories implements Sub
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

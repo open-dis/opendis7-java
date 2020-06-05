@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -246,8 +246,9 @@ public List<VariableParameter> getVariableParameters()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -256,13 +257,13 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        entityID.marshal(dos);
        forceId.marshal(dos);
-       dos.writeByte( (byte)variableParameters.size());
+       dos.writeByte(variableParameters.size());
        entityType.marshal(dos);
        alternativeEntityType.marshal(dos);
        entityLinearVelocity.marshal(dos);
        entityLocation.marshal(dos);
        entityOrientation.marshal(dos);
-       dos.writeInt( (int)entityAppearance);
+       dos.writeInt(entityAppearance);
        deadReckoningParameters.marshal(dos);
        marking.marshal(dos);
        capabilities.marshal(dos);
@@ -282,9 +283,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -318,7 +320,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -349,7 +351,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < variableParameters.size(); idx++)
    {
-        VariableParameter aVariableParameter = (VariableParameter)variableParameters.get(idx);
+        VariableParameter aVariableParameter = variableParameters.get(idx);
         aVariableParameter.marshal(buff);
    }
 
@@ -436,7 +438,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" entityID: ").append(entityID).append("\n");
     sb.append(" forceId: ").append(forceId).append("\n");

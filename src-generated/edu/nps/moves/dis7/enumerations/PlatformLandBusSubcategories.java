@@ -109,7 +109,7 @@ public enum PlatformLandBusSubcategories
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformLandBusSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
@@ -122,7 +122,7 @@ public enum PlatformLandBusSubcategories
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

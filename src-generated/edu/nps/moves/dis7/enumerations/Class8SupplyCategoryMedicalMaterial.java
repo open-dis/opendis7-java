@@ -75,7 +75,7 @@ public enum Class8SupplyCategoryMedicalMaterial implements Category
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class8SupplyCategoryMedicalMaterial unmarshalEnum(ByteBuffer buff) throws Exception
@@ -88,7 +88,7 @@ public enum Class8SupplyCategoryMedicalMaterial implements Category
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

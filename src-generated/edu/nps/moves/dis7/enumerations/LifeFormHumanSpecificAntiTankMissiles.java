@@ -217,7 +217,7 @@ public enum LifeFormHumanSpecificAntiTankMissiles
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static LifeFormHumanSpecificAntiTankMissiles unmarshalEnum(ByteBuffer buff) throws Exception
@@ -230,7 +230,7 @@ public enum LifeFormHumanSpecificAntiTankMissiles
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

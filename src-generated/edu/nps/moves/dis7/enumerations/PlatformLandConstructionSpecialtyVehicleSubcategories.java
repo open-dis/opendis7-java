@@ -183,7 +183,7 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformLandConstructionSpecialtyVehicleSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
@@ -196,7 +196,7 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

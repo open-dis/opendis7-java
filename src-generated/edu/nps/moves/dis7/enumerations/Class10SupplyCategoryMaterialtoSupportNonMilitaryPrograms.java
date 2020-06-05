@@ -71,7 +71,7 @@ public enum Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms implements
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms unmarshalEnum(ByteBuffer buff) throws Exception
@@ -84,7 +84,7 @@ public enum Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms implements
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

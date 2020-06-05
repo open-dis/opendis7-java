@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -302,8 +302,9 @@ public List<GridData> getGridDataRecords()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -311,19 +312,19 @@ public void marshal(DataOutputStream dos) throws Exception
     try 
     {
        environmentalSimulationApplicationID.marshal(dos);
-       dos.writeShort( (short)fieldNumber);
-       dos.writeShort( (short)pduNumber);
-       dos.writeShort( (short)pduTotal);
+       dos.writeShort(fieldNumber);
+       dos.writeShort(pduNumber);
+       dos.writeShort(pduTotal);
        coordinateSystem.marshal(dos);
-       dos.writeByte( (byte)gridDataRecords.size());
+       dos.writeByte(gridDataRecords.size());
        constantGrid.marshal(dos);
        environmentType.marshal(dos);
        orientation.marshal(dos);
        sampleTime.marshal(dos);
-       dos.writeInt( (int)totalValues);
-       dos.writeByte( (byte)vectorDimension);
-       dos.writeByte( (byte)padding1);
-       dos.writeShort( (short)padding2);
+       dos.writeInt(totalValues);
+       dos.writeByte(vectorDimension);
+       dos.writeByte(padding1);
+       dos.writeShort(padding2);
 
        for(int idx = 0; idx < gridAxisDescriptors.size(); idx++)
        {
@@ -347,9 +348,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -399,7 +401,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -432,14 +434,14 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < gridAxisDescriptors.size(); idx++)
    {
-        GridAxisDescriptor aGridAxisDescriptor = (GridAxisDescriptor)gridAxisDescriptors.get(idx);
+        GridAxisDescriptor aGridAxisDescriptor = gridAxisDescriptors.get(idx);
         aGridAxisDescriptor.marshal(buff);
    }
 
 
    for(int idx = 0; idx < gridDataRecords.size(); idx++)
    {
-        GridData aGridData = (GridData)gridDataRecords.get(idx);
+        GridData aGridData = gridDataRecords.get(idx);
         aGridData.marshal(buff);
    }
 
@@ -541,7 +543,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" environmentalSimulationApplicationID: ").append(environmentalSimulationApplicationID).append("\n");
     sb.append(" fieldNumber: ").append(fieldNumber).append("\n");

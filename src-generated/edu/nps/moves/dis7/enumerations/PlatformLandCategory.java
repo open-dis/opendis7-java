@@ -167,7 +167,7 @@ public enum PlatformLandCategory implements Category
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PlatformLandCategory unmarshalEnum(ByteBuffer buff) throws Exception
@@ -180,7 +180,7 @@ public enum PlatformLandCategory implements Category
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

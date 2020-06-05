@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -111,7 +111,7 @@ public class Align
           dis.read();
       }
       catch(IOException ex) {
-          ex.printStackTrace();
+          ex.printStackTrace(System.err);
           throw new RuntimeException("IOException ex: "+ex.getLocalizedMessage());
       }
   }
@@ -122,7 +122,7 @@ public class Align
           dos.writeByte(0);
       }
       catch(IOException ex) {
-          ex.printStackTrace();
+          ex.printStackTrace(System.err);
           throw new RuntimeException("IOException ex: "+ex.getLocalizedMessage());
       }
       

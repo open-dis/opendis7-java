@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7;
@@ -33,7 +33,7 @@ public class VariableDatum extends Object implements Serializable
   private byte[] padding = new byte[0]; // pad to 64-bit boundary
 
   /**
-   * Returns the size of this serialized object in bytes
+   * @return the size of this serialized object in bytes
    */
   public int getMarshalledSize()
   {
@@ -50,6 +50,7 @@ public class VariableDatum extends Object implements Serializable
   /**
    * Setter for {@link VariableDatum#variableDatumID}
    *
+   * @param pVariableDatumID
    * @return this object
    */
   public VariableDatum setVariableDatumID(VariableRecordType pVariableDatumID)
@@ -76,6 +77,8 @@ public class VariableDatum extends Object implements Serializable
    * {@link VariableDatum#variableDatumValue} is NOT
    * set and this pdu is issued (marshaled), the value used when marshaling this field will be
    * the size of the byte array times 8.
+   * @param bitLength
+   * @return 
    */
   public VariableDatum setVariableDatumLengthInBits(int bitLength)
   {
@@ -91,6 +94,8 @@ public class VariableDatum extends Object implements Serializable
    * {@link VariableDatum#variableDatumValue} is NOT
    * set and this pdu is issued (marshaled), the value used when marshaling this field will be
    * the size of the byte array times 8.
+   * @param byteLength
+   * @return 
    */
   public VariableDatum setVariableDatumLengthInBytes(int byteLength)
   {
@@ -100,6 +105,7 @@ public class VariableDatum extends Object implements Serializable
   
   /**
    * Getter for {@link VariableDatum#variableDatumLength}
+   * @return 
    */
   public int getVariableDatumLength()
   {
@@ -113,6 +119,7 @@ public class VariableDatum extends Object implements Serializable
    * The size of the byte array reflects the value of {@link VariableDatum#variableDatumLength} rounded to the next
    * highest byte boundary. If {@link VariableDatum#variableDatumLength} is not set when the Pdu is sent, the
    * receiver will read a bit length equal to the size of the byte array times 8.
+   * @param pVariableDatumValue
    * @return this object
    */
   public VariableDatum setVariableDatumValue(byte[] pVariableDatumValue)
@@ -123,6 +130,7 @@ public class VariableDatum extends Object implements Serializable
 
   /**
    * Getter for {@link VariableDatum#variableDatumValue}
+   * @return 
    */
   public byte[] getVariableDatumValue()
   {
@@ -136,6 +144,7 @@ public class VariableDatum extends Object implements Serializable
   /**
    * Serializes an object to a DataOutputStream.
    *
+   * @throws java.lang.Exception
    * @see java.io.DataOutputStream
    * @param dos The DataOutputStream
    */
@@ -144,7 +153,7 @@ public class VariableDatum extends Object implements Serializable
     try {
       variableDatumID.marshal(dos);
       if (variableDatumLength != null)
-        dos.writeInt((int) variableDatumLength);
+        dos.writeInt(variableDatumLength);
       else
         dos.writeInt(variableDatumLength = calculateDatumLength());
 
@@ -154,7 +163,7 @@ public class VariableDatum extends Object implements Serializable
 
       padding = new byte[Align.to64bits(dos)];
     }
-    catch (Exception e) {
+    catch (IOException e) {
       System.err.println(e);
     }
   }
@@ -162,6 +171,7 @@ public class VariableDatum extends Object implements Serializable
   /**
    * Unserializes an object from a DataInputStream.
    *
+   * @throws java.lang.Exception
    * @see java.io.DataInputStream
    * @param dis The DataInputStream
    * @return marshalled size
@@ -208,7 +218,7 @@ public class VariableDatum extends Object implements Serializable
       buff.putInt(variableDatumLength = calculateDatumLength());
     for (int idx = 0; idx < variableDatumLength; idx++) //for(int idx = 0; idx < variableDatumValue.length; idx++)
     {
-      buff.put((byte) variableDatumValue[idx]);
+      buff.put(variableDatumValue[idx]);
     }
     padding = new byte[Align.to64bits(buff)];
   }

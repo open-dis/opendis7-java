@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -130,19 +130,20 @@ public int getMaximumQuantityReloadTime()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
        expendable.marshal(dos);
-       dos.writeInt( (int)station);
-       dos.writeShort( (short)standardQuantity);
-       dos.writeShort( (short)maximumQuantity);
-       dos.writeInt( (int)standardQuantityReloadTime);
-       dos.writeInt( (int)maximumQuantityReloadTime);
+       dos.writeInt(station);
+       dos.writeShort(standardQuantity);
+       dos.writeShort(maximumQuantity);
+       dos.writeInt(standardQuantityReloadTime);
+       dos.writeInt(maximumQuantityReloadTime);
     }
     catch(Exception e)
     {
@@ -152,9 +153,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -175,7 +177,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -260,7 +262,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" expendable: ").append(expendable).append("\n");
     sb.append(" station: ").append(station).append("\n");

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7;
@@ -13,7 +13,11 @@ import edu.nps.moves.dis7.enumerations.*;
  */
 public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializable
 {
-  protected RadioCommsHeader header = new RadioCommsHeader();
+
+    /**
+     *
+     */
+    protected RadioCommsHeader header = new RadioCommsHeader();
 
   /**
    * encoding scheme used, and enumeration
@@ -58,6 +62,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   /**
    * Returns the size of this serialized object in bytes
    */
+  @Override
   public int getMarshalledSize()
   {
     int marshalSize = 0;
@@ -206,7 +211,6 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    *
    * @return this object
    * @param pData data
-   * @return this object;
    */
   public SignalPdu setData(byte[] pData)
   {
@@ -234,21 +238,22 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @see java.io.DataOutputStream
    * @param dos The DataOutputStream
    */
+  @Override
   public void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
 
     header.marshal(dos);
-    dos.writeShort((short) encodingScheme);
+    dos.writeShort(encodingScheme);
     tdlType.marshal(dos);
-    dos.writeInt((int) sampleRate);
+    dos.writeInt(sampleRate);
 
     if (dataLength != null)
-      dos.writeShort((short) dataLength);
+      dos.writeShort(dataLength);
     else
-      dos.writeShort((short) (dataLength = calculateDataLength()));
+      dos.writeShort((dataLength = calculateDataLength()));
 
-    dos.writeShort((short) samples);
+    dos.writeShort(samples);
     for (int idx = 0; idx < data.length; idx++) {
       dos.writeByte(data[idx]);
     }
@@ -263,6 +268,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param dis The DataInputStream
    * @return marshaled size
    */
+  @Override
   public int unmarshal(DataInputStream dis) throws Exception
   {
     int uPosition = 0;
@@ -301,23 +307,24 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param buff The ByteBuffer at the position to begin writing
    * @throws Exception ByteBuffer-generated exception
    */
+  @Override
   public void marshal(java.nio.ByteBuffer buff) throws Exception
   {
     super.marshal(buff);
     header.marshal(buff);
-    buff.putShort((short) encodingScheme);
+    buff.putShort(encodingScheme);
     tdlType.marshal(buff);
-    buff.putInt((int) sampleRate);
+    buff.putInt(sampleRate);
     
     if(dataLength != null)
-      buff.putShort((short) dataLength);
+      buff.putShort(dataLength);
     else
-      buff.putShort((short) (dataLength = calculateDataLength()));
+      buff.putShort((dataLength = calculateDataLength()));
     
-    buff.putShort((short) samples);
+    buff.putShort(samples);
 
     for (int idx = 0; idx < data.length; idx++) {
-      buff.put((byte) data[idx]);
+      buff.put(data[idx]);
     }
 
     padTo32 = new byte[Align.to32bits(buff)];
@@ -332,6 +339,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @return marshalled size
    * @throws Exception ByteBuffer-generated exception
    */
+  @Override
   public int unmarshal(java.nio.ByteBuffer buff) throws Exception
   {
     super.unmarshal(buff);

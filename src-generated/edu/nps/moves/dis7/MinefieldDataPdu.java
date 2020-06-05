@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -473,8 +473,9 @@ public byte[] getNumberOfVertices()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -483,13 +484,13 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        minefieldID.marshal(dos);
        requestingEntityID.marshal(dos);
-       dos.writeShort( (short)minefieldSequenceNumbeer);
-       dos.writeByte( (byte)requestID);
-       dos.writeByte( (byte)pduSequenceNumber);
-       dos.writeByte( (byte)numberOfPdus);
-       dos.writeByte( (byte)numberOfVertices.length);
-       dos.writeByte( (byte)sensorTypes.size());
-       dos.writeByte( (byte)padding);
+       dos.writeShort(minefieldSequenceNumbeer);
+       dos.writeByte(requestID);
+       dos.writeByte(pduSequenceNumber);
+       dos.writeByte(numberOfPdus);
+       dos.writeByte(numberOfVertices.length);
+       dos.writeByte(sensorTypes.size());
+       dos.writeByte(padding);
        dataFilter.marshal(dos);
        mineType.marshal(dos);
 
@@ -582,9 +583,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -689,7 +691,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -719,7 +721,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < sensorTypes.size(); idx++)
    {
-        MinefieldSensorType aMinefieldSensorType = (MinefieldSensorType)sensorTypes.get(idx);
+        MinefieldSensorType aMinefieldSensorType = sensorTypes.get(idx);
         aMinefieldSensorType.marshal(buff);
    }
 
@@ -727,7 +729,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < mineLocation.size(); idx++)
    {
-        Vector3Float aVector3Float = (Vector3Float)mineLocation.get(idx);
+        Vector3Float aVector3Float = mineLocation.get(idx);
         aVector3Float.marshal(buff);
    }
 
@@ -746,7 +748,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < mineOrientation.size(); idx++)
    {
-        EulerAngles aEulerAngles = (EulerAngles)mineOrientation.get(idx);
+        EulerAngles aEulerAngles = mineOrientation.get(idx);
         aEulerAngles.marshal(buff);
    }
 
@@ -761,7 +763,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < mineEmplacementTime.size(); idx++)
    {
-        MineEmplacementTime aMineEmplacementTime = (MineEmplacementTime)mineEmplacementTime.get(idx);
+        MineEmplacementTime aMineEmplacementTime = mineEmplacementTime.get(idx);
         aMineEmplacementTime.marshal(buff);
    }
 
@@ -772,7 +774,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < fusing.size(); idx++)
    {
-        MinefieldDataFusing aMinefieldDataFusing = (MinefieldDataFusing)fusing.get(idx);
+        MinefieldDataFusing aMinefieldDataFusing = fusing.get(idx);
         aMinefieldDataFusing.marshal(buff);
    }
 
@@ -783,7 +785,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < paintScheme.size(); idx++)
    {
-        MinefieldDataPaintScheme aMinefieldDataPaintScheme = (MinefieldDataPaintScheme)paintScheme.get(idx);
+        MinefieldDataPaintScheme aMinefieldDataPaintScheme = paintScheme.get(idx);
         aMinefieldDataPaintScheme.marshal(buff);
    }
 
@@ -1007,7 +1009,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" minefieldID: ").append(minefieldID).append("\n");
     sb.append(" requestingEntityID: ").append(requestingEntityID).append("\n");

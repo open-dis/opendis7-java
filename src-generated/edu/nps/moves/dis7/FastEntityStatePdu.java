@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -701,59 +701,60 @@ public List<VariableParameter> getVariableParameters()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
     {
-       dos.writeShort( (short)site);
-       dos.writeShort( (short)application);
-       dos.writeShort( (short)entity);
-       dos.writeByte( (byte)forceId);
-       dos.writeByte( (byte)variableParameters.size());
-       dos.writeByte( (byte)entityKind);
-       dos.writeByte( (byte)domain);
-       dos.writeShort( (short)country);
-       dos.writeByte( (byte)category);
-       dos.writeByte( (byte)subcategory);
-       dos.writeByte( (byte)specific);
-       dos.writeByte( (byte)extra);
-       dos.writeByte( (byte)altEntityKind);
-       dos.writeByte( (byte)altDomain);
-       dos.writeShort( (short)altCountry);
-       dos.writeByte( (byte)altCategory);
-       dos.writeByte( (byte)altSubcategory);
-       dos.writeByte( (byte)altSpecific);
-       dos.writeByte( (byte)altExtra);
-       dos.writeFloat( (float)xVelocity);
-       dos.writeFloat( (float)yVelocity);
-       dos.writeFloat( (float)zVelocity);
-       dos.writeDouble( (double)xLocation);
-       dos.writeDouble( (double)yLocation);
-       dos.writeDouble( (double)zLocation);
-       dos.writeFloat( (float)psi);
-       dos.writeFloat( (float)theta);
-       dos.writeFloat( (float)phi);
-       dos.writeInt( (int)entityAppearance);
-       dos.writeByte( (byte)deadReckoningAlgorithm);
+       dos.writeShort(site);
+       dos.writeShort(application);
+       dos.writeShort(entity);
+       dos.writeByte(forceId);
+       dos.writeByte(variableParameters.size());
+       dos.writeByte(entityKind);
+       dos.writeByte(domain);
+       dos.writeShort(country);
+       dos.writeByte(category);
+       dos.writeByte(subcategory);
+       dos.writeByte(specific);
+       dos.writeByte(extra);
+       dos.writeByte(altEntityKind);
+       dos.writeByte(altDomain);
+       dos.writeShort(altCountry);
+       dos.writeByte(altCategory);
+       dos.writeByte(altSubcategory);
+       dos.writeByte(altSpecific);
+       dos.writeByte(altExtra);
+       dos.writeFloat(xVelocity);
+       dos.writeFloat(yVelocity);
+       dos.writeFloat(zVelocity);
+       dos.writeDouble(xLocation);
+       dos.writeDouble(yLocation);
+       dos.writeDouble(zLocation);
+       dos.writeFloat(psi);
+       dos.writeFloat(theta);
+       dos.writeFloat(phi);
+       dos.writeInt(entityAppearance);
+       dos.writeByte(deadReckoningAlgorithm);
 
        for(int idx = 0; idx < otherParameters.length; idx++)
            dos.writeByte(otherParameters[idx]);
 
-       dos.writeFloat( (float)xAcceleration);
-       dos.writeFloat( (float)yAcceleration);
-       dos.writeFloat( (float)zAcceleration);
-       dos.writeFloat( (float)xAngularVelocity);
-       dos.writeFloat( (float)yAngularVelocity);
-       dos.writeFloat( (float)zAngularVelocity);
+       dos.writeFloat(xAcceleration);
+       dos.writeFloat(yAcceleration);
+       dos.writeFloat(zAcceleration);
+       dos.writeFloat(xAngularVelocity);
+       dos.writeFloat(yAngularVelocity);
+       dos.writeFloat(zAngularVelocity);
 
        for(int idx = 0; idx < marking.length; idx++)
            dos.writeByte(marking[idx]);
 
-       dos.writeShort( (short)capabilities);
+       dos.writeShort(capabilities);
 
        for(int idx = 0; idx < variableParameters.size(); idx++)
        {
@@ -770,9 +771,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -871,7 +873,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -935,7 +937,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < variableParameters.size(); idx++)
    {
-        VariableParameter aVariableParameter = (VariableParameter)variableParameters.get(idx);
+        VariableParameter aVariableParameter = variableParameters.get(idx);
         aVariableParameter.marshal(buff);
    }
 
@@ -1088,7 +1090,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" site: ").append(site).append("\n");
     sb.append(" application: ").append(application).append("\n");

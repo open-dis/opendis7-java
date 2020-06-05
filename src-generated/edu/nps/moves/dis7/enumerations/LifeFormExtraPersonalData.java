@@ -147,7 +147,7 @@ public enum LifeFormExtraPersonalData
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static LifeFormExtraPersonalData unmarshalEnum(ByteBuffer buff) throws Exception
@@ -160,7 +160,7 @@ public enum LifeFormExtraPersonalData
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

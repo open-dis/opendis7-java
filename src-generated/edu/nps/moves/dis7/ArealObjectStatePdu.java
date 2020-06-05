@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -230,8 +230,9 @@ public List<Vector3Double> getObjectLocation()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
@@ -240,13 +241,13 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        objectID.marshal(dos);
        referencedObjectID.marshal(dos);
-       dos.writeShort( (short)updateNumber);
+       dos.writeShort(updateNumber);
        forceID.marshal(dos);
        modifications.marshal(dos);
        objectType.marshal(dos);
-       dos.writeInt( (int)specificObjectAppearance);
-       dos.writeShort( (short)generalObjectAppearance);
-       dos.writeShort( (short)objectLocation.size());
+       dos.writeInt(specificObjectAppearance);
+       dos.writeShort(generalObjectAppearance);
+       dos.writeShort(objectLocation.size());
        requesterID.marshal(dos);
        receivingID.marshal(dos);
 
@@ -265,9 +266,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -302,7 +304,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -332,7 +334,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < objectLocation.size(); idx++)
    {
-        Vector3Double aVector3Double = (Vector3Double)objectLocation.get(idx);
+        Vector3Double aVector3Double = objectLocation.get(idx);
         aVector3Double.marshal(buff);
    }
 
@@ -417,7 +419,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" objectID: ").append(objectID).append("\n");
     sb.append(" referencedObjectID: ").append(referencedObjectID).append("\n");

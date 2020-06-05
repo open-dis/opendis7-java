@@ -64,12 +64,12 @@ public enum UAAdditionalPassiveActivityParameterIndex
 
     public static UAAdditionalPassiveActivityParameterIndex unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue((int)dis.readUnsignedShort());
+        return getEnumForValue(dis.readUnsignedShort());
     } 
 
     public static UAAdditionalPassiveActivityParameterIndex unmarshalEnum (ByteBuffer buff) throws Exception
     {
-        return getEnumForValue((int)buff.getShort());
+        return getEnumForValue(buff.getShort());
     }   
 
     public int getMarshalledSize()

@@ -73,7 +73,7 @@ public enum VariantsforSubsurfaceCategory201Mammal
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static VariantsforSubsurfaceCategory201Mammal unmarshalEnum(ByteBuffer buff) throws Exception
@@ -86,7 +86,7 @@ public enum VariantsforSubsurfaceCategory201Mammal
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

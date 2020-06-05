@@ -129,7 +129,7 @@ public enum SubcategoriesforLandCategory200Mammal implements SubCategory
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static SubcategoriesforLandCategory200Mammal unmarshalEnum(ByteBuffer buff) throws Exception
@@ -142,7 +142,7 @@ public enum SubcategoriesforLandCategory200Mammal implements SubCategory
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

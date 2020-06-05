@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -64,16 +64,17 @@ public List<VariableDatum> getVariableDatums()
 
 /**
  * Serializes an object to a DataOutputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataOutputStream
- * @param dos The DataOutputStream
+ * @param dos the OutputStream
  */
 public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
     {
-       dos.writeInt( (int)numberOfFixedDatumRecords);
-       dos.writeInt( (int)variableDatums.size());
+       dos.writeInt(numberOfFixedDatumRecords);
+       dos.writeInt(variableDatums.size());
 
        for(int idx = 0; idx < variableDatums.size(); idx++)
        {
@@ -90,9 +91,10 @@ public void marshal(DataOutputStream dos) throws Exception
 
 /**
  * Unserializes an object from a DataInputStream.
+ * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * @param dis The DataInputStream
- * @return marshalled size
+ * @param dis the InputStream
+ * @return unmarshalled size
  */
 public int unmarshal(DataInputStream dis) throws Exception
 {
@@ -115,7 +117,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     }
     catch(Exception e)
     { 
-      System.out.println(e); 
+      System.err.println(e); 
     }
     return getMarshalledSize();
 }
@@ -136,7 +138,7 @@ public void marshal(java.nio.ByteBuffer buff) throws Exception
 
    for(int idx = 0; idx < variableDatums.size(); idx++)
    {
-        VariableDatum aVariableDatum = (VariableDatum)variableDatums.get(idx);
+        VariableDatum aVariableDatum = variableDatums.get(idx);
         aVariableDatum.marshal(buff);
    }
 
@@ -202,7 +204,7 @@ public int unmarshal(java.nio.ByteBuffer buff) throws Exception
  public String toString()
  {
     StringBuilder sb = new StringBuilder();
-    sb.append(getClass().getSimpleName()+":\n");
+    sb.append(getClass().getSimpleName()).append(":\n");
 
     sb.append(" variableDatums: ").append("\n");
     variableDatums.forEach(r->{ sb.append(r.getClass().getSimpleName()).append(": ").append(r).append("\n");});

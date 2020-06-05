@@ -83,7 +83,7 @@ public enum SpecificDimensionEnumerationsforLandAreaSize
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static SpecificDimensionEnumerationsforLandAreaSize unmarshalEnum(ByteBuffer buff) throws Exception
@@ -96,7 +96,7 @@ public enum SpecificDimensionEnumerationsforLandAreaSize
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

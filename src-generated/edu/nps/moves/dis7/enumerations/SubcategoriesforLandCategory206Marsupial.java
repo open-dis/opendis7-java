@@ -95,7 +95,7 @@ public enum SubcategoriesforLandCategory206Marsupial
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static SubcategoriesforLandCategory206Marsupial unmarshalEnum(ByteBuffer buff) throws Exception
@@ -108,7 +108,7 @@ public enum SubcategoriesforLandCategory206Marsupial
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

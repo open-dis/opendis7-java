@@ -92,12 +92,12 @@ public enum IFFSystemType
 
     public static IFFSystemType unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue((int)dis.readUnsignedShort());
+        return getEnumForValue(dis.readUnsignedShort());
     } 
 
     public static IFFSystemType unmarshalEnum (ByteBuffer buff) throws Exception
     {
-        return getEnumForValue((int)buff.getShort());
+        return getEnumForValue(buff.getShort());
     }   
 
     public int getMarshalledSize()

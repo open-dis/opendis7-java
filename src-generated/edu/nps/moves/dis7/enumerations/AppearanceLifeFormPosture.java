@@ -101,7 +101,7 @@ public enum AppearanceLifeFormPosture
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static AppearanceLifeFormPosture unmarshalEnum(ByteBuffer buff) throws Exception
@@ -114,7 +114,7 @@ public enum AppearanceLifeFormPosture
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2019, MOVES Institute, Naval Postgraduate School. All rights reserved.
+ * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -109,14 +109,14 @@ public class DisTime
         // 2^31-1 DIS time units in an hour. 3600 sec/hr X 1000 msec/sec divided into the number of
         // msec since the start of the hour gives the percentage of DIS time units in the hour, times
         // the number of DIS time units per hour, equals the time value
-        double val = (((double) diff) / (3600.0 * 1000.0)) * Integer.MAX_VALUE;
+        double val = (diff / (3600.0 * 1000.0)) * Integer.MAX_VALUE;
         int ts = (int) val;
 
         return ts;
     }
 
     /**
-     * Returns the absolute timestamp, assuminng that this host is sync'd to NTP.
+     * Returns the absolute timestamp, assuming that this host is sync'd to NTP.
      * Fix to bitshift by mvormelch.
      * @return DIS time units, get absolute timestamp
      */

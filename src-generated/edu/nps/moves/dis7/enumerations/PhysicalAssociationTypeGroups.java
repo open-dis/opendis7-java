@@ -79,7 +79,7 @@ public enum PhysicalAssociationTypeGroups
             showError(ex);
         } */
         
-        return getEnumForValue((int)dis.readByte());
+        return getEnumForValue(dis.readByte());
     } 
 
     public static PhysicalAssociationTypeGroups unmarshalEnum(ByteBuffer buff) throws Exception
@@ -92,7 +92,7 @@ public enum PhysicalAssociationTypeGroups
             showError(ex);
         }
         */
-        return getEnumForValue((int)buff.get());
+        return getEnumForValue(buff.get());
     }
 
     public int getMarshalledSize()
