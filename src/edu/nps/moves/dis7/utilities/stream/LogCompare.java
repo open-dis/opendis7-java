@@ -6,6 +6,7 @@ import static edu.nps.moves.dis7.utilities.stream.PduRecorder.COMMENT_MARKER;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Base64;
 
 /**
@@ -125,7 +126,7 @@ public class LogCompare
       System.out.println("End of compare. There were " + (goodmatch ? "no" : "one or more ") + "errors");
       System.exit(goodmatch ? 0 : 1);
     }
-    catch (Exception ex) {
+    catch (IOException ex) {
       System.err.println("Exception reading pdu logs: " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
       System.exit(1);
     }

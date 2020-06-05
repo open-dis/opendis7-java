@@ -5,6 +5,7 @@ import static java.lang.Math.sqrt;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -14,7 +15,7 @@ import java.util.TreeMap;
  */
 public class X3dSlidingWindowCompression {
 
-    private LinkedHashMap<Double, X3dCoordinates> localMap;
+    private Map<Double, X3dCoordinates> localMap;
 
     public X3dSlidingWindowCompression(LinkedHashMap<Double, X3dCoordinates> localHashMap) {
 
@@ -25,7 +26,7 @@ public class X3dSlidingWindowCompression {
         }
     }
 
-    public TreeMap<Double, X3dCoordinates> doSlidingWindow() {
+    public Map<Double, X3dCoordinates> doSlidingWindow() {
 
         System.out.println("DISTools.Regression.doRegression()");
         //Check whether points could be deleted to compress the stream
@@ -33,34 +34,34 @@ public class X3dSlidingWindowCompression {
         TreeMap<Double, X3dCoordinates> streamMap = new TreeMap<>();
         //Copy LinkedHashMap into TreeMap to be able to pull the first element.
         streamMap.putAll(localMap);
-        TreeMap<Double, X3dCoordinates> returnMap = new TreeMap<>();
+        Map<Double, X3dCoordinates> returnMap = new TreeMap<>();
         //TreeMap of slidingWindows will store all of the points that are currently processed
         //use .pullFirstEntry() to get rid of the points at the beginning.
-        TreeMap<Double, X3dCoordinates> slidingWindow = new TreeMap<>();
+        Map<Double, X3dCoordinates> slidingWindow = new TreeMap<>();
 
+        Set<Double> slidingWindowKeys;
+        /** List of Times in Seconds */
+        List<Double> timestampList = new ArrayList<>();
+        /** List of x coordinates in meters*/
+        List<Double> xList = new ArrayList<>();
+        /** List of y coordinates in meters*/
+        List<Double> yList = new ArrayList<>();
+        /** List of z coordinates in meters*/
+        List<Double> zList = new ArrayList<>();
+        /** List of angle phi in radians*/ 
+        List<Double> phiList = new ArrayList<>();
+        /** List of angle psi in radians*/ 
+        List<Double> psiList = new ArrayList<>();
+        /** List of angle theta in radians*/ 
+        List<Double> thetaList = new ArrayList<>();
         while (streamMap.size() > 0) {
             slidingWindow.put(streamMap.firstEntry().getKey(), streamMap.get(streamMap.firstEntry().getKey()));
             streamMap.pollFirstEntry();
 
             //Calculate the mean and SD
-            Set<Double> slidingWindowKeys = slidingWindow.keySet();
+            slidingWindowKeys = slidingWindow.keySet();
 
             if (slidingWindow.size() >= 3) {
-
-                /** List of Times in Seconds */
-                List<Double> timestampList = new ArrayList<>();
-                /** List of x coordinates in meters*/
-                List<Double> xList = new ArrayList<>();
-                /** List of y coordinates in meters*/
-                List<Double> yList = new ArrayList<>();
-                /** List of z coordinates in meters*/
-                List<Double> zList = new ArrayList<>();
-                /** List of angle phi in radians*/ 
-                List<Double> phiList = new ArrayList<>();
-                /** List of angle psi in radians*/ 
-                List<Double> psiList = new ArrayList<>();
-                /** List of angle theta in radians*/ 
-                List<Double> thetaList = new ArrayList<>();
 
                 Double[] k = new Double[slidingWindowKeys.size()];
                 slidingWindowKeys.toArray(k);
@@ -79,7 +80,8 @@ public class X3dSlidingWindowCompression {
                 }
 
                 //Calculate Area of Triangle
-                //Credit: http://www.ambrsoft.com/TrigoCalc/Line3D/LineColinear.htm
+                //Credit: http://www.ambrsoft.com/TrigoCalc/Line3D/LineColinear.htm;
+                X3dCoordinates firstPoint, lastPoint;
                 for (int i = 0; i < slidingWindow.size(); i++) {
 
                     double a = sqrt(pow(xList.get(1) - xList.get(0), 2) + pow(yList.get(1) - yList.get(0), 2) + pow(zList.get(1) - zList.get(0), 2));
@@ -91,7 +93,7 @@ public class X3dSlidingWindowCompression {
                     //Threshold can be adjusted (areaA)
                     if ((areaA >= 0.1) || (timestampList.get(i) - timestampList.get(0) >= 4.0)) {
                         //grab the first and the last point from the sliding window and push it to the returnMap
-                        X3dCoordinates firstPoint = new X3dCoordinates();
+                        firstPoint = new X3dCoordinates();
                         firstPoint.setX(xList.get(0));
                         firstPoint.setY(yList.get(0));
                         firstPoint.setZ(zList.get(0));
@@ -99,7 +101,7 @@ public class X3dSlidingWindowCompression {
                         firstPoint.setPsi(psiList.get(0));
                         firstPoint.setTheta(thetaList.get(0));
 
-                        X3dCoordinates lastPoint = new X3dCoordinates(xList.get(i), yList.get(i), zList.get(i), phiList.get(i), psiList.get(i), thetaList.get(i));
+                        lastPoint = new X3dCoordinates(xList.get(i), yList.get(i), zList.get(i), phiList.get(i), psiList.get(i), thetaList.get(i));
 
                         returnMap.put(timestampList.get(0), firstPoint);
                         returnMap.put(timestampList.get(i), lastPoint);
@@ -121,8 +123,9 @@ public class X3dSlidingWindowCompression {
 
                         //System.out.println("StreamMap empty. All points left will be added. Break");
                         //grab the first and the last point from the siding window and push it to the returnMap
+                        X3dCoordinates leftPoints;
                         for (int j = 0; j < slidingWindow.size(); j++) {
-                            X3dCoordinates leftPoints = new X3dCoordinates(xList.get(j), yList.get(j), zList.get(j), phiList.get(j), psiList.get(j), thetaList.get(j));
+                            leftPoints = new X3dCoordinates(xList.get(j), yList.get(j), zList.get(j), phiList.get(j), psiList.get(j), thetaList.get(j));
                             returnMap.put(timestampList.get(j), leftPoints);
                         }
 

@@ -13,8 +13,8 @@ import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.LinkedHashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,71 +52,67 @@ public class X3dCreateLineSet {
         this.bufferShort = localBufferShort.clone();
 
         if (bufferShort[2] == 1) {
-        
-        //PDU Factory
-        PduFactory pduFactory = new PduFactory();
-        Pdu localPdu = null;
 
-        localPdu = pduFactory.createPdu(bufferShort);
+            //PDU Factory
+            PduFactory pduFactory = new PduFactory();
+            Pdu localPdu = pduFactory.createPdu(bufferShort);
 
-        // ToDO figure out how to do this! makeEntityStatePDU
-        EntityStatePdu localEspdu = pduFactory.makeEntityStatePdu();
-        //Put all the data we need into the localEspdu
-        ByteBuffer espduBuffer = ByteBuffer.wrap(bufferShort);
-        try {
-            localEspdu.unmarshal(espduBuffer);
-        } catch (Exception ex) {
-            Logger.getLogger(X3dCreateLineSet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            // ToDO figure out how to do this! makeEntityStatePDU
+            EntityStatePdu localEspdu = pduFactory.makeEntityStatePdu();
+            //Put all the data we need into the localEspdu
+            ByteBuffer espduBuffer = ByteBuffer.wrap(bufferShort);
+            try {
+                localEspdu.unmarshal(espduBuffer);
+            } catch (Exception ex) {
+                Logger.getLogger(X3dCreateLineSet.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-        double localTimeStamp = 0;
-        double localX = 0;
-        double localY = 0;
-        double localZ = 0;
+            double localTimeStamp;
+            double localX;
+            double localY;
+            double localZ;
 
-        //TimeStamps for a lineSet is not needed but copied from X3DInterpolators to use them as key for the hashmap
-        // and the standard compression class can be used
-        //Store the first timestamp to subtract it from all others
-        //Same with X,Y,Z to create a local coordiante system
-        if (firstTimeStamp) {
+            //TimeStamps for a lineSet is not needed but copied from X3DInterpolators to use them as key for the hashmap
+            // and the standard compression class can be used
+            //Store the first timestamp to subtract it from all others
+            //Same with X,Y,Z to create a local coordiante system
+            if (firstTimeStamp) {
 
-            firstLocalTimeStamp = localPdu.getTimestamp();
+                firstLocalTimeStamp = localPdu.getTimestamp();
+//            localTimeStamp = localPdu.getTimestamp();
+                firstLocalX = localEspdu.getEntityLocation().getX();
+                firstLocalY = localEspdu.getEntityLocation().getZ();
+                firstLocalZ = -1 * localEspdu.getEntityLocation().getY();
+
+                firstTimeStamp = false;
+            }
+
             localTimeStamp = localPdu.getTimestamp();
-            firstLocalX = localEspdu.getEntityLocation().getX();
-            firstLocalY = localEspdu.getEntityLocation().getZ();
-            firstLocalZ = -1*localEspdu.getEntityLocation().getY();
+            localX = localEspdu.getEntityLocation().getX();
+            localY = localEspdu.getEntityLocation().getZ();
+            localZ = -1 * localEspdu.getEntityLocation().getY();
 
-            firstTimeStamp = false;
+            //Debug for printing X,Y,Z
+            //System.out.println(localX + " " + localY + " " + localZ);
+            localTimeStamp = localTimeStamp - firstLocalTimeStamp;
+            localX = localX - firstLocalX;
+            localY = localY - firstLocalY;
+            localZ = localZ - firstLocalZ;
+
+            //Divide TimeStamp by 1,300,000 to get something close to a second per Unit.
+            //According to the DIS standard one tick is 3600/(2^31) seconds ~ 1.6764 µs
+            //1,300,000 was derived from a stream that is 61 seconds long. The number was adjusted to get a timesensor with 61 seconds
+            //ToDo find the real conversion between TimeStampDelta and seconds
+            localTimeStamp = localTimeStamp / 1300000;
+
+            //Only add to stream if it is an ESPDU
+            //ToDo: Add support for multiple Entities
+            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
+
+                testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, 0.0, 0.0, 0.0));
+
+            }
         }
-
-        localTimeStamp = localPdu.getTimestamp();
-        localX = localEspdu.getEntityLocation().getX();
-        localY = localEspdu.getEntityLocation().getZ();
-        localZ = -1*localEspdu.getEntityLocation().getY();
-
-        //Debug for printing X,Y,Z
-        //System.out.println(localX + " " + localY + " " + localZ);
-        
-        localTimeStamp = localTimeStamp - firstLocalTimeStamp;
-        localX = localX - firstLocalX;
-        localY = localY - firstLocalY;
-        localZ = localZ - firstLocalZ;
-
-        //Divide TimeStamp by 1,300,000 to get something close to a second per Unit.
-        //According to the DIS standard one tick is 3600/(2^31) seconds ~ 1.6764 µs
-        //1,300,000 was derived from a stream that is 61 seconds long. The number was adjusted to get a timesensor with 61 seconds
-        //ToDo find the real conversion between TimeStampDelta and seconds
-        localTimeStamp = localTimeStamp / 1300000;
-
-        //Only add to stream if it is an ESPDU
-        //ToDo: Add support for multiple Entities
-        if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
-
-            testMap.put((double) localTimeStamp, new X3dCoordinates(localX, localY, localZ, 0.0, 0.0, 0.0));
-
-        }
-        }
-
     }
 
     public void makeX3dLineSet() {
@@ -125,10 +121,8 @@ public class X3dCreateLineSet {
         //Remove all collinear points.
         X3dSlidingWindowCompression regression = new X3dSlidingWindowCompression(testMap);
 
-        TreeMap<Double, X3dCoordinates> returnMap = new TreeMap<>();
-
         //To turn of the compression just comment the next line out and the very next in.
-        returnMap = regression.doSlidingWindow();
+        Map<Double, X3dCoordinates> returnMap = regression.doSlidingWindow();
         //returnMap.putAll(testMap);
 
         //Writing all values from the KeyMap to a proper Position Interpolator String

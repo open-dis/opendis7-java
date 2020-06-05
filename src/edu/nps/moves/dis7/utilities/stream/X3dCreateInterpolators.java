@@ -13,8 +13,8 @@ import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.LinkedHashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -58,9 +58,7 @@ public class X3dCreateInterpolators {
 
             //PDU Factory
             PduFactory pduFactory = new PduFactory();
-            Pdu localPdu = null;
-
-            localPdu = pduFactory.createPdu(bufferShort);
+            Pdu localPdu = pduFactory.createPdu(bufferShort);
 
             // ToDO figure out how to do this! makeEntityStatePDU
             EntityStatePdu localEspdu = pduFactory.makeEntityStatePdu();
@@ -72,21 +70,21 @@ public class X3dCreateInterpolators {
                 Logger.getLogger(X3dCreateInterpolators.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            double localTimeStamp = 0;
-            double localX = 0;
-            double localY = 0;
-            double localZ = 0;
+            double localTimeStamp;
+            double localX;
+            double localY;
+            double localZ;
 
-            double localPhi = 0;
-            double localPsi = 0;
-            double localTheta = 0;
+            double localPhi;
+            double localPsi;
+            double localTheta;
 
             //Store the first timestamp to subtract it from all others
             //Same with X,Y,Z to create a local coordiante system
             if (firstTimeStamp) {
 
                 firstLocalTimeStamp = localPdu.getTimestamp();
-                localTimeStamp = localPdu.getTimestamp();
+//                localTimeStamp = localPdu.getTimestamp();
                 firstLocalX = localEspdu.getEntityLocation().getX();
                 firstLocalY = localEspdu.getEntityLocation().getZ();
                 firstLocalZ = -1 * localEspdu.getEntityLocation().getY();
@@ -117,7 +115,7 @@ public class X3dCreateInterpolators {
             //ToDo: Add support for multiple Entities
             if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
 
-                testMap.put((double) localTimeStamp, new X3dCoordinates(localX, localY, localZ, localPhi, localPsi, localTheta));
+                testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, localPhi, localPsi, localTheta));
 
             }
         }
@@ -130,10 +128,8 @@ public class X3dCreateInterpolators {
         //Remove all collinear points.
         X3dSlidingWindowCompression slidingWindowCompression = new X3dSlidingWindowCompression(testMap);
 
-        TreeMap<Double, X3dCoordinates> returnMap = new TreeMap<>();
-
         //To turn of the compression just comment the next line out and the very next in.
-        returnMap = slidingWindowCompression.doSlidingWindow();
+        Map<Double, X3dCoordinates> returnMap = slidingWindowCompression.doSlidingWindow();
         //returnMap.putAll(testMap);
 
         //Writing all values from the KeyMap to a proper Position Interpolator String

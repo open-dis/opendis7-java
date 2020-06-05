@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.enumerations.Country;
@@ -10,7 +5,6 @@ import edu.nps.moves.dis7.utilities.DisNetworking;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.*;
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 
 /**
