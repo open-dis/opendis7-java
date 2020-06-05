@@ -1,6 +1,8 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
+import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisNetworking;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
@@ -233,25 +235,28 @@ public class PduRecorder implements PduReceiver
     String filename = "Pdusave";
     
     PduRecorder recorder;
-    try{recorder = new PduRecorder();} catch(IOException ex) {
+    try {
+        recorder = new PduRecorder();
+    } 
+    catch(IOException ex) {
       System.err.println("Exception creating recorder: "+ex.getLocalizedMessage());
       return;
     }
      
-//    // self test
-//    DISPDUType all[] = DISPDUType.values();
-//    Arrays.stream(all).forEach(typ-> {
-//      if(typ != DISPDUType.OTHER) {
-//        try {
-//          Pdu pdu = factory.createPdu(typ);
-//          disnet.sendPdu(pdu);
-//          sleep(100);
-//        }
-//        catch(Exception ex) {
-//          System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
-//        }
-//      }
-//      });
+    // self test
+    DISPDUType all[] = DISPDUType.values();
+    Arrays.stream(all).forEach(typ-> {
+      if(typ != DISPDUType.OTHER) {
+        try {
+          Pdu pdu = factory.createPdu(typ);
+          disnet.sendPdu(pdu);
+          sleep(100);
+        }
+        catch(Exception ex) {
+          System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
+        }
+      }
+      });
 
     System.out.println("Record for 10 seconds..."); // TODO arrrrgh this is awful
     sleep(10000);
