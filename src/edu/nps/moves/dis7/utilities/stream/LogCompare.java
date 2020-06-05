@@ -2,7 +2,6 @@ package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import static edu.nps.moves.dis7.utilities.stream.PduRecorder.COMMENT_MARKER;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,8 +21,8 @@ public class LogCompare
      * filepath1 and filepath2
      */
   private static String[] paths = {
-    "Pdusave.dislog", // TODO 1
-    "Pdusave1.dislog" // TODO 2
+    "pduLog/Pdusave.dislog", // TODO 1
+    "pduLog/Pdusave1.dislog" // TODO 2
   };
 
   
@@ -54,7 +53,7 @@ public class LogCompare
     File file1 = new File(args[0]);
     File file2 = new File(args[1]);
     if (!file1.exists() || !file2.exists()) {
-      System.out.println("One of " + args[0] + " or " + args[1] + " does not exist.");
+      System.err.println("One of " + args[0] + " or " + args[1] + " does not exist.");
       System.exit(1);
     }
 
@@ -77,12 +76,12 @@ public class LogCompare
           if (line1.equals(line2))
             break mainblock;
 
-          if (line1.startsWith(COMMENT_MARKER) || line2.startsWith(COMMENT_MARKER))
+          if (line1.startsWith(PduRecorder.COMMENT_MARKER) || line2.startsWith(PduRecorder.COMMENT_MARKER))
             break mainblock;
 
           String[] sa1 = line1.split(",");
           String[] sa2 = line2.split(",");
-          if (sa1.length != 2 || sa2.length != 2) {
+          if (sa1.length != sa2.length) {
             System.err.println("Error: parsing error. ASCII 2-part, comma-separated expected. Lines follow.");
             System.err.println(line1);
             System.err.println(line2);
@@ -123,7 +122,7 @@ public class LogCompare
         line2 = reader2.readLine();
       }
 
-      System.out.println("End of compare. There were " + (goodmatch ? "no" : "one or more ") + "errors");
+      System.out.println("End of compare. There were " + (goodmatch ? "no " : "one or more ") + "errors");
       System.exit(goodmatch ? 0 : 1);
     }
     catch (IOException ex) {
