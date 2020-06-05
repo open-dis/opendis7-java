@@ -81,8 +81,8 @@ public class DisNetworking
 
     rsocket = new MulticastSocket(DIS_PORT);
     InetAddress maddr = InetAddress.getByName(MCAST_GROUP);
-    rsocket.setNetworkInterface(findIp4Interface());
-    rsocket.joinGroup(maddr);
+    InetSocketAddress group = new InetSocketAddress(maddr, DIS_PORT);
+    rsocket.joinGroup(group, findIp4Interface());
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
@@ -90,6 +90,7 @@ public class DisNetworking
     rsocket.receive(packet);   //blocks here waiting for next DIS pdu to be received on broadcast IP and specified port 
     //System.out.println("packet received from " + packet.getSocketAddress());
     
+    rsocket.leaveGroup(group, findIp4Interface());
     rsocket.close();
     rsocket = null;
     return new BuffAndLength(packet.getData(), packet.getLength());

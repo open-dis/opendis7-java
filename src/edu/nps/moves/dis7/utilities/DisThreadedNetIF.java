@@ -187,7 +187,7 @@ public class DisThreadedNetIF
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     InetAddress maddr;
-    InetSocketAddress group;
+    InetSocketAddress group = null;
     Pdu pdu;
     ByteBuffer byteBuffer;
     
