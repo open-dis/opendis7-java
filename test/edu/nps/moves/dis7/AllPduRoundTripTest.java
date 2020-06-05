@@ -25,6 +25,7 @@ import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -170,19 +171,19 @@ public class AllPduRoundTripTest
       
       testRecorderForEquals();
     }
-    catch (Throwable t) {
+    catch (Exception t) {
       ex = t;
-      System.out.println(t.getLocalizedMessage());
-      t.printStackTrace();
+      System.err.println(t.getLocalizedMessage());
+      t.printStackTrace(System.err);
     }
 
     assertNull(ex, "Exception should be null if successful creation of all objects");
   }
 
   private File recorderDirectory;
-  private HashMap<DISPDUType, Pdu> pduSentMap = new HashMap<>();
-  private HashMap<DISPDUType, Pdu> pduReceivedMap = new HashMap<>();
-  private HashMap<DISPDUType, Pdu> pduReadMap = new HashMap<>();
+  private Map<DISPDUType, Pdu> pduSentMap = new HashMap<>();
+  private Map<DISPDUType, Pdu> pduReceivedMap = new HashMap<>();
+  private Map<DISPDUType, Pdu> pduReadMap = new HashMap<>();
 
   DisThreadedNetIF disnetworking;
   PduRecorder recorder;
