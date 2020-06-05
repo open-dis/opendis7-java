@@ -1808,7 +1808,6 @@ public class PduFactory
 
     if (aPdu != null) {
       if (buff != null) {
-        int pos = buff.position();      // Save buffer's position
         try {
           aPdu.unmarshal(buff);
         }
@@ -1816,7 +1815,6 @@ public class PduFactory
           System.err.println("error unmarshalling " + pduType);
           System.err.println(ex);
         }
-        buff.position(pos);         // Reset buffer
       }
     }
 
