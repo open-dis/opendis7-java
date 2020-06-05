@@ -4,7 +4,6 @@ import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
