@@ -100,4 +100,8 @@ public class EntityUse
     pdu2.setEntityType(et2);
     disnet.sendPdu(pdu2);  // possibly throws IOException
   }
+  
+  public static void main(String[] args) throws Exception {
+      EntityUse.exampleUse();
+  }
 }
