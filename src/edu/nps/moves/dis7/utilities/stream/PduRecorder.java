@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -58,23 +59,50 @@ public class PduRecorder implements PduReceiver
         pduLogEncoding = aEncoding;
     }
 
-  private BufferedWriter bufferedWriter;
+  private Writer bufferedWriter;
   private File           logFile;
   
-  private DisThreadedNetIF disnetworking;
+  private DisThreadedNetIF disThreadedNetIF;
   
+  /**
+   * Default constructor that uses default values for output directory, multicast
+   * address and port.
+   * 
+   * @throws IOException if something goes wrong during instantiation
+   */
   public PduRecorder() throws IOException
   {
-    this(DEFAULT_OUTDIR,DEFAULT_MCAST,DEFAULT_PORT);
+    this(DEFAULT_OUTDIR, DEFAULT_MCAST, DEFAULT_PORT);
   }
   
+  /**
+   * Constructor to let the use specify an output directory. Uses default values 
+   * multicast address and port.
+   * 
+   * @param dir the directory to write log files to
+   * 
+   * @throws IOException if something goes wrong during instantiation
+   */
+  public PduRecorder(String dir) throws IOException
+  {
+    this(dir, DEFAULT_MCAST, DEFAULT_PORT);
+  }
+  
+  /** Constructor to let the use specify all required parameters
+   * 
+   * @param outputDir the directory to write log files to
+   * @param mcastaddr the multicast address to receive data from
+   * @param port the port to receive data through
+   * @throws IOException if something goes wrong during instantiation
+   */
   public PduRecorder(String outputDir, String mcastaddr, int port) throws IOException
   {
+    DEFAULT_OUTDIR = outputDir;
     logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_EXTENSION );
     bufferedWriter = new BufferedWriter(new FileWriter(logFile));
     
-    disnetworking = new DisThreadedNetIF(port, mcastaddr);
-    disnetworking.addRawListener(bAndL->receivePdu(bAndL.buff,bAndL.length));
+    disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
+    disThreadedNetIF.addRawListener(bAndL->receivePdu(bAndL.buff,bAndL.length));
   }
   
   public void startResume()
@@ -87,16 +115,9 @@ public class PduRecorder implements PduReceiver
     doSave = false;
   }
   
-  public String getOutputFile()
-  {
-    if(logFile != null)
-      return logFile.getAbsolutePath();
-    return null;
-  }
-  
   public File end() throws IOException
   {
-        getDisnetworking().kill();
+    disThreadedNetIF.kill();
 
     writeFooter();
     bufferedWriter.flush();
@@ -158,7 +179,7 @@ public class PduRecorder implements PduReceiver
         headerWritten = true;
       }
       bufferedWriter.write(sb.toString());
-      bufferedWriter.newLine();
+      ((BufferedWriter)bufferedWriter).newLine();
     }
     catch (IOException ex) {
       System.err.println("Fatal exception writing DIS log file in Recorder.start()");
@@ -176,28 +197,30 @@ public class PduRecorder implements PduReceiver
   
   private void writeHeader() throws IOException
   {
-//    String template = ", DIS capture file %s.";
-//    String startComment = String.format(template, logFile.getName() + " (show transient progressing PDU count, then final total)");
-      
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
     bufferedWriter.write( START_COMMENT_MARKER + pduLogEncoding + ", " +  timeStamp + ", DIS capture file, " + logFile.getPath());
-    bufferedWriter.newLine();
+    ((BufferedWriter)bufferedWriter).newLine();
   }
 
   private void writeFooter() throws IOException
-  {
-//    String template = ", DIS capture file, %s.";
-//    String endComment = String.format(template, logFile.getPath());
-      
+  {   
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
     bufferedWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
-    bufferedWriter.newLine();
+    ((BufferedWriter)bufferedWriter).newLine();
   }
 
+  /**
+   * Rotates through file names so that no present file get overwritten.
+   * 
+   * @param outputDir the directory to place the log file
+   * @param filename the name of the file w/ extension
+   * @return a File reference to the log file
+   * @throws IOException if something goes awry
+   */
   private File makeFile(Path outputDir, String filename) throws IOException
   {
     String bname = FilenameUtils.getBaseName(filename);
@@ -224,7 +247,8 @@ public class PduRecorder implements PduReceiver
   }
   
   /** Entry point invocation. Saves a PDU output log to ./pduLog. Invoking the
-   *  edu.nps.moves.dis7.examples.PduReaderPlayer will pay these logs back
+   *  edu.nps.moves.dis7.examples.PduReaderPlayer will playback all logs written
+   *  to the log directory
    * 
    * @param args none supported, TODO offer path/filename
    */
@@ -246,7 +270,7 @@ public class PduRecorder implements PduReceiver
     Arrays.stream(all).forEach(typ-> {
       if(typ != DISPDUType.OTHER) {
         try {
-            recorder.getDisnetworking().send(factory.createPdu(typ));
+            recorder.getDisThreadedNetIF().send(factory.createPdu(typ));
 //          sleep(100);
         }
         catch(Exception ex) {
@@ -272,9 +296,9 @@ public class PduRecorder implements PduReceiver
   }
 
     /**
-     * @return an instance of DisThreadedNetIF
+     * @return an instance of this DisThreadedNetIF
      */
-    public DisThreadedNetIF getDisnetworking() {
-        return disnetworking;
+    public DisThreadedNetIF getDisThreadedNetIF() {
+        return disThreadedNetIF;
     }
 }
