@@ -35,6 +35,7 @@ public class PduReaderPlayer
     String outDir = DEFAULT_OUTPUTDIR;
     String mcast = MCAST_ADDR;
     int port = DIS_PORT;
+    boolean sendToNet = false;
 
     switch (args.length) {
       case 0:
@@ -46,6 +47,7 @@ public class PduReaderPlayer
         outDir = args[0];
         mcast = args[1];
         port = Integer.parseInt(args[2]);
+        sendToNet = true;
         break;
       default:
         System.err.println("Usage: PduReaderPlayer() or PduReaderPlayer(\"outputdir\") or PduReaderPlayer(\"outputdir\",\"multicast address\", ipPort");
@@ -55,6 +57,7 @@ public class PduReaderPlayer
     System.out.println("Beginning pdu playback from directory " + outDir);
     try {
       PduPlayer pduPlayer = new PduPlayer(mcast, port, new File(outDir).toPath());
+      pduPlayer.sendToNet(sendToNet);
       pduPlayer.startResume();
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
