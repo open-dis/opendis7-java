@@ -221,10 +221,15 @@ public class DisThreadedNetIF
         System.err.println("Exception in DISThreadedNetIF receive thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 1 second");
       } finally {
-          if (rsocket != null) {
-              rsocket.close();
-              rsocket = null;
-          }
+         if (rsocket != null && !rsocket.isClosed()) {
+             try {
+                 rsocket.leaveGroup(group, ni);
+             } catch (IOException ex) {
+                 Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+             }
+             rsocket.close();
+             rsocket = null;
+         }
       }
       if (!killed)
         sleep(250);
@@ -263,10 +268,15 @@ public class DisThreadedNetIF
         System.err.println("Exception in DISThreadedNetIF send thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 1 second");
       } finally {
-          if (ssocket != null) {
-              ssocket.close();
-              ssocket = null;
-          }
+         if (ssocket != null && !ssocket.isClosed()) {
+             try {
+                 ssocket.leaveGroup(group, ni);
+             } catch (IOException ex) {
+                 Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+             }
+             ssocket.close();
+             ssocket = null;
+         }
       }
       if (!killed)
         sleep(250);
@@ -298,20 +308,6 @@ public class DisThreadedNetIF
   public void kill()
   {
     killed = true;
-      try {
-          if (ssocket != null && !ssocket.isClosed()) {
-              ssocket.leaveGroup(group, ni);
-              ssocket.close();
-              ssocket = null;
-          }
-          if (rsocket != null && !rsocket.isClosed()) {
-              rsocket.leaveGroup(group, ni);
-              rsocket.close();
-              rsocket = null;
-          }
-      } catch (IOException ex) {
-          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
-      }
   }
 
   private void sleep(long ms)
