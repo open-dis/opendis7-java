@@ -77,7 +77,7 @@ public class PduRecorder implements PduReceiver
   
   /**
    * Constructor to let the use specify an output directory. Uses default values 
-   * multicast address and port.
+   * for multicast address and port.
    * 
    * @param dir the directory to write log files to
    * 
@@ -88,7 +88,7 @@ public class PduRecorder implements PduReceiver
     this(dir, DEFAULT_MCAST, DEFAULT_PORT);
   }
   
-  /** Constructor to let the use specify all required parameters
+  /** Constructor to let the user specify all required parameters
    * 
    * @param outputDir the directory to write log files to
    * @param mcastaddr the multicast address to receive data from
@@ -105,6 +105,7 @@ public class PduRecorder implements PduReceiver
     disThreadedNetIF.addRawListener(bAndL -> {
         receivePdu(bAndL.buff,bAndL.length);
     });
+    sleep(250L); // need time for the send/receive threads to start
   }
   
   public void startResume()
@@ -273,7 +274,6 @@ public class PduRecorder implements PduReceiver
       if(typ != DISPDUType.OTHER) {
         try {
             recorder.getDisThreadedNetIF().send(factory.createPdu(typ));
-//          sleep(100);
         }
         catch(Exception ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
@@ -288,13 +288,12 @@ public class PduRecorder implements PduReceiver
       System.err.println("Exception closing recorder: "+ex.getClass().getSimpleName()+": "+ex.getLocalizedMessage());
     }
   }
-  
+
   private static void sleep(long ms)
   {
     try{
         Thread.sleep(ms);}
-    catch(InterruptedException ex) {
-    }
+    catch(InterruptedException ex) {}
   }
 
     /**
