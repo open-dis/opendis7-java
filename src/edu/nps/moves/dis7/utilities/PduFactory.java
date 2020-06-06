@@ -13,6 +13,8 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 /**
@@ -1453,36 +1455,22 @@ public class PduFactory
    */
   public Pdu createPdu(byte data[])
   {
-    return createPdu(ByteBuffer.wrap(data));
+    DISPDUType type = getTypeFromByteArray(data);
+    return createPdu(type, ByteBuffer.wrap(data));
   }
 
   /**
-   * PDU builder. Pass in an array of bytes, get the correct type of pdu back,
-   * based on the PDU type field contained in the byte buffer.  (Implementation note: includes
-   * workaround code for a jdk8 bytecode bug.)
-   *
-   * @param buff
-   * @return the pdu or null if there was an error creating the Pdu
+   * Return the enumerated pdu type from a byte array, typically received from the 
+   * network.
+   * 
+   * @param ba byte array
+   * @return the type
    */
-  public Pdu createPdu(ByteBuffer buff)
+  private DISPDUType getTypeFromByteArray(byte[] ba)
   {
-    // The (unnecessary) casts around the position() calls are a workaround for an apparent bytecode bug with
-    // javac involving jdk 8.  Google "java bytebuffer no such method position" and see https://github.com/eclipse/jetty.project/issues/3244
-    // specifically for the workaround used in three places below.
-    
-    int pos = buff.position();        // Save buffer's position
-    if (pos + 2 > buff.limit()) {     // Make sure there's enough space in buffer
-      return null;                    // Else return null
-    } // end if: buffer too short
-    
-    buff = buff.position(pos + 2);    // Advance to third byte
-    final int pduIdx = Byte.toUnsignedInt(buff.get());    // Read Pdu type
-    buff = buff.position(pos);        // Reset buffer
-
-    DISPDUType pduType = DISPDUType.getEnumForValue(pduIdx);
-    return createPdu(pduType, buff);
+    return DISPDUType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
   }
-
+  
   /**
    * Create an empty PDU of the given type
    * @param pduType
@@ -1491,16 +1479,6 @@ public class PduFactory
   public Pdu createPdu(DISPDUType pduType)
   {
     return createPdu(pduType, null);
-  }
-
-  /**
-   * Return the enumerated pdu type from a byte array, typically received from the network
-   * @param ba byte array
-   * @return the type
-   */
-  public DISPDUType getTypeFromByteArray(byte[] ba)
-  {
-    return DISPDUType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
   }
   
   private Pdu createPdu(DISPDUType pduType, ByteBuffer buff)
@@ -1808,13 +1786,13 @@ public class PduFactory
 
     if (aPdu != null) {
       if (buff != null) {
-        try {
-          aPdu.unmarshal(buff);
-        }
-        catch (Exception ex) {
-          System.err.println("error unmarshalling " + pduType);
-          System.err.println(ex);
-        }
+          try {
+              aPdu.unmarshal(buff);
+          } catch (Exception ex) {
+//              Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
+              System.err.println("error unmarshalling " + pduType);
+              System.err.println(ex);
+          }
       }
     }
 
@@ -1822,7 +1800,7 @@ public class PduFactory
   }
 
     /**
-     * Decodes datagram contents with bundled PDUs.As a performance hack DIS may
+     * Decodes datagram contents with bundled PDUs. As a performance hack DIS may
      * include several PDUs in one datagram. Typically the max datagram size is
      * 8K (above that it runs into some issues with the default incoming socket
      * buffer size) but it may be more. The PDUs may be of multiple types and
