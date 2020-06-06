@@ -8,7 +8,9 @@ import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
+/** Class to leverage the {@link edu.nps.moves.dis7.utilities.stream.PduRecorder} 
+ * with PDU log saving console controls for resume, pause and quit.
+ * 
  * PduSaver.java created on Aug 21, 2019
  * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
@@ -45,14 +47,13 @@ public class PduListenerSaver
         port = Integer.parseInt(args[2]);
         break;
       default:
-        System.err.println("Usage: PduListener() or PduListener(\"outputdir\") or PduListener(\"outputdir\",\"multicast address\", ipPort");
+        System.err.println("Usage: PduListenerSaver() or PduListenerSaver(\"outputdir\") or PduListenerSaver(\"outputdir\",\"multicast address\", ipPort");
         System.exit(1);
     }
 
     System.out.println("Beginning pdu save to directory " + outDir);
     try {
       PduRecorder recorder = new PduRecorder(outDir, mcast, port);
-
       recorder.startResume();
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
