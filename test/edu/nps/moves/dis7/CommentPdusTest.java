@@ -14,6 +14,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
+  DisNetworking disnet;
+  Pdu receivedPdu;
+    
   @BeforeAll
   public static void setUpClass()
   {
@@ -28,20 +31,21 @@ public class CommentPdusTest
   @BeforeEach
   public void setUp()
   {
+      disnet = new DisNetworking();
+      setUpReceiver();
   }
 
   @AfterEach
   public void tearDown()
   {
+//      disnet.stop();
+//      disnet = null;
   }
-
-  private Pdu receivedPdu;
 
   @Test
   public void testRoundTrip()
   {
     PduFactory factory = new PduFactory();
-    setUpReceiver();
     
     testOne(factory.makeCommentPdu());
     testOne(factory.makeCommentPdu("123_test_string"));
@@ -66,10 +70,9 @@ public class CommentPdusTest
   {
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      DisNetworking disnet = new DisNetworking();
       disnet.sendPdu(pdu);
 
-      Thread.sleep(1000l);
+      Thread.sleep(100l);
     }
     catch (Exception ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
@@ -87,7 +90,7 @@ public class CommentPdusTest
     Thread rcvThread = new Thread(() -> {
       try {
         while(true) {
-          receivedPdu = new DisNetworking().receivePdu();  // blocks
+          receivedPdu = disnet.receivePdu();  // blocks
         }
       }
       catch (IOException ex) {
@@ -103,6 +106,9 @@ public class CommentPdusTest
 
   public static void main(String[] args)
   {
-    new CommentPdusTest().testRoundTrip();
+    CommentPdusTest cpt = new CommentPdusTest();
+    cpt.setUp();
+    cpt.testRoundTrip();
+//    cpt.tearDown();
   }
 }

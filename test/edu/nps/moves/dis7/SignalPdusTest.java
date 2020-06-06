@@ -13,6 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Signal Pdus Test")
 public class SignalPdusTest
 {
+  Pdu receivedPdu;
+  DisNetworking disnet;
+  
   @BeforeAll
   public static void setUpClass()
   {
@@ -27,14 +30,16 @@ public class SignalPdusTest
   @BeforeEach
   public void setUp()
   {
+      disnet = new DisNetworking();
+      setUpReceiver();
   }
 
   @AfterEach
   public void tearDown()
   {
+//      disnet.stop();
+//      disnet = null;
   }
-
-  private Pdu receivedPdu;
 
   @Test
   public void testRoundTrip()
@@ -55,17 +60,15 @@ public class SignalPdusTest
     isig2.setSamples((short) 0x3333);
     isig2.setData("IntercomSignalPdu-testdata".getBytes());
     
-    setUpReceiver();
-
     try {
-      Thread.sleep(2000l); //250l); // make sure receiver is listening
+      Thread.sleep(250l); // make sure receiver is listening
       DisNetworking disnet = new DisNetworking();
       disnet.sendPdu(sigPdu);
       disnet.sendPdu(sigPdu2);
       disnet.sendPdu(isig);
       disnet.sendPdu(isig2);
       
-      Thread.sleep(3000l); //1000l); //(180*1000l));//waiter.wait();
+      Thread.sleep(100l);
     }
     catch (Exception ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
@@ -84,13 +87,12 @@ public class SignalPdusTest
   {
     Thread rcvThread = new Thread(() -> {
       try {
-        receivedPdu = new DisNetworking().receivePdu();  // blocks
+        receivedPdu = disnet.receivePdu();  // blocks
       }
       catch (IOException ex) {
         System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
         System.exit(1);
       }
-      //   waiter.notify();
     });
 
     rcvThread.setPriority(Thread.NORM_PRIORITY);
@@ -100,7 +102,10 @@ public class SignalPdusTest
 
   public static void main(String[] args)
   {
-    new SignalPdusTest().testRoundTrip();
+    SignalPdusTest spt = new SignalPdusTest();
+    spt.setUp();
+    spt.testRoundTrip();
+//    cpt.tearDown();.testRoundTrip();
   }
 
 }
