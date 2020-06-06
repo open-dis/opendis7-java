@@ -43,7 +43,9 @@ public class ThreadedNetExample
     System.out.println("Sent CollisionPdu");
     
     // Wait a bit to see output
-    try{ Thread.sleep(2000L);}catch(InterruptedException ex){}
+    try { 
+        Thread.sleep(250L);
+    } catch(InterruptedException ex) {}
     
     System.out.println("End of example");
   }
