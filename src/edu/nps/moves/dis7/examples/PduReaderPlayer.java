@@ -9,7 +9,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
+/** Class to leverage the {@link edu.nps.moves.dis7.utilities.stream.PduPlayer} 
+ * with PDU log playback console controls for resume, pause and quit.
+ * 
  * PduSaver.java created on Aug 21, 2019
  * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
