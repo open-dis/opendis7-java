@@ -188,10 +188,10 @@ public class DisThreadedNetIF
     sender.setPriority(Thread.NORM_PRIORITY);
     sender.start();
   }
-  int counter = 0;
   
   private Runnable receiveThread = () -> {
       
+    int counter = 0;
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     Pdu pdu;
@@ -218,12 +218,13 @@ public class DisThreadedNetIF
         }
       }
       catch (IOException ex) {
-        if (rsocket != null) {
-          rsocket.close();
-          rsocket = null;
-        }
         System.err.println("Exception in DISThreadedNetIF receive thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 1 second");
+      } finally {
+          if (rsocket != null) {
+              rsocket.close();
+              rsocket = null;
+          }
       }
       if (!killed)
         sleep(250);
@@ -259,17 +260,20 @@ public class DisThreadedNetIF
         }
       }
       catch (Exception ex) {
-        if (ssocket != null) {
-          ssocket.close();
-          ssocket = null;
-        }
-        
         System.err.println("Exception in DISThreadedNetIF send thread: " + ex.getLocalizedMessage());
         System.err.println("Retrying in 1 second");
+      } finally {
+          if (ssocket != null) {
+              ssocket.close();
+              ssocket = null;
+          }
       }
       if (!killed)
         sleep(250);
     }
+      try {
+          dos.close();
+      } catch (IOException e) {}
   };
 
   private void toListeners(Pdu pdu)
@@ -294,8 +298,6 @@ public class DisThreadedNetIF
   public void kill()
   {
     killed = true;
-    sender.interrupt();
-    receiver.interrupt();
       try {
           if (ssocket != null && !ssocket.isClosed()) {
               ssocket.leaveGroup(group, ni);
