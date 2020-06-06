@@ -1,7 +1,8 @@
-package edu.nps.moves.dis7.utilities.stream;
+package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

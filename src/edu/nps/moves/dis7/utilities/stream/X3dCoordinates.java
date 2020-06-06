@@ -22,7 +22,6 @@ public class X3dCoordinates {
         this.setPhi(phi);
         this.setPsi(psi);
         this.setTheta(theta);
-
     }
 
     public X3dCoordinates() {

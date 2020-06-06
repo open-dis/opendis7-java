@@ -142,5 +142,4 @@ public class X3dSlidingWindowCompression {
 
     }
 
-
 }
