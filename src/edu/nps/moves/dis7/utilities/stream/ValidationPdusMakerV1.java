@@ -4,20 +4,19 @@ import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.utilities.DisNetworking;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.*;
-import java.io.File;
-import java.nio.file.Path;
 
 /**
  * ValidationPdusMakerV1.java created on Aug 14, 2019
- * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
+ * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu.
  * <p>
  * This class produces and sends to the net a "standard" stream of Pdus, which may then be captured and
- * saved by an instance of @see edu.nps.moves.dis7.util.playerrecorder.Recorder. After future changes
- * to the DIS library, another run of this class may be done and an instance of @see edu.nps.moves.dis7.util.playerrecorder.LogCompare may
- * be used to detect differences.
+ * saved by an instance of @see edu.nps.moves.dis7.utilities.stream.PduRecorder. After future changes
+ * to the DIS library, another run of this class may be done and an instance of @see edu.nps.moves.dis7.utilities.stream.LogCompare may
+ * be used to detect differences. The PduRecorder handles by default the creation of pduLog/Pdusave.dislog series of log files which
+ * are the output of PDUs created by this validtor class.
  * <p>
  * The main method here takes 1. a directory name, and 2. a file name, in that order.  File type ".dislog" will be appended.
- * If run with an argument count different that 2, the default values of "validatorOut" and "validationLog.txt" are used.
+ * If run with an argument count different than 2, the default values of "validatorOut" and "validationLog.txt" are used.
  *
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
@@ -34,26 +33,17 @@ public class ValidationPdusMakerV1
 
   public ValidationPdusMakerV1()
   {
-    throw new UnsupportedOperationException("Not supported yet.");
-    // need to confirm usage with new Recorder
   }
   
   PduFactory factory;
-  DisNetworking disnet;
   PduRecorder recorder;
+  
   /**
-   *
-   * @param dir directory to save pdu log file
-   * @param fn filename of log file, will append an integer to prevent overwriting
    * @return exit indicator ala @see java.lang.System#exit .
    * @throws java.lang.Exception from network write or pdu creation
    */
-  public int run(String dir, String fn) throws Exception
+  public int run() throws Exception
   {
-    File dirfile = new File(dir);
-    dirfile.mkdirs();
-    Path dirpath = dirfile.toPath();
-
     /* PduFactory is initialized with country, exerciseId, siteId, applicationId and a boolean specifying absolute DIS time use.
      Those values are automatically inserted by PduFactory into those created pdus which use them.  The time field of the DIS pdu
      is set to the time of creation of the instance.  All those may be overridden in the pdu object.  Also, multiple PduFactory instances
@@ -62,33 +52,8 @@ public class ValidationPdusMakerV1
      The values here are used for creating the validation pdu log, and must also be used for future comparison
      */
     factory = new PduFactory(COUNTRY_V1, EXERCISEID_V1, SITEID_V1, APPLICATIONID_V1, USEABSOLUTETIME_V1);
-    disnet = new DisNetworking();
-    recorder = new PduRecorder(); //dirpath,fn);
+    recorder = new PduRecorder();
     
-     // Start a thread to receive and record pdus; this is a datagram socket and is non-interruptible; thread will go away on Sys exit
-    /*Thread receiverThrd = new Thread(() -> {
-      int count = 1;
-      System.out.println("Packet reception count");
-      while (true) {
-        try {
-          DisNetworking.BuffAndLength blen = disnet.receiveRawPdu();
-          //System.out.println("" + count++ + " Got pdu from DisNetworking");
-          recorder.receivePdu(blen.buff, blen.length);
-          System.out.println("\r"+count++);
-        }
-        catch (IOException ex) {
-          System.err.println("Exception receiving Pdu: " + ex.getLocalizedMessage());
-        }
-      }
-    });
-    receiverThrd.setPriority(Thread.NORM_PRIORITY);
-    receiverThrd.setDaemon(true);
-    receiverThrd.start();
-    */
-    /* The standard validation log consists of one of each defined pdu from 1, ENTITY_STATE, to 72, ATTRIBUTE.  There is no pdu of type 0.
-     This sequence of statements unnecessarily creates 72 instance variables.  Those are intended to make it easy to customize the contents of
-     the created pdus.  It would be advisable to fill out more content in the pdus to ensure the correctness of the pdu in the net packet.
-    */
     EntityStatePdu pdu1 = factory.makeEntityStatePdu(); //1
     sendPdu(pdu1);
     FirePdu pdu2 = factory.makeFirePdu(); //2
@@ -252,26 +217,13 @@ public class ValidationPdusMakerV1
   
   private void sendPdu(Pdu pdu) throws Exception
   {
-    disnet.sendPdu(pdu);
-    sleep(100L); // Necessary because reading is asynchronous from the writing and DisNetworking is inefficiently
-    // making and closing a socket each time, potentially losing a packet or two.  Better performance from DisThreadedNetIF.
+    recorder.getDisnetworking().send(pdu);
   }
     
-  private void sleep(long ms)
-  {
-    try{Thread.sleep(ms);}catch(InterruptedException ex) {}
-  }
-
-  public static final String DEFAULT_DIR = "validatorOut";
-  public static final String DEFAULT_NAME = "validationLog.txt";
-
   public static void main(String[] args)
   {
     try {
-      if (args.length == 2)
-        System.exit(new ValidationPdusMakerV1().run(args[0], args[1]));
-      else
-        System.exit(new ValidationPdusMakerV1().run(DEFAULT_DIR, DEFAULT_DIR));
+        System.exit(new ValidationPdusMakerV1().run());
     }
     catch (Exception ex) {
       System.err.println(ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());

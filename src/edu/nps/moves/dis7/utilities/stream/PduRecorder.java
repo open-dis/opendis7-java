@@ -96,7 +96,7 @@ public class PduRecorder implements PduReceiver
   
   public File end() throws IOException
   {
-    disnetworking.kill();
+        getDisnetworking().kill();
 
     writeFooter();
     bufferedWriter.flush();
@@ -246,7 +246,7 @@ public class PduRecorder implements PduReceiver
     Arrays.stream(all).forEach(typ-> {
       if(typ != DISPDUType.OTHER) {
         try {
-          recorder.disnetworking.send(factory.createPdu(typ));
+            recorder.getDisnetworking().send(factory.createPdu(typ));
 //          sleep(100);
         }
         catch(Exception ex) {
@@ -270,4 +270,11 @@ public class PduRecorder implements PduReceiver
     catch(InterruptedException ex) {
     }
   }
+
+    /**
+     * @return an instance of DisThreadedNetIF
+     */
+    public DisThreadedNetIF getDisnetworking() {
+        return disnetworking;
+    }
 }
