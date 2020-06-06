@@ -12,7 +12,6 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
-import java.nio.ByteBuffer;
 
 /**
  * Receives PDUs from the network in IEEE format. Very similar to EspduReciver, but this
@@ -38,7 +37,6 @@ public class EspduReceiverNIO
     PduFactory pduFactory = new PduFactory();
     byte buffer[] = new byte[MAX_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-    ByteBuffer byteBuffer;
     Pdu pdu;
     
     try {
@@ -54,10 +52,7 @@ public class EspduReceiverNIO
         
         socket.receive(packet);
 
-        // Uses the NIO byte buffer class--wrap a ByteBuffer instance around
-        // the data we get from the packet
-        byteBuffer = ByteBuffer.wrap(packet.getData());
-        pdu = pduFactory.createPdu(byteBuffer);
+        pdu = pduFactory.createPdu(packet.getData());
 
         System.out.println("got PDU of type: " + pdu.getClass().getSimpleName());
 
