@@ -17,11 +17,18 @@ import java.util.Arrays;
 import java.util.Base64;
 import java.util.regex.Pattern;
 
+/** Utility to play back log files of recorded PDUs. These PDUs can then be resent
+ * over the a multicast group address, or process locally.
+ * 
+ * @author @author Mike Bailey, jmbailey@nps.edu
+ */
 public class PduPlayer {
 
+    /** PDU listener interface */
     public interface RawListener {
         void receiveBytes(byte[] ba);
     }
+    
     private Path disLogDirectory;
     private String ip;
     private int port;
@@ -39,6 +46,13 @@ public class PduPlayer {
 
     private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
+    /**
+     * 
+     * @param ip the multicast group address to utilize
+     * @param port the multicast port to utilize
+     * @param disLogDirectory a path to the directory containing PDU log files
+     * @throws IOException if something goes wrong processing files
+     */
     public PduPlayer(String ip, int port, Path disLogDirectory) throws IOException {
         this.disLogDirectory = disLogDirectory;
         this.ip = ip;
@@ -76,6 +90,7 @@ public class PduPlayer {
         rawListener = lis;
     }
 
+    /** Thread process for this class */
     @SuppressWarnings("StatementWithEmptyBody")
     public void begin() {
         try {
@@ -423,9 +438,7 @@ public class PduPlayer {
         // @formatter:off
         try {
             Thread.sleep(ms, ns);
-        } catch (InterruptedException ex) {
-            System.out.println("InterruptedException");
-        }
+        } catch (InterruptedException ex) {}
         // @formatter:on
     }
 }
