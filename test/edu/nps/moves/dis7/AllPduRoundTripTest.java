@@ -7,7 +7,7 @@ package edu.nps.moves.dis7;
 /**
  * This is a test class (which can also be run through its main() method) which tests round-tripping of pdus, i.e.,
  * creating a pdu instance in java, serializing it and sending over the network as a stream of bytes, at the same time
- * reading them back from the net.  It also uses the pdu logger in the Player class to  save the received pdus to disk.
+ * reading them back from the net.  It also uses the pdu logger in the Player class to save the received pdus to disk.
  * 
  * Two tests for pdu equivalency are performed:
  * 1.  Sent vs. received
