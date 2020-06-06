@@ -84,7 +84,8 @@
         <echo message="$run.test.classpath=${run.test.classpath}"/>
         <java dir="${work.dir}" 
               classpath="${run.test.classpath}"  
-              classname="org.junit.platform.console.ConsoleLauncher">
+              classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true">
             <arg value="--scan-classpath"/>
             <arg line="--reports-dir build/test/results"/>
         </java>
@@ -94,6 +95,23 @@
             </fileset>
             <report format="frames" todir="build/test/results/html"/>
         </junitreport>
+    </target>
+    
+    <!-- 
+       a semi-unit test in that we ensure that pdus are being produced 
+       correctly and consistently through code changes. generated logs go to
+       ./pduLog
+    -->
+    <target name="validate.pdu.logs" depends="compile">
+        <java classpath="${run.classpath}"  
+              classname="edu.nps.moves.dis7.utilities.ValidationPdusMakerV1"
+              fork="true"/>
+        <java classpath="${run.classpath}"  
+              classname="edu.nps.moves.dis7.utilities.ValidationPdusMakerV1"
+              fork="true"/>
+        <java classpath="${run.classpath}"  
+              classname="edu.nps.moves.dis7.utilities.LogCompare"
+              fork="true"/>
     </target>
     
     <target name="jar-javadoc" depends="javadoc">
