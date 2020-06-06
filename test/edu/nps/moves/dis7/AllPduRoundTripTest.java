@@ -62,13 +62,9 @@ public class AllPduRoundTripTest
   {
     Throwable ex = null;
     try {
-      setupSender();
       setupRecorder();
-        try {
-            Thread.sleep(250L); // these have to be fully setup before continuing
-        } 
-        catch (InterruptedException ex2) {
-        }
+      setupSender();
+      sleep(250L); // these have to be fully setup before continuing
       
       pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
@@ -189,15 +185,15 @@ public class AllPduRoundTripTest
 
   private void setupSender()
   {
-    disnetworking = new DisThreadedNetIF();
-    disnetworking.addListener(pdu -> {
-      pduReceivedMap.put(pdu.getPduType(), pdu);
-    });
+      disnetworking = recorder.getDisThreadedNetIF();
+      disnetworking.addListener(pdu -> {
+          pduReceivedMap.put(pdu.getPduType(), pdu);
+      });
   }
 
   private void shutDownSender()
   {
-    disnetworking.kill();
+//    disnetworking.kill();
   }
 
   private void sendOnePdu(Pdu pdu)
@@ -212,7 +208,7 @@ public class AllPduRoundTripTest
   private void setupRecorder() throws Exception
   {
     recorderDirectory = Files.createTempDir();
-    recorder = new PduRecorder(recorderDirectory.getAbsolutePath(), disnetworking.getMcastGroup(), disnetworking.getDisPort());
+    recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
     System.out.println("Recorder log at " + recorderDirectory.getAbsolutePath());
   }
 
@@ -261,7 +257,10 @@ public class AllPduRoundTripTest
 //@formatter:off
   private void sleep(long ms)
   {
-    try {Thread.sleep(ms);}catch (InterruptedException ex) {}
+    try {
+        Thread.sleep(ms);
+    }
+    catch (InterruptedException ex) {}
   }
 //@formatter:on
   
