@@ -1464,7 +1464,7 @@ public class PduFactory
    * @param buff
    * @return the pdu or null if there was an error creating the Pdu
    */
-  public Pdu createPdu(java.nio.ByteBuffer buff)
+  public Pdu createPdu(ByteBuffer buff)
   {
     // The (unnecessary) casts around the position() calls are a workaround for an apparent bytecode bug with
     // javac involving jdk 8.  Google "java bytebuffer no such method position" and see https://github.com/eclipse/jetty.project/issues/3244
