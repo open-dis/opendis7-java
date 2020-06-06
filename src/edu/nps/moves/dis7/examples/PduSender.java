@@ -17,8 +17,8 @@ import java.util.List;
 
 /**
  * This is an example that sends many/most types of PDUs. Useful for testing standards
- * compliance or getting a full set of PDUs. It also writes the generated PDUs to
- * an XML file.
+ * compliance or getting a full set of PDUs. It used to also write generated PDUs 
+ * to an XML file. TODO: revisit this capability?
  *<p>
  * This is legacy code ported to the edu.nps.moves.dis7 package
  * 
@@ -299,17 +299,15 @@ public class PduSender
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);
       byte[] buffer;
-      Pdu aPdu;
       
-      for (int idx = 0; idx < generatedPdus.size(); idx++) {
+      for (Pdu pdu : generatedPdus) {
 
-        aPdu = generatedPdus.get(idx);
-        aPdu.marshal(dos);
+        pdu.marshal(dos);
 
         buffer = baos.toByteArray();
         packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, port);
         socket.send(packet);
-        System.out.println("Sent PDU of type " + aPdu.getClass().getSimpleName() + " ("+aPdu.getPduType().getValue()+")");
+        System.out.println("Sent PDU of type " + pdu.getClass().getSimpleName() + " ("+pdu.getPduType().getValue()+")");
         baos.reset();
       }
 
@@ -325,15 +323,15 @@ public class PduSender
 
   public static void main(String args[])
   {
+    PduSender sender;
     if (args.length == 2) {
-      PduSender sender = new PduSender(Integer.parseInt(args[0]), args[1]);
-      sender.run();
+      sender = new PduSender(Integer.parseInt(args[0]), args[1]);
     }
     else {
       System.out.println("Usage:   PduSender <port> <multicast group>");
       System.out.println("Default: PduSender  " + PORT + "   " + MULTICAST_ADDRESS);
-      PduSender sender = new PduSender(PORT, MULTICAST_ADDRESS);
-      sender.run();
+      sender = new PduSender(PORT, MULTICAST_ADDRESS);
     }
+    sender.run();
   }
 }
