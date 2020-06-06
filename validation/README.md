@@ -9,6 +9,6 @@ Validation within this library is done through several classes in the `edu.nps.m
 3. `LogCompare` -- compares log files and reports differences to the console.
 4. `ValidationPdusMakerV1` -- generates and records the "official" sequence of Pdus used to validate a library.
 
-To create a log file using the current library, run the main() method in`ValidationPdusMakerV1`.  You may pass it a directory name and a file name.  If run without arguments, the defaults are `./validatorOut` and `validationLog.txt`.
+To create a log file using the current library, run the main() method in`ValidationPdusMakerV1`.
 
-Once there are 2 or more log files to compare, pass the paths to both files to `LogCompare`.
+Once there are 2 or more log files generated in ./pduLog, pass the paths to files of sequence 2 or greater to `LogCompare` i.e. Pdusave2.dislog, etc.
