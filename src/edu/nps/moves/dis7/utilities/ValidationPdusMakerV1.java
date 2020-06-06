@@ -1,7 +1,6 @@
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 
@@ -13,7 +12,7 @@ import edu.nps.moves.dis7.utilities.stream.PduRecorder;
  * saved by an instance of @see edu.nps.moves.dis7.utilities.stream.PduRecorder. After future changes
  * to the DIS library, another run of this class may be done and an instance of @see edu.nps.moves.dis7.utilities.stream.LogCompare may
  * be used to detect differences. The PduRecorder handles by default the creation of pduLog/Pdusave.dislog series of log files which
- * are the output of PDUs created by this validtor class.
+ * are the output of PDUs created by this validator class.
  * <p>
  * The main method here takes 1. a directory name, and 2. a file name, in that order.  File type ".dislog" will be appended.
  * If run with an argument count different than 2, the default values of "validatorOut" and "validationLog.txt" are used.
@@ -31,12 +30,14 @@ public class ValidationPdusMakerV1
   public static final boolean USEABSOLUTETIME_V1 = true;
   //@formatter:on
 
-  public ValidationPdusMakerV1()
-  {
-  }
-  
   PduFactory factory;
   PduRecorder recorder;
+  
+  public ValidationPdusMakerV1() throws Exception
+  {
+    factory = new PduFactory(COUNTRY_V1, EXERCISEID_V1, SITEID_V1, APPLICATIONID_V1, USEABSOLUTETIME_V1);
+    recorder = new PduRecorder();
+  }
   
   /**
    * @return exit indicator ala @see java.lang.System#exit .
@@ -51,8 +52,6 @@ public class ValidationPdusMakerV1
     
      The values here are used for creating the validation pdu log, and must also be used for future comparison
      */
-    factory = new PduFactory(COUNTRY_V1, EXERCISEID_V1, SITEID_V1, APPLICATIONID_V1, USEABSOLUTETIME_V1);
-    recorder = new PduRecorder();
     
     EntityStatePdu pdu1 = factory.makeEntityStatePdu(); //1
     sendPdu(pdu1);
@@ -207,8 +206,6 @@ public class ValidationPdusMakerV1
     sendPdu(pdu72);
 
     System.out.println();
-
-    recorder.end();
     
     System.out.println("Successful run");
     System.out.println("Pdus logged to "+recorder.getLogFile());
@@ -223,7 +220,10 @@ public class ValidationPdusMakerV1
   public static void main(String[] args)
   {
     try {
-        System.exit(new ValidationPdusMakerV1().run());
+        ValidationPdusMakerV1 vpum = new ValidationPdusMakerV1();
+        int x = vpum.run();
+        vpum.recorder.end();
+        System.exit(x);
     }
     catch (Exception ex) {
       System.err.println(ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
