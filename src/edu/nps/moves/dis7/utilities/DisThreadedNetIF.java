@@ -17,21 +17,23 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * DisThreadedNetIF.java created on Jul 29, 2019
+ * DisThreadedNetIF.java created on Jul 29, 2019.
+ * <pre>
  * This is a thread-safe, multicast DIS network interface class.
+ * </pre>
  * 
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
  */
 public class DisThreadedNetIF
 {
-  /* ********** Pdu listener interface *********** */
+  /** Pdu listener interface */
   public interface PduListener
   {
     void incomingPdu(Pdu pdu);
   }
 
-  /* ***** Raw pdu listener class and interface ******** */
+  /** Raw pdu listener class and interface */
   public interface RawPduListener
   {
     void incomingPdu(BuffAndLength bAndL);
@@ -57,7 +59,6 @@ public class DisThreadedNetIF
     }
   }
   
-  
   /************ Begin class ***************/
   
   public static int DEFAULT_DIS_PORT = 3000;
@@ -74,11 +75,19 @@ public class DisThreadedNetIF
   private MulticastSocket ssocket = null;
   private MulticastSocket rsocket = null;
 
+  /**
+   * Default constructor using default port 3000 and multicast address 225.4.5.6
+   */
   public DisThreadedNetIF()
   {
     this(DEFAULT_DIS_PORT, DEFAULT_MCAST_GROUP);
   }
 
+  /**
+   * 
+   * @param port the multicast port to utilize
+   * @param mcastgroup the multicast group address to utilize
+   */
   public DisThreadedNetIF(int port, String mcastgroup)
   {
     disPort = port;
@@ -100,7 +109,7 @@ public class DisThreadedNetIF
   private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
   /**
-   * Add a listener to accept only pdus of the given typ
+   * Add a listener to accept only pdus of a given typ
    * @param lis instance of PduListener
    * @param typ Pdu type
    */
@@ -152,7 +161,7 @@ public class DisThreadedNetIF
   }
   
   /**
-   * Remove previously add raw listener
+   * Remove previously added raw listener
    * @param lis 
    */
   public void removeRawListener(RawPduListener lis)
@@ -171,7 +180,7 @@ public class DisThreadedNetIF
   }
 
   /**
-   * Sent the given pdu to the network, using the ip and port given to the constructor
+   * Send the given pdu to the network using the ip and port given to the constructor
    * @param pdu 
    */
   public void send(Pdu pdu)
