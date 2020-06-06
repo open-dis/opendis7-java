@@ -12,3 +12,6 @@ Validation within this library is done through several classes in the `edu.nps.m
 To create a log file using the current library, run the main() method in`ValidationPdusMakerV1`.
 
 Once there are 2 or more log files generated in ./pduLog, pass the paths to files of sequence 2 or greater to `LogCompare` i.e. Pdusave2.dislog, etc.
+
+An Ant test target has also been written to consolidate the validation process explained here.
+build.xml -> validate.pdu.logs
