@@ -1,7 +1,6 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.utilities.DisNetworking;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.*;
 
@@ -217,7 +216,7 @@ public class ValidationPdusMakerV1
   
   private void sendPdu(Pdu pdu) throws Exception
   {
-    recorder.getDisnetworking().send(pdu);
+    recorder.getDisThreadedNetIF().send(pdu);
   }
     
   public static void main(String[] args)
