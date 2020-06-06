@@ -114,7 +114,7 @@ public class DisThreadedNetIF
   {
     everyTypeListeners.remove(lis);
 
-    typeListeners.entrySet().stream().forEach(entry -> {
+    typeListeners.entrySet().forEach(entry -> {
       List<PduListener> arLis = entry.getValue();
       if (arLis.contains(lis))
         arLis.remove(lis);
@@ -269,11 +269,11 @@ public class DisThreadedNetIF
 
   private void toListeners(Pdu pdu)
   {
-    everyTypeListeners.stream().forEach(lis -> lis.incomingPdu(pdu));
+    everyTypeListeners.forEach(lis -> lis.incomingPdu(pdu));
     if (pdu != null) {
       List<PduListener> arLis = typeListeners.get(pdu.getPduType());
       if (arLis != null)
-        arLis.stream().forEach(lis -> lis.incomingPdu(pdu));
+        arLis.forEach(lis -> lis.incomingPdu(pdu));
     }
   }
   
@@ -302,7 +302,10 @@ public class DisThreadedNetIF
     }
   }
 
-  /* find proper interface */
+  /** Find proper interface
+   * @return a network interface to use to join multicast group
+   * @throws java.net.SocketException if something goes wrong
+   */
   public static NetworkInterface findIp4Interface() throws SocketException
   {
     Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
@@ -316,28 +319,11 @@ public class DisThreadedNetIF
       while (addresses.hasMoreElements()) {
         addr = addresses.nextElement();
         if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
-          //System.out.println("Using network interface " + nif.getDisplayName());
+          System.out.println("Using network interface " + nif.getDisplayName());
           return nif;
         }
       }
     }
     return null;
   }
-
-  /* simple test...
-  public static void main(String[] args) {
-    DisThreadedNetIF netif = new DisThreadedNetIF();
-    
-    PduListener list = (p)->{
-      System.out.println("got "+p.getClass().getSimpleName());
-    };
-    netif.addListener(list);
-    PduFactory factory = new PduFactory();
-    Arrays.stream(DISPDUType.values()).forEach(typ->{
-      Pdu pdu = factory.createPdu(typ);
-      if(pdu != null)
-      netif.send(factory.createPdu(typ));
-    });
-  }
-   */
 }
