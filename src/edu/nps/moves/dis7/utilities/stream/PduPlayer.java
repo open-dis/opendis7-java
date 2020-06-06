@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
+import edu.nps.moves.dis7.enumerations.DISPDUType;
 
 import java.io.*;
 import java.net.DatagramPacket;
@@ -107,12 +108,13 @@ public class PduPlayer {
             Arrays.sort(fs, (f1, f2) -> {
                 return f1.getName().compareTo(f2.getName());
             });
-            //Arrays.sort(fs, Comparator.comparing(File::getName));
 
             if (netSend) {
                 datagramSocket = new DatagramSocket();
             }
             Base64.Decoder base64Decoder = Base64.getDecoder();
+            DatagramPacket datagramPacket;
+            DISPDUType type;
 
             for (File f : fs) {
                 System.out.println("Replaying " + f.getAbsolutePath());
@@ -238,9 +240,10 @@ public class PduPlayer {
                             case "ENCODING_BASE64":
                                 buffer = base64Decoder.decode(sa[1]);
                                 if (netSend) {
-                                    DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, addr, port);
+                                    datagramPacket = new DatagramPacket(buffer, buffer.length, addr, port);
                                     datagramSocket.send(datagramPacket);
-                                    System.out.println("Sent PDU ");
+                                    type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffer[2])); // 3rd byte
+                                    System.out.println("Sent PDU: " + type);
                                 }
                                 break;
 
@@ -296,14 +299,15 @@ public class PduPlayer {
                                     }
                                 }
                                 if (netSend) {
-                                    DatagramPacket datagramPacket = new DatagramPacket(bufferShort, bufferShort.length, addr, port);
+                                    datagramPacket = new DatagramPacket(bufferShort, bufferShort.length, addr, port);
                                     datagramSocket.send(datagramPacket);
                                     // Add Points to X3D Components
                                     globalByteBufferForX3dInterPolators = new byte[byteBuffer2.array().length / 4];
                                     globalByteBufferForX3dInterPolators = bufferShort.clone();
                                     x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators);
                                     x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators);
-                                    System.out.println("Sent PDU ");
+                                    type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
+                                    System.out.println("Sent PDU: " + type);
                                 }
                                 break;
 
@@ -343,13 +347,6 @@ public class PduPlayer {
         }
     }
 
-    private void sleep(long ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException ex) {
-        }
-    }
-
     private void showCounts() {
         // use carriage return \r for transient display output as a run-time developer diagnostic
         // (possibly as part of earlier diagnosis of threading-related problems with dropped packets)
@@ -364,7 +361,7 @@ public class PduPlayer {
     private void byebye() throws IOException {
         System.out.println("Replay stopped.");
         closer();
-        throw new IOException("Dis Replayer parsing error");
+        throw new IOException("PduPlayer parsing error");
     }
 
     private void closer() {
@@ -377,9 +374,7 @@ public class PduPlayer {
                 brdr.close();
                 brdr = null;
             }
-        } catch (IOException ioex) {
-            System.err.println("IOException closing reader in Player");
-        }
+        } catch (IOException ioex) {}
     }
 
     private boolean handleComment(String line, File f) //true if we're done
@@ -434,7 +429,11 @@ public class PduPlayer {
         }
     }
 
-    private static void sleep(long ms, int ns) {
+    private void sleep(long ms) {
+        sleep(ms, 0);
+    }
+    
+    private void sleep(long ms, int ns) {
         // @formatter:off
         try {
             Thread.sleep(ms, ns);
