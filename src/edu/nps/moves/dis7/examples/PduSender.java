@@ -292,8 +292,8 @@ public class PduSender
       // Send the PDUs we created
       DatagramPacket packet;
       InetAddress localMulticastAddress = InetAddress.getByName(MULTICAST_ADDRESS);
-      MulticastSocket socket = new MulticastSocket(PORT);
-      InetSocketAddress group = new InetSocketAddress(localMulticastAddress, PORT);
+      MulticastSocket socket = new MulticastSocket(port);
+      InetSocketAddress group = new InetSocketAddress(localMulticastAddress, port);
       socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -307,7 +307,7 @@ public class PduSender
         aPdu.marshal(dos);
 
         buffer = baos.toByteArray();
-        packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, PORT);
+        packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, port);
         socket.send(packet);
         System.out.println("Sent PDU of type " + aPdu.getClass().getSimpleName() + " ("+aPdu.getPduType().getValue()+")");
         baos.reset();
