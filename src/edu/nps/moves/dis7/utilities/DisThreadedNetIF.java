@@ -32,11 +32,24 @@ public class DisThreadedNetIF
   }
 
   /* ***** Raw pdu listener class and interface ******** */
+  public interface RawPduListener
+  {
+    void incomingPdu(BuffAndLength bAndL);
+  }
+  
+  /**
+   * Stores data for further processing
+   */
   public class BuffAndLength
   {
     public byte[] buff;
     public int length;
 
+    /**
+     * Default constructor for data storage
+     * @param buff the data buffer to store
+     * @param length the length of the data buffer
+     */
     public BuffAndLength(byte[] buff, int length)
     {
       this.buff = buff;
@@ -44,10 +57,6 @@ public class DisThreadedNetIF
     }
   }
   
-  public interface RawPduListener
-  {
-    void incomingPdu(BuffAndLength bAndL);
-  }
   
   /************ Begin class ***************/
   
