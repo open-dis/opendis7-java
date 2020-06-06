@@ -195,6 +195,10 @@ public class AllPduRoundTripTest
     recorderDirectory = Files.createTempDir();
     recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
     disnetworking = recorder.getDisThreadedNetIF();
+    
+    // When the DisThreadedNetIF receives a pdu, a call is made to the
+    // everyTypeListeners which makes a lamba call back here to record received
+    // pdus
     disnetworking.addListener(pdu -> {
         pduReceivedMap.put(pdu.getPduType(), pdu);
     });
