@@ -13,9 +13,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * DisNetworking.java created on Jul 29, 2019
- * Simple multicast receive and send methods
+ * DisNetworking.java created on Jul 29, 2019.
+ * Simple multicast receive and send methods.
+ * <pre>
+ * Inefficient since a socket is opened and closed for each pdu send/receive.
+ * </pre>
+ * 
+ * @deprecated Use {@link edu.nps.moves.dis7.utilities.DisThreadedNetIF} instead
  */
+@Deprecated(since="dis7")
 public class DisNetworking
 {
   public class BuffAndLength
