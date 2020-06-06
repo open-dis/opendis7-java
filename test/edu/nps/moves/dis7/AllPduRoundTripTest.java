@@ -62,9 +62,8 @@ public class AllPduRoundTripTest
   {
     Throwable ex = null;
     try {
-      setupRecorder();
-      setupSender();
-      sleep(250L); // these have to be fully setup before continuing
+      setupSenderRecorder();
+      sleep(250L); // this has to be fully setup before continuing
       
       pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
@@ -150,8 +149,7 @@ public class AllPduRoundTripTest
                     
       // TODO is there a more reliable way to determine whether receiver is complete?
 
-      shutDownSender(); // TODO hopefully this finishes reading the pending buffer before shutting down
-      shutDownRecorder();
+      shutDownSenderRecorder();
       
       System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
            ", match=" + (pduReceivedMap.size() == pduSentMap.size()));
@@ -183,19 +181,6 @@ public class AllPduRoundTripTest
   DisThreadedNetIF disnetworking;
   PduRecorder recorder;
 
-  private void setupSender()
-  {
-      disnetworking = recorder.getDisThreadedNetIF();
-      disnetworking.addListener(pdu -> {
-          pduReceivedMap.put(pdu.getPduType(), pdu);
-      });
-  }
-
-  private void shutDownSender()
-  {
-//    disnetworking.kill();
-  }
-
   private void sendOnePdu(Pdu pdu)
   {
     pduSentMap.put(pdu.getPduType(), pdu);
@@ -205,14 +190,19 @@ public class AllPduRoundTripTest
 //    sleep(100L); // TODO debugging
   }
 
-  private void setupRecorder() throws Exception
+  private void setupSenderRecorder() throws Exception
   {
     recorderDirectory = Files.createTempDir();
     recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
+    disnetworking = recorder.getDisThreadedNetIF();
+    disnetworking.addListener(pdu -> {
+        pduReceivedMap.put(pdu.getPduType(), pdu);
+    });
     System.out.println("Recorder log at " + recorderDirectory.getAbsolutePath());
   }
 
-  private void shutDownRecorder() throws Exception
+  /** Will shutdown the common send/receive network interface */
+  private void shutDownSenderRecorder() throws Exception
   {
     recorder.end();
   }
