@@ -141,11 +141,6 @@ public class AllPduRoundTripTest
       sendOnePdu(pduFactory.makeUnderwaterAcousticPdu());
 
       //sleep(100L); // go sender/receiver go!  is this enough time to receive?
-//        try {
-//            Thread.sleep(250L); // TODO shouldn't this kind of delay timing be in a DIS sender class?
-//        } 
-//        catch (InterruptedException ex2) {
-//        }
                     
       // TODO is there a more reliable way to determine whether receiver is complete?
 
