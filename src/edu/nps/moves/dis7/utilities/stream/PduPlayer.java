@@ -18,7 +18,7 @@ import java.util.Base64;
 import java.util.regex.Pattern;
 
 /** Utility to play back log files of recorded PDUs. These PDUs can then be resent
- * over the a multicast group address, or process locally.
+ * over a multicast group address, or process locally.
  * 
  * @author @author Mike Bailey, jmbailey@nps.edu
  */
