@@ -75,9 +75,7 @@ public class DisThreadedNetIF
   /* *********** queues and lists  and public methods ************** */
   private final List<PduListener> everyTypeListeners = new ArrayList<>();
   private final Map<DISPDUType, List<PduListener>> typeListeners = new HashMap<>();
-  
   private final List<RawPduListener> rawListeners = new ArrayList<>();
-
   private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
   /**
@@ -203,10 +201,8 @@ public class DisThreadedNetIF
           socket.receive(packet);   //blocks here waiting for next DIS pdu to be received on multicast IP and specified port
           toRawListeners(packet.getData(), packet.getLength());
           
-          // Uses the NIO byte buffer class--wrap a ByteBuffer instance around
-          // the data we get from the packet
-          byteBuffer = ByteBuffer.wrap(packet.getData());
-          pdu = pduFactory.createPdu(byteBuffer);
+          // the PduFactory will wrap data in a ByteBuffer
+          pdu = pduFactory.createPdu(packet.getData());
           
           if (pdu != null)
           {
