@@ -102,7 +102,9 @@ public class PduRecorder implements PduReceiver
     bufferedWriter = new BufferedWriter(new FileWriter(logFile));
     
     disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
-    disThreadedNetIF.addRawListener(bAndL->receivePdu(bAndL.buff,bAndL.length));
+    disThreadedNetIF.addRawListener(bAndL -> {
+        receivePdu(bAndL.buff,bAndL.length);
+    });
   }
   
   public void startResume()
