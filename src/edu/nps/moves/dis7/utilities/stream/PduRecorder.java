@@ -19,6 +19,10 @@ import java.util.Calendar;
 
 import org.apache.commons.io.FilenameUtils;
 
+/** Utility to save PDUs received over the network to disk
+ * 
+ * @author Mike Bailey, jmbailey@nps.edu
+ */
 public class PduRecorder implements PduReceiver
 {
   static String DEFAULT_OUTDIR = "./pdulog";
