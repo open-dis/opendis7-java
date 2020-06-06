@@ -62,12 +62,10 @@ public class SignalPdusTest
     
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      DisNetworking disnet = new DisNetworking();
       disnet.sendPdu(sigPdu);
       disnet.sendPdu(sigPdu2);
       disnet.sendPdu(isig);
       disnet.sendPdu(isig2);
-      
       Thread.sleep(100l);
     }
     catch (Exception ex) {

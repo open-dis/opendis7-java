@@ -71,7 +71,6 @@ public class CommentPdusTest
     try {
       Thread.sleep(250l); // make sure receiver is listening
       disnet.sendPdu(pdu);
-
       Thread.sleep(100l);
     }
     catch (Exception ex) {

@@ -16,10 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Bit Field Round TripTest")
 public class BitFieldRoundTripTest
 {
-
-  public BitFieldRoundTripTest()
-  {
-  }
+    Pdu receivedPdu;
+    DisNetworking disnet;
 
   @BeforeAll
   public static void setUpClass()
@@ -34,20 +32,20 @@ public class BitFieldRoundTripTest
 
   @BeforeEach
   public void setUp()
-  {
+  {   
+      disnet = new DisNetworking();
+      setUpReceiver();
   }
 
   @AfterEach
   public void tearDown()
   {
+//      disnet.stop();
+//      disnet = null;
   }
 
-
-  private Pdu receivedPdu;
-  private Object waiter = new Object();
-
   @Test
-  public void testBitFieldRoundTrip()
+  public void testRoundTrip()
   {
     PduFactory factory = new PduFactory();
 
@@ -71,12 +69,10 @@ public class BitFieldRoundTripTest
       .set(LandPlatformAppearance.CAMOUFLAGE_TYPE, AppearanceCamouflageType.FOREST_CAMOUFLAGE.getValue())
       .set(LandPlatformAppearance.IS_FROZEN,1);
   
-    setUpReceiver();
-
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      new DisNetworking().sendPdu(espdu);
-      Thread.sleep(1000l); 
+      disnet.sendPdu(espdu);
+      Thread.sleep(100l); 
     }
     catch (Exception ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
@@ -95,7 +91,7 @@ public class BitFieldRoundTripTest
   {
     Thread rcvThread = new Thread(() -> {
       try {
-        receivedPdu = new DisNetworking().receivePdu();  // blocks
+        receivedPdu = disnet.receivePdu();  // blocks
       }
       catch (IOException ex) {
         System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
@@ -134,6 +130,9 @@ public class BitFieldRoundTripTest
  }
   public static void main(String[] args)
   {
-    new BitFieldRoundTripTest().testBitFieldRoundTrip();
+    BitFieldRoundTripTest brt = new BitFieldRoundTripTest();
+    brt.setUp();
+    brt.testRoundTrip();
+//    brt.tearDown();.testRoundTrip();
   }
 }

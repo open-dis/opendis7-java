@@ -63,7 +63,6 @@ public class AllPduRoundTripTest
     Throwable ex = null;
     try {
       setupSenderRecorder();
-      sleep(250L); // this has to be fully setup before continuing
       
       pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
