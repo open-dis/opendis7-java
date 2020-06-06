@@ -7,10 +7,11 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.EntityType;
-import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.entities.EntityTypeFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import java.io.IOException;
 
 /**
@@ -76,7 +77,7 @@ public class EntityUse
   {
     PduFactory pduFactory = new PduFactory();  // uses defaults: usa, exercise id 1, site id 2, app id 3, absolute time
 
-    EntityStatePdu pdu = pduFactory.makeEntityStatePdu();  
+    EntityStatePdu espdu = pduFactory.makeEntityStatePdu();  
     /* set desired entity state fields here */
     
     EntityType et = EntityTypeFactory.makeEntity(11963);
@@ -85,20 +86,35 @@ public class EntityUse
       return;
     }
     
-    pdu.setEntityType(et);
-    DisNetworking disnet = new DisNetworking(); // uses defaults: multicast port 3000 ip 230.0.0.0
-    disnet.sendPdu(pdu);  // possibly throws IOException
+    espdu.setEntityType(et);
+    
+    DisThreadedNetIF netif = new DisThreadedNetIF(); // uses defaults: multicast port 3000 ip 230.0.0.0
+    
+    // We want to listen also, so add a listener, using JDK8+ lambda grammar
+    netif.addListener(pdu->handleReceivedPdu(pdu));
+    netif.send(espdu);  // possibly throws IOException
     
     /* Do the same for the second way of creating a Shenandoah entity type and show an alternate way of creating an ESPDU */
     
-    EntityStatePdu pdu2 = (EntityStatePdu)pduFactory.createPdu(DISPDUType.ENTITY_STATE);
+    EntityStatePdu espdu2 = (EntityStatePdu)pduFactory.createPdu(DISPDUType.ENTITY_STATE);
     /* set desired entity state fields here */
 
     edu.nps.moves.dis7.entities.usa.platform.surface.AD44Shenandoah et2 = new edu.nps.moves.dis7.entities.usa.platform.surface.AD44Shenandoah();
     /* Use import statement to make the code above more readable */
     
-    pdu2.setEntityType(et2);
-    disnet.sendPdu(pdu2);  // possibly throws IOException
+    espdu2.setEntityType(et2);
+    netif.send(espdu2);  // possibly throws IOException
+    
+    // Wait a bit to see output
+    try { 
+        Thread.sleep(250L);
+    } catch(InterruptedException ex) {}
+  }
+  
+  private static void handleReceivedPdu(Pdu pdu)
+  {
+    // Do something here with the pdu you received
+    System.out.println("Received "+pdu.getClass().getSimpleName());
   }
   
   public static void main(String[] args) throws Exception {
