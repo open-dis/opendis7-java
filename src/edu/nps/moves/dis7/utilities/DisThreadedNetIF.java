@@ -6,21 +6,20 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
-import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * DisThreadedNetIF.java created on Jul 29, 2019
  * This is a thread-safe, multicast DIS network interface class.
- * It is a singleton, meaning one instance per VM. If a DIS needs to send and receive over
- * more than one network address, this class can be modified to be multiply instantiated;
- * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
- *
+ * 
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
  */
@@ -59,6 +58,12 @@ public class DisThreadedNetIF
   private int disPort;
   private String mcastGroup;
   private boolean killed = false;
+  
+  private InetAddress maddr;
+  private InetSocketAddress group;
+  private NetworkInterface ni;
+  private MulticastSocket ssocket = null;
+  private MulticastSocket rsocket = null;
 
   public DisThreadedNetIF()
   {
@@ -69,6 +74,13 @@ public class DisThreadedNetIF
   {
     disPort = port;
     mcastGroup = mcastgroup;
+      try {
+          maddr = InetAddress.getByName(mcastGroup);
+      } catch (UnknownHostException ex) {
+          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    group = new InetSocketAddress(maddr, disPort);
+    ni = findIp4Interface();
     init();
   }
 
@@ -164,9 +176,6 @@ public class DisThreadedNetIF
   private Thread sender;
   private Thread receiver;
 
-  private MulticastSocket socket = null;
-  private InetAddress maddr;
-
   private void init()
   {
     receiver = new Thread(receiveThread, "DisThreadedNetIF receive thread");
@@ -185,20 +194,16 @@ public class DisThreadedNetIF
       
     byte buffer[] = new byte[MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-    InetSocketAddress group;
     Pdu pdu;
-    ByteBuffer byteBuffer;
     
     while (!killed) { // keep trying on error
       try {
-        socket = new MulticastSocket(disPort);
-        maddr = InetAddress.getByName(mcastGroup);
-        group = new InetSocketAddress(maddr, disPort);
-        socket.joinGroup(group, findIp4Interface());
+        rsocket = new MulticastSocket(disPort);
+        rsocket.joinGroup(group, ni);
         
         while (!killed) {
           
-          socket.receive(packet);   //blocks here waiting for next DIS pdu to be received on multicast IP and specified port
+          rsocket.receive(packet);   //blocks here waiting for next DIS pdu to be received on multicast IP and specified port
           toRawListeners(packet.getData(), packet.getLength());
           
           // the PduFactory will wrap data in a ByteBuffer
@@ -213,16 +218,15 @@ public class DisThreadedNetIF
         }
       }
       catch (IOException ex) {
-        if (socket != null) {
-          socket.close();
-          socket = null;
+        if (rsocket != null) {
+          rsocket.close();
+          rsocket = null;
         }
         System.err.println("Exception in DISThreadedNetIF receive thread: " + ex.getLocalizedMessage());
-        System.err.println("Retrying in 5 seconds");
-
+        System.err.println("Retrying in 1 second");
       }
       if (!killed)
-        sleep(5000);
+        sleep(250);
     }
   };
 
@@ -234,37 +238,38 @@ public class DisThreadedNetIF
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);
       
+     while (!killed) { // keep trying on error
       try {
-
+        ssocket = new MulticastSocket(disPort);
+        ssocket.joinGroup(group, ni);
+        
         while (!killed) {
           pdu = pdus2send.take();
 
           // turn object into byte stream
           pdu.marshal(dos);
           data = baos.toByteArray();
-          
-          // Since we don't know the size of the PDU, reluctantly, we create
-          // new packet object each listen cycle
+
+          // Since we don't know the size of the PDU, reluctantly, we create a
+          // new packet here when we finally know
           packet = new DatagramPacket(data, data.length, maddr, disPort);
-          socket.send(packet);
-          
+          ssocket.send(packet);
+
           baos.reset();
         }
       }
-
-      catch (InterruptedException ex) {
-        // probably killed
-      }
       catch (Exception ex) {
-        if (socket != null) {
-          socket.close();
-          socket = null;
+        if (ssocket != null) {
+          ssocket.close();
+          ssocket = null;
         }
+        
         System.err.println("Exception in DISThreadedNetIF send thread: " + ex.getLocalizedMessage());
-        System.err.println("Retrying in 5 seconds");
+        System.err.println("Retrying in 1 second");
       }
       if (!killed)
-        sleep(5000);
+        sleep(250);
+    }
   };
 
   private void toListeners(Pdu pdu)
@@ -291,6 +296,20 @@ public class DisThreadedNetIF
     killed = true;
     sender.interrupt();
     receiver.interrupt();
+      try {
+          if (ssocket != null && !ssocket.isClosed()) {
+              ssocket.leaveGroup(group, ni);
+              ssocket.close();
+              ssocket = null;
+          }
+          if (rsocket != null && !rsocket.isClosed()) {
+              rsocket.leaveGroup(group, ni);
+              rsocket.close();
+              rsocket = null;
+          }
+      } catch (IOException ex) {
+          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+      }
   }
 
   private void sleep(long ms)
@@ -298,22 +317,25 @@ public class DisThreadedNetIF
     try {
       Thread.sleep(ms);
     }
-    catch (InterruptedException ex) {
-    }
+    catch (InterruptedException ex) {}
   }
 
   /** Find proper interface
-   * @return a network interface to use to join multicast group
-   * @throws java.net.SocketException if something goes wrong
+   * @return a network interface to use to join a multicast group
    */
-  public static NetworkInterface findIp4Interface() throws SocketException
+  public static NetworkInterface findIp4Interface()
   {
-    Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
+    Enumeration<NetworkInterface> ifaces = null;
+      try {
+          ifaces = NetworkInterface.getNetworkInterfaces();
+      } catch (SocketException ex) {
+          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+      }
     NetworkInterface nif;
     Enumeration<InetAddress> addresses;
     InetAddress addr;
     
-    while (ifaces.hasMoreElements()) {
+    while (ifaces != null && ifaces.hasMoreElements()) {
       nif = ifaces.nextElement();
       addresses = nif.getInetAddresses();
       while (addresses.hasMoreElements()) {

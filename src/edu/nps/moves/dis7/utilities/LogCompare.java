@@ -1,8 +1,8 @@
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.Pdu;
-import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -63,25 +63,28 @@ public class LogCompare
     int lineno = 0;
     boolean goodmatch = true;
 
-    try {
-      BufferedReader reader1 = new BufferedReader(new FileReader(file1));
-      BufferedReader reader2 = new BufferedReader(new FileReader(file2));
+    try (BufferedReader reader1 = new BufferedReader(new FileReader(file1)); BufferedReader reader2 = new BufferedReader(new FileReader(file2))) {
 
       String line1 = reader1.readLine();
       String line2 = reader2.readLine();
-      lineno++;
+      String[] sa1;
+      String[] sa2;
+      byte[] ba1;
+      byte[] ba2;
+      Pdu pdu1;
+      Pdu pdu2;
 
       while (line1 != null && line2 != null) {
         mainblock:
         {
           if (line1.equals(line2))
-            break mainblock;
+              break mainblock;
 
           if (line1.startsWith(PduRecorder.COMMENT_MARKER) || line2.startsWith(PduRecorder.COMMENT_MARKER))
-            break mainblock;
+              break mainblock;
 
-          String[] sa1 = line1.split(",");
-          String[] sa2 = line2.split(",");
+          sa1 = line1.split(",");
+          sa2 = line2.split(",");
           if (sa1.length != sa2.length) {
             System.err.println("Error: parsing error. ASCII 2-part, comma-separated expected. Lines follow.");
             System.err.println(line1);
@@ -93,8 +96,8 @@ public class LogCompare
           if (sa1[1].equals(sa2[1]))
             break mainblock;
 
-          byte[] ba1 = decdr.decode(sa1[1]);
-          byte[] ba2 = decdr.decode(sa2[1]);
+          ba1 = decdr.decode(sa1[1]);
+          ba2 = decdr.decode(sa2[1]);
 
           if (ba1.length != ba2.length) {
             System.out.println("line " + lineno + ": lengths differ. Lines follow.");
@@ -103,8 +106,8 @@ public class LogCompare
             break mainblock;
           }
 
-          Pdu pdu1 = factory.createPdu(ba1);
-          Pdu pdu2 = factory.createPdu(ba2);
+          pdu1 = factory.createPdu(ba1);
+          pdu2 = factory.createPdu(ba2);
           if (pdu1.equals(pdu2))  // use generated equals method
             break mainblock;
 
@@ -121,6 +124,7 @@ public class LogCompare
 
         line1 = reader1.readLine();
         line2 = reader2.readLine();
+        lineno++;
       }
 
       System.out.println("End of compare. There were " + (goodmatch ? "no " : "one or more ") + "errors");

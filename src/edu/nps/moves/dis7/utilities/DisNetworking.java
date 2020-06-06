@@ -9,6 +9,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * DisNetworking.java created on Jul 29, 2019
@@ -31,6 +33,13 @@ public class DisNetworking
   private int DIS_PORT = 3000;
   private String MCAST_GROUP = "230.0.0.0";
   private static final int MAX_DIS_PDU_SIZE = 8192;
+  
+  private ByteArrayOutputStream baos;
+  private DataOutputStream dos;
+  
+  private InetAddress maddr;
+  private InetSocketAddress group;
+  private NetworkInterface ni;
 
   public DisNetworking()
   {
@@ -41,6 +50,15 @@ public class DisNetworking
   {
     DIS_PORT = port;
     MCAST_GROUP = mcastgroup;
+      try {
+          maddr = InetAddress.getByName(MCAST_GROUP);
+      } catch (UnknownHostException ex) {
+          Logger.getLogger(DisNetworking.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    group = new InetSocketAddress(maddr, DIS_PORT);
+    ni = DisThreadedNetIF.findIp4Interface();
+    baos = new ByteArrayOutputStream();
+    dos = new DataOutputStream(baos);
   }
 
   public int getPort()
@@ -74,16 +92,12 @@ public class DisNetworking
   }
   
   private MulticastSocket rsocket;
-  InetSocketAddress group;
-  InetAddress maddr;
   byte buffer[];
   DatagramPacket packet;
   public BuffAndLength receiveRawPdu() throws IOException
   {
     rsocket = new MulticastSocket(DIS_PORT);
-    maddr = InetAddress.getByName(MCAST_GROUP);
-    group = new InetSocketAddress(maddr, DIS_PORT);
-    rsocket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+    rsocket.joinGroup(group, ni);
     buffer = new byte[MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
@@ -91,34 +105,31 @@ public class DisNetworking
     rsocket.receive(packet);   //blocks here waiting for next DIS pdu to be received on broadcast IP and specified port 
     //System.out.println("packet received from " + packet.getSocketAddress());
     
-    rsocket.leaveGroup(group, DisThreadedNetIF.findIp4Interface());
+    rsocket.leaveGroup(group, ni);
     rsocket.close();
     rsocket = null;
     return new BuffAndLength(packet.getData(), packet.getLength());
   }
 
-  ByteArrayOutputStream baos;
-  DataOutputStream dos;
   public void sendPdu(Pdu pdu) throws Exception
   {
     // turn object into byte stream
-    baos = new ByteArrayOutputStream();
-    dos = new DataOutputStream(baos);
     pdu.marshal(dos);
-    
     sendRawPdu(baos.toByteArray());
+    baos.reset();
   }
 
-  MulticastSocket ssocket;
+  private MulticastSocket ssocket;
   public void sendRawPdu(byte[] data) throws IOException
   {
     ssocket = new MulticastSocket();
-    maddr = InetAddress.getByName(MCAST_GROUP);
+    ssocket.joinGroup(group, ni);
     
     // load byte buffer into packet and send
     packet = new DatagramPacket(data, data.length, maddr, DIS_PORT);
     ssocket.send(packet);
 
+    ssocket.leaveGroup(group, ni);
     ssocket.close();
     ssocket = null;
     //System.out.println("sent to " + maddr.getHostAddress() + ":" + DIS_PORT);
