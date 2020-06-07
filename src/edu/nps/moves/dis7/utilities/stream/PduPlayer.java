@@ -19,9 +19,9 @@ import java.util.Base64;
 import java.util.regex.Pattern;
 
 /** Utility to play back log files of recorded PDUs. These PDUs can then be resent
- * over a multicast group address, or process locally.
+ * over a multicast group address, or processed locally.
  * 
- * @author @author Mike Bailey, jmbailey@nps.edu
+ * @author Mike Bailey, jmbailey@nps.edu
  */
 public class PduPlayer {
 
@@ -112,15 +112,26 @@ public class PduPlayer {
             if (netSend) {
                 datagramSocket = new DatagramSocket();
             }
+            
             Base64.Decoder base64Decoder = Base64.getDecoder();
             DatagramPacket datagramPacket;
             DISPDUType type;
+            String line, tempString;
+            String[] sa = null, splitString;
+            String REGEX;
+            Pattern pattern;
+            byte[] pduTimeBytes = null, bufferShort = null;
+            int[] arr;
+            IntBuffer intBuffer;
+            int tempInt;
+            ByteBuffer byteBuffer1, byteBuffer2;
+            long pduTimeInterval, targetSimTime, now, sleepTime;
 
             for (File f : fs) {
                 System.out.println("Replaying " + f.getAbsolutePath());
                 brdr = new BufferedReader(new FileReader(f), 1024 * 200); // 200kb buffer
 
-                String line = brdr.readLine();
+                line = brdr.readLine();
 
                 while (line != null && !Thread.interrupted()) {
                     while (paused) {
@@ -133,10 +144,7 @@ public class PduPlayer {
                             break;
                         }
                     } else {
-                        String[] sa = null;
-                        String REGEX;
-                        Pattern pattern;
-
+                        
                         switch (pduLogEncoding) {
                             case "ENCODING_BASE64":
                                 sa = line.split(",");
@@ -172,13 +180,7 @@ public class PduPlayer {
                         if (startNanoTime == null) {
                             startNanoTime = System.nanoTime();
                         }
-                        byte[] pduTimeBytes = null;
-                        String[] splitString;
-                        int[] arr;
-                        String tempString;
-                        IntBuffer intBuffer;
-                        byte[] bufferShort = null;
-
+                        
                         switch (pduLogEncoding) {
                             case "ENCODING_BASE64":
                                 pduTimeBytes = base64Decoder.decode(sa[0]);
@@ -206,11 +208,11 @@ public class PduPlayer {
 
                                     tempString = splitString[x].trim();
 
-                                    int tempInt = Integer.parseInt(tempString);
+                                    tempInt = Integer.parseInt(tempString);
                                     arr[x] = tempInt;
                                 }
                                 // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
-                                ByteBuffer byteBuffer1 = ByteBuffer.allocate(arr.length * 4);
+                                byteBuffer1 = ByteBuffer.allocate(arr.length * 4);
                                 intBuffer = byteBuffer1.asIntBuffer();
                                 intBuffer.put(arr);
 
@@ -222,12 +224,12 @@ public class PduPlayer {
 
                         }
 
-                        long pduTimeInterval = Longs.fromByteArray(pduTimeBytes);
+                        pduTimeInterval = Longs.fromByteArray(pduTimeBytes);
                         // This is a relative number in nanoseconds of the time of packet reception minus first packet reception for scenario.
 
-                        long targetSimTime = startNanoTime + pduTimeInterval;  // when we should send the packet
-                        long now = System.nanoTime();
-                        long sleepTime = targetSimTime - now; //System.nanoTime(); // the difference between then and now
+                        targetSimTime = startNanoTime + pduTimeInterval;  // when we should send the packet
+                        now = System.nanoTime();
+                        sleepTime = targetSimTime - now; //System.nanoTime(); // the difference between then and now
 
                         if (sleepTime > 20000000) { // 20 ms //
                             //System.out.println("sim interval = " + pduTimeInterval + ", sleeping for " + sleepTime/1000000l + " ms");
@@ -270,14 +272,14 @@ public class PduPlayer {
 
                                     tempString = splitString[x].trim();
 
-                                    int tempInt = Integer.parseInt(tempString);
+                                    tempInt = Integer.parseInt(tempString);
                                     arr[x] = tempInt;
 
                                     //System.out.println(tempInt);
                                 }
 
                                 // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
-                                ByteBuffer byteBuffer2 = ByteBuffer.allocate(arr.length * 4);
+                                byteBuffer2 = ByteBuffer.allocate(arr.length * 4);
                                 intBuffer = byteBuffer2.asIntBuffer();
                                 intBuffer.put(arr);
 
@@ -412,21 +414,7 @@ public class PduPlayer {
     }
 
     public void end() {
-        thrd.interrupt();
         closer();
-    }
-
-    /**
-     * Invocation. Nothing happens, just object creation, then JVM exit
-     *
-     * @param args none supported
-     */
-    public static void main(String[] args) {
-        try {
-            new PduPlayer("230.1.2.3", 3000, new File("./pdulog").toPath());
-        } catch (IOException ex) {
-            ex.printStackTrace(System.err);
-        }
     }
 
     private void sleep(long ms) {
