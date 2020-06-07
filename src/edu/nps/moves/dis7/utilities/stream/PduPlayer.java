@@ -144,8 +144,8 @@ public class PduPlayer {
 
                             case "ENCODING_PLAINTEXT":
 
-                                if (line.contains("#")) {
-                                    line = line.substring(0, line.indexOf("#") - 1); //Delete appended Comments
+                                if (line.contains(PduRecorder.COMMENT_MARKER)) {
+                                    line = line.substring(0, line.indexOf(PduRecorder.COMMENT_MARKER) - 1); //Delete appended Comments
                                 }
                                 //Pattern splitting needed for playback of unencoded streams
                                 REGEX = "\\],\\[";
