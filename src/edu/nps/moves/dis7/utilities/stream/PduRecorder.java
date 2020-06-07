@@ -170,8 +170,9 @@ public class PduRecorder implements PduReceiver
             sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
             sb.append(',');
             sb.append(Arrays.toString(buffsized).replace(" ", ""));
+            sb.append(" # ");
             type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
-            sb.append(" # " + type);
+            sb.append(type);
             break;
         
         default:
@@ -194,10 +195,21 @@ public class PduRecorder implements PduReceiver
     sb.setLength(0);
   }
   
+  /** Retrieve the path to the log file
+   * 
+   * @return the path to the log file
+   */
   public String getLogFile()
   {
     return logFile.getAbsolutePath();
   }
+  
+    /**
+     * @return an instance of this DisThreadedNetIF
+     */
+    public DisThreadedNetIF getDisThreadedNetIF() {
+        return disThreadedNetIF;
+    }
   
   private void writeHeader() throws IOException
   {
@@ -296,11 +308,4 @@ public class PduRecorder implements PduReceiver
         Thread.sleep(ms);}
     catch(InterruptedException ex) {}
   }
-
-    /**
-     * @return an instance of this DisThreadedNetIF
-     */
-    public DisThreadedNetIF getDisThreadedNetIF() {
-        return disThreadedNetIF;
-    }
 }
