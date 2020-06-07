@@ -6,8 +6,8 @@ package edu.nps.moves.dis7;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-import java.nio.ByteBuffer;
 import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,8 +42,7 @@ public class CreateAllPduTypesTest
   {
   }
 
-  HashSet<Object> pdus = new HashSet<>();
-  ByteBuffer buff = ByteBuffer.allocate(20000);
+  Set<Object> pdus = new HashSet<>();
   DataOutputStream dos = new DataOutputStream(new ByteArrayOutputStream());
 
   private Throwable throwable;

@@ -55,11 +55,11 @@ public class DataQueryPduRoundTripTest
 
   private static VariableDatum variableDatum1 = new VariableDatum();
   private static VariableRecordType variableDatum1Type = VariableRecordType.ADA_SHOOTING_STATUS;
-  private static byte[] variableDatum1Value = new String("varDatum1Value111").getBytes();
+  private static byte[] variableDatum1Value = "varDatum1Value111".getBytes();
 
   private static VariableDatum variableDatum2 = new VariableDatum();
   private static VariableRecordType variableDatum2Type = VariableRecordType.ORDER_STATUS;
-  private static byte[] variableDatum2Value = new String("222varDatum1Value222").getBytes();
+  private static byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
 
   static {
     fixedDatum1.setFixedDatumValue(fixedDatum1Value);
@@ -81,7 +81,6 @@ public class DataQueryPduRoundTripTest
   }
 
   private Pdu receivedPdu;
-  private Object waiter = new Object();
 
   @Test
   public void testRoundTrip()
@@ -126,7 +125,6 @@ public class DataQueryPduRoundTripTest
         System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
         System.exit(1);
       }
-      //   waiter.notify();
     });
 
     rcvThread.setPriority(Thread.NORM_PRIORITY);
