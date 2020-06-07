@@ -154,31 +154,28 @@ public class PduRecorder implements PduReceiver
     byte[] timeByteArray = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
     //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
-    sb.setLength(0);
-    byte[] buffsized;
+    byte[] buffsized = Arrays.copyOf(buff, len);
+    DISPDUType type;
     
     switch (pduLogEncoding)
     {
         case ENCODING_BASE64:
             sb.append(base64Encoder.encodeToString(timeByteArray));
             sb.append(',');
-            buffsized = Arrays.copyOf(buff, len);
             sb.append(base64Encoder.encodeToString(buffsized)); 
             break;
             
         case ENCODING_PLAINTEXT:
             // by Tobias Brennenstuhl SPring 2020
-            //sb.append(encdr.encodeToString(timeAr));
             sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
             sb.append(',');
-            buffsized = Arrays.copyOf(buff, len);
             sb.append(Arrays.toString(buffsized).replace(" ", ""));
-            
-            sb.append(" # " + "TODO PDU type (number and name)");
+            type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
+            sb.append(" # " + type);
             break;
         
         default:
-            System.err.println ("Encoding'" + pduLogEncoding + " not recognized or supported");
+            System.err.println ("Encoding " + pduLogEncoding + " not recognized or supported");
     }
     try {
       if (!headerWritten) {
