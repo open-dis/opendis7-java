@@ -1789,6 +1789,9 @@ public class PduFactory
           try {
               aPdu.unmarshal(buff);
           } catch (Exception ex) {
+              // TODO: trouble shoot. there is an issue when unmarshalling the
+              // special cases of SIGNAL and INTERCOM_SIGNAL pdus from a log
+              // file during play back
 //              Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
               System.err.println("error unmarshalling " + pduType);
               System.err.println(ex);
