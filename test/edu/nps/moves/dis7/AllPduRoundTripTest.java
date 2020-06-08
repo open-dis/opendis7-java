@@ -29,6 +29,7 @@ import java.util.Map;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.io.TempDir;
 
 @DisplayName("All Pdu Round Trip Test")
 
@@ -167,7 +168,6 @@ public class AllPduRoundTripTest
     assertNull(ex, "Exception should be null if successful creation of all objects");
   }
 
-  private File recorderDirectory;
   private Map<DISPDUType, Pdu> pduSentMap = new HashMap<>();
   private Map<DISPDUType, Pdu> pduReceivedMap = new HashMap<>();
   private Map<DISPDUType, Pdu> pduReadMap = new HashMap<>();
@@ -183,11 +183,13 @@ public class AllPduRoundTripTest
     disnetworking.send(pdu);
 //    sleep(100L); // TODO debugging
   }
+  
+  @TempDir
+  File recorderDirectory;
 
   private void setupSenderRecorder() throws Exception
   {
     recorderDirectory = Files.createTempDir();
-    recorderDirectory.deleteOnExit();
     
     recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
     disnetworking = recorder.getDisThreadedNetIF();
