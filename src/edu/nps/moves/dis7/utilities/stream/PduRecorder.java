@@ -187,8 +187,7 @@ public class PduRecorder implements PduReceiver
       ((BufferedWriter)bufferedWriter).newLine();
     }
     catch (IOException ex) {
-      System.err.println("Fatal exception writing DIS log file in Recorder.start()");
-      throw new RuntimeException(ex);
+      throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread: " + ex);
     }
     //System.out.println("Recorder: "+ ++pduCount);
 
