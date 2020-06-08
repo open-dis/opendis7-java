@@ -368,14 +368,14 @@ public class PduPlayer {
     {
         boolean returnValue = false;
         if (line.trim().startsWith(PduRecorder.START_COMMENT_MARKER)) {
-            //System.out.println();
+            
             //Read Encoding from FileHeader
             String[] sa = line.split(",", 3);
-            System.err.println(sa[1].trim());
             pduLogEncoding = sa[1].trim();
+            System.err.println(pduLogEncoding);
             line = line.substring(PduRecorder.START_COMMENT_MARKER.length());
             System.out.println(line + "  ");
-            showPduCountsOneTime = true;  // get the first one in there
+            showPduCountsOneTime = true; // get the first one in there
         } else if (line.trim().startsWith(PduRecorder.FINISH_COMMENT_MARKER)) {
             System.out.print("Total PDUs: ");
             showCounts();
