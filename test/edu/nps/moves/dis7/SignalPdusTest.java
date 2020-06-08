@@ -129,6 +129,8 @@ public class SignalPdusTest {
         recorder.end(); // this finishes the 2nd log file so it can be played
         mutex.acquire();
         Path path = Path.of(recorder.getLogFile()).getParent();
+        
+        // Note: the player will all any and all log files in the given path
         PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
         player.sendToNet(false);
         player.addRawListener(ba -> {
