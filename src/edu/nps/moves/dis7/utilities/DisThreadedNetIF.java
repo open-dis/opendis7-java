@@ -63,7 +63,9 @@ public class DisThreadedNetIF
   
   public static int DEFAULT_DIS_PORT = 3000;
   public static String DEFAULT_MCAST_GROUP = "225.4.5.6";
-  private static final int MAX_DIS_PDU_SIZE = 8192;
+  
+  /** 8192: This has actually been superseded by a larger buffer size, but good enough for now */
+  public static final int MAX_DIS_PDU_SIZE = 8192;
   
   private int disPort;
   private String mcastGroup;

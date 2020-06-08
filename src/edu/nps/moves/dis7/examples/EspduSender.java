@@ -30,16 +30,6 @@ public class EspduSender
   };
 
   /**
-   * Default multicast group address we send on
-   */
-  public static final String DEFAULT_MULTICAST_GROUP = "239.1.2.3";
-
-  /**
-   * Default port we send on
-   */
-  public static final int DIS_DESTINATION_PORT = 3000;
-
-  /**
    * Possible system properties, passed in via -Dattr=val
    * networkMode: unicast, broadcast, multicast
    * destinationIp: where to send the packet. If in multicast mode, this can be multicast.
@@ -65,16 +55,16 @@ public class EspduSender
 
     // Default settings. These are used if no system properties are set. 
     // If system properties are passed in, these are over ridden.
-    int port = DIS_DESTINATION_PORT;
+    int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
     NetworkMode mode;
     InetAddress destinationIp = null; // must be initialized, even if null
 
     try {
-      destinationIp = InetAddress.getByName(DEFAULT_MULTICAST_GROUP);
+      destinationIp = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
     }
     catch (UnknownHostException e) {
       System.err.println(e + " Cannot create multicast address");
-      System.exit(0);
+      System.exit(1);
     }
 
     // All system properties, passed in on the command line via -Dattribute=value
@@ -121,8 +111,8 @@ public class EspduSender
       } // end networkModeString
     }
     catch (IOException | RuntimeException e) {
-      System.out.println("Unable to initialize networking. Exiting.");
-      System.out.println(e);
+      System.err.println("Unable to initialize networking. Exiting.");
+      System.err.println(e);
       System.exit(-1);
     }
 

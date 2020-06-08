@@ -28,8 +28,6 @@ import java.util.List;
 public class PduSender
 {
 
-  public static final int PORT = 3000;
-  public static final String MULTICAST_ADDRESS = "239.1.2.3";
   private int port;
   InetAddress multicastAddress;
 
@@ -291,7 +289,7 @@ public class PduSender
 
       // Send the PDUs we created
       DatagramPacket packet;
-      InetAddress localMulticastAddress = InetAddress.getByName(MULTICAST_ADDRESS);
+      InetAddress localMulticastAddress = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
       MulticastSocket socket = new MulticastSocket(port);
       InetSocketAddress group = new InetSocketAddress(localMulticastAddress, port);
       socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
@@ -329,8 +327,8 @@ public class PduSender
     }
     else {
       System.out.println("Usage:   PduSender <port> <multicast group>");
-      System.out.println("Default: PduSender  " + PORT + "   " + MULTICAST_ADDRESS);
-      sender = new PduSender(PORT, MULTICAST_ADDRESS);
+      System.out.println("Default: PduSender  " + DisThreadedNetIF.DEFAULT_DIS_PORT + "   " + DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      sender = new PduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MCAST_GROUP);
     }
     sender.run();
   }

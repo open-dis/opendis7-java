@@ -9,6 +9,7 @@ import edu.nps.moves.dis7.EntityID;
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.Vector3Double;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -26,16 +27,10 @@ import java.util.List;
  */
 public class EspduReceiver
 {
-  /**
-   * Max size of a PDU in binary format that we can receive. This is actually
-   * somewhat outdated--PDUs can be larger--but this is a reasonable starting point
-   */
-  public static final int MAX_PDU_SIZE = 8192;
-
   public static void main(String args[])
   {
     MulticastSocket socket;
-    byte buffer[] = new byte[MAX_PDU_SIZE];
+    byte buffer[] = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     PduFactory pduFactory = new PduFactory();
     List<Pdu> pduBundle;

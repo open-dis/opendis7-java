@@ -4,6 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import java.io.File;
 import java.io.IOException;
@@ -21,8 +22,6 @@ import java.util.Scanner;
 public class PduReaderPlayer
 {
   private final static String DEFAULT_OUTPUTDIR = "./pduLog";
-  private final static String MCAST_ADDR = "239.1.2.3";
-  private final static int DIS_PORT = 3000;
 
   private enum mystate
   {
@@ -33,8 +32,8 @@ public class PduReaderPlayer
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;
-    String mcast = MCAST_ADDR;
-    int port = DIS_PORT;
+    String mcast = DisThreadedNetIF.DEFAULT_MCAST_GROUP;
+    int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
     boolean sendToNet = false;
 
     switch (args.length) {

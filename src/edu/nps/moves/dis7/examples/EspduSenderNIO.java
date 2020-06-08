@@ -24,16 +24,6 @@ import java.net.MulticastSocket;
  */
 public class EspduSenderNIO
 {
-  /**
-   * multicast group we send on
-   */
-  public static final String MULTICAST_GROUP = "239.1.2.3";
-
-  /**
-   * Port we send on
-   */
-  public static final int PORT = 3000;
-
   public static void main(String args[])
   {
     MulticastSocket socket;
@@ -52,16 +42,16 @@ public class EspduSenderNIO
     eid.setEntityID((short) 2);
 
     try {
-      socket = new MulticastSocket(PORT);
-      maddr = InetAddress.getByName(MULTICAST_GROUP);
-      group = new InetSocketAddress(maddr, PORT);
+      socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
+      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
       
       Vector3Double location;
       EulerAngles orientation;
       float psi;
       byte[] data = new byte[144];
-      DatagramPacket packet = new DatagramPacket(data, data.length, maddr, PORT);
+      DatagramPacket packet = new DatagramPacket(data, data.length, maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
 
       while (true) {
         for (int idx = 0; idx < 100; idx++) {

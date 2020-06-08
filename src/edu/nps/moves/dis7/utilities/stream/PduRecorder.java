@@ -28,17 +28,14 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class PduRecorder implements PduReceiver
 {
+  public static final String COMMENT_MARKER = "#";
+  
   static String DEFAULT_OUTDIR = "./pdulog";
   static String DEFAULT_FILEPREFIX = "Pdusave"; // TODO better name
   static String DISLOG_FILE_EXTENSION = ".dislog";
   
-  static String DEFAULT_MCAST = "230.0.0.0";
-  static int    DEFAULT_PORT = 3000;
- 
-  public static final String COMMENT_MARKER = "#";
-  static String  START_COMMENT_MARKER = COMMENT_MARKER + " Start, ";
-  static String FINISH_COMMENT_MARKER = COMMENT_MARKER + " Finish, ";
-  
+  static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
+  static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
   static final String ENCODING_BASE64                = "ENCODING_BASE64";
   static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
   static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
@@ -49,7 +46,7 @@ public class PduRecorder implements PduReceiver
   static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
   static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
   
-  private static       String pduLogEncoding  = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
+  private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
     /**
      * TODO change this to enumeration type for strictness
@@ -79,7 +76,7 @@ public class PduRecorder implements PduReceiver
    */
   public PduRecorder() throws IOException
   {
-    this(DEFAULT_OUTDIR, DEFAULT_MCAST, DEFAULT_PORT);
+    this(DEFAULT_OUTDIR, DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT);
   }
   
   /**
@@ -92,7 +89,7 @@ public class PduRecorder implements PduReceiver
    */
   public PduRecorder(String dir) throws IOException
   {
-    this(dir, DEFAULT_MCAST, DEFAULT_PORT);
+    this(dir, DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT);
   }
   
   /** Constructor to let the user specify all required parameters

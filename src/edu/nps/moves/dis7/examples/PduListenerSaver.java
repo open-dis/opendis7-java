@@ -4,6 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.IOException;
 import java.util.Scanner;
@@ -20,8 +21,6 @@ import java.util.Scanner;
 public class PduListenerSaver
 {
   private final static String DEFAULT_OUTPUTDIR = "./pduLog";
-  private final static String MCAST_ADDR = "239.1.2.3";
-  private final static int DIS_PORT = 3000;
 
   private enum mystate
   {
@@ -32,8 +31,8 @@ public class PduListenerSaver
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;
-    String mcast = MCAST_ADDR;
-    int port = DIS_PORT;
+    String mcast = DisThreadedNetIF.DEFAULT_MCAST_GROUP;
+    int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
 
     switch (args.length) {
       case 0:
@@ -53,8 +52,7 @@ public class PduListenerSaver
 
     System.out.println("Beginning pdu save to directory " + outDir);
     try {
-      PduRecorder recorder = new PduRecorder(outDir, mcast, port);
-      recorder.startResume();
+      PduRecorder recorder = new PduRecorder(outDir, mcast, port); // assumes save
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
 

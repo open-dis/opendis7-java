@@ -36,9 +36,8 @@ public class DisNetworking
     }
   }
 
-  private int DIS_PORT = 3000;
-  private String MCAST_GROUP = "230.0.0.0";
-  private static final int MAX_DIS_PDU_SIZE = 8192;
+  private int DIS_PORT;
+  private String MCAST_GROUP;
   
   private ByteArrayOutputStream baos;
   private DataOutputStream dos;
@@ -49,7 +48,7 @@ public class DisNetworking
 
   public DisNetworking()
   {
-    this(3000, "230.0.0.0");
+    this(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MCAST_GROUP);
   }
 
   public DisNetworking(int port, String mcastgroup)
@@ -104,7 +103,7 @@ public class DisNetworking
   {
     rsocket = new MulticastSocket(DIS_PORT);
     rsocket.joinGroup(group, ni);
-    buffer = new byte[MAX_DIS_PDU_SIZE];
+    buffer = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
     //System.out.println("Listening on " + MCAST_GROUP + ":" + DIS_PORT + " if:" + socket.getNetworkInterface().getDisplayName());

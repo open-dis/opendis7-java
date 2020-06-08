@@ -1790,11 +1790,13 @@ public class PduFactory
               aPdu.unmarshal(buff);
           } catch (Exception ex) {
               // TODO: trouble shoot. there is an issue when unmarshalling the
-              // special cases of SIGNAL and INTERCOM_SIGNAL pdus from a log
-              // file during play back
+              // special cases of SIGNAL and INTERCOM_SIGNAL pdus during play back 
+              // of the AllPduRoundTripTest log file. However, there is no such
+              // failure during the concise SignalPduTest of the same special case
+              // PDUs only
 //              Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
-              System.err.println("error unmarshalling " + pduType);
-              System.err.println(ex);
+              System.err.println("From: " + PduFactory.class.getName());
+              System.err.println("Error unmarshalling " + pduType + ": " + ex);
           }
       }
     }

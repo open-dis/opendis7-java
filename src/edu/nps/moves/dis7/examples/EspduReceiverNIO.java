@@ -21,30 +21,22 @@ import java.net.MulticastSocket;
  */
 public class EspduReceiverNIO
 {
-  /**
-   * Max size of a PDU in binary format that we can receive. This is actually
-   * somewhat outdated--PDUs can be larger--but this is a reasonable starting point
-   * <p>
-   * This is legacy code ported to the edu.nps.moves.dis7 package
-   */
-  public static final int MAX_PDU_SIZE = 8192; // This has actually been superceded by a larger buffer size, but good enough for now
-
   public static void main(String args[])
   {
     MulticastSocket socket;
     InetAddress maddr;
     InetSocketAddress group;
     PduFactory pduFactory = new PduFactory();
-    byte buffer[] = new byte[MAX_PDU_SIZE];
+    byte buffer[] = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     Pdu pdu;
     
     try {
         
       // Specify the socket to receive data
-      socket = new MulticastSocket(EspduSenderNIO.PORT);
-      maddr = InetAddress.getByName(EspduSenderNIO.MULTICAST_GROUP);
-      group = new InetSocketAddress(maddr, EspduSenderNIO.PORT);
+      socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
+      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
 
       // Loop infinitely, receiving datagrams
