@@ -13,9 +13,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /** Utility to play back log files of recorded PDUs. These PDUs can then be resent
@@ -70,7 +72,6 @@ public class PduPlayer {
     private boolean showPduCountsOneTime = false;
     private int pduCount = 0;
     private DatagramSocket datagramSocket;
-    private BufferedReader brdr;
     private Long startNanoTime = null;
     private boolean paused = false;
     private boolean netSend = true;
@@ -118,7 +119,7 @@ public class PduPlayer {
             Base64.Decoder base64Decoder = Base64.getDecoder();
             DatagramPacket datagramPacket;
             DISPDUType type;
-            String line, tempString;
+            String tempString;
             String[] sa = null, splitString;
             String REGEX;
             Pattern pattern;
@@ -131,11 +132,9 @@ public class PduPlayer {
 
             for (File f : fs) {
                 System.out.println("Replaying " + f.getAbsolutePath());
-                brdr = new BufferedReader(new FileReader(f), 1024 * 200); // 200kb buffer
+                List<String> lines = Files.readAllLines(Path.of(f.getAbsolutePath()));
 
-                line = brdr.readLine();
-
-                while (line != null) {
+                for (String line : lines) {
                     while (paused) {
                         sleep(1000l); // TODO confirm: full second, was half second
                     }
@@ -190,8 +189,6 @@ public class PduPlayer {
 
                             case "ENCODING_PLAINTEXT":
 
-//                                pduTimeBytes = null;
-
                                 //Split first String into multiple Strings cotaining integers
                                 REGEX = ",";
                                 pattern = Pattern.compile(REGEX);
@@ -202,8 +199,6 @@ public class PduPlayer {
 
                                 //Define an array to store the in values from the string and initalize it to a value drifferent from NULL
                                 arr = new int[splitString.length];
-
-//                                tempString = "";
 
                                 //Test
                                 for (int x = 0; x < splitString.length; x++) {
@@ -265,9 +260,6 @@ public class PduPlayer {
 
                                 //Define an array to store the in values from the string and initalize it to a value drifferent from NULL
                                 arr = new int[splitString.length];
-
-                                //trim spaces, if any
-//                                tempString = "";
 
                                 //Test
                                 for (int x = 0; x < splitString.length; x++) {
@@ -332,14 +324,11 @@ public class PduPlayer {
                             showCounts();
                         }
                     }
-
-                    line = brdr.readLine();
                 }
-                brdr.close();
+                
                 //create X3D components - methods will create console output
                 x3dInterpolators.makeX3dInterpolator();
                 x3dLineSet.makeX3dLineSet();
-                
             }
             if (rawListener != null) {
                 rawListener.receiveBytes(null); // indicate the end
@@ -369,16 +358,10 @@ public class PduPlayer {
     }
 
     private void closer() {
-        try {
-            if (datagramSocket != null) {
-                datagramSocket.close();
-                datagramSocket = null;
-            }
-            if (brdr != null) {
-                brdr.close();
-                brdr = null;
-            }
-        } catch (IOException ioex) {}
+        if (datagramSocket != null) {
+            datagramSocket.close();
+            datagramSocket = null;
+        }
     }
 
     private boolean handleComment(String line, File f) //true if we're done

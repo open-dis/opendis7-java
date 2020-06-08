@@ -10,12 +10,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Writer;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.io.FilenameUtils;
 
@@ -63,8 +66,8 @@ public class PduRecorder implements PduReceiver
         pduLogEncoding = aEncoding;
     }
 
-  private Writer bufferedWriter;
-  private File           logFile;
+  private Writer writer;
+  private File   logFile;
   
   private DisThreadedNetIF disThreadedNetIF;
   
@@ -103,7 +106,7 @@ public class PduRecorder implements PduReceiver
   {
     DEFAULT_OUTDIR = outputDir;
     logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_EXTENSION );
-    bufferedWriter = new BufferedWriter(new FileWriter(logFile));
+    writer = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     
     disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
     disThreadedNetIF.addRawListener(bAndL -> {
@@ -122,13 +125,16 @@ public class PduRecorder implements PduReceiver
     doSave = false;
   }
   
-  public File end() throws IOException
+  public File end()
   {
     disThreadedNetIF.kill();
 
     writeFooter();
-    bufferedWriter.flush();
-    bufferedWriter.close();
+      try {
+          writer.close(); // a flush occurs first during a close
+      } catch (IOException ex) {
+          Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+      }
     System.out.println();
     System.out.println("Recorder log file closed: " + logFile.getPath());
     return logFile;
@@ -178,13 +184,13 @@ public class PduRecorder implements PduReceiver
         default:
             System.err.println ("Encoding " + pduLogEncoding + " not recognized or supported");
     }
+    if (!headerWritten) {
+      writeHeader();
+      headerWritten = true;
+    }
     try {
-      if (!headerWritten) {
-        writeHeader();
-        headerWritten = true;
-      }
-      bufferedWriter.write(sb.toString());
-      ((BufferedWriter)bufferedWriter).newLine();
+      writer.write(sb.toString());
+      ((PrintWriter)writer).println();
     }
     catch (IOException ex) {
       throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread: " + ex);
@@ -210,22 +216,30 @@ public class PduRecorder implements PduReceiver
         return disThreadedNetIF;
     }
   
-  private void writeHeader() throws IOException
+  private void writeHeader()
   {
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
-    bufferedWriter.write(START_COMMENT_MARKER + pduLogEncoding + ", " +  timeStamp + ", DIS capture file, " + logFile.getPath());
-    ((BufferedWriter)bufferedWriter).newLine();
+    try {
+          writer.write(START_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+          ((PrintWriter)writer).println();
+      } catch (IOException ex) {
+          Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+      }
   }
 
-  private void writeFooter() throws IOException
+  private void writeFooter()
   {   
     // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     
-    bufferedWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
-    ((BufferedWriter)bufferedWriter).newLine();
+      try {
+          writer.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+          ((PrintWriter)writer).println();
+      } catch (IOException ex) {
+          Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+      }
   }
 
   /**
@@ -274,7 +288,6 @@ public class PduRecorder implements PduReceiver
     PduRecorder recorder;
     try {
         recorder = new PduRecorder(); // default addr, port, output dir
-        recorder.startResume();
     } 
     catch(IOException ex) {
       System.err.println("Exception creating recorder: "+ex.getLocalizedMessage());
@@ -293,12 +306,7 @@ public class PduRecorder implements PduReceiver
       }
     });
 
-    try {
-      recorder.end();
-    }
-    catch(IOException ex) {
-      System.err.println("Exception closing recorder: "+ex.getClass().getSimpleName()+": "+ex.getLocalizedMessage());
-    }
+    recorder.end();
   }
 
   private static void sleep(long ms)
