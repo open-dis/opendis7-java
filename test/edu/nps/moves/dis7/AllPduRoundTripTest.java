@@ -16,20 +16,18 @@ package edu.nps.moves.dis7;
  * @author Mike Bailey, jmbailey@edu.nps.edu
  * @version $Id$
  */
-import com.google.common.io.Files;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
-import java.io.File;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.io.TempDir;
 
 @DisplayName("All Pdu Round Trip Test")
 public class AllPduRoundTripTest
@@ -183,14 +181,9 @@ public class AllPduRoundTripTest
 //    sleep(100L); // TODO debugging
   }
   
-  @TempDir
-  File recorderDirectory;
-
   private void setupSenderRecorder() throws Exception
-  {
-    recorderDirectory = Files.createTempDir();
-    
-    recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
+  { 
+    recorder = new PduRecorder(); // default mcaddr, port, logfile dir
     disnetworking = recorder.getDisThreadedNetIF();
     
     // When the DisThreadedNetIF receives a pdu, a call is made to the
@@ -199,7 +192,7 @@ public class AllPduRoundTripTest
     disnetworking.addListener(pdu -> {
         pduReceivedMap.put(pdu.getPduType(), pdu);
     });
-    System.out.println("Recorder log at " + recorderDirectory.getAbsolutePath());
+    System.out.println("Recorder log at " + recorder.getLogFile());
   }
 
   /** Will shutdown the common send/receive network interface */
@@ -219,7 +212,8 @@ public class AllPduRoundTripTest
   private void getAllFromRecorder(Semaphore sem) throws Exception
   {
     sem.acquire();
-    PduPlayer player = new PduPlayer(disnetworking.getMcastGroup(), disnetworking.getDisPort(), recorderDirectory.toPath());
+    Path path = Path.of(recorder.getLogFile()).getParent();
+    PduPlayer player = new PduPlayer(disnetworking.getMcastGroup(), disnetworking.getDisPort(), path);
     player.sendToNet(false);
     player.addRawListener(ba -> {
       if (ba != null) {
