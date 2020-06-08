@@ -1811,9 +1811,9 @@ public class PduFactory
      * the reported PDU length in the header. There's a lot that can go wrong.
      * If something blows up, we return all the decoded PDUs we can.<p>
      *
-     * @param data
-     * @param length
-     * @return List of PDUs decoded
+     * @param data a large buffer filled with possible multiple PDUs
+     * @param length the size of the multiple PDU buffer
+     * @return List of decoded PDUs 
      */
     public List<Pdu> getPdusFromBundle(byte data[], int length) {
         
