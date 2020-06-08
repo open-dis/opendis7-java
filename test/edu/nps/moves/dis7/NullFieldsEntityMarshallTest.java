@@ -2,12 +2,6 @@
  * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
-/**
- * NullFieldsMarshallTest()); created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
- *
- * @author Mike Bailey, jmbailey@edu.nps.edu
- * @version $Id$
- */
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.entities.usa.platform.land.LAV_105;
@@ -15,6 +9,12 @@ import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * NullFieldsMarshallTest()); created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
+ *
+ * @author Mike Bailey, jmbailey@edu.nps.edu
+ * @version $Id$
+ */
 @DisplayName("Null Fields Entity Marshall Test")
 public class NullFieldsEntityMarshallTest
 {

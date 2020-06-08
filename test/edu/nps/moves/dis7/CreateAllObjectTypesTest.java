@@ -4,17 +4,16 @@
  */
 package edu.nps.moves.dis7;
 
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 /**
  * CreateAllObjectTypes()); created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
  * @author Mike Bailey, jmbailey@edu.nps.edu
  * @version $Id$
  */
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.assertNull;
-
 @DisplayName("All Object Types Create")
-
 public class CreateAllObjectTypesTest
 {
   @BeforeAll

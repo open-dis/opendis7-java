@@ -6,18 +6,16 @@ package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.ActionResponseRequestStatus;
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import java.io.IOException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Fixed and Variable Datum Round Trip Test")
 public class FixedAndVariableDatumRoundTripTest
 {
-  public FixedAndVariableDatumRoundTripTest()
-  {
-  }
+  Pdu receivedPdu;
+  DisThreadedNetIF netif;
 
   @BeforeAll
   public static void setUpClass()
@@ -32,12 +30,16 @@ public class FixedAndVariableDatumRoundTripTest
 
   @BeforeEach
   public void setUp()
-  {
+  {   
+      netif = new DisThreadedNetIF();
+      netif.addListener(pdu -> setUpReceiver(pdu));
   }
 
   @AfterEach
   public void tearDown()
   {
+      netif.kill();
+      netif = null;
   }
 
   private static int REQUEST_ID = 0x00112233;
@@ -61,7 +63,7 @@ public class FixedAndVariableDatumRoundTripTest
 
   private static VariableDatum variableDatum2 = new VariableDatum();
   private static VariableRecordType variableDatum2Type = VariableRecordType.Z_ACCELERATION;
-  private static byte[] variableDatum2Value = new String("222varDatum1Value222").getBytes();
+  private static byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
 
   static {
     fixedDatum1.setFixedDatumValue(fixedDatum1Value);
@@ -82,9 +84,6 @@ public class FixedAndVariableDatumRoundTripTest
     //variableDatum2.setVariableDatumLength(variableDatum2Value.length * 8); //in bits
   }
 
-  private Pdu receivedPdu;
-  private Object waiter = new Object();
-
   @Test
   public void testRoundTrip()
   {
@@ -98,14 +97,12 @@ public class FixedAndVariableDatumRoundTripTest
     sentPdu.getVariableDatums().add(variableDatum1);
     sentPdu.getVariableDatums().add(variableDatum2);
 
-    setUpReceiver();
-
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      new DisNetworking().sendPdu(sentPdu);
+      netif.send(sentPdu);
       Thread.sleep(1000l);
     }
-    catch (Exception ex) {
+    catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
       System.exit(1);
     }
@@ -116,26 +113,16 @@ public class FixedAndVariableDatumRoundTripTest
     assertTrue(receivedPdu.equals(sentPdu),"Sent and received pdus not identical");
   }
 
-  private void setUpReceiver()
+  private void setUpReceiver(Pdu pdu)
   {
-    Thread rcvThread = new Thread(() -> {
-      try {
-        receivedPdu = new DisNetworking().receivePdu();  // blocks
-      }
-      catch (IOException ex) {
-        System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
-        System.exit(1);
-      }
-      //   waiter.notify();
-    });
-
-    rcvThread.setPriority(Thread.NORM_PRIORITY);
-    rcvThread.setDaemon(true);
-    rcvThread.start();
+    receivedPdu = pdu;
   }
 
   public static void main(String[] args)
   {
-    new FixedAndVariableDatumRoundTripTest().testRoundTrip();
+    FixedAndVariableDatumRoundTripTest frt = new FixedAndVariableDatumRoundTripTest();
+    frt.setUp();
+    frt.testRoundTrip();
+    frt.tearDown();
   }
 }

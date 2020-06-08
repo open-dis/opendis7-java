@@ -13,6 +13,7 @@ import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
@@ -26,10 +27,12 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @DisplayName("Signal Pdus Test")
 public class SignalPdusTest {
-
-    static DisThreadedNetIF netif;
-    static List<Pdu> receivedPdus;
-    static PduRecorder recorder;
+    
+    DisThreadedNetIF netif;
+    List<Pdu> receivedPdus;
+    PduRecorder recorder;
+    
+    Semaphore mutex;
     PduFactory pduFac;
     List<Pdu> sentPdus;
     byte[] buff;
@@ -38,23 +41,21 @@ public class SignalPdusTest {
     @BeforeAll
     public static void setUpClass() throws IOException {
         System.out.println("SignalPdusTest");
-        recorder = new PduRecorder(); // default dir
-        netif = recorder.getDisThreadedNetIF();
-        netif.addListener(pdu -> handleReceivedPdu(pdu));
     }
 
     @AfterAll
     public static void tearDownClass() throws IOException {
-        recorder.end(); // kills the netif as well
-        recorder = null;
-        netif = null;
-
-        receivedPdus.clear();
-        receivedPdus = null;
     }
 
     @BeforeEach
-    public void setUp() {
+    public void setUp() throws IOException, InterruptedException {
+        recorder = new PduRecorder(); // default dir
+        netif = recorder.getDisThreadedNetIF();
+        netif.addListener(pdu -> handleReceivedPdu(pdu));
+        
+        mutex = new Semaphore(1);
+        mutex.acquire();
+        
         sentPdus = new ArrayList<>();
         receivedPdus = new ArrayList<>();
         pduFac = new PduFactory();
@@ -89,11 +90,18 @@ public class SignalPdusTest {
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() throws IOException {
         pduFac = null;
         sentPdus.clear();
         sentPdus = null;
+        receivedPdus.clear();
+        receivedPdus = null;
         buff = null;
+        mutex.release();
+        mutex = null;
+        recorder.end(); // kills the netif as well
+        netif = null;
+        recorder = null;
     }
 
     @Test
@@ -116,37 +124,35 @@ public class SignalPdusTest {
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-        receivedPdus.clear();
 
         System.out.println("testRoundTripNet finished");
     }
 
     @Test
-    public void testRoundTripLog() throws IOException {
-
-        PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), Path.of(recorder.getLogFile()));
+    public void testRoundTripLog() throws IOException, InterruptedException {
+        
+        Path path = Path.of(recorder.getLogFile()).getParent();
+        PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
         player.sendToNet(false);
         player.addRawListener(ba -> {
-            if (ba != null) {
-                Pdu pdu = pduFac.createPdu(ba);
-                receivedPdus.add(pdu);
-            } else {
+            if (ba != null)
+                assertNotNull(pduFac.createPdu(ba), "PDU creation failure");
+            else {
                 player.end();
-            }
+                mutex.release();
+            }   
         });
-        player.startResume();
     
-        // Compare
-        assertEquals(sentPdus, receivedPdus, "Sent and received pdus not identical");
-
+        mutex.acquire();
         System.out.println("testRoundTripLog finished");
     }
 
-    static private void handleReceivedPdu(Pdu pdu) {
-        receivedPdus.add(pdu);
+    private void handleReceivedPdu(Pdu pdu) {
+        if (receivedPdus != null)
+            receivedPdus.add(pdu);
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         SignalPdusTest.setUpClass();
         SignalPdusTest spt = new SignalPdusTest();
 

@@ -5,16 +5,15 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import java.io.IOException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
-  DisNetworking disnet;
+  DisThreadedNetIF netif;
   Pdu receivedPdu;
     
   @BeforeAll
@@ -31,15 +30,15 @@ public class CommentPdusTest
   @BeforeEach
   public void setUp()
   {
-      disnet = new DisNetworking();
-      setUpReceiver();
+      netif = new DisThreadedNetIF();
+      netif.addListener(pdu -> setUpReceiver(pdu));
   }
 
   @AfterEach
   public void tearDown()
   {
-//      disnet.stop();
-//      disnet = null;
+      netif.kill();
+      netif = null;
   }
 
   @Test
@@ -62,7 +61,7 @@ public class CommentPdusTest
   {
      sendPdu(pdu); // will wait a while
      assertTrue(receivedPdu != null, "No response from network receive");
-     assertTrue(compare(pdu,receivedPdu),"Comparison failed");
+     assertTrue(compare(pdu,receivedPdu), "Comparison failed");
      receivedPdu = null;
   }
   
@@ -70,10 +69,10 @@ public class CommentPdusTest
   {
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      disnet.sendPdu(pdu);
+      netif.send(pdu);
       Thread.sleep(100l);
     }
-    catch (Exception ex) {
+    catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
       System.exit(1);
     }
@@ -84,23 +83,9 @@ public class CommentPdusTest
     return pdu1.equals(pdu2);
   }
   
-  private void setUpReceiver()
+  private void setUpReceiver(Pdu pdu)
   {
-    Thread rcvThread = new Thread(() -> {
-      try {
-        while(true) {
-          receivedPdu = disnet.receivePdu();  // blocks
-        }
-      }
-      catch (IOException ex) {
-        System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
-        System.exit(1);
-      }
-    });
-
-    rcvThread.setPriority(Thread.NORM_PRIORITY);
-    rcvThread.setDaemon(true);
-    rcvThread.start();
+    receivedPdu = pdu;
   }
 
   public static void main(String[] args)
@@ -108,6 +93,6 @@ public class CommentPdusTest
     CommentPdusTest cpt = new CommentPdusTest();
     cpt.setUp();
     cpt.testRoundTrip();
-//    cpt.tearDown();
+    cpt.tearDown();
   }
 }

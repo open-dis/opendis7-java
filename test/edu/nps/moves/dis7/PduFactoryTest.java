@@ -4,19 +4,17 @@
  */
 package edu.nps.moves.dis7;
 
-/**
- *
- * @author Mike Bailey, jmbailey@edu.nps.edu
- * @version $Id$
- */
-
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ *
+ * @author Mike Bailey, jmbailey@edu.nps.edu
+ * @version $Id$
+ */
 @DisplayName("Pdu Factory Test")
-
 public class PduFactoryTest
 {
     @BeforeAll
@@ -128,20 +126,6 @@ public class PduFactoryTest
         }
 
         assertNull(ex, "Exception should be null if successful creation of all objects");
-    }
-
-    String formatStr = "Name: %s\tDomain: %s\tKind: %s\tCategory: %s\tSubcategory: %s";
-
-    private void dumpObjectType(ObjectType ot)
-    {
-    }
-
-    private void actualDumpObjectType(ObjectType ot)
-    {
-        String dom = ot.getDomain().toString();
-        String kind = ot.getObjectKind().toString();
-        String nm = ot.getClass().getName();
-        System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
     }
     
     public static void main(String[] args)

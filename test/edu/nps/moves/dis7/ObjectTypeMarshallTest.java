@@ -58,10 +58,10 @@ public class ObjectTypeMarshallTest
     {
         Exception ex = null;
         ByteBuffer bb = ByteBuffer.allocate(100);
-        //dumpOT(ot);
+        dumpOT(ot);
         ot.marshal(bb);
         assertEquals(4, bb.position(), "Marshalled array should be 4 bytes long");
-        //dumpBb(bb);
+        dumpBb(bb);
     }
     
     private void dumpBb(ByteBuffer bb)
@@ -73,11 +73,12 @@ public class ObjectTypeMarshallTest
     }
 
     private void dumpOT(ObjectType ot)
-    {
-        System.out.println("ObjectType domain: " + ot.getDomain());
-        System.out.println("ObjectType object kind: " + ot.getObjectKind());
-        System.out.println("ObjectType category: " + ot.getCategory());
-        System.out.println("ObjectType subcategory: " + ot.getSubCategory());
+    {   
+        String formatStr = "Name: %s\tDomain: %s\tKind: %s\tCategory: %s\tSubcategory: %s";
+        String dom = ot.getDomain().toString();
+        String kind = ot.getObjectKind().toString();
+        String nm = ot.getClass().getName();
+        System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
     }
     
     public static void main(String[] args)

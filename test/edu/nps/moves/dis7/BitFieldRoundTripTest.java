@@ -7,9 +7,8 @@ package edu.nps.moves.dis7;
 import edu.nps.moves.dis7.enumerations.AppearanceCamouflageType;
 import edu.nps.moves.dis7.enumerations.ForceID;
 import edu.nps.moves.dis7.enumerations.LandPlatformAppearance;
-import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import java.io.IOException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -17,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BitFieldRoundTripTest
 {
     Pdu receivedPdu;
-    DisNetworking disnet;
+    DisThreadedNetIF netif;
 
   @BeforeAll
   public static void setUpClass()
@@ -33,15 +32,15 @@ public class BitFieldRoundTripTest
   @BeforeEach
   public void setUp()
   {   
-      disnet = new DisNetworking();
-      setUpReceiver();
+      netif = new DisThreadedNetIF();
+      netif.addListener(pdu -> setUpReceiver(pdu));
   }
 
   @AfterEach
   public void tearDown()
   {
-//      disnet.stop();
-//      disnet = null;
+      netif.kill();
+      netif = null;
   }
 
   @Test
@@ -71,10 +70,10 @@ public class BitFieldRoundTripTest
   
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      disnet.sendPdu(espdu);
+      netif.send(espdu);
       Thread.sleep(100l); 
     }
-    catch (Exception ex) {
+    catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
       System.exit(1);
     }
@@ -87,23 +86,11 @@ public class BitFieldRoundTripTest
     assertTrue(same, "Sent and received pdu not the same");
   }
 
-  private void setUpReceiver()
+  private void setUpReceiver(Pdu pdu)
   {
-    Thread rcvThread = new Thread(() -> {
-      try {
-        receivedPdu = disnet.receivePdu();  // blocks
-      }
-      catch (IOException ex) {
-        System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
-        System.exit(1);
-      }
-      //   waiter.notify();
-    });
-
-    rcvThread.setPriority(Thread.NORM_PRIORITY);
-    rcvThread.setDaemon(true);
-    rcvThread.start();
+    receivedPdu = pdu;
   }
+  
   private void dump(String s, EntityStatePdu espdu)
   {
     System.out.println(s);
@@ -128,11 +115,12 @@ public class BitFieldRoundTripTest
     System.out.println("Variable Parameters: "+ espdu.getVariableParameters().toString());
     System.out.println();
  }
+  
   public static void main(String[] args)
   {
     BitFieldRoundTripTest brt = new BitFieldRoundTripTest();
     brt.setUp();
     brt.testRoundTrip();
-//    brt.tearDown();.testRoundTrip();
+    brt.tearDown();
   }
 }

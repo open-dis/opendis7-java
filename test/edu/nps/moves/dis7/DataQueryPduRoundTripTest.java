@@ -5,9 +5,8 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisNetworking;
+import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import java.io.IOException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -15,9 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class DataQueryPduRoundTripTest
 {
 
-  public DataQueryPduRoundTripTest()
-  {
-  }
+ Pdu receivedPdu;
+ DisThreadedNetIF netif;
 
   @BeforeAll
   public static void setUpClass()
@@ -33,11 +31,15 @@ public class DataQueryPduRoundTripTest
   @BeforeEach
   public void setUp()
   {
+      netif = new DisThreadedNetIF();
+      netif.addListener(pdu -> setUpReceiver(pdu));
   }
 
   @AfterEach
   public void tearDown()
   {
+      netif.kill();
+      netif = null;
   }
 
   private static int REQUEST_ID = 0x00112233;
@@ -80,8 +82,6 @@ public class DataQueryPduRoundTripTest
     //  variableDatum2.setVariableDatumLength(variableDatum2Value.length);  // should be done automatically
   }
 
-  private Pdu receivedPdu;
-
   @Test
   public void testRoundTrip()
   {
@@ -98,14 +98,12 @@ public class DataQueryPduRoundTripTest
     sendingPdu.getVariableDatums().add(variableDatum1);
     sendingPdu.getVariableDatums().add(variableDatum2);
 
-    setUpReceiver();
-
     try {
       Thread.sleep(250l); // make sure receiver is listening
-      new DisNetworking().sendPdu(sendingPdu);
+      netif.send(sendingPdu);
       Thread.sleep(1000l); 
     }
-    catch (Exception ex) {
+    catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
       System.exit(1);
     }
@@ -115,25 +113,16 @@ public class DataQueryPduRoundTripTest
     assertTrue(receivedPdu.equals(sendingPdu), "Sent and received pdu not the same");
   }
 
-  private void setUpReceiver()
+  private void setUpReceiver(Pdu pdu)
   {
-    Thread rcvThread = new Thread(() -> {
-      try {
-        receivedPdu = new DisNetworking().receivePdu();  // blocks
-      }
-      catch (IOException ex) {
-        System.err.println("Error receiving Multicast: " + ex.getLocalizedMessage());
-        System.exit(1);
-      }
-    });
-
-    rcvThread.setPriority(Thread.NORM_PRIORITY);
-    rcvThread.setDaemon(true);
-    rcvThread.start();
+    receivedPdu = pdu;
   }
 
   public static void main(String[] args)
   {
-    new DataQueryPduRoundTripTest().testRoundTrip();
+    DataQueryPduRoundTripTest drt = new DataQueryPduRoundTripTest();
+    drt.setUp();
+    drt.testRoundTrip();
+    drt.tearDown();
   }
 }
