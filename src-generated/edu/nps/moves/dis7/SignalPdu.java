@@ -14,10 +14,10 @@ import edu.nps.moves.dis7.enumerations.*;
 public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializable
 {
 
-    /**
-     *
-     */
-    protected RadioCommsHeader header = new RadioCommsHeader();
+  /**
+   *
+   */
+  protected RadioCommsHeader header = new RadioCommsHeader();
 
   /**
    * encoding scheme used, and enumeration
@@ -61,13 +61,12 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Returns the size of this serialized object in bytes
+   * @return 
    */
   @Override
   public int getMarshalledSize()
   {
-    int marshalSize = 0;
-
-    marshalSize = super.getMarshalledSize();
+    int marshalSize = super.getMarshalledSize();
     marshalSize += header.getMarshalledSize();
     marshalSize += 2;  // encodingScheme
     marshalSize += tdlType.getMarshalledSize();
@@ -82,6 +81,8 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Setter for {@link SignalPdu#header}
+   * @param pHeader
+   * @return 
    */
   public SignalPdu setHeader(RadioCommsHeader pHeader)
   {
@@ -91,6 +92,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Getter for {@link SignalPdu#header}
+   * @return 
    */
   public RadioCommsHeader getHeader()
   {
@@ -99,6 +101,8 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Setter for {@link SignalPdu#encodingScheme}
+   * @param pEncodingScheme
+   * @return 
    */
   public SignalPdu setEncodingScheme(short pEncodingScheme)
   {
@@ -108,6 +112,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Getter for {@link SignalPdu#encodingScheme}
+   * @return 
    */
   public short getEncodingScheme()
   {
@@ -117,6 +122,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   /**
    * Setter for {@link SignalPdu#tdlType}
    *
+   * @param pTdlType
    * @return this object
    */
   public SignalPdu setTdlType(SignalTDLType pTdlType)
@@ -127,6 +133,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Getter for {@link SignalPdu#tdlType}
+   * @return 
    */
   public SignalTDLType getTdlType()
   {
@@ -136,6 +143,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   /**
    * Setter for {@link SignalPdu#sampleRate}
    *
+   * @param pSampleRate
    * @return this object
    */
   public SignalPdu setSampleRate(int pSampleRate)
@@ -146,6 +154,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Getter for {@link SignalPdu#sampleRate}
+   * @return 
    */
   public int getSampleRate()
   {
