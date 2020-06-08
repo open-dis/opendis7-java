@@ -98,7 +98,9 @@ public class PduPlayer {
             System.out.println("Replaying DIS logs.");
             InetAddress addr = InetAddress.getByName(ip);
 
-            FilenameFilter filter = (dir, name) -> name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
+            FilenameFilter filter = (dir, name) -> {
+                return name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
+            };
 
             File[] fs = disLogDirectory.toFile().listFiles(filter);
             if (fs == null) {
@@ -133,7 +135,7 @@ public class PduPlayer {
 
                 line = brdr.readLine();
 
-                while (line != null && !Thread.interrupted()) {
+                while (line != null) {
                     while (paused) {
                         sleep(1000l); // TODO confirm: full second, was half second
                     }
@@ -410,7 +412,7 @@ public class PduPlayer {
     }
 
     public void stopPause() {
-        paused = false;
+        paused = true;
     }
 
     public void end() {
