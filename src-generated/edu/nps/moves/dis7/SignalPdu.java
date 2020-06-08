@@ -364,7 +364,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
     for (int idx = 0; idx < byteLength; idx++) {
       data[idx] = buff.get();
     }
-    buff.flip();
+    buff.flip(); // will cause BufferUnderflowException if we don't flip here
     padTo32 = new byte[Align.from32bits(buff)];
     return getMarshalledSize();
   }
