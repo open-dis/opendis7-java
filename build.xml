@@ -100,13 +100,13 @@
         <!--<property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>-->
         <property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>
         <property name="test.class" value="${javac.includes}"/>
-        <echo message="${javac.includes}"/>
+        <echo message="Compiling: ${javac.includes}"/>
     </target>
     
     <target depends="compile-test-single,-pre-test-run-single" 
             description="Run single unit test." 
             name="-do-test-run-single">
-        <echo message="${javac.includes}"/>
+        <echo message="Testing: ${javac.includes}"/>
         <java classpath="${run.test.classpath}"  
               classname="org.junit.platform.console.ConsoleLauncher"
               fork="true">
