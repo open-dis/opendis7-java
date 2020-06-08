@@ -249,8 +249,8 @@ public class DisThreadedNetIF
              rsocket = null;
          }
       }
-      if (!killed)
-        sleep(250);
+//      if (!killed)
+//        sleep(250);
     }
   };
 
@@ -296,8 +296,8 @@ public class DisThreadedNetIF
              ssocket = null;
          }
       }
-      if (!killed)
-        sleep(250);
+//      if (!killed)
+//        sleep(250);
     }
       try {
           dos.close();
