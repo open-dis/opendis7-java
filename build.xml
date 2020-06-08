@@ -77,6 +77,9 @@
     will all the "Test Project" choice in the "Run" menu to properly run junit 5
     test.  Running in other ways, such as individually, doesn't seem to work.
     https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and
+    
+    Porting this project over to Maven might do the trick. NB supports right 
+    click, test-single for Maven. TDN 08 JUN 2020. 
     -->
 
     <target depends="compile-test,-pre-test-run"
@@ -112,23 +115,6 @@
               fork="true">
             <arg line="--select-class=${javac.includes}"/>
         </java>
-    </target>
-    
-    <!-- 
-       a semi-unit test in that we ensure that pdus are being produced 
-       correctly and consistently through code changes. generated logs go to
-       ./pduLog
-    -->
-    <target name="validate.pdu.logs" depends="compile">
-        <java classpath="${run.classpath}"  
-              classname="edu.nps.moves.dis7.utilities.ValidationPdusMakerV1"
-              fork="true"/>
-        <java classpath="${run.classpath}"  
-              classname="edu.nps.moves.dis7.utilities.ValidationPdusMakerV1"
-              fork="true"/>
-        <java classpath="${run.classpath}"  
-              classname="edu.nps.moves.dis7.utilities.LogCompare"
-              fork="true"/>
     </target>
     
     <target name="jar-javadoc" depends="javadoc">
