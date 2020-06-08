@@ -26,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author tdnorbra@nps.edu
  */
 @DisplayName("Signal Pdus Test")
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SignalPdusTest {
     
     DisThreadedNetIF netif;
@@ -54,7 +55,6 @@ public class SignalPdusTest {
         netif.addListener(pdu -> handleReceivedPdu(pdu));
         
         mutex = new Semaphore(1);
-        mutex.acquire();
         
         sentPdus = new ArrayList<>();
         receivedPdus = new ArrayList<>();
@@ -91,22 +91,17 @@ public class SignalPdusTest {
 
     @AfterEach
     public void tearDown() throws IOException {
-        pduFac = null;
         sentPdus.clear();
-        sentPdus = null;
         receivedPdus.clear();
-        receivedPdus = null;
-        buff = null;
-        mutex.release();
-        mutex = null;
         recorder.end(); // kills the netif as well
-        netif = null;
-        recorder = null;
+        mutex.release();
     }
 
     @Test
+    @Order(1)
     public void testRoundTripNet() {
-
+        System.out.println("testRoundTripNet");
+        
         // Compare
         assertEquals(sentPdus, receivedPdus, "Sent and received pdus not identical");
 
@@ -124,13 +119,15 @@ public class SignalPdusTest {
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-
-        System.out.println("testRoundTripNet finished");
     }
 
     @Test
-    public void testRoundTripLog() throws IOException, InterruptedException {
+    @Order(2)
+    public void testRoundTripLog() throws IOException, InterruptedException {   
+        System.out.println("testRoundTripLog");
         
+        recorder.end(); // this finishes the log file it all can be played
+        mutex.acquire();
         Path path = Path.of(recorder.getLogFile()).getParent();
         PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
         player.sendToNet(false);
@@ -144,16 +141,14 @@ public class SignalPdusTest {
         });
     
         mutex.acquire();
-        System.out.println("testRoundTripLog finished");
     }
 
     private void handleReceivedPdu(Pdu pdu) {
-        if (receivedPdus != null)
-            receivedPdus.add(pdu);
+        receivedPdus.add(pdu);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        SignalPdusTest.setUpClass();
+        
         SignalPdusTest spt = new SignalPdusTest();
 
         spt.setUp();
@@ -163,7 +158,6 @@ public class SignalPdusTest {
         spt.setUp();
         spt.testRoundTripLog();
         spt.tearDown();
-        SignalPdusTest.tearDownClass();
     }
 
 }
