@@ -126,7 +126,7 @@ public class SignalPdusTest {
     public void testRoundTripLog() throws IOException, InterruptedException {   
         System.out.println("testRoundTripLog");
         
-        recorder.end(); // this finishes the log file it all can be played
+        recorder.end(); // this finishes the 2nd log file so it can be played
         mutex.acquire();
         Path path = Path.of(recorder.getLogFile()).getParent();
         PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
