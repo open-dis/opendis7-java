@@ -373,15 +373,15 @@ public class PduPlayer {
             String[] sa = line.split(",", 3);
             pduLogEncoding = sa[1].trim();
             System.err.println(pduLogEncoding);
-            line = line.substring(PduRecorder.START_COMMENT_MARKER.length());
-            System.out.println(line + "  ");
+//            line = line.substring(PduRecorder.START_COMMENT_MARKER.length());
+//            System.out.println(line + "  ");
             showPduCountsOneTime = true; // get the first one in there
         } else if (line.trim().startsWith(PduRecorder.FINISH_COMMENT_MARKER)) {
             System.out.print("Total PDUs: ");
             showCounts();
             System.out.println();
             System.out.println("End of replay from " + f.getName());
-            System.out.println(line.substring(PduRecorder.FINISH_COMMENT_MARKER.length()));
+//            System.out.println(line.substring(PduRecorder.FINISH_COMMENT_MARKER.length()));
 
             scenarioPduCount = 0;
             startNanoTime = null;
