@@ -58,7 +58,6 @@ public class PduReaderPlayer
     try {
       PduPlayer pduPlayer = new PduPlayer(mcast, port, new File(outDir).toPath());
       pduPlayer.sendToNet(sendToNet);
-      pduPlayer.startResume();
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
 
