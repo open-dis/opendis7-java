@@ -32,7 +32,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.io.TempDir;
 
 @DisplayName("All Pdu Round Trip Test")
-
 public class AllPduRoundTripTest
 {
   private PduFactory pduFactory;
@@ -149,7 +148,7 @@ public class AllPduRoundTripTest
       System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
            ", match=" + (pduReceivedMap.size() == pduSentMap.size()));
            
-      assertTrue(pduReceivedMap.size() == pduSentMap.size(),"No pdus, or not all sent pdus, received"); // TODO debugger fails??
+      assertEquals(pduReceivedMap.size(), pduSentMap.size(), "No pdus, or not all sent pdus, received");
 
       testForEquals();
       
@@ -212,8 +211,7 @@ public class AllPduRoundTripTest
   private void testForEquals() throws Exception
   {
     assertEquals(pduSentMap.size(), pduReceivedMap.size(), "Different number of pdus received than sent");
-
-    pduSentMap.keySet().forEach(typ -> assertTrue(pduSentMap.get(typ).equals(pduReceivedMap.get(typ)), "Sent and received pdus not identical"));
+    assertIterableEquals(pduSentMap.keySet(), pduReceivedMap.keySet(), "Sent and received pdus not identical");
     
     // TODO is this sufficient?  has each PDU value been compared as well?
   }
@@ -240,8 +238,7 @@ public class AllPduRoundTripTest
   private void testRecorderForEquals() throws Exception
   {
     assertEquals(pduSentMap.size(), pduReadMap.size(), "Different number of pdus sent than read");
-
-    pduSentMap.keySet().forEach(typ -> assertTrue(pduSentMap.get(typ).equals(pduReadMap.get(typ)), "Sent and read pdus not identical"));
+    assertIterableEquals(pduSentMap.keySet(), pduReadMap.keySet(), "Sent and read pdus not identical");
     
     // TODO is this sufficient?  has each PDU value been compared as well?
   }
