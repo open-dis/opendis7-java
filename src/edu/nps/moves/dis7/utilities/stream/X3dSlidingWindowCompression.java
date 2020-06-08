@@ -31,9 +31,8 @@ public class X3dSlidingWindowCompression {
         System.out.println("DISTools.Regression.doRegression()");
         //Check whether points could be deleted to compress the stream
         //https://www.crashkurs-statistik.de/einfache-lineare-regression/
-        TreeMap<Double, X3dCoordinates> streamMap = new TreeMap<>();
+        TreeMap<Double, X3dCoordinates> streamMap = new TreeMap<>(localMap);
         //Copy LinkedHashMap into TreeMap to be able to pull the first element.
-        streamMap.putAll(localMap);
         Map<Double, X3dCoordinates> returnMap = new TreeMap<>();
         //TreeMap of slidingWindows will store all of the points that are currently processed
         //use .pullFirstEntry() to get rid of the points at the beginning.
