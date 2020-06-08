@@ -392,6 +392,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
     for (int idx = 0; idx < byteLength; idx++) {
       data[idx] = buff.get();
     }
+    buff.flip();
     padTo32 = new byte[Align.from32bits(buff)];
     return getMarshalledSize();
   }
