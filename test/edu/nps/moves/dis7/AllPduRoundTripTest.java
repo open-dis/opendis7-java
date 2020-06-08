@@ -187,6 +187,8 @@ public class AllPduRoundTripTest
   private void setupSenderRecorder() throws Exception
   {
     recorderDirectory = Files.createTempDir();
+    recorderDirectory.deleteOnExit();
+    
     recorder = new PduRecorder(recorderDirectory.getAbsolutePath());
     disnetworking = recorder.getDisThreadedNetIF();
     
