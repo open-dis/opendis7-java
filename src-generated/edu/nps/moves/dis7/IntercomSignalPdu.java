@@ -362,7 +362,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
     for (int idx = 0; idx < data.length; idx++) {
       buff.put(data[idx]);
     }
-
+    buff.flip(); // will cause BufferOverflowException if we don't flip here
     padTo32 = new byte[Align.to32bits(buff)];
   }
 
