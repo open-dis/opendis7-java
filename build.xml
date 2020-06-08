@@ -7,7 +7,7 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="open-dis7-java" default="default" basedir=".">
+<project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the project open-dis7-java.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
@@ -79,11 +79,10 @@
     https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and
     -->
 
-    <target name="test" depends="compile-test,-pre-test-run">
-        <echo message="$work.dir=${work.dir}"/>
-        <echo message="$run.test.classpath=${run.test.classpath}"/>
-        <java dir="${work.dir}" 
-              classpath="${run.test.classpath}"  
+    <target depends="compile-test,-pre-test-run"
+            description="Run unit tests."
+            name="test" >
+        <java classpath="${run.test.classpath}"  
               classname="org.junit.platform.console.ConsoleLauncher"
               fork="true">
             <arg value="--scan-classpath"/>
@@ -95,6 +94,19 @@
             </fileset>
             <report format="frames" todir="build/test/results/html"/>
         </junitreport>
+    </target>
+    
+<!--    <property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>-->
+    <property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>
+    <echo message="${javac.includes}"/>
+    <target depends="compile-test-single,-pre-test-run-single" 
+            description="Run single unit test." 
+            name="-do-test-run-single">
+        <java classpath="${run.test.classpath}"  
+              classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true">
+            <arg line="--select-class=${javac.includes}"/>
+        </java>
     </target>
     
     <!-- 
