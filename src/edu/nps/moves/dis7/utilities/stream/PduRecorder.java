@@ -215,8 +215,7 @@ public class PduRecorder implements PduReceiver
   
   private void writeHeader()
   {
-    // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
-    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+    String timeStamp = getTimeStamp();
     
     try {
           writer.write(START_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
@@ -228,8 +227,7 @@ public class PduRecorder implements PduReceiver
 
   private void writeFooter()
   {   
-    // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
-    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+    String timeStamp = getTimeStamp();
     
       try {
           writer.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
@@ -237,6 +235,11 @@ public class PduRecorder implements PduReceiver
       } catch (IOException ex) {
           Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
       }
+  }
+  
+  private String getTimeStamp() {
+      // https://stackoverflow.com/questions/5175728/how-to-get-the-current-date-time-in-java
+      return new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime()); 
   }
 
   /**
