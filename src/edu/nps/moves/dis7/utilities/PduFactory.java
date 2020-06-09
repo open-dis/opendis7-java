@@ -1447,16 +1447,28 @@ public class PduFactory
   }
 
   /**
-   * PDU builder. Pass in an array of bytes, get the correct type of pdu back,
+   * PDU builder. Pass in an array of bytes, get the correct type of pdu back
    * based on the PDU type field contained in the byte array.
    *
-   * @param data
+   * @param data an array of PDU data
    * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
    */
   public Pdu createPdu(byte data[])
   {
-    DISPDUType type = getTypeFromByteArray(data);
-    return createPdu(type, ByteBuffer.wrap(data));
+    return createPdu(ByteBuffer.wrap(data));
+  }
+  
+  /**
+   * PDU builder. Pass in a data buffer, get the correct type of pdu back
+   * based on the PDU type field contained in the underlying array.
+   *
+   * @param buff the buffer containing PDU data to input
+   * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
+   */
+  public Pdu createPdu(ByteBuffer buff)
+  {
+    DISPDUType type = getTypeFromByteArray(buff.array());
+    return createPdu(type, buff);
   }
 
   /**
@@ -1473,8 +1485,8 @@ public class PduFactory
   
   /**
    * Create an empty PDU of the given type
-   * @param pduType
-   * @return the pdu
+   * @param pduType PDU type to create
+   * @return the empty pdu
    */
   public Pdu createPdu(DISPDUType pduType)
   {
