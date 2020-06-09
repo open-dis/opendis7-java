@@ -82,6 +82,13 @@
     click, test-single for Maven. TDN 08 JUN 2020. 
     -->
 
+    <target name="-pre-compile-test">
+        <delete>
+            <fileset dir="./pduLog">
+                <include name="*.dislog"/>
+            </fileset>
+        </delete>
+    </target>
     <target depends="compile-test,-pre-test-run"
             description="Run unit tests."
             name="test" >
@@ -99,7 +106,7 @@
         </junitreport>
     </target>
     
-    <target name="-pre-compile-test-single">
+    <target name="-pre-compile-test-single" depends="-pre-compile-test">
         <!--<property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>-->
         <property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>
         <property name="test.class" value="${javac.includes}"/>
