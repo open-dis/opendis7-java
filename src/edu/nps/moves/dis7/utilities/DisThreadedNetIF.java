@@ -327,32 +327,34 @@ public class DisThreadedNetIF
     catch (InterruptedException ex) {}
   }
 
-  /** Find proper interface
-   * @return a network interface to use to join a multicast group
-   */
-  public static NetworkInterface findIp4Interface()
-  {
-    Enumeration<NetworkInterface> ifaces = null;
-      try {
-          ifaces = NetworkInterface.getNetworkInterfaces();
-      } catch (SocketException ex) {
-          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
-      }
-    NetworkInterface nif;
-    Enumeration<InetAddress> addresses;
-    InetAddress addr;
-    
-    while (ifaces != null && ifaces.hasMoreElements()) {
-      nif = ifaces.nextElement();
-      addresses = nif.getInetAddresses();
-      while (addresses.hasMoreElements()) {
-        addr = addresses.nextElement();
-        if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
-          System.out.println("Using network interface " + nif.getDisplayName());
-          return nif;
+    /**
+     * Find proper interface
+     *
+     * @return a network interface to use to join a multicast group
+     */
+    public static NetworkInterface findIp4Interface() {
+        try {
+            Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
+            NetworkInterface nif;
+            Enumeration<InetAddress> addresses;
+            InetAddress addr;
+
+            while (ifaces != null && ifaces.hasMoreElements()) {
+                nif = ifaces.nextElement();
+                if (nif.isUp()) {
+                    addresses = nif.getInetAddresses();
+                    while (addresses.hasMoreElements()) {
+                        addr = addresses.nextElement();
+                        if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) {
+                            System.out.println("Using network interface " + nif.getDisplayName());
+                            return nif;
+                        }
+                    }
+                }
+            }
+        } catch (SocketException ex) {
+            Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
         }
-      }
+        return null;
     }
-    return null;
-  }
 }
