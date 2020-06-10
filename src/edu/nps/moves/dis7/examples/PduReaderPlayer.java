@@ -6,8 +6,8 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 /** Class to leverage the {@link edu.nps.moves.dis7.utilities.stream.PduPlayer} 
@@ -55,7 +55,7 @@ public class PduReaderPlayer
 
     System.out.println("Beginning pdu playback from directory " + outDir);
     try {
-      PduPlayer pduPlayer = new PduPlayer(mcast, port, new File(outDir).toPath());
+      PduPlayer pduPlayer = new PduPlayer(mcast, port, Path.of(outDir));
       pduPlayer.sendToNet(sendToNet);
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
