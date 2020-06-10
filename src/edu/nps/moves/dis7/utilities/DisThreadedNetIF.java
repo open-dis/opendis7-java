@@ -78,7 +78,7 @@ public class DisThreadedNetIF
   private InetAddress maddr;
   private InetSocketAddress group;
   private NetworkInterface ni;
-  private MulticastSocket socket = null;
+  private DatagramSocket socket = null;
 
   /**
    * Default constructor using default port 3000 and multicast address 225.4.5.6
@@ -225,11 +225,13 @@ public class DisThreadedNetIF
 
         while (!killed) { // keep trying on error
             
-            // If something trips up with the socket, this thread will 
+            // If something trips up with the socket, this thread will attempt to
             // re-establish for both send/receive threads
             try {
+                
+                // The initial value of the SO_BROADCAST socket option is FALSE
                 socket = new MulticastSocket(disPort);
-                socket.joinGroup(group, ni);
+                ((MulticastSocket)socket).joinGroup(group, ni);
 
                 while (!killed) {
 
@@ -246,12 +248,12 @@ public class DisThreadedNetIF
                     buffer.clear();
                 }
             } catch (IOException ex) {
-                System.err.println("Exception in DISThreadedNetIF receive thread: " + ex.getLocalizedMessage());
+                System.err.println("Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
                 System.err.println("Retrying in 1 second");
             } finally {
                 if (socket != null && !socket.isClosed()) {
                     try {
-                        socket.leaveGroup(group, ni);
+                        ((MulticastSocket)socket).leaveGroup(group, ni);
                     } catch (IOException ex) {
                         Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -285,7 +287,7 @@ public class DisThreadedNetIF
                     baos.reset();
                 }
             } catch (Exception ex) {
-                System.err.println("Exception in DISThreadedNetIF send thread: " + ex.getLocalizedMessage());
+                System.err.println("Exception in DisThreadedNetIF send thread: " + ex.getLocalizedMessage());
             }
         }
         try {
