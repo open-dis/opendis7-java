@@ -329,8 +329,10 @@ public class PduPlayer {
                 }
                 
                 //create X3D components - methods will create console output
-                x3dInterpolators.makeX3dInterpolator();
-                x3dLineSet.makeX3dLineSet();
+                if (netSend) {
+                    x3dInterpolators.makeX3dInterpolator();
+                    x3dLineSet.makeX3dLineSet();
+                }
             }
             if (rawListener != null) {
                 rawListener.receiveBytes(null); // indicate the end
