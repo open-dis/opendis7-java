@@ -15,22 +15,27 @@ public class X3dCoordinates {
     private double psi;
     private double theta;
 
-    public X3dCoordinates(double x, double y, double z, double phi, double psi, double theta) {
-        X3dCoordinates.this.setX(x);
-        X3dCoordinates.this.setY(y);
-        X3dCoordinates.this.setZ(z);
-        X3dCoordinates.this.setPhi(phi);
-        X3dCoordinates.this.setPsi(psi);
-        X3dCoordinates.this.setTheta(theta);
+    /** Default constructor */
+    public X3dCoordinates() {
+        this(0.0,0.0,0.0,0.0,0.0,0.0);
     }
 
-    public X3dCoordinates() {
-        X3dCoordinates.this.setX(0.0);
-        X3dCoordinates.this.setY(0.0);
-        X3dCoordinates.this.setZ(0.0);
-        X3dCoordinates.this.setPhi(0.0);
-        X3dCoordinates.this.setPsi(0.0);
-        X3dCoordinates.this.setTheta(0.0);
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param z
+     * @param phi
+     * @param psi
+     * @param theta 
+     */
+    public X3dCoordinates(double x, double y, double z, double phi, double psi, double theta) {
+        this.x= x;
+        this.y = y;
+        this.z = z;
+        this.phi = phi;
+        this.psi = psi;
+        this.theta = theta;
     }
 
     public double getPhi() {
