@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -31,7 +32,7 @@ public class X3dSlidingWindowCompression {
         System.out.println("DISTools.Regression.doRegression()");
         //Check whether points could be deleted to compress the stream
         //https://www.crashkurs-statistik.de/einfache-lineare-regression/
-        TreeMap<Double, X3dCoordinates> streamMap = new TreeMap<>(localMap);
+        Map<Double, X3dCoordinates> streamMap = new TreeMap<>(localMap);
         //Copy LinkedHashMap into TreeMap to be able to pull the first element.
         Map<Double, X3dCoordinates> returnMap = new TreeMap<>();
         //TreeMap of slidingWindows will store all of the points that are currently processed
@@ -54,18 +55,21 @@ public class X3dSlidingWindowCompression {
         /** List of angle theta in radians*/ 
         List<Double> thetaList = new ArrayList<>();
         double key;
+        Double[] k;
+        double a, b, c, s, areaA;
+        X3dCoordinates leftPoints;
         
         while (streamMap.size() > 0) {
-            key = streamMap.firstEntry().getKey();
+            key = (double) ((NavigableMap)streamMap).firstEntry().getKey();
             slidingWindow.put(key, streamMap.get(key));
-            streamMap.pollFirstEntry();
+            ((NavigableMap)streamMap).pollFirstEntry();
 
             //Calculate the mean and SD
             slidingWindowKeys = slidingWindow.keySet();
 
             if (slidingWindow.size() >= 3) {
 
-                Double[] k = new Double[slidingWindowKeys.size()];
+                k = new Double[slidingWindowKeys.size()];
                 slidingWindowKeys.toArray(k);
 
                 for (int i = 0; i < slidingWindow.size(); i++) {
@@ -78,7 +82,6 @@ public class X3dSlidingWindowCompression {
                     xList.add(i, slidingWindow.get(k[i]).getX());
                     yList.add(i, slidingWindow.get(k[i]).getY());
                     zList.add(i, slidingWindow.get(k[i]).getZ());
-
                 }
 
                 //Calculate Area of Triangle
@@ -86,11 +89,11 @@ public class X3dSlidingWindowCompression {
                 X3dCoordinates firstPoint, lastPoint;
                 for (int i = 0; i < slidingWindow.size(); i++) {
 
-                    double a = sqrt(pow(xList.get(1) - xList.get(0), 2) + pow(yList.get(1) - yList.get(0), 2) + pow(zList.get(1) - zList.get(0), 2));
-                    double b = sqrt(pow(xList.get(i) - xList.get(0), 2) + pow(yList.get(i) - yList.get(0), 2) + pow(zList.get(i) - zList.get(0), 2));
-                    double c = sqrt(pow(xList.get(i) - xList.get(1), 2) + pow(yList.get(i) - yList.get(1), 2) + pow(zList.get(i) - zList.get(1), 2));
-                    double s = (a + b + c) / 2;
-                    double areaA = sqrt(s * (s - a) * (s - b) * (s - c));
+                    a = sqrt(pow(xList.get(1) - xList.get(0), 2) + pow(yList.get(1) - yList.get(0), 2) + pow(zList.get(1) - zList.get(0), 2));
+                    b = sqrt(pow(xList.get(i) - xList.get(0), 2) + pow(yList.get(i) - yList.get(0), 2) + pow(zList.get(i) - zList.get(0), 2));
+                    c = sqrt(pow(xList.get(i) - xList.get(1), 2) + pow(yList.get(i) - yList.get(1), 2) + pow(zList.get(i) - zList.get(1), 2));
+                    s = (a + b + c) / 2;
+                    areaA = sqrt(s * (s - a) * (s - b) * (s - c));
 
                     //Threshold can be adjusted (areaA)
                     if ((areaA >= 0.1) || (timestampList.get(i) - timestampList.get(0) >= 4.0)) {
@@ -125,7 +128,6 @@ public class X3dSlidingWindowCompression {
 
                         //System.out.println("StreamMap empty. All points left will be added. Break");
                         //grab the first and the last point from the siding window and push it to the returnMap
-                        X3dCoordinates leftPoints;
                         for (int j = 0; j < slidingWindow.size(); j++) {
                             leftPoints = new X3dCoordinates(xList.get(j), yList.get(j), zList.get(j), phiList.get(j), psiList.get(j), thetaList.get(j));
                             returnMap.put(timestampList.get(j), leftPoints);
@@ -135,13 +137,8 @@ public class X3dSlidingWindowCompression {
                     }
                     //System.out.println("Area of Triangle: " + areaA); //Debug
                 }
-
             }
-
         }
-
         return returnMap;
-
     }
-
 }
