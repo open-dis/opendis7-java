@@ -49,7 +49,7 @@ public class PduPlayer {
 
     private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
-    /**
+    /** Constructor that spawns the player thread.
      * 
      * @param ip the multicast group address to utilize
      * @param port the multicast port to utilize
@@ -97,7 +97,20 @@ public class PduPlayer {
     public void begin() {
         try {
             System.out.println("Replaying DIS logs.");
-            InetAddress addr = InetAddress.getByName(ip);
+            
+            InetAddress addr = null;
+            DatagramPacket datagramPacket;
+            DISPDUType type;
+            String tempString;
+            String[] sa = null, splitString;
+            String REGEX;
+            Pattern pattern;
+            byte[] pduTimeBytes = null, bufferShort = null;
+            int[] arr;
+            IntBuffer intBuffer;
+            int tempInt;
+            ByteBuffer byteBuffer1, byteBuffer2;
+            long pduTimeInterval, targetSimTime, now, sleepTime;
 
             FilenameFilter filter = (dir, name) -> {
                 return name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
@@ -113,22 +126,11 @@ public class PduPlayer {
             });
 
             if (netSend) {
+                addr = InetAddress.getByName(ip);
                 datagramSocket = new DatagramSocket();
             }
             
             Base64.Decoder base64Decoder = Base64.getDecoder();
-            DatagramPacket datagramPacket;
-            DISPDUType type;
-            String tempString;
-            String[] sa = null, splitString;
-            String REGEX;
-            Pattern pattern;
-            byte[] pduTimeBytes = null, bufferShort = null;
-            int[] arr;
-            IntBuffer intBuffer;
-            int tempInt;
-            ByteBuffer byteBuffer1, byteBuffer2;
-            long pduTimeInterval, targetSimTime, now, sleepTime;
 
             for (File f : fs) {
                 System.out.println("Replaying " + f.getAbsolutePath());
