@@ -95,7 +95,7 @@ public class PduRecorder implements PduReceiver
   /** Constructor to let the user specify all required parameters
    * 
    * @param outputDir the directory to write log files to
-   * @param mcastaddr the multicast address to receive data from
+   * @param mcastaddr the multicast group address to receive data from
    * @param port the port to receive data through
    * @throws IOException if something goes wrong during instantiation
    */
