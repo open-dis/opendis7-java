@@ -161,6 +161,14 @@ public class X3dCreateInterpolators {
         Map<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
         Map<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
         Map<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
+        
+        double tempX;
+        double tempY;
+        double tempZ ;
+
+        double tempPhi;
+        double tempPsi;
+        double tempTheta;
 
         for (Double k : keys) {
 
@@ -169,13 +177,13 @@ public class X3dCreateInterpolators {
             String localOrientationStringY;
             String localOrientationStringZ;
 
-            double tempX = returnMap.get(k).getX();
-            double tempY = returnMap.get(k).getY();
-            double tempZ = returnMap.get(k).getZ();
+            tempX = returnMap.get(k).getX();
+            tempY = returnMap.get(k).getY();
+            tempZ = returnMap.get(k).getZ();
 
-            double tempPhi = returnMap.get(k).getPhi() / 6.28;
-            double tempPsi = returnMap.get(k).getPsi() / 6.28;
-            double tempTheta = returnMap.get(k).getTheta() / 6.28;
+            tempPhi = returnMap.get(k).getPhi() / 6.28;
+            tempPsi = returnMap.get(k).getPsi() / 6.28;
+            tempTheta = returnMap.get(k).getTheta() / 6.28;
 
             localCoordinateString = " " + coordinateNumberFormat.format(tempX) + " " + coordinateNumberFormat.format(tempY) + " " + coordinateNumberFormat.format(tempZ);
             localOrientationStringX = " 1 0 0 " + coordinateNumberFormat.format(tempPhi);
