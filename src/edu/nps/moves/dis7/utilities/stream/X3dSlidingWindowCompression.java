@@ -17,7 +17,7 @@ public class X3dSlidingWindowCompression {
 
     private Map<Double, X3dCoordinates> localMap;
 
-    public X3dSlidingWindowCompression(LinkedHashMap<Double, X3dCoordinates> localHashMap) {
+    public X3dSlidingWindowCompression(Map<Double, X3dCoordinates> localHashMap) {
 
         this.localMap = new LinkedHashMap<>();
         Set<Double> keys = localHashMap.keySet();
@@ -53,8 +53,11 @@ public class X3dSlidingWindowCompression {
         List<Double> psiList = new ArrayList<>();
         /** List of angle theta in radians*/ 
         List<Double> thetaList = new ArrayList<>();
+        double key;
+        
         while (streamMap.size() > 0) {
-            slidingWindow.put(streamMap.firstEntry().getKey(), streamMap.get(streamMap.firstEntry().getKey()));
+            key = streamMap.firstEntry().getKey();
+            slidingWindow.put(key, streamMap.get(key));
             streamMap.pollFirstEntry();
 
             //Calculate the mean and SD
