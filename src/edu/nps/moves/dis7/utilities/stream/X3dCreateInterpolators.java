@@ -162,13 +162,13 @@ public class X3dCreateInterpolators {
         double tempPhi;
         double tempPsi;
         double tempTheta;
+        
+        String localCoordinateString;
+        String localOrientationStringX;
+        String localOrientationStringY;
+        String localOrientationStringZ;
 
         for (Double k : keys) {
-
-            String localCoordinateString;
-            String localOrientationStringX;
-            String localOrientationStringY;
-            String localOrientationStringZ;
 
             tempX = returnMap.get(k).getX();
             tempY = returnMap.get(k).getY();
