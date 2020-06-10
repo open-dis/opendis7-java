@@ -30,7 +30,7 @@ public class PduRecorder implements PduReceiver
 {
   public static final String COMMENT_MARKER = "#";
   
-  static String DEFAULT_OUTDIR = "./pdulog";
+  static String DEFAULT_OUTDIR = "./pduLog";
   static String DEFAULT_FILEPREFIX = "Pdusave"; // TODO better name
   static String DISLOG_FILE_EXTENSION = ".dislog";
   
