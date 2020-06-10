@@ -104,11 +104,8 @@ public class X3dCreateInterpolators {
 
             //Only add to stream if it is an ESPDU
             //ToDo: Add support for multiple Entities
-            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
-
+            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE))
                 testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, localPhi, localPsi, localTheta));
-
-            }
         }
     }
 
