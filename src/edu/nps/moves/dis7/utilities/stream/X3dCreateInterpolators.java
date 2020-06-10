@@ -32,7 +32,7 @@ public class X3dCreateInterpolators {
     private double firstLocalPsi = 0;
     private double firstLocalTheta = 0;
 
-    private LinkedHashMap<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
+    private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
 
     //Setting up a NumberFormatter for limitting the decimal count to 3
     private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
@@ -79,7 +79,6 @@ public class X3dCreateInterpolators {
             if (firstTimeStamp) {
 
                 firstLocalTimeStamp = localPdu.getTimestamp();
-//                localTimeStamp = localPdu.getTimestamp();
                 firstLocalX = localEspdu.getEntityLocation().getX();
                 firstLocalY = localEspdu.getEntityLocation().getZ();
                 firstLocalZ = -1 * localEspdu.getEntityLocation().getY();
@@ -152,19 +151,16 @@ public class X3dCreateInterpolators {
 
         for (Double k : keys) {
 
-            if (k > lastTimeStamp) {
-
+            if (k > lastTimeStamp)
                 lastTimeStamp = k;
-
-            }
         }
 
         //Normalize all times in the set
-        LinkedHashMap<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
 
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
 
         for (Double k : keys) {
 
