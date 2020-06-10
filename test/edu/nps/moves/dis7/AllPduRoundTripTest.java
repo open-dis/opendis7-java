@@ -178,7 +178,7 @@ public class AllPduRoundTripTest
     if (pdu.getPduType() == DISPDUType.OTHER)
         System.out.println ("*** Note: DISPDUType.OTHER not supported");
     disnetworking.send(pdu);
-//    sleep(100L); // TODO debugging
+    sleep(100L); // TODO debugging
   }
   
   private void setupSenderRecorder() throws Exception
