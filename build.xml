@@ -10,6 +10,13 @@
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the project open-dis7-java.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
+        <echo message="https://github.com/open-dis/open-dis7-java/issues" />
+        <nbbrowse url="https://github.com/open-dis/open-dis7-java/issues" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 
