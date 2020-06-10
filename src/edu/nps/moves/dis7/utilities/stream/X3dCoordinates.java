@@ -16,21 +16,21 @@ public class X3dCoordinates {
     private double theta;
 
     public X3dCoordinates(double x, double y, double z, double phi, double psi, double theta) {
-        this.setX(x);
-        this.setY(y);
-        this.setZ(z);
-        this.setPhi(phi);
-        this.setPsi(psi);
-        this.setTheta(theta);
+        X3dCoordinates.this.setX(x);
+        X3dCoordinates.this.setY(y);
+        X3dCoordinates.this.setZ(z);
+        X3dCoordinates.this.setPhi(phi);
+        X3dCoordinates.this.setPsi(psi);
+        X3dCoordinates.this.setTheta(theta);
     }
 
     public X3dCoordinates() {
-        this.setX(0.0);
-        this.setY(0.0);
-        this.setZ(0.0);
-        this.setPhi(0.0);
-        this.setPsi(0.0);
-        this.setTheta(0.0);
+        X3dCoordinates.this.setX(0.0);
+        X3dCoordinates.this.setY(0.0);
+        X3dCoordinates.this.setZ(0.0);
+        X3dCoordinates.this.setPhi(0.0);
+        X3dCoordinates.this.setPsi(0.0);
+        X3dCoordinates.this.setTheta(0.0);
     }
 
     public double getPhi() {
