@@ -28,9 +28,6 @@ public class X3dCreateInterpolators {
     private double firstLocalX = 0;
     private double firstLocalY = 0;
     private double firstLocalZ = 0;
-    private double firstLocalPhi = 0;
-    private double firstLocalPsi = 0;
-    private double firstLocalTheta = 0;
 
     private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
 
@@ -113,7 +110,6 @@ public class X3dCreateInterpolators {
 
             }
         }
-
     }
 
     public void makeX3dInterpolator() {
