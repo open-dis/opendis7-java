@@ -132,7 +132,7 @@ public class X3dCreateLineSet {
         }
 
         //Normalize all times in the set
-        LinkedHashMap<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
 
         for (Double k : keys) {
 
