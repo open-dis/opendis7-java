@@ -18,13 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * DisThreadedNetIF.java created on Jul 29, 2019.
- * <pre>
  * This is a thread-safe, multicast DIS network interface class.
- * </pre>
  * 
  * @author Mike Bailey, jmbailey@nps.edu
- * @version $Id$
+ * @since Jul 29, 2019
  */
 public class DisThreadedNetIF
 {
@@ -249,7 +246,7 @@ public class DisThreadedNetIF
                 }
             } catch (IOException ex) {
                 System.err.println("Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
-                System.err.println("Retrying in 1 second");
+                System.err.println("Retrying new socket in 1 second");
             } finally {
                 if (socket != null && !socket.isClosed()) {
                     try {
