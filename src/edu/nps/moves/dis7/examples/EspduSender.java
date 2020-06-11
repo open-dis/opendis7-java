@@ -42,17 +42,8 @@ public class EspduSender
    */
   public static void main(String args[])
   {
-    /**
-     * an entity state pdu
-     */
-    EntityStatePdu espdu = new EntityStatePdu();
     MulticastSocket socket = null; // must be initialized, even if null
-    DisTime disTime = new DisTime();
-
-    // ICBM coordinates for my office
-    double lat = 36.595517;
-    double lon = -121.877000;
-
+    
     // Default settings. These are used if no system properties are set. 
     // If system properties are passed in, these are over ridden.
     int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
@@ -115,6 +106,13 @@ public class EspduSender
       System.err.println(e);
       System.exit(-1);
     }
+    
+    EntityStatePdu espdu = new EntityStatePdu();
+    DisTime disTime = new DisTime();
+
+    // ICBM coordinates for my office
+    double lat = 36.595517;
+    double lon = -121.877000;
 
     // Initialize values in the Entity State PDU object. The exercise ID is 
     // a way to differentiate between different virtual worlds on one network.
