@@ -30,7 +30,7 @@ public class PduRecorder implements PduReceiver
 {
   public static final String COMMENT_MARKER = "#";
   
-  static String DEFAULT_OUTDIR = "./pdulog";
+  static String DEFAULT_OUTDIR = "./pduLog";
   static String DEFAULT_FILEPREFIX = "Pdusave"; // TODO better name
   static String DISLOG_FILE_EXTENSION = ".dislog";
   
@@ -107,9 +107,10 @@ public class PduRecorder implements PduReceiver
     
     disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
     disThreadedNetIF.addRawListener(bAndL -> {
-        receivePdu(bAndL.buff,bAndL.length);
+        receivePdu(bAndL.buff, bAndL.length);
     });
     sleep(250L); // need time for the send/receive threads to start
+    System.out.println(getClass() + " listening to IP address " + mcastaddr + " on port: " + port);
   }
   
   public void startResume()
@@ -139,7 +140,7 @@ public class PduRecorder implements PduReceiver
  
   Long startNanoTime = null;
   StringBuilder sb = new StringBuilder();
-  java.util.Base64.Encoder base64Encoder = Base64.getEncoder();
+  Base64.Encoder base64Encoder = Base64.getEncoder();
   int pduCount = 0;
   boolean headerWritten = false;
   boolean doSave = true;

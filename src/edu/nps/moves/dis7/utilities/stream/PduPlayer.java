@@ -300,10 +300,9 @@ public class PduPlayer {
                                     datagramPacket = new DatagramPacket(bufferShort, bufferShort.length, addr, port);
                                     datagramSocket.send(datagramPacket);
                                     // Add Points to X3D Components
-                                    globalByteBufferForX3dInterPolators = new byte[byteBuffer2.array().length / 4];
                                     globalByteBufferForX3dInterPolators = bufferShort.clone();
-                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators);
-                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators);
+                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
+                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
                                     type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
                                     System.out.println("Sent PDU: " + type);
                                 }
@@ -329,8 +328,10 @@ public class PduPlayer {
                 }
                 
                 //create X3D components - methods will create console output
-                x3dInterpolators.makeX3dInterpolator();
-                x3dLineSet.makeX3dLineSet();
+                if (netSend) {
+                    x3dInterpolators.makeX3dInterpolator();
+                    x3dLineSet.makeX3dLineSet();
+                }
             }
             if (rawListener != null) {
                 rawListener.receiveBytes(null); // indicate the end

@@ -29,7 +29,7 @@ public class X3dCreateLineSet {
     private double firstLocalY = 0;
     private double firstLocalZ = 0;
 
-    private LinkedHashMap<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
+    private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
 
     //Setting up a NumberFormatter for limitting the decimal count to 3
     private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
@@ -74,7 +74,6 @@ public class X3dCreateLineSet {
             if (firstTimeStamp) {
 
                 firstLocalTimeStamp = localPdu.getTimestamp();
-//            localTimeStamp = localPdu.getTimestamp();
                 firstLocalX = localEspdu.getEntityLocation().getX();
                 firstLocalY = localEspdu.getEntityLocation().getZ();
                 firstLocalZ = -1 * localEspdu.getEntityLocation().getY();
@@ -102,11 +101,8 @@ public class X3dCreateLineSet {
 
             //Only add to stream if it is an ESPDU
             //ToDo: Add support for multiple Entities
-            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
-
+            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE))
                 testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, 0.0, 0.0, 0.0));
-
-            }
         }
     }
 
@@ -131,15 +127,12 @@ public class X3dCreateLineSet {
 
         for (Double k : keys) {
 
-            if (k > lastTimeStamp) {
-
+            if (k > lastTimeStamp)
                 lastTimeStamp = k;
-
-            }
         }
 
         //Normalize all times in the set
-        LinkedHashMap<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
 
         for (Double k : keys) {
 
@@ -160,23 +153,18 @@ public class X3dCreateLineSet {
      
 
         //Setting up PositionInterpolator and OrientationInterpolator
-        for (Double k : keys) {
-
-
+        for (Double k : keys)
             lineSetPoints += keyKeyValueSetPositionInterpolator.get(k) + " ";
-
-        }
 
         lineSetPoints += "' ";
 
         //PositionInterpolator
 
         lineSet += lineSetPoints;
-        lineSet += "/> \n </LineSet> \n";
+        lineSet += "/>\n</LineSet> \n";
 
         //Printing PositionInterpolator to the console
         System.out.println(lineSet);
-
     }
 
 }

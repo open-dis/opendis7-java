@@ -2,7 +2,6 @@
  * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
-
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.EntityID;
@@ -13,6 +12,8 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.io.IOException;
 import java.net.DatagramPacket;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.util.Iterator;
 import java.util.List;
@@ -37,11 +38,13 @@ public class EspduReceiver
 
     try {
       // Specify the socket to receive data
-      socket = new MulticastSocket(3000);
-      socket.setBroadcast(true);
+      socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
+      
+      InetAddress maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      InetSocketAddress group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
 
-      //InetAddress address = InetAddress.getByName(EspduSender.DEFAULT_MULTICAST_GROUP);
-      //socket.joinGroup(address);
+      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+      
       // Loop infinitely, receiving datagrams
       EntityID eid;
       Vector3Double position;

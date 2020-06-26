@@ -18,13 +18,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * DisThreadedNetIF.java created on Jul 29, 2019.
- * <pre>
  * This is a thread-safe, multicast DIS network interface class.
- * </pre>
  * 
  * @author Mike Bailey, jmbailey@nps.edu
- * @version $Id$
+ * @since Jul 29, 2019
  */
 public class DisThreadedNetIF
 {
@@ -249,7 +246,7 @@ public class DisThreadedNetIF
                 }
             } catch (IOException ex) {
                 System.err.println("Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
-                System.err.println("Retrying in 1 second");
+                System.err.println("Retrying new socket in 1 second");
             } finally {
                 if (socket != null && !socket.isClosed()) {
                     try {
@@ -327,32 +324,34 @@ public class DisThreadedNetIF
     catch (InterruptedException ex) {}
   }
 
-  /** Find proper interface
-   * @return a network interface to use to join a multicast group
-   */
-  public static NetworkInterface findIp4Interface()
-  {
-    Enumeration<NetworkInterface> ifaces = null;
-      try {
-          ifaces = NetworkInterface.getNetworkInterfaces();
-      } catch (SocketException ex) {
-          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
-      }
-    NetworkInterface nif;
-    Enumeration<InetAddress> addresses;
-    InetAddress addr;
-    
-    while (ifaces != null && ifaces.hasMoreElements()) {
-      nif = ifaces.nextElement();
-      addresses = nif.getInetAddresses();
-      while (addresses.hasMoreElements()) {
-        addr = addresses.nextElement();
-        if (addr instanceof Inet4Address && !addr.isLoopbackAddress()) {
-          System.out.println("Using network interface " + nif.getDisplayName());
-          return nif;
+    /**
+     * Find proper interface
+     *
+     * @return a network interface to use to join a multicast group
+     */
+    public static NetworkInterface findIp4Interface() {
+        try {
+            Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
+            NetworkInterface nif;
+            Enumeration<InetAddress> addresses;
+            InetAddress addr;
+
+            while (ifaces != null && ifaces.hasMoreElements()) {
+                nif = ifaces.nextElement();
+                if (nif.isUp()) {
+                    addresses = nif.getInetAddresses();
+                    while (addresses.hasMoreElements()) {
+                        addr = addresses.nextElement();
+                        if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) {
+                            System.out.println("Using network interface " + nif.getDisplayName());
+                            return nif;
+                        }
+                    }
+                }
+            }
+        } catch (SocketException ex) {
+            Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
         }
-      }
+        return null;
     }
-    return null;
-  }
 }
