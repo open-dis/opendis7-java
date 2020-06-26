@@ -177,7 +177,13 @@
             <report format="frames" todir="build/test/results/html"/>
         </junitreport>
     </target>
-    
+    <target name="-pre-compile-test-single">
+        <delete>
+            <fileset dir="./pduLog">
+                <include name="*.dislog"/>
+            </fileset>
+        </delete>
+    </target>
     <target depends="compile-test-single,-pre-test-run-single" 
             description="Run single unit test." 
             name="-do-test-run-single">
