@@ -17,10 +17,10 @@
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
-	<target name="processScenes.javadoc">
+    <target name="processScenes.javadoc">
 		
-		<property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
-		<property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
+        <property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
+        <property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
         <property name="javadoc.additionalparam" value=""/>
         <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
         <property name="javadoc.dir"             value="javadoc"/>
@@ -35,50 +35,50 @@
         <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
         <property name="javadoc.version"         value="true"/>	
 
-		<javadoc     destdir="${javadoc.dir}"
-				      author="${javadoc.author}"
-                      bottom="${javadoc.copyright}"
-               breakiterator="${javadoc.breakiterator}"
-				   classpath="${x3djsail.stylesheets.dir}/${jsai.full.archive.jar.name}"
-                    Encoding="${javadoc.encoding}"
-                    Doctitle="${javadoc.doctitle}"
-                      Header="${javadoc.doctitle}"
-                   maxmemory="4096m"
+        <javadoc     destdir="${javadoc.dir}"
+                     author="${javadoc.author}"
+                     bottom="${javadoc.copyright}"
+                     breakiterator="${javadoc.breakiterator}"
+                     classpath="${x3djsail.stylesheets.dir}/${jsai.full.archive.jar.name}"
+                     Encoding="${javadoc.encoding}"
+                     Doctitle="${javadoc.doctitle}"
+                     Header="${javadoc.doctitle}"
+                     maxmemory="4096m"
                      noindex="${javadoc.noindex}"
-                    nonavbar="${javadoc.nonavbar}"
-                      notree="${javadoc.notree}"
-                    Overview="${javadoc.dir}/overview.html"
+                     nonavbar="${javadoc.nonavbar}"
+                     notree="${javadoc.notree}"
+                     Overview="${javadoc.dir}/overview.html"
                      Private="${javadoc.private}"
-                      source="${java.source}"
-                  Splitindex="${javadoc.splitindex}"
-                         Use="${javadoc.use}" 
-			 useexternalfile="yes"
-		             verbose="true"
+                     source="${java.source}"
+                     Splitindex="${javadoc.splitindex}"
+                     Use="${javadoc.use}" 
+                     useexternalfile="yes"
+                     verbose="true"
                      version="${javadoc.version}"
-                 Windowtitle="${javadoc.windowtitle}">
-			<!-- TODO
-			https://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
+                     Windowtitle="${javadoc.windowtitle}">
+            <!-- TODO
+            https://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
 
-                  sourcepath="${src.org.web3d.x3d.sai}"
-             useexternalfile="true"
-                    Overview="${src.java.dir}/overview.html"
-            <classpath refid="app.classpath"/>
-                <include name="*/*.java"/>
-			<packageset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
-					<include name="*.java"/>
-					<include name="*/*.java"/>
-					<exclude name="**/*.html"/>
-			</packageset>
-			-->
-						<fileset dir="." defaultexcludes="yes">
-							<include name="src/**/*.java"/>
-							<include name="src-generated/**/*.java"/>
-                            <!-- TODO is this enumerations jar getting included in javadoc? -->
-							<include name="entityjars/open-dis7-entitites-all.jar"/>
-							<exclude name="**/*.html"/>
-				</fileset>
-		</javadoc>
-	</target>
+      sourcepath="${src.org.web3d.x3d.sai}"
+ useexternalfile="true"
+        Overview="${src.java.dir}/overview.html"
+<classpath refid="app.classpath"/>
+    <include name="*/*.java"/>
+            <packageset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
+                            <include name="*.java"/>
+                            <include name="*/*.java"/>
+                            <exclude name="**/*.html"/>
+            </packageset>
+            -->
+            <fileset dir="." defaultexcludes="yes">
+                <include name="src/**/*.java"/>
+                <include name="src-generated/**/*.java"/>
+                <!-- TODO is this enumerations jar getting included in javadoc? -->
+                <include name="entityjars/open-dis7-entitites-all.jar"/>
+                <exclude name="**/*.html"/>
+            </fileset>
+        </javadoc>
+    </target>
     
     <!--
 
@@ -177,8 +177,8 @@
     </target>
     
     <target name="-pre-compile-test-single" depends="-pre-compile-test">
-        <!--<property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>-->
-        <property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>
+        <property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>
+        <!--<property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>-->
         <property name="test.class" value="${javac.includes}"/>
         <echo message="Compiling: ${javac.includes}"/>
     </target>
