@@ -165,8 +165,10 @@
         <java classpath="${run.test.classpath}"  
               classname="org.junit.platform.console.ConsoleLauncher"
               fork="true">
-            <arg value="--scan-classpath"/>
-            <arg line="--reports-dir build/test/results"/>
+            <arg value="--disable-banner"/>
+            <arg value="--fail-if-no-tests"/>
+            <arg value="--scan-classpath=${build.test.classes.dir}"/>
+            <arg value="--reports-dir=${build.test.results.dir}"/>
         </java>
         <junitreport todir="build/test/results">
             <fileset dir="build/test/results">
@@ -176,21 +178,17 @@
         </junitreport>
     </target>
     
-    <target name="-pre-compile-test-single" depends="-pre-compile-test">
-        <property name="javac.includes" value="edu.nps.moves.dis7.SignalPdusTest"/>
-        <!--<property name="javac.includes" value="edu.nps.moves.dis7.AllPduRoundTripTest"/>-->
-        <property name="test.class" value="${javac.includes}"/>
-        <echo message="Compiling: ${javac.includes}"/>
-    </target>
-    
     <target depends="compile-test-single,-pre-test-run-single" 
             description="Run single unit test." 
             name="-do-test-run-single">
-        <echo message="Testing: ${javac.includes}"/>
+        <echo message="Testing: ${test.class}"/>
         <java classpath="${run.test.classpath}"  
               classname="org.junit.platform.console.ConsoleLauncher"
               fork="true">
-            <arg line="--select-class=${javac.includes}"/>
+            <arg value="--disable-banner"/>
+            <arg value="--fail-if-no-tests"/>
+            <arg line="-c=${test.class}"/>
+            <!--<arg value="-h"/>-->
         </java>
     </target>
     
