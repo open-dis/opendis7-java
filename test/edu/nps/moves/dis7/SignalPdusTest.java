@@ -130,7 +130,7 @@ public class SignalPdusTest {
         mutex.acquire();
         Path path = Path.of(recorder.getLogFile()).getParent();
         
-        // Note: the player will all any and all log files in the given path
+        // Note: the player will playback all log files in the given path
         PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
         player.sendToNet(false);
         player.addRawListener(ba -> {
