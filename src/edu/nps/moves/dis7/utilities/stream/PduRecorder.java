@@ -109,7 +109,6 @@ public class PduRecorder implements PduReceiver
     disThreadedNetIF.addRawListener(bAndL -> {
         receivePdu(bAndL.buff, bAndL.length);
     });
-    sleep(250L); // need time for the send/receive threads to start
     System.out.println(getClass() + " listening to IP address " + mcastaddr + " on port: " + port);
   }
   
@@ -308,12 +307,5 @@ public class PduRecorder implements PduReceiver
     });
 
     recorder.end();
-  }
-
-  private static void sleep(long ms)
-  {
-    try{
-        Thread.sleep(ms);}
-    catch(InterruptedException ex) {}
   }
 }
