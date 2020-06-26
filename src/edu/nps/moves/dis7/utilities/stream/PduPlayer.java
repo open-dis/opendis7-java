@@ -49,7 +49,7 @@ public class PduPlayer {
 
     private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
-    /**
+    /** Constructor that spawns the player thread.
      * 
      * @param ip the multicast group address to utilize
      * @param port the multicast port to utilize
@@ -97,7 +97,20 @@ public class PduPlayer {
     public void begin() {
         try {
             System.out.println("Replaying DIS logs.");
-            InetAddress addr = InetAddress.getByName(ip);
+            
+            InetAddress addr = null;
+            DatagramPacket datagramPacket;
+            DISPDUType type;
+            String tempString;
+            String[] sa = null, splitString;
+            String REGEX;
+            Pattern pattern;
+            byte[] pduTimeBytes = null, bufferShort = null;
+            int[] arr;
+            IntBuffer intBuffer;
+            int tempInt;
+            ByteBuffer byteBuffer1, byteBuffer2;
+            long pduTimeInterval, targetSimTime, now, sleepTime;
 
             FilenameFilter filter = (dir, name) -> {
                 return name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
@@ -113,22 +126,11 @@ public class PduPlayer {
             });
 
             if (netSend) {
+                addr = InetAddress.getByName(ip);
                 datagramSocket = new DatagramSocket();
             }
             
             Base64.Decoder base64Decoder = Base64.getDecoder();
-            DatagramPacket datagramPacket;
-            DISPDUType type;
-            String tempString;
-            String[] sa = null, splitString;
-            String REGEX;
-            Pattern pattern;
-            byte[] pduTimeBytes = null, bufferShort = null;
-            int[] arr;
-            IntBuffer intBuffer;
-            int tempInt;
-            ByteBuffer byteBuffer1, byteBuffer2;
-            long pduTimeInterval, targetSimTime, now, sleepTime;
 
             for (File f : fs) {
                 System.out.println("Replaying " + f.getAbsolutePath());
@@ -298,10 +300,9 @@ public class PduPlayer {
                                     datagramPacket = new DatagramPacket(bufferShort, bufferShort.length, addr, port);
                                     datagramSocket.send(datagramPacket);
                                     // Add Points to X3D Components
-                                    globalByteBufferForX3dInterPolators = new byte[byteBuffer2.array().length / 4];
                                     globalByteBufferForX3dInterPolators = bufferShort.clone();
-                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators);
-                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators);
+                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
+                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
                                     type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
                                     System.out.println("Sent PDU: " + type);
                                 }
@@ -327,8 +328,10 @@ public class PduPlayer {
                 }
                 
                 //create X3D components - methods will create console output
-                x3dInterpolators.makeX3dInterpolator();
-                x3dLineSet.makeX3dLineSet();
+                if (netSend) {
+                    x3dInterpolators.makeX3dInterpolator();
+                    x3dLineSet.makeX3dLineSet();
+                }
             }
             if (rawListener != null) {
                 rawListener.receiveBytes(null); // indicate the end

@@ -88,7 +88,7 @@ public class EntityUse
     
     espdu.setEntityType(et);
     
-    DisThreadedNetIF netif = new DisThreadedNetIF(); // uses defaults: multicast port 3000 ip 230.0.0.0
+    DisThreadedNetIF netif = new DisThreadedNetIF(); // uses defaults
     
     // We want to listen also, so add a listener, using JDK8+ lambda grammar
     netif.addListener(pdu->handleReceivedPdu(pdu));

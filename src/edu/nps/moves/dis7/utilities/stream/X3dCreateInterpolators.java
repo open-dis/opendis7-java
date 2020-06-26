@@ -28,11 +28,8 @@ public class X3dCreateInterpolators {
     private double firstLocalX = 0;
     private double firstLocalY = 0;
     private double firstLocalZ = 0;
-    private double firstLocalPhi = 0;
-    private double firstLocalPsi = 0;
-    private double firstLocalTheta = 0;
 
-    private LinkedHashMap<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
+    private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
 
     //Setting up a NumberFormatter for limitting the decimal count to 3
     private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
@@ -79,7 +76,6 @@ public class X3dCreateInterpolators {
             if (firstTimeStamp) {
 
                 firstLocalTimeStamp = localPdu.getTimestamp();
-//                localTimeStamp = localPdu.getTimestamp();
                 firstLocalX = localEspdu.getEntityLocation().getX();
                 firstLocalY = localEspdu.getEntityLocation().getZ();
                 firstLocalZ = -1 * localEspdu.getEntityLocation().getY();
@@ -108,13 +104,9 @@ public class X3dCreateInterpolators {
 
             //Only add to stream if it is an ESPDU
             //ToDo: Add support for multiple Entities
-            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE)) {
-
+            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE))
                 testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, localPhi, localPsi, localTheta));
-
-            }
         }
-
     }
 
     public void makeX3dInterpolator() {
@@ -152,34 +144,39 @@ public class X3dCreateInterpolators {
 
         for (Double k : keys) {
 
-            if (k > lastTimeStamp) {
-
+            if (k > lastTimeStamp)
                 lastTimeStamp = k;
-
-            }
         }
 
         //Normalize all times in the set
-        LinkedHashMap<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetPositionInterpolator = new LinkedHashMap<>();
 
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
-        LinkedHashMap<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorX = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorY = new LinkedHashMap<>();
+        Map<Double, String> keyKeyValueSetOrientationInterpolatorZ = new LinkedHashMap<>();
+        
+        double tempX;
+        double tempY;
+        double tempZ ;
+
+        double tempPhi;
+        double tempPsi;
+        double tempTheta;
+        
+        String localCoordinateString;
+        String localOrientationStringX;
+        String localOrientationStringY;
+        String localOrientationStringZ;
 
         for (Double k : keys) {
 
-            String localCoordinateString;
-            String localOrientationStringX;
-            String localOrientationStringY;
-            String localOrientationStringZ;
+            tempX = returnMap.get(k).getX();
+            tempY = returnMap.get(k).getY();
+            tempZ = returnMap.get(k).getZ();
 
-            double tempX = returnMap.get(k).getX();
-            double tempY = returnMap.get(k).getY();
-            double tempZ = returnMap.get(k).getZ();
-
-            double tempPhi = returnMap.get(k).getPhi() / 6.28;
-            double tempPsi = returnMap.get(k).getPsi() / 6.28;
-            double tempTheta = returnMap.get(k).getTheta() / 6.28;
+            tempPhi = returnMap.get(k).getPhi() / 6.28;
+            tempPsi = returnMap.get(k).getPsi() / 6.28;
+            tempTheta = returnMap.get(k).getTheta() / 6.28;
 
             localCoordinateString = " " + coordinateNumberFormat.format(tempX) + " " + coordinateNumberFormat.format(tempY) + " " + coordinateNumberFormat.format(tempZ);
             localOrientationStringX = " 1 0 0 " + coordinateNumberFormat.format(tempPhi);

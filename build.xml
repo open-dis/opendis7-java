@@ -10,6 +10,76 @@
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the project open-dis7-java.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
+        <echo message="https://github.com/open-dis/open-dis7-java/issues" />
+        <nbbrowse url="https://github.com/open-dis/open-dis7-java/issues" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
+
+	<target name="processScenes.javadoc">
+		
+		<property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
+		<property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
+        <property name="javadoc.additionalparam" value=""/>
+        <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
+        <property name="javadoc.dir"             value="javadoc"/>
+        <property name="javadoc.encoding"        value="ISO-8859-1"/>
+        <property name="javadoc.copyright"       value="Copyright &#169;2005-2020 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../../../../license.html'&gt;open-source license&lt;/a&gt;, free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Examples%20Archive%20X3DJSAIL%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+        <property name="javadoc.noindex"         value="false"/>
+        <property name="javadoc.nonavbar"        value="false"/>
+        <property name="javadoc.notree"          value="false"/>
+        <property name="javadoc.private"         value="false"/>
+        <property name="javadoc.splitindex"      value="true"/>
+        <property name="javadoc.breakiterator"   value="true"/>
+        <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
+        <property name="javadoc.version"         value="true"/>	
+
+		<javadoc     destdir="${javadoc.dir}"
+				      author="${javadoc.author}"
+                      bottom="${javadoc.copyright}"
+               breakiterator="${javadoc.breakiterator}"
+				   classpath="${x3djsail.stylesheets.dir}/${jsai.full.archive.jar.name}"
+                    Encoding="${javadoc.encoding}"
+                    Doctitle="${javadoc.doctitle}"
+                      Header="${javadoc.doctitle}"
+                   maxmemory="4096m"
+                     noindex="${javadoc.noindex}"
+                    nonavbar="${javadoc.nonavbar}"
+                      notree="${javadoc.notree}"
+                    Overview="${javadoc.dir}/overview.html"
+                     Private="${javadoc.private}"
+                      source="${java.source}"
+                  Splitindex="${javadoc.splitindex}"
+                         Use="${javadoc.use}" 
+			 useexternalfile="yes"
+		             verbose="true"
+                     version="${javadoc.version}"
+                 Windowtitle="${javadoc.windowtitle}">
+			<!-- TODO
+			https://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
+
+                  sourcepath="${src.org.web3d.x3d.sai}"
+             useexternalfile="true"
+                    Overview="${src.java.dir}/overview.html"
+            <classpath refid="app.classpath"/>
+                <include name="*/*.java"/>
+			<packageset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
+					<include name="*.java"/>
+					<include name="*/*.java"/>
+					<exclude name="**/*.html"/>
+			</packageset>
+			-->
+						<fileset dir="." defaultexcludes="yes">
+							<include name="src/**/*.java"/>
+							<include name="src-generated/**/*.java"/>
+                            <!-- TODO is this enumerations jar getting included in javadoc? -->
+							<include name="entityjars/open-dis7-entitites-all.jar"/>
+							<exclude name="**/*.html"/>
+				</fileset>
+		</javadoc>
+	</target>
+    
     <!--
 
     There exist several targets which are by default empty and which can be 

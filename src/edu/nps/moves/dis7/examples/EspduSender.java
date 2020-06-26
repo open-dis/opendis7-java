@@ -42,17 +42,8 @@ public class EspduSender
    */
   public static void main(String args[])
   {
-    /**
-     * an entity state pdu
-     */
-    EntityStatePdu espdu = new EntityStatePdu();
     MulticastSocket socket = null; // must be initialized, even if null
-    DisTime disTime = new DisTime();
-
-    // ICBM coordinates for my office
-    double lat = 36.595517;
-    double lon = -121.877000;
-
+    
     // Default settings. These are used if no system properties are set. 
     // If system properties are passed in, these are over ridden.
     int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
@@ -115,6 +106,13 @@ public class EspduSender
       System.err.println(e);
       System.exit(-1);
     }
+    
+    EntityStatePdu espdu = new EntityStatePdu();
+    DisTime disTime = new DisTime();
+
+    // ICBM coordinates for my office
+    double lat = 36.595517;
+    double lon = -121.877000;
 
     // Initialize values in the Entity State PDU object. The exercise ID is 
     // a way to differentiate between different virtual worlds on one network.
@@ -234,22 +232,22 @@ public class EspduSender
         
         for (InetAddress broadcast : broadcastAddresses) {
             System.out.println("Sending broadcast datagram packet to " + broadcast);
-            packet = new DatagramPacket(data, data.length, broadcast, 3000);
+            packet = new DatagramPacket(data, data.length, broadcast, DisThreadedNetIF.DEFAULT_DIS_PORT);
             socket.send(packet);
             // TODO experiment with these!  8)
-            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, 3000); // alternate
+            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, DisThreadedNetIF.DEFAULT_DIS_PORT); // alternate
             socket.send(packet);
         }
 
         // Send every 1 sec. Otherwise this will be all over in a fraction of a second.
-        Thread.sleep(3000);
+        Thread.sleep(1000L);
 
         location = espdu.getEntityLocation();
 
         System.out.println("Espdu #" + idx + " EID=[" + entityID.getSiteID() + "," + entityID.getApplicationID() + "," + entityID.getEntityID() + "]");
         System.out.println(" DIS coordinates location=[" + location.getX() + "," + location.getY() + "," + location.getZ() + "]");
-        double c[] = {location.getX(), location.getY(), location.getZ()};
-        double lla[] = CoordinateConversions.xyzToLatLonDegrees(c);
+//        double c[] = {location.getX(), location.getY(), location.getZ()};
+//        double lla[] = CoordinateConversions.xyzToLatLonDegrees(c);
 //      System.out.println(" Location (lat/lon/alt): [" + lla[0] + ", " + lla[1] + ", " + lla[2] + "]");
       }
     }
