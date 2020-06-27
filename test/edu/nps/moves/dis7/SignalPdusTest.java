@@ -82,7 +82,7 @@ public class SignalPdusTest {
 
         sentPdus.forEach(p -> {
             netif.send(p);
-            sleep(10l); // give receiver time to process
+            sleep(5l); // give receiver time to process
         });
     }
 

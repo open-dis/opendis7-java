@@ -144,7 +144,7 @@ public class AllPduRoundTripTest
       
       pdusSent.forEach(p -> {
           disnetworking.send(p);
-          sleep(1l); // give receiver time to process
+          sleep(5l); // give receiver time to process
       });
 
       shutDownSenderRecorder();
@@ -169,23 +169,24 @@ public class AllPduRoundTripTest
     assertNull(ex, "Exception should be null if successful creation of all objects");
   }
   
-  private void setupSenderRecorder() throws Exception
-  { 
-    recorder = new PduRecorder(); // default mcaddr, port, logfile dir
-    disnetworking = recorder.getDisThreadedNetIF();
-    
-    // When the DisThreadedNetIF receives a pdu, a call is made to the
-    // everyTypeListeners which makes a lamba call back here to capture received
-    // pdus
-    lis = new DisThreadedNetIF.PduListener() {
-      @Override
-      public void incomingPdu(Pdu pdu) {
-          pdusReceived.add(pdu);
-      }
-    };
-    disnetworking.addListener(lis);
-    System.out.println("Recorder log at " + recorder.getLogFile());
-  }
+    private void setupSenderRecorder() throws Exception {
+        recorder = new PduRecorder(); // default mcaddr, port, logfile dir
+        disnetworking = recorder.getDisThreadedNetIF();
+
+        // When the DisThreadedNetIF receives a pdu, a call is made to the
+        // everyTypeListeners which makes a lamba call back here to capture received
+        // pdus
+        lis = new DisThreadedNetIF.PduListener() {
+            @Override
+            public void incomingPdu(Pdu pdu) {
+                if (!pdusReceived.contains(pdu)) {
+                    pdusReceived.add(pdu);
+                }
+            }
+        };
+        disnetworking.addListener(lis);
+        System.out.println("Recorder log at " + recorder.getLogFile());
+    }
 
   /** Will shutdown the common send/receive network interface */
   private void shutDownSenderRecorder() throws Exception
