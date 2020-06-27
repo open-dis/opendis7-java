@@ -17,6 +17,7 @@ public class BitFieldRoundTripTest
 {
     Pdu receivedPdu;
     DisThreadedNetIF netif;
+    DisThreadedNetIF.PduListener lis;
 
   @BeforeAll
   public static void setUpClass()
@@ -33,12 +34,19 @@ public class BitFieldRoundTripTest
   public void setUp()
   {   
       netif = new DisThreadedNetIF();
-      netif.addListener(pdu -> setUpReceiver(pdu));
+      lis = new DisThreadedNetIF.PduListener() {
+          @Override
+          public void incomingPdu(Pdu pdu) {
+              setUpReceiver(pdu);
+          }
+      };
+      netif.addListener(lis);
   }
 
   @AfterEach
   public void tearDown()
   {
+      netif.removeListener(lis);
       netif.kill();
       netif = null;
   }
@@ -69,7 +77,6 @@ public class BitFieldRoundTripTest
       .set(LandPlatformAppearance.IS_FROZEN,1);
   
     try {
-      Thread.sleep(250l); // make sure receiver is listening
       netif.send(espdu);
       Thread.sleep(100l); 
     }

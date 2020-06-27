@@ -16,6 +16,7 @@ public class DataQueryPduRoundTripTest
 
  Pdu receivedPdu;
  DisThreadedNetIF netif;
+ DisThreadedNetIF.PduListener lis;
 
   @BeforeAll
   public static void setUpClass()
@@ -30,14 +31,21 @@ public class DataQueryPduRoundTripTest
 
   @BeforeEach
   public void setUp()
-  {
+  {   
       netif = new DisThreadedNetIF();
-      netif.addListener(pdu -> setUpReceiver(pdu));
+      lis = new DisThreadedNetIF.PduListener() {
+          @Override
+          public void incomingPdu(Pdu pdu) {
+              setUpReceiver(pdu);
+          }
+      };
+      netif.addListener(lis);
   }
 
   @AfterEach
   public void tearDown()
   {
+      netif.removeListener(lis);
       netif.kill();
       netif = null;
   }
@@ -99,9 +107,8 @@ public class DataQueryPduRoundTripTest
     sendingPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      Thread.sleep(250l); // make sure receiver is listening
       netif.send(sendingPdu);
-      Thread.sleep(1000l); 
+      Thread.sleep(100l);
     }
     catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());

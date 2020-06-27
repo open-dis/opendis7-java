@@ -29,30 +29,30 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SignalPdusTest {
     
-    DisThreadedNetIF netif;
-    List<Pdu> receivedPdus;
-    PduRecorder recorder;
+    static DisThreadedNetIF netif;
+    static DisThreadedNetIF.PduListener lis;
+    static List<Pdu> receivedPdus;
+    static PduRecorder recorder;
     
-    Semaphore mutex;
-    PduFactory pduFac;
-    List<Pdu> sentPdus;
+    static Semaphore mutex;
+    static PduFactory pduFac;
+    static List<Pdu> sentPdus;
     byte[] buff;
     int size;
 
     @BeforeAll
     public static void setUpClass() throws IOException {
         System.out.println("SignalPdusTest");
-    }
-
-    @AfterAll
-    public static void tearDownClass() throws IOException {
-    }
-
-    @BeforeEach
-    public void setUp() throws IOException, InterruptedException {
+        
         recorder = new PduRecorder(); // default dir
         netif = recorder.getDisThreadedNetIF();
-        netif.addListener(pdu -> handleReceivedPdu(pdu));
+        lis = new DisThreadedNetIF.PduListener() {
+          @Override
+          public void incomingPdu(Pdu pdu) {
+              handleReceivedPdu(pdu);
+          }
+        };
+        netif.addListener(lis);
         
         mutex = new Semaphore(1);
         
@@ -80,21 +80,24 @@ public class SignalPdusTest {
         ((IntercomSignalPdu) pdu).setData("IntercomSignalPdu-testdata".getBytes());
         sentPdus.add(pdu);
 
-        try {
-            Thread.sleep(250l); // give receive time to spool up
-            sentPdus.forEach(p -> netif.send(p));
-            Thread.sleep(250l); // give receiver time to process
-        } catch (InterruptedException ex) {
-            fail("NetIF Send: " + ex);
-        }
+        sentPdus.forEach(p -> {
+            netif.send(p);
+            sleep(10l); // give receiver time to process
+        });
+    }
+
+    @AfterAll
+    public static void tearDownClass() throws IOException {
+    }
+
+    @BeforeEach
+    public void setUp() throws IOException, InterruptedException {
     }
 
     @AfterEach
     public void tearDown() throws IOException {
-        sentPdus.clear();
-        receivedPdus.clear();
+        netif.removeListener(lis);
         recorder.end(); // kills the netif as well
-        mutex.release();
     }
 
     @Test
@@ -102,9 +105,6 @@ public class SignalPdusTest {
     public void testRoundTripNet() {
         System.out.println("testRoundTripNet");
         
-        // Compare
-        assertEquals(sentPdus, receivedPdus, "Sent and received pdus not identical");
-
         // Let's see how these unmarshall
         receivedPdus.forEach(pdu -> {
             try {
@@ -119,6 +119,9 @@ public class SignalPdusTest {
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        
+        // Compare
+        assertEquals(sentPdus, receivedPdus, "Sent and received pdus not identical");
     }
 
     @Test
@@ -126,7 +129,6 @@ public class SignalPdusTest {
     public void testRoundTripLog() throws IOException, InterruptedException {   
         System.out.println("testRoundTripLog");
         
-        recorder.end(); // this finishes the 2nd log file so it can be played
         mutex.acquire();
         Path path = Path.of(recorder.getLogFile()).getParent();
         
@@ -144,22 +146,27 @@ public class SignalPdusTest {
     
         mutex.acquire();
     }
+    
+    private static void sleep(long ms) {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException ex) {
+            fail("NetIF Send: " + ex);
+        }
+    }
 
-    private void handleReceivedPdu(Pdu pdu) {
+    private static void handleReceivedPdu(Pdu pdu) {
         receivedPdus.add(pdu);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
         
+        setUpClass();
+        
         SignalPdusTest spt = new SignalPdusTest();
-
-        spt.setUp();
         spt.testRoundTripNet();
         spt.tearDown();
-
-        spt.setUp();
         spt.testRoundTripLog();
-        spt.tearDown();
     }
 
 }

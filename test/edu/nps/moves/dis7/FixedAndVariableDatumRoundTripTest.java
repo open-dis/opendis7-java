@@ -4,7 +4,6 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.enumerations.ActionResponseRequestStatus;
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
@@ -16,6 +15,7 @@ public class FixedAndVariableDatumRoundTripTest
 {
   Pdu receivedPdu;
   DisThreadedNetIF netif;
+  DisThreadedNetIF.PduListener lis;
 
   @BeforeAll
   public static void setUpClass()
@@ -32,18 +32,22 @@ public class FixedAndVariableDatumRoundTripTest
   public void setUp()
   {   
       netif = new DisThreadedNetIF();
-      netif.addListener(pdu -> setUpReceiver(pdu));
+      lis = new DisThreadedNetIF.PduListener() {
+          @Override
+          public void incomingPdu(Pdu pdu) {
+              setUpReceiver(pdu);
+          }
+      };
+      netif.addListener(lis);
   }
 
   @AfterEach
   public void tearDown()
   {
+      netif.removeListener(lis);
       netif.kill();
       netif = null;
   }
-
-  private static int REQUEST_ID = 0x00112233;
-  private static ActionResponseRequestStatus REQUEST_STATUS = ActionResponseRequestStatus.RETRANSMIT_REQUEST_LATER;
 
   private static FixedDatum fixedDatum1 = new FixedDatum();
   private static int fixedDatum1Value = 0x111111FF;
@@ -59,7 +63,6 @@ public class FixedAndVariableDatumRoundTripTest
   private static VariableRecordType variableDatum1Type = VariableRecordType.ACLS_AIRCRAFT_REPORT;
   private static String variableDatum1String = "varDatum1Value111";
   private static byte[] variableDatum1Value = variableDatum1String.getBytes();
-  private static int variableDatum1LengthInBits = variableDatum1String.length() * 8 - 1; // test
 
   private static VariableDatum variableDatum2 = new VariableDatum();
   private static VariableRecordType variableDatum2Type = VariableRecordType.Z_ACCELERATION;
@@ -77,11 +80,9 @@ public class FixedAndVariableDatumRoundTripTest
 
     variableDatum1.setVariableDatumID(variableDatum1Type);
     variableDatum1.setVariableDatumValue(variableDatum1Value);
-    //variableDatum1.setVariableDatumLength(variableDatum1LengthInBits);
 
     variableDatum2.setVariableDatumID(variableDatum2Type);
     variableDatum2.setVariableDatumValue(variableDatum2Value);
-    //variableDatum2.setVariableDatumLength(variableDatum2Value.length * 8); //in bits
   }
 
   @Test
@@ -98,9 +99,8 @@ public class FixedAndVariableDatumRoundTripTest
     sentPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      Thread.sleep(250l); // make sure receiver is listening
       netif.send(sentPdu);
-      Thread.sleep(1000l);
+      Thread.sleep(100l);
     }
     catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
