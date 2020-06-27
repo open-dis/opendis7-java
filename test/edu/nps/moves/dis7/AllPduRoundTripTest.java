@@ -17,14 +17,13 @@ package edu.nps.moves.dis7;
  * @version $Id$
  */
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.nio.file.Path;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,7 +31,13 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("All Pdu Round Trip Test")
 public class AllPduRoundTripTest
 {
-  private PduFactory pduFactory;
+  DisThreadedNetIF disnetworking;
+  DisThreadedNetIF.PduListener lis;
+  List<Pdu> pdusSent = new ArrayList<>();
+  List<Pdu> pdusReceived = new ArrayList<>();
+  List<Pdu> pdusRead = new ArrayList<>();
+  PduFactory pduFactory;
+  PduRecorder recorder;
 
   @BeforeAll
   public static void beforeAllTests()
@@ -64,90 +69,89 @@ public class AllPduRoundTripTest
       
       pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
 
-      sendOnePdu(pduFactory.makeAcknowledgePdu());
-      sendOnePdu(pduFactory.makeAcknowledgeReliablePdu());
-      sendOnePdu(pduFactory.makeActionRequestPdu());
-      sendOnePdu(pduFactory.makeActionRequestReliablePdu());
-      sendOnePdu(pduFactory.makeActionResponsePdu());
-      sendOnePdu(pduFactory.makeActionResponseReliablePdu());
-      sendOnePdu(pduFactory.makeAggregateStatePdu());
-      sendOnePdu(pduFactory.makeAppearancePdu());
-      sendOnePdu(pduFactory.makeArealObjectStatePdu());
-      sendOnePdu(pduFactory.makeArticulatedPartsPdu());
-      sendOnePdu(pduFactory.makeAttributePdu());
-      sendOnePdu(pduFactory.makeCollisionElasticPdu());
-      sendOnePdu(pduFactory.makeCollisionPdu());
-      sendOnePdu(pduFactory.makeCommentPdu());
-      sendOnePdu(pduFactory.makeCommentReliablePdu());
-      sendOnePdu(pduFactory.makeCreateEntityPdu());
-      sendOnePdu(pduFactory.makeCreateEntityReliablePdu());
-      sendOnePdu(pduFactory.makeDataPdu());
-      sendOnePdu(pduFactory.makeDataQueryPdu());
-      sendOnePdu(pduFactory.makeDataQueryReliablePdu());
-      sendOnePdu(pduFactory.makeDataReliablePdu());
-      sendOnePdu(pduFactory.makeDesignatorPdu());
-      sendOnePdu(pduFactory.makeDetonationPdu());
-      sendOnePdu(pduFactory.makeDirectedEnergyFirePdu());
-      sendOnePdu(pduFactory.makeElectronicEmissionsPdu());
-      sendOnePdu(pduFactory.makeEntityDamageStatusPdu());
-      sendOnePdu(pduFactory.makeEntityStatePdu());
-      sendOnePdu(pduFactory.makeEntityStateUpdatePdu());
-      sendOnePdu(pduFactory.makeEnvironmentalProcessPdu());
-      sendOnePdu(pduFactory.makeEventReportPdu());
-      sendOnePdu(pduFactory.makeEventReportReliablePdu());
-      sendOnePdu(pduFactory.makeFirePdu());
-      sendOnePdu(pduFactory.makeGriddedDataPdu());
-      sendOnePdu(pduFactory.makeIffPdu());
-      sendOnePdu(pduFactory.makeInformationOperationsReportPdu());
-      sendOnePdu(pduFactory.makeInformationOperationsActionPdu());
-      sendOnePdu(pduFactory.makeIntercomControlPdu());
-      sendOnePdu(pduFactory.makeIntercomSignalPdu());
-      sendOnePdu(pduFactory.makeIsGroupOfPdu());
-      sendOnePdu(pduFactory.makeIsPartOfPdu());
-      sendOnePdu(pduFactory.makeLEDetonationPdu());
-      sendOnePdu(pduFactory.makeLEFirePdu());
-      sendOnePdu(pduFactory.makeLinearObjectStatePdu());
-      sendOnePdu(pduFactory.makeMinefieldDataPdu());
-      sendOnePdu(pduFactory.makeMinefieldQueryPdu());
-      sendOnePdu(pduFactory.makeMinefieldResponseNackPdu());
-      sendOnePdu(pduFactory.makeMinefieldStatePdu());
-      sendOnePdu(pduFactory.makePointObjectStatePdu());
-      sendOnePdu(pduFactory.makeReceiverPdu());
-      sendOnePdu(pduFactory.makeRecordQueryReliablePdu());
-      sendOnePdu(pduFactory.makeRecordReliablePdu());
-      sendOnePdu(pduFactory.makeRemoveEntityPdu());
-      sendOnePdu(pduFactory.makeRemoveEntityReliablePdu());
-      sendOnePdu(pduFactory.makeRepairCompletePdu());
-      sendOnePdu(pduFactory.makeRepairResponsePdu());
-      sendOnePdu(pduFactory.makeResupplyCancelPdu());
-      sendOnePdu(pduFactory.makeResupplyOfferPdu());
-      sendOnePdu(pduFactory.makeResupplyReceivedPdu());
-      sendOnePdu(pduFactory.makeSeesPdu());
-      sendOnePdu(pduFactory.makeServiceRequestPdu());
-      sendOnePdu(pduFactory.makeSetDataPdu());
-      sendOnePdu(pduFactory.makeSetDataReliablePdu());
-      sendOnePdu(pduFactory.makeSetRecordReliablePdu());
-      sendOnePdu(pduFactory.makeSignalPdu());
-      sendOnePdu(pduFactory.makeStartResumePdu());
-      sendOnePdu(pduFactory.makeStartResumeReliablePdu());
-      sendOnePdu(pduFactory.makeStopFreezePdu());
-      sendOnePdu(pduFactory.makeStopFreezeReliablePdu());
-      sendOnePdu(pduFactory.makeTransferOwnershipPdu());
-      sendOnePdu(pduFactory.makeTransmitterPdu());
-      sendOnePdu(pduFactory.makeTspiPdu());
-      sendOnePdu(pduFactory.makeUnderwaterAcousticPdu());
-
-      //sleep(100L); // go sender/receiver go!  is this enough time to receive?
-                    
-      // TODO is there a more reliable way to determine whether receiver is complete?
+      pdusSent.add(pduFactory.makeAcknowledgePdu());
+      pdusSent.add(pduFactory.makeAcknowledgeReliablePdu());
+      pdusSent.add(pduFactory.makeActionRequestPdu());
+      pdusSent.add(pduFactory.makeActionRequestReliablePdu());
+      pdusSent.add(pduFactory.makeActionResponsePdu());
+      pdusSent.add(pduFactory.makeActionResponseReliablePdu());
+      pdusSent.add(pduFactory.makeAggregateStatePdu());
+      pdusSent.add(pduFactory.makeAppearancePdu());
+      pdusSent.add(pduFactory.makeArealObjectStatePdu());
+      pdusSent.add(pduFactory.makeArticulatedPartsPdu());
+      pdusSent.add(pduFactory.makeAttributePdu());
+      pdusSent.add(pduFactory.makeCollisionElasticPdu());
+      pdusSent.add(pduFactory.makeCollisionPdu());
+      pdusSent.add(pduFactory.makeCommentPdu());
+      pdusSent.add(pduFactory.makeCommentReliablePdu());
+      pdusSent.add(pduFactory.makeCreateEntityPdu());
+      pdusSent.add(pduFactory.makeCreateEntityReliablePdu());
+      pdusSent.add(pduFactory.makeDataPdu());
+      pdusSent.add(pduFactory.makeDataQueryPdu());
+      pdusSent.add(pduFactory.makeDataQueryReliablePdu());
+      pdusSent.add(pduFactory.makeDataReliablePdu());
+      pdusSent.add(pduFactory.makeDesignatorPdu());
+      pdusSent.add(pduFactory.makeDetonationPdu());
+      pdusSent.add(pduFactory.makeDirectedEnergyFirePdu());
+      pdusSent.add(pduFactory.makeElectronicEmissionsPdu());
+      pdusSent.add(pduFactory.makeEntityDamageStatusPdu());
+      pdusSent.add(pduFactory.makeEntityStatePdu());
+      pdusSent.add(pduFactory.makeEntityStateUpdatePdu());
+      pdusSent.add(pduFactory.makeEnvironmentalProcessPdu());
+      pdusSent.add(pduFactory.makeEventReportPdu());
+      pdusSent.add(pduFactory.makeEventReportReliablePdu());
+      pdusSent.add(pduFactory.makeFirePdu());
+      pdusSent.add(pduFactory.makeGriddedDataPdu());
+      pdusSent.add(pduFactory.makeIffPdu());
+      pdusSent.add(pduFactory.makeInformationOperationsReportPdu());
+      pdusSent.add(pduFactory.makeInformationOperationsActionPdu());
+      pdusSent.add(pduFactory.makeIntercomControlPdu());
+      pdusSent.add(pduFactory.makeIntercomSignalPdu());
+      pdusSent.add(pduFactory.makeIsGroupOfPdu());
+      pdusSent.add(pduFactory.makeIsPartOfPdu());
+      pdusSent.add(pduFactory.makeLEDetonationPdu());
+      pdusSent.add(pduFactory.makeLEFirePdu());
+      pdusSent.add(pduFactory.makeLinearObjectStatePdu());
+      pdusSent.add(pduFactory.makeMinefieldDataPdu());
+      pdusSent.add(pduFactory.makeMinefieldQueryPdu());
+      pdusSent.add(pduFactory.makeMinefieldResponseNackPdu());
+      pdusSent.add(pduFactory.makeMinefieldStatePdu());
+      pdusSent.add(pduFactory.makePointObjectStatePdu());
+      pdusSent.add(pduFactory.makeReceiverPdu());
+      pdusSent.add(pduFactory.makeRecordQueryReliablePdu());
+      pdusSent.add(pduFactory.makeRecordReliablePdu());
+      pdusSent.add(pduFactory.makeRemoveEntityPdu());
+      pdusSent.add(pduFactory.makeRemoveEntityReliablePdu());
+      pdusSent.add(pduFactory.makeRepairCompletePdu());
+      pdusSent.add(pduFactory.makeRepairResponsePdu());
+      pdusSent.add(pduFactory.makeResupplyCancelPdu());
+      pdusSent.add(pduFactory.makeResupplyOfferPdu());
+      pdusSent.add(pduFactory.makeResupplyReceivedPdu());
+      pdusSent.add(pduFactory.makeSeesPdu());
+      pdusSent.add(pduFactory.makeServiceRequestPdu());
+      pdusSent.add(pduFactory.makeSetDataPdu());
+      pdusSent.add(pduFactory.makeSetDataReliablePdu());
+      pdusSent.add(pduFactory.makeSetRecordReliablePdu());
+      pdusSent.add(pduFactory.makeSignalPdu());
+      pdusSent.add(pduFactory.makeStartResumePdu());
+      pdusSent.add(pduFactory.makeStartResumeReliablePdu());
+      pdusSent.add(pduFactory.makeStopFreezePdu());
+      pdusSent.add(pduFactory.makeStopFreezeReliablePdu());
+      pdusSent.add(pduFactory.makeTransferOwnershipPdu());
+      pdusSent.add(pduFactory.makeTransmitterPdu());
+      pdusSent.add(pduFactory.makeTspiPdu());
+      pdusSent.add(pduFactory.makeUnderwaterAcousticPdu());
+      
+      pdusSent.forEach(p -> {
+          disnetworking.send(p);
+          sleep(1l); // give receiver time to process
+      });
 
       shutDownSenderRecorder();
       
-      System.out.println("pduReceivedMap.size()=" + pduReceivedMap.size() + ", pduSentMap.size()=" + pduSentMap.size() + 
-           ", match=" + (pduReceivedMap.size() == pduSentMap.size()));
-           
-      assertEquals(pduReceivedMap.size(), pduSentMap.size(), "No pdus, or not all sent pdus, received");
-
+      System.out.println("pduReceivedMap.size()=" + pdusReceived.size() + ", pduSentMap.size()=" + pdusSent.size() + 
+           ", match=" + (pdusReceived.size() == pdusSent.size()));
+        
       testForEquals();
       
       Semaphore mutex = new Semaphore(1);
@@ -164,22 +168,6 @@ public class AllPduRoundTripTest
 
     assertNull(ex, "Exception should be null if successful creation of all objects");
   }
-
-  private Map<DISPDUType, Pdu> pduSentMap = new HashMap<>();
-  private Map<DISPDUType, Pdu> pduReceivedMap = new HashMap<>();
-  private Map<DISPDUType, Pdu> pduReadMap = new HashMap<>();
-
-  DisThreadedNetIF disnetworking;
-  PduRecorder recorder;
-
-  private void sendOnePdu(Pdu pdu)
-  {
-    pduSentMap.put(pdu.getPduType(), pdu);
-    if (pdu.getPduType() == DISPDUType.OTHER)
-        System.out.println ("*** Note: DISPDUType.OTHER not supported");
-    disnetworking.send(pdu);
-    sleep(100L); // TODO debugging
-  }
   
   private void setupSenderRecorder() throws Exception
   { 
@@ -187,24 +175,29 @@ public class AllPduRoundTripTest
     disnetworking = recorder.getDisThreadedNetIF();
     
     // When the DisThreadedNetIF receives a pdu, a call is made to the
-    // everyTypeListeners which makes a lamba call back here to record received
+    // everyTypeListeners which makes a lamba call back here to capture received
     // pdus
-    disnetworking.addListener(pdu -> {
-        pduReceivedMap.put(pdu.getPduType(), pdu);
-    });
+    lis = new DisThreadedNetIF.PduListener() {
+      @Override
+      public void incomingPdu(Pdu pdu) {
+          pdusReceived.add(pdu);
+      }
+    };
+    disnetworking.addListener(lis);
     System.out.println("Recorder log at " + recorder.getLogFile());
   }
 
   /** Will shutdown the common send/receive network interface */
   private void shutDownSenderRecorder() throws Exception
   {
+    disnetworking.removeListener(lis);
     recorder.end();
   }
 
   private void testForEquals() throws Exception
   {
-    assertEquals(pduSentMap.size(), pduReceivedMap.size(), "Different number of pdus received than sent");
-    assertIterableEquals(pduSentMap.keySet(), pduReceivedMap.keySet(), "Sent and received pdus not identical");
+    assertEquals(pdusSent.size(), pdusReceived.size(), "Different number of pdus received than sent");
+    assertIterableEquals(pdusSent, pdusReceived, "Sent and received pdus not identical");
     
     // TODO is this sufficient?  has each PDU value been compared as well?
   }
@@ -218,34 +211,30 @@ public class AllPduRoundTripTest
     player.addRawListener(ba -> {
       if (ba != null) {
         Pdu pdu = pduFactory.createPdu(ba);
-        pduReadMap.put(pdu.getPduType(), pdu);
+        pdusRead.add(pdu);
       }
       else {
         player.end();
         sem.release();
       }
     });
-
-    player.startResume();
   }
 
   private void testRecorderForEquals() throws Exception
   {
-    assertEquals(pduSentMap.size(), pduReadMap.size(), "Different number of pdus sent than read");
-    assertIterableEquals(pduSentMap.keySet(), pduReadMap.keySet(), "Sent and read pdus not identical");
+    assertEquals(pdusSent.size(), pdusRead.size(), "Different number of pdus sent than read");
+    assertIterableEquals(pdusSent, pdusRead, "Sent and read pdus not identical");
     
     // TODO is this sufficient?  has each PDU value been compared as well?
   }
   
-//@formatter:off
-  private void sleep(long ms)
-  {
+  private static void sleep(long ms) {
     try {
         Thread.sleep(ms);
+    } catch (InterruptedException ex) {
+        fail("NetIF Send: " + ex);
     }
-    catch (InterruptedException ex) {}
   }
-//@formatter:on
   
   public static void main(String[] args)
   {
