@@ -156,7 +156,8 @@ public class SignalPdusTest {
     }
 
     private static void handleReceivedPdu(Pdu pdu) {
-        receivedPdus.add(pdu);
+        if (!receivedPdus.contains(pdu))
+            receivedPdus.add(pdu);
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
