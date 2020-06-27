@@ -48,25 +48,10 @@ public class PduRecorder implements PduReceiver
   
   private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
-    /**
-     * TODO change this to enumeration type for strictness
-     * @return the pduLogEncoding
-     */
-    public static String getEncoding() {
-        return pduLogEncoding;
-    }
-
-    /**
-     * @param aEncoding the pduLogEncoding to set
-     */
-    public static void setEncoding(String aEncoding) {
-        pduLogEncoding = aEncoding;
-    }
-
   private Writer writer;
   private File   logFile;
-  
   private DisThreadedNetIF disThreadedNetIF;
+  private DisThreadedNetIF.RawPduListener lis; 
   
   /**
    * Default constructor that uses default values for output directory, multicast
@@ -106,11 +91,33 @@ public class PduRecorder implements PduReceiver
     writer = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     
     disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
-    disThreadedNetIF.addRawListener(bAndL -> {
-        receivePdu(bAndL.buff, bAndL.length);
-    });
+    
+    lis = new DisThreadedNetIF.RawPduListener() {
+        @Override
+        public void incomingPdu(DisThreadedNetIF.BuffAndLength bAndL) {
+            receivePdu(bAndL.buff, bAndL.length);
+        }
+    };
+    
+    disThreadedNetIF.addRawListener(lis);
     System.out.println(getClass() + " listening to IP address " + mcastaddr + " on port: " + port);
   }
+  
+    /**
+     * TODO change this to enumeration type for strictness
+     *
+     * @return the pduLogEncoding
+     */
+    public static String getEncoding() {
+        return pduLogEncoding;
+    }
+
+    /**
+     * @param aEncoding the pduLogEncoding to set
+     */
+    public static void setEncoding(String aEncoding) {
+        pduLogEncoding = aEncoding;
+    }
   
   public void startResume()
   {
@@ -124,6 +131,8 @@ public class PduRecorder implements PduReceiver
   
   public File end()
   {
+    doSave = false;
+    disThreadedNetIF.removeRawListener(lis);
     disThreadedNetIF.kill();
 
     writeFooter();
