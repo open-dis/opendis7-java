@@ -292,15 +292,24 @@ public class DisThreadedNetIF
         } catch (IOException e) {}
     };
 
-  private void toListeners(Pdu pdu)
-  {
-    everyTypeListeners.forEach(lis -> lis.incomingPdu(pdu));
-    if (pdu != null) {
-      List<PduListener> arLis = typeListeners.get(pdu.getPduType());
-      if (arLis != null)
-        arLis.forEach(lis -> lis.incomingPdu(pdu));
+    private void toListeners(Pdu pdu) {
+        if (everyTypeListeners.isEmpty()) {
+            return;
+        }
+
+        if (pdu != null) {
+            everyTypeListeners.forEach(lis -> lis.incomingPdu(pdu));
+
+            if (typeListeners.isEmpty()) {
+                return;
+            }
+
+            List<PduListener> arLis = typeListeners.get(pdu.getPduType());
+            if (arLis != null) {
+                arLis.forEach(lis -> lis.incomingPdu(pdu));
+            }
+        }
     }
-  }
   
   private void toRawListeners(byte[] data, int len)
   {
