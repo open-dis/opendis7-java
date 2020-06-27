@@ -51,7 +51,14 @@ public class PduRecorder implements PduReceiver
   private Writer writer;
   private File   logFile;
   private DisThreadedNetIF disThreadedNetIF;
-  private DisThreadedNetIF.RawPduListener lis; 
+  private DisThreadedNetIF.RawPduListener lis;
+  
+  Long startNanoTime = null;
+  StringBuilder sb = new StringBuilder();
+  Base64.Encoder base64Encoder = Base64.getEncoder();
+  int pduCount = 0;
+  boolean headerWritten = false;
+  boolean doSave = true;
   
   /**
    * Default constructor that uses default values for output directory, multicast
@@ -136,22 +143,15 @@ public class PduRecorder implements PduReceiver
     disThreadedNetIF.kill();
 
     writeFooter();
-      try {
-          writer.close(); // a flush occurs first during a close
-      } catch (IOException ex) {
-          Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
-      }
+    try {
+        writer.close(); // a flush occurs first during a close
+    } catch (IOException ex) {
+        Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+    }
     System.out.println();
     System.out.println("Recorder log file closed: " + logFile.getPath());
     return logFile;
   }
- 
-  Long startNanoTime = null;
-  StringBuilder sb = new StringBuilder();
-  Base64.Encoder base64Encoder = Base64.getEncoder();
-  int pduCount = 0;
-  boolean headerWritten = false;
-  boolean doSave = true;
   
   @Override
   public void receivePdu(byte[] buff, int len)
