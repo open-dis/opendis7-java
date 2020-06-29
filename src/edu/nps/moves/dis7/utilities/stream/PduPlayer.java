@@ -359,6 +359,7 @@ public class PduPlayer {
     }
 
     private void closer() {
+        netSend = false;
         if (datagramSocket != null) {
             datagramSocket.close();
             datagramSocket = null;
