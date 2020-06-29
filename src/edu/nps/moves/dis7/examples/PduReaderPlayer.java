@@ -41,22 +41,24 @@ public class PduReaderPlayer
         break;
       case 1:
         outDir = args[0];
+        sendToNet = Boolean.valueOf(args[1]);
         break;
       case 3:
         outDir = args[0];
         mcast = args[1];
         port = Integer.parseInt(args[2]);
-        sendToNet = true;
+        sendToNet = Boolean.valueOf(args[3]);
         break;
       default:
-        System.err.println("Usage: PduReaderPlayer() or PduReaderPlayer(\"outputdir\") or PduReaderPlayer(\"outputdir\",\"multicast address\", ipPort");
+        System.err.println("Usage: PduReaderPlayer() or "
+                + "PduReaderPlayer(\"outputdir\", \"sendToNet true/false\") or "
+                + "PduReaderPlayer(\"outputdir\", \"multicast address\", \"ipPort\", \"sendToNet true/false\"");
         System.exit(1);
     }
 
     System.out.println("Beginning pdu playback from directory " + outDir);
     try {
-      PduPlayer pduPlayer = new PduPlayer(mcast, port, Path.of(outDir));
-      pduPlayer.sendToNet(sendToNet);
+      PduPlayer pduPlayer = new PduPlayer(mcast, port, Path.of(outDir), sendToNet);
       mystate state = mystate.RUNNING;
       Scanner scan = new Scanner(System.in);
 

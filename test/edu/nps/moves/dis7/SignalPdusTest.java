@@ -133,8 +133,7 @@ public class SignalPdusTest {
         Path path = Path.of(recorder.getLogFile()).getParent();
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path);
-        player.sendToNet(false);
+        PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path, false);
         player.addRawListener(ba -> {
             if (ba != null)
                 assertNotNull(pduFac.createPdu(ba), "PDU creation failure");
