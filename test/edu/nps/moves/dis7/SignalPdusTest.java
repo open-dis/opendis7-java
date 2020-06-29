@@ -8,6 +8,7 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
+import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
@@ -92,6 +93,7 @@ public class SignalPdusTest {
 
     @BeforeEach
     public void setUp() throws IOException, InterruptedException {
+        new File("./pduLog/Pdusave.dislog").delete();
     }
 
     @AfterEach
@@ -130,10 +132,10 @@ public class SignalPdusTest {
         System.out.println("testRoundTripLog");
         
         mutex.acquire();
-        Path path = Path.of(recorder.getLogFile()).getParent();
+        Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(netif.getMcastGroup(), netif.getDisPort(), path, false);
+        PduPlayer player = new PduPlayer(DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT, path, false);
         player.addRawListener(ba -> {
             if (ba != null)
                 assertNotNull(pduFac.createPdu(ba), "PDU creation failure");
@@ -164,9 +166,12 @@ public class SignalPdusTest {
         setUpClass();
         
         SignalPdusTest spt = new SignalPdusTest();
+        spt.setUp();
         spt.testRoundTripNet();
         spt.tearDown();
+        spt.setUp();
         spt.testRoundTripLog();
+        spt.tearDown();
     }
 
 }

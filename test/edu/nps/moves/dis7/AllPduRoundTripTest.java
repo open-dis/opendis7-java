@@ -21,6 +21,7 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
+import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,15 +51,19 @@ public class AllPduRoundTripTest
   {
   }
 
-  @BeforeEach
-  public void setUp()
-  {
-  }
+    @BeforeEach
+    public void setUp() {
+        File file = new File("./pduLog");
 
-  @AfterEach
-  public void tearDown()
-  {
-  }
+        for (File subFile : file.listFiles()) {
+            subFile.delete();
+        }
+    }
+
+    @AfterEach
+    public void tearDown()
+    {
+    }
 
   @Test
   public void testRoundTripAllPdus()
