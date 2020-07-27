@@ -93,7 +93,7 @@ public class EspduSender
         else if (networkModeString.equalsIgnoreCase("multicast")) {
           mode = NetworkMode.MULTICAST;
           if (!destinationIp.isMulticastAddress()) {
-            throw new RuntimeException("Sending to multicast address, but destination address " + destinationIp.toString() + "is not multicast");
+            throw new RuntimeException("Sending to multicast address, but destination address " + destinationIp.toString() + " is not multicast");
           }
 
           InetSocketAddress group = new InetSocketAddress(destinationIp, port);
