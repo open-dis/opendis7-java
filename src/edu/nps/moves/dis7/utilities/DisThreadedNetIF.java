@@ -100,7 +100,7 @@ public class DisThreadedNetIF
           Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
       }
     group = new InetSocketAddress(maddr, disPort);
-    ni = findIp4Interface();
+    ni = findIpv4Interface();
     init();
   }
 
@@ -334,11 +334,11 @@ public class DisThreadedNetIF
   }
 
     /**
-     * Find proper interface
+     * Find proper IPV4 interface
      *
      * @return a network interface to use to join a multicast group
      */
-    public static NetworkInterface findIp4Interface() {
+    public static NetworkInterface findIpv4Interface() {
         try {
             Enumeration<NetworkInterface> ifaces = NetworkInterface.getNetworkInterfaces();
             NetworkInterface nif;

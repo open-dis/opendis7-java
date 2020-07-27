@@ -97,7 +97,7 @@ public class EspduSender
           }
 
           InetSocketAddress group = new InetSocketAddress(destinationIp, port);
-          socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+          socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
         }
       } // end networkModeString
     }

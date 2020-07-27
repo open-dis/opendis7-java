@@ -292,7 +292,7 @@ public class PduSender
       InetAddress localMulticastAddress = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
       MulticastSocket socket = new MulticastSocket(port);
       InetSocketAddress group = new InetSocketAddress(localMulticastAddress, port);
-      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+      socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);

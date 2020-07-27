@@ -43,7 +43,7 @@ public class EspduReceiver
       InetAddress maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
       InetSocketAddress group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
 
-      socket.joinGroup(group, DisThreadedNetIF.findIp4Interface());
+      socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
       
       // Loop infinitely, receiving datagrams
       EntityID eid;

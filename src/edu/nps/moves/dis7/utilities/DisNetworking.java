@@ -61,7 +61,7 @@ public class DisNetworking
           Logger.getLogger(DisNetworking.class.getName()).log(Level.SEVERE, null, ex);
       }
     group = new InetSocketAddress(maddr, DIS_PORT);
-    ni = DisThreadedNetIF.findIp4Interface();
+    ni = DisThreadedNetIF.findIpv4Interface();
     baos = new ByteArrayOutputStream();
     dos = new DataOutputStream(baos);
   }
