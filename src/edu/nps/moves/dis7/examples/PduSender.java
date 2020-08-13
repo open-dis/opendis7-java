@@ -41,7 +41,7 @@ public class PduSender
       }
     }
     catch (UnknownHostException e) {
-      System.out.println("Unable to open socket: " + e);
+      System.err.println("Unable to open socket: " + e);
     }
   }
 
@@ -289,9 +289,8 @@ public class PduSender
 
       // Send the PDUs we created
       DatagramPacket packet;
-      InetAddress localMulticastAddress = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
-      MulticastSocket socket = new MulticastSocket(port);
-      InetSocketAddress group = new InetSocketAddress(localMulticastAddress, port);
+      MulticastSocket socket = new MulticastSocket();
+      InetSocketAddress group = new InetSocketAddress(multicastAddress, port);
       socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -303,7 +302,7 @@ public class PduSender
         pdu.marshal(dos);
 
         buffer = baos.toByteArray();
-        packet = new DatagramPacket(buffer, buffer.length, localMulticastAddress, port);
+        packet = new DatagramPacket(buffer, buffer.length, group);
         socket.send(packet);
         System.out.println("Sent PDU of type " + pdu.getClass().getSimpleName() + " ("+pdu.getPduType().getValue()+")");
         baos.reset();
