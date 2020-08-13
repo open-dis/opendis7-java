@@ -42,7 +42,7 @@ public class EspduSenderNIO
     eid.setEntityID((short) 2);
 
     try {
-      socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
+      socket = new MulticastSocket();
       maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
       group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
@@ -51,7 +51,7 @@ public class EspduSenderNIO
       EulerAngles orientation;
       float psi;
       byte[] data = new byte[144];
-      DatagramPacket packet = new DatagramPacket(data, data.length, maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
+      DatagramPacket packet = new DatagramPacket(data, data.length, group);
 
       while (true) {
         for (int idx = 0; idx < 100; idx++) {
