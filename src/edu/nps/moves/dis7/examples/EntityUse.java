@@ -13,6 +13,7 @@ import edu.nps.moves.dis7.entities.EntityTypeFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import java.io.IOException;
+import edu.nps.moves.dis7.entities.usa.platform.surface.*;
 
 /**
  * The Entity Type record, described in section 6.2.30 of IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols, is
@@ -101,8 +102,7 @@ public class EntityUse
     espdu = (EntityStatePdu)pduFactory.createPdu(DISPDUType.ENTITY_STATE);
     /* set desired entity state fields here */
 
-    edu.nps.moves.dis7.entities.usa.platform.surface.AD44Shenandoah et2 = new edu.nps.moves.dis7.entities.usa.platform.surface.AD44Shenandoah();
-    /* Use import statement to make the code above more readable */
+    AD44Shenandoah et2 = new AD44Shenandoah();
     
     espdu.setEntityType(et2);
     netif.send(espdu);  // possibly throws IOException
