@@ -270,7 +270,7 @@ public class DisThreadedNetIF
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         ByteArrayOutputStream baos = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
         DataOutputStream dos = new DataOutputStream(baos);
-        DatagramPacket packet = new DatagramPacket(baos.toByteArray(), baos.size(), maddr, disPort);
+        DatagramPacket packet = new DatagramPacket(baos.toByteArray(), baos.size(), group);
 
         while (!killed) { // keep trying on error
             try {

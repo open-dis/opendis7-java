@@ -69,6 +69,7 @@ public class EspduSender
 
     // Network mode: unicast, multicast, broadcast
     String networkModeString = systemProperties.getProperty("networkMode"); // unicast or multicast or broadcast
+    InetSocketAddress group = null;
 
     // Set up a socket to send information
     try {
@@ -76,7 +77,7 @@ public class EspduSender
       if (portString != null)
         port = Integer.parseInt(portString);
 
-      socket = new MulticastSocket(port);
+      socket = new MulticastSocket();
 
       // Where we send packets to, the destination IP address
       if (destinationIpString != null) {
@@ -96,7 +97,7 @@ public class EspduSender
             throw new RuntimeException("Sending to multicast address, but destination address " + destinationIp.toString() + " is not multicast");
           }
 
-          InetSocketAddress group = new InetSocketAddress(destinationIp, port);
+          group = new InetSocketAddress(destinationIp, port);
           socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
         }
       } // end networkModeString
@@ -232,10 +233,10 @@ public class EspduSender
         
         for (InetAddress broadcast : broadcastAddresses) {
             System.out.println("Sending broadcast datagram packet to " + broadcast);
-            packet = new DatagramPacket(data, data.length, broadcast, DisThreadedNetIF.DEFAULT_DIS_PORT);
+            packet = new DatagramPacket(data, data.length, broadcast, port);
             socket.send(packet);
             // TODO experiment with these!  8)
-            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, DisThreadedNetIF.DEFAULT_DIS_PORT); // alternate
+            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, port); // alternate
             socket.send(packet);
         }
 
