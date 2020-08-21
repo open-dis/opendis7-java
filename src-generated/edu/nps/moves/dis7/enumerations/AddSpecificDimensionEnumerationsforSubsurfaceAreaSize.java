@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 133 marshal size 8<br>
- * Add Specific Dimension Enumerations for Subsurface Area Size<br>
+ * AddSpecificDimensionEnumerationsforSubsurfaceAreaSize<br>
  * The gaps in enumeration values are intentional and are reserved for future additions.
  */
 public enum AddSpecificDimensionEnumerationsforSubsurfaceAreaSize 
@@ -22,8 +22,8 @@ public enum AddSpecificDimensionEnumerationsforSubsurfaceAreaSize
     SMALL_SCHOOL_DENSE_5KM_LONG_X_250M_WIDE_X_83M_DEEP_1KM_X_5KM_X_166M (223, "Small School, Dense (.5km long x 250m wide x 83m deep - 1km x .5km x 166m)"),
     /** Medium School (.5km x 1km x 125m - 1km x 2km x 500m) */
     MEDIUM_SCHOOL_5KM_X_1KM_X_125M_1KM_X_2KM_X_500M (224, "Medium School (.5km x 1km x 125m - 1km x 2km x 500m)"),
-    /** Medium School, Dense (.5km x 1km x 125m  - 1km x 2km x 500m) */
-    MEDIUM_SCHOOL_DENSE_5KM_X_1KM_X_125M_1KM_X_2KM_X_500M (225, "Medium School, Dense (.5km x 1km x 125m  - 1km x 2km x 500m)"),
+    /** Medium School, Dense (.5km x 1km x 125m - 1km x 2km x 500m) */
+    MEDIUM_SCHOOL_DENSE_5KM_X_1KM_X_125M_1KM_X_2KM_X_500M (225, "Medium School, Dense (.5km x 1km x 125m - 1km x 2km x 500m)"),
     /** Large School (5km x 2km x 500m - 10km x 4km x 1km) */
     LARGE_SCHOOL_5KM_X_2KM_X_500M_10KM_X_4KM_X_1KM (226, "Large School (5km x 2km x 500m - 10km x 4km x 1km)"),
     /** Large School, Dense (5km x 2km x 500m - 10km x 4km x 1km) */

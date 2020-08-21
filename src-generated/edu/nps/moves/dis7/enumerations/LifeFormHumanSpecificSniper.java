@@ -8,66 +8,66 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 481 marshal size 8<br>
- * Life Form-Human-Specific-Sniper
+ * LifeFormHumanSpecificSniper
  */
 public enum LifeFormHumanSpecificSniper 
 {
     /** Other */
     OTHER (0, "Other"),
     /** 5.8mm QBU-88 (Type 88) */
-    $58MM_QBU_88_TYPE_88 (1, "5.8mm QBU-88 (Type 88)"),
+    NAME_58MM_QBU_88_TYPE_88 (1, "5.8mm QBU-88 (Type 88)"),
     /** 7.62mm C3 */
-    $762MM_C3 (30, "7.62mm C3"),
+    NAME_762MM_C3 (30, "7.62mm C3"),
     /** 7.62mm FR F2 */
-    $762MM_FR_F2 (31, "7.62mm FR F2"),
+    NAME_762MM_FR_F2 (31, "7.62mm FR F2"),
     /** 7.62mm AWM-F (G22) */
-    $762MM_AWM_F_G22 (32, "7.62mm AWM-F (G22)"),
+    NAME_762MM_AWM_F_G22 (32, "7.62mm AWM-F (G22)"),
     /** 7.62mm G3 SG/1 */
-    $762MM_G3_SG_1 (33, "7.62mm G3 SG/1"),
+    NAME_762MM_G3_SG_1 (33, "7.62mm G3 SG/1"),
     /** 7.62mm Galil Sniper */
-    $762MM_GALIL_SNIPER (34, "7.62mm Galil Sniper"),
+    NAME_762MM_GALIL_SNIPER (34, "7.62mm Galil Sniper"),
     /** 7.62mm L96A1 */
-    $762MM_L96A1 (35, "7.62mm L96A1"),
+    NAME_762MM_L96A1 (35, "7.62mm L96A1"),
     /** 7.62mm M14 DMR */
-    $762MM_M14_DMR (36, "7.62mm M14 DMR"),
+    NAME_762MM_M14_DMR (36, "7.62mm M14 DMR"),
     /** 7.62mm M24 Sniper Weapon System (SWS) */
-    $762MM_M24_SNIPER_WEAPON_SYSTEM_SWS (37, "7.62mm M24 Sniper Weapon System (SWS)"),
+    NAME_762MM_M24_SNIPER_WEAPON_SYSTEM_SWS (37, "7.62mm M24 Sniper Weapon System (SWS)"),
     /** 7.62mm M40A1/A3 */
-    $762MM_M40A1_A3 (38, "7.62mm M40A1/A3"),
+    NAME_762MM_M40A1_A3 (38, "7.62mm M40A1/A3"),
     /** 7.62mm Steyr SSG 69 */
-    $762MM_STEYR_SSG_69 (39, "7.62mm Steyr SSG 69"),
+    NAME_762MM_STEYR_SSG_69 (39, "7.62mm Steyr SSG 69"),
     /** 7.62mm SVD (Dragunov) */
-    $762MM_SVD_DRAGUNOV (40, "7.62mm SVD (Dragunov)"),
+    NAME_762MM_SVD_DRAGUNOV (40, "7.62mm SVD (Dragunov)"),
     /** 7.62mm TYPE 79 */
-    $762MM_TYPE_79 (41, "7.62mm TYPE 79"),
+    NAME_762MM_TYPE_79 (41, "7.62mm TYPE 79"),
     /** 7.62mm SR-25 MK11 */
-    $762MM_SR_25_MK11 (42, "7.62mm SR-25 MK11"),
+    NAME_762MM_SR_25_MK11 (42, "7.62mm SR-25 MK11"),
     /** 7.62mm AW SR-98 */
-    $762MM_AW_SR_98 (43, "7.62mm AW SR-98"),
+    NAME_762MM_AW_SR_98 (43, "7.62mm AW SR-98"),
     /** 7.62mm Blaser R93 */
-    $762MM_BLASER_R93 (44, "7.62mm Blaser R93"),
+    NAME_762MM_BLASER_R93 (44, "7.62mm Blaser R93"),
     /** 7.7mm TYPE 99 */
-    $77MM_TYPE_99 (100, "7.7mm TYPE 99"),
+    NAME_77MM_TYPE_99 (100, "7.7mm TYPE 99"),
     /** 8.58mm Blaser R93 Tactical 2 */
-    $858MM_BLASER_R93_TACTICAL_2 (105, "8.58mm Blaser R93 Tactical 2"),
+    NAME_858MM_BLASER_R93_TACTICAL_2 (105, "8.58mm Blaser R93 Tactical 2"),
     /** 9mm VSS Vintorez */
-    $9MM_VSS_VINTOREZ (110, "9mm VSS Vintorez"),
+    NAME_9MM_VSS_VINTOREZ (110, "9mm VSS Vintorez"),
     /** 12.7mm Steyr HS .50 */
-    $127MM_STEYR_HS_50 (170, "12.7mm Steyr HS .50"),
+    NAME_127MM_STEYR_HS_50 (170, "12.7mm Steyr HS .50"),
     /** 12.7mm M82A1A Special Applications Scoped Rifle (SASR) */
-    $127MM_M82A1A_SPECIAL_APPLICATIONS_SCOPED_RIFLE_SASR (171, "12.7mm M82A1A Special Applications Scoped Rifle (SASR)"),
+    NAME_127MM_M82A1A_SPECIAL_APPLICATIONS_SCOPED_RIFLE_SASR (171, "12.7mm M82A1A Special Applications Scoped Rifle (SASR)"),
     /** 12.7mm NSV */
-    $127MM_NSV (172, "12.7mm NSV"),
+    NAME_127MM_NSV (172, "12.7mm NSV"),
     /** 12.7mm OSV-96 */
-    $127MM_OSV_96 (173, "12.7mm OSV-96"),
+    NAME_127MM_OSV_96 (173, "12.7mm OSV-96"),
     /** 12.7mm Rangemaster 50 */
-    $127MM_RANGEMASTER_50 (174, "12.7mm Rangemaster 50"),
+    NAME_127MM_RANGEMASTER_50 (174, "12.7mm Rangemaster 50"),
     /** 12.7mm V94 */
-    $127MM_V94 (175, "12.7mm V94"),
+    NAME_127MM_V94 (175, "12.7mm V94"),
     /** 20mm Denel NTW-20 */
-    $20MM_DENEL_NTW_20 (200, "20mm Denel NTW-20");
+    NAME_20MM_DENEL_NTW_20 (200, "20mm Denel NTW-20");
 
     private int value;
     private final String description;

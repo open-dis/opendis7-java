@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 610 marshal size 8<br>
- * Class 10 Supply Category - Material to Support Non-Military Programs
+ * Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms
  */
 public enum Class10SupplyCategoryMaterialtoSupportNonMilitaryPrograms implements Category
 {

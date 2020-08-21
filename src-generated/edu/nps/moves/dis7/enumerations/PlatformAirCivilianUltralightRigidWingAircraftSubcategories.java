@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 275 marshal size 8<br>
- * Platform-Air Civilian Ultralight Rigid Wing Aircraft Subcategories<br>
+ * PlatformAirCivilianUltralightRigidWingAircraftSubcategories<br>
  * Subcategories for Air Platform Category 81
  */
 public enum PlatformAirCivilianUltralightRigidWingAircraftSubcategories implements SubCategory

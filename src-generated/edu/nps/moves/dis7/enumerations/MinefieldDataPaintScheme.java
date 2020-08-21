@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 202 marshal size 8<br>
- * Minefield Data-Paint Scheme
+ * MinefieldDataPaintScheme
  */
 public class MinefieldDataPaintScheme extends DisBitSet 
 {
@@ -16,7 +16,7 @@ public class MinefieldDataPaintScheme extends DisBitSet
   /**
    * Identifies the paint scheme of the mine, Use {@link MinefieldPaintSchemePaintScheme} values for this field
    */
-  public static Bits PAINT_SCHEME = new Bits(2, 6, MinefieldPaintSchemePaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(2, 6, MinefieldPaintSchemePaintScheme.class);
 
   public static class Bits
   {

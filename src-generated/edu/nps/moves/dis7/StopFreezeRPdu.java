@@ -11,7 +11,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 /**
  * 5.12.4.5 Serves the same function as the Stop/Freeze PDU (see 5.6.5.5.1) but with the addition of reliability service levels.
- * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu implements Serializable
 {
@@ -160,7 +160,7 @@ public void marshal(DataOutputStream dos) throws Exception
 }
 
 /**
- * Unserializes an object from a DataInputStream.
+ * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
  * @param dis the InputStream

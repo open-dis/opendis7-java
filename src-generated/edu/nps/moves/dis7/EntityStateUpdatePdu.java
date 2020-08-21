@@ -11,7 +11,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 /**
  * 7.2.5. Nonstatic information about a particular entity may be communicated by issuing an Entity State Update PDU. 5.3.5.
- * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class EntityStateUpdatePdu extends EntityInformationFamilyPdu implements Serializable
 {
@@ -193,7 +193,7 @@ public void marshal(DataOutputStream dos) throws Exception
 }
 
 /**
- * Unserializes an object from a DataInputStream.
+ * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
  * @param dis the InputStream

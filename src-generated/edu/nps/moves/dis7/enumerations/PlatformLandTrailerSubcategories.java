@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 436 marshal size 8<br>
- * Platform-Land-Trailer Subcategories<br>
+ * PlatformLandTrailerSubcategories<br>
  * Subcategories for Land Platform Category 89
  */
 public enum PlatformLandTrailerSubcategories implements SubCategory
@@ -69,7 +69,9 @@ public enum PlatformLandTrailerSubcategories implements SubCategory
     /** Trailer, Kitchen */
     TRAILER_KITCHEN (25, "Trailer, Kitchen"),
     /** Trailer, UltraLight Aircraft */
-    TRAILER_ULTRALIGHT_AIRCRAFT (26, "Trailer, UltraLight Aircraft");
+    TRAILER_ULTRALIGHT_AIRCRAFT (26, "Trailer, UltraLight Aircraft"),
+    /** Trailer, Heavy Equipment */
+    TRAILER_HEAVY_EQUIPMENT (27, "Trailer, Heavy Equipment");
 
     private int value;
     private final String description;

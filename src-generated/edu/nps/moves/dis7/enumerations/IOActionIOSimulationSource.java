@@ -8,10 +8,10 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 286 marshal size 16<br>
- * IO Action-IO Simulation Source<br>
- * Values 1-999 are reserved for United States IO Simulation Sources – See applicable agreement of the organizers of the event (training, exercise, etc.) in which information operations is included.
+ * IOActionIOSimulationSource<br>
+ * Values 1-999 are reserved for United States IO Simulation Sources - See applicable agreement of the organizers of the event (training, exercise, etc.) in which information operations is included.
  */
 public enum IOActionIOSimulationSource 
 {

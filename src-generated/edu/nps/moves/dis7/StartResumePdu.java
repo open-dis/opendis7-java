@@ -11,7 +11,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 /**
  * Section 7.5.4. Start or resume an entity or exercise. See 5.6.5.4.
- * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class StartResumePdu extends SimulationManagementFamilyPdu implements Serializable
 {
@@ -106,7 +106,7 @@ public void marshal(DataOutputStream dos) throws Exception
 }
 
 /**
- * Unserializes an object from a DataInputStream.
+ * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
  * @param dis the InputStream

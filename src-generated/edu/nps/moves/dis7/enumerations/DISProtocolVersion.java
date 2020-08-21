@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 3 marshal size 8<br>
- * DIS-Protocol Version
+ * DISProtocolVersion
  */
 public enum DISProtocolVersion 
 {
@@ -20,10 +20,10 @@ public enum DISProtocolVersion
     DIS_PDU_VERSION_10_MAY_92 (1, "DIS PDU version 1.0 (May 92)"),
     /** IEEE 1278-1993 */
     IEEE_1278_1993 (2, "IEEE 1278-1993"),
-    /** DIS PDU version 2.0 - third draft (May 93) */
-    DIS_PDU_VERSION_20_THIRD_DRAFT_MAY_93 (3, "DIS PDU version 2.0 - third draft (May 93)"),
-    /** DIS PDU version 2.0 - fourth draft (revised) March 16, 1994 */
-    DIS_PDU_VERSION_20_FOURTH_DRAFT_REVISED_MARCH_16_1994 (4, "DIS PDU version 2.0 - fourth draft (revised) March 16, 1994"),
+    /** DIS Applications Version 2.0 - Third Draft (28 May 1993), IST-CR-93-15 */
+    DIS_APPLICATIONS_VERSION_20_THIRD_DRAFT_28_MAY_1993 (3, "DIS Applications Version 2.0 - Third Draft (28 May 1993)"),
+    /** DIS Application Protocols Version 2.0 - Fourth Draft (Revised) (16 March 1994), IST-CR-94-50 */
+    DIS_APPLICATION_PROTOCOLS_VERSION_20_FOURTH_DRAFT_REVISED_16_MARCH_1994 (4, "DIS Application Protocols Version 2.0 - Fourth Draft (Revised) (16 March 1994)"),
     /** IEEE 1278.1-1995 */
     IEEE_12781_1995 (5, "IEEE 1278.1-1995"),
     /** IEEE 1278.1A-1998 */

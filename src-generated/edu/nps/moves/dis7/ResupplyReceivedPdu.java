@@ -11,7 +11,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 /**
  * 5.5.7 Used to acknowledge the receipt of supplies by the receiving entity.
- * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class ResupplyReceivedPdu extends LogisticsFamilyPdu implements Serializable
 {
@@ -157,7 +157,7 @@ public void marshal(DataOutputStream dos) throws Exception
 }
 
 /**
- * Unserializes an object from a DataInputStream.
+ * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
  * @param dis the InputStream

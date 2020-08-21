@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 362 marshal size 1<br>
- * Delta Mode 5/S Altitude Positive/Negative Indicator
+ * DeltaMode5/SAltitudePositive/NegativeIndicator
  */
 public enum DeltaMode5SAltitudePositiveNegativeIndicator 
 {

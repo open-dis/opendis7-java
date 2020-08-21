@@ -11,7 +11,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 /**
  * An entity's associations with other entities and/or locations. For each association, this record shall specify the type of the association, the associated entity's EntityID and/or the associated location's world coordinates. This record may be used (optionally) in a transfer transaction to send internal state data from the divesting simulation to the acquiring simulation (see 5.9.4). This record may also be used for other purposes. Section 6.2.9
- * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols
+ * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class Association extends Object implements Serializable
 {
@@ -120,7 +120,7 @@ public void marshal(DataOutputStream dos) throws Exception
 }
 
 /**
- * Unserializes an object from a DataInputStream.
+ * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
  * @param dis the InputStream

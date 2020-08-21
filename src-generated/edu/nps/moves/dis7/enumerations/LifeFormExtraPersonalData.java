@@ -8,10 +8,10 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 477 marshal size 8<br>
- * Life Form Extra-Personal Data<br>
- * The 1's digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB.  The 10's digit is reserved for general age group.  The 100's digit is reserved for gender, where 0 is Male and 1 is Female.
+ * LifeFormExtraPersonalData<br>
+ * The 1s digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10s digit is reserved for general age group. The 100s digit is reserved for gender, where 0 is Male and 1 is Female.
  */
 public enum LifeFormExtraPersonalData 
 {

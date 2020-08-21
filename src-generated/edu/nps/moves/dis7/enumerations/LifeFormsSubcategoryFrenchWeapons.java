@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 19 marshal size 8<br>
- * Life Forms-Subcategory-French Weapons
+ * LifeFormsSubcategoryFrenchWeapons
  */
 public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
 {
@@ -27,7 +27,7 @@ public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
     /** AA-52 machine gun */
     AA_52_MACHINE_GUN (6, "AA-52 machine gun"),
     /** 58-mm rifle grenade */
-    $58_MM_RIFLE_GRENADE (7, "58-mm rifle grenade"),
+    NAME_58_MM_RIFLE_GRENADE (7, "58-mm rifle grenade"),
     /** FR-F1 sniper rifle */
     FR_F1_SNIPER_RIFLE (8, "FR-F1 sniper rifle");
 

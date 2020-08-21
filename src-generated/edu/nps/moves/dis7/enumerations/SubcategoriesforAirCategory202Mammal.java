@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 112 marshal size 8<br>
- * Subcategories for Air Category 202 - Mammal
+ * SubcategoriesforAirCategory202Mammal
  */
 public enum SubcategoriesforAirCategory202Mammal implements SubCategory
 {

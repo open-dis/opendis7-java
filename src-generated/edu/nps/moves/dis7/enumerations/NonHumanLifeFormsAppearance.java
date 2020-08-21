@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 480 marshal size 32<br>
- * Non-Human Life Forms Appearance
+ * NonHumanLifeFormsAppearance
  */
 public class NonHumanLifeFormsAppearance extends DisBitSet 
 {
@@ -16,11 +16,11 @@ public class NonHumanLifeFormsAppearance extends DisBitSet
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits IS_FROZEN = new Bits(21, 1);
+  public static Bits ISFROZEN = new Bits(21, 1);
   /**
    * Describes whether or not the life form is mounted/hoisted on another platform, such as a troop transport or helicopter hoist
    */
-  public static Bits MOUNTED_HOISTED_STATUS = new Bits(22, 1);
+  public static Bits MOUNTED_HOISTEDSTATUS = new Bits(22, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */

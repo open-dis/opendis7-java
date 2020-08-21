@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 780 marshal size 16<br>
- * CIGI Extension Packet ID<br>
+ * CIGIExtensionPacketID<br>
  * Registered extension packet IDs shall be in the range of 1000h - 7FFFh. If the extension capability includes both a request and response packet, it is recommended they be given sequential packet ID numbers. Submitters are welcome to request any ID within this range, but are encouraged to cluster packet IDs for similar capabilities if the next available sequential ID from the beginning of the range is not requested.
  */
 public enum CIGIExtensionPacketID 

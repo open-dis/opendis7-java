@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 192 marshal size 16<br>
- * Minefield Data-Fusing
+ * MinefieldDataFusing
  */
 public class MinefieldDataFusing extends DisBitSet 
 {
@@ -20,7 +20,7 @@ public class MinefieldDataFusing extends DisBitSet
   /**
    * Describes whether the mine has an Anti-Handling device
    */
-  public static Bits HAS_ANTI_HANDLING_DEVICE = new Bits(14, 1);
+  public static Bits HASANTIHANDLINGDEVICE = new Bits(14, 1);
 
   public static class Bits
   {

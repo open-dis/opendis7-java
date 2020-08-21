@@ -3,16 +3,16 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 237 marshal size 16<br>
- * Linear Object Appearance-Minefield Lane Marker
+ * LinearObjectAppearanceMinefieldLaneMarker
  */
 public class LinearObjectAppearanceMinefieldLaneMarker extends DisBitSet 
 {
   /**
    * Describes the visible side of the lane marker, Use {@link AppearanceLinearObjectLaneMarkerVisible} values for this field
    */
-  public static Bits VISIBLE_SIDE = new Bits(0, 2, AppearanceLinearObjectLaneMarkerVisible.class);
+  public static Bits VISIBLESIDE = new Bits(0, 2, AppearanceLinearObjectLaneMarkerVisible.class);
 
   public static class Bits
   {

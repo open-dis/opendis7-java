@@ -3,16 +3,16 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 232 marshal size 16<br>
- * Point Object Appearance-Air/Ground Burst
+ * PointObjectAppearanceAir/GroundBurst
  */
 public class PointObjectAppearanceAirGroundBurst extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the percent opacity of the smoke (0..100)
    */
-  public static Bits OPACITY_PERCENT = new Bits(0, 8);
+  public static Bits OPACITYPERCENT = new Bits(0, 8);
   /**
    * 8-bit unsigned integer indicating the radius in meters of the cylinder which approximates an individual burst
    */
@@ -24,11 +24,11 @@ public class PointObjectAppearanceAirGroundBurst extends DisBitSet
   /**
    * 6-bit unsigned integer indicating the number of bursts in the instance of tactical smoke
    */
-  public static Bits NUMBER_OF_BURSTS = new Bits(24, 6);
+  public static Bits NUMBEROFBURSTS = new Bits(24, 6);
   /**
    * Describes the chemical content of the smoke, Use {@link AppearanceObjectSpecificChemicalType} values for this field
    */
-  public static Bits CHEMICAL_TYPE = new Bits(30, 2, AppearanceObjectSpecificChemicalType.class);
+  public static Bits CHEMICALTYPE = new Bits(30, 2, AppearanceObjectSpecificChemicalType.class);
 
   public static class Bits
   {

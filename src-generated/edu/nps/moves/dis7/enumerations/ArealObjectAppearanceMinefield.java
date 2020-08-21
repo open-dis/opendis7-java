@@ -3,20 +3,20 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 239 marshal size 16<br>
- * Areal Object Appearance-Minefield
+ * ArealObjectAppearanceMinefield
  */
 public class ArealObjectAppearanceMinefield extends DisBitSet 
 {
   /**
    * Describes the breached appearance of the object, Use {@link AppearanceObjectSpecificBreachState} values for this field
    */
-  public static Bits BREACH_STATE = new Bits(0, 2, AppearanceObjectSpecificBreachState.class);
+  public static Bits BREACHSTATE = new Bits(0, 2, AppearanceObjectSpecificBreachState.class);
   /**
    * 16-bit unsigned integer indicating the number of mines in the minefield
    */
-  public static Bits MINE_COUNT = new Bits(16, 16);
+  public static Bits MINECOUNT = new Bits(16, 16);
 
   public static class Bits
   {

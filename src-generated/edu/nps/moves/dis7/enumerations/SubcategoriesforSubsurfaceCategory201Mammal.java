@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 121 marshal size 8<br>
- * Subcategories for Subsurface Category 201 - Mammal
+ * SubcategoriesforSubsurfaceCategory201Mammal
  */
 public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
 {
@@ -30,8 +30,8 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     SOUTHERN_BOTTLENOSE_WHALE (7, "Southern Bottlenose Whale"),
     /** Bowhead Whale */
     BOWHEAD_WHALE (8, "Bowhead Whale"),
-    /** Bryde's Whale */
-    BRYDES_WHALE (9, "Bryde's Whale"),
+    /** Brydes Whale */
+    BRYDES_WHALE (9, "Brydes Whale"),
     /** Dwarf Sperm Whale */
     DWARF_SPERM_WHALE (10, "Dwarf Sperm Whale"),
     /** Finback Whale */
@@ -92,10 +92,10 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     HARBOUR_PORPOISE (101, "Harbour Porpoise"),
     /** Californian Porpoise */
     CALIFORNIAN_PORPOISE (102, "Californian Porpoise"),
-    /** Dall's Porpoise */
-    DALLS_PORPOISE (103, "Dall's Porpoise"),
-    /** Burmeister's Porpoise */
-    BURMEISTERS_PORPOISE (104, "Burmeister's Porpoise"),
+    /** Dalls Porpoise */
+    DALLS_PORPOISE (103, "Dalls Porpoise"),
+    /** Burmeisters Porpoise */
+    BURMEISTERS_PORPOISE (104, "Burmeisters Porpoise"),
     /** Seal, 120-129 Seal */
     SEAL (120, "Seal"),
     /** Bearded Seal */

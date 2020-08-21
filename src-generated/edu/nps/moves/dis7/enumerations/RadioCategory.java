@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 22 marshal size 8<br>
- * Radio Category
+ * RadioCategory
  */
 public enum RadioCategory implements Category
 {
@@ -96,8 +96,12 @@ public enum RadioCategory implements Category
     COMBAT_SEARCH_AND_RESCUE_CSAR_RADIO (40, "Combat Search and Rescue (CSAR) Radio"),
     /** Counter Unmanned Aircraft System (C-UAS) Radio */
     COUNTER_UNMANNED_AIRCRAFT_SYSTEM_C_UAS_RADIO (41, "Counter Unmanned Aircraft System (C-UAS) Radio"),
+    /** Emergency Position-Indicating Radio Beacons (EPIRB) */
+    EMERGENCY_POSITION_INDICATING_RADIO_BEACONS_EPIRB (42, "Emergency Position-Indicating Radio Beacons (EPIRB)"),
     /** Electronic Attack Systems */
-    ELECTRONIC_ATTACK_SYSTEMS (50, "Electronic Attack Systems");
+    ELECTRONIC_ATTACK_SYSTEMS (50, "Electronic Attack Systems"),
+    /** Tactical Targeting Network Technology (TTNT) */
+    TACTICAL_TARGETING_NETWORK_TECHNOLOGY_TTNT (51, "Tactical Targeting Network Technology (TTNT)");
 
     private int value;
     private final String description;

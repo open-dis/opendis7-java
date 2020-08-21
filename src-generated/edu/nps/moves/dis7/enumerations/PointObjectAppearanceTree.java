@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 487 marshal size 32<br>
- * Point Object Appearance-Tree
+ * PointObjectAppearanceTree
  */
 public class PointObjectAppearanceTree extends DisBitSet 
 {
@@ -16,7 +16,7 @@ public class PointObjectAppearanceTree extends DisBitSet
   /**
    * Indicates the leaf coverage, Use {@link LeafCoverage} values for this field
    */
-  public static Bits LEAF_COVERAGE = new Bits(2, 2, LeafCoverage.class);
+  public static Bits LEAFCOVERAGE = new Bits(2, 2, LeafCoverage.class);
 
   public static class Bits
   {

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 366 marshal size 2<br>
- * Turn Rate Source
+ * TurnRateSource
  */
 public enum TurnRateSource 
 {
@@ -19,7 +19,7 @@ public enum TurnRateSource
     /** Less Than 1-Degree Turn or Not Turning */
     LESS_THAN_1_DEGREE_TURN_OR_NOT_TURNING (1, "Less Than 1-Degree Turn or Not Turning"),
     /** 1-Degree or Greater Turn Rate */
-    $1_DEGREE_OR_GREATER_TURN_RATE (2, "1-Degree or Greater Turn Rate");
+    NAME_1_DEGREE_OR_GREATER_TURN_RATE (2, "1-Degree or Greater Turn Rate");
 
     private int value;
     private final String description;

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 71 marshal size 32<br>
- * Action Request-Action ID
+ * ActionRequestActionID
  */
 public enum ActionRequestActionID 
 {
@@ -18,18 +18,18 @@ public enum ActionRequestActionID
     OTHER (0, "Other"),
     /** Local storage of the requested information */
     LOCAL_STORAGE_OF_THE_REQUESTED_INFORMATION (1, "Local storage of the requested information"),
-    /** Inform SM of event "ran out of ammunition" */
-    INFORM_SM_OF_EVENT_RAN_OUT_OF_AMMUNITION_ (2, "Inform SM of event 'ran out of ammunition'"),
-    /** Inform SM of event "killed in action" */
-    INFORM_SM_OF_EVENT_KILLED_IN_ACTION_ (3, "Inform SM of event 'killed in action'"),
-    /** Inform SM of event "damage" */
-    INFORM_SM_OF_EVENT_DAMAGE_ (4, "Inform SM of event 'damage'"),
-    /** Inform SM of event "mobility disabled" */
-    INFORM_SM_OF_EVENT_MOBILITY_DISABLED_ (5, "Inform SM of event 'mobility disabled'"),
-    /** Inform SM of event "fire disabled" */
-    INFORM_SM_OF_EVENT_FIRE_DISABLED_ (6, "Inform SM of event 'fire disabled'"),
-    /** Inform SM of event "ran out of fuel" */
-    INFORM_SM_OF_EVENT_RAN_OUT_OF_FUEL_ (7, "Inform SM of event 'ran out of fuel'"),
+    /** Inform SM of event ran out of ammunition */
+    INFORM_SM_OF_EVENT_RAN_OUT_OF_AMMUNITION (2, "Inform SM of event ran out of ammunition"),
+    /** Inform SM of event killed in action */
+    INFORM_SM_OF_EVENT_KILLED_IN_ACTION (3, "Inform SM of event killed in action"),
+    /** Inform SM of event damage */
+    INFORM_SM_OF_EVENT_DAMAGE (4, "Inform SM of event damage"),
+    /** Inform SM of event mobility disabled */
+    INFORM_SM_OF_EVENT_MOBILITY_DISABLED (5, "Inform SM of event mobility disabled"),
+    /** Inform SM of event fire disabled */
+    INFORM_SM_OF_EVENT_FIRE_DISABLED (6, "Inform SM of event fire disabled"),
+    /** Inform SM of event ran out of fuel */
+    INFORM_SM_OF_EVENT_RAN_OUT_OF_FUEL (7, "Inform SM of event ran out of fuel"),
     /** Recall checkpoint data */
     RECALL_CHECKPOINT_DATA (8, "Recall checkpoint data"),
     /** Recall initial parameters */
@@ -111,7 +111,13 @@ public enum ActionRequestActionID
     /** TACCSF LOS Request-Type 1 */
     TACCSF_LOS_REQUEST_TYPE_1 (100, "TACCSF LOS Request-Type 1"),
     /** TACCSF LOS Request-Type 2 */
-    TACCSF_LOS_REQUEST_TYPE_2 (101, "TACCSF LOS Request-Type 2");
+    TACCSF_LOS_REQUEST_TYPE_2 (101, "TACCSF LOS Request-Type 2"),
+    /** Airmount Mount Request */
+    AIRMOUNT_MOUNT_REQUEST (4303, "Airmount Mount Request"),
+    /** Airmount Dismount Request */
+    AIRMOUNT_DISMOUNT_REQUEST (4304, "Airmount Dismount Request"),
+    /** Airmount Information Request */
+    AIRMOUNT_INFORMATION_REQUEST (4305, "Airmount Information Request");
 
     private int value;
     private final String description;

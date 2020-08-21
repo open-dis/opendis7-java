@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 463 marshal size 8<br>
  * Color<br>
  * The color values 1 to 15 are defined in the HTML 3.0 specification; color values 20 to 159 are defined in the SVG 1.0 specification

@@ -3,20 +3,20 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 454 marshal size 32<br>
- * Space Platform Capabilities
+ * SpacePlatformCapabilities
  */
 public class SpacePlatformCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * Describes whether the entity is able to supply some type of ammunition in response to an appropriate service request
    */
-  public static Bits AMMUNITION_SUPPLY = new Bits(0, 1);
+  public static Bits AMMUNITIONSUPPLY = new Bits(0, 1);
   /**
    * Describes whether the entity is able to supply some type of fuel in response to an appropriate service request
    */
-  public static Bits FUEL_SUPPLY = new Bits(1, 1);
+  public static Bits FUELSUPPLY = new Bits(1, 1);
   /**
    * Describes whether the entity is able to provide recovery (e.g., towing) services in response to an appropriate service request
    */

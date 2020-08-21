@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 469 marshal size 8<br>
- * Link 11/11B Data Terminal Set Indicator
+ * Link11DataTerminalSetIndicator
  */
 public enum Link1111BDataTerminalSetIndicator 
 {

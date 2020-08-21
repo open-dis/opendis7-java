@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 61 marshal size 16<br>
- * Munition Descriptor-Fuse
+ * MunitionDescriptorFuse
  */
 public enum MunitionDescriptorFuse 
 {
@@ -41,41 +41,41 @@ public enum MunitionDescriptorFuse
     /** Contact, Delayed */
     CONTACT_DELAYED (1200, "Contact, Delayed"),
     /** 10 ms Delay */
-    $10_MS_DELAY (1201, "10 ms Delay"),
+    NAME_10_MS_DELAY (1201, "10 ms Delay"),
     /** 20 ms Delay */
-    $20_MS_DELAY (1202, "20 ms Delay"),
+    NAME_20_MS_DELAY (1202, "20 ms Delay"),
     /** 50 ms Delay */
-    $50_MS_DELAY (1205, "50 ms Delay"),
+    NAME_50_MS_DELAY (1205, "50 ms Delay"),
     /** 60 ms Delay */
-    $60_MS_DELAY (1206, "60 ms Delay"),
+    NAME_60_MS_DELAY (1206, "60 ms Delay"),
     /** 100 ms Delay */
-    $100_MS_DELAY (1210, "100 ms Delay"),
+    NAME_100_MS_DELAY (1210, "100 ms Delay"),
     /** 125 ms Delay */
-    $125_MS_DELAY (1212, "125 ms Delay"),
+    NAME_125_MS_DELAY (1212, "125 ms Delay"),
     /** 250 ms Delay */
-    $250_MS_DELAY (1225, "250 ms Delay"),
+    NAME_250_MS_DELAY (1225, "250 ms Delay"),
     /** 5 ms Delay */
-    $5_MS_DELAY (1250, "5 ms Delay"),
+    NAME_5_MS_DELAY (1250, "5 ms Delay"),
     /** 15 ms Delay */
-    $15_MS_DELAY (1251, "15 ms Delay"),
+    NAME_15_MS_DELAY (1251, "15 ms Delay"),
     /** 25 ms Delay */
-    $25_MS_DELAY (1252, "25 ms Delay"),
+    NAME_25_MS_DELAY (1252, "25 ms Delay"),
     /** 30 ms Delay */
-    $30_MS_DELAY (1253, "30 ms Delay"),
+    NAME_30_MS_DELAY (1253, "30 ms Delay"),
     /** 35 ms Delay */
-    $35_MS_DELAY (1254, "35 ms Delay"),
+    NAME_35_MS_DELAY (1254, "35 ms Delay"),
     /** 40 ms Delay */
-    $40_MS_DELAY (1255, "40 ms Delay"),
+    NAME_40_MS_DELAY (1255, "40 ms Delay"),
     /** 45 ms Delay */
-    $45_MS_DELAY (1256, "45 ms Delay"),
+    NAME_45_MS_DELAY (1256, "45 ms Delay"),
     /** 90 ms Delay */
-    $90_MS_DELAY (1257, "90 ms Delay"),
+    NAME_90_MS_DELAY (1257, "90 ms Delay"),
     /** 120 ms Delay */
-    $120_MS_DELAY (1258, "120 ms Delay"),
+    NAME_120_MS_DELAY (1258, "120 ms Delay"),
     /** 180 ms Delay */
-    $180_MS_DELAY (1259, "180 ms Delay"),
+    NAME_180_MS_DELAY (1259, "180 ms Delay"),
     /** 240 ms Delay */
-    $240_MS_DELAY (1260, "240 ms Delay"),
+    NAME_240_MS_DELAY (1260, "240 ms Delay"),
     /** Contact, Electronic (Oblique Contact) */
     CONTACT_ELECTRONIC_OBLIQUE_CONTACT (1300, "Contact, Electronic (Oblique Contact)"),
     /** Contact, Graze */
@@ -123,19 +123,19 @@ public enum MunitionDescriptorFuse
     /** Timed, Short Delay Impact */
     TIMED_SHORT_DELAY_IMPACT (2700, "Timed, Short Delay Impact"),
     /** 10 ms Delay */
-    $10_MS_DELAY_2 (2701, "10 ms Delay"),
+    NAME_10_MS_DELAY_2 (2701, "10 ms Delay"),
     /** 20 ms Delay */
-    $20_MS_DELAY_2 (2702, "20 ms Delay"),
+    NAME_20_MS_DELAY_2 (2702, "20 ms Delay"),
     /** 50 ms Delay */
-    $50_MS_DELAY_2 (2705, "50 ms Delay"),
+    NAME_50_MS_DELAY_2 (2705, "50 ms Delay"),
     /** 60 ms Delay */
-    $60_MS_DELAY_2 (2706, "60 ms Delay"),
+    NAME_60_MS_DELAY_2 (2706, "60 ms Delay"),
     /** 100 ms Delay */
-    $100_MS_DELAY_2 (2710, "100 ms Delay"),
+    NAME_100_MS_DELAY_2 (2710, "100 ms Delay"),
     /** 125 ms Delay */
-    $125_MS_DELAY_2 (2712, "125 ms Delay"),
+    NAME_125_MS_DELAY_2 (2712, "125 ms Delay"),
     /** 250 ms Delay */
-    $250_MS_DELAY_2 (2725, "250 ms Delay"),
+    NAME_250_MS_DELAY_2 (2725, "250 ms Delay"),
     /** Timed, Nose Mounted Variable Delay */
     TIMED_NOSE_MOUNTED_VARIABLE_DELAY (2800, "Timed, Nose Mounted Variable Delay"),
     /** Timed, Long Delay Side */

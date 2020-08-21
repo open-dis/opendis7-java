@@ -8,13 +8,13 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 102 marshal size 8<br>
- * Subcategories for Land Category 202 - Amphibian
+ * SubcategoriesforLandCategory202Amphibian
  */
 public enum SubcategoriesforLandCategory202Amphibian implements SubCategory
 {
-    /** Frog, 1-169  Frog/Toad */
+    /** Frog, 1-169 Frog/Toad */
     FROG (1, "Frog"),
     /** Toad */
     TOAD (2, "Toad"),

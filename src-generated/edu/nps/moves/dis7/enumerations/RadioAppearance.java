@@ -3,16 +3,16 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 41 marshal size 32<br>
- * Radio Appearance
+ * RadioAppearance
  */
 public class RadioAppearance extends DisBitSet 
 {
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits IS_FROZEN = new Bits(21, 1);
+  public static Bits ISFROZEN = new Bits(21, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */

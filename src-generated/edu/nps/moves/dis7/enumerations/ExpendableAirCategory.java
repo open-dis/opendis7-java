@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 25 marshal size 8<br>
- * Expendable-Air Category
+ * ExpendableAirCategory
  */
 public enum ExpendableAirCategory implements Category
 {
@@ -20,18 +20,24 @@ public enum ExpendableAirCategory implements Category
     CHAFF (1, "Chaff"),
     /** Flare */
     FLARE (2, "Flare"),
-    /** Combined chaff and flare */
-    COMBINED_CHAFF_AND_FLARE (3, "Combined chaff and flare"),
-    /** Active emitter */
-    ACTIVE_EMITTER (4, "Active emitter"),
-    /** Passive decoy */
-    PASSIVE_DECOY (5, "Passive decoy"),
-    /** Winged decoy */
-    WINGED_DECOY (6, "Winged decoy"),
+    /** Combined Chaff and Flare */
+    COMBINED_CHAFF_AND_FLARE (3, "Combined Chaff and Flare"),
+    /** Active Emitter */
+    ACTIVE_EMITTER (4, "Active Emitter"),
+    /** Passive Decoy */
+    PASSIVE_DECOY (5, "Passive Decoy"),
+    /** Winged Decoy */
+    WINGED_DECOY (6, "Winged Decoy"),
     /** Signal/Illumination Flare */
     SIGNAL_ILLUMINATION_FLARE (7, "Signal/Illumination Flare"),
     /** Smoke Generator */
-    SMOKE_GENERATOR (8, "Smoke Generator");
+    SMOKE_GENERATOR (8, "Smoke Generator"),
+    /** Combined Flare and Smoke Generator */
+    COMBINED_FLARE_AND_SMOKE_GENERATOR (12, "Combined Flare and Smoke Generator"),
+    /** SAR Night Light (SRNL) */
+    SAR_NIGHT_LIGHT_SRNL (13, "SAR Night Light (SRNL)"),
+    /** SAR Buoy */
+    SAR_BUOY (14, "SAR Buoy");
 
     private int value;
     private final String description;

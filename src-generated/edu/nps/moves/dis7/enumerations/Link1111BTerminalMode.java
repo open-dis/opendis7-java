@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 468 marshal size 8<br>
- * Link 11/11B Terminal Mode
+ * Link11TerminalMode
  */
 public enum Link1111BTerminalMode 
 {

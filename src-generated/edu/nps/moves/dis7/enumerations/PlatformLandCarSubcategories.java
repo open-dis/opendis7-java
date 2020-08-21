@@ -8,10 +8,10 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 428 marshal size 8<br>
- * Platform-Land-Car Subcategories<br>
- * Subcategories for Land Platform Category 81.  Subcategory values have the general form/style in the 10's/100's digits and the size in the 1's digit. A zero in the 1's digit indicates an unspecified size.
+ * PlatformLandCarSubcategories<br>
+ * Subcategories for Land Platform Category 81. Subcategory values have the general form/style in the 10s/100s digits and the size in the 1s digit. A zero in the 1s digit indicates an unspecified size.
  */
 public enum PlatformLandCarSubcategories implements SubCategory
 {
@@ -31,41 +31,41 @@ public enum PlatformLandCarSubcategories implements SubCategory
     /** Generic, Oversize, ACRISS O */
     GENERIC_OVERSIZE (15, "Generic, Oversize"),
     /** 2-Door (Coupe), No specific enumerations may be placed in this subcategory */
-    $2_DOOR_COUPE (20, "2-Door (Coupe)"),
+    NAME_2_DOOR_COUPE (20, "2-Door (Coupe)"),
     /** 2-Door (Coupe), Mini/Microcar (Tiny) */
-    $2_DOOR_COUPE_MINI_MICROCAR_TINY (21, "2-Door (Coupe), Mini/Microcar (Tiny)"),
+    NAME_2_DOOR_COUPE_MINI_MICROCAR_TINY (21, "2-Door (Coupe), Mini/Microcar (Tiny)"),
     /** 2-Door (Coupe), Economy/Compact (Small) */
-    $2_DOOR_COUPE_ECONOMY_COMPACT_SMALL (22, "2-Door (Coupe), Economy/Compact (Small)"),
+    NAME_2_DOOR_COUPE_ECONOMY_COMPACT_SMALL (22, "2-Door (Coupe), Economy/Compact (Small)"),
     /** 2-Door (Coupe), Intermediate/Standard (Medium) */
-    $2_DOOR_COUPE_INTERMEDIATE_STANDARD_MEDIUM (23, "2-Door (Coupe), Intermediate/Standard (Medium)"),
+    NAME_2_DOOR_COUPE_INTERMEDIATE_STANDARD_MEDIUM (23, "2-Door (Coupe), Intermediate/Standard (Medium)"),
     /** 3-Door Hatchback, No specific enumerations may be placed in this subcategory */
-    $3_DOOR_HATCHBACK (30, "3-Door Hatchback"),
+    NAME_3_DOOR_HATCHBACK (30, "3-Door Hatchback"),
     /** 3-Door Hatchback, Mini/Microcar (Tiny) */
-    $3_DOOR_HATCHBACK_MINI_MICROCAR_TINY (31, "3-Door Hatchback, Mini/Microcar (Tiny)"),
+    NAME_3_DOOR_HATCHBACK_MINI_MICROCAR_TINY (31, "3-Door Hatchback, Mini/Microcar (Tiny)"),
     /** 3-Door Hatchback, Economy/Compact (Small) */
-    $3_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (32, "3-Door Hatchback, Economy/Compact (Small)"),
+    NAME_3_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (32, "3-Door Hatchback, Economy/Compact (Small)"),
     /** 4-Door Sedan, No specific enumerations may be placed in this subcategory */
-    $4_DOOR_SEDAN (40, "4-Door Sedan"),
+    NAME_4_DOOR_SEDAN (40, "4-Door Sedan"),
     /** 4-Door Sedan, Mini/Microcar (Tiny) */
-    $4_DOOR_SEDAN_MINI_MICROCAR_TINY (41, "4-Door Sedan, Mini/Microcar (Tiny)"),
+    NAME_4_DOOR_SEDAN_MINI_MICROCAR_TINY (41, "4-Door Sedan, Mini/Microcar (Tiny)"),
     /** 4-Door Sedan, Economy/Compact (Small) */
-    $4_DOOR_SEDAN_ECONOMY_COMPACT_SMALL (42, "4-Door Sedan, Economy/Compact (Small)"),
+    NAME_4_DOOR_SEDAN_ECONOMY_COMPACT_SMALL (42, "4-Door Sedan, Economy/Compact (Small)"),
     /** 4-Door Sedan, Intermediate/Standard (Medium) */
-    $4_DOOR_SEDAN_INTERMEDIATE_STANDARD_MEDIUM (43, "4-Door Sedan, Intermediate/Standard (Medium)"),
+    NAME_4_DOOR_SEDAN_INTERMEDIATE_STANDARD_MEDIUM (43, "4-Door Sedan, Intermediate/Standard (Medium)"),
     /** 4-Door Sedan, Full/Premium/Luxury (Large) */
-    $4_DOOR_SEDAN_FULL_PREMIUM_LUXURY_LARGE (44, "4-Door Sedan, Full/Premium/Luxury (Large)"),
+    NAME_4_DOOR_SEDAN_FULL_PREMIUM_LUXURY_LARGE (44, "4-Door Sedan, Full/Premium/Luxury (Large)"),
     /** 4-Door Sedan, Oversize */
-    $4_DOOR_SEDAN_OVERSIZE (45, "4-Door Sedan, Oversize"),
+    NAME_4_DOOR_SEDAN_OVERSIZE (45, "4-Door Sedan, Oversize"),
     /** 5-Door Hatchback, No specific enumerations may be placed in this subcategory */
-    $5_DOOR_HATCHBACK (50, "5-Door Hatchback"),
+    NAME_5_DOOR_HATCHBACK (50, "5-Door Hatchback"),
     /** 5-Door Hatchback, Mini/Microcar (Tiny) */
-    $5_DOOR_HATCHBACK_MINI_MICROCAR_TINY (51, "5-Door Hatchback, Mini/Microcar (Tiny)"),
+    NAME_5_DOOR_HATCHBACK_MINI_MICROCAR_TINY (51, "5-Door Hatchback, Mini/Microcar (Tiny)"),
     /** 5-Door Hatchback, Economy/Compact (Small) */
-    $5_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (52, "5-Door Hatchback, Economy/Compact (Small)"),
+    NAME_5_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (52, "5-Door Hatchback, Economy/Compact (Small)"),
     /** 5-Door Hatchback, Intermediate/Standard (Medium) */
-    $5_DOOR_HATCHBACK_INTERMEDIATE_STANDARD_MEDIUM (53, "5-Door Hatchback, Intermediate/Standard (Medium)"),
+    NAME_5_DOOR_HATCHBACK_INTERMEDIATE_STANDARD_MEDIUM (53, "5-Door Hatchback, Intermediate/Standard (Medium)"),
     /** 5-Door Hatchback, Full/Premium/Luxury (Large) */
-    $5_DOOR_HATCHBACK_FULL_PREMIUM_LUXURY_LARGE (54, "5-Door Hatchback, Full/Premium/Luxury (Large)"),
+    NAME_5_DOOR_HATCHBACK_FULL_PREMIUM_LUXURY_LARGE (54, "5-Door Hatchback, Full/Premium/Luxury (Large)"),
     /** Wagon, No specific enumerations may be placed in this subcategory */
     WAGON (60, "Wagon"),
     /** Wagon, Economy/Compact (Small) */

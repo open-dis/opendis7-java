@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 488 marshal size 32<br>
- * Linear Object Appearance-Wire
+ * LinearObjectAppearanceWire
  */
 public class LinearObjectAppearanceWire extends DisBitSet 
 {
@@ -20,7 +20,7 @@ public class LinearObjectAppearanceWire extends DisBitSet
   /**
    * Describes whether the wire is buried or not
    */
-  public static Bits IS_BURIED = new Bits(20, 1);
+  public static Bits ISBURIED = new Bits(20, 1);
 
   public static class Bits
   {

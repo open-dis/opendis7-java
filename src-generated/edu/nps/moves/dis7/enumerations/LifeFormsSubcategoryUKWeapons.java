@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 18 marshal size 8<br>
- * Life Forms-Subcategory-U.K. Weapons
+ * LifeFormsSubcategoryU.K.Weapons
  */
 public enum LifeFormsSubcategoryUKWeapons implements SubCategory
 {
@@ -21,7 +21,7 @@ public enum LifeFormsSubcategoryUKWeapons implements SubCategory
     /** Javelin */
     JAVELIN (3, "Javelin"),
     /** 51-mm mortar */
-    $51_MM_MORTAR (4, "51-mm mortar"),
+    NAME_51_MM_MORTAR (4, "51-mm mortar"),
     /** SLR 7.62-mm rifle */
     SLR_762_MM_RIFLE (5, "SLR 7.62-mm rifle"),
     /** Sterling 9-mm submachine gun */

@@ -8,13 +8,13 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 120 marshal size 8<br>
- * Subcategories for Subsurface Category 200 - Fish
+ * SubcategoriesforSubsurfaceCategory200Fish
  */
 public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
 {
-    /** Forage Fish, Small Schooling, 1-29  Small size schooling (forage) fish (herring-like, sardines, squid, krill) */
+    /** Forage Fish, Small Schooling, 1-29 Small size schooling (forage) fish (herring-like, sardines, squid, krill) */
     FORAGE_FISH_SMALL_SCHOOLING (1, "Forage Fish, Small Schooling"),
     /** Herring */
     HERRING (2, "Herring"),

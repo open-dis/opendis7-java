@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 139 marshal size 8<br>
- * Variants for Subsurface Category 201 - Mammal
+ * VariantsforSubsurfaceCategory201Mammal
  */
 public enum VariantsforSubsurfaceCategory201Mammal 
 {

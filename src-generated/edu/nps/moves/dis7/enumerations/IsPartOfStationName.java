@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 212 marshal size 16<br>
- * IsPartOf-Station Name
+ * IsPartOfStationName
  */
 public enum IsPartOfStationName 
 {
@@ -18,18 +18,18 @@ public enum IsPartOfStationName
     OTHER (0, "Other"),
     /** Aircraft Wingstation */
     AIRCRAFT_WINGSTATION (1, "Aircraft Wingstation"),
-    /** Ship's Forward Gunmount (Starboard) */
-    SHIPS_FORWARD_GUNMOUNT_STARBOARD (2, "Ship's Forward Gunmount (Starboard)"),
-    /** Ship's Forward Gunmount (Port) */
-    SHIPS_FORWARD_GUNMOUNT_PORT (3, "Ship's Forward Gunmount (Port)"),
-    /** Ship's Forward Gunmount (Centerline) */
-    SHIPS_FORWARD_GUNMOUNT_CENTERLINE (4, "Ship's Forward Gunmount (Centerline)"),
-    /** Ship's Aft Gunmount (Starboard) */
-    SHIPS_AFT_GUNMOUNT_STARBOARD (5, "Ship's Aft Gunmount (Starboard)"),
-    /** Ship's Aft Gunmount (Port) */
-    SHIPS_AFT_GUNMOUNT_PORT (6, "Ship's Aft Gunmount (Port)"),
-    /** Ship's Aft Gunmount (Centerline) */
-    SHIPS_AFT_GUNMOUNT_CENTERLINE (7, "Ship's Aft Gunmount (Centerline)"),
+    /** Ships Forward Gunmount (Starboard) */
+    SHIPS_FORWARD_GUNMOUNT_STARBOARD (2, "Ships Forward Gunmount (Starboard)"),
+    /** Ships Forward Gunmount (Port) */
+    SHIPS_FORWARD_GUNMOUNT_PORT (3, "Ships Forward Gunmount (Port)"),
+    /** Ships Forward Gunmount (Centerline) */
+    SHIPS_FORWARD_GUNMOUNT_CENTERLINE (4, "Ships Forward Gunmount (Centerline)"),
+    /** Ships Aft Gunmount (Starboard) */
+    SHIPS_AFT_GUNMOUNT_STARBOARD (5, "Ships Aft Gunmount (Starboard)"),
+    /** Ships Aft Gunmount (Port) */
+    SHIPS_AFT_GUNMOUNT_PORT (6, "Ships Aft Gunmount (Port)"),
+    /** Ships Aft Gunmount (Centerline) */
+    SHIPS_AFT_GUNMOUNT_CENTERLINE (7, "Ships Aft Gunmount (Centerline)"),
     /** Forward Torpedo Tube */
     FORWARD_TORPEDO_TUBE (8, "Forward Torpedo Tube"),
     /** Aft Torpedo Tube */
@@ -51,7 +51,15 @@ public enum IsPartOfStationName
     /** Air-to-Air Refueling Boom */
     AIR_TO_AIR_REFUELING_BOOM (17, "Air-to-Air Refueling Boom"),
     /** Aerial Refueling Receptacle */
-    AERIAL_REFUELING_RECEPTACLE (18, "Aerial Refueling Receptacle");
+    AERIAL_REFUELING_RECEPTACLE (18, "Aerial Refueling Receptacle"),
+    /** Port Side Refueling Drogue */
+    PORT_SIDE_REFUELING_DROGUE (19, "Port Side Refueling Drogue"),
+    /** Starboard Side Refueling Drogue */
+    STARBOARD_SIDE_REFUELING_DROGUE (20, "Starboard Side Refueling Drogue"),
+    /** Center Refueling Drogue */
+    CENTER_REFUELING_DROGUE (21, "Center Refueling Drogue"),
+    /** Air Refueling Probe */
+    AIR_REFUELING_PROBE (22, "Air Refueling Probe");
 
     private int value;
     private final String description;

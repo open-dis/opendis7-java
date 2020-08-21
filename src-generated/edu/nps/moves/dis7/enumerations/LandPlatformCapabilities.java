@@ -3,20 +3,20 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 450 marshal size 32<br>
- * Land Platform Capabilities
+ * LandPlatformCapabilities
  */
 public class LandPlatformCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * Describes whether the entity is able to supply some type of ammunition in response to an appropriate service request
    */
-  public static Bits AMMUNITION_SUPPLY = new Bits(0, 1);
+  public static Bits AMMUNITIONSUPPLY = new Bits(0, 1);
   /**
    * Describes whether the entity is able to supply some type of fuel in response to an appropriate service request
    */
-  public static Bits FUEL_SUPPLY = new Bits(1, 1);
+  public static Bits FUELSUPPLY = new Bits(1, 1);
   /**
    * Describes whether the entity is able to provide recovery (e.g., towing) services in response to an appropriate service request
    */
@@ -30,17 +30,17 @@ public class LandPlatformCapabilities extends DisBitSet implements EntityCapabil
    */
   public static Bits RESERVED = new Bits(4, 1);
   /**
-   * The Entity is able to be carried as a sling load payload.  The extended appearance record (if available) will identify if it is currently sling loaded and entity association and/or entity offset records (if available) will provide additional sling load details (such as carrier).
+   * The Entity is able to be carried as a sling load payload. The extended appearance record (if available) will identify if it is currently sling loaded and entity association and/or entity offset records (if available) will provide additional sling load details (such as carrier).
    */
-  public static Bits SLING_LOADABLE = new Bits(6, 1);
+  public static Bits SLINGLOADABLE = new Bits(6, 1);
   /**
-   * The Entity is an IED or contains an IED.  The extended appearance record (if available) will identify how well hidden the IED is on the Entity.  An Attached Part (if applicable, for instance a jury-rigged munition does not apply here) will identify the IED explicitly.
+   * The Entity is an IED or contains an IED. The extended appearance record (if available) will identify how well hidden the IED is on the Entity. An Attached Part (if applicable, for instance a jury-rigged munition does not apply here) will identify the IED explicitly.
    */
-  public static Bits IED_PRESENCE_INDICATOR = new Bits(7, 1);
+  public static Bits IEDPRESENCEINDICATOR = new Bits(7, 1);
   /**
    * The Entity (normally a virtual manned module) can be task organized into an existing mixed mode unit (where mixed mode is intended to comprise a combination of computer-generated forces and virtual or even live forces).
    */
-  public static Bits TASK_ORGANIZABLE = new Bits(8, 1);
+  public static Bits TASKORGANIZABLE = new Bits(8, 1);
 
   public static class Bits
   {

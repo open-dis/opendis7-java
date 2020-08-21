@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 279 marshal size 8<br>
- * Platform-Air Civilian Lighter than Air, Balloon Subcategories<br>
+ * PlatformAirCivilianLighterthanAir,BalloonSubcategories<br>
  * Subcategories for Air Platform Category 100
  */
 public enum PlatformAirCivilianLighterthanAirBalloonSubcategories implements SubCategory

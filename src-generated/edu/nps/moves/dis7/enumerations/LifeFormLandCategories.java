@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 472 marshal size 8<br>
- * Life Form Land Categories
+ * LifeFormLandCategories
  */
 public enum LifeFormLandCategories implements Category
 {
@@ -52,6 +52,8 @@ public enum LifeFormLandCategories implements Category
     EMERGENCY_MEDICAL_TECHNICIAN_EMT (131, "Emergency Medical Technician (EMT)"),
     /** Firefighter */
     FIREFIGHTER (132, "Firefighter"),
+    /** Press */
+    PRESS (133, "Press"),
     /** SubcategoriesforLandCategory200Mammal */    MAMMAL_2 (200, "Mammal"),
     /** SubcategoriesforLandCategory201Reptile */    REPTILE_2 (201, "Reptile"),
     /** SubcategoriesforLandCategory202Amphibian */    AMPHIBIAN_2 (202, "Amphibian"),

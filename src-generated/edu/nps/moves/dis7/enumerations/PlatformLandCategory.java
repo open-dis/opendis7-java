@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 9 marshal size 8<br>
- * Platform-Land Category
+ * PlatformLandCategory
  */
 public enum PlatformLandCategory implements Category
 {
@@ -22,8 +22,8 @@ public enum PlatformLandCategory implements Category
     ARMORED_FIGHTING_VEHICLE (2, "Armored Fighting Vehicle"),
     /** Armored Utility Vehicle, Engineering vehicle, tracked load carriers, towing vehicles, recovery vehicles, AVLB, etc. */
     ARMORED_UTILITY_VEHICLE (3, "Armored Utility Vehicle"),
-    /** Self-propelled Artillery, Guns and howitzers */
-    SELF_PROPELLED_ARTILLERY (4, "Self-propelled Artillery"),
+    /** Self-Propelled Artillery */
+    SELF_PROPELLED_ARTILLERY (4, "Self-Propelled Artillery"),
     /** Towed Artillery, Anti-Tank guns, guns and howitzers */
     TOWED_ARTILLERY (5, "Towed Artillery"),
     /** Small Wheeled Utility Vehicle, 0-1.25 tons */

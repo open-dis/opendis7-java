@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 101 marshal size 8<br>
- * Subcategories for Land Category 201 - Reptile
+ * SubcategoriesforLandCategory201Reptile
  */
 public enum SubcategoriesforLandCategory201Reptile implements SubCategory
 {
@@ -50,7 +50,7 @@ public enum SubcategoriesforLandCategory201Reptile implements SubCategory
     COBRA (66, "Cobra"),
     /** Australian Brown Snake */
     AUSTRALIAN_BROWN_SNAKE (67, "Australian Brown Snake"),
-    /** Tortoise, 90-119  Turtle/Tortoise */
+    /** Tortoise, 90-119 Turtle/Tortoise */
     TORTOISE (90, "Tortoise"),
     /** Turtle */
     TURTLE (100, "Turtle"),

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 106 marshal size 8<br>
- * Subcategories for Land Category 206 - Marsupial<br>
+ * SubcategoriesforLandCategory206Marsupial<br>
  * 1-99 Ameridelphia, 100-250 Australidelphia
  */
 public enum SubcategoriesforLandCategory206Marsupial 
@@ -20,8 +20,8 @@ public enum SubcategoriesforLandCategory206Marsupial
     BROWN_FOUR_EYED_OPOSSUM (1, "Brown Four-Eyed Opossum"),
     /** Bushy-Tailed Opossum */
     BUSHY_TAILED_OPOSSUM (2, "Bushy-Tailed Opossum"),
-    /** Tate's Shrew Opossum, 90-99 Shrew Opossum */
-    TATES_SHREW_OPOSSUM (90, "Tate's Shrew Opossum"),
+    /** Tates Shrew Opossum, 90-99 Shrew Opossum */
+    TATES_SHREW_OPOSSUM (90, "Tates Shrew Opossum"),
     /** Greater Bilby, 100-109 Bandicoots and Bilbies */
     GREATER_BILBY (100, "Greater Bilby"),
     /** Tasmanian Devil, 110-149 Carnivorous Marsupials */

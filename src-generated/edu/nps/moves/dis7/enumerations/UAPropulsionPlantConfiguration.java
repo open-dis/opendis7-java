@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 149 marshal size 16<br>
- * UA-Propulsion Plant Configuration
+ * UAPropulsionPlantConfiguration
  */
 public class UAPropulsionPlantConfiguration extends DisBitSet 
 {
@@ -16,7 +16,7 @@ public class UAPropulsionPlantConfiguration extends DisBitSet
   /**
    * Describes whether the hull-mounted masker is on or off
    */
-  public static Bits HULL_MOUNTED_MASKER_ON = new Bits(7, 1);
+  public static Bits HULLMOUNTEDMASKERON = new Bits(7, 1);
 
   public static class Bits
   {

@@ -8,22 +8,22 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 271 marshal size 14<br>
- * Signal-Encoding Type
+ * SignalEncodingType
  */
 public enum SignalEncodingType 
 {
     /** 8-bit mu-law (ITU-T G.711) */
-    $8_BIT_MU_LAW_ITU_T_G711 (1, "8-bit mu-law (ITU-T G.711)"),
-    /** CVSD (MIL-STD-188-113), There are variants of CVSD encoding types that exist in the DIS community.  These are not compatible with each other.  At least two additional types of CVSD, known as CCTT CVSD and CECOM CVSD, also use Enumeration value 2.  Make sure that if you are using CVSD that your system is compatible with other systems playing in an exercise. */
+    NAME_8_BIT_MU_LAW_ITU_T_G711 (1, "8-bit mu-law (ITU-T G.711)"),
+    /** CVSD (MIL-STD-188-113), There are variants of CVSD encoding types that exist in the DIS community. These are not compatible with each other. At least two additional types of CVSD, known as CCTT CVSD and CECOM CVSD, also use Enumeration value 2.  Make sure that if you are using CVSD that your system is compatible with other systems playing in an exercise. */
     CVSD_MIL_STD_188_113 (2, "CVSD (MIL-STD-188-113)"),
     /** ADPCM (ITU-T G.726) */
     ADPCM_ITU_T_G726 (3, "ADPCM (ITU-T G.726)"),
     /** 16-bit Linear PCM 2’s complement, Big Endian */
-    $16_BIT_LINEAR_PCM_2S_COMPLEMENT_BIG_ENDIAN (4, "16-bit Linear PCM 2’s complement, Big Endian"),
+    NAME_16_BIT_LINEAR_PCM_2S_COMPLEMENT_BIG_ENDIAN (4, "16-bit Linear PCM 2’s complement, Big Endian"),
     /** 8-bit Linear PCM, unsigned */
-    $8_BIT_LINEAR_PCM_UNSIGNED (5, "8-bit Linear PCM, unsigned"),
+    NAME_8_BIT_LINEAR_PCM_UNSIGNED (5, "8-bit Linear PCM, unsigned"),
     /** VQ (Vector Quantization) */
     VQ_VECTOR_QUANTIZATION (6, "VQ (Vector Quantization)"),
     /** (unavailable for use) */
@@ -34,8 +34,10 @@ public enum SignalEncodingType
     GSM_HALF_RATE_ETSI_0620 (9, "GSM Half-Rate (ETSI 06.20)"),
     /** Speex Narrow Band, http://www.speex.org/ */
     SPEEX_NARROW_BAND (10, "Speex Narrow Band"),
+    /** Opus, https://tools.ietf.org/html/rfc6716 */
+    OPUS (11, "Opus"),
     /** 16-bit Linear PCM 2’s complement, Little Endian */
-    $16_BIT_LINEAR_PCM_2S_COMPLEMENT_LITTLE_ENDIAN (100, "16-bit Linear PCM 2’s complement, Little Endian"),
+    NAME_16_BIT_LINEAR_PCM_2S_COMPLEMENT_LITTLE_ENDIAN (100, "16-bit Linear PCM 2’s complement, Little Endian"),
     /** (unavailable for use) */
     UNAVAILABLE_FOR_USE_2 (255, "(unavailable for use)");
 

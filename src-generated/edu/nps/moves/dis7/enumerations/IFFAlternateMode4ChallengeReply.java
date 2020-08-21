@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 96 marshal size 8<br>
- * IFF-Alternate Mode 4 Challenge/Reply
+ * IFFAlternateMode4Challenge/Reply
  */
 public enum IFFAlternateMode4ChallengeReply 
 {

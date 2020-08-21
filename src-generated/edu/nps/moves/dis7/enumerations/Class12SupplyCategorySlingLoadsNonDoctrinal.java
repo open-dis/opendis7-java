@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 612 marshal size 8<br>
- * Class 12 Supply Category - Sling Loads (Non Doctrinal)
+ * Class12SupplyCategorySlingLoads(NonDoctrinal)
  */
 public enum Class12SupplyCategorySlingLoadsNonDoctrinal implements Category
 {
@@ -35,7 +35,9 @@ public enum Class12SupplyCategorySlingLoadsNonDoctrinal implements Category
     /** Sling Load, Helicopters */
     SLING_LOAD_HELICOPTERS (10, "Sling Load, Helicopters"),
     /** Sling Load, Hoist */
-    SLING_LOAD_HOIST (11, "Sling Load, Hoist");
+    SLING_LOAD_HOIST (11, "Sling Load, Hoist"),
+    /** Sling Load, Concrete Block */
+    SLING_LOAD_CONCRETE_BLOCK (12, "Sling Load, Concrete Block");
 
     private int value;
     private final String description;

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 426 marshal size 2<br>
- * Cover/Shroud Status
+ * Cover/ShroudStatus
  */
 public enum CoverShroudStatus 
 {

@@ -8,22 +8,22 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 512 marshal size 8<br>
- * Life Form-Human-Specific-Mortars
+ * LifeFormHumanSpecificMortars
  */
 public enum LifeFormHumanSpecificMortars 
 {
     /** Others */
     OTHERS (0, "Others"),
     /** 60mm M224 */
-    $60MM_M224 (30, "60mm M224"),
+    NAME_60MM_M224 (30, "60mm M224"),
     /** 81mm F2 */
-    $81MM_F2 (50, "81mm F2"),
+    NAME_81MM_F2 (50, "81mm F2"),
     /** 81mm L16 */
-    $81MM_L16 (51, "81mm L16"),
+    NAME_81MM_L16 (51, "81mm L16"),
     /** 81mm M252 */
-    $81MM_M252 (52, "81mm M252");
+    NAME_81MM_M252 (52, "81mm M252");
 
     private int value;
     private final String description;

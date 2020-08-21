@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 431 marshal size 8<br>
- * Platform-Land-Single Unit Utility Emergency Truck Subcategories<br>
+ * PlatformLandSingleUnitUtilityEmergencyTruckSubcategories<br>
  * Subcategories for Land Platform Category 84
  */
 public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements SubCategory
@@ -24,6 +24,8 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     FIRE_PARAMEDIC_TRUCK (2, "Fire/Paramedic Truck"),
     /** Ambulance, Advanced Life Support */
     AMBULANCE_ADVANCED_LIFE_SUPPORT (3, "Ambulance, Advanced Life Support"),
+    /** Ambulance Pickup Truck */
+    AMBULANCE_PICKUP_TRUCK (4, "Ambulance Pickup Truck"),
     /** Fire Engine */
     FIRE_ENGINE (10, "Fire Engine"),
     /** Aerial Ladder Fire Engine */

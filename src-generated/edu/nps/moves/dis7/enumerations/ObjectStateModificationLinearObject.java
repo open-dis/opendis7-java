@@ -3,20 +3,20 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 241 marshal size 16<br>
- * Object State-Modification-Linear Object
+ * ObjectStateModificationLinearObject
  */
 public class ObjectStateModificationLinearObject extends DisBitSet 
 {
   /**
    * Describes whether the location of the linear segment has been modified since the last update number
    */
-  public static Bits IS_LOCATION_MODIFIED = new Bits(0, 1);
+  public static Bits ISLOCATIONMODIFIED = new Bits(0, 1);
   /**
    * Describes whether the orientation of the linear segment has been modified since the last update number
    */
-  public static Bits IS_ORIENTATION_MODIFIED = new Bits(1, 1);
+  public static Bits ISORIENTATIONMODIFIED = new Bits(1, 1);
 
   public static class Bits
   {

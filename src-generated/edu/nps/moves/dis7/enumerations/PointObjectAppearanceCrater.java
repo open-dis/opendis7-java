@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 233 marshal size 16<br>
- * Point Object Appearance-Crater
+ * PointObjectAppearanceCrater
  */
 public class PointObjectAppearanceCrater extends DisBitSet 
 {
@@ -24,7 +24,7 @@ public class PointObjectAppearanceCrater extends DisBitSet
   /**
    * Describes the breached appearance of the object, Use {@link AppearanceLinearObjectTankDitchBreach} values for this field
    */
-  public static Bits BREACH_STATE = new Bits(30, 2, AppearanceLinearObjectTankDitchBreach.class);
+  public static Bits BREACHSTATE = new Bits(30, 2, AppearanceLinearObjectTankDitchBreach.class);
 
   public static class Bits
   {

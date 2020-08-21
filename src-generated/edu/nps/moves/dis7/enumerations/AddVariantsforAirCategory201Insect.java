@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 137 marshal size 8<br>
- * Add Variants for Air Category 201 - Insect
+ * AddVariantsforAirCategory201Insect
  */
 public enum AddVariantsforAirCategory201Insect 
 {

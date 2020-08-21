@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 489 marshal size 32<br>
- * Linear Object Appearance-Speed Bump
+ * LinearObjectAppearanceSpeedBump
  */
 public class LinearObjectAppearanceSpeedBump extends DisBitSet 
 {

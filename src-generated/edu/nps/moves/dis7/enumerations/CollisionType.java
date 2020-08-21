@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 189 marshal size 8<br>
- * Collision Type
+ * CollisionType
  */
 public enum CollisionType 
 {
@@ -18,8 +18,8 @@ public enum CollisionType
     INELASTIC (0, "Inelastic"),
     /** Elastic */
     ELASTIC (1, "Elastic"),
-    /** Boom nozzle has cleared the receiver's refueling receptacle, Collision Type 55 indicates that during an aerial refueling exercise the boom nozzle has cleared the receiver's refueling receptacle. */
-    BOOM_NOZZLE_HAS_CLEARED_THE_RECEIVERS_REFUELING_RECEPTACLE (55, "Boom nozzle has cleared the receiver's refueling receptacle");
+    /** Boom nozzle has cleared the receivers refueling receptacle, Collision Type 55 indicates that during an aerial refueling exercise the boom nozzle has cleared the receiver's refueling receptacle. */
+    BOOM_NOZZLE_HAS_CLEARED_THE_RECEIVERS_REFUELING_RECEPTACLE (55, "Boom nozzle has cleared the receivers refueling receptacle");
 
     private int value;
     private final String description;

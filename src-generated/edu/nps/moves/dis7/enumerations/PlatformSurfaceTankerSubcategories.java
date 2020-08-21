@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 443 marshal size 8<br>
- * Platform-Surface Tanker Subcategories<br>
+ * PlatformSurfaceTankerSubcategories<br>
  * Subcategories for Surface Platform Category 82.
  */
 public enum PlatformSurfaceTankerSubcategories implements SubCategory
@@ -28,10 +28,10 @@ public enum PlatformSurfaceTankerSubcategories implements SubCategory
     CRUDE_OIL_TANKER_UP_TO_159_999_DWT (5, "Crude Oil Tanker (up to 159,999 DWT)"),
     /** Liquid Bulk Tanker */
     LIQUID_BULK_TANKER (6, "Liquid Bulk Tanker"),
-    /** Very Large Crude Carrier (160,000–319,999 DWT) */
-    VERY_LARGE_CRUDE_CARRIER_160_000_319_999_DWT (7, "Very Large Crude Carrier (160,000–319,999 DWT)"),
-    /** Ultra Large Crude Carrier (320,000–549,999 DWT) */
-    ULTRA_LARGE_CRUDE_CARRIER_320_000_549_999_DWT (8, "Ultra Large Crude Carrier (320,000–549,999 DWT)"),
+    /** Very Large Crude Carrier (160,000-319,999 DWT) */
+    VERY_LARGE_CRUDE_CARRIER_160_000_319_999_DWT (7, "Very Large Crude Carrier (160,000-319,999 DWT)"),
+    /** Ultra Large Crude Carrier (320,000-549,999 DWT) */
+    ULTRA_LARGE_CRUDE_CARRIER_320_000_549_999_DWT (8, "Ultra Large Crude Carrier (320,000-549,999 DWT)"),
     /** Condensate Storage Tanker */
     CONDENSATE_STORAGE_TANKER (9, "Condensate Storage Tanker");
 

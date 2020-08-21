@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 602 marshal size 8<br>
- * Class 2 Supply Category - Clothing, Individual Equipment, Tools, Admin. Supplies
+ * Class2SupplyCategoryClothing,IndividualEquipment,Tools,Admin.Supplies
  */
 public enum Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies implements Category
 {
@@ -26,8 +26,8 @@ public enum Class2SupplyCategoryClothingIndividualEquipmentToolsAdminSupplies im
     F_CLOTHING (5, "F - Clothing"),
     /** G - Electronics */
     G_ELECTRONICS (6, "G - Electronics"),
-    /** M - Weapons  (Humans) */
-    M_WEAPONS_HUMANS (7, "M - Weapons  (Humans)"),
+    /** M - Weapons (Humans) */
+    M_WEAPONS_HUMANS (7, "M - Weapons (Humans)"),
     /** T - Industrial Supplies */
     T_INDUSTRIAL_SUPPLIES (8, "T - Industrial Supplies");
 

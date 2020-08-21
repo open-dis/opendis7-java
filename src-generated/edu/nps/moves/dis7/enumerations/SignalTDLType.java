@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 178 marshal size 16<br>
- * Signal-TDL Type
+ * SignalTDLType
  */
 public enum SignalTDLType 
 {
@@ -203,7 +203,9 @@ public enum SignalTDLType
     /** JPALS Data Link */
     JPALS_DATA_LINK (125, "JPALS Data Link"),
     /** OneSAF IADS Communications Link */
-    ONESAF_IADS_COMMUNICATIONS_LINK (126, "OneSAF IADS Communications Link");
+    ONESAF_IADS_COMMUNICATIONS_LINK (126, "OneSAF IADS Communications Link"),
+    /** Tactical Targeting Network Technology (TTNT) Application */
+    TACTICAL_TARGETING_NETWORK_TECHNOLOGY_TTNT_APPLICATION (127, "Tactical Targeting Network Technology (TTNT) Application");
 
     private int value;
     private final String description;

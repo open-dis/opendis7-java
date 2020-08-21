@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 16 marshal size 8<br>
- * Life Forms-Subcategory-U.S. Weapons
+ * LifeFormsSubcategoryU.S.Weapons
  */
 public enum LifeFormsSubcategoryUSWeapons implements SubCategory
 {
@@ -24,8 +24,8 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     DE_COCKER_KP90DC_45 (4, "De-cocker KP90DC .45"),
     /** De-cocker KP91DC .40 */
     DE_COCKER_KP91DC_40 (5, "De-cocker KP91DC .40"),
-    /** General officer's Model 15 .45 */
-    GENERAL_OFFICERS_MODEL_15_45 (6, "General officer's Model 15 .45"),
+    /** General officers Model 15 .45 */
+    GENERAL_OFFICERS_MODEL_15_45 (6, "General officers Model 15 .45"),
     /** Nova 9-mm, LaFrance */
     NOVA_9_MM_LAFRANCE (7, "Nova 9-mm, LaFrance"),
     /** Personal Defense Weapon MP5K-PDW 9-mm */
@@ -33,7 +33,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** Silenced Colt .45, LaFrance */
     SILENCED_COLT_45_LAFRANCE (9, "Silenced Colt .45, LaFrance"),
     /** 5900-series 9-mm, Smith and Wesson (SandW) */
-    $5900_SERIES_9_MM_SMITH_WESSON_SW (10, "5900-series 9-mm, Smith & Wesson (S&W)"),
+    NAME_5900_SERIES_9_MM_SMITH_WESSON_SW (10, "5900-series 9-mm, Smith & Wesson (S&W)"),
     /** M9 */
     M9 (11, "M9"),
     /** Model 1911A1, Springfield Armory */
@@ -109,7 +109,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** MP5/10 10-mm */
     MP5_10_10_MM (47, "MP5/10 10-mm"),
     /** 9-mm, Colt */
-    $9_MM_COLT (48, "9-mm, Colt"),
+    NAME_9_MM_COLT (48, "9-mm, Colt"),
     /** Ingram */
     INGRAM (49, "Ingram"),
     /** Externally powered (EPG) 7.62-mm, Ares */
@@ -139,7 +139,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** M1919A4 .30-cal, Browning */
     M1919A4_30_CAL_BROWNING (62, "M1919A4 .30-cal, Browning"),
     /** .50-cal, Browning */
-    $50_CAL_BROWNING (63, ".50-cal, Browning"),
+    NAME_50_CAL_BROWNING (63, ".50-cal, Browning"),
     /** Colored-smoke hand grenade M18 */
     COLORED_SMOKE_HAND_GRENADE_M18 (64, "Colored-smoke hand grenade M18"),
     /** Colored-smoke grenades, Federal Laboratories */
@@ -232,8 +232,8 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     RIFLE_LAUNCHER_ANTI_ARMOR_MUNITION_RAAM_OLIN (108, "Rifle-launcher Anti-Armor Munition (RAAM), Olin"),
     /** Rocket launcher M-20 3.5-in */
     ROCKET_LAUNCHER_M_20_35_IN (109, "Rocket launcher M-20 3.5-in"),
-    /** Rocket launcher, Enhanced M72 "E series" HEAT, 66-mm */
-    ROCKET_LAUNCHER_ENHANCED_M72_E_SERIES_HEAT_66_MM (110, "Rocket launcher, Enhanced M72 'E series' HEAT, 66-mm"),
+    /** Rocket launcher, Enhanced M72 E series HEAT, 66-mm */
+    ROCKET_LAUNCHER_ENHANCED_M72_E_SERIES_HEAT_66_MM (110, "Rocket launcher, Enhanced M72 E series HEAT, 66-mm"),
     /** Selective fire weapon AC-556 5.56-mm, Ruger */
     SELECTIVE_FIRE_WEAPON_AC_556_556_MM_RUGER (111, "Selective fire weapon AC-556 5.56-mm, Ruger"),
     /** Selective fire weapon AC-556F 5.56-mm, Ruger */

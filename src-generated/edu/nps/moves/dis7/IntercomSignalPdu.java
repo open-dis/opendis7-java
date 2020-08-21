@@ -14,10 +14,10 @@ import edu.nps.moves.dis7.enumerations.*;
 public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements Serializable
 {
 
-  /**
-   *
-   */
-  protected IntercomReferenceID intercomReferenceID = new IntercomReferenceID();
+    /**
+     *
+     */
+    protected IntercomReferenceID intercomReferenceID = new IntercomReferenceID();
 
   /**
    * ID of communications device

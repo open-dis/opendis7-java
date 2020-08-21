@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 29 marshal size 16<br>
  * Country
  */
@@ -104,8 +104,8 @@ public enum Country
     CHAD_TCD (43, "Chad (TCD)"),
     /** Chile (CHL) */
     CHILE_CHL (44, "Chile (CHL)"),
-    /** China, People's Republic of (CHN) */
-    CHINA_PEOPLES_REPUBLIC_OF_CHN (45, "China, People's Republic of (CHN)"),
+    /** China, Peoples Republic of (CHN) */
+    CHINA_PEOPLES_REPUBLIC_OF_CHN (45, "China, Peoples Republic of (CHN)"),
     /** Christmas Island (CXR) */
     CHRISTMAS_ISLAND_CXR (46, "Christmas Island (CXR)"),
     /** Cocos (Keeling) Islands (CCK) */
@@ -210,8 +210,8 @@ public enum Country
     HOWLAND_ISLAND_UNITED_STATES (96, "Howland Island (United States)"),
     /** Hungary (HUN) */
     HUNGARY_HUN (97, "Hungary (HUN)"),
-    /** Iceland (ESL) */
-    ICELAND_ESL (98, "Iceland (ESL)"),
+    /** Iceland (ISL) */
+    ICELAND_ISL (98, "Iceland (ISL)"),
     /** India (IND) */
     INDIA_IND (99, "India (IND)"),
     /** Indonesia (IDN) */
@@ -226,8 +226,8 @@ public enum Country
     ISRAEL_ISR (105, "Israel (ISR)"),
     /** Italy (ITA) */
     ITALY_ITA (106, "Italy (ITA)"),
-    /** Cote d'Ivoire (CIV) */
-    COTE_DIVOIRE_CIV (107, "Cote d'Ivoire (CIV)"),
+    /** Cote dIvoire (CIV) */
+    COTE_DIVOIRE_CIV (107, "Cote dIvoire (CIV)"),
     /** Jamaica (JAM) */
     JAMAICA_JAM (108, "Jamaica (JAM)"),
     /** Jan Mayen (Norway), Use Svalbard and Jan Mayen */
@@ -250,14 +250,14 @@ public enum Country
     KINGMAN_REEF_UNITED_STATES (117, "Kingman Reef (United States)"),
     /** Kiribati (KIR) */
     KIRIBATI_KIR (118, "Kiribati (KIR)"),
-    /** Korea (Democratic People's Republic of) (PRK) */
-    KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK (119, "Korea (Democratic People's Republic of) (PRK)"),
+    /** Korea (Democratic Peoples Republic of) (PRK) */
+    KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK (119, "Korea (Democratic Peoples Republic of) (PRK)"),
     /** Korea (Republic of) (KOR) */
     KOREA_REPUBLIC_OF_KOR (120, "Korea (Republic of) (KOR)"),
     /** Kuwait (KWT) */
     KUWAIT_KWT (121, "Kuwait (KWT)"),
-    /** Lao People's Democratic Republic (LAO) */
-    LAO_PEOPLES_DEMOCRATIC_REPUBLIC_LAO (122, "Lao People's Democratic Republic (LAO)"),
+    /** Lao Peoples Democratic Republic (LAO) */
+    LAO_PEOPLES_DEMOCRATIC_REPUBLIC_LAO (122, "Lao Peoples Democratic Republic (LAO)"),
     /** Lebanon (LBN) */
     LEBANON_LBN (123, "Lebanon (LBN)"),
     /** Lesotho (LSO) */
@@ -312,8 +312,8 @@ public enum Country
     MOZAMBIQUE_MOZ (148, "Mozambique (MOZ)"),
     /** Namibia (NAM) */
     NAMIBIA_NAM (149, "Namibia (NAM)"),
-    /** Nauru (NRO) */
-    NAURU_NRO (150, "Nauru (NRO)"),
+    /** Nauru (NRU) */
+    NAURU_NRU (150, "Nauru (NRU)"),
     /** Navassa Island (United States), Use United States Minor Outlying Islands */
     NAVASSA_ISLAND_UNITED_STATES (151, "Navassa Island (United States)"),
     /** Nepal (NPL) */
@@ -370,8 +370,8 @@ public enum Country
     QATAR_QAT (178, "Qatar (QAT)"),
     /** Reunion (REU) */
     REUNION_REU (179, "Reunion (REU)"),
-    /** Romania (ROY) */
-    ROMANIA_ROY (180, "Romania (ROY)"),
+    /** Romania (ROU) */
+    ROMANIA_ROU (180, "Romania (ROU)"),
     /** Rwanda (RWA) */
     RWANDA_RWA (181, "Rwanda (RWA)"),
     /** Saint Kitts and Nevis (KNA) */
@@ -418,8 +418,8 @@ public enum Country
     SURINAME_SUR (202, "Suriname (SUR)"),
     /** Svalbard (Norway), Use Svalbard and Jan Mayen */
     SVALBARD_NORWAY (203, "Svalbard (Norway)"),
-    /** Swaziland (SWZ) */
-    SWAZILAND_SWZ (204, "Swaziland (SWZ)"),
+    /** Eswatini (SWZ) */
+    ESWATINI_SWZ (204, "Eswatini (SWZ)"),
     /** Sweden (SWE) */
     SWEDEN_SWE (205, "Sweden (SWE)"),
     /** Switzerland (CHE) */
@@ -516,10 +516,10 @@ public enum Country
     KYRGYZSTAN_KGZ (253, "Kyrgyzstan (KGZ)"),
     /** Latvia (LVA) */
     LATVIA_LVA (254, "Latvia (LVA)"),
-    /** Lithuania  (LTU) */
-    LITHUANIA_LTU (255, "Lithuania  (LTU)"),
-    /** Macedonia (The Former Yugoslav Republic of) (MKD) */
-    MACEDONIA_THE_FORMER_YUGOSLAV_REPUBLIC_OF_MKD (256, "Macedonia (The Former Yugoslav Republic of) (MKD)"),
+    /** Lithuania (LTU) */
+    LITHUANIA_LTU (255, "Lithuania (LTU)"),
+    /** North Macedonia (MKD) */
+    NORTH_MACEDONIA_MKD (256, "North Macedonia (MKD)"),
     /** Midway Islands (United States), Use United States Minor Outlying Islands */
     MIDWAY_ISLANDS_UNITED_STATES (257, "Midway Islands (United States)"),
     /** Moldova (Republic of) (MDA) */

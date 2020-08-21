@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 26 marshal size 8<br>
- * Expendable-Surface Category
+ * ExpendableSurfaceCategory
  */
 public enum ExpendableSurfaceCategory implements Category
 {
@@ -18,12 +18,16 @@ public enum ExpendableSurfaceCategory implements Category
     OTHER (0, "Other"),
     /** Flare */
     FLARE (2, "Flare"),
-    /** Active emitter */
-    ACTIVE_EMITTER (4, "Active emitter"),
-    /** Passive decoy */
-    PASSIVE_DECOY (5, "Passive decoy"),
-    /** Smoke */
-    SMOKE (8, "Smoke");
+    /** Active Emitter */
+    ACTIVE_EMITTER (4, "Active Emitter"),
+    /** Passive Decoy */
+    PASSIVE_DECOY (5, "Passive Decoy"),
+    /** Smoke Generator */
+    SMOKE_GENERATOR (8, "Smoke Generator"),
+    /** Combined Flare and Smoke Generator */
+    COMBINED_FLARE_AND_SMOKE_GENERATOR (12, "Combined Flare and Smoke Generator"),
+    /** SAR Buoy */
+    SAR_BUOY (14, "SAR Buoy");
 
     private int value;
     private final String description;

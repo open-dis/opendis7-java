@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 64 marshal size 16<br>
- * Repair Complete-Repair
+ * RepairCompleteRepair
  */
 public enum RepairCompleteRepair 
 {
@@ -74,24 +74,24 @@ public enum RepairCompleteRepair
     GUN_ELEVATION_DRIVE (2000, "gun elevation drive"),
     /** gun stabilization system */
     GUN_STABILIZATION_SYSTEM (2010, "gun stabilization system"),
-    /** gunner's primary sight (GPS) */
-    GUNNERS_PRIMARY_SIGHT_GPS (2020, "gunner's primary sight (GPS)"),
-    /** commander's extension to the GPS */
-    COMMANDERS_EXTENSION_TO_THE_GPS (2030, "commander's extension to the GPS"),
+    /** gunners primary sight (GPS) */
+    GUNNERS_PRIMARY_SIGHT_GPS (2020, "gunners primary sight (GPS)"),
+    /** commanders extension to the GPS */
+    COMMANDERS_EXTENSION_TO_THE_GPS (2030, "commanders extension to the GPS"),
     /** loading mechanism */
     LOADING_MECHANISM (2040, "loading mechanism"),
-    /** gunner's auxiliary sight */
-    GUNNERS_AUXILIARY_SIGHT (2050, "gunner's auxiliary sight"),
-    /** gunner's control panel */
-    GUNNERS_CONTROL_PANEL (2060, "gunner's control panel"),
-    /** gunner's control assembly handle(s) */
-    GUNNERS_CONTROL_ASSEMBLY_HANDLES (2070, "gunner's control assembly handle(s)"),
-    /** commander's control handles/assembly */
-    COMMANDERS_CONTROL_HANDLES_ASSEMBLY (2090, "commander's control handles/assembly"),
-    /** commander's weapon station */
-    COMMANDERS_WEAPON_STATION (2100, "commander's weapon station"),
-    /** commander's independent thermal viewer (CITV) */
-    COMMANDERS_INDEPENDENT_THERMAL_VIEWER_CITV (2110, "commander's independent thermal viewer (CITV)"),
+    /** gunners auxiliary sight */
+    GUNNERS_AUXILIARY_SIGHT (2050, "gunners auxiliary sight"),
+    /** gunners control panel */
+    GUNNERS_CONTROL_PANEL (2060, "gunners control panel"),
+    /** gunners control assembly handle(s) */
+    GUNNERS_CONTROL_ASSEMBLY_HANDLES (2070, "gunners control assembly handle(s)"),
+    /** commanders control handles/assembly */
+    COMMANDERS_CONTROL_HANDLES_ASSEMBLY (2090, "commanders control handles/assembly"),
+    /** commanders weapon station */
+    COMMANDERS_WEAPON_STATION (2100, "commanders weapon station"),
+    /** commanders independent thermal viewer (CITV) */
+    COMMANDERS_INDEPENDENT_THERMAL_VIEWER_CITV (2110, "commanders independent thermal viewer (CITV)"),
     /** general weapons */
     GENERAL_WEAPONS (2120, "general weapons"),
     /** fuel transfer pump */

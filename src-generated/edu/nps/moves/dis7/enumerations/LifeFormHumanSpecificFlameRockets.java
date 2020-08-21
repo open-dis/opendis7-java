@@ -8,26 +8,26 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 522 marshal size 8<br>
- * Life Form-Human-Specific-Flame Rockets
+ * LifeFormHumanSpecificFlameRockets
  */
 public enum LifeFormHumanSpecificFlameRockets 
 {
     /** Other */
     OTHER (0, "Other"),
     /** 66mm M202 Flash */
-    $66MM_M202_FLASH (20, "66mm M202 Flash"),
+    NAME_66MM_M202_FLASH (20, "66mm M202 Flash"),
     /** 62mm FHJ-84 */
-    $62MM_FHJ_84 (30, "62mm FHJ-84"),
+    NAME_62MM_FHJ_84 (30, "62mm FHJ-84"),
     /** 90mm C90-CR-FIM (M3) */
-    $90MM_C90_CR_FIM_M3 (40, "90mm C90-CR-FIM (M3)"),
+    NAME_90MM_C90_CR_FIM_M3 (40, "90mm C90-CR-FIM (M3)"),
     /** 93mm RPO-A Shmel */
-    $93MM_RPO_A_SHMEL (50, "93mm RPO-A Shmel"),
+    NAME_93MM_RPO_A_SHMEL (50, "93mm RPO-A Shmel"),
     /** 93mm RPO-Z Shmel */
-    $93MM_RPO_Z_SHMEL (51, "93mm RPO-Z Shmel"),
+    NAME_93MM_RPO_Z_SHMEL (51, "93mm RPO-Z Shmel"),
     /** 93mm RPO-D Shmel */
-    $93MM_RPO_D_SHMEL (52, "93mm RPO-D Shmel");
+    NAME_93MM_RPO_D_SHMEL (52, "93mm RPO-D Shmel");
 
     private int value;
     private final String description;

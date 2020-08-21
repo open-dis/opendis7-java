@@ -3,16 +3,16 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 234 marshal size 16<br>
- * Point Object Appearance-Ribbon Bridge
+ * PointObjectAppearanceRibbonBridge
  */
 public class PointObjectAppearanceRibbonBridge extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the number of segments composing the ribbon bridge
    */
-  public static Bits NUMBER_OF_SEGMENTS = new Bits(0, 8);
+  public static Bits NUMBEROFSEGMENTS = new Bits(0, 8);
 
   public static class Bits
   {

@@ -8,16 +8,16 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 361 marshal size 1<br>
- * Mode 5/S Altitude Resolution
+ * Mode5/SAltitudeResolution
  */
 public enum Mode5SAltitudeResolution 
 {
     /** 100-foot */
-    $100_FOOT (0, "100-foot"),
+    NAME_100_FOOT (0, "100-foot"),
     /** 25-foot */
-    $25_FOOT (1, "25-foot");
+    NAME_25_FOOT (1, "25-foot");
 
     private int value;
     private final String description;

@@ -3,20 +3,20 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 190 marshal size 16<br>
- * Minefield State-Appearance Bit Map
+ * MinefieldStateAppearanceBitMap
  */
 public class MinefieldStateAppearanceBitMap extends DisBitSet 
 {
   /**
    * Identifies the type of minefield, Use {@link MinefieldAppearanceMinefieldType} values for this field
    */
-  public static Bits MINEFIELD_TYPE = new Bits(0, 2, MinefieldAppearanceMinefieldType.class);
+  public static Bits MINEFIELDTYPE = new Bits(0, 2, MinefieldAppearanceMinefieldType.class);
   /**
    * Describes whether the minefield is active or inactive, Use {@link MinefieldAppearanceActiveStatus} values for this field
    */
-  public static Bits ACTIVE_STATUS = new Bits(2, 1, MinefieldAppearanceActiveStatus.class);
+  public static Bits ACTIVESTATUS = new Bits(2, 1, MinefieldAppearanceActiveStatus.class);
   /**
    * Identifies whether the minefield has an active or inactive lane, Use {@link MinefieldAppearanceLane} values for this field
    */

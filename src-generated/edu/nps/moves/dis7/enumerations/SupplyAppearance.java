@@ -3,32 +3,32 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 40 marshal size 32<br>
- * Supply Appearance
+ * SupplyAppearance
  */
 public class SupplyAppearance extends DisBitSet 
 {
   /**
    * Describes the visual paint design, Use {@link AppearancePaintScheme} values for this field
    */
-  public static Bits PAINT_SCHEME = new Bits(0, 1, AppearancePaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(0, 1, AppearancePaintScheme.class);
   /**
    * Describes the damaged appearance, Use {@link AppearanceDamage} values for this field
    */
   public static Bits DAMAGE = new Bits(3, 2, AppearanceDamage.class);
   /**
-   * Describes the status of a supply's parachute, Use {@link Parachute} values for this field
+   * Describes the status of a supplys parachute, Use {@link Parachute} values for this field
    */
-  public static Bits PARACHUTE_STATUS = new Bits(7, 2, Parachute.class);
+  public static Bits PARACHUTESTATUS = new Bits(7, 2, Parachute.class);
   /**
    * Describes whether the entity is burning and flames are visible
    */
-  public static Bits IS_FLAMING = new Bits(15, 1);
+  public static Bits ISFLAMING = new Bits(15, 1);
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits IS_FROZEN = new Bits(21, 1);
+  public static Bits ISFROZEN = new Bits(21, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
@@ -36,7 +36,7 @@ public class SupplyAppearance extends DisBitSet
   /**
    * Describes the deployed status, Use {@link AppearanceSupplyDeployed} values for this field
    */
-  public static Bits DEPLOYED_STATUS = new Bits(24, 2, AppearanceSupplyDeployed.class);
+  public static Bits DEPLOYEDSTATUS = new Bits(24, 2, AppearanceSupplyDeployed.class);
   /**
    * Describes whether or not the entity is masked or cloaked
    */

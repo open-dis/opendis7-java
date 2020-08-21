@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 514 marshal size 8<br>
- * Life Form-Human-Specific-Weapon Non-specific
+ * LifeFormHumanSpecificWeaponNonspecific
  */
 public enum LifeFormHumanSpecificWeaponNonspecific 
 {
@@ -19,7 +19,11 @@ public enum LifeFormHumanSpecificWeaponNonspecific
     /** Knife */
     KNIFE (10, "Knife"),
     /** Machete */
-    MACHETE (50, "Machete");
+    MACHETE (50, "Machete"),
+    /** Explosive Vest */
+    EXPLOSIVE_VEST (100, "Explosive Vest"),
+    /** M18A1 Claymore */
+    M18A1_CLAYMORE (150, "M18A1 Claymore");
 
     private int value;
     private final String description;

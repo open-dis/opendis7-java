@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 435 marshal size 8<br>
- * Platform-Land-Farm Specialty Vehicle Subcategories<br>
+ * PlatformLandFarmSpecialtyVehicleSubcategories<br>
  * Subcategories for Land Platform Category 88
  */
 public enum PlatformLandFarmSpecialtyVehicleSubcategories implements SubCategory

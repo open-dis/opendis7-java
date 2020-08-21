@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 442 marshal size 8<br>
- * Platform-Surface-Dry Cargo Ship Subcategories<br>
+ * PlatformSurfaceDryCargoShipSubcategories<br>
  * Subcategories for Surface Platform Category 81.
  */
 public enum PlatformSurfaceDryCargoShipSubcategories implements SubCategory

@@ -3,16 +3,16 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 229 marshal size 16<br>
- * Object State Appearance-General
+ * ObjectStateAppearanceGeneral
  */
 public class ObjectStateAppearanceGeneral extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the percent completion of the object (0..100)
    */
-  public static Bits PERCENT_COMPLETE = new Bits(0, 8);
+  public static Bits PERCENTCOMPLETE = new Bits(0, 8);
   /**
    * Describes the damaged appearance, Use {@link AppearanceObjectGeneralDamage} values for this field
    */
@@ -28,15 +28,15 @@ public class ObjectStateAppearanceGeneral extends DisBitSet
   /**
    * Describes whether or not there is a smoke plume
    */
-  public static Bits IS_SMOKING = new Bits(12, 1);
+  public static Bits ISSMOKING = new Bits(12, 1);
   /**
    * Describes whether the object is burning and flames are visible
    */
-  public static Bits IS_FLAMING = new Bits(13, 1);
+  public static Bits ISFLAMING = new Bits(13, 1);
   /**
    * Describes whether the object has or contains an IED, Use {@link AppearanceObjectGeneralIEDPresent} values for this field
    */
-  public static Bits IED_PRESENT = new Bits(14, 2, AppearanceObjectGeneralIEDPresent.class);
+  public static Bits IEDPRESENT = new Bits(14, 2, AppearanceObjectGeneralIEDPresent.class);
 
   public static class Bits
   {

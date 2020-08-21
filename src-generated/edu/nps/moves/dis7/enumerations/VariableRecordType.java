@@ -8,12 +8,14 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 66 marshal size 32<br>
- * Variable Record Types
+ * VariableRecordTypes
  */
 public enum VariableRecordType 
 {
+    /** Entity ID List */
+    ENTITY_ID_LIST (1, "Entity ID List"),
     /** DDCP Join Transaction Join Request Message */
     DDCP_JOIN_TRANSACTION_JOIN_REQUEST_MESSAGE (1001, "DDCP Join Transaction Join Request Message"),
     /** DDCP Set Playback Window Transaction Set Playback Window Request Message */
@@ -307,25 +309,25 @@ public enum VariableRecordType
     /** Ammunition */
     AMMUNITION (24000, "Ammunition"),
     /** 120-mm HEAT, quantity */
-    $120_MM_HEAT_QUANTITY (24001, "120-mm HEAT, quantity"),
+    NAME_120_MM_HEAT_QUANTITY (24001, "120-mm HEAT, quantity"),
     /** 120-mm SABOT, quantity */
-    $120_MM_SABOT_QUANTITY (24002, "120-mm SABOT, quantity"),
+    NAME_120_MM_SABOT_QUANTITY (24002, "120-mm SABOT, quantity"),
     /** 12.7-mm M8, quantity */
-    $127_MM_M8_QUANTITY (24003, "12.7-mm M8, quantity"),
+    NAME_127_MM_M8_QUANTITY (24003, "12.7-mm M8, quantity"),
     /** 12.7-mm M20, quantity */
-    $127_MM_M20_QUANTITY (24004, "12.7-mm M20, quantity"),
+    NAME_127_MM_M20_QUANTITY (24004, "12.7-mm M20, quantity"),
     /** 7.62-mm M62, quantity */
-    $762_MM_M62_QUANTITY (24005, "7.62-mm M62, quantity"),
+    NAME_762_MM_M62_QUANTITY (24005, "7.62-mm M62, quantity"),
     /** M250 UKL8A1, quantity */
     M250_UKL8A1_QUANTITY (24006, "M250 UKL8A1, quantity"),
     /** M250 UKL8A3, quantity */
     M250_UKL8A3_QUANTITY (24007, "M250 UKL8A3, quantity"),
     /** 7.62-mm M80, quantity */
-    $762_MM_M80_QUANTITY (24008, "7.62-mm M80, quantity"),
+    NAME_762_MM_M80_QUANTITY (24008, "7.62-mm M80, quantity"),
     /** 12.7-mm, quantity */
-    $127_MM_QUANTITY (24009, "12.7-mm, quantity"),
+    NAME_127_MM_QUANTITY (24009, "12.7-mm, quantity"),
     /** 7.62-mm, quantity */
-    $762_MM_QUANTITY (24010, "7.62-mm, quantity"),
+    NAME_762_MM_QUANTITY (24010, "7.62-mm, quantity"),
     /** Mines, quantity */
     MINES_QUANTITY (24060, "Mines, quantity"),
     /** Type */
@@ -1049,6 +1051,8 @@ public enum VariableRecordType
     TACTICAL_DRIVER_STATUS (100068, "Tactical Driver Status"),
     /** Sonar System Status */
     SONAR_SYSTEM_STATUS (100100, "Sonar System Status"),
+    /** Accomplished accept */
+    ACCOMPLISHED_ACCEPT (100160, "Accomplished accept"),
     /** Upper latitude */
     UPPER_LATITUDE (100161, "Upper latitude"),
     /** Latitude-South (Location of weather cell) */
@@ -1057,8 +1061,6 @@ public enum VariableRecordType
     WESTERN_LONGITUDE (100163, "Western longitude"),
     /** Longitude-West (location of weather cell) */
     LONGITUDE_WEST_LOCATION_OF_WEATHER_CELL (100164, "Longitude-West (location of weather cell)"),
-    /** Accomplished accept */
-    ACCOMPLISHED_ACCEPT (100160, "Accomplished accept"),
     /** CD ROM Number (Disk ID for terrain) */
     CD_ROM_NUMBER_DISK_ID_FOR_TERRAIN (100165, "CD ROM Number (Disk ID for terrain)"),
     /** DTED disk ID */
@@ -1713,6 +1715,60 @@ public enum VariableRecordType
     FFS_AIRDROP_REQUEST_DATA (270165, "FFS Airdrop Request Data"),
     /** FFS Airdrop Data */
     FFS_AIRDROP_DATA (270166, "FFS Airdrop Data"),
+    /** Horizontal Circular Error Probable (m) */
+    HORIZONTAL_CIRCULAR_ERROR_PROBABLE_M (300000, "Horizontal Circular Error Probable (m)"),
+    /** Horizontal Position Error (m) */
+    HORIZONTAL_POSITION_ERROR_M (300001, "Horizontal Position Error (m)"),
+    /** Vertical Position Error (m) */
+    VERTICAL_POSITION_ERROR_M (300002, "Vertical Position Error (m)"),
+    /** Horizontal Velocity Error (m/s) */
+    HORIZONTAL_VELOCITY_ERROR_M_S (300003, "Horizontal Velocity Error (m/s)"),
+    /** Vertical Velocity Error (m/s) */
+    VERTICAL_VELOCITY_ERROR_M_S (300004, "Vertical Velocity Error (m/s)"),
+    /** 4th Lowest Jammer to Signal Ratio for P(Y)-L1 (dB) */
+    NAME_4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L1_DB (300005, "4th Lowest Jammer to Signal Ratio for P(Y)-L1 (dB)"),
+    /** 4th Lowest Jammer to Signal Ratio for P(Y)-L2 (dB) */
+    NAME_4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L2_DB (300006, "4th Lowest Jammer to Signal Ratio for P(Y)-L2 (dB)"),
+    /** GPS Figure of Merit */
+    GPS_FIGURE_OF_MERIT (300007, "GPS Figure of Merit"),
+    /** Weapon Transfer GPS State */
+    WEAPON_TRANSFER_GPS_STATE (300008, "Weapon Transfer GPS State"),
+    /** Weapon Transfer Horizontal Position Error (m) */
+    WEAPON_TRANSFER_HORIZONTAL_POSITION_ERROR_M (300009, "Weapon Transfer Horizontal Position Error (m)"),
+    /** Weapon Transfer Vertical Position Error (m) */
+    WEAPON_TRANSFER_VERTICAL_POSITION_ERROR_M (300010, "Weapon Transfer Vertical Position Error (m)"),
+    /** Weapon Transfer Vertical Position Error (m) */
+    WEAPON_TRANSFER_VERTICAL_POSITION_ERROR_M_2 (300011, "Weapon Transfer Vertical Position Error (m)"),
+    /** Weapon Transfer Horizontal Velocity Error (m/s) */
+    WEAPON_TRANSFER_HORIZONTAL_VELOCITY_ERROR_M_S (300012, "Weapon Transfer Horizontal Velocity Error (m/s)"),
+    /** Time Transfer Error (sec) */
+    TIME_TRANSFER_ERROR_SEC (300013, "Time Transfer Error (sec)"),
+    /** Age of Ephemeris (sec) */
+    AGE_OF_EPHEMERIS_SEC (300014, "Age of Ephemeris (sec)"),
+    /** Non-Flyout Munition Entity Request DIS Type Enumeration */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_DIS_TYPE_ENUMERATION (300016, "Non-Flyout Munition Entity Request DIS Type Enumeration"),
+    /** Non-Flyout Munition Entity Request Launch Point X (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_LAUNCH_POINT_X_M (300017, "Non-Flyout Munition Entity Request Launch Point X (m)"),
+    /** Non-Flyout Munition Entity Request Launch Point Y (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_LAUNCH_POINT_Y_M (300018, "Non-Flyout Munition Entity Request Launch Point Y (m)"),
+    /** Non-Flyout Munition Entity Request Launch Point Z (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_LAUNCH_POINT_Z_M (300019, "Non-Flyout Munition Entity Request Launch Point Z (m)"),
+    /** Non-Flyout Munition Entity Request Maximum Altitude (m MSL) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_MAXIMUM_ALTITUDE_M_MSL (300020, "Non-Flyout Munition Entity Request Maximum Altitude (m MSL)"),
+    /** Non-Flyout Munition Entity Request Flight Path */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_FLIGHT_PATH (300021, "Non-Flyout Munition Entity Request Flight Path"),
+    /** Non-Flyout Munition Entity Request Impact Point X (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_IMPACT_POINT_X_M (300022, "Non-Flyout Munition Entity Request Impact Point X (m)"),
+    /** Non-Flyout Munition Entity Request Impact Point Y (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_IMPACT_POINT_Y_M (300023, "Non-Flyout Munition Entity Request Impact Point Y (m)"),
+    /** Non-Flyout Munition Entity Request Impact Point Z (m) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_IMPACT_POINT_Z_M (300024, "Non-Flyout Munition Entity Request Impact Point Z (m)"),
+    /** Non-Flyout Munition Entity Request Elapsed Flight Time (sec) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_ELAPSED_FLIGHT_TIME_SEC (300025, "Non-Flyout Munition Entity Request Elapsed Flight Time (sec)"),
+    /** Non-Flyout Munition Entity Request Launch Time (sec) */
+    NON_FLYOUT_MUNITION_ENTITY_REQUEST_LAUNCH_TIME_SEC (300026, "Non-Flyout Munition Entity Request Launch Time (sec)"),
+    /** Time Error (sec) */
+    TIME_ERROR_SEC (300027, "Time Error (sec)"),
     /** Link 16 Command Variety 1 */
     LINK_16_COMMAND_VARIETY_1 (301100, "Link 16 Command Variety 1"),
     /** Push */
@@ -1819,6 +1875,58 @@ public enum VariableRecordType
     FORMATION_F2F_NPG (301255, "Formation F2F NPG"),
     /** Formation F2F Channel */
     FORMATION_F2F_CHANNEL (301256, "Formation F2F Channel"),
+    /** JLVC (JSPA) LogReport */
+    JLVC_JSPA_LOGREPORT (400008, "JLVC (JSPA) LogReport"),
+    /** JLVC (JSPA) SupplyAdjust */
+    JLVC_JSPA_SUPPLYADJUST (400009, "JLVC (JSPA) SupplyAdjust"),
+    /** JLVC (JSPA) EntityControl */
+    JLVC_JSPA_ENTITYCONTROL (400010, "JLVC (JSPA) EntityControl"),
+    /** JLVC (JSPA) HealthUpdate */
+    JLVC_JSPA_HEALTHUPDATE (400011, "JLVC (JSPA) HealthUpdate"),
+    /** JLVC (JSPA) RepairComplete */
+    JLVC_JSPA_REPAIRCOMPLETE (400012, "JLVC (JSPA) RepairComplete"),
+    /** JLVC (JSPA) UnitActivation */
+    JLVC_JSPA_UNITACTIVATION (400013, "JLVC (JSPA) UnitActivation"),
+    /** JLVC (JSPA) BattleDamageRepair */
+    JLVC_JSPA_BATTLEDAMAGEREPAIR (400014, "JLVC (JSPA) BattleDamageRepair"),
+    /** JLVC (JSPA) Minefield */
+    JLVC_JSPA_MINEFIELD (400015, "JLVC (JSPA) Minefield"),
+    /** JLVC (JSPA) Wire */
+    JLVC_JSPA_WIRE (400016, "JLVC (JSPA) Wire"),
+    /** JLVC (JSPA) Abatis */
+    JLVC_JSPA_ABATIS (400017, "JLVC (JSPA) Abatis"),
+    /** JLVC (JSPA) Crater */
+    JLVC_JSPA_CRATER (400018, "JLVC (JSPA) Crater"),
+    /** JLVC (JSPA) Ditch */
+    JLVC_JSPA_DITCH (400019, "JLVC (JSPA) Ditch"),
+    /** JLVC (JSPA) Lanes */
+    JLVC_JSPA_LANES (400020, "JLVC (JSPA) Lanes"),
+    /** JLVC (JSPA) IED */
+    JLVC_JSPA_IED (400021, "JLVC (JSPA) IED"),
+    /** JLVC (JSPA) Rubble */
+    JLVC_JSPA_RUBBLE (400022, "JLVC (JSPA) Rubble"),
+    /** JLVC (JSPA) SubmergedBarrier */
+    JLVC_JSPA_SUBMERGEDBARRIER (400023, "JLVC (JSPA) SubmergedBarrier"),
+    /** JLVC (JSPA) FloatingBarrier */
+    JLVC_JSPA_FLOATINGBARRIER (400024, "JLVC (JSPA) FloatingBarrier"),
+    /** JLVC (JSPA) Foxhole */
+    JLVC_JSPA_FOXHOLE (400025, "JLVC (JSPA) Foxhole"),
+    /** JLVC (JSPA) VehicleHole */
+    JLVC_JSPA_VEHICLEHOLE (400026, "JLVC (JSPA) VehicleHole"),
+    /** JLVC (JSPA) VehicleFortification */
+    JLVC_JSPA_VEHICLEFORTIFICATION (400027, "JLVC (JSPA) VehicleFortification"),
+    /** JLVC (JSPA) Sandbag */
+    JLVC_JSPA_SANDBAG (400028, "JLVC (JSPA) Sandbag"),
+    /** JLVC (JSPA) Checkpoint */
+    JLVC_JSPA_CHECKPOINT (400029, "JLVC (JSPA) Checkpoint"),
+    /** JLVC (JSPA) ContamCloud2D */
+    JLVC_JSPA_CONTAMCLOUD2D (400030, "JLVC (JSPA) ContamCloud2D"),
+    /** JLVC (JSPA) PopulationEffect */
+    JLVC_JSPA_POPULATIONEFFECT (400031, "JLVC (JSPA) PopulationEffect"),
+    /** JLVC (JSPA) Mine */
+    JLVC_JSPA_MINE (400032, "JLVC (JSPA) Mine"),
+    /** JLVC (JSPA) SeaMinefield */
+    JLVC_JSPA_SEAMINEFIELD (400033, "JLVC (JSPA) SeaMinefield"),
     /** Munition */
     MUNITION (500001, "Munition"),
     /** Engine Fuel */
@@ -1933,10 +2041,10 @@ public enum VariableRecordType
     ANTI_COLLISION_LIGHT_STATUS (553013, "Anti-Collision Light Status"),
     /** Nav/Formation Flash Rate */
     NAV_FORMATION_FLASH_RATE (553014, "Nav/Formation Flash Rate"),
-    /** Anti-Col. 'On' Duration */
-    ANTI_COL_ON_DURATION (553015, "Anti-Col. 'On' Duration"),
-    /** Anti-Col. 'Off' Duration */
-    ANTI_COL_OFF_DURATION (553016, "Anti-Col. 'Off' Duration"),
+    /** Anti-Col. On Duration */
+    ANTI_COL_ON_DURATION (553015, "Anti-Col. On Duration"),
+    /** Anti-Col. Off Duration */
+    ANTI_COL_OFF_DURATION (553016, "Anti-Col. Off Duration"),
     /** Intercept Status */
     INTERCEPT_STATUS (553017, "Intercept Status"),
     /** LifeForm Signaling Device Type */
@@ -2013,10 +2121,10 @@ public enum VariableRecordType
     OCCLUSION_OVERRIDE (555008, "Occlusion Override"),
     /** Commit Range */
     COMMIT_RANGE (556001, "Commit Range"),
-    /** Current Scenario IFF Mode 4A Code for This Threat's Affiliation */
-    CURRENT_SCENARIO_IFF_MODE_4A_CODE_FOR_THIS_THREATS_AFFILIATION (556007, "Current Scenario IFF Mode 4A Code for This Threat's Affiliation"),
-    /** Current Scenario IFF Mode 4B Code for This Threat's Affiliation */
-    CURRENT_SCENARIO_IFF_MODE_4B_CODE_FOR_THIS_THREATS_AFFILIATION (556008, "Current Scenario IFF Mode 4B Code for This Threat's Affiliation"),
+    /** Current Scenario IFF Mode 4A Code for This Threats Affiliation */
+    CURRENT_SCENARIO_IFF_MODE_4A_CODE_FOR_THIS_THREATS_AFFILIATION (556007, "Current Scenario IFF Mode 4A Code for This Threats Affiliation"),
+    /** Current Scenario IFF Mode 4B Code for This Threats Affiliation */
+    CURRENT_SCENARIO_IFF_MODE_4B_CODE_FOR_THIS_THREATS_AFFILIATION (556008, "Current Scenario IFF Mode 4B Code for This Threats Affiliation"),
     /** Ok to Engage Waypoint Number */
     OK_TO_ENGAGE_WAYPOINT_NUMBER (556016, "Ok to Engage Waypoint Number"),
     /** Max Speed at Sea Level */
@@ -2159,8 +2267,8 @@ public enum VariableRecordType
     GLOBAL_CONTROL_FREEZE_WEAPONS_QUANTITY_ON_ALL_OWNSHIPS (610043, "Global Control - Freeze Weapons Quantity On All Ownships"),
     /** Global Control - Freeze Fuel Quantity On All Ownships */
     GLOBAL_CONTROL_FREEZE_FUEL_QUANTITY_ON_ALL_OWNSHIPS (610044, "Global Control - Freeze Fuel Quantity On All Ownships"),
-    /** Global Control-  Freeze Kill Override On All Ownships */
-    GLOBAL_CONTROL_FREEZE_KILL_OVERRIDE_ON_ALL_OWNSHIPS (610045, "Global Control-  Freeze Kill Override On All Ownships"),
+    /** Global Control - Freeze Kill Override On All Ownships */
+    GLOBAL_CONTROL_FREEZE_KILL_OVERRIDE_ON_ALL_OWNSHIPS (610045, "Global Control - Freeze Kill Override On All Ownships"),
     /** Global Control - Freeze Crash Override On All Ownships */
     GLOBAL_CONTROL_FREEZE_CRASH_OVERRIDE_ON_ALL_OWNSHIPS (610046, "Global Control - Freeze Crash Override On All Ownships"),
     /** Ownship OFP Block Number */
@@ -2295,6 +2403,16 @@ public enum VariableRecordType
     OPERATIONAL_LIMITS (700005, "Operational Limits"),
     /** Event Marker Message */
     EVENT_MARKER_MESSAGE (1000620, "Event Marker Message"),
+    /** Receiver Aircraft Aero Model Data */
+    RECEIVER_AIRCRAFT_AERO_MODEL_DATA (2000000, "Receiver Aircraft Aero Model Data"),
+    /** Tanker Aircraft Aero Model Data */
+    TANKER_AIRCRAFT_AERO_MODEL_DATA (2000010, "Tanker Aircraft Aero Model Data"),
+    /** Boom Aircraft Aero Model Data */
+    BOOM_AIRCRAFT_AERO_MODEL_DATA (2000020, "Boom Aircraft Aero Model Data"),
+    /** Access to Image Generator Data */
+    ACCESS_TO_IMAGE_GENERATOR_DATA (2000030, "Access to Image Generator Data"),
+    /** Host Load Numbers */
+    HOST_LOAD_NUMBERS (2000040, "Host Load Numbers"),
     /** Extended Fire Event Reports */
     EXTENDED_FIRE_EVENT_REPORTS (5005001, "Extended Fire Event Reports"),
     /** Battle Damage Assessment (BDA) Event Report */

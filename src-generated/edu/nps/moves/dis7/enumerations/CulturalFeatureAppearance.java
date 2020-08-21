@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 39 marshal size 32<br>
- * Cultural Feature Appearance
+ * CulturalFeatureAppearance
  */
 public class CulturalFeatureAppearance extends DisBitSet 
 {
@@ -16,19 +16,19 @@ public class CulturalFeatureAppearance extends DisBitSet
   /**
    * Describes whether or not smoke is emanating from the entity
    */
-  public static Bits IS_SMOKE_EMANATING = new Bits(5, 1);
+  public static Bits ISSMOKEEMANATING = new Bits(5, 1);
   /**
    * Describes whether the entity is burning and flames are visible
    */
-  public static Bits IS_FLAMING = new Bits(15, 1);
+  public static Bits ISFLAMING = new Bits(15, 1);
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits IS_FROZEN = new Bits(21, 1);
+  public static Bits ISFROZEN = new Bits(21, 1);
   /**
    * Describes whether the internal heat is on or off
    */
-  public static Bits INTERNAL_HEAT_ON = new Bits(22, 1);
+  public static Bits INTERNALHEATON = new Bits(22, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
@@ -36,11 +36,11 @@ public class CulturalFeatureAppearance extends DisBitSet
   /**
    * Describes whether the exterior lights are on or off
    */
-  public static Bits EXTERIOR_LIGHTS_ON = new Bits(28, 1);
+  public static Bits EXTERIORLIGHTSON = new Bits(28, 1);
   /**
    * Describes whether the interior lights are on or off
    */
-  public static Bits INTERIOR_LIGHTS_ON = new Bits(29, 1);
+  public static Bits INTERIORLIGHTSON = new Bits(29, 1);
   /**
    * Describes whether or not the entity is masked or cloaked
    */

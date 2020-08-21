@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 326 marshal size 16<br>
- * Sensor Record-Sensor Type-Passive Sensors
+ * SensorRecordSensorTypePassiveSensors
  */
 public enum SensorRecordSensorTypePassiveSensors 
 {
@@ -66,18 +66,18 @@ public enum SensorRecordSensorTypePassiveSensors
     BOW_21 (60024, "BOW-21"),
     /** Chaparral IRST */
     CHAPARRAL_IRST (60025, "Chaparral IRST"),
-    /**  */
-    undef (60026, ""),
-    /**  */
-    undef_2 (60027, ""),
-    /**  */
-    undef_3 (60028, ""),
-    /**  */
-    undef_4 (60029, ""),
-    /**  */
-    undef_5 (60030, ""),
-    /**  */
-    undef_6 (60031, ""),
+    /** NATOID_FlankerIRST */
+    NATOID_FLANKERIRST (60026, "NATOID_FlankerIRST"),
+    /** NATOID_FoxbatIRST */
+    NATOID_FOXBATIRST (60027, "NATOID_FoxbatIRST"),
+    /** NATOID_FoxhoundIRST */
+    NATOID_FOXHOUNDIRST (60028, "NATOID_FoxhoundIRST"),
+    /** NATOID_FulcrumIRST */
+    NATOID_FULCRUMIRST (60029, "NATOID_FulcrumIRST"),
+    /** NATOID_HavocIRST */
+    NATOID_HAVOCIRST (60030, "NATOID_HavocIRST"),
+    /** NATOID_HindIRST */
+    NATOID_HINDIRST (60031, "NATOID_HindIRST"),
     /** KJ-200 */
     KJ_200 (60032, "KJ-200"),
     /** KJ-8602 */

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 508 marshal size 8<br>
- * Platform-Subsurface-Civilian Semi-Submersibles-Subcategories<br>
+ * PlatformSubsurfaceCivilianSemiSubmersiblesSubcategories<br>
  * Subcategories for Subsurface Platform Category 82
  */
 public enum PlatformSubsurfaceCivilianSemiSubmersiblesSubcategories implements SubCategory

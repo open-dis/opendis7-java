@@ -8,18 +8,18 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 510 marshal size 8<br>
- * Life Form-Human-Specific-Anti-Materiel Rifles
+ * LifeFormHumanSpecificAntiMaterielRifles
  */
 public enum LifeFormHumanSpecificAntiMaterielRifles 
 {
     /** Other */
     OTHER (0, "Other"),
     /** 12.7mm AW50 */
-    $127MM_AW50 (10, "12.7mm AW50"),
+    NAME_127MM_AW50 (10, "12.7mm AW50"),
     /** 12.7mm AW50F */
-    $127MM_AW50F (11, "12.7mm AW50F");
+    NAME_127MM_AW50F (11, "12.7mm AW50F");
 
     private int value;
     private final String description;

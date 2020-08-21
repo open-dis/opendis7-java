@@ -8,14 +8,14 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 467 marshal size 8<br>
- * Link 11/11B Fidelity Level
+ * Link11/11BFidelityLevel
  */
 public enum Link1111BFidelityLevel 
 {
-    /** No Statement */
-    NO_STATEMENT (0, "No Statement"),
+    /** Fidelity Level 0 */
+    FIDELITY_LEVEL_0 (0, "Fidelity Level 0"),
     /** Fidelity Level 1 */
     FIDELITY_LEVEL_1 (1, "Fidelity Level 1"),
     /** Fidelity Level 2 */

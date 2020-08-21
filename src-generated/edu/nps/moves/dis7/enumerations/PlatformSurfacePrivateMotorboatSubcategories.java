@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 445 marshal size 8<br>
- * Platform-Surface Private Motorboat Subcategories<br>
+ * PlatformSurfacePrivateMotorboatSubcategories<br>
  * Subcategories for Surface Platform Category 84.
  */
 public enum PlatformSurfacePrivateMotorboatSubcategories implements SubCategory

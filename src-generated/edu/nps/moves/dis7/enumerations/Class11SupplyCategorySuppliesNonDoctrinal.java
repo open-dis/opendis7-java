@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 611 marshal size 8<br>
- * Class 11 Supply Category - Supplies (Non Doctrinal)
+ * Class11SupplyCategorySupplies(NonDoctrinal)
  */
 public enum Class11SupplyCategorySuppliesNonDoctrinal implements Category
 {

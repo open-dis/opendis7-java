@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 444 marshal size 8<br>
- * Platform-Surface Support Vessel Subcategories<br>
+ * PlatformSurfaceSupportVesselSubcategories<br>
  * Subcategories for Surface Platform Category 83
  */
 public enum PlatformSurfaceSupportVesselSubcategories implements SubCategory
@@ -25,7 +25,15 @@ public enum PlatformSurfaceSupportVesselSubcategories implements SubCategory
     /** Dive Support Vessel */
     DIVE_SUPPORT_VESSEL (4, "Dive Support Vessel"),
     /** Fireboat */
-    FIREBOAT (5, "Fireboat");
+    FIREBOAT (5, "Fireboat"),
+    /** Well Stimulation Vessel (WSV) */
+    WELL_STIMULATION_VESSEL_WSV (6, "Well Stimulation Vessel (WSV)"),
+    /** Anchor Handling Tug Supply Vessel (AHTS) */
+    ANCHOR_HANDLING_TUG_SUPPLY_VESSEL_AHTS (7, "Anchor Handling Tug Supply Vessel (AHTS)"),
+    /** Offshore Construction Vessel (OCV) */
+    OFFSHORE_CONSTRUCTION_VESSEL_OCV (8, "Offshore Construction Vessel (OCV)"),
+    /** Emergency Response and Rescue Vessel (ERRV) */
+    EMERGENCY_RESPONSE_AND_RESCUE_VESSEL_ERRV (9, "Emergency Response and Rescue Vessel (ERRV)");
 
     private int value;
     private final String description;

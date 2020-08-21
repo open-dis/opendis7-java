@@ -8,32 +8,32 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 475 marshal size 8<br>
- * Life Form-Human-Specific-High Power Rifles
+ * LifeFormHumanSpecificHighPowerRifles
  */
 public enum LifeFormHumanSpecificHighPowerRifles 
 {
     /** Other */
     OTHER (0, "Other"),
     /** 7.62mm M14 */
-    $762MM_M14 (10, "7.62mm M14"),
+    NAME_762MM_M14 (10, "7.62mm M14"),
     /** 7.62mm Remington 700 */
-    $762MM_REMINGTON_700 (11, "7.62mm Remington 700"),
+    NAME_762MM_REMINGTON_700 (11, "7.62mm Remington 700"),
     /** 7.62mm SIG-Sauer SSG-2000 */
-    $762MM_SIG_SAUER_SSG_2000 (12, "7.62mm SIG-Sauer SSG-2000"),
+    NAME_762MM_SIG_SAUER_SSG_2000 (12, "7.62mm SIG-Sauer SSG-2000"),
     /** 7.62mm Stoner SR-25 */
-    $762MM_STONER_SR_25 (13, "7.62mm Stoner SR-25"),
+    NAME_762MM_STONER_SR_25 (13, "7.62mm Stoner SR-25"),
     /** 7.62mm Mosin-Nagant Model 1891/30 */
-    $762MM_MOSIN_NAGANT_MODEL_1891_30 (14, "7.62mm Mosin-Nagant Model 1891/30"),
+    NAME_762MM_MOSIN_NAGANT_MODEL_1891_30 (14, "7.62mm Mosin-Nagant Model 1891/30"),
     /** 7.62mm HK417 */
-    $762MM_HK417 (15, "7.62mm HK417"),
-    /** 7.62mm HK417 16" Recce */
-    $762MM_HK417_16_RECCE (16, "7.62mm HK417 16' Recce"),
+    NAME_762MM_HK417 (15, "7.62mm HK417"),
+    /** 7.62mm HK417 16 Recce */
+    NAME_762MM_HK417_16_RECCE (16, "7.62mm HK417 16 Recce"),
     /** 7.65mm BAR M1918 */
-    $765MM_BAR_M1918 (50, "7.65mm BAR M1918"),
+    NAME_765MM_BAR_M1918 (50, "7.65mm BAR M1918"),
     /** 7.65mm M1 Garand */
-    $765MM_M1_GARAND (51, "7.65mm M1 Garand");
+    NAME_765MM_M1_GARAND (51, "7.65mm M1 Garand");
 
     private int value;
     private final String description;

@@ -8,18 +8,18 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 343 marshal size 3<br>
- * TCAS/ACAS Software Version
+ * TCAS/ACASSoftwareVersion
  */
 public enum TCASACASSoftwareVersion 
 {
     /** No Statement */
     NO_STATEMENT (0, "No Statement"),
     /** 6.0.2 */
-    $602 (1, "6.0.2"),
+    NAME_602 (1, "6.0.2"),
     /** 7.0 */
-    $70 (2, "7.0");
+    NAME_70 (2, "7.0");
 
     private int value;
     private final String description;

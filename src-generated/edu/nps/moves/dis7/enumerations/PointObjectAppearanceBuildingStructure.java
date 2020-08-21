@@ -3,9 +3,9 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 230 marshal size 16<br>
- * Point Object Appearance-Building/Structure
+ * PointObjectAppearanceBuilding/Structure
  */
 public class PointObjectAppearanceBuildingStructure extends DisBitSet 
 {
@@ -16,11 +16,11 @@ public class PointObjectAppearanceBuildingStructure extends DisBitSet
   /**
    * Describes the visual paint design, Use {@link BuildingPaintScheme} values for this field
    */
-  public static Bits PAINT_SCHEME = new Bits(8, 8, BuildingPaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(8, 8, BuildingPaintScheme.class);
   /**
    * Describes whether the aperture (e.g., tent) is open or closed
    */
-  public static Bits IS_APERTURE_OPEN = new Bits(16, 1);
+  public static Bits ISAPERTUREOPEN = new Bits(16, 1);
 
   public static class Bits
   {

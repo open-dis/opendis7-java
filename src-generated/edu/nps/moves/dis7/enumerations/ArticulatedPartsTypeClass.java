@@ -8,30 +8,30 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 59 marshal size 32<br>
- * Articulated Parts-Type Class
+ * ArticulatedPartsTypeClass
  */
 public enum ArticulatedPartsTypeClass 
 {
     /** Not Specified */
     NOT_SPECIFIED (0, "Not Specified"),
-    /** rudder */
-    RUDDER (1024, "rudder"),
-    /** left flap */
-    LEFT_FLAP (1056, "left flap"),
-    /** right flap */
-    RIGHT_FLAP (1088, "right flap"),
-    /** left aileron */
-    LEFT_AILERON (1120, "left aileron"),
-    /** right aileron */
-    RIGHT_AILERON (1152, "right aileron"),
-    /** helicopter - main rotor */
-    HELICOPTER_MAIN_ROTOR (1184, "helicopter - main rotor"),
-    /** helicopter - tail rotor */
-    HELICOPTER_TAIL_ROTOR (1216, "helicopter - tail rotor"),
-    /** other Aircraft Control Surfaces defined as needed */
-    OTHER_AIRCRAFT_CONTROL_SURFACES_DEFINED_AS_NEEDED (1248, "other Aircraft Control Surfaces defined as needed"),
+    /** Rudder */
+    RUDDER (1024, "Rudder"),
+    /** Left Flap */
+    LEFT_FLAP (1056, "Left Flap"),
+    /** Right Flap */
+    RIGHT_FLAP (1088, "Right Flap"),
+    /** Left Aileron */
+    LEFT_AILERON (1120, "Left Aileron"),
+    /** Right Aileron */
+    RIGHT_AILERON (1152, "Right Aileron"),
+    /** Helicopter - Main Rotor */
+    HELICOPTER_MAIN_ROTOR (1184, "Helicopter - Main Rotor"),
+    /** Helicopter - Tail Rotor */
+    HELICOPTER_TAIL_ROTOR (1216, "Helicopter - Tail Rotor"),
+    /** Other Aircraft Control Surfaces Defined as Needed */
+    OTHER_AIRCRAFT_CONTROL_SURFACES_DEFINED_AS_NEEDED (1248, "Other Aircraft Control Surfaces Defined as Needed"),
     /** Propeller Number 1 */
     PROPELLER_NUMBER_1 (1280, "Propeller Number 1"),
     /** Propeller Number 2 */
@@ -56,46 +56,76 @@ public enum ArticulatedPartsTypeClass
     LEFT_ELEVATOR (1600, "Left Elevator"),
     /** Right Elevator */
     RIGHT_ELEVATOR (1632, "Right Elevator"),
-    /** periscope */
-    PERISCOPE (2048, "periscope"),
-    /** generic antenna */
-    GENERIC_ANTENNA (2080, "generic antenna"),
-    /** snorkel */
-    SNORKEL (2112, "snorkel"),
-    /** other extendible parts defined as needed */
-    OTHER_EXTENDIBLE_PARTS_DEFINED_AS_NEEDED (2144, "other extendible parts defined as needed"),
+    /** Canard (left) */
+    CANARD_LEFT (1664, "Canard (left)"),
+    /** Canard (right) */
+    CANARD_RIGHT (1696, "Canard (right)"),
+    /** Elevon Inner (left) */
+    ELEVON_INNER_LEFT (1728, "Elevon Inner (left)"),
+    /** Elevon Inner (right) */
+    ELEVON_INNER_RIGHT (1760, "Elevon Inner (right)"),
+    /** Elevon Middle (left) */
+    ELEVON_MIDDLE_LEFT (1792, "Elevon Middle (left)"),
+    /** Elevon Middle (right) */
+    ELEVON_MIDDLE_RIGHT (1824, "Elevon Middle (right)"),
+    /** Elevon Outer (left) */
+    ELEVON_OUTER_LEFT (1856, "Elevon Outer (left)"),
+    /** Elevon Outer (right) */
+    ELEVON_OUTER_RIGHT (1888, "Elevon Outer (right)"),
+    /** Canopy (Aircraft) */
+    CANOPY_AIRCRAFT (1920, "Canopy (Aircraft)"),
+    /** Periscope */
+    PERISCOPE (2048, "Periscope"),
+    /** Generic Antenna */
+    GENERIC_ANTENNA (2080, "Generic Antenna"),
+    /** Snorkel */
+    SNORKEL (2112, "Snorkel"),
+    /** Other Extendible Parts Defined as Needed */
+    OTHER_EXTENDIBLE_PARTS_DEFINED_AS_NEEDED (2144, "Other Extendible Parts Defined as Needed"),
+    /** Dive Plane (Sail) - Left */
+    DIVE_PLANE_SAIL_LEFT (2176, "Dive Plane (Sail) - Left"),
+    /** Dive Plane (Sail) - Right */
+    DIVE_PLANE_SAIL_RIGHT (2208, "Dive Plane (Sail) - Right"),
+    /** Dive Plane (Bow) - Left */
+    DIVE_PLANE_BOW_LEFT (2240, "Dive Plane (Bow) - Left"),
+    /** Dive Plane (Bow) - Right */
+    DIVE_PLANE_BOW_RIGHT (2272, "Dive Plane (Bow) - Right"),
+    /** Dive Plane (Stern) - Left */
+    DIVE_PLANE_STERN_LEFT (2304, "Dive Plane (Stern) - Left"),
+    /** Dive Plane (Stern) - Right */
+    DIVE_PLANE_STERN_RIGHT (2336, "Dive Plane (Stern) - Right"),
     /** Landing Gear, Nose and Left/Right Main move in unison; intended for low-fidelity simulations and not to be used if the others are used. */
     LANDING_GEAR (3072, "Landing Gear"),
-    /** tail hook */
-    TAIL_HOOK (3104, "tail hook"),
-    /** speed brake */
-    SPEED_BRAKE (3136, "speed brake"),
+    /** Tail Hook */
+    TAIL_HOOK (3104, "Tail Hook"),
+    /** Speed Brake */
+    SPEED_BRAKE (3136, "Speed Brake"),
     /** Left Door of Primary Weapon Bay */
     LEFT_DOOR_OF_PRIMARY_WEAPON_BAY (3168, "Left Door of Primary Weapon Bay"),
     /** Right Door of Primary Weapon Bay */
     RIGHT_DOOR_OF_PRIMARY_WEAPON_BAY (3200, "Right Door of Primary Weapon Bay"),
-    /** tank or APC hatch */
-    TANK_OR_APC_HATCH (3232, "tank or APC hatch"),
-    /** wingsweep */
-    WINGSWEEP (3264, "wingsweep"),
-    /** Bridge launcher */
-    BRIDGE_LAUNCHER (3296, "Bridge launcher"),
-    /** Bridge section 1 */
-    BRIDGE_SECTION_1 (3328, "Bridge section 1"),
-    /** Bridge section 2 */
-    BRIDGE_SECTION_2 (3360, "Bridge section 2"),
-    /** Bridge section 3 */
-    BRIDGE_SECTION_3 (3392, "Bridge section 3"),
-    /** Primary blade 1 */
-    PRIMARY_BLADE_1 (3424, "Primary blade 1"),
-    /** Primary blade 2 */
-    PRIMARY_BLADE_2 (3456, "Primary blade 2"),
-    /** Primary boom */
-    PRIMARY_BOOM (3488, "Primary boom"),
-    /** Primary launcher arm */
-    PRIMARY_LAUNCHER_ARM (3520, "Primary launcher arm"),
-    /** other fixed position parts defined as needed */
-    OTHER_FIXED_POSITION_PARTS_DEFINED_AS_NEEDED (3552, "other fixed position parts defined as needed"),
+    /** Tank or APC Hatch */
+    TANK_OR_APC_HATCH (3232, "Tank or APC Hatch"),
+    /** Wingsweep */
+    WINGSWEEP (3264, "Wingsweep"),
+    /** Bridge Launcher */
+    BRIDGE_LAUNCHER (3296, "Bridge Launcher"),
+    /** Bridge Section 1 */
+    BRIDGE_SECTION_1 (3328, "Bridge Section 1"),
+    /** Bridge Section 2 */
+    BRIDGE_SECTION_2 (3360, "Bridge Section 2"),
+    /** Bridge Section 3 */
+    BRIDGE_SECTION_3 (3392, "Bridge Section 3"),
+    /** Primary Blade 1 */
+    PRIMARY_BLADE_1 (3424, "Primary Blade 1"),
+    /** Primary Blade 2 */
+    PRIMARY_BLADE_2 (3456, "Primary Blade 2"),
+    /** Primary Boom */
+    PRIMARY_BOOM (3488, "Primary Boom"),
+    /** Primary Launcher Arm */
+    PRIMARY_LAUNCHER_ARM (3520, "Primary Launcher Arm"),
+    /** Other Fixed Position Parts Defined as Needed */
+    OTHER_FIXED_POSITION_PARTS_DEFINED_AS_NEEDED (3552, "Other Fixed Position Parts Defined as Needed"),
     /** Landing Gear - Nose */
     LANDING_GEAR_NOSE (3584, "Landing Gear - Nose"),
     /** Landing Gear - Left Main */
@@ -114,206 +144,208 @@ public enum ArticulatedPartsTypeClass
     SPOT_SEARCH_LIGHT_3 (3808, "Spot/Search Light #3"),
     /** Spot/Search Light #4 */
     SPOT_SEARCH_LIGHT_4 (3840, "Spot/Search Light #4"),
-    /** Primary turret number 1 */
-    PRIMARY_TURRET_NUMBER_1 (4096, "Primary turret number 1"),
-    /** Primary turret number 2 */
-    PRIMARY_TURRET_NUMBER_2 (4128, "Primary turret number 2"),
-    /** Primary turret number 3 */
-    PRIMARY_TURRET_NUMBER_3 (4160, "Primary turret number 3"),
-    /** Primary turret number 4 */
-    PRIMARY_TURRET_NUMBER_4 (4192, "Primary turret number 4"),
-    /** Primary turret number 5 */
-    PRIMARY_TURRET_NUMBER_5 (4224, "Primary turret number 5"),
-    /** Primary turret number 6 */
-    PRIMARY_TURRET_NUMBER_6 (4256, "Primary turret number 6"),
-    /** Primary turret number 7 */
-    PRIMARY_TURRET_NUMBER_7 (4288, "Primary turret number 7"),
-    /** Primary turret number 8 */
-    PRIMARY_TURRET_NUMBER_8 (4320, "Primary turret number 8"),
-    /** Primary turret number 9 */
-    PRIMARY_TURRET_NUMBER_9 (4352, "Primary turret number 9"),
-    /** Primary turret number 10 */
-    PRIMARY_TURRET_NUMBER_10 (4384, "Primary turret number 10"),
-    /** Primary gun number 1 */
-    PRIMARY_GUN_NUMBER_1 (4416, "Primary gun number 1"),
-    /** Primary gun number 2 */
-    PRIMARY_GUN_NUMBER_2 (4448, "Primary gun number 2"),
-    /** Primary gun number 3 */
-    PRIMARY_GUN_NUMBER_3 (4480, "Primary gun number 3"),
-    /** Primary gun number 4 */
-    PRIMARY_GUN_NUMBER_4 (4512, "Primary gun number 4"),
-    /** Primary gun number 5 */
-    PRIMARY_GUN_NUMBER_5 (4544, "Primary gun number 5"),
-    /** Primary gun number 6 */
-    PRIMARY_GUN_NUMBER_6 (4576, "Primary gun number 6"),
-    /** Primary gun number 7 */
-    PRIMARY_GUN_NUMBER_7 (4608, "Primary gun number 7"),
-    /** Primary gun number 8 */
-    PRIMARY_GUN_NUMBER_8 (4640, "Primary gun number 8"),
-    /** Primary gun number 9 */
-    PRIMARY_GUN_NUMBER_9 (4672, "Primary gun number 9"),
-    /** Primary gun number 10 */
-    PRIMARY_GUN_NUMBER_10 (4704, "Primary gun number 10"),
-    /** Primary launcher 1 */
-    PRIMARY_LAUNCHER_1 (4736, "Primary launcher 1"),
-    /** Primary launcher 2 */
-    PRIMARY_LAUNCHER_2 (4768, "Primary launcher 2"),
-    /** Primary launcher 3 */
-    PRIMARY_LAUNCHER_3 (4800, "Primary launcher 3"),
-    /** Primary launcher 4 */
-    PRIMARY_LAUNCHER_4 (4832, "Primary launcher 4"),
-    /** Primary launcher 5 */
-    PRIMARY_LAUNCHER_5 (4864, "Primary launcher 5"),
-    /** Primary launcher 6 */
-    PRIMARY_LAUNCHER_6 (4896, "Primary launcher 6"),
-    /** Primary launcher 7 */
-    PRIMARY_LAUNCHER_7 (4928, "Primary launcher 7"),
-    /** Primary launcher 8 */
-    PRIMARY_LAUNCHER_8 (4960, "Primary launcher 8"),
-    /** Primary launcher 9 */
-    PRIMARY_LAUNCHER_9 (4992, "Primary launcher 9"),
-    /** Primary launcher 10 */
-    PRIMARY_LAUNCHER_10 (5024, "Primary launcher 10"),
-    /** Primary defense systems 1, Point defense systems like Phalanx guns, or visible chaff, flare, or smoke dispensers. */
-    PRIMARY_DEFENSE_SYSTEMS_1 (5056, "Primary defense systems 1"),
-    /** Primary defense systems 2 */
-    PRIMARY_DEFENSE_SYSTEMS_2 (5088, "Primary defense systems 2"),
-    /** Primary defense systems 3 */
-    PRIMARY_DEFENSE_SYSTEMS_3 (5120, "Primary defense systems 3"),
-    /** Primary defense systems 4 */
-    PRIMARY_DEFENSE_SYSTEMS_4 (5152, "Primary defense systems 4"),
-    /** Primary defense systems 5 */
-    PRIMARY_DEFENSE_SYSTEMS_5 (5184, "Primary defense systems 5"),
-    /** Primary defense systems 6 */
-    PRIMARY_DEFENSE_SYSTEMS_6 (5216, "Primary defense systems 6"),
-    /** Primary defense systems 7 */
-    PRIMARY_DEFENSE_SYSTEMS_7 (5248, "Primary defense systems 7"),
-    /** Primary defense systems 8 */
-    PRIMARY_DEFENSE_SYSTEMS_8 (5280, "Primary defense systems 8"),
-    /** Primary defense systems 9 */
-    PRIMARY_DEFENSE_SYSTEMS_9 (5312, "Primary defense systems 9"),
-    /** Primary defense systems 10 */
-    PRIMARY_DEFENSE_SYSTEMS_10 (5344, "Primary defense systems 10"),
-    /** Primary radar 1, Any radar dish or movable antenna or sensor. */
-    PRIMARY_RADAR_1 (5376, "Primary radar 1"),
-    /** Primary radar 2 */
-    PRIMARY_RADAR_2 (5408, "Primary radar 2"),
-    /** Primary radar 3 */
-    PRIMARY_RADAR_3 (5440, "Primary radar 3"),
-    /** Primary radar 4 */
-    PRIMARY_RADAR_4 (5472, "Primary radar 4"),
-    /** Primary radar 5 */
-    PRIMARY_RADAR_5 (5504, "Primary radar 5"),
-    /** Primary radar 6 */
-    PRIMARY_RADAR_6 (5536, "Primary radar 6"),
-    /** Primary radar 7 */
-    PRIMARY_RADAR_7 (5568, "Primary radar 7"),
-    /** Primary radar 8 */
-    PRIMARY_RADAR_8 (5600, "Primary radar 8"),
-    /** Primary radar 9 */
-    PRIMARY_RADAR_9 (5632, "Primary radar 9"),
-    /** Primary radar 10 */
-    PRIMARY_RADAR_10 (5664, "Primary radar 10"),
-    /** Secondary turret number 1 */
-    SECONDARY_TURRET_NUMBER_1 (5696, "Secondary turret number 1"),
-    /** Secondary turret number 2 */
-    SECONDARY_TURRET_NUMBER_2 (5728, "Secondary turret number 2"),
-    /** Secondary turret number 3 */
-    SECONDARY_TURRET_NUMBER_3 (5760, "Secondary turret number 3"),
-    /** Secondary turret number 4 */
-    SECONDARY_TURRET_NUMBER_4 (5792, "Secondary turret number 4"),
-    /** Secondary turret number 5 */
-    SECONDARY_TURRET_NUMBER_5 (5824, "Secondary turret number 5"),
-    /** Secondary turret number 6 */
-    SECONDARY_TURRET_NUMBER_6 (5856, "Secondary turret number 6"),
-    /** Secondary turret number 7 */
-    SECONDARY_TURRET_NUMBER_7 (5888, "Secondary turret number 7"),
-    /** Secondary turret number 8 */
-    SECONDARY_TURRET_NUMBER_8 (5920, "Secondary turret number 8"),
-    /** Secondary turret number 9 */
-    SECONDARY_TURRET_NUMBER_9 (5952, "Secondary turret number 9"),
-    /** Secondary turret number 10 */
-    SECONDARY_TURRET_NUMBER_10 (5984, "Secondary turret number 10"),
-    /** Secondary gun number 1 */
-    SECONDARY_GUN_NUMBER_1 (6016, "Secondary gun number 1"),
-    /** Secondary gun number 2 */
-    SECONDARY_GUN_NUMBER_2 (6048, "Secondary gun number 2"),
-    /** Secondary gun number 3 */
-    SECONDARY_GUN_NUMBER_3 (6080, "Secondary gun number 3"),
-    /** Secondary gun number 4 */
-    SECONDARY_GUN_NUMBER_4 (6112, "Secondary gun number 4"),
-    /** Secondary gun number 5 */
-    SECONDARY_GUN_NUMBER_5 (6144, "Secondary gun number 5"),
-    /** Secondary gun number 6 */
-    SECONDARY_GUN_NUMBER_6 (6176, "Secondary gun number 6"),
-    /** Secondary gun number 7 */
-    SECONDARY_GUN_NUMBER_7 (6208, "Secondary gun number 7"),
-    /** Secondary gun number 8 */
-    SECONDARY_GUN_NUMBER_8 (6240, "Secondary gun number 8"),
-    /** Secondary gun number 9 */
-    SECONDARY_GUN_NUMBER_9 (6272, "Secondary gun number 9"),
-    /** Secondary gun number 10 */
-    SECONDARY_GUN_NUMBER_10 (6304, "Secondary gun number 10"),
-    /** Secondary launcher 1 */
-    SECONDARY_LAUNCHER_1 (6336, "Secondary launcher 1"),
-    /** Secondary launcher 2 */
-    SECONDARY_LAUNCHER_2 (6368, "Secondary launcher 2"),
-    /** Secondary launcher 3 */
-    SECONDARY_LAUNCHER_3 (6400, "Secondary launcher 3"),
-    /** Secondary launcher 4 */
-    SECONDARY_LAUNCHER_4 (6432, "Secondary launcher 4"),
-    /** Secondary launcher 5 */
-    SECONDARY_LAUNCHER_5 (6464, "Secondary launcher 5"),
-    /** Secondary launcher 6 */
-    SECONDARY_LAUNCHER_6 (6496, "Secondary launcher 6"),
-    /** Secondary launcher 7 */
-    SECONDARY_LAUNCHER_7 (6528, "Secondary launcher 7"),
-    /** Secondary launcher 8 */
-    SECONDARY_LAUNCHER_8 (6560, "Secondary launcher 8"),
-    /** Secondary launcher 9 */
-    SECONDARY_LAUNCHER_9 (6592, "Secondary launcher 9"),
-    /** Secondary launcher 10 */
-    SECONDARY_LAUNCHER_10 (6624, "Secondary launcher 10"),
-    /** Secondary defense systems 1 */
-    SECONDARY_DEFENSE_SYSTEMS_1 (6656, "Secondary defense systems 1"),
-    /** Secondary defense systems 2 */
-    SECONDARY_DEFENSE_SYSTEMS_2 (6688, "Secondary defense systems 2"),
-    /** Secondary defense systems 3 */
-    SECONDARY_DEFENSE_SYSTEMS_3 (6720, "Secondary defense systems 3"),
-    /** Secondary defense systems 4 */
-    SECONDARY_DEFENSE_SYSTEMS_4 (6752, "Secondary defense systems 4"),
-    /** Secondary defense systems 5 */
-    SECONDARY_DEFENSE_SYSTEMS_5 (6784, "Secondary defense systems 5"),
-    /** Secondary defense systems 6 */
-    SECONDARY_DEFENSE_SYSTEMS_6 (6816, "Secondary defense systems 6"),
-    /** Secondary defense systems 7 */
-    SECONDARY_DEFENSE_SYSTEMS_7 (6848, "Secondary defense systems 7"),
-    /** Secondary defense systems 8 */
-    SECONDARY_DEFENSE_SYSTEMS_8 (6880, "Secondary defense systems 8"),
-    /** Secondary defense systems 9 */
-    SECONDARY_DEFENSE_SYSTEMS_9 (6912, "Secondary defense systems 9"),
-    /** Secondary defense systems 10 */
-    SECONDARY_DEFENSE_SYSTEMS_10 (6944, "Secondary defense systems 10"),
-    /** Secondary radar 1 */
-    SECONDARY_RADAR_1 (6976, "Secondary radar 1"),
-    /** Secondary radar 2 */
-    SECONDARY_RADAR_2 (7008, "Secondary radar 2"),
-    /** Secondary radar 3 */
-    SECONDARY_RADAR_3 (7040, "Secondary radar 3"),
-    /** Secondary radar 4 */
-    SECONDARY_RADAR_4 (7072, "Secondary radar 4"),
-    /** Secondary radar 5 */
-    SECONDARY_RADAR_5 (7104, "Secondary radar 5"),
-    /** Secondary radar 6 */
-    SECONDARY_RADAR_6 (7136, "Secondary radar 6"),
-    /** Secondary radar 7 */
-    SECONDARY_RADAR_7 (7168, "Secondary radar 7"),
-    /** Secondary radar 8 */
-    SECONDARY_RADAR_8 (7200, "Secondary radar 8"),
-    /** Secondary radar 9 */
-    SECONDARY_RADAR_9 (7232, "Secondary radar 9"),
-    /** Secondary radar 10 */
-    SECONDARY_RADAR_10 (7264, "Secondary radar 10"),
+    /** Landing Light */
+    LANDING_LIGHT (3872, "Landing Light"),
+    /** Primary Turret Number 1 */
+    PRIMARY_TURRET_NUMBER_1 (4096, "Primary Turret Number 1"),
+    /** Primary Turret Number 2 */
+    PRIMARY_TURRET_NUMBER_2 (4128, "Primary Turret Number 2"),
+    /** Primary Turret Number 3 */
+    PRIMARY_TURRET_NUMBER_3 (4160, "Primary Turret Number 3"),
+    /** Primary Turret Number 4 */
+    PRIMARY_TURRET_NUMBER_4 (4192, "Primary Turret Number 4"),
+    /** Primary Turret Number 5 */
+    PRIMARY_TURRET_NUMBER_5 (4224, "Primary Turret Number 5"),
+    /** Primary Turret Number 6 */
+    PRIMARY_TURRET_NUMBER_6 (4256, "Primary Turret Number 6"),
+    /** Primary Turret Number 7 */
+    PRIMARY_TURRET_NUMBER_7 (4288, "Primary Turret Number 7"),
+    /** Primary Turret Number 8 */
+    PRIMARY_TURRET_NUMBER_8 (4320, "Primary Turret Number 8"),
+    /** Primary Turret Number 9 */
+    PRIMARY_TURRET_NUMBER_9 (4352, "Primary Turret Number 9"),
+    /** Primary Turret Number 10 */
+    PRIMARY_TURRET_NUMBER_10 (4384, "Primary Turret Number 10"),
+    /** Primary Gun Number 1 */
+    PRIMARY_GUN_NUMBER_1 (4416, "Primary Gun Number 1"),
+    /** Primary Gun Number 2 */
+    PRIMARY_GUN_NUMBER_2 (4448, "Primary Gun Number 2"),
+    /** Primary Gun Number 3 */
+    PRIMARY_GUN_NUMBER_3 (4480, "Primary Gun Number 3"),
+    /** Primary Gun Number 4 */
+    PRIMARY_GUN_NUMBER_4 (4512, "Primary Gun Number 4"),
+    /** Primary Gun Number 5 */
+    PRIMARY_GUN_NUMBER_5 (4544, "Primary Gun Number 5"),
+    /** Primary Gun Number 6 */
+    PRIMARY_GUN_NUMBER_6 (4576, "Primary Gun Number 6"),
+    /** Primary Gun Number 7 */
+    PRIMARY_GUN_NUMBER_7 (4608, "Primary Gun Number 7"),
+    /** Primary Gun Number 8 */
+    PRIMARY_GUN_NUMBER_8 (4640, "Primary Gun Number 8"),
+    /** Primary Gun Number 9 */
+    PRIMARY_GUN_NUMBER_9 (4672, "Primary Gun Number 9"),
+    /** Primary Gun Number 10 */
+    PRIMARY_GUN_NUMBER_10 (4704, "Primary Gun Number 10"),
+    /** Primary Launcher 1 */
+    PRIMARY_LAUNCHER_1 (4736, "Primary Launcher 1"),
+    /** Primary Launcher 2 */
+    PRIMARY_LAUNCHER_2 (4768, "Primary Launcher 2"),
+    /** Primary Launcher 3 */
+    PRIMARY_LAUNCHER_3 (4800, "Primary Launcher 3"),
+    /** Primary Launcher 4 */
+    PRIMARY_LAUNCHER_4 (4832, "Primary Launcher 4"),
+    /** Primary Launcher 5 */
+    PRIMARY_LAUNCHER_5 (4864, "Primary Launcher 5"),
+    /** Primary Launcher 6 */
+    PRIMARY_LAUNCHER_6 (4896, "Primary Launcher 6"),
+    /** Primary Launcher 7 */
+    PRIMARY_LAUNCHER_7 (4928, "Primary Launcher 7"),
+    /** Primary Launcher 8 */
+    PRIMARY_LAUNCHER_8 (4960, "Primary Launcher 8"),
+    /** Primary Launcher 9 */
+    PRIMARY_LAUNCHER_9 (4992, "Primary Launcher 9"),
+    /** Primary Launcher 10 */
+    PRIMARY_LAUNCHER_10 (5024, "Primary Launcher 10"),
+    /** Primary Defense Systems 1, Point defense systems like Phalanx guns, or visible chaff, flare, or smoke dispensers. */
+    PRIMARY_DEFENSE_SYSTEMS_1 (5056, "Primary Defense Systems 1"),
+    /** Primary Defense Systems 2 */
+    PRIMARY_DEFENSE_SYSTEMS_2 (5088, "Primary Defense Systems 2"),
+    /** Primary Defense Systems 3 */
+    PRIMARY_DEFENSE_SYSTEMS_3 (5120, "Primary Defense Systems 3"),
+    /** Primary Defense Systems 4 */
+    PRIMARY_DEFENSE_SYSTEMS_4 (5152, "Primary Defense Systems 4"),
+    /** Primary Defense Systems 5 */
+    PRIMARY_DEFENSE_SYSTEMS_5 (5184, "Primary Defense Systems 5"),
+    /** Primary Defense Systems 6 */
+    PRIMARY_DEFENSE_SYSTEMS_6 (5216, "Primary Defense Systems 6"),
+    /** Primary Defense Systems 7 */
+    PRIMARY_DEFENSE_SYSTEMS_7 (5248, "Primary Defense Systems 7"),
+    /** Primary Defense Systems 8 */
+    PRIMARY_DEFENSE_SYSTEMS_8 (5280, "Primary Defense Systems 8"),
+    /** Primary Defense Systems 9 */
+    PRIMARY_DEFENSE_SYSTEMS_9 (5312, "Primary Defense Systems 9"),
+    /** Primary Defense Systems 10 */
+    PRIMARY_DEFENSE_SYSTEMS_10 (5344, "Primary Defense Systems 10"),
+    /** Primary Radar 1, Any radar dish or movable antenna or sensor. */
+    PRIMARY_RADAR_1 (5376, "Primary Radar 1"),
+    /** Primary Radar 2 */
+    PRIMARY_RADAR_2 (5408, "Primary Radar 2"),
+    /** Primary Radar 3 */
+    PRIMARY_RADAR_3 (5440, "Primary Radar 3"),
+    /** Primary Radar 4 */
+    PRIMARY_RADAR_4 (5472, "Primary Radar 4"),
+    /** Primary Radar 5 */
+    PRIMARY_RADAR_5 (5504, "Primary Radar 5"),
+    /** Primary Radar 6 */
+    PRIMARY_RADAR_6 (5536, "Primary Radar 6"),
+    /** Primary Radar 7 */
+    PRIMARY_RADAR_7 (5568, "Primary Radar 7"),
+    /** Primary Radar 8 */
+    PRIMARY_RADAR_8 (5600, "Primary Radar 8"),
+    /** Primary Radar 9 */
+    PRIMARY_RADAR_9 (5632, "Primary Radar 9"),
+    /** Primary Radar 10 */
+    PRIMARY_RADAR_10 (5664, "Primary Radar 10"),
+    /** Secondary Turret Number 1 */
+    SECONDARY_TURRET_NUMBER_1 (5696, "Secondary Turret Number 1"),
+    /** Secondary Turret Number 2 */
+    SECONDARY_TURRET_NUMBER_2 (5728, "Secondary Turret Number 2"),
+    /** Secondary Turret Number 3 */
+    SECONDARY_TURRET_NUMBER_3 (5760, "Secondary Turret Number 3"),
+    /** Secondary Turret Number 4 */
+    SECONDARY_TURRET_NUMBER_4 (5792, "Secondary Turret Number 4"),
+    /** Secondary Turret Number 5 */
+    SECONDARY_TURRET_NUMBER_5 (5824, "Secondary Turret Number 5"),
+    /** Secondary Turret Number 6 */
+    SECONDARY_TURRET_NUMBER_6 (5856, "Secondary Turret Number 6"),
+    /** Secondary Turret Number 7 */
+    SECONDARY_TURRET_NUMBER_7 (5888, "Secondary Turret Number 7"),
+    /** Secondary Turret Number 8 */
+    SECONDARY_TURRET_NUMBER_8 (5920, "Secondary Turret Number 8"),
+    /** Secondary Turret Number 9 */
+    SECONDARY_TURRET_NUMBER_9 (5952, "Secondary Turret Number 9"),
+    /** Secondary Turret Number 10 */
+    SECONDARY_TURRET_NUMBER_10 (5984, "Secondary Turret Number 10"),
+    /** Secondary Gun Number 1 */
+    SECONDARY_GUN_NUMBER_1 (6016, "Secondary Gun Number 1"),
+    /** Secondary Gun Number 2 */
+    SECONDARY_GUN_NUMBER_2 (6048, "Secondary Gun Number 2"),
+    /** Secondary Gun Number 3 */
+    SECONDARY_GUN_NUMBER_3 (6080, "Secondary Gun Number 3"),
+    /** Secondary Gun Number 4 */
+    SECONDARY_GUN_NUMBER_4 (6112, "Secondary Gun Number 4"),
+    /** Secondary Gun Number 5 */
+    SECONDARY_GUN_NUMBER_5 (6144, "Secondary Gun Number 5"),
+    /** Secondary Gun Number 6 */
+    SECONDARY_GUN_NUMBER_6 (6176, "Secondary Gun Number 6"),
+    /** Secondary Gun Number 7 */
+    SECONDARY_GUN_NUMBER_7 (6208, "Secondary Gun Number 7"),
+    /** Secondary Gun Number 8 */
+    SECONDARY_GUN_NUMBER_8 (6240, "Secondary Gun Number 8"),
+    /** Secondary Gun Number 9 */
+    SECONDARY_GUN_NUMBER_9 (6272, "Secondary Gun Number 9"),
+    /** Secondary Gun Number 10 */
+    SECONDARY_GUN_NUMBER_10 (6304, "Secondary Gun Number 10"),
+    /** Secondary Launcher 1 */
+    SECONDARY_LAUNCHER_1 (6336, "Secondary Launcher 1"),
+    /** Secondary Launcher 2 */
+    SECONDARY_LAUNCHER_2 (6368, "Secondary Launcher 2"),
+    /** Secondary Launcher 3 */
+    SECONDARY_LAUNCHER_3 (6400, "Secondary Launcher 3"),
+    /** Secondary Launcher 4 */
+    SECONDARY_LAUNCHER_4 (6432, "Secondary Launcher 4"),
+    /** Secondary Launcher 5 */
+    SECONDARY_LAUNCHER_5 (6464, "Secondary Launcher 5"),
+    /** Secondary Launcher 6 */
+    SECONDARY_LAUNCHER_6 (6496, "Secondary Launcher 6"),
+    /** Secondary Launcher 7 */
+    SECONDARY_LAUNCHER_7 (6528, "Secondary Launcher 7"),
+    /** Secondary Launcher 8 */
+    SECONDARY_LAUNCHER_8 (6560, "Secondary Launcher 8"),
+    /** Secondary Launcher 9 */
+    SECONDARY_LAUNCHER_9 (6592, "Secondary Launcher 9"),
+    /** Secondary Launcher 10 */
+    SECONDARY_LAUNCHER_10 (6624, "Secondary Launcher 10"),
+    /** Secondary Defense Systems 1 */
+    SECONDARY_DEFENSE_SYSTEMS_1 (6656, "Secondary Defense Systems 1"),
+    /** Secondary Defense Systems 2 */
+    SECONDARY_DEFENSE_SYSTEMS_2 (6688, "Secondary Defense Systems 2"),
+    /** Secondary Defense Systems 3 */
+    SECONDARY_DEFENSE_SYSTEMS_3 (6720, "Secondary Defense Systems 3"),
+    /** Secondary Defense Systems 4 */
+    SECONDARY_DEFENSE_SYSTEMS_4 (6752, "Secondary Defense Systems 4"),
+    /** Secondary Defense Systems 5 */
+    SECONDARY_DEFENSE_SYSTEMS_5 (6784, "Secondary Defense Systems 5"),
+    /** Secondary Defense Systems 6 */
+    SECONDARY_DEFENSE_SYSTEMS_6 (6816, "Secondary Defense Systems 6"),
+    /** Secondary Defense Systems 7 */
+    SECONDARY_DEFENSE_SYSTEMS_7 (6848, "Secondary Defense Systems 7"),
+    /** Secondary Defense Systems 8 */
+    SECONDARY_DEFENSE_SYSTEMS_8 (6880, "Secondary Defense Systems 8"),
+    /** Secondary Defense Systems 9 */
+    SECONDARY_DEFENSE_SYSTEMS_9 (6912, "Secondary Defense Systems 9"),
+    /** Secondary Defense Systems 10 */
+    SECONDARY_DEFENSE_SYSTEMS_10 (6944, "Secondary Defense Systems 10"),
+    /** Secondary Radar 1 */
+    SECONDARY_RADAR_1 (6976, "Secondary Radar 1"),
+    /** Secondary Radar 2 */
+    SECONDARY_RADAR_2 (7008, "Secondary Radar 2"),
+    /** Secondary Radar 3 */
+    SECONDARY_RADAR_3 (7040, "Secondary Radar 3"),
+    /** Secondary Radar 4 */
+    SECONDARY_RADAR_4 (7072, "Secondary Radar 4"),
+    /** Secondary Radar 5 */
+    SECONDARY_RADAR_5 (7104, "Secondary Radar 5"),
+    /** Secondary Radar 6 */
+    SECONDARY_RADAR_6 (7136, "Secondary Radar 6"),
+    /** Secondary Radar 7 */
+    SECONDARY_RADAR_7 (7168, "Secondary Radar 7"),
+    /** Secondary Radar 8 */
+    SECONDARY_RADAR_8 (7200, "Secondary Radar 8"),
+    /** Secondary Radar 9 */
+    SECONDARY_RADAR_9 (7232, "Secondary Radar 9"),
+    /** Secondary Radar 10 */
+    SECONDARY_RADAR_10 (7264, "Secondary Radar 10"),
     /** Deck Elevator #1 */
     DECK_ELEVATOR_1 (7296, "Deck Elevator #1"),
     /** Deck Elevator #2 */
@@ -332,10 +364,10 @@ public enum ArticulatedPartsTypeClass
     ARRESTOR_WIRES_2 (7520, "Arrestor Wires #2"),
     /** Arrestor Wires #3 */
     ARRESTOR_WIRES_3 (7552, "Arrestor Wires #3"),
-    /** Wing (or rotor) fold */
-    WING_OR_ROTOR_FOLD (7584, "Wing (or rotor) fold"),
-    /** Fuselage fold */
-    FUSELAGE_FOLD (7616, "Fuselage fold"),
+    /** Wing (or Rotor) Fold */
+    WING_OR_ROTOR_FOLD (7584, "Wing (or Rotor) Fold"),
+    /** Fuselage Fold */
+    FUSELAGE_FOLD (7616, "Fuselage Fold"),
     /** Main Cargo Door */
     MAIN_CARGO_DOOR (7648, "Main Cargo Door"),
     /** Cargo Ramp */
@@ -429,45 +461,49 @@ public enum ArticulatedPartsTypeClass
     /** Right Engine Nacelle */
     RIGHT_ENGINE_NACELLE (9088, "Right Engine Nacelle"),
     /** 1st Left Wheel, May be a sprocket, idler, or road wheel */
-    $1ST_LEFT_WHEEL (9120, "1st Left Wheel"),
+    NAME_1ST_LEFT_WHEEL (9120, "1st Left Wheel"),
     /** 1st Right Wheel */
-    $1ST_RIGHT_WHEEL (9152, "1st Right Wheel"),
+    NAME_1ST_RIGHT_WHEEL (9152, "1st Right Wheel"),
     /** 2nd Left Wheel */
-    $2ND_LEFT_WHEEL (9184, "2nd Left Wheel"),
+    NAME_2ND_LEFT_WHEEL (9184, "2nd Left Wheel"),
     /** 2nd Right Wheel */
-    $2ND_RIGHT_WHEEL (9216, "2nd Right Wheel"),
+    NAME_2ND_RIGHT_WHEEL (9216, "2nd Right Wheel"),
     /** 3rd Left Wheel */
-    $3RD_LEFT_WHEEL (9248, "3rd Left Wheel"),
+    NAME_3RD_LEFT_WHEEL (9248, "3rd Left Wheel"),
     /** 3rd Right Wheel */
-    $3RD_RIGHT_WHEEL (9280, "3rd Right Wheel"),
+    NAME_3RD_RIGHT_WHEEL (9280, "3rd Right Wheel"),
     /** 4th Left Wheel */
-    $4TH_LEFT_WHEEL (9312, "4th Left Wheel"),
+    NAME_4TH_LEFT_WHEEL (9312, "4th Left Wheel"),
     /** 4th Right Wheel */
-    $4TH_RIGHT_WHEEL (9344, "4th Right Wheel"),
+    NAME_4TH_RIGHT_WHEEL (9344, "4th Right Wheel"),
     /** 5th Left Wheel */
-    $5TH_LEFT_WHEEL (9376, "5th Left Wheel"),
+    NAME_5TH_LEFT_WHEEL (9376, "5th Left Wheel"),
     /** 5th Right Wheel */
-    $5TH_RIGHT_WHEEL (9408, "5th Right Wheel"),
+    NAME_5TH_RIGHT_WHEEL (9408, "5th Right Wheel"),
     /** 6th Left Wheel */
-    $6TH_LEFT_WHEEL (9440, "6th Left Wheel"),
+    NAME_6TH_LEFT_WHEEL (9440, "6th Left Wheel"),
     /** 6th Right Wheel */
-    $6TH_RIGHT_WHEEL (9472, "6th Right Wheel"),
+    NAME_6TH_RIGHT_WHEEL (9472, "6th Right Wheel"),
     /** 7th Left Wheel */
-    $7TH_LEFT_WHEEL (9504, "7th Left Wheel"),
+    NAME_7TH_LEFT_WHEEL (9504, "7th Left Wheel"),
     /** 7th Right Wheel */
-    $7TH_RIGHT_WHEEL (9536, "7th Right Wheel"),
+    NAME_7TH_RIGHT_WHEEL (9536, "7th Right Wheel"),
     /** 8th Left Wheel */
-    $8TH_LEFT_WHEEL (9568, "8th Left Wheel"),
+    NAME_8TH_LEFT_WHEEL (9568, "8th Left Wheel"),
     /** 8th Right Wheel */
-    $8TH_RIGHT_WHEEL (9600, "8th Right Wheel"),
+    NAME_8TH_RIGHT_WHEEL (9600, "8th Right Wheel"),
     /** 9th Left Wheel */
-    $9TH_LEFT_WHEEL (9632, "9th Left Wheel"),
+    NAME_9TH_LEFT_WHEEL (9632, "9th Left Wheel"),
     /** 9th Right Wheel */
-    $9TH_RIGHT_WHEEL (9664, "9th Right Wheel"),
+    NAME_9TH_RIGHT_WHEEL (9664, "9th Right Wheel"),
     /** 10th Left Wheel */
-    $10TH_LEFT_WHEEL (9696, "10th Left Wheel"),
+    NAME_10TH_LEFT_WHEEL (9696, "10th Left Wheel"),
     /** 10th Right Wheel */
-    $10TH_RIGHT_WHEEL (9728, "10th Right Wheel");
+    NAME_10TH_RIGHT_WHEEL (9728, "10th Right Wheel"),
+    /** Refueling Probe */
+    REFUELING_PROBE (9760, "Refueling Probe"),
+    /** Steering Wheel */
+    STEERING_WHEEL (9792, "Steering Wheel");
 
     private int value;
     private final String description;

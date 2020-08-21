@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 609 marshal size 8<br>
- * Class 9 Supply Category - Repair Parts and Components
+ * Class9SupplyCategoryRepairPartsandComponents
  */
 public enum Class9SupplyCategoryRepairPartsandComponents implements Category
 {
@@ -24,7 +24,7 @@ public enum Class9SupplyCategoryRepairPartsandComponents implements Category
     D_ADMIN_VEHICLES (4, "D - Admin Vehicles"),
     /** G - Electronics */
     G_ELECTRONICS (5, "G - Electronics"),
-    /** K - Tactical Vehicles, Any repair part for a modelled function of a platform, not related to Mobility, Firepower, Sensor, or Communications,  e.g. Bulldozer Blade, Crane, Winch, Mine Plow, etc. */
+    /** K - Tactical Vehicles, Any repair part for a modelled function of a platform, not related to Mobility, Firepower, Sensor, or Communications, e.g. Bulldozer Blade, Crane, Winch, Mine Plow, etc. */
     K_TACTICAL_VEHICLES (6, "K - Tactical Vehicles"),
     /** L - Missiles */
     L_MISSILES (7, "L - Missiles"),

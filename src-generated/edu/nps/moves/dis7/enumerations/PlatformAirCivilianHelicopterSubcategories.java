@@ -8,10 +8,10 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 278 marshal size 8<br>
- * Platform-Air Civilian Helicopter Subcategories<br>
- * Subcategories for Air Platform Categories 90-92.  Subcategory values have the number of rotors in the 10's digit and the rotor configuration in the 1's digit.
+ * PlatformAirCivilianHelicopterSubcategories<br>
+ * Subcategories for Air Platform Categories 90-92. Subcategory values have the number of rotors in the 10s digit and the rotor configuration in the 1s digit.
  */
 public enum PlatformAirCivilianHelicopterSubcategories implements SubCategory
 {

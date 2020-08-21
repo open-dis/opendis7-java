@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 181 marshal size 7<br>
- * Intercom Control-Communications Type
+ * IntercomControlCommunicationsType
  */
 public enum IntercomControlCommunicationsType 
 {

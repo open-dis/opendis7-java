@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 60 marshal size 16<br>
- * Munition Descriptor-Warhead
+ * MunitionDescriptorWarhead
  */
 public enum MunitionDescriptorWarhead 
 {
@@ -23,11 +23,11 @@ public enum MunitionDescriptorWarhead
     /** Glass Beads */
     GLASS_BEADS (0030, "Glass Beads"),
     /** 1 um */
-    $1_UM (0031, "1 um"),
+    NAME_1_UM (0031, "1 um"),
     /** 5 um */
-    $5_UM (0032, "5 um"),
+    NAME_5_UM (0032, "5 um"),
     /** 10 um */
-    $10_UM (0033, "10 um"),
+    NAME_10_UM (0033, "10 um"),
     /** High Explosive (HE) */
     HIGH_EXPLOSIVE_HE (1000, "High Explosive (HE)"),
     /** HE, Plastic */

@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 174 marshal size 8<br>
- * JTIDS/MIDS Modulation Parameters-Transmitting Terminal Secondary Mode
+ * JTIDS/MIDSModulationParametersTransmittingTerminalSecondaryMode
  */
 public enum JTIDSMIDSModulationParametersTransmittingTerminalSecondaryMode 
 {

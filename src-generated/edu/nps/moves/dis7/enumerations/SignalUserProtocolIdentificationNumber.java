@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
- * UID 177 marshal size 14<br>
- * Signal-User Protocol Identification Number
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * UID 177 marshal size 32<br>
+ * SignalUserProtocolIdentificationNumber
  */
 public enum SignalUserProtocolIdentificationNumber 
 {
@@ -81,7 +81,9 @@ public enum SignalUserProtocolIdentificationNumber
     /** Image File Transfer Message */
     IMAGE_FILE_TRANSFER_MESSAGE (7030, "Image File Transfer Message"),
     /** Geotag Data Message */
-    GEOTAG_DATA_MESSAGE (7040, "Geotag Data Message");
+    GEOTAG_DATA_MESSAGE (7040, "Geotag Data Message"),
+    /** Tactical Video Regeneration Data */
+    TACTICAL_VIDEO_REGENERATION_DATA (7050, "Tactical Video Regeneration Data");
 
     private int value;
     private final String description;
@@ -104,7 +106,7 @@ public enum SignalUserProtocolIdentificationNumber
     
     public static int getEnumBitWidth()
     {
-      return 14;
+      return 32;
     }
 
     public static SignalUserProtocolIdentificationNumber getEnumForValue(int i)
@@ -120,32 +122,32 @@ public enum SignalUserProtocolIdentificationNumber
 
     public void marshal(DataOutputStream dos) throws IOException
     {
-        dos.writeShort(getValue());
+        dos.writeInt(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer buff)
     {
-        buff.putShort((short)getValue());
+        buff.putInt(getValue());
     }
 
     public static SignalUserProtocolIdentificationNumber unmarshalEnum (DataInputStream dis) throws Exception
     {
-        return getEnumForValue(dis.readUnsignedShort());
+        return getEnumForValue(dis.readInt());
     } 
 
-    public static SignalUserProtocolIdentificationNumber unmarshalEnum (ByteBuffer buff) throws Exception
+    public static SignalUserProtocolIdentificationNumber unmarshalEnum (ByteBuffer buff)
     {
-        return getEnumForValue(buff.getShort());
-    }   
+        return getEnumForValue(buff.getInt());
+    }
 
     public int getMarshalledSize()
     {
-        return 2; // 16 bits
+        return 4; // 32 bits
     }
     
     @Override
     public String toString()
     {
-        return "SignalUserProtocolIdentificationNumber: " + name() + ": " + getValue(); 
+        return "SignalUserProtocolIdentificationNumber: " + name() + ": " + getValue();
     }
 }

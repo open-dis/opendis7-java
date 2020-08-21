@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 80 marshal size 16<br>
- * Designator System Name
+ * DesignatorSystemName
  */
 public enum DesignatorSystemName 
 {
@@ -164,8 +164,14 @@ public enum DesignatorSystemName
     AN_PAQ_1_LTD (8900, "AN/PAQ-1 LTD"),
     /** AN/PAQ-3 MULE */
     AN_PAQ_3_MULE (9000, "AN/PAQ-3 MULE"),
+    /** AN/PEQ-1; SOFLAM */
+    AN_PEQ_1_SOFLAM (9090, "AN/PEQ-1; SOFLAM"),
     /** AN/PEQ-3 */
     AN_PEQ_3 (9100, "AN/PEQ-3"),
+    /** AN/PEQ-15; ATPIAL */
+    AN_PEQ_15_ATPIAL (9140, "AN/PEQ-15; ATPIAL"),
+    /** AN/PEQ-18; IZLID 1000P */
+    AN_PEQ_18_IZLID_1000P (9150, "AN/PEQ-18; IZLID 1000P"),
     /** AN/TVQ-2 G/VLLD */
     AN_TVQ_2_G_VLLD (9200, "AN/TVQ-2 G/VLLD"),
     /** AN/ZSQ-2(V)1 EOS */

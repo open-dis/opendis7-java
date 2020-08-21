@@ -8,9 +8,9 @@ import java.io.IOException;
 import edu.nps.moves.dis7.*;
 
 /**
- * Generated from XML, SISO-REF-010-v25, 2018-08-29<br>
+ * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 100 marshal size 8<br>
- * Subcategories for Land Category 200 - Mammal<br>
+ * SubcategoriesforLandCategory200Mammal<br>
  * 1-199 Domesticated animals, 200-255 Wild animals
  */
 public enum SubcategoriesforLandCategory200Mammal implements SubCategory
