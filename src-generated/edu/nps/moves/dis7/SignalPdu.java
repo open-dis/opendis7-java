@@ -60,8 +60,8 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   }
 
   /**
-   * Returns the size of this serialized object in bytes
-   * @return 
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
    */
   @Override
   public int getMarshalledSize()

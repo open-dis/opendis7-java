@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 212 marshal size 16<br>
- * IsPartOfStationName
+ * _____________________
  */
 public enum IsPartOfStationName 
 {
@@ -116,6 +116,10 @@ public enum IsPartOfStationName
         return getEnumForValue(buff.getShort());
     }   
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
     {
         return 2; // 16 bits

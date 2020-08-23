@@ -5,18 +5,18 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 486 marshal size 32<br>
- * PointObjectAppearancePothole
+ * _______________________________
  */
 public class PointObjectAppearancePothole extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the diameter in decimeters
    */
-  public static Bits DIAMETER = new Bits(0, 8);
+  public static Bits undef = new Bits(0, 8);
   /**
    * 8-bit unsigned integer indicating the depth in centimeters
    */
-  public static Bits DEPTH = new Bits(8, 8);
+  public static Bits undef_2 = new Bits(8, 8);
 
   public static class Bits
   {

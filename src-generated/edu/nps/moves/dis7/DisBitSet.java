@@ -60,6 +60,10 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         }
     }
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     @Override
     public int getMarshalledSize()
     {

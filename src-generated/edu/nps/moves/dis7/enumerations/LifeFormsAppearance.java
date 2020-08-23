@@ -5,78 +5,78 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 37 marshal size 32<br>
- * LifeFormsAppearance
+ * _____________________
  */
 public class LifeFormsAppearance extends DisBitSet 
 {
   /**
    * Describes the visual paint design, Use {@link AppearancePaintScheme} values for this field
    */
-  public static Bits PAINTSCHEME = new Bits(0, 1, AppearancePaintScheme.class);
+  public static Bits undef = new Bits(0, 1, AppearancePaintScheme.class);
   /**
    * Describes the visual appearance of the severity of any injury, Use {@link AppearanceLifeformHealth} values for this field
    */
-  public static Bits HEALTH = new Bits(3, 2, AppearanceLifeformHealth.class);
+  public static Bits undef_2 = new Bits(3, 2, AppearanceLifeformHealth.class);
   /**
    * Describes the manner and degree to which the life form is complying, Use {@link AppearanceLifeFormComplianceStatus} values for this field
    */
-  public static Bits COMPLIANCESTATUS = new Bits(5, 4, AppearanceLifeFormComplianceStatus.class);
+  public static Bits undef_3 = new Bits(5, 4, AppearanceLifeFormComplianceStatus.class);
   /**
    * Describes whether signal smoke is being used or not
    */
-  public static Bits SIGNALSMOKEINUSE = new Bits(11, 1);
+  public static Bits undef_4 = new Bits(11, 1);
   /**
    * Describes whether flash lights are on or off
    */
-  public static Bits FLASHLIGHTSON = new Bits(12, 1);
+  public static Bits undef_5 = new Bits(12, 1);
   /**
    * Describes whether a signal mirror is being used or not
    */
-  public static Bits SIGNALMIRRORINUSE = new Bits(13, 1);
+  public static Bits undef_6 = new Bits(13, 1);
   /**
    * Describes whether an IR strobe is on or off
    */
-  public static Bits IRSTROBEON = new Bits(14, 1);
+  public static Bits undef_7 = new Bits(14, 1);
   /**
    * Describes whether an IR illuminator (flare) is on or off
    */
-  public static Bits IRILLUMINATORON = new Bits(15, 1);
+  public static Bits undef_8 = new Bits(15, 1);
   /**
    * Describes the posture (position) of the life form, Use {@link AppearanceLifeFormPosture} values for this field
    */
-  public static Bits LIFEFORMPOSTURE = new Bits(16, 4, AppearanceLifeFormPosture.class);
+  public static Bits undef_9 = new Bits(16, 4, AppearanceLifeFormPosture.class);
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits ISFROZEN = new Bits(21, 1);
+  public static Bits undef_10 = new Bits(21, 1);
   /**
    * Describes whether or not the life form is mounted/hoisted on another platform, such as a troop transport or helicopter hoist
    */
-  public static Bits MOUNTED_HOISTEDSTATUS = new Bits(22, 1);
+  public static Bits undef_11 = new Bits(22, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
-  public static Bits STATE = new Bits(23, 1, AppearanceEntityorObjectState.class);
+  public static Bits undef_12 = new Bits(23, 1, AppearanceEntityorObjectState.class);
   /**
    * Describes the position of the life forms primary weapon/implement, Use {@link AppearanceLifeFormWeaponImplement} values for this field
    */
-  public static Bits WEAPON_IMPLEMENT1 = new Bits(24, 2, AppearanceLifeFormWeaponImplement.class);
+  public static Bits undef_13 = new Bits(24, 2, AppearanceLifeFormWeaponImplement.class);
   /**
    * Describes the position of the life forms secondary weapon/implement, Use {@link AppearanceLifeFormWeaponImplement} values for this field
    */
-  public static Bits WEAPON_IMPLEMENT2 = new Bits(26, 2, AppearanceLifeFormWeaponImplement.class);
+  public static Bits undef_14 = new Bits(26, 2, AppearanceLifeFormWeaponImplement.class);
   /**
    * Describes the camouflage color, Use {@link AppearanceCamouflageType} values for this field
    */
-  public static Bits CAMOUFLAGETYPE = new Bits(28, 2, AppearanceCamouflageType.class);
+  public static Bits undef_15 = new Bits(28, 2, AppearanceCamouflageType.class);
   /**
    * Describes whether or not the life form is in a prepared concealed position, Use {@link AppearanceConcealedPosition} values for this field
    */
-  public static Bits CONCEALEDSTATIONARY = new Bits(30, 1, AppearanceConcealedPosition.class);
+  public static Bits undef_16 = new Bits(30, 1, AppearanceConcealedPosition.class);
   /**
    * Describes whether or not the life form uses concealment during movement, Use {@link AppearanceConcealedMovement} values for this field
    */
-  public static Bits CONCEALEDMOVEMENT = new Bits(31, 1, AppearanceConcealedMovement.class);
+  public static Bits undef_17 = new Bits(31, 1, AppearanceConcealedMovement.class);
 
   public static class Bits
   {

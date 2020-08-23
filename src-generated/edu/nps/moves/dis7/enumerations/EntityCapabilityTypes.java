@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 55 marshal size 32<br>
- * EntityCapabilities
+ * ___________________
  */
 public enum EntityCapabilityTypes 
 {
@@ -83,6 +83,10 @@ public enum EntityCapabilityTypes
         return getEnumForValue(buff.getInt());
     }
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
     {
         return 4; // 32 bits

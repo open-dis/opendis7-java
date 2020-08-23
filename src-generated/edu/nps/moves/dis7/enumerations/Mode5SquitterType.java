@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 352 marshal size 3<br>
- * Mode5SquitterType
+ * ____________________
  */
 public enum Mode5SquitterType 
 {
@@ -91,6 +91,8 @@ public enum Mode5SquitterType
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

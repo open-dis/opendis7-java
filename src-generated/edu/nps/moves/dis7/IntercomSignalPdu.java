@@ -66,7 +66,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Returns the size of this serialized object in bytes
-   * @return 
+   * @return size in bytes
    */
   @Override
   public int getMarshalledSize()

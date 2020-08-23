@@ -5,14 +5,14 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 234 marshal size 16<br>
- * PointObjectAppearanceRibbonBridge
+ * _____________________________________
  */
 public class PointObjectAppearanceRibbonBridge extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the number of segments composing the ribbon bridge
    */
-  public static Bits NUMBEROFSEGMENTS = new Bits(0, 8);
+  public static Bits undef = new Bits(0, 8);
 
   public static class Bits
   {

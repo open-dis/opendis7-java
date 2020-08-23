@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 633 marshal size 8<br>
- * LifeSavingEquipment<br>
+ * _____________________<br>
  * Subcategories for Surface Platform Category 101. For Subcategory 1-3. Use the Extra field to specify the capacity 1-255 persons.
  */
 public enum LifeSavingEquipment implements SubCategory
@@ -95,6 +95,8 @@ public enum LifeSavingEquipment implements SubCategory
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

@@ -5,22 +5,22 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 236 marshal size 16<br>
- * LinearObjectAppearanceExhaustsmoke
+ * ______________________________________
  */
 public class LinearObjectAppearanceExhaustSmoke extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the percent opacity of the smoke (0..100)
    */
-  public static Bits OPACITYPERCENT = new Bits(0, 8);
+  public static Bits undef = new Bits(0, 8);
   /**
    * Describes whether or not the smoke is attached to the vehicle
    */
-  public static Bits SMOKEISATTACHED = new Bits(8, 1);
+  public static Bits undef_2 = new Bits(8, 1);
   /**
    * Describes the chemical content of the smoke, Use {@link AppearanceObjectSpecificChemicalType} values for this field
    */
-  public static Bits CHEMICALTYPE = new Bits(9, 2, AppearanceObjectSpecificChemicalType.class);
+  public static Bits undef_3 = new Bits(9, 2, AppearanceObjectSpecificChemicalType.class);
 
   public static class Bits
   {

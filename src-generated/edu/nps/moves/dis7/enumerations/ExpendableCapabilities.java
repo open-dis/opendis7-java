@@ -5,14 +5,14 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 461 marshal size 32<br>
- * ExpendableCapabilities
+ * _______________________
  */
 public class ExpendableCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits RESERVED = new Bits(0, 5);
+  public static Bits undef = new Bits(0, 5);
 
   public static class Bits
   {

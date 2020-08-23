@@ -25,7 +25,10 @@ public class RemoveEntityPdu extends SimulationManagementFamilyPdu implements Se
     setPduType( DISPDUType.REMOVE_ENTITY );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

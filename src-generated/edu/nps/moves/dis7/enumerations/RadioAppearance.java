@@ -5,18 +5,18 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 41 marshal size 32<br>
- * RadioAppearance
+ * ________________
  */
 public class RadioAppearance extends DisBitSet 
 {
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits ISFROZEN = new Bits(21, 1);
+  public static Bits undef = new Bits(21, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
-  public static Bits STATE = new Bits(23, 1, AppearanceEntityorObjectState.class);
+  public static Bits undef_2 = new Bits(23, 1, AppearanceEntityorObjectState.class);
 
   public static class Bits
   {

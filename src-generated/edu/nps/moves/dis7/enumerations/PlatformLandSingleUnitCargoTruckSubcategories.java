@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 430 marshal size 8<br>
- * PlatformLandSingleUnitCargoTruckSubcategories<br>
+ * ___________________________________________________<br>
  * Subcategories for Land Platform Category 83
  */
 public enum PlatformLandSingleUnitCargoTruckSubcategories implements SubCategory
@@ -151,6 +151,8 @@ public enum PlatformLandSingleUnitCargoTruckSubcategories implements SubCategory
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

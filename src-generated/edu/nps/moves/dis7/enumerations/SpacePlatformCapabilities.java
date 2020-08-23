@@ -5,30 +5,30 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 454 marshal size 32<br>
- * SpacePlatformCapabilities
+ * ___________________________
  */
 public class SpacePlatformCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * Describes whether the entity is able to supply some type of ammunition in response to an appropriate service request
    */
-  public static Bits AMMUNITIONSUPPLY = new Bits(0, 1);
+  public static Bits undef = new Bits(0, 1);
   /**
    * Describes whether the entity is able to supply some type of fuel in response to an appropriate service request
    */
-  public static Bits FUELSUPPLY = new Bits(1, 1);
+  public static Bits undef_2 = new Bits(1, 1);
   /**
    * Describes whether the entity is able to provide recovery (e.g., towing) services in response to an appropriate service request
    */
-  public static Bits RECOVERY = new Bits(2, 1);
+  public static Bits undef_3 = new Bits(2, 1);
   /**
    * Describes whether the entity is able to supply certain repair services in response to an appropriate service request
    */
-  public static Bits REPAIR = new Bits(3, 1);
+  public static Bits undef_4 = new Bits(3, 1);
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits RESERVED = new Bits(4, 1);
+  public static Bits undef_5 = new Bits(4, 1);
 
   public static class Bits
   {

@@ -49,7 +49,10 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
     setPduType( DISPDUType.DATA_QUERY_RELIABLE );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

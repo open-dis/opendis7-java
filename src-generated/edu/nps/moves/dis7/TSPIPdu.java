@@ -45,7 +45,10 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
     setPduType( DISPDUType.TIME_SPACE_POSITION_INFORMATION );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

@@ -5,22 +5,22 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 488 marshal size 32<br>
- * LinearObjectAppearanceWire
+ * _____________________________
  */
 public class LinearObjectAppearanceWire extends DisBitSet 
 {
   /**
    * 8-bit enumeration indicating the color, Use {@link Color} values for this field
    */
-  public static Bits COLOR = new Bits(0, 8, Color.class);
+  public static Bits undef = new Bits(0, 8, Color.class);
   /**
    * 4-bit unsigned integer indicating 16 levels of contrast (low to high) distinguishing variation of object from surrounding surface
    */
-  public static Bits CONTRAST = new Bits(16, 4);
+  public static Bits undef_2 = new Bits(16, 4);
   /**
    * Describes whether the wire is buried or not
    */
-  public static Bits ISBURIED = new Bits(20, 1);
+  public static Bits undef_3 = new Bits(20, 1);
 
   public static class Bits
   {

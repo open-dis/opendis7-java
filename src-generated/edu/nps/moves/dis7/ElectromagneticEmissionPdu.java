@@ -41,7 +41,10 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsFamilyPdu im
     setPaddingForEmissionsPdu( (short)0 );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

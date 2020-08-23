@@ -24,7 +24,10 @@ public abstract class InformationOperationsFamilyPdu extends PduBase implements 
     setProtocolFamily( DISProtocolFamily.INFORMATION_OPERATIONS );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

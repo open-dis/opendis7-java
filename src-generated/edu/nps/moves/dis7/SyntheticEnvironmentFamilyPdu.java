@@ -22,7 +22,10 @@ public abstract class SyntheticEnvironmentFamilyPdu extends PduBase implements S
     setProtocolFamily( DISProtocolFamily.SYNTHETIC_ENVIRONMENT );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

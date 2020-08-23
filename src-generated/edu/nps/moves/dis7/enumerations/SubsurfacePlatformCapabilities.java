@@ -5,42 +5,42 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 453 marshal size 32<br>
- * SubsurfacePlatformCapabilities
+ * ________________________________
  */
 public class SubsurfacePlatformCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * Describes whether the entity is able to supply some type of ammunition in response to an appropriate service request
    */
-  public static Bits AMMUNITIONSUPPLY = new Bits(0, 1);
+  public static Bits undef = new Bits(0, 1);
   /**
    * Describes whether the entity is able to supply some type of fuel in response to an appropriate service request
    */
-  public static Bits FUELSUPPLY = new Bits(1, 1);
+  public static Bits undef_2 = new Bits(1, 1);
   /**
    * Describes whether the entity is able to provide recovery (e.g., towing) services in response to an appropriate service request
    */
-  public static Bits RECOVERY = new Bits(2, 1);
+  public static Bits undef_3 = new Bits(2, 1);
   /**
    * Describes whether the entity is able to supply certain repair services in response to an appropriate service request
    */
-  public static Bits REPAIR = new Bits(3, 1);
+  public static Bits undef_4 = new Bits(3, 1);
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits RESERVED = new Bits(4, 1);
+  public static Bits undef_5 = new Bits(4, 1);
   /**
    * The Entity is able to be carried as a sling load payload. The extended appearance record (if available) will identify if it is currently sling loaded and entity association and/or entity offset records (if available) will provide additional sling load details (such as carrier).
    */
-  public static Bits SLINGLOADABLE = new Bits(6, 1);
+  public static Bits undef_6 = new Bits(6, 1);
   /**
    * The Entity is an IED or contains an IED. The extended appearance record (if available) will identify how well hidden the IED is on the Entity. An Attached Part (if applicable, for instance a jury-rigged munition does not apply here) will identify the IED explicitly.
    */
-  public static Bits IEDPRESENCEINDICATOR = new Bits(7, 1);
+  public static Bits undef_7 = new Bits(7, 1);
   /**
    * The Entity (normally a virtual manned module) can be task organized into an existing mixed mode unit (where mixed mode is intended to comprise a combination of computer-generated forces and virtual or even live forces).
    */
-  public static Bits TASKORGANIZABLE = new Bits(8, 1);
+  public static Bits undef_8 = new Bits(8, 1);
 
   public static class Bits
   {

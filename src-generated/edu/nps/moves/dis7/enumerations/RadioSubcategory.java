@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 23 marshal size 16<br>
- * RadioSubcategory<br>
+ * _________________<br>
  * JETDS Specific Series are reserved in the range 11-100. Each set allows for 255 radios.
  */
 public enum RadioSubcategory implements SubCategory
@@ -192,6 +192,10 @@ public enum RadioSubcategory implements SubCategory
         return getEnumForValue(buff.getShort());
     }   
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
     {
         return 2; // 16 bits

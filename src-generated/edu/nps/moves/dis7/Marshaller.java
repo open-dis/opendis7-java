@@ -16,14 +16,14 @@ public interface Marshaller
 {
     /**
      * 
-     * @return the size in bytes of a value from a stream
+     * @return size in bytes of a value from a stream
      */
     int getMarshalledSize();
     
     /**
      * 
      * @param dos the output stream to marshal to
-     * @throws Exception 
+     * @throws Exception error during marshaling
      */
     void marshal(DataOutputStream dos) throws Exception;
     
@@ -31,13 +31,13 @@ public interface Marshaller
      * 
      * @param dis the input stream to unmarshal from
      * @return the size of the PDU
-     * @throws Exception 
+     * @throws Exception error during unmarshalling
      */
     int unmarshal(DataInputStream dis) throws Exception;
 
     /**
      * Packs a Pdu into the ByteBuffer.
-     * @throws java.lang.Exception
+     * @throws Exception error during marshaling
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin writing
      */
@@ -46,7 +46,7 @@ public interface Marshaller
     /**
      * Unpacks a Pdu from the underlying data.
      * @return the size of the PDU
-     * @throws java.lang.Exception
+     * @throws Exception error during unmarshalling
      * @see java.nio.ByteBuffer
      * @param buff The ByteBuffer at the position to begin reading
      */

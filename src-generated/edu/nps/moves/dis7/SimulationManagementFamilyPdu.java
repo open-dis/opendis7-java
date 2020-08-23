@@ -28,7 +28,10 @@ public abstract class SimulationManagementFamilyPdu extends PduBase implements S
     setProtocolFamily( DISProtocolFamily.SIMULATION_MANAGEMENT );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

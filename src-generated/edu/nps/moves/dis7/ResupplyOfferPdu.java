@@ -40,7 +40,10 @@ public class ResupplyOfferPdu extends LogisticsFamilyPdu implements Serializable
     setPduType( DISPDUType.RESUPPLY_OFFER );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

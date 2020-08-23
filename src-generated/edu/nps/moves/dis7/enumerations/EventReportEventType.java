@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 73 marshal size 32<br>
- * EventReportEventType
+ * _______________________
  */
 public enum EventReportEventType 
 {
@@ -108,6 +108,10 @@ public enum EventReportEventType
         return getEnumForValue(buff.getInt());
     }
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
     {
         return 4; // 32 bits

@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 428 marshal size 8<br>
- * PlatformLandCarSubcategories<br>
+ * _______________________________<br>
  * Subcategories for Land Platform Category 81. Subcategory values have the general form/style in the 10s/100s digits and the size in the 1s digit. A zero in the 1s digit indicates an unspecified size.
  */
 public enum PlatformLandCarSubcategories implements SubCategory
@@ -175,6 +175,8 @@ public enum PlatformLandCarSubcategories implements SubCategory
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

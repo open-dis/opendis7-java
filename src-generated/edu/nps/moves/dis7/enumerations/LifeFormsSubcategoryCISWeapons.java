@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 17 marshal size 8<br>
- * LifeFormsSubcategoryC.I.S.Weapons
+ * _____________________________________
  */
 public enum LifeFormsSubcategoryCISWeapons implements SubCategory
 {
@@ -189,6 +189,8 @@ public enum LifeFormsSubcategoryCISWeapons implements SubCategory
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

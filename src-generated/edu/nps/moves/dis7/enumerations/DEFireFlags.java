@@ -5,18 +5,18 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 313 marshal size 16<br>
- * DEFireFlags
+ * _____________
  */
 public class DEFireFlags extends DisBitSet 
 {
   /**
    * Identifies the State of the DE Weapon
    */
-  public static Bits WEAPONON = new Bits(0, 1);
+  public static Bits undef = new Bits(0, 1);
   /**
    * Identifies a DE Weapon State Change, Use {@link DEFireFlagsStateUpdateFlag} values for this field
    */
-  public static Bits STATE_UPDATEFLAG = new Bits(1, 1, DEFireFlagsStateUpdateFlag.class);
+  public static Bits undef_2 = new Bits(1, 1, DEFireFlagsStateUpdateFlag.class);
 
   public static class Bits
   {

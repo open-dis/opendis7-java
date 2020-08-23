@@ -70,7 +70,10 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
     setPduType( DISPDUType.DIRECTED_ENERGY_FIRE );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

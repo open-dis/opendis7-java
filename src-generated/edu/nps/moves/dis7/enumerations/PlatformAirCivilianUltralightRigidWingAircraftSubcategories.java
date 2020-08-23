@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 275 marshal size 8<br>
- * PlatformAirCivilianUltralightRigidWingAircraftSubcategories<br>
+ * __________________________________________________________________<br>
  * Subcategories for Air Platform Category 81
  */
 public enum PlatformAirCivilianUltralightRigidWingAircraftSubcategories implements SubCategory
@@ -91,6 +91,8 @@ public enum PlatformAirCivilianUltralightRigidWingAircraftSubcategories implemen
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

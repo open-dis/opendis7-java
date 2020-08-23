@@ -5,14 +5,14 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 242 marshal size 16<br>
- * ObjectStateModificationArealObject
+ * ______________________________________
  */
 public class ObjectStateModificationArealObject extends DisBitSet 
 {
   /**
    * Describes whether any locations of the areal object have been modified since the last update number
    */
-  public static Bits ISLOCATIONMODIFIED = new Bits(0, 1);
+  public static Bits undef = new Bits(0, 1);
 
   public static class Bits
   {

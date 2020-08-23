@@ -5,26 +5,26 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 38 marshal size 32<br>
- * EnvironmentalAppearance
+ * ________________________
  */
 public class EnvironmentalAppearance extends DisBitSet 
 {
   /**
    * Describes the density, Use {@link AppearanceEnvironmentalDensity} values for this field
    */
-  public static Bits DENSITY = new Bits(16, 4, AppearanceEnvironmentalDensity.class);
+  public static Bits undef = new Bits(16, 4, AppearanceEnvironmentalDensity.class);
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits ISFROZEN = new Bits(21, 1);
+  public static Bits undef_2 = new Bits(21, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
-  public static Bits STATE = new Bits(23, 1, AppearanceEntityorObjectState.class);
+  public static Bits undef_3 = new Bits(23, 1, AppearanceEntityorObjectState.class);
   /**
    * Describes whether or not the entity is masked or cloaked
    */
-  public static Bits MASKED_CLOAKED = new Bits(31, 1);
+  public static Bits undef_4 = new Bits(31, 1);
 
   public static class Bits
   {

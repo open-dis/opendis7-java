@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 473 marshal size 8<br>
- * LifeFormHumanSubcategoryEquipmentClass
+ * ___________________________________________
  */
 public enum LifeFormHumanSubcategoryEquipmentClass 
 {
@@ -44,11 +44,11 @@ public enum LifeFormHumanSubcategoryEquipmentClass
     /** Sensors, Subcategories 151-159 are restricted to sensor equipment classes. */
     SENSORS (151, "Sensors"),
     /** LifeFormHumanSpecificEquipmentClass */    SIGNAL_SENSOR_2 (152, "Signal Sensor"),
-    /** LifeFormHumanSpecificLasersClass */    LASERS_2 (153, "Lasers"),
+    /** _____________________________________ */    LASERS_2 (153, "Lasers"),
     /** Animal Companion, Subcategories 160-169 are restricted to animal companion classes. */
     ANIMAL_COMPANION (160, "Animal Companion"),
-    /** LifeFormHumanSpecificPersonalElectronicsClass */    PERSONAL_ELECTRONICS_2 (171, "Personal Electronics"),
-    /** LifeFormHumanSpecificLogisticsEQClass */    LOGISTICS_EQUIPMENT_2 (172, "Logistics Equipment");
+    /** ___________________________________________________ */    PERSONAL_ELECTRONICS_2 (171, "Personal Electronics"),
+    /** ___________________________________________ */    LOGISTICS_EQUIPMENT_2 (172, "Logistics Equipment");
 
     private int value;
     private final String description;
@@ -120,6 +120,8 @@ public enum LifeFormHumanSubcategoryEquipmentClass
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

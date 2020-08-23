@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 286 marshal size 16<br>
- * IOActionIOSimulationSource<br>
+ * ______________________________<br>
  * Values 1-999 are reserved for United States IO Simulation Sources - See applicable agreement of the organizers of the event (training, exercise, etc.) in which information operations is included.
  */
 public enum IOActionIOSimulationSource 
@@ -74,6 +74,10 @@ public enum IOActionIOSimulationSource
         return getEnumForValue(buff.getShort());
     }   
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
     {
         return 2; // 16 bits

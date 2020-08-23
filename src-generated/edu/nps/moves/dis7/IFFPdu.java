@@ -40,7 +40,10 @@ public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializabl
     setPduType( DISPDUType.IDENTIFICATION_FRIEND_OR_FOE );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 

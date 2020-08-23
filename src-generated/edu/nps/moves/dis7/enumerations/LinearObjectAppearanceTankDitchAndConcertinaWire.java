@@ -5,22 +5,22 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 235 marshal size 16<br>
- * LinearObjectAppearanceTankDitchandConcertinaWire
+ * _______________________________________________________
  */
 public class LinearObjectAppearanceTankDitchAndConcertinaWire extends DisBitSet 
 {
   /**
    * Describes the breached appearance of the object, Use {@link AppearanceLinearObjectTankDitchBreach} values for this field
    */
-  public static Bits BREACHSTATE = new Bits(0, 2, AppearanceLinearObjectTankDitchBreach.class);
+  public static Bits undef = new Bits(0, 2, AppearanceLinearObjectTankDitchBreach.class);
   /**
    * 8-bit unsigned integer indicating the fixed length in meters of a breached segment
    */
-  public static Bits BREACHLENGTH = new Bits(16, 8);
+  public static Bits undef_2 = new Bits(16, 8);
   /**
    * 8-bit record where each bit indicates whether its associated segment is breached or not, such that bit 0 of the record is the first segment
    */
-  public static Bits BREACHLOCATION = new Bits(24, 8);
+  public static Bits undef_3 = new Bits(24, 8);
 
   public static class Bits
   {

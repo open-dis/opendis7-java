@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 383 marshal size 1<br>
- * AppearanceLauncher/Operational
+ * _______________________________
  */
 public enum AppearanceLauncherOperational 
 {
@@ -89,6 +89,8 @@ public enum AppearanceLauncherOperational
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

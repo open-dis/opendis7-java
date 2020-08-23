@@ -84,6 +84,10 @@ public class PduStatus
     return value;
   }
 
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
   public int getMarshalledSize()
   {
     return 1;

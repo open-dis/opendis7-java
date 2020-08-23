@@ -5,18 +5,18 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 149 marshal size 16<br>
- * UAPropulsionPlantConfiguration
+ * _________________________________
  */
 public class UAPropulsionPlantConfiguration extends DisBitSet 
 {
   /**
    * Describes the configuration of the power plant, Use {@link UAPropulsionPlantConfigurationConfiguration} values for this field
    */
-  public static Bits CONFIGURATION = new Bits(0, 7, UAPropulsionPlantConfigurationConfiguration.class);
+  public static Bits undef = new Bits(0, 7, UAPropulsionPlantConfigurationConfiguration.class);
   /**
    * Describes whether the hull-mounted masker is on or off
    */
-  public static Bits HULLMOUNTEDMASKERON = new Bits(7, 1);
+  public static Bits undef_2 = new Bits(7, 1);
 
   public static class Bits
   {

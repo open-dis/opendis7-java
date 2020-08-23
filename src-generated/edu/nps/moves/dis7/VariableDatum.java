@@ -33,7 +33,8 @@ public class VariableDatum extends Object implements Serializable
   private byte[] padding = new byte[0]; // pad to 64-bit boundary
 
   /**
-   * @return the size of this serialized object in bytes
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
    */
   public int getMarshalledSize()
   {

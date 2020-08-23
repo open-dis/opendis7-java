@@ -4,15 +4,18 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>open-dis7-java</name>
+            <explicit-platform explicit-source-supported="true"/>
             <source-roots>
-                <root id="src.src-generated.dir"/>
                 <root id="src.dir"/>
+                <root id="src.src-generated.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
+                <root id="test.dist.dir"/>
             </test-roots>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>classpath</word>
             <word>multicast</word>
         </spellchecker-wordlist>
     </configuration>

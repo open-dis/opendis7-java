@@ -5,26 +5,26 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 233 marshal size 16<br>
- * PointObjectAppearanceCrater
+ * ______________________________
  */
 public class PointObjectAppearanceCrater extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the diameter of the crater in meters
    */
-  public static Bits DIAMETER = new Bits(0, 8);
+  public static Bits undef = new Bits(0, 8);
   /**
    * 8-bit unsigned integer indicating the depth of the crater in centimeters
    */
-  public static Bits DEPTH = new Bits(8, 8);
+  public static Bits undef_2 = new Bits(8, 8);
   /**
    * 8-bit unsigned integer indicating the height of the crater in centimeters
    */
-  public static Bits HEIGHT = new Bits(16, 8);
+  public static Bits undef_3 = new Bits(16, 8);
   /**
    * Describes the breached appearance of the object, Use {@link AppearanceLinearObjectTankDitchBreach} values for this field
    */
-  public static Bits BREACHSTATE = new Bits(30, 2, AppearanceLinearObjectTankDitchBreach.class);
+  public static Bits undef_4 = new Bits(30, 2, AppearanceLinearObjectTankDitchBreach.class);
 
   public static class Bits
   {

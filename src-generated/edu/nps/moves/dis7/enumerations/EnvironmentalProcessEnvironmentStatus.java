@@ -5,18 +5,18 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 249 marshal size 8<br>
- * EnvironmentalProcessEnvironmentStatus
+ * ________________________________________
  */
 public class EnvironmentalProcessEnvironmentStatus extends DisBitSet 
 {
   /**
    * Indicates that the current update shall be the last update for the specified process
    */
-  public static Bits ISLAST = new Bits(0, 1);
+  public static Bits undef = new Bits(0, 1);
   /**
    * Describes whether the environmental process is active or not
    */
-  public static Bits ISACTIVE = new Bits(1, 1);
+  public static Bits undef_2 = new Bits(1, 1);
 
   public static class Bits
   {

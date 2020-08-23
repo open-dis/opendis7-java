@@ -110,14 +110,14 @@ public class Domain
     return (String) invoke(getDescription, null);
   }
 
-    /**
-     *
-     * @return
-     */
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
     public int getMarshalledSize()
-  {
-    return (Integer) invoke(mSize, null);
-  }
+    {
+      return (Integer) invoke(mSize, null);
+    }
 
     /**
      *

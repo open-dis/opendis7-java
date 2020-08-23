@@ -5,14 +5,14 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 237 marshal size 16<br>
- * LinearObjectAppearanceMinefieldLaneMarker
+ * ______________________________________________
  */
 public class LinearObjectAppearanceMinefieldLaneMarker extends DisBitSet 
 {
   /**
    * Describes the visible side of the lane marker, Use {@link AppearanceLinearObjectLaneMarkerVisible} values for this field
    */
-  public static Bits VISIBLESIDE = new Bits(0, 2, AppearanceLinearObjectLaneMarkerVisible.class);
+  public static Bits undef = new Bits(0, 2, AppearanceLinearObjectLaneMarkerVisible.class);
 
   public static class Bits
   {

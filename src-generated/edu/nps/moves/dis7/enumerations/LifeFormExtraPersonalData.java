@@ -10,7 +10,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 477 marshal size 8<br>
- * LifeFormExtraPersonalData<br>
+ * _____________________________<br>
  * The 1s digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10s digit is reserved for general age group. The 100s digit is reserved for gender, where 0 is Male and 1 is Female.
  */
 public enum LifeFormExtraPersonalData 
@@ -163,6 +163,8 @@ public enum LifeFormExtraPersonalData
         return getEnumForValue(buff.get());
     }
 
+    /** Returns the size of this serialized object in bytes
+     *@return size in bytes*/  
     public int getMarshalledSize()
     {
         return 1; // 8 bits

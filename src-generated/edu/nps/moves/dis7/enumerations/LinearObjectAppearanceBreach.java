@@ -5,7 +5,7 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 238 marshal size 16<br>
- * LinearObjectAppearanceBreach
+ * _______________________________
  */
 public class LinearObjectAppearanceBreach extends DisBitSet 
 {

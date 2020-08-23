@@ -5,22 +5,22 @@ import edu.nps.moves.dis7.*;
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 192 marshal size 16<br>
- * MinefieldDataFusing
+ * _____________________
  */
 public class MinefieldDataFusing extends DisBitSet 
 {
   /**
    * Identifies the type of the primary fuse, Use {@link MinefieldFusingFuseType} values for this field
    */
-  public static Bits PRIMARY = new Bits(0, 7, MinefieldFusingFuseType.class);
+  public static Bits undef = new Bits(0, 7, MinefieldFusingFuseType.class);
   /**
    * Identifies the type of the secondary fuse, Use {@link MinefieldFusingFuseType} values for this field
    */
-  public static Bits SECONDARY = new Bits(7, 7, MinefieldFusingFuseType.class);
+  public static Bits undef_2 = new Bits(7, 7, MinefieldFusingFuseType.class);
   /**
    * Describes whether the mine has an Anti-Handling device
    */
-  public static Bits HASANTIHANDLINGDEVICE = new Bits(14, 1);
+  public static Bits undef_3 = new Bits(14, 1);
 
   public static class Bits
   {

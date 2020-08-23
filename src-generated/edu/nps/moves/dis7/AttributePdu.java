@@ -51,7 +51,10 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
     setPduType( DISPDUType.ATTRIBUTE );
  }
 
-/** Returns the size of this serialized object in bytes*/
+  /**
+   * Returns size of this serialized object in bytes
+   * @return size in bytes
+   */
 public int getMarshalledSize()
 {
    int marshalSize = 0; 
