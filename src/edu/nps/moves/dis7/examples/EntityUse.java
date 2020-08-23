@@ -102,11 +102,11 @@ public class EntityUse
     espdu = (EntityStatePdu)pduFactory.createPdu(DISPDUType.ENTITY_STATE);
     /* set desired entity state fields here */
 
-    AD44Shenandoah et2 = new AD44Shenandoah();
+    AD_44_Shenandoah entityType2 = new AD_44_Shenandoah(); // edu.nps.moves.dis7.entities.usa.platform.surface
     
-    espdu.setEntityType(et2);
+    espdu.setEntityType(entityType2);
     netif.send(espdu);  // possibly throws IOException
-    sleep(100L);
+    sleep(100L); // TODO remove?
   }
   
   private static void sleep(long ms)
