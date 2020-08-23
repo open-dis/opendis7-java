@@ -29,23 +29,54 @@
     <target description="Build and test whole project." name="all">
         <echo message="timestamp ${timestamp}"/>
         <antcall target="clean"/>
+        <echo message="================"/>
         <antcall target="compile"/>
-        <antcall target="test"/>
+        <echo message="================"/>
+        <echo message="TODO: test"/>
+    <!--<antcall target="test"/>-->
+        <echo message="================"/>
         <antcall target="javadoc"/>
+        <echo message="================"/>
         <antcall target="jar"/>
         <echo message="build all complete"/>
     </target>
     
-    <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
-        <echo message="https://github.com/open-dis/open-dis7-java/issues" />
-        <nbbrowse url="https://github.com/open-dis/open-dis7-java/issues" />
-        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    <target name="clean" description="clean all assets created by this project">
+        <mkdir dir="dist" description="ensure necessary directory present"/>
+        <delete verbose="true">
+            <fileset dir="dist" includes="*.jar"/>
+        </delete>
+        <delete dir="javadoc"/>
+        <mkdir dir="build/classes" description="ensure necessary directory present"/>
+        <delete verbose="false">
+            <fileset dir="build/classes" includes="**/*"/>
+        </delete>
     </target>
     
-
-    <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
-        <nbbrowse file="javadoc/index.html" />
-        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    <target name="compile" description="compile all assets">
+        <echo message="compile src, src-generated"/>
+        <mkdir dir="build/classes" description="ensure build/classes directory present"/>
+        <javac destdir="build/classes"
+                 debug="on"
+                source="1.8"
+                target="1.8"
+     includeantruntime="false">
+            <src>
+                <pathelement path="src"/>
+                <pathelement path="src-generated"/>
+            </src>
+            <classpath>
+                <pathelement path="dist/open-dis7-enumerations-classes.jar"/>
+                <pathelement path="lib/commons-io-2.6.jar"/>
+                <pathelement path="lib/guava-28.0-jre.jar"/>
+            </classpath>
+            <!-- https://ant.apache.org/manual/Tasks/javac.html#bootstrap -->
+            <!-- https://stackoverflow.com/questions/4134803/ant-passing-compilerarg-into-javac -->
+            <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
+            <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
+            <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
+            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
+        </javac>
     </target>
     
     <target name="javadoc" depends="init">
@@ -57,16 +88,26 @@
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
                 <include name="src-generated/java/**/*.java"/>
-                <include name="test/**/*.java"/>
             </fileset>
             <classpath>
-                <pathelement path="libs/commons-io-2.6.jar"/>
-                <pathelement path="testlibs/*.jar"/>
+                <pathelement path="lib/commons-io-2.6.jar"/>
+                <pathelement path="lib/guava-28.0-jre.jar"/>
             </classpath>
         </javadoc>
     </target>
+    
+    <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
+        <echo message="https://github.com/open-dis/open-dis7-java/issues" />
+        <nbbrowse url="https://github.com/open-dis/open-dis7-java/issues" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
+    
+    <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
 
-    <target name="processScenes.javadoc"><!-- copied as potential template -->
+    <target name="processScenes.javadoc.donotrun"><!-- copied as potential template -->
 		
         <property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
         <property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
@@ -105,20 +146,6 @@
                      verbose="true"
                      version="${javadoc.version}"
                      Windowtitle="${javadoc.windowtitle}">
-            <!-- TODO
-            https://stackoverflow.com/questions/10519558/createprocess-error-206-the-filename-or-extension-is-too-long-when-running-main
-
-      sourcepath="${src.org.web3d.x3d.sai}"
- useexternalfile="true"
-        Overview="${src.java.dir}/overview.html"
-<classpath refid="app.classpath"/>
-    <include name="*/*.java"/>
-            <packageset dir="${src.org.web3d.x3d.sai}" defaultexcludes="yes">
-                            <include name="*.java"/>
-                            <include name="*/*.java"/>
-                            <exclude name="**/*.html"/>
-            </packageset>
-            -->
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
                 <include name="src-generated/**/*.java"/>
@@ -200,39 +227,6 @@
     Porting this project over to Maven might do the trick. NB supports right 
     click, test-single for Maven. TDN 08 JUN 2020. 
     -->
-
-    <target depends="compile-test,-pre-test-run"
-            description="Run unit tests."
-            name="test" >
-        <java classpath="${run.test.classpath}"  
-              classname="org.junit.platform.console.ConsoleLauncher"
-              fork="true">
-            <arg value="--disable-banner"/>
-            <arg value="--fail-if-no-tests"/>
-            <arg value="--scan-classpath=${build.test.classes.dir}"/>
-            <arg value="--reports-dir=${build.test.results.dir}"/>
-        </java>
-        <junitreport todir="build/test/results">
-            <fileset dir="build/test/results">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="build/test/results/html"/>
-        </junitreport>
-    </target>
-    
-    <target depends="compile-test-single,-pre-test-run-single" 
-            description="Run single unit test." 
-            name="-do-test-run-single">
-        <echo message="Testing: ${test.class}"/>
-        <java classpath="${run.test.classpath}"  
-              classname="org.junit.platform.console.ConsoleLauncher"
-              fork="true">
-            <arg value="--disable-banner"/>
-            <arg value="--fail-if-no-tests"/>
-            <arg line="-c=${test.class}"/>
-            <!--<arg value="-h"/>-->
-        </java>
-    </target>
     
     <target name="jar" depends="jar-classes,jar-source,jar-javadoc">
         <!-- javadoc manifest properties -->
@@ -252,7 +246,7 @@
     
     <target name="jar-javadoc" depends="javadoc">
         <jar destfile="dist/open-dis7-javadoc.jar" 
-              basedir="dist/javadoc">
+              basedir="javadoc">
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Javadoc files for ${manifest.name}"/>
