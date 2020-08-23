@@ -13,7 +13,7 @@
     <import file="nbproject/build-impl.xml"/>
     
     <tstamp>
-        <format property="timestamp" pattern="d MMMM yyyy hh:mm:ss"/>
+        <format property="timestamp" pattern="d MMMM yyyy HH:mm:ss"/>
     </tstamp>
     
     <!-- javadoc manifest properties -->
@@ -41,14 +41,21 @@
         <echo message="build all complete"/>
     </target>
     
-    <target name="clean" description="clean all assets created by this project">
+    <target name="clean" description="clean assets created by this project">
         <mkdir dir="dist" description="ensure necessary directory present"/>
         <delete verbose="true">
-            <fileset dir="dist" includes="*.jar"/>
+            <fileset dir="dist">
+                <include name="open-dis7-classes.jar"/>
+                <include name="open-dis7-source.jar"/>
+                <include name="open-dis7-javadoc.jar"/>
+                <exclude name="open-dis7-enumerations-classes.jar"/>
+                <exclude name="open-dis7-enumerations-source.jar"/>
+                <exclude name="open-dis7-enumerations-javadoc.jar"/>
+            </fileset>
         </delete>
         <delete dir="javadoc"/>
         <mkdir dir="build/classes" description="ensure necessary directory present"/>
-        <delete verbose="false">
+        <delete verbose="false" includeemptydirs="false">
             <fileset dir="build/classes" includes="**/*"/>
         </delete>
     </target>
@@ -79,7 +86,7 @@
         </javac>
     </target>
     
-    <target name="javadoc" depends="init">
+    <target name="javadoc">
         <javadoc  classpath="${build.classes.dir}"
                     destdir="javadoc"
             useexternalfile="yes"
@@ -87,7 +94,7 @@
             <!-- useexternalfile="yes" avoids command error: filename or extension is too long -->
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
-                <include name="src-generated/java/**/*.java"/>
+                <include name="src-generated/**/*.java"/>
             </fileset>
             <classpath>
                 <pathelement path="lib/commons-io-2.6.jar"/>
@@ -228,7 +235,7 @@
     click, test-single for Maven. TDN 08 JUN 2020. 
     -->
     
-    <target name="jar" depends="jar-classes,jar-source,jar-javadoc">
+    <target name="jar">
         <!-- javadoc manifest properties -->
         <echo message="manifest.name          = ${manifest.name}"/>
         <echo message="Built-By               = ${Built-By}"/>
@@ -246,6 +253,7 @@
     
     <target name="jar-javadoc" depends="javadoc">
         <jar destfile="dist/open-dis7-javadoc.jar" 
+               update="true"
               basedir="javadoc">
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
@@ -269,9 +277,22 @@
         <jar destfile="dist/open-dis7-source.jar"
              includes="edu/nps/moves/dis7/**"
              excludes=".keep"
+               update="true"
             zip64Mode="always">
-            <fileset dir="src"/>
-            <fileset dir="src-generated"/>            
+            <fileset dir="src" defaultexcludes="yes">
+                <include name="**/*.java"/>
+            </fileset>
+            <fileset dir="src-generated">
+                <include name="**/dis7/*.java"/>
+                <include name="**/dis7/**/*.java"/>
+                <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
+                <exclude name="**/entities/**/*.java"/>
+                <exclude name="**/entitytypes/**/*.java"/>
+                <exclude name="**/enumerations/**/*.java"/>
+                <exclude name="**/jammers/**/*.java"/>
+                <exclude name="**/objecttypes/**/*.java"/>
+                <exclude name="**/*.undef/**/*.java"/>
+            </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Java source files for ${manifest.name}"/>
@@ -295,8 +316,19 @@
              basedir="."
              includes="edu/nps/moves/dis7/**"
              excludes=".keep"
+               update="true"
             zip64Mode="always">
-            <fileset dir="build/classes"/>            
+            <fileset dir="build/classes" defaultexcludes="yes">
+                <include name="**/dis7*.class"/>
+                <include name="**/dis7/**/*.class"/>
+                <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
+                <exclude name="**/entities/**/*.class"/>
+                <exclude name="**/entitytypes/**/*.class"/>
+                <exclude name="**/enumerations/**/*.class"/>
+                <exclude name="**/jammers/**/*.class"/>
+                <exclude name="**/objecttypes/**/*.class"/>
+                <exclude name="**/objecttypes.undef/**/*"/>
+            </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Java class files for ${manifest.name}"/>
