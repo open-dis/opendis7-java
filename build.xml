@@ -7,17 +7,66 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
+
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the project open-dis7-java.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+    <tstamp>
+        <format property="timestamp" pattern="d MMMM yyyy hh:mm:ss"/>
+    </tstamp>
+    
+    <!-- javadoc manifest properties -->
+    <property name="manifest.name"          value="OpenDIS7 Protocol Data Units (PDUs)"/>
+    <property name="Built-By"               value="https://github.com/open-dis/open-dis7-java"/>
+    <property name="Specification-Title"    value="IEEE Distributed Interactive Simulation (DIS) Protocol"/>
+    <property name="Specification-Version"  value="7"/>
+    <property name="Specification-Vendor"   value="Institute of Electrical and Electronics Engineers (IEEE)"/>
+    <property name="Implementation-Title"   value="edu.nps.moves.dis7"/>
+    <property name="Implementation-Version" value="${timestamp}"/>
+    <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
+    
+    <target description="Build and test whole project." name="all">
+        <echo message="timestamp ${timestamp}"/>
+        <antcall target="clean"/>
+        <antcall target="compile"/>
+        <antcall target="test"/>
+        <antcall target="javadoc"/>
+        <antcall target="jar"/>
+        <echo message="build all complete"/>
+    </target>
     
     <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
         <echo message="https://github.com/open-dis/open-dis7-java/issues" />
         <nbbrowse url="https://github.com/open-dis/open-dis7-java/issues" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
+    
 
-    <target name="processScenes.javadoc">
+    <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
+        <nbbrowse file="javadoc/index.html" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
+    
+    <target name="javadoc" depends="init">
+        <javadoc  classpath="${build.classes.dir}"
+                    destdir="javadoc"
+            useexternalfile="yes"
+                    verbose="false">
+            <!-- useexternalfile="yes" avoids command error: filename or extension is too long -->
+            <fileset dir="." defaultexcludes="yes">
+                <include name="src/**/*.java"/>
+                <include name="src-generated/java/**/*.java"/>
+                <include name="test/**/*.java"/>
+            </fileset>
+            <classpath>
+                <pathelement path="libs/commons-io-2.6.jar"/>
+                <pathelement path="testlibs/*.jar"/>
+            </classpath>
+        </javadoc>
+    </target>
+
+    <target name="processScenes.javadoc"><!-- copied as potential template -->
 		
         <property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
         <property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
@@ -170,6 +219,7 @@
             <report format="frames" todir="build/test/results/html"/>
         </junitreport>
     </target>
+    
     <target depends="compile-test-single,-pre-test-run-single" 
             description="Run single unit test." 
             name="-do-test-run-single">
@@ -184,33 +234,91 @@
         </java>
     </target>
     
+    <target name="jar" depends="jar-classes,jar-source,jar-javadoc">
+        <!-- javadoc manifest properties -->
+        <echo message="manifest.name          = ${manifest.name}"/>
+        <echo message="Built-By               = ${Built-By}"/>
+        <echo message="Specification-Title    = ${Specification-Title}"/>
+        <echo message="Specification-Version  = ${Specification-Version}"/>
+        <echo message="Specification-Vendor   = ${Specification-Vendor}"/>
+        <echo message="Implementation-Title   = ${Implementation-Title}"/>
+        <echo message="Implementation-Version = ${timestamp}"/>
+        <echo message="Implementation-Vendor  = ${Implementation-Vendor}"/>
+        
+        <antcall target="jar-classes"/>
+        <antcall target="jar-source"/>
+        <antcall target="jar-javadoc"/>
+    </target>
+    
     <target name="jar-javadoc" depends="javadoc">
-        <jar destfile="${basedir}/dist/open-dis7-javadoc.jar" basedir="${basedir}/dist/javadoc">            
+        <jar destfile="dist/open-dis7-javadoc.jar" 
+              basedir="dist/javadoc">
+            <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
-                <attribute name="Built-By" value="open-dis-7-java"/>
-                <attribute name="Specification-Title" value="DIS 7 Javadoc"/>
-                <attribute name="Specification-Version" value="7.0"/>
-                <attribute name="Specification-Vendor" value="Naval Postgraduate School"/>
-                <attribute name="Implementation-Title" value="edu.nps.moves.dis7"/>
-                <attribute name="Implementation-Version" value="build01"/>
-                <attribute name="Implementation-Vendor" value="Naval Postgraduate School"/>
+                <attribute name="description"            value="Javadoc files for ${manifest.name}"/>
+                <attribute name="Built-By"               value="${Built-By}"/>
+                <attribute name="Specification-Title"    value="${Specification-Title}"/>
+                <attribute name="Specification-Version"  value="${Specification-Version}"/>
+                <attribute name="Specification-Vendor"   value="${Specification-Vendor}"/>
+                <attribute name="Implementation-Title"   value="${Implementation-Title}"/>
+                <attribute name="Implementation-Version" value="${Implementation-Version}"/>
+                <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
+                
+                <section name="edu/nps/moves/dis7">
+                    <attribute name="Sealed" value="true"/>
+                </section>
             </manifest>
         </jar>
     </target>
     
     <target name="jar-source">
-        <jar destfile="${basedir}/dist/open-dis7-source.jar">
-            <fileset dir="${basedir}/src" includes="**/*.java"/>
-            <fileset dir="${basedir}/src-generated" includes="**/*.java"/>
+        <jar destfile="dist/open-dis7-source.jar"
+             includes="edu/nps/moves/dis7/**"
+             excludes=".keep"
+            zip64Mode="always">
+            <fileset dir="src"/>
+            <fileset dir="src-generated"/>            
+            <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
-                <attribute name="Built-By" value="open-dis-7-java"/>
-                <attribute name="Specification-Title" value="DIS 7 Source"/>
-                <attribute name="Specification-Version" value="7.0"/>
-                <attribute name="Specification-Vendor" value="Naval Postgraduate School"/>
-                <attribute name="Implementation-Title" value="edu.nps.moves.dis7"/>
-                <attribute name="Implementation-Version" value="build01"/>
-                <attribute name="Implementation-Vendor" value="Naval Postgraduate School"/>
+                <attribute name="description"            value="Java source files for ${manifest.name}"/>
+                <attribute name="Built-By"               value="${Built-By}"/>
+                <attribute name="Specification-Title"    value="${Specification-Title}"/>
+                <attribute name="Specification-Version"  value="${Specification-Version}"/>
+                <attribute name="Specification-Vendor"   value="${Specification-Vendor}"/>
+                <attribute name="Implementation-Title"   value="${Implementation-Title}"/>
+                <attribute name="Implementation-Version" value="${Implementation-Version}"/>
+                <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
+                
+                <section name="edu/nps/moves/dis7">
+                    <attribute name="Sealed" value="true"/>
+                </section>
             </manifest>
         </jar>        
     </target>
+    
+    <target name="jar-classes">
+        <jar destfile="dist/open-dis7-classes.jar"
+             basedir="."
+             includes="edu/nps/moves/dis7/**"
+             excludes=".keep"
+            zip64Mode="always">
+            <fileset dir="build/classes"/>            
+            <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
+            <manifest>
+                <attribute name="description"            value="Java class files for ${manifest.name}"/>
+                <attribute name="Built-By"               value="${Built-By}"/>
+                <attribute name="Specification-Title"    value="${Specification-Title}"/>
+                <attribute name="Specification-Version"  value="${Specification-Version}"/>
+                <attribute name="Specification-Vendor"   value="${Specification-Vendor}"/>
+                <attribute name="Implementation-Title"   value="${Implementation-Title}"/>
+                <attribute name="Implementation-Version" value="${Implementation-Version}"/>
+                <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
+                
+                <section name="edu/nps/moves/dis7">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+            </manifest>
+        </jar>        
+    </target>
+    
 </project>
