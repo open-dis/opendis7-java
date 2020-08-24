@@ -164,7 +164,8 @@ public class PduPlayer {
                                 //Add the "]" to the end of sa[0]. It was taken off by the split
                                 sa[0] = sa[0].concat("]");
                                 //Add the "]" to the end of sa[0]. It was taken off by the split
-                                sa[1] = "[".concat(sa[1]);
+                                if (sa.length > 1)
+                                    sa[1] = "[".concat(sa[1]);
 
                                 break;
 
