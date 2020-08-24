@@ -4,8 +4,8 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.objecttypes.LinearObject.Culturalfeature.Tracks_Tire.Tracks_Tire;
-import edu.nps.moves.dis7.objecttypes.LinearObject.Obstacle.ConcertinaWire._2_Roll._2_Roll;
+import edu.nps.moves.dis7.objecttypes.LinearObject.Culturalfeature.TracksTire.TracksTire;
+import edu.nps.moves.dis7.objecttypes.LinearObject.Obstacle.ConcertinaWire._2Roll;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,7 +31,7 @@ public class ObjectTypeMarshallTest
     {
         Throwable thr = null;
         try {
-            _2_Roll roll2 = new _2_Roll();
+            _2Roll roll2 = new _2Roll();
             common(roll2);
         }
         catch (Throwable t) {
@@ -45,7 +45,7 @@ public class ObjectTypeMarshallTest
     {
         Throwable thr = null;
         try {
-            Tracks_Tire tracksTire = new Tracks_Tire();
+            TracksTire tracksTire = new TracksTire();
             common(tracksTire);
         }
         catch (Throwable t) {

@@ -55,7 +55,7 @@ public class DataQueryPduRoundTripTest
 
   private static FixedDatum fixedDatum1 = new FixedDatum();
   private static int fixedDatum1Value = 0x111111FF;
-  private static VariableRecordType fixedDatum1VarRecordType = VariableRecordType.$120_MM_HEAT_QUANTITY;
+  private static VariableRecordType fixedDatum1VarRecordType = VariableRecordType._120_MM_HEAT_QUANTITY;
   private static FixedDatum fixedDatum2 = new FixedDatum();
   private static int fixedDatum2Value = 0x222222FF;
   private static VariableRecordType fixedDatum2VarRecordType = VariableRecordType.ACCELERATION;
