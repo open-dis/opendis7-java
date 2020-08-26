@@ -48,7 +48,7 @@ public class DisNetworking
 
   public DisNetworking()
   {
-    this(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+    this(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
   }
 
   public DisNetworking(int port, String mcastgroup)

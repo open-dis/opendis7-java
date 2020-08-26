@@ -30,8 +30,8 @@ public class PduRecorder implements PduReceiver
 {
   public static final String COMMENT_MARKER = "#";
   
-  static String DEFAULT_OUTDIR = "./pduLog";
-  static String DEFAULT_FILEPREFIX = "Pdusave"; // TODO better name
+  static String outputDirectoryPath   = "./pduLog";
+  static String DEFAULT_FILE_PREFIX   = "PduCaptureLog";
   static String DISLOG_FILE_EXTENSION = ".dislog";
   
   static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
@@ -42,72 +42,72 @@ public class PduRecorder implements PduReceiver
   static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
   static final String ENCODING_EXI                   = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
   static final String ENCODING_JSON                  = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
-  static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
+  static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";       // verbose pretty-print. perhaps output only (MAK format itself is binary)
   static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
   static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
   
   private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
-  private Writer writer;
+  private Writer logFileWriter;
   private File   logFile;
-  private DisThreadedNetIF disThreadedNetIF;
-  private DisThreadedNetIF.RawPduListener lis;
+  private DisThreadedNetIF                disThreadedNetIF;
+  private DisThreadedNetIF.RawPduListener disRawPduListener;
   
-  Long startNanoTime = null;
-  StringBuilder sb = new StringBuilder();
-  Base64.Encoder base64Encoder = Base64.getEncoder();
-  int pduCount = 0;
-  boolean headerWritten = false;
-  boolean doSave = true;
+  private Long      startNanoTime = null;
+  private final  StringBuilder sb = new StringBuilder();
+  private final  Base64.Encoder base64Encoder = Base64.getEncoder();
+  private static int     port     = DisThreadedNetIF.DEFAULT_DIS_PORT; // self-test via port 1 when main() invoked
+  private final  int     pduCount = 0;    // debug
+  private boolean headerWritten   = false;
+  private boolean running         = true; // starts recording by default
   
   /**
-   * Default constructor that uses default values for output directory, multicast
-   * address and port.
+   * Default constructor that uses default values for output directory, multicast address and port.
    * 
    * @throws IOException if something goes wrong during instantiation
    */
   public PduRecorder() throws IOException
   {
-    this(DEFAULT_OUTDIR, DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT);
+      this(outputDirectoryPath, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, port);
   }
   
   /**
    * Constructor to let the use specify an output directory. Uses default values 
    * for multicast address and port.
    * 
-   * @param dir the directory to write log files to
-   * 
+   * @param directoryPath the directory to write log files to
    * @throws IOException if something goes wrong during instantiation
    */
-  public PduRecorder(String dir) throws IOException
+  public PduRecorder(String directoryPath) throws IOException
   {
-    this(dir, DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT);
+    this(directoryPath, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetIF.DEFAULT_DIS_PORT);
   }
   
   /** Constructor to let the user specify all required parameters
    * 
-   * @param outputDir the directory to write log files to
-   * @param mcastaddr the multicast group address to receive data from
+   * @param outputPath local path to the directory to write log files to
+   * @param multicastAddress the multicast group address to receive data from (TODO allow unicast UDP)
    * @param port the port to receive data through
    * @throws IOException if something goes wrong during instantiation
    */
-  public PduRecorder(String outputDir, String mcastaddr, int port) throws IOException
+  @SuppressWarnings("Convert2Lambda")
+  public PduRecorder(String outputPath, String multicastAddress, int port) throws IOException
   {
-    DEFAULT_OUTDIR = outputDir;
-    logFile = makeFile(new File(outputDir).toPath(), DEFAULT_FILEPREFIX+DISLOG_FILE_EXTENSION );
-    writer = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+    outputDirectoryPath = outputPath;
+    logFile       = createUniquePduLogFile(new File(outputPath).toPath(), DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
+    logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     
-    disThreadedNetIF = new DisThreadedNetIF(port, mcastaddr);
+    disThreadedNetIF = new DisThreadedNetIF(port, multicastAddress);
     
-    lis = new DisThreadedNetIF.RawPduListener() {
+    disRawPduListener = new DisThreadedNetIF.RawPduListener() {
         @Override
         public void incomingPdu(DisThreadedNetIF.BuffAndLength bAndL) {
             receivePdu(bAndL.buff, bAndL.length);
         }
     };
     
-    disThreadedNetIF.addRawListener(lis);
-    System.out.println(getClass() + " listening to IP address " + mcastaddr + " on port: " + port);
+    disThreadedNetIF.addRawListener(disRawPduListener);
+    System.out.println(getClass() + " listening to IP address " + multicastAddress + " on port " + port);
   }
   
     /**
@@ -115,48 +115,54 @@ public class PduRecorder implements PduReceiver
      *
      * @return the pduLogEncoding
      */
-    public static String getEncoding() {
+    public static String getPduLogEncoding()
+    {
         return pduLogEncoding;
     }
 
     /**
-     * @param aEncoding the pduLogEncoding to set
+     * @param newPduLogEncoding the pduLogEncoding to set
      */
-    public static void setEncoding(String aEncoding) {
-        pduLogEncoding = aEncoding;
+    public static void setPduLogEncoding(String newPduLogEncoding) {
+        pduLogEncoding = newPduLogEncoding;
     }
   
   public void startResume()
   {
-    doSave = true;
+    running = true;
   }
   
   public void stopPause()
   {
-    doSave = false;
+    running = false;
   }
   
   public File end()
   {
-    doSave = false;
-    disThreadedNetIF.removeRawListener(lis);
+    running = false;
+    disThreadedNetIF.removeRawListener(disRawPduListener);
     disThreadedNetIF.kill();
 
     writeFooter();
     try {
-        writer.close(); // a flush occurs first during a close
-    } catch (IOException ex) {
+        System.out.println();
+        System.out.println("Closing recorder log file: " + logFile.getCanonicalPath());
+        logFileWriter.close(); // a flush occurs first during a close
+    } 
+    catch (IOException ex) {
         Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
     }
-    System.out.println();
-    System.out.println("Recorder log file closed: " + logFile.getPath());
     return logFile;
   }
+  byte[] oldBuffer;
   
   @Override
-  public void receivePdu(byte[] buff, int len)
+  public void receivePdu(byte[] newBuffer, int newLength)
   {
-    if(!doSave)
+    if (java.util.Arrays.equals(newBuffer, oldBuffer))
+        System.err.println ("PduRecorder warning: PDU newBuffer equals PDU oldBuffer"); // debug
+    
+    if(!isRunning())
       return;
     
     long packetRcvNanoTime = System.nanoTime();
@@ -166,8 +172,8 @@ public class PduRecorder implements PduReceiver
     byte[] timeByteArray = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
     //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
-    byte[] buffsized = Arrays.copyOf(buff, len);
-    DISPDUType type;
+    byte[] buffsized = Arrays.copyOf(newBuffer, newLength);
+    DISPDUType pduType;
     
     switch (pduLogEncoding)
     {
@@ -183,8 +189,8 @@ public class PduRecorder implements PduReceiver
             sb.append(',');
             sb.append(Arrays.toString(buffsized).replace(" ", ""));
             sb.append(" # ");
-            type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
-            sb.append(type);
+            pduType = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
+            sb.append(pduType);
             break;
         
         default:
@@ -195,8 +201,8 @@ public class PduRecorder implements PduReceiver
       headerWritten = true;
     }
     try {
-      writer.write(sb.toString());
-      ((PrintWriter)writer).println();
+      logFileWriter.write(sb.toString());
+      ((PrintWriter)logFileWriter).println();
     }
     catch (IOException ex) {
       throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread: " + ex);
@@ -210,7 +216,7 @@ public class PduRecorder implements PduReceiver
    * 
    * @return the path to the log file
    */
-  public String getLogFile()
+  public String getLogFilePath()
   {
     return logFile.getAbsolutePath();
   }
@@ -224,24 +230,30 @@ public class PduRecorder implements PduReceiver
   
   private void writeHeader()
   {
-    String timeStamp = getTimeStamp();
-    
-    try {
-          writer.write(START_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
-          ((PrintWriter)writer).println();
-      } catch (IOException ex) {
+      String timeStamp = getTimeStamp();
+
+      try
+      {
+          logFileWriter.write(START_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+          ((PrintWriter) logFileWriter).println();
+      } 
+      catch (IOException ex)
+      {
           Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
       }
   }
 
   private void writeFooter()
   {   
-    String timeStamp = getTimeStamp();
-    
-      try {
-          writer.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
-          ((PrintWriter)writer).println();
-      } catch (IOException ex) {
+      String timeStamp = getTimeStamp();
+
+      try
+      {
+          logFileWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+          ((PrintWriter) logFileWriter).println();
+      } 
+      catch (IOException ex)
+      {
           Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
       }
   }
@@ -259,30 +271,44 @@ public class PduRecorder implements PduReceiver
    * @return a File reference to the log file
    * @throws IOException if something goes awry
    */
-  private File makeFile(Path outputDir, String filename) throws IOException
+  private File createUniquePduLogFile(Path outputDir, String filename) throws IOException
   {
-    String bname = FilenameUtils.getBaseName(filename);
-    String ext = FilenameUtils.getExtension(filename);
+    String baseName  = FilenameUtils.getBaseName(filename);
+    String extension = FilenameUtils.getExtension(filename);
 
-    Integer count = null;
-    File f;
+    Integer fileCounter = null;
+    File    newFile;
     boolean fileExists;
     outputDir.toFile().mkdirs();
     do {
-      String fn = bname + (count == null ? "" : count) + "." + ext;
-      f = new File(outputDir.toFile(), fn);
-      fileExists = f.exists();
-      if (count == null)
-        count = 1;
+      String nextFileName = baseName + (fileCounter == null ? "" : fileCounter) + "." + extension;
+      newFile = new File(outputDir.toFile(), nextFileName);
+      fileExists = newFile.exists();
+      if (fileCounter == null)
+        fileCounter = 1;
       else
-        count++;
+        fileCounter++;
     } while (fileExists);
-    if (!f.createNewFile()) {
-      System.out.println("Cannot create dis log file at " + f.getAbsolutePath());
+    
+    if (newFile.createNewFile()) 
+    {
+        System.out.println("Recorder log file open: " + newFile.getCanonicalPath());
+    }
+    else
+    {
+      System.out.println("Cannot create dis log file at " + newFile.getAbsolutePath());
       throw new RuntimeException("File creation error");
     }
-    return f;
+    return newFile;
   }
+
+    /**
+     * @return the pduRecorderRunning
+     */
+    public boolean isRunning()
+    {
+        return running;
+    }
   
   /** Entry point invocation. Saves a PDU output log to ./pduLog. Invoking the
    *  edu.nps.moves.dis7.examples.PduReaderPlayer will playback all logs written
@@ -292,29 +318,36 @@ public class PduRecorder implements PduReceiver
    */
   public static void main(String[] args)
   {
+    System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs via port " + port);
+    port = 1; // avoid listening to other PDU streams during self test
+    
     PduFactory factory = new PduFactory(); //default appid, country, etc.
 
-    PduRecorder recorder;
+    PduRecorder pduRecorder;
     try {
-        recorder = new PduRecorder(); // default addr, port, output dir
+        pduRecorder = new PduRecorder(); // default address, port, output directory path
     } 
     catch(IOException ex) {
-      System.err.println("Exception creating recorder: "+ex.getLocalizedMessage());
+      System.err.println("Exception creating recorder: " + ex.getLocalizedMessage());
       return;
     }
+    System.out.println("dis7.utilities.stream.PduRecorder pduRecorder created... isRunning()=" + pduRecorder.isRunning());
      
-    DISPDUType all[] = DISPDUType.values();
-    Arrays.stream(all).forEach(typ-> {
-      if(typ != DISPDUType.OTHER) {
+    DISPDUType allPDUTypesArray[] = DISPDUType.values();
+    System.out.println("dis7.utilities.stream.PduRecorder allPDUTypesArray created, length=" + allPDUTypesArray.length + " ...");
+    Arrays.stream(allPDUTypesArray).forEach(pduTypeValue-> {
+      if(pduTypeValue != DISPDUType.OTHER) 
+      {
         try {
-            recorder.getDisThreadedNetIF().send(factory.createPdu(typ));
+            pduRecorder.getDisThreadedNetIF().send(factory.createPdu(pduTypeValue));
         }
         catch(Exception ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
         }
       }
     });
-
-    recorder.end();
+    System.err.flush(); // ensure all output sent
+    pduRecorder.end();
+    System.out.println("dis7.utilities.stream.PduRecorder pduRecorder complete... isRunning()=" + pduRecorder.isRunning());
   }
 }

@@ -60,7 +60,7 @@ public class DisThreadedNetIF
   /************ Begin class ***************/
   
   public static int DEFAULT_DIS_PORT = 3000;
-  public static String DEFAULT_MCAST_GROUP = "225.4.5.6";
+  public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
   
   /** 8192: This has actually been superseded by a larger buffer size, but good enough for now */
   public static final int MAX_DIS_PDU_SIZE = 8192;
@@ -82,7 +82,7 @@ public class DisThreadedNetIF
    */
   public DisThreadedNetIF()
   {
-    this(DEFAULT_DIS_PORT, DEFAULT_MCAST_GROUP);
+    this(DEFAULT_DIS_PORT, DEFAULT_MULTICAST_ADDRESS);
   }
 
   /**
@@ -237,17 +237,20 @@ public class DisThreadedNetIF
 
                     pdu = pduFactory.createPdu(buffer);
 
-                    if (pdu != null) {
+                    if (pdu != null)
+                    {
                         counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
                         System.err.println(counter + ". received " + pdu.getPduType().name());
                         toListeners(pdu);
                     }
                     buffer.clear();
                 }
-            } catch (IOException ex) {
+            } 
+            catch (IOException ex) {
                 System.err.println("Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
                 System.err.println("Retrying new socket in 1 second");
-            } finally {
+            } 
+            finally {
                 if (socket != null && !socket.isClosed()) {
                     try {
                         ((MulticastSocket)socket).leaveGroup(group, ni);

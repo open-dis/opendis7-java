@@ -1462,13 +1462,13 @@ public class PduFactory
    * PDU builder. Pass in a data buffer, get the correct type of pdu back
    * based on the PDU type field contained in the underlying array.
    *
-   * @param buff the buffer containing PDU data to input
+   * @param byteBuffer the buffer containing PDU data to input
    * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
    */
-  public Pdu createPdu(ByteBuffer buff)
+  public Pdu createPdu(ByteBuffer byteBuffer)
   {
-    DISPDUType type = getTypeFromByteArray(buff.array());
-    return createPdu(type, buff);
+    DISPDUType pduType = getTypeFromByteArray(byteBuffer.array());
+    return createPdu(pduType, byteBuffer);
   }
 
   /**
@@ -1493,7 +1493,7 @@ public class PduFactory
     return createPdu(pduType, null);
   }
   
-  private Pdu createPdu(DISPDUType pduType, ByteBuffer buff)
+  private Pdu createPdu(DISPDUType pduType, ByteBuffer byteBuffer)
   {
     Pdu aPdu = null;
     switch (pduType) {
@@ -1797,15 +1797,14 @@ public class PduFactory
     }   // end switch
 
     if (aPdu != null) {
-      if (buff != null) {
+      if (byteBuffer != null) {
           try {
-              aPdu.unmarshal(buff);
+              aPdu.unmarshal(byteBuffer);
           } catch (Exception ex) {
               Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
           }
       }
     }
-
     return aPdu;
   }
 
