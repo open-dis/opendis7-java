@@ -59,7 +59,7 @@ public class BitFieldRoundTripTest
     EntityStatePdu espdu = factory.makeEntityStatePdu();
     
     espdu.setForceId(ForceID.FRIENDLY_9);
-    espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.MK48_14_logistics_platform_truck());
+    espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.MK4814logisticsplatformtruck());
     Vector3Float lv = new Vector3Float();
     lv.setX(5.0f);
     espdu.setEntityLinearVelocity(lv);
