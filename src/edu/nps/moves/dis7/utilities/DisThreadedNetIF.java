@@ -59,13 +59,13 @@ public class DisThreadedNetIF
   
   /************ Begin class ***************/
   
-  public static int DEFAULT_DIS_PORT = 3000;
+  public static int    DEFAULT_DIS_PORT          = 3000;
   public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
   
   /** 8192: This has actually been superseded by a larger buffer size, but good enough for now */
   public static final int MAX_DIS_PDU_SIZE = 8192;
   
-  /** 1500: Rough size of an ethernet frame */
+  /** 1500:  size of an ethernet frame, common value to avoid packet segmentation */
   public static final int MAX_TRANSMISSION_UNIT_SIZE = 1500;
   
   private int disPort;
