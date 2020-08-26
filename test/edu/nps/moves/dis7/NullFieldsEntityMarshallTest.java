@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.entities.usa.platform.land.LAV_105;
+import edu.nps.moves.dis7.entities.usa.platform.land.LAV105;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Null Fields Entity Marshall Test")
 public class NullFieldsEntityMarshallTest
 {
-    LAV_105 lav105;
+    LAV105 lav105;
 
     @BeforeAll
     public static void beforeAllTests()
@@ -33,7 +33,7 @@ public class NullFieldsEntityMarshallTest
     @BeforeEach
     public void setUp()
     {
-        lav105 = new LAV_105();
+        lav105 = new LAV105();
     }
     
     @AfterEach
