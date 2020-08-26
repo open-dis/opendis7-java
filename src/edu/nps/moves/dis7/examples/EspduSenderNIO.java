@@ -43,7 +43,7 @@ public class EspduSenderNIO
 
     try {
       socket = new MulticastSocket();
-      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
       group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
       

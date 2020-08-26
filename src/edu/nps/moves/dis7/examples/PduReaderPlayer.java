@@ -32,7 +32,7 @@ public class PduReaderPlayer
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;
-    String mcast = DisThreadedNetIF.DEFAULT_MCAST_GROUP;
+    String mcast = DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS;
     int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
     boolean sendToNet = false;
 

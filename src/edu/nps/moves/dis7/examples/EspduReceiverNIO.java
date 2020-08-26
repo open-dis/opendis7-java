@@ -30,12 +30,13 @@ public class EspduReceiverNIO
     byte buffer[] = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     Pdu pdu;
+    int pduCounter = 0;
     
     try {
         
       // Specify the socket to receive data
       socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
-      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
       group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
 
@@ -46,7 +47,9 @@ public class EspduReceiverNIO
 
         pdu = pduFactory.createPdu(packet.getData());
 
-        System.out.println("got PDU of type: " + pdu.getClass().getSimpleName());
+        pduCounter++;
+
+        System.out.println(pduCounter + ". got PDU of type: " + pdu.getClass().getSimpleName());
 
       } // end while
     } // End try

@@ -36,11 +36,12 @@ public class EspduReceiver
     PduFactory pduFactory = new PduFactory();
     List<Pdu> pduBundle;
 
-    try {
+    try 
+    {
       // Specify the socket to receive data
       socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
       
-      InetAddress maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      InetAddress maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
       InetSocketAddress group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
 
       socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
@@ -50,6 +51,7 @@ public class EspduReceiver
       Vector3Double position;
       Iterator<Pdu> it;
       Pdu aPdu;
+      int pduCounter = 0;
       
       while (true) {
         socket.receive(packet);
@@ -61,8 +63,9 @@ public class EspduReceiver
 
         while (it.hasNext()) {
           aPdu = it.next();
+          pduCounter++;
 
-          System.out.print("got PDU of type: " + aPdu.getClass().getName());
+          System.out.print(pduCounter + ". got PDU of type: " + aPdu.getClass().getName());
           if (aPdu instanceof EntityStatePdu) {
             eid = ((EntityStatePdu) aPdu).getEntityID();
             position = ((EntityStatePdu) aPdu).getEntityLocation();
