@@ -52,7 +52,8 @@ public class PduSender
 
       // Loop through all the enumerated PDU types, create a PDU for each type,
       // and add that PDU to a list.
-      for (DISPDUType pdu : DISPDUType.values()) {
+      for (DISPDUType pdu : DISPDUType.values()) { // results are in alphabetic, not numeric order
+          
         Pdu aPdu = null;
 
         switch (pdu) {
@@ -296,15 +297,19 @@ public class PduSender
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);
       byte[] buffer;
+      int pduCounter = 0;
       
       for (Pdu pdu : generatedPdus) {
 
+//      Thread.sleep(300); // debug
+        pduCounter++;
         pdu.marshal(dos);
 
         buffer = baos.toByteArray();
         packet = new DatagramPacket(buffer, buffer.length, group);
         socket.send(packet);
-        System.out.println("Sent PDU of type " + pdu.getClass().getSimpleName() + " ("+pdu.getPduType().getValue()+")");
+
+        System.out.println(pduCounter + ".  Sent PDU of type " + pdu.getPduType().getValue() + " "+ pdu.getClass().getSimpleName());
         baos.reset();
       }
 
@@ -325,9 +330,9 @@ public class PduSender
       sender = new PduSender(Integer.parseInt(args[0]), args[1]);
     }
     else {
-      System.out.println("Usage:   PduSender <port> <multicast group>");
-      System.out.println("Default: PduSender  " + DisThreadedNetIF.DEFAULT_DIS_PORT + "   " + DisThreadedNetIF.DEFAULT_MCAST_GROUP);
-      sender = new PduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MCAST_GROUP);
+      System.out.println("Usage:   AlphabeticalPduSender <port> <multicast group>");
+      System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetIF.DEFAULT_DIS_PORT + "   " + DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
+      sender = new PduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
     }
     sender.run();
   }
