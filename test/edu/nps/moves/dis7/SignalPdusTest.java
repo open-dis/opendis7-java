@@ -135,7 +135,7 @@ public class SignalPdusTest {
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(DisThreadedNetIF.DEFAULT_MCAST_GROUP, DisThreadedNetIF.DEFAULT_DIS_PORT, path, false);
+        PduPlayer player = new PduPlayer(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetIF.DEFAULT_DIS_PORT, path, false);
         player.addRawListener(ba -> {
             if (ba != null)
                 assertNotNull(pduFac.createPdu(ba), "PDU creation failure");
