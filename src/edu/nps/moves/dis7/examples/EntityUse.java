@@ -86,14 +86,15 @@ public class EntityUse
     EntityStatePdu espdu = pduFactory.makeEntityStatePdu();  
     /* set desired entity state fields here */
     
-    EntityType et = EntityTypeFactory.makeEntity(11963);
-    if(et == null) {
-      System.err.println("Missing USA SURFACE entity jar in classpath");
-      return;
-    }
+    // TODO check
+//    EntityType et = EntityTypeFactory.makeEntity(11963);
+//    if(et == null) {
+//      System.err.println("Missing USA SURFACE entity jar in classpath");
+//      return;
+//    }
+//    espdu.setEntityType(et);
     
-    espdu.setEntityType(et);
-    
+    System.out.println("Sending " + espdu.getClass().getSimpleName());
     netif.send(espdu);  // possibly throws IOException
     sleep(100L);
     
@@ -105,8 +106,8 @@ public class EntityUse
     AD44Shenandoah entityType2 = new AD44Shenandoah(); // edu.nps.moves.dis7.entities.usa.platform.surface
     
     espdu.setEntityType(entityType2);
+    System.out.println("Sending " + espdu.getClass().getSimpleName());
     netif.send(espdu);  // possibly throws IOException
-    sleep(100L); // TODO remove?
   }
   
   private static void sleep(long ms)
