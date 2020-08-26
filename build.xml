@@ -32,8 +32,8 @@
         <echo message="================"/>
         <antcall target="compile"/>
         <echo message="================"/>
-        <echo message="TODO: test"/>
-    <!--<antcall target="test"/>-->
+        <echo message="TODO: test suite cleanups, individual programs are runnable OK"/>
+        <antcall target="test"/>
         <echo message="================"/>
         <antcall target="javadoc"/>
         <echo message="================"/>
