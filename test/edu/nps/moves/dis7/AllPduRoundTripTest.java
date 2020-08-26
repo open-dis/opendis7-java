@@ -190,7 +190,7 @@ public class AllPduRoundTripTest
             }
         };
         disnetworking.addListener(lis);
-        System.out.println("Recorder log at " + recorder.getLogFile());
+        System.out.println("Recorder log at " + recorder.getLogFilePath());
     }
 
   /** Will shutdown the common send/receive network interface */
@@ -211,7 +211,7 @@ public class AllPduRoundTripTest
   private void getAllFromRecorder(Semaphore sem) throws Exception
   {
     sem.acquire();
-    Path path = Path.of(recorder.getLogFile()).getParent();
+    Path path = Path.of(recorder.getLogFilePath()).getParent();
     PduPlayer player = new PduPlayer(disnetworking.getMcastGroup(), disnetworking.getDisPort(), path, false);
     player.addRawListener(ba -> {
       if (ba != null) {
