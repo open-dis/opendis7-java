@@ -16,6 +16,7 @@
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
             <word>classpath</word>
             <word>multicast</word>
+            <word>unicast</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
