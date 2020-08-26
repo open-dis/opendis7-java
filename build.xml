@@ -41,6 +41,14 @@
         <echo message="build all complete"/>
     </target>
     
+    <target name="clean.pduLog" description="clean recorded pduLog files">
+        <delete verbose="true">
+            <fileset dir="pduLog">
+                <include name="*.dislog"/>
+            </fileset>
+        </delete>
+    </target>
+    
     <target name="clean" description="clean assets created by this project">
         <mkdir dir="dist" description="ensure necessary directory present"/>
         <delete verbose="true">
@@ -345,6 +353,39 @@
                 </section>
             </manifest>
         </jar>        
+    </target>
+    
+    <!-- special test harness for JUnit5 by Terry Norbraten -->
+    <target depends="compile-test,-pre-test-run"
+            description="Run unit tests."
+            name="test" >
+        <java classpath="${run.test.classpath}"
+              classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true">
+            <arg value="--disable-banner"/>
+            <arg value="--fail-if-no-tests"/>
+            <arg value="--scan-classpath=${build.test.classes.dir}"/>
+            <arg value="--reports-dir=${build.test.results.dir}"/>
+        </java>
+        <junitreport todir="build/test/results">
+            <fileset dir="build/test/results">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="build/test/results/html"/>
+        </junitreport>
+    </target>
+    <target depends="compile-test-single,-pre-test-run-single"
+            description="Run single unit test."
+            name="-do-test-run-single">
+        <echo message="Testing: ${test.class}"/>
+        <java classpath="${run.test.classpath}"
+              classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true">
+            <arg value="--disable-banner"/>
+            <arg value="--fail-if-no-tests"/>
+            <arg line="-c=${test.class}"/>
+            <!--<arg value="-h"/>-->
+        </java>
     </target>
     
 </project>
