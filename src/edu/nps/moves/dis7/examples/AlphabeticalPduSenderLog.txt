@@ -1,0 +1,87 @@
+ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/AlphabeticalPduSender.java -Drun.class=edu.nps.moves.dis7.examples.AlphabeticalPduSender run-single
+init:
+Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
+warning: [options] bootstrap class path not set in conjunction with -source 8
+1 warning
+compile-single:
+run-single:
+Usage:   AlphabeticalPduSender <port> <multicast group>
+Default: AlphabeticalPduSender  3000   225.4.5.6
+PDU of type DISPDUType: 0 OTHER not created or sent 
+Using network interface Intel(R) Dual Band Wireless-AC 8260
+1.  Sent PDU of type 15 AcknowledgePdu
+2.  Sent PDU of type 55 AcknowledgeReliablePdu
+3.  Sent PDU of type 16 ActionRequestPdu
+4.  Sent PDU of type 56 ActionRequestReliablePdu
+5.  Sent PDU of type 17 ActionResponsePdu
+6.  Sent PDU of type 57 ActionResponseReliablePdu
+7.  Sent PDU of type 33 AggregateStatePdu
+8.  Sent PDU of type 47 AppearancePdu
+9.  Sent PDU of type 45 ArealObjectStatePdu
+10.  Sent PDU of type 48 ArticulatedPartsPdu
+11.  Sent PDU of type 72 AttributePdu
+12.  Sent PDU of type 66 CollisionElasticPdu
+13.  Sent PDU of type 4 CollisionPdu
+14.  Sent PDU of type 22 CommentPdu
+15.  Sent PDU of type 62 CommentReliablePdu
+16.  Sent PDU of type 11 CreateEntityPdu
+17.  Sent PDU of type 51 CreateEntityReliablePdu
+18.  Sent PDU of type 20 DataPdu
+19.  Sent PDU of type 18 DataQueryPdu
+20.  Sent PDU of type 58 DataQueryReliablePdu
+21.  Sent PDU of type 60 DataReliablePdu
+22.  Sent PDU of type 24 DesignatorPdu
+23.  Sent PDU of type 3 DetonationPdu
+24.  Sent PDU of type 68 DirectedEnergyFirePdu
+25.  Sent PDU of type 23 ElectromagneticEmissionPdu
+26.  Sent PDU of type 69 EntityDamageStatusPdu
+27.  Sent PDU of type 1 EntityStatePdu
+28.  Sent PDU of type 67 EntityStateUpdatePdu
+29.  Sent PDU of type 41 EnvironmentalProcessPdu
+30.  Sent PDU of type 21 EventReportPdu
+31.  Sent PDU of type 61 EventReportReliablePdu
+32.  Sent PDU of type 2 FirePdu
+33.  Sent PDU of type 42 GriddedDataPdu
+34.  Sent PDU of type 28 IdentificationFriendOrFoePdu
+35.  Sent PDU of type 70 InformationOperationsActionPdu
+36.  Sent PDU of type 71 InformationOperationsReportPdu
+37.  Sent PDU of type 32 IntercomControlPdu
+38.  Sent PDU of type 31 IntercomSignalPdu
+39.  Sent PDU of type 34 IsGroupOfPdu
+40.  Sent PDU of type 36 IsPartOfPdu
+41.  Sent PDU of type 44 LinearObjectStatePdu
+42.  Sent PDU of type 50 LiveEntityDetonationPdu
+43.  Sent PDU of type 49 LiveEntityFirePdu
+44.  Sent PDU of type 39 MinefieldDataPdu
+45.  Sent PDU of type 38 MinefieldQueryPdu
+46.  Sent PDU of type 40 MinefieldResponseNACKPdu
+47.  Sent PDU of type 37 MinefieldStatePdu
+48.  Sent PDU of type 43 PointObjectStatePdu
+49.  Sent PDU of type 27 ReceiverPdu
+50.  Sent PDU of type 65 RecordQueryReliablePdu
+51.  Sent PDU of type 63 RecordReliablePdu
+52.  Sent PDU of type 12 RemoveEntityPdu
+53.  Sent PDU of type 52 RemoveEntityReliablePdu
+54.  Sent PDU of type 9 RepairCompletePdu
+55.  Sent PDU of type 10 RepairResponsePdu
+56.  Sent PDU of type 8 ResupplyCancelPdu
+57.  Sent PDU of type 6 ResupplyOfferPdu
+58.  Sent PDU of type 7 ResupplyReceivedPdu
+59.  Sent PDU of type 5 ServiceRequestPdu
+60.  Sent PDU of type 19 SetDataPdu
+61.  Sent PDU of type 59 SetDataReliablePdu
+62.  Sent PDU of type 64 SetRecordReliablePdu
+63.  Sent PDU of type 26 SignalPdu
+64.  Sent PDU of type 13 StartResumePdu
+65.  Sent PDU of type 53 StartResumeReliablePdu
+66.  Sent PDU of type 14 StopFreezePdu
+67.  Sent PDU of type 54 StopFreezeReliablePdu
+68.  Sent PDU of type 30 SupplementalEmissionEntityStatePdu
+69.  Sent PDU of type 46 TimeSpacePositionInformationPdu
+70.  Sent PDU of type 35 TransferOwnershipPdu
+71.  Sent PDU of type 25 TransmitterPdu
+72.  Sent PDU of type 29 UnderwaterAcousticPdu
+BUILD SUCCESSFUL (total time: 2 seconds)

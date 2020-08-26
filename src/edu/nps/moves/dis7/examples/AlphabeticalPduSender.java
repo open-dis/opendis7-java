@@ -25,13 +25,13 @@ import java.util.List;
  * @author DMcG
  * @author Mike Bailey
  */
-public class PduSender
+public class AlphabeticalPduSender
 {
 
   private int port;
   InetAddress multicastAddress;
 
-  public PduSender(int port, String multicast)
+  public AlphabeticalPduSender(int port, String multicast)
   {
     try {
       this.port = port;
@@ -325,14 +325,14 @@ public class PduSender
 
   public static void main(String args[])
   {
-    PduSender sender;
+    AlphabeticalPduSender sender;
     if (args.length == 2) {
-      sender = new PduSender(Integer.parseInt(args[0]), args[1]);
+      sender = new AlphabeticalPduSender(Integer.parseInt(args[0]), args[1]);
     }
     else {
       System.out.println("Usage:   AlphabeticalPduSender <port> <multicast group>");
       System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetIF.DEFAULT_DIS_PORT + "   " + DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
-      sender = new PduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
+      sender = new AlphabeticalPduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
     }
     sender.run();
   }
