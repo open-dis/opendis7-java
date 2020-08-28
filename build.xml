@@ -259,7 +259,7 @@
         <antcall target="jar-javadoc"/>
     </target>
     
-    <target name="jar-javadoc" depends="javadoc">
+    <target name="jar-javadoc"> <!-- depends="javadoc" -->
         <jar destfile="dist/open-dis7-javadoc.jar" 
                update="true"
               basedir="javadoc">
