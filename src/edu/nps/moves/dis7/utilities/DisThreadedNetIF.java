@@ -186,7 +186,7 @@ public class DisThreadedNetIF
 
   /**
    * Send the given pdu to the network using the ip and port given to the constructor
-   * @param pdu 
+   * @param pdu the pdu to send
    */
   public void send(Pdu pdu)
   {

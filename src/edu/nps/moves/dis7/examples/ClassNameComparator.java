@@ -36,7 +36,7 @@ public class ClassNameComparator implements Comparator<Pdu> {
     /**
      * Returns true if this comparator is the same class as the comparator passed in.
      * 
-     * @param obj
+     * @param obj object to compare to this object
      */
     @Override
     public boolean equals(Object obj) {
