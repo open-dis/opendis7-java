@@ -22,12 +22,12 @@ public class X3dCoordinates {
 
     /**
      * 
-     * @param x
-     * @param y
-     * @param z
-     * @param phi
-     * @param psi
-     * @param theta 
+     * @param x coordinate
+     * @param y coordinate
+     * @param z coordinate
+     * @param phi orientation
+     * @param psi orientation
+     * @param theta orientation 
      */
     public X3dCoordinates(double x, double y, double z, double phi, double psi, double theta) {
         this.x= x;

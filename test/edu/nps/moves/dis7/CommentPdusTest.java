@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
-  DisThreadedNetIF netif;
-  Pdu receivedPdu;
-  DisThreadedNetIF.PduListener lis;
+  DisThreadedNetIF disThreadedNetworkInterface;
+  Pdu              receivedPdu;
+  DisThreadedNetIF.PduListener pduListener;
     
   @BeforeAll
   public static void setUpClass()
@@ -31,22 +31,22 @@ public class CommentPdusTest
   @BeforeEach
   public void setUp()
   {   
-      netif = new DisThreadedNetIF();
-      lis = new DisThreadedNetIF.PduListener() {
+      disThreadedNetworkInterface = new DisThreadedNetIF();
+      pduListener = new DisThreadedNetIF.PduListener() {
           @Override
-          public void incomingPdu(Pdu pdu) {
-              setUpReceiver(pdu);
+          public void incomingPdu(Pdu newPdu) {
+              setUpReceiver(newPdu);
           }
       };
-      netif.addListener(lis);
+      disThreadedNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      netif.removeListener(lis);
-      netif.kill();
-      netif = null;
+      disThreadedNetworkInterface.removeListener(pduListener);
+      disThreadedNetworkInterface.kill();
+      disThreadedNetworkInterface = null;
   }
 
   @Test
@@ -76,7 +76,7 @@ public class CommentPdusTest
   private void sendPdu(Pdu pdu)
   {
     try {
-      netif.send(pdu);
+      disThreadedNetworkInterface.send(pdu);
       Thread.sleep(100l);
     }
     catch (InterruptedException ex) {
@@ -90,16 +90,17 @@ public class CommentPdusTest
     return pdu1.equals(pdu2);
   }
   
-  private void setUpReceiver(Pdu pdu)
+  private void setUpReceiver(Pdu newPdu)
   {
-    receivedPdu = pdu;
+    receivedPdu = newPdu;
   }
 
   public static void main(String[] args)
   {
-    CommentPdusTest cpt = new CommentPdusTest();
-    cpt.setUp();
-    cpt.testRoundTrip();
-    cpt.tearDown();
+    CommentPdusTest commentPdusTest = new CommentPdusTest();
+    
+    commentPdusTest.setUp();
+    commentPdusTest.testRoundTrip();
+    commentPdusTest.tearDown();
   }
 }

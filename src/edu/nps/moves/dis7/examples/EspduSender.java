@@ -38,7 +38,7 @@ public class EspduSender
    * If in multicast mode, a join() will be done on the multicast address.
    * port: port used for both source and destination.
    *
-   * @param args
+   * @param args command-line arguments
    */
   public static void main(String args[])
   {

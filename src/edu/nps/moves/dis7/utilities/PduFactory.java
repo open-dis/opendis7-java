@@ -218,7 +218,7 @@ public class PduFactory
   /**
    * Create an Entity State PDU<br>
    * IEEE Std 1278.1-2012, 5.3.2
-   * @return the pdu
+   * @return the new pdu
    */
   public EntityStatePdu makeEntityStatePdu()
   {
@@ -241,7 +241,7 @@ public class PduFactory
   /**
    * Create a Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.3
-   * @return the pdu
+   * @return the new pdu
    */  
   public FirePdu makeFirePdu()
   {
@@ -260,7 +260,7 @@ public class PduFactory
   /**
    * Create a Detonation PDU<br>
    * IEEE Std 1278.1-2012, 5.4.4
-   * @return the pdu
+   * @return the new pdu
    */  
   public DetonationPdu makeDetonationPdu()
   {
@@ -276,7 +276,7 @@ public class PduFactory
   /**
    * Create a Collision PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
-   * @return the pdu
+   * @return the new pdu
    */  
   public CollisionPdu makeCollisionPdu()
   {
@@ -295,7 +295,7 @@ public class PduFactory
   /**
    * Create a Service Request PDU<br>
    * IEEE Std 1278.1-2012, 5.5.5
-   * @return the pdu
+   * @return the new pdu
    */  
   public ServiceRequestPdu makeServiceRequestPdu()
   {
@@ -312,7 +312,7 @@ public class PduFactory
   /**
    * Create a Resupply Offer PDU<br>
    * IEEE Std 1278.1-2012, 5.5.6
-   * @return the pdu
+   * @return the new pdu
    */  
   public ResupplyOfferPdu makeResupplyOfferPdu()
   {
@@ -326,7 +326,7 @@ public class PduFactory
   /**
    * Create a Resupply Received PDU<br>
    * IEEE Std 1278.1-2012, 5.5.7
-   * @return the pdu
+   * @return the new pdu
    */  
   public ResupplyReceivedPdu makeResupplyReceivedPdu()
   {
@@ -340,7 +340,7 @@ public class PduFactory
   /**
    * Create a Resupply Cancel PDU<br>
    * IEEE Std 1278.1-2012, 5.5.8
-   * @return the pdu
+   * @return the new pdu
    */  
   public ResupplyCancelPdu makeResupplyCancelPdu()
   {
@@ -354,7 +354,7 @@ public class PduFactory
   /**
    * Create a Repair Complete PDU<br>
    * IEEE Std 1278.1-2012, 5.5.10
-   * @return the pdu
+   * @return the new pdu
    */  
   public RepairCompletePdu makeRepairCompletePdu()
   {
@@ -371,7 +371,7 @@ public class PduFactory
    /**
    * Create a Repair Response PDU<br>
    * IEEE Std 1278.1-2012, 5.5.11
-   * @return the pdu
+   * @return the new pdu
    */  
  public RepairResponsePdu makeRepairResponsePdu()
   {
@@ -388,7 +388,7 @@ public class PduFactory
   /**
    * Create a Create Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.2
-   * @return the pdu
+   * @return the new pdu
    */  
   public CreateEntityPdu makeCreateEntityPdu()
   {
@@ -400,7 +400,7 @@ public class PduFactory
    /**
    * Create a Remove Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.3
-   * @return the pdu
+   * @return the new pdu
    */  
  public RemoveEntityPdu makeRemoveEntityPdu()
   {
@@ -414,7 +414,7 @@ public class PduFactory
   /**
    * Create a Start Resume PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.4
-   * @return the pdu
+   * @return the new pdu
    */  
   public StartResumePdu makeStartResumePdu()
   {
@@ -426,7 +426,7 @@ public class PduFactory
   /**
    * Create a Stop Freeze PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.5
-   * @return the pdu
+   * @return the new pdu
    */  
   public StopFreezePdu makeStopFreezePdu()
   {
@@ -442,7 +442,7 @@ public class PduFactory
   /**
    * Create an Acknowledge PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.6
-   * @return the pdu
+   * @return the new pdu
    */  
   public AcknowledgePdu makeAcknowledgePdu()
   {
@@ -459,7 +459,7 @@ public class PduFactory
   /**
    * Create an Action Request PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.7
-   * @return the pdu
+   * @return the new pdu
    */  
   public ActionRequestPdu makeActionRequestPdu()
   {
@@ -473,7 +473,7 @@ public class PduFactory
   /**
    * Create an Action Response PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.8
-   * @return the pdu
+   * @return the new pdu
    */  
   public ActionResponsePdu makeActionResponsePdu()
   {
@@ -487,7 +487,7 @@ public class PduFactory
   /**
    * Create a Data Query PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.9
-   * @return the pdu
+   * @return the new pdu
    */  
   public DataQueryPdu makeDataQueryPdu()
   {
@@ -499,7 +499,7 @@ public class PduFactory
   /**
    * Create a Set DataPDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.10
-   * @return the pdu
+   * @return the new pdu
    */  
   public SetDataPdu makeSetDataPdu()
   {
@@ -511,7 +511,7 @@ public class PduFactory
   /**
    * Create a Data PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.11
-   * @return the pdu
+   * @return the new pdu
    */  
   public DataPdu makeDataPdu()
   {
@@ -523,7 +523,7 @@ public class PduFactory
   /**
    * Create an Event Report PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.12
-   * @return the pdu
+   * @return the new pdu
    */  
   public EventReportPdu makeEventReportPdu()
   {
@@ -537,7 +537,7 @@ public class PduFactory
   /**
    * Create a Comment PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.13
-   * @return the pdu
+   * @return the new pdu
    */  
   public CommentPdu makeCommentPdu()
   {
@@ -548,8 +548,8 @@ public class PduFactory
   
   /**
    * Create a Comment PDU containing the given String(s), variable record type = "OTHER"
-   * @param comments 
-   * @return the pdu
+   * @param comments of interest
+   * @return the new pdu
    */
   public CommentPdu makeCommentPdu(String ... comments)
   {
@@ -559,8 +559,8 @@ public class PduFactory
   /**
    * Create a Comment PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
-   * @param comments 
-   * @return the pdu
+   * @param comments of interest
+   * @return the new pdu
    */
   public CommentPdu makeCommentPdu(VariableRecordType typ, String... comments)
   {
@@ -579,7 +579,7 @@ public class PduFactory
   /**
    * Create a Electromagnetic Emission (EE) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.3
-   * @return the pdu
+   * @return the new pdu
    */  
   public ElectromagneticEmissionPdu makeElectronicEmissionsPdu()
   {
@@ -595,7 +595,7 @@ public class PduFactory
   /**
    * Create a Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
-   * @return the pdu
+   * @return the new pdu
    */
   public DesignatorPdu makeDesignatorPdu()
   {
@@ -616,7 +616,7 @@ public class PduFactory
   /**
    * Create a Transmitter PDU<br>
    * IEEE Std 1278.1-2012, 5.8.3
-   * @return the pdu
+   * @return the new pdu
    */
   public TransmitterPdu makeTransmitterPdu()
   {
@@ -638,7 +638,7 @@ public class PduFactory
   /**
    * Create a Signal PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
-   * @return the pdu
+   * @return the new pdu
    */
   public SignalPdu makeSignalPdu()
   {
@@ -653,7 +653,7 @@ public class PduFactory
   /**
    * Create a Receiver PDU<br>
    * IEEE Std 1278.1-2012, 5.8.5
-   * @return the pdu
+   * @return the new pdu
    */
   public ReceiverPdu makeReceiverPdu()
   {
@@ -669,7 +669,7 @@ public class PduFactory
   /**
    * Create a an Identification Friend or Foe (IFF) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.6
-   * @return the pdu
+   * @return the new pdu
    */
   public IFFPdu makeIffPdu()
   {
@@ -688,7 +688,7 @@ public class PduFactory
   /**
    * Create a Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
-   * @return the pdu
+   * @return the new pdu
    */
   public UnderwaterAcousticPdu makeUnderwaterAcousticPdu()
   {
@@ -705,7 +705,7 @@ public class PduFactory
   /**
    * Create a Supplemental Emission/Entity State (SEES) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.7
-   * @return the pdu
+   * @return the new pdu
    */
   public SEESPdu makeSeesPdu()
   {
@@ -717,7 +717,7 @@ public class PduFactory
   /**
    * Create an Intercom Signal PDU<br>
    * IEEE Std 1278.1-2012, 5.8.6
-   * @return the pdu
+   * @return the new pdu
    */
   public IntercomSignalPdu makeIntercomSignalPdu()
   {
@@ -729,7 +729,7 @@ public class PduFactory
   /**
    * Create an Intercom Control PDU<br>
    * IEEE Std 1278.1-2012, 5.8.7
-   * @return the pdu
+   * @return the new pdu
    */
   public IntercomControlPdu makeIntercomControlPdu()
   {
@@ -746,7 +746,7 @@ public class PduFactory
   /**
    * Create a Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
-   * @return the pdu
+   * @return the new pdu
    */
   public AggregateStatePdu makeAggregateStatePdu()
   {
@@ -764,7 +764,7 @@ public class PduFactory
   /**
    * Create an IsGroupOf PDU<br>
    * IEEE Std 1278.1-2012, 5.9.3
-   * @return the pdu
+   * @return the new pdu
    */
   public IsGroupOfPdu makeIsGroupOfPdu()
   {
@@ -779,7 +779,7 @@ public class PduFactory
   /**
    * Create a Transfer Ownership PDU<br>
    * IEEE Std 1278.1-2012, 5.9.4
-   * @return the pdu
+   * @return the new pdu
    */
   public TransferOwnershipPdu makeTransferOwnershipPdu()
   {
@@ -798,7 +798,7 @@ public class PduFactory
   /**
    * Create an IsPartOf PDU<br>
    * IEEE Std 1278.1-2012, 5.9.5
-   * @return the pdu
+   * @return the new pdu
    */
   public IsPartOfPdu makeIsPartOfPdu()
   {
@@ -817,7 +817,7 @@ public class PduFactory
   /**
    * Create a Minefield State PDU<br>
    * IEEE Std 1278.1-2012, 5.10.2
-   * @return the pdu
+   * @return the new pdu
    */
   public MinefieldStatePdu makeMinefieldStatePdu()
   {
@@ -837,7 +837,7 @@ public class PduFactory
   /**
    * Create a Minefield Query PDU<br>
    * IEEE Std 1278.1-2012, 5.10.3
-   * @return the pdu
+   * @return the new pdu
    */
   public MinefieldQueryPdu makeMinefieldQueryPdu()
   {
@@ -854,7 +854,7 @@ public class PduFactory
   /**
    * Create a Minefield Data PDU<br>
    * IEEE Std 1278.1-2012, 5.10.4
-   * @return the pdu
+   * @return the new pdu
    */
   public MinefieldDataPdu makeMinefieldDataPdu()
   {
@@ -874,7 +874,7 @@ public class PduFactory
   /**
    * Create a Minefield Response Negative Acknowledgment (NACK) PDU<br>
    * IEEE Std 1278.1-2012, 5.10.5
-   * @return the pdu
+   * @return the new pdu
    */
   public MinefieldResponseNACKPdu makeMinefieldResponseNackPdu()
   {
@@ -886,7 +886,7 @@ public class PduFactory
   /**
    * Create an Environmental Process PDU<br>
    * IEEE Std 1278.1-2012, 5.11.2.2
-   * @return the pdu
+   * @return the new pdu
    */
   public EnvironmentalProcessPdu makeEnvironmentalProcessPdu()
   {
@@ -903,7 +903,7 @@ public class PduFactory
   /**
    * Create a Gridded Data PDU<br>
    * IEEE Std 1278.1-2012, 5.11.2.3
-   * @return the pdu
+   * @return the new pdu
    */
   public GriddedDataPdu makeGriddedDataPdu()
   {
@@ -922,7 +922,7 @@ public class PduFactory
   /**
    * Create a Point Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.2
-   * @return the pdu
+   * @return the new pdu
    */
   public PointObjectStatePdu makePointObjectStatePdu()
   {
@@ -943,7 +943,7 @@ public class PduFactory
   /**
    * Create a Linear Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.3
-   * @return the pdu
+   * @return the new pdu
    */
   public LinearObjectStatePdu makeLinearObjectStatePdu()
   {
@@ -962,7 +962,7 @@ public class PduFactory
   /**
    * Create an Areal Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.4
-   * @return the pdu
+   * @return the new pdu
    */
   public ArealObjectStatePdu makeArealObjectStatePdu()
   {
@@ -979,7 +979,7 @@ public class PduFactory
   /**
    * Create a Time Space Position Information (TSPI) PDU<br>
    * IEEE Std 1278.1-2012, 9.4.2
-   * @return the pdu
+   * @return the new pdu
    */
   public TSPIPdu makeTspiPdu()
   {
@@ -999,7 +999,7 @@ public class PduFactory
   /**
    * Create an Appearance PDU<br>
    * IEEE Std 1278.1-2012, 9.4.3
-   * @return the pdu
+   * @return the new pdu
    */
   public AppearancePdu makeAppearancePdu()
   {
@@ -1019,7 +1019,7 @@ public class PduFactory
   /**
    * Create an Articulated Parts PDU<br>
    * IEEE Std 1278.1-2012, 9.4.4
-   * @return the pdu
+   * @return the new pdu
    */
   public ArticulatedPartsPdu makeArticulatedPartsPdu()
   {
@@ -1032,7 +1032,7 @@ public class PduFactory
   /**
    * Create a Live Entity (LE) Fire PDU<br>
    * IEEE Std 1278.1-2012, 9.4.5
-   * @return the pdu
+   * @return the new pdu
    */
   public LEFirePdu makeLEFirePdu()
   {
@@ -1053,7 +1053,7 @@ public class PduFactory
   /**
    * Create a Live Entity (LE) Detonation PDU<br>
    * IEEE Std 1278.1-2012, 9.4.6
-   * @return the pdu
+   * @return the new pdu
    */
   public LEDetonationPdu makeLEDetonationPdu()
   {
@@ -1076,7 +1076,7 @@ public class PduFactory
   /**
    * Create a Create Entity-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.2
-   * @return the pdu
+   * @return the new pdu
    */
   public CreateEntityReliablePdu makeCreateEntityReliablePdu()
   {
@@ -1092,7 +1092,7 @@ public class PduFactory
   /**
    * Create a Remove Entity-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.3
-   * @return the pdu
+   * @return the new pdu
    */
   public RemoveEntityReliablePdu makeRemoveEntityReliablePdu()
   {
@@ -1106,7 +1106,7 @@ public class PduFactory
   /**
    * Create a Start/Resume-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.4
-   * @return the pdu
+   * @return the new pdu
    */
   public StartResumeReliablePdu makeStartResumeReliablePdu()
   {
@@ -1122,7 +1122,7 @@ public class PduFactory
   /**
    * Create a Stop/Freeze-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.5
-   * @return the pdu
+   * @return the new pdu
    */
   public StopFreezeReliablePdu makeStopFreezeReliablePdu()
   {
@@ -1139,7 +1139,7 @@ public class PduFactory
   /**
    * Create an Acknowledge-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.6
-   * @return the pdu
+   * @return the new pdu
    */
   public AcknowledgeReliablePdu makeAcknowledgeReliablePdu()
   {
@@ -1156,7 +1156,7 @@ public class PduFactory
   /**
    * Create an Action Request-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.7
-   * @return the pdu
+   * @return the new pdu
    */
   public ActionRequestReliablePdu makeActionRequestReliablePdu()
   {
@@ -1171,7 +1171,7 @@ public class PduFactory
   /**
    * Create an Action Response-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.8
-   * @return the pdu
+   * @return the new pdu
    */
   public ActionResponseReliablePdu makeActionResponseReliablePdu()
   {
@@ -1185,7 +1185,7 @@ public class PduFactory
   /**
    * Create a Data Query-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.9
-   * @return the pdu
+   * @return the new pdu
    */
   public DataQueryReliablePdu makeDataQueryReliablePdu()
   {
@@ -1201,7 +1201,7 @@ public class PduFactory
   /**
    * Create a Set Data-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.10
-   * @return the pdu
+   * @return the new pdu
    */
   public SetDataReliablePdu makeSetDataReliablePdu()
   {
@@ -1217,7 +1217,7 @@ public class PduFactory
   /**
    * Create a Data-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.11
-   * @return the pdu
+   * @return the new pdu
    */
   public DataReliablePdu makeDataReliablePdu()
   {
@@ -1233,7 +1233,7 @@ public class PduFactory
   /**
    * Create an Event Report-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.12
-   * @return the pdu
+   * @return the new pdu
    */
   public EventReportReliablePdu makeEventReportReliablePdu()
   {
@@ -1247,7 +1247,7 @@ public class PduFactory
   /**
    * Create a Comment-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.13
-   * @return the pdu
+   * @return the new pdu
    */
   public CommentReliablePdu makeCommentReliablePdu()
   {
@@ -1258,8 +1258,8 @@ public class PduFactory
 
   /**
    * Create a Comment-R PDU containing the given String(s), variable record type = "OTHER"
-   * @param comments 
-   * @return the pdu
+   * @param comments of interest
+   * @return the new pdu
    */
   public CommentReliablePdu makeCommentReliablePdu(String ... comments)
   {
@@ -1269,8 +1269,8 @@ public class PduFactory
   /**
    * Create a CommentR PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
-   * @param comments 
-   * @return the pdu
+   * @param comments of interest
+   * @return the new pdu
    */
   public CommentReliablePdu makeCommentReliablePdu(VariableRecordType typ, String... comments)
   {
@@ -1289,7 +1289,7 @@ public class PduFactory
   /**
    * Create a Record-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.16
-   * @return the pdu
+   * @return the new pdu
    */
   public RecordReliablePdu makeRecordReliablePdu()
   {
@@ -1304,7 +1304,7 @@ public class PduFactory
   /**
    * Create a Set Record-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.15
-   * @return the pdu
+   * @return the new pdu
    */
   public SetRecordReliablePdu makeSetRecordReliablePdu()
   {
@@ -1318,7 +1318,7 @@ public class PduFactory
   /**
    * Create a Record Query-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.14
-   * @return the pdu
+   * @return the new pdu
    */
   public RecordQueryReliablePdu makeRecordQueryReliablePdu()
   {
@@ -1333,7 +1333,7 @@ public class PduFactory
   /**
    * Create a Collision-Elastic PDU<br>
    * IEEE Std 1278.1-2012, 5.3.4
-   * @return the pdu
+   * @return the new pdu
    */
   public CollisionElasticPdu makeCollisionElasticPdu()
   {
@@ -1344,7 +1344,7 @@ public class PduFactory
   /**
    * Create a Entity State Update PDU<br>
    * IEEE Std 1278.1-2012, 5.3.5
-   * @return the pdu
+   * @return the new pdu
    */
   public EntityStateUpdatePdu makeEntityStateUpdatePdu()
   {
@@ -1361,7 +1361,7 @@ public class PduFactory
   /**
    * Create a Directed Energy (DE) Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.5
-   * @return the pdu
+   * @return the new pdu
    */
   public DirectedEnergyFirePdu makeDirectedEnergyFirePdu()
   {
@@ -1380,7 +1380,7 @@ public class PduFactory
   /**
    * Create a Collision-Elastic PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
-   * @return the pdu
+   * @return the new pdu
    */
   public EntityDamageStatusPdu makeEntityDamageStatusPdu()
   {
@@ -1391,7 +1391,7 @@ public class PduFactory
   /**
    * Create an Information Operations (IO) Action PDU<br>
    * IEEE Std 1278.1-2012, 5.13.3
-   * @return the pdu
+   * @return the new pdu
    */
   public InformationOperationsActionPdu makeInformationOperationsActionPdu()
   {
@@ -1411,7 +1411,7 @@ public class PduFactory
   /**
    * Create an Information Operations (IO) Report PDU<br>
    * IEEE Std 1278.1-2012, 5.13.4
-   * @return the pdu
+   * @return the new pdu
    */
   public InformationOperationsReportPdu makeInformationOperationsReportPdu()
   {
@@ -1430,7 +1430,7 @@ public class PduFactory
   /**
    * Create an Attribute PDU<br>
    * IEEE Std 1278.1-2012, 5.3.6
-   * @return the pdu
+   * @return the new pdu
    */
   public AttributePdu makeAttributePdu()
   {

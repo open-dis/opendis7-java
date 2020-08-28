@@ -25,8 +25,8 @@ public class ClassNameComparator implements Comparator<Pdu> {
      * Returns a number less than, equal to, or greater than zero,
      * depending on whether the object is lexically less than, equal to,
      * or greater than the other object.
-     * @param object1
-     * @param object2
+     * @param object1 first object to compare
+     * @param object2 second object to compare
      */
     @Override
     public int compare(Pdu object1, Pdu object2) {

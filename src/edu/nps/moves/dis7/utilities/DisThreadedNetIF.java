@@ -25,6 +25,9 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetIF
 {
+  private static final String messagePrefix = "[" + DisThreadedNetIF.class.getName() + "] ";
+  private             boolean verbose = true;
+  
   /** Pdu listener interface */
   public interface PduListener
   {
@@ -111,8 +114,8 @@ public class DisThreadedNetIF
   private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
   /**
-   * Add a listener to accept only pdus of a given typ
-   * @param lis instance of PduListener
+   * Add a listener to accept only pdus of a given type
+   * @param lis listener instance implementing the RawPduListener interface
    * @param typ Pdu type
    */
   public void addListener(PduListener lis, DISPDUType typ)
@@ -131,7 +134,7 @@ public class DisThreadedNetIF
   
   /**
    * Add a listener to accept all pdu types
-   * @param lis instance implementing the PduListener interface
+   * @param lis listener instance implementing the RawPduListener interface
    */
   public void addListener(PduListener lis)
   {
@@ -140,7 +143,7 @@ public class DisThreadedNetIF
 
   /**
    * Remove previously added listener
-   * @param lis instance implementing the PduListener interface
+   * @param lis listener instance implementing the RawPduListener interface
    */
   public void removeListener(PduListener lis)
   {
@@ -155,7 +158,7 @@ public class DisThreadedNetIF
   
   /**
    * Add a listener to accept pdus of all types in the form of a byte array
-   * @param lis instance implementing the RawPduListener interface
+   * @param lis listener instance implementing the RawPduListener interface
    */
   public void addRawListener(RawPduListener lis)
   {
@@ -164,7 +167,7 @@ public class DisThreadedNetIF
   
   /**
    * Remove previously added raw listener
-   * @param lis 
+   * @param lis listener instance implementing the RawPduListener interface
    */
   public void removeRawListener(RawPduListener lis)
   {
@@ -240,15 +243,16 @@ public class DisThreadedNetIF
                     if (pdu != null)
                     {
                         counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
-                        System.err.println(counter + ". received " + pdu.getPduType().name());
+                        if (verbose)
+                            System.err.println(messagePrefix + counter + ". received " + pdu.getPduType().toString());
                         toListeners(pdu);
                     }
                     buffer.clear();
                 }
             } 
             catch (IOException ex) {
-                System.err.println("Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
-                System.err.println("Retrying new socket in 1 second");
+                System.err.println(messagePrefix + "Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
+                System.err.println(messagePrefix + "Retrying new socket in 1 second");
             } 
             finally {
                 if (socket != null && !socket.isClosed()) {
@@ -286,8 +290,10 @@ public class DisThreadedNetIF
 
                     baos.reset();
                 }
-            } catch (Exception ex) {
-                System.err.println("Exception in DisThreadedNetIF send thread: " + ex.getLocalizedMessage());
+            } 
+            catch (Exception ex)
+            {
+                System.err.println(messagePrefix + "Exception in DisThreadedNetIF send thread: " + ex.getLocalizedMessage());
             }
         }
         try {
@@ -354,8 +360,9 @@ public class DisThreadedNetIF
                     addresses = nif.getInetAddresses();
                     while (addresses.hasMoreElements()) {
                         addr = addresses.nextElement();
-                        if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) {
-                            System.out.println("Using network interface " + nif.getDisplayName());
+                        if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) 
+                        {
+                            System.out.println(messagePrefix + "Using network interface " + nif.getDisplayName());
                             return nif;
                         }
                     }
@@ -365,5 +372,21 @@ public class DisThreadedNetIF
             Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+
+    /**
+     * @return the verbose
+     */
+    public boolean isVerbose()
+    {
+        return verbose;
+    }
+
+    /**
+     * @param verbose the verbose to set
+     */
+    public void setVerbose(boolean verbose)
+    {
+        this.verbose = verbose;
     }
 }
