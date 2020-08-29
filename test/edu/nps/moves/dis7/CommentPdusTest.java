@@ -69,6 +69,12 @@ public class CommentPdusTest
   {
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null, "No response from network receiver");
+     String marshallMismatchMessage = 
+        "Marshalled size mismatch," +
+            "sent (" +      newPdu.getMarshalledSize() + " bytes) and " +
+        "recieved (" + receivedPdu.getMarshalledSize() + " bytes)";
+     // https://stackoverflow.com/questions/20631621/cannot-find-symbol-assertequals/20631672
+     assertEquals(newPdu.getMarshalledSize(), receivedPdu.getMarshalledSize(), marshallMismatchMessage);
      assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
      receivedPdu = null; // ensure cleared prior to next test
   }

@@ -82,10 +82,11 @@ public class EntityStatePduTest
   {
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null,         "No response from network receive");
-     assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
-     assertEqual(newPdu.getMarshalledSize(),receivedPdu),getMarshalledSize(),"Marshalled size mismatch," +
+     assertEquals(newPdu.getMarshalledSize(),receivedPdu.getMarshalledSize(),
+        "Marshalled size mismatch," +
             "sent (" +      newPdu.getMarshalledSize() + " bytes) and " +
         "recieved (" + receivedPdu.getMarshalledSize() + " bytes)");
+     assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
      receivedPdu = null; // ensure cleared prior to next test
   }
   
