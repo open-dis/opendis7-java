@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
-  DisThreadedNetIF disThreadedNetworkInterface;
-  Pdu              receivedPdu;
+  DisThreadedNetIF             disThreadedNetworkInterface;
+  Pdu                          receivedPdu;
   DisThreadedNetIF.PduListener pduListener;
     
   @BeforeAll
@@ -52,32 +52,32 @@ public class CommentPdusTest
   @Test
   public void testRoundTrip()
   {
-    PduFactory factory = new PduFactory();
+    PduFactory pduFactory = new PduFactory();
     
-    testOne(factory.makeCommentPdu());
-    testOne(factory.makeCommentPdu("123_test_string"));
-    testOne(factory.makeCommentPdu(VariableRecordType.MODEL_TYPE, "456_test with type = modeltype"));
-    testOne(factory.makeCommentPdu("xyz first message","mno second message", "jkl third message"));
+    testOne(pduFactory.makeCommentPdu());
+    testOne(pduFactory.makeCommentPdu("123_test_string"));
+    testOne(pduFactory.makeCommentPdu(VariableRecordType.MODEL_TYPE, "456_test with type = modeltype"));
+    testOne(pduFactory.makeCommentPdu("xyz first message","mno second message", "jkl third message"));
     
-    testOne(factory.makeCommentReliablePdu());
-    testOne(factory.makeCommentReliablePdu("789_test_string"));
-    testOne(factory.makeCommentReliablePdu(VariableRecordType.ACLS_AIRCRAFT_REPORT, "abc_test with type = acls_aircraft_report"));
-    testOne(factory.makeCommentReliablePdu("xyz R first message","mno R second message", "jkl R third message"));   
+    testOne(pduFactory.makeCommentReliablePdu());
+    testOne(pduFactory.makeCommentReliablePdu("789_test_string"));
+    testOne(pduFactory.makeCommentReliablePdu(VariableRecordType.ACLS_AIRCRAFT_REPORT, "abc_test with type = acls_aircraft_report"));
+    testOne(pduFactory.makeCommentReliablePdu("xyz R first message","mno R second message", "jkl R third message"));   
   }
   
-  private void testOne(Pdu pdu)
+  private void testOne(Pdu newPdu)
   {
-     sendPdu(pdu); // will wait a while
-     assertTrue(receivedPdu != null, "No response from network receive");
-     assertTrue(compare(pdu,receivedPdu), "Comparison failed");
-     receivedPdu = null;
+     sendPdu(newPdu); // will wait a while
+     assertTrue(receivedPdu != null, "No response from network receiver");
+     assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
+     receivedPdu = null; // ensure cleared prior to next test
   }
   
   private void sendPdu(Pdu pdu)
   {
     try {
       disThreadedNetworkInterface.send(pdu);
-      Thread.sleep(100l);
+      Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
     }
     catch (InterruptedException ex) {
       System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
