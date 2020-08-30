@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
-  DisThreadedNetIF             disThreadedNetworkInterface;
-  Pdu                          receivedPdu;
-  DisThreadedNetIF.PduListener pduListener;
+  DisThreadedNetworkInterface             disNetworkInterface;
+  Pdu                                     receivedPdu;
+  DisThreadedNetworkInterface.PduListener pduListener;
     
   @BeforeAll
   public static void setUpClass()
@@ -31,22 +31,22 @@ public class CommentPdusTest
   @BeforeEach
   public void setUp()
   {   
-      disThreadedNetworkInterface = new DisThreadedNetIF();
-      pduListener = new DisThreadedNetIF.PduListener() {
+      disNetworkInterface = new DisThreadedNetworkInterface();
+      pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu newPdu) {
               setUpReceiver(newPdu);
           }
       };
-      disThreadedNetworkInterface.addListener(pduListener);
+      disNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      disThreadedNetworkInterface.removeListener(pduListener);
-      disThreadedNetworkInterface.kill();
-      disThreadedNetworkInterface = null;
+      disNetworkInterface.removeListener(pduListener);
+      disNetworkInterface.kill();
+      disNetworkInterface = null;
   }
 
   @Test
@@ -82,7 +82,7 @@ public class CommentPdusTest
   private void sendPdu(Pdu pdu)
   {
     try {
-      disThreadedNetworkInterface.send(pdu);
+      disNetworkInterface.send(pdu);
       Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
     }
     catch (InterruptedException ex) {

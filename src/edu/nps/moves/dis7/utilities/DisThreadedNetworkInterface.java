@@ -24,9 +24,9 @@ import java.util.logging.Logger;
  * @author Mike Bailey, jmbailey@nps.edu
  * @since Jul 29, 2019
  */
-public class DisThreadedNetIF
+public class DisThreadedNetworkInterface
 {
-  private static final String TRACE_PREFIX = "[" + DisThreadedNetIF.class.getName() + "] ";
+  private static final String TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getName() + "] ";
   private             boolean verbose = true;
   
   /** Pdu listener interface */
@@ -84,7 +84,7 @@ public class DisThreadedNetIF
   /**
    * Default constructor using default port 3000 and multicast address 225.4.5.6
    */
-  public DisThreadedNetIF()
+  public DisThreadedNetworkInterface()
   {
     this(DEFAULT_DIS_PORT, DEFAULT_MULTICAST_ADDRESS);
   }
@@ -94,14 +94,14 @@ public class DisThreadedNetIF
    * @param port the multicast port to utilize
    * @param mcastgroup the multicast group address to utilize
    */
-  public DisThreadedNetIF(int port, String mcastgroup)
+  public DisThreadedNetworkInterface(int port, String mcastgroup)
   {
     disPort = port;
     mcastGroup = mcastgroup;
       try {
           maddr = InetAddress.getByName(mcastGroup);
       } catch (UnknownHostException ex) {
-          Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+          Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
       }
     group = new InetSocketAddress(maddr, disPort);
     ni = findIpv4Interface();
@@ -265,7 +265,7 @@ public class DisThreadedNetIF
                     try {
                         ((MulticastSocket)socket).leaveGroup(group, ni);
                     } catch (IOException ex) {
-                        Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     socket.close();
                     socket = null;
@@ -375,7 +375,7 @@ public class DisThreadedNetIF
                 }
             }
         } catch (SocketException ex) {
-            Logger.getLogger(DisThreadedNetIF.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

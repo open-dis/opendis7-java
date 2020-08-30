@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,8 +15,8 @@ public class DataQueryPduRoundTripTest
 {
 
  Pdu receivedPdu;
- DisThreadedNetIF netif;
- DisThreadedNetIF.PduListener lis;
+ DisThreadedNetworkInterface disNetworkInterface;
+ DisThreadedNetworkInterface.PduListener pduListener;
 
   @BeforeAll
   public static void setUpClass()
@@ -32,22 +32,22 @@ public class DataQueryPduRoundTripTest
   @BeforeEach
   public void setUp()
   {   
-      netif = new DisThreadedNetIF();
-      lis = new DisThreadedNetIF.PduListener() {
+      disNetworkInterface = new DisThreadedNetworkInterface();
+      pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu pdu) {
               setUpReceiver(pdu);
           }
       };
-      netif.addListener(lis);
+      disNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      netif.removeListener(lis);
-      netif.kill();
-      netif = null;
+      disNetworkInterface.removeListener(pduListener);
+      disNetworkInterface.kill();
+      disNetworkInterface = null;
   }
 
   private static int REQUEST_ID = 0x00112233;
@@ -107,7 +107,7 @@ public class DataQueryPduRoundTripTest
     sendingPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      netif.send(sendingPdu);
+      disNetworkInterface.send(sendingPdu);
       Thread.sleep(100l);
     }
     catch (InterruptedException ex) {

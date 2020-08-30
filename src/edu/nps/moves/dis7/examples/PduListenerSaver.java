@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.io.IOException;
 import java.util.Scanner;
@@ -31,8 +31,8 @@ public class PduListenerSaver
   public static void main(String[] args)
   {
     String outputDirectoryPath = DEFAULT_OUTPUT_DIRECTORY;
-    String multicastAddress    = DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS;
-    int    port                = DisThreadedNetIF.DEFAULT_DIS_PORT;
+    String multicastAddress    = DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS;
+    int    port                = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
 
     switch (args.length) {
       case 0:

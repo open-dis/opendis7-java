@@ -2,7 +2,7 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -292,7 +292,7 @@ public class AlphabeticalPduSender
       DatagramPacket packet;
       MulticastSocket socket = new MulticastSocket();
       InetSocketAddress group = new InetSocketAddress(multicastAddress, port);
-      socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
+      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       DataOutputStream dos = new DataOutputStream(baos);
@@ -331,8 +331,8 @@ public class AlphabeticalPduSender
     }
     else {
       System.out.println("Usage:   AlphabeticalPduSender <port> <multicast group>");
-      System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetIF.DEFAULT_DIS_PORT + "   " + DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
-      sender = new AlphabeticalPduSender(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
+      System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetworkInterface.DEFAULT_DIS_PORT + "   " + DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      sender = new AlphabeticalPduSender(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
     }
     sender.run();
   }

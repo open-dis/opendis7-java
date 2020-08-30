@@ -9,7 +9,7 @@ import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import java.io.IOException;
 import edu.nps.moves.dis7.entities.usa.platform.surface.*;
 
@@ -76,7 +76,7 @@ public class EntityStateEntityIdExampleUse
    */
   public static void exampleUse() throws Exception
   {
-    DisThreadedNetIF disNetworkInterface = new DisThreadedNetIF(); // uses defaults
+    DisThreadedNetworkInterface disNetworkInterface = new DisThreadedNetworkInterface(); // uses defaults
     
     // We want to listen also, so add a listener, using JDK8+ lambda grammar
     disNetworkInterface.addListener(pdu->handleReceivedPdu(pdu));

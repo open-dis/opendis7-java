@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -32,8 +32,8 @@ public class PduReaderPlayer
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;
-    String mcast = DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS;
-    int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
+    String mcast = DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS;
+    int port = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
     boolean sendToNet = false;
 
     switch (args.length) {

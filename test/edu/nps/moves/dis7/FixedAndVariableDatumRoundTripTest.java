@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -14,8 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class FixedAndVariableDatumRoundTripTest
 {
   Pdu receivedPdu;
-  DisThreadedNetIF netif;
-  DisThreadedNetIF.PduListener lis;
+  DisThreadedNetworkInterface disNetworkInterface;
+  DisThreadedNetworkInterface.PduListener pduListener;
 
   @BeforeAll
   public static void setUpClass()
@@ -31,22 +31,22 @@ public class FixedAndVariableDatumRoundTripTest
   @BeforeEach
   public void setUp()
   {   
-      netif = new DisThreadedNetIF();
-      lis = new DisThreadedNetIF.PduListener() {
+      disNetworkInterface = new DisThreadedNetworkInterface();
+      pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu pdu) {
               setUpReceiver(pdu);
           }
       };
-      netif.addListener(lis);
+      disNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      netif.removeListener(lis);
-      netif.kill();
-      netif = null;
+      disNetworkInterface.removeListener(pduListener);
+      disNetworkInterface.kill();
+      disNetworkInterface = null;
   }
 
   private static FixedDatum fixedDatum1 = new FixedDatum();
@@ -99,7 +99,7 @@ public class FixedAndVariableDatumRoundTripTest
     sentPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      netif.send(sentPdu);
+      disNetworkInterface.send(sentPdu);
       Thread.sleep(100l);
     }
     catch (InterruptedException ex) {

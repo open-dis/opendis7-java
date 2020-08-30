@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -27,7 +27,7 @@ public class EspduReceiverNIO
     InetAddress maddr;
     InetSocketAddress group;
     PduFactory pduFactory = new PduFactory();
-    byte buffer[] = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
+    byte buffer[] = new byte[DisThreadedNetworkInterface.MAX_DIS_PDU_SIZE];
     DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
     Pdu pdu;
     int pduCounter = 0;
@@ -35,10 +35,10 @@ public class EspduReceiverNIO
     try {
         
       // Specify the socket to receive data
-      socket = new MulticastSocket(DisThreadedNetIF.DEFAULT_DIS_PORT);
-      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
-      group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
-      socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
+      socket = new MulticastSocket(DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      group = new InetSocketAddress(maddr, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
 
       // Loop infinitely, receiving datagrams
       while (true) {
@@ -52,7 +52,7 @@ public class EspduReceiverNIO
         System.out.println(pduCounter + ". got PDU of type: " + pdu.getClass().getSimpleName());
 
       } // end while
-    } // End try
+    } // End try // End try
     catch (IOException e) {
       System.err.println(e);
     }

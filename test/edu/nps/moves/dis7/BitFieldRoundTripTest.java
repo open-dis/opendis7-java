@@ -7,7 +7,7 @@ package edu.nps.moves.dis7;
 import edu.nps.moves.dis7.enumerations.AppearanceCamouflageType;
 import edu.nps.moves.dis7.enumerations.ForceID;
 import edu.nps.moves.dis7.enumerations.LandPlatformAppearance;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -16,8 +16,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BitFieldRoundTripTest
 {
     Pdu receivedPdu;
-    DisThreadedNetIF netif;
-    DisThreadedNetIF.PduListener lis;
+    DisThreadedNetworkInterface disNetworkInterface;
+    DisThreadedNetworkInterface.PduListener pduListener;
 
   @BeforeAll
   public static void setUpClass()
@@ -33,22 +33,22 @@ public class BitFieldRoundTripTest
   @BeforeEach
   public void setUp()
   {   
-      netif = new DisThreadedNetIF();
-      lis = new DisThreadedNetIF.PduListener() {
+      disNetworkInterface = new DisThreadedNetworkInterface();
+      pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu pdu) {
               setUpReceiver(pdu);
           }
       };
-      netif.addListener(lis);
+      disNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      netif.removeListener(lis);
-      netif.kill();
-      netif = null;
+      disNetworkInterface.removeListener(pduListener);
+      disNetworkInterface.kill();
+      disNetworkInterface = null;
   }
 
   @Test
@@ -77,7 +77,7 @@ public class BitFieldRoundTripTest
       .set(LandPlatformAppearance.IS_FROZEN,1);
   
     try {
-      netif.send(espdu);
+      disNetworkInterface.send(espdu);
       Thread.sleep(100l); 
     }
     catch (InterruptedException ex) {

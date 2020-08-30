@@ -6,14 +6,14 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
 /**
  * ThreadedNetExample.java created on Sep 9, 2019
- * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
- * 
- * Shows how to use DisThreadedNetIF from an application class
+ MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
+ 
+ Shows how to use DisThreadedNetworkInterface from an application class
  * 
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
@@ -22,8 +22,8 @@ public class ThreadedNetExample
 {
   public static void main(String[] args)
   {
-    // Create an instance of DisThreadedNetIF using default port 3000, mcast 225.4.5.6, use other constructor to specific port and ip
-    DisThreadedNetIF netif = new DisThreadedNetIF();
+    // Create an instance of DisThreadedNetworkInterface using default port 3000, mcast 225.4.5.6, use other constructor to specific port and ip
+    DisThreadedNetworkInterface netif = new DisThreadedNetworkInterface();
     
     // Internally, the DisThreadeNetIF class has constructed whatever threads it needs to operated
     

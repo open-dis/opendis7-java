@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
@@ -30,8 +30,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SignalPdusTest {
     
-    static DisThreadedNetIF netif;
-    static DisThreadedNetIF.PduListener lis;
+    static DisThreadedNetworkInterface disNetworkInterface;
+    static DisThreadedNetworkInterface.PduListener pduListener;
     static List<Pdu> receivedPdus;
     static PduRecorder recorder;
     
@@ -46,14 +46,14 @@ public class SignalPdusTest {
         System.out.println("SignalPdusTest");
         
         recorder = new PduRecorder(); // default dir
-        netif = recorder.getDisThreadedNetIF();
-        lis = new DisThreadedNetIF.PduListener() {
+        disNetworkInterface = recorder.getDisThreadedNetIF();
+        pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu pdu) {
               handleReceivedPdu(pdu);
           }
         };
-        netif.addListener(lis);
+        disNetworkInterface.addListener(pduListener);
         
         mutex = new Semaphore(1);
         
@@ -82,7 +82,7 @@ public class SignalPdusTest {
         sentPdus.add(pdu);
 
         sentPdus.forEach(p -> {
-            netif.send(p);
+            disNetworkInterface.send(p);
             sleep(5l); // give receiver time to process
         });
     }
@@ -98,8 +98,8 @@ public class SignalPdusTest {
 
     @AfterEach
     public void tearDown() throws IOException {
-        netif.removeListener(lis);
-        recorder.end(); // kills the netif as well
+        disNetworkInterface.removeListener(pduListener);
+        recorder.end(); // kills the disNetworkInterface as well
     }
 
     @Test
@@ -135,7 +135,7 @@ public class SignalPdusTest {
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetIF.DEFAULT_DIS_PORT, path, false);
+        PduPlayer player = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, false);
         player.addRawListener(ba -> {
             if (ba != null)
                 assertNotNull(pduFac.createPdu(ba), "PDU creation failure");

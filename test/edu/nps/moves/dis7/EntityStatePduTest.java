@@ -8,7 +8,7 @@ import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.entities.usa.munition.other.M1A2;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.EntityKind;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.PlatformDomain;
 import org.junit.jupiter.api.*;
@@ -17,9 +17,9 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Entity State Pdu Test")
 public class EntityStatePduTest
 {
-  DisThreadedNetIF             disThreadedNetworkInterface;
-  Pdu                          receivedPdu;
-  DisThreadedNetIF.PduListener pduListener;
+  DisThreadedNetworkInterface             disNetworkInterface;
+  Pdu                                     receivedPdu;
+  DisThreadedNetworkInterface.PduListener pduListener;
     
   @BeforeAll
   public static void setUpClass()
@@ -35,22 +35,22 @@ public class EntityStatePduTest
   @BeforeEach
   public void setUp()
   {
-      disThreadedNetworkInterface = new DisThreadedNetIF();
-      pduListener = new DisThreadedNetIF.PduListener() {
+      disNetworkInterface = new DisThreadedNetworkInterface();
+      pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu newPdu) {
               setUpReceiver(newPdu);
   }
       };
-      disThreadedNetworkInterface.addListener(pduListener);
+      disNetworkInterface.addListener(pduListener);
   }
 
   @AfterEach
   public void tearDown()
   {
-      disThreadedNetworkInterface.removeListener(pduListener);
-      disThreadedNetworkInterface.kill();
-      disThreadedNetworkInterface = null;
+      disNetworkInterface.removeListener(pduListener);
+      disNetworkInterface.kill();
+      disNetworkInterface = null;
   }
 
   @Test
@@ -137,7 +137,7 @@ public class EntityStatePduTest
   private void sendPdu(Pdu pdu)
   {
     try {
-      disThreadedNetworkInterface.send(pdu);
+      disNetworkInterface.send(pdu);
       Thread.sleep(100);
     }
     catch (InterruptedException ex) {

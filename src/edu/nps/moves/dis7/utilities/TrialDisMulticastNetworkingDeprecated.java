@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * </pre>
  * 
  * @since Jul 29, 2019.
- * @deprecated Use {@link edu.nps.moves.dis7.utilities.DisThreadedNetIF} instead
+ * @deprecated Use {@link edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface} instead
  */
 @Deprecated(since="dis7")
 public class TrialDisMulticastNetworkingDeprecated
@@ -48,7 +48,7 @@ public class TrialDisMulticastNetworkingDeprecated
 
   public TrialDisMulticastNetworkingDeprecated()
   {
-    this(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
+    this(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
   }
 
   public TrialDisMulticastNetworkingDeprecated(int port, String mcastgroup)
@@ -61,7 +61,7 @@ public class TrialDisMulticastNetworkingDeprecated
           Logger.getLogger(TrialDisMulticastNetworkingDeprecated.class.getName()).log(Level.SEVERE, null, ex);
       }
     group = new InetSocketAddress(maddr, DIS_PORT);
-    ni = DisThreadedNetIF.findIpv4Interface();
+    ni = DisThreadedNetworkInterface.findIpv4Interface();
     baos = new ByteArrayOutputStream();
     dos = new DataOutputStream(baos);
   }
@@ -103,7 +103,7 @@ public class TrialDisMulticastNetworkingDeprecated
   {
     rsocket = new MulticastSocket(DIS_PORT);
     rsocket.joinGroup(group, ni);
-    buffer = new byte[DisThreadedNetIF.MAX_DIS_PDU_SIZE];
+    buffer = new byte[DisThreadedNetworkInterface.MAX_DIS_PDU_SIZE];
     packet = new DatagramPacket(buffer, buffer.length);
 
     //System.out.println("Listening on " + MCAST_GROUP + ":" + DIS_PORT + " if:" + socket.getNetworkInterface().getDisplayName());

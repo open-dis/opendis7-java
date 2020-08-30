@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import java.io.File;
@@ -62,10 +62,10 @@ public class X3dInterpolatorsTest {
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetIF.DEFAULT_DIS_PORT, path, true);
-        player.addRawListener(ba -> {
+        PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, true);
+        pduPlayer.addRawListener(ba -> {
             if (ba == null) {
-                player.end();
+                pduPlayer.end();
                 mutex.release();
             }   
         });

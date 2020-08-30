@@ -7,7 +7,7 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.utilities.CoordinateConversions;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -46,12 +46,12 @@ public class EspduSender
     
     // Default settings. These are used if no system properties are set. 
     // If system properties are passed in, these are over ridden.
-    int port = DisThreadedNetIF.DEFAULT_DIS_PORT;
+    int port = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
     NetworkMode mode;
     InetAddress destinationIp = null; // must be initialized, even if null
 
     try {
-      destinationIp = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
+      destinationIp = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
     }
     catch (UnknownHostException e) {
       System.err.println(e + " Cannot create multicast address");
@@ -98,7 +98,7 @@ public class EspduSender
           }
 
           group = new InetSocketAddress(destinationIp, port);
-          socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
+          socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
         }
       } // end networkModeString
     }

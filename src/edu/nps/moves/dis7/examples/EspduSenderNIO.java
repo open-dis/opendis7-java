@@ -8,7 +8,7 @@ import edu.nps.moves.dis7.EntityID;
 import edu.nps.moves.dis7.EntityStatePdu;
 import edu.nps.moves.dis7.EulerAngles;
 import edu.nps.moves.dis7.Vector3Double;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -43,9 +43,9 @@ public class EspduSenderNIO
 
     try {
       socket = new MulticastSocket();
-      maddr = InetAddress.getByName(DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
-      group = new InetSocketAddress(maddr, DisThreadedNetIF.DEFAULT_DIS_PORT);
-      socket.joinGroup(group, DisThreadedNetIF.findIpv4Interface());
+      maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      group = new InetSocketAddress(maddr, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
       
       Vector3Double location;
       EulerAngles orientation;

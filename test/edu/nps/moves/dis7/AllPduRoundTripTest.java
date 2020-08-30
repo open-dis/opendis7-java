@@ -17,7 +17,7 @@ package edu.nps.moves.dis7;
  * @version $Id$
  */
 import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
@@ -32,8 +32,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("All Pdu Round Trip Test")
 public class AllPduRoundTripTest
 {
-  DisThreadedNetIF disnetworking;
-  DisThreadedNetIF.PduListener lis;
+  DisThreadedNetworkInterface disNetworkInterface;
+  DisThreadedNetworkInterface.PduListener pduListener;
   List<Pdu> pdusSent = new ArrayList<>();
   List<Pdu> pdusReceived = new ArrayList<>();
   List<Pdu> pdusRead = new ArrayList<>();
@@ -148,7 +148,7 @@ public class AllPduRoundTripTest
       pdusSent.add(pduFactory.makeUnderwaterAcousticPdu());
       
       pdusSent.forEach(p -> {
-          disnetworking.send(p);
+          disNetworkInterface.send(p);
           sleep(5l); // give receiver time to process
       });
 
@@ -176,12 +176,12 @@ public class AllPduRoundTripTest
   
     private void setupSenderRecorder() throws Exception {
         recorder = new PduRecorder(); // default mcaddr, port, logfile dir
-        disnetworking = recorder.getDisThreadedNetIF();
+        disNetworkInterface = recorder.getDisThreadedNetIF();
 
-        // When the DisThreadedNetIF receives a pdu, a call is made to the
+        // When the DisThreadedNetworkInterface receives a pdu, a call is made to the
         // everyTypeListeners which makes a lamba call back here to capture received
         // pdus
-        lis = new DisThreadedNetIF.PduListener() {
+        pduListener = new DisThreadedNetworkInterface.PduListener() {
             @Override
             public void incomingPdu(Pdu pdu) {
                 if (!pdusReceived.contains(pdu)) {
@@ -189,14 +189,14 @@ public class AllPduRoundTripTest
                 }
             }
         };
-        disnetworking.addListener(lis);
+        disNetworkInterface.addListener(pduListener);
         System.out.println("Recorder log at " + recorder.getLogFilePath());
     }
 
   /** Will shutdown the common send/receive network interface */
   private void shutDownSenderRecorder() throws Exception
   {
-    disnetworking.removeListener(lis);
+    disNetworkInterface.removeListener(pduListener);
     recorder.end();
   }
 
@@ -212,7 +212,7 @@ public class AllPduRoundTripTest
   {
     sem.acquire();
     Path path = Path.of(recorder.getLogFilePath()).getParent();
-    PduPlayer player = new PduPlayer(disnetworking.getMcastGroup(), disnetworking.getDisPort(), path, false);
+    PduPlayer player = new PduPlayer(disNetworkInterface.getMcastGroup(), disNetworkInterface.getDisPort(), path, false);
     player.addRawListener(ba -> {
       if (ba != null) {
         Pdu pdu = pduFactory.createPdu(ba);

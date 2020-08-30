@@ -3,7 +3,7 @@ package edu.nps.moves.dis7.utilities.stream;
 import com.google.common.primitives.Longs;
 
 import edu.nps.moves.dis7.enumerations.DISPDUType;
-import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
+import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
 import java.io.BufferedWriter;
@@ -50,13 +50,13 @@ public class PduRecorder implements PduReceiver
 
   private Writer logFileWriter;
   private File   logFile;
-  private DisThreadedNetIF                disThreadedNetIF;
-  private DisThreadedNetIF.RawPduListener disRawPduListener;
+  private DisThreadedNetworkInterface                disThreadedNetIF;
+  private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
   
   private Long      startNanoTime = null;
   private final  StringBuilder sb = new StringBuilder();
   private final  Base64.Encoder base64Encoder = Base64.getEncoder();
-  private static int     port     = DisThreadedNetIF.DEFAULT_DIS_PORT; // self-test via port 1 when main() invoked
+  private static int     port     = DisThreadedNetworkInterface.DEFAULT_DIS_PORT; // self-test via port 1 when main() invoked
   private final  int     pduCount = 0;    // debug
   private boolean headerWritten   = false;
   private boolean running         = true; // starts recording by default
@@ -68,7 +68,7 @@ public class PduRecorder implements PduReceiver
    */
   public PduRecorder() throws IOException
   {
-      this(outputDirectoryPath, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, port);
+      this(outputDirectoryPath, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, port);
   }
   
   /**
@@ -80,7 +80,7 @@ public class PduRecorder implements PduReceiver
    */
   public PduRecorder(String directoryPath) throws IOException
   {
-    this(directoryPath, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetIF.DEFAULT_DIS_PORT);
+    this(directoryPath, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
   }
   
   /** Constructor to let the user specify all required parameters
@@ -97,11 +97,11 @@ public class PduRecorder implements PduReceiver
     logFile       = createUniquePduLogFile(new File(outputPath).toPath(), DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
     logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     
-    disThreadedNetIF = new DisThreadedNetIF(port, multicastAddress);
+    disThreadedNetIF = new DisThreadedNetworkInterface(port, multicastAddress);
     
-    disRawPduListener = new DisThreadedNetIF.RawPduListener() {
+    disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
         @Override
-        public void incomingPdu(DisThreadedNetIF.BuffAndLength bAndL) {
+        public void incomingPdu(DisThreadedNetworkInterface.BuffAndLength bAndL) {
             receivePdu(bAndL.buff, bAndL.length);
         }
     };
@@ -222,9 +222,9 @@ public class PduRecorder implements PduReceiver
   }
   
     /**
-     * @return an instance of this DisThreadedNetIF
+     * @return an instance of this DisThreadedNetworkInterface
      */
-    public DisThreadedNetIF getDisThreadedNetIF() {
+    public DisThreadedNetworkInterface getDisThreadedNetIF() {
         return disThreadedNetIF;
     }
   
