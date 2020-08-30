@@ -247,7 +247,7 @@ public class DisThreadedNetIF
                         if (isVerbose())
                         {
                             System.out.println(messagePrefix + counter + ". received " + pdu.getPduType().toString() +
-                                                             " (timestamp " + edu.nps.moves.dis7.DisTime.timeStampToString(pdu.getTimestamp()) +
+                                                             " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp()) +
                                                              ", size " + pdu.getMarshalledSize() + " bytes)");
                             System.out.flush();
                         }
