@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetIF
 {
-  private static final String messagePrefix = "[" + DisThreadedNetIF.class.getName() + "] ";
+  private static final String TRACE_PREFIX = "[" + DisThreadedNetIF.class.getName() + "] ";
   private             boolean verbose = true;
   
   /** Pdu listener interface */
@@ -246,9 +246,9 @@ public class DisThreadedNetIF
                         counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
                         if (isVerbose())
                         {
-                            System.out.println(messagePrefix + counter + ". received " + pdu.getPduType().toString() +
-                                                             " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp()) +
-                                                             ", size " + pdu.getMarshalledSize() + " bytes)");
+                            System.out.println(TRACE_PREFIX + counter + ". received " + pdu.getPduType().toString()
+                                                            + " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp())
+                                                            + ", size " + pdu.getMarshalledSize() + " bytes)");
                             System.out.flush();
                         }
                         toListeners(pdu);
@@ -257,8 +257,8 @@ public class DisThreadedNetIF
                 }
             } 
             catch (IOException ex) {
-                System.err.println(messagePrefix + "Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
-                System.err.println(messagePrefix + "Retrying new socket in 1 second");
+                System.err.println(TRACE_PREFIX + "Exception in DisThreadedNetIF receive thread: " + ex.getLocalizedMessage());
+                System.err.println(TRACE_PREFIX + "Retrying new socket in 1 second");
             } 
             finally {
                 if (socket != null && !socket.isClosed()) {
@@ -299,7 +299,7 @@ public class DisThreadedNetIF
             } 
             catch (Exception ex)
             {
-                System.err.println(messagePrefix + "Exception in DisThreadedNetIF send thread: " + ex.getLocalizedMessage());
+                System.err.println(TRACE_PREFIX + "Exception in DisThreadedNetIF send thread: " + ex.getLocalizedMessage());
             }
         }
         try {
@@ -368,7 +368,7 @@ public class DisThreadedNetIF
                         addr = addresses.nextElement();
                         if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) 
                         {
-                            System.out.println(messagePrefix + "Using network interface " + nif.getDisplayName());
+                            System.out.println(TRACE_PREFIX + "Using network interface " + nif.getDisplayName());
                             return nif;
                         }
                     }
