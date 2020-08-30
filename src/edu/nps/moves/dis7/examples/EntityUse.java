@@ -49,35 +49,36 @@ import edu.nps.moves.dis7.entities.usa.platform.surface.*;
  *   }
  * }
  * </pre>
- * Entity classes are found in several jars included in this project. They are typically separated into countries and/or platforms.  Assuming one or more are in the application
- * classpath, individual entity types may be used/instantiated in either of 2 ways:<p>
+ * <p>Entity classes are found in several jars included in this project. They are typically separated into countries and/or platforms.  Assuming one or more are in the application
+ * classpath, individual entity types may be used/instantiated in either of 2 ways:</p>
  * 
- * 1. By name, including package.  For example, you may include the following statements in your application:<pre>
- * import edu.nps.moves.dis.entities.are.platform.air.Hawk102;
+ * <p>1. By name, including package.  For example, you may include the following statements in your application:</p>
+ *  <pre>import edu.nps.moves.dis.entities.are.platform.air.Hawk102;
  * EntityType et = new Hawk102();</pre>
  * 
- * 2. By <b>SISO uid</b>. Included in the <u>edu.nps.moves.dis.entities</u> package is the EntityTypeFactory class.  It has a static method with a makeEntity method.  You would do:<pre>
- * import edu.nps.moves.dis.entities.EntityFactory;
+ * <p>2. By <b>SISO uid</b>. Included in the <u>edu.nps.moves.dis.entities</u> package is the EntityTypeFactory class.  
+ * It has a static method with a makeEntity method.  You would do:</p>
+ * <pre>import edu.nps.moves.dis.entities.EntityFactory;
  * EntityType et = EntityTypeFactory.makeEntity(28585);</pre>
  * 
- * Importantly, if you pass a legal uid to the makeEntity method, but do not have the appropriate entity jar in your classpath, the method returns null,
- * and displays a message on System.err.<p>
+ * <p>Importantly, if you pass a legal uid to the makeEntity method, but do not have the appropriate entity jar in your classpath, the method returns null,
+ * and displays a message on System.err.</p>
  * 
- * The code in this class illustrates EntityType use.
+ * The code in this class illustrates EntityStatePDU and EntityType use.
  * 
  */
 public class EntityUse
 {
   /**
-   * Using two methods, create and send an EntityState PDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
+   * Using two methods, create and send an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
    * @throws IOException 
    */
   public static void exampleUse() throws Exception
   {
-    DisThreadedNetIF netif = new DisThreadedNetIF(); // uses defaults
+    DisThreadedNetIF disNetworkInterface = new DisThreadedNetIF(); // uses defaults
     
     // We want to listen also, so add a listener, using JDK8+ lambda grammar
-    netif.addListener(pdu->handleReceivedPdu(pdu));
+    disNetworkInterface.addListener(pdu->handleReceivedPdu(pdu));
     
     PduFactory pduFactory = new PduFactory();  // uses defaults: usa, exercise id 1, site id 2, app id 3, absolute time
 
@@ -93,7 +94,7 @@ public class EntityUse
 //    espdu.setEntityType(et);
     
     System.out.println("Sending " + espdu.getClass().getSimpleName());
-    netif.send(espdu);  // possibly throws IOException
+    disNetworkInterface.send(espdu);  // possibly throws IOException
     sleep(100L);
     
     /* Do the same for the second way of creating a Shenandoah entity type and show an alternate way of creating an ESPDU */
@@ -105,7 +106,7 @@ public class EntityUse
     
     espdu.setEntityType(entityType2);
     System.out.println("Sending " + espdu.getClass().getSimpleName());
-    netif.send(espdu);  // possibly throws IOException
+    disNetworkInterface.send(espdu);  // possibly throws IOException
   }
   /**
    * Thread sleep for interval in milliseconds.
@@ -125,7 +126,8 @@ public class EntityUse
     System.out.println("Received "+pdu.getClass().getSimpleName());
   }
   
-  public static void main(String[] args) throws Exception {
-      EntityUse.exampleUse();
+  public static void main(String[] args) throws Exception
+  {
+      EntityUse.exampleUse(); // run example showing use
   }
 }
