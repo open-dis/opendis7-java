@@ -9,7 +9,7 @@
 <!-- in the project's Project Properties dialog box.-->
 
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
-    <description>Builds, tests, and runs the project open-dis7-java.</description>
+    <description>Builds, tests, and runs the open-dis7-java project.</description>
     <import file="nbproject/build-impl.xml"/>
     
     <tstamp>
@@ -53,12 +53,14 @@
         <mkdir dir="dist" description="ensure necessary directory present"/>
         <delete verbose="true">
             <fileset dir="dist">
-                <include name="open-dis7-classes.jar"/>
-                <include name="open-dis7-source.jar"/>
-                <include name="open-dis7-javadoc.jar"/>
+                <include name="open-dis7-pdus-classes.jar"/>
+                <include name="open-dis7-pdus-source.jar"/>
+                <include name="open-dis7-pdus-javadoc.jar"/>
+                
                 <exclude name="open-dis7-enumerations-classes.jar"/>
                 <exclude name="open-dis7-enumerations-source.jar"/>
                 <exclude name="open-dis7-enumerations-javadoc.jar"/>
+                <exclude name="README.md"/>
             </fileset>
         </delete>
         <delete dir="javadoc"/>
@@ -164,8 +166,7 @@
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
                 <include name="src-generated/**/*.java"/>
-                <!-- TODO is this enumerations jar getting included in javadoc? -->
-                <include name="entityjars/open-dis7-entitites-all.jar"/>
+                <!-- latest enumerations are found in src-generated -->
                 <exclude name="**/*.html"/>
             </fileset>
         </javadoc>
@@ -260,7 +261,7 @@
     </target>
     
     <target name="jar-javadoc"> <!-- depends="javadoc" -->
-        <jar destfile="dist/open-dis7-javadoc.jar" 
+        <jar destfile="dist/open-dis7-pdus-javadoc.jar" 
                update="true"
               basedir="javadoc">
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
@@ -282,7 +283,7 @@
     </target>
     
     <target name="jar-source">
-        <jar destfile="dist/open-dis7-source.jar"
+        <jar destfile="dist/open-dis7-pdus-source.jar"
              includes="edu/nps/moves/dis7/**"
              excludes=".keep"
                update="true"
@@ -323,7 +324,7 @@
     </target>
     
     <target name="jar-classes">
-        <jar destfile="dist/open-dis7-classes.jar"
+        <jar destfile="dist/open-dis7-pdus-classes.jar"
              basedir="."
              includes="edu/nps/moves/dis7/**"
              excludes=".keep"
