@@ -6,10 +6,8 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.EntityStatePdu;
-import edu.nps.moves.dis7.EntityType;
 import edu.nps.moves.dis7.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import edu.nps.moves.dis7.entities.EntityTypeFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
 import java.io.IOException;
@@ -109,11 +107,14 @@ public class EntityUse
     System.out.println("Sending " + espdu.getClass().getSimpleName());
     netif.send(espdu);  // possibly throws IOException
   }
-  
-  private static void sleep(long ms)
+  /**
+   * Thread sleep for interval in milliseconds.
+   * @param interval milliseconds
+   */
+  private static void sleep(long interval)
   {
     try {
-        Thread.sleep(ms);
+        Thread.sleep(interval);
     }
     catch (InterruptedException ex) {}
   }
