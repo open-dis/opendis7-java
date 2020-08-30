@@ -4,56 +4,19 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.entities.usa.munition.other.M1A2;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.EntityKind;
-import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.PlatformDomain;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Entity State Pdu Test")
-public class EntityStatePduTest
+public class EntityStatePduTest extends PduTest
 {
-  DisThreadedNetworkInterface             disNetworkInterface;
-  Pdu                                     receivedPdu;
-  DisThreadedNetworkInterface.PduListener pduListener;
-    
-  @BeforeAll
-  public static void setUpClass()
-  {
-    System.out.println("EntityStatePduTest");
-  }
-
-  @AfterAll
-  public static void tearDownClass()
-  {
-  }
-
-  @BeforeEach
-  public void setUp()
-  {
-      disNetworkInterface = new DisThreadedNetworkInterface();
-      pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu newPdu) {
-              setUpReceiver(newPdu);
-  }
-      };
-      disNetworkInterface.addListener(pduListener);
-  }
-
-  @AfterEach
-  public void tearDown()
-  {
-      disNetworkInterface.removeListener(pduListener);
-      disNetworkInterface.kill();
-      disNetworkInterface = null;
-  }
-
   @Test
+  @Override
   public void testRoundTrip()
   {
     PduFactory pduFactory = new PduFactory();
@@ -75,11 +38,12 @@ public class EntityStatePduTest
     // or simply use an enumeration by name, with accompanying import statement above
     espdu.setEntityType(new M1A2()); 
         
-    testOne(espdu);
-    testOne(espdu.setEntityID(entityID).setEntityType(entityType));   
+    testOnePdu(espdu);
+    testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType));   
   }
   
-  private void testOne(Pdu newPdu)
+  @Override
+  protected void testOnePdu(Pdu newPdu)
   {
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null,         "No response from network receive");
@@ -134,34 +98,12 @@ public class EntityStatePduTest
      receivedPdu = null; // ensure cleared prior to next test
   }
   
-  private void sendPdu(Pdu pdu)
-  {
-    try {
-      disNetworkInterface.send(pdu);
-      Thread.sleep(100);
+    public static void main(String[] args)
+    {
+        EntityStatePduTest entityStatePduTest = new EntityStatePduTest();
+        
+        entityStatePduTest.setUp();
+        entityStatePduTest.testRoundTrip();
+        entityStatePduTest.tearDown();
     }
-    catch (InterruptedException ex) {
-      System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
-      System.exit(1);
-    }
-  }
- 
-  private boolean compare(Pdu pdu1, Pdu pdu2)
-  {
-    return pdu1.equalsImpl(pdu2);
-  }
-  
-  private void setUpReceiver(Pdu newPdu)
-  {
-    receivedPdu = newPdu;
-  }
-  
-  public static void main(String[] args)
-  {
-    EntityStatePduTest entityStatePduTest = new EntityStatePduTest();
-    
-    entityStatePduTest.setUp();
-    entityStatePduTest.testRoundTrip();
-    entityStatePduTest.tearDown();
-  }
 }
