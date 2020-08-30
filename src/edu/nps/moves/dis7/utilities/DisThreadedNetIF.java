@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.DisTime;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -243,8 +244,13 @@ public class DisThreadedNetIF
                     if (pdu != null)
                     {
                         counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
-                        if (verbose)
-                            System.err.println(messagePrefix + counter + ". received " + pdu.getPduType().toString());
+                        if (isVerbose())
+                        {
+                            System.out.println(messagePrefix + counter + ". received " + pdu.getPduType().toString() +
+                                                             " (timestamp " + edu.nps.moves.dis7.DisTime.timeStampToString(pdu.getTimestamp()) +
+                                                             ", size " + pdu.getMarshalledSize() + " bytes)");
+                            System.out.flush();
+                        }
                         toListeners(pdu);
                     }
                     buffer.clear();
