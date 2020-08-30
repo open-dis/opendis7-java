@@ -14,14 +14,15 @@ import java.io.IOException;
 import edu.nps.moves.dis7.entities.usa.platform.surface.*;
 
 /**
- * The Entity Type record, described in section 6.2.30 of IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols, is
+ * <p>The Entity Type record, described in section 6.2.30 of IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation—Application Protocols, is
  * implemented in this library as edu.nps.moves.dis.EntityType.java. There are 8 fields in the record: kind, domain, country, category, subcategory, specific and extra.  For
  * describing a particular entity in DIS, such as a vehicle, munition, or other, the values for each of these fields are enumerated in the SISO specification,
- * SISO-REF-010-v25, 2018-08-29.<p>
+ * SISO-REF-010-v25, 2018-08-29.</p>
  * 
- * The code generator in the open-dis7-source-generator project produces a class for each entity described in the SISO specification.  Each of these classes is
+ * <p>The code generator in the open-dis7-source-generator project produces a class for each entity described in the SISO specification.  Each of these classes is
  * a subclass of EntityType, so may be used in PDUs requiring EntityType instances.  The source for each of these classes is trivial.  As an example, here is
- * the source to Hawk102.java, which is described in the SISO specification under uid 28585:<pre>
+ * the source to Hawk102.java, which is described in the SISO specification under uid 28585</p>
+ * <pre>
  * package edu.nps.moves.dis.entities.are.platform.air;
  *
  * import edu.nps.moves.dis.*;
@@ -67,7 +68,7 @@ import edu.nps.moves.dis7.entities.usa.platform.surface.*;
  * The code in this class illustrates EntityStatePDU and EntityType use.
  * 
  */
-public class EntityUse
+public class EntityStateEntityIdExampleUse
 {
   /**
    * Using two methods, create and send an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
@@ -128,6 +129,6 @@ public class EntityUse
   
   public static void main(String[] args) throws Exception
   {
-      EntityUse.exampleUse(); // run example showing use
+      EntityStateEntityIdExampleUse.exampleUse(); // run example showing use
   }
 }
