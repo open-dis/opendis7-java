@@ -4,7 +4,8 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.entities.usa.platform.land.M1A2;
+import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.entities.usa.munition.other.M1A2;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.EntityKind;
 import edu.nps.moves.dis7.utilities.DisThreadedNetIF;
@@ -82,11 +83,54 @@ public class EntityStatePduTest
   {
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null,         "No response from network receive");
+     
+     assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
+     // TODO compatibility version
+     assertEquals (         newPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
+     assertEquals (         newPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
+     assertEquals (         newPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
+     assertEquals(((PduBase)newPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
+     assertEquals(((PduBase)newPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
+     // TODO HDR length
+     assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
+     
+     // can cast PDUs at this point since PduType matched
+     EntityStatePdu      newEspdu = (EntityStatePdu) newPdu;
+     EntityStatePdu receivedEspdu = (EntityStatePdu) newPdu;
+     assertEquals (newEspdu.getEntityID(),                receivedEspdu.getEntityID(),                "mismatched EntityID");
+     // TODO Sequence number
+     assertEquals (newEspdu.getEntityType(),              receivedEspdu.getEntityType(),              "mismatched EntityType");
+     // padding?
+     assertEquals (newEspdu.getEntityAppearance(),        receivedEspdu.getEntityAppearance(),        "mismatched EntityAppearance");
+     assertEquals (newEspdu.getCapabilities(),            receivedEspdu.getCapabilities(),            "mismatched EntityCapabilities");
+     assertEquals (newEspdu.getEntityLocation(),          receivedEspdu.getEntityLocation(),          "mismatched EntityLocation");
+     assertEquals (newEspdu.getEntityOrientation(),       receivedEspdu.getEntityOrientation(),       "mismatched EntityOrientation");
+     assertEquals (newEspdu.getForceId(),                 receivedEspdu.getForceId(),                 "mismatched EntityForceId");
+     assertEquals (newEspdu.getMarking(),                 receivedEspdu.getMarking(),                 "mismatched Marking");
+     assertEquals (newEspdu.getDeadReckoningParameters(), receivedEspdu.getDeadReckoningParameters(), "mismatched DeadReckoningParameters");
+     
+     // attached parts, utility method for NumberVariableParameters
+     assertEquals (newEspdu.getVariableParameters(),      receivedEspdu.getVariableParameters(),      "mismatched VariableParameters");
+     assertEquals (newEspdu.getEntityLinearVelocity(),    receivedEspdu.getEntityLinearVelocity(),    "mismatched EntityLinearVelocity");
+
+     // trace option to compare strings, JSON or XML
+     if (false) // true || !newEspdu.toString().equals(receivedEspdu.toString())) 
+     {
+         System.err.println("     newEspdu=" +      newEspdu.toString());
+         System.err.println("receivedEspdu=" + receivedEspdu.toString());
+     }
+     assertEquals (newEspdu.toString(),    receivedEspdu.toString(),    "mismatched toString()");
+     // built-in object comparison
+     assertTrue   (newEspdu.equalsImpl(receivedEspdu),                                                "EntityStatePdu.equalsImpl() built-in object comparison");
+     // final recheck that everything adds up
      assertEquals(newPdu.getMarshalledSize(),receivedPdu.getMarshalledSize(),
         "Marshalled size mismatch," +
             "sent (" +      newPdu.getMarshalledSize() + " bytes) and " +
         "recieved (" + receivedPdu.getMarshalledSize() + " bytes)");
-     assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
+     assertEquals (newPdu.getLength(),         receivedPdu.getLength(), "mismatched length"); // from Pdu superclass
+     
+//   comparison of class Pdu is questionable
+//   assertTrue(compare(newPdu,receivedPdu), "compare() method failed for original and received PDUs");
      receivedPdu = null; // ensure cleared prior to next test
   }
   
@@ -104,7 +148,7 @@ public class EntityStatePduTest
  
   private boolean compare(Pdu pdu1, Pdu pdu2)
   {
-    return pdu1.equals(pdu2);
+    return pdu1.equalsImpl(pdu2);
   }
   
   private void setUpReceiver(Pdu newPdu)
