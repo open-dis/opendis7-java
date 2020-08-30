@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Simple multicast receive and send methods.
+ * Trial code producing simple multicast receive and send methods, no longer used.
  * <pre>
  * Inefficient since a socket is opened and closed for each pdu send/receive.
  * </pre>
@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * @deprecated Use {@link edu.nps.moves.dis7.utilities.DisThreadedNetIF} instead
  */
 @Deprecated(since="dis7")
-public class DisNetworking
+public class TrialDisMulticastNetworkingDeprecated
 {
   public class BuffAndLength
   {
@@ -46,19 +46,19 @@ public class DisNetworking
   private InetSocketAddress group;
   private NetworkInterface ni;
 
-  public DisNetworking()
+  public TrialDisMulticastNetworkingDeprecated()
   {
     this(DisThreadedNetIF.DEFAULT_DIS_PORT, DisThreadedNetIF.DEFAULT_MULTICAST_ADDRESS);
   }
 
-  public DisNetworking(int port, String mcastgroup)
+  public TrialDisMulticastNetworkingDeprecated(int port, String mcastgroup)
   {
     DIS_PORT = port;
     MCAST_GROUP = mcastgroup;
       try {
           maddr = InetAddress.getByName(MCAST_GROUP);
       } catch (UnknownHostException ex) {
-          Logger.getLogger(DisNetworking.class.getName()).log(Level.SEVERE, null, ex);
+          Logger.getLogger(TrialDisMulticastNetworkingDeprecated.class.getName()).log(Level.SEVERE, null, ex);
       }
     group = new InetSocketAddress(maddr, DIS_PORT);
     ni = DisThreadedNetIF.findIpv4Interface();
