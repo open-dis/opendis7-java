@@ -7,6 +7,7 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.*;
 import edu.nps.moves.dis7.enumerations.*;
+import edu.nps.moves.dis7.enumerations.DISPDUType;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
