@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
+import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;

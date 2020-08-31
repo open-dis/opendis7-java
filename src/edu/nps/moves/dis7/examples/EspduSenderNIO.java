@@ -4,10 +4,10 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.EntityID;
-import edu.nps.moves.dis7.EntityStatePdu;
-import edu.nps.moves.dis7.EulerAngles;
-import edu.nps.moves.dis7.Vector3Double;
+import edu.nps.moves.dis7.pdus.EntityID;
+import edu.nps.moves.dis7.pdus.EntityStatePdu;
+import edu.nps.moves.dis7.pdus.EulerAngles;
+import edu.nps.moves.dis7.pdus.Vector3Double;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import java.net.DatagramPacket;
 import java.net.InetAddress;

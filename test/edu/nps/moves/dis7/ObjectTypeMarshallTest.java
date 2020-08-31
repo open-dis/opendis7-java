@@ -4,8 +4,9 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.objecttypes.LinearObject.Culturalfeature.TracksTire.TracksTire;
-import edu.nps.moves.dis7.objecttypes.LinearObject.Obstacle.ConcertinaWire._2Roll;
+import edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire;
+import edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll;
+import edu.nps.moves.dis7.pdus.ObjectType;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;

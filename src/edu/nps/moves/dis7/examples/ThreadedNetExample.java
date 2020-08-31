@@ -4,7 +4,7 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;

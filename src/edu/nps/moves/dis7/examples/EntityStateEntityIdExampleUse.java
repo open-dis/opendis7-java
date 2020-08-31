@@ -5,8 +5,8 @@
 
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.EntityStatePdu;
-import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.pdus.EntityStatePdu;
+import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;

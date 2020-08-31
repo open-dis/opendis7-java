@@ -1,6 +1,6 @@
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 

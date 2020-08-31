@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.entities.usa.platform.land.LAV105;
+import edu.nps.moves.dis7.pdus.EntityType;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;

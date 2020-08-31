@@ -41,7 +41,7 @@
         <echo message="build all complete"/>
     </target>
     
-    <target name="clean.pduLog" description="clean recorded pduLog files">
+    <target name="clean-pduLog" description="clean recorded pduLog files">
         <delete verbose="true">
             <fileset dir="pduLog">
                 <include name="*.dislog"/>
@@ -67,6 +67,14 @@
         <mkdir dir="build/classes" description="ensure necessary directory present"/>
         <delete verbose="false" includeemptydirs="false">
             <fileset dir="build/classes" includes="**/*"/>
+        </delete>
+    </target>
+    
+    <target name="clean-build">
+        <echo message="warning: be judicious about clean-build, full recompilation may require multiple compilation loops afterward"/>
+        <mkdir dir="build" description="ensure necessary directory present"/>
+        <delete includeemptydirs="true" verbose="false">
+            <fileset dir="build" includes="**/*"/>
         </delete>
     </target>
     

@@ -5,7 +5,7 @@
 
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.Pdu;
+import edu.nps.moves.dis7.pdus.Pdu;
 import java.util.Comparator;
 
 /**

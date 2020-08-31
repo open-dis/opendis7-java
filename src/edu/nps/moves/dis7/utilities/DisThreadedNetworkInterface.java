@@ -4,8 +4,8 @@
  */
 package edu.nps.moves.dis7.utilities;
 
-import edu.nps.moves.dis7.Pdu;
-import edu.nps.moves.dis7.DisTime;
+import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.pdus.DisTime;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;

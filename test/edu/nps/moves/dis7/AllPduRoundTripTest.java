@@ -17,6 +17,7 @@ package edu.nps.moves.dis7;
  * @version $Id$
  */
 import edu.nps.moves.dis7.enumerations.Country;
+import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;

@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package edu.nps.moves.dis7;
 
+import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;

@@ -9,6 +9,12 @@ import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.EntityKind;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.pdus.EntityID;
+import edu.nps.moves.dis7.pdus.EntityStatePdu;
+import edu.nps.moves.dis7.pdus.EntityType;
+import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.pdus.PduBase;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 

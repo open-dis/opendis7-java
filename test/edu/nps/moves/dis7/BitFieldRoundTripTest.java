@@ -7,6 +7,11 @@ package edu.nps.moves.dis7;
 import edu.nps.moves.dis7.enumerations.AppearanceCamouflageType;
 import edu.nps.moves.dis7.enumerations.ForceID;
 import edu.nps.moves.dis7.enumerations.LandPlatformAppearance;
+import edu.nps.moves.dis7.pdus.EntityStatePdu;
+import edu.nps.moves.dis7.pdus.EulerAngles;
+import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.pdus.Vector3Double;
+import edu.nps.moves.dis7.pdus.Vector3Float;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
@@ -101,8 +106,8 @@ public class BitFieldRoundTripTest
   private void dump(String s, EntityStatePdu espdu)
   {
     System.out.println(s);
-    System.out.println("Alternative EntityType: "+espdu.alternativeEntityType.toString());
-    System.out.println("Entity Capabilities: "+espdu.capabilities.toString());
+    System.out.println("Alternative EntityType: "+espdu.getAlternativeEntityType().toString());
+    System.out.println("Entity Capabilities: "+espdu.getCapabilities().toString());
     System.out.println("Dead Reckoning Parameters: "+ espdu.getDeadReckoningParameters().toString());
     System.out.println("Entity Appearance: "+ espdu.getEntityAppearance());
     System.out.println("Entity ID: "+ espdu.getEntityID().toString());
