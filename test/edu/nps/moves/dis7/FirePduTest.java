@@ -11,15 +11,15 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.PlatformDomain;
 import edu.nps.moves.dis7.pdus.Domain;
 import edu.nps.moves.dis7.pdus.EntityID;
-import edu.nps.moves.dis7.pdus.EntityStatePdu;
+import edu.nps.moves.dis7.pdus.FirePdu;
 import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.PduBase;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Entity State Pdu Test")
-public class EntityStatePduTest extends PduTest
+@DisplayName("Fire Pdu Test")
+public class FirePduTest extends PduTest
 {
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
@@ -28,7 +28,7 @@ public class EntityStatePduTest extends PduTest
   {
     PduFactory pduFactory = new PduFactory();
     
-    EntityStatePdu    espdu = pduFactory.makeEntityStatePdu(); 
+    FirePdu    firePdu = pduFactory.makeFirePdu(); 
     // TODO alternate constructors and utility methods
     EntityID       entityID = new EntityID().setSiteID((short)1).setApplicationID((short)2).setEntityID((short)3);
     EntityType   entityType = new EntityType()
@@ -39,18 +39,20 @@ public class EntityStatePduTest extends PduTest
                     .setSubCategory((byte) 1)   // M1 Abrams
                     .setSpecific   ((byte) 3);  // M1A2 Abrams
     
-    espdu.setEntityType(entityType);
-    // Alternate way using entity jar(s)
-    espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
-    // or simply use an enumeration by name, with accompanying import statement above
-    espdu.setEntityType(new M1A2()); 
-        
-    testOnePdu(espdu);
-    testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType));   
+    // TODO update PDU-specific tests
+
+//    firePdu.setEntityType(entityType);
+//    // Alternate way using entity jar(s)
+//    firePdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
+//    // or simply use an enumeration by name, with accompanying import statement above
+//    firePdu.setEntityType(new M1A2()); 
+//        
+//    testOnePdu(firePdu);
+//    testOnePdu(firePdu.setEntityID(entityID).setEntityType(entityType));   
   }
   
   /** Test single PDU for correctness according to all contained fields in this PDU type
-    * @param newPdu PDU of interest*/
+    * @param newPdu PDU of interest */
   @Override
   protected void testOnePdu(Pdu newPdu)
   {
@@ -68,23 +70,23 @@ public class EntityStatePduTest extends PduTest
      assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
      
      // can cast PDUs at this point since PduType matched
-     EntityStatePdu      newEspdu = (EntityStatePdu) newPdu;
-     EntityStatePdu receivedEspdu = (EntityStatePdu) newPdu;
-     assertEquals (newEspdu.getEntityID(),                receivedEspdu.getEntityID(),                "mismatched EntityID");
-     // TODO Sequence number
-     assertEquals (newEspdu.getEntityType(),              receivedEspdu.getEntityType(),              "mismatched EntityType");
-     // padding?
-     assertEquals (newEspdu.getEntityAppearance(),        receivedEspdu.getEntityAppearance(),        "mismatched EntityAppearance");
-     assertEquals (newEspdu.getCapabilities(),            receivedEspdu.getCapabilities(),            "mismatched EntityCapabilities");
-     assertEquals (newEspdu.getEntityLocation(),          receivedEspdu.getEntityLocation(),          "mismatched EntityLocation");
-     assertEquals (newEspdu.getEntityOrientation(),       receivedEspdu.getEntityOrientation(),       "mismatched EntityOrientation");
-     assertEquals (newEspdu.getForceId(),                 receivedEspdu.getForceId(),                 "mismatched EntityForceId");
-     assertEquals (newEspdu.getMarking(),                 receivedEspdu.getMarking(),                 "mismatched Marking");
-     assertEquals (newEspdu.getDeadReckoningParameters(), receivedEspdu.getDeadReckoningParameters(), "mismatched DeadReckoningParameters");
-     
-     // attached parts, utility method for NumberVariableParameters
-     assertEquals (newEspdu.getVariableParameters(),      receivedEspdu.getVariableParameters(),      "mismatched VariableParameters");
-     assertEquals (newEspdu.getEntityLinearVelocity(),    receivedEspdu.getEntityLinearVelocity(),    "mismatched EntityLinearVelocity");
+     FirePdu      newEspdu = (FirePdu) newPdu;
+     FirePdu receivedEspdu = (FirePdu) newPdu;
+//     assertEquals (newEspdu.getEntityID(),                receivedEspdu.getEntityID(),                "mismatched EntityID");
+//     // TODO Sequence number
+//     assertEquals (newEspdu.getEntityType(),              receivedEspdu.getEntityType(),              "mismatched EntityType");
+//     // padding?
+//     assertEquals (newEspdu.getEntityAppearance(),        receivedEspdu.getEntityAppearance(),        "mismatched EntityAppearance");
+//     assertEquals (newEspdu.getCapabilities(),            receivedEspdu.getCapabilities(),            "mismatched EntityCapabilities");
+//     assertEquals (newEspdu.getEntityLocation(),          receivedEspdu.getEntityLocation(),          "mismatched EntityLocation");
+//     assertEquals (newEspdu.getEntityOrientation(),       receivedEspdu.getEntityOrientation(),       "mismatched EntityOrientation");
+//     assertEquals (newEspdu.getForceId(),                 receivedEspdu.getForceId(),                 "mismatched EntityForceId");
+//     assertEquals (newEspdu.getMarking(),                 receivedEspdu.getMarking(),                 "mismatched Marking");
+//     assertEquals (newEspdu.getDeadReckoningParameters(), receivedEspdu.getDeadReckoningParameters(), "mismatched DeadReckoningParameters");
+//     
+//     // attached parts, utility method for NumberVariableParameters
+//     assertEquals (newEspdu.getVariableParameters(),      receivedEspdu.getVariableParameters(),      "mismatched VariableParameters");
+//     assertEquals (newEspdu.getEntityLinearVelocity(),    receivedEspdu.getEntityLinearVelocity(),    "mismatched EntityLinearVelocity");
 
      // trace option to compare strings, JSON or XML
      if (false) // true || !newEspdu.toString().equals(receivedEspdu.toString())) 
@@ -94,7 +96,7 @@ public class EntityStatePduTest extends PduTest
      }
      assertEquals (newEspdu.toString(),    receivedEspdu.toString(),    "mismatched toString()");
      // built-in object comparison
-     assertTrue   (newEspdu.equalsImpl(receivedEspdu),                                                "EntityStatePdu.equalsImpl() built-in object comparison");
+     assertTrue   (newEspdu.equalsImpl(receivedEspdu),                                                "FirePdu.equalsImpl() built-in object comparison");
      // final recheck that everything adds up
      assertEquals(newPdu.getMarshalledSize(),receivedPdu.getMarshalledSize(),
         "Marshalled size mismatch," +
@@ -109,10 +111,10 @@ public class EntityStatePduTest extends PduTest
   
     public static void main(String[] args)
     {
-        EntityStatePduTest entityStatePduTest = new EntityStatePduTest();
+        FirePduTest firePduTest = new FirePduTest();
         
-        entityStatePduTest.setUp();
-        entityStatePduTest.testRoundTrip();
-        entityStatePduTest.tearDown();
+        firePduTest.setUp();
+        firePduTest.testRoundTrip();
+        firePduTest.tearDown();
     }
 }

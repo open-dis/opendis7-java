@@ -99,9 +99,16 @@ abstract public class PduTest
         }
     }
 
+    /** Compare all values of these two obects and report if identical
+     * @param pdu1 first pdu
+     * @param pdu2 second pdu
+     * @return true if identical values found */
     protected boolean compare(Pdu pdu1, Pdu pdu2)
     {
-        return pdu1.equalsImpl(pdu2);
+        boolean result = (pdu1 != null) && (pdu2 != null) &&
+                          pdu1.getPduType().equals(pdu2.getPduType()) &&
+                          pdu1.equalsImpl(pdu2);
+        return result;
     }
 
     protected void setUpReceiver(Pdu newPdu)
@@ -109,8 +116,11 @@ abstract public class PduTest
         receivedPdu = newPdu;
     }
 
+  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
     public abstract void testRoundTrip();
 
+    /** Test single PDU for correctness according to all contained fields in this PDU type
+     * @param newPdu PDU of interest*/
     protected abstract void testOnePdu(Pdu newPdu);
     
 }

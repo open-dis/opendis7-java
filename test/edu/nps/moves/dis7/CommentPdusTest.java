@@ -50,6 +50,7 @@ public class CommentPdusTest
       disNetworkInterface = null;
   }
 
+  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   public void testRoundTrip()
   {
@@ -66,6 +67,8 @@ public class CommentPdusTest
     testOne(pduFactory.makeCommentReliablePdu("xyz R first message","mno R second message", "jkl R third message"));   
   }
   
+  /** Test single PDU for correctness according to all contained fields in this PDU type
+    * @param newPdu PDU of interest */
   private void testOne(Pdu newPdu)
   {
      sendPdu(newPdu); // will wait a while
