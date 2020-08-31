@@ -55,12 +55,12 @@ public class PduFactory
   /**
    * Create a PduFactory which creates pdus using the specified default values.
    * @param country used in EntityType and RadioType objects
-   * @param exerciseId used in standard Pdu header
-   * @param siteId used in standard Pdu header
-   * @param applicationId used in standard Pdu header
+   * @param exerciseId used in standard PDU header
+   * @param siteId used in standard PDU header
+   * @param applicationId used in standard PDU header
    * @param useAbsoluteTimestamp boolean to specify absolute time stamps (IEEE Std 1278.1-2012, 4.6)
-   * @see   edu.nps.moves.dis7.EntityType
-   * @see   edu.nps.moves.dis7.RadioType
+   * @see   edu.nps.moves.dis7.pdus.EntityType
+   * @see   edu.nps.moves.dis7.pdus.RadioType
    */
   public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, boolean useAbsoluteTimestamp)
   {
