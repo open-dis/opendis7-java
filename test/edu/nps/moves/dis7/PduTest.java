@@ -34,9 +34,12 @@ POSSIBILITY OF SUCH DAMAGE.
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.pdus.PduBase;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -114,6 +117,19 @@ abstract public class PduTest
     protected void setUpReceiver(Pdu newPdu)
     {
         receivedPdu = newPdu;
+    }
+    /** Common tests for fields in PDU header */
+    protected void testPduHeader (Pdu newPdu)
+    {  
+        assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
+        // TODO compatibility version
+        assertEquals (         newPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
+        assertEquals (         newPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
+        assertEquals (         newPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
+        assertEquals(((PduBase)newPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
+        assertEquals(((PduBase)newPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
+        // TODO HDR length
+        assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
     }
 
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

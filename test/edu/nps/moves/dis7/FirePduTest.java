@@ -59,35 +59,28 @@ public class FirePduTest extends PduTest
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null,         "No response from network receive");
      
-     assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
-     // TODO compatibility version
-     assertEquals (         newPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
-     assertEquals (         newPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
-     assertEquals (         newPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
-     assertEquals(((PduBase)newPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
-     assertEquals(((PduBase)newPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
-     // TODO HDR length
-     assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
+     testPduHeader(newPdu);
      
      // can cast PDUs at this point since PduType matched
      FirePdu      newEspdu = (FirePdu) newPdu;
      FirePdu receivedEspdu = (FirePdu) newPdu;
-//     assertEquals (newEspdu.getEntityID(),                receivedEspdu.getEntityID(),                "mismatched EntityID");
-//     // TODO Sequence number
-//     assertEquals (newEspdu.getEntityType(),              receivedEspdu.getEntityType(),              "mismatched EntityType");
-//     // padding?
-//     assertEquals (newEspdu.getEntityAppearance(),        receivedEspdu.getEntityAppearance(),        "mismatched EntityAppearance");
-//     assertEquals (newEspdu.getCapabilities(),            receivedEspdu.getCapabilities(),            "mismatched EntityCapabilities");
-//     assertEquals (newEspdu.getEntityLocation(),          receivedEspdu.getEntityLocation(),          "mismatched EntityLocation");
-//     assertEquals (newEspdu.getEntityOrientation(),       receivedEspdu.getEntityOrientation(),       "mismatched EntityOrientation");
-//     assertEquals (newEspdu.getForceId(),                 receivedEspdu.getForceId(),                 "mismatched EntityForceId");
-//     assertEquals (newEspdu.getMarking(),                 receivedEspdu.getMarking(),                 "mismatched Marking");
-//     assertEquals (newEspdu.getDeadReckoningParameters(), receivedEspdu.getDeadReckoningParameters(), "mismatched DeadReckoningParameters");
-//     
-//     // attached parts, utility method for NumberVariableParameters
-//     assertEquals (newEspdu.getVariableParameters(),      receivedEspdu.getVariableParameters(),      "mismatched VariableParameters");
-//     assertEquals (newEspdu.getEntityLinearVelocity(),    receivedEspdu.getEntityLinearVelocity(),    "mismatched EntityLinearVelocity");
 
+     assertEquals (newEspdu.getFiringEntityID(),            receivedEspdu.getFiringEntityID(),           "mismatched FiringEntityID");
+     assertEquals (newEspdu.getTargetEntityID(),            receivedEspdu.getTargetEntityID(),           "mismatched TargetEntityID");
+     // TODO Target Entity ID (App, Entity)
+     // TODO Munition/Expendable Entity ID (Site, App)
+     // TODO Munition/Expendable Entity ID (Entity)
+     assertEquals (newEspdu.getEventID(),                   receivedEspdu.getEventID(),                   "mismatched EventID");
+     assertEquals (newEspdu.getLocationInWorldCoordinates(),receivedEspdu.getLocationInWorldCoordinates(),"mismatched  LocationInWorldCoordinates");
+     assertEquals (newEspdu.getVelocity(),                  receivedEspdu.getVelocity(),                  "mismatched  Velocity");
+     assertEquals (newEspdu.getFireMissionIndex(),          receivedEspdu.getFireMissionIndex(),          "mismatched  FireMissionIndex");
+     assertEquals (newEspdu.getMunitionExpendibleID(),      receivedEspdu.getMunitionExpendibleID(),      "mismatched  MunitionExpendibleID");
+     // TODO Munition Descriptor
+     assertEquals (newEspdu.getPadding(),                   receivedEspdu.getPadding(),                   "mismatched  Padding");
+     assertEquals (newEspdu.getRange(),                     receivedEspdu.getRange(),                     "mismatched  Range");
+     // TODO Fire Type, Padding2, Num Variable Records
+     // TODO Variable Records
+     
      // trace option to compare strings, JSON or XML
      if (false) // true || !newEspdu.toString().equals(receivedEspdu.toString())) 
      {

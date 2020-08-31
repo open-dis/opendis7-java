@@ -57,15 +57,7 @@ public class EntityStatePduTest extends PduTest
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null,         "No response from network receive");
      
-     assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
-     // TODO compatibility version
-     assertEquals (         newPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
-     assertEquals (         newPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
-     assertEquals (         newPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
-     assertEquals(((PduBase)newPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
-     assertEquals(((PduBase)newPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
-     // TODO HDR length
-     assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
+     testPduHeader(newPdu);
      
      // can cast PDUs at this point since PduType matched
      EntityStatePdu      newEspdu = (EntityStatePdu) newPdu;
