@@ -281,9 +281,9 @@ public class DisThreadedNetworkInterface
         Pdu pdu;
 
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
-        ByteArrayOutputStream baos = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
-        DataOutputStream dos = new DataOutputStream(baos);
-        DatagramPacket packet = new DatagramPacket(baos.toByteArray(), baos.size(), group);
+        ByteArrayOutputStream baos   = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
+        DataOutputStream      dos    = new DataOutputStream(baos);
+        DatagramPacket        packet = new DatagramPacket(baos.toByteArray(), baos.size(), group);
 
         while (!killed) { // keep trying on error
             try {
@@ -294,6 +294,7 @@ public class DisThreadedNetworkInterface
                     packet.setData(baos.toByteArray());
                     socket.send(packet);
 
+                    dos.flush();  // immediately force pdu write
                     baos.reset();
                 }
             } 
