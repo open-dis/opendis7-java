@@ -39,6 +39,7 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -49,7 +50,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 abstract public class PduTest
 {
-    protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l;
+    protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l; // i.e. 100, type long
     private         long threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
     
     @BeforeAll
@@ -75,9 +76,9 @@ abstract public class PduTest
         pduListener = new DisThreadedNetworkInterface.PduListener()
         {
             @Override
-            public void incomingPdu(Pdu newPdu)
+            public void incomingPdu(Pdu createdPdu)
             {
-                setUpReceiver(newPdu);
+                setUpReceiver(createdPdu);
             }
         };
         disNetworkInterface.addListener(pduListener);
@@ -94,18 +95,18 @@ abstract public class PduTest
 
     /** 
      * Handler
-     * @param newPdu new PDU of interest
+     * @param createdPdu new PDU of interest
      */
-    protected void sendPdu(Pdu newPdu)
+    protected void sendPdu(Pdu createdPdu)
     {
         try
         {
-            disNetworkInterface.send(newPdu);
+            disNetworkInterface.send(createdPdu);
             Thread.sleep(getThreadSleepInterval()); // TODO better way to wait?
         } 
         catch (InterruptedException ex)
         {
-            System.err.println(this.getClass().getName() + ".sendPdu(Pdu newPdu), error sending Multicast: " + ex.getLocalizedMessage());
+            System.err.println(this.getClass().getName() + ".sendPdu(Pdu createdPdu), error sending Multicast: " + ex.getLocalizedMessage());
             System.exit(1);
         }
     }
@@ -131,21 +132,63 @@ abstract public class PduTest
         receivedPdu = newPdu;
     }
     /** 
-     * Common tests for fields in PDU header
+     * Initial common tests for fields in PDU header.
      * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
-     * @param newPdu separate PDU for comparison
+     * @param createdPdu separate PDU for comparison
      */
-    protected void testPduHeaderMatch (Pdu newPdu)
-    {  
-        assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
+    protected void testPduSendReceiveHeaderMatch (Pdu createdPdu)
+    {
+        String TEST_SUITE_WARNING = " (TODO note that test works standalone but mysteriously fails as part of project test suite)";
+
+        sendPdu(createdPdu); // will wait a while, then return receivedPdu
+        assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec" 
+                   + TEST_SUITE_WARNING);
+     
+        assertTrue((createdPdu != receivedPdu), "Exact match found between createdPdu and receivedPdu object references indicates improper test configuration");
+        
+        assertEquals (         createdPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
         // TODO compatibility version
-        assertEquals (         newPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
-        assertEquals (         newPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
-        assertEquals (         newPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
-        assertEquals(((PduBase)newPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
-        assertEquals(((PduBase)newPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
+        assertEquals (         createdPdu.getExerciseID(),              receivedPdu.getExerciseID(),      "mismatched ExerciseID");
+        assertEquals (         createdPdu.getPduType(),                 receivedPdu.getPduType(),         "mismatched PduType");
+        assertEquals (         createdPdu.getProtocolFamily(),          receivedPdu.getProtocolFamily(),  "mismatched ProtocolFamily"); // derived from PduType
+        assertEquals(((PduBase)createdPdu).getPduStatus(),    ((PduBase)receivedPdu).getPduStatus(),      "mismatched PduStatus");
+        assertEquals(((PduBase)createdPdu).getPadding(),      ((PduBase)receivedPdu).getPadding(),        "mismatched header padding");
         // TODO HDR length
-        assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
+        assertEquals (createdPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
+        
+        // trace option to show strings if mismatched (prior to assertion error)
+        if (!createdPdu.toString().equals(receivedPdu.toString())) // false true  TODO JSON or XML
+        {
+            System.out.println("String mismatch:");
+            System.out.println("================================================================");
+            System.out.println("     newEspdu=" +      createdPdu.toString());
+            System.out.println("================================================================");
+            System.out.println("receivedEspdu=" + receivedPdu.toString());
+            System.out.println("================================================================");
+        }
+    }
+    /** 
+     * Final common tests of PDU characteristics after individual fields are checked.
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param createdPdu separate PDU for comparison
+     */
+    protected void testPduFinishingChecks (Pdu createdPdu)
+    {
+     assertEquals (createdPdu.toString(),          receivedPdu.toString(),    "mismatched toString()");
+     
+     // built-in object comparison
+     assertTrue   (createdPdu.equalsImpl(receivedPdu),                        "createdPdu.equalsImpl(receivedPdu) built-in object comparison");
+     // final recheck that everything adds up
+     assertEquals(createdPdu.getMarshalledSize(),  receivedPdu.getMarshalledSize(),
+        "Marshalled size mismatch," +
+            "sent (" +      createdPdu.getMarshalledSize() + " bytes) and " +
+        "recieved (" + receivedPdu.getMarshalledSize() + " bytes)");
+     assertEquals (createdPdu.getLength(),         receivedPdu.getLength(), "mismatched length"); // from Pdu superclass
+     
+//   comparison of class Pdu is questionable
+//   assertTrue(compare(createdPdu,receivedPdu), "compare() method failed for original and received PDUs");
+
+     receivedPdu = null; // ensure cleared prior to next test
     }
 
     /** 
@@ -154,9 +197,9 @@ abstract public class PduTest
     public abstract void testRoundTrip();
 
     /** Test single PDU for correctness according to all contained fields in this PDU type
-     * @param newPdu separate PDU for comparison
+     * @param createdPdu separate PDU for comparison
      */
-    protected abstract void testOnePdu(Pdu newPdu);
+    protected abstract void testOnePdu(Pdu createdPdu);
 
     /**
      * Threaded sleep may be necessary to ensure completion of sending/receiving PDU

@@ -30,58 +30,34 @@ public class FirePduTest extends PduTest
   
   /** Test single PDU for correctness according to all contained fields in this PDU type
    * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
-   * @param newPdu separate PDU for comparison
+   * @param createdPdu separate PDU for comparison
    */
   @Override
-  protected void testOnePdu(Pdu newPdu)
+  protected void testOnePdu(Pdu createdPdu)
   {
-     String TODO_WARNING = " (test works standalone but mysteriously fails as part of project test suite)";
-     
-     sendPdu(newPdu); // will wait a while
-     assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec" 
-                + TODO_WARNING);
-     
-     testPduHeaderMatch(newPdu);
+     testPduSendReceiveHeaderMatch (createdPdu); // shared tests in superclass
      
      // can cast PDUs at this point since PduType matched
-     FirePdu      newEspdu = (FirePdu) newPdu;
-     FirePdu receivedEspdu = (FirePdu) newPdu;
+     FirePdu  createdFirePdu = (FirePdu)  createdPdu;
+     FirePdu receivedFirePdu = (FirePdu) receivedPdu;
 
-     assertEquals (newEspdu.getFiringEntityID(),            receivedEspdu.getFiringEntityID(),           "mismatched FiringEntityID");
-     assertEquals (newEspdu.getTargetEntityID(),            receivedEspdu.getTargetEntityID(),           "mismatched TargetEntityID");
+     assertEquals (createdFirePdu.getFiringEntityID(),            receivedFirePdu.getFiringEntityID(),           "mismatched FiringEntityID");
+     assertEquals (createdFirePdu.getTargetEntityID(),            receivedFirePdu.getTargetEntityID(),           "mismatched TargetEntityID");
      // TODO Target Entity ID (App, Entity)
      // TODO Munition/Expendable Entity ID (Site, App)
      // TODO Munition/Expendable Entity ID (Entity)
-     assertEquals (newEspdu.getEventID(),                   receivedEspdu.getEventID(),                   "mismatched EventID");
-     assertEquals (newEspdu.getLocationInWorldCoordinates(),receivedEspdu.getLocationInWorldCoordinates(),"mismatched  LocationInWorldCoordinates");
-     assertEquals (newEspdu.getVelocity(),                  receivedEspdu.getVelocity(),                  "mismatched  Velocity");
-     assertEquals (newEspdu.getFireMissionIndex(),          receivedEspdu.getFireMissionIndex(),          "mismatched  FireMissionIndex");
-     assertEquals (newEspdu.getMunitionExpendibleID(),      receivedEspdu.getMunitionExpendibleID(),      "mismatched  MunitionExpendibleID");
+     assertEquals (createdFirePdu.getEventID(),                   receivedFirePdu.getEventID(),                   "mismatched EventID");
+     assertEquals (createdFirePdu.getLocationInWorldCoordinates(),receivedFirePdu.getLocationInWorldCoordinates(),"mismatched  LocationInWorldCoordinates");
+     assertEquals (createdFirePdu.getVelocity(),                  receivedFirePdu.getVelocity(),                  "mismatched  Velocity");
+     assertEquals (createdFirePdu.getFireMissionIndex(),          receivedFirePdu.getFireMissionIndex(),          "mismatched  FireMissionIndex");
+     assertEquals (createdFirePdu.getMunitionExpendibleID(),      receivedFirePdu.getMunitionExpendibleID(),      "mismatched  MunitionExpendibleID");
      // TODO Munition Descriptor
-     assertEquals (newEspdu.getPadding(),                   receivedEspdu.getPadding(),                   "mismatched  Padding");
-     assertEquals (newEspdu.getRange(),                     receivedEspdu.getRange(),                     "mismatched  Range");
+     assertEquals (createdFirePdu.getPadding(),                   receivedFirePdu.getPadding(),                   "mismatched  Padding");
+     assertEquals (createdFirePdu.getRange(),                     receivedFirePdu.getRange(),                     "mismatched  Range");
      // TODO Fire Type, Padding2, Num Variable Records
      // TODO Variable Records
      
-     // trace option to compare strings, JSON or XML
-     if (false) // true || !newEspdu.toString().equals(receivedEspdu.toString())) 
-     {
-         System.err.println("     newEspdu=" +      newEspdu.toString());
-         System.err.println("receivedEspdu=" + receivedEspdu.toString());
-     }
-     assertEquals (newEspdu.toString(),    receivedEspdu.toString(),    "mismatched toString()");
-     // built-in object comparison
-     assertTrue   (newEspdu.equalsImpl(receivedEspdu),                                                "FirePdu.equalsImpl() built-in object comparison");
-     // final recheck that everything adds up
-     assertEquals(newPdu.getMarshalledSize(),receivedPdu.getMarshalledSize(),
-        "Marshalled size mismatch," +
-            "sent (" +      newPdu.getMarshalledSize() + " bytes) and " +
-        "recieved (" + receivedPdu.getMarshalledSize() + " bytes)");
-     assertEquals (newPdu.getLength(),         receivedPdu.getLength(), "mismatched length"); // from Pdu superclass
-     
-//   comparison of class Pdu is questionable
-//   assertTrue(compare(newPdu,receivedPdu), "compare() method failed for original and received PDUs");
-     receivedPdu = null; // ensure cleared prior to next test
+     testPduFinishingChecks(createdPdu); // shared tests in superclass
   }
   
     public static void main(String[] args)
