@@ -39,7 +39,6 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -68,6 +67,7 @@ abstract public class PduTest
     Pdu receivedPdu;
     DisThreadedNetworkInterface.PduListener pduListener;
 
+    /** Ensure network connections, listener and handler are prepared */
     @BeforeEach
     public void setUp()
     {
@@ -83,6 +83,7 @@ abstract public class PduTest
         disNetworkInterface.addListener(pduListener);
     }
 
+    /** Ensure network connections are removed */
     @AfterEach
     public void tearDown()
     {
@@ -91,15 +92,20 @@ abstract public class PduTest
         disNetworkInterface = null;
     }
 
-    protected void sendPdu(Pdu pdu)
+    /** 
+     * Handler
+     * @param newPdu new PDU of interest
+     */
+    protected void sendPdu(Pdu newPdu)
     {
         try
         {
-            disNetworkInterface.send(pdu);
+            disNetworkInterface.send(newPdu);
             Thread.sleep(getThreadSleepInterval()); // TODO better way to wait?
-        } catch (InterruptedException ex)
+        } 
+        catch (InterruptedException ex)
         {
-            System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
+            System.err.println(this.getClass().getName() + ".sendPdu(Pdu newPdu), error sending Multicast: " + ex.getLocalizedMessage());
             System.exit(1);
         }
     }
@@ -116,6 +122,10 @@ abstract public class PduTest
         return result;
     }
 
+    /** 
+     * Handler
+     * @param newPdu new PDU of interest
+     */
     protected void setUpReceiver(Pdu newPdu)
     {
         receivedPdu = newPdu;
@@ -138,7 +148,9 @@ abstract public class PduTest
         assertEquals (newPdu.getTimestamp(),                        receivedPdu.getTimestamp(),       "mismatched Timestamp");
     }
 
-  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
+    /** 
+     * Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization)
+     */
     public abstract void testRoundTrip();
 
     /** Test single PDU for correctness according to all contained fields in this PDU type
@@ -147,6 +159,7 @@ abstract public class PduTest
     protected abstract void testOnePdu(Pdu newPdu);
 
     /**
+     * Threaded sleep may be necessary to ensure completion of sending/receiving PDU
      * @return the threadSleepInterval
      */
     public long getThreadSleepInterval()
@@ -155,6 +168,7 @@ abstract public class PduTest
     }
 
     /**
+     * Threaded sleep may be necessary to ensure completion of sending/receiving PDU
      * @param threadSleepInterval the threadSleepInterval to set
      */
     public void setThreadSleepInterval(long threadSleepInterval)
