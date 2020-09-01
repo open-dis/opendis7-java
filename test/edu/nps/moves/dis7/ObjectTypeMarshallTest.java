@@ -58,17 +58,17 @@ public class ObjectTypeMarshallTest
     private void common(ObjectType ot) throws Throwable
     {
         Exception ex = null;
-        ByteBuffer bb = ByteBuffer.allocate(100);
+        ByteBuffer byteBuffer = ByteBuffer.allocate(100);
         dumpOT(ot);
-        ot.marshal(bb);
-        assertEquals(4, bb.position(), "Marshalled array should be 4 bytes long");
-        dumpBb(bb);
+        ot.marshal(byteBuffer);
+        assertEquals(4, byteBuffer.position(), "Marshalled array should be 4 bytes long");
+        dumpBb(byteBuffer);
     }
     
-    private void dumpBb(ByteBuffer bb)
+    private void dumpBb(ByteBuffer byteBuffer)
     {
-        for (int i = 0; i < bb.position(); i++) {
-            System.out.print(String.format("%02X ", bb.array()[i]));
+        for (int i = 0; i < byteBuffer.position(); i++) {
+            System.out.print(String.format("%02X ", byteBuffer.array()[i]));
         }
         System.out.println();
     }

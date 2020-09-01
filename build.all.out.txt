@@ -1,6 +1,6 @@
 ant -f C:\\x3d-github\\open-dis7-java all
 all:
-timestamp 30 August 2020 20:43:49
+timestamp 31 August 2020 16:28:12
 clean:
 ================
 compile:
@@ -16,90 +16,89 @@ compile src, src-generated
 Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
-Compiling 15 source files to C:\x3d-github\open-dis7-java\build\test\classes
+Deleted 23 out of date files in 0 seconds
+Compiling 16 source files to C:\x3d-github\open-dis7-java\build\test\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
-Copying 1 file to C:\x3d-github\open-dis7-java\build\test\classes
 compile-test:
-Created dir: C:\x3d-github\open-dis7-java\build\test\results
 test:
 AllPduRoundTripTest
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
 Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 15 ACKNOWLEDGE (timestamp 05:15:37, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 55 ACKNOWLEDGE_RELIABLE (timestamp 05:15:38, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 16 ACTION_REQUEST (timestamp 05:15:38, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 56 ACTION_REQUEST_RELIABLE (timestamp 05:15:38, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:15:40, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 57 ACTION_RESPONSE_RELIABLE (timestamp 05:15:40, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 33 AGGREGATE_STATE (timestamp 05:15:43, size 136 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 47 APPEARANCE (timestamp 05:15:48, size 69 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 45 AREAL_OBJECT_STATE (timestamp 05:15:50, size 49 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 10. received DISPDUType 48 ARTICULATED_PARTS (timestamp 05:15:50, size 19 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 11. received DISPDUType 72 ATTRIBUTE (timestamp 05:16:08, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 12. received DISPDUType 66 COLLISION_ELASTIC (timestamp 05:16:10, size 100 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 13. received DISPDUType 4 COLLISION (timestamp 05:16:11, size 60 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 14. received DISPDUType 22 COMMENT (timestamp 05:16:11, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 15. received DISPDUType 62 COMMENT_RELIABLE (timestamp 05:16:11, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 16. received DISPDUType 11 CREATE_ENTITY (timestamp 05:16:12, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 17. received DISPDUType 51 CREATE_ENTITY_RELIABLE (timestamp 05:16:12, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 18. received DISPDUType 20 DATA (timestamp 05:16:12, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 19. received DISPDUType 18 DATA_QUERY (timestamp 05:16:12, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 20. received DISPDUType 58 DATA_QUERY_RELIABLE (timestamp 05:16:12, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 21. received DISPDUType 60 DATA_RELIABLE (timestamp 05:16:13, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 22. received DISPDUType 24 DESIGNATOR (timestamp 05:16:13, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 23. received DISPDUType 3 DETONATION (timestamp 05:16:15, size 104 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 24. received DISPDUType 68 DIRECTED_ENERGY_FIRE (timestamp 05:16:17, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 25. received DISPDUType 23 ELECTROMAGNETIC_EMISSION (timestamp 05:16:18, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 26. received DISPDUType 69 ENTITY_DAMAGE_STATUS (timestamp 05:16:18, size 24 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 27. received DISPDUType 1 ENTITY_STATE (timestamp 05:16:19, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 28. received DISPDUType 67 ENTITY_STATE_UPDATE (timestamp 05:16:19, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 29. received DISPDUType 41 ENVIRONMENTAL_PROCESS (timestamp 05:16:20, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 30. received DISPDUType 21 EVENT_REPORT (timestamp 05:16:20, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 31. received DISPDUType 61 EVENT_REPORT_RELIABLE (timestamp 05:16:20, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 32. received DISPDUType 2 FIRE (timestamp 05:16:21, size 96 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 33. received DISPDUType 42 GRIDDED_DATA (timestamp 05:16:21, size 64 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 34. received DISPDUType 28 IDENTIFICATION_FRIEND_OR_FOE (timestamp 05:16:24, size 60 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 35. received DISPDUType 71 INFORMATION_OPERATIONS_REPORT (timestamp 05:16:25, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 36. received DISPDUType 70 INFORMATION_OPERATIONS_ACTION (timestamp 05:16:25, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 37. received DISPDUType 32 INTERCOM_CONTROL (timestamp 05:16:26, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 38. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 05:16:27, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 39. received DISPDUType 34 ISGROUPOF (timestamp 05:16:27, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 40. received DISPDUType 36 ISPARTOF (timestamp 05:16:30, size 52 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 41. received DISPDUType 50 LIVE_ENTITY_DETONATION (timestamp 05:16:32, size 81 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 42. received DISPDUType 49 LIVE_ENTITY_FIRE (timestamp 05:16:32, size 69 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 43. received DISPDUType 44 LINEAR_OBJECT_STATE (timestamp 05:16:32, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 44. received DISPDUType 39 MINEFIELD_DATA (timestamp 05:16:35, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 45. received DISPDUType 38 MINEFIELD_QUERY (timestamp 05:16:35, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 46. received DISPDUType 40 MINEFIELD_RESPONSE_NACK (timestamp 05:16:36, size 26 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 47. received DISPDUType 37 MINEFIELD_STATE (timestamp 05:16:37, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 48. received DISPDUType 43 POINT_OBJECT_STATE (timestamp 05:16:39, size 91 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 49. received DISPDUType 27 RECEIVER (timestamp 05:16:39, size 36 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 50. received DISPDUType 65 RECORD_QUERY_RELIABLE (timestamp 05:16:41, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 51. received DISPDUType 63 RECORD_RELIABLE (timestamp 05:16:41, size 36 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 52. received DISPDUType 12 REMOVE_ENTITY (timestamp 05:16:41, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 53. received DISPDUType 52 REMOVE_ENTITY_RELIABLE (timestamp 05:16:41, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 54. received DISPDUType 9 REPAIR_COMPLETE (timestamp 05:16:41, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 55. received DISPDUType 10 REPAIR_RESPONSE (timestamp 05:16:42, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 56. received DISPDUType 8 RESUPPLY_CANCEL (timestamp 05:16:42, size 24 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 57. received DISPDUType 6 RESUPPLY_OFFER (timestamp 05:16:42, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 58. received DISPDUType 7 RESUPPLY_RECEIVED (timestamp 05:16:42, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 59. received DISPDUType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE (timestamp 05:16:42, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 60. received DISPDUType 5 SERVICE_REQUEST (timestamp 05:16:42, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 61. received DISPDUType 19 SET_DATA (timestamp 05:16:42, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 62. received DISPDUType 59 SET_DATA_RELIABLE (timestamp 05:16:43, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 63. received DISPDUType 64 SET_RECORD_RELIABLE (timestamp 05:16:43, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 64. received DISPDUType 26 SIGNAL (timestamp 05:16:43, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 65. received DISPDUType 13 START_RESUME (timestamp 05:16:43, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 66. received DISPDUType 53 START_RESUME_RELIABLE (timestamp 05:16:43, size 48 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 67. received DISPDUType 14 STOP_FREEZE (timestamp 05:16:44, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 68. received DISPDUType 54 STOP_FREEZE_RELIABLE (timestamp 05:16:44, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 69. received DISPDUType 35 TRANSFER_OWNERSHIP (timestamp 05:16:45, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 70. received DISPDUType 25 TRANSMITTER (timestamp 05:16:49, size 107 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 71. received DISPDUType 46 TIME_SPACE_POSITION_INFORMATION (timestamp 05:16:52, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 72. received DISPDUType 29 UNDERWATER_ACOUSTIC (timestamp 05:16:52, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 15 ACKNOWLEDGE (timestamp 12:03:56, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 55 ACKNOWLEDGE_RELIABLE (timestamp 12:03:57, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 16 ACTION_REQUEST (timestamp 12:03:58, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 56 ACTION_REQUEST_RELIABLE (timestamp 12:03:58, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 17 ACTION_RESPONSE (timestamp 12:03:59, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 57 ACTION_RESPONSE_RELIABLE (timestamp 12:03:59, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 33 AGGREGATE_STATE (timestamp 12:04:05, size 136 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 47 APPEARANCE (timestamp 12:04:10, size 69 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 45 AREAL_OBJECT_STATE (timestamp 12:04:11, size 49 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 10. received DISPDUType 48 ARTICULATED_PARTS (timestamp 12:04:11, size 19 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 11. received DISPDUType 72 ATTRIBUTE (timestamp 12:04:30, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 12. received DISPDUType 66 COLLISION_ELASTIC (timestamp 12:04:31, size 100 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 13. received DISPDUType 4 COLLISION (timestamp 12:04:31, size 60 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 14. received DISPDUType 22 COMMENT (timestamp 12:04:31, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 15. received DISPDUType 62 COMMENT_RELIABLE (timestamp 12:04:33, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 16. received DISPDUType 11 CREATE_ENTITY (timestamp 12:04:33, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 17. received DISPDUType 51 CREATE_ENTITY_RELIABLE (timestamp 12:04:33, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 18. received DISPDUType 20 DATA (timestamp 12:04:34, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 19. received DISPDUType 18 DATA_QUERY (timestamp 12:04:34, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 20. received DISPDUType 58 DATA_QUERY_RELIABLE (timestamp 12:04:34, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 21. received DISPDUType 60 DATA_RELIABLE (timestamp 12:04:34, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 22. received DISPDUType 24 DESIGNATOR (timestamp 12:04:35, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 23. received DISPDUType 3 DETONATION (timestamp 12:04:37, size 104 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 24. received DISPDUType 68 DIRECTED_ENERGY_FIRE (timestamp 12:04:38, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 25. received DISPDUType 23 ELECTROMAGNETIC_EMISSION (timestamp 12:04:40, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 26. received DISPDUType 69 ENTITY_DAMAGE_STATUS (timestamp 12:04:40, size 24 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 27. received DISPDUType 1 ENTITY_STATE (timestamp 12:04:41, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 28. received DISPDUType 67 ENTITY_STATE_UPDATE (timestamp 12:04:41, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 29. received DISPDUType 41 ENVIRONMENTAL_PROCESS (timestamp 12:04:42, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 30. received DISPDUType 21 EVENT_REPORT (timestamp 12:04:42, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 31. received DISPDUType 61 EVENT_REPORT_RELIABLE (timestamp 12:04:43, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 32. received DISPDUType 2 FIRE (timestamp 12:04:43, size 96 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 33. received DISPDUType 42 GRIDDED_DATA (timestamp 12:04:43, size 64 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 34. received DISPDUType 28 IDENTIFICATION_FRIEND_OR_FOE (timestamp 12:04:47, size 60 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 35. received DISPDUType 71 INFORMATION_OPERATIONS_REPORT (timestamp 12:04:47, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 36. received DISPDUType 70 INFORMATION_OPERATIONS_ACTION (timestamp 12:04:48, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 37. received DISPDUType 32 INTERCOM_CONTROL (timestamp 12:04:48, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 38. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 12:04:49, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 39. received DISPDUType 34 ISGROUPOF (timestamp 12:04:49, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 40. received DISPDUType 36 ISPARTOF (timestamp 12:04:52, size 52 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 41. received DISPDUType 50 LIVE_ENTITY_DETONATION (timestamp 12:04:54, size 81 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 42. received DISPDUType 49 LIVE_ENTITY_FIRE (timestamp 12:04:54, size 69 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 43. received DISPDUType 44 LINEAR_OBJECT_STATE (timestamp 12:04:54, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 44. received DISPDUType 39 MINEFIELD_DATA (timestamp 12:04:58, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 45. received DISPDUType 38 MINEFIELD_QUERY (timestamp 12:04:58, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 46. received DISPDUType 40 MINEFIELD_RESPONSE_NACK (timestamp 12:04:59, size 26 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 47. received DISPDUType 37 MINEFIELD_STATE (timestamp 12:05:01, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 48. received DISPDUType 43 POINT_OBJECT_STATE (timestamp 12:05:07, size 91 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 49. received DISPDUType 27 RECEIVER (timestamp 12:05:08, size 36 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 50. received DISPDUType 65 RECORD_QUERY_RELIABLE (timestamp 12:05:10, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 51. received DISPDUType 63 RECORD_RELIABLE (timestamp 12:05:10, size 36 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 52. received DISPDUType 12 REMOVE_ENTITY (timestamp 12:05:10, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 53. received DISPDUType 52 REMOVE_ENTITY_RELIABLE (timestamp 12:05:10, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 54. received DISPDUType 9 REPAIR_COMPLETE (timestamp 12:05:11, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 55. received DISPDUType 10 REPAIR_RESPONSE (timestamp 12:05:11, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 56. received DISPDUType 8 RESUPPLY_CANCEL (timestamp 12:05:12, size 24 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 57. received DISPDUType 6 RESUPPLY_OFFER (timestamp 12:05:12, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 58. received DISPDUType 7 RESUPPLY_RECEIVED (timestamp 12:05:12, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 59. received DISPDUType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE (timestamp 12:05:12, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 60. received DISPDUType 5 SERVICE_REQUEST (timestamp 12:05:13, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 61. received DISPDUType 19 SET_DATA (timestamp 12:05:13, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 62. received DISPDUType 59 SET_DATA_RELIABLE (timestamp 12:05:13, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 63. received DISPDUType 64 SET_RECORD_RELIABLE (timestamp 12:05:13, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 64. received DISPDUType 26 SIGNAL (timestamp 12:05:14, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 65. received DISPDUType 13 START_RESUME (timestamp 12:05:14, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 66. received DISPDUType 53 START_RESUME_RELIABLE (timestamp 12:05:14, size 48 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 67. received DISPDUType 14 STOP_FREEZE (timestamp 12:05:15, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 68. received DISPDUType 54 STOP_FREEZE_RELIABLE (timestamp 12:05:15, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 69. received DISPDUType 35 TRANSFER_OWNERSHIP (timestamp 12:05:18, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 70. received DISPDUType 25 TRANSMITTER (timestamp 12:05:21, size 107 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 71. received DISPDUType 46 TIME_SPACE_POSITION_INFORMATION (timestamp 12:05:25, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 72. received DISPDUType 29 UNDERWATER_ACOUSTIC (timestamp 12:05:25, size 32 bytes)
 
 Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 pduReceivedMap.size()=72, pduSentMap.size()=72, match=true
@@ -110,8 +109,8 @@ Total PDUs: 72
 End of replay from PduCaptureLog.dislog
 BitFieldRoundTripTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 73. received DISPDUType 1 ENTITY_STATE (timestamp 05:28:08, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE (timestamp 05:28:08, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 73. received DISPDUType 1 ENTITY_STATE (timestamp 12:16:37, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE (timestamp 12:16:37, size 144 bytes)
 Sent pdu: 
 Alternative EntityType: EntityType:
  entityKind: EntityKind 0 OTHER
@@ -180,7 +179,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1074711773
+Timestamp: 2146597213
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -251,19 +250,19 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1074711773
+Timestamp: 2146597213
 Variable Parameters: []
 
 EntityStatePduTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE (timestamp 05:31:58, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE (timestamp 05:31:58, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE (timestamp 05:31:58, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE (timestamp 12:20:10, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE (timestamp 12:20:10, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE (timestamp 12:20:10, size 144 bytes)
 CreateAllPduTypesTest
 FixedAndVariableDatumRoundTripTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:37:20, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:37:20, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE (timestamp 12:25:54, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 17 ACTION_RESPONSE (timestamp 12:25:54, size 128 bytes)
 X3dInterpolatorsTest
 testInterpolators
 Replaying DIS logs.
@@ -370,7 +369,7 @@ Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 20 DATA
-100Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 25 TRANSMITTER
@@ -522,36 +521,36 @@ Writing X3D LineSet
 
 CommentPdusTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 22 COMMENT (timestamp 06:39:27, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 22 COMMENT (timestamp 06:41:28, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 22 COMMENT (timestamp 06:43:28, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 22 COMMENT (timestamp 06:45:27, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:47:28, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:49:28, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:51:29, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:53:29, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 22 COMMENT (timestamp 19:49:51, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 22 COMMENT (timestamp 19:51:54, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 22 COMMENT (timestamp 19:53:57, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 22 COMMENT (timestamp 19:55:57, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 62 COMMENT_RELIABLE (timestamp 19:57:57, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 62 COMMENT_RELIABLE (timestamp 19:59:57, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 62 COMMENT_RELIABLE (timestamp 20:01:58, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 62 COMMENT_RELIABLE (timestamp 20:03:57, size 128 bytes)
 PduFactoryTest
 MarshalEnumsTest
 DataQueryPduRoundTripTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 18 DATA_QUERY (timestamp 06:58:48, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY (timestamp 06:58:48, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 18 DATA_QUERY (timestamp 20:09:59, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY (timestamp 20:09:59, size 128 bytes)
 CreateAllObjectTypesTest
 SignalPdusTest
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 07:02:06, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL (timestamp 07:02:06, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 07:02:06, size 50 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 07:02:06, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 07:02:06, size 58 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 20:13:27, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL (timestamp 20:13:27, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 20:13:27, size 50 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 20:13:29, size 33 bytes)
+ENCODING_PLAINTEXT
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 20:13:29, size 58 bytes)
 testRoundTripNet
 
 Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 testRoundTripLog
 Replaying DIS logs.
-ENCODING_PLAINTEXT
 Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
 Total PDUs: 4
 End of replay from PduCaptureLog.dislog
@@ -562,6 +561,9 @@ Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll
 01 01 02 01 
 Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
 01 03 02 00 
+EntityStatePduTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: null
 NullFieldsEntityMarshallTest
 .
 '-- JUnit Jupiter [OK]
@@ -593,28 +595,47 @@ NullFieldsEntityMarshallTest
   +-- Object Type Marshal Test [OK]
   | +-- testGoodMarshall() [OK]
   | '-- testNoSubCategory() [OK]
+  +-- Fire Pdu Test [OK]
+  | '-- testRoundTrip() [X] No response from network receive after 100 msec ==> expected: <true> but was: <false>
   '-- Null Fields Entity Marshall Test [OK]
     +-- testGoodMarshall() [OK]
     '-- testNoSpecificNoExtraMarshal() [OK]
 
-Test run finished after 5687 ms
-[        15 containers found      ]
+Failures (1):
+  JUnit Jupiter:Fire Pdu Test:testRoundTrip()
+    MethodSource [className = 'edu.nps.moves.dis7.FirePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
+    => org.opentest4j.AssertionFailedError: No response from network receive after 100 msec ==> expected: <true> but was: <false>
+       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+       edu.nps.moves.dis7.FirePduTest.testOnePdu(FirePduTest.java:47)
+       edu.nps.moves.dis7.FirePduTest.testRoundTrip(FirePduTest.java:36)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+       java.base/java.lang.reflect.Method.invoke(Method.java:564)
+       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:686)
+       [...]
+
+Test run finished after 4167 ms
+[        16 containers found      ]
 [         0 containers skipped    ]
-[        15 containers started    ]
+[        16 containers started    ]
 [         0 containers aborted    ]
-[        15 containers successful ]
+[        16 containers successful ]
 [         0 containers failed     ]
-[        17 tests found           ]
+[        18 tests found           ]
 [         0 tests skipped         ]
-[        17 tests started         ]
+[        18 tests started         ]
 [         0 tests aborted         ]
 [        17 tests successful      ]
-[         0 tests failed          ]
+[         1 tests failed          ]
 
-Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null576637417
+Java Result: 1
+Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null450115148
 Loading stylesheet jar:file:/C:/apache-ant-1.10.8/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 311ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null576637417
+Transform time: 580ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null450115148
 ================
 javadoc:
 Generating Javadoc
@@ -22412,8 +22433,6 @@ Constructing Javadoc information...
 Creating destination directory: "C:\x3d-github\open-dis7-java\javadoc\"
 Standard Doclet version 14.0.2
 Building tree for all the packages and classes...
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EntityStateEntityIdExampleUse.java:75: warning: no description for @throws
-   * @throws IOException 
 C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:39: warning: no description for @param
      * @param d
 C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:40: warning: no description for @return
@@ -22426,15 +22445,10 @@ C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:5
      * @param d
 C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:60: warning: no description for @return
      * @return
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\PduFactory.java:62: error: reference not found
-   * @see   edu.nps.moves.dis7.EntityType
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\PduFactory.java:63: error: reference not found
-   * @see   edu.nps.moves.dis7.RadioType
 Building index for all the packages and classes...
 Building index for all classes...
 Generating C:\x3d-github\open-dis7-java\javadoc\help-doc.html...
-2 errors
-7 warnings
+6 warnings
 ================
 jar:
 manifest.name          = OpenDIS7 Protocol Data Units (PDUs)
@@ -22443,7 +22457,7 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7
 Specification-Vendor   = Institute of Electrical and Electronics Engineers (IEEE)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 30 August 2020 20:43:49
+Implementation-Version = 31 August 2020 16:28:12
 Implementation-Vendor  = Naval Postgraduate School (NPS)
 jar-classes:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
@@ -22452,4 +22466,4 @@ Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-source.jar
 jar-javadoc:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
 build all complete
-BUILD SUCCESSFUL (total time: 4 minutes 11 seconds)
+BUILD SUCCESSFUL (total time: 4 minutes 57 seconds)

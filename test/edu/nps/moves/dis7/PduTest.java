@@ -44,13 +44,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
 /**
- *
- * @author brutzman
+ * Abstract superclass for PDU testing, originally extracted using Netbeans refactoring feature.
+ * @author Don Brutzman
  */
 
 abstract public class PduTest
 {
-
+    protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l;
+    private         long threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
+    
     @BeforeAll
     public static void setUpClass()
     {
@@ -94,7 +96,7 @@ abstract public class PduTest
         try
         {
             disNetworkInterface.send(pdu);
-            Thread.sleep(100);
+            Thread.sleep(getThreadSleepInterval()); // TODO better way to wait?
         } catch (InterruptedException ex)
         {
             System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
@@ -102,7 +104,7 @@ abstract public class PduTest
         }
     }
 
-    /** Compare all values of these two obects and report if identical
+    /** Compare all values of these two objects and report if identical
      * @param pdu1 first pdu
      * @param pdu2 second pdu
      * @return true if identical values found */
@@ -118,8 +120,12 @@ abstract public class PduTest
     {
         receivedPdu = newPdu;
     }
-    /** Common tests for fields in PDU header */
-    protected void testPduHeader (Pdu newPdu)
+    /** 
+     * Common tests for fields in PDU header
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param newPdu separate PDU for comparison
+     */
+    protected void testPduHeaderMatch (Pdu newPdu)
     {  
         assertEquals (         newPdu.getProtocolVersion(),         receivedPdu.getProtocolVersion(), "mismatched ProtocolVersion");
         // TODO compatibility version
@@ -136,7 +142,24 @@ abstract public class PduTest
     public abstract void testRoundTrip();
 
     /** Test single PDU for correctness according to all contained fields in this PDU type
-     * @param newPdu PDU of interest*/
+     * @param newPdu separate PDU for comparison
+     */
     protected abstract void testOnePdu(Pdu newPdu);
+
+    /**
+     * @return the threadSleepInterval
+     */
+    public long getThreadSleepInterval()
+    {
+        return threadSleepInterval;
+    }
+
+    /**
+     * @param threadSleepInterval the threadSleepInterval to set
+     */
+    public void setThreadSleepInterval(long threadSleepInterval)
+    {
+        this.threadSleepInterval = threadSleepInterval;
+    }
     
 }

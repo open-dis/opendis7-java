@@ -30,36 +30,23 @@ public class FirePduTest extends PduTest
     
     FirePdu    firePdu = pduFactory.makeFirePdu(); 
     // TODO alternate constructors and utility methods
-    EntityID       entityID = new EntityID().setSiteID((short)1).setApplicationID((short)2).setEntityID((short)3);
-    EntityType   entityType = new EntityType()
-                    .setEntityKind (EntityKind.PLATFORM).setEntityKind(EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
-                    .setCountry    (Country.UNITED_STATES_OF_AMERICA_USA)  // 225 USA
-                    .setDomain     (Domain.inst(PlatformDomain.LAND))      // Land (vs air, surface, subsurface, space)
-                    .setCategory   ((byte) 1)   // Tank
-                    .setSubCategory((byte) 1)   // M1 Abrams
-                    .setSpecific   ((byte) 3);  // M1A2 Abrams
     
     // TODO update PDU-specific tests
-
-//    firePdu.setEntityType(entityType);
-//    // Alternate way using entity jar(s)
-//    firePdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
-//    // or simply use an enumeration by name, with accompanying import statement above
-//    firePdu.setEntityType(new M1A2()); 
-//        
-//    testOnePdu(firePdu);
-//    testOnePdu(firePdu.setEntityID(entityID).setEntityType(entityType));   
+    
+    testOnePdu(firePdu);
   }
   
   /** Test single PDU for correctness according to all contained fields in this PDU type
-    * @param newPdu PDU of interest */
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @param newPdu separate PDU for comparison
+   */
   @Override
   protected void testOnePdu(Pdu newPdu)
   {
      sendPdu(newPdu); // will wait a while
-     assertTrue(receivedPdu != null,         "No response from network receive");
+     assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec");
      
-     testPduHeader(newPdu);
+     testPduHeaderMatch(newPdu);
      
      // can cast PDUs at this point since PduType matched
      FirePdu      newEspdu = (FirePdu) newPdu;

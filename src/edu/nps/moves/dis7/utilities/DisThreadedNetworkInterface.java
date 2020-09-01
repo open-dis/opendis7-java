@@ -38,25 +38,25 @@ public class DisThreadedNetworkInterface
   /** Raw pdu listener class and interface */
   public interface RawPduListener
   {
-    void incomingPdu(BuffAndLength bAndL);
+    void incomingPdu(ByteArrayBufferAndLength bAndL);
   }
   
   /**
    * Stores data for further processing
    */
-  public class BuffAndLength
+  public class ByteArrayBufferAndLength
   {
-    public byte[] buff;
+    public byte[] bufferByteArray;
     public int length;
 
     /**
      * Default constructor for data storage
-     * @param buff the data buffer to store
+     * @param bufferByteArray the data buffer to store
      * @param length the length of the data buffer
      */
-    public BuffAndLength(byte[] buff, int length)
+    public ByteArrayBufferAndLength(byte[] bufferByteArray, int length)
     {
-      this.buff = buff;
+      this.bufferByteArray = bufferByteArray;
       this.length = length;
     }
   }
@@ -220,8 +220,8 @@ public class DisThreadedNetworkInterface
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         // The raw listeners will strip off any extra padding and process what is
         // required
-        ByteBuffer buffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
-        DatagramPacket packet = new DatagramPacket(buffer.array(), buffer.capacity());
+        ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
+        DatagramPacket packet = new DatagramPacket(byteBuffer.array(), byteBuffer.capacity());
         Pdu pdu;
 
         while (!killed) { // keep trying on error
@@ -239,7 +239,7 @@ public class DisThreadedNetworkInterface
                     socket.receive(packet); // blocks here waiting for next DIS pdu to be received on multicast IP and specified port
                     toRawListeners(packet.getData(), packet.getLength());
 
-                    pdu = pduFactory.createPdu(buffer);
+                    pdu = pduFactory.createPdu(byteBuffer);
 
                     if (pdu != null)
                     {
@@ -253,7 +253,7 @@ public class DisThreadedNetworkInterface
                         }
                         toListeners(pdu);
                     }
-                    buffer.clear();
+                    byteBuffer.clear();
                 }
             } 
             catch (IOException ex) {
@@ -332,7 +332,7 @@ public class DisThreadedNetworkInterface
     if(rawListeners.isEmpty())
       return;
     
-    BuffAndLength bl = new BuffAndLength(data, len);
+    ByteArrayBufferAndLength bl = new ByteArrayBufferAndLength(data, len);
     rawListeners.forEach(lis->lis.incomingPdu(bl));
   }
   

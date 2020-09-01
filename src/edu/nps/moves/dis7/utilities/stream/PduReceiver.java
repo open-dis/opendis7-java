@@ -13,8 +13,8 @@ public interface PduReceiver
   /** Receives a PDU and writes its raw contents to an output file for later
    * playback and inspection.
    * 
-   * @param buff the array containing raw PDU data
+   * @param bufferByteArray the array containing raw PDU data
    * @param len the length of the buffer
    */
-  void receivePdu(byte[] buff, int len);
+  void receivePdu(byte[] bufferByteArray, int len);
 }

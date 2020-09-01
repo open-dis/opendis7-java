@@ -55,9 +55,9 @@ public class X3dCreateLineSet {
             // ToDO figure out how to do this! makeEntityStatePDU
             EntityStatePdu localEspdu = pduFactory.makeEntityStatePdu();
             //Put all the data we need into the localEspdu
-            ByteBuffer espduBuffer = ByteBuffer.wrap(bufferShort);
+            ByteBuffer espduByteBuffer = ByteBuffer.wrap(bufferShort);
             try {
-                localEspdu.unmarshal(espduBuffer);
+                localEspdu.unmarshal(espduByteBuffer);
             } catch (Exception ex) {
                 Logger.getLogger(X3dCreateLineSet.class.getName()).log(Level.SEVERE, null, ex);
             }

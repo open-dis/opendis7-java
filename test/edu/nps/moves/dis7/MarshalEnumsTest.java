@@ -526,20 +526,20 @@ public class MarshalEnumsTest
 
   private void marshalOne(Enum en) throws Throwable
   {
-    ByteBuffer bb = ByteBuffer.allocate(100);
-    marshalIt(en, bb);
+    ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+    marshalIt(en, byteBuffer);
     int sz = getMarshalSize(en);
-    assertEquals(sz, bb.position(), "Marshalled array should be " + sz + " bytes long");
+    assertEquals(sz, byteBuffer.position(), "Marshalled array should be " + sz + " bytes long");
     //  dump(en, sz, bb);
 
     count++;
   }
 
-  private void marshalIt(Enum en, ByteBuffer bb) throws Throwable
+  private void marshalIt(Enum en, ByteBuffer byteBuffer) throws Throwable
   {
     Class<?> c = en.getClass();
     Method meth = c.getDeclaredMethod("marshal", new Class[]{ByteBuffer.class});
-    meth.invoke(en, bb);
+    meth.invoke(en, byteBuffer);
   }
 
   private int getMarshalSize(Enum en) throws Throwable
@@ -554,10 +554,10 @@ public class MarshalEnumsTest
     Throwable thr = null;
     try {
       Exception ex = null;
-      ByteBuffer bb = ByteBuffer.allocate(100);
-      bs.marshal(bb);
+      ByteBuffer byteBuffer = ByteBuffer.allocate(100);
+      bs.marshal(byteBuffer);
       int sz = bs.getMarshalledSize();
-      assertEquals(sz, bb.position(), "Marshalled array should be " + sz + " bytes long");
+      assertEquals(sz, byteBuffer.position(), "Marshalled array should be " + sz + " bytes long");
       //System.out.print(s + " ");
       //   dump(bs, bb);
     }

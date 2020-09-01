@@ -73,6 +73,7 @@ public class CommentPdusTest
   {
      sendPdu(newPdu); // will wait a while
      assertTrue(receivedPdu != null, "No response from network receiver");
+     
      String marshallMismatchMessage = 
         "Marshalled size mismatch," +
             "sent (" +      newPdu.getMarshalledSize() + " bytes) and " +

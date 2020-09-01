@@ -72,7 +72,7 @@ public class EntityStateEntityIdExampleUse
 {
   /**
    * Using two methods, create and send an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
-   * @throws IOException 
+   * @throws IOException report if problem occurs
    */
   public static void exampleUse() throws Exception
   {

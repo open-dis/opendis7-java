@@ -41,7 +41,7 @@ public class SignalPdusTest {
     static Semaphore mutex;
     static PduFactory pduFac;
     static List<Pdu> sentPdus;
-    byte[] buff;
+    byte[] bufferByteArray;
     int size;
 
     @BeforeAll
@@ -113,12 +113,12 @@ public class SignalPdusTest {
         // Let's see how these unmarshall
         receivedPdus.forEach(pdu -> {
             try {
-                buff = pdu.marshal();
-                size = pdu.unmarshal(ByteBuffer.wrap(buff));
+                bufferByteArray = pdu.marshal();
+                size = pdu.unmarshal(ByteBuffer.wrap(bufferByteArray));
                 assertTrue(size > 0, "Unmarshalling error: Unmarshalled size: " + size);
 
                 // This also unmarshalls the pdu
-                pdu = pduFac.createPdu(buff);
+                pdu = pduFac.createPdu(bufferByteArray);
                 assertNotNull(pdu, "Unmarshalling error " + pdu);
             } catch (Exception ex) {
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);

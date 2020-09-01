@@ -101,8 +101,8 @@ public class PduRecorder implements PduReceiver
     
     disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
         @Override
-        public void incomingPdu(DisThreadedNetworkInterface.BuffAndLength bAndL) {
-            receivePdu(bAndL.buff, bAndL.length);
+        public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
+            receivePdu(bAndL.bufferByteArray, bAndL.length);
         }
     };
     

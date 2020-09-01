@@ -24,14 +24,14 @@ import java.util.logging.Logger;
 @Deprecated(since="dis7")
 public class TrialDisMulticastNetworkingDeprecated
 {
-  public class BuffAndLength
+  public class ByteArrayBufferAndLength
   {
-    public byte[] buff;
+    public byte[] bufferByteArray;
     public int length;
 
-    public BuffAndLength(byte[] buff, int length)
+    public ByteArrayBufferAndLength(byte[] bufferByteArray, int length)
     {
-      this.buff = buff;
+      this.bufferByteArray = bufferByteArray;
       this.length = length;
     }
   }
@@ -92,14 +92,14 @@ public class TrialDisMulticastNetworkingDeprecated
   public Pdu receivePdu() throws IOException
   {
     PduFactory pduFactory = new PduFactory();
-    BuffAndLength blen = receiveRawPdu();
-    return pduFactory.createPdu(blen.buff);
+    ByteArrayBufferAndLength blen = receiveRawPdu();
+    return pduFactory.createPdu(blen.bufferByteArray);
   }
   
   private MulticastSocket rsocket;
   byte buffer[];
   DatagramPacket packet;
-  public BuffAndLength receiveRawPdu() throws IOException
+  public ByteArrayBufferAndLength receiveRawPdu() throws IOException
   {
     rsocket = new MulticastSocket(DIS_PORT);
     rsocket.joinGroup(group, ni);
@@ -113,7 +113,7 @@ public class TrialDisMulticastNetworkingDeprecated
     rsocket.leaveGroup(group, ni);
     rsocket.close();
     rsocket = null;
-    return new BuffAndLength(packet.getData(), packet.getLength());
+    return new ByteArrayBufferAndLength(packet.getData(), packet.getLength());
   }
 
   public void sendPdu(Pdu pdu) throws Exception

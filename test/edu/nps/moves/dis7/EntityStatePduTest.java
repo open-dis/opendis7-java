@@ -49,15 +49,18 @@ public class EntityStatePduTest extends PduTest
     testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType));   
   }
   
-  /** Test single PDU for correctness according to all contained fields in this PDU type
-    * @param newPdu PDU of interest*/
+  /** 
+   * Test single PDU for correctness according to all contained fields in this PDU type
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @param newPdu separate PDU for comparison
+   */
   @Override
   protected void testOnePdu(Pdu newPdu)
   {
      sendPdu(newPdu); // will wait a while
-     assertTrue(receivedPdu != null,         "No response from network receive");
+     assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec");
      
-     testPduHeader(newPdu);
+     testPduHeaderMatch(newPdu);
      
      // can cast PDUs at this point since PduType matched
      EntityStatePdu      newEspdu = (EntityStatePdu) newPdu;
