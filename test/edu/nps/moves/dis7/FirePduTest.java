@@ -4,17 +4,9 @@
  */
 package edu.nps.moves.dis7;
 
-import edu.nps.moves.dis7.entities.usa.munition.other.M1A2;
-import edu.nps.moves.dis7.enumerations.Country;
-import edu.nps.moves.dis7.enumerations.EntityKind;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import edu.nps.moves.dis7.enumerations.PlatformDomain;
-import edu.nps.moves.dis7.pdus.Domain;
-import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.FirePdu;
-import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.pdus.PduBase;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,8 +35,11 @@ public class FirePduTest extends PduTest
   @Override
   protected void testOnePdu(Pdu newPdu)
   {
+     String TODO_WARNING = " (test works standalone but mysteriously fails as part of project test suite)";
+     
      sendPdu(newPdu); // will wait a while
-     assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec");
+     assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec" 
+                + TODO_WARNING);
      
      testPduHeaderMatch(newPdu);
      
