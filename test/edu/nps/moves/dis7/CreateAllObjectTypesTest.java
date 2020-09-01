@@ -260,19 +260,18 @@ public class CreateAllObjectTypesTest
     assertNull(ex, "Exception should be null if successful creation of all objects");
   }
 
-  String formatStr = "Name: %s\tDomain: %s\tKind: %s\tCategory: %s\tSubcategory: %s";
-
   private void dumpObjectType(ObjectType ot)
   {
     actualDumpObjectType(ot);
   }
+  String formatString = "Name: %s\tDomain: %s\tKind: %s\tCategory: %s\tSubcategory: %s";
 
-  private void actualDumpObjectType(ObjectType ot)
+  private void actualDumpObjectType(ObjectType objectType)
   {
-    String dom = ot.getDomain().toString();
-    String kind = ot.getObjectKind().toString();
-    String nm = ot.getClass().getName();
-    //System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
+    String domain = objectType.getDomain().toString();
+    String kind   = objectType.getObjectKind().toString();
+    String name   = objectType.getClass().getName();
+    System.out.println(String.format(formatString, name, domain, kind, objectType.getCategory(), objectType.getSubCategory()));
   }
 
   public static void main(String[] args)
