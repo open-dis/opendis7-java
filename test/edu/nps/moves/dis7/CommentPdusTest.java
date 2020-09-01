@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
+import edu.nps.moves.dis7.pdus.CommentPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
@@ -61,6 +62,8 @@ public class CommentPdusTest
     testOne(pduFactory.makeCommentPdu(VariableRecordType.MODEL_TYPE, "456_test with type = modeltype"));
     testOne(pduFactory.makeCommentPdu("xyz first message","mno second message", "jkl third message"));
     
+    // TODO alternate constructors, setters and getters for CommentPdu
+    
     testOne(pduFactory.makeCommentReliablePdu());
     testOne(pduFactory.makeCommentReliablePdu("789_test_string"));
     testOne(pduFactory.makeCommentReliablePdu(VariableRecordType.ACLS_AIRCRAFT_REPORT, "abc_test with type = acls_aircraft_report"));
@@ -81,6 +84,8 @@ public class CommentPdusTest
      // https://stackoverflow.com/questions/20631621/cannot-find-symbol-assertequals/20631672
      assertEquals(newPdu.getMarshalledSize(), receivedPdu.getMarshalledSize(), marshallMismatchMessage);
      assertTrue(compare(newPdu,receivedPdu), "Comparison failed");
+     assertEquals(newPdu.getPduType(), receivedPdu.getPduType(), "PDU type mismatch");
+     
      receivedPdu = null; // ensure cleared prior to next test
   }
   
