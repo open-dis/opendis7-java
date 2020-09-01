@@ -23,37 +23,36 @@ public class EspduReceiverNIO
 {
   public static void main(String args[])
   {
-    MulticastSocket socket;
-    InetAddress maddr;
+    MulticastSocket   socket;
+    InetAddress       multicastAddress;
     InetSocketAddress group;
-    PduFactory pduFactory = new PduFactory();
-    byte buffer[] = new byte[DisThreadedNetworkInterface.MAX_DIS_PDU_SIZE];
-    DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+    PduFactory        pduFactory = new PduFactory();
+    byte              buffer[] = new byte[DisThreadedNetworkInterface.MAX_DIS_PDU_SIZE];
+    DatagramPacket    packet = new DatagramPacket(buffer, buffer.length);
     Pdu pdu;
     int pduCounter = 0;
     
-    try {
-        
+    try 
+    {
       // Specify the socket to receive data
-      socket = new MulticastSocket(DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
-      maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
-      group = new InetSocketAddress(maddr, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
-      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
+                socket = new MulticastSocket(DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      multicastAddress = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+                 group = new InetSocketAddress(multicastAddress, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface()); // picks best candidate
 
-      // Loop infinitely, receiving datagrams
-      while (true) {
-        
+      while (true) // Loop indefinitely, receiving datagrams
+      {
         socket.receive(packet);
 
         pdu = pduFactory.createPdu(packet.getData());
 
         pduCounter++;
-
         System.out.println(pduCounter + ". got PDU of type: " + pdu.getClass().getSimpleName());
-
+        
       } // end while
-    } // End try // End try
-    catch (IOException e) {
+    } // End try
+    catch (IOException e)
+    {
       System.err.println(e);
     }
 

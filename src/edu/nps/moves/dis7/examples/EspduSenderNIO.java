@@ -26,26 +26,26 @@ public class EspduSenderNIO
 {
   public static void main(String args[])
   {
-    MulticastSocket socket;
-    InetAddress maddr;
+    MulticastSocket   socket;
+    InetAddress       multicastAddress;
     InetSocketAddress group;
 
-    EntityStatePdu espdu = new EntityStatePdu();
+    EntityStatePdu    espdu = new EntityStatePdu();
     espdu.setExerciseID((byte) 0);
 
-    // The EID is the unique identifier for objects in the world. This 
-    // EID should match up with the ID for the object specified in the 
-    // VMRL/x3d world.
+    // The EID is the unique identifier for objects in the world. This EID
+    // should match up with the ID for the object specified in the VMRL/x3d world.
     EntityID eid = espdu.getEntityID();
-    eid.setSiteID((short) 1); // 0 is apparently not a valid site number
+    eid.setSiteID       ((short) 1); // 0 is apparently not a valid site number
     eid.setApplicationID((short) 1);
-    eid.setEntityID((short) 2);
+    eid.setEntityID     ((short) 2);
 
-    try {
-      socket = new MulticastSocket();
-      maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
-      group = new InetSocketAddress(maddr, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
-      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
+    try
+    {
+                socket = new MulticastSocket();
+      multicastAddress = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+                 group = new InetSocketAddress(multicastAddress, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface()); // picks best candidate
       
       Vector3Double location;
       EulerAngles orientation;
@@ -53,8 +53,10 @@ public class EspduSenderNIO
       byte[] data = new byte[144];
       DatagramPacket packet = new DatagramPacket(data, data.length, group);
 
-      while (true) {
-        for (int idx = 0; idx < 100; idx++) {
+      while (true)
+      {
+        for (int idx = 0; idx < 100; idx++)
+        {
           // The timestamp should be monotonically increasing. Many implementations
           // discard packets that have earlier timestamps (assumption is that it
           // arrived out of order) or non-increasing timestamp (dupe packet).
@@ -92,7 +94,8 @@ public class EspduSenderNIO
         }
       }
     }
-    catch (Exception e) {
+    catch (Exception e)
+    {
       System.err.println(e);
     }
   }
