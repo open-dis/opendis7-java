@@ -310,7 +310,7 @@
                 <exclude name="**/entitytypes/**/*.java"/>
                 <exclude name="**/enumerations/**/*.java"/>
                 <exclude name="**/jammers/**/*.java"/>
-                <exclude name="**/objecttypes/**/*.java"/>
+                <exclude name="**/objectTypes/**/*.java"/>
                 <exclude name="**/*.undef/**/*.java"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
@@ -340,14 +340,14 @@
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
                 <include name="**/dis7*.class"/>
-                <include name="**/dis7/**/*.class"/>
+                <include name="**/dis7/pdus/**/*.class"/>
                 <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
                 <exclude name="**/entities/**/*.class"/>
                 <exclude name="**/entitytypes/**/*.class"/>
                 <exclude name="**/enumerations/**/*.class"/>
                 <exclude name="**/jammers/**/*.class"/>
-                <exclude name="**/objecttypes/**/*.class"/>
-                <exclude name="**/objecttypes.undef/**/*"/>
+                <exclude name="**/objectTypes/**/*.class"/>
+                <exclude name="**/objectTypes.undef/**/*"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
