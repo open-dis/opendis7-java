@@ -94,10 +94,12 @@ abstract public class PduTest
     }
 
     /** 
-     * Handler
+     * Handler that passes PDU to DIS network interface for marshalling (serialization), 
+     * which then sends IEEE Standard (binary) PDU to self, which is then read separately
+     * for unmarshalling (deserialization) further unit testing.
      * @param createdPdu new PDU of interest
      */
-    protected void sendPdu(Pdu createdPdu)
+    protected void sendIeeeStandardPdu(Pdu createdPdu)
     {
         try
         {
@@ -106,7 +108,7 @@ abstract public class PduTest
         } 
         catch (InterruptedException ex)
         {
-            System.err.println(this.getClass().getName() + ".sendPdu(Pdu createdPdu), error sending Multicast: " + ex.getLocalizedMessage());
+            System.err.println(this.getClass().getName() + ".sendIeeeStandardPdu(Pdu createdPdu), error sending Multicast: " + ex.getLocalizedMessage());
             System.exit(1);
         }
     }
@@ -140,7 +142,7 @@ abstract public class PduTest
     {
         String TEST_SUITE_WARNING = " (TODO note that test works standalone but mysteriously fails as part of project test suite)";
 
-        sendPdu(createdPdu); // will wait a while, then return receivedPdu
+        sendIeeeStandardPdu(createdPdu); // send to self, then wait a while, then return receivedPdu
         assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec" 
                    + TEST_SUITE_WARNING);
      

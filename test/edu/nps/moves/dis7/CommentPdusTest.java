@@ -5,7 +5,6 @@
 package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.VariableRecordType;
-import edu.nps.moves.dis7.pdus.CommentPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
@@ -74,7 +73,7 @@ public class CommentPdusTest
     * @param newPdu PDU of interest */
   private void testOne(Pdu newPdu)
   {
-     sendPdu(newPdu); // will wait a while
+     sendPdu(newPdu); // send to self, then wait a while, then return receivedPdu
      assertTrue(receivedPdu != null, "No response from network receiver");
      
      String marshallMismatchMessage = 
