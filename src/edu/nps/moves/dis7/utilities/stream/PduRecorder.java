@@ -97,7 +97,7 @@ public class PduRecorder implements PduReceiver
     logFile       = createUniquePduLogFile(new File(outputPath).toPath(), DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
     logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     
-    disThreadedNetIF = new DisThreadedNetworkInterface(port, multicastAddress);
+    disThreadedNetIF = new DisThreadedNetworkInterface(multicastAddress, port);
     
     disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
         @Override
