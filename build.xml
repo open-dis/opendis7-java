@@ -268,7 +268,7 @@
         <antcall target="jar-javadoc"/>
     </target>
     
-    <target name="jar-javadoc"> <!-- depends="javadoc" -->
+    <target name="jar-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
         <jar destfile="dist/open-dis7-pdus-javadoc.jar" 
                update="true"
               basedir="javadoc">
@@ -303,7 +303,6 @@
                 <include name="**/*.dislog"/>
             </fileset>
             <fileset dir="src-generated">
-                <include name="**/dis7/*.java"/>
                 <include name="**/dis7/**/*.java"/>
                 <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
                 <exclude name="**/entities/**/*.java"/>
@@ -331,7 +330,7 @@
         </jar>        
     </target>
     
-    <target name="jar-classes">
+    <target name="jar-classes" description="merges all dis7 subpackage classes except for enumerations">
         <jar destfile="dist/open-dis7-pdus-classes.jar"
              basedir="."
              includes="edu/nps/moves/dis7/**"
@@ -339,8 +338,7 @@
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
-                <include name="**/dis7*.class"/>
-                <include name="**/dis7/pdus/**/*.class"/>
+                <include name="**/dis7/**/*.class"/>
                 <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
                 <exclude name="**/entities/**/*.class"/>
                 <exclude name="**/entitytypes/**/*.class"/>
