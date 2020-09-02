@@ -26,6 +26,9 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetworkInterface
 {
+  public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
+  public static int    DEFAULT_DIS_PORT          = 3000;
+  
   private static final String TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getName() + "] ";
   private             boolean verbose = true;
   
@@ -63,48 +66,45 @@ public class DisThreadedNetworkInterface
   
   /************ Begin class ***************/
   
-  public static int    DEFAULT_DIS_PORT          = 3000;
-  public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
-  
-  /** 8192: This has actually been superseded by a larger buffer size, but good enough for now */
+  /** MTU 8192: TODO this has actually been superseded by a larger buffer size, but good enough for now */
   public static final int MAX_DIS_PDU_SIZE = 8192;
   
-  /** 1500:  size of an ethernet frame, common value to avoid packet segmentation */
+  /** MTU 1500:  size of an Ethernet frame, common value to avoid packet segmentation */
   public static final int MAX_TRANSMISSION_UNIT_SIZE = 1500;
   
-  private int disPort;
-  private String mcastGroup;
+  private int     disPort;
+  private String  multicastAddress;
   private boolean killed = false;
   
-  private InetAddress maddr;
-  private InetSocketAddress group;
-  private NetworkInterface ni;
-  private DatagramSocket socket = null;
+  private InetAddress       inetAddress;
+  private InetSocketAddress inetSocket;
+  private NetworkInterface  networkInterface;
+  private DatagramSocket    socket = null;
 
   /**
    * Default constructor using default port 3000 and multicast address 225.4.5.6
    */
   public DisThreadedNetworkInterface()
   {
-    this(DEFAULT_DIS_PORT, DEFAULT_MULTICAST_ADDRESS);
+    this(DEFAULT_MULTICAST_ADDRESS, DEFAULT_DIS_PORT);
   }
 
   /**
-   * 
+   * Constructor
+   * @param multicastGroup the multicast group address to utilize
    * @param port the multicast port to utilize
-   * @param mcastgroup the multicast group address to utilize
    */
-  public DisThreadedNetworkInterface(int port, String mcastgroup)
+  public DisThreadedNetworkInterface(String multicastGroup, int port)
   {
     disPort = port;
-    mcastGroup = mcastgroup;
+    multicastAddress = multicastGroup;
       try {
-          maddr = InetAddress.getByName(mcastGroup);
+          inetAddress = InetAddress.getByName(multicastAddress);
       } catch (UnknownHostException ex) {
           Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
       }
-    group = new InetSocketAddress(maddr, disPort);
-    ni = findIpv4Interface();
+    inetSocket = new InetSocketAddress(inetAddress, getDisPort());
+    networkInterface = findIpv4Interface();
     init();
   }
 
@@ -182,7 +182,7 @@ public class DisThreadedNetworkInterface
 
   public String getMcastGroup()
   {
-    return mcastGroup;
+    return multicastAddress;
   }
 
   /**
@@ -231,8 +231,8 @@ public class DisThreadedNetworkInterface
             try {
                 
                 // The initial value of the SO_BROADCAST socket option is FALSE
-                socket = new MulticastSocket(disPort);
-                ((MulticastSocket)socket).joinGroup(group, ni);
+                socket = new MulticastSocket(getDisPort());
+                ((MulticastSocket)socket).joinGroup(inetSocket, networkInterface);
 
                 while (!killed) {
 
@@ -263,7 +263,7 @@ public class DisThreadedNetworkInterface
             finally {
                 if (socket != null && !socket.isClosed()) {
                     try {
-                        ((MulticastSocket)socket).leaveGroup(group, ni);
+                        ((MulticastSocket)socket).leaveGroup(inetSocket, networkInterface);
                     } catch (IOException ex) {
                         Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -283,7 +283,7 @@ public class DisThreadedNetworkInterface
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         ByteArrayOutputStream baos   = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
         DataOutputStream      dos    = new DataOutputStream(baos);
-        DatagramPacket        packet = new DatagramPacket(baos.toByteArray(), baos.size(), group);
+        DatagramPacket        packet = new DatagramPacket(baos.toByteArray(), baos.size(), inetSocket);
 
         while (!killed) { // keep trying on error
             try {
@@ -395,5 +395,13 @@ public class DisThreadedNetworkInterface
     public void setVerbose(boolean verbose)
     {
         this.verbose = verbose;
+    }
+
+    /**
+     * @param disPort the disPort value to set
+     */
+    public void setDisPort(int disPort)
+    {
+        this.disPort = disPort;
     }
 }
