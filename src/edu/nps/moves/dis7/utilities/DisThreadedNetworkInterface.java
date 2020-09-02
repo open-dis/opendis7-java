@@ -103,7 +103,7 @@ public class DisThreadedNetworkInterface
       } catch (UnknownHostException ex) {
           Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
       }
-    inetSocket = new InetSocketAddress(inetAddress, getDisPort());
+    inetSocket = new InetSocketAddress(inetAddress, disPort);
     networkInterface = findIpv4Interface();
     init();
   }
