@@ -986,6 +986,7 @@ public class PduFactory
   {
     TSPIPdu pdu = new TSPIPdu()
       .setLiveEntityId(newEntityID());
+    return pdu;
     /*
             .setDeadReckoningParameters(newLiveDeadReckoningParameters())
             .setEntityLinearVelocity(new LiveEntityLinearVelocity())
@@ -993,8 +994,8 @@ public class PduFactory
             .setEntityOrientation(new LiveEntityOrientation())
             .setOrientationError(new LiveEntityOrientationError())
             .setPositionError(new LiveEntityPositionError())*/
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
-    return (TSPIPdu) addBoilerPlate(pdu);
+//    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+//    return (TSPIPdu) addBoilerPlate(pdu);
   }
 
   /**
@@ -1008,13 +1009,14 @@ public class PduFactory
       .setEntityType(newEntityType())
       .setAlternateEntityType(newEntityType())
       .setLiveEntityId(new EntityID());
+    return pdu;
     /*
             .setCapabilities(new SurfacePlatformCapabilities())
             .setAppearanceFields(new Appearance())
             .setEntityMarking(newEntityMarking())
             .setForceId(ForceID.OTHER)*/
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
-    return (AppearancePdu) addBoilerPlate(pdu);
+//    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+//    return (AppearancePdu) addBoilerPlate(pdu);
   }
 
   /**
@@ -1026,8 +1028,9 @@ public class PduFactory
   {
     ArticulatedPartsPdu pdu = new ArticulatedPartsPdu()
       .setLiveEntityId(new EntityID());
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
-    return (ArticulatedPartsPdu) addBoilerPlate(pdu);
+    return pdu;
+//    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+//    return (ArticulatedPartsPdu) addBoilerPlate(pdu);
   }
 
   /**
@@ -1043,12 +1046,13 @@ public class PduFactory
       .setMunitionLiveEntityId(newEntityID())
       .setTargetLiveEntityId(newEntityID())
       .setMunitionDescriptor(newMunitionDescriptor());
+    return pdu;
     /*
             .setLocation(new LiveEntityRelativeWorldCoordinates())
             .setVelocity(new LiveEntityLinearVelocity())
      */
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
-    return (LEFirePdu) addBoilerPlate(pdu);
+//    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+//    return (LEFirePdu) addBoilerPlate(pdu);
   }
 
   /**
@@ -1064,14 +1068,15 @@ public class PduFactory
       .setMunitionLiveEntityId(newEntityID())
       .setTargetLiveEntityId(newEntityID())
       .setMunitionDescriptor(newMunitionDescriptor());
+    return pdu;
     /*
             .setEntityLocation(new LiveEntityLinearVelocity())
             .setMunitionOrientation(new LiveEntityOrientation16())
             .setVelocity(new LiveEntityLinearVelocity())
             .setWorldLocation(new LiveEntityRelativeWorldCoordinates())
      */
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
-    return (LEDetonationPdu) addBoilerPlate(pdu);
+//    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+//    return (LEDetonationPdu) addBoilerPlate(pdu);
   }
 
   /**
