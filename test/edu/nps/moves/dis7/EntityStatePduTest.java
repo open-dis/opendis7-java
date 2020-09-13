@@ -38,9 +38,9 @@ public class EntityStatePduTest extends PduTest
                     .setEntityKind (EntityKind.PLATFORM).setEntityKind(EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
                     .setCountry    (Country.UNITED_STATES_OF_AMERICA_USA)  // 225 USA
                     .setDomain     (Domain.inst(PlatformDomain.LAND))      // Land (vs air, surface, subsurface, space)
-                    .setCategory   ((byte) 1)   // Tank
-                    .setSubCategory((byte) 1)   // M1 Abrams
-                    .setSpecific   ((byte) 3);  // M1A2 Abrams
+                    .setCategory   (1)   // Tank
+                    .setSubCategory(1)   // M1 Abrams
+                    .setSpecific   (3);  // M1A2 Abrams
     espdu.setEntityType(entityType);
     // TODO this is screaming for utility methods...
     EntityMarking entityMarking = new EntityMarking().setCharacters("Espdu Test1".getBytes());
