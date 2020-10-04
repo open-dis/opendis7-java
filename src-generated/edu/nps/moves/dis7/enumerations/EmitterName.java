@@ -5,95 +5,95 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 75 marshal size 16<br>
- * ____________
+ * EmitterName
  */
 public enum EmitterName 
 {
     /** 1245/6X */
-    NAME_1245_6X (2, "1245/6X"),
+    _1245_6X (2, "1245/6X"),
     /** 1L117 */
-    NAME_1L117 (3, "1L117"),
+    _1L117 (3, "1L117"),
     /** 1L121E */
-    NAME_1L121E (4, "1L121E"),
+    _1L121E (4, "1L121E"),
     /** 1L250 */
-    NAME_1L250 (5, "1L250"),
+    _1L250 (5, "1L250"),
     /** 1L220-U */
-    NAME_1L220_U (6, "1L220-U"),
+    _1L220_U (6, "1L220-U"),
     /** 1L122-1E */
-    NAME_1L122_1E (7, "1L122-1E"),
+    _1L122_1E (7, "1L122-1E"),
     /** 1RL138 */
-    NAME_1RL138 (10, "1RL138"),
+    _1RL138 (10, "1RL138"),
     /** 5N20 */
-    NAME_5N20 (12, "5N20"),
+    _5N20 (12, "5N20"),
     /** 5P-10 */
-    NAME_5P_10 (14, "5P-10"),
+    _5P_10 (14, "5P-10"),
     /** 5P-10E */
-    NAME_5P_10E (15, "5P-10E"),
+    _5P_10E (15, "5P-10E"),
     /** 5P-10-01 */
-    NAME_5P_10_01 (16, "5P-10-01"),
+    _5P_10_01 (16, "5P-10-01"),
     /** 5P-10-01E */
-    NAME_5P_10_01E (17, "5P-10-01E"),
+    _5P_10_01E (17, "5P-10-01E"),
     /** 5P-10-02 */
-    NAME_5P_10_02 (18, "5P-10-02"),
+    _5P_10_02 (18, "5P-10-02"),
     /** 5P-10-02E */
-    NAME_5P_10_02E (19, "5P-10-02E"),
+    _5P_10_02E (19, "5P-10-02E"),
     /** 5P-10-03 */
-    NAME_5P_10_03 (20, "5P-10-03"),
+    _5P_10_03 (20, "5P-10-03"),
     /** 5P-10-03E */
-    NAME_5P_10_03E (21, "5P-10-03E"),
+    _5P_10_03E (21, "5P-10-03E"),
     /** 5P-10E MOD */
-    NAME_5P_10E_MOD (22, "5P-10E MOD"),
+    _5P_10E_MOD (22, "5P-10E MOD"),
     /** 621A-3 */
-    NAME_621A_3 (25, "621A-3"),
+    _621A_3 (25, "621A-3"),
     /** COMMID_860F-1AL-101 */
     COMMID_860F_1AL_101 (40, "COMMID_860F-1AL-101"),
     /** 1226 DECCA MIL */
-    NAME_1226_DECCA_MIL (45, "1226 DECCA MIL"),
+    _1226_DECCA_MIL (45, "1226 DECCA MIL"),
     /** 9B-1348 */
-    NAME_9B_1348 (46, "9B-1348"),
+    _9B_1348 (46, "9B-1348"),
     /** 3KM6 */
-    NAME_3KM6 (47, "3KM6"),
+    _3KM6 (47, "3KM6"),
     /** 9KR400 */
-    NAME_9KR400 (48, "9KR400"),
+    _9KR400 (48, "9KR400"),
     /** 55G6-1 */
-    NAME_55G6_1 (50, "55G6-1"),
+    _55G6_1 (50, "55G6-1"),
     /** 59N6 */
-    NAME_59N6 (55, "59N6"),
+    _59N6 (55, "59N6"),
     /** 67N6 */
-    NAME_67N6 (60, "67N6"),
+    _67N6 (60, "67N6"),
     /** 76T6 */
-    NAME_76T6 (63, "76T6"),
+    _76T6 (63, "76T6"),
     /** 80K6 */
-    NAME_80K6 (65, "80K6"),
+    _80K6 (65, "80K6"),
     /** 96L6E */
-    NAME_96L6E (70, "96L6E"),
+    _96L6E (70, "96L6E"),
     /** 9GR400 */
-    NAME_9GR400 (80, "9GR400"),
+    _9GR400 (80, "9GR400"),
     /** 9 GR 400A */
-    NAME_9_GR_400A (81, "9 GR 400A"),
+    _9_GR_400A (81, "9 GR 400A"),
     /** 9GR600 */
-    NAME_9GR600 (90, "9GR600"),
+    _9GR600 (90, "9GR600"),
     /** 9GR606 */
-    NAME_9GR606 (91, "9GR606"),
+    _9GR606 (91, "9GR606"),
     /** 9 LV 100 */
-    NAME_9_LV_100 (125, "9 LV 100"),
+    _9_LV_100 (125, "9 LV 100"),
     /** 9LV 200 TA */
-    NAME_9LV_200_TA (135, "9LV 200 TA"),
+    _9LV_200_TA (135, "9LV 200 TA"),
     /** 9LV 200 TV */
-    NAME_9LV_200_TV (180, "9LV 200 TV"),
+    _9LV_200_TV (180, "9LV 200 TV"),
     /** 9LV 200 TT */
-    NAME_9LV_200_TT (181, "9LV 200 TT"),
+    _9LV_200_TT (181, "9LV 200 TT"),
     /** 9LV200 MK III */
-    NAME_9LV200_MK_III (183, "9LV200 MK III"),
+    _9LV200_MK_III (183, "9LV200 MK III"),
     /** 9LV326 */
-    NAME_9LV326 (185, "9LV326"),
+    _9LV326 (185, "9LV326"),
     /** 9M96E2 Seeker */
-    NAME_9M96E2_SEEKER (190, "9M96E2 Seeker"),
+    _9M96E2_SEEKER (190, "9M96E2 Seeker"),
     /** NATOID_A310Z */
     NATOID_A310Z (225, "NATOID_A310Z"),
     /** NATOID_A325A */
@@ -177,7 +177,7 @@ public enum EmitterName
     /** AIM-120A */
     AIM_120A (1216, "AIM-120A"),
     /** 1L271 */
-    NAME_1L271 (1230, "1L271"),
+    _1L271 (1230, "1L271"),
     /** ALA-51 */
     ALA_51 (1240, "ALA-51"),
     /** Albatros MK2 */
@@ -193,9 +193,9 @@ public enum EmitterName
     /** WGU-16/B */
     WGU_16_B (1270, "WGU-16/B"),
     /** 1L13-3 (55G6) */
-    NAME_1L13_3_55G6 (1280, "1L13-3 (55G6)"),
+    _1L13_3_55G6 (1280, "1L13-3 (55G6)"),
     /** 1L13-3 (55G6) */
-    NAME_1L13_3_55G6_2 (1282, "1L13-3 (55G6)"),
+    _1L13_3_55G6_2 (1282, "1L13-3 (55G6)"),
     /** AMDR 3D */
     AMDR_3D (1288, "AMDR 3D"),
     /** ANA SPS 502 */
@@ -1247,7 +1247,7 @@ public enum EmitterName
     /** NATOID_AT2SwatterMG */
     NATOID_AT2SWATTERMG (8820, "NATOID_AT2SwatterMG"),
     /** 9K114 Shturm MG */
-    NAME_9K114_SHTURM_MG (8824, "9K114 Shturm MG"),
+    _9K114_SHTURM_MG (8824, "9K114 Shturm MG"),
     /** ATCR-22 */
     ATCR_22 (8830, "ATCR-22"),
     /** ATCR-22 M */
@@ -1391,7 +1391,7 @@ public enum EmitterName
     /** NATOID_BigNet */
     NATOID_BIGNET (9855, "NATOID_BigNet"),
     /** 9S15MT */
-    NAME_9S15MT (9885, "9S15MT"),
+    _9S15MT (9885, "9S15MT"),
     /** NATOID_BillFold */
     NATOID_BILLFOLD (9900, "NATOID_BillFold"),
     /** BLIGHTER 400 */
@@ -2087,7 +2087,7 @@ public enum EmitterName
     /** P-15 */
     P_15 (15840, "P-15"),
     /** 35N6 */
-    NAME_35N6 (15842, "35N6"),
+    _35N6 (15842, "35N6"),
     /** NATOID_FlatScreen */
     NATOID_FLATSCREEN (15885, "NATOID_FlatScreen"),
     /** NATOID_FlatSpin */
@@ -2295,7 +2295,7 @@ public enum EmitterName
     /** Grifo-F */
     GRIFO_F (17016, "Grifo-F"),
     /** 9S32 */
-    NAME_9S32 (17025, "9S32"),
+    _9S32 (17025, "9S32"),
     /** NATOID_GRILLSCREEN */
     NATOID_GRILLSCREEN (17027, "NATOID_GRILLSCREEN"),
     /** GROUND MASTER 400 */
@@ -2383,7 +2383,7 @@ public enum EmitterName
     /** NATOID_HighScoop */
     NATOID_HIGHSCOOP (18135, "NATOID_HighScoop"),
     /** 9S19MT */
-    NAME_9S19MT (18150, "9S19MT"),
+    _9S19MT (18150, "9S19MT"),
     /** NATOID_HighSieve */
     NATOID_HIGHSIEVE (18180, "NATOID_HighSieve"),
     /** NATOID_HillBlock */
@@ -4049,15 +4049,15 @@ public enum EmitterName
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static EmitterName unmarshalEnum (DataInputStream dis) throws Exception
@@ -4065,23 +4065,28 @@ public enum EmitterName
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static EmitterName unmarshalEnum (ByteBuffer buff) throws Exception
+    public static EmitterName unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "EmitterName: " + name() + ": " + getValue(); 
+        return "EmitterName " + getValue() + " " + name(); 
     }
 }

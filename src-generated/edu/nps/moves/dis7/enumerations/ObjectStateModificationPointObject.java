@@ -1,22 +1,22 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 240 marshal size 16<br>
- * ______________________________________
+ * ObjectStateModificationPointObject
  */
 public class ObjectStateModificationPointObject extends DisBitSet 
 {
   /**
    * Describes whether the point object location has been modified since the last update number
    */
-  public static Bits undef = new Bits(0, 1);
+  public static Bits ISLOCATIONMODIFIED = new Bits(0, 1);
   /**
    * Describes whether the point object orientation has been modified since the last update number
    */
-  public static Bits undef_2 = new Bits(1, 1);
+  public static Bits ISORIENTATIONMODIFIED = new Bits(1, 1);
 
   public static class Bits
   {

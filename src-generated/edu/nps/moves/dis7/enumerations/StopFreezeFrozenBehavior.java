@@ -1,26 +1,26 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 68 marshal size 8<br>
- * ___________________________
+ * StopFreezeFrozenBehavior
  */
 public class StopFreezeFrozenBehavior extends DisBitSet 
 {
   /**
    * Describes whether a simulation application should run the internal simulation clock or not
    */
-  public static Bits undef = new Bits(0, 1);
+  public static Bits RUNSIMULATIONCLOCK = new Bits(0, 1);
   /**
    * Describes whether a simulation application should transmit updates and interactions or not
    */
-  public static Bits undef_2 = new Bits(1, 1);
+  public static Bits TRANSMITUPDATES = new Bits(1, 1);
   /**
    * Describes whether a simulation application should update simulation models of other entities via received updates or interactions
    */
-  public static Bits undef_3 = new Bits(2, 1);
+  public static Bits PROCESSUPDATES = new Bits(2, 1);
 
   public static class Bits
   {

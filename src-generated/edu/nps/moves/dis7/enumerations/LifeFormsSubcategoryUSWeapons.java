@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 16 marshal size 8<br>
- * ___________________________________
+ * LifeFormsSubcategoryUSWeapons
  */
 public enum LifeFormsSubcategoryUSWeapons implements SubCategory
 {
@@ -33,7 +33,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** Silenced Colt .45, LaFrance */
     SILENCED_COLT_45_LAFRANCE (9, "Silenced Colt .45, LaFrance"),
     /** 5900-series 9-mm, Smith and Wesson (SandW) */
-    NAME_5900_SERIES_9_MM_SMITH_WESSON_SW (10, "5900-series 9-mm, Smith & Wesson (S&W)"),
+    _5900_SERIES_9_MM_SMITH_WESSON_SW (10, "5900-series 9-mm, Smith & Wesson (S&W)"),
     /** M9 */
     M9 (11, "M9"),
     /** Model 1911A1, Springfield Armory */
@@ -109,7 +109,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** MP5/10 10-mm */
     MP5_10_10_MM (47, "MP5/10 10-mm"),
     /** 9-mm, Colt */
-    NAME_9_MM_COLT (48, "9-mm, Colt"),
+    _9_MM_COLT (48, "9-mm, Colt"),
     /** Ingram */
     INGRAM (49, "Ingram"),
     /** Externally powered (EPG) 7.62-mm, Ares */
@@ -139,7 +139,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** M1919A4 .30-cal, Browning */
     M1919A4_30_CAL_BROWNING (62, "M1919A4 .30-cal, Browning"),
     /** .50-cal, Browning */
-    NAME_50_CAL_BROWNING (63, ".50-cal, Browning"),
+    _50_CAL_BROWNING (63, ".50-cal, Browning"),
     /** Colored-smoke hand grenade M18 */
     COLORED_SMOKE_HAND_GRENADE_M18 (64, "Colored-smoke hand grenade M18"),
     /** Colored-smoke grenades, Federal Laboratories */
@@ -299,9 +299,9 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static LifeFormsSubcategoryUSWeapons unmarshalEnum (DataInputStream dis) throws Exception
@@ -316,29 +316,36 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
-    public static LifeFormsSubcategoryUSWeapons unmarshalEnum(ByteBuffer buff) throws Exception
+    public static LifeFormsSubcategoryUSWeapons unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "LifeFormsSubcategoryUSWeapons: " + name() + ": " + getValue(); 
+        return "LifeFormsSubcategoryUSWeapons " + getValue() + " " + name(); 
     }
 }

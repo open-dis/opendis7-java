@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.omn.platform.surface;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bb9efbc
+ * Country: Oman (OMN)
+ * Entity kind: Platform
+ * Domain: SURFACE
+ *
+ * Entity type uid: 17957
+ */
+public class B11ALSharqiyah extends EntityType
+{
+    public B11ALSharqiyah()
+    {
+        setCountry(Country.OMAN_OMN);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.SURFACE));
+
+        setCategory((byte)7); // uid 17942, Light/Patrol Craft
+        setSubCategory((byte)4); // uid 17955, Dhofar (Province) Class (fast attack craft-missile)
+        setSpecific((byte)2); // uid 17957, B11 AL Sharqiyah
+    }
+}

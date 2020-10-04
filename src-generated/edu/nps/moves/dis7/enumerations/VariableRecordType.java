@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 66 marshal size 32<br>
- * _____________________
+ * VariableRecordTypes
  */
 public enum VariableRecordType 
 {
@@ -309,25 +309,25 @@ public enum VariableRecordType
     /** Ammunition */
     AMMUNITION (24000, "Ammunition"),
     /** 120-mm HEAT, quantity */
-    NAME_120_MM_HEAT_QUANTITY (24001, "120-mm HEAT, quantity"),
+    _120_MM_HEAT_QUANTITY (24001, "120-mm HEAT, quantity"),
     /** 120-mm SABOT, quantity */
-    NAME_120_MM_SABOT_QUANTITY (24002, "120-mm SABOT, quantity"),
+    _120_MM_SABOT_QUANTITY (24002, "120-mm SABOT, quantity"),
     /** 12.7-mm M8, quantity */
-    NAME_127_MM_M8_QUANTITY (24003, "12.7-mm M8, quantity"),
+    _127_MM_M8_QUANTITY (24003, "12.7-mm M8, quantity"),
     /** 12.7-mm M20, quantity */
-    NAME_127_MM_M20_QUANTITY (24004, "12.7-mm M20, quantity"),
+    _127_MM_M20_QUANTITY (24004, "12.7-mm M20, quantity"),
     /** 7.62-mm M62, quantity */
-    NAME_762_MM_M62_QUANTITY (24005, "7.62-mm M62, quantity"),
+    _762_MM_M62_QUANTITY (24005, "7.62-mm M62, quantity"),
     /** M250 UKL8A1, quantity */
     M250_UKL8A1_QUANTITY (24006, "M250 UKL8A1, quantity"),
     /** M250 UKL8A3, quantity */
     M250_UKL8A3_QUANTITY (24007, "M250 UKL8A3, quantity"),
     /** 7.62-mm M80, quantity */
-    NAME_762_MM_M80_QUANTITY (24008, "7.62-mm M80, quantity"),
+    _762_MM_M80_QUANTITY (24008, "7.62-mm M80, quantity"),
     /** 12.7-mm, quantity */
-    NAME_127_MM_QUANTITY (24009, "12.7-mm, quantity"),
+    _127_MM_QUANTITY (24009, "12.7-mm, quantity"),
     /** 7.62-mm, quantity */
-    NAME_762_MM_QUANTITY (24010, "7.62-mm, quantity"),
+    _762_MM_QUANTITY (24010, "7.62-mm, quantity"),
     /** Mines, quantity */
     MINES_QUANTITY (24060, "Mines, quantity"),
     /** Type */
@@ -1726,9 +1726,9 @@ public enum VariableRecordType
     /** Vertical Velocity Error (m/s) */
     VERTICAL_VELOCITY_ERROR_M_S (300004, "Vertical Velocity Error (m/s)"),
     /** 4th Lowest Jammer to Signal Ratio for P(Y)-L1 (dB) */
-    NAME_4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L1_DB (300005, "4th Lowest Jammer to Signal Ratio for P(Y)-L1 (dB)"),
+    _4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L1_DB (300005, "4th Lowest Jammer to Signal Ratio for P(Y)-L1 (dB)"),
     /** 4th Lowest Jammer to Signal Ratio for P(Y)-L2 (dB) */
-    NAME_4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L2_DB (300006, "4th Lowest Jammer to Signal Ratio for P(Y)-L2 (dB)"),
+    _4TH_LOWEST_JAMMER_TO_SIGNAL_RATIO_FOR_PY_L2_DB (300006, "4th Lowest Jammer to Signal Ratio for P(Y)-L2 (dB)"),
     /** GPS Figure of Merit */
     GPS_FIGURE_OF_MERIT (300007, "GPS Figure of Merit"),
     /** Weapon Transfer GPS State */
@@ -2486,9 +2486,9 @@ public enum VariableRecordType
         dos.writeInt(getValue());
     }
 
-    public void marshal(ByteBuffer buff)
+    public void marshal(ByteBuffer byteBuffer)
     {
-        buff.putInt(getValue());
+        byteBuffer.putInt(getValue());
     }
 
     public static VariableRecordType unmarshalEnum (DataInputStream dis) throws Exception
@@ -2496,14 +2496,15 @@ public enum VariableRecordType
         return getEnumForValue(dis.readInt());
     } 
 
-    public static VariableRecordType unmarshalEnum (ByteBuffer buff)
+    public static VariableRecordType unmarshalEnum (ByteBuffer byteBuffer)
     {
-        return getEnumForValue(buff.getInt());
+        return getEnumForValue(byteBuffer.getInt());
     }
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
@@ -2513,6 +2514,6 @@ public enum VariableRecordType
     @Override
     public String toString()
     {
-        return "VariableRecordType: " + name() + ": " + getValue();
+        return "VariableRecordType: " + getValue() + " " + name();
     }
 }

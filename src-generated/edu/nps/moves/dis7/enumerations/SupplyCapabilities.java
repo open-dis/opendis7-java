@@ -1,34 +1,34 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 459 marshal size 32<br>
- * ___________________
+ * SupplyCapabilities
  */
 public class SupplyCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * Describes whether the entity is able to supply some type of ammunition in response to an appropriate service request
    */
-  public static Bits undef = new Bits(0, 1);
+  public static Bits AMMUNITIONSUPPLY = new Bits(0, 1);
   /**
    * Describes whether the entity is able to supply some type of fuel in response to an appropriate service request
    */
-  public static Bits undef_2 = new Bits(1, 1);
+  public static Bits FUELSUPPLY = new Bits(1, 1);
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits undef_3 = new Bits(2, 3);
+  public static Bits RESERVED = new Bits(2, 3);
   /**
    * The Entity is able to be carried as a sling load payload. The extended appearance record (if available) will identify if it is currently sling loaded and entity association and/or entity offset records (if available) will provide additional sling load details (such as carrier).
    */
-  public static Bits undef_4 = new Bits(6, 1);
+  public static Bits SLINGLOADABLE = new Bits(6, 1);
   /**
    * The Entity is an IED or contains an IED. The extended appearance record (if available) will identify how well hidden the IED is on the Entity. An Attached Part (if applicable, for instance a jury-rigged munition does not apply here) will identify the IED explicitly.
    */
-  public static Bits undef_5 = new Bits(7, 1);
+  public static Bits IEDPRESENCEINDICATOR = new Bits(7, 1);
 
   public static class Bits
   {

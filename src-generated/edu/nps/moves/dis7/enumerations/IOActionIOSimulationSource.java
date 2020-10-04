@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 286 marshal size 16<br>
- * ______________________________<br>
+ * IOActionIOSimulationSource<br>
  * Values 1-999 are reserved for United States IO Simulation Sources - See applicable agreement of the organizers of the event (training, exercise, etc.) in which information operations is included.
  */
 public enum IOActionIOSimulationSource 
@@ -53,15 +53,15 @@ public enum IOActionIOSimulationSource
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static IOActionIOSimulationSource unmarshalEnum (DataInputStream dis) throws Exception
@@ -69,23 +69,28 @@ public enum IOActionIOSimulationSource
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static IOActionIOSimulationSource unmarshalEnum (ByteBuffer buff) throws Exception
+    public static IOActionIOSimulationSource unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "IOActionIOSimulationSource: " + name() + ": " + getValue(); 
+        return "IOActionIOSimulationSource " + getValue() + " " + name(); 
     }
 }

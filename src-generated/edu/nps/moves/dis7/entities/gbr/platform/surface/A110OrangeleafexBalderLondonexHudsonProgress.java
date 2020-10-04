@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.gbr.platform.surface;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ca372ef
+ * Country: United Kingdom of Great Britain and Northern Ireland (GBR)
+ * Entity kind: Platform
+ * Domain: SURFACE
+ *
+ * Entity type uid: 15391
+ */
+public class A110OrangeleafexBalderLondonexHudsonProgress extends EntityType
+{
+    public A110OrangeleafexBalderLondonexHudsonProgress()
+    {
+        setCountry(Country.UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.SURFACE));
+
+        setCategory((byte)16); // uid 15370, Auxiliary
+        setSubCategory((byte)8); // uid 15388, Appleleaf class (support tankers (AOT))
+        setSpecific((byte)3); // uid 15391, A 110 Orangeleaf (ex-Balder London, ex-Hudson Progress)
+    }
+}

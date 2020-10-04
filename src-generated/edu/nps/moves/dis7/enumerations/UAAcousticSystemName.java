@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 144 marshal size 16<br>
- * _______________________
+ * UAAcousticSystemName
  */
 public enum UAAcousticSystemName 
 {
@@ -69,15 +69,15 @@ public enum UAAcousticSystemName
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static UAAcousticSystemName unmarshalEnum (DataInputStream dis) throws Exception
@@ -85,23 +85,28 @@ public enum UAAcousticSystemName
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static UAAcousticSystemName unmarshalEnum (ByteBuffer buff) throws Exception
+    public static UAAcousticSystemName unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "UAAcousticSystemName: " + name() + ": " + getValue(); 
+        return "UAAcousticSystemName " + getValue() + " " + name(); 
     }
 }

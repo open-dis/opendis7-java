@@ -1,66 +1,66 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 33 marshal size 32<br>
- * ___________________________
+ * SurfacePlatformAppearance
  */
 public class SurfacePlatformAppearance extends DisBitSet 
 {
   /**
    * Describes the visual paint design, Use {@link AppearancePaintScheme} values for this field
    */
-  public static Bits undef = new Bits(0, 1, AppearancePaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(0, 1, AppearancePaintScheme.class);
   /**
    * Describes whether it is capable of moving on its own power
    */
-  public static Bits undef_2 = new Bits(1, 1);
+  public static Bits MOBILITYKILLED = new Bits(1, 1);
   /**
    * Describes the damaged appearance, Use {@link AppearanceDamage} values for this field
    */
-  public static Bits undef_3 = new Bits(3, 2, AppearanceDamage.class);
+  public static Bits DAMAGE = new Bits(3, 2, AppearanceDamage.class);
   /**
    * Describes whether or not smoke is emanating from the entity
    */
-  public static Bits undef_4 = new Bits(5, 1);
+  public static Bits ISSMOKEEMANATING = new Bits(5, 1);
   /**
    * Describes whether or not the engine is emitting smoke
    */
-  public static Bits undef_5 = new Bits(6, 1);
+  public static Bits ISENGINEEMITTINGSMOKE = new Bits(6, 1);
   /**
    * Describes the size of the wake trailing effect, Use {@link AppearanceTrailingEffects} values for this field
    */
-  public static Bits undef_6 = new Bits(7, 2, AppearanceTrailingEffects.class);
+  public static Bits WAKESIZE = new Bits(7, 2, AppearanceTrailingEffects.class);
   /**
    * Describes whether running lights are on or off
    */
-  public static Bits undef_7 = new Bits(12, 1);
+  public static Bits RUNNINGLIGHTSON = new Bits(12, 1);
   /**
    * Describes whether the entity is burning and flames are visible
    */
-  public static Bits undef_8 = new Bits(15, 1);
+  public static Bits ISFLAMING = new Bits(15, 1);
   /**
    * Describes whether the entity is frozen and should not be dead reckoned
    */
-  public static Bits undef_9 = new Bits(21, 1);
+  public static Bits ISFROZEN = new Bits(21, 1);
   /**
    * Describes whether the power plant is on or off
    */
-  public static Bits undef_10 = new Bits(22, 1);
+  public static Bits POWERPLANTON = new Bits(22, 1);
   /**
    * Describes whether the entity is active or deactivated, Use {@link AppearanceEntityorObjectState} values for this field
    */
-  public static Bits undef_11 = new Bits(23, 1, AppearanceEntityorObjectState.class);
+  public static Bits STATE = new Bits(23, 1, AppearanceEntityorObjectState.class);
   /**
    * Describes whether spot lights are on or off
    */
-  public static Bits undef_12 = new Bits(28, 1);
+  public static Bits SPOTLIGHTSON = new Bits(28, 1);
   /**
    * Describes whether interior lights are on or off
    */
-  public static Bits undef_13 = new Bits(29, 1);
+  public static Bits INTERIORLIGHTSON = new Bits(29, 1);
 
   public static class Bits
   {

@@ -1,30 +1,30 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 190 marshal size 16<br>
- * __________________________________
+ * MinefieldStateAppearanceBitMap
  */
 public class MinefieldStateAppearanceBitMap extends DisBitSet 
 {
   /**
    * Identifies the type of minefield, Use {@link MinefieldAppearanceMinefieldType} values for this field
    */
-  public static Bits undef = new Bits(0, 2, MinefieldAppearanceMinefieldType.class);
+  public static Bits MINEFIELDTYPE = new Bits(0, 2, MinefieldAppearanceMinefieldType.class);
   /**
    * Describes whether the minefield is active or inactive, Use {@link MinefieldAppearanceActiveStatus} values for this field
    */
-  public static Bits undef_2 = new Bits(2, 1, MinefieldAppearanceActiveStatus.class);
+  public static Bits ACTIVESTATUS = new Bits(2, 1, MinefieldAppearanceActiveStatus.class);
   /**
    * Identifies whether the minefield has an active or inactive lane, Use {@link MinefieldAppearanceLane} values for this field
    */
-  public static Bits undef_3 = new Bits(3, 1, MinefieldAppearanceLane.class);
+  public static Bits LANE = new Bits(3, 1, MinefieldAppearanceLane.class);
   /**
    * Describes the state of the minefield, Use {@link MinefieldAppearanceState} values for this field
    */
-  public static Bits undef_4 = new Bits(13, 1, MinefieldAppearanceState.class);
+  public static Bits STATE = new Bits(13, 1, MinefieldAppearanceState.class);
 
   public static class Bits
   {

@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 98 marshal size 8<br>
- * _________________________________________
+ * IFFSystemType1OperationalParameter2
  */
 public enum IFFSystemType1OperationalParameter2 
 {
@@ -57,9 +57,9 @@ public enum IFFSystemType1OperationalParameter2
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static IFFSystemType1OperationalParameter2 unmarshalEnum (DataInputStream dis) throws Exception
@@ -74,29 +74,36 @@ public enum IFFSystemType1OperationalParameter2
         return getEnumForValue(dis.readByte());
     } 
 
-    public static IFFSystemType1OperationalParameter2 unmarshalEnum(ByteBuffer buff) throws Exception
+    public static IFFSystemType1OperationalParameter2 unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "IFFSystemType1OperationalParameter2: " + name() + ": " + getValue(); 
+        return "IFFSystemType1OperationalParameter2 " + getValue() + " " + name(); 
     }
 }

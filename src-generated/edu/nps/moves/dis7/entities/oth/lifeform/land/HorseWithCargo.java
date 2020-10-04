@@ -1,0 +1,26 @@
+package edu.nps.moves.dis7.entities.oth.lifeform.land;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1850f2da
+ * Country: Other
+ * Entity kind: Life form
+ * Domain: LAND
+ *
+ * Entity type uid: 32235
+ */
+public class HorseWithCargo extends EntityType
+{
+    public HorseWithCargo()
+    {
+        setCountry(Country.OTHER);
+        setEntityKind(EntityKind.LIFE_FORM);
+        setDomain(Domain.inst(PlatformDomain.LAND));
+
+        setCategory((byte)200); // uid 32223, Mammal
+        setSubCategory((byte)91); // uid 32235, Horse With Cargo
+    }
+}

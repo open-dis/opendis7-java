@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 59 marshal size 32<br>
- * ____________________________
+ * ArticulatedPartsTypeClass
  */
 public enum ArticulatedPartsTypeClass 
 {
@@ -461,45 +461,45 @@ public enum ArticulatedPartsTypeClass
     /** Right Engine Nacelle */
     RIGHT_ENGINE_NACELLE (9088, "Right Engine Nacelle"),
     /** 1st Left Wheel, May be a sprocket, idler, or road wheel */
-    NAME_1ST_LEFT_WHEEL (9120, "1st Left Wheel"),
+    _1ST_LEFT_WHEEL (9120, "1st Left Wheel"),
     /** 1st Right Wheel */
-    NAME_1ST_RIGHT_WHEEL (9152, "1st Right Wheel"),
+    _1ST_RIGHT_WHEEL (9152, "1st Right Wheel"),
     /** 2nd Left Wheel */
-    NAME_2ND_LEFT_WHEEL (9184, "2nd Left Wheel"),
+    _2ND_LEFT_WHEEL (9184, "2nd Left Wheel"),
     /** 2nd Right Wheel */
-    NAME_2ND_RIGHT_WHEEL (9216, "2nd Right Wheel"),
+    _2ND_RIGHT_WHEEL (9216, "2nd Right Wheel"),
     /** 3rd Left Wheel */
-    NAME_3RD_LEFT_WHEEL (9248, "3rd Left Wheel"),
+    _3RD_LEFT_WHEEL (9248, "3rd Left Wheel"),
     /** 3rd Right Wheel */
-    NAME_3RD_RIGHT_WHEEL (9280, "3rd Right Wheel"),
+    _3RD_RIGHT_WHEEL (9280, "3rd Right Wheel"),
     /** 4th Left Wheel */
-    NAME_4TH_LEFT_WHEEL (9312, "4th Left Wheel"),
+    _4TH_LEFT_WHEEL (9312, "4th Left Wheel"),
     /** 4th Right Wheel */
-    NAME_4TH_RIGHT_WHEEL (9344, "4th Right Wheel"),
+    _4TH_RIGHT_WHEEL (9344, "4th Right Wheel"),
     /** 5th Left Wheel */
-    NAME_5TH_LEFT_WHEEL (9376, "5th Left Wheel"),
+    _5TH_LEFT_WHEEL (9376, "5th Left Wheel"),
     /** 5th Right Wheel */
-    NAME_5TH_RIGHT_WHEEL (9408, "5th Right Wheel"),
+    _5TH_RIGHT_WHEEL (9408, "5th Right Wheel"),
     /** 6th Left Wheel */
-    NAME_6TH_LEFT_WHEEL (9440, "6th Left Wheel"),
+    _6TH_LEFT_WHEEL (9440, "6th Left Wheel"),
     /** 6th Right Wheel */
-    NAME_6TH_RIGHT_WHEEL (9472, "6th Right Wheel"),
+    _6TH_RIGHT_WHEEL (9472, "6th Right Wheel"),
     /** 7th Left Wheel */
-    NAME_7TH_LEFT_WHEEL (9504, "7th Left Wheel"),
+    _7TH_LEFT_WHEEL (9504, "7th Left Wheel"),
     /** 7th Right Wheel */
-    NAME_7TH_RIGHT_WHEEL (9536, "7th Right Wheel"),
+    _7TH_RIGHT_WHEEL (9536, "7th Right Wheel"),
     /** 8th Left Wheel */
-    NAME_8TH_LEFT_WHEEL (9568, "8th Left Wheel"),
+    _8TH_LEFT_WHEEL (9568, "8th Left Wheel"),
     /** 8th Right Wheel */
-    NAME_8TH_RIGHT_WHEEL (9600, "8th Right Wheel"),
+    _8TH_RIGHT_WHEEL (9600, "8th Right Wheel"),
     /** 9th Left Wheel */
-    NAME_9TH_LEFT_WHEEL (9632, "9th Left Wheel"),
+    _9TH_LEFT_WHEEL (9632, "9th Left Wheel"),
     /** 9th Right Wheel */
-    NAME_9TH_RIGHT_WHEEL (9664, "9th Right Wheel"),
+    _9TH_RIGHT_WHEEL (9664, "9th Right Wheel"),
     /** 10th Left Wheel */
-    NAME_10TH_LEFT_WHEEL (9696, "10th Left Wheel"),
+    _10TH_LEFT_WHEEL (9696, "10th Left Wheel"),
     /** 10th Right Wheel */
-    NAME_10TH_RIGHT_WHEEL (9728, "10th Right Wheel"),
+    _10TH_RIGHT_WHEEL (9728, "10th Right Wheel"),
     /** Refueling Probe */
     REFUELING_PROBE (9760, "Refueling Probe"),
     /** Steering Wheel */
@@ -545,9 +545,9 @@ public enum ArticulatedPartsTypeClass
         dos.writeInt(getValue());
     }
 
-    public void marshal(ByteBuffer buff)
+    public void marshal(ByteBuffer byteBuffer)
     {
-        buff.putInt(getValue());
+        byteBuffer.putInt(getValue());
     }
 
     public static ArticulatedPartsTypeClass unmarshalEnum (DataInputStream dis) throws Exception
@@ -555,14 +555,15 @@ public enum ArticulatedPartsTypeClass
         return getEnumForValue(dis.readInt());
     } 
 
-    public static ArticulatedPartsTypeClass unmarshalEnum (ByteBuffer buff)
+    public static ArticulatedPartsTypeClass unmarshalEnum (ByteBuffer byteBuffer)
     {
-        return getEnumForValue(buff.getInt());
+        return getEnumForValue(byteBuffer.getInt());
     }
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
@@ -572,6 +573,6 @@ public enum ArticulatedPartsTypeClass
     @Override
     public String toString()
     {
-        return "ArticulatedPartsTypeClass: " + name() + ": " + getValue();
+        return "ArticulatedPartsTypeClass: " + getValue() + " " + name();
     }
 }

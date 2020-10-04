@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.rus.munition.antipersonnel;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@104a287c
+ * Country: Russia (RUS)
+ * Entity kind: Munition
+ * Domain: ANTI_PERSONNEL
+ *
+ * Entity type uid: 32304
+ */
+public class TBG32VThermobaric extends EntityType
+{
+    public TBG32VThermobaric()
+    {
+        setCountry(Country.RUSSIA_RUS);
+        setEntityKind(EntityKind.MUNITION);
+        setDomain(Domain.inst(MunitionDomain.ANTI_PERSONNEL));
+
+        setCategory((byte)2); // uid 20637, Ballistic
+        setSubCategory((byte)56); // uid 27318, 105mm
+        setSpecific((byte)2); // uid 32304, TBG-32V Thermobaric
+    }
+}

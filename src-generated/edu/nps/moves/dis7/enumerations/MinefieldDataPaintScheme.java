@@ -1,22 +1,22 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 202 marshal size 8<br>
- * ___________________________
+ * MinefieldDataPaintScheme
  */
 public class MinefieldDataPaintScheme extends DisBitSet 
 {
   /**
    * Identifies the algae build-up on the mine, Use {@link MinefieldPaintSchemeAlgae} values for this field
    */
-  public static Bits undef = new Bits(0, 2, MinefieldPaintSchemeAlgae.class);
+  public static Bits ALGAE = new Bits(0, 2, MinefieldPaintSchemeAlgae.class);
   /**
    * Identifies the paint scheme of the mine, Use {@link MinefieldPaintSchemePaintScheme} values for this field
    */
-  public static Bits undef_2 = new Bits(2, 6, MinefieldPaintSchemePaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(2, 6, MinefieldPaintSchemePaintScheme.class);
 
   public static class Bits
   {

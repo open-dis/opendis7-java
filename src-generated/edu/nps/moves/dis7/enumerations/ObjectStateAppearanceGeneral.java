@@ -1,42 +1,42 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 229 marshal size 16<br>
- * _______________________________
+ * ObjectStateAppearanceGeneral
  */
 public class ObjectStateAppearanceGeneral extends DisBitSet 
 {
   /**
    * 8-bit unsigned integer indicating the percent completion of the object (0..100)
    */
-  public static Bits undef = new Bits(0, 8);
+  public static Bits PERCENTCOMPLETE = new Bits(0, 8);
   /**
    * Describes the damaged appearance, Use {@link AppearanceObjectGeneralDamage} values for this field
    */
-  public static Bits undef_2 = new Bits(8, 2, AppearanceObjectGeneralDamage.class);
+  public static Bits DAMAGE = new Bits(8, 2, AppearanceObjectGeneralDamage.class);
   /**
    * Describes whether the object was predistributed, Use {@link AppearanceObjectGeneralPredistributed} values for this field
    */
-  public static Bits undef_3 = new Bits(10, 1, AppearanceObjectGeneralPredistributed.class);
+  public static Bits PREDISTRIBUTED = new Bits(10, 1, AppearanceObjectGeneralPredistributed.class);
   /**
    * Describes the state of the object, Use {@link AppearanceEntityorObjectState} values for this field
    */
-  public static Bits undef_4 = new Bits(11, 1, AppearanceEntityorObjectState.class);
+  public static Bits STATE = new Bits(11, 1, AppearanceEntityorObjectState.class);
   /**
    * Describes whether or not there is a smoke plume
    */
-  public static Bits undef_5 = new Bits(12, 1);
+  public static Bits ISSMOKING = new Bits(12, 1);
   /**
    * Describes whether the object is burning and flames are visible
    */
-  public static Bits undef_6 = new Bits(13, 1);
+  public static Bits ISFLAMING = new Bits(13, 1);
   /**
    * Describes whether the object has or contains an IED, Use {@link AppearanceObjectGeneralIEDPresent} values for this field
    */
-  public static Bits undef_7 = new Bits(14, 2, AppearanceObjectGeneralIEDPresent.class);
+  public static Bits IEDPRESENT = new Bits(14, 2, AppearanceObjectGeneralIEDPresent.class);
 
   public static class Bits
   {

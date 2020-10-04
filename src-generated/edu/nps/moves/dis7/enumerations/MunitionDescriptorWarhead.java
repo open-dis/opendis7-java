@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 60 marshal size 16<br>
- * ___________________________
+ * MunitionDescriptorWarhead
  */
 public enum MunitionDescriptorWarhead 
 {
@@ -23,11 +23,11 @@ public enum MunitionDescriptorWarhead
     /** Glass Beads */
     GLASS_BEADS (0030, "Glass Beads"),
     /** 1 um */
-    NAME_1_UM (0031, "1 um"),
+    _1_UM (0031, "1 um"),
     /** 5 um */
-    NAME_5_UM (0032, "5 um"),
+    _5_UM (0032, "5 um"),
     /** 10 um */
-    NAME_10_UM (0033, "10 um"),
+    _10_UM (0033, "10 um"),
     /** High Explosive (HE) */
     HIGH_EXPLOSIVE_HE (1000, "High Explosive (HE)"),
     /** HE, Plastic */
@@ -241,15 +241,15 @@ public enum MunitionDescriptorWarhead
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static MunitionDescriptorWarhead unmarshalEnum (DataInputStream dis) throws Exception
@@ -257,23 +257,28 @@ public enum MunitionDescriptorWarhead
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static MunitionDescriptorWarhead unmarshalEnum (ByteBuffer buff) throws Exception
+    public static MunitionDescriptorWarhead unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "MunitionDescriptorWarhead: " + name() + ": " + getValue(); 
+        return "MunitionDescriptorWarhead " + getValue() + " " + name(); 
     }
 }

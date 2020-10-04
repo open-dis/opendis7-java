@@ -5,25 +5,25 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 271 marshal size 14<br>
- * ____________________
+ * SignalEncodingType
  */
 public enum SignalEncodingType 
 {
     /** 8-bit mu-law (ITU-T G.711) */
-    NAME_8_BIT_MU_LAW_ITU_T_G711 (1, "8-bit mu-law (ITU-T G.711)"),
+    _8_BIT_MU_LAW_ITU_T_G711 (1, "8-bit mu-law (ITU-T G.711)"),
     /** CVSD (MIL-STD-188-113), There are variants of CVSD encoding types that exist in the DIS community. These are not compatible with each other. At least two additional types of CVSD, known as CCTT CVSD and CECOM CVSD, also use Enumeration value 2.  Make sure that if you are using CVSD that your system is compatible with other systems playing in an exercise. */
     CVSD_MIL_STD_188_113 (2, "CVSD (MIL-STD-188-113)"),
     /** ADPCM (ITU-T G.726) */
     ADPCM_ITU_T_G726 (3, "ADPCM (ITU-T G.726)"),
     /** 16-bit Linear PCM 2’s complement, Big Endian */
-    NAME_16_BIT_LINEAR_PCM_2S_COMPLEMENT_BIG_ENDIAN (4, "16-bit Linear PCM 2’s complement, Big Endian"),
+    _16_BIT_LINEAR_PCM_2S_COMPLEMENT_BIG_ENDIAN (4, "16-bit Linear PCM 2’s complement, Big Endian"),
     /** 8-bit Linear PCM, unsigned */
-    NAME_8_BIT_LINEAR_PCM_UNSIGNED (5, "8-bit Linear PCM, unsigned"),
+    _8_BIT_LINEAR_PCM_UNSIGNED (5, "8-bit Linear PCM, unsigned"),
     /** VQ (Vector Quantization) */
     VQ_VECTOR_QUANTIZATION (6, "VQ (Vector Quantization)"),
     /** (unavailable for use) */
@@ -37,7 +37,7 @@ public enum SignalEncodingType
     /** Opus, https://tools.ietf.org/html/rfc6716 */
     OPUS (11, "Opus"),
     /** 16-bit Linear PCM 2’s complement, Little Endian */
-    NAME_16_BIT_LINEAR_PCM_2S_COMPLEMENT_LITTLE_ENDIAN (100, "16-bit Linear PCM 2’s complement, Little Endian"),
+    _16_BIT_LINEAR_PCM_2S_COMPLEMENT_LITTLE_ENDIAN (100, "16-bit Linear PCM 2’s complement, Little Endian"),
     /** (unavailable for use) */
     UNAVAILABLE_FOR_USE_2 (255, "(unavailable for use)");
 
@@ -75,15 +75,15 @@ public enum SignalEncodingType
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static SignalEncodingType unmarshalEnum (DataInputStream dis) throws Exception
@@ -91,23 +91,28 @@ public enum SignalEncodingType
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static SignalEncodingType unmarshalEnum (ByteBuffer buff) throws Exception
+    public static SignalEncodingType unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "SignalEncodingType: " + name() + ": " + getValue(); 
+        return "SignalEncodingType " + getValue() + " " + name(); 
     }
 }

@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 19 marshal size 8<br>
- * _____________________________________
+ * LifeFormsSubcategoryFrenchWeapons
  */
 public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
 {
@@ -27,7 +27,7 @@ public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
     /** AA-52 machine gun */
     AA_52_MACHINE_GUN (6, "AA-52 machine gun"),
     /** 58-mm rifle grenade */
-    NAME_58_MM_RIFLE_GRENADE (7, "58-mm rifle grenade"),
+    _58_MM_RIFLE_GRENADE (7, "58-mm rifle grenade"),
     /** FR-F1 sniper rifle */
     FR_F1_SNIPER_RIFLE (8, "FR-F1 sniper rifle");
 
@@ -71,9 +71,9 @@ public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static LifeFormsSubcategoryFrenchWeapons unmarshalEnum (DataInputStream dis) throws Exception
@@ -88,29 +88,36 @@ public enum LifeFormsSubcategoryFrenchWeapons implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
-    public static LifeFormsSubcategoryFrenchWeapons unmarshalEnum(ByteBuffer buff) throws Exception
+    public static LifeFormsSubcategoryFrenchWeapons unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "LifeFormsSubcategoryFrenchWeapons: " + name() + ": " + getValue(); 
+        return "LifeFormsSubcategoryFrenchWeapons " + getValue() + " " + name(); 
     }
 }
