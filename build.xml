@@ -64,6 +64,7 @@
             </fileset>
         </delete>
         <delete dir="javadoc"/>
+        <mkdir dir="javadoc"/>
         <mkdir dir="build/classes" description="ensure necessary directory present"/>
         <delete verbose="false" includeemptydirs="false">
             <fileset dir="build/classes" includes="**/*"/>
@@ -76,49 +77,6 @@
         <delete includeemptydirs="true" verbose="false">
             <fileset dir="build" includes="**/*"/>
         </delete>
-    </target>
-    
-    <target name="compile" description="compile all assets">
-        <echo message="compile src, src-generated"/>
-        <mkdir dir="build/classes" description="ensure build/classes directory present"/>
-        <javac destdir="build/classes"
-                 debug="on"
-                source="1.8"
-                target="1.8"
-     includeantruntime="false">
-            <src>
-                <pathelement path="src"/>
-                <pathelement path="src-generated"/>
-            </src>
-            <classpath>
-                <pathelement path="dist/open-dis7-enumerations-classes.jar"/>
-                <pathelement path="lib/commons-io-2.6.jar"/>
-                <pathelement path="lib/guava-28.0-jre.jar"/>
-            </classpath>
-            <!-- https://ant.apache.org/manual/Tasks/javac.html#bootstrap -->
-            <!-- https://stackoverflow.com/questions/4134803/ant-passing-compilerarg-into-javac -->
-            <!-- https://stackoverflow.com/questions/20174355/how-class-loading-is-done-by-using-xbootclasspath-ppath -->
-            <!-- https://stackoverflow.com/questions/48148607/how-to-add-a-jar-to-the-boot-classpath-in-java-9 -->
-            <!-- -Xbootclasspath/p became -Xbootclasspath/a in jdk 9 -->
-            <compilerarg value="-Xbootclasspath/p:${toString:lib.path.ref}"/>
-        </javac>
-    </target>
-    
-    <target name="javadoc">
-        <javadoc  classpath="${build.classes.dir}"
-                    destdir="javadoc"
-            useexternalfile="yes"
-                    verbose="false">
-            <!-- useexternalfile="yes" avoids command error: filename or extension is too long -->
-            <fileset dir="." defaultexcludes="yes">
-                <include name="src/**/*.java"/>
-                <include name="src-generated/**/*.java"/>
-            </fileset>
-            <classpath>
-                <pathelement path="lib/commons-io-2.6.jar"/>
-                <pathelement path="lib/guava-28.0-jre.jar"/>
-            </classpath>
-        </javadoc>
     </target>
     
     <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
@@ -302,16 +260,7 @@
                 <include name="**/*.txt"/>
                 <include name="**/*.dislog"/>
             </fileset>
-            <fileset dir="src-generated">
-                <include name="**/dis7/**/*.java"/>
-                <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
-                <exclude name="**/entities/**/*.java"/>
-                <exclude name="**/entitytypes/**/*.java"/>
-                <exclude name="**/enumerations/**/*.java"/>
-                <exclude name="**/jammers/**/*.java"/>
-                <exclude name="**/objectTypes/**/*.java"/>
-                <exclude name="**/*.undef/**/*.java"/>
-            </fileset>
+            
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Java source files for ${manifest.name}"/>
@@ -330,7 +279,7 @@
         </jar>        
     </target>
     
-    <target name="jar-classes" description="merges all dis7 subpackage classes except for enumerations">
+    <target name="jar-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
         <jar destfile="dist/open-dis7-pdus-classes.jar"
              basedir="."
              includes="edu/nps/moves/dis7/**"
@@ -338,14 +287,7 @@
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
-                <include name="**/dis7/**/*.class"/>
-                <!-- avoid duplicating enumerations classes, which are maintained in separate jars -->
-                <exclude name="**/entities/**/*.class"/>
-                <exclude name="**/entitytypes/**/*.class"/>
-                <exclude name="**/enumerations/**/*.class"/>
-                <exclude name="**/jammers/**/*.class"/>
-                <exclude name="**/objectTypes/**/*.class"/>
-                <exclude name="**/objectTypes.undef/**/*"/>
+                <include name="**/moves/**/*.class"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
@@ -359,6 +301,9 @@
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
                 <section name="edu/nps/moves/dis7">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+                <section name="edu/nps/moves/spatial">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
