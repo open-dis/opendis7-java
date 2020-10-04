@@ -6,7 +6,6 @@
             <name>open-dis7-java</name>
             <source-roots>
                 <root id="src.dir"/>
-                <root id="src.src-generated.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
