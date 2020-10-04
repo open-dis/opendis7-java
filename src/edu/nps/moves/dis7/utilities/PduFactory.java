@@ -118,10 +118,9 @@ public class PduFactory
     return pdu;
   }
 
-  private LiveEntityPdu addBoilerPlate(LiveEntityPdu pdu)
+  private LiveEntityFamilyPdu addBoilerPlate(LiveEntityFamilyPdu pdu)
   {
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL)
-      .setExerciseID(defaultExerciseId)
+    pdu.setExerciseID(defaultExerciseId)
       .setTimestamp(doTime())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
 
@@ -992,8 +991,8 @@ public class PduFactory
             .setEntityLocation(new LiveEntityRelativeWorldCoordinates())
             .setEntityOrientation(new LiveEntityOrientation())
             .setOrientationError(new LiveEntityOrientationError())
-            .setPositionError(new LiveEntityPositionError())*/
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+            .setPositionError(new LiveEntityPositionError())
+    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);*/
     return (TSPIPdu) addBoilerPlate(pdu);
   }
 
@@ -1012,8 +1011,8 @@ public class PduFactory
             .setCapabilities(new SurfacePlatformCapabilities())
             .setAppearanceFields(new Appearance())
             .setEntityMarking(newEntityMarking())
-            .setForceId(ForceID.OTHER)*/
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+            .setForceId(ForceID.OTHER)
+    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);*/
     return (AppearancePdu) addBoilerPlate(pdu);
   }
 
@@ -1026,7 +1025,7 @@ public class PduFactory
   {
     ArticulatedPartsPdu pdu = new ArticulatedPartsPdu()
       .setLiveEntityId(new EntityID());
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+    /*pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);*/
     return (ArticulatedPartsPdu) addBoilerPlate(pdu);
   }
 
@@ -1046,8 +1045,8 @@ public class PduFactory
     /*
             .setLocation(new LiveEntityRelativeWorldCoordinates())
             .setVelocity(new LiveEntityLinearVelocity())
-     */
     pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+     */
     return (LEFirePdu) addBoilerPlate(pdu);
   }
 
@@ -1069,8 +1068,8 @@ public class PduFactory
             .setMunitionOrientation(new LiveEntityOrientation16())
             .setVelocity(new LiveEntityLinearVelocity())
             .setWorldLocation(new LiveEntityRelativeWorldCoordinates())
-     */
     pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+     */
     return (LEDetonationPdu) addBoilerPlate(pdu);
   }
 
