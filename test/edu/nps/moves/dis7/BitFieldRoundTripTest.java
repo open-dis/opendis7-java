@@ -77,9 +77,9 @@ public class BitFieldRoundTripTest
     espdu.setEntityOrientation(euler);
     
     LandPlatformAppearance app = new LandPlatformAppearance();
-    app.set(LandPlatformAppearance.BLACKOUT_BRAKE_LIGHTS_ON, 1)
-      .set(LandPlatformAppearance.CAMOUFLAGE_TYPE, AppearanceCamouflageType.FOREST_CAMOUFLAGE.getValue())
-      .set(LandPlatformAppearance.IS_FROZEN,1);
+    app.set(LandPlatformAppearance.BLACKOUTBRAKELIGHTSON, 1)
+      .set(LandPlatformAppearance.CAMOUFLAGETYPE, AppearanceCamouflageType.FOREST_CAMOUFLAGE.getValue())
+      .set(LandPlatformAppearance.ISFROZEN,1);
   
     try {
       disNetworkInterface.send(espdu);
