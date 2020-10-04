@@ -311,6 +311,7 @@
     </target>
     
     <!-- special test harness for JUnit5 by Terry Norbraten -->
+    <!-- https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and -->
     <target depends="compile-test,-pre-test-run"
             description="Run unit tests."
             name="test" >
@@ -322,11 +323,11 @@
             <arg value="--scan-classpath=${build.test.classes.dir}"/>
             <arg value="--reports-dir=${build.test.results.dir}"/>
         </java>
-        <junitreport todir="build/test/results">
-            <fileset dir="build/test/results">
+        <junitreport todir="${build.test.results.dir}">
+            <fileset dir="${build.test.results.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
-            <report format="frames" todir="build/test/results/html"/>
+            <report format="frames" todir="${build.test.results.dir}/html"/>
         </junitreport>
     </target>
     <target depends="compile-test-single,-pre-test-run-single"
@@ -341,6 +342,33 @@
             <arg line="-c=${test.class}"/>
             <!--<arg value="-h"/>-->
         </java>
+        <junitreport todir="${build.test.results.dir}">
+            <fileset dir="${build.test.results.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${build.test.results.dir}/html"/>
+        </junitreport>
+    </target>
+    <target depends="compile-test-single,-pre-test-run-single"
+            description="Debug single unit test."
+            name="-debug-start-debuggee-test">
+        <java classpath="${run.test.classpath}"
+              classname="org.junit.platform.console.ConsoleLauncher"
+              fork="true">
+            <arg value="--disable-banner"/>
+            <arg value="--fail-if-no-tests"/>
+            <arg line="-c=${test.class}"/>
+            <jvmarg value="-Xdebug" />
+            <jvmarg value="-Xnoagent" />
+            <jvmarg value="-Djava.compiler=NONE" />
+            <jvmarg value="-agentlib:jdwp=transport=${debug-transport},address=${jpda.address}" />
+        </java>
+        <junitreport todir="${build.test.results.dir}">
+            <fileset dir="${build.test.results.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${build.test.results.dir}/html"/>
+        </junitreport>
     </target>
     
 </project>
