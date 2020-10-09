@@ -35,7 +35,7 @@ public class EntityStatePduTest extends PduTest
     // TODO test various alternate constructors and utility methods
     
     EntityType   entityType = new EntityType()
-                    .setEntityKind (EntityKind.PLATFORM).setEntityKind(EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
+                    .setEntityKind (EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
                     .setCountry    (Country.UNITED_STATES_OF_AMERICA_USA)  // 225 USA
                     .setDomain     (Domain.inst(PlatformDomain.LAND))      // Land (vs air, surface, subsurface, space)
                     .setCategory   (1)   // Tank
