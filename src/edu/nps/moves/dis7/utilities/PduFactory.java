@@ -992,7 +992,8 @@ public class PduFactory
             .setEntityOrientation(new LiveEntityOrientation())
             .setOrientationError(new LiveEntityOrientationError())
             .setPositionError(new LiveEntityPositionError())
-    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);*/
+    pdu.setSubprotocolNumber(DISLiveEntitySubprotocolNumber.NO_SUBPROTOCOL);
+    */
     return (TSPIPdu) addBoilerPlate(pdu);
   }
 
