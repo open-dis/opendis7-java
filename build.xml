@@ -210,7 +210,7 @@
     click, test-single for Maven. TDN 08 JUN 2020. 
     -->
     
-    <target name="jar">
+    <target name="jar" depends="compile,test,javadoc">
         <!-- javadoc manifest properties -->
         <echo message="manifest.name          = ${manifest.name}"/>
         <echo message="Built-By               = ${Built-By}"/>
