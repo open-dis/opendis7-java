@@ -53,39 +53,39 @@ public class FixedAndVariableDatumRoundTripTest
       disNetworkInterface = null;
   }
 
-  private static FixedDatum fixedDatum1 = new FixedDatum();
-  private static int fixedDatum1Value = 0x111111FF;
-  private static VariableRecordType fixedDatum1VarRecordType = VariableRecordType.ACTIVATE_OWNSHIP;
-  private static FixedDatum fixedDatum2 = new FixedDatum();
-  private static int fixedDatum2Value = 0x222222FF;
-  private static VariableRecordType fixedDatum2VarRecordType = VariableRecordType.HUMIDITY;
-  private static FixedDatum fixedDatum3 = new FixedDatum();
-  private static int fixedDatum3Value = 0x333333FF;
-  private static VariableRecordType fixedDatum3VarRecordType = VariableRecordType.SKE_FREQUENCY;
+  private static final FixedDatum fixedDatum1 = new FixedDatum();
+  private static final int FIXED_DATUM_VALUE = 0x111111FF;
+  private static final VariableRecordType FIXED_DATUM_1_VAR_RECORD_TYPE = VariableRecordType.ACTIVATE_OWNSHIP;
+  private static final FixedDatum fixedDatum2 = new FixedDatum();
+  private static final int FIXED_DATUM2_VALUE = 0x222222FF;
+  private static final VariableRecordType FIXED_DATUM_2_VAR_RECORD_TYPE = VariableRecordType.HUMIDITY;
+  private static final FixedDatum fixedDatum3 = new FixedDatum();
+  private static final int FIXED_DATUM_3_VALUE = 0x333333FF;
+  private static final VariableRecordType FIXED_DATUM_3_VAR_RECORD_TYPE = VariableRecordType.SKE_FREQUENCY;
 
-  private static VariableDatum variableDatum1 = new VariableDatum();
-  private static VariableRecordType variableDatum1Type = VariableRecordType.ACLS_AIRCRAFT_REPORT;
-  private static String variableDatum1String = "varDatum1Value111";
-  private static byte[] variableDatum1Value = variableDatum1String.getBytes();
+  private static final VariableDatum variableDatum1 = new VariableDatum();
+  private static final VariableRecordType VARIABLE_DATUM_1_TYPE = VariableRecordType.ACLS_AIRCRAFT_REPORT;
+  private static final String VARIABLE_DATUM_1_STRING = "varDatum1Value111";
+  private static final byte[] variableDatum1Value = VARIABLE_DATUM_1_STRING.getBytes();
 
-  private static VariableDatum variableDatum2 = new VariableDatum();
-  private static VariableRecordType variableDatum2Type = VariableRecordType.Z_ACCELERATION;
-  private static byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
+  private static final VariableDatum variableDatum2 = new VariableDatum();
+  private static final VariableRecordType VARIABLE_DATUM_2_TYPE = VariableRecordType.Z_ACCELERATION;
+  private static final byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
 
   static {
-    fixedDatum1.setFixedDatumValue(fixedDatum1Value);
-    fixedDatum1.setFixedDatumID(fixedDatum1VarRecordType);
+    fixedDatum1.setFixedDatumValue(FIXED_DATUM_VALUE);
+    fixedDatum1.setFixedDatumID(FIXED_DATUM_1_VAR_RECORD_TYPE);
 
-    fixedDatum2.setFixedDatumValue(fixedDatum2Value);
-    fixedDatum2.setFixedDatumID(fixedDatum2VarRecordType);
+    fixedDatum2.setFixedDatumValue(FIXED_DATUM2_VALUE);
+    fixedDatum2.setFixedDatumID(FIXED_DATUM_2_VAR_RECORD_TYPE);
 
-    fixedDatum3.setFixedDatumValue(fixedDatum3Value);
-    fixedDatum3.setFixedDatumID(fixedDatum3VarRecordType);
+    fixedDatum3.setFixedDatumValue(FIXED_DATUM_3_VALUE);
+    fixedDatum3.setFixedDatumID(FIXED_DATUM_3_VAR_RECORD_TYPE);
 
-    variableDatum1.setVariableDatumID(variableDatum1Type);
+    variableDatum1.setVariableDatumID(VARIABLE_DATUM_1_TYPE);
     variableDatum1.setVariableDatumValue(variableDatum1Value);
 
-    variableDatum2.setVariableDatumID(variableDatum2Type);
+    variableDatum2.setVariableDatumID(VARIABLE_DATUM_2_TYPE);
     variableDatum2.setVariableDatumValue(variableDatum2Value);
   }
 
