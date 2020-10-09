@@ -985,7 +985,6 @@ public class PduFactory
   {
     TSPIPdu pdu = new TSPIPdu()
       .setLiveEntityId(newEntityID());
-    return pdu;
     /*
             .setDeadReckoningParameters(newLiveDeadReckoningParameters())
             .setEntityLinearVelocity(new LiveEntityLinearVelocity())
@@ -1009,7 +1008,6 @@ public class PduFactory
       .setEntityType(newEntityType())
       .setAlternateEntityType(newEntityType())
       .setLiveEntityId(new EntityID());
-    return pdu;
     /*
             .setCapabilities(new SurfacePlatformCapabilities())
             .setAppearanceFields(new Appearance())
@@ -1045,7 +1043,6 @@ public class PduFactory
       .setMunitionLiveEntityId(newEntityID())
       .setTargetLiveEntityId(newEntityID())
       .setMunitionDescriptor(newMunitionDescriptor());
-    return pdu;
     /*
             .setLocation(new LiveEntityRelativeWorldCoordinates())
             .setVelocity(new LiveEntityLinearVelocity())
@@ -1067,7 +1064,6 @@ public class PduFactory
       .setMunitionLiveEntityId(newEntityID())
       .setTargetLiveEntityId(newEntityID())
       .setMunitionDescriptor(newMunitionDescriptor());
-    return pdu;
     /*
             .setEntityLocation(new LiveEntityLinearVelocity())
             .setMunitionOrientation(new LiveEntityOrientation16())
