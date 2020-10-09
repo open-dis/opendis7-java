@@ -133,6 +133,7 @@ abstract public class PduTest
     {
         receivedPdu = newPdu;
     }
+    
     /** 
      * Initial common tests for fields in PDU header.
      * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
@@ -169,6 +170,7 @@ abstract public class PduTest
             System.out.println("================================================================");
         }
     }
+    
     /** 
      * Final common tests of PDU characteristics after individual fields are checked.
      * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
