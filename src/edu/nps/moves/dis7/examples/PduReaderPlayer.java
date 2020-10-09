@@ -47,11 +47,17 @@ public class PduReaderPlayer
         outDir = args[0];
         mcast = args[1];
         port = Integer.parseInt(args[2]);
+        break;
+      case 4:
+        outDir = args[0];
+        mcast = args[1];
+        port = Integer.parseInt(args[2]);
         sendToNet = Boolean.valueOf(args[3]);
         break;
       default:
         System.err.println("Usage: PduReaderPlayer() or "
                 + "PduReaderPlayer(\"outputdir\", \"sendToNet true/false\") or "
+                + "PduReaderPlayer(\"outputdir\", \"ipPort\", \"sendToNet true/false\") or "
                 + "PduReaderPlayer(\"outputdir\", \"multicast address\", \"ipPort\", \"sendToNet true/false\"");
         System.exit(1);
     }
