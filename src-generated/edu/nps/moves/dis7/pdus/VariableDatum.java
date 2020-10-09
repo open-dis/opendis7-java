@@ -4,8 +4,9 @@
  */
 package edu.nps.moves.dis7.pdus;
 
-import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
+
+import java.io.*;
 import java.util.Arrays;
 
 /**
@@ -197,7 +198,7 @@ public class VariableDatum extends Object implements Serializable
       //uPosition += padding.length;
     }
     catch (Exception e) {
-      System.out.println(e);
+      System.err.println(e);
     }
     return getMarshalledSize();
   }

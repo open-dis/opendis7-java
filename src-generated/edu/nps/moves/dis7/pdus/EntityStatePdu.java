@@ -10,7 +10,7 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- *  7.2.2. Represents the postion and state of one entity in the world. See 5.3.2.
+ *  7.2.2. Represents the position and state of one entity in the world. See 5.3.2.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public class EntityStatePdu extends EntityInformationFamilyPdu implements Serializable

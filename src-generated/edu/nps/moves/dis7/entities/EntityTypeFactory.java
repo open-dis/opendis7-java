@@ -31,7 +31,7 @@ public class EntityTypeFactory
       return null;
     
     try {
-      Class cls = Class.forName(name);
+      Class<?> cls = Class.forName(name);
       Constructor<EntityType> constr = (Constructor<EntityType>) cls.getConstructors()[0];
       return constr.newInstance();
     }
