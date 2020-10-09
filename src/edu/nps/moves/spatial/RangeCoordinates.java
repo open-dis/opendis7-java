@@ -435,8 +435,6 @@ public class RangeCoordinates
 
     public static void main(String args[])
     {
-
-
         // x-axis intercept: prime meridian, equator, and zero altitude.
         RangeCoordinates primeMeridian = new RangeCoordinates(0.0, 0.0, 0.0);
         primeMeridian.DISCoordFromLocalFlat(0.0, 0.0, 0.0);
