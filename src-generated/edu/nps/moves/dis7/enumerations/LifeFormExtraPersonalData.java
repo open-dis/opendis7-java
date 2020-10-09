@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 477 marshal size 8<br>
- * _____________________________<br>
+ * LifeFormExtraPersonalData<br>
  * The 1s digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10s digit is reserved for general age group. The 100s digit is reserved for gender, where 0 is Male and 1 is Female.
  */
 public enum LifeFormExtraPersonalData 
@@ -133,9 +133,9 @@ public enum LifeFormExtraPersonalData
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static LifeFormExtraPersonalData unmarshalEnum (DataInputStream dis) throws Exception
@@ -150,29 +150,36 @@ public enum LifeFormExtraPersonalData
         return getEnumForValue(dis.readByte());
     } 
 
-    public static LifeFormExtraPersonalData unmarshalEnum(ByteBuffer buff) throws Exception
+    public static LifeFormExtraPersonalData unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "LifeFormExtraPersonalData: " + name() + ": " + getValue(); 
+        return "LifeFormExtraPersonalData " + getValue() + " " + name(); 
     }
 }

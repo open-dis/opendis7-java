@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 61 marshal size 16<br>
- * ________________________
+ * MunitionDescriptorFuse
  */
 public enum MunitionDescriptorFuse 
 {
@@ -41,41 +41,41 @@ public enum MunitionDescriptorFuse
     /** Contact, Delayed */
     CONTACT_DELAYED (1200, "Contact, Delayed"),
     /** 10 ms Delay */
-    NAME_10_MS_DELAY (1201, "10 ms Delay"),
+    _10_MS_DELAY (1201, "10 ms Delay"),
     /** 20 ms Delay */
-    NAME_20_MS_DELAY (1202, "20 ms Delay"),
+    _20_MS_DELAY (1202, "20 ms Delay"),
     /** 50 ms Delay */
-    NAME_50_MS_DELAY (1205, "50 ms Delay"),
+    _50_MS_DELAY (1205, "50 ms Delay"),
     /** 60 ms Delay */
-    NAME_60_MS_DELAY (1206, "60 ms Delay"),
+    _60_MS_DELAY (1206, "60 ms Delay"),
     /** 100 ms Delay */
-    NAME_100_MS_DELAY (1210, "100 ms Delay"),
+    _100_MS_DELAY (1210, "100 ms Delay"),
     /** 125 ms Delay */
-    NAME_125_MS_DELAY (1212, "125 ms Delay"),
+    _125_MS_DELAY (1212, "125 ms Delay"),
     /** 250 ms Delay */
-    NAME_250_MS_DELAY (1225, "250 ms Delay"),
+    _250_MS_DELAY (1225, "250 ms Delay"),
     /** 5 ms Delay */
-    NAME_5_MS_DELAY (1250, "5 ms Delay"),
+    _5_MS_DELAY (1250, "5 ms Delay"),
     /** 15 ms Delay */
-    NAME_15_MS_DELAY (1251, "15 ms Delay"),
+    _15_MS_DELAY (1251, "15 ms Delay"),
     /** 25 ms Delay */
-    NAME_25_MS_DELAY (1252, "25 ms Delay"),
+    _25_MS_DELAY (1252, "25 ms Delay"),
     /** 30 ms Delay */
-    NAME_30_MS_DELAY (1253, "30 ms Delay"),
+    _30_MS_DELAY (1253, "30 ms Delay"),
     /** 35 ms Delay */
-    NAME_35_MS_DELAY (1254, "35 ms Delay"),
+    _35_MS_DELAY (1254, "35 ms Delay"),
     /** 40 ms Delay */
-    NAME_40_MS_DELAY (1255, "40 ms Delay"),
+    _40_MS_DELAY (1255, "40 ms Delay"),
     /** 45 ms Delay */
-    NAME_45_MS_DELAY (1256, "45 ms Delay"),
+    _45_MS_DELAY (1256, "45 ms Delay"),
     /** 90 ms Delay */
-    NAME_90_MS_DELAY (1257, "90 ms Delay"),
+    _90_MS_DELAY (1257, "90 ms Delay"),
     /** 120 ms Delay */
-    NAME_120_MS_DELAY (1258, "120 ms Delay"),
+    _120_MS_DELAY (1258, "120 ms Delay"),
     /** 180 ms Delay */
-    NAME_180_MS_DELAY (1259, "180 ms Delay"),
+    _180_MS_DELAY (1259, "180 ms Delay"),
     /** 240 ms Delay */
-    NAME_240_MS_DELAY (1260, "240 ms Delay"),
+    _240_MS_DELAY (1260, "240 ms Delay"),
     /** Contact, Electronic (Oblique Contact) */
     CONTACT_ELECTRONIC_OBLIQUE_CONTACT (1300, "Contact, Electronic (Oblique Contact)"),
     /** Contact, Graze */
@@ -123,19 +123,19 @@ public enum MunitionDescriptorFuse
     /** Timed, Short Delay Impact */
     TIMED_SHORT_DELAY_IMPACT (2700, "Timed, Short Delay Impact"),
     /** 10 ms Delay */
-    NAME_10_MS_DELAY_2 (2701, "10 ms Delay"),
+    _10_MS_DELAY_2 (2701, "10 ms Delay"),
     /** 20 ms Delay */
-    NAME_20_MS_DELAY_2 (2702, "20 ms Delay"),
+    _20_MS_DELAY_2 (2702, "20 ms Delay"),
     /** 50 ms Delay */
-    NAME_50_MS_DELAY_2 (2705, "50 ms Delay"),
+    _50_MS_DELAY_2 (2705, "50 ms Delay"),
     /** 60 ms Delay */
-    NAME_60_MS_DELAY_2 (2706, "60 ms Delay"),
+    _60_MS_DELAY_2 (2706, "60 ms Delay"),
     /** 100 ms Delay */
-    NAME_100_MS_DELAY_2 (2710, "100 ms Delay"),
+    _100_MS_DELAY_2 (2710, "100 ms Delay"),
     /** 125 ms Delay */
-    NAME_125_MS_DELAY_2 (2712, "125 ms Delay"),
+    _125_MS_DELAY_2 (2712, "125 ms Delay"),
     /** 250 ms Delay */
-    NAME_250_MS_DELAY_2 (2725, "250 ms Delay"),
+    _250_MS_DELAY_2 (2725, "250 ms Delay"),
     /** Timed, Nose Mounted Variable Delay */
     TIMED_NOSE_MOUNTED_VARIABLE_DELAY (2800, "Timed, Nose Mounted Variable Delay"),
     /** Timed, Long Delay Side */
@@ -263,15 +263,15 @@ public enum MunitionDescriptorFuse
        return null;
     }
 
-
-    public void marshal(DataOutputStream dos) throws IOException
+ 
+   public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.putShort((short)getValue());
+        byteBuffer.putShort((short)getValue());
     }
 
     public static MunitionDescriptorFuse unmarshalEnum (DataInputStream dis) throws Exception
@@ -279,23 +279,28 @@ public enum MunitionDescriptorFuse
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
-    public static MunitionDescriptorFuse unmarshalEnum (ByteBuffer buff) throws Exception
+    public static MunitionDescriptorFuse unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
-        return getEnumForValue(buff.getShort());
+        return getEnumForValue(byteBuffer.getShort());
     }   
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
         return 2; // 16 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "MunitionDescriptorFuse: " + name() + ": " + getValue(); 
+        return "MunitionDescriptorFuse " + getValue() + " " + name(); 
     }
 }

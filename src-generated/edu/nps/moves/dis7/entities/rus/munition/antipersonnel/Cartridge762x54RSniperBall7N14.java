@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.rus.munition.antipersonnel;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60b616c8
+ * Country: Russia (RUS)
+ * Entity kind: Munition
+ * Domain: ANTI_PERSONNEL
+ *
+ * Entity type uid: 23981
+ */
+public class Cartridge762x54RSniperBall7N14 extends EntityType
+{
+    public Cartridge762x54RSniperBall7N14()
+    {
+        setCountry(Country.RUSSIA_RUS);
+        setEntityKind(EntityKind.MUNITION);
+        setDomain(Domain.inst(MunitionDomain.ANTI_PERSONNEL));
+
+        setCategory((byte)2); // uid 20637, Ballistic
+        setSubCategory((byte)2); // uid 20641, 7.62 mm
+        setSpecific((byte)5); // uid 23981, Cartridge, 7.62x54R, Sniper Ball, 7N14
+    }
+}

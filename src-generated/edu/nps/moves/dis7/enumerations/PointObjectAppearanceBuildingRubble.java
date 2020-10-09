@@ -1,11 +1,11 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 483 marshal size 32<br>
- * _______________________________________
+ * PointObjectAppearanceBuildingRubble
  */
 public class PointObjectAppearanceBuildingRubble extends DisBitSet 
 {

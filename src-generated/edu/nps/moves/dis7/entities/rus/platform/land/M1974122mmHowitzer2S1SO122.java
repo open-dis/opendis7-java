@@ -1,0 +1,26 @@
+package edu.nps.moves.dis7.entities.rus.platform.land;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@25d958c6
+ * Country: Russia (RUS)
+ * Entity kind: Platform
+ * Domain: LAND
+ *
+ * Entity type uid: 12747
+ */
+public class M1974122mmHowitzer2S1SO122 extends EntityType
+{
+    public M1974122mmHowitzer2S1SO122()
+    {
+        setCountry(Country.RUSSIA_RUS);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.LAND));
+
+        setCategory((byte)4); // uid 12745, Self-Propelled Artillery
+        setSubCategory((byte)2); // uid 12747, M-1974 122-mm Howitzer (2S1) (SO-122)
+    }
+}

@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 428 marshal size 8<br>
- * _______________________________<br>
+ * PlatformLandCarSubcategories<br>
  * Subcategories for Land Platform Category 81. Subcategory values have the general form/style in the 10s/100s digits and the size in the 1s digit. A zero in the 1s digit indicates an unspecified size.
  */
 public enum PlatformLandCarSubcategories implements SubCategory
@@ -31,41 +31,41 @@ public enum PlatformLandCarSubcategories implements SubCategory
     /** Generic, Oversize, ACRISS O */
     GENERIC_OVERSIZE (15, "Generic, Oversize"),
     /** 2-Door (Coupe), No specific enumerations may be placed in this subcategory */
-    NAME_2_DOOR_COUPE (20, "2-Door (Coupe)"),
+    _2_DOOR_COUPE (20, "2-Door (Coupe)"),
     /** 2-Door (Coupe), Mini/Microcar (Tiny) */
-    NAME_2_DOOR_COUPE_MINI_MICROCAR_TINY (21, "2-Door (Coupe), Mini/Microcar (Tiny)"),
+    _2_DOOR_COUPE_MINI_MICROCAR_TINY (21, "2-Door (Coupe), Mini/Microcar (Tiny)"),
     /** 2-Door (Coupe), Economy/Compact (Small) */
-    NAME_2_DOOR_COUPE_ECONOMY_COMPACT_SMALL (22, "2-Door (Coupe), Economy/Compact (Small)"),
+    _2_DOOR_COUPE_ECONOMY_COMPACT_SMALL (22, "2-Door (Coupe), Economy/Compact (Small)"),
     /** 2-Door (Coupe), Intermediate/Standard (Medium) */
-    NAME_2_DOOR_COUPE_INTERMEDIATE_STANDARD_MEDIUM (23, "2-Door (Coupe), Intermediate/Standard (Medium)"),
+    _2_DOOR_COUPE_INTERMEDIATE_STANDARD_MEDIUM (23, "2-Door (Coupe), Intermediate/Standard (Medium)"),
     /** 3-Door Hatchback, No specific enumerations may be placed in this subcategory */
-    NAME_3_DOOR_HATCHBACK (30, "3-Door Hatchback"),
+    _3_DOOR_HATCHBACK (30, "3-Door Hatchback"),
     /** 3-Door Hatchback, Mini/Microcar (Tiny) */
-    NAME_3_DOOR_HATCHBACK_MINI_MICROCAR_TINY (31, "3-Door Hatchback, Mini/Microcar (Tiny)"),
+    _3_DOOR_HATCHBACK_MINI_MICROCAR_TINY (31, "3-Door Hatchback, Mini/Microcar (Tiny)"),
     /** 3-Door Hatchback, Economy/Compact (Small) */
-    NAME_3_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (32, "3-Door Hatchback, Economy/Compact (Small)"),
+    _3_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (32, "3-Door Hatchback, Economy/Compact (Small)"),
     /** 4-Door Sedan, No specific enumerations may be placed in this subcategory */
-    NAME_4_DOOR_SEDAN (40, "4-Door Sedan"),
+    _4_DOOR_SEDAN (40, "4-Door Sedan"),
     /** 4-Door Sedan, Mini/Microcar (Tiny) */
-    NAME_4_DOOR_SEDAN_MINI_MICROCAR_TINY (41, "4-Door Sedan, Mini/Microcar (Tiny)"),
+    _4_DOOR_SEDAN_MINI_MICROCAR_TINY (41, "4-Door Sedan, Mini/Microcar (Tiny)"),
     /** 4-Door Sedan, Economy/Compact (Small) */
-    NAME_4_DOOR_SEDAN_ECONOMY_COMPACT_SMALL (42, "4-Door Sedan, Economy/Compact (Small)"),
+    _4_DOOR_SEDAN_ECONOMY_COMPACT_SMALL (42, "4-Door Sedan, Economy/Compact (Small)"),
     /** 4-Door Sedan, Intermediate/Standard (Medium) */
-    NAME_4_DOOR_SEDAN_INTERMEDIATE_STANDARD_MEDIUM (43, "4-Door Sedan, Intermediate/Standard (Medium)"),
+    _4_DOOR_SEDAN_INTERMEDIATE_STANDARD_MEDIUM (43, "4-Door Sedan, Intermediate/Standard (Medium)"),
     /** 4-Door Sedan, Full/Premium/Luxury (Large) */
-    NAME_4_DOOR_SEDAN_FULL_PREMIUM_LUXURY_LARGE (44, "4-Door Sedan, Full/Premium/Luxury (Large)"),
+    _4_DOOR_SEDAN_FULL_PREMIUM_LUXURY_LARGE (44, "4-Door Sedan, Full/Premium/Luxury (Large)"),
     /** 4-Door Sedan, Oversize */
-    NAME_4_DOOR_SEDAN_OVERSIZE (45, "4-Door Sedan, Oversize"),
+    _4_DOOR_SEDAN_OVERSIZE (45, "4-Door Sedan, Oversize"),
     /** 5-Door Hatchback, No specific enumerations may be placed in this subcategory */
-    NAME_5_DOOR_HATCHBACK (50, "5-Door Hatchback"),
+    _5_DOOR_HATCHBACK (50, "5-Door Hatchback"),
     /** 5-Door Hatchback, Mini/Microcar (Tiny) */
-    NAME_5_DOOR_HATCHBACK_MINI_MICROCAR_TINY (51, "5-Door Hatchback, Mini/Microcar (Tiny)"),
+    _5_DOOR_HATCHBACK_MINI_MICROCAR_TINY (51, "5-Door Hatchback, Mini/Microcar (Tiny)"),
     /** 5-Door Hatchback, Economy/Compact (Small) */
-    NAME_5_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (52, "5-Door Hatchback, Economy/Compact (Small)"),
+    _5_DOOR_HATCHBACK_ECONOMY_COMPACT_SMALL (52, "5-Door Hatchback, Economy/Compact (Small)"),
     /** 5-Door Hatchback, Intermediate/Standard (Medium) */
-    NAME_5_DOOR_HATCHBACK_INTERMEDIATE_STANDARD_MEDIUM (53, "5-Door Hatchback, Intermediate/Standard (Medium)"),
+    _5_DOOR_HATCHBACK_INTERMEDIATE_STANDARD_MEDIUM (53, "5-Door Hatchback, Intermediate/Standard (Medium)"),
     /** 5-Door Hatchback, Full/Premium/Luxury (Large) */
-    NAME_5_DOOR_HATCHBACK_FULL_PREMIUM_LUXURY_LARGE (54, "5-Door Hatchback, Full/Premium/Luxury (Large)"),
+    _5_DOOR_HATCHBACK_FULL_PREMIUM_LUXURY_LARGE (54, "5-Door Hatchback, Full/Premium/Luxury (Large)"),
     /** Wagon, No specific enumerations may be placed in this subcategory */
     WAGON (60, "Wagon"),
     /** Wagon, Economy/Compact (Small) */
@@ -145,9 +145,9 @@ public enum PlatformLandCarSubcategories implements SubCategory
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static PlatformLandCarSubcategories unmarshalEnum (DataInputStream dis) throws Exception
@@ -162,29 +162,36 @@ public enum PlatformLandCarSubcategories implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
-    public static PlatformLandCarSubcategories unmarshalEnum(ByteBuffer buff) throws Exception
+    public static PlatformLandCarSubcategories unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "PlatformLandCarSubcategories: " + name() + ": " + getValue(); 
+        return "PlatformLandCarSubcategories " + getValue() + " " + name(); 
     }
 }

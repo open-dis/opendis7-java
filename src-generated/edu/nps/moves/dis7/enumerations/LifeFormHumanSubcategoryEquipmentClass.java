@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 473 marshal size 8<br>
- * ___________________________________________
+ * LifeFormHumanSubcategoryEquipmentClass
  */
 public enum LifeFormHumanSubcategoryEquipmentClass 
 {
@@ -44,11 +44,11 @@ public enum LifeFormHumanSubcategoryEquipmentClass
     /** Sensors, Subcategories 151-159 are restricted to sensor equipment classes. */
     SENSORS (151, "Sensors"),
     /** LifeFormHumanSpecificEquipmentClass */    SIGNAL_SENSOR_2 (152, "Signal Sensor"),
-    /** _____________________________________ */    LASERS_2 (153, "Lasers"),
+    /** LifeFormHumanSpecificLasersClass */    LASERS_2 (153, "Lasers"),
     /** Animal Companion, Subcategories 160-169 are restricted to animal companion classes. */
     ANIMAL_COMPANION (160, "Animal Companion"),
-    /** ___________________________________________________ */    PERSONAL_ELECTRONICS_2 (171, "Personal Electronics"),
-    /** ___________________________________________ */    LOGISTICS_EQUIPMENT_2 (172, "Logistics Equipment");
+    /** LifeFormHumanSpecificPersonalElectronicsClass */    PERSONAL_ELECTRONICS_2 (171, "Personal Electronics"),
+    /** LifeFormHumanSpecificLogisticsEQClass */    LOGISTICS_EQUIPMENT_2 (172, "Logistics Equipment");
 
     private int value;
     private final String description;
@@ -90,9 +90,9 @@ public enum LifeFormHumanSubcategoryEquipmentClass
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static LifeFormHumanSubcategoryEquipmentClass unmarshalEnum (DataInputStream dis) throws Exception
@@ -107,29 +107,36 @@ public enum LifeFormHumanSubcategoryEquipmentClass
         return getEnumForValue(dis.readByte());
     } 
 
-    public static LifeFormHumanSubcategoryEquipmentClass unmarshalEnum(ByteBuffer buff) throws Exception
+    public static LifeFormHumanSubcategoryEquipmentClass unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "LifeFormHumanSubcategoryEquipmentClass: " + name() + ": " + getValue(); 
+        return "LifeFormHumanSubcategoryEquipmentClass " + getValue() + " " + name(); 
     }
 }

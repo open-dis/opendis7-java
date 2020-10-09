@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.swe.platform.land;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e19755a
+ * Country: Sweden (SWE)
+ * Entity kind: Platform
+ * Domain: LAND
+ *
+ * Entity type uid: 27660
+ */
+public class BVS10TroopCarryingTCV extends EntityType
+{
+    public BVS10TroopCarryingTCV()
+    {
+        setCountry(Country.SWEDEN_SWE);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.LAND));
+
+        setCategory((byte)9); // uid 27646, Large Tracked Utility Vehicle
+        setSubCategory((byte)4); // uid 27658, All Terrain Vehicle (Protected) / ATV(P) / Viking / BvS 10
+        setSpecific((byte)2); // uid 27660, BV-S10 Troop Carrying (TCV)
+    }
+}

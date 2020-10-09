@@ -1,6 +1,6 @@
 package edu.nps.moves.dis7.jammers.Deception.Analyzer;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**

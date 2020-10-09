@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 72 marshal size 32<br>
- * ______________________________
+ * ActionResponseRequestStatus
  */
 public enum ActionResponseRequestStatus 
 {
@@ -83,9 +83,9 @@ public enum ActionResponseRequestStatus
         dos.writeInt(getValue());
     }
 
-    public void marshal(ByteBuffer buff)
+    public void marshal(ByteBuffer byteBuffer)
     {
-        buff.putInt(getValue());
+        byteBuffer.putInt(getValue());
     }
 
     public static ActionResponseRequestStatus unmarshalEnum (DataInputStream dis) throws Exception
@@ -93,14 +93,15 @@ public enum ActionResponseRequestStatus
         return getEnumForValue(dis.readInt());
     } 
 
-    public static ActionResponseRequestStatus unmarshalEnum (ByteBuffer buff)
+    public static ActionResponseRequestStatus unmarshalEnum (ByteBuffer byteBuffer)
     {
-        return getEnumForValue(buff.getInt());
+        return getEnumForValue(byteBuffer.getInt());
     }
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
@@ -110,6 +111,6 @@ public enum ActionResponseRequestStatus
     @Override
     public String toString()
     {
-        return "ActionResponseRequestStatus: " + name() + ": " + getValue();
+        return "ActionResponseRequestStatus: " + getValue() + " " + name();
     }
 }

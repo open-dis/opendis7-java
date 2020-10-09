@@ -5,25 +5,25 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 512 marshal size 8<br>
- * ________________________________
+ * LifeFormHumanSpecificMortars
  */
 public enum LifeFormHumanSpecificMortars 
 {
     /** Others */
     OTHERS (0, "Others"),
     /** 60mm M224 */
-    NAME_60MM_M224 (30, "60mm M224"),
+    _60MM_M224 (30, "60mm M224"),
     /** 81mm F2 */
-    NAME_81MM_F2 (50, "81mm F2"),
+    _81MM_F2 (50, "81mm F2"),
     /** 81mm L16 */
-    NAME_81MM_L16 (51, "81mm L16"),
+    _81MM_L16 (51, "81mm L16"),
     /** 81mm M252 */
-    NAME_81MM_M252 (52, "81mm M252");
+    _81MM_M252 (52, "81mm M252");
 
     private int value;
     private final String description;
@@ -65,9 +65,9 @@ public enum LifeFormHumanSpecificMortars
         dos.writeByte(getValue());
     }
     
-    public void marshal(ByteBuffer buff) throws Exception
+    public void marshal(ByteBuffer byteBuffer) throws Exception
     {
-        buff.put((byte)getValue());
+        byteBuffer.put((byte)getValue());
     }
 
     public static LifeFormHumanSpecificMortars unmarshalEnum (DataInputStream dis) throws Exception
@@ -82,29 +82,36 @@ public enum LifeFormHumanSpecificMortars
         return getEnumForValue(dis.readByte());
     } 
 
-    public static LifeFormHumanSpecificMortars unmarshalEnum(ByteBuffer buff) throws Exception
+    public static LifeFormHumanSpecificMortars unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
-            value = (int)buff.get();
+            value = (int)byteBuffer.get();
         }
         catch(Exception ex) {
             showError(ex);
         }
         */
-        return getEnumForValue(buff.get());
+        return getEnumForValue(byteBuffer.get());
     }
 
-    /** Returns the size of this serialized object in bytes
-     *@return size in bytes*/  
+  /**
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
+   */
     public int getMarshalledSize()
     {
         return 1; // 8 bits
     }
     
+  /**
+   * Provide simple identifier
+   * @return ID number and name
+   */
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificMortars: " + name() + ": " + getValue(); 
+        return "LifeFormHumanSpecificMortars " + getValue() + " " + name(); 
     }
 }

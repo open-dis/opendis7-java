@@ -5,12 +5,12 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 57 marshal size 32<br>
- * ______________
+ * AttachedParts
  */
 public enum AttachedParts 
 {
@@ -77,9 +77,9 @@ public enum AttachedParts
         dos.writeInt(getValue());
     }
 
-    public void marshal(ByteBuffer buff)
+    public void marshal(ByteBuffer byteBuffer)
     {
-        buff.putInt(getValue());
+        byteBuffer.putInt(getValue());
     }
 
     public static AttachedParts unmarshalEnum (DataInputStream dis) throws Exception
@@ -87,14 +87,15 @@ public enum AttachedParts
         return getEnumForValue(dis.readInt());
     } 
 
-    public static AttachedParts unmarshalEnum (ByteBuffer buff)
+    public static AttachedParts unmarshalEnum (ByteBuffer byteBuffer)
     {
-        return getEnumForValue(buff.getInt());
+        return getEnumForValue(byteBuffer.getInt());
     }
 
   /**
-   * Returns size of this serialized object in bytes
-   * @return size in bytes
+   * Returns size of this serialized (marshalled) object in bytes
+   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @return serialized size in bytes
    */
     public int getMarshalledSize()
     {
@@ -104,6 +105,6 @@ public enum AttachedParts
     @Override
     public String toString()
     {
-        return "AttachedParts: " + name() + ": " + getValue();
+        return "AttachedParts: " + getValue() + " " + name();
     }
 }

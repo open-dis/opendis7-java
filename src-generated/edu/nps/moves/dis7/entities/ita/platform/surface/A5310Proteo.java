@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.ita.platform.surface;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e63ec0b
+ * Country: Italy (ITA)
+ * Entity kind: Platform
+ * Domain: SURFACE
+ *
+ * Entity type uid: 18468
+ */
+public class A5310Proteo extends EntityType
+{
+    public A5310Proteo()
+    {
+        setCountry(Country.ITALY_ITA);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.SURFACE));
+
+        setCategory((byte)16); // uid 18374, Auxiliary
+        setSubCategory((byte)16); // uid 18467, Salvage Ship
+        setSpecific((byte)1); // uid 18468, A5310 Proteo
+    }
+}

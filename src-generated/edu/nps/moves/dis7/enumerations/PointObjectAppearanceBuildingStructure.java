@@ -1,26 +1,26 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 230 marshal size 16<br>
- * __________________________________________
+ * PointObjectAppearanceBuildingStructure
  */
 public class PointObjectAppearanceBuildingStructure extends DisBitSet 
 {
   /**
    * Describes the color of the building or structure, Use {@link Color} values for this field
    */
-  public static Bits undef = new Bits(0, 8, Color.class);
+  public static Bits COLOR = new Bits(0, 8, Color.class);
   /**
    * Describes the visual paint design, Use {@link BuildingPaintScheme} values for this field
    */
-  public static Bits undef_2 = new Bits(8, 8, BuildingPaintScheme.class);
+  public static Bits PAINTSCHEME = new Bits(8, 8, BuildingPaintScheme.class);
   /**
    * Describes whether the aperture (e.g., tent) is open or closed
    */
-  public static Bits undef_3 = new Bits(16, 1);
+  public static Bits ISAPERTUREOPEN = new Bits(16, 1);
 
   public static class Bits
   {

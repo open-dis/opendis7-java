@@ -1,22 +1,22 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 487 marshal size 32<br>
- * ____________________________
+ * PointObjectAppearanceTree
  */
 public class PointObjectAppearanceTree extends DisBitSet 
 {
   /**
    * Indicates the visually represented season, Use {@link Season} values for this field
    */
-  public static Bits undef = new Bits(0, 2, Season.class);
+  public static Bits SEASON = new Bits(0, 2, Season.class);
   /**
    * Indicates the leaf coverage, Use {@link LeafCoverage} values for this field
    */
-  public static Bits undef_2 = new Bits(2, 2, LeafCoverage.class);
+  public static Bits LEAFCOVERAGE = new Bits(2, 2, LeafCoverage.class);
 
   public static class Bits
   {

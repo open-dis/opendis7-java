@@ -1,26 +1,26 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 317 marshal size 8<br>
- * ____________________________________________________
+ * DEDamageDescriptionComponentVisualDamageStatus
  */
 public class DEDamageDescriptionComponentVisualDamageStatus extends DisBitSet 
 {
   /**
    * Describes presence of fire at the damage site
    */
-  public static Bits undef = new Bits(0, 1);
+  public static Bits ISFIREPRESENT = new Bits(0, 1);
   /**
    * Describes presence of smoke emanating from the damage site, Use {@link ComponentVisualDamageStatusSmoke} values for this field
    */
-  public static Bits undef_2 = new Bits(1, 2, ComponentVisualDamageStatusSmoke.class);
+  public static Bits SMOKE = new Bits(1, 2, ComponentVisualDamageStatusSmoke.class);
   /**
    * Describes general surface appearance at the damage site, Use {@link ComponentVisualDamageStatusSurfaceDamage} values for this field
    */
-  public static Bits undef_3 = new Bits(3, 2, ComponentVisualDamageStatusSurfaceDamage.class);
+  public static Bits SURFACEDAMAGE = new Bits(3, 2, ComponentVisualDamageStatusSurfaceDamage.class);
 
   public static class Bits
   {

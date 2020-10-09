@@ -1,18 +1,18 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 231 marshal size 16<br>
- * __________________________________________________________________________________________
+ * PointObjectAppearanceLogcribAbatisVehicledefiladeandInfantryfightingposition
  */
 public class PointObjectAppearanceLogCribAbatisEtAl extends DisBitSet 
 {
   /**
    * Describes the breached appearance of the object, Use {@link AppearanceObjectSpecificBreachState} values for this field
    */
-  public static Bits undef = new Bits(0, 2, AppearanceObjectSpecificBreachState.class);
+  public static Bits BREACHSTATE = new Bits(0, 2, AppearanceObjectSpecificBreachState.class);
 
   public static class Bits
   {

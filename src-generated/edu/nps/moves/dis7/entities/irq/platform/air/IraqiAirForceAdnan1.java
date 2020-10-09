@@ -1,0 +1,26 @@
+package edu.nps.moves.dis7.entities.irq.platform.air;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b5f4d54
+ * Country: Iraq (IRQ)
+ * Entity kind: Platform
+ * Domain: AIR
+ *
+ * Entity type uid: 18000
+ */
+public class IraqiAirForceAdnan1 extends EntityType
+{
+    public IraqiAirForceAdnan1()
+    {
+        setCountry(Country.IRAQ_IRQ);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.AIR));
+
+        setCategory((byte)8); // uid 17999, Surveillance/C2 (Airborne Early Warning)
+        setSubCategory((byte)1); // uid 18000, Iraqi Air Force Adnan 1
+    }
+}

@@ -1,18 +1,18 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 460 marshal size 32<br>
- * __________________
+ * RadioCapabilities
  */
 public class RadioCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits undef = new Bits(0, 5);
+  public static Bits RESERVED = new Bits(0, 5);
 
   public static class Bits
   {

@@ -1,0 +1,27 @@
+package edu.nps.moves.dis7.entities.usa.platform.air;
+
+import edu.nps.moves.dis7.pdus.*;
+import edu.nps.moves.dis7.enumerations.*;
+
+/**
+ * SISO-REF-010-v28, 2020-05-07
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73041b7d
+ * Country: United States of America (USA)
+ * Entity kind: Platform
+ * Domain: AIR
+ *
+ * Entity type uid: 24814
+ */
+public class S330SP extends EntityType
+{
+    public S330SP()
+    {
+        setCountry(Country.UNITED_STATES_OF_AMERICA_USA);
+        setEntityKind(EntityKind.PLATFORM);
+        setDomain(Domain.inst(PlatformDomain.AIR));
+
+        setCategory((byte)21); // uid 11088, Utility helicopter
+        setSubCategory((byte)9); // uid 24812, Sikorsky S-333/434
+        setSpecific((byte)2); // uid 24814, S-330SP
+    }
+}

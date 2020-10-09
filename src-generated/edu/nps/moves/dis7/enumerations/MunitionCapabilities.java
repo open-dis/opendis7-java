@@ -1,22 +1,22 @@
 package edu.nps.moves.dis7.enumerations;
 
-import edu.nps.moves.dis7.*;
+import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
  * UID 455 marshal size 32<br>
- * _____________________
+ * MunitionCapabilities
  */
 public class MunitionCapabilities extends DisBitSet implements EntityCapabilities
 {
   /**
    * This entry is reserved for backward compatibility and may not be reused
    */
-  public static Bits undef = new Bits(0, 5);
+  public static Bits RESERVED = new Bits(0, 5);
   /**
    * The Entity is an IED or contains an IED. The extended appearance record (if available) will identify how well hidden the IED is on the Entity. An Attached Part (if applicable, for instance a jury-rigged munition does not apply here) will identify the IED explicitly.
    */
-  public static Bits undef_2 = new Bits(7, 1);
+  public static Bits IEDPRESENCEINDICATOR = new Bits(7, 1);
 
   public static class Bits
   {
