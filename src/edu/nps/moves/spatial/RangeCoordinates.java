@@ -5,44 +5,44 @@ import edu.nps.moves.dis7.pdus.LiveEntityOrientation;
 import edu.nps.moves.dis7.pdus.Vector3Double;
 
 /**
- * Represents a local, flat range area with Euclidean coordinates, which is 
+ * <p>Represents a local, flat range area with Euclidean coordinates, which is
  * convenient for somewhat small simulated areas. This class assumes a local, 
  * flat, coordinate system with an origin at (lat, lon, altitude) and positive X 
  * pointing local east, positive Y pointing local north, and positive Z pointing 
  * up. Specified in WGS_84 geodesic coordinate system. Altitude is distance 
- * above the ellipsoid.<p>
+ * above the ellipsoid.</p>
  *
- * The coordinate system has its origin at the given (lat, lon) and creates a
- * plane tangent and normal to the ellipsoid at that point. <p>
+ * <p>The coordinate system has its origin at the given (lat, lon) and creates a
+ * plane tangent and normal to the ellipsoid at that point. </p>
  *
- * There are several major reference frames that may be useful in various contexts:<p>
+ * <p>There are several major reference frames that may be useful in various contexts:</p>
  *
- * Geocentric: Origin at the center of the earth. Positive X out at the intersection
- * of the equator and prime meridian, Y out at 90 deg east lon, and Z up through
- * the north pole. This is the coordinate system used by DIS world coordinates.<p>
+ * <p>Geocentric: Origin at the center of the earth. Positive X out at the intersection
+ * of the equator and prime meridian, Y out at 90 degrees east lon, and Z up through
+ * the north pole. This is the coordinate system used by DIS world coordinates.</p>
  *
- * Geodetic: The coordinate system uses lat/lon/altitude. This is handy for positioning
+ * <p>Geodetic: The coordinate system uses lat/lon/altitude. This is handy for positioning
  * an object on the earth (or close to it) but not so handy for describing things
- * like velocity.<p>
+ * like velocity.</p>
  *
- * Local Tangent Surface Euclidean (LTSE): Pick a lat/lon/altitude, and then at
+ * <p>Local Tangent Surface Euclidean (LTSE): Pick a lat/lon/altitude, and then at
  * that point you can define a single plane normal and tangent to the globe. Positive X points
  * local east, positive Y points local north, and positive Z points local up. This
  * is handy for describing the position of an object in, for example, a range of
  * somewhat small dimensions, perhaps 20KM X 20KM, where we don't want to get sucked
- * into the whole curved earth scene and just want to be simple.<p>
+ * into the whole curved earth scene and just want to be simple.</p>
  *
- * Body Centric/Lococentric/Platform-centric: The origin is at the volumentric center
+ * <p>Body Centric/Lococentric/Platform-centric: The origin is at the volumetric center
  * of an entity (in DIS); Positive
  * x points out the long axis, positive Y points to the right, and positive Z points
  * down. This is widely used to describe (roll, pitch, yaw) in aircraft. Note that you
  * need a transform from (for example) the LTSE to body coordinates to define the
  * position of the body axis origin and orientation WRT the LTSE origin.  Note that
  * the direction of the Z axis is the opposite of that used by LTSE. The axes are
- * often named (u,v,w) in this frame of reference. <p>
+ * often named (u,v,w) in this frame of reference. </p>
  *
- * We can also convert between these coordinate systems using standard libraries
- * in the SRM. <p>
+ * <p>We can also convert between these coordinate systems using standard libraries
+ * in the SRM. </p>
  *
  * See User’s Manual for SRM Orientation, Velocity, and Acceleration
  * Transformations Version 2.0, 18 Nov 2009, available with the
@@ -63,7 +63,7 @@ public class RangeCoordinates
      * at the center of of the earth. Coordinates, in (x, y, z), in meters. This
      * is the reference frame used by many DIS fields on the wire. The technical
      * term for this would be geocentric. Z is through the north pole, x out
-     * the prime meridian at the equator, and y out the equator at 90 deg east.
+     * the prime meridian at the equator, and y out the equator at 90 degrees east.
      */
     SRF_Celestiocentric disCoordinateReferenceFrame;
 
@@ -89,9 +89,9 @@ public class RangeCoordinates
     double altitudeOrigin;
 
     /**
-     * Constructor for a local flat coordinate system. Takes the latitude and
+     * <p>Constructor for a local flat coordinate system. Takes the latitude and
      * longitude (in degrees) for WGS_84 and the height above the ellipsoid
-     * and creates a local, flat coordinate system at that point.<p>
+     * and creates a local, flat coordinate system at that point.</p>
      * 
      * @param originLat Origin of the flat local coordinate system, in degrees, latitude
      * @param originLon Origin of the flat local coordinate system, in degrees, longitude
@@ -156,12 +156,12 @@ public class RangeCoordinates
 
     /**
      * Transform from local, flat coordinate system to the DIS coordinate system.
-     * All units in meters, positive x east, y north, z altitude.<p>
+     * All units in meters, positive x east, y north, z altitude.
      * 
      * @param x x coordinate in local, flat coordinate system
      * @param y y coordinate in meters in local, flat coordinate system
      * @param z z coordinate, altitude, in meters in local flat coordinate system
-     * @return 
+     * @return DIS coordinates
      */
     public Vector3Double DISCoordFromLocalFlat(double x, double y, double z)
     {
@@ -200,7 +200,7 @@ public class RangeCoordinates
      * Changes the world-coordinates vector3double to the local euclidian flat
      * coordinate system. Overwrites the values in worldCoordinates.
      * 
-     * @param worldCoordinates 
+     * @param worldCoordinates local euclidian flat coordinates
      */
    public void changeVectorToLocalCoordFromDIS(Vector3Double worldCoordinates)
    {
@@ -215,10 +215,10 @@ public class RangeCoordinates
     /**
      * Given DIS coordinates, convert to the local Euclidean plane coordinates.
      * 
-     * @param x
-     * @param y
-     * @param z
-     * @return 
+     * @param x DIS coordinates x
+     * @param y DIS coordinates y
+     * @param z DIS coordinates z
+     * @return local Euclidean plane coordinates
      */
     public Vector3Double localCoordFromDis(double x, double y, double z)
     {
@@ -252,24 +252,24 @@ public class RangeCoordinates
     }
 
     /**
-     * Converts a roll, pitch, and heading/yaw in the local flat coordinate system to DIS Euler
+     * <p>Converts a pitch, roll, and heading/yaw in the local flat coordinate system to DIS Euler
      * angles. Input orientation is in units of radians.DIS uses Euler angles to describe
      * the orientation of an object, using an earth-centered coordinate system, with
      * successive rotations about the original x, y, and z axes. You need to be careful
      * here because there are all sorts of conventions for "Euler angles" including
-     * the order in which the axes are rotated about. <p>
+     * the order in which the axes are rotated about. </p>
      *
-     * phi = roll, theta = pitch, psi = yaw/heading<p>, by one popular convention.
-     * All units are in radians.<p>
+     * <p>phi = roll, theta = pitch, psi = yaw/heading<p>, by one popular convention.
+     * All units are in radians.</p>
      *
-     * Note that we also need the position of the object in the local coordinate system.
+     * <p>Note that we also need the position of the object in the local coordinate system.
      * The DIS Euler angles will vary depending on not just the roll/pitch/heading,
      * but also where in the local coordinate frame the object is. Also, the pitch/roll/heading
-     * are in the local coordinate system, NOT the coordinate system of the object.<p>
+     * are in the local coordinate system, NOT the coordinate system of the object.</p>
      * 
-     * @param pitchRollHeading
-     * @param localPosition
-     * @return 
+     * @param pitchRollHeading pitch, roll, and heading/yaw in local flat coordinate system
+     * @param localPosition position in local flat coordinate system
+     * @return live entity orientation
      */
     public LiveEntityOrientation localRollPitchHeadingToDisEuler(LiveEntityOrientation pitchRollHeading,
                                                        Vector3Double localPosition)
@@ -447,7 +447,7 @@ public class RangeCoordinates
         RangeCoordinates northPole = new RangeCoordinates(0.0, 180.0, 0.0); // north pole
         northPole.DISCoordFromLocalFlat(0.0, 0.0, 0.0);
 
-        // y-axis: equator, 90 deg east. x and z should be near-zero
+        // y-axis: equator, 90 degrees east. x and z should be near-zero
         RangeCoordinates yAxis = new RangeCoordinates(90.0, 0.0, 0.0); // y axis
         yAxis.DISCoordFromLocalFlat(0.0, 0.0, 0.0);
 

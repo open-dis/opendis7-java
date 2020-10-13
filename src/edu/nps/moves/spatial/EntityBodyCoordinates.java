@@ -32,16 +32,16 @@ public class EntityBodyCoordinates
     /** Create a new lococentric Euclidean reference frame embedded in a parent SRF.
      * The origin of the lococentric coordinate system is specified, along with
      * two unit vectors, parallel to the u and v axes.
-     * @param parentSRF
-     * @param x
-     * @param y
-     * @param z
-     * @param primaryDirectionX
-     * @param primaryDirectionY
-     * @param primaryDirectionZ
-     * @param secondaryDirectionX
-     * @param secondaryDirectionY
-     * @param secondaryDirectionZ
+     * @param parentSRF parent spatial reference frame
+     * @param x parent lococenter, x coordinate
+     * @param y parent lococenter, y coordinate
+     * @param z parent lococenter, z coordinate
+     * @param primaryDirectionX unit vector parallel to u axis, x coordinate
+     * @param primaryDirectionY unit vector parallel to u axis, y coordinate
+     * @param primaryDirectionZ unit vector parallel to u axis, z coordinate
+     * @param secondaryDirectionX unit vector parallel to v axis, x coordinate
+     * @param secondaryDirectionY unit vector parallel to v axis, y coordinate
+     * @param secondaryDirectionZ unit vector parallel to v axis, z coordinate
      */
     public EntityBodyCoordinates(BaseSRF_3D parentSRF, 
                                  float x, float y, float z, // lococenter, in parent SRF
