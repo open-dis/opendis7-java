@@ -317,7 +317,7 @@
             name="test" >
         <java classpath="${run.test.classpath}"
               classname="org.junit.platform.console.ConsoleLauncher"
-              fork="true">
+              fork="false">
             <arg value="--disable-banner"/>
             <arg value="--fail-if-no-tests"/>
             <arg value="--scan-classpath=${build.test.classes.dir}"/>
@@ -336,7 +336,7 @@
         <echo message="Testing: ${test.class}"/>
         <java classpath="${run.test.classpath}"
               classname="org.junit.platform.console.ConsoleLauncher"
-              fork="true">
+              fork="false">
             <arg value="--disable-banner"/>
             <arg value="--fail-if-no-tests"/>
             <arg line="-c=${test.class}"/>
@@ -354,7 +354,7 @@
             name="-debug-start-debuggee-test">
         <java classpath="${run.test.classpath}"
               classname="org.junit.platform.console.ConsoleLauncher"
-              fork="true">
+              fork="false">
             <arg value="--disable-banner"/>
             <arg value="--fail-if-no-tests"/>
             <arg line="-c=${test.class}"/>
