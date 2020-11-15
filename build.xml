@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- You may freely edit this file. See commented blocks below for -->
-<!-- some examples of how to customize the build. -->
-<!-- (If you delete it and reopen the project it will be recreated.) -->
-<!-- By default, only the Clean and Build commands use this build script. -->
-<!-- Commands such as Run, Debug, and Test only use this build script if -->
-<!-- the Compile on Save feature is turned off for the project. -->
-<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
-<!-- in the project's Project Properties dialog box.-->
 
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the open-dis7-java project.</description>
@@ -28,20 +20,27 @@
     
     <target description="Build and test whole project." name="all">
         <echo message="timestamp ${timestamp}"/>
+        <fail message="Please build using Ant 1.9.0 or higher.">
+            <condition>
+                <not>
+                    <antversion atleast="1.9.0"/><!-- recommend latest 1.10.+ -->
+                </not>
+            </condition>
+        </fail>
         <antcall target="clean"/>
         <echo message="================"/>
         <antcall target="compile"/>
         <echo message="================"/>
+        <antcall target="javadoc"/>
+        <echo message="================"/>
         <echo message="TODO: test suite cleanups, individual programs are runnable OK"/>
         <antcall target="test"/>
-        <echo message="================"/>
-        <antcall target="javadoc"/>
         <echo message="================"/>
         <antcall target="jar"/>
         <echo message="build all complete"/>
     </target>
     
-    <target name="clean-pduLog" description="clean recorded pduLog files">
+    <target name="clean.pduLog" description="clean recorded pduLog files">
         <delete verbose="true">
             <fileset dir="pduLog">
                 <include name="*.dislog"/>
@@ -56,23 +55,23 @@
                 <include name="open-dis7-pdus-classes.jar"/>
                 <include name="open-dis7-pdus-source.jar"/>
                 <include name="open-dis7-pdus-javadoc.jar"/>
-                
+                <!-- do not delete jar files produced by open-dis7-source-generator -->
                 <exclude name="open-dis7-enumerations-classes.jar"/>
                 <exclude name="open-dis7-enumerations-source.jar"/>
                 <exclude name="open-dis7-enumerations-javadoc.jar"/>
                 <exclude name="README.md"/>
             </fileset>
         </delete>
-        <delete dir="javadoc"/>
-        <mkdir dir="javadoc"/>
-        <mkdir dir="build/classes" description="ensure necessary directory present"/>
+        <delete dir="dist/javadoc" description="get rid of all prior files"/>
+        <mkdir  dir="dist/javadoc" description="restore directory"/>
+        <mkdir  dir="build/classes" description="ensure necessary directory present"/>
         <delete verbose="false" includeemptydirs="false">
             <fileset dir="build/classes" includes="**/*"/>
         </delete>
     </target>
     
-    <target name="clean-build">
-        <echo message="warning: be judicious about clean-build, full recompilation may require multiple compilation loops afterward"/>
+    <target name="clean.build">
+        <!-- should be fixed now... <echo message="warning: be judicious about clean.build, full recompilation may require multiple compilation loops afterward"/> -->
         <mkdir dir="build" description="ensure necessary directory present"/>
         <delete includeemptydirs="true" verbose="false">
             <fileset dir="build" includes="**/*"/>
@@ -86,6 +85,7 @@
     </target>
     
     <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
+        <echo message="view local javadoc"/>
         <nbbrowse file="javadoc/index.html" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
@@ -210,7 +210,7 @@
     click, test-single for Maven. TDN 08 JUN 2020. 
     -->
     
-    <target name="jar" depends="compile,test,javadoc">
+    <target name="jar" depends="compile">
         <!-- javadoc manifest properties -->
         <echo message="manifest.name          = ${manifest.name}"/>
         <echo message="Built-By               = ${Built-By}"/>
@@ -227,9 +227,10 @@
     </target>
     
     <target name="jar-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
-        <jar destfile="dist/open-dis7-pdus-javadoc.jar" 
+        <echo message="(note that generated javadoc subdirectory is found within dist subdirectory)"/>
+        <jar destfile="dist/open-dis7-pdus-javadoc.jar"
                update="true"
-              basedir="javadoc">
+              basedir="dist/javadoc">
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Javadoc files for ${manifest.name}"/>
