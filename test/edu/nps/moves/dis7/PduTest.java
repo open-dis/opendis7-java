@@ -52,6 +52,7 @@ abstract public class PduTest
 {
     protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l; // i.e. 100, type long
     private         long threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
+    private         int  maximumRetryAttempts = 10;
     
     @BeforeAll
     public static void setUpClass()
@@ -99,12 +100,26 @@ abstract public class PduTest
      * for unmarshalling (deserialization) further unit testing.
      * @param createdPdu new PDU of interest
      */
+    @SuppressWarnings("SleepWhileInLoop")
     protected void sendIeeeStandardPdu(Pdu createdPdu)
     {
-        try
+        disNetworkInterface.send(createdPdu);
+        
+        try // check to see if the sent PDU came back
         {
-            disNetworkInterface.send(createdPdu);
-            Thread.sleep(getThreadSleepInterval()); // TODO better way to wait?
+            int numberOfReadTests = 0;
+            do // check at least once, perhaps multiple times for receipt before returning
+            {
+                Thread.sleep(getThreadSleepInterval());
+                if (receivedPdu != null)
+                    return;
+                numberOfReadTests++;
+                System.out.flush();
+                System.err.println ("*** PduTest.sendIeeeStandardPdu(" + createdPdu.getPduType().name() + ")" +
+                           " receipt reattempt #" + numberOfReadTests + ", " + (numberOfReadTests * getThreadSleepInterval()) + " msec total");
+            }
+            while (numberOfReadTests < getMaximumRetryAttempts());
+            System.err.println ("*** PduTest.sendIeeeStandardPdu(" + createdPdu.getPduType().name() + ") did not succeed");
         } 
         catch (InterruptedException ex)
         {
@@ -144,7 +159,8 @@ abstract public class PduTest
         String TEST_SUITE_WARNING = " (TODO note that test works standalone but mysteriously fails as part of project test suite)";
 
         sendIeeeStandardPdu(createdPdu); // send to self, then wait a while, then return receivedPdu
-        assertTrue(receivedPdu != null,         "No response from network receive after " + getThreadSleepInterval() + " msec" 
+        assertTrue(receivedPdu != null,         "No response from network receive after " + 
+                Math.max(getMaximumRetryAttempts(), 1) + " retry attempts at " + getThreadSleepInterval() + " msec intervals"
                    + TEST_SUITE_WARNING);
      
         assertTrue((createdPdu != receivedPdu), "Exact match found between createdPdu and receivedPdu object references indicates improper test configuration");
@@ -221,6 +237,22 @@ abstract public class PduTest
     public void setThreadSleepInterval(long threadSleepInterval)
     {
         this.threadSleepInterval = threadSleepInterval;
+    }
+
+    /**
+     * @return the maximumRetryAttempts value
+     */
+    public int getMaximumRetryAttempts()
+    {
+        return maximumRetryAttempts;
+    }
+
+    /**
+     * @param maximumRetryAttempts the maximumRetryAttempts value to set
+     */
+    public void setMaximumRetryAttempts(int maximumRetryAttempts)
+    {
+        this.maximumRetryAttempts = maximumRetryAttempts;
     }
     
 }
