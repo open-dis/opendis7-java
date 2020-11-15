@@ -26,21 +26,29 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetworkInterface
 {
+  /** Default value */
   public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
+
+  /** Default value */
   public static int    DEFAULT_DIS_PORT          = 3000;
   
   private static final String TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getName() + "] ";
   private             boolean verbose = true;
+  private             boolean verboseIncludesTimestamp = false;
   
   /** Pdu listener interface */
   public interface PduListener
   {
+      /** Callback method
+       * @param pdu received pdu*/
     void incomingPdu(Pdu pdu);
   }
 
   /** Raw pdu listener class and interface */
   public interface RawPduListener
   {
+      /** Callback method
+       * @param bAndL exposed buffer to receive incoming pdu*/
     void incomingPdu(ByteArrayBufferAndLength bAndL);
   }
   
@@ -49,7 +57,9 @@ public class DisThreadedNetworkInterface
    */
   public class ByteArrayBufferAndLength
   {
+    /** Active ByteArray buffer */
     public byte[] bufferByteArray;
+    /** Active ByteArray buffer length */
     public int length;
 
     /**
@@ -174,12 +184,16 @@ public class DisThreadedNetworkInterface
   {
     rawListeners.remove(lis);
   }
-  
+
+  /** Get current port value
+    * @return current port value */
   public int getDisPort()
   {
     return disPort;
   }
 
+  /** Get current multicast address value
+    * @return current multicast address value */
   public String getMcastGroup()
   {
     return multicastAddress;
@@ -229,7 +243,6 @@ public class DisThreadedNetworkInterface
             // If something trips up with the socket, this thread will attempt to
             // re-establish for both send/receive threads
             try {
-                
                 // The initial value of the SO_BROADCAST socket option is FALSE
                 socket = new MulticastSocket(getDisPort());
                 ((MulticastSocket)socket).joinGroup(inetSocket, networkInterface);
@@ -246,9 +259,11 @@ public class DisThreadedNetworkInterface
                         counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
                         if (isVerbose())
                         {
-                            System.out.println(TRACE_PREFIX + counter + ". received " + pdu.getPduType().toString()
-                                                            + " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp())
-                                                            + ", size " + pdu.getMarshalledSize() + " bytes)");
+                            String message = TRACE_PREFIX + counter + ". received " + pdu.getPduType().toString();
+                            if (isVerboseIncludesTimestamp())
+                                message += " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp());
+                            message +=", size " + pdu.getMarshalledSize() + " bytes)";
+                            System.out.println(message);
                             System.out.flush();
                         }
                         toListeners(pdu);
@@ -335,12 +350,14 @@ public class DisThreadedNetworkInterface
     ByteArrayBufferAndLength bl = new ByteArrayBufferAndLength(data, len);
     rawListeners.forEach(lis->lis.incomingPdu(bl));
   }
-  
+
+  /** Terminate the instance */
   public void kill()
   {
     killed = true;
   }
 
+  /** Thread sleep for indicated interval */
   private void sleep(long ms)
   {
     try {
@@ -395,6 +412,22 @@ public class DisThreadedNetworkInterface
     public void setVerbose(boolean verbose)
     {
         this.verbose = verbose;
+    }
+
+    /**
+     * @return the verboseIncludesTimestamp value
+     */
+    public boolean isVerboseIncludesTimestamp()
+    {
+        return verboseIncludesTimestamp;
+    }
+
+    /**
+     * @param verboseIncludesTimestamp the value to set
+     */
+    public void setVerboseIncludesTimestamp(boolean verboseIncludesTimestamp)
+    {
+        this.verboseIncludesTimestamp = verboseIncludesTimestamp;
     }
 
     /**

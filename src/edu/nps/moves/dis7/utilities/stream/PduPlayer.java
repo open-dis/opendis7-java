@@ -29,6 +29,7 @@ public class PduPlayer {
 
     /** PDU listener interface */
     public interface RawListener {
+        /** callback */
         void receiveBytes(byte[] ba);
     }
     
@@ -37,15 +38,15 @@ public class PduPlayer {
     private int port;
     private Thread thrd;
 
-    static final String ENCODING_BASE64 = "ENCODING_BASE64";
-    static final String ENCODING_PLAINTEXT = "ENCODING_PLAINTEXT";
-    static final String ENCODING_BINARY = "ENCODING_BINARY";  // TODO likely requires different code path
-    static final String ENCODING_XML = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
-    static final String ENCODING_EXI = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
-    static final String ENCODING_JSON = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
+    static final String ENCODING_BASE64          = "ENCODING_BASE64";
+    static final String ENCODING_PLAINTEXT       = "ENCODING_PLAINTEXT";
+    static final String ENCODING_BINARY          = "ENCODING_BINARY";  // TODO likely requires different code path
+    static final String ENCODING_XML             = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
+    static final String ENCODING_EXI             = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
+    static final String ENCODING_JSON            = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
+    static final String ENCODING_CDIS            = "ENCODING_CDIS";    // future work based on new SISO standard
     static final String ENCODING_MAK_DATA_LOGGER = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
     static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
-    static final String ENCODING_CDIS = "ENCODING_CDIS";    // future work based on new SISO standard
 
     private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
 
@@ -392,15 +393,17 @@ public class PduPlayer {
         }
         return returnValue;
     }
-
+    /** Start or resume this instance */
     public void startResume() {
         paused = false;
     }
 
+    /** Stop or pause this instance */
     public void stopPause() {
         paused = true;
     }
 
+    /** End operation of this instance */
     public void end() {
         closer();
     }

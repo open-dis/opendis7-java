@@ -28,6 +28,7 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class PduRecorder implements PduReceiver
 {
+  /** Character sentinel indicating remainder of line is a comment */
   public static final String COMMENT_MARKER = "#";
   
   static String outputDirectoryPath   = "./pduLog";
@@ -126,17 +127,18 @@ public class PduRecorder implements PduReceiver
     public static void setPduLogEncoding(String newPduLogEncoding) {
         pduLogEncoding = newPduLogEncoding;
     }
-  
+
+  /** Start or resume this instance */
   public void startResume()
   {
     running = true;
   }
-  
+  /** Stop or pause this instance */
   public void stopPause()
   {
     running = false;
   }
-  
+  /** End operation of this instance */
   public File end()
   {
     running = false;

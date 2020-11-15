@@ -22,11 +22,18 @@ import java.util.*;
  */
 public class EspduSender
 {
+  /** default value avoids unterminated zombie senders */
   public static final int NUMBER_TO_SEND = 5000;
 
+  /** TCP/IP network modes */
   public enum NetworkMode
   {
-    UNICAST, MULTICAST, BROADCAST
+    /** unicast socket */
+    UNICAST,
+    /** multicast socket */
+    MULTICAST,
+    /** broadcast socket */
+    BROADCAST
   };
 
   /**

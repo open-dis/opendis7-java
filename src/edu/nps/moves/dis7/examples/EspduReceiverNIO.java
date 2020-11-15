@@ -21,6 +21,9 @@ import java.net.MulticastSocket;
  */
 public class EspduReceiverNIO
 {
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String args[])
   {
     MulticastSocket   socket;

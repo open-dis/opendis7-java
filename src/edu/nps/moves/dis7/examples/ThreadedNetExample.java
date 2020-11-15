@@ -20,6 +20,9 @@ import edu.nps.moves.dis7.utilities.PduFactory;
  */
 public class ThreadedNetExample
 {
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     // Create an instance of DisThreadedNetworkInterface using default port 3000, mcast 225.4.5.6, use other constructor to specific port and ip

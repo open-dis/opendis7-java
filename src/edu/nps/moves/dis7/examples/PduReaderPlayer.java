@@ -29,6 +29,9 @@ public class PduReaderPlayer
     PAUSED;
   }
 
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;

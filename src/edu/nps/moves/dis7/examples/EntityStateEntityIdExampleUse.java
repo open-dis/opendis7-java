@@ -126,7 +126,11 @@ public class EntityStateEntityIdExampleUse
     // Do something here with the pdu you received
     System.out.println("Received "+pdu.getClass().getSimpleName());
   }
-  
+
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    * @throws java.lang.Exception if fails
+    */
   public static void main(String[] args) throws Exception
   {
       EntityStateEntityIdExampleUse.exampleUse(); // run example showing use

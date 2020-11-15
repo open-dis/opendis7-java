@@ -28,6 +28,9 @@ public class PduListenerSaver
     PAUSED;
   }
 
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     String outputDirectoryPath = DEFAULT_OUTPUT_DIRECTORY;
