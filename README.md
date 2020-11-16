@@ -7,3 +7,5 @@ associated enumerations from the
 
 Additional testing and experimentation is performed in the NPS MOVES
 [Networked Graphics MV3500](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500) course.
+
+Recent project products include DIS stream-handling support.
