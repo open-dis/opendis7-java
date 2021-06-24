@@ -1,6 +1,6 @@
 ant -f C:\\x3d-github\\open-dis7-java all
 all:
-timestamp 15 November 2020 15:56:11
+timestamp 24 June 2021 07:41:13
 clean:
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
@@ -54,16 +54,17 @@ Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\Entit
 Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java...
 Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\package-info.java...
 Constructing Javadoc information...
-Standard Doclet version 15.0.1+9-18
+Building index for all the packages and classes...
+Standard Doclet version 16+36-2231
 Building tree for all the packages and classes...
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:337: warning: no comment
     public void c(double lat, double lon, double alt,
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:379: warning: no comment
     public void change(double localX, double localY, double localZ,
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:436: warning: no comment
-    public static void main(String args[])
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:459: warning: no comment
   public SRF_LococentricEuclidean3D getPlatformReferenceFrame(Vector3Double rangePositionCoordinates)
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:436: warning: no comment
+    public static void main(String args[])
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduPlayer.java:90: warning: no comment
     public void addRawListener(RawListener lis) {
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduPlayer.java:33: warning: no @param for ba
@@ -88,12 +89,10 @@ C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastN
   public TrialDisMulticastNetworkingDeprecated()
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:58: warning: no comment
   public TrialDisMulticastNetworkingDeprecated(int port, String mcastgroup)
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:74: warning: no comment
-  public int getPort()
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:80: warning: no comment
   public String getIp()
-C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:86: warning: no comment
-  public void stop()
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:74: warning: no comment
+  public int getPort()
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:100: warning: no comment
   public Pdu receivePdu() throws IOException
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:111: warning: no comment
@@ -102,13 +101,14 @@ C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastN
   public void sendPdu(Pdu pdu) throws Exception
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:137: warning: no comment
   public void sendRawPdu(byte[] data) throws IOException
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:86: warning: no comment
+  public void stop()
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:30: warning: no comment
     public byte[] bufferByteArray;
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:31: warning: no comment
     public int length;
 C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java:34: warning: no comment
     public ByteArrayBufferAndLength(byte[] bufferByteArray, int length)
-Building index for all the packages and classes...
 Building index for all classes...
 Generating C:\x3d-github\open-dis7-java\dist\javadoc\help-doc.html...
 26 warnings
@@ -121,15 +121,15 @@ Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 compile:
-Deleted 19 out of date files in 0 seconds
-Compiling 12 source files to C:\x3d-github\open-dis7-java\build\test\classes
+Deleted 24 out of date files in 0 seconds
+Compiling 17 source files to C:\x3d-github\open-dis7-java\build\test\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
 compile-test:
 test:
 AllPduRoundTripTest
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
 Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 15 ACKNOWLEDGE, size 32 bytes)
@@ -213,7 +213,7 @@ ENCODING_PLAINTEXT
 Total PDUs: 72
 End of replay from PduCaptureLog.dislog
 BitFieldRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 73. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 Sent pdu:
@@ -284,7 +284,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -262612199
+Timestamp: -1327237953
 Variable Parameters: []
 
 Rcvd pdu:
@@ -355,19 +355,19 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -262612199
+Timestamp: -1327237953
 Variable Parameters: []
 
 EntityStatePduTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 CreateAllPduTypesTest
 FixedAndVariableDatumRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
 X3dInterpolatorsTest
 testInterpolators
 Replaying DIS logs.
@@ -564,7 +564,7 @@ Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 20 DATA
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 1 ENTITY_STATE
-190Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 25 TRANSMITTER
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 1 ENTITY_STATE
@@ -625,7 +625,7 @@ Writing X3D LineSet
 </LineSet>
 
 CommentPdusTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 22 COMMENT, size 32 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 22 COMMENT, size 56 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 22 COMMENT, size 72 bytes)
@@ -637,23 +637,13 @@ CommentPdusTest
 PduFactoryTest
 MarshalEnumsTest
 DataQueryPduRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 18 DATA_QUERY, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY, size 128 bytes)
 EntityStatePduTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: Cannot invoke "java.net.DatagramSocket.send(java.net.DatagramPacket)" because "this.socket" is null
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #1, 100 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #2, 200 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #3, 300 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #4, 400 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #5, 500 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #6, 600 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #7, 700 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #8, 800 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #9, 900 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) receipt reattempt #10, 1000 msec total
-*** PduTest.sendIeeeStandardPdu(DETONATION) did not succeed
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 3 DETONATION, size 104 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 3 DETONATION, size 104 bytes)
 CreateAllObjectTypesTest
 Name: edu.nps.moves.dis7.objectTypes.ArealObject.ArealObject	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Obstacle	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
@@ -843,8 +833,8 @@ Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFighti
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.OverheadCoveredInfantryPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 2
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 0	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.ArmoredVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.FightingVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 2
 ENCODING_PLAINTEXT
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.FightingVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 2
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.MortarCarrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 3
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Tank	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 4
@@ -853,23 +843,25 @@ Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Tacticalsmoke	Dom
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.AirBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Grenade	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: Cannot invoke "java.net.DatagramSocket.send(java.net.DatagramPacket)" because "this.socket" is null
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.GroundBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Artillery	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Green	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 2
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Red	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 5
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #1, 100 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Violet	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 3
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Yellow	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 4
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
 SignalPdusTest
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 33 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL, size 33 bytes)
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #2, 200 msec total
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 50 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 31 INTERCOM_SIGNAL, size 33 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 31 INTERCOM_SIGNAL, size 58 bytes)
@@ -889,9 +881,16 @@ Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll
 Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
 01 03 02 00
 EntityStatePduTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 2 FIRE, size 96 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 2 FIRE, size 96 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface PANGP Virtual Ethernet Adapter #6
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #3, 300 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #4, 400 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #5, 500 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #6, 600 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #7, 700 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #8, 800 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #9, 900 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #10, 1000 msec total
+*** PduTest.sendIeeeStandardPdu(FIRE) did not succeed
 NullFieldsEntityMarshallTest
 .
 +-- JUnit Jupiter [OK]
@@ -916,7 +915,7 @@ NullFieldsEntityMarshallTest
 | +-- Data Query Pdu Round Test [OK]
 | | '-- testRoundTrip() [OK]
 | +-- Detonation Pdu Test [OK]
-| | '-- testRoundTrip() [X] No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
+| | '-- testRoundTrip() [OK]
 | +-- All Object Types Create [OK]
 | | '-- testCreateAllObjectTypes() [OK]
 | +-- Signal Pdus Test [OK]
@@ -926,29 +925,29 @@ NullFieldsEntityMarshallTest
 | | +-- testGoodMarshall() [OK]
 | | '-- testNoSubCategory() [OK]
 | +-- Fire Pdu Test [OK]
-| | '-- testRoundTrip() [OK]
+| | '-- testRoundTrip() [X] No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
 | '-- Null Fields Entity Marshall Test [OK]
 |   +-- testGoodMarshall() [OK]
 |   '-- testNoSpecificNoExtraMarshal() [OK]
 '-- JUnit Vintage [OK]
 
 Failures (1):
-  JUnit Jupiter:Detonation Pdu Test:testRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.DetonationPduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
+  JUnit Jupiter:Fire Pdu Test:testRoundTrip()
+    MethodSource [className = 'edu.nps.moves.dis7.FirePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
     => org.opentest4j.AssertionFailedError: No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
        org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
        org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
        org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
        edu.nps.moves.dis7.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:162)
-       edu.nps.moves.dis7.DetonationPduTest.testOnePdu(DetonationPduTest.java:76)
-       edu.nps.moves.dis7.DetonationPduTest.testRoundTrip(DetonationPduTest.java:66)
+       edu.nps.moves.dis7.FirePduTest.testOnePdu(FirePduTest.java:38)
+       edu.nps.moves.dis7.FirePduTest.testRoundTrip(FirePduTest.java:28)
        java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
        java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-       java.base/java.lang.reflect.Method.invoke(Method.java:564)
+       java.base/java.lang.reflect.Method.invoke(Method.java:567)
        [...]
 
-Test run finished after 6672 ms
+Test run finished after 8254 ms
 [        18 containers found      ]
 [         0 containers skipped    ]
 [        18 containers started    ]
@@ -963,10 +962,10 @@ Test run finished after 6672 ms
 [         1 tests failed          ]
 
 Java Result: 1
-Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null274676673
-Loading stylesheet jar:file:/C:/apache-ant-1.10.9/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 29ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null274676673
+Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null545486508
+Loading stylesheet jar:file:/C:/apache-ant-1.10.10/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
+Transform time: 513ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null545486508
 ================
 init:
 Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
@@ -980,7 +979,7 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7
 Specification-Vendor   = Institute of Electrical and Electronics Engineers (IEEE)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 15 November 2020 15:56:11
+Implementation-Version = 24 June 2021 07:41:13
 Implementation-Vendor  = Naval Postgraduate School (NPS)
 init:
 deps-jar:
@@ -995,4 +994,4 @@ jar-javadoc:
 (note that generated javadoc subdirectory is found within dist subdirectory)
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
 build all complete
-BUILD SUCCESSFUL (total time: 16 seconds)
+BUILD SUCCESSFUL (total time: 24 seconds)
