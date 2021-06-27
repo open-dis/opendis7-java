@@ -18,7 +18,7 @@
     <property name="Implementation-Version" value="${timestamp}"/>
     <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
     
-    <target description="Build and test whole project." name="all">
+    <target description="Build and test the whole project, create distribution jar files." name="all">
         <echo message="timestamp ${timestamp}"/>
         <fail message="Please build using Ant 1.9.0 or higher.">
             <condition>
