@@ -138,7 +138,8 @@ public class PduRecorder implements PduReceiver
   {
     running = false;
   }
-  /** End operation of this instance */
+  /** End operation of this instance
+     * @return recorder logFile */
   public File end()
   {
     running = false;

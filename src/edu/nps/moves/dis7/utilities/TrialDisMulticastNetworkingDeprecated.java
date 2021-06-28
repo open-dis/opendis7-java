@@ -27,10 +27,14 @@ public class TrialDisMulticastNetworkingDeprecated
   /** deprecated */
   public class ByteArrayBufferAndLength
   {
+    /** deprecated do not use */
     public byte[] bufferByteArray;
+    /** deprecated do not use */
     public int length;
 
-  /* deprecated do not use */
+    /** deprecated do not use
+       * @param bufferByteArray deprecated do not use
+       * @param length deprecated do not use */
     public ByteArrayBufferAndLength(byte[] bufferByteArray, int length)
     {
       this.bufferByteArray = bufferByteArray;
@@ -48,13 +52,15 @@ public class TrialDisMulticastNetworkingDeprecated
   private InetSocketAddress group;
   private NetworkInterface ni;
 
-  /* deprecated do not use */
+  /** deprecated do not use */
   public TrialDisMulticastNetworkingDeprecated()
   {
     this(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
   }
 
-  /* deprecated do not use */
+  /** deprecated do not use
+     * @param port deprecated do not use
+     * @param mcastgroup deprecated do not use */
   public TrialDisMulticastNetworkingDeprecated(int port, String mcastgroup)
   {
     DIS_PORT = port;
@@ -70,19 +76,21 @@ public class TrialDisMulticastNetworkingDeprecated
     dos = new DataOutputStream(baos);
   }
 
-  /* deprecated do not use */
+  /** deprecated do not use
+     * @return  deprecated do not use */
   public int getPort()
   {
     return DIS_PORT;
   }
 
-  /* deprecated do not use */
+  /** deprecated do not use
+     * @return deprecated do not use */
   public String getIp()
   {
     return MCAST_GROUP;
   }
 
-  /* deprecated do not use */
+  /** deprecated do not use */
   public void stop()
   {
     if(rsocket != null) {
@@ -96,7 +104,9 @@ public class TrialDisMulticastNetworkingDeprecated
     }
   }
 
-  /* deprecated do not use */
+  /** deprecated do not use
+     * @return deprecated do not use
+     * @throws java.io.IOException if network-related error occurs */
   public Pdu receivePdu() throws IOException
   {
     PduFactory pduFactory = new PduFactory();
@@ -107,7 +117,9 @@ public class TrialDisMulticastNetworkingDeprecated
   private MulticastSocket rsocket;
   byte buffer[];
   DatagramPacket packet;
-  /* deprecated do not use */
+  /** deprecated do not use
+     * @return deprecated do not use
+     * @throws java.io.IOException if network-related error occurs */
   public ByteArrayBufferAndLength receiveRawPdu() throws IOException
   {
     rsocket = new MulticastSocket(DIS_PORT);
@@ -125,7 +137,12 @@ public class TrialDisMulticastNetworkingDeprecated
     return new ByteArrayBufferAndLength(packet.getData(), packet.getLength());
   }
 
-  public void sendPdu(Pdu pdu) throws Exception
+    /**
+     * deprecated do not use
+     * @param pdu deprecated do not use
+     * @throws Exception if network-related error occurs
+     */
+    public void sendPdu(Pdu pdu) throws Exception
   {
     // turn object into byte stream
     pdu.marshal(dos);
@@ -134,7 +151,13 @@ public class TrialDisMulticastNetworkingDeprecated
   }
 
   private MulticastSocket ssocket;
-  public void sendRawPdu(byte[] data) throws IOException
+
+    /**
+     * deprecated do not use
+     * @param data deprecated do not use
+     * @throws IOException if network-related error occurs
+     */
+    public void sendRawPdu(byte[] data) throws IOException
   {
     ssocket = new MulticastSocket();
     ssocket.joinGroup(group, ni);

@@ -111,8 +111,8 @@ public class X3dCreateInterpolators {
         }
     }
 
-    public void makeX3dInterpolator() {
-
+    public void makeX3dInterpolator()
+    {
         //Compression of the testMap.
         //Remove all collinear points.
         X3dSlidingWindowCompression slidingWindowCompression = new X3dSlidingWindowCompression(testMap);
