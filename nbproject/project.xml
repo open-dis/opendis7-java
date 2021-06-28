@@ -12,14 +12,18 @@
             </test-roots>
         </data>
         <spellchecker-wordlist xmlns="http://www.netbeans.org/ns/spellchecker-wordlist/1">
+            <word>accessor</word>
             <word>boolean</word>
             <word>classpath</word>
             <word>deserialization</word>
+            <word>Invocable</word>
             <word>marshalling</word>
             <word>multicast</word>
             <word>Netbeans</word>
+            <word>pdu</word>
             <word>pdus</word>
             <word>unicast</word>
+            <word>unmarshalling</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
