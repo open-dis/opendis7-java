@@ -1,6 +1,6 @@
 ant -f C:\\x3d-github\\open-dis7-java all
 all:
-timestamp 27 June 2021 19:08:38
+timestamp 28 June 2021 02:14:54
 clean:
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
@@ -137,6 +137,7 @@ Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 40. received DISPDUType 36 ISPARTOF, size 52 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 41. received DISPDUType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 42. received DISPDUType 49 LIVE_ENTITY_FIRE, size 67 bytes)
+ENCODING_PLAINTEXT
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 43. received DISPDUType 44 LINEAR_OBJECT_STATE, size 40 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 44. received DISPDUType 39 MINEFIELD_DATA, size 44 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 45. received DISPDUType 38 MINEFIELD_QUERY, size 40 bytes)
@@ -145,7 +146,6 @@ Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 48. received DISPDUType 43 POINT_OBJECT_STATE, size 91 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 49. received DISPDUType 27 RECEIVER, size 36 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 50. received DISPDUType 65 RECORD_QUERY_RELIABLE, size 40 bytes)
-ENCODING_PLAINTEXT
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 51. received DISPDUType 63 RECORD_RELIABLE, size 36 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 52. received DISPDUType 12 REMOVE_ENTITY, size 28 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 53. received DISPDUType 52 REMOVE_ENTITY_RELIABLE, size 32 bytes)
@@ -247,7 +247,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 637870647
+Timestamp: 1085248757
 Variable Parameters: []
 
 Rcvd pdu:
@@ -318,36 +318,26 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 637870647
+Timestamp: 1085248757
 Variable Parameters: []
 
 EntityStatePduTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: Cannot invoke "java.net.DatagramSocket.send(java.net.DatagramPacket)" because "this.socket" is null
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #1, 100 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #2, 200 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #3, 300 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #4, 400 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #5, 500 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #6, 600 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #7, 700 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #8, 800 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #9, 900 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) receipt reattempt #10, 1000 msec total
-*** PduTest.sendIeeeStandardPdu(ENTITY_STATE) did not succeed
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 CreateAllPduTypesTest
 FixedAndVariableDatumRoundTripTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
 X3dInterpolatorsTest
 testInterpolators
 Replaying DIS logs.
 Replaying C:\x3d-github\open-dis7-java\.\pduLog\Pdusave.dislog
-Sent PDU: DISPDUType 25 TRANSMITTER
 ENCODING_PLAINTEXT
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 25 TRANSMITTER, size 107 bytes)
+Sent PDU: DISPDUType 25 TRANSMITTER
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
@@ -812,21 +802,20 @@ Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilad
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Tank	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 4
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.VehicleDefilade	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: Cannot invoke "java.net.DatagramSocket.send(java.net.DatagramPacket)" because "this.socket" is null
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: Cannot invoke "java.net.DatagramSocket.send(java.net.DatagramPacket)" because "this.socket" is null
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.AirBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Grenade	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 1
-*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #1, 100 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.GroundBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #1, 100 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Artillery	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 1
-*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #2, 200 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Green	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 2
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Red	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 5
-*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #3, 300 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Violet	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 3
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #2, 200 msec total
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Yellow	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 4
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
@@ -834,7 +823,6 @@ SignalPdusTest
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
-*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #4, 400 msec total
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 33 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL, size 33 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 50 bytes)
@@ -851,20 +839,22 @@ End of replay from PduCaptureLog.dislog
 
 Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 ObjectTypeMarshallTest
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #3, 300 msec total
 Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
 01 01 02 01
 Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
 01 03 02 00
 EntityStatePduTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+*** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #4, 400 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #5, 500 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #6, 600 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #7, 700 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #8, 800 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #9, 900 msec total
 *** PduTest.sendIeeeStandardPdu(FIRE) receipt reattempt #10, 1000 msec total
-NullFieldsEntityMarshallTest
 *** PduTest.sendIeeeStandardPdu(FIRE) did not succeed
+NullFieldsEntityMarshallTest
 .
 +-- JUnit Jupiter [OK]
 | +-- All Pdu Round Trip Test [OK]
@@ -872,7 +862,7 @@ NullFieldsEntityMarshallTest
 | +-- Bit Field Round TripTest [OK]
 | | '-- testRoundTrip() [OK]
 | +-- Entity State Pdu Test [OK]
-| | '-- testRoundTrip() [X] No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
+| | '-- testRoundTrip() [OK]
 | +-- CreateAllPduTypesTest [OK]
 | | '-- testCreateAll() [OK]
 | +-- Fixed and Variable Datum Round Trip Test [OK]
@@ -904,21 +894,7 @@ NullFieldsEntityMarshallTest
 |   '-- testNoSpecificNoExtraMarshal() [OK]
 '-- JUnit Vintage [OK]
 
-Failures (2):
-  JUnit Jupiter:Entity State Pdu Test:testRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.EntityStatePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
-       edu.nps.moves.dis7.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:162)
-       edu.nps.moves.dis7.EntityStatePduTest.testOnePdu(EntityStatePduTest.java:68)
-       edu.nps.moves.dis7.EntityStatePduTest.testRoundTrip(EntityStatePduTest.java:55)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-       java.base/java.lang.reflect.Method.invoke(Method.java:567)
-       [...]
+Failures (1):
   JUnit Jupiter:Fire Pdu Test:testRoundTrip()
     MethodSource [className = 'edu.nps.moves.dis7.FirePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
     => org.opentest4j.AssertionFailedError: No response from network receive after 10 retry attempts at 100 msec intervals (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
@@ -934,7 +910,7 @@ Failures (2):
        java.base/java.lang.reflect.Method.invoke(Method.java:567)
        [...]
 
-Test run finished after 9964 ms
+Test run finished after 9723 ms
 [        18 containers found      ]
 [         0 containers skipped    ]
 [        18 containers started    ]
@@ -945,14 +921,14 @@ Test run finished after 9964 ms
 [         0 tests skipped         ]
 [        19 tests started         ]
 [         0 tests aborted         ]
-[        17 tests successful      ]
-[         2 tests failed          ]
+[        18 tests successful      ]
+[         1 tests failed          ]
 
 Java Result: 1
-Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null60036054
+Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null2025884922
 Loading stylesheet jar:file:/C:/apache-ant-1.10.10/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 661ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null60036054
+Transform time: 127ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null2025884922
 ================
 init:
 Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
@@ -966,7 +942,7 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7
 Specification-Vendor   = Institute of Electrical and Electronics Engineers (IEEE)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 27 June 2021 19:08:38
+Implementation-Version = 28 June 2021 02:14:54
 Implementation-Vendor  = Naval Postgraduate School (NPS)
 init:
 deps-jar:
@@ -981,4 +957,4 @@ jar-javadoc:
 (note that generated javadoc subdirectory is found within dist subdirectory)
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
 build all complete
-BUILD SUCCESSFUL (total time: 29 seconds)
+BUILD SUCCESSFUL (total time: 26 seconds)
