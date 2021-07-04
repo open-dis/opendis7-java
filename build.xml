@@ -242,7 +242,7 @@
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <section name="edu/nps/moves/dis7">
+                <section name="edu/nps/moves/**">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
@@ -259,7 +259,15 @@
                 <include name="**/*.java"/>
                 <include name="**/*.md"/>
                 <include name="**/*.txt"/>
-                <include name="**/*.dislog"/>
+            <!--<include name="**/*.dislog"/>-->
+                <exclude name="edu/nps/moves/dis7/utilities/logs/**"/>
+                <include name="edu/nps/moves/spatial/**"/>
+            </fileset>
+            <fileset dir="src-generated" defaultexcludes="yes">
+                <!-- omitting enumerations directories -->
+                <include name="edu/nps/moves/dis7/pdus/**"/>
+                <include name="edu/nps/moves/dis7/utilities/**/*.java"/>
+                <exclude name="edu/nps/moves/dis7/utilities/logs/**"/>
             </fileset>
             
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
@@ -281,14 +289,17 @@
     </target>
     
     <target name="jar-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
+        <!--   -->
         <jar destfile="dist/open-dis7-pdus-classes.jar"
              basedir="."
-             includes="edu/nps/moves/dis7/**"
+             includes="edu/nps/moves/**"
              excludes=".keep"
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
-                <include name="**/moves/**/*.class"/>
+                <include name="edu/nps/moves/dis7/pdus/*.class"/>
+                <include name="edu/nps/moves/dis7/utilities/**/*.class"/>
+                <include name="edu/nps/moves/spatial/*.class"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
