@@ -213,7 +213,7 @@ public class AllPduRoundTripTest
   {
     sem.acquire();
     Path path = Path.of(recorder.getLogFilePath()).getParent();
-    PduPlayer player = new PduPlayer(disNetworkInterface.getMcastGroup(), disNetworkInterface.getDisPort(), path, false);
+    PduPlayer player = new PduPlayer(disNetworkInterface.getMulticastGroup(), disNetworkInterface.getDisPort(), path, false);
     player.addRawListener(ba -> {
       if (ba != null) {
         Pdu pdu = pduFactory.createPdu(ba);
