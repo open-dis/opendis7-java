@@ -20,12 +20,13 @@ public class FirePduTest extends PduTest
   {
     PduFactory pduFactory = new PduFactory();
     
-    FirePdu    firePdu = pduFactory.makeFirePdu(); 
+    FirePdu    firePdu = pduFactory.makeFirePdu();
     // TODO alternate constructors and utility methods
     
     // TODO update PDU-specific tests
-    
+
     testOnePdu(firePdu);
+    testOnePdu(firePdu.setRange(1000.0f).setFireMissionIndex(2)); // pipelining);
   }
   
   /** Test single PDU for correctness according to all contained fields in this PDU type
