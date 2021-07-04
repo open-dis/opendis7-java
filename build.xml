@@ -221,16 +221,80 @@
         <echo message="Implementation-Version = ${timestamp}"/>
         <echo message="Implementation-Vendor  = ${Implementation-Vendor}"/>
         
-        <antcall target="jar-classes"/>
-        <antcall target="jar-source"/>
-        <antcall target="jar-javadoc"/>
+        <antcall target="jar-pdus-classes"/>
+        <antcall target="jar-pdus-source"/>
+        <antcall target="jar-pdus-javadoc"/>
+        <antcall target="jar-full"/>
     </target>
-    
-    <target name="jar-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
+
+    <target name="jar-full" description="full set of everything, pdus and enumerations">
+        <delete  file="dist/open-dis7-full.jar"/>
+        <jar destfile="dist/open-dis7-full.jar"
+               update="true"
+              basedir="."
+            zip64Mode="always">
+            <!-- zip64Mode https://stackoverflow.com/questions/39524481/error-creating-jar-archive-contains-more-than-65535-entries/ -->
+            <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
+             <zipfileset src="dist/open-dis7-enumerations-classes.jar"/>
+        <!-- <zipfileset src="dist/open-dis7-enumerations-javadoc.jar"/> duplicative -->
+             <zipfileset src="dist/open-dis7-enumerations-source.jar"/>
+             <zipfileset src="dist/open-dis7-pdus-classes.jar"/>
+             <zipfileset src="dist/open-dis7-pdus-javadoc.jar"/>
+             <zipfileset src="dist/open-dis7-pdus-source.jar"/>
+
+            <!--
+            <fileset dir="build/" defaultexcludes="yes">
+                <include name="classes/**/*"/>
+                <exclude name="test/*"/>
+            </fileset>
+            <fileset dir="dist/" defaultexcludes="yes">
+                <include name="javadoc/*"/>
+                <include name="javadoc/**/*"/>
+                <exclude name="test/*"/>
+            </fileset>
+            <fileset dir="src/" defaultexcludes="yes">
+                <include name="**/*"/>
+                <exclude name="test/*"/>
+            </fileset>
+            <fileset dir="src-generated/." defaultexcludes="yes">
+                <include name="**/*"/>
+                <exclude name="test/*"/>
+            </fileset>
+            -->
+            <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
+            <manifest>
+                <attribute name="description"            value="Full set of files for ${manifest.name}"/>
+                <attribute name="Built-By"               value="${Built-By}"/>
+                <attribute name="Specification-Title"    value="${Specification-Title}"/>
+                <attribute name="Specification-Version"  value="${Specification-Version}"/>
+                <attribute name="Specification-Vendor"   value="${Specification-Vendor}"/>
+                <attribute name="Implementation-Title"   value="${Implementation-Title}"/>
+                <attribute name="Implementation-Version" value="${Implementation-Version}"/>
+                <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
+
+                <section name="**/edu/nps/moves/**">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="jar-pdus-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
         <echo message="(note that generated javadoc subdirectory is found within dist subdirectory)"/>
+        <delete  file="dist/open-dis7-pdus-javadoc.jar"/>
         <jar destfile="dist/open-dis7-pdus-javadoc.jar"
                update="true"
-              basedir="dist/javadoc">
+              basedir="dist"
+            zip64Mode="always">
+            <fileset dir="dist" defaultexcludes="yes">
+                <include name="javadoc/edu/nps/moves/dis7/pdus/*"/>
+                <include name="javadoc/edu/nps/moves/dis7/utilities/**/*"/>
+                <include name="javadoc/edu/nps/moves/spatial/*"/>
+                <exclude name="javadoc/edu/nps/moves/dis7/entities/*"/>
+                <exclude name="javadoc/edu/nps/moves/dis7/enumerations/*"/>
+                <exclude name="javadoc/edu/nps/moves/dis7/jammers/*"/>
+                <exclude name="javadoc/edu/nps/moves/dis7/objectTypes/*"/>
+            </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
                 <attribute name="description"            value="Javadoc files for ${manifest.name}"/>
@@ -249,8 +313,10 @@
         </jar>
     </target>
     
-    <target name="jar-source">
+    <target name="jar-pdus-source">
+        <delete  file="dist/open-dis7-pdus-source.jar"/>
         <jar destfile="dist/open-dis7-pdus-source.jar"
+              basedir="src"
              includes="edu/nps/moves/dis7/**"
              excludes=".keep"
                update="true"
@@ -288,18 +354,22 @@
         </jar>        
     </target>
     
-    <target name="jar-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
-        <!--   -->
+    <target name="jar-pdus-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
+        <delete  file="dist/open-dis7-pdus-classes.jar"/>
         <jar destfile="dist/open-dis7-pdus-classes.jar"
-             basedir="."
+             basedir="build"
              includes="edu/nps/moves/**"
              excludes=".keep"
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
-                <include name="edu/nps/moves/dis7/pdus/*.class"/>
-                <include name="edu/nps/moves/dis7/utilities/**/*.class"/>
-                <include name="edu/nps/moves/spatial/*.class"/>
+                <include name="**/edu/nps/moves/dis7/pdus/*"/>
+                <include name="**/edu/nps/moves/dis7/utilities/**/*"/>
+                <include name="**/edu/nps/moves/spatial/*"/>
+                <exclude name="**/edu/nps/moves/dis7/entities/*"/>
+                <exclude name="**/edu/nps/moves/dis7/enumerations/*"/>
+                <exclude name="**/edu/nps/moves/dis7/jammers/*"/>
+                <exclude name="**/edu/nps/moves/dis7/objectTypes/*"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
@@ -360,6 +430,10 @@
             </fileset>
             <report format="frames" todir="${build.test.results.dir}/html"/>
         </junitreport>
+        <!--
+        <echo message="*** ant sleep 2 seconds..."/>
+        <sleep seconds="2" description="hoping to avoid intermittent test failures due to  network timeout"/>
+        -->
     </target>
     <target depends="compile-test-single,-pre-test-run-single"
             description="Debug single unit test."
