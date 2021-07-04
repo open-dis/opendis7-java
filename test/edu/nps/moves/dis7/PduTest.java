@@ -50,9 +50,13 @@ import org.junit.jupiter.api.BeforeEach;
 
 abstract public class PduTest
 {
-    protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l; // i.e. 100, type long
+    protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 1000l; // e.g. 100 msec, type long
     private         long threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
     private         int  maximumRetryAttempts = 10;
+
+    Pdu                                     receivedPdu;
+    DisThreadedNetworkInterface             disNetworkInterface;
+    DisThreadedNetworkInterface.PduListener pduListener;
     
     @BeforeAll
     public static void setUpClass()
@@ -64,10 +68,6 @@ abstract public class PduTest
     public static void tearDownClass()
     {
     }
-
-    DisThreadedNetworkInterface disNetworkInterface;
-    Pdu receivedPdu;
-    DisThreadedNetworkInterface.PduListener pduListener;
 
     /** Ensure network connections, listener and handler are prepared */
     @BeforeEach
@@ -92,6 +92,16 @@ abstract public class PduTest
         disNetworkInterface.removeListener(pduListener);
         disNetworkInterface.kill();
         disNetworkInterface = null;
+        try // additional sleep, allowing teardown to proceed
+        {
+            Thread.sleep(getThreadSleepInterval());
+        }
+        catch (InterruptedException ie)
+        {
+            System.err.flush();
+            System.err.println ("*** tearDown() failed to sleep");
+            ie.printStackTrace();
+        }
     }
 
     /** 
@@ -113,10 +123,18 @@ abstract public class PduTest
                 Thread.sleep(getThreadSleepInterval());
                 if (receivedPdu != null)
                     return;
+                // no receipt yet
                 numberOfReadTests++;
-                System.out.flush();
+                String padding1 = new String(); // count
+                String padding2 = new String(); // duration
+                if (numberOfReadTests < 10)
+                    padding1 = " ";
+                if ((numberOfReadTests * getThreadSleepInterval()) < 1000l)
+                    padding2 = " ";
                 System.err.println ("*** PduTest.sendIeeeStandardPdu(" + createdPdu.getPduType().name() + ")" +
-                           " receipt reattempt #" + numberOfReadTests + ", " + (numberOfReadTests * getThreadSleepInterval()) + " msec total");
+                           " receipt reattempt " + padding1 + "#" + numberOfReadTests + ", " + padding2 +
+                           (numberOfReadTests * getThreadSleepInterval()) + " msec total sleep");
+                System.err.flush();
             }
             while (numberOfReadTests < getMaximumRetryAttempts());
             System.err.println ("*** PduTest.sendIeeeStandardPdu(" + createdPdu.getPduType().name() + ") did not succeed");
@@ -156,7 +174,7 @@ abstract public class PduTest
      */
     protected void testPduSendReceiveHeaderMatch (Pdu createdPdu)
     {
-        String TEST_SUITE_WARNING = " (TODO note that test works standalone but mysteriously fails as part of project test suite)";
+        String TEST_SUITE_WARNING = " (TODO note that test may work standalone but mysteriously fail as part of project test suite)";
 
         sendIeeeStandardPdu(createdPdu); // send to self, then wait a while, then return receivedPdu
         assertTrue(receivedPdu != null,         "No response from network receive after " + 
