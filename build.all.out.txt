@@ -1,6 +1,6 @@
 ant -f C:\\x3d-github\\open-dis7-java all
 all:
-timestamp 4 July 2021 12:47:26
+timestamp 4 July 2021 16:35:37
 clean:
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
@@ -22018,7 +22018,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -298626691
+Timestamp: -1059604225
 Variable Parameters: []
 
 Rcvd pdu:
@@ -22089,13 +22089,13 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DISPDUType 1 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -298626691
+Timestamp: -1059604225
 Variable Parameters: []
 
 EntityStatePduTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
 CreateAllPduTypesTest
 FixedAndVariableDatumRoundTripTest
@@ -22107,8 +22107,8 @@ testInterpolators
 Replaying DIS logs.
 Replaying C:\x3d-github\open-dis7-java\.\pduLog\Pdusave.dislog
 ENCODING_PLAINTEXT
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 25 TRANSMITTER, size 107 bytes)
 Sent PDU: DISPDUType 25 TRANSMITTER
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 25 TRANSMITTER, size 107 bytes)
 Sent PDU: DISPDUType 1 ENTITY_STATE
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
 Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
@@ -22376,8 +22376,8 @@ DataQueryPduRoundTripTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY, size 128 bytes)
 EntityStatePduTest
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 3 DETONATION, size 104 bytes)
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 3 DETONATION, size 104 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 3 DETONATION, size 104 bytes)
 CreateAllObjectTypesTest
 Name: edu.nps.moves.dis7.objectTypes.ArealObject.ArealObject	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
 Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Obstacle	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
@@ -22587,7 +22587,6 @@ Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCani
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
 SignalPdusTest
-ENCODING_PLAINTEXT
 Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 [edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
 class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
@@ -22601,6 +22600,7 @@ testRoundTripNet
 Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
 testRoundTripLog
 Replaying DIS logs.
+ENCODING_PLAINTEXT
 Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
 Total PDUs: 4
 End of replay from PduCaptureLog.dislog
@@ -22656,7 +22656,7 @@ NullFieldsEntityMarshallTest
 |   '-- testNoSpecificNoExtraMarshal() [OK]
 '-- JUnit Vintage [OK]
 
-Test run finished after 15303 ms
+Test run finished after 15250 ms
 [        18 containers found      ]
 [         0 containers skipped    ]
 [        18 containers started    ]
@@ -22670,10 +22670,10 @@ Test run finished after 15303 ms
 [        19 tests successful      ]
 [         0 tests failed          ]
 
-Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null344575222
+Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null864411565
 Loading stylesheet jar:file:/C:/apache-ant-1.10.10/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 30ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null344575222
+Transform time: 68ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null864411565
 ================
 init:
 Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
@@ -22687,19 +22687,21 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7
 Specification-Vendor   = Institute of Electrical and Electronics Engineers (IEEE)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 4 July 2021 12:47:26
+Implementation-Version = 4 July 2021 16:35:37
 Implementation-Vendor  = Naval Postgraduate School (NPS)
 init:
 deps-jar:
 Cycle detected: open-dis7-java was already built
 Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 compile:
-jar-classes:
+jar-pdus-classes:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
-jar-source:
+jar-pdus-source:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-source.jar
-jar-javadoc:
+jar-pdus-javadoc:
 (note that generated javadoc subdirectory is found within dist subdirectory)
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
+jar-full:
+Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-full.jar
 build all complete
-BUILD SUCCESSFUL (total time: 10 minutes 8 seconds)
+BUILD SUCCESSFUL (total time: 29 minutes 22 seconds)
