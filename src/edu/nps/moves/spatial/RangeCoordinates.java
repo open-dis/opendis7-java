@@ -334,6 +334,15 @@ public class RangeCoordinates
         return null;
     }
 
+    /**
+     *
+     * @param lat latitude, decimal degrees
+     * @param lon longitude, decimal degrees
+     * @param alt altitude meters
+     * @param bank bank angle, decimal degrees from level, positive is right bank
+     * @param pitch pitch angle, decimal degrees
+     * @param head heading angle, decimal degrees
+     */
     public void c(double lat, double lon, double alt,
             double bank, double pitch, double head)
     {
@@ -368,7 +377,6 @@ public class RangeCoordinates
                System.out.println("mW2LTSE_ori:" + mW2LTSE_ori);
                //OrientationTaitBryanAngles
                //        tbDIS_ori = new OrientationTaitBryanAngles(tbE2NED_ori.composeWith(tbE2NED_ori.composeWith(mW2LTSE_ori)).getTaitBryanAngles());
-
         }
         catch(SrmException e)
         {
@@ -376,6 +384,15 @@ public class RangeCoordinates
         }
     }
 
+    /**
+     *
+     * @param localX coordinate
+     * @param localY coordinate
+     * @param localZ coordinate
+     * @param bank bank angle, decimal degrees from level, positive is right bank
+     * @param noseUp in LTSE: 0 + positive up angle from horizon
+     * @param bearing heading angle, clockwise from true north is positive
+     */
     public void change(double localX, double localY, double localZ,
             double bank, double noseUp, double bearing)
     {
@@ -385,14 +402,14 @@ public class RangeCoordinates
         // bank, degrees from level, positive is right bank
         // bearing to LTSE: 360 - bearing - 270 = yaw in LTSE
         // noseUp in LTSE: 0 + positive up angle from horizon
-        // roll in ltse: -180 + bank angle
+        // roll in LTSE: -180 + bank angle
         
         try
         {
             Coord3D localLTSEPosition = localTangentSurfaceReferenceFrame.createCoordinate3D(localZ, localY, localZ);
-            Coord3D localLTSEOrigin = localTangentSurfaceReferenceFrame.createCoordinate3D(0.0, 0.0, 0.0);
+            Coord3D localLTSEOrigin   = localTangentSurfaceReferenceFrame.createCoordinate3D(0.0, 0.0, 0.0);
             Coord3D disPosition = disCoordinateReferenceFrame.createCoordinate3D();
-            Coord3D disOrigin = disCoordinateReferenceFrame.createCoordinate3D();
+            Coord3D disOrigin   = disCoordinateReferenceFrame.createCoordinate3D();
             //Coord3D geodeticPosition = earthSurfaceReferenceFrame.createCoordinate3D(latitudeOrigin, longitudeOrigin, altitudeOrigin);
 
             // changes the contents of disPosition to reflect the geocentric coordinates of the LTSE position
@@ -423,16 +440,16 @@ public class RangeCoordinates
                                                             localLTSEPosition, // Position, in LTSE coordinates
                                                             taitBryanDis); // output: the orientation in DIS ref frame
            System.out.println("orientation in DIS:" + taitBryanDis.toString());
-
-
         }
         catch(SrmException e)
         {
             System.err.println(e);
         }
- 
     }
 
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
     public static void main(String args[])
     {
         // x-axis intercept: prime meridian, equator, and zero altitude.
@@ -460,7 +477,8 @@ public class RangeCoordinates
     {
       try
       {
-          // The x,y,z location of the platform in range coordinates (ie, the LTSE).
+        // The x,y,z location of the platform in range coordinates (ie, the LTSE).
+        // TODO unused??
         Coord3D lococenter = localTangentSurfaceReferenceFrame.createCoordinate3D(rangePositionCoordinates.getX(),
                 rangePositionCoordinates.getY(),
                 rangePositionCoordinates.getZ());
@@ -476,6 +494,6 @@ public class RangeCoordinates
       {
           System.err.println(e);
       }
-      return null;
+      return null; // TODO compute and return correct value
   }
 }
