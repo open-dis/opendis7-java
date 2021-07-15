@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7640a5b1
- * Country: Taiwan, Province of China (TWN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28da7d11;
+ * Country: Taiwan, Province of China (TWN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31419
  */
 public class _608TzengChiang extends EntityType
 {
+    /** Default constructor */
     public _608TzengChiang()
     {
         setCountry(Country.TAIWAN_PROVINCE_OF_CHINA_TWN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f8dfe74
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77b3752b;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 11583
  */
 public class PC9Chinook extends EntityType
 {
+    /** Default constructor */
     public PC9Chinook()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

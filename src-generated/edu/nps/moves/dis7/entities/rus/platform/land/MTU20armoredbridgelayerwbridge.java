@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6dc1484
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51e37590;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 12482
  */
 public class MTU20armoredbridgelayerwbridge extends EntityType
 {
+    /** Default constructor */
     public MTU20armoredbridgelayerwbridge()
     {
         setCountry(Country.RUSSIA_RUS);

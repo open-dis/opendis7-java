@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68fa0ba8
- * Country: Iraq (IRQ)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3cc41abc;
+ * Country: Iraq (IRQ);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18012
  */
 public class NestinClassminesweeperinshore extends EntityType
 {
+    /** Default constructor */
     public NestinClassminesweeperinshore()
     {
         setCountry(Country.IRAQ_IRQ);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6dd7b5a3
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b86de0d;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 29703
  */
 public class PistenBully400 extends EntityType
 {
+    /** Default constructor */
     public PistenBully400()
     {
         setCountry(Country.GERMANY_DEU);

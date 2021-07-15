@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b2a30d
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bfc257;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 13050
  */
 public class SA5MissileLauncher extends EntityType
 {
+    /** Default constructor */
     public SA5MissileLauncher()
     {
         setCountry(Country.RUSSIA_RUS);

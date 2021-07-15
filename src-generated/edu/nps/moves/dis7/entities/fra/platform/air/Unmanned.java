@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4efac082
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1b2abca6;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 23676
  */
 public class Unmanned extends EntityType
 {
+    /** Default constructor */
     public Unmanned()
     {
         setCountry(Country.FRANCE_FRA);

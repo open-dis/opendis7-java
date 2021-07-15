@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1edf1c96
- * Country: Algeria (DZA)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e32c033;
+ * Country: Algeria (DZA);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 27037
  */
 public class _012RaisHadjMubarek extends EntityType
 {
+    /** Default constructor */
     public _012RaisHadjMubarek()
     {
         setCountry(Country.ALGERIA_DZA);

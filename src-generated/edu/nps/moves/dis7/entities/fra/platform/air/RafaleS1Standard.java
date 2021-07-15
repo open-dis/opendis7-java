@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d29f28
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34f7cfd9;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 15772
  */
 public class RafaleS1Standard extends EntityType
 {
+    /** Default constructor */
     public RafaleS1Standard()
     {
         setCountry(Country.FRANCE_FRA);

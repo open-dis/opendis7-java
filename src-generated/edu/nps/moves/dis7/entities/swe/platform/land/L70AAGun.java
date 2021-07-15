@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@62db3891
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1f0b3cfe;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 17486
  */
 public class L70AAGun extends EntityType
 {
+    /** Default constructor */
     public L70AAGun()
     {
         setCountry(Country.SWEDEN_SWE);

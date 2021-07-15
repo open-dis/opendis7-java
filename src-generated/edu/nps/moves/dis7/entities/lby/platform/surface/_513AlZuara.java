@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3574e198
- * Country: Libya (LBY)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@552518c3;
+ * Country: Libya (LBY);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27801
  */
 public class _513AlZuara extends EntityType
 {
+    /** Default constructor */
     public _513AlZuara()
     {
         setCountry(Country.LIBYA_LBY);

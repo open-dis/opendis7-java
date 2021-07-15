@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc0bcf6
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c4f9535;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28300
  */
 public class P812Poema extends EntityType
 {
+    /** Default constructor */
     public P812Poema()
     {
         setCountry(Country.NETHERLANDS_NLD);

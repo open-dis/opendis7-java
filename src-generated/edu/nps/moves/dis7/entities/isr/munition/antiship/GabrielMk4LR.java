@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ce26986
- * Country: Israel (ISR)
- * Entity kind: Munition
- * Domain: ANTI_SHIP
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc48a17;
+ * Country: Israel (ISR);
+ * Entity kind: Munition;
+ * Domain: ANTI_SHIP;
  *
  * Entity type uid: 21300
  */
 public class GabrielMk4LR extends EntityType
 {
+    /** Default constructor */
     public GabrielMk4LR()
     {
         setCountry(Country.ISRAEL_ISR);

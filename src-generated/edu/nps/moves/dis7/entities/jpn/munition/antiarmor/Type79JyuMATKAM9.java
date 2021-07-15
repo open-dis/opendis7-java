@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6c07ad6b
- * Country: Japan (JPN)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1fe8f5e8;
+ * Country: Japan (JPN);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 29032
  */
 public class Type79JyuMATKAM9 extends EntityType
 {
+    /** Default constructor */
     public Type79JyuMATKAM9()
     {
         setCountry(Country.JAPAN_JPN);

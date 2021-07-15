@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6337c201
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a3631f8;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16431
  */
 public class P6113Geier extends EntityType
 {
+    /** Default constructor */
     public P6113Geier()
     {
         setCountry(Country.GERMANY_DEU);

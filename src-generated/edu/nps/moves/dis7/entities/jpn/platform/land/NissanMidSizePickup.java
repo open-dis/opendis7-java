@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c6daf0
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69637b10;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 24894
  */
 public class NissanMidSizePickup extends EntityType
 {
+    /** Default constructor */
     public NissanMidSizePickup()
     {
         setCountry(Country.JAPAN_JPN);

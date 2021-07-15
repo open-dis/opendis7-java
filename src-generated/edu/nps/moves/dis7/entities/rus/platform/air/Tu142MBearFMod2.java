@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@141e879d
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29852487;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 13344
  */
 public class Tu142MBearFMod2 extends EntityType
 {
+    /** Default constructor */
     public Tu142MBearFMod2()
     {
         setCountry(Country.RUSSIA_RUS);

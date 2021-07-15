@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bc58891
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4207852d;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 10972
  */
 public class P3AEWC extends EntityType
 {
+    /** Default constructor */
     public P3AEWC()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

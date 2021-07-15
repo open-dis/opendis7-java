@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57a3e26a
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b86805d;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28056
  */
 public class DCRCUnit extends EntityType
 {
+    /** Default constructor */
     public DCRCUnit()
     {
         setCountry(Country.GERMANY_DEU);

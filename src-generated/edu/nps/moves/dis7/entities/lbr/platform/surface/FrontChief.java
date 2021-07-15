@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@560cbf1a
- * Country: Liberia (LBR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ae81e1;
+ * Country: Liberia (LBR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24528
  */
 public class FrontChief extends EntityType
 {
+    /** Default constructor */
     public FrontChief()
     {
         setCountry(Country.LIBERIA_LBR);

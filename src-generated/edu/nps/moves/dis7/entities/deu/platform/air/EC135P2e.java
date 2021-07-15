@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@a307a8c
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1cd629b3;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 32999
  */
 public class EC135P2e extends EntityType
 {
+    /** Default constructor */
     public EC135P2e()
     {
         setCountry(Country.GERMANY_DEU);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18c5069b
- * Country: Iraq (IRQ)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ec2cc4;
+ * Country: Iraq (IRQ);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18023
  */
 public class _507lbnMarjid extends EntityType
 {
+    /** Default constructor */
     public _507lbnMarjid()
     {
         setCountry(Country.IRAQ_IRQ);

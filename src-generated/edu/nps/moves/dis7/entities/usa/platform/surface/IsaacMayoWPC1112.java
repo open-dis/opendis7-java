@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62c3f556
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@457a5b2d;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29847
  */
 public class IsaacMayoWPC1112 extends EntityType
 {
+    /** Default constructor */
     public IsaacMayoWPC1112()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@310d57b1
- * Country: France (FRA)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@231b35fb;
+ * Country: France (FRA);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 23951
  */
 public class Milan2T extends EntityType
 {
+    /** Default constructor */
     public Milan2T()
     {
         setCountry(Country.FRANCE_FRA);

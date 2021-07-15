@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d2c9361
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70b6db83;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 12377
  */
 public class SSN722KeyWest extends EntityType
 {
+    /** Default constructor */
     public SSN722KeyWest()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4e96cb04
- * Country: United States of America (USA)
- * Entity kind: Sensor/Emitter
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6d9428f3;
+ * Country: United States of America (USA);
+ * Entity kind: Sensor/Emitter;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 25006
  */
 public class MK84Mod1SUS extends EntityType
 {
+    /** Default constructor */
     public MK84Mod1SUS()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d8bafa9
- * Country: Indonesia (IDN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@115667d;
+ * Country: Indonesia (IDN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31092
  */
 public class _531TelukGilimanuk extends EntityType
 {
+    /** Default constructor */
     public _531TelukGilimanuk()
     {
         setCountry(Country.INDONESIA_IDN);

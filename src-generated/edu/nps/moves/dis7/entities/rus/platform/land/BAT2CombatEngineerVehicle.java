@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ce90bc5
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1517f633;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 12733
  */
 public class BAT2CombatEngineerVehicle extends EntityType
 {
+    /** Default constructor */
     public BAT2CombatEngineerVehicle()
     {
         setCountry(Country.RUSSIA_RUS);

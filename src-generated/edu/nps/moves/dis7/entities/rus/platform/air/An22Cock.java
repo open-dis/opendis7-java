@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@99a78d7
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@58399d82;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 13353
  */
 public class An22Cock extends EntityType
 {
+    /** Default constructor */
     public An22Cock()
     {
         setCountry(Country.RUSSIA_RUS);

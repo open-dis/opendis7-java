@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ef14fe
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1800a575;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16814
  */
 public class Artemis extends EntityType
 {
+    /** Default constructor */
     public Artemis()
     {
         setCountry(Country.GERMANY_DEU);

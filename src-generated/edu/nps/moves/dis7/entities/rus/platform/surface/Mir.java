@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d2dc9d2
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7123be6c;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 14138
  */
 public class Mir extends EntityType
 {
+    /** Default constructor */
     public Mir()
     {
         setCountry(Country.RUSSIA_RUS);

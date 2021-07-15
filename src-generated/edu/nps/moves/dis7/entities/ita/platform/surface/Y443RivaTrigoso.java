@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e28bdd1
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61884cb1;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18514
  */
 public class Y443RivaTrigoso extends EntityType
 {
+    /** Default constructor */
     public Y443RivaTrigoso()
     {
         setCountry(Country.ITALY_ITA);

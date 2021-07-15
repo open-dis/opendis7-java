@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -22,11 +22,18 @@ import java.util.*;
  */
 public class EspduSender
 {
+  /** default value avoids unterminated zombie senders */
   public static final int NUMBER_TO_SEND = 5000;
 
+  /** TCP/IP network modes */
   public enum NetworkMode
   {
-    UNICAST, MULTICAST, BROADCAST
+    /** unicast socket */
+    UNICAST,
+    /** multicast socket */
+    MULTICAST,
+    /** broadcast socket */
+    BROADCAST
   };
 
   /**

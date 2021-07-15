@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9a7504c
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74650e52;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30939
  */
 public class GordonReid813735 extends EntityType
 {
+    /** Default constructor */
     public GordonReid813735()
     {
         setCountry(Country.CANADA_CAN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b580b88
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ad5923a;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 12729
  */
 public class MTPMaintenanceVehicle extends EntityType
 {
+    /** Default constructor */
     public MTPMaintenanceVehicle()
     {
         setCountry(Country.RUSSIA_RUS);

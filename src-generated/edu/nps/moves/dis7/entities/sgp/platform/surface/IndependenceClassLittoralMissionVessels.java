@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67efd2c2
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3727f0ee;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32117
  */
 public class IndependenceClassLittoralMissionVessels extends EntityType
 {
+    /** Default constructor */
     public IndependenceClassLittoralMissionVessels()
     {
         setCountry(Country.SINGAPORE_SGP);

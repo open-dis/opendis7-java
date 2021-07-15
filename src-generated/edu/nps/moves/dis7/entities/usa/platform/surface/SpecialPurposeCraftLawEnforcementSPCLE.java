@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7742a45c
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@475f5672;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26779
  */
 public class SpecialPurposeCraftLawEnforcementSPCLE extends EntityType
 {
+    /** Default constructor */
     public SpecialPurposeCraftLawEnforcementSPCLE()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b4d50b
- * Country: South Africa (ZAF)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2016f509;
+ * Country: South Africa (ZAF);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 19109
  */
 public class Cheetah extends EntityType
 {
+    /** Default constructor */
     public Cheetah()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

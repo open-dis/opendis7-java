@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 16 marshal size 8<br>
  * LifeFormsSubcategoryUSWeapons
  */
@@ -69,11 +69,11 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** AR-15 (M16) 5.56-mm */
     AR_15_M16_556_MM (27, "AR-15 (M16) 5.56-mm"),
     /** M1 .30 */
-    M1_30 (28, "M1 .30"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "M1 .30"),
     /** M14 7.62-mm, NATO */
     M14_762_MM_NATO (29, "M14 7.62-mm, NATO"),
     /** M14 (M1A, M1A1-A1), Springfield Armory */
-    M14_M1A_M1A1_A1_SPRINGFIELD_ARMORY (30, "M14 (M1A, M1A1-A1), Springfield Armory"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "M14 (M1A, M1A1-A1), Springfield Armory"),
     /** M14K assault rifle, LaFrance */
     M14K_ASSAULT_RIFLE_LAFRANCE (31, "M14K assault rifle, LaFrance"),
     /** M16A2 assault rifle 5.56-mm, Colt */
@@ -93,7 +93,7 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** Assault carbine M16K, LaFrance */
     ASSAULT_CARBINE_M16K_LAFRANCE (39, "Assault carbine M16K, LaFrance"),
     /** M1 .30 */
-    M1_30_2 (40, "M1 .30"),
+    M1_30 (40, "M1 .30"),
     /** M4 (Model 720) 5.56-mm, Colt */
     M4_MODEL_720_556_MM_COLT (41, "M4 (Model 720) 5.56-mm, Colt"),
     /** M-900 9-mm, Calico */
@@ -105,45 +105,45 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     /** M11, Cobray */
     M11_COBRAY (45, "M11, Cobray"),
     /** M951 9-mm, Calico */
-    M951_9_MM_CALICO (46, "M951 9-mm, Calico"),
+    TIME_SPACE_POSITION_INFORMATION (46, "M951 9-mm, Calico"),
     /** MP5/10 10-mm */
     MP5_10_10_MM (47, "MP5/10 10-mm"),
     /** 9-mm, Colt */
     _9_MM_COLT (48, "9-mm, Colt"),
     /** Ingram */
-    INGRAM (49, "Ingram"),
+    LIVE_ENTITY_FIRE (49, "Ingram"),
     /** Externally powered (EPG) 7.62-mm, Ares */
-    EXTERNALLY_POWERED_EPG_762_MM_ARES (50, "Externally powered (EPG) 7.62-mm, Ares"),
+    LIVE_ENTITY_DETONATION (50, "Externally powered (EPG) 7.62-mm, Ares"),
     /** GECAL 50 */
-    GECAL_50 (51, "GECAL 50"),
+    CREATE_ENTITY_RELIABLE (51, "GECAL 50"),
     /** General purpose M60 7.62-mm */
-    GENERAL_PURPOSE_M60_762_MM (52, "General purpose M60 7.62-mm"),
+    REMOVE_ENTITY_RELIABLE (52, "General purpose M60 7.62-mm"),
     /** Heavy M2HB-QCB .50, RAMO */
-    HEAVY_M2HB_QCB_50_RAMO (53, "Heavy M2HB-QCB .50, RAMO"),
+    START_RESUME_RELIABLE (53, "Heavy M2HB-QCB .50, RAMO"),
     /** Light assault M60E3 (Enhanced) 7.62-mm */
-    LIGHT_ASSAULT_M60E3_ENHANCED_762_MM (54, "Light assault M60E3 (Enhanced) 7.62-mm"),
+    STOP_FREEZE_RELIABLE (54, "Light assault M60E3 (Enhanced) 7.62-mm"),
     /** Light M16A2 5.56-mm, Colt */
-    LIGHT_M16A2_556_MM_COLT (55, "Light M16A2 5.56-mm, Colt"),
+    ACKNOWLEDGE_RELIABLE (55, "Light M16A2 5.56-mm, Colt"),
     /** Light 5.56-mm, Ares */
-    LIGHT_556_MM_ARES (56, "Light 5.56-mm, Ares"),
+    ACTION_REQUEST_RELIABLE (56, "Light 5.56-mm, Ares"),
     /** Lightweight M2 .50, RAMO */
-    LIGHTWEIGHT_M2_50_RAMO (57, "Lightweight M2 .50, RAMO"),
+    ACTION_RESPONSE_RELIABLE (57, "Lightweight M2 .50, RAMO"),
     /** Lightweight assault M60E3 7.62-mm */
-    LIGHTWEIGHT_ASSAULT_M60E3_762_MM (58, "Lightweight assault M60E3 7.62-mm"),
+    DATA_QUERY_RELIABLE (58, "Lightweight assault M60E3 7.62-mm"),
     /** Minigun M134 7.62-mm, General Electric */
-    MINIGUN_M134_762_MM_GENERAL_ELECTRIC (59, "Minigun M134 7.62-mm, General Electric"),
+    SET_DATA_RELIABLE (59, "Minigun M134 7.62-mm, General Electric"),
     /** MG system MK19 Mod 3, 40-mm */
-    MG_SYSTEM_MK19_MOD_3_40_MM (60, "MG system MK19 Mod 3, 40-mm"),
+    DATA_RELIABLE (60, "MG system MK19 Mod 3, 40-mm"),
     /** MG system (or kit) M2HB QCB .50, Saco Defense */
-    MG_SYSTEM_OR_KIT_M2HB_QCB_50_SACO_DEFENSE (61, "MG system (or kit) M2HB QCB .50, Saco Defense"),
+    EVENT_REPORT_RELIABLE (61, "MG system (or kit) M2HB QCB .50, Saco Defense"),
     /** M1919A4 .30-cal, Browning */
-    M1919A4_30_CAL_BROWNING (62, "M1919A4 .30-cal, Browning"),
+    COMMENT_RELIABLE (62, "M1919A4 .30-cal, Browning"),
     /** .50-cal, Browning */
-    _50_CAL_BROWNING (63, ".50-cal, Browning"),
+    RECORD_RELIABLE (63, ".50-cal, Browning"),
     /** Colored-smoke hand grenade M18 */
-    COLORED_SMOKE_HAND_GRENADE_M18 (64, "Colored-smoke hand grenade M18"),
+    SET_RECORD_RELIABLE	 (64, "Colored-smoke hand grenade M18"),
     /** Colored-smoke grenades, Federal Laboratories */
-    COLORED_SMOKE_GRENADES_FEDERAL_LABORATORIES (65, "Colored-smoke grenades, Federal Laboratories"),
+    RECORD_QUERY_RELIABLE (65, "Colored-smoke grenades, Federal Laboratories"),
     /** Infrared smoke grenade M76 */
     INFRARED_SMOKE_GRENADE_M76 (66, "Infrared smoke grenade M76"),
     /** Smoke hand grenade AN-M8 HC */
@@ -262,27 +262,39 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormsSubcategoryUSWeapons(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormsSubcategoryUSWeapons getEnumForValue(int i)
     {
        for(LifeFormsSubcategoryUSWeapons val: LifeFormsSubcategoryUSWeapons.values()) {
@@ -293,17 +305,29 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormsSubcategoryUSWeapons unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -316,6 +340,11 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormsSubcategoryUSWeapons unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -346,6 +375,9 @@ public enum LifeFormsSubcategoryUSWeapons implements SubCategory
     @Override
     public String toString()
     {
-        return "LifeFormsSubcategoryUSWeapons " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormsSubcategoryUSWeapons " + padding + getValue() + " " + name();
     }
 }

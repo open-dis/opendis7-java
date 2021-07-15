@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ca93621
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59c33386;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 14473
  */
 public class Bolva1 extends EntityType
 {
+    /** Default constructor */
     public Bolva1()
     {
         setCountry(Country.RUSSIA_RUS);

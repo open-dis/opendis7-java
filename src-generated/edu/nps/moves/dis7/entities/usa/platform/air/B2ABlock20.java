@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4816ee24
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a6ea47d;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25394
  */
 public class B2ABlock20 extends EntityType
 {
+    /** Default constructor */
     public B2ABlock20()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

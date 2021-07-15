@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46c662f2
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: STRATEGIC
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2dd3d39d;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: STRATEGIC;
  *
  * Entity type uid: 32520
  */
 public class TridentIIThirdStageVehicle extends EntityType
 {
+    /** Default constructor */
     public TridentIIThirdStageVehicle()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

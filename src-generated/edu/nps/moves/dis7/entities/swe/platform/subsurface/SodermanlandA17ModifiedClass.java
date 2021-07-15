@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6981f8f3
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35c12c7a;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 27286
  */
 public class SodermanlandA17ModifiedClass extends EntityType
 {
+    /** Default constructor */
     public SodermanlandA17ModifiedClass()
     {
         setCountry(Country.SWEDEN_SWE);

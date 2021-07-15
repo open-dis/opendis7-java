@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29013ef2
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d28fb02;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 12363
  */
 public class SSN708MinneapolisSaintPaul extends EntityType
 {
+    /** Default constructor */
     public SSN708MinneapolisSaintPaul()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

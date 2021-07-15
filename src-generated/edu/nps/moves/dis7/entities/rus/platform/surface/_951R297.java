@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f82663e
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@486bc9a4;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27124
  */
 public class _951R297 extends EntityType
 {
+    /** Default constructor */
     public _951R297()
     {
         setCountry(Country.RUSSIA_RUS);

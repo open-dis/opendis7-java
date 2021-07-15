@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4de4b452
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e7edb54;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 15785
  */
 public class AlphaJet3 extends EntityType
 {
+    /** Default constructor */
     public AlphaJet3()
     {
         setCountry(Country.FRANCE_FRA);

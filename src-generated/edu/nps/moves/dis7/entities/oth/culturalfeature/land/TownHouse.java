@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71fb8301
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52657d5f;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: LAND;
  *
  * Entity type uid: 22058
  */
 public class TownHouse extends EntityType
 {
+    /** Default constructor */
     public TownHouse()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62058742
- * Country: Switzerland (CHE)
- * Entity kind: Munition
- * Domain: ANTI_AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bfb93cf;
+ * Country: Switzerland (CHE);
+ * Entity kind: Munition;
+ * Domain: ANTI_AIR;
  *
  * Entity type uid: 21728
  */
 public class SAPHEIT extends EntityType
 {
+    /** Default constructor */
     public SAPHEIT()
     {
         setCountry(Country.SWITZERLAND_CHE);

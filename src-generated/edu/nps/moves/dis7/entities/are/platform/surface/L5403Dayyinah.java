@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23f86d8a
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79e66b2f;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18718
  */
 public class L5403Dayyinah extends EntityType
 {
+    /** Default constructor */
     public L5403Dayyinah()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

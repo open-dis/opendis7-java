@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18cebaa5
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17cdf2d0;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18228
  */
 public class _323Akko extends EntityType
 {
+    /** Default constructor */
     public _323Akko()
     {
         setCountry(Country.ISRAEL_ISR);

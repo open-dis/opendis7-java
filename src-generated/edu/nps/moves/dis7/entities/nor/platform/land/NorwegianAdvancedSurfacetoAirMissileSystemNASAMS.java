@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46cf05f7
- * Country: Norway (NOR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1734f68;
+ * Country: Norway (NOR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30279
  */
 public class NorwegianAdvancedSurfacetoAirMissileSystemNASAMS extends EntityType
 {
+    /** Default constructor */
     public NorwegianAdvancedSurfacetoAirMissileSystemNASAMS()
     {
         setCountry(Country.NORWAY_NOR);

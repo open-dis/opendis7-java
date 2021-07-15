@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d13baac
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f6329cb;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 23785
  */
 public class Cessna206 extends EntityType
 {
+    /** Default constructor */
     public Cessna206()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6940f685
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15e0fe05;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 14163
  */
 public class BorisChilikin extends EntityType
 {
+    /** Default constructor */
     public BorisChilikin()
     {
         setCountry(Country.RUSSIA_RUS);

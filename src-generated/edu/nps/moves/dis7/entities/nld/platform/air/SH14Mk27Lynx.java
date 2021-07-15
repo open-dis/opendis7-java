@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@70d2e40b
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5aa0dbf4;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 18936
  */
 public class SH14Mk27Lynx extends EntityType
 {
+    /** Default constructor */
     public SH14Mk27Lynx()
     {
         setCountry(Country.NETHERLANDS_NLD);

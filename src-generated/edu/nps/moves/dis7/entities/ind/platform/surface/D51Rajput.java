@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18a136ac
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@648c94da;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23160
  */
 public class D51Rajput extends EntityType
 {
+    /** Default constructor */
     public D51Rajput()
     {
         setCountry(Country.INDIA_IND);

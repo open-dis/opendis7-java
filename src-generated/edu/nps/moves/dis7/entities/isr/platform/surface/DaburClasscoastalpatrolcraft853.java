@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@312ab28e
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1506f20f;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23766
  */
 public class DaburClasscoastalpatrolcraft853 extends EntityType
 {
+    /** Default constructor */
     public DaburClasscoastalpatrolcraft853()
     {
         setCountry(Country.ISRAEL_ISR);

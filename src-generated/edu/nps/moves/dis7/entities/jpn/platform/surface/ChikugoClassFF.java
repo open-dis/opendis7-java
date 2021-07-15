@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@fd0e5b6
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5049d8b2;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18905
  */
 public class ChikugoClassFF extends EntityType
 {
+    /** Default constructor */
     public ChikugoClassFF()
     {
         setCountry(Country.JAPAN_JPN);

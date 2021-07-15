@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65f8f5ae
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@514646ef;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16148
  */
 public class F782Amyotdinville extends EntityType
 {
+    /** Default constructor */
     public F782Amyotdinville()
     {
         setCountry(Country.FRANCE_FRA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@f6c48ac
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7823a2f9;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25702
  */
 public class VantVT15 extends EntityType
 {
+    /** Default constructor */
     public VantVT15()
     {
         setCountry(Country.BRAZIL_BRA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@673919a7
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b6e5c12;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 26344
  */
 public class VolvoFH166x6 extends EntityType
 {
+    /** Default constructor */
     public VolvoFH166x6()
     {
         setCountry(Country.SWEDEN_SWE);

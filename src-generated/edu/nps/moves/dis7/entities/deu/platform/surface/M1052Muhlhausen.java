@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51549490
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@488d1cd7;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16639
  */
 public class M1052Muhlhausen extends EntityType
 {
+    /** Default constructor */
     public M1052Muhlhausen()
     {
         setCountry(Country.GERMANY_DEU);

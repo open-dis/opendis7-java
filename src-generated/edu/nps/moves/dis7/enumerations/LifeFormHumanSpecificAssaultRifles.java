@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 474 marshal size 8<br>
  * LifeFormHumanSpecificAssaultRifles
  */
@@ -27,7 +27,7 @@ public enum LifeFormHumanSpecificAssaultRifles
     /** 5.45mm Kbk wz. 1988 Tantal */
     _545MM_KBK_WZ_1988_TANTAL (13, "5.45mm Kbk wz. 1988 Tantal"),
     /** 5.56mm AK-101 */
-    _556MM_AK_101 (30, "5.56mm AK-101"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "5.56mm AK-101"),
     /** 5.56mm Diemaco C7, Diemaco is now Colt Canada. */
     _556MM_DIEMACO_C7 (31, "5.56mm Diemaco C7"),
     /** 5.56mm Colt Canada C8 Carbine */
@@ -59,45 +59,45 @@ public enum LifeFormHumanSpecificAssaultRifles
     /** 5.56mm Enfield SA-80A2 */
     _556MM_ENFIELD_SA_80A2 (45, "5.56mm Enfield SA-80A2"),
     /** 5.56mm Pindad SS1 V1 */
-    _556MM_PINDAD_SS1_V1 (46, "5.56mm Pindad SS1 V1"),
+    TIME_SPACE_POSITION_INFORMATION (46, "5.56mm Pindad SS1 V1"),
     /** 5.56mm Pindad SS1 V2 */
     _556MM_PINDAD_SS1_V2 (47, "5.56mm Pindad SS1 V2"),
     /** 5.56mm Pindad SS1 V3 */
     _556MM_PINDAD_SS1_V3 (48, "5.56mm Pindad SS1 V3"),
     /** 5.56mm Steyr AUG A1 */
-    _556MM_STEYR_AUG_A1 (49, "5.56mm Steyr AUG A1"),
+    LIVE_ENTITY_FIRE (49, "5.56mm Steyr AUG A1"),
     /** 5.56mm T65 */
-    _556MM_T65 (50, "5.56mm T65"),
+    LIVE_ENTITY_DETONATION (50, "5.56mm T65"),
     /** 5.56mm T91 */
-    _556MM_T91 (51, "5.56mm T91"),
+    CREATE_ENTITY_RELIABLE (51, "5.56mm T91"),
     /** 5.56mm Tavor TAR-21 */
-    _556MM_TAVOR_TAR_21 (52, "5.56mm Tavor TAR-21"),
+    REMOVE_ENTITY_RELIABLE (52, "5.56mm Tavor TAR-21"),
     /** 5.56mm Type CQ / M311 */
-    _556MM_TYPE_CQ_M311 (53, "5.56mm Type CQ / M311"),
+    START_RESUME_RELIABLE (53, "5.56mm Type CQ / M311"),
     /** 5.56mm Daewoo K11 */
-    _556MM_DAEWOO_K11 (54, "5.56mm Daewoo K11"),
+    STOP_FREEZE_RELIABLE (54, "5.56mm Daewoo K11"),
     /** 5.56mm Austeyr F88 */
-    _556MM_AUSTEYR_F88 (55, "5.56mm Austeyr F88"),
+    ACKNOWLEDGE_RELIABLE (55, "5.56mm Austeyr F88"),
     /** 5.56mm Austeyr F88-GLA */
-    _556MM_AUSTEYR_F88_GLA (56, "5.56mm Austeyr F88-GLA"),
+    ACTION_REQUEST_RELIABLE (56, "5.56mm Austeyr F88-GLA"),
     /** 5.56mm Austeyr F88-S-A1 */
-    _556MM_AUSTEYR_F88_S_A1 (57, "5.56mm Austeyr F88-S-A1"),
+    ACTION_RESPONSE_RELIABLE (57, "5.56mm Austeyr F88-S-A1"),
     /** 5.56mm Austeyr F88-S-A2 */
-    _556MM_AUSTEYR_F88_S_A2 (58, "5.56mm Austeyr F88-S-A2"),
+    DATA_QUERY_RELIABLE (58, "5.56mm Austeyr F88-S-A2"),
     /** 5.56mm Austeyr F88-C */
-    _556MM_AUSTEYR_F88_C (59, "5.56mm Austeyr F88-C"),
+    SET_DATA_RELIABLE (59, "5.56mm Austeyr F88-C"),
     /** 5.56mm Austeyr F88-S-A1C */
-    _556MM_AUSTEYR_F88_S_A1C (60, "5.56mm Austeyr F88-S-A1C"),
+    DATA_RELIABLE (60, "5.56mm Austeyr F88-S-A1C"),
     /** 5.56mm Austeyr F88-S-A1 LTR */
-    _556MM_AUSTEYR_F88_S_A1_LTR (61, "5.56mm Austeyr F88-S-A1 LTR"),
+    EVENT_REPORT_RELIABLE (61, "5.56mm Austeyr F88-S-A1 LTR"),
     /** 5.56mm Austeyr EF88 */
-    _556MM_AUSTEYR_EF88 (62, "5.56mm Austeyr EF88"),
+    COMMENT_RELIABLE (62, "5.56mm Austeyr EF88"),
     /** 5.56mm Bushmaster XM15 */
-    _556MM_BUSHMASTER_XM15 (63, "5.56mm Bushmaster XM15"),
+    RECORD_RELIABLE (63, "5.56mm Bushmaster XM15"),
     /** 5.56mm HK416 */
-    _556MM_HK416 (64, "5.56mm HK416"),
+    SET_RECORD_RELIABLE	 (64, "5.56mm HK416"),
     /** 5.56mm F90 */
-    _556MM_F90 (65, "5.56mm F90"),
+    RECORD_QUERY_RELIABLE (65, "5.56mm F90"),
     /** 5.56mm F90(G) */
     _556MM_F90G (66, "5.56mm F90(G)"),
     /** 5.56mm F90M */
@@ -138,27 +138,39 @@ public enum LifeFormHumanSpecificAssaultRifles
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificAssaultRifles(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificAssaultRifles getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificAssaultRifles val: LifeFormHumanSpecificAssaultRifles.values()) {
@@ -169,17 +181,29 @@ public enum LifeFormHumanSpecificAssaultRifles
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificAssaultRifles unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -192,6 +216,11 @@ public enum LifeFormHumanSpecificAssaultRifles
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificAssaultRifles unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -222,6 +251,9 @@ public enum LifeFormHumanSpecificAssaultRifles
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificAssaultRifles " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificAssaultRifles " + padding + getValue() + " " + name();
     }
 }

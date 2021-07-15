@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25a73de1
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f443fae;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 13262
  */
 public class MiG27KFloggerD extends EntityType
 {
+    /** Default constructor */
     public MiG27KFloggerD()
     {
         setCountry(Country.RUSSIA_RUS);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b6eb2ec
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34340fab;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17568
  */
 public class M82Huon extends EntityType
 {
+    /** Default constructor */
     public M82Huon()
     {
         setCountry(Country.AUSTRALIA_AUS);

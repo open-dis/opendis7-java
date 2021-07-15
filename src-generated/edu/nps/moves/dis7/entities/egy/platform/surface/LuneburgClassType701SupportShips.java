@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1f59a598
- * Country: Egypt (EGY)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61322f9d;
+ * Country: Egypt (EGY);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27494
  */
 public class LuneburgClassType701SupportShips extends EntityType
 {
+    /** Default constructor */
     public LuneburgClassType701SupportShips()
     {
-        setCountry(Country.EGYPT_EGY);
+        setCountry(Country.COMMENT_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@73e4387
- * Country: France (FRA)
- * Entity kind: Munition
- * Domain: ANTI_AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b6fb197;
+ * Country: France (FRA);
+ * Entity kind: Munition;
+ * Domain: ANTI_AIR;
  *
  * Entity type uid: 21037
  */
 public class MicaMissile extends EntityType
 {
+    /** Default constructor */
     public MicaMissile()
     {
         setCountry(Country.FRANCE_FRA);

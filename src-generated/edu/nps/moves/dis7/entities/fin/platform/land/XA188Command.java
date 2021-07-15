@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@762ef0ea
- * Country: Finland (FIN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d34d211;
+ * Country: Finland (FIN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27910
  */
 public class XA188Command extends EntityType
 {
+    /** Default constructor */
     public XA188Command()
     {
         setCountry(Country.FINLAND_FIN);

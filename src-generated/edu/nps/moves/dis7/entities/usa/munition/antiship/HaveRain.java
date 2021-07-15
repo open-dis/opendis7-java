@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dde5f38
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_SHIP
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68e24e7;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_SHIP;
  *
  * Entity type uid: 29098
  */
 public class HaveRain extends EntityType
 {
+    /** Default constructor */
     public HaveRain()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

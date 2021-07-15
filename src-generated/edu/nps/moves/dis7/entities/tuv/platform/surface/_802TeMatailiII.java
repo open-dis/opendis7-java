@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ab5f08a
- * Country: Tuvalu (TUV)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a66e67e;
+ * Country: Tuvalu (TUV);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32550
  */
 public class _802TeMatailiII extends EntityType
 {
+    /** Default constructor */
     public _802TeMatailiII()
     {
         setCountry(Country.TUVALU_TUV);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34cdeda2
- * Country: Indonesia (IDN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d6764b2;
+ * Country: Indonesia (IDN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31673
  */
 public class _584NusaUtara extends EntityType
 {
+    /** Default constructor */
     public _584NusaUtara()
     {
         setCountry(Country.INDONESIA_IDN);

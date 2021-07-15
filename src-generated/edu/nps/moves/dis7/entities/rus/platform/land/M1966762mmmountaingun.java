@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72ed9aad
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e52fb3e;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 12820
  */
 public class M1966762mmmountaingun extends EntityType
 {
+    /** Default constructor */
     public M1966762mmmountaingun()
     {
         setCountry(Country.RUSSIA_RUS);

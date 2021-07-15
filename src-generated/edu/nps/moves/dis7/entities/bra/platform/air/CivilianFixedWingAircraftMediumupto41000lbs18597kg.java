@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@57fffcd7
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@39aeed2f;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 23887
  */
 public class CivilianFixedWingAircraftMediumupto41000lbs18597kg extends EntityType
 {
+    /** Default constructor */
     public CivilianFixedWingAircraftMediumupto41000lbs18597kg()
     {
         setCountry(Country.BRAZIL_BRA);

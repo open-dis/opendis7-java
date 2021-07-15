@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19cdc217
- * Country: Italy (ITA)
- * Entity kind: Munition
- * Domain: ANTI_SHIP
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c7c0e36;
+ * Country: Italy (ITA);
+ * Entity kind: Munition;
+ * Domain: ANTI_SHIP;
  *
  * Entity type uid: 21682
  */
 public class WhiteheadK113 extends EntityType
 {
+    /** Default constructor */
     public WhiteheadK113()
     {
         setCountry(Country.ITALY_ITA);

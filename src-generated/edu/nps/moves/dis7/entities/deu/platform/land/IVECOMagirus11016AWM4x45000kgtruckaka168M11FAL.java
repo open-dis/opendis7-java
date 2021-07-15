@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4a07d605
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1f9f6368;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 16280
  */
 public class IVECOMagirus11016AWM4x45000kgtruckaka168M11FAL extends EntityType
 {
+    /** Default constructor */
     public IVECOMagirus11016AWM4x45000kgtruckaka168M11FAL()
     {
         setCountry(Country.GERMANY_DEU);

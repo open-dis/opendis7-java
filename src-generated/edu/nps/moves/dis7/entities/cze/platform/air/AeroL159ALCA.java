@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@235834f2
- * Country: Czech Republic (CZE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@158d2680;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30086
  */
 public class AeroL159ALCA extends EntityType
 {
+    /** Default constructor */
     public AeroL159ALCA()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

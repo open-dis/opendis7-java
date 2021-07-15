@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ed5eb72
- * Country: Greece (GRC)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45312be2;
+ * Country: Greece (GRC);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23357
  */
 public class L174Samos extends EntityType
 {
+    /** Default constructor */
     public L174Samos()
     {
         setCountry(Country.GREECE_GRC);

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 6 marshal size 8<br>
  * ForceID
  */
@@ -71,36 +71,48 @@ public enum ForceID
     /** Neutral 9 */
     NEUTRAL_9 (27, "Neutral 9"),
     /** Friendly 10 */
-    FRIENDLY_10 (28, "Friendly 10"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Friendly 10"),
     /** Opposing 10 */
     OPPOSING_10 (29, "Opposing 10"),
     /** Neutral 10 */
-    NEUTRAL_10 (30, "Neutral 10");
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Neutral 10");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     ForceID(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static ForceID getEnumForValue(int i)
     {
        for(ForceID val: ForceID.values()) {
@@ -111,17 +123,29 @@ public enum ForceID
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static ForceID unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -134,6 +158,11 @@ public enum ForceID
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static ForceID unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -164,6 +193,9 @@ public enum ForceID
     @Override
     public String toString()
     {
-        return "ForceID " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "ForceID " + padding + getValue() + " " + name();
     }
 }

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63f8276e
- * Country: Indonesia (IDN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77258e59;
+ * Country: Indonesia (IDN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31436
  */
 public class Boeing7372x9Surveiller extends EntityType
 {
+    /** Default constructor */
     public Boeing7372x9Surveiller()
     {
         setCountry(Country.INDONESIA_IDN);

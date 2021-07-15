@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@235d659c
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5377414a;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 10110
  */
 public class XM727 extends EntityType
 {
+    /** Default constructor */
     public XM727()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

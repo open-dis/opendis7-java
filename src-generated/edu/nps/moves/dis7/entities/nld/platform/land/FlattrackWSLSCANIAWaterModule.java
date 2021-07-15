@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5149f008
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@226f885f;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27953
  */
 public class FlattrackWSLSCANIAWaterModule extends EntityType
 {
+    /** Default constructor */
     public FlattrackWSLSCANIAWaterModule()
     {
         setCountry(Country.NETHERLANDS_NLD);

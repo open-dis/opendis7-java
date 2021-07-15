@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fad94a7
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a3591c5;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31815
  */
 public class KawasakiJetSki extends EntityType
 {
+    /** Default constructor */
     public KawasakiJetSki()
     {
         setCountry(Country.JAPAN_JPN);

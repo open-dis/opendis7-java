@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5965be2d
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e31276e;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16536
  */
 public class M1091Kulmbach extends EntityType
 {
+    /** Default constructor */
     public M1091Kulmbach()
     {
         setCountry(Country.GERMANY_DEU);

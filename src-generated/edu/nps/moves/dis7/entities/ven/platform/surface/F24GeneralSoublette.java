@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3709748f
- * Country: Venezuela (Bolivarian Republic of) (VEN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@280fafd;
+ * Country: Venezuela (Bolivarian Republic of) (VEN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27765
  */
 public class F24GeneralSoublette extends EntityType
 {
+    /** Default constructor */
     public F24GeneralSoublette()
     {
         setCountry(Country.VENEZUELA_BOLIVARIAN_REPUBLIC_OF_VEN);

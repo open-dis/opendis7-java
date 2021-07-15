@@ -35,15 +35,16 @@ public class X3dCreateLineSet {
     private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
 
     // -------------------- End Variables for Position Interpolator
-    public X3dCreateLineSet() {
 
+    /** Constructor */
+    public X3dCreateLineSet()
+    {
         //3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
         coordinateNumberFormat.setMaximumFractionDigits(3);
-
     }
 
-    public void addPointsToMap(byte[] localBufferShort) {
-
+    public void addPointsToMap(byte[] localBufferShort)
+    {
         this.bufferShort = localBufferShort.clone();
 
         if (bufferShort[2] == 1) {

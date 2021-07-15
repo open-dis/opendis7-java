@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6aaa5eb0
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@c818063;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17600
  */
 public class LeafclassUnderwayReplenishmentTankerAORAOT extends EntityType
 {
+    /** Default constructor */
     public LeafclassUnderwayReplenishmentTankerAORAOT()
     {
         setCountry(Country.AUSTRALIA_AUS);

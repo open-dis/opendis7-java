@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27e199ce
- * Country: Germany (DEU)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@279126f5;
+ * Country: Germany (DEU);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 21214
  */
 public class Pars3missile extends EntityType
 {
+    /** Default constructor */
     public Pars3missile()
     {
         setCountry(Country.GERMANY_DEU);

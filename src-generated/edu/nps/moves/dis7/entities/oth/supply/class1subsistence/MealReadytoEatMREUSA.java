@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7283877
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_1_SUBSISTENCE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@33f349ae;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_1_SUBSISTENCE;
  *
  * Entity type uid: 30646
  */
 public class MealReadytoEatMREUSA extends EntityType
 {
+    /** Default constructor */
     public MealReadytoEatMREUSA()
     {
         setCountry(Country.OTHER);

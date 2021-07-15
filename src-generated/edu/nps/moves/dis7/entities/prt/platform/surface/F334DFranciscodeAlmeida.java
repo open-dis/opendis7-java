@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54534abf
- * Country: Portugal (PRT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fae4d4a;
+ * Country: Portugal (PRT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23097
  */
 public class F334DFranciscodeAlmeida extends EntityType
 {
+    /** Default constructor */
     public F334DFranciscodeAlmeida()
     {
         setCountry(Country.PORTUGAL_PRT);

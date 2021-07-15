@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64440065
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: BATTLEFIELD_SUPPORT
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@120350eb;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: BATTLEFIELD_SUPPORT;
  *
  * Entity type uid: 20812
  */
 public class HEbombOF843A extends EntityType
 {
+    /** Default constructor */
     public HEbombOF843A()
     {
         setCountry(Country.RUSSIA_RUS);

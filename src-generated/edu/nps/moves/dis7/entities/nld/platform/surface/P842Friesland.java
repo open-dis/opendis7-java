@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c4f9535
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51768776;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27757
  */
 public class P842Friesland extends EntityType
 {
+    /** Default constructor */
     public P842Friesland()
     {
         setCountry(Country.NETHERLANDS_NLD);

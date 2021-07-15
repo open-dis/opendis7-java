@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b39fd82
- * Country: Norway (NOR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d4d3fe7;
+ * Country: Norway (NOR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27606
  */
 public class F311RoaldAmundsen extends EntityType
 {
+    /** Default constructor */
     public F311RoaldAmundsen()
     {
         setCountry(Country.NORWAY_NOR);

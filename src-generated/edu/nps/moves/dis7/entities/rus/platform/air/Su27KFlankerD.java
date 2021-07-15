@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79ab34c1
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ca0863b;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 13190
  */
 public class Su27KFlankerD extends EntityType
 {
+    /** Default constructor */
     public Su27KFlankerD()
     {
         setCountry(Country.RUSSIA_RUS);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43f82e78
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e950bcf;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23181
  */
 public class K43Nishank extends EntityType
 {
+    /** Default constructor */
     public K43Nishank()
     {
         setCountry(Country.INDIA_IND);

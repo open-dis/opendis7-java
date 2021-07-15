@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6de610c6
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_7_MAJOR_ITEMS
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1de08775;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_7_MAJOR_ITEMS;
  *
  * Entity type uid: 30751
  */
 public class FuelTankHawk492l extends EntityType
 {
+    /** Default constructor */
     public FuelTankHawk492l()
     {
         setCountry(Country.OTHER);

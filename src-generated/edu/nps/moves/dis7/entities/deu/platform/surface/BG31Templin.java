@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4196c360
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f99f5e0;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16552
  */
 public class BG31Templin extends EntityType
 {
+    /** Default constructor */
     public BG31Templin()
     {
         setCountry(Country.GERMANY_DEU);

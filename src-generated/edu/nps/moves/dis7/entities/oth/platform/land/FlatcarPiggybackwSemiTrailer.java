@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36c54a56
- * Country: Other
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2392212b;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 29670
  */
 public class FlatcarPiggybackwSemiTrailer extends EntityType
 {
+    /** Default constructor */
     public FlatcarPiggybackwSemiTrailer()
     {
         setCountry(Country.OTHER);

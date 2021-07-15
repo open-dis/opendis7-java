@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@ac91282
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@35d60381;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24297
  */
 public class Boeing737200Advanced extends EntityType
 {
+    /** Default constructor */
     public Boeing737200Advanced()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

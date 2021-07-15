@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b25ef1c
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: ANTI_RADAR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@200d1a3d;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: ANTI_RADAR;
  *
  * Entity type uid: 20525
  */
 public class Kh29TEKedgeTVguided extends EntityType
 {
+    /** Default constructor */
     public Kh29TEKedgeTVguided()
     {
         setCountry(Country.RUSSIA_RUS);

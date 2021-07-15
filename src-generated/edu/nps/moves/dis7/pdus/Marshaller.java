@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -10,14 +10,14 @@ import java.io.DataOutputStream;
 import java.nio.ByteBuffer;
 
 /**
- * Marshaller.java created on Apr 22, 2019 
- * MOVES Institute, Naval Postgraduate School (NPS), Monterey California USA https://www.nps.edu
+ * Marshaller.java created on Apr 22, 2019.
+ * MOVES Institute, Naval Postgraduate School (NPS), Monterey California USA https://www.nps.edu.
  */
 public interface Marshaller
 {
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
     int getMarshalledSize();

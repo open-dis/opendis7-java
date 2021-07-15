@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@62d0ac62
- * Country: Other
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3c1e23ff;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24727
  */
 public class GenericMediumHelicopterCoaxialRotor extends EntityType
 {
+    /** Default constructor */
     public GenericMediumHelicopterCoaxialRotor()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63e31ee
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ed17bee;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 29387
  */
 public class HaulmarkTrailerLightweightCargo800KG extends EntityType
 {
+    /** Default constructor */
     public HaulmarkTrailerLightweightCargo800KG()
     {
         setCountry(Country.AUSTRALIA_AUS);

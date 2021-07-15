@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@781f10f2
- * Country: Iraq (IRQ)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52d645b1;
+ * Country: Iraq (IRQ);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24582
  */
 public class AlThirthar extends EntityType
 {
+    /** Default constructor */
     public AlThirthar()
     {
         setCountry(Country.IRAQ_IRQ);

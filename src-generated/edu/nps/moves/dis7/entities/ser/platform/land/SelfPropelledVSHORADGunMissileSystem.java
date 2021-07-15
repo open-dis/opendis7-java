@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b52dd31
- * Country: Serbia and Montenegro
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36c0d0bd;
+ * Country: Serbia and Montenegro;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 23671
  */
 public class SelfPropelledVSHORADGunMissileSystem extends EntityType
 {
+    /** Default constructor */
     public SelfPropelledVSHORADGunMissileSystem()
     {
         setCountry(Country.SERBIA_AND_MONTENEGRO);

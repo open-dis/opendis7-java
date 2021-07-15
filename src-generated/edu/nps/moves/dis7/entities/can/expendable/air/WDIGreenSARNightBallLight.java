@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fd4312a
- * Country: Canada (CAN)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11f3400c;
+ * Country: Canada (CAN);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 31838
  */
 public class WDIGreenSARNightBallLight extends EntityType
 {
+    /** Default constructor */
     public WDIGreenSARNightBallLight()
     {
         setCountry(Country.CANADA_CAN);

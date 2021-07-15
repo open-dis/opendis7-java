@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cf08c97
- * Country: Russia (RUS)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50672905;
+ * Country: Russia (RUS);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22836
  */
 public class TurnSpikeR3812 extends EntityType
 {
+    /** Default constructor */
     public TurnSpikeR3812()
     {
         setCountry(Country.RUSSIA_RUS);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a54638b
- * Country: United States of America (USA)
- * Entity kind: Radio
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@359865a2;
+ * Country: United States of America (USA);
+ * Entity kind: Radio;
+ * Domain: LAND;
  *
  * Entity type uid: 22206
  */
 public class TypicalDAFIFDerivedILSGlideslopeTransmitter extends EntityType
 {
+    /** Default constructor */
     public TypicalDAFIFDerivedILSGlideslopeTransmitter()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

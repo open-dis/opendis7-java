@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14f9390f
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5170bcf4;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29496
  */
 public class M1059Weilheim extends EntityType
 {
+    /** Default constructor */
     public M1059Weilheim()
     {
         setCountry(Country.GERMANY_DEU);

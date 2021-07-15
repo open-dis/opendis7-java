@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4d5d943d
- * Country: Cyprus (CYP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@564fabc8;
+ * Country: Cyprus (CYP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24505
  */
 public class CrudeOilTankerupto159999DWT extends EntityType
 {
+    /** Default constructor */
     public CrudeOilTankerupto159999DWT()
     {
-        setCountry(Country.CYPRUS_CYP);
+        setCountry(Country.ACKNOWLEDGE_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

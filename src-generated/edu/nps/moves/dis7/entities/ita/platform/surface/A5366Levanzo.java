@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@295eaa7c
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60dce7ea;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18472
  */
 public class A5366Levanzo extends EntityType
 {
+    /** Default constructor */
     public A5366Levanzo()
     {
         setCountry(Country.ITALY_ITA);

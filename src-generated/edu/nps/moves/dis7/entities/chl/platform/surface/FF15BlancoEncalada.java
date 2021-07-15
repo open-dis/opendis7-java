@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8646db9
- * Country: Chile (CHL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d921e20;
+ * Country: Chile (CHL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27467
  */
 public class FF15BlancoEncalada extends EntityType
 {
+    /** Default constructor */
     public FF15BlancoEncalada()
     {
         setCountry(Country.CHILE_CHL);

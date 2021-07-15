@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@649725e3
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ae33a11;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29271
  */
 public class DDH183Izumo extends EntityType
 {
+    /** Default constructor */
     public DDH183Izumo()
     {
         setCountry(Country.JAPAN_JPN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2a8a4e0c
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@47c40b56;
+ * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 26319
  */
 public class PinzgauerHighMobilityAllTerrainVehicle extends EntityType
 {
+    /** Default constructor */
     public PinzgauerHighMobilityAllTerrainVehicle()
     {
         setCountry(Country.UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR);

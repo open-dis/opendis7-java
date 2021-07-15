@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@259287ac
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: ANTI_AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c176ff1;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: ANTI_AIR;
  *
  * Entity type uid: 25368
  */
 public class SA21Growler9M96E2 extends EntityType
 {
+    /** Default constructor */
     public SA21Growler9M96E2()
     {
         setCountry(Country.RUSSIA_RUS);

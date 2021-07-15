@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63fd4873
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5707c1cb;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23311
  */
 public class A832Zuiderkruis extends EntityType
 {
+    /** Default constructor */
     public A832Zuiderkruis()
     {
         setCountry(Country.NETHERLANDS_NLD);

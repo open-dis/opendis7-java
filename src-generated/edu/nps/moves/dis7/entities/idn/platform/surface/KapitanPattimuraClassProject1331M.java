@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a9d6f02
- * Country: Indonesia (IDN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5fe1ce85;
+ * Country: Indonesia (IDN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30518
  */
 public class KapitanPattimuraClassProject1331M extends EntityType
 {
+    /** Default constructor */
     public KapitanPattimuraClassProject1331M()
     {
         setCountry(Country.INDONESIA_IDN);

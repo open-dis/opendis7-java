@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@255eaa6b
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b2e46af;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29907
  */
 public class GavleK22 extends EntityType
 {
+    /** Default constructor */
     public GavleK22()
     {
         setCountry(Country.SWEDEN_SWE);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65e2dbf3
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29ca901e;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31849
  */
 public class LAVIIIEngineerELAV extends EntityType
 {
+    /** Default constructor */
     public LAVIIIEngineerELAV()
     {
         setCountry(Country.CANADA_CAN);

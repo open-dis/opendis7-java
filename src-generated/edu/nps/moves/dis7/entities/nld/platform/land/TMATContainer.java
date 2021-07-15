@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26b894bd
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@655a5d9c;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27945
  */
 public class TMATContainer extends EntityType
 {
+    /** Default constructor */
     public TMATContainer()
     {
         setCountry(Country.NETHERLANDS_NLD);

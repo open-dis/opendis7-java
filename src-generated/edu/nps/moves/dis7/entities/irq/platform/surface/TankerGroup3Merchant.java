@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@736d6a5c
- * Country: Iraq (IRQ)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3d9f6567;
+ * Country: Iraq (IRQ);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24580
  */
 public class TankerGroup3Merchant extends EntityType
 {
+    /** Default constructor */
     public TankerGroup3Merchant()
     {
         setCountry(Country.IRAQ_IRQ);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44a93f8a
- * Country: Russia (RUS)
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42ff9a77;
+ * Country: Russia (RUS);
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32168
  */
 public class _152mmAT14Spriggan9M133Kornet extends EntityType
 {
+    /** Default constructor */
     public _152mmAT14Spriggan9M133Kornet()
     {
         setCountry(Country.RUSSIA_RUS);

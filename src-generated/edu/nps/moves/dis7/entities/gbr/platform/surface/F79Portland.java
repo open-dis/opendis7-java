@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@310aee0b
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b112b13;
+ * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23328
  */
 public class F79Portland extends EntityType
 {
+    /** Default constructor */
     public F79Portland()
     {
         setCountry(Country.UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR);

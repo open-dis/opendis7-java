@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77724cbe
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59498d94;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 11586
  */
 public class PC12Thunderbolt extends EntityType
 {
+    /** Default constructor */
     public PC12Thunderbolt()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

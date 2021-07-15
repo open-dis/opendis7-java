@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@19976a65
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@18317edc;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28052
  */
 public class CommandFacility extends EntityType
 {
+    /** Default constructor */
     public CommandFacility()
     {
         setCountry(Country.GERMANY_DEU);

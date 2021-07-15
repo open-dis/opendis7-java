@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55182842
- * Country: Czech Republic (CZE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10e31a9a;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30083
  */
 public class Tatra815 extends EntityType
 {
+    /** Default constructor */
     public Tatra815()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

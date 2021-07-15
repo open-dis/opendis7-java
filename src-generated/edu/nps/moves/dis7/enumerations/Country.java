@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 29 marshal size 16<br>
  * Country
  */
@@ -71,11 +71,11 @@ public enum Country
     /** Botswana (BWA) */
     BOTSWANA_BWA (27, "Botswana (BWA)"),
     /** Bouvet Island (BVT) */
-    BOUVET_ISLAND_BVT (28, "Bouvet Island (BVT)"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Bouvet Island (BVT)"),
     /** Brazil (BRA) */
     BRAZIL_BRA (29, "Brazil (BRA)"),
     /** British Indian Ocean Territory (IOT) */
-    BRITISH_INDIAN_OCEAN_TERRITORY_IOT (30, "British Indian Ocean Territory (IOT)"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "British Indian Ocean Territory (IOT)"),
     /** Virgin Islands (British) (VGB) */
     VIRGIN_ISLANDS_BRITISH_VGB (31, "Virgin Islands (British) (VGB)"),
     /** Brunei Darussalam (BRN) */
@@ -107,45 +107,45 @@ public enum Country
     /** China, Peoples Republic of (CHN) */
     CHINA_PEOPLES_REPUBLIC_OF_CHN (45, "China, Peoples Republic of (CHN)"),
     /** Christmas Island (CXR) */
-    CHRISTMAS_ISLAND_CXR (46, "Christmas Island (CXR)"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Christmas Island (CXR)"),
     /** Cocos (Keeling) Islands (CCK) */
     COCOS_KEELING_ISLANDS_CCK (47, "Cocos (Keeling) Islands (CCK)"),
     /** Colombia (COL) */
     COLOMBIA_COL (48, "Colombia (COL)"),
     /** Comoros (COM) */
-    COMOROS_COM (49, "Comoros (COM)"),
+    LIVE_ENTITY_FIRE (49, "Comoros (COM)"),
     /** Congo (COG), Not to be confused with the neighbouring Democratic Republic of the Congo */
-    CONGO_COG (50, "Congo (COG)"),
+    LIVE_ENTITY_DETONATION (50, "Congo (COG)"),
     /** Cook Islands (COK) */
-    COOK_ISLANDS_COK (51, "Cook Islands (COK)"),
+    CREATE_ENTITY_RELIABLE (51, "Cook Islands (COK)"),
     /** Coral Sea Islands (Australia), Use Australia */
-    CORAL_SEA_ISLANDS_AUSTRALIA (52, "Coral Sea Islands (Australia)"),
+    REMOVE_ENTITY_RELIABLE (52, "Coral Sea Islands (Australia)"),
     /** Costa Rica (CRI) */
-    COSTA_RICA_CRI (53, "Costa Rica (CRI)"),
+    START_RESUME_RELIABLE (53, "Costa Rica (CRI)"),
     /** Cuba (CUB) */
-    CUBA_CUB (54, "Cuba (CUB)"),
+    STOP_FREEZE_RELIABLE (54, "Cuba (CUB)"),
     /** Cyprus (CYP) */
-    CYPRUS_CYP (55, "Cyprus (CYP)"),
+    ACKNOWLEDGE_RELIABLE (55, "Cyprus (CYP)"),
     /** Czechoslovakia (CSK), Now dissolved; succeeded by the Czech Republic and Slovakia */
-    CZECHOSLOVAKIA_CSK (56, "Czechoslovakia (CSK)"),
+    ACTION_REQUEST_RELIABLE (56, "Czechoslovakia (CSK)"),
     /** Denmark (DNK) */
-    DENMARK_DNK (57, "Denmark (DNK)"),
+    ACTION_RESPONSE_RELIABLE (57, "Denmark (DNK)"),
     /** Djibouti (DJI) */
-    DJIBOUTI_DJI (58, "Djibouti (DJI)"),
+    DATA_QUERY_RELIABLE (58, "Djibouti (DJI)"),
     /** Dominica (DMA) */
-    DOMINICA_DMA (59, "Dominica (DMA)"),
+    SET_DATA_RELIABLE (59, "Dominica (DMA)"),
     /** Dominican Republic (DOM) */
-    DOMINICAN_REPUBLIC_DOM (60, "Dominican Republic (DOM)"),
+    DATA_RELIABLE (60, "Dominican Republic (DOM)"),
     /** Ecuador (ECU) */
-    ECUADOR_ECU (61, "Ecuador (ECU)"),
+    EVENT_REPORT_RELIABLE (61, "Ecuador (ECU)"),
     /** Egypt (EGY) */
-    EGYPT_EGY (62, "Egypt (EGY)"),
+    COMMENT_RELIABLE (62, "Egypt (EGY)"),
     /** El Salvador (SLV) */
-    EL_SALVADOR_SLV (63, "El Salvador (SLV)"),
+    RECORD_RELIABLE (63, "El Salvador (SLV)"),
     /** Equatorial Guinea (GNQ) */
-    EQUATORIAL_GUINEA_GNQ (64, "Equatorial Guinea (GNQ)"),
+    SET_RECORD_RELIABLE	 (64, "Equatorial Guinea (GNQ)"),
     /** Ethiopia (ETH) */
-    ETHIOPIA_ETH (65, "Ethiopia (ETH)"),
+    RECORD_QUERY_RELIABLE (65, "Ethiopia (ETH)"),
     /** Europa Island (France), Use French Southern Territories */
     EUROPA_ISLAND_FRANCE (66, "Europa Island (France)"),
     /** Falkland Islands (Malvinas) (FLK) */
@@ -576,27 +576,39 @@ public enum Country
     private int value;
     private final String description;
 
+    /** Constructor */
     Country(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 16;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static Country getEnumForValue(int i)
     {
        for(Country val: Country.values()) {
@@ -607,22 +619,38 @@ public enum Country
        return null;
     }
 
- 
-   public void marshal(DataOutputStream dos) throws IOException
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
+    public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.putShort((short)getValue());
     }
-
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static Country unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static Country unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
         return getEnumForValue(byteBuffer.getShort());

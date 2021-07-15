@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 120 marshal size 8<br>
  * SubcategoriesforSubsurfaceCategory200Fish
  */
@@ -25,7 +25,7 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
     /** Squid */
     SQUID (5, "Squid"),
     /** Medium Schooling Fish, 30-59 Medium size schooling fish (cod-like, hake, haddock) */
-    MEDIUM_SCHOOLING_FISH (30, "Medium Schooling Fish"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Medium Schooling Fish"),
     /** Hake */
     HAKE (31, "Hake"),
     /** Cod */
@@ -35,9 +35,9 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
     /** Mackerel */
     MACKEREL (34, "Mackerel"),
     /** Large Schooling Fish, 60-89 Large size schooling fish (tuna) */
-    LARGE_SCHOOLING_FISH (60, "Large Schooling Fish"),
+    DATA_RELIABLE (60, "Large Schooling Fish"),
     /** Tuna */
-    TUNA (61, "Tuna"),
+    EVENT_REPORT_RELIABLE (61, "Tuna"),
     /** Small Shark, 90-119 Small shark */
     SMALL_SHARK (90, "Small Shark"),
     /** Dogfish Shark */
@@ -72,27 +72,39 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
     private int value;
     private final String description;
 
+    /** Constructor */
     SubcategoriesforSubsurfaceCategory200Fish(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static SubcategoriesforSubsurfaceCategory200Fish getEnumForValue(int i)
     {
        for(SubcategoriesforSubsurfaceCategory200Fish val: SubcategoriesforSubsurfaceCategory200Fish.values()) {
@@ -103,17 +115,29 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforSubsurfaceCategory200Fish unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -126,6 +150,11 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforSubsurfaceCategory200Fish unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -156,6 +185,9 @@ public enum SubcategoriesforSubsurfaceCategory200Fish implements SubCategory
     @Override
     public String toString()
     {
-        return "SubcategoriesforSubsurfaceCategory200Fish " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "SubcategoriesforSubsurfaceCategory200Fish " + padding + getValue() + " " + name();
     }
 }

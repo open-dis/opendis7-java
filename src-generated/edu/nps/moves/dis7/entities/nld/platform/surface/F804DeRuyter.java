@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b9267b
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@560513ce;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23308
  */
 public class F804DeRuyter extends EntityType
 {
+    /** Default constructor */
     public F804DeRuyter()
     {
         setCountry(Country.NETHERLANDS_NLD);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7674a051
- * Country: Oman (OMN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@320e400;
+ * Country: Oman (OMN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17966
  */
 public class C10ALTemsah extends EntityType
 {
+    /** Default constructor */
     public C10ALTemsah()
     {
         setCountry(Country.OMAN_OMN);

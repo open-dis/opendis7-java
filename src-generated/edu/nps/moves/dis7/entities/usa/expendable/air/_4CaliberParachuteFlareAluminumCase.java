@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66a472b9
- * Country: United States of America (USA)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43423d40;
+ * Country: United States of America (USA);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 24969
  */
 public class _4CaliberParachuteFlareAluminumCase extends EntityType
 {
+    /** Default constructor */
     public _4CaliberParachuteFlareAluminumCase()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

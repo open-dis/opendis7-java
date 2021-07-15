@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1bb564e2
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3381b4fc;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29172
  */
 public class PartenaviaAP68TP600AViator extends EntityType
 {
+    /** Default constructor */
     public PartenaviaAP68TP600AViator()
     {
         setCountry(Country.ITALY_ITA);

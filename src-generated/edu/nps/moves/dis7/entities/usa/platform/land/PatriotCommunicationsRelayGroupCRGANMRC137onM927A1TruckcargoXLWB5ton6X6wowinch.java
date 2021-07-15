@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@f8a6243
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4887de2b;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 22969
  */
 public class PatriotCommunicationsRelayGroupCRGANMRC137onM927A1TruckcargoXLWB5ton6X6wowinch extends EntityType
 {
+    /** Default constructor */
     public PatriotCommunicationsRelayGroupCRGANMRC137onM927A1TruckcargoXLWB5ton6X6wowinch()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

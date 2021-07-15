@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18dd5ed3
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@34451ed8;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30368
  */
 public class SingleEngineTurboprop extends EntityType
 {
+    /** Default constructor */
     public SingleEngineTurboprop()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

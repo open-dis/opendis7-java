@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6884f0d9
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b1ed14b;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32111
  */
 public class _98Daring extends EntityType
 {
+    /** Default constructor */
     public _98Daring()
     {
         setCountry(Country.SINGAPORE_SGP);

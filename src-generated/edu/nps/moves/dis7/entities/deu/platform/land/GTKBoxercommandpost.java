@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@503f91c3
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dc27487;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 22746
  */
 public class GTKBoxercommandpost extends EntityType
 {
+    /** Default constructor */
     public GTKBoxercommandpost()
     {
         setCountry(Country.GERMANY_DEU);

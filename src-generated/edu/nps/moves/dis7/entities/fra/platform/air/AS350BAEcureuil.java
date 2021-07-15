@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c711375
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bf9ce3e;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 15867
  */
 public class AS350BAEcureuil extends EntityType
 {
+    /** Default constructor */
     public AS350BAEcureuil()
     {
         setCountry(Country.FRANCE_FRA);

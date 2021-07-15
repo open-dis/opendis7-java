@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -19,16 +19,28 @@ import java.util.BitSet;
 */
 public abstract class DisBitSet extends BitSet implements Marshaller
 {
-    private final int bitLength;
+    /** size parameter */
+    private final int  bitLength;
+    /** size parameter */
     private final int byteLength;
 
-    public DisBitSet(int len)
+    /**
+     * Constructor
+     * @param length number of bits
+     */
+    public DisBitSet(int length)
     {
-        super(len); // length from bitfield element
-        bitLength = len;
+        super(length); // length from bitfield element
+        bitLength = length;
         byteLength = (bitLength + Byte.SIZE - 1) / Byte.SIZE;
     }
 
+    /**
+     * Calculate bit mask
+     * @param position in this DisBitSet
+     * @param length number of bits
+     * @return bit mask
+     */
     protected static int calculateMask(int position, int length)
     {
         int result = 0;
@@ -38,6 +50,11 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         return result;
     }
 
+    /**
+     * Calculate bit mask
+     * @param length number of bits
+     * @return bit mask
+     */
     protected static int calculateMask(int length)
     {
         int ret = 0;
@@ -47,11 +64,17 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         return ret;
     }
 
-    protected void setbits(int pos, int len, int val)
+    /**
+     * Accessor method to set bits
+     * @param position in this DisBitSet
+     * @param length number of bits
+     * @param value value of bits to set
+     */
+    protected void setbits(int position, int length, int value)
     {
         try {
-            for (int i = pos, j = 0; i < pos + len; i++, j++) {
-                boolean isset = (val & (1 << j)) != 0;
+            for (int i = position, j = 0; i < position + length; i++, j++) {
+                boolean isset = (value & (1 << j)) != 0;
                 set(i, i + 1, isset); // BitSet class
             }
         }
@@ -62,7 +85,7 @@ public abstract class DisBitSet extends BitSet implements Marshaller
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
     @Override
@@ -71,6 +94,9 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         return byteLength;
     }
 
+    /** Marshal value to DataOutputStream
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output */
     @Override
     public void marshal(DataOutputStream dos)
     {
@@ -82,12 +108,19 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         }
     }
 
+    /** Marshal value to ByteBuffer
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output */
     @Override
     public void marshal(ByteBuffer byteBuffer)
     {
         byteBuffer.put(marshallCommon());
     }
 
+    /** Marshal value to ByteBuffer
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">https://en.wikipedia.org/wiki/Endianness</a>
+     * @return Little-Endian byte array, network byte order requires reverse */
     public byte[] marshallCommon()
     {
         byte[] byteArray = toByteArray();
@@ -103,7 +136,7 @@ public abstract class DisBitSet extends BitSet implements Marshaller
      * Deserializes an object from a DataInputStream.
      * @param dis DataInputStream
      * @see java.io.DataInputStream
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @return marshalled serialized size in bytes
      */
     @Override
@@ -120,6 +153,12 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         return getMarshalledSize();
     }
 
+    /**
+     * Deserializes an object from a ByteBuffer.
+     * @param byteBuffer input
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @return marshalled serialized size in bytes
+     */
     @Override
     public int unmarshal(ByteBuffer byteBuffer)
     {
@@ -130,6 +169,10 @@ public abstract class DisBitSet extends BitSet implements Marshaller
         return getMarshalledSize();
     }
 
+    /** Deserializes an object from a byte array
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank">https://en.wikipedia.org/wiki/Endianness</a>
+     * @param ba byte array of interest */
     private void unmarshalCommon(byte[] ba)
     {
         reverse(ba); // big endian to little

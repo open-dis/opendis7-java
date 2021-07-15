@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5456afaa
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19b89d4;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25607
  */
 public class HKP14Sweden extends EntityType
 {
+    /** Default constructor */
     public HKP14Sweden()
     {
         setCountry(Country.GERMANY_DEU);

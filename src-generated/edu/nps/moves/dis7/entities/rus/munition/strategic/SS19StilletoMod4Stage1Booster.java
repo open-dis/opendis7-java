@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d4ecc67
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: STRATEGIC
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ad0bb4e;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: STRATEGIC;
  *
  * Entity type uid: 32382
  */
 public class SS19StilletoMod4Stage1Booster extends EntityType
 {
+    /** Default constructor */
     public SS19StilletoMod4Stage1Booster()
     {
         setCountry(Country.RUSSIA_RUS);

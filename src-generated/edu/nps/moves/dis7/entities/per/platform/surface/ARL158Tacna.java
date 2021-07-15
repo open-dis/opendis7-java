@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@697446d4
- * Country: Peru (PER)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d0332e1;
+ * Country: Peru (PER);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28254
  */
 public class ARL158Tacna extends EntityType
 {
+    /** Default constructor */
     public ARL158Tacna()
     {
         setCountry(Country.PERU_PER);

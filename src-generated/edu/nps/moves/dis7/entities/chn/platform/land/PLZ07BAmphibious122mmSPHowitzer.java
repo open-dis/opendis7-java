@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f021e6c
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78ac1102;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31958
  */
 public class PLZ07BAmphibious122mmSPHowitzer extends EntityType
 {
+    /** Default constructor */
     public PLZ07BAmphibious122mmSPHowitzer()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

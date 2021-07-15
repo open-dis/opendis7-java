@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@252dc8c4
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@761e788f;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26869
  */
 public class AgirA212 extends EntityType
 {
+    /** Default constructor */
     public AgirA212()
     {
         setCountry(Country.SWEDEN_SWE);

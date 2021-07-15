@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2401f4c3
- * Country: Argentina (ARG)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@694f9431;
+ * Country: Argentina (ARG);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31264
  */
 public class P42Rosales extends EntityType
 {
+    /** Default constructor */
     public P42Rosales()
     {
         setCountry(Country.ARGENTINA_ARG);

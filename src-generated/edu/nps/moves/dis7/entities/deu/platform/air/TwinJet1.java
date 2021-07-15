@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27e47833
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3e44f2a5;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24349
  */
 public class TwinJet1 extends EntityType
 {
+    /** Default constructor */
     public TwinJet1()
     {
         setCountry(Country.GERMANY_DEU);

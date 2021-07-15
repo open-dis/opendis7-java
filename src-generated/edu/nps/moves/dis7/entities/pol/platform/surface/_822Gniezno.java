@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f4919b0
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39ab59f8;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23058
  */
 public class _822Gniezno extends EntityType
 {
+    /** Default constructor */
     public _822Gniezno()
     {
         setCountry(Country.POLAND_POL);

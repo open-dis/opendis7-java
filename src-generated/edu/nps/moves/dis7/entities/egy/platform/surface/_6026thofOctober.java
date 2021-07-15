@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1190200a
- * Country: Egypt (EGY)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24aed80c;
+ * Country: Egypt (EGY);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27527
  */
 public class _6026thofOctober extends EntityType
 {
+    /** Default constructor */
     public _6026thofOctober()
     {
-        setCountry(Country.EGYPT_EGY);
+        setCountry(Country.COMMENT_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

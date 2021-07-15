@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49faf066
- * Country: Switzerland (CHE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26c47874;
+ * Country: Switzerland (CHE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31130
  */
 public class F5FreedomFighterTigerII extends EntityType
 {
+    /** Default constructor */
     public F5FreedomFighterTigerII()
     {
         setCountry(Country.SWITZERLAND_CHE);

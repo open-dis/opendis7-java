@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4ef31221
- * Country: United States of America (USA)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@713e7d9a;
+ * Country: United States of America (USA);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22333
  */
 public class ASR4LRSR extends EntityType
 {
+    /** Default constructor */
     public ASR4LRSR()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

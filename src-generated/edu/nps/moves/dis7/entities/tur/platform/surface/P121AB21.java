@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12d5c30e
- * Country: Turkey (TUR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4228bf58;
+ * Country: Turkey (TUR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23249
  */
 public class P121AB21 extends EntityType
 {
+    /** Default constructor */
     public P121AB21()
     {
         setCountry(Country.TURKEY_TUR);

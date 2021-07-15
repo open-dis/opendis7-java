@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2362f559
- * Country: Denmark (DNK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f4948e4;
+ * Country: Denmark (DNK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32954
  */
 public class PearlSeaways extends EntityType
 {
+    /** Default constructor */
     public PearlSeaways()
     {
-        setCountry(Country.DENMARK_DNK);
+        setCountry(Country.ACTION_RESPONSE_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@368239c8
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58d25a40;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28621
  */
 public class M806AS4ArmoredRecoveryVehicleLightARVL extends EntityType
 {
+    /** Default constructor */
     public M806AS4ArmoredRecoveryVehicleLightARVL()
     {
         setCountry(Country.AUSTRALIA_AUS);

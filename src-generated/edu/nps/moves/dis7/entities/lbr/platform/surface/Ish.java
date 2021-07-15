@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a11c4c7
- * Country: Liberia (LBR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54709809;
+ * Country: Liberia (LBR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24530
  */
 public class Ish extends EntityType
 {
+    /** Default constructor */
     public Ish()
     {
         setCountry(Country.LIBERIA_LBR);

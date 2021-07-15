@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10aa41f2
- * Country: Estonia (EST)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d20d0b;
+ * Country: Estonia (EST);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27775
  */
 public class M315Ugandi extends EntityType
 {
+    /** Default constructor */
     public M315Ugandi()
     {
         setCountry(Country.ESTONIA_EST);

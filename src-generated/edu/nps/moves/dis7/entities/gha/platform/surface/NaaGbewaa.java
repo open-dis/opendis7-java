@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29ca3d04
- * Country: Ghana (GHA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bf0fe62;
+ * Country: Ghana (GHA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27503
  */
 public class NaaGbewaa extends EntityType
 {
+    /** Default constructor */
     public NaaGbewaa()
     {
         setCountry(Country.GHANA_GHA);

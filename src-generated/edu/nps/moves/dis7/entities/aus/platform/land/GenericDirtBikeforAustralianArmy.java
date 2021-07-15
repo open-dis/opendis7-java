@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c2c22f3
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d04a311;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31184
  */
 public class GenericDirtBikeforAustralianArmy extends EntityType
 {
+    /** Default constructor */
     public GenericDirtBikeforAustralianArmy()
     {
         setCountry(Country.AUSTRALIA_AUS);

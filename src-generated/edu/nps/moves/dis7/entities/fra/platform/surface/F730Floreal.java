@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75d3a5e0
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ffaf86;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 15956
  */
 public class F730Floreal extends EntityType
 {
+    /** Default constructor */
     public F730Floreal()
     {
         setCountry(Country.FRANCE_FRA);

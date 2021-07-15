@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@38aafb53
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72825400;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25551
  */
 public class BionixAFV extends EntityType
 {
+    /** Default constructor */
     public BionixAFV()
     {
         setCountry(Country.SINGAPORE_SGP);

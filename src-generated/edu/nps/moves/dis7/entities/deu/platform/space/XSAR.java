@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7331196b
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ddf0d24;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16819
  */
 public class XSAR extends EntityType
 {
+    /** Default constructor */
     public XSAR()
     {
         setCountry(Country.GERMANY_DEU);

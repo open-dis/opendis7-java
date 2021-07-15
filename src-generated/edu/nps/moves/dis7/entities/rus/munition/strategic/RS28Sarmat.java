@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@516195cf
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: STRATEGIC
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@40c76f5a;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: STRATEGIC;
  *
  * Entity type uid: 32398
  */
 public class RS28Sarmat extends EntityType
 {
+    /** Default constructor */
     public RS28Sarmat()
     {
         setCountry(Country.RUSSIA_RUS);

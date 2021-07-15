@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c055c54
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4983159f;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18146
  */
 public class _511Hengam extends EntityType
 {
+    /** Default constructor */
     public _511Hengam()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

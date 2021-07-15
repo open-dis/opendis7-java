@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6a57ae10
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@560348e6;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 22777
  */
 public class RDEKZO extends EntityType
 {
+    /** Default constructor */
     public RDEKZO()
     {
         setCountry(Country.GERMANY_DEU);

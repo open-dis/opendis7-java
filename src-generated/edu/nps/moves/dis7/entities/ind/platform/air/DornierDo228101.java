@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77825085
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8ad6665;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31711
  */
 public class DornierDo228101 extends EntityType
 {
+    /** Default constructor */
     public DornierDo228101()
     {
         setCountry(Country.INDIA_IND);

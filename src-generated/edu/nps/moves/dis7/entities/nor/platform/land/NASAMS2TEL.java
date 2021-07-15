@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5851bd4f
- * Country: Norway (NOR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77b7ffa4;
+ * Country: Norway (NOR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30283
  */
 public class NASAMS2TEL extends EntityType
 {
+    /** Default constructor */
     public NASAMS2TEL()
     {
         setCountry(Country.NORWAY_NOR);

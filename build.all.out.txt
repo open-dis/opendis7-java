@@ -1,869 +1,58 @@
 ant -f C:\\x3d-github\\open-dis7-java all
 all:
-timestamp 7 September 2020 11:16:17
+timestamp 4 July 2021 16:35:37
 clean:
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
 Deleting C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-source.jar
-Deleting directory C:\x3d-github\open-dis7-java\javadoc
+Deleting directory C:\x3d-github\open-dis7-java\dist\javadoc
+Created dir: C:\x3d-github\open-dis7-java\dist\javadoc
 ================
-compile:
-compile src, src-generated
-Compiling 21789 source files to C:\x3d-github\open-dis7-java\build\classes
-Note: C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\entities\EntityTypeFactory.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
-================
-TODO: test suite cleanups, individual programs are runnable OK
 init:
-compile:
-compile src, src-generated
 Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
-Deleted 23 out of date files in 1 seconds
-Compiling 16 source files to C:\x3d-github\open-dis7-java\build\test\classes
+Compiling 21797 source files to C:\x3d-github\open-dis7-java\build\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
-compile-test:
-test:
-AllPduRoundTripTest
-Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
-Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 15 ACKNOWLEDGE (timestamp 04:35:40, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 55 ACKNOWLEDGE_RELIABLE (timestamp 04:35:42, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 16 ACTION_REQUEST (timestamp 04:35:42, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 56 ACTION_REQUEST_RELIABLE (timestamp 04:35:43, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 17 ACTION_RESPONSE (timestamp 04:35:43, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 57 ACTION_RESPONSE_RELIABLE (timestamp 04:35:43, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 33 AGGREGATE_STATE (timestamp 04:35:52, size 136 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 47 APPEARANCE (timestamp 04:36:00, size 69 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 45 AREAL_OBJECT_STATE (timestamp 04:36:02, size 49 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 10. received DISPDUType 48 ARTICULATED_PARTS (timestamp 04:36:02, size 19 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 11. received DISPDUType 72 ATTRIBUTE (timestamp 04:36:29, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 12. received DISPDUType 66 COLLISION_ELASTIC (timestamp 04:36:31, size 100 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 13. received DISPDUType 4 COLLISION (timestamp 04:36:31, size 60 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 14. received DISPDUType 22 COMMENT (timestamp 04:36:32, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 15. received DISPDUType 62 COMMENT_RELIABLE (timestamp 04:36:32, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 16. received DISPDUType 11 CREATE_ENTITY (timestamp 04:36:32, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 17. received DISPDUType 51 CREATE_ENTITY_RELIABLE (timestamp 04:36:32, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 18. received DISPDUType 20 DATA (timestamp 04:36:32, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 19. received DISPDUType 18 DATA_QUERY (timestamp 04:36:32, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 20. received DISPDUType 58 DATA_QUERY_RELIABLE (timestamp 04:36:33, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 21. received DISPDUType 60 DATA_RELIABLE (timestamp 04:36:33, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 22. received DISPDUType 24 DESIGNATOR (timestamp 04:36:34, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 23. received DISPDUType 3 DETONATION (timestamp 04:36:38, size 104 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 24. received DISPDUType 68 DIRECTED_ENERGY_FIRE (timestamp 04:36:39, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 25. received DISPDUType 23 ELECTROMAGNETIC_EMISSION (timestamp 04:36:39, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 26. received DISPDUType 69 ENTITY_DAMAGE_STATUS (timestamp 04:36:40, size 24 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 27. received DISPDUType 1 ENTITY_STATE (timestamp 04:36:41, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 28. received DISPDUType 67 ENTITY_STATE_UPDATE (timestamp 04:36:41, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 29. received DISPDUType 41 ENVIRONMENTAL_PROCESS (timestamp 04:36:42, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 30. received DISPDUType 21 EVENT_REPORT (timestamp 04:36:42, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 31. received DISPDUType 61 EVENT_REPORT_RELIABLE (timestamp 04:36:42, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 32. received DISPDUType 2 FIRE (timestamp 04:36:44, size 96 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 33. received DISPDUType 42 GRIDDED_DATA (timestamp 04:36:44, size 64 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 34. received DISPDUType 28 IDENTIFICATION_FRIEND_OR_FOE (timestamp 04:36:47, size 60 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 35. received DISPDUType 71 INFORMATION_OPERATIONS_REPORT (timestamp 04:36:47, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 36. received DISPDUType 70 INFORMATION_OPERATIONS_ACTION (timestamp 04:36:47, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 37. received DISPDUType 32 INTERCOM_CONTROL (timestamp 04:36:48, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 38. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 04:36:50, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 39. received DISPDUType 34 ISGROUPOF (timestamp 04:36:51, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 40. received DISPDUType 36 ISPARTOF (timestamp 04:36:53, size 52 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 41. received DISPDUType 50 LIVE_ENTITY_DETONATION (timestamp 04:36:56, size 81 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 42. received DISPDUType 49 LIVE_ENTITY_FIRE (timestamp 04:36:57, size 69 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 43. received DISPDUType 44 LINEAR_OBJECT_STATE (timestamp 04:36:57, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 44. received DISPDUType 39 MINEFIELD_DATA (timestamp 04:36:59, size 44 bytes)
-ENCODING_PLAINTEXT
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 45. received DISPDUType 38 MINEFIELD_QUERY (timestamp 04:37:00, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 46. received DISPDUType 40 MINEFIELD_RESPONSE_NACK (timestamp 04:37:00, size 26 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 47. received DISPDUType 37 MINEFIELD_STATE (timestamp 04:37:03, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 48. received DISPDUType 43 POINT_OBJECT_STATE (timestamp 04:37:05, size 91 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 49. received DISPDUType 27 RECEIVER (timestamp 04:37:06, size 36 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 50. received DISPDUType 65 RECORD_QUERY_RELIABLE (timestamp 04:37:06, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 51. received DISPDUType 63 RECORD_RELIABLE (timestamp 04:37:06, size 36 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 52. received DISPDUType 12 REMOVE_ENTITY (timestamp 04:37:06, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 53. received DISPDUType 52 REMOVE_ENTITY_RELIABLE (timestamp 04:37:06, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 54. received DISPDUType 9 REPAIR_COMPLETE (timestamp 04:37:08, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 55. received DISPDUType 10 REPAIR_RESPONSE (timestamp 04:37:08, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 56. received DISPDUType 8 RESUPPLY_CANCEL (timestamp 04:37:08, size 24 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 57. received DISPDUType 6 RESUPPLY_OFFER (timestamp 04:37:08, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 58. received DISPDUType 7 RESUPPLY_RECEIVED (timestamp 04:37:08, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 59. received DISPDUType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE (timestamp 04:37:08, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 60. received DISPDUType 5 SERVICE_REQUEST (timestamp 04:37:09, size 28 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 61. received DISPDUType 19 SET_DATA (timestamp 04:37:09, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 62. received DISPDUType 59 SET_DATA_RELIABLE (timestamp 04:37:09, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: null
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 63. received DISPDUType 64 SET_RECORD_RELIABLE (timestamp 04:37:09, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 64. received DISPDUType 26 SIGNAL (timestamp 04:37:10, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 65. received DISPDUType 13 START_RESUME (timestamp 04:37:10, size 44 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 66. received DISPDUType 53 START_RESUME_RELIABLE (timestamp 04:37:10, size 48 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 67. received DISPDUType 14 STOP_FREEZE (timestamp 04:37:11, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 68. received DISPDUType 54 STOP_FREEZE_RELIABLE (timestamp 04:37:12, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 69. received DISPDUType 35 TRANSFER_OWNERSHIP (timestamp 04:37:14, size 40 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 70. received DISPDUType 25 TRANSMITTER (timestamp 04:37:17, size 107 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 71. received DISPDUType 46 TIME_SPACE_POSITION_INFORMATION (timestamp 04:37:21, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 72. received DISPDUType 29 UNDERWATER_ACOUSTIC (timestamp 04:37:22, size 32 bytes)
-
-Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-pduReceivedMap.size()=72, pduSentMap.size()=72, match=true
-Replaying DIS logs.
-Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
-Total PDUs: 72
-End of replay from PduCaptureLog.dislog
-BitFieldRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 73. received DISPDUType 1 ENTITY_STATE (timestamp 04:54:15, size 144 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE (timestamp 04:54:15, size 144 bytes)
-Sent pdu: 
-Alternative EntityType: EntityType:
- entityKind: EntityKind 0 OTHER
- domain: Other
- country: Country 225 UNITED_STATES_OF_AMERICA_USA
- category: 0
- subCategory: 0
- specific: 0
- extra: 0
-
-Entity Capabilities: LandPlatformCapabilities: {}
-Dead Reckoning Parameters: DeadReckoningParameters:
- deadReckoningAlgorithm: DeadReckoningAlgorithm 0 OTHER
- parameters: 
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
- entityLinearAcceleration: Vector3Float:
- x: 0.0
- y: 0.0
- z: 0.0
-
- entityAngularVelocity: Vector3Float:
- x: 0.0
- y: 0.0
- z: 0.0
-
-
-Entity Appearance: 0
-Entity ID: EntityID:
- siteID: 2
- applicationID: 3
- entityID: 0
-
-Entity Linear Velocity: Vector3Float:
- x: 5.0
- y: 0.0
- z: 0.0
-
-Entity Location: Vector3Double:
- x: 10.0
- y: 20.0
- z: 1.0
-
-Entity Orientation: EulerAngles:
- psi: 35.0
- theta: 45.0
- phi: 25.0
-
-Entity Type: MK4814logisticsplatformtruck:
- entityKind: EntityKind 1 PLATFORM
- domain: Land
- country: Country 225 UNITED_STATES_OF_AMERICA_USA
- category: 7
- subCategory: 18
- specific: 1
- extra: 0
-
-Exercise ID: 1
-Force ID: ForceID 25 FRIENDLY_9
-Length: 144
-Marking: EntityMarking:
- characterSet: EntityMarkingCharacterSet 0 UNUSED
- characters: 
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-Pdu Status: PduStatus: 00101000
-Pdu Type: DISPDUType 1 ENTITY_STATE
-Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
-Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1342455259
-Variable Parameters: []
-
-Rcvd pdu: 
-Alternative EntityType: EntityType:
- entityKind: EntityKind 0 OTHER
- domain: Other
- country: Country 225 UNITED_STATES_OF_AMERICA_USA
- category: 0
- subCategory: 0
- specific: 0
- extra: 0
-
-Entity Capabilities: LandPlatformCapabilities: {}
-Dead Reckoning Parameters: DeadReckoningParameters:
- deadReckoningAlgorithm: DeadReckoningAlgorithm 0 OTHER
- parameters: 
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
- entityLinearAcceleration: Vector3Float:
- x: 0.0
- y: 0.0
- z: 0.0
-
- entityAngularVelocity: Vector3Float:
- x: 0.0
- y: 0.0
- z: 0.0
-
-
-Entity Appearance: 0
-Entity ID: EntityID:
- siteID: 2
- applicationID: 3
- entityID: 0
-
-Entity Linear Velocity: Vector3Float:
- x: 5.0
- y: 0.0
- z: 0.0
-
-Entity Location: Vector3Double:
- x: 10.0
- y: 20.0
- z: 1.0
-
-Entity Orientation: EulerAngles:
- psi: 35.0
- theta: 45.0
-ENCODING_PLAINTEXT
- phi: 25.0
-
-Entity Type: MK4814logisticsplatformtruck:
- entityKind: EntityKind 1 PLATFORM
- domain: Land
- country: Country 225 UNITED_STATES_OF_AMERICA_USA
- category: 7
- subCategory: 18
- specific: 1
- extra: 0
-
-Exercise ID: 1
-Force ID: ForceID 25 FRIENDLY_9
-Length: 144
-Marking: EntityMarking:
- characterSet: EntityMarkingCharacterSet 0 UNUSED
- characters: 
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
-Pdu Status: PduStatus: 00101000
-Pdu Type: DISPDUType 1 ENTITY_STATE
-Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
-Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1342455259
-Variable Parameters: []
-
-EntityStatePduTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-CreateAllPduTypesTest
-FixedAndVariableDatumRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:06:01, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:06:01, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 17 ACTION_RESPONSE (timestamp 05:06:01, size 128 bytes)
-X3dInterpolatorsTest
-testInterpolators
-Replaying DIS logs.
-Replaying C:\x3d-github\open-dis7-java\.\pduLog\Pdusave.dislog
-Sent PDU: DISPDUType 25 TRANSMITTER
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 25 TRANSMITTER (timestamp 07:03:22, size 107 bytes)
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 20 DATA
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 25 TRANSMITTER
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Sent PDU: DISPDUType 1 ENTITY_STATE
-Total PDUs: 231
-End of replay from Pdusave.dislog
-DISTools.Regression.doRegression()
-Writing Position and Rotation Interpolator
-<TimeSensor DEF='PduStreamClock' cycleInterval='104.30541272727272' loop = 'true'/>
-<PositionInterpolator DEF='EntityPosition' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 ' 
-keyValue = ' 0 0 0  0.851 1.82 0.204  0.941 1.971 0.271  2.099 3.391 1.667  2.414 3.606 2.229  3.595 3.014 5.773  3.916 2.49 7.104  11.988 -10.664 40.467  12.316 -11.199 41.831  22.634 -27.754 84.441  23.69 -29.444 88.782  41.954 -56.738 161.927  56.241 -77.67 218.71  70.611 -98.714 275.782  71.697 -100.321 280.164  81.364 -114.837 320.067  83.752 -118.419 329.908  86.533 -122.511 341.037  86.585 -122.587 341.244  86.786 -123.888 343.083  86.769 -124.075 343.235  86.05 -126.65 344.131  85.915 -126.954 344.114  84.887 -128.695 343.389  84.689 -128.939 343.156  83.698 -129.729 341.537  83.541 -129.771 341.195  82.93 -129.452 339.365  82.803 -129.162 338.751  79.585 -122.453 323.714  77.938 -118.956 315.823  70.493 -103.141 280.143  66.427 -94.736 261.386  56.336 -61.466 202.176  56.321 -61.418 202.089  49.848 -57.608 182.231  49.818 -57.587 182.136  41.326 -50.719 154.152  41.3 -50.691 154.059  29.742 -37.795 112.301  22.739 -28.905 85.889  10.823 -12.606 39.611  9.204 -10.387 33.307  4.081 -3.346 13.254  3.954 -3.176 12.779  1.899 -0.45 5.184  1.841 -0.372 4.966  1.745 -0.214 4.577  1.681 -0.058 4.267  1.654 0.027 4.118  1.615 0.228 3.807  1.601 0.345 3.648 ' />
-<OrientationInterpolator DEF='EntityOrientationZ' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 ' 
-keyValue = ' 0 0 1 0.062  0 0 1 -0.097  0 0 1 -0.104  0 0 1 -0.163  0 0 1 -0.174  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.213  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.211  0 0 1 -0.211  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.212  0 0 1 -0.263  0 0 1 -0.272  0 0 1 0.497  0 0 1 0.468  0 0 1 0.368  0 0 1 0.358  0 0 1 0.322  0 0 1 0.316  0 0 1 0.286  0 0 1 0.284  0 0 1 0.283  0 0 1 0.283  0 0 1 0.283  0 0 1 0.283  0 0 1 0.275  0 0 1 0.277  0 0 1 0.3  0 0 1 0.298  0 0 1 0.294  0 0 1 0.294  0 0 1 0.291  0 0 1 0.29  0 0 1 0.29  0 0 1 0.29  0 0 1 0.292  0 0 1 0.292  0 0 1 0.29  0 0 1 0.29  0 0 1 0.284  0 0 1 0.277  0 0 1 0.274  0 0 1 0.266  0 0 1 0.262 ' />
-<OrientationInterpolator DEF='EntityOrientationY' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 ' 
-keyValue = ' 0 1 0 -0.191  0 1 0 -0.152  0 1 0 -0.146  0 1 0 -0.064  0 1 0 -0.039  0 1 0 0.058  0 1 0 0.059  0 1 0 0.058  0 1 0 0.057  0 1 0 0.058  0 1 0 0.058  0 1 0 0.055  0 1 0 0.055  0 1 0 0.055  0 1 0 0.054  0 1 0 0.054  0 1 0 0.054  0 1 0 0.054  0 1 0 0.058  0 1 0 0.136  0 1 0 0.144  0 1 0 0.186  0 1 0 0.18  0 1 0 0.115  0 1 0 0.101  0 1 0 0.026  0 1 0 0.012  0 1 0 -0.061  0 1 0 -0.066  0 1 0 -0.065  0 1 0 -0.065  0 1 0 -0.065  0 1 0 -0.069  0 1 0 -0.085  0 1 0 -0.081  0 1 0 -0.03  0 1 0 -0.034  0 1 0 -0.044  0 1 0 -0.044  0 1 0 -0.05  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.053  0 1 0 -0.053  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.066  0 1 0 -0.077  0 1 0 -0.084  0 1 0 -0.097  0 1 0 -0.104 ' />
-<OrientationInterpolator DEF='EntityOrientationX' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 ' 
-keyValue = ' 1 0 0 0.499  1 0 0 -0.359  1 0 0 -0.353  1 0 0 -0.315  1 0 0 -0.312  1 0 0 -0.313  1 0 0 -0.312  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.313  1 0 0 -0.313  1 0 0 -0.313  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.313  1 0 0 -0.314  1 0 0 -0.344  1 0 0 -0.35  1 0 0 0.44  1 0 0 0.414  1 0 0 0.331  1 0 0 0.325  1 0 0 0.31  1 0 0 0.309  1 0 0 0.314  1 0 0 0.315  1 0 0 0.316  1 0 0 0.316  1 0 0 0.316  1 0 0 0.316  1 0 0 0.319  1 0 0 0.318  1 0 0 0.31  1 0 0 0.311  1 0 0 0.312  1 0 0 0.312  1 0 0 0.313  1 0 0 0.313  1 0 0 0.313  1 0 0 0.312  1 0 0 0.311  1 0 0 0.312  1 0 0 0.313  1 0 0 0.313  1 0 0 0.315  1 0 0 0.318  1 0 0 0.32  1 0 0 0.324  1 0 0 0.326 ' />
-DISTools.Regression.doRegression()
-Writing X3D LineSet
-<LineSet vertexCount='49'> 
- <Coordinate point=' 0 0 0  1.968 3.278 1.459  2.099 3.391 1.667  2.948 3.723 3.445  3.063 3.685 3.772  4.219 2 8.345  4.958 0.839 11.234  11.988 -10.664 40.467  12.316 -11.199 41.831  22.634 -27.754 84.441  23.69 -29.444 88.782  41.954 -56.738 161.927  56.241 -77.67 218.71  70.611 -98.714 275.782  71.697 -100.321 280.164  83.629 -118.236 329.408  83.752 -118.419 329.908  86.533 -122.511 341.037  86.585 -122.587 341.244  86.786 -123.888 343.083  86.769 -124.075 343.235  86.05 -126.65 344.131  85.915 -126.954 344.114  84.887 -128.695 343.389  84.689 -128.939 343.156  83.698 -129.729 341.537  83.541 -129.771 341.195  82.93 -129.452 339.365  82.803 -129.162 338.751  79.585 -122.453 323.714  77.938 -118.956 315.823  69.562 -101.188 275.759  66.427 -94.736 261.386  56.336 -61.466 202.176  56.321 -61.418 202.089  49.848 -57.608 182.231  49.818 -57.587 182.136  41.326 -50.719 154.152  41.3 -50.691 154.059  29.742 -37.795 112.301  22.739 -28.905 85.889  10.823 -12.606 39.611  9.204 -10.387 33.307  3.954 -3.176 12.779  3.691 -2.829 11.814  1.681 -0.058 4.267  1.654 0.027 4.118  1.615 0.228 3.807  1.601 0.345 3.648 ' />
-</LineSet> 
-
-CommentPdusTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 22 COMMENT (timestamp 06:12:28, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 22 COMMENT (timestamp 06:14:28, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 22 COMMENT (timestamp 06:16:29, size 72 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 22 COMMENT (timestamp 06:18:31, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:20:31, size 32 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:22:32, size 56 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:24:34, size 88 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 62 COMMENT_RELIABLE (timestamp 06:26:34, size 128 bytes)
-PduFactoryTest
-MarshalEnumsTest
-DataQueryPduRoundTripTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY (timestamp 06:32:51, size 128 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 18 DATA_QUERY (timestamp 06:32:51, size 128 bytes)
-CreateAllObjectTypesTest
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.ArealObject	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Obstacle	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Minefield	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Hasty	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Prepared	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Scattered	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Solitary	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.LinearObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Culturalfeature	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Wire.Wire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Wire.WireCrush	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Obstacle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ChainLinkFence.ChainLinkFence	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 9	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire.ConcertinaWire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._3Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcreteBarrier.ConcreteBarrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Rut.Rut	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.SpeedBump.SpeedBump	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.TankDitch.TankDitch	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.TankDitch.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Obstaclebreach	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Breach.Breach	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Breach.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.MinefieldLaneMarker.MinefieldLaneMarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.MinefieldLaneMarker.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.ExhaustSmoke.ExhaustSmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.ExhaustSmoke.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.PointObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Culturalfeature	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingRubble.BuildingRubble	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingRubble.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.BuildingStructure	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.ApartmentBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Church	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.FOBGuardTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 17
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.FOBTrailerOffice	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 16
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.GovernmentBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.GuardHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 18
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Hanger	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.IndustrialBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.MicrowaveTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 6
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.PortaPotty	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 15
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.PowerPylon	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 7
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower1000ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 14
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower100ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 12
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower500ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 13
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTVTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 8
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.School	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 9
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.TransformerYard	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 10
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Windmill	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 19
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingBridgeSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 6
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingFOB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 7
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseDouble	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseSingleRailing	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingMosqueSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingStoreSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedEarth.DisturbedEarth	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoad	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadAsphalt	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadConcrete	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadGravel	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.IndustrialProcessingPlant.IndustrialProcessingPlant	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 13	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.IndustrialProcessingPlant.OilRefinery	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 13	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingApartment	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 12
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingChurch	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 14
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingControlTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 7
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingFarmHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 15
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingFireStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 10
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingGasStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingHospital	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingMudbrickHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 16
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingMudbrickStore	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 17
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingOfficeBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingPoliceStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 9
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingPowerStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 11
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingSchool	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 13
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingStore	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingWarehouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 6
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingWaterTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 8
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.MaintenanceStructure	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LargeAreaMaintenanceShelterLAMSAviationMaintenanceAM	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LargeAreaMaintenanceShelterLAMSVehicleMaintenanceVM	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LightweightMaintenanceEnclosureLMEBradley	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LightweightMaintenanceEnclosureLMEM1	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Pump.Pump	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 12	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Pump.PumpGas	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 12	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.Tent	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentArctic	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentBedouin	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 9
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentChemicallyandBiologicalProtectedShelterCBPS	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 10
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentExpandableFrame	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 7
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentFritsche	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 8
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentKuchi	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 11
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentModularGeneralPurposeTentSystemMGPTS	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentTEMPER	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 6
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduous	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreen	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.UtilityPole.UtilityPole	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 14	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.EnvironmentalObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.Flood	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Obstacle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis.Abatis	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis._14Tree	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis._8Tree	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.Barrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierConstruction	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 6
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierFenceChain6foot	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 8
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierFenceWood6foot	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 9
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketDoubleStacked	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierJerseyPlastic	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 7
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierTexas	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 10
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.DragonsTeeth	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Crater	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Large	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Medium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Small	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.LogCrib	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Rectangular	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Triangular	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.PotHole.PotHole	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 9	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDrop	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDropCovered	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDropUncovered	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstaclemarker.NBCHazardMarker.NBCHazardMarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Passageway	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.AVLB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.JointAssaultBridgeJAB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.M60A1	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.MTU20	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Pier.Pier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 4	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge.RibbonBridge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge._2Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge._4Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge.StationaryBridge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge._2Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge._4Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.Preparedposition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.CoveredMachineGunBunker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.HastyFightingPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.InfantryFightingPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.NonCoveredInfantryPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.NonCoveredMachineGunBunker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.OverheadCoveredInfantryPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 0	Subcategory: 0
-ENCODING_PLAINTEXT
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.ArmoredVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.FightingVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.MortarCarrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Exception in DisThreadedNetIF send thread: null
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Tank	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.VehicleDefilade	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.AirBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Grenade	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.GroundBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Artillery	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Green	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 2
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Red	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 5
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Violet	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 3
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Yellow	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 4
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
-Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
-SignalPdusTest
-Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 07:30:48, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL (timestamp 07:30:48, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL (timestamp 07:30:48, size 50 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 07:30:48, size 33 bytes)
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 31 INTERCOM_SIGNAL (timestamp 07:30:48, size 58 bytes)
-testRoundTripNet
-
-Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-testRoundTripLog
-Replaying DIS logs.
-Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
-Total PDUs: 4
-End of replay from PduCaptureLog.dislog
-
-Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
-ObjectTypeMarshallTest
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
-01 01 02 01 
-Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
-01 03 02 00 
-EntityStatePduTest
-[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
-NullFieldsEntityMarshallTest
-.
-'-- JUnit Jupiter [OK]
-  +-- All Pdu Round Trip Test [OK]
-  | '-- testRoundTripAllPdus() [OK]
-  +-- Bit Field Round TripTest [OK]
-  | '-- testRoundTrip() [OK]
-  +-- Entity State Pdu Test [OK]
-  | '-- testRoundTrip() [X] No response from network receive after 100 msec (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
-  +-- CreateAllPduTypesTest [OK]
-  | '-- testCreateAll() [OK]
-  +-- Fixed and Variable Datum Round Trip Test [OK]
-  | '-- testRoundTrip() [OK]
-  +-- X3dInterpolatorsTest [OK]
-  | '-- testInterpolators() [OK]
-  +-- Comment Pdus Test [OK]
-  | '-- testRoundTrip() [OK]
-  +-- Pdu Factory Test [OK]
-  | '-- testCreateAllPdus() [OK]
-  +-- Marshal Enums Test [OK]
-  | '-- testGoodMarshall() [OK]
-  +-- Data Query Pdu Round Test [OK]
-  | '-- testRoundTrip() [OK]
-  +-- All Object Types Create [OK]
-  | '-- testCreateAllObjectTypes() [OK]
-  +-- Signal Pdus Test [OK]
-  | +-- testRoundTripNet() [OK]
-  | '-- testRoundTripLog() [OK]
-  +-- Object Type Marshal Test [OK]
-  | +-- testGoodMarshall() [OK]
-  | '-- testNoSubCategory() [OK]
-  +-- Fire Pdu Test [OK]
-  | '-- testRoundTrip() [X] No response from network receive after 100 msec (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
-  '-- Null Fields Entity Marshall Test [OK]
-    +-- testGoodMarshall() [OK]
-    '-- testNoSpecificNoExtraMarshal() [OK]
-
-Failures (2):
-  JUnit Jupiter:Entity State Pdu Test:testRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.EntityStatePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: No response from network receive after 100 msec (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
-       edu.nps.moves.dis7.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:146)
-       edu.nps.moves.dis7.EntityStatePduTest.testOnePdu(EntityStatePduTest.java:68)
-       edu.nps.moves.dis7.EntityStatePduTest.testRoundTrip(EntityStatePduTest.java:55)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-       java.base/java.lang.reflect.Method.invoke(Method.java:564)
-       [...]
-  JUnit Jupiter:Fire Pdu Test:testRoundTrip()
-    MethodSource [className = 'edu.nps.moves.dis7.FirePduTest', methodName = 'testRoundTrip', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: No response from network receive after 100 msec (TODO note that test works standalone but mysteriously fails as part of project test suite) ==> expected: <true> but was: <false>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
-       edu.nps.moves.dis7.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:146)
-       edu.nps.moves.dis7.FirePduTest.testOnePdu(FirePduTest.java:38)
-       edu.nps.moves.dis7.FirePduTest.testRoundTrip(FirePduTest.java:28)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-       java.base/java.lang.reflect.Method.invoke(Method.java:564)
-       [...]
-
-Test run finished after 9432 ms
-[        16 containers found      ]
-[         0 containers skipped    ]
-[        16 containers started    ]
-[         0 containers aborted    ]
-[        16 containers successful ]
-[         0 containers failed     ]
-[        18 tests found           ]
-[         0 tests skipped         ]
-[        18 tests started         ]
-[         0 tests aborted         ]
-[        16 tests successful      ]
-[         2 tests failed          ]
-
-Java Result: 1
-Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null416755399
-Loading stylesheet jar:file:/C:/apache-ant-1.10.8/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 989ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null416755399
+Creating empty C:\x3d-github\open-dis7-java\build\classes\edu\nps\moves\spatial\package-info.class
+Creating empty C:\x3d-github\open-dis7-java\build\classes\edu\nps\moves\dis7\utilities\stream\package-info.class
+Creating empty C:\x3d-github\open-dis7-java\build\classes\edu\nps\moves\dis7\pdus\package-info.class
+Creating empty C:\x3d-github\open-dis7-java\build\classes\edu\nps\moves\dis7\examples\package-info.class
+Creating empty C:\x3d-github\open-dis7-java\build\classes\edu\nps\moves\dis7\utilities\package-info.class
+Copying 7 files to C:\x3d-github\open-dis7-java\build\classes
+compile:
 ================
-javadoc:
+init:
 Generating Javadoc
 Javadoc execution
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\AlphabeticalPduSender.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\ClassNameComparator.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EntityStateEntityIdExampleUse.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduReceiver.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduReceiverNIO.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduSender.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduSenderNIO.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\PduListenerSaver.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\PduReaderPlayer.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\ThreadedNetExample.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\package-info.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\CoordinateConversions.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\DisThreadedNetworkInterface.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\PduFactory.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\package-info.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduPlayer.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduReceiver.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduRecorder.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCoordinates.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateInterpolators.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateLineSet.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dSlidingWindowCompression.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\package-info.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\EntityBodyCoordinates.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java...
+Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\package-info.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\entities\EntityTypeFactory.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\entities\afg\lifeform\land\AfghanBorderPoliceABP.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\entities\afg\lifeform\land\AfghanBorderPolicewRPG7.java...
@@ -21695,6 +20884,7 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\ElectromagneticEmissionBeamFunction.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\ElectromagneticEmissionStateUpdateIndicator.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\EmitterName.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\EmitterNameAdditional.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\EmitterSystemFunction.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\EntityAssociationAssociationStatus.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\EntityAssociationAssociationType.java...
@@ -21777,6 +20967,7 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LeafCoverage.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Level2SquitterStatus.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormAirCategories.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormCategoriesAfghanistan.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormCategoriesUS.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormExtraPersonalData.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificAntiMaterielRifles.java...
@@ -21791,9 +20982,12 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificGrenadeLaunchingMachineGun.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificHandGuns.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificHighPowerRifles.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificLasersClass.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificLogisticsEQClass.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificMachineGuns.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificManPortableAirDefenseSystem.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificMortars.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificPersonalElectronicsClass.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificRecoillessRifles.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificShotGuns.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormHumanSpecificSniper.java...
@@ -21811,10 +21005,6 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormsSubcategoryUKWeapons.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeFormsSubcategoryUSWeapons.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LifeSavingEquipment.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Life_Form_Categories_Afghanistan.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Life_Form_Human_Specific_Lasers_Class.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Life_Form_Human_Specific_Logistics_EQ_Class.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Life_Form_Human_Specific_Personal_Electronics_Class.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LinearObjectAppearanceBreach.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LinearObjectAppearanceExhaustSmoke.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LinearObjectAppearanceMinefieldLaneMarker.java...
@@ -21822,23 +21012,23 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LinearObjectAppearanceTankDitchAndConcertinaWire.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\LinearObjectAppearanceWire.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link1111BDataTerminalSetIndicator.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link1111BEncryptionFlag.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link1111BFidelityLevel.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link1111BModeofOperation.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link1111BTerminalMode.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11B_Data_Signaling_Rate.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11B_Link_State.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11B_Message_Sub_Type.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11B_Mode_of_Operation.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11B_Modulation_Standard.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_11B_Encryption_Flag.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_Data_Signalling_Rate.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_Message_Sub_Type.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_Message_Type_Identifier.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_Signal_Integration_Interval.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_11_Signal_Waveform.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link_16_Version.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11BDataSignalingRate.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11BLinkState.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11BMessageSubType.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11BModeofOperation.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11BModulationStandard.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11DataSignallingRate.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11MessageSubType.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11MessageTypeIdentifier.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11SignalIntegrationInterval.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link11SignalWaveform.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Link16Version.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Material.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Message_Type_Identifier.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\MessageTypeIdentifier.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\MinefieldAppearanceActiveStatus.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\MinefieldAppearanceLane.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\MinefieldAppearanceMinefieldType.java...
@@ -21951,7 +21141,7 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\RepairResponseRepairResult.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\ReplyAmplification.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\RequiredReliabilityService.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\SISO_STD_002_Version.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\SISOSTD002Version.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Season.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\SensorEmitterAppearance.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\SensorEmitterCapabilities.java...
@@ -22004,8 +21194,8 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TCASACASType.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TCASIIIType.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TILinkType.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TimeSlotAllocationLevel.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TimeTypeSource.java...
-Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\Time_Slot_Allocation_Level.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TransferControlTransferType.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TransmissionIndicator.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\enumerations\TransmitterAntennaPatternReferenceSystem.java...
@@ -22632,48 +21822,864 @@ Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Vector3Float.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\VectoringNozzleSystem.java...
 Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\WarfareFamilyPdu.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\AlphabeticalPduSender.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\ClassNameComparator.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EntityStateEntityIdExampleUse.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduReceiver.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduReceiverNIO.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduSender.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\EspduSenderNIO.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\PduListenerSaver.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\PduReaderPlayer.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\examples\ThreadedNetExample.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\CoordinateConversions.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\DisThreadedNetworkInterface.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\PduFactory.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\TrialDisMulticastNetworkingDeprecated.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduPlayer.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduReceiver.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\PduRecorder.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCoordinates.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateInterpolators.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateLineSet.java...
-Loading source file C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dSlidingWindowCompression.java...
+Loading source file C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\package-info.java...
 Constructing Javadoc information...
-Creating destination directory: "C:\x3d-github\open-dis7-java\javadoc\"
-Standard Doclet version 14.0.2
-Building tree for all the packages and classes...
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:39: warning: no description for @param
-     * @param d
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:40: warning: no description for @return
-     * @return
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:49: warning: no description for @param
-     * @param d
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:50: warning: no description for @return
-     * @return
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:59: warning: no description for @param
-     * @param d
-C:\x3d-github\open-dis7-java\src-generated\edu\nps\moves\dis7\pdus\Domain.java:60: warning: no description for @return
-     * @return
 Building index for all the packages and classes...
+Standard Doclet version 16+36-2231
+Building tree for all the packages and classes...
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:337: warning: no comment
+    public void c(double lat, double lon, double alt,
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:379: warning: no comment
+    public void change(double localX, double localY, double localZ,
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:459: warning: no comment
+  public SRF_LococentricEuclidean3D getPlatformReferenceFrame(Vector3Double rangePositionCoordinates)
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\spatial\RangeCoordinates.java:436: warning: no comment
+    public static void main(String args[])
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateInterpolators.java:47: warning: no comment
+    public void addPointsToMap(byte[] localBufferShort) {
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateInterpolators.java:114: warning: no comment
+    public void makeX3dInterpolator()
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateLineSet.java:46: warning: no comment
+    public void addPointsToMap(byte[] localBufferShort)
+C:\x3d-github\open-dis7-java\src\edu\nps\moves\dis7\utilities\stream\X3dCreateLineSet.java:110: warning: no comment
+    public void makeX3dLineSet() {
 Building index for all classes...
-Generating C:\x3d-github\open-dis7-java\javadoc\help-doc.html...
-6 warnings
+Generating C:\x3d-github\open-dis7-java\dist\javadoc\help-doc.html...
+8 warnings
+Browsing: file:/C:/x3d-github/open-dis7-java/dist/javadoc/index.html
+javadoc:
 ================
+TODO: test suite cleanups, individual programs are runnable OK
+init:
+Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+compile:
+Deleted 19 out of date files in 3 seconds
+Compiling 12 source files to C:\x3d-github\open-dis7-java\build\test\classes
+warning: [options] bootstrap class path not set in conjunction with -source 8
+1 warning
+compile-test:
+test:
+AllPduRoundTripTest
+Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
+Recorder log at C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 15 ACKNOWLEDGE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 55 ACKNOWLEDGE_RELIABLE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 16 ACTION_REQUEST, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 56 ACTION_REQUEST_RELIABLE, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 17 ACTION_RESPONSE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 33 AGGREGATE_STATE, size 136 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 47 APPEARANCE, size 67 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 45 AREAL_OBJECT_STATE, size 49 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 10. received DISPDUType 48 ARTICULATED_PARTS, size 17 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 11. received DISPDUType 72 ATTRIBUTE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 12. received DISPDUType 66 COLLISION_ELASTIC, size 100 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 13. received DISPDUType 4 COLLISION, size 60 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 14. received DISPDUType 22 COMMENT, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 15. received DISPDUType 62 COMMENT_RELIABLE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 16. received DISPDUType 11 CREATE_ENTITY, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 17. received DISPDUType 51 CREATE_ENTITY_RELIABLE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 18. received DISPDUType 20 DATA, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 19. received DISPDUType 18 DATA_QUERY, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 20. received DISPDUType 58 DATA_QUERY_RELIABLE, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 21. received DISPDUType 60 DATA_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 22. received DISPDUType 24 DESIGNATOR, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 23. received DISPDUType 3 DETONATION, size 104 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 24. received DISPDUType 68 DIRECTED_ENERGY_FIRE, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 25. received DISPDUType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 26. received DISPDUType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 27. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 28. received DISPDUType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 29. received DISPDUType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 30. received DISPDUType 21 EVENT_REPORT, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 31. received DISPDUType 61 EVENT_REPORT_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 32. received DISPDUType 2 FIRE, size 96 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 33. received DISPDUType 42 GRIDDED_DATA, size 64 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 34. received DISPDUType 28 IDENTIFICATION_FRIEND_OR_FOE, size 60 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 35. received DISPDUType 71 INFORMATION_OPERATIONS_REPORT, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 36. received DISPDUType 70 INFORMATION_OPERATIONS_ACTION, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 37. received DISPDUType 32 INTERCOM_CONTROL, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 38. received DISPDUType 31 INTERCOM_SIGNAL, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 39. received DISPDUType 34 ISGROUPOF, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 40. received DISPDUType 36 ISPARTOF, size 52 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 41. received DISPDUType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 42. received DISPDUType 49 LIVE_ENTITY_FIRE, size 67 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 43. received DISPDUType 44 LINEAR_OBJECT_STATE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 44. received DISPDUType 39 MINEFIELD_DATA, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 45. received DISPDUType 38 MINEFIELD_QUERY, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 46. received DISPDUType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 47. received DISPDUType 37 MINEFIELD_STATE, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 48. received DISPDUType 43 POINT_OBJECT_STATE, size 91 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 49. received DISPDUType 27 RECEIVER, size 36 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 50. received DISPDUType 65 RECORD_QUERY_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 51. received DISPDUType 63 RECORD_RELIABLE, size 36 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 52. received DISPDUType 12 REMOVE_ENTITY, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 53. received DISPDUType 52 REMOVE_ENTITY_RELIABLE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 54. received DISPDUType 9 REPAIR_COMPLETE, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 55. received DISPDUType 10 REPAIR_RESPONSE, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 56. received DISPDUType 8 RESUPPLY_CANCEL, size 24 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 57. received DISPDUType 6 RESUPPLY_OFFER, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 58. received DISPDUType 7 RESUPPLY_RECEIVED, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 59. received DISPDUType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 60. received DISPDUType 5 SERVICE_REQUEST, size 28 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 61. received DISPDUType 19 SET_DATA, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 62. received DISPDUType 59 SET_DATA_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 63. received DISPDUType 64 SET_RECORD_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 64. received DISPDUType 26 SIGNAL, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 65. received DISPDUType 13 START_RESUME, size 44 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 66. received DISPDUType 53 START_RESUME_RELIABLE, size 48 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 67. received DISPDUType 14 STOP_FREEZE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 68. received DISPDUType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 69. received DISPDUType 35 TRANSFER_OWNERSHIP, size 40 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 70. received DISPDUType 25 TRANSMITTER, size 107 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 71. received DISPDUType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 72. received DISPDUType 29 UNDERWATER_ACOUSTIC, size 32 bytes)
+
+Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+pduReceivedMap.size()=72, pduSentMap.size()=72, match=true
+Replaying DIS logs.
+Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
+ENCODING_PLAINTEXT
+Total PDUs: 72
+End of replay from PduCaptureLog.dislog
+BitFieldRoundTripTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 73. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+Sent pdu:
+Alternative EntityType: EntityType:
+ entityKind: EntityKind 0 OTHER
+ domain: Other
+ country: Country 225 UNITED_STATES_OF_AMERICA_USA
+ category: 0
+ subCategory: 0
+ specific: 0
+ extra: 0
+
+Entity Capabilities: LandPlatformCapabilities: {}
+Dead Reckoning Parameters: DeadReckoningParameters:
+ deadReckoningAlgorithm: DeadReckoningAlgorithm 0 OTHER
+ parameters:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+ entityLinearAcceleration: Vector3Float:
+ x: 0.0
+ y: 0.0
+ z: 0.0
+
+ entityAngularVelocity: Vector3Float:
+ x: 0.0
+ y: 0.0
+ z: 0.0
+
+
+Entity Appearance: 0
+Entity ID: EntityID:
+ siteID: 2
+ applicationID: 3
+ entityID: 0
+
+Entity Linear Velocity: Vector3Float:
+ x: 5.0
+ y: 0.0
+ z: 0.0
+
+Entity Location: Vector3Double:
+ x: 10.0
+ y: 20.0
+ z: 1.0
+
+Entity Orientation: EulerAngles:
+ psi: 35.0
+ theta: 45.0
+ phi: 25.0
+
+Entity Type: MK4814logisticsplatformtruck:
+ entityKind: EntityKind 1 PLATFORM
+ domain: Land
+ country: Country 225 UNITED_STATES_OF_AMERICA_USA
+ category: 7
+ subCategory: 18
+ specific: 1
+ extra: 0
+
+Exercise ID: 1
+Force ID: ForceID 25 FRIENDLY_9
+Length: 144
+Marking: EntityMarking:
+ characterSet: EntityMarkingCharacterSet 0 UNUSED
+ characters:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Pdu Status: PduStatus: 00101000
+Pdu Type: DISPDUType 1 ENTITY_STATE
+Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
+Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
+Timestamp: -1059604225
+Variable Parameters: []
+
+Rcvd pdu:
+Alternative EntityType: EntityType:
+ entityKind: EntityKind 0 OTHER
+ domain: Other
+ country: Country 225 UNITED_STATES_OF_AMERICA_USA
+ category: 0
+ subCategory: 0
+ specific: 0
+ extra: 0
+
+Entity Capabilities: LandPlatformCapabilities: {}
+Dead Reckoning Parameters: DeadReckoningParameters:
+ deadReckoningAlgorithm: DeadReckoningAlgorithm 0 OTHER
+ parameters:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+ entityLinearAcceleration: Vector3Float:
+ x: 0.0
+ y: 0.0
+ z: 0.0
+
+ entityAngularVelocity: Vector3Float:
+ x: 0.0
+ y: 0.0
+ z: 0.0
+
+
+Entity Appearance: 0
+Entity ID: EntityID:
+ siteID: 2
+ applicationID: 3
+ entityID: 0
+
+Entity Linear Velocity: Vector3Float:
+ x: 5.0
+ y: 0.0
+ z: 0.0
+
+Entity Location: Vector3Double:
+ x: 10.0
+ y: 20.0
+ z: 1.0
+
+Entity Orientation: EulerAngles:
+ psi: 35.0
+ theta: 45.0
+ phi: 25.0
+
+Entity Type: MK4814logisticsplatformtruck:
+ entityKind: EntityKind 1 PLATFORM
+ domain: Land
+ country: Country 225 UNITED_STATES_OF_AMERICA_USA
+ category: 7
+ subCategory: 18
+ specific: 1
+ extra: 0
+
+Exercise ID: 1
+Force ID: ForceID 25 FRIENDLY_9
+Length: 144
+Marking: EntityMarking:
+ characterSet: EntityMarkingCharacterSet 0 UNUSED
+ characters:
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Pdu Status: PduStatus: 00101000
+Pdu Type: DISPDUType 1 ENTITY_STATE
+Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
+Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
+Timestamp: -1059604225
+Variable Parameters: []
+
+EntityStatePduTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 1 ENTITY_STATE, size 144 bytes)
+CreateAllPduTypesTest
+FixedAndVariableDatumRoundTripTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 17 ACTION_RESPONSE, size 128 bytes)
+X3dInterpolatorsTest
+testInterpolators
+Replaying DIS logs.
+Replaying C:\x3d-github\open-dis7-java\.\pduLog\Pdusave.dislog
+ENCODING_PLAINTEXT
+Sent PDU: DISPDUType 25 TRANSMITTER
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 25 TRANSMITTER, size 107 bytes)
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 20 DATA
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 25 TRANSMITTER
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Sent PDU: DISPDUType 1 ENTITY_STATE
+Total PDUs: 231
+End of replay from Pdusave.dislog
+DISTools.Regression.doRegression()
+Writing Position and Rotation Interpolator
+<TimeSensor DEF='PduStreamClock' cycleInterval='104.30541272727272' loop = 'true'/>
+<PositionInterpolator DEF='EntityPosition' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 '
+keyValue = ' 0 0 0  0.851 1.82 0.204  0.941 1.971 0.271  2.099 3.391 1.667  2.414 3.606 2.229  3.595 3.014 5.773  3.916 2.49 7.104  11.988 -10.664 40.467  12.316 -11.199 41.831  22.634 -27.754 84.441  23.69 -29.444 88.782  41.954 -56.738 161.927  56.241 -77.67 218.71  70.611 -98.714 275.782  71.697 -100.321 280.164  81.364 -114.837 320.067  83.752 -118.419 329.908  86.533 -122.511 341.037  86.585 -122.587 341.244  86.786 -123.888 343.083  86.769 -124.075 343.235  86.05 -126.65 344.131  85.915 -126.954 344.114  84.887 -128.695 343.389  84.689 -128.939 343.156  83.698 -129.729 341.537  83.541 -129.771 341.195  82.93 -129.452 339.365  82.803 -129.162 338.751  79.585 -122.453 323.714  77.938 -118.956 315.823  70.493 -103.141 280.143  66.427 -94.736 261.386  56.336 -61.466 202.176  56.321 -61.418 202.089  49.848 -57.608 182.231  49.818 -57.587 182.136  41.326 -50.719 154.152  41.3 -50.691 154.059  29.742 -37.795 112.301  22.739 -28.905 85.889  10.823 -12.606 39.611  9.204 -10.387 33.307  4.081 -3.346 13.254  3.954 -3.176 12.779  1.899 -0.45 5.184  1.841 -0.372 4.966  1.745 -0.214 4.577  1.681 -0.058 4.267  1.654 0.027 4.118  1.615 0.228 3.807  1.601 0.345 3.648 ' />
+<OrientationInterpolator DEF='EntityOrientationZ' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 '
+keyValue = ' 0 0 1 0.062  0 0 1 -0.097  0 0 1 -0.104  0 0 1 -0.163  0 0 1 -0.174  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.213  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.211  0 0 1 -0.211  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.212  0 0 1 -0.211  0 0 1 -0.212  0 0 1 -0.263  0 0 1 -0.272  0 0 1 0.497  0 0 1 0.468  0 0 1 0.368  0 0 1 0.358  0 0 1 0.322  0 0 1 0.316  0 0 1 0.286  0 0 1 0.284  0 0 1 0.283  0 0 1 0.283  0 0 1 0.283  0 0 1 0.283  0 0 1 0.275  0 0 1 0.277  0 0 1 0.3  0 0 1 0.298  0 0 1 0.294  0 0 1 0.294  0 0 1 0.291  0 0 1 0.29  0 0 1 0.29  0 0 1 0.29  0 0 1 0.292  0 0 1 0.292  0 0 1 0.29  0 0 1 0.29  0 0 1 0.284  0 0 1 0.277  0 0 1 0.274  0 0 1 0.266  0 0 1 0.262 ' />
+<OrientationInterpolator DEF='EntityOrientationY' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 '
+keyValue = ' 0 1 0 -0.191  0 1 0 -0.152  0 1 0 -0.146  0 1 0 -0.064  0 1 0 -0.039  0 1 0 0.058  0 1 0 0.059  0 1 0 0.058  0 1 0 0.057  0 1 0 0.058  0 1 0 0.058  0 1 0 0.055  0 1 0 0.055  0 1 0 0.055  0 1 0 0.054  0 1 0 0.054  0 1 0 0.054  0 1 0 0.054  0 1 0 0.058  0 1 0 0.136  0 1 0 0.144  0 1 0 0.186  0 1 0 0.18  0 1 0 0.115  0 1 0 0.101  0 1 0 0.026  0 1 0 0.012  0 1 0 -0.061  0 1 0 -0.066  0 1 0 -0.065  0 1 0 -0.065  0 1 0 -0.065  0 1 0 -0.069  0 1 0 -0.085  0 1 0 -0.081  0 1 0 -0.03  0 1 0 -0.034  0 1 0 -0.044  0 1 0 -0.044  0 1 0 -0.05  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.053  0 1 0 -0.053  0 1 0 -0.052  0 1 0 -0.052  0 1 0 -0.066  0 1 0 -0.077  0 1 0 -0.084  0 1 0 -0.097  0 1 0 -0.104 ' />
+<OrientationInterpolator DEF='EntityOrientationX' key = '0 0.038 0.039 0.046 0.048 0.063 0.067 0.116 0.118 0.167 0.172 0.255 0.32 0.385 0.39 0.435 0.454 0.517 0.518 0.527 0.528 0.535 0.536 0.54 0.541 0.544 0.545 0.548 0.549 0.569 0.578 0.62 0.641 0.713 0.713 0.735 0.735 0.767 0.767 0.814 0.844 0.896 0.903 0.946 0.949 0.992 0.993 0.996 0.997 0.998 0.999 1 '
+keyValue = ' 1 0 0 0.499  1 0 0 -0.359  1 0 0 -0.353  1 0 0 -0.315  1 0 0 -0.312  1 0 0 -0.313  1 0 0 -0.312  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.313  1 0 0 -0.313  1 0 0 -0.313  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.314  1 0 0 -0.313  1 0 0 -0.314  1 0 0 -0.344  1 0 0 -0.35  1 0 0 0.44  1 0 0 0.414  1 0 0 0.331  1 0 0 0.325  1 0 0 0.31  1 0 0 0.309  1 0 0 0.314  1 0 0 0.315  1 0 0 0.316  1 0 0 0.316  1 0 0 0.316  1 0 0 0.316  1 0 0 0.319  1 0 0 0.318  1 0 0 0.31  1 0 0 0.311  1 0 0 0.312  1 0 0 0.312  1 0 0 0.313  1 0 0 0.313  1 0 0 0.313  1 0 0 0.312  1 0 0 0.311  1 0 0 0.312  1 0 0 0.313  1 0 0 0.313  1 0 0 0.315  1 0 0 0.318  1 0 0 0.32  1 0 0 0.324  1 0 0 0.326 ' />
+DISTools.Regression.doRegression()
+Writing X3D LineSet
+<LineSet vertexCount='49'>
+ <Coordinate point=' 0 0 0  1.968 3.278 1.459  2.099 3.391 1.667  2.948 3.723 3.445  3.063 3.685 3.772  4.219 2 8.345  4.958 0.839 11.234  11.988 -10.664 40.467  12.316 -11.199 41.831  22.634 -27.754 84.441  23.69 -29.444 88.782  41.954 -56.738 161.927  56.241 -77.67 218.71  70.611 -98.714 275.782  71.697 -100.321 280.164  83.629 -118.236 329.408  83.752 -118.419 329.908  86.533 -122.511 341.037  86.585 -122.587 341.244  86.786 -123.888 343.083  86.769 -124.075 343.235  86.05 -126.65 344.131  85.915 -126.954 344.114  84.887 -128.695 343.389  84.689 -128.939 343.156  83.698 -129.729 341.537  83.541 -129.771 341.195  82.93 -129.452 339.365  82.803 -129.162 338.751  79.585 -122.453 323.714  77.938 -118.956 315.823  69.562 -101.188 275.759  66.427 -94.736 261.386  56.336 -61.466 202.176  56.321 -61.418 202.089  49.848 -57.608 182.231  49.818 -57.587 182.136  41.326 -50.719 154.152  41.3 -50.691 154.059  29.742 -37.795 112.301  22.739 -28.905 85.889  10.823 -12.606 39.611  9.204 -10.387 33.307  3.954 -3.176 12.779  3.691 -2.829 11.814  1.681 -0.058 4.267  1.654 0.027 4.118  1.615 0.228 3.807  1.601 0.345 3.648 ' />
+</LineSet>
+
+CommentPdusTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 22 COMMENT, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 22 COMMENT, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 22 COMMENT, size 72 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 22 COMMENT, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 62 COMMENT_RELIABLE, size 32 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 6. received DISPDUType 62 COMMENT_RELIABLE, size 56 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 7. received DISPDUType 62 COMMENT_RELIABLE, size 88 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 8. received DISPDUType 62 COMMENT_RELIABLE, size 128 bytes)
+PduFactoryTest
+MarshalEnumsTest
+DataQueryPduRoundTripTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 18 DATA_QUERY, size 128 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 9. received DISPDUType 18 DATA_QUERY, size 128 bytes)
+EntityStatePduTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 3 DETONATION, size 104 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 3 DETONATION, size 104 bytes)
+CreateAllObjectTypesTest
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.ArealObject	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Obstacle	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Minefield	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Hasty	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Prepared	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Scattered	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Minefield.Solitary	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.ArealObject.Obstacle.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.LinearObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Culturalfeature	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Wire.Wire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.Wire.WireCrush	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Obstacle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ChainLinkFence.ChainLinkFence	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 9	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire.ConcertinaWire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._3Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcreteBarrier.ConcreteBarrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.Rut.Rut	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.SpeedBump.SpeedBump	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.TankDitch.TankDitch	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.TankDitch.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Obstaclebreach	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Breach.Breach	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Breach.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclebreach.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 7 OBSTACLE_BREACH	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.MinefieldLaneMarker.MinefieldLaneMarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.MinefieldLaneMarker.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstaclemarker.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.ExhaustSmoke.ExhaustSmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.ExhaustSmoke.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.PointObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 0 OTHER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Culturalfeature	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingRubble.BuildingRubble	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingRubble.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.BuildingStructure	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.ApartmentBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Church	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.FOBGuardTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 17
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.FOBTrailerOffice	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 16
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.GovernmentBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.GuardHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 18
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Hanger	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.IndustrialBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.MicrowaveTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 6
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.PortaPotty	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 15
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.PowerPylon	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 7
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower1000ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 14
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower100ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 12
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTower500ft	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 13
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.RadioTVTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 8
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.School	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 9
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.TransformerYard	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 10
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.BuildingStructure.Windmill	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 1	Subcategory: 19
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingBridgeSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 6
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingFOB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 7
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseDouble	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingHouseSingleRailing	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingMosqueSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.ContainerBasedBuilding.ContainerBasedBuildingStoreSingle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 8	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedEarth.DisturbedEarth	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoad	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadAsphalt	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadConcrete	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.DisturbedRoad.DisturbedRoadGravel	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 4	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.IndustrialProcessingPlant.IndustrialProcessingPlant	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 13	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.IndustrialProcessingPlant.OilRefinery	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 13	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingApartment	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 12
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingChurch	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 14
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingControlTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 7
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingFarmHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 15
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingFireStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 10
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingGasStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingHospital	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingMudbrickHouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 16
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingMudbrickStore	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 17
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingOfficeBuilding	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingPoliceStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 9
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingPowerStation	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 11
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingSchool	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 13
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingStore	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingWarehouse	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 6
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MOUTBuilding.MOUTBuildingWaterTower	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 7	Subcategory: 8
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.MaintenanceStructure	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LargeAreaMaintenanceShelterLAMSAviationMaintenanceAM	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LargeAreaMaintenanceShelterLAMSVehicleMaintenanceVM	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LightweightMaintenanceEnclosureLMEBradley	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.MaintenanceStructure.LightweightMaintenanceEnclosureLMEM1	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 6	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Pump.Pump	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 12	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Pump.PumpGas	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 12	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.Tent	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentArctic	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentBedouin	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 9
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentChemicallyandBiologicalProtectedShelterCBPS	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 10
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentExpandableFrame	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 7
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentFritsche	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 8
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentKuchi	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 11
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentModularGeneralPurposeTentSystemMGPTS	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.Tent.TentTEMPER	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 5	Subcategory: 6
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduous	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeDeciduous.TreeDeciduousSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 10	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreen	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.TreeEvergreen.TreeEvergreenSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 11	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Culturalfeature.UtilityPole.UtilityPole	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 14	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.EnvironmentalObject	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.Flood	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.EnvironmentalObject.Flood.FloodSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 8 ENVIRONMENTAL_OBJECT	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Obstacle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis.Abatis	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis._14Tree	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Abatis._8Tree	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.Barrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierConstruction	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 6
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierFenceChain6foot	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 8
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierFenceWood6foot	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 9
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketDoubleStacked	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketLarge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketMedium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierHESCOBasketSmall	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierJerseyPlastic	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 7
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.BarrierTexas	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 10
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Barrier.DragonsTeeth	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 4	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Crater	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Large	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Medium	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Crater.Small	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 3	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.LogCrib	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Rectangular	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.LogCrib.Triangular	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.PotHole.PotHole	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 9	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDrop	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDropCovered	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstacle.RockDrop.RockDropUncovered	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 5	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstaclemarker.Obstaclemarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Obstaclemarker.NBCHazardMarker.NBCHazardMarker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 6 OBSTACLE_MARKER	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Passageway	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.AVLB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.JointAssaultBridgeJAB	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.M60A1	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.MTU20	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.AVLB.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.Pier.Pier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 4	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge.RibbonBridge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge._2Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.RibbonBridge._4Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 3	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge.StationaryBridge	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge._2Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Passageway.StationaryBridge._4Lane	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 4 PASSAGEWAY	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.Preparedposition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.CoveredMachineGunBunker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.HastyFightingPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.InfantryFightingPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.NonCoveredInfantryPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.NonCoveredMachineGunBunker	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.InfantryFightingPosition.OverheadCoveredInfantryPosition	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 2	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.Other.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.ArmoredVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.FightingVehicle	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.MortarCarrier	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Other	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.Tank	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Preparedposition.VehicleDefilade.VehicleDefilade	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 2 PREPARED_POSITION	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Tacticalsmoke	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.AirBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Grenade	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.AirBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 2	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.GroundBurst	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Artillery	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.GroundBurst.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 1	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.Other.Other	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 0	Subcategory: 0
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Green	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 2
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Red	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 5
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Violet	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 3
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M18Yellow	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 4
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
+Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
+SignalPdusTest
+Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+class edu.nps.moves.dis7.utilities.stream.PduRecorder listening to IP address 225.4.5.6 on port 3000
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 26 SIGNAL, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 26 SIGNAL, size 50 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 3. received DISPDUType 31 INTERCOM_SIGNAL, size 33 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 4. received DISPDUType 31 INTERCOM_SIGNAL, size 58 bytes)
+testRoundTripNet
+
+Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+testRoundTripLog
+Replaying DIS logs.
+ENCODING_PLAINTEXT
+Replaying C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
+Total PDUs: 4
+End of replay from PduCaptureLog.dislog
+
+Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+ObjectTypeMarshallTest
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Obstacle.ConcertinaWire._2Roll	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 1 OBSTACLE	Category: 2	Subcategory: 1
+01 01 02 01
+Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.TracksTire	Domain: PlatformDomain 1 LAND	Kind: ObjectKind 3 CULTURAL_FEATURE	Category: 2	Subcategory: 0
+01 03 02 00
+EntityStatePduTest
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] Using network interface Intel(R) Dual Band Wireless-AC 8260
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 5. received DISPDUType 2 FIRE, size 96 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 1. received DISPDUType 2 FIRE, size 96 bytes)
+[edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface] 2. received DISPDUType 2 FIRE, size 96 bytes)
+NullFieldsEntityMarshallTest
+.
++-- JUnit Jupiter [OK]
+| +-- All Pdu Round Trip Test [OK]
+| | '-- testRoundTripAllPdus() [OK]
+| +-- Bit Field Round TripTest [OK]
+| | '-- testRoundTrip() [OK]
+| +-- Entity State Pdu Test [OK]
+| | '-- testRoundTrip() [OK]
+| +-- CreateAllPduTypesTest [OK]
+| | '-- testCreateAll() [OK]
+| +-- Fixed and Variable Datum Round Trip Test [OK]
+| | '-- testRoundTrip() [OK]
+| +-- X3dInterpolatorsTest [OK]
+| | '-- testInterpolators() [OK]
+| +-- Comment Pdus Test [OK]
+| | '-- testRoundTrip() [OK]
+| +-- Pdu Factory Test [OK]
+| | '-- testCreateAllPdus() [OK]
+| +-- Marshal Enums Test [OK]
+| | '-- testGoodMarshall() [OK]
+| +-- Data Query Pdu Round Test [OK]
+| | '-- testRoundTrip() [OK]
+| +-- Detonation Pdu Test [OK]
+| | '-- testRoundTrip() [OK]
+| +-- All Object Types Create [OK]
+| | '-- testCreateAllObjectTypes() [OK]
+| +-- Signal Pdus Test [OK]
+| | +-- testRoundTripNet() [OK]
+| | '-- testRoundTripLog() [OK]
+| +-- Object Type Marshal Test [OK]
+| | +-- testGoodMarshall() [OK]
+| | '-- testNoSubCategory() [OK]
+| +-- Fire Pdu Test [OK]
+| | '-- testRoundTrip() [OK]
+| '-- Null Fields Entity Marshall Test [OK]
+|   +-- testGoodMarshall() [OK]
+|   '-- testNoSpecificNoExtraMarshal() [OK]
+'-- JUnit Vintage [OK]
+
+Test run finished after 15250 ms
+[        18 containers found      ]
+[         0 containers skipped    ]
+[        18 containers started    ]
+[         0 containers aborted    ]
+[        18 containers successful ]
+[         0 containers failed     ]
+[        19 tests found           ]
+[         0 tests skipped         ]
+[        19 tests started         ]
+[         0 tests aborted         ]
+[        19 tests successful      ]
+[         0 tests failed          ]
+
+Processing C:\x3d-github\open-dis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null864411565
+Loading stylesheet jar:file:/C:/apache-ant-1.10.10/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
+Transform time: 68ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null864411565
+================
+init:
+Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+compile:
 jar:
 manifest.name          = OpenDIS7 Protocol Data Units (PDUs)
 Built-By               = https://github.com/open-dis/open-dis7-java
@@ -22681,13 +22687,21 @@ Specification-Title    = IEEE Distributed Interactive Simulation (DIS) Protocol
 Specification-Version  = 7
 Specification-Vendor   = Institute of Electrical and Electronics Engineers (IEEE)
 Implementation-Title   = edu.nps.moves.dis7
-Implementation-Version = 7 September 2020 11:16:17
+Implementation-Version = 4 July 2021 16:35:37
 Implementation-Vendor  = Naval Postgraduate School (NPS)
-jar-classes:
+init:
+deps-jar:
+Cycle detected: open-dis7-java was already built
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+compile:
+jar-pdus-classes:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-classes.jar
-jar-source:
+jar-pdus-source:
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-source.jar
-jar-javadoc:
+jar-pdus-javadoc:
+(note that generated javadoc subdirectory is found within dist subdirectory)
 Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-pdus-javadoc.jar
+jar-full:
+Building jar: C:\x3d-github\open-dis7-java\dist\open-dis7-full.jar
 build all complete
-BUILD SUCCESSFUL (total time: 5 minutes 57 seconds)
+BUILD SUCCESSFUL (total time: 29 minutes 22 seconds)

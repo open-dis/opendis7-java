@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3549bca9
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4f9a2c08;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30217
  */
 public class SurveillanceC2AirborneEarlyWarning extends EntityType
 {
+    /** Default constructor */
     public SurveillanceC2AirborneEarlyWarning()
     {
         setCountry(Country.INDIA_IND);

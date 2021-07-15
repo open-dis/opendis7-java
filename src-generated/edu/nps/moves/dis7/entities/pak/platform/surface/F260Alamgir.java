@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ce93c18
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57f64f5e;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30450
  */
 public class F260Alamgir extends EntityType
 {
+    /** Default constructor */
     public F260Alamgir()
     {
         setCountry(Country.PAKISTAN_PAK);

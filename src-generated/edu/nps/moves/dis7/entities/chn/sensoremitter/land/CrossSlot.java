@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d806de6
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ba97962;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22527
  */
 public class CrossSlot extends EntityType
 {
+    /** Default constructor */
     public CrossSlot()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

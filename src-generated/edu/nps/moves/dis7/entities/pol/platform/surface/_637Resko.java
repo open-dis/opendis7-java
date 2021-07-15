@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ee33af7
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56193c7d;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23071
  */
 public class _637Resko extends EntityType
 {
+    /** Default constructor */
     public _637Resko()
     {
         setCountry(Country.POLAND_POL);

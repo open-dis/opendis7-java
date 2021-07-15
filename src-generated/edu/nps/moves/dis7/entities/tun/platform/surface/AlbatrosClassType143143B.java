@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@250a500b
- * Country: Tunisia (TUN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4c1bdcc2;
+ * Country: Tunisia (TUN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27505
  */
 public class AlbatrosClassType143143B extends EntityType
 {
+    /** Default constructor */
     public AlbatrosClassType143143B()
     {
         setCountry(Country.TUNISIA_TUN);

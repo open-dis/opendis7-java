@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@17d677df
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5d76b067;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30999
  */
 public class KingstonClassMaritimeCoastalDefenceVessel extends EntityType
 {
+    /** Default constructor */
     public KingstonClassMaritimeCoastalDefenceVessel()
     {
         setCountry(Country.CANADA_CAN);

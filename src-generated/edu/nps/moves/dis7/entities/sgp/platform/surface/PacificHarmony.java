@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73fb1d7f
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f4f5330;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24570
  */
 public class PacificHarmony extends EntityType
 {
+    /** Default constructor */
     public PacificHarmony()
     {
         setCountry(Country.SINGAPORE_SGP);

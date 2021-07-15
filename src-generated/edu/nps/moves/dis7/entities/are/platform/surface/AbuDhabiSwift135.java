@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6f70a21b
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@15c4af7a;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28239
  */
 public class AbuDhabiSwift135 extends EntityType
 {
+    /** Default constructor */
     public AbuDhabiSwift135()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

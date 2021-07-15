@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49986178
- * Country: Other
- * Entity kind: Life form
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46c662f2;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: AIR;
  *
  * Entity type uid: 32259
  */
 public class Duck extends EntityType
 {
+    /** Default constructor */
     public Duck()
     {
         setCountry(Country.OTHER);

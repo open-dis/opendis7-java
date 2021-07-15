@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@13d9261f
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1442f788;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 17473
  */
 public class SelfPropelledArtillery extends EntityType
 {
+    /** Default constructor */
     public SelfPropelledArtillery()
     {
         setCountry(Country.SWEDEN_SWE);

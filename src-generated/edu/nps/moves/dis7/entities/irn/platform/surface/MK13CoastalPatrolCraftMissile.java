@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77a7cf58
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2d1dee39;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30538
  */
 public class MK13CoastalPatrolCraftMissile extends EntityType
 {
+    /** Default constructor */
     public MK13CoastalPatrolCraftMissile()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dba773d
- * Country: Turkey (TUR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e1a46fb;
+ * Country: Turkey (TUR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30596
  */
 public class F4E2020Terminator extends EntityType
 {
+    /** Default constructor */
     public F4E2020Terminator()
     {
         setCountry(Country.TURKEY_TUR);

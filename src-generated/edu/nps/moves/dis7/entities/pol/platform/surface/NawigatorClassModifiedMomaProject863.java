@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51e37590
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79b663b3;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32568
  */
 public class NawigatorClassModifiedMomaProject863 extends EntityType
 {
+    /** Default constructor */
     public NawigatorClassModifiedMomaProject863()
     {
         setCountry(Country.POLAND_POL);

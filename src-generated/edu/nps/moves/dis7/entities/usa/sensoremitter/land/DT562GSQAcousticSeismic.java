@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7c69e1e1
- * Country: United States of America (USA)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4b9f7edc;
+ * Country: United States of America (USA);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22991
  */
 public class DT562GSQAcousticSeismic extends EntityType
 {
+    /** Default constructor */
     public DT562GSQAcousticSeismic()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

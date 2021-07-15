@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -14,28 +14,37 @@ import edu.nps.moves.dis7.enumerations.*;
  */
 public class EmitterBeam extends Object implements Serializable
 {
+   /** beamDataLength is an undescribed parameter... */
    protected byte  beamDataLength;
 
+   /** beamNumber is an undescribed parameter... */
    protected byte  beamNumber;
 
+   /** beamParameterIndex is an undescribed parameter... */
    protected short  beamParameterIndex;
 
+   /** fundamentalParameterData is an undescribed parameter... */
    protected EEFundamentalParameterData  fundamentalParameterData = new EEFundamentalParameterData(); 
 
+   /** beamData is an undescribed parameter... */
    protected BeamData  beamData = new BeamData(); 
 
    /**  uid 78 */
    protected ElectromagneticEmissionBeamFunction beamFunction = ElectromagneticEmissionBeamFunction.values()[0];
 
+   /** numberOfTargets is an undescribed parameter... */
    protected byte  numberOfTargets;
 
    /**  uid 79 */
    protected HighDensityTrackJam highDensityTrackJam = HighDensityTrackJam.values()[0];
 
+   /** beamStatus is an undescribed parameter... */
    protected BeamStatus  beamStatus = new BeamStatus(); 
 
+   /** jammingTechnique is an undescribed parameter... */
    protected JammingTechnique  jammingTechnique = new JammingTechnique(); 
 
+   /** trackJamData is an undescribed parameter... */
    protected List< TrackJamData > trackJamData = new ArrayList< TrackJamData >();
  
 
@@ -46,7 +55,7 @@ public class EmitterBeam extends Object implements Serializable
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -292,7 +301,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -365,7 +374,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

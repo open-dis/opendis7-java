@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@538cd0f2
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@253c1256;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29198
  */
 public class PACMFI17Mushshak extends EntityType
 {
+    /** Default constructor */
     public PACMFI17Mushshak()
     {
         setCountry(Country.PAKISTAN_PAK);

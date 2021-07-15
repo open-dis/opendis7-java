@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@241a0c3a
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@511816c0;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 29481
  */
 public class LargeWheeledUtilityVehicle extends EntityType
 {
+    /** Default constructor */
     public LargeWheeledUtilityVehicle()
     {
         setCountry(Country.POLAND_POL);

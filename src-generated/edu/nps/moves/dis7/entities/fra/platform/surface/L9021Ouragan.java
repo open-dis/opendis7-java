@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@402c4085
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@563f38c4;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 16015
  */
 public class L9021Ouragan extends EntityType
 {
+    /** Default constructor */
     public L9021Ouragan()
     {
         setCountry(Country.FRANCE_FRA);

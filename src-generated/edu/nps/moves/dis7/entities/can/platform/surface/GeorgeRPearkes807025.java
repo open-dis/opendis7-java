@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e2d773b
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23faf8f2;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30200
  */
 public class GeorgeRPearkes807025 extends EntityType
 {
+    /** Default constructor */
     public GeorgeRPearkes807025()
     {
         setCountry(Country.CANADA_CAN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5f233b26
- * Country: Other
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@654b72c0;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24648
  */
 public class GenericLargeSailboatupto65ft198m extends EntityType
 {
+    /** Default constructor */
     public GenericLargeSailboatupto65ft198m()
     {
         setCountry(Country.OTHER);

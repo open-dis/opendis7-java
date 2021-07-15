@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@14d14731
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@235a0c16;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25705
  */
 public class DominatorXP extends EntityType
 {
+    /** Default constructor */
     public DominatorXP()
     {
         setCountry(Country.ISRAEL_ISR);

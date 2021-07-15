@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@b16e202
- * Country: South Africa (ZAF)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@73d4066e;
+ * Country: South Africa (ZAF);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23105
  */
 public class Valourclass extends EntityType
 {
+    /** Default constructor */
     public Valourclass()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

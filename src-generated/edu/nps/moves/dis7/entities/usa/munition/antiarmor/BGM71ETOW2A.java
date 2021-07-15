@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b4a3a1
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19bf47fc;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 19524
  */
 public class BGM71ETOW2A extends EntityType
 {
+    /** Default constructor */
     public BGM71ETOW2A()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

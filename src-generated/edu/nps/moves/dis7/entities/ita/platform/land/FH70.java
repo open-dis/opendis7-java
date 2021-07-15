@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18025ced
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7096b474;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 18291
  */
 public class FH70 extends EntityType
 {
+    /** Default constructor */
     public FH70()
     {
         setCountry(Country.ITALY_ITA);

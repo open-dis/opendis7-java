@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ea12c19
- * Country: Bahrain (BHR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1324409e;
+ * Country: Bahrain (BHR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18679
  */
 public class _30ALJarim extends EntityType
 {
+    /** Default constructor */
     public _30ALJarim()
     {
         setCountry(Country.BAHRAIN_BHR);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2a331b46
- * Country: Spain (ESP)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@29138d3a;
+ * Country: Spain (ESP);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 24128
  */
 public class SmallWheeledUtilityVehicle0125tons extends EntityType
 {
+    /** Default constructor */
     public SmallWheeledUtilityVehicle0125tons()
     {
         setCountry(Country.SPAIN_ESP);

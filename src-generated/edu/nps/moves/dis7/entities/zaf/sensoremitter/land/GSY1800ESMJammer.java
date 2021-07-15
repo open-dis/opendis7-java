@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42a05533
- * Country: South Africa (ZAF)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@644947ee;
+ * Country: South Africa (ZAF);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 23705
  */
 public class GSY1800ESMJammer extends EntityType
 {
+    /** Default constructor */
     public GSY1800ESMJammer()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

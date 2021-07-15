@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a70575
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_1_SUBSISTENCE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ecdf528;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_1_SUBSISTENCE;
  *
  * Entity type uid: 30650
  */
 public class MealColdWeather extends EntityType
 {
+    /** Default constructor */
     public MealColdWeather()
     {
         setCountry(Country.OTHER);

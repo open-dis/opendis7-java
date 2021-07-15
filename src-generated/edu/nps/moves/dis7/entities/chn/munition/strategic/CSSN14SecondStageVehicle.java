@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43d76a92
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Munition
- * Domain: STRATEGIC
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@508ad266;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Munition;
+ * Domain: STRATEGIC;
  *
  * Entity type uid: 32794
  */
 public class CSSN14SecondStageVehicle extends EntityType
 {
+    /** Default constructor */
     public CSSN14SecondStageVehicle()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

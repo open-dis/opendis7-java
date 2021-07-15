@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b7ea70d
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40f1be1b;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18508
  */
 public class Y425PortoFerraio extends EntityType
 {
+    /** Default constructor */
     public Y425PortoFerraio()
     {
         setCountry(Country.ITALY_ITA);

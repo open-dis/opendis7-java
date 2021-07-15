@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e58d65e
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fcff1b9;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23035
  */
 public class _273GeneralTadeuszKosciuszko extends EntityType
 {
+    /** Default constructor */
     public _273GeneralTadeuszKosciuszko()
     {
         setCountry(Country.POLAND_POL);

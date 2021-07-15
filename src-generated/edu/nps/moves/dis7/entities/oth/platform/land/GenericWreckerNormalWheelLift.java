@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d2260db
- * Country: Other
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63a5e46c;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25853
  */
 public class GenericWreckerNormalWheelLift extends EntityType
 {
+    /** Default constructor */
     public GenericWreckerNormalWheelLift()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@424e1977
- * Country: Finland (FIN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4009e306;
+ * Country: Finland (FIN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27909
  */
 public class PatriaXA188GVV extends EntityType
 {
+    /** Default constructor */
     public PatriaXA188GVV()
     {
         setCountry(Country.FINLAND_FIN);

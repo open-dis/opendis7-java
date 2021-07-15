@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3fabf088
- * Country: Oman (OMN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5851bd4f;
+ * Country: Oman (OMN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28564
  */
 public class Hawk203 extends EntityType
 {
+    /** Default constructor */
     public Hawk203()
     {
         setCountry(Country.OMAN_OMN);

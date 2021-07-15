@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@684b31de
- * Country: Serbia and Montenegro
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20de05e5;
+ * Country: Serbia and Montenegro;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 23673
  */
 public class BOV30w2x30mm extends EntityType
 {
+    /** Default constructor */
     public BOV30w2x30mm()
     {
         setCountry(Country.SERBIA_AND_MONTENEGRO);

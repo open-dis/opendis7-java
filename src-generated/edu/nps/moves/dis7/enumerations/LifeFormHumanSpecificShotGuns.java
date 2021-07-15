@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 511 marshal size 8<br>
  * LifeFormHumanSpecificShotGuns
  */
@@ -33,11 +33,11 @@ public enum LifeFormHumanSpecificShotGuns
     /** 10.4mm Browning Citori O/U .410 Bore */
     _104MM_BROWNING_CITORI_O_U_410_BORE (27, "10.4mm Browning Citori O/U .410 Bore"),
     /** 18.5mm Browning Double Automatic 12 Gauge */
-    _185MM_BROWNING_DOUBLE_AUTOMATIC_12_GAUGE (28, "18.5mm Browning Double Automatic 12 Gauge"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "18.5mm Browning Double Automatic 12 Gauge"),
     /** 18.5mm Ithaca 37 12 Gauge */
     _185MM_ITHACA_37_12_GAUGE (29, "18.5mm Ithaca 37 12 Gauge"),
     /** 16.8mm Ithaca 37 16 Gauge */
-    _168MM_ITHACA_37_16_GAUGE (30, "16.8mm Ithaca 37 16 Gauge"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "16.8mm Ithaca 37 16 Gauge"),
     /** 15.6mm Ithaca 37 20 Gauge */
     _156MM_ITHACA_37_20_GAUGE (31, "15.6mm Ithaca 37 20 Gauge"),
     /** 14mm Ithaca 37 28 Gauge */
@@ -69,45 +69,45 @@ public enum LifeFormHumanSpecificShotGuns
     /** Remington Model 11 SA */
     REMINGTON_MODEL_11_SA (45, "Remington Model 11 SA"),
     /** Remington Model 10 12 Gauge */
-    REMINGTON_MODEL_10_12_GAUGE (46, "Remington Model 10 12 Gauge"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Remington Model 10 12 Gauge"),
     /** 15.6mm Remington Model 17 20 Gauge */
     _156MM_REMINGTON_MODEL_17_20_GAUGE (47, "15.6mm Remington Model 17 20 Gauge"),
     /** Remington Model 31 */
     REMINGTON_MODEL_31 (48, "Remington Model 31"),
     /** Remington Model 11-48 SA */
-    REMINGTON_MODEL_11_48_SA (49, "Remington Model 11-48 SA"),
+    LIVE_ENTITY_FIRE (49, "Remington Model 11-48 SA"),
     /** 18.5mm Remington 870 12 Gauge */
-    _185MM_REMINGTON_870_12_GAUGE (50, "18.5mm Remington 870 12 Gauge"),
+    LIVE_ENTITY_DETONATION (50, "18.5mm Remington 870 12 Gauge"),
     /** 16.8mm Remington 870 16 Gauge */
-    _168MM_REMINGTON_870_16_GAUGE (51, "16.8mm Remington 870 16 Gauge"),
+    CREATE_ENTITY_RELIABLE (51, "16.8mm Remington 870 16 Gauge"),
     /** 15.6mm Remington 870 20 Gauge */
-    _156MM_REMINGTON_870_20_GAUGE (52, "15.6mm Remington 870 20 Gauge"),
+    REMOVE_ENTITY_RELIABLE (52, "15.6mm Remington 870 20 Gauge"),
     /** 14mm Remington 870 28 Gauge */
-    _14MM_REMINGTON_870_28_GAUGE (53, "14mm Remington 870 28 Gauge"),
+    START_RESUME_RELIABLE (53, "14mm Remington 870 28 Gauge"),
     /** 10.4mm Remington 870 .410 Bore */
-    _104MM_REMINGTON_870_410_BORE (54, "10.4mm Remington 870 .410 Bore"),
+    STOP_FREEZE_RELIABLE (54, "10.4mm Remington 870 .410 Bore"),
     /** Remington Model 58 SA */
-    REMINGTON_MODEL_58_SA (55, "Remington Model 58 SA"),
+    ACKNOWLEDGE_RELIABLE (55, "Remington Model 58 SA"),
     /** 18.5mm Remington 878 SA 12 Gauge */
-    _185MM_REMINGTON_878_SA_12_GAUGE (56, "18.5mm Remington 878 SA 12 Gauge"),
+    ACTION_REQUEST_RELIABLE (56, "18.5mm Remington 878 SA 12 Gauge"),
     /** 18.5mm Remington Model 1100 SA 12 Gauge */
-    _185MM_REMINGTON_MODEL_1100_SA_12_GAUGE (57, "18.5mm Remington Model 1100 SA 12 Gauge"),
+    ACTION_RESPONSE_RELIABLE (57, "18.5mm Remington Model 1100 SA 12 Gauge"),
     /** 16.8mm Remington Model 1100 SA 16 Gauge */
-    _168MM_REMINGTON_MODEL_1100_SA_16_GAUGE (58, "16.8mm Remington Model 1100 SA 16 Gauge"),
+    DATA_QUERY_RELIABLE (58, "16.8mm Remington Model 1100 SA 16 Gauge"),
     /** 15.6mm Remington Model 1100 SA 20 Gauge */
-    _156MM_REMINGTON_MODEL_1100_SA_20_GAUGE (59, "15.6mm Remington Model 1100 SA 20 Gauge"),
+    SET_DATA_RELIABLE (59, "15.6mm Remington Model 1100 SA 20 Gauge"),
     /** 14mm Remington Model 1100 SA 28 Gauge */
-    _14MM_REMINGTON_MODEL_1100_SA_28_GAUGE (60, "14mm Remington Model 1100 SA 28 Gauge"),
+    DATA_RELIABLE (60, "14mm Remington Model 1100 SA 28 Gauge"),
     /** 10.4mm Remington Model 1100 SA .410 Bore */
-    _104MM_REMINGTON_MODEL_1100_SA_410_BORE (61, "10.4mm Remington Model 1100 SA .410 Bore"),
+    EVENT_REPORT_RELIABLE (61, "10.4mm Remington Model 1100 SA .410 Bore"),
     /** 18.5mm Remington 11-87 SA 12 Gauge */
-    _185MM_REMINGTON_11_87_SA_12_GAUGE (62, "18.5mm Remington 11-87 SA 12 Gauge"),
+    COMMENT_RELIABLE (62, "18.5mm Remington 11-87 SA 12 Gauge"),
     /** 15.6mm Remington 11-87 SA 20 Gauge */
-    _156MM_REMINGTON_11_87_SA_20_GAUGE (63, "15.6mm Remington 11-87 SA 20 Gauge"),
+    RECORD_RELIABLE (63, "15.6mm Remington 11-87 SA 20 Gauge"),
     /** 19.7mm Remington Model SP-10 SA 10 Gauge */
-    _197MM_REMINGTON_MODEL_SP_10_SA_10_GAUGE (64, "19.7mm Remington Model SP-10 SA 10 Gauge"),
+    SET_RECORD_RELIABLE	 (64, "19.7mm Remington Model SP-10 SA 10 Gauge"),
     /** 18.5mm Remington 887 12 Gauge */
-    _185MM_REMINGTON_887_12_GAUGE (65, "18.5mm Remington 887 12 Gauge"),
+    RECORD_QUERY_RELIABLE (65, "18.5mm Remington 887 12 Gauge"),
     /** 18.5mm Remington Sparta 100 SxS 12 Gauge */
     _185MM_REMINGTON_SPARTA_100_SXS_12_GAUGE (70, "18.5mm Remington Sparta 100 SxS 12 Gauge"),
     /** 15.6mm Remington Sparta 100 SxS 20 Gauge */
@@ -296,27 +296,39 @@ public enum LifeFormHumanSpecificShotGuns
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificShotGuns(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificShotGuns getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificShotGuns val: LifeFormHumanSpecificShotGuns.values()) {
@@ -327,17 +339,29 @@ public enum LifeFormHumanSpecificShotGuns
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificShotGuns unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -350,6 +374,11 @@ public enum LifeFormHumanSpecificShotGuns
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificShotGuns unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -380,6 +409,9 @@ public enum LifeFormHumanSpecificShotGuns
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificShotGuns " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificShotGuns " + padding + getValue() + " " + name();
     }
 }

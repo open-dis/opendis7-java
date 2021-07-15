@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5afa3c9
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53fe15ff;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 15992
  */
 public class M646Croixdusud extends EntityType
 {
+    /** Default constructor */
     public M646Croixdusud()
     {
         setCountry(Country.FRANCE_FRA);

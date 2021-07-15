@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5412bfea
- * Country: Saudi Arabia (SAU)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@8a2a6a;
+ * Country: Saudi Arabia (SAU);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28569
  */
 public class BAESystemsHawk extends EntityType
 {
+    /** Default constructor */
     public BAESystemsHawk()
     {
         setCountry(Country.SAUDI_ARABIA_SAU);

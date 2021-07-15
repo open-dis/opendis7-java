@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f4948e4
- * Country: Denmark (DNK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14cd1699;
+ * Country: Denmark (DNK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29464
  */
 public class P562Viben extends EntityType
 {
+    /** Default constructor */
     public P562Viben()
     {
-        setCountry(Country.DENMARK_DNK);
+        setCountry(Country.ACTION_RESPONSE_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

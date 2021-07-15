@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6995bf68
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2631f68c;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31438
  */
 public class BoeingP8MultiMissionMaritimeAircraftMMA extends EntityType
 {
+    /** Default constructor */
     public BoeingP8MultiMissionMaritimeAircraftMMA()
     {
         setCountry(Country.INDIA_IND);

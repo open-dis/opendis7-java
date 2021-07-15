@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@57ce2898
- * Country: Iraq (IRQ)
- * Entity kind: Munition
- * Domain: TACTICAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@256589a1;
+ * Country: Iraq (IRQ);
+ * Entity kind: Munition;
+ * Domain: TACTICAL;
  *
  * Entity type uid: 21273
  */
 public class AlHussein extends EntityType
 {
+    /** Default constructor */
     public AlHussein()
     {
         setCountry(Country.IRAQ_IRQ);

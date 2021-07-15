@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1bce4f0a
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@100fc185;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 32033
  */
 public class AvibrasLM0736RocketLauncher extends EntityType
 {
+    /** Default constructor */
     public AvibrasLM0736RocketLauncher()
     {
         setCountry(Country.BRAZIL_BRA);

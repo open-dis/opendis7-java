@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35c12c7a
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73c9e8e8;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26828
  */
 public class Munter91 extends EntityType
 {
+    /** Default constructor */
     public Munter91()
     {
         setCountry(Country.SWEDEN_SWE);

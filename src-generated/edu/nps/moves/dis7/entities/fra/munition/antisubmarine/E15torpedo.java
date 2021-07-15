@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77083e41
- * Country: France (FRA)
- * Entity kind: Munition
- * Domain: ANTI_SUBMARINE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5dbab232;
+ * Country: France (FRA);
+ * Entity kind: Munition;
+ * Domain: ANTI_SUBMARINE;
  *
  * Entity type uid: 21121
  */
 public class E15torpedo extends EntityType
 {
+    /** Default constructor */
     public E15torpedo()
     {
         setCountry(Country.FRANCE_FRA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@60297f36
- * Country: Other
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5c84624f;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25989
  */
 public class GenericWheelchair extends EntityType
 {
+    /** Default constructor */
     public GenericWheelchair()
     {
         setCountry(Country.OTHER);

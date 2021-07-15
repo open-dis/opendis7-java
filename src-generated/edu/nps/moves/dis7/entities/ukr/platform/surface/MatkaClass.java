@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@378f002a
- * Country: Ukraine (UKR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46a145ba;
+ * Country: Ukraine (UKR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27859
  */
 public class MatkaClass extends EntityType
 {
+    /** Default constructor */
     public MatkaClass()
     {
         setCountry(Country.UKRAINE_UKR);

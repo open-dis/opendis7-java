@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 516 marshal size 8<br>
  * LifeFormHumanSpecificMachineGuns
  */
@@ -33,11 +33,11 @@ public enum LifeFormHumanSpecificMachineGuns
     /** 7.62x51mm M1919A4/Mk 21 Mod 0 Browning MMG */
     _762X51MM_M1919A4_MK_21_MOD_0_BROWNING_MMG (27, "7.62x51mm M1919A4/Mk 21 Mod 0 Browning MMG"),
     /** 7.62x63mm M1919A6 Browning MMG */
-    _762X63MM_M1919A6_BROWNING_MMG (28, "7.62x63mm M1919A6 Browning MMG"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "7.62x63mm M1919A6 Browning MMG"),
     /** 7.62x51mm M37 Browning MMG */
     _762X51MM_M37_BROWNING_MMG (29, "7.62x51mm M37 Browning MMG"),
     /** 5.56x45mm Ares Shrike 5.56 LMG */
-    _556X45MM_ARES_SHRIKE_556_LMG (30, "5.56x45mm Ares Shrike 5.56 LMG"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "5.56x45mm Ares Shrike 5.56 LMG"),
     /** 5.56x45mm LSAT LMG */
     _556X45MM_LSAT_LMG (31, "5.56x45mm LSAT LMG"),
     /** 5.56x45mm CMG-1 LMG */
@@ -65,37 +65,37 @@ public enum LifeFormHumanSpecificMachineGuns
     /** 5.56x45mm HK23/GR-9 LMG */
     _556X45MM_HK23_GR_9_LMG (44, "5.56x45mm HK23/GR-9 LMG"),
     /** 5.56x45mm M27 IAR SAW */
-    _556X45MM_M27_IAR_SAW (46, "5.56x45mm M27 IAR SAW"),
+    TIME_SPACE_POSITION_INFORMATION (46, "5.56x45mm M27 IAR SAW"),
     /** 5.56x45mm L86 LSW */
     _556X45MM_L86_LSW (47, "5.56x45mm L86 LSW"),
     /** 5.56x45mm Daewoo K3 LMG */
     _556X45MM_DAEWOO_K3_LMG (48, "5.56x45mm Daewoo K3 LMG"),
     /** 5.56x45mm Vector Mini SS GPMG */
-    _556X45MM_VECTOR_MINI_SS_GPMG (49, "5.56x45mm Vector Mini SS GPMG"),
+    LIVE_ENTITY_FIRE (49, "5.56x45mm Vector Mini SS GPMG"),
     /** 7.62x51mm M60 GPMG */
-    _762X51MM_M60_GPMG (50, "7.62x51mm M60 GPMG"),
+    LIVE_ENTITY_DETONATION (50, "7.62x51mm M60 GPMG"),
     /** 7.62x51mm M60E3 GPMG */
-    _762X51MM_M60E3_GPMG (51, "7.62x51mm M60E3 GPMG"),
+    CREATE_ENTITY_RELIABLE (51, "7.62x51mm M60E3 GPMG"),
     /** 7.62x51mm M60E4 GPMG */
-    _762X51MM_M60E4_GPMG (52, "7.62x51mm M60E4 GPMG"),
+    REMOVE_ENTITY_RELIABLE (52, "7.62x51mm M60E4 GPMG"),
     /** 7.62x51mm M60E6 GPMG */
-    _762X51MM_M60E6_GPMG (53, "7.62x51mm M60E6 GPMG"),
+    START_RESUME_RELIABLE (53, "7.62x51mm M60E6 GPMG"),
     /** 7.62x51mm Mark 48 GMPG */
-    _762X51MM_MARK_48_GMPG (55, "7.62x51mm Mark 48 GMPG"),
+    ACKNOWLEDGE_RELIABLE (55, "7.62x51mm Mark 48 GMPG"),
     /** 7.62x51mm M240/FN MAG 58 GPMG */
-    _762X51MM_M240_FN_MAG_58_GPMG (58, "7.62x51mm M240/FN MAG 58 GPMG"),
+    DATA_QUERY_RELIABLE (58, "7.62x51mm M240/FN MAG 58 GPMG"),
     /** 7.62x51mm M240E4/M240B GPMG */
-    _762X51MM_M240E4_M240B_GPMG (59, "7.62x51mm M240E4/M240B GPMG"),
+    SET_DATA_RELIABLE (59, "7.62x51mm M240E4/M240B GPMG"),
     /** 7.62x51mm M240E1/M240D GPMG */
-    _762X51MM_M240E1_M240D_GPMG (60, "7.62x51mm M240E1/M240D GPMG"),
+    DATA_RELIABLE (60, "7.62x51mm M240E1/M240D GPMG"),
     /** 7.62x51mm M240G GPMG */
-    _762X51MM_M240G_GPMG (61, "7.62x51mm M240G GPMG"),
+    EVENT_REPORT_RELIABLE (61, "7.62x51mm M240G GPMG"),
     /** 7.62x51mm M240E5/M240H GPMG */
-    _762X51MM_M240E5_M240H_GPMG (62, "7.62x51mm M240E5/M240H GPMG"),
+    COMMENT_RELIABLE (62, "7.62x51mm M240E5/M240H GPMG"),
     /** 7.62x51mm M240L GPMG */
-    _762X51MM_M240L_GPMG (63, "7.62x51mm M240L GPMG"),
+    RECORD_RELIABLE (63, "7.62x51mm M240L GPMG"),
     /** 7.62x39mm Kk 62 LMG */
-    _762X39MM_KK_62_LMG (65, "7.62x39mm Kk 62 LMG"),
+    RECORD_QUERY_RELIABLE (65, "7.62x39mm Kk 62 LMG"),
     /** 7.62x51mm Vector SS-77 GPMG */
     _762X51MM_VECTOR_SS_77_GPMG (70, "7.62x51mm Vector SS-77 GPMG"),
     /** 7.62x51mm SIG MG 710-3 GPMG */
@@ -192,27 +192,39 @@ public enum LifeFormHumanSpecificMachineGuns
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificMachineGuns(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificMachineGuns getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificMachineGuns val: LifeFormHumanSpecificMachineGuns.values()) {
@@ -223,17 +235,29 @@ public enum LifeFormHumanSpecificMachineGuns
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificMachineGuns unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -246,6 +270,11 @@ public enum LifeFormHumanSpecificMachineGuns
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificMachineGuns unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -276,6 +305,9 @@ public enum LifeFormHumanSpecificMachineGuns
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificMachineGuns " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificMachineGuns " + padding + getValue() + " " + name();
     }
 }

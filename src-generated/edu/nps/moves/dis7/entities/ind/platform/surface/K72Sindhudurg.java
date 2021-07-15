@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61a88b8c
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6436a7db;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18839
  */
 public class K72Sindhudurg extends EntityType
 {
+    /** Default constructor */
     public K72Sindhudurg()
     {
         setCountry(Country.INDIA_IND);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53f6fd09
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ba88be8;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16844
  */
 public class Maxus extends EntityType
 {
+    /** Default constructor */
     public Maxus()
     {
         setCountry(Country.GERMANY_DEU);

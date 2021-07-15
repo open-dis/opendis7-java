@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3af4e0bf
- * Country: Malaysia (MYS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c1bd44c;
+ * Country: Malaysia (MYS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27459
  */
 public class F134LaksamanaHangNadim extends EntityType
 {
+    /** Default constructor */
     public F134LaksamanaHangNadim()
     {
         setCountry(Country.MALAYSIA_MYS);

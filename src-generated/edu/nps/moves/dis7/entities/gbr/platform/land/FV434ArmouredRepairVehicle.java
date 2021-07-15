@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@37045b48
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15405bd6;
+ * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28148
  */
 public class FV434ArmouredRepairVehicle extends EntityType
 {
+    /** Default constructor */
     public FV434ArmouredRepairVehicle()
     {
         setCountry(Country.UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR);

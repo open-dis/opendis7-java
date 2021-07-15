@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.examples;
@@ -29,6 +29,9 @@ public class PduReaderPlayer
     PAUSED;
   }
 
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     String outDir = DEFAULT_OUTPUTDIR;

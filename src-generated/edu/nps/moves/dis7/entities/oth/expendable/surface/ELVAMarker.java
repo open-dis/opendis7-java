@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ea3a513
- * Country: Other
- * Entity kind: Expendable
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@636fccb0;
+ * Country: Other;
+ * Entity kind: Expendable;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32653
  */
 public class ELVAMarker extends EntityType
 {
+    /** Default constructor */
     public ELVAMarker()
     {
         setCountry(Country.OTHER);

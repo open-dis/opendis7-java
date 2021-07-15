@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c5e69a5
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: ANTI_SUBMARINE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@504497fa;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: ANTI_SUBMARINE;
  *
  * Entity type uid: 30582
  */
 public class _84RURPK4MetelU extends EntityType
 {
+    /** Default constructor */
     public _84RURPK4MetelU()
     {
         setCountry(Country.RUSSIA_RUS);

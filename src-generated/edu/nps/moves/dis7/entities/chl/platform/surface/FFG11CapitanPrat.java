@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@757942a1
- * Country: Chile (CHL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42f93a98;
+ * Country: Chile (CHL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28309
  */
 public class FFG11CapitanPrat extends EntityType
 {
+    /** Default constructor */
     public FFG11CapitanPrat()
     {
         setCountry(Country.CHILE_CHL);

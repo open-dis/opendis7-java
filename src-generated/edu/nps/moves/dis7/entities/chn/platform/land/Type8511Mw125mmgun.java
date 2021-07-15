@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c81cdd1
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6043cd28;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 16871
  */
 public class Type8511Mw125mmgun extends EntityType
 {
+    /** Default constructor */
     public Type8511Mw125mmgun()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

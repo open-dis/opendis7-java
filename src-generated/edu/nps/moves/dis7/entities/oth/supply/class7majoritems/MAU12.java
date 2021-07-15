@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ca2cd5e
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_7_MAJOR_ITEMS
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ad1be5d;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_7_MAJOR_ITEMS;
  *
  * Entity type uid: 30717
  */
 public class MAU12 extends EntityType
 {
+    /** Default constructor */
     public MAU12()
     {
         setCountry(Country.OTHER);

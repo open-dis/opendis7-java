@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@47797401
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2da5fdc;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 29785
  */
 public class OceanThermalPowerStation extends EntityType
 {
+    /** Default constructor */
     public OceanThermalPowerStation()
     {
         setCountry(Country.OTHER);

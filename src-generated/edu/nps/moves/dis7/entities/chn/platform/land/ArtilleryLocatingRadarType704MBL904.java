@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@17695df3
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2fd66ad3;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25301
  */
 public class ArtilleryLocatingRadarType704MBL904 extends EntityType
 {
+    /** Default constructor */
     public ArtilleryLocatingRadarType704MBL904()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

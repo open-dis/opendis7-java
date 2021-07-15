@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9573b3b
- * Country: Lithuania (LTU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a56812e;
+ * Country: Lithuania (LTU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31796
  */
 public class M54Kursis extends EntityType
 {
+    /** Default constructor */
     public M54Kursis()
     {
         setCountry(Country.LITHUANIA_LTU);

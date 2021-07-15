@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@faa3fed
- * Country: Qatar (QAT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61942c1;
+ * Country: Qatar (QAT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17829
  */
 public class DamsahCombattanteIIIMClassfastattackcraftmissile extends EntityType
 {
+    /** Default constructor */
     public DamsahCombattanteIIIMClassfastattackcraftmissile()
     {
         setCountry(Country.QATAR_QAT);

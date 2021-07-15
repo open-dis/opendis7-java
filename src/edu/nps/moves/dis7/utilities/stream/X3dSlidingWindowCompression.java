@@ -18,6 +18,10 @@ public class X3dSlidingWindowCompression {
 
     private Map<Double, X3dCoordinates> localMap;
 
+    /**
+     * Constructor
+     * @param localHashMap double map of X3dCoordinates
+     */
     public X3dSlidingWindowCompression(Map<Double, X3dCoordinates> localHashMap) {
 
         this.localMap = new LinkedHashMap<>();
@@ -27,6 +31,10 @@ public class X3dSlidingWindowCompression {
         }
     }
 
+    /**
+     * Perform sliding window computations
+     * @return double map of X3dCoordinates
+     */
     public Map<Double, X3dCoordinates> doSlidingWindow() {
 
         System.out.println("DISTools.Regression.doRegression()");

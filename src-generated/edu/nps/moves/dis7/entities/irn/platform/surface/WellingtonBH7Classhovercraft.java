@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@302a07d
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@64ba3208;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18112
  */
 public class WellingtonBH7Classhovercraft extends EntityType
 {
+    /** Default constructor */
     public WellingtonBH7Classhovercraft()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

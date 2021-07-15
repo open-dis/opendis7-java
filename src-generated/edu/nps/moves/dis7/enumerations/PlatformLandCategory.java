@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 9 marshal size 8<br>
  * PlatformLandCategory
  */
@@ -71,11 +71,11 @@ public enum PlatformLandCategory implements Category
     /** Civilian Vehicle, Civilian land vehicles were moved to a group of Category values starting at 80 */
     CIVILIAN_VEHICLE (27, "Civilian Vehicle"),
     /** Air Defense / Missile Defense Unit Equipment */
-    AIR_DEFENSE_MISSILE_DEFENSE_UNIT_EQUIPMENT (28, "Air Defense / Missile Defense Unit Equipment"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Air Defense / Missile Defense Unit Equipment"),
     /** Command, Control, Communications, and Intelligence (C3I) System */
     COMMAND_CONTROL_COMMUNICATIONS_AND_INTELLIGENCE_C3I_SYSTEM (29, "Command, Control, Communications, and Intelligence (C3I) System"),
     /** Operations Facility */
-    OPERATIONS_FACILITY (30, "Operations Facility"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Operations Facility"),
     /** Intelligence Facility */
     INTELLIGENCE_FACILITY (31, "Intelligence Facility"),
     /** Surveillance Facility */
@@ -97,7 +97,7 @@ public enum PlatformLandCategory implements Category
     /** Observation Post */
     OBSERVATION_POST (40, "Observation Post"),
     /** Unmanned */
-    UNMANNED (50, "Unmanned"),
+    LIVE_ENTITY_DETONATION (50, "Unmanned"),
     /** PlatformLandMotorcycleSubcategories */    MOTORCYCLE_2 (80, "Motorcycle"),
     /** PlatformLandCarSubcategories */    CAR_2 (81, "Car"),
     /** PlatformLandBusSubcategories */    BUS_2 (82, "Bus"),
@@ -116,27 +116,39 @@ public enum PlatformLandCategory implements Category
     private int value;
     private final String description;
 
+    /** Constructor */
     PlatformLandCategory(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static PlatformLandCategory getEnumForValue(int i)
     {
        for(PlatformLandCategory val: PlatformLandCategory.values()) {
@@ -147,17 +159,29 @@ public enum PlatformLandCategory implements Category
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandCategory unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -170,6 +194,11 @@ public enum PlatformLandCategory implements Category
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandCategory unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -200,6 +229,9 @@ public enum PlatformLandCategory implements Category
     @Override
     public String toString()
     {
-        return "PlatformLandCategory " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "PlatformLandCategory " + padding + getValue() + " " + name();
     }
 }

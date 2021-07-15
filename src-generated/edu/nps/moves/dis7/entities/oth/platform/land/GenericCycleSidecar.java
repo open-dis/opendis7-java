@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@53bf7094
- * Country: Other
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30865a90;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25976
  */
 public class GenericCycleSidecar extends EntityType
 {
+    /** Default constructor */
     public GenericCycleSidecar()
     {
         setCountry(Country.OTHER);

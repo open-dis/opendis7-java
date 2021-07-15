@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60e9df3c
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f233b26;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28250
  */
 public class Moawin extends EntityType
 {
+    /** Default constructor */
     public Moawin()
     {
         setCountry(Country.PAKISTAN_PAK);

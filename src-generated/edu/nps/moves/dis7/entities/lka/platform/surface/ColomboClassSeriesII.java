@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b2f5fcf
- * Country: Sri Lanka (LKA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14fa92af;
+ * Country: Sri Lanka (LKA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26425
  */
 public class ColomboClassSeriesII extends EntityType
 {
+    /** Default constructor */
     public ColomboClassSeriesII()
     {
         setCountry(Country.SRI_LANKA_LKA);

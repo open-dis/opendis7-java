@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1530d0f2
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@abc7005;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
  *
  * Entity type uid: 30861
  */
 public class SlingLoadApacheAH64CenterHook11500lb extends EntityType
 {
+    /** Default constructor */
     public SlingLoadApacheAH64CenterHook11500lb()
     {
         setCountry(Country.OTHER);

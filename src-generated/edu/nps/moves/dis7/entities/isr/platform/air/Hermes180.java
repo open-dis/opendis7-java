@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@32c8e539
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@349c1daf;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 23492
  */
 public class Hermes180 extends EntityType
 {
+    /** Default constructor */
     public Hermes180()
     {
         setCountry(Country.ISRAEL_ISR);

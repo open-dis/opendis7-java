@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1f3c5308
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4ca0b9b1;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
  *
  * Entity type uid: 30848
  */
 public class SlingLoadCollapsibleDouble500Gal extends EntityType
 {
+    /** Default constructor */
     public SlingLoadCollapsibleDouble500Gal()
     {
         setCountry(Country.OTHER);

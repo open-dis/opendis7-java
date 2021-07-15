@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d58dc61
- * Country: Russia (RUS)
- * Entity kind: Sensor/Emitter
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4152bd0f;
+ * Country: Russia (RUS);
+ * Entity kind: Sensor/Emitter;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28215
  */
 public class RGB55 extends EntityType
 {
+    /** Default constructor */
     public RGB55()
     {
         setCountry(Country.RUSSIA_RUS);

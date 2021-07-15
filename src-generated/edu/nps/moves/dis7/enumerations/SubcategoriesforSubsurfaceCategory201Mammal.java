@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 121 marshal size 8<br>
  * SubcategoriesforSubsurfaceCategory201Mammal
  */
@@ -69,23 +69,23 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     /** Sperm Whale */
     SPERM_WHALE (27, "Sperm Whale"),
     /** Dolphin, 50-99 Dolphin */
-    DOLPHIN (50, "Dolphin"),
+    LIVE_ENTITY_DETONATION (50, "Dolphin"),
     /** Bottlenose Dolphin */
-    BOTTLENOSE_DOLPHIN (51, "Bottlenose Dolphin"),
+    CREATE_ENTITY_RELIABLE (51, "Bottlenose Dolphin"),
     /** Bottlenose Indo-Pacific Dolphin */
-    BOTTLENOSE_INDO_PACIFIC_DOLPHIN (52, "Bottlenose Indo-Pacific Dolphin"),
+    REMOVE_ENTITY_RELIABLE (52, "Bottlenose Indo-Pacific Dolphin"),
     /** Bottlenose Burrunan Dolphin */
-    BOTTLENOSE_BURRUNAN_DOLPHIN (53, "Bottlenose Burrunan Dolphin"),
+    START_RESUME_RELIABLE (53, "Bottlenose Burrunan Dolphin"),
     /** Atlantic Spotted Dolphin */
-    ATLANTIC_SPOTTED_DOLPHIN (54, "Atlantic Spotted Dolphin"),
+    STOP_FREEZE_RELIABLE (54, "Atlantic Spotted Dolphin"),
     /** Australian Snubfin Dolphin */
-    AUSTRALIAN_SNUBFIN_DOLPHIN (55, "Australian Snubfin Dolphin"),
+    ACKNOWLEDGE_RELIABLE (55, "Australian Snubfin Dolphin"),
     /** Chilean Black Dolphin */
-    CHILEAN_BLACK_DOLPHIN (56, "Chilean Black Dolphin"),
+    ACTION_REQUEST_RELIABLE (56, "Chilean Black Dolphin"),
     /** Chinese White Dolphin */
-    CHINESE_WHITE_DOLPHIN (57, "Chinese White Dolphin"),
+    ACTION_RESPONSE_RELIABLE (57, "Chinese White Dolphin"),
     /** Clymene Dolphin */
-    CLYMENE_DOLPHIN (58, "Clymene Dolphin"),
+    DATA_QUERY_RELIABLE (58, "Clymene Dolphin"),
     /** Porpoise, 100-119 Porpoise */
     PORPOISE (100, "Porpoise"),
     /** Harbour Porpoise */
@@ -136,27 +136,39 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     private int value;
     private final String description;
 
+    /** Constructor */
     SubcategoriesforSubsurfaceCategory201Mammal(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static SubcategoriesforSubsurfaceCategory201Mammal getEnumForValue(int i)
     {
        for(SubcategoriesforSubsurfaceCategory201Mammal val: SubcategoriesforSubsurfaceCategory201Mammal.values()) {
@@ -167,17 +179,29 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforSubsurfaceCategory201Mammal unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -190,6 +214,11 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforSubsurfaceCategory201Mammal unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -220,6 +249,9 @@ public enum SubcategoriesforSubsurfaceCategory201Mammal implements SubCategory
     @Override
     public String toString()
     {
-        return "SubcategoriesforSubsurfaceCategory201Mammal " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "SubcategoriesforSubsurfaceCategory201Mammal " + padding + getValue() + " " + name();
     }
 }

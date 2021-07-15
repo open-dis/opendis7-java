@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c0de229
- * Country: Australia (AUS)
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ace919c;
+ * Country: Australia (AUS);
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 31500
  */
 public class _66mmM72A6LAW extends EntityType
 {
+    /** Default constructor */
     public _66mmM72A6LAW()
     {
         setCountry(Country.AUSTRALIA_AUS);

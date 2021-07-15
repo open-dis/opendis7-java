@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15c4af7a
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@173a6728;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 32008
  */
 public class BombardierDash8300MPA extends EntityType
 {
+    /** Default constructor */
     public BombardierDash8300MPA()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

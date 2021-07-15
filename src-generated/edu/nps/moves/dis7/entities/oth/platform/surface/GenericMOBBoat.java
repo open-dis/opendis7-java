@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4604b900
- * Country: Other
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@410e94e;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30877
  */
 public class GenericMOBBoat extends EntityType
 {
+    /** Default constructor */
     public GenericMOBBoat()
     {
         setCountry(Country.OTHER);

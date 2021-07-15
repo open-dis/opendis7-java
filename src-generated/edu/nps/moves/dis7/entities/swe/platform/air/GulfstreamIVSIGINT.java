@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@730f9695
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72f8ae0c;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 27635
  */
 public class GulfstreamIVSIGINT extends EntityType
 {
+    /** Default constructor */
     public GulfstreamIVSIGINT()
     {
         setCountry(Country.SWEDEN_SWE);

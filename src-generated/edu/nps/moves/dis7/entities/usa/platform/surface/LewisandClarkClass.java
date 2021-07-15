@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@166c2c17
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@193eb1ba;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31751
  */
 public class LewisandClarkClass extends EntityType
 {
+    /** Default constructor */
     public LewisandClarkClass()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

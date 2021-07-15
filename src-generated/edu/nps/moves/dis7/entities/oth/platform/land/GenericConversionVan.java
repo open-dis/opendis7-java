@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@50b1f030
- * Country: Other
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1162410a;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 25964
  */
 public class GenericConversionVan extends EntityType
 {
+    /** Default constructor */
     public GenericConversionVan()
     {
         setCountry(Country.OTHER);

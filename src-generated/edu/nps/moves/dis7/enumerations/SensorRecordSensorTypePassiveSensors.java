@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 326 marshal size 16<br>
  * SensorRecordSensorTypePassiveSensors
  */
@@ -66,18 +66,18 @@ public enum SensorRecordSensorTypePassiveSensors
     BOW_21 (60024, "BOW-21"),
     /** Chaparral IRST */
     CHAPARRAL_IRST (60025, "Chaparral IRST"),
-    /** NATOID_FlankerIRST */
-    NATOID_FLANKERIRST (60026, "NATOID_FlankerIRST"),
-    /** NATOID_FoxbatIRST */
-    NATOID_FOXBATIRST (60027, "NATOID_FoxbatIRST"),
-    /** NATOID_FoxhoundIRST */
-    NATOID_FOXHOUNDIRST (60028, "NATOID_FoxhoundIRST"),
-    /** NATOID_FulcrumIRST */
-    NATOID_FULCRUMIRST (60029, "NATOID_FulcrumIRST"),
-    /** NATOID_HavocIRST */
-    NATOID_HAVOCIRST (60030, "NATOID_HavocIRST"),
-    /** NATOID_HindIRST */
-    NATOID_HINDIRST (60031, "NATOID_HindIRST"),
+    /** NATOID_Flanker IRST */
+    NATOID_FLANKER_IRST (60026, "NATOID_Flanker IRST"),
+    /** NATOID_Foxbat IRST */
+    NATOID_FOXBAT_IRST (60027, "NATOID_Foxbat IRST"),
+    /** NATOID_Foxhound IRST */
+    NATOID_FOXHOUND_IRST (60028, "NATOID_Foxhound IRST"),
+    /** NATOID_Fulcrum IRST */
+    NATOID_FULCRUM_IRST (60029, "NATOID_Fulcrum IRST"),
+    /** NATOID_Havoc IRST */
+    NATOID_HAVOC_IRST (60030, "NATOID_Havoc IRST"),
+    /** NATOID_Hind IRST */
+    NATOID_HIND_IRST (60031, "NATOID_Hind IRST"),
     /** KJ-200 */
     KJ_200 (60032, "KJ-200"),
     /** KJ-8602 */
@@ -108,27 +108,39 @@ public enum SensorRecordSensorTypePassiveSensors
     private int value;
     private final String description;
 
+    /** Constructor */
     SensorRecordSensorTypePassiveSensors(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 16;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static SensorRecordSensorTypePassiveSensors getEnumForValue(int i)
     {
        for(SensorRecordSensorTypePassiveSensors val: SensorRecordSensorTypePassiveSensors.values()) {
@@ -139,22 +151,38 @@ public enum SensorRecordSensorTypePassiveSensors
        return null;
     }
 
- 
-   public void marshal(DataOutputStream dos) throws IOException
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
+    public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.putShort((short)getValue());
     }
-
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SensorRecordSensorTypePassiveSensors unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SensorRecordSensorTypePassiveSensors unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
         return getEnumForValue(byteBuffer.getShort());

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36d4b5c
- * Country: Bangladesh (BGD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@366e2eef;
+ * Country: Bangladesh (BGD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32611
  */
 public class P8126Durdanta extends EntityType
 {
+    /** Default constructor */
     public P8126Durdanta()
     {
         setCountry(Country.BANGLADESH_BGD);

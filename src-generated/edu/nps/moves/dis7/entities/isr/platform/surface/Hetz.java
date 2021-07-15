@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57ac5227
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18c5069b;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18221
  */
 public class Hetz extends EntityType
 {
+    /** Default constructor */
     public Hetz()
     {
         setCountry(Country.ISRAEL_ISR);

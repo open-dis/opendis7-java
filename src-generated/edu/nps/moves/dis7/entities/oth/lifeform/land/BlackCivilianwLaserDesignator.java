@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1d7c9811
- * Country: Other
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4ccdacf5;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32747
  */
 public class BlackCivilianwLaserDesignator extends EntityType
 {
+    /** Default constructor */
     public BlackCivilianwLaserDesignator()
     {
         setCountry(Country.OTHER);

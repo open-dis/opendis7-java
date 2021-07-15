@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@612e21b9
- * Country: Sri Lanka (LKA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cd5122d;
+ * Country: Sri Lanka (LKA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28879
  */
 public class Mihikatha extends EntityType
 {
+    /** Default constructor */
     public Mihikatha()
     {
         setCountry(Country.SRI_LANKA_LKA);

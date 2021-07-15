@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4135c3b
- * Country: Cuba (CUB)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72d1ad2e;
+ * Country: Cuba (CUB);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29972
  */
 public class SonyaClass561 extends EntityType
 {
+    /** Default constructor */
     public SonyaClass561()
     {
-        setCountry(Country.CUBA_CUB);
+        setCountry(Country.STOP_FREEZE_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

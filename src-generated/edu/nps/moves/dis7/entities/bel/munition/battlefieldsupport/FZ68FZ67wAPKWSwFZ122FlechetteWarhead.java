@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7971c2a9
- * Country: Belgium (BEL)
- * Entity kind: Munition
- * Domain: BATTLEFIELD_SUPPORT
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@395f52ed;
+ * Country: Belgium (BEL);
+ * Entity kind: Munition;
+ * Domain: BATTLEFIELD_SUPPORT;
  *
  * Entity type uid: 30323
  */
 public class FZ68FZ67wAPKWSwFZ122FlechetteWarhead extends EntityType
 {
+    /** Default constructor */
     public FZ68FZ67wAPKWSwFZ122FlechetteWarhead()
     {
         setCountry(Country.BELGIUM_BEL);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@31b6fb14
- * Country: Canada (CAN)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@628b503a;
+ * Country: Canada (CAN);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 31835
  */
 public class LEDSRNL extends EntityType
 {
+    /** Default constructor */
     public LEDSRNL()
     {
         setCountry(Country.CANADA_CAN);

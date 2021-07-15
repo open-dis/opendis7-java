@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@250d440
- * Country: Viet Nam (VNM)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@679d0be8;
+ * Country: Viet Nam (VNM);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29967
  */
 public class HQ864 extends EntityType
 {
+    /** Default constructor */
     public HQ864()
     {
         setCountry(Country.VIET_NAM_VNM);

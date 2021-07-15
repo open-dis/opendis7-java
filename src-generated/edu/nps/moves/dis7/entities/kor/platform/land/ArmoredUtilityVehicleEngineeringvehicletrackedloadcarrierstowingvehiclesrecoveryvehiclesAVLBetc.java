@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2cab9998
- * Country: Korea (Republic of) (KOR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1e044120;
+ * Country: Korea (Republic of) (KOR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 23757
  */
 public class ArmoredUtilityVehicleEngineeringvehicletrackedloadcarrierstowingvehiclesrecoveryvehiclesAVLBetc extends EntityType
 {
+    /** Default constructor */
     public ArmoredUtilityVehicleEngineeringvehicletrackedloadcarrierstowingvehiclesrecoveryvehiclesAVLBetc()
     {
         setCountry(Country.KOREA_REPUBLIC_OF_KOR);

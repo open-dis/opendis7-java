@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3aee3976
- * Country: Micronesia (Federated States of) (FSM)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e24ddd0;
+ * Country: Micronesia (Federated States of) (FSM);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26715
  */
 public class Independence extends EntityType
 {
+    /** Default constructor */
     public Independence()
     {
         setCountry(Country.MICRONESIA_FEDERATED_STATES_OF_FSM);

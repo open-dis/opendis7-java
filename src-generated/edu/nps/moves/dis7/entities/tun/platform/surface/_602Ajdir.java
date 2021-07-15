@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@618ff5c2
- * Country: Tunisia (TUN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7640a5b1;
+ * Country: Tunisia (TUN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27579
  */
 public class _602Ajdir extends EntityType
 {
+    /** Default constructor */
     public _602Ajdir()
     {
         setCountry(Country.TUNISIA_TUN);

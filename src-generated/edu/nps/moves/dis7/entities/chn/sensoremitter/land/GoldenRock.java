@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f541e67
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bcc8f13;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 28693
  */
 public class GoldenRock extends EntityType
 {
+    /** Default constructor */
     public GoldenRock()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

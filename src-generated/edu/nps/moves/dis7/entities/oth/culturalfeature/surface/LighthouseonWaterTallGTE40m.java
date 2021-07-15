@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79ba0285
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24fc2c80;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29797
  */
 public class LighthouseonWaterTallGTE40m extends EntityType
 {
+    /** Default constructor */
     public LighthouseonWaterTallGTE40m()
     {
         setCountry(Country.OTHER);

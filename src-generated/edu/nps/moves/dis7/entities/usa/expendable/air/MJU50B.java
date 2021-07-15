@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d444652
- * Country: United States of America (USA)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d5574c7;
+ * Country: United States of America (USA);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 24186
  */
 public class MJU50B extends EntityType
 {
+    /** Default constructor */
     public MJU50B()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

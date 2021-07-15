@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61d9efe0
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@f415a95;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24444
  */
 public class LiquidPetroleumGasLPGTanker extends EntityType
 {
+    /** Default constructor */
     public LiquidPetroleumGasLPGTanker()
     {
         setCountry(Country.KUWAIT_KWT);

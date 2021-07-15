@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d76b067
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c3708b3;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28529
  */
 public class Hawk115CT155Hawk extends EntityType
 {
+    /** Default constructor */
     public Hawk115CT155Hawk()
     {
         setCountry(Country.CANADA_CAN);

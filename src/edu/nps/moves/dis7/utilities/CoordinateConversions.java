@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -12,7 +12,9 @@ package edu.nps.moves.dis7.utilities;
  */
 public class CoordinateConversions
 {
+    /** conversion factor */
     public static final double RADIANS_TO_DEGREES = 180.0/Math.PI;
+    /** conversion factor */
     public static final double DEGREES_TO_RADIANS = Math.PI/180.0;
     
     private CoordinateConversions()

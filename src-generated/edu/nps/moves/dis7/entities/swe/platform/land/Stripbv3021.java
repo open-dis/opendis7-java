@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd9ebde
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68d651f2;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27676
  */
 public class Stripbv3021 extends EntityType
 {
+    /** Default constructor */
     public Stripbv3021()
     {
         setCountry(Country.SWEDEN_SWE);

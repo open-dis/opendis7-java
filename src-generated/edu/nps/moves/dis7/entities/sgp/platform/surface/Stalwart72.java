@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d0865a3
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@987455b;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 25358
  */
 public class Stalwart72 extends EntityType
 {
+    /** Default constructor */
     public Stalwart72()
     {
         setCountry(Country.SINGAPORE_SGP);

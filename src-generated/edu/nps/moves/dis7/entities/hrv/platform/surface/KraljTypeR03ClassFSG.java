@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@313ac989
- * Country: Croatia (HRV)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@16293aa2;
+ * Country: Croatia (HRV);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19336
  */
 public class KraljTypeR03ClassFSG extends EntityType
 {
+    /** Default constructor */
     public KraljTypeR03ClassFSG()
     {
         setCountry(Country.CROATIA_HRV);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62f68dff
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2371aaca;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18231
  */
 public class Kidon extends EntityType
 {
+    /** Default constructor */
     public Kidon()
     {
         setCountry(Country.ISRAEL_ISR);

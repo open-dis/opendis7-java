@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73c60324
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@458342d3;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 24867
  */
 public class HondaAccord extends EntityType
 {
+    /** Default constructor */
     public HondaAccord()
     {
         setCountry(Country.JAPAN_JPN);

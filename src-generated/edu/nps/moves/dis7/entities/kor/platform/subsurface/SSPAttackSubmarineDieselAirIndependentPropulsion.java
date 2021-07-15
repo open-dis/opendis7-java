@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1eba372c
- * Country: Korea (Republic of) (KOR)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@a7e2d9d;
+ * Country: Korea (Republic of) (KOR);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 30421
  */
 public class SSPAttackSubmarineDieselAirIndependentPropulsion extends EntityType
 {
+    /** Default constructor */
     public SSPAttackSubmarineDieselAirIndependentPropulsion()
     {
         setCountry(Country.KOREA_REPUBLIC_OF_KOR);

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -61,10 +61,12 @@ import java.util.*;
  */
 public class DisTime
 {
-
+    /** mask for absolute timestamps */
     public static final int ABSOLUTE_TIMESTAMP_MASK = 0x00000001;
+    /** mask for relative timestamps */
     public static final int RELATIVE_TIMESTAMP_MASK = 0xfffffffe;
-    protected GregorianCalendar cal;
+    /** calendar instance */
+    protected GregorianCalendar calendar;
 
    // public static DisTime disTime = null;
 
@@ -84,7 +86,7 @@ public class DisTime
 */
     public DisTime()
     {
-        cal = new GregorianCalendar();
+        calendar = new GregorianCalendar();
     }
 
     /**
@@ -93,16 +95,16 @@ public class DisTime
      * @return integer DIS time units since the start of the hour.
      */
     private int getDisTimeUnitsSinceTopOfHour() {
-        // set cal object to current time
+        // set calendar object to current time
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
-        cal.setTimeInMillis(currentTime);
+        calendar.setTimeInMillis(currentTime);
 
-        // Set cal to top of the hour, then compute what the cal object says was milliseconds since 1970
+        // Set calendar to top of the hour, then compute what the calendar object says was milliseconds since 1970
         // at the top of the hour
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        long topOfHour = cal.getTimeInMillis();
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        long topOfHour = calendar.getTimeInMillis();
 
         // Milliseconds since the top of the hour
         long diff = currentTime - topOfHour;
@@ -147,18 +149,18 @@ public class DisTime
      * @return a timestamp in hundredths of a second since the start of the year
      */
     public long getNpsTimestamp() {
-        // set cal object to current time
+        // set calendar object to current time
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
-        cal.setTimeInMillis(currentTime);
+        calendar.setTimeInMillis(currentTime);
 
-        // Set cal to the start of the year
-        cal.set(Calendar.MONTH, 0);
-        cal.set(Calendar.DAY_OF_MONTH, 1);
-        cal.set(Calendar.HOUR, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MILLISECOND, 0);
-        long startOfYear = cal.getTimeInMillis();
+        // Set calendar to the start of the year
+        calendar.set(Calendar.MONTH, 0);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.set(Calendar.HOUR, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        long startOfYear = calendar.getTimeInMillis();
 
         // Milliseconds since the top of the hour
         long diff = currentTime - startOfYear;
@@ -181,12 +183,12 @@ public class DisTime
      *
      * Unix time (in seconds) rolls over in 2038. 
      *
-     * See the Wikipedia page on Unix time for gory details. 
+     * Consult <a href="https://en.wikipedia.org/wiki/Unix_time">The Wikipedia page on Unix time for the gory details</a>
      * @return seconds since 1970
      */
     public long getUnixTimestamp() {
         long t = System.currentTimeMillis();
-        t = t / 1000l;   // NB: integer division, convert milliseconds to seconds
+        t /= 1000l;   // NB: integer division, convert milliseconds to seconds
         return t;
     }
     /**

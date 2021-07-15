@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1aafa419
- * Country: Czech Republic (CZE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@436813f3;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30080
  */
 public class _152mmShKHDANAM1CZ extends EntityType
 {
+    /** Default constructor */
     public _152mmShKHDANAM1CZ()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

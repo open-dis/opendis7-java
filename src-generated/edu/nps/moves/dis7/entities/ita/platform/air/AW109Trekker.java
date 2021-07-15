@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@20a8a64e
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5d2a4eed;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28508
  */
 public class AW109Trekker extends EntityType
 {
+    /** Default constructor */
     public AW109Trekker()
     {
         setCountry(Country.ITALY_ITA);

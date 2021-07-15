@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@561b61ed
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51c959a4;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 29283
  */
 public class SeaeyePantherXTPlus extends EntityType
 {
+    /** Default constructor */
     public SeaeyePantherXTPlus()
     {
         setCountry(Country.SWEDEN_SWE);

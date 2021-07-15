@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51e94b7d
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1be77a76;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
  *
  * Entity type uid: 30850
  */
 public class SlingLoadBladder500Gal extends EntityType
 {
+    /** Default constructor */
     public SlingLoadBladder500Gal()
     {
         setCountry(Country.OTHER);

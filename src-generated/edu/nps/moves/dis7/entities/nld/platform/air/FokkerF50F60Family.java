@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5bd73d1a
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@76b74e9c;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28194
  */
 public class FokkerF50F60Family extends EntityType
 {
+    /** Default constructor */
     public FokkerF50F60Family()
     {
         setCountry(Country.NETHERLANDS_NLD);

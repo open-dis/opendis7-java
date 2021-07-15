@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e7a9db7
- * Country: Czech Republic (CZE)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cc4d454;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 30104
  */
 public class TamaraTrashDrum extends EntityType
 {
+    /** Default constructor */
     public TamaraTrashDrum()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64b73e7a
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78383390;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23187
  */
 public class K83Nashak extends EntityType
 {
+    /** Default constructor */
     public K83Nashak()
     {
         setCountry(Country.INDIA_IND);

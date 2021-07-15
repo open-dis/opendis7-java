@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1846ad0f
- * Country: Afghanistan (AFG)
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6cf047cf;
+ * Country: Afghanistan (AFG);
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32208
  */
 public class TerroristCombatantTeenagerFemalewExplosiveVest extends EntityType
 {
+    /** Default constructor */
     public TerroristCombatantTeenagerFemalewExplosiveVest()
     {
         setCountry(Country.AFGHANISTAN_AFG);

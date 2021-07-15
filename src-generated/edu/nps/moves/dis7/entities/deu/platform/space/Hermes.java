@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34c01041
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5505ae1a;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16802
  */
 public class Hermes extends EntityType
 {
+    /** Default constructor */
     public Hermes()
     {
         setCountry(Country.GERMANY_DEU);

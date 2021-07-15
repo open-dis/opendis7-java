@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a369e14
- * Country: Tunisia (TUN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e7c141d;
+ * Country: Tunisia (TUN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27508
  */
 public class _507Himilcon extends EntityType
 {
+    /** Default constructor */
     public _507Himilcon()
     {
         setCountry(Country.TUNISIA_TUN);

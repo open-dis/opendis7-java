@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13e9f2e2
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72889280;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29902
  */
 public class FokkerF27200MAR extends EntityType
 {
+    /** Default constructor */
     public FokkerF27200MAR()
     {
         setCountry(Country.PAKISTAN_PAK);

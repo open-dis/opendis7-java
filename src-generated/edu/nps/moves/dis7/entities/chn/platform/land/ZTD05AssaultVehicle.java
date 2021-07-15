@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@401e7803
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76a3e297;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31852
  */
 public class ZTD05AssaultVehicle extends EntityType
 {
+    /** Default constructor */
     public ZTD05AssaultVehicle()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

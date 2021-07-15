@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5350ab17
- * Country: Other
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ab2ba47;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32736
  */
 public class CivilianwRPG7 extends EntityType
 {
+    /** Default constructor */
     public CivilianwRPG7()
     {
         setCountry(Country.OTHER);

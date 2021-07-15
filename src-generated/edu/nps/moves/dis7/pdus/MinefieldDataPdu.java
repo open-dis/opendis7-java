@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -51,41 +51,58 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
    /** Sensor types, each 16-bits long */
    protected List< MinefieldSensorType > sensorTypes = new ArrayList< MinefieldSensorType >();
  
-   private byte[] padTo32 = new byte[0]; // pad to 32-bit boundary
+   /** pad to 32-bit boundary */
+
+   private byte[] padTo32 = new byte[0];
 
    /** Mine locations */
    protected List< Vector3Float > mineLocation = new ArrayList< Vector3Float >();
  
+   /** groundBurialDepthOffset is an undescribed parameter... */
    protected float[]  groundBurialDepthOffset = new float[0]; 
 
+   /** waterBurialDepthOffset is an undescribed parameter... */
    protected float[]  waterBurialDepthOffset = new float[0]; 
 
+   /** snowBurialDepthOffset is an undescribed parameter... */
    protected float[]  snowBurialDepthOffset = new float[0]; 
 
+   /** mineOrientation is an undescribed parameter... */
    protected List< EulerAngles > mineOrientation = new ArrayList< EulerAngles >();
  
+   /** thermalContrast is an undescribed parameter... */
    protected float[]  thermalContrast = new float[0]; 
 
+   /** reflectance is an undescribed parameter... */
    protected float[]  reflectance = new float[0]; 
 
+   /** mineEmplacementTime is an undescribed parameter... */
    protected List< MineEmplacementTime > mineEmplacementTime = new ArrayList< MineEmplacementTime >();
  
+   /** mineEntityNumber is an undescribed parameter... */
    protected short[]  mineEntityNumber = new short[0]; 
 
    /**  uid 192 */
    protected List< MinefieldDataFusing > fusing = new ArrayList< MinefieldDataFusing >();
  
+   /** scalarDetectionCoefficient is an undescribed parameter... */
    protected byte[]  scalarDetectionCoefficient = new byte[0]; 
 
    /**  uid 202 */
    protected List< MinefieldDataPaintScheme > paintScheme = new ArrayList< MinefieldDataPaintScheme >();
  
-   private byte[] padTo32_2 = new byte[0]; // pad to 32-bit boundary
+   /** pad to 32-bit boundary */
 
+   private byte[] padTo32_2 = new byte[0];
+
+   /** numberOfTripDetonationWires is an undescribed parameter... */
    protected byte[]  numberOfTripDetonationWires = new byte[0]; 
 
-   private byte[] padTo32_3 = new byte[0]; // pad to 32-bit boundary
+   /** pad to 32-bit boundary */
 
+   private byte[] padTo32_3 = new byte[0];
+
+   /** numberOfVertices is an undescribed parameter... */
    protected byte[]  numberOfVertices = new byte[0]; 
 
 
@@ -97,7 +114,7 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -696,7 +713,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -917,7 +934,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@676cf48
- * Country: Greece (GRC)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c4d1ac;
+ * Country: Greece (GRC);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27522
  */
 public class P75PlotarchisMaridakis extends EntityType
 {
+    /** Default constructor */
     public P75PlotarchisMaridakis()
     {
         setCountry(Country.GREECE_GRC);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3fef1e6b
- * Country: United States of America (USA)
- * Entity kind: Radio
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@389a1e34;
+ * Country: United States of America (USA);
+ * Entity kind: Radio;
+ * Domain: LAND;
  *
  * Entity type uid: 22203
  */
 public class TypicalDAFIFDerivedTrafficControlVoiceRadio extends EntityType
 {
+    /** Default constructor */
     public TypicalDAFIFDerivedTrafficControlVoiceRadio()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a6f6cac
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15f861ee;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: LAND;
  *
  * Entity type uid: 26345
  */
 public class Mortars3x82mmwithFuse extends EntityType
 {
+    /** Default constructor */
     public Mortars3x82mmwithFuse()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@667a467f
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@478530cb;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 23416
  */
 public class OilWellWorking extends EntityType
 {
+    /** Default constructor */
     public OilWellWorking()
     {
         setCountry(Country.OTHER);

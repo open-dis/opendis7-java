@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a1ddbf1
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd4459b;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27177
  */
 public class RedGreenStripedFishingBuoy extends EntityType
 {
+    /** Default constructor */
     public RedGreenStripedFishingBuoy()
     {
         setCountry(Country.OTHER);

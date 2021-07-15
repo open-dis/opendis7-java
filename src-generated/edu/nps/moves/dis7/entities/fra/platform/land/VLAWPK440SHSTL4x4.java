@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3cc1435c
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@291b4bf5;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28740
  */
 public class VLAWPK440SHSTL4x4 extends EntityType
 {
+    /** Default constructor */
     public VLAWPK440SHSTL4x4()
     {
         setCountry(Country.FRANCE_FRA);

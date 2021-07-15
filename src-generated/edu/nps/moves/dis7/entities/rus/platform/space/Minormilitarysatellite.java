@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@aa4d8cc
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3ce53f6a;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 14866
  */
 public class Minormilitarysatellite extends EntityType
 {
+    /** Default constructor */
     public Minormilitarysatellite()
     {
         setCountry(Country.RUSSIA_RUS);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f0d6038
- * Country: Togo (TGO)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@434514d8;
+ * Country: Togo (TGO);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24595
  */
 public class Amatory extends EntityType
 {
+    /** Default constructor */
     public Amatory()
     {
         setCountry(Country.TOGO_TGO);

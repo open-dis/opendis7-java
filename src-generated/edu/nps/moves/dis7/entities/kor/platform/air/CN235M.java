@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5118388b
- * Country: Korea (Republic of) (KOR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c22d4f;
+ * Country: Korea (Republic of) (KOR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 17628
  */
 public class CN235M extends EntityType
 {
+    /** Default constructor */
     public CN235M()
     {
         setCountry(Country.KOREA_REPUBLIC_OF_KOR);

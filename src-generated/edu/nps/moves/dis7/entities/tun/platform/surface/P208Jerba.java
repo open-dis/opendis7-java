@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68b9834c
- * Country: Tunisia (TUN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27d33393;
+ * Country: Tunisia (TUN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23018
  */
 public class P208Jerba extends EntityType
 {
+    /** Default constructor */
     public P208Jerba()
     {
         setCountry(Country.TUNISIA_TUN);

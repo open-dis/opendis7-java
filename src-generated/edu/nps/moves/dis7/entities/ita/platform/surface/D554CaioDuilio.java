@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1698ee84
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f0b0a5e;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 22716
  */
 public class D554CaioDuilio extends EntityType
 {
+    /** Default constructor */
     public D554CaioDuilio()
     {
         setCountry(Country.ITALY_ITA);

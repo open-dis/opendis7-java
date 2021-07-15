@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71d44a3
- * Country: Czech Republic (CZE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1623b78d;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30093
  */
 public class LetL410Turbolet extends EntityType
 {
+    /** Default constructor */
     public LetL410Turbolet()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

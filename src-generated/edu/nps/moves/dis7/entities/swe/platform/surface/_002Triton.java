@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@352c44a8
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48528634;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32894
  */
 public class _002Triton extends EntityType
 {
+    /** Default constructor */
     public _002Triton()
     {
         setCountry(Country.SWEDEN_SWE);

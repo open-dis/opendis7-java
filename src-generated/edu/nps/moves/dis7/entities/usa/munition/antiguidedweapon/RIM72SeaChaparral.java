@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@76af51d6
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_GUIDED_WEAPON
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45e7bb79;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_GUIDED_WEAPON;
  *
  * Entity type uid: 19667
  */
 public class RIM72SeaChaparral extends EntityType
 {
+    /** Default constructor */
     public RIM72SeaChaparral()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

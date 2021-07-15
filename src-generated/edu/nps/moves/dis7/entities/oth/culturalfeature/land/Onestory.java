@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@75dc1c1c
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3d88ce0e;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: LAND;
  *
  * Entity type uid: 21955
  */
 public class Onestory extends EntityType
 {
+    /** Default constructor */
     public Onestory()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76b74e9c
- * Country: Morocco (MAR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b800468;
+ * Country: Morocco (MAR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27720
  */
 public class _407SidiMohammedBenAbdallah extends EntityType
 {
+    /** Default constructor */
     public _407SidiMohammedBenAbdallah()
     {
         setCountry(Country.MOROCCO_MAR);

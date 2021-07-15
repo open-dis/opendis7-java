@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36f6e879
- * Country: Austria (AUT)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60f82f98;
+ * Country: Austria (AUT);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 24134
  */
 public class Steyr24M12000kg extends EntityType
 {
+    /** Default constructor */
     public Steyr24M12000kg()
     {
         setCountry(Country.AUSTRIA_AUT);

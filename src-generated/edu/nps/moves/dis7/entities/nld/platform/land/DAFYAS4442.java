@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e8ab815
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4108fa66;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27937
  */
 public class DAFYAS4442 extends EntityType
 {
+    /** Default constructor */
     public DAFYAS4442()
     {
         setCountry(Country.NETHERLANDS_NLD);

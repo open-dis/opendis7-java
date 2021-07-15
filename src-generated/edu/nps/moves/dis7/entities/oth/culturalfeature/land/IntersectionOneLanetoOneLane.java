@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42b4df5a
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68a5aadd;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: LAND;
  *
  * Entity type uid: 22112
  */
 public class IntersectionOneLanetoOneLane extends EntityType
 {
+    /** Default constructor */
     public IntersectionOneLanetoOneLane()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c58d7be
- * Country: Canada (CAN)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a3c99f1;
+ * Country: Canada (CAN);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 31918
  */
 public class Bundle360lb extends EntityType
 {
+    /** Default constructor */
     public Bundle360lb()
     {
         setCountry(Country.CANADA_CAN);

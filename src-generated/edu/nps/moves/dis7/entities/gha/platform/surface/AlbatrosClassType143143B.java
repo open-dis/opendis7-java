@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5812f68b
- * Country: Ghana (GHA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@673be18f;
+ * Country: Ghana (GHA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27502
  */
 public class AlbatrosClassType143143B extends EntityType
 {
+    /** Default constructor */
     public AlbatrosClassType143143B()
     {
         setCountry(Country.GHANA_GHA);

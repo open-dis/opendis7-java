@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@376b5cb2
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46d1b59;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 29089
  */
 public class FGM172SRAWPredatorSRAWShortRangeAssaultWeapon extends EntityType
 {
+    /** Default constructor */
     public FGM172SRAWPredatorSRAWShortRangeAssaultWeapon()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

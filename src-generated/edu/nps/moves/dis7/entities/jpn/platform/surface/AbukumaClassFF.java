@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@44c79f32
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18245eb0;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23138
  */
 public class AbukumaClassFF extends EntityType
 {
+    /** Default constructor */
     public AbukumaClassFF()
     {
         setCountry(Country.JAPAN_JPN);

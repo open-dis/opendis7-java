@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@799f10e1
- * Country: Croatia (HRV)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c64cb25;
+ * Country: Croatia (HRV);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19334
  */
 public class RTOP21Sibenik extends EntityType
 {
+    /** Default constructor */
     public RTOP21Sibenik()
     {
         setCountry(Country.CROATIA_HRV);

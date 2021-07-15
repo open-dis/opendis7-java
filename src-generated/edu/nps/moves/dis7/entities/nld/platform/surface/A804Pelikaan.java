@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e33c391
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62da83ed;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28284
  */
 public class A804Pelikaan extends EntityType
 {
+    /** Default constructor */
     public A804Pelikaan()
     {
         setCountry(Country.NETHERLANDS_NLD);

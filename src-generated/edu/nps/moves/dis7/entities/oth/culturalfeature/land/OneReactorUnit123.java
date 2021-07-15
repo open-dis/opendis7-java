@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fb48970
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dd2b9c1;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: LAND;
  *
  * Entity type uid: 22037
  */
 public class OneReactorUnit123 extends EntityType
 {
+    /** Default constructor */
     public OneReactorUnit123()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fc6f14e
- * Country: Bulgaria (BGR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@271053e1;
+ * Country: Bulgaria (BGR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32902
  */
 public class _56KapitanParviRangDimitarPaskalev extends EntityType
 {
+    /** Default constructor */
     public _56KapitanParviRangDimitarPaskalev()
     {
         setCountry(Country.BULGARIA_BGR);

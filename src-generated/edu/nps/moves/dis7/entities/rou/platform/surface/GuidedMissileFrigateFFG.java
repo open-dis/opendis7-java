@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@601cbd8c
- * Country: Romania (ROU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@497570fb;
+ * Country: Romania (ROU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27808
  */
 public class GuidedMissileFrigateFFG extends EntityType
 {
+    /** Default constructor */
     public GuidedMissileFrigateFFG()
     {
         setCountry(Country.ROMANIA_ROU);

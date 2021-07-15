@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c1b89ac
- * Country: Other
- * Entity kind: Munition
- * Domain: ANTI_PERSONNEL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73bb573d;
+ * Country: Other;
+ * Entity kind: Munition;
+ * Domain: ANTI_PERSONNEL;
  *
  * Entity type uid: 21704
  */
 public class _20000lbsExplosive extends EntityType
 {
+    /** Default constructor */
     public _20000lbsExplosive()
     {
         setCountry(Country.OTHER);

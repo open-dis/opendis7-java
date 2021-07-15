@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55120f99
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1059754c;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31690
  */
 public class RosomakM3APCwWKMB50cal extends EntityType
 {
+    /** Default constructor */
     public RosomakM3APCwWKMB50cal()
     {
         setCountry(Country.POLAND_POL);

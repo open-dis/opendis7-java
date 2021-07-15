@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1ef7fe8e
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f47d241;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29305
  */
 public class LockheedC130Model382Hercules extends EntityType
 {
+    /** Default constructor */
     public LockheedC130Model382Hercules()
     {
         setCountry(Country.AUSTRALIA_AUS);

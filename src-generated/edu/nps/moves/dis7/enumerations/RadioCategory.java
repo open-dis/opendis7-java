@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 22 marshal size 8<br>
  * RadioCategory
  */
@@ -71,11 +71,11 @@ public enum RadioCategory implements Category
     /** SINCGARS Terminal */
     SINCGARS_TERMINAL (27, "SINCGARS Terminal"),
     /** L-Band SATCOM Terminal */
-    L_BAND_SATCOM_TERMINAL (28, "L-Band SATCOM Terminal"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "L-Band SATCOM Terminal"),
     /** IBS Terminal */
     IBS_TERMINAL (29, "IBS Terminal"),
     /** GPS */
-    GPS (30, "GPS"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "GPS"),
     /** Tactical Video */
     TACTICAL_VIDEO (31, "Tactical Video"),
     /** Air-to-Air Missile Datalink */
@@ -99,34 +99,46 @@ public enum RadioCategory implements Category
     /** Emergency Position-Indicating Radio Beacons (EPIRB) */
     EMERGENCY_POSITION_INDICATING_RADIO_BEACONS_EPIRB (42, "Emergency Position-Indicating Radio Beacons (EPIRB)"),
     /** Electronic Attack Systems */
-    ELECTRONIC_ATTACK_SYSTEMS (50, "Electronic Attack Systems"),
+    LIVE_ENTITY_DETONATION (50, "Electronic Attack Systems"),
     /** Tactical Targeting Network Technology (TTNT) */
-    TACTICAL_TARGETING_NETWORK_TECHNOLOGY_TTNT (51, "Tactical Targeting Network Technology (TTNT)");
+    CREATE_ENTITY_RELIABLE (51, "Tactical Targeting Network Technology (TTNT)");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     RadioCategory(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static RadioCategory getEnumForValue(int i)
     {
        for(RadioCategory val: RadioCategory.values()) {
@@ -137,17 +149,29 @@ public enum RadioCategory implements Category
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static RadioCategory unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -160,6 +184,11 @@ public enum RadioCategory implements Category
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static RadioCategory unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -190,6 +219,9 @@ public enum RadioCategory implements Category
     @Override
     public String toString()
     {
-        return "RadioCategory " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "RadioCategory " + padding + getValue() + " " + name();
     }
 }

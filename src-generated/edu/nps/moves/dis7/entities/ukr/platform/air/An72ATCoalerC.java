@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@59696551
- * Country: Ukraine (UKR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3c83468e;
+ * Country: Ukraine (UKR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29258
  */
 public class An72ATCoalerC extends EntityType
 {
+    /** Default constructor */
     public An72ATCoalerC()
     {
         setCountry(Country.UKRAINE_UKR);

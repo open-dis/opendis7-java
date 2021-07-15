@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37314843
- * Country: Pakistan (PAK)
- * Entity kind: Munition
- * Domain: TACTICAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d7ceca8;
+ * Country: Pakistan (PAK);
+ * Entity kind: Munition;
+ * Domain: TACTICAL;
  *
  * Entity type uid: 32542
  */
 public class ShaheenIISecondStageVehicle extends EntityType
 {
+    /** Default constructor */
     public ShaheenIISecondStageVehicle()
     {
         setCountry(Country.PAKISTAN_PAK);

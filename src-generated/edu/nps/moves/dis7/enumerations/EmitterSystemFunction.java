@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 76 marshal size 8<br>
  * EmitterSystemFunction
  */
@@ -71,11 +71,11 @@ public enum EmitterSystemFunction
     /** Coastal Surveillance */
     COASTAL_SURVEILLANCE (27, "Coastal Surveillance"),
     /** Decoy/Mimic */
-    DECOY_MIMIC (28, "Decoy/Mimic"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Decoy/Mimic"),
     /** Data Transmission */
     DATA_TRANSMISSION (29, "Data Transmission"),
     /** Earth Surveillance */
-    EARTH_SURVEILLANCE (30, "Earth Surveillance"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Earth Surveillance"),
     /** Gun Lay Beacon */
     GUN_LAY_BEACON (31, "Gun Lay Beacon"),
     /** Ground Mapping */
@@ -107,37 +107,37 @@ public enum EmitterSystemFunction
     /** Repeater Jamming */
     REPEATER_JAMMING (45, "Repeater Jamming"),
     /** Spot Noise Jamming */
-    SPOT_NOISE_JAMMING (46, "Spot Noise Jamming"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Spot Noise Jamming"),
     /** Missile Acquisition */
     MISSILE_ACQUISITION (47, "Missile Acquisition"),
     /** Missile Downlink */
     MISSILE_DOWNLINK (48, "Missile Downlink"),
     /** Meteorological */
-    METEOROLOGICAL (49, "Meteorological"),
+    LIVE_ENTITY_FIRE (49, "Meteorological"),
     /** Space */
-    SPACE (50, "Space"),
+    LIVE_ENTITY_DETONATION (50, "Space"),
     /** Surface Search */
-    SURFACE_SEARCH (51, "Surface Search"),
+    CREATE_ENTITY_RELIABLE (51, "Surface Search"),
     /** Shell Tracking */
-    SHELL_TRACKING (52, "Shell Tracking"),
+    REMOVE_ENTITY_RELIABLE (52, "Shell Tracking"),
     /** Television */
-    TELEVISION (56, "Television"),
+    ACTION_REQUEST_RELIABLE (56, "Television"),
     /** Unknown */
-    UNKNOWN (57, "Unknown"),
+    ACTION_RESPONSE_RELIABLE (57, "Unknown"),
     /** Video Remoting */
-    VIDEO_REMOTING (58, "Video Remoting"),
+    DATA_QUERY_RELIABLE (58, "Video Remoting"),
     /** Experimental or Training */
-    EXPERIMENTAL_OR_TRAINING (59, "Experimental or Training"),
+    SET_DATA_RELIABLE (59, "Experimental or Training"),
     /** Missile Guidance */
-    MISSILE_GUIDANCE (60, "Missile Guidance"),
+    DATA_RELIABLE (60, "Missile Guidance"),
     /** Missile Homing */
-    MISSILE_HOMING (61, "Missile Homing"),
+    EVENT_REPORT_RELIABLE (61, "Missile Homing"),
     /** Missile Tracking */
-    MISSILE_TRACKING (62, "Missile Tracking"),
+    COMMENT_RELIABLE (62, "Missile Tracking"),
     /** Jamming, noise */
-    JAMMING_NOISE (64, "Jamming, noise"),
+    SET_RECORD_RELIABLE	 (64, "Jamming, noise"),
     /** Jamming, deception */
-    JAMMING_DECEPTION (65, "Jamming, deception"),
+    RECORD_QUERY_RELIABLE (65, "Jamming, deception"),
     /** Decoy */
     DECOY (66, "Decoy"),
     /** Navigation/Distance Measuring Equipment */
@@ -180,27 +180,39 @@ public enum EmitterSystemFunction
     private int value;
     private final String description;
 
+    /** Constructor */
     EmitterSystemFunction(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static EmitterSystemFunction getEnumForValue(int i)
     {
        for(EmitterSystemFunction val: EmitterSystemFunction.values()) {
@@ -211,17 +223,29 @@ public enum EmitterSystemFunction
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EmitterSystemFunction unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -234,6 +258,11 @@ public enum EmitterSystemFunction
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EmitterSystemFunction unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -264,6 +293,9 @@ public enum EmitterSystemFunction
     @Override
     public String toString()
     {
-        return "EmitterSystemFunction " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "EmitterSystemFunction " + padding + getValue() + " " + name();
     }
 }

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e4204e2
- * Country: Greece (GRC)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32c726ee;
+ * Country: Greece (GRC);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23372
  */
 public class P18Armatolos extends EntityType
 {
+    /** Default constructor */
     public P18Armatolos()
     {
         setCountry(Country.GREECE_GRC);

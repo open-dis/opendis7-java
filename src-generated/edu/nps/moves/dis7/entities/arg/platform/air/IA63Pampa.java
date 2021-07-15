@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f2b958e
- * Country: Argentina (ARG)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4ee285c6;
+ * Country: Argentina (ARG);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 32593
  */
 public class IA63Pampa extends EntityType
 {
+    /** Default constructor */
     public IA63Pampa()
     {
         setCountry(Country.ARGENTINA_ARG);

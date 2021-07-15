@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4aeaff64
- * Country: United States of America (USA)
- * Entity kind: Radio
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1131aead;
+ * Country: United States of America (USA);
+ * Entity kind: Radio;
+ * Domain: AIR;
  *
  * Entity type uid: 26805
  */
 public class ANUSQ140V7CMIDSTerminalNoVoiceNoTACANTACANRT1843CU extends EntityType
 {
+    /** Default constructor */
     public ANUSQ140V7CMIDSTerminalNoVoiceNoTACANTACANRT1843CU()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@394a2528
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@399c4be1;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 15647
  */
 public class ERC90armoredcar extends EntityType
 {
+    /** Default constructor */
     public ERC90armoredcar()
     {
         setCountry(Country.FRANCE_FRA);

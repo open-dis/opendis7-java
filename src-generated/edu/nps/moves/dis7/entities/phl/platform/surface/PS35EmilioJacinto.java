@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f9e1534
- * Country: Philippines (PHL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19f21b6b;
+ * Country: Philippines (PHL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28422
  */
 public class PS35EmilioJacinto extends EntityType
 {
+    /** Default constructor */
     public PS35EmilioJacinto()
     {
         setCountry(Country.PHILIPPINES_PHL);

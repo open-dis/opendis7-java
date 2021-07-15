@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c30b71f
- * Country: Other
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4a951911;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24638
  */
 public class GenericDiveSupportVessel extends EntityType
 {
+    /** Default constructor */
     public GenericDiveSupportVessel()
     {
         setCountry(Country.OTHER);

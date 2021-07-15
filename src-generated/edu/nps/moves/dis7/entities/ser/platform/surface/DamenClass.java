@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@a0db585
- * Country: Serbia and Montenegro
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4eb1c69;
+ * Country: Serbia and Montenegro;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19080
  */
 public class DamenClass extends EntityType
 {
+    /** Default constructor */
     public DamenClass()
     {
         setCountry(Country.SERBIA_AND_MONTENEGRO);

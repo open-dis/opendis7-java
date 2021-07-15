@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f381794
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@610f7aa;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28769
  */
 public class TPK635TSR extends EntityType
 {
+    /** Default constructor */
     public TPK635TSR()
     {
         setCountry(Country.FRANCE_FRA);

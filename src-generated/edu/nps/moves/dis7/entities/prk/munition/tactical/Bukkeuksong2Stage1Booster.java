@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7eaa2bc6
- * Country: Korea (Democratic Peoples Republic of) (PRK)
- * Entity kind: Munition
- * Domain: TACTICAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76a9a009;
+ * Country: Korea (Democratic Peoples Republic of) (PRK);
+ * Entity kind: Munition;
+ * Domain: TACTICAL;
  *
  * Entity type uid: 32517
  */
 public class Bukkeuksong2Stage1Booster extends EntityType
 {
+    /** Default constructor */
     public Bukkeuksong2Stage1Booster()
     {
         setCountry(Country.KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK);

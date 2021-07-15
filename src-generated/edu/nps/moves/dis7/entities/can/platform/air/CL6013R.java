@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6acdbdf5
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2b552920;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 26117
  */
 public class CL6013R extends EntityType
 {
+    /** Default constructor */
     public CL6013R()
     {
         setCountry(Country.CANADA_CAN);

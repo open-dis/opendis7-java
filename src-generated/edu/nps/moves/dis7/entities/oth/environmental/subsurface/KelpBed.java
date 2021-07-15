@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@6df2af02
- * Country: Other
- * Entity kind: Environmental
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@37e55819;
+ * Country: Other;
+ * Entity kind: Environmental;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 21938
  */
 public class KelpBed extends EntityType
 {
+    /** Default constructor */
     public KelpBed()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@779228dc
- * Country: Other
- * Entity kind: Environmental
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2bdcfcf;
+ * Country: Other;
+ * Entity kind: Environmental;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 21939
  */
 public class Knuckle extends EntityType
 {
+    /** Default constructor */
     public Knuckle()
     {
         setCountry(Country.OTHER);

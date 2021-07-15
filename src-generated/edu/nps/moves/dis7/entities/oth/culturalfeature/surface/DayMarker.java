@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26865b57
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@8f4b803;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SURFACE;
  *
  * Entity type uid: 22142
  */
 public class DayMarker extends EntityType
 {
+    /** Default constructor */
     public DayMarker()
     {
         setCountry(Country.OTHER);

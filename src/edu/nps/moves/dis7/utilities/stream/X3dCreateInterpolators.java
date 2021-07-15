@@ -35,6 +35,8 @@ public class X3dCreateInterpolators {
     private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
 
     // -------------------- End Variables for Position Interpolator
+
+    /** Default Constructor */
     public X3dCreateInterpolators() {
 
         //3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
@@ -109,8 +111,8 @@ public class X3dCreateInterpolators {
         }
     }
 
-    public void makeX3dInterpolator() {
-
+    public void makeX3dInterpolator()
+    {
         //Compression of the testMap.
         //Remove all collinear points.
         X3dSlidingWindowCompression slidingWindowCompression = new X3dSlidingWindowCompression(testMap);

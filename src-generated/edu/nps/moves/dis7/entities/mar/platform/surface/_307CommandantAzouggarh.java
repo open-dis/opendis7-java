@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@411341bd
- * Country: Morocco (MAR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@245a26e1;
+ * Country: Morocco (MAR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27717
  */
 public class _307CommandantAzouggarh extends EntityType
 {
+    /** Default constructor */
     public _307CommandantAzouggarh()
     {
         setCountry(Country.MOROCCO_MAR);

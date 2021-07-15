@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@763d9750
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64b8f8f4;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31678
  */
 public class P8APoseidonAUS extends EntityType
 {
+    /** Default constructor */
     public P8APoseidonAUS()
     {
         setCountry(Country.AUSTRALIA_AUS);

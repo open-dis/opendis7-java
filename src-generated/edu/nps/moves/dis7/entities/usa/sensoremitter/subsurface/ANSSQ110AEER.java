@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4ede035e
- * Country: United States of America (USA)
- * Entity kind: Sensor/Emitter
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@23d0944b;
+ * Country: United States of America (USA);
+ * Entity kind: Sensor/Emitter;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 22393
  */
 public class ANSSQ110AEER extends EntityType
 {
+    /** Default constructor */
     public ANSSQ110AEER()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

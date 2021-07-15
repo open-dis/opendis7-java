@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27a5f880
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e0e048a;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24328
  */
 public class BombardierCRJ200Series extends EntityType
 {
+    /** Default constructor */
     public BombardierCRJ200Series()
     {
         setCountry(Country.CANADA_CAN);

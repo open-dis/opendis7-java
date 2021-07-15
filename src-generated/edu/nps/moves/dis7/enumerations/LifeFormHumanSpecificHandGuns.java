@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 513 marshal size 8<br>
  * LifeFormHumanSpecificHandGuns
  */
@@ -19,7 +19,7 @@ public enum LifeFormHumanSpecificHandGuns
     /** 5.45mm PSM */
     _545MM_PSM (1, "5.45mm PSM"),
     /** 9mm MK3 SLP */
-    _9MM_MK3_SLP (30, "9mm MK3 SLP"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "9mm MK3 SLP"),
     /** 9mm Beretta 92S/92FS (M9) */
     _9MM_BERETTA_92S_92FS_M9 (31, "9mm Beretta 92S/92FS (M9)"),
     /** 9mm HandK USP */
@@ -41,34 +41,46 @@ public enum LifeFormHumanSpecificHandGuns
     /** .45 Cal M1911 */
     _45_CAL_M1911 (41, ".45 Cal M1911"),
     /** 9.07mm Ruger GP 100 */
-    _907MM_RUGER_GP_100 (50, "9.07mm Ruger GP 100"),
+    LIVE_ENTITY_DETONATION (50, "9.07mm Ruger GP 100"),
     /** 10mm Glock 20 */
-    _10MM_GLOCK_20 (60, "10mm Glock 20");
+    DATA_RELIABLE (60, "10mm Glock 20");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificHandGuns(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificHandGuns getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificHandGuns val: LifeFormHumanSpecificHandGuns.values()) {
@@ -79,17 +91,29 @@ public enum LifeFormHumanSpecificHandGuns
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificHandGuns unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -102,6 +126,11 @@ public enum LifeFormHumanSpecificHandGuns
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificHandGuns unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -132,6 +161,9 @@ public enum LifeFormHumanSpecificHandGuns
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificHandGuns " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificHandGuns " + padding + getValue() + " " + name();
     }
 }

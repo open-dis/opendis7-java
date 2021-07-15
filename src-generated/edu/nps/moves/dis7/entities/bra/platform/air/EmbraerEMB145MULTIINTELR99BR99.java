@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77cd7a0
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@20e2cbe0;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25700
  */
 public class EmbraerEMB145MULTIINTELR99BR99 extends EntityType
 {
+    /** Default constructor */
     public EmbraerEMB145MULTIINTELR99BR99()
     {
         setCountry(Country.BRAZIL_BRA);

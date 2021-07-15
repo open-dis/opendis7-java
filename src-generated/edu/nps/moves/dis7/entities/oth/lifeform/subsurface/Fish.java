@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2eb6d34a
- * Country: Other
- * Entity kind: Life form
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@40cf6254;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 32263
  */
 public class Fish extends EntityType
 {
+    /** Default constructor */
     public Fish()
     {
         setCountry(Country.OTHER);

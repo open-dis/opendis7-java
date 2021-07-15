@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -18,16 +18,27 @@ public class DataFilterRecord extends Object implements Serializable
    /** Bitflags field */
    protected int  bitFlags;
 
+   /** Default static instance variable */
    public static int  GROUND_BURIAL_DEPTH_OFFSET_BIT = 0;
+   /** Default static instance variable */
    public static int  WATER_BURIAL_DEPTH_OFFSET_BIT = 1;
+   /** Default static instance variable */
    public static int  SNOW_BURIAL_DEPTH_OFFSET_BIT = 2;
+   /** Default static instance variable */
    public static int  MINE_ORIENTATION_BIT = 3;
+   /** Default static instance variable */
    public static int  THERMAL_CONSTRAST_BIT = 4;
+   /** Default static instance variable */
    public static int  REFLECTANCE_BIT = 5;
+   /** Default static instance variable */
    public static int  MINE_EMPLACEMENT_TIME_BIT = 6;
+   /** Default static instance variable */
    public static int  TRIP_DETONATION_WIRE_BIT = 7;
+   /** Default static instance variable */
    public static int  FUSING_BIT = 8;
+   /** Default static instance variable */
    public static int  SCALAR_DETECTION_COEFFICIENT_BIT = 9;
+   /** Default static instance variable */
    public static int  PAINT_SCHEME_BIT = 10;
 
 /** Constructor */
@@ -37,7 +48,7 @@ public class DataFilterRecord extends Object implements Serializable
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -88,7 +99,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -124,7 +135,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

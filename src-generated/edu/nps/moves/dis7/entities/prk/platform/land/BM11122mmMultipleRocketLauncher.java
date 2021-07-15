@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71e5f61d
- * Country: Korea (Democratic Peoples Republic of) (PRK)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@c7a975a;
+ * Country: Korea (Democratic Peoples Republic of) (PRK);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 17757
  */
 public class BM11122mmMultipleRocketLauncher extends EntityType
 {
+    /** Default constructor */
     public BM11122mmMultipleRocketLauncher()
     {
         setCountry(Country.KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35fb3008
- * Country: Austria (AUT)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67b64c45;
+ * Country: Austria (AUT);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 23519
  */
 public class Pandur extends EntityType
 {
+    /** Default constructor */
     public Pandur()
     {
         setCountry(Country.AUSTRIA_AUT);

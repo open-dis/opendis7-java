@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10d905c1
- * Country: Other
- * Entity kind: Sensor/Emitter
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5503c7d;
+ * Country: Other;
+ * Entity kind: Sensor/Emitter;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 22567
  */
 public class Jammingnoise extends EntityType
 {
+    /** Default constructor */
     public Jammingnoise()
     {
         setCountry(Country.OTHER);

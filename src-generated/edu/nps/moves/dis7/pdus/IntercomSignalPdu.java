@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.pdus;
@@ -54,6 +54,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    */
   protected byte[] data = new byte[1]; //Wireshark complains if no data 
 
+  /** bit padding */
   private byte[] padTo32 = new byte[0]; // pad to 32-bit boundary
 
   /**

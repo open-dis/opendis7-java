@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 472 marshal size 8<br>
  * LifeFormLandCategories
  */
@@ -29,9 +29,9 @@ public enum LifeFormLandCategories implements Category
     /** United Nations */
     UNITED_NATIONS (16, "United Nations"),
     /** Special Operations Forces (SOF), Values from 30-49 are restricted to Special Operations Forces and may be further clarified by country code-specific values. */
-    SPECIAL_OPERATIONS_FORCES_SOF (30, "Special Operations Forces (SOF)"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Special Operations Forces (SOF)"),
     /** Law Enforcement, Values from 50-69 are restricted to Law Enforcement and may be further clarified by country code-specific values. */
-    LAW_ENFORCEMENT (50, "Law Enforcement"),
+    LIVE_ENTITY_DETONATION (50, "Law Enforcement"),
     /** Non-Military National Government Agencies, Values from 70-89 are restricted to Non-Military National Government Agencies and may be further clarified by country code-specific values. */
     NON_MILITARY_NATIONAL_GOVERNMENT_AGENCIES (70, "Non-Military National Government Agencies"),
     /** Regional / Local Forces, Values from 90-99 are restricted to Regional / Local Forces (e.g., state guard) and may be further clarified by country code-specific values. */
@@ -65,27 +65,39 @@ public enum LifeFormLandCategories implements Category
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormLandCategories(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormLandCategories getEnumForValue(int i)
     {
        for(LifeFormLandCategories val: LifeFormLandCategories.values()) {
@@ -96,17 +108,29 @@ public enum LifeFormLandCategories implements Category
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormLandCategories unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -119,6 +143,11 @@ public enum LifeFormLandCategories implements Category
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormLandCategories unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -149,6 +178,9 @@ public enum LifeFormLandCategories implements Category
     @Override
     public String toString()
     {
-        return "LifeFormLandCategories " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormLandCategories " + padding + getValue() + " " + name();
     }
 }

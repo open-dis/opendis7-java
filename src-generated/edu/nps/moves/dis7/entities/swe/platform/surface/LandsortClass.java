@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e58512c
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7e19755a;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26833
  */
 public class LandsortClass extends EntityType
 {
+    /** Default constructor */
     public LandsortClass()
     {
         setCountry(Country.SWEDEN_SWE);

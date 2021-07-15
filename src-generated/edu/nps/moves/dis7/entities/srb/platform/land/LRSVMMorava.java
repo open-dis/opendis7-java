@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1bc776b7
- * Country: Serbia (SRB)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e51d054;
+ * Country: Serbia (SRB);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30158
  */
 public class LRSVMMorava extends EntityType
 {
+    /** Default constructor */
     public LRSVMMorava()
     {
         setCountry(Country.SERBIA_SRB);

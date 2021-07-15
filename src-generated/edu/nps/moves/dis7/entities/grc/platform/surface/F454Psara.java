@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f16c6b3
- * Country: Greece (GRC)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58326051;
+ * Country: Greece (GRC);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23352
  */
 public class F454Psara extends EntityType
 {
+    /** Default constructor */
     public F454Psara()
     {
         setCountry(Country.GREECE_GRC);

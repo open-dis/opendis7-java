@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62d363ab
- * Country: Micronesia (Federated States of) (FSM)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4eeea57d;
+ * Country: Micronesia (Federated States of) (FSM);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26713
  */
 public class Palikir extends EntityType
 {
+    /** Default constructor */
     public Palikir()
     {
         setCountry(Country.MICRONESIA_FEDERATED_STATES_OF_FSM);

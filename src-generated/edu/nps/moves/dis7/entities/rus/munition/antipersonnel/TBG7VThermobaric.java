@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e734eee
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: ANTI_PERSONNEL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f56424d;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: ANTI_PERSONNEL;
  *
  * Entity type uid: 32308
  */
 public class TBG7VThermobaric extends EntityType
 {
+    /** Default constructor */
     public TBG7VThermobaric()
     {
         setCountry(Country.RUSSIA_RUS);

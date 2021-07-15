@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -18,6 +18,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
    /** ID of the entity that shot */
    protected EntityID  firingEntityID = new EntityID(); 
 
+   /** eventID is an undescribed parameter... */
    protected EventIdentifier  eventID = new EventIdentifier(); 
 
    /** Field shall identify the munition type enumeration for the DE weapon beam, Section 7.3.4  */
@@ -38,8 +39,10 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
    /** Field shall identify the emissions wavelength in units of meters, Section 7.3.4  */
    protected float  wavelength;
 
+   /** pad1 is an undescribed parameter... */
    protected int  pad1;
 
+   /** pulseRepititionFrequency is an undescribed parameter... */
    protected float  pulseRepititionFrequency;
 
    /** field shall identify the pulse width emissions in units of seconds, Section 7.3.4 */
@@ -51,10 +54,13 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
    /** Field shall identify the pulse shape and shall be represented as an 8-bit enumeration, Section 7.3.4  uid 312 */
    protected DEFirePulseShape pulseShape = DEFirePulseShape.values()[0];
 
+   /** pad2 is an undescribed parameter... */
    protected byte  pad2;
 
+   /** pad3 is an undescribed parameter... */
    protected int  pad3;
 
+   /** pad4 is an undescribed parameter... */
    protected short  pad4;
 
    /** Field shall specify the number of DE records, Section 7.3.4  */
@@ -72,7 +78,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -439,7 +445,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -534,7 +540,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

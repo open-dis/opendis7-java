@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43814d18
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e1ec318;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30983
  */
 public class GWagonw762mmMG extends EntityType
 {
+    /** Default constructor */
     public GWagonw762mmMG()
     {
         setCountry(Country.CANADA_CAN);

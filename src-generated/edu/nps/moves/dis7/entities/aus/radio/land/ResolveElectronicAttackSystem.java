@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56872fcb
- * Country: Australia (AUS)
- * Entity kind: Radio
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@340c57e0;
+ * Country: Australia (AUS);
+ * Entity kind: Radio;
+ * Domain: LAND;
  *
  * Entity type uid: 31618
  */
 public class ResolveElectronicAttackSystem extends EntityType
 {
+    /** Default constructor */
     public ResolveElectronicAttackSystem()
     {
         setCountry(Country.AUSTRALIA_AUS);

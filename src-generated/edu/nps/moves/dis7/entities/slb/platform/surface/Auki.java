@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a2ef072
- * Country: Solomon Islands (SLB)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35eb4a3b;
+ * Country: Solomon Islands (SLB);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26749
  */
 public class Auki extends EntityType
 {
+    /** Default constructor */
     public Auki()
     {
         setCountry(Country.SOLOMON_ISLANDS_SLB);

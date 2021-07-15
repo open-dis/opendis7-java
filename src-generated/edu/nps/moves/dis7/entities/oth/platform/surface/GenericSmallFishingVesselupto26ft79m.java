@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5e8a459
- * Country: Other
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15fc442;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24651
  */
 public class GenericSmallFishingVesselupto26ft79m extends EntityType
 {
+    /** Default constructor */
     public GenericSmallFishingVesselupto26ft79m()
     {
         setCountry(Country.OTHER);

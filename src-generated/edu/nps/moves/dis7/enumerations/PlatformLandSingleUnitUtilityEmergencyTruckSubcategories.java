@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 431 marshal size 8<br>
  * PlatformLandSingleUnitUtilityEmergencyTruckSubcategories<br>
  * Subcategories for Land Platform Category 84
@@ -45,7 +45,7 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     /** Police, Pickup Truck */
     POLICE_PICKUP_TRUCK (23, "Police, Pickup Truck"),
     /** Hazmat */
-    HAZMAT (30, "Hazmat"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Hazmat"),
     /** Wrecker, Normal Hook and Chain */
     WRECKER_NORMAL_HOOK_AND_CHAIN (40, "Wrecker, Normal Hook and Chain"),
     /** Wrecker, Normal Boom */
@@ -59,15 +59,15 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     /** Wrecker, Heavy Hook and Chain */
     WRECKER_HEAVY_HOOK_AND_CHAIN (45, "Wrecker, Heavy Hook and Chain"),
     /** Wrecker, Heavy Boom */
-    WRECKER_HEAVY_BOOM (46, "Wrecker, Heavy Boom"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Wrecker, Heavy Boom"),
     /** Wrecker, Heavy Wheel Lift */
     WRECKER_HEAVY_WHEEL_LIFT (47, "Wrecker, Heavy Wheel Lift"),
     /** Wrecker, Heavy Flatbed */
     WRECKER_HEAVY_FLATBED (48, "Wrecker, Heavy Flatbed"),
     /** Wrecker, Heavy Integrated */
-    WRECKER_HEAVY_INTEGRATED (49, "Wrecker, Heavy Integrated"),
+    LIVE_ENTITY_FIRE (49, "Wrecker, Heavy Integrated"),
     /** Postal Truck */
-    POSTAL_TRUCK (60, "Postal Truck"),
+    DATA_RELIABLE (60, "Postal Truck"),
     /** Street Sweeper */
     STREET_SWEEPER (70, "Street Sweeper"),
     /** Street Sweeper, Three Wheeled */
@@ -110,27 +110,39 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     private int value;
     private final String description;
 
+    /** Constructor */
     PlatformLandSingleUnitUtilityEmergencyTruckSubcategories(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static PlatformLandSingleUnitUtilityEmergencyTruckSubcategories getEnumForValue(int i)
     {
        for(PlatformLandSingleUnitUtilityEmergencyTruckSubcategories val: PlatformLandSingleUnitUtilityEmergencyTruckSubcategories.values()) {
@@ -141,17 +153,29 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandSingleUnitUtilityEmergencyTruckSubcategories unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -164,6 +188,11 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandSingleUnitUtilityEmergencyTruckSubcategories unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -194,6 +223,9 @@ public enum PlatformLandSingleUnitUtilityEmergencyTruckSubcategories implements 
     @Override
     public String toString()
     {
-        return "PlatformLandSingleUnitUtilityEmergencyTruckSubcategories " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "PlatformLandSingleUnitUtilityEmergencyTruckSubcategories " + padding + getValue() + " " + name();
     }
 }

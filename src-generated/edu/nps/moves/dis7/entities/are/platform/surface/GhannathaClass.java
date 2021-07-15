@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d5c2745
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5cf3157b;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32006
  */
 public class GhannathaClass extends EntityType
 {
+    /** Default constructor */
     public GhannathaClass()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

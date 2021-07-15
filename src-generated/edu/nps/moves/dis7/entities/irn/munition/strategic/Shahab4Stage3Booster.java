@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18a98913
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Munition
- * Domain: STRATEGIC
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@255d9277;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Munition;
+ * Domain: STRATEGIC;
  *
  * Entity type uid: 32498
  */
 public class Shahab4Stage3Booster extends EntityType
 {
+    /** Default constructor */
     public Shahab4Stage3Booster()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

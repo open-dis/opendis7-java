@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41059616
- * Country: Other
- * Entity kind: Radio
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1acc873b;
+ * Country: Other;
+ * Entity kind: Radio;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31912
  */
 public class AISSARTRadio extends EntityType
 {
+    /** Default constructor */
     public AISSARTRadio()
     {
         setCountry(Country.OTHER);

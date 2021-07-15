@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7eb01b12
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12cd9150;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24445
  */
 public class GasAlMutlaa extends EntityType
 {
+    /** Default constructor */
     public GasAlMutlaa()
     {
         setCountry(Country.KUWAIT_KWT);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ce2e079
- * Country: Other
- * Entity kind: Life form
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c77344f;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 32272
  */
 public class OrcaWhale extends EntityType
 {
+    /** Default constructor */
     public OrcaWhale()
     {
         setCountry(Country.OTHER);

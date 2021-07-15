@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5460b754
- * Country: Switzerland (CHE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@558756be;
+ * Country: Switzerland (CHE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 32946
  */
 public class PiranhaIII extends EntityType
 {
+    /** Default constructor */
     public PiranhaIII()
     {
         setCountry(Country.SWITZERLAND_CHE);

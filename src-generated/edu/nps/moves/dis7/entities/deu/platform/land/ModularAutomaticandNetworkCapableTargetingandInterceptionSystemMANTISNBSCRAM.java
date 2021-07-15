@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3cfdd820
- * Country: Germany (DEU)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7fd7a283;
+ * Country: Germany (DEU);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28080
  */
 public class ModularAutomaticandNetworkCapableTargetingandInterceptionSystemMANTISNBSCRAM extends EntityType
 {
+    /** Default constructor */
     public ModularAutomaticandNetworkCapableTargetingandInterceptionSystemMANTISNBSCRAM()
     {
         setCountry(Country.GERMANY_DEU);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@548e7350
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7c16905e;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 32014
  */
 public class P3Orion extends EntityType
 {
+    /** Default constructor */
     public P3Orion()
     {
         setCountry(Country.BRAZIL_BRA);

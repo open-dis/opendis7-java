@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@8bd86c8
- * Country: Ukraine (UKR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@74170687;
+ * Country: Ukraine (UKR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29243
  */
 public class An38100 extends EntityType
 {
+    /** Default constructor */
     public An38100()
     {
         setCountry(Country.UKRAINE_UKR);

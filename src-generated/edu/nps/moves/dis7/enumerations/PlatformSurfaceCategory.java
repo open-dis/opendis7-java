@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 11 marshal size 8<br>
  * PlatformSurfaceCategory
  */
@@ -59,35 +59,35 @@ public enum PlatformSurfaceCategory implements Category
     /** Surveillance Ship */
     SURVEILLANCE_SHIP (21, "Surveillance Ship"),
     /** Frigate (including Corvette) */
-    FRIGATE_INCLUDING_CORVETTE (50, "Frigate (including Corvette)"),
+    LIVE_ENTITY_DETONATION (50, "Frigate (including Corvette)"),
     /** Battleship */
-    BATTLESHIP (51, "Battleship"),
+    CREATE_ENTITY_RELIABLE (51, "Battleship"),
     /** Heavy Cruiser */
-    HEAVY_CRUISER (52, "Heavy Cruiser"),
+    REMOVE_ENTITY_RELIABLE (52, "Heavy Cruiser"),
     /** Destroyer Tender */
-    DESTROYER_TENDER (53, "Destroyer Tender"),
+    START_RESUME_RELIABLE (53, "Destroyer Tender"),
     /** Amphibious Assault Ship */
-    AMPHIBIOUS_ASSAULT_SHIP (54, "Amphibious Assault Ship"),
+    STOP_FREEZE_RELIABLE (54, "Amphibious Assault Ship"),
     /** Amphibious Cargo Ship */
-    AMPHIBIOUS_CARGO_SHIP (55, "Amphibious Cargo Ship"),
+    ACKNOWLEDGE_RELIABLE (55, "Amphibious Cargo Ship"),
     /** Amphibious Transport Dock */
-    AMPHIBIOUS_TRANSPORT_DOCK (56, "Amphibious Transport Dock"),
+    ACTION_REQUEST_RELIABLE (56, "Amphibious Transport Dock"),
     /** Ammunition Ship */
-    AMMUNITION_SHIP (57, "Ammunition Ship"),
+    ACTION_RESPONSE_RELIABLE (57, "Ammunition Ship"),
     /** Combat Stores Ship */
-    COMBAT_STORES_SHIP (58, "Combat Stores Ship"),
+    DATA_QUERY_RELIABLE (58, "Combat Stores Ship"),
     /** Surveillance Towed Array Sonar System (SURTASS) */
-    SURVEILLANCE_TOWED_ARRAY_SONAR_SYSTEM_SURTASS (59, "Surveillance Towed Array Sonar System (SURTASS)"),
+    SET_DATA_RELIABLE (59, "Surveillance Towed Array Sonar System (SURTASS)"),
     /** Fast Combat Support Ship */
-    FAST_COMBAT_SUPPORT_SHIP (60, "Fast Combat Support Ship"),
+    DATA_RELIABLE (60, "Fast Combat Support Ship"),
     /** Non-Combatant Ship */
-    NON_COMBATANT_SHIP (61, "Non-Combatant Ship"),
+    EVENT_REPORT_RELIABLE (61, "Non-Combatant Ship"),
     /** Coast Guard Cutters */
-    COAST_GUARD_CUTTERS (62, "Coast Guard Cutters"),
+    COMMENT_RELIABLE (62, "Coast Guard Cutters"),
     /** Coast Guard Boats */
-    COAST_GUARD_BOATS (63, "Coast Guard Boats"),
+    RECORD_RELIABLE (63, "Coast Guard Boats"),
     /** Fast Attack Craft */
-    FAST_ATTACK_CRAFT (64, "Fast Attack Craft"),
+    SET_RECORD_RELIABLE	 (64, "Fast Attack Craft"),
     /** PlatformSurfacePassengerVesselSubcategories */    PASSENGER_VESSEL_GROUP_1_MERCHANT_2 (80, "Passenger Vessel (Group 1 Merchant)"),
     /** PlatformSurfaceDryCargoShipSubcategories */    DRY_CARGO_SHIP_GROUP_2_MERCHANT_2 (81, "Dry Cargo Ship (Group 2 Merchant)"),
     /** PlatformSurfaceTankerSubcategories */    TANKER_GROUP_3_MERCHANT_2 (82, "Tanker (Group 3 Merchant)"),
@@ -103,27 +103,39 @@ public enum PlatformSurfaceCategory implements Category
     private int value;
     private final String description;
 
+    /** Constructor */
     PlatformSurfaceCategory(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static PlatformSurfaceCategory getEnumForValue(int i)
     {
        for(PlatformSurfaceCategory val: PlatformSurfaceCategory.values()) {
@@ -134,17 +146,29 @@ public enum PlatformSurfaceCategory implements Category
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformSurfaceCategory unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -157,6 +181,11 @@ public enum PlatformSurfaceCategory implements Category
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformSurfaceCategory unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -187,6 +216,9 @@ public enum PlatformSurfaceCategory implements Category
     @Override
     public String toString()
     {
-        return "PlatformSurfaceCategory " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "PlatformSurfaceCategory " + padding + getValue() + " " + name();
     }
 }

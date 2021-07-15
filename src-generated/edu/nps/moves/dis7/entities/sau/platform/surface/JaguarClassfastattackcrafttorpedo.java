@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10358c32
- * Country: Saudi Arabia (SAU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65c86db8;
+ * Country: Saudi Arabia (SAU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17863
  */
 public class JaguarClassfastattackcrafttorpedo extends EntityType
 {
+    /** Default constructor */
     public JaguarClassfastattackcrafttorpedo()
     {
         setCountry(Country.SAUDI_ARABIA_SAU);

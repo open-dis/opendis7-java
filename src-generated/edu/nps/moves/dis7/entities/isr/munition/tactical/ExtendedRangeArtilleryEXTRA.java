@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@56a05324
- * Country: Israel (ISR)
- * Entity kind: Munition
- * Domain: TACTICAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@9408857;
+ * Country: Israel (ISR);
+ * Entity kind: Munition;
+ * Domain: TACTICAL;
  *
  * Entity type uid: 32532
  */
 public class ExtendedRangeArtilleryEXTRA extends EntityType
 {
+    /** Default constructor */
     public ExtendedRangeArtilleryEXTRA()
     {
         setCountry(Country.ISRAEL_ISR);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ceb80a1
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1817f1eb;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29892
  */
 public class Ababil3 extends EntityType
 {
+    /** Default constructor */
     public Ababil3()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

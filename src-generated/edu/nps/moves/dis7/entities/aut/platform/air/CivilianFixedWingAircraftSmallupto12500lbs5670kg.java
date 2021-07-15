@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@735b478
- * Country: Austria (AUT)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@566776ad;
+ * Country: Austria (AUT);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29433
  */
 public class CivilianFixedWingAircraftSmallupto12500lbs5670kg extends EntityType
 {
+    /** Default constructor */
     public CivilianFixedWingAircraftSmallupto12500lbs5670kg()
     {
         setCountry(Country.AUSTRIA_AUT);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@df9d400
- * Country: United States of America (USA)
- * Entity kind: Expendable
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70ee9d31;
+ * Country: United States of America (USA);
+ * Entity kind: Expendable;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 25004
  */
 public class MK64Mod0SUSpracticeversionofMK61 extends EntityType
 {
+    /** Default constructor */
     public MK64Mod0SUSpracticeversionofMK61()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

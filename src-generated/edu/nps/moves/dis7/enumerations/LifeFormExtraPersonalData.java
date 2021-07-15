@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 477 marshal size 8<br>
  * LifeFormExtraPersonalData<br>
  * The 1s digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10s digit is reserved for general age group. The 100s digit is reserved for gender, where 0 is Male and 1 is Female.
@@ -41,13 +41,13 @@ public enum LifeFormExtraPersonalData
     /** Toddler (1-3 years) (Male) */
     TODDLER_1_3_YEARS_MALE (20, "Toddler (1-3 years) (Male)"),
     /** Child (3-10 years) (Male) */
-    CHILD_3_10_YEARS_MALE (30, "Child (3-10 years) (Male)"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Child (3-10 years) (Male)"),
     /** Adolescent (10-12 years) (Male) */
     ADOLESCENT_10_12_YEARS_MALE (40, "Adolescent (10-12 years) (Male)"),
     /** Teenager (13-16 years) (Male) */
-    TEENAGER_13_16_YEARS_MALE (50, "Teenager (13-16 years) (Male)"),
+    LIVE_ENTITY_DETONATION (50, "Teenager (13-16 years) (Male)"),
     /** Young Adult (17-25 years) (Male) */
-    YOUNG_ADULT_17_25_YEARS_MALE (60, "Young Adult (17-25 years) (Male)"),
+    DATA_RELIABLE (60, "Young Adult (17-25 years) (Male)"),
     /** Adult (25-55 years) (Male) */
     ADULT_25_55_YEARS_MALE (70, "Adult (25-55 years) (Male)"),
     /** Senior Adult (55-70 years) (Male) */
@@ -96,27 +96,39 @@ public enum LifeFormExtraPersonalData
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormExtraPersonalData(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormExtraPersonalData getEnumForValue(int i)
     {
        for(LifeFormExtraPersonalData val: LifeFormExtraPersonalData.values()) {
@@ -127,17 +139,29 @@ public enum LifeFormExtraPersonalData
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormExtraPersonalData unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -150,6 +174,11 @@ public enum LifeFormExtraPersonalData
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormExtraPersonalData unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -180,6 +209,9 @@ public enum LifeFormExtraPersonalData
     @Override
     public String toString()
     {
-        return "LifeFormExtraPersonalData " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormExtraPersonalData " + padding + getValue() + " " + name();
     }
 }

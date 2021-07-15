@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e37fb82
- * Country: South Africa (ZAF)
- * Entity kind: Munition
- * Domain: BATTLEFIELD_SUPPORT
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28367da7;
+ * Country: South Africa (ZAF);
+ * Entity kind: Munition;
+ * Domain: BATTLEFIELD_SUPPORT;
  *
  * Entity type uid: 26981
  */
 public class DenelAssistedwithBaseBleed155mm extends EntityType
 {
+    /** Default constructor */
     public DenelAssistedwithBaseBleed155mm()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

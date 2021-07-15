@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7b3cbe6e
- * Country: Russia (RUS)
- * Entity kind: Munition
- * Domain: ANTI_RADAR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@58c42c8c;
+ * Country: Russia (RUS);
+ * Entity kind: Munition;
+ * Domain: ANTI_RADAR;
  *
  * Entity type uid: 20512
  */
 public class AS12Kegler extends EntityType
 {
+    /** Default constructor */
     public AS12Kegler()
     {
         setCountry(Country.RUSSIA_RUS);

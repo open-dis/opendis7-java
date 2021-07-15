@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3f390d63
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3401a114;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 18176
  */
 public class GabrielMk2launcher extends EntityType
 {
+    /** Default constructor */
     public GabrielMk2launcher()
     {
         setCountry(Country.ISRAEL_ISR);

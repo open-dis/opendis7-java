@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1f6c4ae
- * Country: Canada (CAN)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@429f0ca8;
+ * Country: Canada (CAN);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 31945
  */
 public class TargetSpotMarker extends EntityType
 {
+    /** Default constructor */
     public TargetSpotMarker()
     {
         setCountry(Country.CANADA_CAN);

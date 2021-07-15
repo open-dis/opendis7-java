@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b1a30e5
- * Country: Serbia and Montenegro
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b9aeedb;
+ * Country: Serbia and Montenegro;
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 26965
  */
 public class _82mmHEATTM79 extends EntityType
 {
+    /** Default constructor */
     public _82mmHEATTM79()
     {
         setCountry(Country.SERBIA_AND_MONTENEGRO);

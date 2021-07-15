@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2c7d121c
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@62fad19;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 24883
  */
 public class ToyotaTechTruckw127mmMG extends EntityType
 {
+    /** Default constructor */
     public ToyotaTechTruckw127mmMG()
     {
         setCountry(Country.JAPAN_JPN);

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 323 marshal size 8<br>
  * EntityAssociationPhysicalAssociationType
  */
@@ -47,21 +47,21 @@ public enum EntityAssociationPhysicalAssociationType
     /** Hoisted */
     HOISTED (15, "Hoisted"),
     /** Restrained to a Lifeform */
-    RESTRAINED_TO_A_LIFEFORM (30, "Restrained to a Lifeform"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Restrained to a Lifeform"),
     /** Restrained to a Platform */
     RESTRAINED_TO_A_PLATFORM (31, "Restrained to a Platform"),
     /** Restrained to an Object */
     RESTRAINED_TO_AN_OBJECT (32, "Restrained to an Object"),
     /** Refueling Operation */
-    REFUELING_OPERATION (61, "Refueling Operation"),
+    EVENT_REPORT_RELIABLE (61, "Refueling Operation"),
     /** Search and Rescue Basket */
-    SEARCH_AND_RESCUE_BASKET (62, "Search and Rescue Basket"),
+    COMMENT_RELIABLE (62, "Search and Rescue Basket"),
     /** Search and Rescue Rescue Collar */
-    SEARCH_AND_RESCUE_RESCUE_COLLAR (63, "Search and Rescue Rescue Collar"),
+    RECORD_RELIABLE (63, "Search and Rescue Rescue Collar"),
     /** Engagement/Object 2 is Being Engaged */
-    ENGAGEMENT_OBJECT_2_IS_BEING_ENGAGED (64, "Engagement/Object 2 is Being Engaged"),
+    SET_RECORD_RELIABLE	 (64, "Engagement/Object 2 is Being Engaged"),
     /** Return To Base/Object 2 is the Destination Object */
-    RETURN_TO_BASE_OBJECT_2_IS_THE_DESTINATION_OBJECT (65, "Return To Base/Object 2 is the Destination Object"),
+    RECORD_QUERY_RELIABLE (65, "Return To Base/Object 2 is the Destination Object"),
     /** Line between Communication Towers */
     LINE_BETWEEN_COMMUNICATION_TOWERS (90, "Line between Communication Towers"),
     /** Line Between Power Towers */
@@ -74,27 +74,39 @@ public enum EntityAssociationPhysicalAssociationType
     private int value;
     private final String description;
 
+    /** Constructor */
     EntityAssociationPhysicalAssociationType(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static EntityAssociationPhysicalAssociationType getEnumForValue(int i)
     {
        for(EntityAssociationPhysicalAssociationType val: EntityAssociationPhysicalAssociationType.values()) {
@@ -105,17 +117,29 @@ public enum EntityAssociationPhysicalAssociationType
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EntityAssociationPhysicalAssociationType unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -128,6 +152,11 @@ public enum EntityAssociationPhysicalAssociationType
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EntityAssociationPhysicalAssociationType unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -158,6 +187,9 @@ public enum EntityAssociationPhysicalAssociationType
     @Override
     public String toString()
     {
-        return "EntityAssociationPhysicalAssociationType " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "EntityAssociationPhysicalAssociationType " + padding + getValue() + " " + name();
     }
 }

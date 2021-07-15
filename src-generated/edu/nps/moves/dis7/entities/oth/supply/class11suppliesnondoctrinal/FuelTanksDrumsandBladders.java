@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@627acb38
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@631944d4;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL;
  *
  * Entity type uid: 30601
  */
 public class FuelTanksDrumsandBladders extends EntityType
 {
+    /** Default constructor */
     public FuelTanksDrumsandBladders()
     {
         setCountry(Country.OTHER);

@@ -4,12 +4,13 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
+ * SISO-REF-010-v28 (2020-05-07)
  *
  * ObjectType uid: 227
  */
 public class _3Roll extends ObjectType
 {
+    /** Default constructor */
     public _3Roll()
     {
         setDomain(PlatformDomain.getEnumForValue(1));

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 515 marshal size 8<br>
  * LifeFormHumanSpecificGrenadeLaunchers
  */
@@ -47,7 +47,7 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
     /** 40mm VOG RG-6 */
     _40MM_VOG_RG_6 (25, "40mm VOG RG-6"),
     /** 40x46mm M79 */
-    _40X46MM_M79 (30, "40x46mm M79"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "40x46mm M79"),
     /** 40x46mm M203 */
     _40X46MM_M203 (31, "40x46mm M203"),
     /** 40x36mm M320 */
@@ -73,15 +73,15 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
     /** 40x46mm Hawk MM-1 */
     _40X46MM_HAWK_MM_1 (44, "40x46mm Hawk MM-1"),
     /** 25x40mm XM25 CDTE */
-    _25X40MM_XM25_CDTE (50, "25x40mm XM25 CDTE"),
+    LIVE_ENTITY_DETONATION (50, "25x40mm XM25 CDTE"),
     /** 37mm Milkor37/38 LL Stopper */
-    _37MM_MILKOR37_38_LL_STOPPER (60, "37mm Milkor37/38 LL Stopper"),
+    DATA_RELIABLE (60, "37mm Milkor37/38 LL Stopper"),
     /** 40mm Milkor40 GL */
-    _40MM_MILKOR40_GL (61, "40mm Milkor40 GL"),
+    EVENT_REPORT_RELIABLE (61, "40mm Milkor40 GL"),
     /** 40mm Milkor MGL */
-    _40MM_MILKOR_MGL (62, "40mm Milkor MGL"),
+    COMMENT_RELIABLE (62, "40mm Milkor MGL"),
     /** 40x47mm Pallad wz1974 */
-    _40X47MM_PALLAD_WZ1974 (65, "40x47mm Pallad wz1974"),
+    RECORD_QUERY_RELIABLE (65, "40x47mm Pallad wz1974"),
     /** 40x47mm Pallad wz1983 */
     _40X47MM_PALLAD_WZ1983 (66, "40x47mm Pallad wz1983"),
     /** UGL 200 Canister RWGL-3 */
@@ -100,27 +100,39 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificGrenadeLaunchers(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificGrenadeLaunchers getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificGrenadeLaunchers val: LifeFormHumanSpecificGrenadeLaunchers.values()) {
@@ -131,17 +143,29 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificGrenadeLaunchers unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -154,6 +178,11 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificGrenadeLaunchers unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -184,6 +213,9 @@ public enum LifeFormHumanSpecificGrenadeLaunchers
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificGrenadeLaunchers " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificGrenadeLaunchers " + padding + getValue() + " " + name();
     }
 }

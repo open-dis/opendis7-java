@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50b494a6
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3327bd23;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31026
  */
 public class HLVWFuelTanker10000Liter extends EntityType
 {
+    /** Default constructor */
     public HLVWFuelTanker10000Liter()
     {
         setCountry(Country.CANADA_CAN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@173b1af1
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_9_REPAIR_PARTS_AND_COMPONENTS
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51f34185;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_9_REPAIR_PARTS_AND_COMPONENTS;
  *
  * Entity type uid: 30805
  */
 public class MineRoller extends EntityType
 {
+    /** Default constructor */
     public MineRoller()
     {
         setCountry(Country.OTHER);

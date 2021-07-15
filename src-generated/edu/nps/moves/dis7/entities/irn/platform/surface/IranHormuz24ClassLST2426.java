@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@784c3487
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7216fb24;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18103
  */
 public class IranHormuz24ClassLST2426 extends EntityType
 {
+    /** Default constructor */
     public IranHormuz24ClassLST2426()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

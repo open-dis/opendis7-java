@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5286c33a
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@319bc845;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 23781
  */
 public class IAIKfirLionCub extends EntityType
 {
+    /** Default constructor */
     public IAIKfirLionCub()
     {
         setCountry(Country.ISRAEL_ISR);

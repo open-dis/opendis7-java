@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22680f52
- * Country: New Zealand (NZL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@200606de;
+ * Country: New Zealand (NZL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31943
  */
 public class ManHX77REBS extends EntityType
 {
+    /** Default constructor */
     public ManHX77REBS()
     {
         setCountry(Country.NEW_ZEALAND_NZL);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7e77678c
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@21527b8;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 19546
  */
 public class M712CopperheadCannonLaunchedGuidedProjectile extends EntityType
 {
+    /** Default constructor */
     public M712CopperheadCannonLaunchedGuidedProjectile()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

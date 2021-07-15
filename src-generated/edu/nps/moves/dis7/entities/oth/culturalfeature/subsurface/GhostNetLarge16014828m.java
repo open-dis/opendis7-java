@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a90fcaa
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@17d816b3;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 25213
  */
 public class GhostNetLarge16014828m extends EntityType
 {
+    /** Default constructor */
     public GhostNetLarge16014828m()
     {
         setCountry(Country.OTHER);

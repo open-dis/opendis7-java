@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65d09a04
- * Country: Egypt (EGY)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5dda768f;
+ * Country: Egypt (EGY);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29807
  */
 public class AquitaineClass extends EntityType
 {
+    /** Default constructor */
     public AquitaineClass()
     {
-        setCountry(Country.EGYPT_EGY);
+        setCountry(Country.COMMENT_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

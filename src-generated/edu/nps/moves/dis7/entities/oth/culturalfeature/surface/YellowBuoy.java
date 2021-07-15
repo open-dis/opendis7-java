@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d626f2
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@213012a0;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SURFACE;
  *
  * Entity type uid: 22954
  */
 public class YellowBuoy extends EntityType
 {
+    /** Default constructor */
     public YellowBuoy()
     {
         setCountry(Country.OTHER);

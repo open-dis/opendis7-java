@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@757277dc
- * Country: Egypt (EGY)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@247bddad;
+ * Country: Egypt (EGY);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 18816
  */
 public class ImprovedRomeoClassType033SSK849 extends EntityType
 {
+    /** Default constructor */
     public ImprovedRomeoClassType033SSK849()
     {
-        setCountry(Country.EGYPT_EGY);
+        setCountry(Country.COMMENT_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SUBSURFACE));
 

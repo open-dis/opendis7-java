@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -18,8 +18,10 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
    /** Field shall identify the damaged entity (see 6.2.28), Section 7.3.4 */
    protected EntityID  damagedEntityID = new EntityID(); 
 
+   /** padding1 is an undescribed parameter... */
    protected short  padding1 = (short)0;
 
+   /** padding2 is an undescribed parameter... */
    protected short  padding2 = (short)0;
 
    /** field shall specify the number of Damage Description records, Section 7.3.5 */
@@ -37,7 +39,7 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -170,7 +172,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -231,7 +233,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

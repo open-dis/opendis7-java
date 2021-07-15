@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@727453a3
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b86cb18;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SURFACE;
  *
  * Entity type uid: 29780
  */
 public class TidalBarragePowerStation extends EntityType
 {
+    /** Default constructor */
     public TidalBarragePowerStation()
     {
         setCountry(Country.OTHER);

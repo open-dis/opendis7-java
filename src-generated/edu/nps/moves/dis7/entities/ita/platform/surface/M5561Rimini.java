@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19ae6bb
- * Country: Italy (ITA)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c398c80;
+ * Country: Italy (ITA);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18357
  */
 public class M5561Rimini extends EntityType
 {
+    /** Default constructor */
     public M5561Rimini()
     {
         setCountry(Country.ITALY_ITA);

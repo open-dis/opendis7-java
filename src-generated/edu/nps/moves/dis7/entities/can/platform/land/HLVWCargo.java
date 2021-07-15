@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35d176f7
- * Country: Canada (CAN)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31610302;
+ * Country: Canada (CAN);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31022
  */
 public class HLVWCargo extends EntityType
 {
+    /** Default constructor */
     public HLVWCargo()
     {
         setCountry(Country.CANADA_CAN);

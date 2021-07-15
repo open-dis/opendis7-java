@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13cc0b90
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47a4eee2;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 25137
  */
 public class SSN778NewHampshire extends EntityType
 {
+    /** Default constructor */
     public SSN778NewHampshire()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

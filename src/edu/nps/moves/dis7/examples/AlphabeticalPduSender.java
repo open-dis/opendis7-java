@@ -31,6 +31,10 @@ public class AlphabeticalPduSender
   private int port;
   InetAddress multicastAddress;
 
+  /** Constructor
+     * @param port socket port number
+     * @param multicast multicast address
+     */
   public AlphabeticalPduSender(int port, String multicast)
   {
     try {
@@ -45,6 +49,7 @@ public class AlphabeticalPduSender
     }
   }
 
+  /** Invocable run method for this object */
   public void run()
   {
     try {
@@ -323,6 +328,9 @@ public class AlphabeticalPduSender
     }
   }
 
+  /** Command-line invocation (CLI)
+    * @param args command-line arguments
+    */
   public static void main(String args[])
   {
     AlphabeticalPduSender sender;

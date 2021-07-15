@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55f45b92
- * Country: Other
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79c5636f;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24631
  */
 public class GenericCoastalTradingVesselCoaster extends EntityType
 {
+    /** Default constructor */
     public GenericCoastalTradingVesselCoaster()
     {
         setCountry(Country.OTHER);

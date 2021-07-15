@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4743a322
- * Country: Saudi Arabia (SAU)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6631cb64;
+ * Country: Saudi Arabia (SAU);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17851
  */
 public class _702Madina extends EntityType
 {
+    /** Default constructor */
     public _702Madina()
     {
         setCountry(Country.SAUDI_ARABIA_SAU);

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 23 marshal size 16<br>
  * RadioSubcategory<br>
  * JETDS Specific Series are reserved in the range 11-100. Each set allows for 255 radios.
@@ -59,11 +59,11 @@ public enum RadioSubcategory implements SubCategory
     /** JETDS FRC Set 1 */
     JETDS_FRC_SET_1 (27, "JETDS FRC Set 1"),
     /** JETDS FRC Set 2 */
-    JETDS_FRC_SET_2 (28, "JETDS FRC Set 2"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "JETDS FRC Set 2"),
     /** JETDS FRC Set 3 */
     JETDS_FRC_SET_3 (29, "JETDS FRC Set 3"),
     /** JETDS FRC Set 4 */
-    JETDS_FRC_SET_4 (30, "JETDS FRC Set 4"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "JETDS FRC Set 4"),
     /** JETDS GRC Set 1 */
     JETDS_GRC_SET_1 (31, "JETDS GRC Set 1"),
     /** JETDS GRC Set 2 */
@@ -95,72 +95,84 @@ public enum RadioSubcategory implements SubCategory
     /** JETDS PRC Set 3 */
     JETDS_PRC_SET_3 (45, "JETDS PRC Set 3"),
     /** JETDS PRC Set 4 */
-    JETDS_PRC_SET_4 (46, "JETDS PRC Set 4"),
+    TIME_SPACE_POSITION_INFORMATION (46, "JETDS PRC Set 4"),
     /** JETDS SRC Set 1 */
     JETDS_SRC_SET_1 (47, "JETDS SRC Set 1"),
     /** JETDS SRC Set 2 */
     JETDS_SRC_SET_2 (48, "JETDS SRC Set 2"),
     /** JETDS SRC Set 3 */
-    JETDS_SRC_SET_3 (49, "JETDS SRC Set 3"),
+    LIVE_ENTITY_FIRE (49, "JETDS SRC Set 3"),
     /** JETDS SRC Set 4 */
-    JETDS_SRC_SET_4 (50, "JETDS SRC Set 4"),
+    LIVE_ENTITY_DETONATION (50, "JETDS SRC Set 4"),
     /** JETDS TRC Set 1 */
-    JETDS_TRC_SET_1 (51, "JETDS TRC Set 1"),
+    CREATE_ENTITY_RELIABLE (51, "JETDS TRC Set 1"),
     /** JETDS TRC Set 2 */
-    JETDS_TRC_SET_2 (52, "JETDS TRC Set 2"),
+    REMOVE_ENTITY_RELIABLE (52, "JETDS TRC Set 2"),
     /** JETDS TRC Set 3 */
-    JETDS_TRC_SET_3 (53, "JETDS TRC Set 3"),
+    START_RESUME_RELIABLE (53, "JETDS TRC Set 3"),
     /** JETDS TRC Set 4 */
-    JETDS_TRC_SET_4 (54, "JETDS TRC Set 4"),
+    STOP_FREEZE_RELIABLE (54, "JETDS TRC Set 4"),
     /** JETDS VRC Set 1 */
-    JETDS_VRC_SET_1 (55, "JETDS VRC Set 1"),
+    ACKNOWLEDGE_RELIABLE (55, "JETDS VRC Set 1"),
     /** JETDS VRC Set 2 */
-    JETDS_VRC_SET_2 (56, "JETDS VRC Set 2"),
+    ACTION_REQUEST_RELIABLE (56, "JETDS VRC Set 2"),
     /** JETDS VRC Set 3 */
-    JETDS_VRC_SET_3 (57, "JETDS VRC Set 3"),
+    ACTION_RESPONSE_RELIABLE (57, "JETDS VRC Set 3"),
     /** JETDS VRC Set 4 */
-    JETDS_VRC_SET_4 (58, "JETDS VRC Set 4"),
+    DATA_QUERY_RELIABLE (58, "JETDS VRC Set 4"),
     /** JETDS WRC Set 1 */
-    JETDS_WRC_SET_1 (59, "JETDS WRC Set 1"),
+    SET_DATA_RELIABLE (59, "JETDS WRC Set 1"),
     /** JETDS WRC Set 2 */
-    JETDS_WRC_SET_2 (60, "JETDS WRC Set 2"),
+    DATA_RELIABLE (60, "JETDS WRC Set 2"),
     /** JETDS WRC Set 3 */
-    JETDS_WRC_SET_3 (61, "JETDS WRC Set 3"),
+    EVENT_REPORT_RELIABLE (61, "JETDS WRC Set 3"),
     /** JETDS WRC Set 4 */
-    JETDS_WRC_SET_4 (62, "JETDS WRC Set 4"),
+    COMMENT_RELIABLE (62, "JETDS WRC Set 4"),
     /** JETDS ZRC Set 1 */
-    JETDS_ZRC_SET_1 (63, "JETDS ZRC Set 1"),
+    RECORD_RELIABLE (63, "JETDS ZRC Set 1"),
     /** JETDS ZRC Set 2 */
-    JETDS_ZRC_SET_2 (64, "JETDS ZRC Set 2"),
+    SET_RECORD_RELIABLE	 (64, "JETDS ZRC Set 2"),
     /** JETDS ZRC Set 3 */
-    JETDS_ZRC_SET_3 (65, "JETDS ZRC Set 3"),
+    RECORD_QUERY_RELIABLE (65, "JETDS ZRC Set 3"),
     /** JETDS ZRC Set 4 */
     JETDS_ZRC_SET_4 (66, "JETDS ZRC Set 4");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     RadioSubcategory(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 16;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static RadioSubcategory getEnumForValue(int i)
     {
        for(RadioSubcategory val: RadioSubcategory.values()) {
@@ -171,22 +183,38 @@ public enum RadioSubcategory implements SubCategory
        return null;
     }
 
- 
-   public void marshal(DataOutputStream dos) throws IOException
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
+    public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.putShort((short)getValue());
     }
-
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static RadioSubcategory unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static RadioSubcategory unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
         return getEnumForValue(byteBuffer.getShort());

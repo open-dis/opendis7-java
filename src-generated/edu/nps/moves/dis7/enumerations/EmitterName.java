@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 75 marshal size 16<br>
  * EmitterName
  */
@@ -50,26 +50,26 @@ public enum EmitterName
     _5P_10E_MOD (22, "5P-10E MOD"),
     /** 621A-3 */
     _621A_3 (25, "621A-3"),
-    /** COMMID_860F-1AL-101 */
-    COMMID_860F_1AL_101 (40, "COMMID_860F-1AL-101"),
+    /** COMMID_860F-1  AL-101 */
+    COMMID_860F_1_AL_101 (40, "COMMID_860F-1  AL-101"),
     /** 1226 DECCA MIL */
     _1226_DECCA_MIL (45, "1226 DECCA MIL"),
     /** 9B-1348 */
-    _9B_1348 (46, "9B-1348"),
+    TIME_SPACE_POSITION_INFORMATION (46, "9B-1348"),
     /** 3KM6 */
     _3KM6 (47, "3KM6"),
     /** 9KR400 */
     _9KR400 (48, "9KR400"),
     /** 55G6-1 */
-    _55G6_1 (50, "55G6-1"),
+    LIVE_ENTITY_DETONATION (50, "55G6-1"),
     /** 59N6 */
-    _59N6 (55, "59N6"),
+    ACKNOWLEDGE_RELIABLE (55, "59N6"),
     /** 67N6 */
-    _67N6 (60, "67N6"),
+    DATA_RELIABLE (60, "67N6"),
     /** 76T6 */
-    _76T6 (63, "76T6"),
+    RECORD_RELIABLE (63, "76T6"),
     /** 80K6 */
-    _80K6 (65, "80K6"),
+    RECORD_QUERY_RELIABLE (65, "80K6"),
     /** 96L6E */
     _96L6E (70, "96L6E"),
     /** 9GR400 */
@@ -1064,8 +1064,8 @@ public enum EmitterName
     APAR (7765, "APAR"),
     /** Aparna */
     APARNA (7770, "Aparna"),
-    /** COMMID_ApelcoAD77 */
-    COMMID_APELCOAD77 (7785, "COMMID_ApelcoAD77"),
+    /** COMMID_Apelco AD 7 7 */
+    COMMID_APELCO_AD_7_7 (7785, "COMMID_Apelco AD 7 7"),
     /** APG 71 */
     APG_71 (7830, "APG 71"),
     /** APN 148 */
@@ -1086,8 +1086,8 @@ public enum EmitterName
     AR_1 (8103, "AR-1"),
     /** AR 3D */
     AR_3D (8105, "AR 3D"),
-    /** COMMID_PlesseyAR-5 */
-    COMMID_PLESSEYAR_5 (8112, "COMMID_PlesseyAR-5"),
+    /** COMMID_Plessey AR-5 */
+    COMMID_PLESSEY_AR_5 (8112, "COMMID_Plessey AR-5"),
     /** COMMID_AR-15 */
     COMMID_AR_15 (8113, "COMMID_AR-15"),
     /** AR-15/2 */
@@ -1102,8 +1102,8 @@ public enum EmitterName
     ARBALET_52 (8121, "Arbalet-52"),
     /** ARBB-31 */
     ARBB_31 (8122, "ARBB-31"),
-    /** COMMID_ARBB33 */
-    COMMID_ARBB33 (8123, "COMMID_ARBB33"),
+    /** COMMID_ARBB 33 */
+    COMMID_ARBB_33 (8123, "COMMID_ARBB 33"),
     /** COMMID_ARIES */
     COMMID_ARIES (8126, "COMMID_ARIES"),
     /** ARGS-14E */
@@ -1136,14 +1136,14 @@ public enum EmitterName
     ARI_5991 (8285, "ARI 5991"),
     /** ARI 5995 */
     ARI_5995 (8290, "ARI 5995"),
-    /** COMMID_ARINC564BNDXKINGRDR1E */
-    COMMID_ARINC564BNDXKINGRDR1E (8325, "COMMID_ARINC564BNDXKINGRDR1E"),
-    /** COMMID_ARINC700BNDXKINGRDR1E */
-    COMMID_ARINC700BNDXKINGRDR1E (8370, "COMMID_ARINC700BNDXKINGRDR1E"),
+    /** COMMID_ARINC 564 BNDXKING RDR 1E */
+    COMMID_ARINC_564_BNDXKING_RDR_1E (8325, "COMMID_ARINC 564 BNDXKING RDR 1E"),
+    /** COMMID_ARINC 700 BNDXKING RDR 1E */
+    COMMID_ARINC_700_BNDXKING_RDR_1E (8370, "COMMID_ARINC 700 BNDXKING RDR 1E"),
     /** ARK-1 */
     ARK_1 (8375, "ARK-1"),
-    /** COMMID_ARL-MMTI */
-    COMMID_ARL_MMTI (8378, "COMMID_ARL-MMTI"),
+    /** COMMID_ARL-M MTI */
+    COMMID_ARL_M_MTI (8378, "COMMID_ARL-M MTI"),
     /** ARMOR */
     ARMOR (8379, "ARMOR"),
     /** ARSR-3 */
@@ -1162,32 +1162,32 @@ public enum EmitterName
     ARTHUR_MOD_B (8400, "ARTHUR MOD B"),
     /** ARTHUR MOD C */
     ARTHUR_MOD_C (8405, "ARTHUR MOD C"),
-    /** NATOID_AS2Kipper */
-    NATOID_AS2KIPPER (8415, "NATOID_AS2Kipper"),
-    /** NATOID_AS2KipperMH */
-    NATOID_AS2KIPPERMH (8460, "NATOID_AS2KipperMH"),
+    /** NATOID_AS 2 Kipper */
+    NATOID_AS_2_KIPPER (8415, "NATOID_AS 2 Kipper"),
+    /** NATOID_AS 2 Kipper MH */
+    NATOID_AS_2_KIPPER_MH (8460, "NATOID_AS 2 Kipper MH"),
     /** AS 3 YJ-83K mmW MH */
     AS_3_YJ_83K_MMW_MH (8470, "AS 3 YJ-83K mmW MH"),
     /** AS.34 Kormoran Seeker */
     AS34_KORMORAN_SEEKER (8480, "AS.34 Kormoran Seeker"),
-    /** NATOID_AS4Kitchen */
-    NATOID_AS4KITCHEN (8505, "NATOID_AS4Kitchen"),
-    /** NATOID_AS4KitchenMH */
-    NATOID_AS4KITCHENMH (8550, "NATOID_AS4KitchenMH"),
-    /** NATOID_AS5KeltMH */
-    NATOID_AS5KELTMH (8595, "NATOID_AS5KeltMH"),
-    /** NATOID_AS6KingfishMH */
-    NATOID_AS6KINGFISHMH (8640, "NATOID_AS6KingfishMH"),
-    /** NATOID_AS7Kerry */
-    NATOID_AS7KERRY (8685, "NATOID_AS7Kerry"),
-    /** NATOID_AS7KerryMG */
-    NATOID_AS7KERRYMG (8730, "NATOID_AS7KerryMG"),
-    /** NATOID_AS15KENTaltimeter */
-    NATOID_AS15KENTALTIMETER (8735, "NATOID_AS15KENTaltimeter"),
-    /** NATOID_AS-17AKryptonSeeker */
-    NATOID_AS_17AKRYPTONSEEKER (8736, "NATOID_AS-17AKryptonSeeker"),
-    /** NATOID_AS-17BKryptonSeeker */
-    NATOID_AS_17BKRYPTONSEEKER (8737, "NATOID_AS-17BKryptonSeeker"),
+    /** NATOID_AS 4 Kitchen */
+    NATOID_AS_4_KITCHEN (8505, "NATOID_AS 4 Kitchen"),
+    /** NATOID_AS 4 Kitchen MH */
+    NATOID_AS_4_KITCHEN_MH (8550, "NATOID_AS 4 Kitchen MH"),
+    /** NATOID_AS 5 Kelt MH */
+    NATOID_AS_5_KELT_MH (8595, "NATOID_AS 5 Kelt MH"),
+    /** NATOID_AS 6 Kingfish MH */
+    NATOID_AS_6_KINGFISH_MH (8640, "NATOID_AS 6 Kingfish MH"),
+    /** NATOID_AS 7 Kerry */
+    NATOID_AS_7_KERRY (8685, "NATOID_AS 7 Kerry"),
+    /** NATOID_AS 7 Kerry MG */
+    NATOID_AS_7_KERRY_MG (8730, "NATOID_AS 7 Kerry MG"),
+    /** NATOID_AS 15 KENT altimeter */
+    NATOID_AS_15_KENT_ALTIMETER (8735, "NATOID_AS 15 KENT altimeter"),
+    /** NATOID_AS-17A Krypton Seeker */
+    NATOID_AS_17A_KRYPTON_SEEKER (8736, "NATOID_AS-17A Krypton Seeker"),
+    /** NATOID_AS-17B Krypton Seeker */
+    NATOID_AS_17B_KRYPTON_SEEKER (8737, "NATOID_AS-17B Krypton Seeker"),
     /** COMMID_AS901 */
     COMMID_AS901 (8750, "COMMID_AS901"),
     /** AS901A */
@@ -1236,16 +1236,16 @@ public enum EmitterName
     ASR_11_DASR (8793, "ASR-11/DASR"),
     /** ASR-12 */
     ASR_12_2 (8795, "ASR-12"),
-    /** COMMID_RaytheonASR-10SS */
-    COMMID_RAYTHEONASR_10SS (8812, "COMMID_RaytheonASR-10SS"),
+    /** COMMID_Raytheon ASR-10SS */
+    COMMID_RAYTHEON_ASR_10SS (8812, "COMMID_Raytheon ASR-10SS"),
     /** ASR-23SS */
     ASR_23SS (8816, "ASR-23SS"),
     /** Arabel */
     ARABEL (8818, "Arabel"),
     /** COMMID_ASTRE */
     COMMID_ASTRE (8819, "COMMID_ASTRE"),
-    /** NATOID_AT2SwatterMG */
-    NATOID_AT2SWATTERMG (8820, "NATOID_AT2SwatterMG"),
+    /** NATOID_AT 2 Swatter MG */
+    NATOID_AT_2_SWATTER_MG (8820, "NATOID_AT 2 Swatter MG"),
     /** 9K114 Shturm MG */
     _9K114_SHTURM_MG (8824, "9K114 Shturm MG"),
     /** ATCR-22 */
@@ -1266,14 +1266,14 @@ public enum EmitterName
     ATCR_44 (8848, "ATCR-44"),
     /** ATCR-44 K */
     ATCR_44_K (8849, "ATCR-44 K"),
-    /** COMMID_Argos73 */
-    COMMID_ARGOS73 (8850, "COMMID_Argos73"),
+    /** COMMID_Argos 73 */
+    COMMID_ARGOS_73 (8850, "COMMID_Argos 73"),
     /** ATCR-44 M/S */
     ATCR_44_M_S (8851, "ATCR-44 M/S"),
     /** ATCR-4T */
     ATCR_4T (8852, "ATCR-4T"),
-    /** COMMID_AtlasElektronkTRSN */
-    COMMID_ATLASELEKTRONKTRSN (8865, "COMMID_AtlasElektronkTRSN"),
+    /** COMMID_Atlas Elektronk TRS N */
+    COMMID_ATLAS_ELEKTRONK_TRS_N (8865, "COMMID_Atlas Elektronk TRS N"),
     /** ATLAS-8600X */
     ATLAS_8600X (8866, "ATLAS-8600X"),
     /** Atlas-9600M */
@@ -1298,10 +1298,10 @@ public enum EmitterName
     AVIA_D (8985, "AVIA D"),
     /** COMMID_Aviaconversia */
     COMMID_AVIACONVERSIA (8990, "COMMID_Aviaconversia"),
-    /** COMMID_AviaconversiaII */
-    COMMID_AVIACONVERSIAII (8993, "COMMID_AviaconversiaII"),
-    /** COMMID_AviaconversiaIII */
-    COMMID_AVIACONVERSIAIII (8995, "COMMID_AviaconversiaIII"),
+    /** COMMID_Aviaconversia II */
+    COMMID_AVIACONVERSIA_II (8993, "COMMID_Aviaconversia II"),
+    /** COMMID_Aviaconversia III */
+    COMMID_AVIACONVERSIA_III (8995, "COMMID_Aviaconversia III"),
     /** AVQ 20 */
     AVQ_20 (9000, "AVQ 20"),
     /** AVQ-21 */
@@ -1322,78 +1322,78 @@ public enum EmitterName
     B597Z (9200, "B597Z"),
     /** B636Z */
     B636Z (9205, "B636Z"),
-    /** NATOID_BackBoard */
-    NATOID_BACKBOARD (9215, "NATOID_BackBoard"),
-    /** NATOID_BackNetAB */
-    NATOID_BACKNETAB (9225, "NATOID_BackNetAB"),
-    /** NATOID_BackTrap */
-    NATOID_BACKTRAP (9270, "NATOID_BackTrap"),
-    /** COMMID_BAESystemsRT-1805APN */
-    COMMID_BAESYSTEMSRT_1805APN (9280, "COMMID_BAESystemsRT-1805APN"),
+    /** NATOID_Back Board */
+    NATOID_BACK_BOARD (9215, "NATOID_Back Board"),
+    /** NATOID_Back Net A B */
+    NATOID_BACK_NET_A_B (9225, "NATOID_Back Net A B"),
+    /** NATOID_Back Trap */
+    NATOID_BACK_TRAP (9270, "NATOID_Back Trap"),
+    /** COMMID_BAE Systems RT-1805APN */
+    COMMID_BAE_SYSTEMS_RT_1805APN (9280, "COMMID_BAE Systems RT-1805APN"),
     /** Balance Beam */
     BALANCE_BEAM (9285, "Balance Beam"),
     /** BALTIKA-B */
     BALTIKA_B (9300, "BALTIKA-B"),
     /** BALTYK */
     BALTYK (9310, "BALTYK"),
-    /** NATOID_BallEnd */
-    NATOID_BALLEND (9315, "NATOID_BallEnd"),
-    /** NATOID_BallGun */
-    NATOID_BALLGUN (9360, "NATOID_BallGun"),
-    /** NATOID_BandStand */
-    NATOID_BANDSTAND (9405, "NATOID_BandStand"),
-    /** COMMID_BandStand3 */
-    COMMID_BANDSTAND3 (9406, "COMMID_BandStand3"),
+    /** NATOID_Ball End */
+    NATOID_BALL_END (9315, "NATOID_Ball End"),
+    /** NATOID_Ball Gun */
+    NATOID_BALL_GUN (9360, "NATOID_Ball Gun"),
+    /** NATOID_Band Stand */
+    NATOID_BAND_STAND (9405, "NATOID_Band Stand"),
+    /** COMMID_Band Stand 3 */
+    COMMID_BAND_STAND_3 (9406, "COMMID_Band Stand 3"),
     /** P-35/37 (A); P-50 (B) */
     P_35_37_A_P_50_B (9450, "P-35/37 (A); P-50 (B)"),
     /** BARAX */
     BARAX (9475, "BARAX"),
     /** BASIR-110D */
     BASIR_110D (9485, "BASIR-110D"),
-    /** NATOID_BassTilt */
-    NATOID_BASSTILT (9495, "NATOID_BassTilt"),
+    /** NATOID_Bass Tilt */
+    NATOID_BASS_TILT (9495, "NATOID_Bass Tilt"),
     /** Badger */
     BADGER (9505, "Badger"),
     /** NATOID_Beacon */
     NATOID_BEACON (9540, "NATOID_Beacon"),
-    /** NATOID_BeanSticks */
-    NATOID_BEANSTICKS (9585, "NATOID_BeanSticks"),
-    /** NATOID_BeeHind */
-    NATOID_BEEHIND (9630, "NATOID_BeeHind"),
-    /** NATOID_BellCrownA */
-    NATOID_BELLCROWNA (9640, "NATOID_BellCrownA"),
-    /** NATOID_BellCrownB */
-    NATOID_BELLCROWNB (9642, "NATOID_BellCrownB"),
-    /** NATOID_BellSquat */
-    NATOID_BELLSQUAT (9643, "NATOID_BellSquat"),
-    /** NATOID_BIGBACK */
-    NATOID_BIGBACK (9645, "NATOID_BIGBACK"),
-    /** NATOID_BigBirdABC */
-    NATOID_BIGBIRDABC (9659, "NATOID_BigBirdABC"),
-    /** NATOID_BigBirdD */
-    NATOID_BIGBIRDD (9660, "NATOID_BigBirdD"),
-    /** NATOID_BigBirdDMod */
-    NATOID_BIGBIRDDMOD (9661, "NATOID_BigBirdDMod"),
-    /** NATOID_BigBulge */
-    NATOID_BIGBULGE (9675, "NATOID_BigBulge"),
-    /** NATOID_BigBulgeA */
-    NATOID_BIGBULGEA (9720, "NATOID_BigBulgeA"),
-    /** NATOID_BigBulgeB */
-    NATOID_BIGBULGEB (9765, "NATOID_BigBulgeB"),
-    /** COMMID_BIGEYE */
-    COMMID_BIGEYE (9775, "COMMID_BIGEYE"),
+    /** NATOID_Bean Sticks */
+    NATOID_BEAN_STICKS (9585, "NATOID_Bean Sticks"),
+    /** NATOID_Bee Hind */
+    NATOID_BEE_HIND (9630, "NATOID_Bee Hind"),
+    /** NATOID_Bell Crown A */
+    NATOID_BELL_CROWN_A (9640, "NATOID_Bell Crown A"),
+    /** NATOID_Bell Crown B */
+    NATOID_BELL_CROWN_B (9642, "NATOID_Bell Crown B"),
+    /** NATOID_Bell Squat */
+    NATOID_BELL_SQUAT (9643, "NATOID_Bell Squat"),
+    /** NATOID_BIG BACK */
+    NATOID_BIG_BACK (9645, "NATOID_BIG BACK"),
+    /** NATOID_Big Bird ABC */
+    NATOID_BIG_BIRD_ABC (9659, "NATOID_Big Bird ABC"),
+    /** NATOID_Big Bird D */
+    NATOID_BIG_BIRD_D (9660, "NATOID_Big Bird D"),
+    /** NATOID_Big Bird D Mod */
+    NATOID_BIG_BIRD_D_MOD (9661, "NATOID_Big Bird D Mod"),
+    /** NATOID_Big Bulge */
+    NATOID_BIG_BULGE (9675, "NATOID_Big Bulge"),
+    /** NATOID_Big Bulge A */
+    NATOID_BIG_BULGE_A (9720, "NATOID_Big Bulge A"),
+    /** NATOID_Big Bulge B */
+    NATOID_BIG_BULGE_B (9765, "NATOID_Big Bulge B"),
+    /** COMMID_BIG EYE */
+    COMMID_BIG_EYE (9775, "COMMID_BIG EYE"),
     /** SNAR-10 */
     SNAR_10 (9780, "SNAR-10"),
-    /** COMMID_BIGHEADB */
-    COMMID_BIGHEADB (9781, "COMMID_BIGHEADB"),
-    /** NATOID_BigMesh */
-    NATOID_BIGMESH (9810, "NATOID_BigMesh"),
-    /** NATOID_BigNet */
-    NATOID_BIGNET (9855, "NATOID_BigNet"),
+    /** COMMID_BIG HEAD B */
+    COMMID_BIG_HEAD_B (9781, "COMMID_BIG HEAD B"),
+    /** NATOID_Big Mesh */
+    NATOID_BIG_MESH (9810, "NATOID_Big Mesh"),
+    /** NATOID_Big Net */
+    NATOID_BIG_NET (9855, "NATOID_Big Net"),
     /** 9S15MT */
     _9S15MT (9885, "9S15MT"),
-    /** NATOID_BillFold */
-    NATOID_BILLFOLD (9900, "NATOID_BillFold"),
+    /** NATOID_Bill Fold */
+    NATOID_BILL_FOLD (9900, "NATOID_Bill Fold"),
     /** BLIGHTER 400 */
     BLIGHTER_400 (9903, "BLIGHTER 400"),
     /** Blowpipe MG */
@@ -1414,20 +1414,20 @@ public enum EmitterName
     BLUE_ORCHID (10035, "Blue Orchid"),
     /** BM/DJG-8715 */
     BM_DJG_8715 (10057, "BM/DJG-8715"),
-    /** NATOID_BoatSail */
-    NATOID_BOATSAIL (10080, "NATOID_BoatSail"),
+    /** NATOID_Boat Sail */
+    NATOID_BOAT_SAIL (10080, "NATOID_Boat Sail"),
     /** BOR-A 550 */
     BOR_A_550 (10090, "BOR-A 550"),
-    /** COMMID_BoforsElectronic9LV331 */
-    COMMID_BOFORSELECTRONIC9LV331 (10125, "COMMID_BoforsElectronic9LV331"),
-    /** COMMID_BoforsEricssonSeaGiraffe50HC */
-    COMMID_BOFORSERICSSONSEAGIRAFFE50HC (10170, "COMMID_BoforsEricssonSeaGiraffe50HC"),
-    /** NATOID_BowlMesh */
-    NATOID_BOWLMESH (10215, "NATOID_BowlMesh"),
-    /** NATOID_BoxBrick */
-    NATOID_BOXBRICK (10260, "NATOID_BoxBrick"),
-    /** NATOID_BoxTail */
-    NATOID_BOXTAIL (10305, "NATOID_BoxTail"),
+    /** COMMID_Bofors Electronic 9LV 331 */
+    COMMID_BOFORS_ELECTRONIC_9LV_331 (10125, "COMMID_Bofors Electronic 9LV 331"),
+    /** COMMID_Bofors Ericsson Sea Giraffe 50 HC */
+    COMMID_BOFORS_ERICSSON_SEA_GIRAFFE_50_HC (10170, "COMMID_Bofors Ericsson Sea Giraffe 50 HC"),
+    /** NATOID_Bowl Mesh */
+    NATOID_BOWL_MESH (10215, "NATOID_Bowl Mesh"),
+    /** NATOID_Box Brick */
+    NATOID_BOX_BRICK (10260, "NATOID_Box Brick"),
+    /** NATOID_Box Tail */
+    NATOID_BOX_TAIL (10305, "NATOID_Box Tail"),
     /** BM/KG 8601/8605/8606 */
     BM_KG_8601_8605_8606 (10315, "BM/KG 8601/8605/8606"),
     /** BPS 11A */
@@ -1442,16 +1442,16 @@ public enum EmitterName
     BRAHMOS (10500, "BrahMos"),
     /** COMMID_BridgeMaster */
     COMMID_BRIDGEMASTER (10510, "COMMID_BridgeMaster"),
-    /** COMMID_BridgeMasterEEPA */
-    COMMID_BRIDGEMASTEREEPA (10511, "COMMID_BridgeMasterEEPA"),
-    /** COMMID_BridgeMasterEATAandARPA */
-    COMMID_BRIDGEMASTEREATAANDARPA (10512, "COMMID_BridgeMasterEATAandARPA"),
-    /** COMMID_BridgeMasterEnaval */
-    COMMID_BRIDGEMASTERENAVAL (10513, "COMMID_BridgeMasterEnaval"),
+    /** COMMID_BridgeMaster E EPA */
+    COMMID_BRIDGEMASTER_E_EPA (10511, "COMMID_BridgeMaster E EPA"),
+    /** COMMID_BridgeMaster E ATA and ARPA */
+    COMMID_BRIDGEMASTER_E_ATA_AND_ARPA (10512, "COMMID_BridgeMaster E ATA and ARPA"),
+    /** COMMID_BridgeMaster E naval */
+    COMMID_BRIDGEMASTER_E_NAVAL (10513, "COMMID_BridgeMaster E naval"),
     /** Brimstone mmW MH */
     BRIMSTONE_MMW_MH (10520, "Brimstone mmW MH"),
-    /** NATOID_BreadBin */
-    NATOID_BREADBIN (10530, "NATOID_BreadBin"),
+    /** NATOID_Bread Bin */
+    NATOID_BREAD_BIN (10530, "NATOID_Bread Bin"),
     /** Asr */
     ASR (10540, "Asr"),
     /** BT 271 */
@@ -1466,8 +1466,8 @@ public enum EmitterName
     BURAN_D (10642, "Buran-D"),
     /** BUREVISNYK-1 */
     BUREVISNYK_1 (10650, "BUREVISNYK-1"),
-    /** NATOID_BuzzStand */
-    NATOID_BUZZSTAND (10665, "NATOID_BuzzStand"),
+    /** NATOID_Buzz Stand */
+    NATOID_BUZZ_STAND (10665, "NATOID_Buzz Stand"),
     /** C 5A Multi Mode Radar */
     C_5A_MULTI_MODE_RADAR (10710, "C 5A Multi Mode Radar"),
     /** C-802 AL */
@@ -1476,8 +1476,8 @@ public enum EmitterName
     COMMID_CAESAR (10740, "COMMID_CAESAR"),
     /** Caiman */
     CAIMAN (10755, "Caiman"),
-    /** NATOID_CakeStand */
-    NATOID_CAKESTAND (10800, "NATOID_CakeStand"),
+    /** NATOID_Cake Stand */
+    NATOID_CAKE_STAND (10800, "NATOID_Cake Stand"),
     /** Calypso C61 */
     CALYPSO_C61 (10845, "Calypso C61"),
     /** Calypso C63 */
@@ -1488,14 +1488,14 @@ public enum EmitterName
     CALYPSO_III (10891, "Calypso III"),
     /** Calypso IV */
     CALYPSO_IV (10892, "Calypso IV"),
-    /** COMMID_CardionCoastal */
-    COMMID_CARDIONCOASTAL (10895, "COMMID_CardionCoastal"),
+    /** COMMID_Cardion Coastal */
+    COMMID_CARDION_COASTAL (10895, "COMMID_Cardion Coastal"),
     /** Castor Ii */
     CASTOR_II (10935, "Castor Ii"),
     /** Castor 2J TT (Crotale NG) */
     CASTOR_2J_TT_CROTALE_NG (10940, "Castor 2J TT (Crotale NG)"),
-    /** NATOID_CatHouse */
-    NATOID_CATHOUSE (10980, "NATOID_CatHouse"),
+    /** NATOID_Cat House */
+    NATOID_CAT_HOUSE (10980, "NATOID_Cat House"),
     /** CDR-431 */
     CDR_431 (10985, "CDR-431"),
     /** CEAFAR */
@@ -1508,16 +1508,16 @@ public enum EmitterName
     CEROS_200_CWI (10991, "CEROS 200 CWI"),
     /** CH/SS-N-6 */
     CH_SS_N_6 (10995, "CH/SS-N-6"),
-    /** NATOID_ChairBackTT */
-    NATOID_CHAIRBACKTT (11000, "NATOID_ChairBackTT"),
-    /** NATOID_ChairBackILL */
-    NATOID_CHAIRBACKILL (11010, "NATOID_ChairBackILL"),
+    /** NATOID_Chair Back TT */
+    NATOID_CHAIR_BACK_TT (11000, "NATOID_Chair Back TT"),
+    /** NATOID_Chair Back ILL */
+    NATOID_CHAIR_BACK_ILL (11010, "NATOID_Chair Back ILL"),
     /** LEMZ 96L6 */
     LEMZ_96L6 (11020, "LEMZ 96L6"),
-    /** NATOID_CheeseBrick */
-    NATOID_CHEESEBRICK (11025, "NATOID_CheeseBrick"),
-    /** NATOID_CheeseCake */
-    NATOID_CHEESECAKE (11030, "NATOID_CheeseCake"),
+    /** NATOID_Cheese Brick */
+    NATOID_CHEESE_BRICK (11025, "NATOID_Cheese Brick"),
+    /** NATOID_Cheese Cake */
+    NATOID_CHEESE_CAKE (11030, "NATOID_Cheese Cake"),
     /** Clam Pipe */
     CLAM_PIPE (11070, "Clam Pipe"),
     /** NATOID_Clamshell */
@@ -1540,24 +1540,24 @@ public enum EmitterName
     COBRA_SHOE (11133, "Cobra Shoe"),
     /** Colibri */
     COLIBRI (11137, "Colibri"),
-    /** COMMID_CollinsWXR-300 */
-    COMMID_COLLINSWXR_300 (11155, "COMMID_CollinsWXR-300"),
-    /** COMMID_CollinsWXR-700X */
-    COMMID_COLLINSWXR_700X (11160, "COMMID_CollinsWXR-700X"),
+    /** COMMID_Collins WXR-300 */
+    COMMID_COLLINS_WXR_300 (11155, "COMMID_Collins WXR-300"),
+    /** COMMID_Collins WXR-700X */
+    COMMID_COLLINS_WXR_700X (11160, "COMMID_Collins WXR-700X"),
     /** Collins TWR-850 */
     COLLINS_TWR_850 (11165, "Collins TWR-850"),
-    /** COMMID_CollinsDN101 */
-    COMMID_COLLINSDN101 (11205, "COMMID_CollinsDN101"),
+    /** COMMID_Collins DN 101 */
+    COMMID_COLLINS_DN_101 (11205, "COMMID_Collins DN 101"),
     /** NATOID_COMET-1 */
     NATOID_COMET_1 (11230, "NATOID_COMET-1"),
     /** CONDOR MK 2 */
     CONDOR_MK_2 (11235, "CONDOR MK 2"),
-    /** COMMID_ConsiliumSelesmarRTM25XIM */
-    COMMID_CONSILIUMSELESMARRTM25XIM (11240, "COMMID_ConsiliumSelesmarRTM25XIM"),
-    /** COMMID_ContravesSeaHunterMK4 */
-    COMMID_CONTRAVESSEAHUNTERMK4 (11250, "COMMID_ContravesSeaHunterMK4"),
-    /** NATOID_CornCan */
-    NATOID_CORNCAN (11260, "NATOID_CornCan"),
+    /** COMMID_Consilium Selesmar RTM 25 XIM */
+    COMMID_CONSILIUM_SELESMAR_RTM_25_XIM (11240, "COMMID_Consilium Selesmar RTM 25 XIM"),
+    /** COMMID_Contraves Sea Hunter MK 4 */
+    COMMID_CONTRAVES_SEA_HUNTER_MK_4 (11250, "COMMID_Contraves Sea Hunter MK 4"),
+    /** NATOID_Corn Can */
+    NATOID_CORN_CAN (11260, "NATOID_Corn Can"),
     /** COSMO SKYMED-1 */
     COSMO_SKYMED_1 (11265, "COSMO SKYMED-1"),
     /** CR-105 RMCA */
@@ -1566,22 +1566,22 @@ public enum EmitterName
     CREW_DUKE_2 (11280, "CREW Duke 2"),
     /** CREW Duke 3 */
     CREW_DUKE_3 (11290, "CREW Duke 3"),
-    /** NATOID_CrossBird */
-    NATOID_CROSSBIRD (11295, "NATOID_CrossBird"),
-    /** NATOID_CrossDome */
-    NATOID_CROSSDOME (11340, "NATOID_CrossDome"),
-    /** NATOID_CrossLegs */
-    NATOID_CROSSLEGS (11385, "NATOID_CrossLegs"),
-    /** NATOID_CrossOut */
-    NATOID_CROSSOUT (11430, "NATOID_CrossOut"),
-    /** NATOID_CrossSlot */
-    NATOID_CROSSSLOT (11475, "NATOID_CrossSlot"),
-    /** NATOID_CrossSword */
-    NATOID_CROSSSWORD (11520, "NATOID_CrossSword"),
-    /** NATOID_CrossUp */
-    NATOID_CROSSUP (11565, "NATOID_CrossUp"),
-    /** NATOID_CrossSwordFC */
-    NATOID_CROSSSWORDFC (11610, "NATOID_CrossSwordFC"),
+    /** NATOID_Cross Bird */
+    NATOID_CROSS_BIRD (11295, "NATOID_Cross Bird"),
+    /** NATOID_Cross Dome */
+    NATOID_CROSS_DOME (11340, "NATOID_Cross Dome"),
+    /** NATOID_Cross Legs */
+    NATOID_CROSS_LEGS (11385, "NATOID_Cross Legs"),
+    /** NATOID_Cross Out */
+    NATOID_CROSS_OUT (11430, "NATOID_Cross Out"),
+    /** NATOID_Cross Slot */
+    NATOID_CROSS_SLOT (11475, "NATOID_Cross Slot"),
+    /** NATOID_Cross Sword */
+    NATOID_CROSS_SWORD (11520, "NATOID_Cross Sword"),
+    /** NATOID_Cross Up */
+    NATOID_CROSS_UP (11565, "NATOID_Cross Up"),
+    /** NATOID_Cross Sword FC */
+    NATOID_CROSS_SWORD_FC (11610, "NATOID_Cross Sword FC"),
     /** Crotale Acquisition TA */
     CROTALE_ACQUISITION_TA (11655, "Crotale Acquisition TA"),
     /** Crotale NG TA */
@@ -1606,16 +1606,16 @@ public enum EmitterName
     CSS_N_4_SARDINE (11800, "CSS-N-4 Sardine"),
     /** CSS-N-8 Saccade */
     CSS_N_8_SACCADE (11810, "CSS-N-8 Saccade"),
-    /** NATOID_CurlStoneB */
-    NATOID_CURLSTONEB (11825, "NATOID_CurlStoneB"),
+    /** NATOID_Curl Stone B */
+    NATOID_CURL_STONE_B (11825, "NATOID_Curl Stone B"),
     /** CWS-1 */
     CWS_1 (11830, "CWS-1"),
     /** CWS 2 */
     CWS_2 (11835, "CWS 2"),
     /** CWS-3 */
     CWS_3 (11840, "CWS-3"),
-    /** NATOID_CylinderHead */
-    NATOID_CYLINDERHEAD (11880, "NATOID_CylinderHead"),
+    /** NATOID_Cylinder Head */
+    NATOID_CYLINDER_HEAD (11880, "NATOID_Cylinder Head"),
     /** Cymbeline */
     CYMBELINE (11902, "Cymbeline"),
     /** Cyrano II */
@@ -1636,86 +1636,86 @@ public enum EmitterName
     NATOID_DAWN (12060, "NATOID_Dawn"),
     /** DCR */
     DCR (12090, "DCR"),
-    /** NATOID_DeadDuck */
-    NATOID_DEADDUCK (12105, "NATOID_DeadDuck"),
-    /** COMMID_DECCA-20V909 */
-    COMMID_DECCA_20V909 (12110, "COMMID_DECCA-20V909"),
-    /** COMMID_DECCA-20V90S */
-    COMMID_DECCA_20V90S (12111, "COMMID_DECCA-20V90S"),
-    /** COMMID_DECCA45 */
-    COMMID_DECCA45 (12150, "COMMID_DECCA45"),
-    /** COMMID_DECCA50 */
-    COMMID_DECCA50 (12195, "COMMID_DECCA50"),
-    /** COMMID_DECCA71 */
-    COMMID_DECCA71 (12196, "COMMID_DECCA71"),
+    /** NATOID_Dead Duck */
+    NATOID_DEAD_DUCK (12105, "NATOID_Dead Duck"),
+    /** COMMID_DECCA-20 V909 */
+    COMMID_DECCA_20_V909 (12110, "COMMID_DECCA-20 V909"),
+    /** COMMID_DECCA-20 V90S */
+    COMMID_DECCA_20_V90S (12111, "COMMID_DECCA-20 V90S"),
+    /** COMMID_DECCA 45 */
+    COMMID_DECCA_45 (12150, "COMMID_DECCA 45"),
+    /** COMMID_DECCA 50 */
+    COMMID_DECCA_50 (12195, "COMMID_DECCA 50"),
+    /** COMMID_DECCA 71 */
+    COMMID_DECCA_71 (12196, "COMMID_DECCA 71"),
     /** Decca 72 */
     DECCA_72 (12197, "Decca 72"),
-    /** COMMID_DECCA110 */
-    COMMID_DECCA110 (12240, "COMMID_DECCA110"),
-    /** COMMID_DECCA170 */
-    COMMID_DECCA170 (12285, "COMMID_DECCA170"),
-    /** COMMID_DECCAHF2 */
-    COMMID_DECCAHF2 (12292, "COMMID_DECCAHF2"),
-    /** COMMID_DECCA202 */
-    COMMID_DECCA202 (12330, "COMMID_DECCA202"),
-    /** COMMID_DECCAD202 */
-    COMMID_DECCAD202 (12375, "COMMID_DECCAD202"),
-    /** COMMID_DECCA303 */
-    COMMID_DECCA303 (12420, "COMMID_DECCA303"),
-    /** COMMID_DECCA535 */
-    COMMID_DECCA535 (12430, "COMMID_DECCA535"),
-    /** COMMID_DECCA626 */
-    COMMID_DECCA626 (12465, "COMMID_DECCA626"),
-    /** COMMID_DECCA629 */
-    COMMID_DECCA629 (12510, "COMMID_DECCA629"),
-    /** COMMID_DECCA914 */
-    COMMID_DECCA914 (12555, "COMMID_DECCA914"),
-    /** COMMID_DECCA916 */
-    COMMID_DECCA916 (12600, "COMMID_DECCA916"),
-    /** COMMID_DECCA926 */
-    COMMID_DECCA926 (12610, "COMMID_DECCA926"),
-    /** COMMID_DECCA1070A */
-    COMMID_DECCA1070A (12615, "COMMID_DECCA1070A"),
-    /** COMMID_Decca1008 */
-    COMMID_DECCA1008 (12616, "COMMID_Decca1008"),
-    /** COMMID_DECCA1226Commercial */
-    COMMID_DECCA1226COMMERCIAL (12645, "COMMID_DECCA1226Commercial"),
-    /** COMMID_DECCA1290 */
-    COMMID_DECCA1290 (12655, "COMMID_DECCA1290"),
-    /** COMMID_DECCA1626 */
-    COMMID_DECCA1626 (12690, "COMMID_DECCA1626"),
-    /** COMMID_DECCA2070 */
-    COMMID_DECCA2070 (12691, "COMMID_DECCA2070"),
-    /** COMMID_Decca1630 */
-    COMMID_DECCA1630 (12694, "COMMID_Decca1630"),
-    /** COMMID_DECCA2459 */
-    COMMID_DECCA2459 (12735, "COMMID_DECCA2459"),
-    /** COMMID_DECCAAWS1 */
-    COMMID_DECCAAWS1 (12780, "COMMID_DECCAAWS1"),
-    /** COMMID_DECCAAWS2 */
-    COMMID_DECCAAWS2 (12782, "COMMID_DECCAAWS2"),
-    /** COMMID_DECCAAWS4 */
-    COMMID_DECCAAWS4 (12785, "COMMID_DECCAAWS4"),
-    /** COMMID_DECCAAWS-4(2) */
-    COMMID_DECCAAWS_42 (12787, "COMMID_DECCAAWS-4(2)"),
-    /** COMMID_DECCAMAR */
-    COMMID_DECCAMAR (12800, "COMMID_DECCAMAR"),
-    /** COMMID_DECCARM326 */
-    COMMID_DECCARM326 (12805, "COMMID_DECCARM326"),
-    /** COMMID_DECCARM416 */
-    COMMID_DECCARM416 (12825, "COMMID_DECCARM416"),
+    /** COMMID_DECCA 110 */
+    COMMID_DECCA_110 (12240, "COMMID_DECCA 110"),
+    /** COMMID_DECCA 170 */
+    COMMID_DECCA_170 (12285, "COMMID_DECCA 170"),
+    /** COMMID_DECCA HF 2 */
+    COMMID_DECCA_HF_2 (12292, "COMMID_DECCA HF 2"),
+    /** COMMID_DECCA 202 */
+    COMMID_DECCA_202 (12330, "COMMID_DECCA 202"),
+    /** COMMID_DECCA D202 */
+    COMMID_DECCA_D202 (12375, "COMMID_DECCA D202"),
+    /** COMMID_DECCA 303 */
+    COMMID_DECCA_303 (12420, "COMMID_DECCA 303"),
+    /** COMMID_DECCA 535 */
+    COMMID_DECCA_535 (12430, "COMMID_DECCA 535"),
+    /** COMMID_DECCA 626 */
+    COMMID_DECCA_626 (12465, "COMMID_DECCA 626"),
+    /** COMMID_DECCA 629 */
+    COMMID_DECCA_629 (12510, "COMMID_DECCA 629"),
+    /** COMMID_DECCA 914 */
+    COMMID_DECCA_914 (12555, "COMMID_DECCA 914"),
+    /** COMMID_DECCA 916 */
+    COMMID_DECCA_916 (12600, "COMMID_DECCA 916"),
+    /** COMMID_DECCA 926 */
+    COMMID_DECCA_926 (12610, "COMMID_DECCA 926"),
+    /** COMMID_DECCA 1070A */
+    COMMID_DECCA_1070A (12615, "COMMID_DECCA 1070A"),
+    /** COMMID_Decca 1008 */
+    COMMID_DECCA_1008 (12616, "COMMID_Decca 1008"),
+    /** COMMID_DECCA 1226 Commercial */
+    COMMID_DECCA_1226_COMMERCIAL (12645, "COMMID_DECCA 1226 Commercial"),
+    /** COMMID_DECCA 1290 */
+    COMMID_DECCA_1290 (12655, "COMMID_DECCA 1290"),
+    /** COMMID_DECCA 1626 */
+    COMMID_DECCA_1626 (12690, "COMMID_DECCA 1626"),
+    /** COMMID_DECCA 2070 */
+    COMMID_DECCA_2070 (12691, "COMMID_DECCA 2070"),
+    /** COMMID_Decca 1630 */
+    COMMID_DECCA_1630 (12694, "COMMID_Decca 1630"),
+    /** COMMID_DECCA 2459 */
+    COMMID_DECCA_2459 (12735, "COMMID_DECCA 2459"),
+    /** COMMID_DECCA AWS 1 */
+    COMMID_DECCA_AWS_1 (12780, "COMMID_DECCA AWS 1"),
+    /** COMMID_DECCA AWS 2 */
+    COMMID_DECCA_AWS_2 (12782, "COMMID_DECCA AWS 2"),
+    /** COMMID_DECCA AWS 4 */
+    COMMID_DECCA_AWS_4 (12785, "COMMID_DECCA AWS 4"),
+    /** COMMID_DECCA AWS-4 (2) */
+    COMMID_DECCA_AWS_4_2 (12787, "COMMID_DECCA AWS-4 (2)"),
+    /** COMMID_DECCA MAR */
+    COMMID_DECCA_MAR (12800, "COMMID_DECCA MAR"),
+    /** COMMID_DECCA RM 326 */
+    COMMID_DECCA_RM_326 (12805, "COMMID_DECCA RM 326"),
+    /** COMMID_DECCA RM 416 */
+    COMMID_DECCA_RM_416 (12825, "COMMID_DECCA RM 416"),
     /** DECCA RM 970BT */
     DECCA_RM_970BT (12850, "DECCA RM 970BT"),
-    /** COMMID_DECCARM914 */
-    COMMID_DECCARM914 (12870, "COMMID_DECCARM914"),
+    /** COMMID_DECCA RM 914 */
+    COMMID_DECCA_RM_914 (12870, "COMMID_DECCA RM 914"),
     /** DF-21D Seeker */
     DF_21D_SEEKER (12875, "DF-21D Seeker"),
-    /** COMMID_DECCARM1690 */
-    COMMID_DECCARM1690 (12915, "COMMID_DECCARM1690"),
-    /** COMMID_DECCA1690 */
-    COMMID_DECCA1690 (12916, "COMMID_DECCA1690"),
-    /** COMMID_DECCASuper101MK3 */
-    COMMID_DECCASUPER101MK3 (12960, "COMMID_DECCASuper101MK3"),
+    /** COMMID_DECCA RM 1690 */
+    COMMID_DECCA_RM_1690 (12915, "COMMID_DECCA RM 1690"),
+    /** COMMID_DECCA 1690 */
+    COMMID_DECCA_1690 (12916, "COMMID_DECCA 1690"),
+    /** COMMID_DECCA Super 101 MK 3 */
+    COMMID_DECCA_SUPER_101_MK_3 (12960, "COMMID_DECCA Super 101 MK 3"),
     /** DISS 1 */
     DISS_1 (13005, "DISS 1"),
     /** DISS-7 */
@@ -1730,10 +1730,10 @@ public enum EmitterName
     RAPIER_TTDN_181 (13050, "Rapier TTDN 181"),
     /** Rapier 2000 TT */
     RAPIER_2000_TT (13055, "Rapier 2000 TT"),
-    /** NATOID_DogEar */
-    NATOID_DOGEAR (13095, "NATOID_DogEar"),
-    /** NATOID_DogHouse */
-    NATOID_DOGHOUSE (13140, "NATOID_DogHouse"),
+    /** NATOID_Dog Ear */
+    NATOID_DOG_EAR (13095, "NATOID_Dog Ear"),
+    /** NATOID_Dog House */
+    NATOID_DOG_HOUSE (13140, "NATOID_Dog House"),
     /** DM3 */
     DM3 (13141, "DM3"),
     /** DM-3B */
@@ -1742,14 +1742,14 @@ public enum EmitterName
     DM_5 (13143, "DM-5"),
     /** Don 2 */
     DON_2 (13185, "Don 2"),
-    /** NATOID_DonAB2Kay */
-    NATOID_DONAB2KAY (13230, "NATOID_DonAB2Kay"),
+    /** NATOID_Don AB2Kay */
+    NATOID_DON_AB2KAY (13230, "NATOID_Don AB2Kay"),
     /** NATOID_Donets */
     NATOID_DONETS (13275, "NATOID_Donets"),
-    /** COMMID_Doppler90Series */
-    COMMID_DOPPLER90SERIES (13280, "COMMID_Doppler90Series"),
-    /** NATOID_DownBeat */
-    NATOID_DOWNBEAT (13320, "NATOID_DownBeat"),
+    /** COMMID_Doppler 90 Series */
+    COMMID_DOPPLER_90_SERIES (13280, "COMMID_Doppler 90 Series"),
+    /** NATOID_Down Beat */
+    NATOID_DOWN_BEAT (13320, "NATOID_Down Beat"),
     /** DR-582 */
     DR_582 (13360, "DR-582"),
     /** DRAA 2A */
@@ -1772,14 +1772,14 @@ public enum EmitterName
     DRAC_43A (13460, "DRAC 43A"),
     /** DRAC 44A */
     DRAC_44A (13465, "DRAC 44A"),
-    /** NATOID_DragonEye */
-    NATOID_DRAGONEYE (13477, "NATOID_DragonEye"),
-    /** NATOID_DragonEye2 */
-    NATOID_DRAGONEYE2 (13480, "NATOID_DragonEye2"),
-    /** NATOID_DragonEye3 */
-    NATOID_DRAGONEYE3 (13481, "NATOID_DragonEye3"),
-    /** NATOID_DragonEye4 */
-    NATOID_DRAGONEYE4 (13485, "NATOID_DragonEye4"),
+    /** NATOID_Dragon Eye */
+    NATOID_DRAGON_EYE (13477, "NATOID_Dragon Eye"),
+    /** NATOID_Dragon Eye 2 */
+    NATOID_DRAGON_EYE_2 (13480, "NATOID_Dragon Eye 2"),
+    /** NATOID_Dragon Eye 3 */
+    NATOID_DRAGON_EYE_3 (13481, "NATOID_Dragon Eye 3"),
+    /** NATOID_Dragon Eye 4 */
+    NATOID_DRAGON_EYE_4 (13485, "NATOID_Dragon Eye 4"),
     /** DRBC 30B */
     DRBC_30B (13500, "DRBC 30B"),
     /** DRBC 31A */
@@ -1840,12 +1840,12 @@ public enum EmitterName
     DROP_KICK (14400, "Drop Kick"),
     /** DRUA 31 */
     DRUA_31 (14445, "DRUA 31"),
-    /** NATOID_DrumTilt */
-    NATOID_DRUMTILT (14490, "NATOID_DrumTilt"),
-    /** NATOID_DrumTiltA */
-    NATOID_DRUMTILTA (14535, "NATOID_DrumTiltA"),
-    /** NATOID_DrumTiltB */
-    NATOID_DRUMTILTB (14545, "NATOID_DrumTiltB"),
+    /** NATOID_Drum Tilt */
+    NATOID_DRUM_TILT (14490, "NATOID_Drum Tilt"),
+    /** NATOID_Drum Tilt A */
+    NATOID_DRUM_TILT_A (14535, "NATOID_Drum Tilt A"),
+    /** NATOID_Drum Tilt B */
+    NATOID_DRUM_TILT_B (14545, "NATOID_Drum Tilt B"),
     /** DRUN 30A */
     DRUN_30A (14560, "DRUN 30A"),
     /** NATOID_Dumbo */
@@ -1862,8 +1862,8 @@ public enum EmitterName
     EKCO_E390 (14590, "EKCO E390"),
     /** ECR-90 */
     ECR_90 (14600, "ECR-90"),
-    /** NATOID_EggCupAB */
-    NATOID_EGGCUPAB (14625, "NATOID_EggCupAB"),
+    /** NATOID_Egg Cup AB */
+    NATOID_EGG_CUP_AB (14625, "NATOID_Egg Cup AB"),
     /** EISCAT */
     EISCAT (14640, "EISCAT"),
     /** EKCO E120 */
@@ -1924,8 +1924,8 @@ public enum EmitterName
     EL_M_2207 (14760, "EL M 2207"),
     /** EL/M-2215 */
     EL_M_2215 (14765, "EL/M-2215"),
-    /** NATOID_ELM2216(V) */
-    NATOID_ELM2216V (14770, "NATOID_ELM2216(V)"),
+    /** NATOID_ELM 2216(V) */
+    NATOID_ELM_2216V (14770, "NATOID_ELM 2216(V)"),
     /** EL/M-2216XH */
     EL_M_2216XH (14772, "EL/M-2216XH"),
     /** EL/M-2218S */
@@ -1960,18 +1960,18 @@ public enum EmitterName
     EL_M_2311 (14821, "EL/M-2311"),
     /** ELM-2026 */
     ELM_2026 (14822, "ELM-2026"),
-    /** COMMID_ELNA4007 */
-    COMMID_ELNA4007 (14830, "COMMID_ELNA4007"),
+    /** COMMID_ELNA 4007 */
+    COMMID_ELNA_4007 (14830, "COMMID_ELNA 4007"),
     /** ELW-2090 */
     ELW_2090 (14835, "ELW-2090"),
-    /** COMMID_EnhancedMeteorDetectionRadarEMDR */
-    COMMID_ENHANCEDMETEORDETECTIONRADAREMDR (14845, "COMMID_EnhancedMeteorDetectionRadarEMDR"),
+    /** COMMID_Enhanced Meteor Detection Radar EMDR */
+    COMMID_ENHANCED_METEOR_DETECTION_RADAR_EMDR (14845, "COMMID_Enhanced Meteor Detection Radar EMDR"),
     /** EMD 2900 */
     EMD_2900 (14850, "EMD 2900"),
     /** EMPAR */
     EMPAR (14851, "EMPAR"),
-    /** NATOID_EndTray */
-    NATOID_ENDTRAY (14895, "NATOID_EndTray"),
+    /** NATOID_End Tray */
+    NATOID_END_TRAY (14895, "NATOID_End Tray"),
     /** EQ-36 */
     EQ_36 (14896, "EQ-36"),
     /** Ericsson SLAR */
@@ -1998,38 +1998,38 @@ public enum EmitterName
     EXOCET_1_MH (14985, "Exocet 1 MH"),
     /** Exocet 2 */
     EXOCET_2 (15030, "Exocet 2"),
-    /** NATOID_EyeBowl */
-    NATOID_EYEBOWL (15075, "NATOID_EyeBowl"),
-    /** NATOID_EyeShield */
-    NATOID_EYESHIELD (15120, "NATOID_EyeShield"),
+    /** NATOID_Eye Bowl */
+    NATOID_EYE_BOWL (15075, "NATOID_Eye Bowl"),
+    /** NATOID_Eye Shield */
+    NATOID_EYE_SHIELD (15120, "NATOID_Eye Shield"),
     /** NATOID_F332Z */
     NATOID_F332Z (15140, "NATOID_F332Z"),
-    /** NATOID_FalconClawTI */
-    NATOID_FALCONCLAWTI (15155, "NATOID_FalconClawTI"),
-    /** NATOID_FalconClawTT */
-    NATOID_FALCONCLAWTT (15156, "NATOID_FalconClawTT"),
+    /** NATOID_Falcon Claw TI */
+    NATOID_FALCON_CLAW_TI (15155, "NATOID_Falcon Claw TI"),
+    /** NATOID_Falcon Claw TT */
+    NATOID_FALCON_CLAW_TT (15156, "NATOID_Falcon Claw TT"),
     /** FALCON */
     FALCON (15160, "FALCON"),
     /** FALCON-G */
     FALCON_G (15161, "FALCON-G"),
-    /** NATOID_FalconEye */
-    NATOID_FALCONEYE (15163, "NATOID_FalconEye"),
-    /** NATOID_FanSongA */
-    NATOID_FANSONGA (15165, "NATOID_FanSongA"),
-    /** NATOID_FanSongBFTA */
-    NATOID_FANSONGBFTA (15200, "NATOID_FanSongBFTA"),
-    /** NATOID_FanSongBFTT */
-    NATOID_FANSONGBFTT (15210, "NATOID_FanSongBFTT"),
-    /** NATOID_FanSongCETA */
-    NATOID_FANSONGCETA (15220, "NATOID_FanSongCETA"),
-    /** NATOID_FanSongCETT */
-    NATOID_FANSONGCETT (15230, "NATOID_FanSongCETT"),
-    /** NATOID_FanSongCEMG */
-    NATOID_FANSONGCEMG (15240, "NATOID_FanSongCEMG"),
-    /** NATOID_FanSongBFFMG */
-    NATOID_FANSONGBFFMG (15255, "NATOID_FanSongBFFMG"),
-    /** NATOID_FanTail */
-    NATOID_FANTAIL (15300, "NATOID_FanTail"),
+    /** NATOID_Falcon Eye */
+    NATOID_FALCON_EYE (15163, "NATOID_Falcon Eye"),
+    /** NATOID_Fan Song A */
+    NATOID_FAN_SONG_A (15165, "NATOID_Fan Song A"),
+    /** NATOID_Fan Song BF TA */
+    NATOID_FAN_SONG_BF_TA (15200, "NATOID_Fan Song BF TA"),
+    /** NATOID_Fan Song BF TT */
+    NATOID_FAN_SONG_BF_TT (15210, "NATOID_Fan Song BF TT"),
+    /** NATOID_Fan Song CE TA */
+    NATOID_FAN_SONG_CE_TA (15220, "NATOID_Fan Song CE TA"),
+    /** NATOID_Fan Song CE TT */
+    NATOID_FAN_SONG_CE_TT (15230, "NATOID_Fan Song CE TT"),
+    /** NATOID_Fan Song CE MG */
+    NATOID_FAN_SONG_CE_MG (15240, "NATOID_Fan Song CE MG"),
+    /** NATOID_Fan Song BFF MG */
+    NATOID_FAN_SONG_BFF_MG (15255, "NATOID_Fan Song BFF MG"),
+    /** NATOID_Fan Tail */
+    NATOID_FAN_TAIL (15300, "NATOID_Fan Tail"),
     /** FAR-2117 */
     FAR_2117 (15301, "FAR-2117"),
     /** FAR-2827 */
@@ -2054,46 +2054,46 @@ public enum EmitterName
     FCS_2_31 (15319, "FCS-2-31"),
     /** FCS-3 */
     FCS_3 (15320, "FCS-3"),
-    /** NATOID_FinCurve */
-    NATOID_FINCURVE (15345, "NATOID_FinCurve"),
-    /** NATOID_FireCan */
-    NATOID_FIRECAN (15390, "NATOID_FireCan"),
-    /** NATOID_FireDish */
-    NATOID_FIREDISH (15435, "NATOID_FireDish"),
-    /** NATOID_FireDomeTA */
-    NATOID_FIREDOMETA (15470, "NATOID_FireDomeTA"),
-    /** NATOID_FireDomeTT */
-    NATOID_FIREDOMETT (15475, "NATOID_FireDomeTT"),
-    /** NATOID_FireDomeTI */
-    NATOID_FIREDOMETI (15480, "NATOID_FireDomeTI"),
-    /** NATOID_FireIron */
-    NATOID_FIREIRON (15525, "NATOID_FireIron"),
-    /** NATOID_FireWheel */
-    NATOID_FIREWHEEL (15570, "NATOID_FireWheel"),
-    /** NATOID_FishBowl */
-    NATOID_FISHBOWL (15615, "NATOID_FishBowl"),
+    /** NATOID_Fin Curve */
+    NATOID_FIN_CURVE (15345, "NATOID_Fin Curve"),
+    /** NATOID_Fire Can */
+    NATOID_FIRE_CAN (15390, "NATOID_Fire Can"),
+    /** NATOID_Fire Dish */
+    NATOID_FIRE_DISH (15435, "NATOID_Fire Dish"),
+    /** NATOID_Fire Dome TA */
+    NATOID_FIRE_DOME_TA (15470, "NATOID_Fire Dome TA"),
+    /** NATOID_Fire Dome TT */
+    NATOID_FIRE_DOME_TT (15475, "NATOID_Fire Dome TT"),
+    /** NATOID_Fire Dome TI */
+    NATOID_FIRE_DOME_TI (15480, "NATOID_Fire Dome TI"),
+    /** NATOID_Fire Iron */
+    NATOID_FIRE_IRON (15525, "NATOID_Fire Iron"),
+    /** NATOID_Fire Wheel */
+    NATOID_FIRE_WHEEL (15570, "NATOID_Fire Wheel"),
+    /** NATOID_Fish Bowl */
+    NATOID_FISH_BOWL (15615, "NATOID_Fish Bowl"),
     /** FLAIR */
     FLAIR (15650, "FLAIR"),
-    /** NATOID_FlapLid */
-    NATOID_FLAPLID (15660, "NATOID_FlapLid"),
-    /** NATOID_FlapTruck */
-    NATOID_FLAPTRUCK (15705, "NATOID_FlapTruck"),
-    /** NATOID_FlapWheel */
-    NATOID_FLAPWHEEL (15750, "NATOID_FlapWheel"),
-    /** NATOID_FlashDance */
-    NATOID_FLASHDANCE (15795, "NATOID_FlashDance"),
-    /** NATOID_FlashDanceM */
-    NATOID_FLASHDANCEM (15800, "NATOID_FlashDanceM"),
+    /** NATOID_Flap Lid */
+    NATOID_FLAP_LID (15660, "NATOID_Flap Lid"),
+    /** NATOID_Flap Truck */
+    NATOID_FLAP_TRUCK (15705, "NATOID_Flap Truck"),
+    /** NATOID_Flap Wheel */
+    NATOID_FLAP_WHEEL (15750, "NATOID_Flap Wheel"),
+    /** NATOID_Flash Dance */
+    NATOID_FLASH_DANCE (15795, "NATOID_Flash Dance"),
+    /** NATOID_Flash Dance M */
+    NATOID_FLASH_DANCE_M (15800, "NATOID_Flash Dance M"),
     /** P-15 */
     P_15 (15840, "P-15"),
     /** 35N6 */
     _35N6 (15842, "35N6"),
-    /** NATOID_FlatScreen */
-    NATOID_FLATSCREEN (15885, "NATOID_FlatScreen"),
-    /** NATOID_FlatSpin */
-    NATOID_FLATSPIN (15930, "NATOID_FlatSpin"),
-    /** NATOID_FlatTwin */
-    NATOID_FLATTWIN (15975, "NATOID_FlatTwin"),
+    /** NATOID_Flat Screen */
+    NATOID_FLAT_SCREEN (15885, "NATOID_Flat Screen"),
+    /** NATOID_Flat Spin */
+    NATOID_FLAT_SPIN (15930, "NATOID_Flat Spin"),
+    /** NATOID_Flat Twin */
+    NATOID_FLAT_TWIN (15975, "NATOID_Flat Twin"),
     /** FL-400 */
     FL_400 (15980, "FL-400"),
     /** Fledermaus */
@@ -2102,32 +2102,32 @@ public enum EmitterName
     NATOID_FLYCATCHER (16030, "NATOID_FLYCATCHER"),
     /** FLYCATCHER MK 2 */
     FLYCATCHER_MK_2 (16035, "FLYCATCHER MK 2"),
-    /** NATOID_FlyScreen */
-    NATOID_FLYSCREEN (16065, "NATOID_FlyScreen"),
-    /** NATOID_FlyScreenAandB */
-    NATOID_FLYSCREENAB (16110, "NATOID_FlyScreenA&B"),
-    /** NATOID_FlyTrapB */
-    NATOID_FLYTRAPB (16155, "NATOID_FlyTrapB"),
+    /** NATOID_Fly Screen */
+    NATOID_FLY_SCREEN (16065, "NATOID_Fly Screen"),
+    /** NATOID_Fly Screen AandB */
+    NATOID_FLY_SCREEN_AB (16110, "NATOID_Fly Screen A&B"),
+    /** NATOID_Fly Trap B */
+    NATOID_FLY_TRAP_B (16155, "NATOID_Fly Trap B"),
     /** FM-90 */
     FM_90 (16160, "FM-90"),
-    /** NATOID_FogLampMG */
-    NATOID_FOGLAMPMG (16200, "NATOID_FogLampMG"),
-    /** NATOID_FogLampTT */
-    NATOID_FOGLAMPTT (16245, "NATOID_FogLampTT"),
-    /** NATOID_FoilTwo */
-    NATOID_FOILTWO (16290, "NATOID_FoilTwo"),
+    /** NATOID_Fog Lamp MG */
+    NATOID_FOG_LAMP_MG (16200, "NATOID_Fog Lamp MG"),
+    /** NATOID_Fog Lamp TT */
+    NATOID_FOG_LAMP_TT (16245, "NATOID_Fog Lamp TT"),
+    /** NATOID_Foil Two */
+    NATOID_FOIL_TWO (16290, "NATOID_Foil Two"),
     /** FootBall */
     FOOTBALL (16300, "FootBall"),
     /** Fox Hunter */
     FOX_HUNTER (16335, "Fox Hunter"),
-    /** NATOID_FoxFireAL */
-    NATOID_FOXFIREAL (16380, "NATOID_FoxFireAL"),
-    /** NATOID_FoxFireILL */
-    NATOID_FOXFIREILL (16390, "NATOID_FoxFireILL"),
+    /** NATOID_Fox Fire AL */
+    NATOID_FOX_FIRE_AL (16380, "NATOID_Fox Fire AL"),
+    /** NATOID_Fox Fire ILL */
+    NATOID_FOX_FIRE_ILL (16390, "NATOID_Fox Fire ILL"),
     /** FR-151A */
     FR_151A (16400, "FR-151A"),
-    /** COMMID_FurunoFR-1500FR-1600 */
-    COMMID_FURUNOFR_1500FR_1600 (16405, "COMMID_FurunoFR-1500FR-1600"),
+    /** COMMID_Furuno FR-1500FR-1600 */
+    COMMID_FURUNO_FR_1500FR_1600 (16405, "COMMID_Furuno FR-1500FR-1600"),
     /** FR-1505 DA */
     FR_1505_DA (16410, "FR-1505 DA"),
     /** FR-1510DS */
@@ -2136,18 +2136,18 @@ public enum EmitterName
     FR_2000 (16420, "FR-2000"),
     /** Furuno-2855W */
     FURUNO_2855W (16421, "Furuno-2855W"),
-    /** COMMID_FregatMAE */
-    COMMID_FREGATMAE (16422, "COMMID_FregatMAE"),
-    /** COMMID_FregatN1 */
-    COMMID_FREGATN1 (16423, "COMMID_FregatN1"),
-    /** COMMID_FregatN2 */
-    COMMID_FREGATN2 (16424, "COMMID_FregatN2"),
-    /** NATOID_FrontDome */
-    NATOID_FRONTDOME (16425, "NATOID_FrontDome"),
-    /** NATOID_FrontDoor */
-    NATOID_FRONTDOOR (16470, "NATOID_FrontDoor"),
-    /** NATOID_FrontPiece */
-    NATOID_FRONTPIECE (16515, "NATOID_FrontPiece"),
+    /** COMMID_Fregat MAE */
+    COMMID_FREGAT_MAE (16422, "COMMID_Fregat MAE"),
+    /** COMMID_Fregat N1 */
+    COMMID_FREGAT_N1 (16423, "COMMID_Fregat N1"),
+    /** COMMID_Fregat N2 */
+    COMMID_FREGAT_N2 (16424, "COMMID_Fregat N2"),
+    /** NATOID_Front Dome */
+    NATOID_FRONT_DOME (16425, "NATOID_Front Dome"),
+    /** NATOID_Front Door */
+    NATOID_FRONT_DOOR (16470, "NATOID_Front Door"),
+    /** NATOID_Front Piece */
+    NATOID_FRONT_PIECE (16515, "NATOID_Front Piece"),
     /** Furby mmW MH */
     FURBY_MMW_MH (16520, "Furby mmW MH"),
     /** NATOID_Furke */
@@ -2158,20 +2158,20 @@ public enum EmitterName
     FURUNO (16560, "Furuno"),
     /** Furuno 1721 */
     FURUNO_1721 (16561, "Furuno 1721"),
-    /** COMMID_Furuno1934C */
-    COMMID_FURUNO1934C (16564, "COMMID_Furuno1934C"),
-    /** COMMID_Furuno1715 */
-    COMMID_FURUNO1715 (16565, "COMMID_Furuno1715"),
+    /** COMMID_Furuno 1934C */
+    COMMID_FURUNO_1934C (16564, "COMMID_Furuno 1934C"),
+    /** COMMID_Furuno 1715 */
+    COMMID_FURUNO_1715 (16565, "COMMID_Furuno 1715"),
     /** Furuno 1730 */
     FURUNO_1730 (16580, "Furuno 1730"),
     /** Furuno 1832 */
     FURUNO_1832 (16585, "Furuno 1832"),
-    /** COMMID_Furuno1835 */
-    COMMID_FURUNO1835 (16587, "COMMID_Furuno1835"),
+    /** COMMID_Furuno 1835 */
+    COMMID_FURUNO_1835 (16587, "COMMID_Furuno 1835"),
     /** Furuno 1932 */
     FURUNO_1932 (16590, "Furuno 1932"),
-    /** COMMID_Furuno1935 */
-    COMMID_FURUNO1935 (16596, "COMMID_Furuno1935"),
+    /** COMMID_Furuno 1935 */
+    COMMID_FURUNO_1935 (16596, "COMMID_Furuno 1935"),
     /** Furuno 701 */
     FURUNO_701 (16605, "Furuno 701"),
     /** Furuno 1940 */
@@ -2198,12 +2198,12 @@ public enum EmitterName
     FR_801D (16725, "FR-801D"),
     /** Furuno 8051 */
     FURUNO_8051 (16730, "Furuno 8051"),
-    /** COMMID_FurunoDRS-2D */
-    COMMID_FURUNODRS_2D (16732, "COMMID_FurunoDRS-2D"),
-    /** COMMID_FurunoDRS-4D */
-    COMMID_FURUNODRS_4D (16733, "COMMID_FurunoDRS-4D"),
-    /** COMMID_FurunoDRS-4A */
-    COMMID_FURUNODRS_4A (16734, "COMMID_FurunoDRS-4A"),
+    /** COMMID_Furuno DRS-2D */
+    COMMID_FURUNO_DRS_2D (16732, "COMMID_Furuno DRS-2D"),
+    /** COMMID_Furuno DRS-4D */
+    COMMID_FURUNO_DRS_4D (16733, "COMMID_Furuno DRS-4D"),
+    /** COMMID_Furuno DRS-4A */
+    COMMID_FURUNO_DRS_4A (16734, "COMMID_Furuno DRS-4A"),
     /** G030A(APD-31) */
     G030AAPD_31 (16735, "G030A(APD-31)"),
     /** GA 01 00 */
@@ -2218,30 +2218,30 @@ public enum EmitterName
     NATOID_GARDENIA (16800, "NATOID_Gardenia"),
     /** NATOID_Garpin */
     NATOID_GARPIN (16830, "NATOID_Garpin"),
-    /** NATOID_GateGuard */
-    NATOID_GATEGUARD (16833, "NATOID_GateGuard"),
+    /** NATOID_Gate Guard */
+    NATOID_GATE_GUARD (16833, "NATOID_Gate Guard"),
     /** Garpun-Bal-E */
     GARPUN_BAL_E (16835, "Garpun-Bal-E"),
     /** GBS1 */
     GBS1 (16840, "GBS1"),
     /** GCA-2000 */
     GCA_2000 (16850, "GCA-2000"),
-    /** COMMID_Furuno18321921Series */
-    COMMID_FURUNO18321921SERIES (16858, "COMMID_Furuno18321921Series"),
+    /** COMMID_Furuno 18321921 Series */
+    COMMID_FURUNO_18321921_SERIES (16858, "COMMID_Furuno 18321921 Series"),
     /** COMMID_GEMINI-DB */
     COMMID_GEMINI_DB (16870, "COMMID_GEMINI-DB"),
     /** GEM BX 132 */
     GEM_BX_132 (16875, "GEM BX 132"),
     /** GEM SC-2050X */
     GEM_SC_2050X (16876, "GEM SC-2050X"),
-    /** COMMID_GEMSeaEagle200N */
-    COMMID_GEMSEAEAGLE200N (16877, "COMMID_GEMSeaEagle200N"),
+    /** COMMID_GEM Sea Eagle 200 N */
+    COMMID_GEM_SEA_EAGLE_200_N (16877, "COMMID_GEM Sea Eagle 200 N"),
     /** MPDR-12 */
     MPDR_12 (16880, "MPDR-12"),
     /** GEN-X */
     GEN_X (16881, "GEN-X"),
-    /** NATOID_GepardTT */
-    NATOID_GEPARDTT (16884, "NATOID_GepardTT"),
+    /** NATOID_Gepard TT */
+    NATOID_GEPARD_TT (16884, "NATOID_Gepard TT"),
     /** GERAN-F */
     GERAN_F (16888, "GERAN-F"),
     /** GERFAUT */
@@ -2256,20 +2256,20 @@ public enum EmitterName
     GIRAFFE_50_AT (16908, "Giraffe-50 AT"),
     /** Giraffe 75 */
     GIRAFFE_75 (16912, "Giraffe 75"),
-    /** NATOID_GinSlingTA */
-    NATOID_GINSLINGTA (16915, "NATOID_GinSlingTA"),
+    /** NATOID_Gin Sling TA */
+    NATOID_GIN_SLING_TA (16915, "NATOID_Gin Sling TA"),
     /** Gin Sling */
     GIN_SLING (16920, "Gin Sling"),
-    /** NATOID_GinSlingMG */
-    NATOID_GINSLINGMG (16925, "NATOID_GinSlingMG"),
+    /** NATOID_Gin Sling MG */
+    NATOID_GIN_SLING_MG (16925, "NATOID_Gin Sling MG"),
     /** Goal Keeper */
     GOAL_KEEPER (16930, "Goal Keeper"),
-    /** NATOID_GoldenDome */
-    NATOID_GOLDENDOME (16935, "NATOID_GoldenDome"),
-    /** NATOID_GoldenHeart */
-    NATOID_GOLDENHEART (16940, "NATOID_GoldenHeart"),
-    /** NATOID_GoldenRock */
-    NATOID_GOLDENROCK (16942, "NATOID_GoldenRock"),
+    /** NATOID_Golden Dome */
+    NATOID_GOLDEN_DOME (16935, "NATOID_Golden Dome"),
+    /** NATOID_Golden Heart */
+    NATOID_GOLDEN_HEART (16940, "NATOID_Golden Heart"),
+    /** NATOID_Golden Rock */
+    NATOID_GOLDEN_ROCK (16942, "NATOID_Golden Rock"),
     /** GPN-22 */
     GPN_22 (16945, "GPN-22"),
     /** GPSJ-10 */
@@ -2284,20 +2284,20 @@ public enum EmitterName
     GRN_9 (16950, "GRN-9"),
     /** GRAN-K */
     GRAN_K (16951, "GRAN-K"),
-    /** NATOID_GraveStone */
-    NATOID_GRAVESTONE (16960, "NATOID_GraveStone"),
+    /** NATOID_Grave Stone */
+    NATOID_GRAVE_STONE (16960, "NATOID_Grave Stone"),
     /** GRAVES */
     GRAVES (16963, "GRAVES"),
     /** Green Stain */
     GREEN_STAIN (16965, "Green Stain"),
-    /** NATOID_GridBow */
-    NATOID_GRIDBOW (17010, "NATOID_GridBow"),
+    /** NATOID_Grid Bow */
+    NATOID_GRID_BOW (17010, "NATOID_Grid Bow"),
     /** Grifo-F */
     GRIFO_F (17016, "Grifo-F"),
     /** 9S32 */
     _9S32 (17025, "9S32"),
-    /** NATOID_GRILLSCREEN */
-    NATOID_GRILLSCREEN (17027, "NATOID_GRILLSCREEN"),
+    /** NATOID_GRILL SCREEN */
+    NATOID_GRILL_SCREEN (17027, "NATOID_GRILL SCREEN"),
     /** GROUND MASTER 400 */
     GROUND_MASTER_400 (17030, "GROUND MASTER 400"),
     /** GT-4 */
@@ -2312,82 +2312,82 @@ public enum EmitterName
     RPK_2 (17070, "RPK-2"),
     /** HADR */
     HADR (17080, "HADR"),
-    /** NATOID_HairNet */
-    NATOID_HAIRNET (17100, "NATOID_HairNet"),
-    /** NATOID_HalfPlateA */
-    NATOID_HALFPLATEA (17145, "NATOID_HalfPlateA"),
-    /** NATOID_HalfPlateB */
-    NATOID_HALFPLATEB (17190, "NATOID_HalfPlateB"),
+    /** NATOID_Hair Net */
+    NATOID_HAIR_NET (17100, "NATOID_Hair Net"),
+    /** NATOID_Half Plate A */
+    NATOID_HALF_PLATE_A (17145, "NATOID_Half Plate A"),
+    /** NATOID_Half Plate B */
+    NATOID_HALF_PLATE_B (17190, "NATOID_Half Plate B"),
     /** HARD */
     HARD (17220, "HARD"),
     /** Harpoon */
     HARPOON (17225, "Harpoon"),
-    /** NATOID_HatBox */
-    NATOID_HATBOX (17230, "NATOID_HatBox"),
-    /** NATOID_HawkScreech */
-    NATOID_HAWKSCREECH (17235, "NATOID_HawkScreech"),
-    /** NATOID_HayPole */
-    NATOID_HAYPOLE (17250, "NATOID_HayPole"),
-    /** NATOID_HayRick */
-    NATOID_HAYRICK (17255, "NATOID_HayRick"),
-    /** NATOID_HeadLightA */
-    NATOID_HEADLIGHTA (17280, "NATOID_HeadLightA"),
-    /** NATOID_HeadLights */
-    NATOID_HEADLIGHTS (17325, "NATOID_HeadLights"),
-    /** NATOID_HeadLightsC */
-    NATOID_HEADLIGHTSC (17370, "NATOID_HeadLightsC"),
-    /** NATOID_HeadLightsMGA */
-    NATOID_HEADLIGHTSMGA (17415, "NATOID_HeadLightsMGA"),
-    /** NATOID_HeadLightsMGB */
-    NATOID_HEADLIGHTSMGB (17460, "NATOID_HeadLightsMGB"),
-    /** NATOID_HeadLightsTT */
-    NATOID_HEADLIGHTSTT (17505, "NATOID_HeadLightsTT"),
-    /** NATOID_HeadNet */
-    NATOID_HEADNET (17550, "NATOID_HeadNet"),
-    /** NATOID_HeartAcheB */
-    NATOID_HEARTACHEB (17572, "NATOID_HeartAcheB"),
+    /** NATOID_Hat Box */
+    NATOID_HAT_BOX (17230, "NATOID_Hat Box"),
+    /** NATOID_Hawk Screech */
+    NATOID_HAWK_SCREECH (17235, "NATOID_Hawk Screech"),
+    /** NATOID_Hay Pole */
+    NATOID_HAY_POLE (17250, "NATOID_Hay Pole"),
+    /** NATOID_Hay Rick */
+    NATOID_HAY_RICK (17255, "NATOID_Hay Rick"),
+    /** NATOID_Head Light A */
+    NATOID_HEAD_LIGHT_A (17280, "NATOID_Head Light A"),
+    /** NATOID_Head Lights */
+    NATOID_HEAD_LIGHTS (17325, "NATOID_Head Lights"),
+    /** NATOID_Head Lights C */
+    NATOID_HEAD_LIGHTS_C (17370, "NATOID_Head Lights C"),
+    /** NATOID_Head Lights MG A */
+    NATOID_HEAD_LIGHTS_MG_A (17415, "NATOID_Head Lights MG A"),
+    /** NATOID_Head Lights MG B */
+    NATOID_HEAD_LIGHTS_MG_B (17460, "NATOID_Head Lights MG B"),
+    /** NATOID_Head Lights TT */
+    NATOID_HEAD_LIGHTS_TT (17505, "NATOID_Head Lights TT"),
+    /** NATOID_Head Net */
+    NATOID_HEAD_NET (17550, "NATOID_Head Net"),
+    /** NATOID_Heart Ache B */
+    NATOID_HEART_ACHE_B (17572, "NATOID_Heart Ache B"),
     /** Hellfire mmW MH */
     HELLFIRE_MMW_MH (17590, "Hellfire mmW MH"),
-    /** NATOID_HenEgg */
-    NATOID_HENEGG (17595, "NATOID_HenEgg"),
-    /** NATOID_HenHouse */
-    NATOID_HENHOUSE (17640, "NATOID_HenHouse"),
-    /** NATOID_HenNest */
-    NATOID_HENNEST (17685, "NATOID_HenNest"),
-    /** NATOID_HenRoost */
-    NATOID_HENROOST (17730, "NATOID_HenRoost"),
+    /** NATOID_Hen Egg */
+    NATOID_HEN_EGG (17595, "NATOID_Hen Egg"),
+    /** NATOID_Hen House */
+    NATOID_HEN_HOUSE (17640, "NATOID_Hen House"),
+    /** NATOID_Hen Nest */
+    NATOID_HEN_NEST (17685, "NATOID_Hen Nest"),
+    /** NATOID_Hen Roost */
+    NATOID_HEN_ROOST (17730, "NATOID_Hen Roost"),
     /** COMMID_Herakles */
     COMMID_HERAKLES (17732, "COMMID_Herakles"),
     /** HF-2 MG */
     HF_2_MG (17735, "HF-2 MG"),
     /** HGR-105 */
     HGR_105 (17745, "HGR-105"),
-    /** NATOID_HighBrick */
-    NATOID_HIGHBRICK (17775, "NATOID_HighBrick"),
-    /** NATOID_HighFix */
-    NATOID_HIGHFIX (17820, "NATOID_HighFix"),
-    /** NATOID_HighGuard */
-    NATOID_HIGHGUARD (17842, "NATOID_HighGuard"),
-    /** NATOID_HighLarkTI */
-    NATOID_HIGHLARKTI (17865, "NATOID_HighLarkTI"),
-    /** NATOID_HighLark1 */
-    NATOID_HIGHLARK1 (17910, "NATOID_HighLark1"),
-    /** NATOID_HighLark2 */
-    NATOID_HIGHLARK2 (17955, "NATOID_HighLark2"),
-    /** NATOID_HighLark4 */
-    NATOID_HIGHLARK4 (18000, "NATOID_HighLark4"),
-    /** NATOID_HighLune */
-    NATOID_HIGHLUNE (18045, "NATOID_HighLune"),
-    /** NATOID_HighPoleAandB */
-    NATOID_HIGHPOLEAB (18090, "NATOID_HighPoleA&B"),
-    /** NATOID_HighScoop */
-    NATOID_HIGHSCOOP (18135, "NATOID_HighScoop"),
+    /** NATOID_High Brick */
+    NATOID_HIGH_BRICK (17775, "NATOID_High Brick"),
+    /** NATOID_High Fix */
+    NATOID_HIGH_FIX (17820, "NATOID_High Fix"),
+    /** NATOID_High Guard */
+    NATOID_HIGH_GUARD (17842, "NATOID_High Guard"),
+    /** NATOID_High Lark TI */
+    NATOID_HIGH_LARK_TI (17865, "NATOID_High Lark TI"),
+    /** NATOID_High Lark 1 */
+    NATOID_HIGH_LARK_1 (17910, "NATOID_High Lark 1"),
+    /** NATOID_High Lark 2 */
+    NATOID_HIGH_LARK_2 (17955, "NATOID_High Lark 2"),
+    /** NATOID_High Lark 4 */
+    NATOID_HIGH_LARK_4 (18000, "NATOID_High Lark 4"),
+    /** NATOID_High Lune */
+    NATOID_HIGH_LUNE (18045, "NATOID_High Lune"),
+    /** NATOID_High Pole AandB */
+    NATOID_HIGH_POLE_AB (18090, "NATOID_High Pole A&B"),
+    /** NATOID_High Scoop */
+    NATOID_HIGH_SCOOP (18135, "NATOID_High Scoop"),
     /** 9S19MT */
     _9S19MT (18150, "9S19MT"),
-    /** NATOID_HighSieve */
-    NATOID_HIGHSIEVE (18180, "NATOID_HighSieve"),
-    /** NATOID_HillBlock */
-    NATOID_HILLBLOCK (18185, "NATOID_HillBlock"),
+    /** NATOID_High Sieve */
+    NATOID_HIGH_SIEVE (18180, "NATOID_High Sieve"),
+    /** NATOID_Hill Block */
+    NATOID_HILL_BLOCK (18185, "NATOID_Hill Block"),
     /** COMMID_HG-9550 */
     COMMID_HG_9550 (18190, "COMMID_HG-9550"),
     /** HJ-6374 */
@@ -2398,16 +2398,16 @@ public enum EmitterName
     HN_503 (18200, "HN-503"),
     /** HN-C03-M */
     HN_C03_M (18201, "HN-C03-M"),
-    /** NATOID_HomeTalk */
-    NATOID_HOMETALK (18225, "NATOID_HomeTalk"),
-    /** NATOID_HornSpoon */
-    NATOID_HORNSPOON (18270, "NATOID_HornSpoon"),
-    /** NATOID_HotBrick */
-    NATOID_HOTBRICK (18280, "NATOID_HotBrick"),
-    /** NATOID_HotFlash */
-    NATOID_HOTFLASH (18315, "NATOID_HotFlash"),
-    /** NATOID_HotFlash2 */
-    NATOID_HOTFLASH2 (18316, "NATOID_HotFlash2"),
+    /** NATOID_Home Talk */
+    NATOID_HOME_TALK (18225, "NATOID_Home Talk"),
+    /** NATOID_Horn Spoon */
+    NATOID_HORN_SPOON (18270, "NATOID_Horn Spoon"),
+    /** NATOID_Hot Brick */
+    NATOID_HOT_BRICK (18280, "NATOID_Hot Brick"),
+    /** NATOID_Hot Flash */
+    NATOID_HOT_FLASH (18315, "NATOID_Hot Flash"),
+    /** NATOID_Hot Flash 2 */
+    NATOID_HOT_FLASH_2 (18316, "NATOID_Hot Flash 2"),
     /** IHS-6 */
     IHS_6 (18318, "IHS-6"),
     /** IRL144M */
@@ -2440,14 +2440,14 @@ public enum EmitterName
     IFF_MK_XV (18405, "IFF MK XV"),
     /** IFF INT */
     IFF_INT (18406, "IFF INT"),
-    /** NATOID_JackKnife */
-    NATOID_JACKKNIFE (18407, "NATOID_JackKnife"),
+    /** NATOID_Jack Knife */
+    NATOID_JACK_KNIFE (18407, "NATOID_Jack Knife"),
     /** IFF TRSP */
     IFF_TRSP (18408, "IFF TRSP"),
     /** Javelin MG */
     JAVELIN_MG (18410, "Javelin MG"),
-    /** NATOID_JayBird */
-    NATOID_JAYBIRD (18450, "NATOID_JayBird"),
+    /** NATOID_Jay Bird */
+    NATOID_JAY_BIRD (18450, "NATOID_Jay Bird"),
     /** J/FPS-3 */
     J_FPS_3 (18451, "J/FPS-3"),
     /** JH-10 */
@@ -2532,36 +2532,36 @@ public enum EmitterName
     KAIGE (18600, "Kaige"),
     /** KALKAN */
     KALKAN (18610, "KALKAN"),
-    /** COMMID_KelvinHughes2A */
-    COMMID_KELVINHUGHES2A (18630, "COMMID_KelvinHughes2A"),
-    /** COMMID_KelvinHughes149 */
-    COMMID_KELVINHUGHES149 (18675, "COMMID_KelvinHughes149"),
+    /** COMMID_Kelvin Hughes 2A */
+    COMMID_KELVIN_HUGHES_2A (18630, "COMMID_Kelvin Hughes 2A"),
+    /** COMMID_Kelvin Hughes 149 */
+    COMMID_KELVIN_HUGHES_149 (18675, "COMMID_Kelvin Hughes 149"),
     /** NATOID_Karpaty */
     NATOID_KARPATY (18700, "NATOID_Karpaty"),
-    /** COMMID_KelvinHughestype1006 */
-    COMMID_KELVINHUGHESTYPE1006 (18720, "COMMID_KelvinHughestype1006"),
-    /** COMMID_KelvinHughestype1007 */
-    COMMID_KELVINHUGHESTYPE1007 (18765, "COMMID_KelvinHughestype1007"),
-    /** COMMID_KelvinHughesType1007FBand */
-    COMMID_KELVINHUGHESTYPE1007FBAND (18766, "COMMID_KelvinHughesType1007FBand"),
-    /** COMMID_KelvinHughes2007FBand */
-    COMMID_KELVINHUGHES2007FBAND (18767, "COMMID_KelvinHughes2007FBand"),
-    /** COMMID_KelvinHughes2007IBand */
-    COMMID_KELVINHUGHES2007IBAND (18768, "COMMID_KelvinHughes2007IBand"),
-    /** COMMID_KHNucleus5000 */
-    COMMID_KHNUCLEUS5000 (18770, "COMMID_KHNucleus5000"),
-    /** COMMID_KHMANTA */
-    COMMID_KHMANTA (18774, "COMMID_KHMANTA"),
-    /** COMMID_KHNUCLEUS26000 */
-    COMMID_KHNUCLEUS26000 (18775, "COMMID_KHNUCLEUS26000"),
-    /** COMMID_KHNUCLEUS35000 */
-    COMMID_KHNUCLEUS35000 (18776, "COMMID_KHNUCLEUS35000"),
-    /** COMMID_KHNUCLEUS36000A */
-    COMMID_KHNUCLEUS36000A (18777, "COMMID_KHNUCLEUS36000A"),
+    /** COMMID_Kelvin Hughes type 1006 */
+    COMMID_KELVIN_HUGHES_TYPE_1006 (18720, "COMMID_Kelvin Hughes type 1006"),
+    /** COMMID_Kelvin Hughes type 1007 */
+    COMMID_KELVIN_HUGHES_TYPE_1007 (18765, "COMMID_Kelvin Hughes type 1007"),
+    /** COMMID_Kelvin Hughes Type 1007 F Band */
+    COMMID_KELVIN_HUGHES_TYPE_1007_F_BAND (18766, "COMMID_Kelvin Hughes Type 1007 F Band"),
+    /** COMMID_Kelvin Hughes 2007 F Band */
+    COMMID_KELVIN_HUGHES_2007_F_BAND (18767, "COMMID_Kelvin Hughes 2007 F Band"),
+    /** COMMID_Kelvin Hughes 2007 I Band */
+    COMMID_KELVIN_HUGHES_2007_I_BAND (18768, "COMMID_Kelvin Hughes 2007 I Band"),
+    /** COMMID_KH Nucleus 5000 */
+    COMMID_KH_NUCLEUS_5000 (18770, "COMMID_KH Nucleus 5000"),
+    /** COMMID_KH MANTA */
+    COMMID_KH_MANTA (18774, "COMMID_KH MANTA"),
+    /** COMMID_KH NUCLEUS 2 6000 */
+    COMMID_KH_NUCLEUS_2_6000 (18775, "COMMID_KH NUCLEUS 2 6000"),
+    /** COMMID_KH NUCLEUS 3 5000 */
+    COMMID_KH_NUCLEUS_3_5000 (18776, "COMMID_KH NUCLEUS 3 5000"),
+    /** COMMID_KH NUCLEUS 3 6000A */
+    COMMID_KH_NUCLEUS_3_6000A (18777, "COMMID_KH NUCLEUS 3 6000A"),
     /** KH Family */
     KH_FAMILY (18780, "KH Family"),
-    /** COMMID_KelvinHughes6000A */
-    COMMID_KELVINHUGHES6000A (18781, "COMMID_KelvinHughes6000A"),
+    /** COMMID_Kelvin Hughes 6000A */
+    COMMID_KELVIN_HUGHES_6000A (18781, "COMMID_Kelvin Hughes 6000A"),
     /** Kh-38MAE MH */
     KH_38MAE_MH (18782, "Kh-38MAE MH"),
     /** KG8605A */
@@ -2574,24 +2574,24 @@ public enum EmitterName
     KHIBINY (18787, "KHIBINY"),
     /** KG300E */
     KG300E (18789, "KG300E"),
-    /** COMMID_KHSharpEye */
-    COMMID_KHSHARPEYE (18790, "COMMID_KHSharpEye"),
-    /** COMMID_KHSharpEyeB */
-    COMMID_KHSHARPEYEB (18791, "COMMID_KHSharpEyeB"),
-    /** COMMID_KHSharpEyeC */
-    COMMID_KHSHARPEYEC (18792, "COMMID_KHSharpEyeC"),
+    /** COMMID_KH SharpEye */
+    COMMID_KH_SHARPEYE (18790, "COMMID_KH SharpEye"),
+    /** COMMID_KH Sharp Eye B */
+    COMMID_KH_SHARP_EYE_B (18791, "COMMID_KH Sharp Eye B"),
+    /** COMMID_KH Sharp Eye C */
+    COMMID_KH_SHARP_EYE_C (18792, "COMMID_KH Sharp Eye C"),
     /** KH 1700 */
     KH_1700 (18795, "KH 1700"),
-    /** NATOID_KingPin */
-    NATOID_KINGPIN (18797, "NATOID_KingPin"),
+    /** NATOID_King Pin */
+    NATOID_KING_PIN (18797, "NATOID_King Pin"),
     /** KG-300 */
     KG_300 (18805, "KG-300"),
-    /** NATOID_KiteScreech */
-    NATOID_KITESCREECH (18810, "NATOID_KiteScreech"),
-    /** NATOID_KiteScreechA */
-    NATOID_KITESCREECHA (18855, "NATOID_KiteScreechA"),
-    /** NATOID_KiteScreechB */
-    NATOID_KITESCREECHB (18900, "NATOID_KiteScreechB"),
+    /** NATOID_Kite Screech */
+    NATOID_KITE_SCREECH (18810, "NATOID_Kite Screech"),
+    /** NATOID_Kite Screech A */
+    NATOID_KITE_SCREECH_A (18855, "NATOID_Kite Screech A"),
+    /** NATOID_Kite Screech B */
+    NATOID_KITE_SCREECH_B (18900, "NATOID_Kite Screech B"),
     /** NATOID_Kivach */
     NATOID_KIVACH (18945, "NATOID_Kivach"),
     /** KLC-1 */
@@ -2608,14 +2608,14 @@ public enum EmitterName
     KLJ_7 (18960, "KLJ-7"),
     /** KLJ-7B */
     KLJ_7B (18961, "KLJ-7B"),
-    /** NATOID_KnifeRest */
-    NATOID_KNIFEREST (18990, "NATOID_KnifeRest"),
+    /** NATOID_Knife Rest */
+    NATOID_KNIFE_REST (18990, "NATOID_Knife Rest"),
     /** P-10 */
     P_10 (19035, "P-10"),
-    /** NATOID_KNIFERESTC */
-    NATOID_KNIFERESTC (19037, "NATOID_KNIFERESTC"),
-    /** COMMID_KodenMD3730 */
-    COMMID_KODENMD3730 (19039, "COMMID_KodenMD3730"),
+    /** NATOID_KNIFE REST C */
+    NATOID_KNIFE_REST_C (19037, "NATOID_KNIFE REST C"),
+    /** COMMID_Koden MD 3730 */
+    COMMID_KODEN_MD_3730 (19039, "COMMID_Koden MD 3730"),
     /** KJ-2000 */
     KJ_2000 (19040, "KJ-2000"),
     /** KOPYO-I */
@@ -2654,14 +2654,14 @@ public enum EmitterName
     L_88 (19145, "L-88"),
     /** LAADS */
     LAADS (19150, "LAADS"),
-    /** NATOID_LandFall */
-    NATOID_LANDFALL (19170, "NATOID_LandFall"),
-    /** NATOID_LandRollMG */
-    NATOID_LANDROLLMG (19215, "NATOID_LandRollMG"),
-    /** NATOID_LandRollTA */
-    NATOID_LANDROLLTA (19260, "NATOID_LandRollTA"),
-    /** NATOID_LandRollTT */
-    NATOID_LANDROLLTT (19305, "NATOID_LandRollTT"),
+    /** NATOID_Land Fall */
+    NATOID_LAND_FALL (19170, "NATOID_Land Fall"),
+    /** NATOID_Land Roll MG */
+    NATOID_LAND_ROLL_MG (19215, "NATOID_Land Roll MG"),
+    /** NATOID_Land Roll TA */
+    NATOID_LAND_ROLL_TA (19260, "NATOID_Land Roll TA"),
+    /** NATOID_Land Roll TT */
+    NATOID_LAND_ROLL_TT (19305, "NATOID_Land Roll TT"),
     /** LAZUR */
     LAZUR (19306, "LAZUR"),
     /** Model 791-A */
@@ -2672,14 +2672,14 @@ public enum EmitterName
     LC_150 (19310, "LC-150"),
     /** LEER-3 */
     LEER_3 (19320, "LEER-3"),
-    /** NATOID_LegDrive */
-    NATOID_LEGDRIVE (19330, "NATOID_LegDrive"),
+    /** NATOID_Leg Drive */
+    NATOID_LEG_DRIVE (19330, "NATOID_Leg Drive"),
     /** NATOID_Leningraf */
     NATOID_LENINGRAF (19350, "NATOID_Leningraf"),
     /** LIANA */
     LIANA (19370, "LIANA"),
-    /** NATOID_LightBulb */
-    NATOID_LIGHTBULB (19395, "NATOID_LightBulb"),
+    /** NATOID_Light Bulb */
+    NATOID_LIGHT_BULB (19395, "NATOID_Light Bulb"),
     /** LIRA-A10 */
     LIRA_A10 (19396, "LIRA-A10"),
     /** LIROD 8 */
@@ -2692,48 +2692,48 @@ public enum EmitterName
     LMT_NRAI_6A (19400, "LMT NRAI-6A"),
     /** LN 55 */
     LN_55 (19440, "LN 55"),
-    /** NATOID_Ln66 */
-    NATOID_LN66 (19485, "NATOID_Ln66"),
+    /** NATOID_Ln 66 */
+    NATOID_LN_66 (19485, "NATOID_Ln 66"),
     /** NATOID_Liman */
     NATOID_LIMAN (19500, "NATOID_Liman"),
-    /** NATOID_Liman2 */
-    NATOID_LIMAN2 (19505, "NATOID_Liman2"),
-    /** NATOID_LongBow */
-    NATOID_LONGBOW (19530, "NATOID_LongBow"),
-    /** NATOID_LongBrick */
-    NATOID_LONGBRICK (19575, "NATOID_LongBrick"),
-    /** NATOID_LongBull */
-    NATOID_LONGBULL (19620, "NATOID_LongBull"),
-    /** NATOID_LongEye */
-    NATOID_LONGEYE (19665, "NATOID_LongEye"),
-    /** NATOID_LongHead */
-    NATOID_LONGHEAD (19710, "NATOID_LongHead"),
-    /** NATOID_LongTalk */
-    NATOID_LONGTALK (19755, "NATOID_LongTalk"),
-    /** NATOID_LongTrack */
-    NATOID_LONGTRACK (19800, "NATOID_LongTrack"),
-    /** NATOID_LongTrough */
-    NATOID_LONGTROUGH (19845, "NATOID_LongTrough"),
-    /** NATOID_LookTwo */
-    NATOID_LOOKTWO (19890, "NATOID_LookTwo"),
+    /** NATOID_Liman 2 */
+    NATOID_LIMAN_2 (19505, "NATOID_Liman 2"),
+    /** NATOID_Long Bow */
+    NATOID_LONG_BOW (19530, "NATOID_Long Bow"),
+    /** NATOID_Long Brick */
+    NATOID_LONG_BRICK (19575, "NATOID_Long Brick"),
+    /** NATOID_Long Bull */
+    NATOID_LONG_BULL (19620, "NATOID_Long Bull"),
+    /** NATOID_Long Eye */
+    NATOID_LONG_EYE (19665, "NATOID_Long Eye"),
+    /** NATOID_Long Head */
+    NATOID_LONG_HEAD (19710, "NATOID_Long Head"),
+    /** NATOID_Long Talk */
+    NATOID_LONG_TALK (19755, "NATOID_Long Talk"),
+    /** NATOID_Long Track */
+    NATOID_LONG_TRACK (19800, "NATOID_Long Track"),
+    /** NATOID_Long Trough */
+    NATOID_LONG_TROUGH (19845, "NATOID_Long Trough"),
+    /** NATOID_Look Two */
+    NATOID_LOOK_TWO (19890, "NATOID_Look Two"),
     /** LOPAR */
     LOPAR (19920, "LOPAR"),
     /** LORAN */
     LORAN (19935, "LORAN"),
-    /** NATOID_LowBlowTA */
-    NATOID_LOWBLOWTA (19950, "NATOID_LowBlowTA"),
-    /** NATOID_LowBlowTT */
-    NATOID_LOWBLOWTT (19955, "NATOID_LowBlowTT"),
-    /** NATOID_LowBlowMG */
-    NATOID_LOWBLOWMG (19960, "NATOID_LowBlowMG"),
-    /** NATOID_LowJackTT */
-    NATOID_LOWJACKTT (19970, "NATOID_LowJackTT"),
-    /** NATOID_LowJackMG */
-    NATOID_LOWJACKMG (19971, "NATOID_LowJackMG"),
-    /** NATOID_LowSieve */
-    NATOID_LOWSIEVE (19980, "NATOID_LowSieve"),
-    /** NATOID_LowTrough */
-    NATOID_LOWTROUGH (20025, "NATOID_LowTrough"),
+    /** NATOID_Low Blow TA */
+    NATOID_LOW_BLOW_TA (19950, "NATOID_Low Blow TA"),
+    /** NATOID_Low Blow TT */
+    NATOID_LOW_BLOW_TT (19955, "NATOID_Low Blow TT"),
+    /** NATOID_Low Blow MG */
+    NATOID_LOW_BLOW_MG (19960, "NATOID_Low Blow MG"),
+    /** NATOID_Low Jack TT */
+    NATOID_LOW_JACK_TT (19970, "NATOID_Low Jack TT"),
+    /** NATOID_Low Jack MG */
+    NATOID_LOW_JACK_MG (19971, "NATOID_Low Jack MG"),
+    /** NATOID_Low Sieve */
+    NATOID_LOW_SIEVE (19980, "NATOID_Low Sieve"),
+    /** NATOID_Low Trough */
+    NATOID_LOW_TROUGH (20025, "NATOID_Low Trough"),
     /** LR66 */
     LR66 (20029, "LR66"),
     /** LRA-900 */
@@ -2744,8 +2744,8 @@ public enum EmitterName
     LW_01 (20060, "LW 01"),
     /** LW 08, Use 28485 value. */
     LW_08 (20070, "LW 08"),
-    /** NATOID_M-1983FCR */
-    NATOID_M_1983FCR (20090, "NATOID_M-1983FCR"),
+    /** NATOID_M-1983 FCR */
+    NATOID_M_1983_FCR (20090, "NATOID_M-1983 FCR"),
     /** M22-40 */
     M22_40 (20115, "M22-40"),
     /** M44 */
@@ -2762,40 +2762,40 @@ public enum EmitterName
     MAD_HACK (20350, "MAD HACK"),
     /** NATOID_MARELD */
     NATOID_MARELD (20360, "NATOID_MARELD"),
-    /** COMMID_MAType909# */
-    COMMID_MATYPE909 (20385, "COMMID_MAType909#"),
+    /** COMMID_MA Type 909# */
+    COMMID_MA_TYPE_909 (20385, "COMMID_MA Type 909#"),
     /** MARC S-152 */
     MARC_S_152 (20420, "MARC S-152"),
-    /** COMMID_Marconi1810 */
-    COMMID_MARCONI1810 (20430, "COMMID_Marconi1810"),
-    /** COMMID_MarconiCanadaHC75 */
-    COMMID_MARCONICANADAHC75 (20475, "COMMID_MarconiCanadaHC75"),
-    /** COMMID_MarconiS713 */
-    COMMID_MARCONIS713 (20495, "COMMID_MarconiS713"),
-    /** COMMID_MarconiS1802 */
-    COMMID_MARCONIS1802 (20520, "COMMID_MarconiS1802"),
-    /** COMMID_MarconiS247 */
-    COMMID_MARCONIS247 (20530, "COMMID_MarconiS247"),
-    /** COMMID_MarconiS810 */
-    COMMID_MARCONIS810 (20565, "COMMID_MarconiS810"),
-    /** COMMID_MarconiSA10 */
-    COMMID_MARCONISA10 (20585, "COMMID_MarconiSA10"),
-    /** COMMID_MarconiST805 */
-    COMMID_MARCONIST805 (20590, "COMMID_MarconiST805"),
-    /** COMMID_Marconitype967 */
-    COMMID_MARCONITYPE967 (20610, "COMMID_Marconitype967"),
-    /** COMMID_Marconitype968 */
-    COMMID_MARCONITYPE968 (20655, "COMMID_Marconitype968"),
-    /** COMMID_Marconitype992 */
-    COMMID_MARCONITYPE992 (20700, "COMMID_Marconitype992"),
-    /** COMMID_Marconisignaaltype1022 */
-    COMMID_MARCONISIGNAALTYPE1022 (20745, "COMMID_Marconisignaaltype1022"),
-    /** COMMID_Marconisignaaltype910 */
-    COMMID_MARCONISIGNAALTYPE910 (20790, "COMMID_Marconisignaaltype910"),
-    /** COMMID_Marconisignaaltype911 */
-    COMMID_MARCONISIGNAALTYPE911 (20835, "COMMID_Marconisignaaltype911"),
-    /** COMMID_Marconisignaaltype992R */
-    COMMID_MARCONISIGNAALTYPE992R (20880, "COMMID_Marconisignaaltype992R"),
+    /** COMMID_Marconi 1810 */
+    COMMID_MARCONI_1810 (20430, "COMMID_Marconi 1810"),
+    /** COMMID_Marconi Canada HC 75 */
+    COMMID_MARCONI_CANADA_HC_75 (20475, "COMMID_Marconi Canada HC 75"),
+    /** COMMID_Marconi S 713 */
+    COMMID_MARCONI_S_713 (20495, "COMMID_Marconi S 713"),
+    /** COMMID_Marconi S 1802 */
+    COMMID_MARCONI_S_1802 (20520, "COMMID_Marconi S 1802"),
+    /** COMMID_Marconi S247 */
+    COMMID_MARCONI_S247 (20530, "COMMID_Marconi S247"),
+    /** COMMID_Marconi S 810 */
+    COMMID_MARCONI_S_810 (20565, "COMMID_Marconi S 810"),
+    /** COMMID_Marconi SA 10 */
+    COMMID_MARCONI_SA_10 (20585, "COMMID_Marconi SA 10"),
+    /** COMMID_Marconi ST805 */
+    COMMID_MARCONI_ST805 (20590, "COMMID_Marconi ST805"),
+    /** COMMID_Marconi type 967 */
+    COMMID_MARCONI_TYPE_967 (20610, "COMMID_Marconi type 967"),
+    /** COMMID_Marconi type 968 */
+    COMMID_MARCONI_TYPE_968 (20655, "COMMID_Marconi type 968"),
+    /** COMMID_Marconi type 992 */
+    COMMID_MARCONI_TYPE_992 (20700, "COMMID_Marconi type 992"),
+    /** COMMID_Marconisignaal type 1022 */
+    COMMID_MARCONISIGNAAL_TYPE_1022 (20745, "COMMID_Marconisignaal type 1022"),
+    /** COMMID_Marconisignaal type 910 */
+    COMMID_MARCONISIGNAAL_TYPE_910 (20790, "COMMID_Marconisignaal type 910"),
+    /** COMMID_Marconisignaal type 911 */
+    COMMID_MARCONISIGNAAL_TYPE_911 (20835, "COMMID_Marconisignaal type 911"),
+    /** COMMID_Marconisignaal type 992R */
+    COMMID_MARCONISIGNAAL_TYPE_992R (20880, "COMMID_Marconisignaal type 992R"),
     /** MARTELLO 743D */
     MARTELLO_743D (20890, "MARTELLO 743D"),
     /** MARTELLO S-723A */
@@ -2808,10 +2808,10 @@ public enum EmitterName
     MELODI (20917, "MELODI"),
     /** MERLIN */
     MERLIN (20918, "MERLIN"),
-    /** COMMID_NorthropGrummanMESA */
-    COMMID_NORTHROPGRUMMANMESA (20920, "COMMID_NorthropGrummanMESA"),
-    /** NATOID_MeshBrick */
-    NATOID_MESHBRICK (20925, "NATOID_MeshBrick"),
+    /** COMMID_Northrop Grumman MESA */
+    COMMID_NORTHROP_GRUMMAN_MESA (20920, "COMMID_Northrop Grumman MESA"),
+    /** NATOID_Mesh Brick */
+    NATOID_MESH_BRICK (20925, "NATOID_Mesh Brick"),
     /** METEOR 1500S */
     METEOR_1500S (20927, "METEOR 1500S"),
     /** METEOR 200 */
@@ -2832,8 +2832,8 @@ public enum EmitterName
     MIRAGE_ILL (20950, "Mirage ILL"),
     /** MK 15 (Phalanx BLK 0) */
     MK_15_PHALANX_BLK_0 (20969, "MK 15 (Phalanx BLK 0)"),
-    /** COMMID_MK15CIWS */
-    COMMID_MK15CIWS (20970, "COMMID_MK15CIWS"),
+    /** COMMID_MK 15 CIWS */
+    COMMID_MK_15_CIWS (20970, "COMMID_MK 15 CIWS"),
     /** MK-23 */
     MK_23 (21015, "MK-23"),
     /** MK 23 TAS */
@@ -2896,12 +2896,12 @@ public enum EmitterName
     MODEL_17C (21625, "Model-17C"),
     /** Moon 4 */
     MOON_4 (21645, "Moon 4"),
-    /** NATOID_MoonPie */
-    NATOID_MOONPIE (21646, "NATOID_MoonPie"),
+    /** NATOID_Moon Pie */
+    NATOID_MOON_PIE (21646, "NATOID_Moon Pie"),
     /** MOON CONE */
     MOON_CONE (21647, "MOON CONE"),
-    /** NATOID_MoonRack */
-    NATOID_MOONRACK (21648, "NATOID_MoonRack"),
+    /** NATOID_Moon Rack */
+    NATOID_MOON_RACK (21648, "NATOID_Moon Rack"),
     /** MOON FACE */
     MOON_FACE (21649, "MOON FACE"),
     /** NATOID_MMRS */
@@ -2928,8 +2928,8 @@ public enum EmitterName
     MPR (21695, "MPR"),
     /** MPS-1 */
     MPS_1 (21697, "MPS-1"),
-    /** NATOID_MR-231MOD */
-    NATOID_MR_231MOD (21699, "NATOID_MR-231MOD"),
+    /** NATOID_MR-231 MOD */
+    NATOID_MR_231_MOD (21699, "NATOID_MR-231 MOD"),
     /** MR-1600 */
     MR_1600 (21700, "MR-1600"),
     /** MRR */
@@ -2954,16 +2954,16 @@ public enum EmitterName
     MT_305X (21710, "MT-305X"),
     /** MR-10M1E */
     MR_10M1E (21711, "MR-10M1E"),
-    /** NATOID_MuffCob */
-    NATOID_MUFFCOB (21735, "NATOID_MuffCob"),
+    /** NATOID_Muff Cob */
+    NATOID_MUFF_COB (21735, "NATOID_Muff Cob"),
     /** Mushroom */
     MUSHROOM (21780, "Mushroom"),
     /** Mushroom 1 */
     MUSHROOM_1 (21825, "Mushroom 1"),
     /** Mushroom 2 */
     MUSHROOM_2 (21870, "Mushroom 2"),
-    /** NATOID_Mushroom3 */
-    NATOID_MUSHROOM3 (21871, "NATOID_Mushroom3"),
+    /** NATOID_Mushroom 3 */
+    NATOID_MUSHROOM_3 (21871, "NATOID_Mushroom 3"),
     /** N-23 */
     N_23 (21872, "N-23"),
     /** N-011M Bars */
@@ -2986,14 +2986,14 @@ public enum EmitterName
     N001V (21881, "N001V"),
     /** NACOS RADARPILOT Platinum */
     NACOS_RADARPILOT_PLATINUM (21884, "NACOS RADARPILOT Platinum"),
-    /** NATOID_NampoB */
-    NATOID_NAMPOB (21885, "NATOID_NampoB"),
+    /** NATOID_Nampo B */
+    NATOID_NAMPO_B (21885, "NATOID_Nampo B"),
     /** NAGIRA */
     NAGIRA (21886, "NAGIRA"),
-    /** NATOID_NanjingB */
-    NATOID_NANJINGB (21890, "NATOID_NanjingB"),
-    /** NATOID_NanjingC */
-    NATOID_NANJINGC (21895, "NATOID_NanjingC"),
+    /** NATOID_Nanjing B */
+    NATOID_NANJING_B (21890, "NATOID_Nanjing B"),
+    /** NATOID_Nanjing C */
+    NATOID_NANJING_C (21895, "NATOID_Nanjing C"),
     /** Nayada */
     NAYADA (21915, "Nayada"),
     /** NAYADA-5M */
@@ -3008,8 +3008,8 @@ public enum EmitterName
     NEPTUN (21960, "Neptun"),
     /** NIKE HERCULES MTR */
     NIKE_HERCULES_MTR (21970, "NIKE HERCULES MTR"),
-    /** NATOID_NIKETT */
-    NATOID_NIKETT (21980, "NATOID_NIKETT"),
+    /** NATOID_NIKE TT */
+    NATOID_NIKE_TT (21980, "NATOID_NIKE TT"),
     /** NJ-81E */
     NJ_81E (21983, "NJ-81E"),
     /** Normandie */
@@ -3028,8 +3028,8 @@ public enum EmitterName
     NPG_630 (21990, "NPG-630"),
     /** NPM-510 */
     NPM_510 (21991, "NPM-510"),
-    /** NATOID_NutCan */
-    NATOID_NUTCAN (21992, "NATOID_NutCan"),
+    /** NATOID_Nut Can */
+    NATOID_NUT_CAN (21992, "NATOID_Nut Can"),
     /** NRBA 50 */
     NRBA_50 (22005, "NRBA 50"),
     /** NRBA 51 */
@@ -3042,8 +3042,8 @@ public enum EmitterName
     NUR_31 (22127, "NUR-31"),
     /** NWS-3 */
     NWS_3 (22130, "NWS-3"),
-    /** NATOID_NysaB */
-    NATOID_NYSAB (22140, "NATOID_NysaB"),
+    /** NATOID_Nysa B */
+    NATOID_NYSA_B (22140, "NATOID_Nysa B"),
     /** NATOID_O524A */
     NATOID_O524A (22185, "NATOID_O524A"),
     /** NATOID_O580B */
@@ -3054,16 +3054,16 @@ public enum EmitterName
     NATOID_O626Z (22320, "NATOID_O626Z"),
     /** Ocean Master */
     OCEAN_MASTER (22335, "Ocean Master"),
-    /** COMMID_OceanMaster400 */
-    COMMID_OCEANMASTER400 (22340, "COMMID_OceanMaster400"),
-    /** NATOID_OddGroup */
-    NATOID_ODDGROUP (22345, "NATOID_OddGroup"),
-    /** NATOID_OddLot */
-    NATOID_ODDLOT (22365, "NATOID_OddLot"),
-    /** NATOID_OddPair */
-    NATOID_ODDPAIR (22410, "NATOID_OddPair"),
-    /** NATOID_OddRods */
-    NATOID_ODDRODS (22411, "NATOID_OddRods"),
+    /** COMMID_Ocean Master 400 */
+    COMMID_OCEAN_MASTER_400 (22340, "COMMID_Ocean Master 400"),
+    /** NATOID_Odd Group */
+    NATOID_ODD_GROUP (22345, "NATOID_Odd Group"),
+    /** NATOID_Odd Lot */
+    NATOID_ODD_LOT (22365, "NATOID_Odd Lot"),
+    /** NATOID_Odd Pair */
+    NATOID_ODD_PAIR (22410, "NATOID_Odd Pair"),
+    /** NATOID_Odd Rods */
+    NATOID_ODD_RODS (22411, "NATOID_Odd Rods"),
     /** NATOID_Oka */
     NATOID_OKA (22455, "NATOID_Oka"),
     /** OKEAN */
@@ -3080,8 +3080,8 @@ public enum EmitterName
     OMERA_ORB32 (22635, "Omera ORB32"),
     /** OMUL */
     OMUL (22640, "OMUL"),
-    /** NATOID_OneEye */
-    NATOID_ONEEYE (22680, "NATOID_OneEye"),
+    /** NATOID_One Eye */
+    NATOID_ONE_EYE (22680, "NATOID_One Eye"),
     /** OP-28 */
     OP_28 (22690, "OP-28"),
     /** OPRL-4 */
@@ -3134,8 +3134,8 @@ public enum EmitterName
     OTOMAT_MK_II_TESEO (22905, "Otomat MK II Teseo"),
     /** Otomat Series AL */
     OTOMAT_SERIES_AL (22906, "Otomat Series AL"),
-    /** NATOID_OwlScreech */
-    NATOID_OWLSCREECH (22950, "NATOID_OwlScreech"),
+    /** NATOID_Owl Screech */
+    NATOID_OWL_SCREECH (22950, "NATOID_Owl Screech"),
     /** P360Z */
     P360Z (22955, "P360Z"),
     /** P-14 */
@@ -3156,14 +3156,14 @@ public enum EmitterName
     P_18_MOD (22964, "P-18 MOD"),
     /** PAGE */
     PAGE (22970, "PAGE"),
-    /** NATOID_PaintBox */
-    NATOID_PAINTBOX (22977, "NATOID_PaintBox"),
-    /** NATOID_PalmFrond */
-    NATOID_PALMFROND (22995, "NATOID_PalmFrond"),
-    /** NATOID_ModifiedPaintBox */
-    NATOID_MODIFIEDPAINTBOX (22998, "NATOID_ModifiedPaintBox"),
-    /** NATOID_PalmFrondAB */
-    NATOID_PALMFRONDAB (23040, "NATOID_PalmFrondAB"),
+    /** NATOID_Paint Box */
+    NATOID_PAINT_BOX (22977, "NATOID_Paint Box"),
+    /** NATOID_Palm Frond */
+    NATOID_PALM_FROND (22995, "NATOID_Palm Frond"),
+    /** NATOID_Modified Paint Box */
+    NATOID_MODIFIED_PAINT_BOX (22998, "NATOID_Modified Paint Box"),
+    /** NATOID_Palm Frond AB */
+    NATOID_PALM_FROND_AB (23040, "NATOID_Palm Frond AB"),
     /** PAR-2 */
     PAR_2 (23045, "PAR-2"),
     /** PAR-2000 */
@@ -3172,90 +3172,90 @@ public enum EmitterName
     PAR_2090C (23053, "PAR-2090C"),
     /** PAR-80 */
     PAR_80 (23055, "PAR-80"),
-    /** NATOID_PatHandTT */
-    NATOID_PATHANDTT (23085, "NATOID_PatHandTT"),
-    /** NATOID_PatHandMG */
-    NATOID_PATHANDMG (23095, "NATOID_PatHandMG"),
+    /** NATOID_Pat Hand TT */
+    NATOID_PAT_HAND_TT (23085, "NATOID_Pat Hand TT"),
+    /** NATOID_Pat Hand MG */
+    NATOID_PAT_HAND_MG (23095, "NATOID_Pat Hand MG"),
     /** PATRIOT */
     PATRIOT (23100, "PATRIOT"),
-    /** NATOID_PattyCake */
-    NATOID_PATTYCAKE (23130, "NATOID_PattyCake"),
-    /** NATOID_PawnCake */
-    NATOID_PAWNCAKE (23175, "NATOID_PawnCake"),
+    /** NATOID_Patty Cake */
+    NATOID_PATTY_CAKE (23130, "NATOID_Patty Cake"),
+    /** NATOID_Pawn Cake */
+    NATOID_PAWN_CAKE (23175, "NATOID_Pawn Cake"),
     /** PBR 4 Rubin */
     PBR_4_RUBIN (23220, "PBR 4 Rubin"),
     /** PCS 514 */
     PCS_514 (23240, "PCS 514"),
-    /** NATOID_PeaSticks */
-    NATOID_PEASTICKS (23265, "NATOID_PeaSticks"),
+    /** NATOID_Pea Sticks */
+    NATOID_PEA_STICKS (23265, "NATOID_Pea Sticks"),
     /** Pechora SC */
     PECHORA_SC (23295, "Pechora SC"),
-    /** NATOID_PeelCone */
-    NATOID_PEELCONE (23310, "NATOID_PeelCone"),
-    /** NATOID_PeelGroup */
-    NATOID_PEELGROUP (23355, "NATOID_PeelGroup"),
-    /** NATOID_PeelGroupA */
-    NATOID_PEELGROUPA (23400, "NATOID_PeelGroupA"),
-    /** NATOID_PeelGroupB */
-    NATOID_PEELGROUPB (23445, "NATOID_PeelGroupB"),
-    /** NATOID_PeelGroupMG */
-    NATOID_PEELGROUPMG (23450, "NATOID_PeelGroupMG"),
-    /** NATOID_PeelPair */
-    NATOID_PEELPAIR (23490, "NATOID_PeelPair"),
+    /** NATOID_Peel Cone */
+    NATOID_PEEL_CONE (23310, "NATOID_Peel Cone"),
+    /** NATOID_Peel Group */
+    NATOID_PEEL_GROUP (23355, "NATOID_Peel Group"),
+    /** NATOID_Peel Group A */
+    NATOID_PEEL_GROUP_A (23400, "NATOID_Peel Group A"),
+    /** NATOID_Peel Group B */
+    NATOID_PEEL_GROUP_B (23445, "NATOID_Peel Group B"),
+    /** NATOID_Peel Group MG */
+    NATOID_PEEL_GROUP_MG (23450, "NATOID_Peel Group MG"),
+    /** NATOID_Peel Pair */
+    NATOID_PEEL_PAIR (23490, "NATOID_Peel Pair"),
     /** NATOID_Pelena */
     NATOID_PELENA (23500, "NATOID_Pelena"),
     /** PGZ07 */
     PGZ07 (23515, "PGZ07"),
     /** Phalanx */
     PHALANX (23525, "Phalanx"),
-    /** COMMID_Philips9LV200 */
-    COMMID_PHILIPS9LV200 (23535, "COMMID_Philips9LV200"),
-    /** COMMID_Philips9LV331 */
-    COMMID_PHILIPS9LV331 (23580, "COMMID_Philips9LV331"),
-    /** COMMID_PhilipsLV223 */
-    COMMID_PHILIPSLV223 (23625, "COMMID_PhilipsLV223"),
-    /** COMMID_PhilipsSeaGiraffe50HC */
-    COMMID_PHILIPSSEAGIRAFFE50HC (23670, "COMMID_PhilipsSeaGiraffe50HC"),
+    /** COMMID_Philips 9LV 200 */
+    COMMID_PHILIPS_9LV_200 (23535, "COMMID_Philips 9LV 200"),
+    /** COMMID_Philips 9LV 331 */
+    COMMID_PHILIPS_9LV_331 (23580, "COMMID_Philips 9LV 331"),
+    /** COMMID_Philips LV 223 */
+    COMMID_PHILIPS_LV_223 (23625, "COMMID_Philips LV 223"),
+    /** COMMID_Philips Sea Giraffe 50 HC */
+    COMMID_PHILIPS_SEA_GIRAFFE_50_HC (23670, "COMMID_Philips Sea Giraffe 50 HC"),
     /** PICOSAR */
     PICOSAR (23680, "PICOSAR"),
-    /** COMMID_PILOTMK2 */
-    COMMID_PILOTMK2 (23685, "COMMID_PILOTMK2"),
-    /** NATOID_PinJib */
-    NATOID_PINJIB (23690, "NATOID_PinJib"),
-    /** NATOID_PinTip */
-    NATOID_PINTIP (23695, "NATOID_PinTip"),
+    /** COMMID_PILOT MK2 */
+    COMMID_PILOT_MK2 (23685, "COMMID_PILOT MK2"),
+    /** NATOID_Pin Jib */
+    NATOID_PIN_JIB (23690, "NATOID_Pin Jib"),
+    /** NATOID_Pin Tip */
+    NATOID_PIN_TIP (23695, "NATOID_Pin Tip"),
     /** PL-11 */
     PL_11 (23700, "PL-11"),
     /** PL-12 */
     PL_12 (23701, "PL-12"),
-    /** NATOID_PlankShad */
-    NATOID_PLANKSHAD (23710, "NATOID_PlankShad"),
-    /** NATOID_PlankShave */
-    NATOID_PLANKSHAVE (23715, "NATOID_PlankShave"),
-    /** NATOID_PlankShaveA */
-    NATOID_PLANKSHAVEA (23760, "NATOID_PlankShaveA"),
-    /** NATOID_PlankShaveB */
-    NATOID_PLANKSHAVEB (23805, "NATOID_PlankShaveB"),
-    /** NATOID_PlateSteer */
-    NATOID_PLATESTEER (23850, "NATOID_PlateSteer"),
-    /** COMMID_PlesseyAWS1 */
-    COMMID_PLESSEYAWS1 (23895, "COMMID_PlesseyAWS1"),
-    /** COMMID_PlesseyAWS-2 */
-    COMMID_PLESSEYAWS_2 (23925, "COMMID_PlesseyAWS-2"),
-    /** COMMID_PlesseyAWS4 */
-    COMMID_PLESSEYAWS4 (23940, "COMMID_PlesseyAWS4"),
-    /** COMMID_PlesseyAWS6 */
-    COMMID_PLESSEYAWS6 (23985, "COMMID_PlesseyAWS6"),
-    /** COMMID_PlesseyRJ */
-    COMMID_PLESSEYRJ (23990, "COMMID_PlesseyRJ"),
-    /** COMMID_PlesseyType904 */
-    COMMID_PLESSEYTYPE904 (24020, "COMMID_PlesseyType904"),
-    /** COMMID_Plesseytype996 */
-    COMMID_PLESSEYTYPE996 (24030, "COMMID_Plesseytype996"),
+    /** NATOID_Plank Shad */
+    NATOID_PLANK_SHAD (23710, "NATOID_Plank Shad"),
+    /** NATOID_Plank Shave */
+    NATOID_PLANK_SHAVE (23715, "NATOID_Plank Shave"),
+    /** NATOID_Plank Shave A */
+    NATOID_PLANK_SHAVE_A (23760, "NATOID_Plank Shave A"),
+    /** NATOID_Plank Shave B */
+    NATOID_PLANK_SHAVE_B (23805, "NATOID_Plank Shave B"),
+    /** NATOID_Plate Steer */
+    NATOID_PLATE_STEER (23850, "NATOID_Plate Steer"),
+    /** COMMID_Plessey AWS 1 */
+    COMMID_PLESSEY_AWS_1 (23895, "COMMID_Plessey AWS 1"),
+    /** COMMID_Plessey AWS-2 */
+    COMMID_PLESSEY_AWS_2 (23925, "COMMID_Plessey AWS-2"),
+    /** COMMID_Plessey AWS 4 */
+    COMMID_PLESSEY_AWS_4 (23940, "COMMID_Plessey AWS 4"),
+    /** COMMID_Plessey AWS 6 */
+    COMMID_PLESSEY_AWS_6 (23985, "COMMID_Plessey AWS 6"),
+    /** COMMID_Plessey RJ */
+    COMMID_PLESSEY_RJ (23990, "COMMID_Plessey RJ"),
+    /** COMMID_Plessey Type 904 */
+    COMMID_PLESSEY_TYPE_904 (24020, "COMMID_Plessey Type 904"),
+    /** COMMID_Plessey type 996 */
+    COMMID_PLESSEY_TYPE_996 (24030, "COMMID_Plessey type 996"),
     /** Plessey AWS 9 */
     PLESSEY_AWS_9 (24035, "Plessey AWS 9"),
-    /** NATOID_PlinthNet */
-    NATOID_PLINTHNET (24075, "NATOID_PlinthNet"),
+    /** NATOID_Plinth Net */
+    NATOID_PLINTH_NET (24075, "NATOID_Plinth Net"),
     /** NATOID_Pluto */
     NATOID_PLUTO (24095, "NATOID_Pluto"),
     /** POHJANPALO */
@@ -3264,32 +3264,32 @@ public enum EmitterName
     POLIMENT_K (24110, "Poliment-K"),
     /** POLLUX */
     POLLUX (24120, "POLLUX"),
-    /** NATOID_PopGroup */
-    NATOID_POPGROUP (24165, "NATOID_PopGroup"),
-    /** NATOID_PopGroupMG */
-    NATOID_POPGROUPMG (24210, "NATOID_PopGroupMG"),
-    /** NATOID_PopGroupTA */
-    NATOID_POPGROUPTA (24255, "NATOID_PopGroupTA"),
-    /** NATOID_PopGroupTT */
-    NATOID_POPGROUPTT (24300, "NATOID_PopGroupTT"),
-    /** NATOID_PorkFist */
-    NATOID_PORKFIST (24320, "NATOID_PorkFist"),
-    /** NATOID_PorkTrough */
-    NATOID_PORKTROUGH (24345, "NATOID_PorkTrough"),
+    /** NATOID_Pop Group */
+    NATOID_POP_GROUP (24165, "NATOID_Pop Group"),
+    /** NATOID_Pop Group MG */
+    NATOID_POP_GROUP_MG (24210, "NATOID_Pop Group MG"),
+    /** NATOID_Pop Group TA */
+    NATOID_POP_GROUP_TA (24255, "NATOID_Pop Group TA"),
+    /** NATOID_Pop Group TT */
+    NATOID_POP_GROUP_TT (24300, "NATOID_Pop Group TT"),
+    /** NATOID_Pork Fist */
+    NATOID_PORK_FIST (24320, "NATOID_Pork Fist"),
+    /** NATOID_Pork Trough */
+    NATOID_PORK_TROUGH (24345, "NATOID_Pork Trough"),
     /** Positive ME */
     POSITIVE_ME (24385, "Positive ME"),
     /** Positive-ME1.2 */
     POSITIVE_ME12 (24386, "Positive-ME1.2"),
-    /** NATOID_PostBow */
-    NATOID_POSTBOW (24390, "NATOID_PostBow"),
-    /** NATOID_PostLamp */
-    NATOID_POSTLAMP (24435, "NATOID_PostLamp"),
-    /** NATOID_PotDrum */
-    NATOID_POTDRUM (24480, "NATOID_PotDrum"),
-    /** NATOID_PotHead */
-    NATOID_POTHEAD (24525, "NATOID_PotHead"),
-    /** NATOID_PotShot */
-    NATOID_POTSHOT (24535, "NATOID_PotShot"),
+    /** NATOID_Post Bow */
+    NATOID_POST_BOW (24390, "NATOID_Post Bow"),
+    /** NATOID_Post Lamp */
+    NATOID_POST_LAMP (24435, "NATOID_Post Lamp"),
+    /** NATOID_Pot Drum */
+    NATOID_POT_DRUM (24480, "NATOID_Pot Drum"),
+    /** NATOID_Pot Head */
+    NATOID_POT_HEAD (24525, "NATOID_Pot Head"),
+    /** NATOID_Pot Shot */
+    NATOID_POT_SHOT (24535, "NATOID_Pot Shot"),
     /** Praetorian Countermeasures Suite */
     PRAETORIAN_COUNTERMEASURES_SUITE (24540, "Praetorian Countermeasures Suite"),
     /** PRIMUS 30A */
@@ -3308,8 +3308,8 @@ public enum EmitterName
     PRIMUS_700 (24618, "Primus 700"),
     /** PRIMUS 800 */
     PRIMUS_800 (24619, "PRIMUS 800"),
-    /** COMMID_Primus3000 */
-    COMMID_PRIMUS3000 (24620, "COMMID_Primus3000"),
+    /** COMMID_Primus 3000 */
+    COMMID_PRIMUS_3000 (24620, "COMMID_Primus 3000"),
     /** PRORA */
     PRORA (24630, "PRORA"),
     /** PRS-2 */
@@ -3332,8 +3332,8 @@ public enum EmitterName
     PS_870 (24709, "PS-870"),
     /** PS-890 */
     PS_890 (24710, "PS-890"),
-    /** NATOID_PuffBall */
-    NATOID_PUFFBALL (24750, "NATOID_PuffBall"),
+    /** NATOID_Puff Ball */
+    NATOID_PUFF_BALL (24750, "NATOID_Puff Ball"),
     /** Quadradar VI */
     QUADRADAR_VI (24755, "Quadradar VI"),
     /** QW-1A */
@@ -3358,34 +3358,34 @@ public enum EmitterName
     RAC_3D (24776, "RAC-3D"),
     /** COMMID_RAC-30 */
     COMMID_RAC_30 (24780, "COMMID_RAC-30"),
-    /** COMMID_Racal1229 */
-    COMMID_RACAL1229 (24795, "COMMID_Racal1229"),
+    /** COMMID_Racal 1229 */
+    COMMID_RACAL_1229 (24795, "COMMID_Racal 1229"),
     /** DECCA 1230 */
     DECCA_1230 (24800, "DECCA 1230"),
-    /** COMMID_RacalAC2690BT */
-    COMMID_RACALAC2690BT (24840, "COMMID_RacalAC2690BT"),
-    /** COMMID_RacalDecca1216 */
-    COMMID_RACALDECCA1216 (24885, "COMMID_RacalDecca1216"),
+    /** COMMID_Racal AC 2690 BT */
+    COMMID_RACAL_AC_2690_BT (24840, "COMMID_Racal AC 2690 BT"),
+    /** COMMID_Racal Decca 1216 */
+    COMMID_RACAL_DECCA_1216 (24885, "COMMID_Racal Decca 1216"),
     /** Racal-DECCA 20V90/9 */
     RACAL_DECCA_20V90_9 (24890, "Racal-DECCA 20V90/9"),
-    /** COMMID_RacalDecca360 */
-    COMMID_RACALDECCA360 (24930, "COMMID_RacalDecca360"),
-    /** COMMID_RacalDeccaAC1290 */
-    COMMID_RACALDECCAAC1290 (24975, "COMMID_RacalDeccaAC1290"),
-    /** COMMID_RacalDeccaTM1229 */
-    COMMID_RACALDECCATM1229 (25020, "COMMID_RacalDeccaTM1229"),
-    /** COMMID_RacalDeccaTM1626 */
-    COMMID_RACALDECCATM1626 (25065, "COMMID_RacalDeccaTM1626"),
-    /** COMMID_RacalDRBN34A */
-    COMMID_RACALDRBN34A (25110, "COMMID_RacalDRBN34A"),
+    /** COMMID_Racal Decca 360 */
+    COMMID_RACAL_DECCA_360 (24930, "COMMID_Racal Decca 360"),
+    /** COMMID_Racal Decca AC 1290 */
+    COMMID_RACAL_DECCA_AC_1290 (24975, "COMMID_Racal Decca AC 1290"),
+    /** COMMID_Racal Decca TM 1229 */
+    COMMID_RACAL_DECCA_TM_1229 (25020, "COMMID_Racal Decca TM 1229"),
+    /** COMMID_Racal Decca TM 1626 */
+    COMMID_RACAL_DECCA_TM_1626 (25065, "COMMID_Racal Decca TM 1626"),
+    /** COMMID_Racal DRBN 34A */
+    COMMID_RACAL_DRBN_34A (25110, "COMMID_Racal DRBN 34A"),
     /** RADA MHR */
     RADA_MHR (25150, "RADA MHR"),
-    /** COMMID_Radar24 */
-    COMMID_RADAR24 (25155, "COMMID_Radar24"),
-    /** COMMID_RADARPILOT1000 */
-    COMMID_RADARPILOT1000 (25170, "COMMID_RADARPILOT1000"),
-    /** COMMID_RADARPILOT1100 */
-    COMMID_RADARPILOT1100 (25171, "COMMID_RADARPILOT1100"),
+    /** COMMID_Radar 24 */
+    COMMID_RADAR_24 (25155, "COMMID_Radar 24"),
+    /** COMMID_RADARPILOT 1000 */
+    COMMID_RADARPILOT_1000 (25170, "COMMID_RADARPILOT 1000"),
+    /** COMMID_RADARPILOT 1100 */
+    COMMID_RADARPILOT_1100 (25171, "COMMID_RADARPILOT 1100"),
     /** RAJENDRA */
     RAJENDRA (25180, "RAJENDRA"),
     /** RAN 7S */
@@ -3430,44 +3430,44 @@ public enum EmitterName
     RAWS (25288, "RAWS"),
     /** RAWL-02 */
     RAWL_02 (25289, "RAWL-02"),
-    /** COMMID_Raytheon1220 */
-    COMMID_RAYTHEON1220 (25290, "COMMID_Raytheon1220"),
+    /** COMMID_Raytheon 1220 */
+    COMMID_RAYTHEON_1220 (25290, "COMMID_Raytheon 1220"),
     /** RAWS-03 */
     RAWS_03 (25291, "RAWS-03"),
-    /** COMMID_Raytheon1210xx */
-    COMMID_RAYTHEON1210XX (25292, "COMMID_Raytheon1210xx"),
-    /** COMMID_Raytheon1302 */
-    COMMID_RAYTHEON1302 (25300, "COMMID_Raytheon1302"),
-    /** COMMID_Raytheon1500 */
-    COMMID_RAYTHEON1500 (25335, "COMMID_Raytheon1500"),
-    /** COMMID_Raytheon1645 */
-    COMMID_RAYTHEON1645 (25380, "COMMID_Raytheon1645"),
-    /** COMMID_Raytheon1650 */
-    COMMID_RAYTHEON1650 (25425, "COMMID_Raytheon1650"),
-    /** COMMID_Raytheon1900 */
-    COMMID_RAYTHEON1900 (25470, "COMMID_Raytheon1900"),
-    /** COMMID_Raytheon2502 */
-    COMMID_RAYTHEON2502 (25515, "COMMID_Raytheon2502"),
+    /** COMMID_Raytheon 1210xx */
+    COMMID_RAYTHEON_1210XX (25292, "COMMID_Raytheon 1210xx"),
+    /** COMMID_Raytheon 1302 */
+    COMMID_RAYTHEON_1302 (25300, "COMMID_Raytheon 1302"),
+    /** COMMID_Raytheon 1500 */
+    COMMID_RAYTHEON_1500 (25335, "COMMID_Raytheon 1500"),
+    /** COMMID_Raytheon 1645 */
+    COMMID_RAYTHEON_1645 (25380, "COMMID_Raytheon 1645"),
+    /** COMMID_Raytheon 1650 */
+    COMMID_RAYTHEON_1650 (25425, "COMMID_Raytheon 1650"),
+    /** COMMID_Raytheon 1900 */
+    COMMID_RAYTHEON_1900 (25470, "COMMID_Raytheon 1900"),
+    /** COMMID_Raytheon 2502 */
+    COMMID_RAYTHEON_2502 (25515, "COMMID_Raytheon 2502"),
     /** Raytheon Anschutz NautoScan NX */
     RAYTHEON_ANSCHUTZ_NAUTOSCAN_NX (25530, "Raytheon Anschutz NautoScan NX"),
-    /** COMMID_RaytheonR41 */
-    COMMID_RAYTHEONR41 (25540, "COMMID_RaytheonR41"),
-    /** COMMID_RaytheonRM10256X */
-    COMMID_RAYTHEONRM10256X (25545, "COMMID_RaytheonRM10256X"),
-    /** COMMID_RaytheonSL72 */
-    COMMID_RAYTHEONSL72 (25550, "COMMID_RaytheonSL72"),
-    /** COMMID_RaytheonTM16506X */
-    COMMID_RAYTHEONTM16506X (25560, "COMMID_RaytheonTM16506X"),
-    /** COMMID_RaytheonTM166012S */
-    COMMID_RAYTHEONTM166012S (25605, "COMMID_RaytheonTM166012S"),
+    /** COMMID_Raytheon R41 */
+    COMMID_RAYTHEON_R41 (25540, "COMMID_Raytheon R41"),
+    /** COMMID_Raytheon RM 1025 6X */
+    COMMID_RAYTHEON_RM_1025_6X (25545, "COMMID_Raytheon RM 1025 6X"),
+    /** COMMID_Raytheon SL 72 */
+    COMMID_RAYTHEON_SL_72 (25550, "COMMID_Raytheon SL 72"),
+    /** COMMID_Raytheon TM 16506X */
+    COMMID_RAYTHEON_TM_16506X (25560, "COMMID_Raytheon TM 16506X"),
+    /** COMMID_Raytheon TM 166012S */
+    COMMID_RAYTHEON_TM_166012S (25605, "COMMID_Raytheon TM 166012S"),
     /** RAY-1220XR */
     RAY_1220XR (25630, "RAY-1220XR"),
     /** COMMID_RAY-1401 */
     COMMID_RAY_1401 (25635, "COMMID_RAY-1401"),
-    /** COMMID_Ray2900 */
-    COMMID_RAY2900 (25650, "COMMID_Ray2900"),
-    /** COMMID_RaymarineRD218 */
-    COMMID_RAYMARINERD218 (25694, "COMMID_RaymarineRD218"),
+    /** COMMID_Ray 2900 */
+    COMMID_RAY_2900 (25650, "COMMID_Ray 2900"),
+    /** COMMID_Raymarine RD218 */
+    COMMID_RAYMARINE_RD218 (25694, "COMMID_Raymarine RD218"),
     /** COMMID_Raypath */
     COMMID_RAYPATH (25695, "COMMID_Raypath"),
     /** RBE2 */
@@ -3510,8 +3510,8 @@ public enum EmitterName
     RDR_1400_C (25890, "RDR 1400 C"),
     /** RDR 1500 */
     RDR_1500 (25895, "RDR 1500"),
-    /** NATOID_RiceCake */
-    NATOID_RICECAKE (25896, "NATOID_RiceCake"),
+    /** NATOID_Rice Cake */
+    NATOID_RICE_CAKE (25896, "NATOID_Rice Cake"),
     /** RDR 1600 */
     RDR_1600 (25897, "RDR 1600"),
     /** RDR 2000 */
@@ -3530,26 +3530,26 @@ public enum EmitterName
     REC_1C (25904, "REC-1C"),
     /** Resolve EAS */
     RESOLVE_EAS (25906, "Resolve EAS"),
-    /** NATOID_RiceCupC */
-    NATOID_RICECUPC (25907, "NATOID_RiceCupC"),
+    /** NATOID_Rice Cup C */
+    NATOID_RICE_CUP_C (25907, "NATOID_Rice Cup C"),
     /** REL-6E */
     REL_6E (25908, "REL-6E"),
     /** REC-1 */
     REC_1 (25909, "REC-1"),
-    /** NATOID_RiceBowl */
-    NATOID_RICEBOWL (25910, "NATOID_RiceBowl"),
+    /** NATOID_Rice Bowl */
+    NATOID_RICE_BOWL (25910, "NATOID_Rice Bowl"),
     /** Improved Reporter */
     IMPROVED_REPORTER (25911, "Improved Reporter"),
-    /** NATOID_RiceBug */
-    NATOID_RICEBUG (25912, "NATOID_RiceBug"),
-    /** NATOID_RiceCup */
-    NATOID_RICECUP (25915, "NATOID_RiceCup"),
-    /** NATOID_RiceLamp */
-    NATOID_RICELAMP (25920, "NATOID_RiceLamp"),
+    /** NATOID_Rice Bug */
+    NATOID_RICE_BUG (25912, "NATOID_Rice Bug"),
+    /** NATOID_Rice Cup */
+    NATOID_RICE_CUP (25915, "NATOID_Rice Cup"),
+    /** NATOID_Rice Lamp */
+    NATOID_RICE_LAMP (25920, "NATOID_Rice Lamp"),
     /** REZONANS */
     REZONANS (25950, "REZONANS"),
-    /** NATOID_RicePad */
-    NATOID_RICEPAD (25965, "NATOID_RicePad"),
+    /** NATOID_Rice Pad */
+    NATOID_RICE_PAD (25965, "NATOID_Rice Pad"),
     /** RKL-526 */
     RKL_526 (25966, "RKL-526"),
     /** RKZ-764 */
@@ -3576,16 +3576,16 @@ public enum EmitterName
     RIR_778 (25977, "RIR 778"),
     /** RISAT */
     RISAT (25978, "RISAT"),
-    /** NATOID_RiceScoop */
-    NATOID_RICESCOOP (26008, "NATOID_RiceScoop"),
-    /** NATOID_RiceScreen */
-    NATOID_RICESCREEN (26010, "NATOID_RiceScreen"),
-    /** COMMID_DECCARM1070A */
-    COMMID_DECCARM1070A (26011, "COMMID_DECCARM1070A"),
+    /** NATOID_Rice Scoop */
+    NATOID_RICE_SCOOP (26008, "NATOID_Rice Scoop"),
+    /** NATOID_Rice Screen */
+    NATOID_RICE_SCREEN (26010, "NATOID_Rice Screen"),
+    /** COMMID_DECCA RM 1070A */
+    COMMID_DECCA_RM_1070A (26011, "COMMID_DECCA RM 1070A"),
     /** RM370BT */
     RM370BT (26015, "RM370BT"),
-    /** COMMID_RockwellCollinsFMR-200X */
-    COMMID_ROCKWELLCOLLINSFMR_200X (26020, "COMMID_RockwellCollinsFMR-200X"),
+    /** COMMID_Rockwell Collins FMR-200X */
+    COMMID_ROCKWELL_COLLINS_FMR_200X (26020, "COMMID_Rockwell Collins FMR-200X"),
     /** NATOID_RM-231-2 */
     NATOID_RM_231_2 (26040, "NATOID_RM-231-2"),
     /** NATOID_RM-231-3 */
@@ -3604,24 +3604,24 @@ public enum EmitterName
     ROLAND_TA (26145, "ROLAND TA"),
     /** ROLAND TT */
     ROLAND_TT (26190, "ROLAND TT"),
-    /** NATOID_RoundBall */
-    NATOID_ROUNDBALL (26235, "NATOID_RoundBall"),
+    /** NATOID_Round Ball */
+    NATOID_ROUND_BALL (26235, "NATOID_Round Ball"),
     /** RP-379D Tirada D */
     RP_379D_TIRADA_D (26236, "RP-379D Tirada D"),
     /** RP-3 */
     RP_3 (26237, "RP-3"),
     /** RP-4G */
     RP_4G (26238, "RP-4G"),
-    /** NATOID_RoundHouse */
-    NATOID_ROUNDHOUSE (26280, "NATOID_RoundHouse"),
-    /** NATOID_RoundHouseB */
-    NATOID_ROUNDHOUSEB (26325, "NATOID_RoundHouseB"),
+    /** NATOID_Round House */
+    NATOID_ROUND_HOUSE (26280, "NATOID_Round House"),
+    /** NATOID_Round House B */
+    NATOID_ROUND_HOUSE_B (26325, "NATOID_Round House B"),
     /** RPR-117 */
     RPR_117 (26326, "RPR-117"),
     /** RS-02/50 */
     RS_02_50 (26327, "RS-02/50"),
-    /** COMMID_RSR210N */
-    COMMID_RSR210N (26328, "COMMID_RSR210N"),
+    /** COMMID_RSR 210N */
+    COMMID_RSR_210N (26328, "COMMID_RSR 210N"),
     /** RT-02/50 */
     RT_02_50 (26330, "RT-02/50"),
     /** RTA-4100 */
@@ -3632,14 +3632,14 @@ public enum EmitterName
     RTN_25X (26353, "RTN-25X"),
     /** RTS-6400 */
     RTS_6400 (26354, "RTS-6400"),
-    /** NATOID_RubyRake */
-    NATOID_RUBYRAKE (26355, "NATOID_RubyRake"),
-    /** NATOID_RumSling */
-    NATOID_RUMSLING (26360, "NATOID_RumSling"),
-    /** NATOID_RumSlingRO */
-    NATOID_RUMSLINGRO (26361, "NATOID_RumSlingRO"),
-    /** NATOID_RumSlingTT */
-    NATOID_RUMSLINGTT (26362, "NATOID_RumSlingTT"),
+    /** NATOID_Ruby Rake */
+    NATOID_RUBY_RAKE (26355, "NATOID_Ruby Rake"),
+    /** NATOID_Rum Sling */
+    NATOID_RUM_SLING (26360, "NATOID_Rum Sling"),
+    /** NATOID_Rum Sling RO */
+    NATOID_RUM_SLING_RO (26361, "NATOID_Rum Sling RO"),
+    /** NATOID_Rum Sling TT */
+    NATOID_RUM_SLING_TT (26362, "NATOID_Rum Sling TT"),
     /** RV2 */
     RV2 (26370, "RV2"),
     /** RV3 */
@@ -3664,18 +3664,18 @@ public enum EmitterName
     RV_377 (26610, "RV-377"),
     /** RV UM */
     RV_UM (26640, "RV UM"),
-    /** COMMID_RXN2-60 */
-    COMMID_RXN2_60 (26660, "COMMID_RXN2-60"),
-    /** NATOID_RyeHouse */
-    NATOID_RYEHOUSE (26665, "NATOID_RyeHouse"),
+    /** COMMID_RXN 2-60 */
+    COMMID_RXN_2_60 (26660, "COMMID_RXN 2-60"),
+    /** NATOID_Rye House */
+    NATOID_RYE_HOUSE (26665, "NATOID_Rye House"),
     /** S-1810CD */
     S_1810CD (26670, "S-1810CD"),
     /** Sahab */
     SAHAB (26672, "Sahab"),
     /** Salamandre */
     SALAMANDRE (26673, "Salamandre"),
-    /** COMMID_SamyungSMR-7200 */
-    COMMID_SAMYUNGSMR_7200 (26674, "COMMID_SamyungSMR-7200"),
+    /** COMMID_Samyung SMR-7200 */
+    COMMID_SAMYUNG_SMR_7200 (26674, "COMMID_Samyung SMR-7200"),
     /** S1850M */
     S1850M (26675, "S1850M"),
     /** S-511 */
@@ -3694,32 +3694,32 @@ public enum EmitterName
     S_654 (26683, "S-654"),
     /** S-669 */
     S_669 (26684, "S-669"),
-    /** NATOID_SA2Guideline */
-    NATOID_SA2GUIDELINE (26685, "NATOID_SA2Guideline"),
+    /** NATOID_SA 2 Guideline */
+    NATOID_SA_2_GUIDELINE (26685, "NATOID_SA 2 Guideline"),
     /** S-244 */
     S_244 (26686, "S-244"),
     /** S-711 */
     S_711 (26687, "S-711"),
-    /** NATOID_SA3Goa */
-    NATOID_SA3GOA (26730, "NATOID_SA3Goa"),
-    /** NATOID_SA8GeckoDT */
-    NATOID_SA8GECKODT (26775, "NATOID_SA8GeckoDT"),
-    /** NATOID_SA-12TELARILL */
-    NATOID_SA_12TELARILL (26795, "NATOID_SA-12TELARILL"),
+    /** NATOID_SA 3 Goa */
+    NATOID_SA_3_GOA (26730, "NATOID_SA 3 Goa"),
+    /** NATOID_SA 8 Gecko DT */
+    NATOID_SA_8_GECKO_DT (26775, "NATOID_SA 8 Gecko DT"),
+    /** NATOID_SA-12 TELAR ILL */
+    NATOID_SA_12_TELAR_ILL (26795, "NATOID_SA-12 TELAR ILL"),
     /** SABER-M60 */
     SABER_M60 (26799, "SABER-M60"),
     /** Samovar */
     SAMOVAR (26805, "Samovar"),
     /** Sampson */
     SAMPSON (26810, "Sampson"),
-    /** NATOID_SAN7GadflyTI */
-    NATOID_SAN7GADFLYTI (26820, "NATOID_SAN7GadflyTI"),
-    /** NATOID_SAN11Cads1UN */
-    NATOID_SAN11CADS1UN (26865, "NATOID_SAN11Cads1UN"),
+    /** NATOID_SA N 7 Gadfly TI */
+    NATOID_SA_N_7_GADFLY_TI (26820, "NATOID_SA N 7 Gadfly TI"),
+    /** NATOID_SA N 11 Cads 1 UN */
+    NATOID_SA_N_11_CADS_1_UN (26865, "NATOID_SA N 11 Cads 1 UN"),
     /** Saccade MH */
     SACCADE_MH (26900, "Saccade MH"),
-    /** NATOID_SaltPotAandB */
-    NATOID_SALTPOTAB (26910, "NATOID_SaltPotA&B"),
+    /** NATOID_Salt Pot AandB */
+    NATOID_SALT_POT_AB (26910, "NATOID_Salt Pot A&B"),
     /** SAP-14 */
     SAP_14 (26920, "SAP-14"),
     /** SAP-518 */
@@ -3736,36 +3736,36 @@ public enum EmitterName
     SATRAPE (26950, "SATRAPE"),
     /** SATURNE II */
     SATURNE_II (26955, "SATURNE II"),
-    /** NATOID_ScanCan */
-    NATOID_SCANCAN (27000, "NATOID_ScanCan"),
-    /** NATOID_ScanFix */
-    NATOID_SCANFIX (27045, "NATOID_ScanFix"),
-    /** NATOID_ScanOdd */
-    NATOID_SCANODD (27090, "NATOID_ScanOdd"),
+    /** NATOID_Scan Can */
+    NATOID_SCAN_CAN (27000, "NATOID_Scan Can"),
+    /** NATOID_Scan Fix */
+    NATOID_SCAN_FIX (27045, "NATOID_Scan Fix"),
+    /** NATOID_Scan Odd */
+    NATOID_SCAN_ODD (27090, "NATOID_Scan Odd"),
     /** SCANTER 1002 */
     SCANTER_1002 (27095, "SCANTER 1002"),
-    /** COMMID_SCANTER2001 */
-    COMMID_SCANTER2001 (27100, "COMMID_SCANTER2001"),
-    /** COMMID_SCANTER2002 */
-    COMMID_SCANTER2002 (27101, "COMMID_SCANTER2002"),
-    /** COMMID_SCANTER2100 */
-    COMMID_SCANTER2100 (27102, "COMMID_SCANTER2100"),
+    /** COMMID_SCANTER 2001 */
+    COMMID_SCANTER_2001 (27100, "COMMID_SCANTER 2001"),
+    /** COMMID_SCANTER 2002 */
+    COMMID_SCANTER_2002 (27101, "COMMID_SCANTER 2002"),
+    /** COMMID_SCANTER 2100 */
+    COMMID_SCANTER_2100 (27102, "COMMID_SCANTER 2100"),
     /** SCANTER 4002 */
     SCANTER_4002 (27109, "SCANTER 4002"),
-    /** COMMID_SCANTER4100 */
-    COMMID_SCANTER4100 (27110, "COMMID_SCANTER4100"),
+    /** COMMID_SCANTER 4100 */
+    COMMID_SCANTER_4100 (27110, "COMMID_SCANTER 4100"),
     /** SCANTER 5102 */
     SCANTER_5102 (27111, "SCANTER 5102"),
     /** SCANTER 5502 */
     SCANTER_5502 (27113, "SCANTER 5502"),
-    /** COMMID_SCANTER6000 */
-    COMMID_SCANTER6000 (27115, "COMMID_SCANTER6000"),
-    /** COMMID_SCANTER6002 */
-    COMMID_SCANTER6002 (27116, "COMMID_SCANTER6002"),
-    /** COMMID_ScanterMil009 */
-    COMMID_SCANTERMIL009 (27125, "COMMID_ScanterMil009"),
-    /** NATOID_ScanThree */
-    NATOID_SCANTHREE (27135, "NATOID_ScanThree"),
+    /** COMMID_SCANTER 6000 */
+    COMMID_SCANTER_6000 (27115, "COMMID_SCANTER 6000"),
+    /** COMMID_SCANTER 6002 */
+    COMMID_SCANTER_6002 (27116, "COMMID_SCANTER 6002"),
+    /** COMMID_Scanter Mil 009 */
+    COMMID_SCANTER_MIL_009 (27125, "COMMID_Scanter Mil 009"),
+    /** NATOID_Scan Three */
+    NATOID_SCAN_THREE (27135, "NATOID_Scan Three"),
     /** SCANTER MIL S */
     SCANTER_MIL_S (27137, "SCANTER MIL S"),
     /** Scanter SMR */
@@ -3778,8 +3778,8 @@ public enum EmitterName
     STAR_2000 (27143, "STAR 2000"),
     /** NATOID_SCOREBOARD */
     NATOID_SCOREBOARD (27150, "NATOID_SCOREBOARD"),
-    /** NATOID_ScoupPlate */
-    NATOID_SCOUPPLATE (27180, "NATOID_ScoupPlate"),
+    /** NATOID_Scoup Plate */
+    NATOID_SCOUP_PLATE (27180, "NATOID_Scoup Plate"),
     /** COMMID_SCOUT */
     COMMID_SCOUT (27183, "COMMID_SCOUT"),
     /** SCR-584 */
@@ -3794,8 +3794,8 @@ public enum EmitterName
     SEA_EAGLE_S_C_TYPE_382 (27240, "Sea Eagle S/C (Type 382)"),
     /** SEA FALCON */
     SEA_FALCON (27245, "SEA FALCON"),
-    /** COMMID_SeaGiraffeAMB */
-    COMMID_SEAGIRAFFEAMB (27248, "COMMID_SeaGiraffeAMB"),
+    /** COMMID_Sea Giraffe AMB */
+    COMMID_SEA_GIRAFFE_AMB (27248, "COMMID_Sea Giraffe AMB"),
     /** COMMID_Seaguard */
     COMMID_SEAGUARD (27251, "COMMID_Seaguard"),
     /** Sea Hunter 4 MG */
@@ -3804,12 +3804,12 @@ public enum EmitterName
     SEA_HUNTER_4_TA (27315, "Sea Hunter 4 TA"),
     /** Sea Hunter 4 TT */
     SEA_HUNTER_4_TT (27360, "Sea Hunter 4 TT"),
-    /** NATOID_SeaGull */
-    NATOID_SEAGULL (27405, "NATOID_SeaGull"),
-    /** COMMID_SeaMaster400 */
-    COMMID_SEAMASTER400 (27430, "COMMID_SeaMaster400"),
-    /** NATOID_SeaNet */
-    NATOID_SEANET (27450, "NATOID_SeaNet"),
+    /** NATOID_Sea Gull */
+    NATOID_SEA_GULL (27405, "NATOID_Sea Gull"),
+    /** COMMID_Sea Master 400 */
+    COMMID_SEA_MASTER_400 (27430, "COMMID_Sea Master 400"),
+    /** NATOID_Sea Net */
+    NATOID_SEA_NET (27450, "NATOID_Sea Net"),
     /** Sea Sparrow */
     SEA_SPARROW (27451, "Sea Sparrow"),
     /** Sea Spray */
@@ -3830,26 +3830,26 @@ public enum EmitterName
     SEASPRAY_7000E (27582, "SEASPRAY 7000E"),
     /** SeaVue */
     SEAVUE (27583, "SeaVue"),
-    /** COMMID_SeasprayMk3 */
-    COMMID_SEASPRAYMK3 (27584, "COMMID_SeasprayMk3"),
-    /** COMMID_SeleniaOrion7 */
-    COMMID_SELENIAORION7 (27585, "COMMID_SeleniaOrion7"),
-    /** COMMID_Seleniatype912 */
-    COMMID_SELENIATYPE912 (27630, "COMMID_Seleniatype912"),
-    /** COMMID_SelenniaRAN12LX */
-    COMMID_SELENNIARAN12LX (27675, "COMMID_SelenniaRAN12LX"),
+    /** COMMID_Seaspray Mk3 */
+    COMMID_SEASPRAY_MK3 (27584, "COMMID_Seaspray Mk3"),
+    /** COMMID_Selenia Orion 7 */
+    COMMID_SELENIA_ORION_7 (27585, "COMMID_Selenia Orion 7"),
+    /** COMMID_Selenia type 912 */
+    COMMID_SELENIA_TYPE_912 (27630, "COMMID_Selenia type 912"),
+    /** COMMID_Selennia RAN 12 LX */
+    COMMID_SELENNIA_RAN_12_LX (27675, "COMMID_Selennia RAN 12 LX"),
     /** Selenia RAN 20S */
     SELENIA_RAN_20S (27680, "Selenia RAN 20S"),
-    /** COMMID_SelenniaRTN10X */
-    COMMID_SELENNIARTN10X (27720, "COMMID_SelenniaRTN10X"),
-    /** COMMID_SeliniaARP1645 */
-    COMMID_SELINIAARP1645 (27765, "COMMID_SeliniaARP1645"),
+    /** COMMID_Selennia RTN 10X */
+    COMMID_SELENNIA_RTN_10X (27720, "COMMID_Selennia RTN 10X"),
+    /** COMMID_Selinia ARP 1645 */
+    COMMID_SELINIA_ARP_1645 (27765, "COMMID_Selinia ARP 1645"),
     /** SENTIR-M20 */
     SENTIR_M20 (27770, "SENTIR-M20"),
     /** SERHAT */
     SERHAT (27773, "SERHAT"),
-    /** COMMID_Series10CompactSubmarineRadar(CSR) */
-    COMMID_SERIES10COMPACTSUBMARINERADARCSR (27775, "COMMID_Series10CompactSubmarineRadar(CSR)"),
+    /** COMMID_Series 10 Compact Submarine Radar (CSR) */
+    COMMID_SERIES_10_COMPACT_SUBMARINE_RADAR_CSR (27775, "COMMID_Series 10 Compact Submarine Radar (CSR)"),
     /** SERIES 52 */
     SERIES_52 (27780, "SERIES 52"),
     /** SERIES 320 */
@@ -3868,86 +3868,86 @@ public enum EmitterName
     SGR_104 (27870, "SGR-104"),
     /** SHAHINE */
     SHAHINE (27875, "SHAHINE"),
-    /** NATOID_SheetBend */
-    NATOID_SHEETBEND (27900, "NATOID_SheetBend"),
-    /** NATOID_SheetCurve */
-    NATOID_SHEETCURVE (27945, "NATOID_SheetCurve"),
+    /** NATOID_Sheet Bend */
+    NATOID_SHEET_BEND (27900, "NATOID_Sheet Bend"),
+    /** NATOID_Sheet Curve */
+    NATOID_SHEET_CURVE (27945, "NATOID_Sheet Curve"),
     /** SHIKRA */
     SHIKRA (27980, "SHIKRA"),
-    /** NATOID_ShipGlobe */
-    NATOID_SHIPGLOBE (27990, "NATOID_ShipGlobe"),
-    /** NATOID_ShipWheel */
-    NATOID_SHIPWHEEL (28035, "NATOID_ShipWheel"),
+    /** NATOID_Ship Globe */
+    NATOID_SHIP_GLOBE (27990, "NATOID_Ship Globe"),
+    /** NATOID_Ship Wheel */
+    NATOID_SHIP_WHEEL (28035, "NATOID_Ship Wheel"),
     /** SGR 114 */
     SGR_114 (28080, "SGR 114"),
-    /** NATOID_ShoreWalkA */
-    NATOID_SHOREWALKA (28125, "NATOID_ShoreWalkA"),
-    /** NATOID_ShortHorn */
-    NATOID_SHORTHORN (28170, "NATOID_ShortHorn"),
-    /** NATOID_ShotDome */
-    NATOID_SHOTDOME (28215, "NATOID_ShotDome"),
-    /** NATOID_SideGlobeJN */
-    NATOID_SIDEGLOBEJN (28260, "NATOID_SideGlobeJN"),
+    /** NATOID_Shore Walk A */
+    NATOID_SHORE_WALK_A (28125, "NATOID_Shore Walk A"),
+    /** NATOID_Short Horn */
+    NATOID_SHORT_HORN (28170, "NATOID_Short Horn"),
+    /** NATOID_Shot Dome */
+    NATOID_SHOT_DOME (28215, "NATOID_Shot Dome"),
+    /** NATOID_Side Globe JN */
+    NATOID_SIDE_GLOBE_JN (28260, "NATOID_Side Globe JN"),
     /** PRV-11 */
     PRV_11 (28280, "PRV-11"),
-    /** NATOID_SideWalkA */
-    NATOID_SIDEWALKA (28305, "NATOID_SideWalkA"),
-    /** COMMID_SignaalDA02 */
-    COMMID_SIGNAALDA02 (28350, "COMMID_SignaalDA02"),
-    /** COMMID_SignaalDA05 */
-    COMMID_SIGNAALDA05 (28395, "COMMID_SignaalDA05"),
-    /** COMMID_SignaalDA08 */
-    COMMID_SIGNAALDA08 (28440, "COMMID_SignaalDA08"),
-    /** COMMID_SignaalDA082LS */
-    COMMID_SIGNAALDA082LS (28445, "COMMID_SignaalDA082LS"),
-    /** COMMID_SignaalLW04 */
-    COMMID_SIGNAALLW04 (28480, "COMMID_SignaalLW04"),
-    /** COMMID_SignaalLW08 */
-    COMMID_SIGNAALLW08 (28485, "COMMID_SignaalLW08"),
-    /** COMMID_SignaalLWOR */
-    COMMID_SIGNAALLWOR (28530, "COMMID_SignaalLWOR"),
-    /** COMMID_SignaalM45 */
-    COMMID_SIGNAALM45 (28575, "COMMID_SignaalM45"),
-    /** COMMID_SignaalMW08 */
-    COMMID_SIGNAALMW08 (28620, "COMMID_SignaalMW08"),
-    /** COMMID_SignaalSMART */
-    COMMID_SIGNAALSMART (28665, "COMMID_SignaalSMART"),
-    /** COMMID_SignaalSTING */
-    COMMID_SIGNAALSTING (28710, "COMMID_SignaalSTING"),
-    /** COMMID_SignaalSTIR */
-    COMMID_SIGNAALSTIR (28755, "COMMID_SignaalSTIR"),
-    /** COMMID_SignaalSTIR1.8M */
-    COMMID_SIGNAALSTIR18M (28760, "COMMID_SignaalSTIR1.8M"),
-    /** COMMID_SignaalSTIR24M */
-    COMMID_SIGNAALSTIR24M (28770, "COMMID_SignaalSTIR24M"),
-    /** COMMID_SignaalWM202 */
-    COMMID_SIGNAALWM202 (28800, "COMMID_SignaalWM202"),
-    /** COMMID_SignaalWM25 */
-    COMMID_SIGNAALWM25 (28845, "COMMID_SignaalWM25"),
-    /** COMMID_SignaalWM27 */
-    COMMID_SIGNAALWM27 (28890, "COMMID_SignaalWM27"),
-    /** COMMID_SignaalWM28 */
-    COMMID_SIGNAALWM28 (28935, "COMMID_SignaalWM28"),
-    /** COMMID_SignaalZW01 */
-    COMMID_SIGNAALZW01 (28980, "COMMID_SignaalZW01"),
-    /** COMMID_SignaalZW06 */
-    COMMID_SIGNAALZW06 (29025, "COMMID_SignaalZW06"),
-    /** COMMID_SignaalZW07 */
-    COMMID_SIGNAALZW07 (29030, "COMMID_SignaalZW07"),
-    /** COMMID_SignaalZW0800 */
-    COMMID_SIGNAALZW0800 (29035, "COMMID_SignaalZW0800"),
+    /** NATOID_Side Walk A */
+    NATOID_SIDE_WALK_A (28305, "NATOID_Side Walk A"),
+    /** COMMID_Signaal DA 02 */
+    COMMID_SIGNAAL_DA_02 (28350, "COMMID_Signaal DA 02"),
+    /** COMMID_Signaal DA 05 */
+    COMMID_SIGNAAL_DA_05 (28395, "COMMID_Signaal DA 05"),
+    /** COMMID_Signaal DA 08 */
+    COMMID_SIGNAAL_DA_08 (28440, "COMMID_Signaal DA 08"),
+    /** COMMID_Signaal DA 082LS */
+    COMMID_SIGNAAL_DA_082LS (28445, "COMMID_Signaal DA 082LS"),
+    /** COMMID_Signaal LW 04 */
+    COMMID_SIGNAAL_LW_04 (28480, "COMMID_Signaal LW 04"),
+    /** COMMID_Signaal LW 08 */
+    COMMID_SIGNAAL_LW_08 (28485, "COMMID_Signaal LW 08"),
+    /** COMMID_Signaal LWOR */
+    COMMID_SIGNAAL_LWOR (28530, "COMMID_Signaal LWOR"),
+    /** COMMID_Signaal M45 */
+    COMMID_SIGNAAL_M45 (28575, "COMMID_Signaal M45"),
+    /** COMMID_Signaal MW 08 */
+    COMMID_SIGNAAL_MW_08 (28620, "COMMID_Signaal MW 08"),
+    /** COMMID_Signaal SMART */
+    COMMID_SIGNAAL_SMART (28665, "COMMID_Signaal SMART"),
+    /** COMMID_Signaal STING */
+    COMMID_SIGNAAL_STING (28710, "COMMID_Signaal STING"),
+    /** COMMID_Signaal STIR */
+    COMMID_SIGNAAL_STIR (28755, "COMMID_Signaal STIR"),
+    /** COMMID_Signaal STIR 1.8M */
+    COMMID_SIGNAAL_STIR_18M (28760, "COMMID_Signaal STIR 1.8M"),
+    /** COMMID_Signaal STIR 24M */
+    COMMID_SIGNAAL_STIR_24M (28770, "COMMID_Signaal STIR 24M"),
+    /** COMMID_Signaal WM 202 */
+    COMMID_SIGNAAL_WM_202 (28800, "COMMID_Signaal WM 202"),
+    /** COMMID_Signaal WM 25 */
+    COMMID_SIGNAAL_WM_25 (28845, "COMMID_Signaal WM 25"),
+    /** COMMID_Signaal WM 27 */
+    COMMID_SIGNAAL_WM_27 (28890, "COMMID_Signaal WM 27"),
+    /** COMMID_Signaal WM 28 */
+    COMMID_SIGNAAL_WM_28 (28935, "COMMID_Signaal WM 28"),
+    /** COMMID_Signaal ZW 01 */
+    COMMID_SIGNAAL_ZW_01 (28980, "COMMID_Signaal ZW 01"),
+    /** COMMID_Signaal ZW 06 */
+    COMMID_SIGNAAL_ZW_06 (29025, "COMMID_Signaal ZW 06"),
+    /** COMMID_Signaal ZW 07 */
+    COMMID_SIGNAAL_ZW_07 (29030, "COMMID_Signaal ZW 07"),
+    /** COMMID_Signaal ZW 0800 */
+    COMMID_SIGNAAL_ZW_0800 (29035, "COMMID_Signaal ZW 0800"),
     /** SIMRAD 3G */
     SIMRAD_3G (29043, "SIMRAD 3G"),
     /** SIMRAD 4G */
     SIMRAD_4G (29045, "SIMRAD 4G"),
-    /** COMMID_SimradCA54 */
-    COMMID_SIMRADCA54 (29050, "COMMID_SimradCA54"),
-    /** NATOID_SkiPole */
-    NATOID_SKIPOLE (29070, "NATOID_SkiPole"),
-    /** NATOID_SkinHead */
-    NATOID_SKINHEAD (29115, "NATOID_SkinHead"),
-    /** NATOID_SkipSpin */
-    NATOID_SKIPSPIN (29160, "NATOID_SkipSpin"),
+    /** COMMID_Simrad CA54 */
+    COMMID_SIMRAD_CA54 (29050, "COMMID_Simrad CA54"),
+    /** NATOID_Ski Pole */
+    NATOID_SKI_POLE (29070, "NATOID_Ski Pole"),
+    /** NATOID_Skin Head */
+    NATOID_SKIN_HEAD (29115, "NATOID_Skin Head"),
+    /** NATOID_Skip Spin */
+    NATOID_SKIP_SPIN (29160, "NATOID_Skip Spin"),
     /** Sky Wave (Over The Horizon) */
     SKY_WAVE_OVER_THE_HORIZON (29175, "Sky Wave (Over The Horizon)"),
     /** Skyguard B */
@@ -3960,8 +3960,8 @@ public enum EmitterName
     SKYGUARD_LR (29191, "Skyguard LR"),
     /** Skymaster */
     SKYMASTER (29200, "Skymaster"),
-    /** NATOID_SkyWatch */
-    NATOID_SKYWATCH (29205, "NATOID_SkyWatch"),
+    /** NATOID_Sky Watch */
+    NATOID_SKY_WATCH (29205, "NATOID_Sky Watch"),
     /** Sky Ranger */
     SKY_RANGER (29210, "Sky Ranger"),
     /** COMMID_SKYSHADOW */
@@ -3972,73 +3972,85 @@ public enum EmitterName
     SL (29250, "SL"),
     /** SL/ALQ-234 */
     SL_ALQ_234 (29270, "SL/ALQ-234"),
-    /** NATOID_SlapShot */
-    NATOID_SLAPSHOT (29295, "NATOID_SlapShot"),
-    /** NATOID_SlapShotG */
-    NATOID_SLAPSHOTG (29297, "NATOID_SlapShotG"),
+    /** NATOID_Slap Shot */
+    NATOID_SLAP_SHOT (29295, "NATOID_Slap Shot"),
+    /** NATOID_Slap Shot G */
+    NATOID_SLAP_SHOT_G (29297, "NATOID_Slap Shot G"),
     /** SLC-2 */
     SLC_2 (29300, "SLC-2"),
     /** SLC-4 */
     SLC_4 (29305, "SLC-4"),
-    /** NATOID_SlimNet */
-    NATOID_SLIMNET (29340, "NATOID_SlimNet"),
-    /** NATOID_SlotBackA */
-    NATOID_SLOTBACKA (29385, "NATOID_SlotBackA"),
-    /** NATOID_SlotBackILL */
-    NATOID_SLOTBACKILL (29400, "NATOID_SlotBackILL"),
-    /** NATOID_SlotBackB */
-    NATOID_SLOTBACKB (29430, "NATOID_SlotBackB"),
-    /** NATOID_SlotBackIV */
-    NATOID_SLOTBACKIV (29431, "NATOID_SlotBackIV"),
-    /** NATOID_SlotBackBTopaz */
-    NATOID_SLOTBACKBTOPAZ (29432, "NATOID_SlotBackBTopaz"),
-    /** NATOID_SlotBackE */
-    NATOID_SLOTBACKE (29433, "NATOID_SlotBackE"),
-    /** NATOID_SlotBackG */
-    NATOID_SLOTBACKG (29434, "NATOID_SlotBackG"),
-    /** NATOID_SlotBackVI */
-    NATOID_SLOTBACKVI (29435, "NATOID_SlotBackVI"),
-    /** NATOID_SlotRest */
-    NATOID_SLOTREST (29440, "NATOID_SlotRest"),
+    /** NATOID_Slim Net */
+    NATOID_SLIM_NET (29340, "NATOID_Slim Net"),
+    /** NATOID_Slot Back A */
+    NATOID_SLOT_BACK_A (29385, "NATOID_Slot Back A"),
+    /** NATOID_Slot Back ILL */
+    NATOID_SLOT_BACK_ILL (29400, "NATOID_Slot Back ILL"),
+    /** NATOID_Slot Back B */
+    NATOID_SLOT_BACK_B (29430, "NATOID_Slot Back B"),
+    /** NATOID_Slot Back IV */
+    NATOID_SLOT_BACK_IV (29431, "NATOID_Slot Back IV"),
+    /** NATOID_Slot Back B Topaz */
+    NATOID_SLOT_BACK_B_TOPAZ (29432, "NATOID_Slot Back B Topaz"),
+    /** NATOID_Slot Back E */
+    NATOID_SLOT_BACK_E (29433, "NATOID_Slot Back E"),
+    /** NATOID_Slot Back G */
+    NATOID_SLOT_BACK_G (29434, "NATOID_Slot Back G"),
+    /** NATOID_Slot Back VI */
+    NATOID_SLOT_BACK_VI (29435, "NATOID_Slot Back VI"),
+    /** NATOID_Slot Rest */
+    NATOID_SLOT_REST (29440, "NATOID_Slot Rest"),
     /** SM-674A/UPM */
     SM_674A_UPM (29450, "SM-674A/UPM"),
-    /** COMMID_SMA3RM */
-    COMMID_SMA3RM (29475, "COMMID_SMA3RM"),
-    /** COMMID_SMA3RM20 */
-    COMMID_SMA3RM20 (29520, "COMMID_SMA3RM20"),
-    /** COMMID_SMA3RM20ASMG */
-    COMMID_SMA3RM20ASMG (29565, "COMMID_SMA3RM20ASMG"),
-    /** COMMID_SMABPS704 */
-    COMMID_SMABPS704 (29610, "COMMID_SMABPS704"),
-    /** COMMID_SMASPIN749(V)2 */
-    COMMID_SMASPIN749V2 (29655, "COMMID_SMASPIN749(V)2"),
-    /** COMMID_SMASPN703 */
-    COMMID_SMASPN703 (29700, "COMMID_SMASPN703");
+    /** COMMID_SMA 3 RM */
+    COMMID_SMA_3_RM (29475, "COMMID_SMA 3 RM"),
+    /** COMMID_SMA 3 RM 20 */
+    COMMID_SMA_3_RM_20 (29520, "COMMID_SMA 3 RM 20"),
+    /** COMMID_SMA 3RM 20ASMG */
+    COMMID_SMA_3RM_20ASMG (29565, "COMMID_SMA 3RM 20ASMG"),
+    /** COMMID_SMA BPS 704 */
+    COMMID_SMA_BPS_704 (29610, "COMMID_SMA BPS 704"),
+    /** COMMID_SMA SPIN 749 (V) 2 */
+    COMMID_SMA_SPIN_749_V_2 (29655, "COMMID_SMA SPIN 749 (V) 2"),
+    /** COMMID_SMA SPN 703 */
+    COMMID_SMA_SPN_703 (29700, "COMMID_SMA SPN 703");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     EmitterName(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 16;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static EmitterName getEnumForValue(int i)
     {
        for(EmitterName val: EmitterName.values()) {
@@ -4049,22 +4061,38 @@ public enum EmitterName
        return null;
     }
 
- 
-   public void marshal(DataOutputStream dos) throws IOException
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
+    public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.putShort((short)getValue());
     }
-
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EmitterName unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static EmitterName unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
         return getEnumForValue(byteBuffer.getShort());

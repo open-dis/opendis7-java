@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19f497aa
- * Country: Czechoslovakia (CSK)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26270b77;
+ * Country: Czechoslovakia (CSK);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22501
  */
 public class IdentificationClassificationRadar extends EntityType
 {
+    /** Default constructor */
     public IdentificationClassificationRadar()
     {
-        setCountry(Country.CZECHOSLOVAKIA_CSK);
+        setCountry(Country.ACTION_REQUEST_RELIABLE);
         setEntityKind(EntityKind.SENSOR_EMITTER);
         setDomain(Domain.inst(PlatformDomain.LAND));
 

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6daf7d37
- * Country: Slovakia (SVK)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@636bbbbb;
+ * Country: Slovakia (SVK);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30125
  */
 public class RM70Modular extends EntityType
 {
+    /** Default constructor */
     public RM70Modular()
     {
         setCountry(Country.SLOVAKIA_SVK);

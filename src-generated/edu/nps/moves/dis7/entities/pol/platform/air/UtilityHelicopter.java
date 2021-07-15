@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4bf324f9
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@534243e4;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24803
  */
 public class UtilityHelicopter extends EntityType
 {
+    /** Default constructor */
     public UtilityHelicopter()
     {
         setCountry(Country.POLAND_POL);

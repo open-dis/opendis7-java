@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10027fc9
- * Country: Myanmar (MMR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37cd92d6;
+ * Country: Myanmar (MMR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32913
  */
 public class _448YanWinAung extends EntityType
 {
+    /** Default constructor */
     public _448YanWinAung()
     {
         setCountry(Country.MYANMAR_MMR);

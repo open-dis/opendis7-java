@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e4e1ef5
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1afd72ef;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30361
  */
 public class P176AlHili extends EntityType
 {
+    /** Default constructor */
     public P176AlHili()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

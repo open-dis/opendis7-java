@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@363f6148
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f19b8b3;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17914
  */
 public class P301Inttisar extends EntityType
 {
+    /** Default constructor */
     public P301Inttisar()
     {
         setCountry(Country.KUWAIT_KWT);

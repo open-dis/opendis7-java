@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 434 marshal size 8<br>
  * PlatformLandConstructionSpecialtyVehicleSubcategories<br>
  * Subcategories for Land Platform Category 87
@@ -73,11 +73,11 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
     /** Dump Truck, Super */
     DUMP_TRUCK_SUPER (27, "Dump Truck, Super"),
     /** Dump Truck, Off Road */
-    DUMP_TRUCK_OFF_ROAD (28, "Dump Truck, Off Road"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Dump Truck, Off Road"),
     /** Paver */
     PAVER (29, "Paver"),
     /** Drilling Machine */
-    DRILLING_MACHINE (30, "Drilling Machine"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Drilling Machine"),
     /** Concrete Mixer, Other */
     CONCRETE_MIXER_OTHER (31, "Concrete Mixer, Other"),
     /** Concrete Mixer, Rear Discharge */
@@ -109,50 +109,62 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
     /** Fork Lift, Rought Terrain */
     FORK_LIFT_ROUGHT_TERRAIN (45, "Fork Lift, Rought Terrain"),
     /** Transloader */
-    TRANSLOADER (46, "Transloader"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Transloader"),
     /** Truck, Water, Construction */
     TRUCK_WATER_CONSTRUCTION (47, "Truck, Water, Construction"),
     /** Truck, Fuel Delivery */
     TRUCK_FUEL_DELIVERY (48, "Truck, Fuel Delivery"),
     /** Truck, Sawmill */
-    TRUCK_SAWMILL (49, "Truck, Sawmill"),
+    LIVE_ENTITY_FIRE (49, "Truck, Sawmill"),
     /** Truck, Line Marking, Construction */
-    TRUCK_LINE_MARKING_CONSTRUCTION (50, "Truck, Line Marking, Construction"),
+    LIVE_ENTITY_DETONATION (50, "Truck, Line Marking, Construction"),
     /** Tractor, Industrial */
-    TRACTOR_INDUSTRIAL (51, "Tractor, Industrial"),
+    CREATE_ENTITY_RELIABLE (51, "Tractor, Industrial"),
     /** Compactor, High Speed */
-    COMPACTOR_HIGH_SPEED (52, "Compactor, High Speed"),
+    REMOVE_ENTITY_RELIABLE (52, "Compactor, High Speed"),
     /** Truck, Drilling */
-    TRUCK_DRILLING (53, "Truck, Drilling"),
+    START_RESUME_RELIABLE (53, "Truck, Drilling"),
     /** Truck, Drilling Support */
-    TRUCK_DRILLING_SUPPORT (54, "Truck, Drilling Support"),
+    STOP_FREEZE_RELIABLE (54, "Truck, Drilling Support"),
     /** Crane, Construction */
-    CRANE_CONSTRUCTION (55, "Crane, Construction");
+    ACKNOWLEDGE_RELIABLE (55, "Crane, Construction");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     PlatformLandConstructionSpecialtyVehicleSubcategories(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static PlatformLandConstructionSpecialtyVehicleSubcategories getEnumForValue(int i)
     {
        for(PlatformLandConstructionSpecialtyVehicleSubcategories val: PlatformLandConstructionSpecialtyVehicleSubcategories.values()) {
@@ -163,17 +175,29 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandConstructionSpecialtyVehicleSubcategories unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -186,6 +210,11 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static PlatformLandConstructionSpecialtyVehicleSubcategories unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -216,6 +245,9 @@ public enum PlatformLandConstructionSpecialtyVehicleSubcategories implements Sub
     @Override
     public String toString()
     {
-        return "PlatformLandConstructionSpecialtyVehicleSubcategories " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "PlatformLandConstructionSpecialtyVehicleSubcategories " + padding + getValue() + " " + name();
     }
 }

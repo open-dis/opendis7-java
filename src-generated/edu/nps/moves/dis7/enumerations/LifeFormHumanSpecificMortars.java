@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 512 marshal size 8<br>
  * LifeFormHumanSpecificMortars
  */
@@ -17,38 +17,50 @@ public enum LifeFormHumanSpecificMortars
     /** Others */
     OTHERS (0, "Others"),
     /** 60mm M224 */
-    _60MM_M224 (30, "60mm M224"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "60mm M224"),
     /** 81mm F2 */
-    _81MM_F2 (50, "81mm F2"),
+    LIVE_ENTITY_DETONATION (50, "81mm F2"),
     /** 81mm L16 */
-    _81MM_L16 (51, "81mm L16"),
+    CREATE_ENTITY_RELIABLE (51, "81mm L16"),
     /** 81mm M252 */
-    _81MM_M252 (52, "81mm M252");
+    REMOVE_ENTITY_RELIABLE (52, "81mm M252");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificMortars(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificMortars getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificMortars val: LifeFormHumanSpecificMortars.values()) {
@@ -59,17 +71,29 @@ public enum LifeFormHumanSpecificMortars
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificMortars unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -82,6 +106,11 @@ public enum LifeFormHumanSpecificMortars
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificMortars unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -112,6 +141,9 @@ public enum LifeFormHumanSpecificMortars
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificMortars " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificMortars " + padding + getValue() + " " + name();
     }
 }

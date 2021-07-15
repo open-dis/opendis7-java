@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46a123e4
- * Country: United States of America (USA)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b35798;
+ * Country: United States of America (USA);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 12455
  */
 public class Meteorologysatellite extends EntityType
 {
+    /** Default constructor */
     public Meteorologysatellite()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

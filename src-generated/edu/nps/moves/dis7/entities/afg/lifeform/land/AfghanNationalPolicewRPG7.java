@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bbc21bd
- * Country: Afghanistan (AFG)
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30358dc7;
+ * Country: Afghanistan (AFG);
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32195
  */
 public class AfghanNationalPolicewRPG7 extends EntityType
 {
+    /** Default constructor */
     public AfghanNationalPolicewRPG7()
     {
         setCountry(Country.AFGHANISTAN_AFG);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15e8c040
- * Country: Other
- * Entity kind: Life form
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30798137;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: AIR;
  *
  * Entity type uid: 32262
  */
 public class Vulture extends EntityType
 {
+    /** Default constructor */
     public Vulture()
     {
         setCountry(Country.OTHER);

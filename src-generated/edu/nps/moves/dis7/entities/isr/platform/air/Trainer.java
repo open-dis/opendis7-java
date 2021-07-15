@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@19553973
- * Country: Israel (ISR)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@704f1591;
+ * Country: Israel (ISR);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 18202
  */
 public class Trainer extends EntityType
 {
+    /** Default constructor */
     public Trainer()
     {
         setCountry(Country.ISRAEL_ISR);

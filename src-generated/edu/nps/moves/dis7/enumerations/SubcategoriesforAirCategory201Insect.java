@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 111 marshal size 8<br>
  * SubcategoriesforAirCategory201Insect
  */
@@ -21,13 +21,13 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
     /** Fly, 20-29 Fly/Midge */
     FLY (20, "Fly"),
     /** Mosquito, 30-39 Mosquito/Gnat */
-    MOSQUITO (30, "Mosquito"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Mosquito"),
     /** Wasp, 40-49 Wasp/Hornet */
     WASP (40, "Wasp"),
     /** Bee, 50-59 Bee */
-    BEE (50, "Bee"),
+    LIVE_ENTITY_DETONATION (50, "Bee"),
     /** Beetle, 60-69 Beetle */
-    BEETLE (60, "Beetle"),
+    DATA_RELIABLE (60, "Beetle"),
     /** Dragonfly, 70-79 Dragonfly/Damselfly */
     DRAGONFLY (70, "Dragonfly"),
     /** Locust, 80-89 Locust */
@@ -36,27 +36,39 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
     private int value;
     private final String description;
 
+    /** Constructor */
     SubcategoriesforAirCategory201Insect(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static SubcategoriesforAirCategory201Insect getEnumForValue(int i)
     {
        for(SubcategoriesforAirCategory201Insect val: SubcategoriesforAirCategory201Insect.values()) {
@@ -67,17 +79,29 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforAirCategory201Insect unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -90,6 +114,11 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SubcategoriesforAirCategory201Insect unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -120,6 +149,9 @@ public enum SubcategoriesforAirCategory201Insect implements SubCategory
     @Override
     public String toString()
     {
-        return "SubcategoriesforAirCategory201Insect " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "SubcategoriesforAirCategory201Insect " + padding + getValue() + " " + name();
     }
 }

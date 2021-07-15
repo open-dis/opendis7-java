@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -15,27 +15,37 @@ import edu.nps.moves.dis7.enumerations.*;
  */
 public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
 {
+   /** liveEntityId is an undescribed parameter... */
    protected EntityID  liveEntityId = new EntityID(); 
 
    /** bit field */
    protected byte  TSPIFlag;
 
+   /** entityLocation is an undescribed parameter... */
    protected LiveEntityRelativeWorldCoordinates  entityLocation = new LiveEntityRelativeWorldCoordinates(); 
 
+   /** entityLinearVelocity is an undescribed parameter... */
    protected LiveEntityLinearVelocity  entityLinearVelocity = new LiveEntityLinearVelocity(); 
 
+   /** entityOrientation is an undescribed parameter... */
    protected LiveEntityOrientation  entityOrientation = new LiveEntityOrientation(); 
 
+   /** positionError is an undescribed parameter... */
    protected LiveEntityPositionError  positionError = new LiveEntityPositionError(); 
 
+   /** orientationError is an undescribed parameter... */
    protected LiveEntityOrientationError  orientationError = new LiveEntityOrientationError(); 
 
+   /** deadReckoningParameters is an undescribed parameter... */
    protected LiveDeadReckoningParameters  deadReckoningParameters = new LiveDeadReckoningParameters(); 
 
+   /** measuredSpeed is an undescribed parameter... */
    protected short  measuredSpeed;
 
+   /** systemSpecificDataLength is an undescribed parameter... */
    protected byte  systemSpecificDataLength;
 
+   /** systemSpecificData is an undescribed parameter... */
    protected byte[]  systemSpecificData = new byte[0]; 
 
 
@@ -47,7 +57,7 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
 public int getMarshalledSize()
@@ -281,7 +291,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * Deserializes an object from a DataInputStream.
  * @throws java.lang.Exception if something goes wrong
  * @see java.io.DataInputStream
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
@@ -347,7 +357,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * Unpacks a Pdu from the underlying data.
  * @throws java.nio.BufferUnderflowException if byteBuffer is too small
  * @see java.nio.ByteBuffer
- * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+ * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception

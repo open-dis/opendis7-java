@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1a78dacd
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d81e101;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19342
  */
 public class BarkatClass extends EntityType
 {
+    /** Default constructor */
     public BarkatClass()
     {
         setCountry(Country.PAKISTAN_PAK);

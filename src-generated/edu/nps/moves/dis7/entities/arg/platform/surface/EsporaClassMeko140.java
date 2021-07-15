@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@41a4555e
- * Country: Argentina (ARG)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6aa8ceb6;
+ * Country: Argentina (ARG);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31262
  */
 public class EsporaClassMeko140 extends EntityType
 {
+    /** Default constructor */
     public EsporaClassMeko140()
     {
         setCountry(Country.ARGENTINA_ARG);

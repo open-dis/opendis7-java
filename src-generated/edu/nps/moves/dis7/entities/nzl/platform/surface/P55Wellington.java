@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37d3d232
- * Country: New Zealand (NZL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@82c57b3;
+ * Country: New Zealand (NZL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30216
  */
 public class P55Wellington extends EntityType
 {
+    /** Default constructor */
     public P55Wellington()
     {
         setCountry(Country.NEW_ZEALAND_NZL);

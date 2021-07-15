@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@215be6bb
- * Country: Bangladesh (BGD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15975490;
+ * Country: Bangladesh (BGD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32622
  */
 public class F28SomudraJoy extends EntityType
 {
+    /** Default constructor */
     public F28SomudraJoy()
     {
         setCountry(Country.BANGLADESH_BGD);

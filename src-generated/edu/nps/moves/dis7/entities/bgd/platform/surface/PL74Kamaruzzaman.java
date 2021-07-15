@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a82f6ef
- * Country: Bangladesh (BGD)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@617c74e5;
+ * Country: Bangladesh (BGD);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32629
  */
 public class PL74Kamaruzzaman extends EntityType
 {
+    /** Default constructor */
     public PL74Kamaruzzaman()
     {
         setCountry(Country.BANGLADESH_BGD);

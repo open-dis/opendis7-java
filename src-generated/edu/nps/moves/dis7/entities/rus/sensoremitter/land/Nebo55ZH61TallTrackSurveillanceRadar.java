@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52d63b7e
- * Country: Russia (RUS)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1be3f8f8;
+ * Country: Russia (RUS);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 24148
  */
 public class Nebo55ZH61TallTrackSurveillanceRadar extends EntityType
 {
+    /** Default constructor */
     public Nebo55ZH61TallTrackSurveillanceRadar()
     {
         setCountry(Country.RUSSIA_RUS);

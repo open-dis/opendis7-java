@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@246df37b
- * Country: Canada (CAN)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11c3ce6a;
+ * Country: Canada (CAN);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 32656
  */
 public class MarkerBuoyiSLDMBPIWPersonInWater extends EntityType
 {
+    /** Default constructor */
     public MarkerBuoyiSLDMBPIWPersonInWater()
     {
         setCountry(Country.CANADA_CAN);

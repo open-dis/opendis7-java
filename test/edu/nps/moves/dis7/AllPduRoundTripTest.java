@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7;
@@ -213,7 +213,7 @@ public class AllPduRoundTripTest
   {
     sem.acquire();
     Path path = Path.of(recorder.getLogFilePath()).getParent();
-    PduPlayer player = new PduPlayer(disNetworkInterface.getMcastGroup(), disNetworkInterface.getDisPort(), path, false);
+    PduPlayer player = new PduPlayer(disNetworkInterface.getMulticastGroup(), disNetworkInterface.getDisPort(), path, false);
     player.addRawListener(ba -> {
       if (ba != null) {
         Pdu pdu = pduFactory.createPdu(ba);

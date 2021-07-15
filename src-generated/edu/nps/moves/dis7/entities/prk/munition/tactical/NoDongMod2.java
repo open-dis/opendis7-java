@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@632cf7d3
- * Country: Korea (Democratic Peoples Republic of) (PRK)
- * Entity kind: Munition
- * Domain: TACTICAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19fbc594;
+ * Country: Korea (Democratic Peoples Republic of) (PRK);
+ * Entity kind: Munition;
+ * Domain: TACTICAL;
  *
  * Entity type uid: 32508
  */
 public class NoDongMod2 extends EntityType
 {
+    /** Default constructor */
     public NoDongMod2()
     {
         setCountry(Country.KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK);

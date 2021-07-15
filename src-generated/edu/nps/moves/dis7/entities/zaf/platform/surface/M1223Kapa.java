@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cd5122d
- * Country: South Africa (ZAF)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a2fa51f;
+ * Country: South Africa (ZAF);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27561
  */
 public class M1223Kapa extends EntityType
 {
+    /** Default constructor */
     public M1223Kapa()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

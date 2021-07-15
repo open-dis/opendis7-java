@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b7ab7ab
- * Country: United States of America (USA)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fee14b;
+ * Country: United States of America (USA);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 22229
  */
 public class RR170Chaff extends EntityType
 {
+    /** Default constructor */
     public RR170Chaff()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

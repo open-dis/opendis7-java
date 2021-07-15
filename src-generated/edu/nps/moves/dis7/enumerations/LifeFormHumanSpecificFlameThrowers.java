@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 523 marshal size 8<br>
  * LifeFormHumanSpecificFlameThrowers
  */
@@ -27,7 +27,7 @@ public enum LifeFormHumanSpecificFlameThrowers
     /** M9A1-7 */
     M9A1_7 (22, "M9A1-7"),
     /** LPO-50 */
-    LPO_50 (30, "LPO-50"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "LPO-50"),
     /** K Pattern */
     K_PATTERN (35, "K Pattern"),
     /** Portable, No 2 Ack Pack */
@@ -39,36 +39,48 @@ public enum LifeFormHumanSpecificFlameThrowers
     /** ROKS-2 */
     ROKS_2 (45, "ROKS-2"),
     /** ROKS-3 */
-    ROKS_3 (46, "ROKS-3"),
+    TIME_SPACE_POSITION_INFORMATION (46, "ROKS-3"),
     /** Type-93 */
-    TYPE_93 (50, "Type-93"),
+    LIVE_ENTITY_DETONATION (50, "Type-93"),
     /** Type-100 */
-    TYPE_100 (51, "Type-100");
+    CREATE_ENTITY_RELIABLE (51, "Type-100");
 
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormHumanSpecificFlameThrowers(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormHumanSpecificFlameThrowers getEnumForValue(int i)
     {
        for(LifeFormHumanSpecificFlameThrowers val: LifeFormHumanSpecificFlameThrowers.values()) {
@@ -79,17 +91,29 @@ public enum LifeFormHumanSpecificFlameThrowers
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificFlameThrowers unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -102,6 +126,11 @@ public enum LifeFormHumanSpecificFlameThrowers
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormHumanSpecificFlameThrowers unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -132,6 +161,9 @@ public enum LifeFormHumanSpecificFlameThrowers
     @Override
     public String toString()
     {
-        return "LifeFormHumanSpecificFlameThrowers " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormHumanSpecificFlameThrowers " + padding + getValue() + " " + name();
     }
 }

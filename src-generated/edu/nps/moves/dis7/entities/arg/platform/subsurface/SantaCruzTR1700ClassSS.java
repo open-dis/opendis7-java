@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5aaa6d82
- * Country: Argentina (ARG)
- * Entity kind: Platform
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ae40994;
+ * Country: Argentina (ARG);
+ * Entity kind: Platform;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 18762
  */
 public class SantaCruzTR1700ClassSS extends EntityType
 {
+    /** Default constructor */
     public SantaCruzTR1700ClassSS()
     {
         setCountry(Country.ARGENTINA_ARG);

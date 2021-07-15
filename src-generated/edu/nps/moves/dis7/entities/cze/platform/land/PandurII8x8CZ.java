@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@48f2bd5b
- * Country: Czech Republic (CZE)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36902638;
+ * Country: Czech Republic (CZE);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30077
  */
 public class PandurII8x8CZ extends EntityType
 {
+    /** Default constructor */
     public PandurII8x8CZ()
     {
         setCountry(Country.CZECH_REPUBLIC_CZE);

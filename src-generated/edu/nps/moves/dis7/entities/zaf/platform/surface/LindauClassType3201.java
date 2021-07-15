@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@720bf653
- * Country: South Africa (ZAF)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49ede9c7;
+ * Country: South Africa (ZAF);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27562
  */
 public class LindauClassType3201 extends EntityType
 {
+    /** Default constructor */
     public LindauClassType3201()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

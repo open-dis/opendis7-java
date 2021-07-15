@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@b77b0a0
- * Country: Other
- * Entity kind: Supply
- * Domain: NOT_USED
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@615bad16;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: NOT_USED;
  *
  * Entity type uid: 22165
  */
 public class Other extends EntityType
 {
+    /** Default constructor */
     public Other()
     {
         setCountry(Country.OTHER);

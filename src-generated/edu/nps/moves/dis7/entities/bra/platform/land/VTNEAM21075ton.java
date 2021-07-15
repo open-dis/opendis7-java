@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ffc5af1
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d8a00e3;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 32041
  */
 public class VTNEAM21075ton extends EntityType
 {
+    /** Default constructor */
     public VTNEAM21075ton()
     {
         setCountry(Country.BRAZIL_BRA);

@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41d477ed
- * Country: Czechoslovakia (CSK)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4efbca5a;
+ * Country: Czechoslovakia (CSK);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 22832
  */
 public class ShKH77ZUZANA155mmSPHowitzer extends EntityType
 {
+    /** Default constructor */
     public ShKH77ZUZANA155mmSPHowitzer()
     {
-        setCountry(Country.CZECHOSLOVAKIA_CSK);
+        setCountry(Country.ACTION_REQUEST_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 

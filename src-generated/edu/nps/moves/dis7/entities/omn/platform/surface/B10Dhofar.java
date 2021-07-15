@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1deb2c43
- * Country: Oman (OMN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c074c0c;
+ * Country: Oman (OMN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17956
  */
 public class B10Dhofar extends EntityType
 {
+    /** Default constructor */
     public B10Dhofar()
     {
         setCountry(Country.OMAN_OMN);

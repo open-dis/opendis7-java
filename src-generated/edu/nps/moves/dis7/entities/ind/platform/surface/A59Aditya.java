@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2445445a
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6995bf68;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18853
  */
 public class A59Aditya extends EntityType
 {
+    /** Default constructor */
     public A59Aditya()
     {
         setCountry(Country.INDIA_IND);

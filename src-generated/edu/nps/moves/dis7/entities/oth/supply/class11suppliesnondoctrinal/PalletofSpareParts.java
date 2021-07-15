@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5feb82b3
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7c956dda;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL;
  *
  * Entity type uid: 30815
  */
 public class PalletofSpareParts extends EntityType
 {
+    /** Default constructor */
     public PalletofSpareParts()
     {
         setCountry(Country.OTHER);

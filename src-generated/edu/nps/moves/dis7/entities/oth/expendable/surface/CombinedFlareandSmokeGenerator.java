@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3c4059a
- * Country: Other
- * Entity kind: Expendable
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@28519bfb;
+ * Country: Other;
+ * Entity kind: Expendable;
+ * Domain: SURFACE;
  *
  * Entity type uid: 32652
  */
 public class CombinedFlareandSmokeGenerator extends EntityType
 {
+    /** Default constructor */
     public CombinedFlareandSmokeGenerator()
     {
         setCountry(Country.OTHER);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6cee903a
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@248d3a;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
  *
  * Entity type uid: 30843
  */
 public class SlingLoadHowitzerM19815741lb extends EntityType
 {
+    /** Default constructor */
     public SlingLoadHowitzerM19815741lb()
     {
         setCountry(Country.OTHER);

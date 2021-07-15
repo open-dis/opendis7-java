@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@169bb4dd
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68c9d179;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16227
  */
 public class Opticalimagingsurveillancesatellite extends EntityType
 {
+    /** Default constructor */
     public Opticalimagingsurveillancesatellite()
     {
         setCountry(Country.FRANCE_FRA);

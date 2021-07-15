@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@692e028d
- * Country: Russia (RUS)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7158daf2;
+ * Country: Russia (RUS);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 14863
  */
 public class Opticalimagingsurveillancesatellite extends EntityType
 {
+    /** Default constructor */
     public Opticalimagingsurveillancesatellite()
     {
         setCountry(Country.RUSSIA_RUS);

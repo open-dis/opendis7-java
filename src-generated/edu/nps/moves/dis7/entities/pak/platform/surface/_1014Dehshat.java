@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7de4a01f
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bf71cec;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 28450
  */
 public class _1014Dehshat extends EntityType
 {
+    /** Default constructor */
     public _1014Dehshat()
     {
         setCountry(Country.PAKISTAN_PAK);

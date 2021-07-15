@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1c6e0a08
- * Country: Portugal (PRT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d2644e3;
+ * Country: Portugal (PRT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30460
  */
 public class TejoClass extends EntityType
 {
+    /** Default constructor */
     public TejoClass()
     {
         setCountry(Country.PORTUGAL_PRT);

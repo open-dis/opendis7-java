@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4d825dbe
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_1_SUBSISTENCE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@11228bee;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_1_SUBSISTENCE;
  *
  * Entity type uid: 30656
  */
 public class WaterDrinkingSterileClearColorlessBulk extends EntityType
 {
+    /** Default constructor */
     public WaterDrinkingSterileClearColorlessBulk()
     {
         setCountry(Country.OTHER);

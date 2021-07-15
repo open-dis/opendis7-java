@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@288409f0
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fc0e448;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 31719
  */
 public class YLC6Radar extends EntityType
 {
+    /** Default constructor */
     public YLC6Radar()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

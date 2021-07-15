@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a65c995
- * Country: Canada (CAN)
- * Entity kind: Munition
- * Domain: BATTLEFIELD_SUPPORT
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a31ca20;
+ * Country: Canada (CAN);
+ * Entity kind: Munition;
+ * Domain: BATTLEFIELD_SUPPORT;
  *
  * Entity type uid: 21764
  */
 public class CRV7WAU5001BKEPKineticEnergyPenetrator extends EntityType
 {
+    /** Default constructor */
     public CRV7WAU5001BKEPKineticEnergyPenetrator()
     {
         setCountry(Country.CANADA_CAN);

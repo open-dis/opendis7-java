@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54234569
- * Country: Czechoslovakia (CSK)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b490d5e;
+ * Country: Czechoslovakia (CSK);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 22502
  */
 public class RamonaSoftBall extends EntityType
 {
+    /** Default constructor */
     public RamonaSoftBall()
     {
-        setCountry(Country.CZECHOSLOVAKIA_CSK);
+        setCountry(Country.ACTION_REQUEST_RELIABLE);
         setEntityKind(EntityKind.SENSOR_EMITTER);
         setDomain(Domain.inst(PlatformDomain.LAND));
 

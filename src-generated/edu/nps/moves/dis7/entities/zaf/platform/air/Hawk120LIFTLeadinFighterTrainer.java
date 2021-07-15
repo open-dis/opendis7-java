@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cd4a4d7
- * Country: South Africa (ZAF)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a0094c9;
+ * Country: South Africa (ZAF);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28575
  */
 public class Hawk120LIFTLeadinFighterTrainer extends EntityType
 {
+    /** Default constructor */
     public Hawk120LIFTLeadinFighterTrainer()
     {
         setCountry(Country.SOUTH_AFRICA_ZAF);

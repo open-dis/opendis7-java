@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d28bcd5
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75699e35;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31680
  */
 public class Leopard2A4 extends EntityType
 {
+    /** Default constructor */
     public Leopard2A4()
     {
         setCountry(Country.POLAND_POL);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f197a46
- * Country: China, Peoples Republic of (CHN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7880cdf3;
+ * Country: China, Peoples Republic of (CHN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17354
  */
 public class T814Haitoetal extends EntityType
 {
+    /** Default constructor */
     public T814Haitoetal()
     {
         setCountry(Country.CHINA_PEOPLES_REPUBLIC_OF_CHN);

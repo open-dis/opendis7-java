@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6956de9
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@161cd475;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29313
  */
 public class F35JointStrikeFighterJSF extends EntityType
 {
+    /** Default constructor */
     public F35JointStrikeFighterJSF()
     {
         setCountry(Country.AUSTRALIA_AUS);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@127e70c5
- * Country: Montenegro (MNE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5aabbb29;
+ * Country: Montenegro (MNE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30132
  */
 public class P33Kotor extends EntityType
 {
+    /** Default constructor */
     public P33Kotor()
     {
         setCountry(Country.MONTENEGRO_MNE);

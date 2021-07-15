@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c95ac9e
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@517bd097;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17928
  */
 public class ALTahaddyClassLCMAKL extends EntityType
 {
+    /** Default constructor */
     public ALTahaddyClassLCMAKL()
     {
         setCountry(Country.KUWAIT_KWT);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79ecc507
- * Country: Venezuela (Bolivarian Republic of) (VEN)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39e53bef;
+ * Country: Venezuela (Bolivarian Republic of) (VEN);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27766
  */
 public class F25GeneralSalom extends EntityType
 {
+    /** Default constructor */
     public F25GeneralSalom()
     {
         setCountry(Country.VENEZUELA_BOLIVARIAN_REPUBLIC_OF_VEN);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49e53c76
- * Country: Colombia (COL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a798d51;
+ * Country: Colombia (COL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27487
  */
 public class BL161CartagenadeIndias extends EntityType
 {
+    /** Default constructor */
     public BL161CartagenadeIndias()
     {
         setCountry(Country.COLOMBIA_COL);

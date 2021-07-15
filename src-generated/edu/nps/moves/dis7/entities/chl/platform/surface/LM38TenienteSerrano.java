@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52f759d7
- * Country: Chile (CHL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32d2fa64;
+ * Country: Chile (CHL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27516
  */
 public class LM38TenienteSerrano extends EntityType
 {
+    /** Default constructor */
     public LM38TenienteSerrano()
     {
         setCountry(Country.CHILE_CHL);

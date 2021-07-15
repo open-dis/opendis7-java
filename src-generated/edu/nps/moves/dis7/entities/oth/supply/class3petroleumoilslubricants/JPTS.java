@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b2e9db2
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_3_PETROLEUM_OILS_LUBRICANTS
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79ba0285;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_3_PETROLEUM_OILS_LUBRICANTS;
  *
  * Entity type uid: 30678
  */
 public class JPTS extends EntityType
 {
+    /** Default constructor */
     public JPTS()
     {
         setCountry(Country.OTHER);

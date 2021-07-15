@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@548a9f61
- * Country: Belgium (BEL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@737996a0;
+ * Country: Belgium (BEL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 23315
  */
 public class M916Bellis extends EntityType
 {
+    /** Default constructor */
     public M916Bellis()
     {
         setCountry(Country.BELGIUM_BEL);

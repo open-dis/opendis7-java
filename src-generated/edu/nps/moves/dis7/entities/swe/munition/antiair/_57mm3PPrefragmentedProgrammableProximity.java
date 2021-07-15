@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f179f51
- * Country: Sweden (SWE)
- * Entity kind: Munition
- * Domain: ANTI_AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7afe0e67;
+ * Country: Sweden (SWE);
+ * Entity kind: Munition;
+ * Domain: ANTI_AIR;
  *
  * Entity type uid: 27638
  */
 public class _57mm3PPrefragmentedProgrammableProximity extends EntityType
 {
+    /** Default constructor */
     public _57mm3PPrefragmentedProgrammableProximity()
     {
         setCountry(Country.SWEDEN_SWE);

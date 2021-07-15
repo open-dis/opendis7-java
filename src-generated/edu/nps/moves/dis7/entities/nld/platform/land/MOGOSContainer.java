@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@287f94b1
- * Country: Netherlands (NLD)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1494b84d;
+ * Country: Netherlands (NLD);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 27946
  */
 public class MOGOSContainer extends EntityType
 {
+    /** Default constructor */
     public MOGOSContainer()
     {
         setCountry(Country.NETHERLANDS_NLD);

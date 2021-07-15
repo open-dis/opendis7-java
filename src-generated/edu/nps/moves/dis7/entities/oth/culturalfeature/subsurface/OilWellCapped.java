@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@324e8baa
- * Country: Other
- * Entity kind: Cultural feature
- * Domain: SUBSURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5be7b749;
+ * Country: Other;
+ * Entity kind: Cultural feature;
+ * Domain: SUBSURFACE;
  *
  * Entity type uid: 23417
  */
 public class OilWellCapped extends EntityType
 {
+    /** Default constructor */
     public OilWellCapped()
     {
         setCountry(Country.OTHER);

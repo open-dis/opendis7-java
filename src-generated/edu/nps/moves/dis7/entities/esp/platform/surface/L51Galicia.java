@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65a48602
- * Country: Spain (ESP)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2dd2e270;
+ * Country: Spain (ESP);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19035
  */
 public class L51Galicia extends EntityType
 {
+    /** Default constructor */
     public L51Galicia()
     {
         setCountry(Country.SPAIN_ESP);

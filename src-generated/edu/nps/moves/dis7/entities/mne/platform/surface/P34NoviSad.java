@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5910de75
- * Country: Montenegro (MNE)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72c927f1;
+ * Country: Montenegro (MNE);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30133
  */
 public class P34NoviSad extends EntityType
 {
+    /** Default constructor */
     public P34NoviSad()
     {
         setCountry(Country.MONTENEGRO_MNE);

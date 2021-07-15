@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1930a804
- * Country: United States of America (USA)
- * Entity kind: Munition
- * Domain: ANTI_GUIDED_WEAPON
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21c75084;
+ * Country: United States of America (USA);
+ * Entity kind: Munition;
+ * Domain: ANTI_GUIDED_WEAPON;
  *
  * Entity type uid: 26600
  */
 public class RIM116BRAM extends EntityType
 {
+    /** Default constructor */
     public RIM116BRAM()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

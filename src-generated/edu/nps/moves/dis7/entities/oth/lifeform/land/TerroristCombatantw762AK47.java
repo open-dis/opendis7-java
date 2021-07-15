@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@297bd171
- * Country: Other
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c9cafa5;
+ * Country: Other;
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32724
  */
 public class TerroristCombatantw762AK47 extends EntityType
 {
+    /** Default constructor */
     public TerroristCombatantw762AK47()
     {
         setCountry(Country.OTHER);

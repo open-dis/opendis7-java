@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3569edd5
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f34a967;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30455
  */
 public class SA319BAlouetteIII extends EntityType
 {
+    /** Default constructor */
     public SA319BAlouetteIII()
     {
         setCountry(Country.PAKISTAN_PAK);

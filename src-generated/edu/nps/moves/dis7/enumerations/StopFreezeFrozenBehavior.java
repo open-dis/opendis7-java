@@ -3,7 +3,7 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 68 marshal size 8<br>
  * StopFreezeFrozenBehavior
  */
@@ -22,6 +22,7 @@ public class StopFreezeFrozenBehavior extends DisBitSet
    */
   public static Bits PROCESSUPDATES = new Bits(2, 1);
 
+  /** Internal class */
   public static class Bits
   {
     private int position;
@@ -49,23 +50,31 @@ public class StopFreezeFrozenBehavior extends DisBitSet
     }
   }
 
+  /** Default constructor */
   public StopFreezeFrozenBehavior()
   {
     super(8); // length from bitfield element
   }
 
-  public StopFreezeFrozenBehavior(Bits wh, int i)
+  /** Default constructor with parameters
+   * @param wh Bits custom data structure
+   * @param value bits of interest  */
+  public StopFreezeFrozenBehavior(Bits wh, int value)
   {
     this();
-    set(wh,i);
+    set(wh,value);
   }
 
-  public StopFreezeFrozenBehavior set(Bits wh, int val)
+  /** Accessor method to set value
+   * @param wh Bits custom data structure
+   * @param value bits of interest
+   * @return this object */
+  public StopFreezeFrozenBehavior set(Bits wh, int value)
   {
-    //if((val & ~wh.inputmask) != 0)
-    //  throw new EnumNotFoundException("bad bits passed to "+getClass().getSimpleName()+", field "+wh.name() + " cannot be "+val);
+    //if((value & ~wh.inputmask) != 0)
+    //  throw new EnumNotFoundException("bad bits passed to "+getClass().getSimpleName()+", field "+wh.name() + " cannot be "+value);
 
-    setbits(wh.position,wh.length,val);
+    setbits(wh.position,wh.length,value);
     return this;
   }
 /*
@@ -79,13 +88,19 @@ public class StopFreezeFrozenBehavior extends DisBitSet
     return this;
   }
 */
-  // Some bitfields are defined without specific bits enumerated 
-  public StopFreezeFrozenBehavior set(int start, int length, int val)
+  /** Some bitfields are defined without specific bits enumerated
+   * @param start initial position in bit array
+   * @param length number of bits
+   * @param value bits of interest
+   * @return this object */
+  public StopFreezeFrozenBehavior set(int start, int length, int value)
   {
-      setbits(start,length,val);
+      setbits(start,length,value);
       return this;
   }
-  
+
+  /** Provide string representation
+   * @return string representation */
   @Override
   public String toString()
   {

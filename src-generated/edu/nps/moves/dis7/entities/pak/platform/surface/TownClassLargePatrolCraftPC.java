@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46044faa
- * Country: Pakistan (PAK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49d98dc5;
+ * Country: Pakistan (PAK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 19340
  */
 public class TownClassLargePatrolCraftPC extends EntityType
 {
+    /** Default constructor */
     public TownClassLargePatrolCraftPC()
     {
         setCountry(Country.PAKISTAN_PAK);

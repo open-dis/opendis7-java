@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@544e8149
- * Country: United Arab Emirates (ARE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f9f381d;
+ * Country: United Arab Emirates (ARE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28585
  */
 public class Hawk102 extends EntityType
 {
+    /** Default constructor */
     public Hawk102()
     {
         setCountry(Country.UNITED_ARAB_EMIRATES_ARE);

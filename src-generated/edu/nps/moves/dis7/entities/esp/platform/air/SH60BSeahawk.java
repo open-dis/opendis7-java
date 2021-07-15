@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36cc9385
- * Country: Spain (ESP)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10afe71a;
+ * Country: Spain (ESP);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29905
  */
 public class SH60BSeahawk extends EntityType
 {
+    /** Default constructor */
     public SH60BSeahawk()
     {
         setCountry(Country.SPAIN_ESP);

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 178 marshal size 16<br>
  * SignalTDLType
  */
@@ -71,11 +71,11 @@ public enum SignalTDLType
     /** Have Quick IIA (Saturn) */
     HAVE_QUICK_IIA_SATURN (27, "Have Quick IIA (Saturn)"),
     /** Intra-Flight Data Link 1 */
-    INTRA_FLIGHT_DATA_LINK_1 (28, "Intra-Flight Data Link 1"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Intra-Flight Data Link 1"),
     /** Intra-Flight Data Link 2 */
     INTRA_FLIGHT_DATA_LINK_2 (29, "Intra-Flight Data Link 2"),
     /** Improved Data Modem (IDM) */
-    IMPROVED_DATA_MODEM_IDM (30, "Improved Data Modem (IDM)"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Improved Data Modem (IDM)"),
     /** Air Force Application Program Development (AFAPD) */
     AIR_FORCE_APPLICATION_PROGRAM_DEVELOPMENT_AFAPD (31, "Air Force Application Program Development (AFAPD)"),
     /** Cooperative Engagement Capability (CEC) */
@@ -107,45 +107,45 @@ public enum SignalTDLType
     /** Guardrail Common Sensor System Two (CSS2) Data Link */
     GUARDRAIL_COMMON_SENSOR_SYSTEM_TWO_CSS2_DATA_LINK (45, "Guardrail Common Sensor System Two (CSS2) Data Link"),
     /** Guardrail CSS2 Multi-Role Data Link (MRDL) */
-    GUARDRAIL_CSS2_MULTI_ROLE_DATA_LINK_MRDL (46, "Guardrail CSS2 Multi-Role Data Link (MRDL)"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Guardrail CSS2 Multi-Role Data Link (MRDL)"),
     /** Guardrail CSS2 Direct Air to Satellite Relay (DASR) Data Link */
     GUARDRAIL_CSS2_DIRECT_AIR_TO_SATELLITE_RELAY_DASR_DATA_LINK (47, "Guardrail CSS2 Direct Air to Satellite Relay (DASR) Data Link"),
     /** Line of Sight (LOS) Data Link Implementation (LOS tether) */
     LINE_OF_SIGHT_LOS_DATA_LINK_IMPLEMENTATION_LOS_TETHER (48, "Line of Sight (LOS) Data Link Implementation (LOS tether)"),
     /** Lightweight CDL (LWCDL) */
-    LIGHTWEIGHT_CDL_LWCDL (49, "Lightweight CDL (LWCDL)"),
+    LIVE_ENTITY_FIRE (49, "Lightweight CDL (LWCDL)"),
     /** L-52M (SR-71) */
-    L_52M_SR_71 (50, "L-52M (SR-71)"),
+    LIVE_ENTITY_DETONATION (50, "L-52M (SR-71)"),
     /** Rivet Reach/Rivet Owl Data Link */
-    RIVET_REACH_RIVET_OWL_DATA_LINK (51, "Rivet Reach/Rivet Owl Data Link"),
+    CREATE_ENTITY_RELIABLE (51, "Rivet Reach/Rivet Owl Data Link"),
     /** Senior Span */
-    SENIOR_SPAN (52, "Senior Span"),
+    REMOVE_ENTITY_RELIABLE (52, "Senior Span"),
     /** Senior Spur */
-    SENIOR_SPUR (53, "Senior Spur"),
+    START_RESUME_RELIABLE (53, "Senior Spur"),
     /** Senior Stretch. */
-    SENIOR_STRETCH (54, "Senior Stretch."),
+    STOP_FREEZE_RELIABLE (54, "Senior Stretch."),
     /** Senior Year Interoperable Data Link (IDL) */
-    SENIOR_YEAR_INTEROPERABLE_DATA_LINK_IDL (55, "Senior Year Interoperable Data Link (IDL)"),
+    ACKNOWLEDGE_RELIABLE (55, "Senior Year Interoperable Data Link (IDL)"),
     /** Space CDL */
-    SPACE_CDL (56, "Space CDL"),
+    ACTION_REQUEST_RELIABLE (56, "Space CDL"),
     /** TR-1 mode MIST Airborne Data Link */
-    TR_1_MODE_MIST_AIRBORNE_DATA_LINK (57, "TR-1 mode MIST Airborne Data Link"),
+    ACTION_RESPONSE_RELIABLE (57, "TR-1 mode MIST Airborne Data Link"),
     /** Ku-band SATCOM Data Link Implementation (UAV) */
-    KU_BAND_SATCOM_DATA_LINK_IMPLEMENTATION_UAV (58, "Ku-band SATCOM Data Link Implementation (UAV)"),
+    DATA_QUERY_RELIABLE (58, "Ku-band SATCOM Data Link Implementation (UAV)"),
     /** Mission Equipment Control Data link (MECDL) */
-    MISSION_EQUIPMENT_CONTROL_DATA_LINK_MECDL (59, "Mission Equipment Control Data link (MECDL)"),
+    SET_DATA_RELIABLE (59, "Mission Equipment Control Data link (MECDL)"),
     /** Radar Data Transmitting Set Data Link */
-    RADAR_DATA_TRANSMITTING_SET_DATA_LINK (60, "Radar Data Transmitting Set Data Link"),
+    DATA_RELIABLE (60, "Radar Data Transmitting Set Data Link"),
     /** Surveillance and Control Data Link (SCDL) */
-    SURVEILLANCE_AND_CONTROL_DATA_LINK_SCDL (61, "Surveillance and Control Data Link (SCDL)"),
+    EVENT_REPORT_RELIABLE (61, "Surveillance and Control Data Link (SCDL)"),
     /** Tactical UAV Video */
-    TACTICAL_UAV_VIDEO (62, "Tactical UAV Video"),
+    COMMENT_RELIABLE (62, "Tactical UAV Video"),
     /** UHF SATCOM Data Link Implementation (UAV) */
-    UHF_SATCOM_DATA_LINK_IMPLEMENTATION_UAV (63, "UHF SATCOM Data Link Implementation (UAV)"),
+    RECORD_RELIABLE (63, "UHF SATCOM Data Link Implementation (UAV)"),
     /** Tactical Common Data Link (TCDL) */
-    TACTICAL_COMMON_DATA_LINK_TCDL (64, "Tactical Common Data Link (TCDL)"),
+    SET_RECORD_RELIABLE	 (64, "Tactical Common Data Link (TCDL)"),
     /** Low Level Air Picture Interface (LLAPI) */
-    LOW_LEVEL_AIR_PICTURE_INTERFACE_LLAPI (65, "Low Level Air Picture Interface (LLAPI)"),
+    RECORD_QUERY_RELIABLE (65, "Low Level Air Picture Interface (LLAPI)"),
     /** Weapons Data Link (AGM-130) */
     WEAPONS_DATA_LINK_AGM_130 (66, "Weapons Data Link (AGM-130)"),
     /** Automatic Identification System (AIS) */
@@ -210,27 +210,39 @@ public enum SignalTDLType
     private int value;
     private final String description;
 
+    /** Constructor */
     SignalTDLType(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 16;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static SignalTDLType getEnumForValue(int i)
     {
        for(SignalTDLType val: SignalTDLType.values()) {
@@ -241,22 +253,38 @@ public enum SignalTDLType
        return null;
     }
 
- 
-   public void marshal(DataOutputStream dos) throws IOException
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
+    public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeShort(getValue());
     }
 
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.putShort((short)getValue());
     }
-
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SignalTDLType unmarshalEnum (DataInputStream dis) throws Exception
     {
         return getEnumForValue(dis.readUnsignedShort());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static SignalTDLType unmarshalEnum (ByteBuffer byteBuffer) throws Exception
     {
         return getEnumForValue(byteBuffer.getShort());

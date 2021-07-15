@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2e16b08d
- * Country: Other
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2d83c5a5;
+ * Country: Other;
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24706
  */
 public class CivilianFixedWingAircraftLargeupto255000lbs115666kg extends EntityType
 {
+    /** Default constructor */
     public CivilianFixedWingAircraftLargeupto255000lbs115666kg()
     {
         setCountry(Country.OTHER);

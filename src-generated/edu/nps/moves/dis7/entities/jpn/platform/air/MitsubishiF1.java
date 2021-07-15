@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@24fb6a80
- * Country: Japan (JPN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@28d6290;
+ * Country: Japan (JPN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29178
  */
 public class MitsubishiF1 extends EntityType
 {
+    /** Default constructor */
     public MitsubishiF1()
     {
         setCountry(Country.JAPAN_JPN);

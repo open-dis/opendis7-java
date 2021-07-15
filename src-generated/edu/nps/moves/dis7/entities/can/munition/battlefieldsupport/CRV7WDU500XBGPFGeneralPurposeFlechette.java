@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c950b3b
- * Country: Canada (CAN)
- * Entity kind: Munition
- * Domain: BATTLEFIELD_SUPPORT
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@349c4d1c;
+ * Country: Canada (CAN);
+ * Entity kind: Munition;
+ * Domain: BATTLEFIELD_SUPPORT;
  *
  * Entity type uid: 21765
  */
 public class CRV7WDU500XBGPFGeneralPurposeFlechette extends EntityType
 {
+    /** Default constructor */
     public CRV7WDU500XBGPFGeneralPurposeFlechette()
     {
         setCountry(Country.CANADA_CAN);

@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 463 marshal size 8<br>
  * Color<br>
  * The color values 1 to 15 are defined in the HTML 3.0 specification; color values 20 to 159 are defined in the SVG 1.0 specification
@@ -73,11 +73,11 @@ public enum Color
     /** Teal */
     TEAL (27, "Teal"),
     /** Dark Cyan */
-    DARK_CYAN (28, "Dark Cyan"),
+    IDENTIFICATION_FRIEND_OR_FOE (28, "Dark Cyan"),
     /** Deep Sky Blue */
     DEEP_SKY_BLUE (29, "Deep Sky Blue"),
     /** Dark Turquoise */
-    DARK_TURQUOISE (30, "Dark Turquoise"),
+    SUPPLEMENTAL_EMISSION_ENTITY_STATE (30, "Dark Turquoise"),
     /** Medium Spring Green */
     MEDIUM_SPRING_GREEN (31, "Medium Spring Green"),
     /** Lime */
@@ -109,45 +109,45 @@ public enum Color
     /** Steel Blue */
     STEEL_BLUE (45, "Steel Blue"),
     /** Dark Slate Blue */
-    DARK_SLATE_BLUE (46, "Dark Slate Blue"),
+    TIME_SPACE_POSITION_INFORMATION (46, "Dark Slate Blue"),
     /** Medium Turquoise */
     MEDIUM_TURQUOISE (47, "Medium Turquoise"),
     /** Indigo */
     INDIGO (48, "Indigo"),
     /** Dark Olive Green */
-    DARK_OLIVE_GREEN (49, "Dark Olive Green"),
+    LIVE_ENTITY_FIRE (49, "Dark Olive Green"),
     /** Cadet Blue */
-    CADET_BLUE (50, "Cadet Blue"),
+    LIVE_ENTITY_DETONATION (50, "Cadet Blue"),
     /** Cornflower Blue */
-    CORNFLOWER_BLUE (51, "Cornflower Blue"),
+    CREATE_ENTITY_RELIABLE (51, "Cornflower Blue"),
     /** Medium Aquamarine */
-    MEDIUM_AQUAMARINE (52, "Medium Aquamarine"),
+    REMOVE_ENTITY_RELIABLE (52, "Medium Aquamarine"),
     /** Dim Gray */
-    DIM_GRAY (53, "Dim Gray"),
+    START_RESUME_RELIABLE (53, "Dim Gray"),
     /** Slate Blue */
-    SLATE_BLUE (54, "Slate Blue"),
+    STOP_FREEZE_RELIABLE (54, "Slate Blue"),
     /** Olive Drab */
-    OLIVE_DRAB (55, "Olive Drab"),
+    ACKNOWLEDGE_RELIABLE (55, "Olive Drab"),
     /** Slate Gray */
-    SLATE_GRAY (56, "Slate Gray"),
+    ACTION_REQUEST_RELIABLE (56, "Slate Gray"),
     /** Light Slate Gray */
-    LIGHT_SLATE_GRAY (57, "Light Slate Gray"),
+    ACTION_RESPONSE_RELIABLE (57, "Light Slate Gray"),
     /** Medium Slate Blue */
-    MEDIUM_SLATE_BLUE (58, "Medium Slate Blue"),
+    DATA_QUERY_RELIABLE (58, "Medium Slate Blue"),
     /** Lawn Green */
-    LAWN_GREEN (59, "Lawn Green"),
+    SET_DATA_RELIABLE (59, "Lawn Green"),
     /** Chartreuse */
-    CHARTREUSE (60, "Chartreuse"),
+    DATA_RELIABLE (60, "Chartreuse"),
     /** Aquamarine */
-    AQUAMARINE (61, "Aquamarine"),
+    EVENT_REPORT_RELIABLE (61, "Aquamarine"),
     /** Maroon */
-    MAROON (62, "Maroon"),
+    COMMENT_RELIABLE (62, "Maroon"),
     /** Purple */
-    PURPLE (63, "Purple"),
+    RECORD_RELIABLE (63, "Purple"),
     /** Olive */
-    OLIVE (64, "Olive"),
+    SET_RECORD_RELIABLE	 (64, "Olive"),
     /** Gray */
-    GRAY (65, "Gray"),
+    RECORD_QUERY_RELIABLE (65, "Gray"),
     /** Grey */
     GREY (66, "Grey"),
     /** Sky Blue */
@@ -340,27 +340,39 @@ public enum Color
     private int value;
     private final String description;
 
+    /** Constructor */
     Color(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static Color getEnumForValue(int i)
     {
        for(Color val: Color.values()) {
@@ -371,17 +383,29 @@ public enum Color
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static Color unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -394,6 +418,11 @@ public enum Color
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static Color unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -424,6 +453,9 @@ public enum Color
     @Override
     public String toString()
     {
-        return "Color " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "Color " + padding + getValue() + " " + name();
     }
 }

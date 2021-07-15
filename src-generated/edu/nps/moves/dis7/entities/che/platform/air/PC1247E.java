@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@611a990b
- * Country: Switzerland (CHE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6981f8f3;
+ * Country: Switzerland (CHE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 29222
  */
 public class PC1247E extends EntityType
 {
+    /** Default constructor */
     public PC1247E()
     {
         setCountry(Country.SWITZERLAND_CHE);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7f0d8eff
- * Country: Italy (ITA)
- * Entity kind: Munition
- * Domain: ANTI_GUIDED_WEAPON
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13f40d71;
+ * Country: Italy (ITA);
+ * Entity kind: Munition;
+ * Domain: ANTI_GUIDED_WEAPON;
  *
  * Entity type uid: 21667
  */
 public class Decoy extends EntityType
 {
+    /** Default constructor */
     public Decoy()
     {
         setCountry(Country.ITALY_ITA);

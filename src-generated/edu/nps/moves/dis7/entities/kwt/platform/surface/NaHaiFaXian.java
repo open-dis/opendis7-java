@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44a2b17b
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35d6ca49;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 24442
  */
 public class NaHaiFaXian extends EntityType
 {
+    /** Default constructor */
     public NaHaiFaXian()
     {
         setCountry(Country.KUWAIT_KWT);

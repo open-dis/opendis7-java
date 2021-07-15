@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@515f550a
- * Country: Argentina (ARG)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15327b79;
+ * Country: Argentina (ARG);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 24777
  */
 public class FAdeAAT63Pampa extends EntityType
 {
+    /** Default constructor */
     public FAdeAAT63Pampa()
     {
         setCountry(Country.ARGENTINA_ARG);

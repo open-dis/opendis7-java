@@ -4,19 +4,20 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f5958c9
- * Country: Denmark (DNK)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fe94a96;
+ * Country: Denmark (DNK);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 25468
  */
 public class SAR2Naja extends EntityType
 {
+    /** Default constructor */
     public SAR2Naja()
     {
-        setCountry(Country.DENMARK_DNK);
+        setCountry(Country.ACTION_RESPONSE_RELIABLE);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

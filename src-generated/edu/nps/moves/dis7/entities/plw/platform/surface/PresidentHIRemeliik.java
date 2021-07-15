@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48e7b3d2
- * Country: Palau (PLW)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c0da600;
+ * Country: Palau (PLW);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 26729
  */
 public class PresidentHIRemeliik extends EntityType
 {
+    /** Default constructor */
     public PresidentHIRemeliik()
     {
         setCountry(Country.PALAU_PLW);

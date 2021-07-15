@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2289aca5
- * Country: Kazakhstan (KAZ)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e985ce9;
+ * Country: Kazakhstan (KAZ);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27546
  */
 public class _2023Aktau extends EntityType
 {
+    /** Default constructor */
     public _2023Aktau()
     {
         setCountry(Country.KAZAKHSTAN_KAZ);

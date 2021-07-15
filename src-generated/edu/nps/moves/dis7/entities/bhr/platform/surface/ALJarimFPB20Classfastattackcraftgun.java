@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7921b0a2
- * Country: Bahrain (BHR)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@246ae04d;
+ * Country: Bahrain (BHR);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18678
  */
 public class ALJarimFPB20Classfastattackcraftgun extends EntityType
 {
+    /** Default constructor */
     public ALJarimFPB20Classfastattackcraftgun()
     {
         setCountry(Country.BAHRAIN_BHR);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78dc4696
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62315f22;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31686
  */
 public class RosomakM1Mw30mmTurret extends EntityType
 {
+    /** Default constructor */
     public RosomakM1Mw30mmTurret()
     {
         setCountry(Country.POLAND_POL);

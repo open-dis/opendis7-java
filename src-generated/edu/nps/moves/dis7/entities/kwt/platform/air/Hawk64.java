@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@552518c3
- * Country: Kuwait (KWT)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@372ea2bc;
+ * Country: Kuwait (KWT);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 28553
  */
 public class Hawk64 extends EntityType
 {
+    /** Default constructor */
     public Hawk64()
     {
         setCountry(Country.KUWAIT_KWT);

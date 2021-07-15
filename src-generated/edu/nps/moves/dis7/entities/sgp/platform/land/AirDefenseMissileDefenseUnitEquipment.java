@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2b10ace9
- * Country: Singapore (SGP)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1866da85;
+ * Country: Singapore (SGP);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 28710
  */
 public class AirDefenseMissileDefenseUnitEquipment extends EntityType
 {
+    /** Default constructor */
     public AirDefenseMissileDefenseUnitEquipment()
     {
         setCountry(Country.SINGAPORE_SGP);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@294e5088
- * Country: Iran (Islamic Republic of) (IRN)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@9ef8eb7;
+ * Country: Iran (Islamic Republic of) (IRN);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31137
  */
 public class McDonnellDouglasF4PhantomII1 extends EntityType
 {
+    /** Default constructor */
     public McDonnellDouglasF4PhantomII1()
     {
         setCountry(Country.IRAN_ISLAMIC_REPUBLIC_OF_IRN);

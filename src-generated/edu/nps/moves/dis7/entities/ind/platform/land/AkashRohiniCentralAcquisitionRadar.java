@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a55299e
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ed5eb72;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31656
  */
 public class AkashRohiniCentralAcquisitionRadar extends EntityType
 {
+    /** Default constructor */
     public AkashRohiniCentralAcquisitionRadar()
     {
         setCountry(Country.INDIA_IND);

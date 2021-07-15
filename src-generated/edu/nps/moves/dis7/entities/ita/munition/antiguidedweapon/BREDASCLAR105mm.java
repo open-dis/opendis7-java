@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56cfe6be
- * Country: Italy (ITA)
- * Entity kind: Munition
- * Domain: ANTI_GUIDED_WEAPON
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16e1219f;
+ * Country: Italy (ITA);
+ * Entity kind: Munition;
+ * Domain: ANTI_GUIDED_WEAPON;
  *
  * Entity type uid: 21668
  */
 public class BREDASCLAR105mm extends EntityType
 {
+    /** Default constructor */
     public BREDASCLAR105mm()
     {
         setCountry(Country.ITALY_ITA);

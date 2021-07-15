@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3670f00
- * Country: Malta (MLT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7555b920;
+ * Country: Malta (MLT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 27575
  */
 public class P31 extends EntityType
 {
+    /** Default constructor */
     public P31()
     {
         setCountry(Country.MALTA_MLT);

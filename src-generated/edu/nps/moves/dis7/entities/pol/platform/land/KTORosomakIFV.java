@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@779dfe55
- * Country: Poland (POL)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7f4037ed;
+ * Country: Poland (POL);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31684
  */
 public class KTORosomakIFV extends EntityType
 {
+    /** Default constructor */
     public KTORosomakIFV()
     {
         setCountry(Country.POLAND_POL);

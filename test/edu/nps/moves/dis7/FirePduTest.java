@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2020, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7;
@@ -20,12 +20,13 @@ public class FirePduTest extends PduTest
   {
     PduFactory pduFactory = new PduFactory();
     
-    FirePdu    firePdu = pduFactory.makeFirePdu(); 
+    FirePdu    firePdu = pduFactory.makeFirePdu();
     // TODO alternate constructors and utility methods
     
     // TODO update PDU-specific tests
-    
+
     testOnePdu(firePdu);
+    testOnePdu(firePdu.setRange(1000.0f).setFireMissionIndex(2)); // pipelining);
   }
   
   /** Test single PDU for correctness according to all contained fields in this PDU type

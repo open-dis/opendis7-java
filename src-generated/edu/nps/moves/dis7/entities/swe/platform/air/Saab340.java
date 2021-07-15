@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5d21202d
- * Country: Sweden (SWE)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@fd9ebde;
+ * Country: Sweden (SWE);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 25609
  */
 public class Saab340 extends EntityType
 {
+    /** Default constructor */
     public Saab340()
     {
         setCountry(Country.SWEDEN_SWE);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@433e536f
- * Country: Qatar (QAT)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63998bf4;
+ * Country: Qatar (QAT);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 17831
  */
 public class Q02ALGhariyah extends EntityType
 {
+    /** Default constructor */
     public Q02ALGhariyah()
     {
         setCountry(Country.QATAR_QAT);

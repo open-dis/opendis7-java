@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3315d2d7
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55740540;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31115
  */
 public class PoidsLourdsForceSpecialePLFSHeavySpecialForcesVehicle extends EntityType
 {
+    /** Default constructor */
     public PoidsLourdsForceSpecialePLFSHeavySpecialForcesVehicle()
     {
         setCountry(Country.FRANCE_FRA);

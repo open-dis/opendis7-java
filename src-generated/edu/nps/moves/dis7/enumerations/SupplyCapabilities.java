@@ -3,7 +3,7 @@ package edu.nps.moves.dis7.enumerations;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 459 marshal size 32<br>
  * SupplyCapabilities
  */
@@ -30,6 +30,7 @@ public class SupplyCapabilities extends DisBitSet implements EntityCapabilities
    */
   public static Bits IEDPRESENCEINDICATOR = new Bits(7, 1);
 
+  /** Internal class */
   public static class Bits
   {
     private int position;
@@ -57,23 +58,31 @@ public class SupplyCapabilities extends DisBitSet implements EntityCapabilities
     }
   }
 
+  /** Default constructor */
   public SupplyCapabilities()
   {
     super(32); // length from bitfield element
   }
 
-  public SupplyCapabilities(Bits wh, int i)
+  /** Default constructor with parameters
+   * @param wh Bits custom data structure
+   * @param value bits of interest  */
+  public SupplyCapabilities(Bits wh, int value)
   {
     this();
-    set(wh,i);
+    set(wh,value);
   }
 
-  public SupplyCapabilities set(Bits wh, int val)
+  /** Accessor method to set value
+   * @param wh Bits custom data structure
+   * @param value bits of interest
+   * @return this object */
+  public SupplyCapabilities set(Bits wh, int value)
   {
-    //if((val & ~wh.inputmask) != 0)
-    //  throw new EnumNotFoundException("bad bits passed to "+getClass().getSimpleName()+", field "+wh.name() + " cannot be "+val);
+    //if((value & ~wh.inputmask) != 0)
+    //  throw new EnumNotFoundException("bad bits passed to "+getClass().getSimpleName()+", field "+wh.name() + " cannot be "+value);
 
-    setbits(wh.position,wh.length,val);
+    setbits(wh.position,wh.length,value);
     return this;
   }
 /*
@@ -87,13 +96,19 @@ public class SupplyCapabilities extends DisBitSet implements EntityCapabilities
     return this;
   }
 */
-  // Some bitfields are defined without specific bits enumerated 
-  public SupplyCapabilities set(int start, int length, int val)
+  /** Some bitfields are defined without specific bits enumerated
+   * @param start initial position in bit array
+   * @param length number of bits
+   * @param value bits of interest
+   * @return this object */
+  public SupplyCapabilities set(int start, int length, int value)
   {
-      setbits(start,length,val);
+      setbits(start,length,value);
       return this;
   }
-  
+
+  /** Provide string representation
+   * @return string representation */
   @Override
   public String toString()
   {

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@31f7eb8
- * Country: United States of America (USA)
- * Entity kind: Life form
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77c692b4;
+ * Country: United States of America (USA);
+ * Entity kind: Life form;
+ * Domain: LAND;
  *
  * Entity type uid: 32698
  */
 public class Mortars extends EntityType
 {
+    /** Default constructor */
     public Mortars()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);

@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@65f5cae3
- * Country: Russia (RUS)
- * Entity kind: Expendable
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6cee903a;
+ * Country: Russia (RUS);
+ * Entity kind: Expendable;
+ * Domain: AIR;
  *
  * Entity type uid: 22293
  */
 public class TACCSFnotionalhostilechaff extends EntityType
 {
+    /** Default constructor */
     public TACCSFnotionalhostilechaff()
     {
         setCountry(Country.RUSSIA_RUS);

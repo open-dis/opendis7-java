@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d421fe
- * Country: Sweden (SWE)
- * Entity kind: Munition
- * Domain: ANTI_ARMOR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38089dae;
+ * Country: Sweden (SWE);
+ * Entity kind: Munition;
+ * Domain: ANTI_ARMOR;
  *
  * Entity type uid: 25723
  */
 public class Slpprjm95120mmAPFSDS extends EntityType
 {
+    /** Default constructor */
     public Slpprjm95120mmAPFSDS()
     {
         setCountry(Country.SWEDEN_SWE);

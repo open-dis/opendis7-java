@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29caf222
- * Country: Norway (NOR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@473b3b7a;
+ * Country: Norway (NOR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 30281
  */
 public class NASAMSFireDistributionCenterFDC extends EntityType
 {
+    /** Default constructor */
     public NASAMSFireDistributionCenterFDC()
     {
         setCountry(Country.NORWAY_NOR);

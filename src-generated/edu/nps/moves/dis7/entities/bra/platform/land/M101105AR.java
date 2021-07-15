@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61832929
- * Country: Brazil (BRA)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@573f2bb1;
+ * Country: Brazil (BRA);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 32031
  */
 public class M101105AR extends EntityType
 {
+    /** Default constructor */
     public M101105AR()
     {
         setCountry(Country.BRAZIL_BRA);

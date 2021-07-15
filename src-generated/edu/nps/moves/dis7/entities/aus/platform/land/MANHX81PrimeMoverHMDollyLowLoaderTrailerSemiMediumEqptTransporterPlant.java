@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2db0f6b2
- * Country: Australia (AUS)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d591d15;
+ * Country: Australia (AUS);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 29751
  */
 public class MANHX81PrimeMoverHMDollyLowLoaderTrailerSemiMediumEqptTransporterPlant extends EntityType
 {
+    /** Default constructor */
     public MANHX81PrimeMoverHMDollyLowLoaderTrailerSemiMediumEqptTransporterPlant()
     {
         setCountry(Country.AUSTRALIA_AUS);

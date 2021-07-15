@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3cbfdf5c
- * Country: Other
- * Entity kind: Supply
- * Domain: CLASS_1_SUBSISTENCE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@123ca460;
+ * Country: Other;
+ * Entity kind: Supply;
+ * Domain: CLASS_1_SUBSISTENCE;
  *
  * Entity type uid: 30652
  */
 public class SOtherNonRefrigerated extends EntityType
 {
+    /** Default constructor */
     public SOtherNonRefrigerated()
     {
         setCountry(Country.OTHER);

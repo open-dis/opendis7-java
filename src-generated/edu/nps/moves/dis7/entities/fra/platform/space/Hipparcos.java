@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f9e9475
- * Country: France (FRA)
- * Entity kind: Platform
- * Domain: SPACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d554c5f;
+ * Country: France (FRA);
+ * Entity kind: Platform;
+ * Domain: SPACE;
  *
  * Entity type uid: 16230
  */
 public class Hipparcos extends EntityType
 {
+    /** Default constructor */
     public Hipparcos()
     {
         setCountry(Country.FRANCE_FRA);

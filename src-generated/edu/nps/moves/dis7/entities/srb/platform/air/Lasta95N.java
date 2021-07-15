@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26221bad
- * Country: Serbia (SRB)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f66f0d0;
+ * Country: Serbia (SRB);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 30174
  */
 public class Lasta95N extends EntityType
 {
+    /** Default constructor */
     public Lasta95N()
     {
         setCountry(Country.SERBIA_SRB);

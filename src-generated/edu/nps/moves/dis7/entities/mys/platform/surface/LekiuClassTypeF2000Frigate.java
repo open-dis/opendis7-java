@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@410954b
- * Country: Malaysia (MYS)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e5c7f0b;
+ * Country: Malaysia (MYS);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 30508
  */
 public class LekiuClassTypeF2000Frigate extends EntityType
 {
+    /** Default constructor */
     public LekiuClassTypeF2000Frigate()
     {
         setCountry(Country.MALAYSIA_MYS);

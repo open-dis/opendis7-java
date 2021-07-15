@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c51cf28
- * Country: India (IND)
- * Entity kind: Platform
- * Domain: AIR
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bca7e0d;
+ * Country: India (IND);
+ * Entity kind: Platform;
+ * Domain: AIR;
  *
  * Entity type uid: 31439
  */
 public class P8INeptune extends EntityType
 {
+    /** Default constructor */
     public P8INeptune()
     {
         setCountry(Country.INDIA_IND);

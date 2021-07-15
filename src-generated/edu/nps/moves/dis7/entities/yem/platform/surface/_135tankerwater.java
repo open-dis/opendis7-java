@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f27f59b
- * Country: Yemen (YEM)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@551be9f6;
+ * Country: Yemen (YEM);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 18747
  */
 public class _135tankerwater extends EntityType
 {
+    /** Default constructor */
     public _135tankerwater()
     {
         setCountry(Country.YEMEN_YEM);

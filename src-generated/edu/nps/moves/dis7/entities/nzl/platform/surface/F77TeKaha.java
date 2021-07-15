@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@329a1243
- * Country: New Zealand (NZL)
- * Entity kind: Platform
- * Domain: SURFACE
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70e0accd;
+ * Country: New Zealand (NZL);
+ * Entity kind: Platform;
+ * Domain: SURFACE;
  *
  * Entity type uid: 31743
  */
 public class F77TeKaha extends EntityType
 {
+    /** Default constructor */
     public F77TeKaha()
     {
         setCountry(Country.NEW_ZEALAND_NZL);

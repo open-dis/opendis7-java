@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65e21ce3
- * Country: Syrian Arab Republic (SYR)
- * Entity kind: Platform
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68a4dcc6;
+ * Country: Syrian Arab Republic (SYR);
+ * Entity kind: Platform;
+ * Domain: LAND;
  *
  * Entity type uid: 31703
  */
 public class _2S1Gvozdika122mmHowitzer extends EntityType
 {
+    /** Default constructor */
     public _2S1Gvozdika122mmHowitzer()
     {
         setCountry(Country.SYRIAN_ARAB_REPUBLIC_SYR);

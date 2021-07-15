@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 476 marshal size 8<br>
  * LifeFormCategoriesUS
  */
@@ -37,17 +37,17 @@ public enum LifeFormCategoriesUS
     /** Delta Force */
     DELTA_FORCE (36, "Delta Force"),
     /** Federal Bureau of Investigation (FBI) */
-    FEDERAL_BUREAU_OF_INVESTIGATION_FBI (51, "Federal Bureau of Investigation (FBI)"),
+    CREATE_ENTITY_RELIABLE (51, "Federal Bureau of Investigation (FBI)"),
     /** Central Intelligence Agency (CIA) */
-    CENTRAL_INTELLIGENCE_AGENCY_CIA (52, "Central Intelligence Agency (CIA)"),
+    REMOVE_ENTITY_RELIABLE (52, "Central Intelligence Agency (CIA)"),
     /** Department of Homeland Security (DHS) */
-    DEPARTMENT_OF_HOMELAND_SECURITY_DHS (53, "Department of Homeland Security (DHS)"),
+    START_RESUME_RELIABLE (53, "Department of Homeland Security (DHS)"),
     /** Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF) */
-    BUREAU_OF_ALCOHOL_TOBACCO_FIREARMS_AND_EXPLOSIVES_ATF (54, "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)"),
+    STOP_FREEZE_RELIABLE (54, "Bureau of Alcohol, Tobacco, Firearms and Explosives (ATF)"),
     /** U.S. Secret Service (USSS) */
-    US_SECRET_SERVICE_USSS (55, "U.S. Secret Service (USSS)"),
+    ACKNOWLEDGE_RELIABLE (55, "U.S. Secret Service (USSS)"),
     /** U.S. Marshal */
-    US_MARSHAL (56, "U.S. Marshal"),
+    ACTION_REQUEST_RELIABLE (56, "U.S. Marshal"),
     /** State Police (Highway Patrol) */
     STATE_POLICE_HIGHWAY_PATROL (71, "State Police (Highway Patrol)"),
     /** County Sheriff/Police */
@@ -60,27 +60,39 @@ public enum LifeFormCategoriesUS
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormCategoriesUS(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormCategoriesUS getEnumForValue(int i)
     {
        for(LifeFormCategoriesUS val: LifeFormCategoriesUS.values()) {
@@ -91,17 +103,29 @@ public enum LifeFormCategoriesUS
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormCategoriesUS unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -114,6 +138,11 @@ public enum LifeFormCategoriesUS
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormCategoriesUS unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -144,6 +173,9 @@ public enum LifeFormCategoriesUS
     @Override
     public String toString()
     {
-        return "LifeFormCategoriesUS " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormCategoriesUS " + padding + getValue() + " " + name();
     }
 }

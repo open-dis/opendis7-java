@@ -8,7 +8,7 @@ import java.io.IOException;
 import edu.nps.moves.dis7.pdus.*;
 
 /**
- * Generated from XML, SISO-REF-010-v28, 2020-05-07<br>
+ * Generated from XML, <br>
  * UID 501 marshal size 8<br>
  * LifeFormCategoriesAfghanistan
  */
@@ -19,15 +19,15 @@ public enum LifeFormCategoriesAfghanistan
     /** Afghan Air Force (AAF) */
     AFGHAN_AIR_FORCE_AAF (13, "Afghan Air Force (AAF)"),
     /** National Directorate of Security (NDS) */
-    NATIONAL_DIRECTORATE_OF_SECURITY_NDS (51, "National Directorate of Security (NDS)"),
+    CREATE_ENTITY_RELIABLE (51, "National Directorate of Security (NDS)"),
     /** Afghan National Police (ANP) */
-    AFGHAN_NATIONAL_POLICE_ANP (52, "Afghan National Police (ANP)"),
+    REMOVE_ENTITY_RELIABLE (52, "Afghan National Police (ANP)"),
     /** Afghan Border Police (ABP) */
-    AFGHAN_BORDER_POLICE_ABP (53, "Afghan Border Police (ABP)"),
+    START_RESUME_RELIABLE (53, "Afghan Border Police (ABP)"),
     /** Afghan National Civil Order Police (ANCOP) */
-    AFGHAN_NATIONAL_CIVIL_ORDER_POLICE_ANCOP (54, "Afghan National Civil Order Police (ANCOP)"),
+    STOP_FREEZE_RELIABLE (54, "Afghan National Civil Order Police (ANCOP)"),
     /** Afghan Public Protection Force (APPF) */
-    AFGHAN_PUBLIC_PROTECTION_FORCE_APPF (55, "Afghan Public Protection Force (APPF)"),
+    ACKNOWLEDGE_RELIABLE (55, "Afghan Public Protection Force (APPF)"),
     /** Non-Military National Government Agencies */
     NON_MILITARY_NATIONAL_GOVERNMENT_AGENCIES (70, "Non-Military National Government Agencies"),
     /** Terrorist Combatant */
@@ -44,27 +44,39 @@ public enum LifeFormCategoriesAfghanistan
     private int value;
     private final String description;
 
+    /** Constructor */
     LifeFormCategoriesAfghanistan(int value, String description)
     {
         this.value = value;
         this.description = description;
     }
-
+    /** Provide enumeration value
+      * @return integer value */
     public int getValue()
     {
         return value;
     }
 
+    /** Provide enumeration description
+     * @return description
+     */
     public String getDescription()
     {
         return description;
     }
-    
+
+    /** bit width for this enumeration
+     * @return number of bits wide
+     */
     public static int getEnumBitWidth()
     {
       return 8;
     }
 
+    /** provide enumeration for a given value
+     * @param i integer value of interest
+     * @return enumeration corresponding to numeric value
+     */
     public static LifeFormCategoriesAfghanistan getEnumForValue(int i)
     {
        for(LifeFormCategoriesAfghanistan val: LifeFormCategoriesAfghanistan.values()) {
@@ -75,17 +87,29 @@ public enum LifeFormCategoriesAfghanistan
        return null;
     }
 
-
+    /** Marshal value to DataOutputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dos DataOutputStream for output
+     * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
     {
         dos.writeByte(getValue());
     }
     
+    /** Marshal value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for output
+     * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
     {
         byteBuffer.put((byte)getValue());
     }
 
+    /** Unmarshal value to DataInputStream
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param dis DataInputStream for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormCategoriesAfghanistan unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
@@ -98,6 +122,11 @@ public enum LifeFormCategoriesAfghanistan
         return getEnumForValue(dis.readByte());
     } 
 
+    /** Unmarshal enumeration value to ByteBuffer
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param byteBuffer ByteBuffer for input
+     * @throws Exception unmarshalling input-output error
+     * @return enumeration of interest */
     public static LifeFormCategoriesAfghanistan unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
@@ -128,6 +157,9 @@ public enum LifeFormCategoriesAfghanistan
     @Override
     public String toString()
     {
-        return "LifeFormCategoriesAfghanistan " + getValue() + " " + name(); 
+        String padding = new String();
+        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+            padding = "0"; // leading zero for column spacing
+        return "LifeFormCategoriesAfghanistan " + padding + getValue() + " " + name();
     }
 }

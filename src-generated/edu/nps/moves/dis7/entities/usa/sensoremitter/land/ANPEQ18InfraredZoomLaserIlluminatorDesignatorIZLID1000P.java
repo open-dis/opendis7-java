@@ -4,16 +4,17 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28, 2020-05-07
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e5c5e6
- * Country: United States of America (USA)
- * Entity kind: Sensor/Emitter
- * Domain: LAND
+ * SISO-REF-010-v28 (2020-05-07)
+ * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1bc6c20d;
+ * Country: United States of America (USA);
+ * Entity kind: Sensor/Emitter;
+ * Domain: LAND;
  *
  * Entity type uid: 32302
  */
 public class ANPEQ18InfraredZoomLaserIlluminatorDesignatorIZLID1000P extends EntityType
 {
+    /** Default constructor */
     public ANPEQ18InfraredZoomLaserIlluminatorDesignatorIZLID1000P()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);
