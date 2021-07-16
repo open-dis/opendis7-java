@@ -28,7 +28,7 @@ public class ThreadedNetExample
     // Create an instance of DisThreadedNetworkInterface using default port 3000, mcast 225.4.5.6, use other constructor to specific port and ip
     DisThreadedNetworkInterface netif = new DisThreadedNetworkInterface();
     
-    // Internally, the DisThreadeNetIF class has constructed whatever threads it needs to operated
+    // Internally, the DisThreadedNetworkInterface class has constructed whatever threads it needs to operated
     
     // We want to listen also, so add a listener, using JDK8+ lambda grammar
     netif.addListener(pdu->handleReceivedPdu(pdu));
