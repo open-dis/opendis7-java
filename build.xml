@@ -55,6 +55,8 @@
                 <include name="open-dis7-pdus-classes.jar"/>
                 <include name="open-dis7-pdus-source.jar"/>
                 <include name="open-dis7-pdus-javadoc.jar"/>
+                <include name="open-dis7-full.zip"/>
+                <include name="open-dis7-full.jar"/>
                 <!-- do not delete jar files produced by open-dis7-source-generator -->
                 <exclude name="open-dis7-enumerations-classes.jar"/>
                 <exclude name="open-dis7-enumerations-source.jar"/>
