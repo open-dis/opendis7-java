@@ -7,12 +7,15 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.DisTime;
 import edu.nps.moves.dis7.enumerations.DISPDUType;
+
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
-
 import java.io.IOException;
+
 import java.net.*;
+
 import java.nio.ByteBuffer;
+
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
@@ -37,7 +40,7 @@ public class DisThreadedNetworkInterface
     private boolean verboseIncludesTimestamp = false;
 
     /**
-     * Pdu listener interface
+     * Pdu listener class and interface
      */
     public interface PduListener
     {
@@ -258,12 +261,12 @@ public class DisThreadedNetworkInterface
     {
         createDatagramSocket(); // common asset, synchronized to prevent interleaved reentry
 
-        receiver = new Thread(receiveThread, "DisThreadedNetworkInterface receive thread");
+        receiver = new Thread(receiveThread, TRACE_PREFIX + " receive thread");
         receiver.setDaemon(true);
         receiver.setPriority(Thread.NORM_PRIORITY);
         receiver.start();
 
-        sender = new Thread(sendThread, "DisThreadedNetworkInterface send thread");
+        sender = new Thread(sendThread, TRACE_PREFIX + " send thread");
         sender.setDaemon(true);
         sender.setPriority(Thread.NORM_PRIORITY);
         sender.start();
@@ -443,7 +446,7 @@ public class DisThreadedNetworkInterface
     catch (InterruptedException ie) 
     {
         System.err.flush();
-        System.err.println ("*** DisThreadedNetworkInterface.sleep(" + duration + ") failed to sleep");
+        System.err.println ("*** " + getClass().getName() + ".sleep(" + duration + ") failed to sleep");
         ie.printStackTrace();
     }
   }
@@ -468,7 +471,7 @@ public class DisThreadedNetworkInterface
                         addr = addresses.nextElement();
                         if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) 
                         {
-                            System.out.println(TRACE_PREFIX + "Using network interface " + nif.getDisplayName());
+                            System.out.println(TRACE_PREFIX + " Using network interface " + nif.getDisplayName());
                             return nif;
                         }
                     }
