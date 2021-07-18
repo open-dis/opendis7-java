@@ -155,12 +155,14 @@ public enum PlatformLandCategory implements Category
           if(val.getValue()==i)
               return val;
        }
+       System.out.flush(); // ensure contiguous console outputs
        System.err.println("No enumeration found for value " + i + " of enumeration PlatformLandCategory");
+       System.err.flush(); // ensure contiguous console outputs
        return null;
     }
 
     /** Marshal value to DataOutputStream
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param dos DataOutputStream for output
      * @throws IOException input-output error */
     public void marshal(DataOutputStream dos) throws IOException
@@ -169,7 +171,7 @@ public enum PlatformLandCategory implements Category
     }
     
     /** Marshal value to ByteBuffer
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param byteBuffer ByteBuffer for output
      * @throws IOException input-output error */
     public void marshal(ByteBuffer byteBuffer) throws Exception
@@ -178,7 +180,7 @@ public enum PlatformLandCategory implements Category
     }
 
     /** Unmarshal value to DataInputStream
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param dis DataInputStream for input
      * @throws Exception unmarshalling input-output error
      * @return enumeration of interest */
@@ -195,7 +197,7 @@ public enum PlatformLandCategory implements Category
     } 
 
     /** Unmarshal enumeration value to ByteBuffer
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param byteBuffer ByteBuffer for input
      * @throws Exception unmarshalling input-output error
      * @return enumeration of interest */
@@ -214,7 +216,7 @@ public enum PlatformLandCategory implements Category
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
     public int getMarshalledSize()

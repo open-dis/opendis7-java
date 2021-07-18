@@ -37,7 +37,7 @@ public class VariableDatum extends Object implements Serializable
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
   public int getMarshalledSize()
@@ -168,8 +168,11 @@ public class VariableDatum extends Object implements Serializable
 
       padding = new byte[Align.to64bits(dos)];
     }
-    catch (IOException e) {
-      System.err.println(e);
+    catch (IOException e)
+    {
+        System.out.flush(); // ensure contiguous console outputs
+        System.err.println(e);
+        System.err.flush(); // ensure contiguous console outputs
     }
   }
 
@@ -177,7 +180,7 @@ public class VariableDatum extends Object implements Serializable
    * Deserializes an object from a DataInputStream.
    * @param dis DataInputStream
    * @see java.io.DataInputStream
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return marshalled serialized size in bytes
    * @throws java.lang.Exception if something goes wrong
    */
@@ -198,8 +201,11 @@ public class VariableDatum extends Object implements Serializable
       padding = new byte[Align.from64bits(uPosition, dis)];
       //uPosition += padding.length;
     }
-    catch (Exception e) {
-      System.err.println(e);
+    catch (Exception e) 
+    {
+        System.out.flush(); // ensure contiguous console outputs
+        System.err.println(e);
+        System.err.flush(); // ensure contiguous console outputs
     }
     return getMarshalledSize();
   }
@@ -233,7 +239,7 @@ public class VariableDatum extends Object implements Serializable
    *
    * @throws java.nio.BufferUnderflowException if buff is too small
    * @see java.nio.ByteBuffer
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @param byteBuffer The ByteBuffer at the position to begin reading
    * @return marshalled serialized size in bytes
    * @throws Exception ByteBuffer-generated exception

@@ -87,8 +87,11 @@ public class Domain
       getDescription = c.getDeclaredMethod("getDescription", (Class[]) null);
       //@formatter:on
     }
-    catch (NoSuchMethodException ex) {
-      System.err.println("Can't find methods in " + c.getSimpleName());
+    catch (NoSuchMethodException ex)
+    {
+        System.out.flush(); // ensure contiguous console outputs
+        System.err.println("Can't find methods in " + c.getSimpleName());
+        System.err.flush(); // ensure contiguous console outputs
     }
   }
 
@@ -112,7 +115,7 @@ public class Domain
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
     public int getMarshalledSize()
@@ -142,7 +145,7 @@ public class Domain
      * Deserializes an object from a DataInputStream.
      * @param dis DataInputStream
      * @see java.io.DataInputStream
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @return marshalled serialized size in bytes
      */
     public int unmarshal(DataInputStream dis)
@@ -155,7 +158,7 @@ public class Domain
 
     /**
      * Deserializes an object from a ByteBuffer.
-     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param byteBuffer The ByteBuffer at the position to begin writing
      * @return marshalled serialized size in bytes
      */

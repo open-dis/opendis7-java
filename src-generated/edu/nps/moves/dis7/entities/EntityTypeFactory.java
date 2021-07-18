@@ -41,9 +41,12 @@ public class EntityTypeFactory
       Constructor<EntityType> constr = (Constructor<EntityType>) cls.getConstructors()[0];
       return constr.newInstance();
     }
-    catch(ClassNotFoundException | InstantiationException | IllegalAccessException | InvocationTargetException ex) {
-      System.err.println(name+"(uid "+uid+") could not be instantiated. Check for proper entity jar(s) on classpath.");
-      return null;
+    catch(ClassNotFoundException | InstantiationException | IllegalAccessException | InvocationTargetException ex)
+    {
+       System.out.flush(); // ensure contiguous console outputs
+       System.err.println(name+"(uid "+uid+") could not be instantiated. Check for proper entity jar(s) on classpath.");
+       System.err.flush(); // ensure contiguous console outputs
+       return null;
     }
   }
 }

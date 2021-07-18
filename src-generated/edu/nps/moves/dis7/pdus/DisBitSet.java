@@ -203,6 +203,8 @@ public abstract class DisBitSet extends BitSet implements Marshaller
 
     private void showError(Throwable ex)
     {
+        System.out.flush(); // ensure contiguous console outputs
         System.err.println(ex.getClass().getSimpleName() + ": " + ex.getMessage());
+        System.err.flush(); // ensure contiguous console outputs
     }
 }

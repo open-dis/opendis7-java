@@ -67,7 +67,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
   @Override
@@ -289,8 +289,11 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 
       padTo32 = new byte[Align.to32bits(dos)];
     }
-    catch (Exception e) {
-      System.err.println(e);
+    catch (Exception e)
+    {
+        System.out.flush(); // ensure contiguous console outputs
+        System.err.println(e);
+        System.err.flush(); // ensure contiguous console outputs
     }
   }
 
@@ -298,7 +301,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * Deserializes an object from a DataInputStream.
    * @param dis DataInputStream
    * @see java.io.DataInputStream
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return marshalled serialized size in bytes
    * @throws java.lang.Exception if something goes wrong
    */
@@ -373,7 +376,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    *
    * @throws java.nio.BufferUnderflowException if buff is too small
    * @see java.nio.ByteBuffer
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @param byteBuffer The ByteBuffer at the position to begin reading
    * @return marshalled serialized size in bytes
    * @throws Exception ByteBuffer-generated exception

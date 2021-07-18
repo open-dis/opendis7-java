@@ -62,7 +62,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 
   /**
    * Returns size of this serialized (marshalled) object in bytes
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
   @Override
@@ -276,7 +276,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * Deserializes an object from a DataInputStream.
    * @param dis DataInputStream
    * @see java.io.DataInputStream
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return marshalled serialized size in bytes
    */
   @Override
@@ -346,7 +346,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    *
    * @throws java.nio.BufferUnderflowException if buff is too small
    * @see java.nio.ByteBuffer
-   * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+   * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @param byteBuffer The ByteBuffer at the position to begin reading
    * @return marshalled serialized size in bytes
    * @throws Exception ByteBuffer-generated exception
