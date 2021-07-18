@@ -473,7 +473,12 @@ public class RangeCoordinates
         westALittle.DISCoordFromLocalFlat(0.0, 0.0, 0.0);
     }
 
-  public SRF_LococentricEuclidean3D getPlatformReferenceFrame(Vector3Double rangePositionCoordinates)
+    /**
+     * Get Spatial Reference Frame (SRF) for this platform at the given coordinate
+     * @param rangePositionCoordinates local coordinates for location of interest
+     * @return Spatial Reference Frame (SRF) for this platform
+     */
+    public SRF_LococentricEuclidean3D getPlatformReferenceFrame(Vector3Double rangePositionCoordinates)
     {
       try
       {

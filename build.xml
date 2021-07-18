@@ -55,6 +55,8 @@
                 <include name="open-dis7-pdus-classes.jar"/>
                 <include name="open-dis7-pdus-source.jar"/>
                 <include name="open-dis7-pdus-javadoc.jar"/>
+                <include name="open-dis7-full.zip"/>
+                <include name="open-dis7-full.jar"/>
                 <!-- do not delete jar files produced by open-dis7-source-generator -->
                 <exclude name="open-dis7-enumerations-classes.jar"/>
                 <exclude name="open-dis7-enumerations-source.jar"/>
@@ -85,8 +87,8 @@
     </target>
     
     <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
-        <echo message="view local javadoc"/>
-        <nbbrowse file="javadoc/index.html" />
+        <echo message="view local javadoc in dist/javadoc subdirectory"/>
+        <nbbrowse file="dist/javadoc/index.html" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
@@ -224,12 +226,13 @@
         <antcall target="jar-pdus-classes"/>
         <antcall target="jar-pdus-source"/>
         <antcall target="jar-pdus-javadoc"/>
-        <antcall target="jar-full"/>
+    <!--<antcall target="zip-full"/>-->
     </target>
 
-    <target name="jar-full" description="full set of everything, pdus and enumerations">
-        <delete  file="dist/open-dis7-full.jar"/>
-        <jar destfile="dist/open-dis7-full.jar"
+    <target name="zip-full" description="full set of everything, pdus and enumerations">
+        <!-- TODO README -->
+        <delete  file="dist/open-dis7-full.zip"/>
+        <zip destfile="dist/open-dis7-full.zip"
                update="true"
             zip64Mode="always">
             <!-- zip64Mode https://stackoverflow.com/questions/39524481/error-creating-jar-archive-contains-more-than-65535-entries/ -->
@@ -258,6 +261,7 @@
             </fileset>-->
             
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
+            <!--
             <manifest>
                 <attribute name="description"            value="Full set of files for ${manifest.name}"/>
                 <attribute name="Built-By"               value="${Built-By}"/>
@@ -272,7 +276,8 @@
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
-        </jar>
+            -->
+        </zip>
     </target>
 
     <target name="jar-pdus-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
