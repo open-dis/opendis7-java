@@ -447,7 +447,7 @@ public class DisThreadedNetworkInterface
     {
         System.err.flush();
         System.err.println ("*** " + getClass().getName() + ".sleep(" + duration + ") failed to sleep");
-        ie.printStackTrace();
+        ie.printStackTrace(System.err);
     }
   }
 
