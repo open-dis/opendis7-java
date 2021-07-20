@@ -361,9 +361,10 @@
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
+                <include name="**/edu/nps/moves/legacy/math/*"/>
                 <include name="**/edu/nps/moves/dis7/pdus/*"/>
-                <include name="**/edu/nps/moves/dis7/utilities/**/*"/>
                 <include name="**/edu/nps/moves/spatial/*"/>
+                <include name="**/edu/nps/moves/dis7/utilities/**/*"/>
                 <exclude name="**/edu/nps/moves/dis7/entities/*"/>
                 <exclude name="**/edu/nps/moves/dis7/enumerations/*"/>
                 <exclude name="**/edu/nps/moves/dis7/jammers/*"/>

@@ -44,7 +44,7 @@ public class PduFactoryTest
         Throwable ex = null;
         try {
             //Arrays.stream(PduFactory.class.getDeclaredMethods()).forEach(m->System.out.println(m.getName()));
-            PduFactory fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
+            PduFactory fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
 
             fact.makeAcknowledgePdu();
             fact.makeAcknowledgeReliablePdu();

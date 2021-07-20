@@ -73,7 +73,7 @@ public class AllPduRoundTripTest
     try {
       setupSenderRecorder();
       
-      pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, true);
+      pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
 
       pdusSent.add(pduFactory.makeAcknowledgePdu());
       pdusSent.add(pduFactory.makeAcknowledgeReliablePdu());

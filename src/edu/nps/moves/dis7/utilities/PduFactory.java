@@ -33,6 +33,8 @@ import java.util.stream.Stream;
  */
 public class PduFactory
 {
+  public enum TimestampStyle {IEEE_ABSOLUTE, IEEE_RELATIVE, NPS, UNIX};
+  
   private Country country = Country.UNITED_STATES_OF_AMERICA_USA;
   private byte defaultExerciseId = 1;
   private short defaultSiteId = 2;
@@ -42,14 +44,21 @@ public class PduFactory
 
   private Method getTime;
   private boolean useFastPdu = false;
+  
+  /** We can marshal the PDU with a timestamp set to any of several styles. 
+   * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
+   * with the same timestamp as duplicates and may discard them.
+   */
+  private TimestampStyle timestampStyle = TimestampStyle.IEEE_ABSOLUTE;
 
   /**
-   * Create a PduFactory using defaults for country (USA), exerciseId (2), application (3) and absolute timestamps.
+   * Create a PduFactory using defaults for country (USA), exerciseId (2), 
+   * application (3) and absolute timestamps.
    */
   public PduFactory()
   {
     this.disTime = new DisTime();
-    getTimeStampMethod();
+    setTimeStampStyle(timestampStyle);
   }
   
   /**
@@ -58,34 +67,57 @@ public class PduFactory
    * @param exerciseId used in standard PDU header
    * @param siteId used in standard PDU header
    * @param applicationId used in standard PDU header
-   * @param useAbsoluteTimestamp boolean to specify absolute time stamps (IEEE Std 1278.1-2012, 4.6)
+   * @param timestampStyle enum to specify time stamp style (IEEE Std 1278.1-2012, 4.6)
    * @see   edu.nps.moves.dis7.pdus.EntityType
    * @see   edu.nps.moves.dis7.pdus.RadioType
    */
-  public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, boolean useAbsoluteTimestamp)
+  public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, TimestampStyle timestampStyle)
   {
-    this.disTime = new DisTime();
+    this();
     this.country = country;
     this.defaultExerciseId = exerciseId;
     this.defaultSiteId = siteId;
     this.defaultAppId = applicationId;
-
-    this.useAbsoluteTimestamp = useAbsoluteTimestamp;
-    getTimeStampMethod();
+    
+    setTimeStampStyle(timestampStyle);
+  }
+  
+  /** Set one of four styles. IEEE_ABSOLUTE, IEEE_RELATIVE, NPS, or UNIX 
+   * 
+   * @param ts the timestamp style to set for this PDU
+   */
+  public final void setTimeStampStyle(TimestampStyle ts) {
+      timestampStyle = ts;
+      setTimeStampMethod();
   }
 
-  private void getTimeStampMethod()
-  {
-    try {
-      if (useAbsoluteTimestamp)
-        getTime = DisTime.class.getDeclaredMethod("getDisAbsoluteTimestamp", new Class<?>[0]);
-      else
-        getTime = DisTime.class.getDeclaredMethod("getDisRelativeTimestamp", new Class<?>[0]);
+    private void setTimeStampMethod() {
+        try {
+            switch (timestampStyle) {
+                case IEEE_ABSOLUTE:
+                    getTime = DisTime.class.getDeclaredMethod("getDisAbsoluteTimestamp", new Class<?>[0]);
+                    break;
+
+                case IEEE_RELATIVE:
+                    getTime = DisTime.class.getDeclaredMethod("getDisRelativeTimestamp", new Class<?>[0]);
+                    break;
+
+                case NPS:
+                    getTime = DisTime.class.getDeclaredMethod("getNpsTimestamp", new Class<?>[0]);
+                    break;
+
+                case UNIX:
+                    getTime = DisTime.class.getDeclaredMethod("getUnixTimestamp", new Class<?>[0]);
+                    break;
+
+                default:
+                    getTime = DisTime.class.getDeclaredMethod("getDisAbsoluteTimestamp", new Class<?>[0]);
+                    break;
+            }
+        } catch (NoSuchMethodException ex) {
+            throw new RuntimeException(ex);
+        }
     }
-    catch (NoSuchMethodException ex) {
-      throw new RuntimeException(ex);
-    }
-  }
 
   /**
    * Use the default or fast method to create EntityState pdus from input byte streams.

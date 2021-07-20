@@ -35,7 +35,7 @@ public class ThreadedNetExample
     
     // Use PduFactory to make pdus, default country = Deutschland, exercise, site, app, absolute timestamps
     
-    PduFactory factory = new PduFactory(Country.GERMANY_DEU, (byte) 1, (short) 2, (short) 3, true);
+    PduFactory factory = new PduFactory(Country.GERMANY_DEU, (byte) 1, (short) 2, (short) 3, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
     
     // Make and send 3 pdus with no delay between, testing threaded receiver performance
     netif.send(factory.makeEntityStatePdu());
