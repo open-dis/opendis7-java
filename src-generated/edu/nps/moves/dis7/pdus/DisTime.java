@@ -124,7 +124,6 @@ public class DisTime
      * Fix to bitshift by mvormelch.
      * @return DIS time units, get absolute timestamp
      */
-
     public int getDisAbsoluteTimestamp() {
          int val = this.getDisTimeUnitsSinceTopOfHour();
          val = (val << 1) | ABSOLUTE_TIMESTAMP_MASK; // always flip the lsb to 1
@@ -148,7 +147,7 @@ public class DisTime
      * as long as you're not working on New Year's Eve.
      * @return a timestamp in hundredths of a second since the start of the year
      */
-    public long getNpsTimestamp() {
+    public int getNpsTimestamp() {
         // set calendar object to current time
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
         calendar.setTimeInMillis(currentTime);
@@ -166,7 +165,7 @@ public class DisTime
         long diff = currentTime - startOfYear;
         diff /= 10; // milliseconds to hundredths of a second
 
-        return diff;
+        return (int) diff;
     }
 
     /**
@@ -186,10 +185,10 @@ public class DisTime
      * Consult the Wikipedia page on <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a> for the gory details
      * @return seconds since 1970
      */
-    public long getUnixTimestamp() {
+    public int getUnixTimestamp() {
         long t = System.currentTimeMillis();
         t /= 1000l;   // NB: integer division, convert milliseconds to seconds
-        return t;
+        return (int) t;
     }
     /**
      * Convert timestamp value to string for logging and diagnostics
