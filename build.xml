@@ -314,9 +314,6 @@
     <target name="jar-pdus-source">
         <delete  file="dist/open-dis7-pdus-source.jar"/>
         <jar destfile="dist/open-dis7-pdus-source.jar"
-              basedir="src"
-             includes="edu/nps/moves/dis7/**"
-             excludes=".keep"
                update="true"
             zip64Mode="always">
             <fileset dir="src" defaultexcludes="yes">
@@ -324,14 +321,11 @@
                 <include name="**/*.md"/>
                 <include name="**/*.txt"/>
             <!--<include name="**/*.dislog"/>-->
-                <exclude name="edu/nps/moves/dis7/utilities/logs/**"/>
-                <include name="edu/nps/moves/spatial/**"/>
+                <exclude name="edu/nps/moves/dis7/utilities/logs/*"/>
             </fileset>
             <fileset dir="src-generated" defaultexcludes="yes">
                 <!-- omitting enumerations directories -->
                 <include name="edu/nps/moves/dis7/pdus/**"/>
-                <include name="edu/nps/moves/dis7/utilities/**/*.java"/>
-                <exclude name="edu/nps/moves/dis7/utilities/logs/**"/>
             </fileset>
             
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
@@ -355,20 +349,22 @@
     <target name="jar-pdus-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
         <delete  file="dist/open-dis7-pdus-classes.jar"/>
         <jar destfile="dist/open-dis7-pdus-classes.jar"
-             basedir="build"
-             includes="edu/nps/moves/**"
-             excludes=".keep"
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
-                <include name="**/edu/nps/moves/legacy/math/*"/>
-                <include name="**/edu/nps/moves/dis7/pdus/*"/>
-                <include name="**/edu/nps/moves/spatial/*"/>
-                <include name="**/edu/nps/moves/dis7/utilities/**/*"/>
-                <exclude name="**/edu/nps/moves/dis7/entities/*"/>
-                <exclude name="**/edu/nps/moves/dis7/enumerations/*"/>
-                <exclude name="**/edu/nps/moves/dis7/jammers/*"/>
-                <exclude name="**/edu/nps/moves/dis7/objectTypes/*"/>
+                <include name="edu/nps/moves/dis7/examples/*"/>
+                <include name="edu/nps/moves/dis7/pdus/*"/>
+                <include name="edu/nps/moves/dis7/utilities/*"/>
+                <include name="edu/nps/moves/dis7/utilities/stream/*"/>
+                <include name="edu/nps/moves/legacy/math/*"/>
+                <include name="edu/nps/moves/spatial/*"/>
+                <exclude name="edu/nps/moves/dis7/entities/*"/>
+                <exclude name="edu/nps/moves/dis7/enumerations/*"/>
+                <exclude name="edu/nps/moves/dis7/jammers/*"/>
+                <exclude name="edu/nps/moves/dis7/objectTypes/*"/>
+                <exclude name="**/*.txt"/>
+                <exclude name="**/*.TXT"/>
+                <exclude name="**/*.*log"/>
             </fileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
