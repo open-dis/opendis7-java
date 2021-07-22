@@ -1,7 +1,7 @@
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.pdus.*;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 
 import java.io.ByteArrayOutputStream;
@@ -57,7 +57,7 @@ public class AlphabeticalPduSender
 
       // Loop through all the enumerated PDU types, create a PDU for each type,
       // and add that PDU to a list.
-      for (DISPDUType pdu : DISPDUType.values()) { // results are in alphabetic, not numeric order
+      for (DisPduType pdu : DisPduType.values()) { // results are in alphabetic, not numeric order
           
         Pdu aPdu = null;
 

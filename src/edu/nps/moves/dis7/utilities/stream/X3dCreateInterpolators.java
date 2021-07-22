@@ -2,7 +2,7 @@ package edu.nps.moves.dis7.utilities.stream;
 
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.nio.ByteBuffer;
 import java.text.NumberFormat;
@@ -106,7 +106,7 @@ public class X3dCreateInterpolators {
 
             //Only add to stream if it is an ESPDU
             //ToDo: Add support for multiple Entities
-            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DISPDUType.ENTITY_STATE))
+            if ((localPdu.getPduType() != null) && (localPdu.getPduType() == DisPduType.ENTITY_STATE))
                 testMap.put(localTimeStamp, new X3dCoordinates(localX, localY, localZ, localPhi, localPsi, localTheta));
         }
     }

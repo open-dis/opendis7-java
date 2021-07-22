@@ -2,7 +2,7 @@ package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
 
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
@@ -176,7 +176,7 @@ public class PduRecorder implements PduReceiver
     //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
     byte[] buffsized = Arrays.copyOf(newBuffer, newLength);
-    DISPDUType pduType;
+    DisPduType pduType;
     
     switch (pduLogEncoding)
     {
@@ -192,7 +192,7 @@ public class PduRecorder implements PduReceiver
             sb.append(',');
             sb.append(Arrays.toString(buffsized).replace(" ", ""));
             sb.append(" # ");
-            pduType = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
+            pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
             sb.append(pduType);
             break;
         
@@ -336,10 +336,10 @@ public class PduRecorder implements PduReceiver
     }
     System.out.println("dis7.utilities.stream.PduRecorder pduRecorder created... isRunning()=" + pduRecorder.isRunning());
      
-    DISPDUType allPDUTypesArray[] = DISPDUType.values();
+    DisPduType allPDUTypesArray[] = DisPduType.values();
     System.out.println("dis7.utilities.stream.PduRecorder allPDUTypesArray created, length=" + allPDUTypesArray.length + " ...");
     Arrays.stream(allPDUTypesArray).forEach(pduTypeValue-> {
-      if(pduTypeValue != DISPDUType.OTHER) 
+      if(pduTypeValue != DisPduType.OTHER) 
       {
         try {
             pduRecorder.getDisThreadedNetIF().send(factory.createPdu(pduTypeValue));

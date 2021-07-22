@@ -7,7 +7,7 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
@@ -1471,7 +1471,7 @@ public class PduFactory
       .setOriginatingSimulationAddress(newSimulationAddress());
     /*
             .setActionCode(DISAttributeActionCode.NO_STATEMENT)
-            .setAttributeRecordPduType(DISPDUType.OTHER)
+            .setAttributeRecordPduType(DisPduType.OTHER)
             .setAttributeRecordProtocolVersion(DISProtocolFamily.OTHER)
             .setMasterAttributeRecordType(VariableRecordTypes.OTHER)
      */
@@ -1500,7 +1500,7 @@ public class PduFactory
    */
   public Pdu createPdu(ByteBuffer byteBuffer)
   {
-    DISPDUType pduType = getTypeFromByteArray(byteBuffer.array());
+    DisPduType pduType = getTypeFromByteArray(byteBuffer.array());
     return createPdu(pduType, byteBuffer);
   }
 
@@ -1511,9 +1511,9 @@ public class PduFactory
    * @param ba byte array
    * @return the type
    */
-  private DISPDUType getTypeFromByteArray(byte[] ba)
+  private DisPduType getTypeFromByteArray(byte[] ba)
   {
-    return DISPDUType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
+    return DisPduType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
   }
   
   /**
@@ -1521,12 +1521,12 @@ public class PduFactory
    * @param pduType PDU type to create
    * @return the empty pdu
    */
-  public Pdu createPdu(DISPDUType pduType)
+  public Pdu createPdu(DisPduType pduType)
   {
     return createPdu(pduType, null);
   }
   
-  private Pdu createPdu(DISPDUType pduType, ByteBuffer byteBuffer)
+  private Pdu createPdu(DisPduType pduType, ByteBuffer byteBuffer)
   {
     Pdu aPdu = null;
     switch (pduType) {
