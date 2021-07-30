@@ -6,8 +6,11 @@ package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.DisBitSet;
+
 import java.lang.reflect.Method;
+
 import java.nio.ByteBuffer;
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -140,7 +143,7 @@ public class MarshalEnumsTest
       marshalOne(DISPDUStatusLVCIndicatorLVC.values()[0]);
       marshalOne(DISPDUStatusRadioAttachedIndicatorRAI.values()[0]);
       marshalOne(DISPDUStatusTransferredEntityIndicatorTEI.values()[0]);
-      marshalOne(DISPDUType.values()[0]);
+      marshalOne(DisPduType.values()[0]);
       marshalOne(DISProtocolFamily.values()[0]);
       marshalOne(DISProtocolVersion.values()[0]);
       marshalOne(DRParametersType.values()[0]);
