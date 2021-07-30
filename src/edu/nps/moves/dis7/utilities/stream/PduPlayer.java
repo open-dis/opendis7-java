@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 
 import java.io.*;
 import java.net.DatagramPacket;
@@ -104,7 +104,7 @@ public class PduPlayer {
             
             InetAddress addr = null;
             DatagramPacket datagramPacket;
-            DISPDUType type;
+            DisPduType type;
             String tempString;
             String[] sa = null, splitString;
             String REGEX;
@@ -248,7 +248,7 @@ public class PduPlayer {
                                 if (netSend) {
                                     datagramPacket = new DatagramPacket(buffer, buffer.length, addr, port);
                                     datagramSocket.send(datagramPacket);
-                                    type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(buffer[2])); // 3rd byte
+                                    type = DisPduType.getEnumForValue(Byte.toUnsignedInt(buffer[2])); // 3rd byte
                                     System.out.println("Sent PDU: " + type);
                                 }
                                 break;
@@ -308,7 +308,7 @@ public class PduPlayer {
                                     globalByteBufferForX3dInterPolators = bufferShort.clone();
                                     x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
                                     x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
-                                    type = DISPDUType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
+                                    type = DisPduType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
                                     System.out.println("Sent PDU: " + type);
                                 }
                                 break;

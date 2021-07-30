@@ -8,7 +8,7 @@ package edu.nps.moves.dis7.examples;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.PduFactory;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import java.io.IOException;
 import edu.nps.moves.dis7.entities.usa.platform.surface.*;
@@ -100,7 +100,7 @@ public class EntityStateEntityIdExampleUse
     
     /* Do the same for the second way of creating a Shenandoah entity type and show an alternate way of creating an ESPDU */
     
-    espdu = (EntityStatePdu)pduFactory.createPdu(DISPDUType.ENTITY_STATE);
+    espdu = (EntityStatePdu)pduFactory.createPdu(DisPduType.ENTITY_STATE);
     /* set desired entity state fields here */
 
     AD44Shenandoah entityType2 = new AD44Shenandoah(); // edu.nps.moves.dis7.entities.usa.platform.surface

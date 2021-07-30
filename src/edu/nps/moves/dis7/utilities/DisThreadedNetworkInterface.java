@@ -6,7 +6,7 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.DisTime;
-import edu.nps.moves.dis7.enumerations.DISPDUType;
+import edu.nps.moves.dis7.enumerations.DisPduType;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -144,7 +144,7 @@ public class DisThreadedNetworkInterface
 
     /* *********** queues and lists  and public methods ************** */
     private final List<PduListener> everyTypeListeners = new ArrayList<>();
-    private final Map<DISPDUType, List<PduListener>> typeListeners = new HashMap<>();
+    private final Map<DisPduType, List<PduListener>> typeListeners = new HashMap<>();
     private final List<RawPduListener> rawListeners = new ArrayList<>();
     private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>();
 
@@ -153,7 +153,7 @@ public class DisThreadedNetworkInterface
      * @param newListener listener instance implementing the RawPduListener interface
      * @param disPduType Pdu type
      */
-    public void addListener(PduListener newListener, DISPDUType disPduType)
+    public void addListener(PduListener newListener, DisPduType disPduType)
     {
         if (disPduType == null)
         {
