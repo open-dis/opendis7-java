@@ -7,10 +7,12 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
-import edu.nps.moves.dis7.enumerations.DisPduType;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
 import java.nio.ByteBuffer;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
