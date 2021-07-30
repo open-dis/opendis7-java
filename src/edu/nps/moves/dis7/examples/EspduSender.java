@@ -8,6 +8,8 @@ package edu.nps.moves.dis7.examples;
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.utilities.CoordinateConversions;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
+import edu.nps.moves.dis7.utilities.PduFactory;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -115,26 +117,13 @@ public class EspduSender
       System.exit(-1);
     }
     
-    EntityStatePdu espdu = new EntityStatePdu();
-    DisTime disTime = new DisTime();
+    // Factory with default absolute time
+    PduFactory pduFac = new PduFactory();
+    EntityStatePdu espdu = pduFac.makeEntityStatePdu();
 
     // ICBM coordinates for my office
     double lat = 36.595517;
     double lon = -121.877000;
-
-    // Initialize values in the Entity State PDU object. The exercise ID is 
-    // a way to differentiate between different virtual worlds on one network.
-    // Note that some values (such as the PDU type and PDU family) are set
-    // automatically when you create the ESPDU.
-    espdu.setExerciseID((byte) 1);
-
-    // The EID is the unique identifier for objects in the world. This 
-    // EID should match up with the ID for the object specified in the 
-    // VMRL/x3d/virtual world.
-    EntityID entityID = espdu.getEntityID();
-    entityID.setSiteID((short) 1);  // 0 is apparently not a valid site number, per the spec
-    entityID.setApplicationID((short) 1);
-    entityID.setEntityID((short) 2);
 
     // Set the entity type. SISO has a big list of enumerations, so that by
     // specifying various numbers we can say this is an M1A2 American tank,
@@ -155,10 +144,23 @@ public class EspduSender
     // Using entitytype jar
     espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
 
-    Set<InetAddress> broadcastAddresses;
+    Set<InetAddress> broadcastAddresses = getBroadcastAddresses();
+    
     // Loop through sending N ESPDUs
     try {
       System.out.println("Sending " + NUMBER_TO_SEND + " ESPDU packets to " + destinationIp.toString());
+      int timestamp;
+      double direction;
+      double disCoordinates[];
+      Vector3Double location;
+      FirePdu fire;
+      byte[] fireArray;
+      byte[] data;
+      DatagramPacket packet;
+      
+      ByteArrayOutputStream baos = new ByteArrayOutputStream();
+      DataOutputStream dos = new DataOutputStream(baos);
+        
       for (int idx = 0; idx < NUMBER_TO_SEND; idx++) {
         // DIS time is a pain in the ass. DIS time units are 2^31-1 units per
         // hour, and time is set to DIS time units from the top of the hour. 
@@ -180,7 +182,7 @@ public class EspduSender
         // update the timestamp on ALL packets sent.
         // An alterative approach: actually follow the standard. It's a crazy concept,
         // but it might just work.
-        int timestamp = disTime.getDisAbsoluteTimestamp();
+        timestamp = pduFac.getTimestamp();
         espdu.setTimestamp(timestamp);
 
         // Set the position of the entity in the world. DIS uses a cartesian 
@@ -200,17 +202,17 @@ public class EspduSender
         // The x and y values will change, but the z value should not.
         //lon = lon + (double)((double)idx / 100000.0);
         //System.out.println("lla=" + lat + "," + lon + ", 0.0");
-        double direction = Math.pow(-1.0, idx);
+        direction = Math.pow(-1.0, idx);
         lon = lon + (direction * 0.00006);
-        System.out.println(lon);
+//        System.out.println(lon);
 
-        double disCoordinates[] = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, 1.0);
-        Vector3Double location = espdu.getEntityLocation();
+        disCoordinates = CoordinateConversions.getXYZfromLatLonDegrees(lat, lon, 1.0);
+        location = espdu.getEntityLocation();
         location.setX(disCoordinates[0]);
         location.setY(disCoordinates[1]);
         location.setZ(disCoordinates[2]);
-        System.out.println("lat, lon:" + lat + ", " + lon);
-        System.out.println("DIS coord:" + disCoordinates[0] + ", " + disCoordinates[1] + ", " + disCoordinates[2]);
+//        System.out.println("lat, lon: (" + lat + ", " + lon + ")");
+//        System.out.println("DIS coord: (" + disCoordinates[0] + ", " + disCoordinates[1] + ", " + disCoordinates[2] + ")");
 
         // Optionally, we can do some rotation of the entity
         /*
@@ -220,28 +222,25 @@ public class EspduSender
             orientation.setPsi(psi);
             orientation.setTheta((float)(orientation.getTheta() + idx /2.0));
          */
+        
         // You can set other ESPDU values here, such as the velocity, acceleration,
         // and so on.
         // Marshal out the espdu object to a byte array, then send a datagram
         // packet with that data in it.
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        DataOutputStream dos = new DataOutputStream(baos);
         espdu.marshal(dos);
-
-        FirePdu fire = new FirePdu();
-        byte[] fireArray = fire.marshal();
 
         // The byte array here is the packet in DIS format. We put that into a 
         // datagram and send it.
-        byte[] data = baos.toByteArray();
+        data = baos.toByteArray();
         
-        broadcastAddresses = getBroadcastAddresses();
-        DatagramPacket packet;
-        
+        fire = pduFac.makeFirePdu();
+        fireArray = fire.marshal();
+
         for (InetAddress broadcast : broadcastAddresses) {
-            System.out.println("Sending broadcast datagram packet to " + broadcast);
+            System.out.println("Sending broadcast datagram packets to " + broadcast);
             packet = new DatagramPacket(data, data.length, broadcast, port);
             socket.send(packet);
+            
             // TODO experiment with these!  8)
             packet = new DatagramPacket(fireArray, fireArray.length, broadcast, port); // alternate
             socket.send(packet);
@@ -250,13 +249,15 @@ public class EspduSender
         // Send every 1 sec. Otherwise this will be all over in a fraction of a second.
         Thread.sleep(1000L);
 
-        location = espdu.getEntityLocation();
+        baos.reset();
 
-        System.out.println("Espdu #" + idx + " EID=[" + entityID.getSiteID() + "," + entityID.getApplicationID() + "," + entityID.getEntityID() + "]");
-        System.out.println(" DIS coordinates location=[" + location.getX() + "," + location.getY() + "," + location.getZ() + "]");
+        System.out.println("Espdu #" + idx + " EID=[" + espdu.getEntityID().getSiteID() + ", " + espdu.getEntityID().getApplicationID() + ", " + espdu.getEntityID().getEntityID() + "]");
+        System.out.println(" DIS coordinates location=[" + location.getX() + ", " + location.getY() + ", " + location.getZ() + "]");
 //        double c[] = {location.getX(), location.getY(), location.getZ()};
 //        double lla[] = CoordinateConversions.xyzToLatLonDegrees(c);
 //      System.out.println(" Location (lat/lon/alt): [" + lla[0] + ", " + lla[1] + ", " + lla[2] + "]");
+
+        System.out.println("FirePdu #" + idx + " EID=[" + fire.getFiringEntityID().getSiteID() + ", " + fire.getFiringEntityID().getApplicationID() + ", " + fire.getFiringEntityID().getEntityID() + "]");
       }
     }
     catch (Exception ex) {
