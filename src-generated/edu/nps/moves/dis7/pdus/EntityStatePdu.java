@@ -58,7 +58,7 @@ public class EntityStatePdu extends EntityInformationFamilyPdu implements Serial
 /** Constructor */
  public EntityStatePdu()
  {
-    setPduType( DISPDUType.ENTITY_STATE );
+    setPduType( DisPduType.ENTITY_STATE );
  }
 
   /**

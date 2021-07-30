@@ -83,7 +83,7 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
 /** Constructor */
  public AggregateStatePdu()
  {
-    setPduType( DISPDUType.AGGREGATE_STATE );
+    setPduType( DisPduType.AGGREGATE_STATE );
  }
 
   /**

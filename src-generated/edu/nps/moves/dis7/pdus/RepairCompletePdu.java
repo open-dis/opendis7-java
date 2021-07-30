@@ -31,7 +31,7 @@ public class RepairCompletePdu extends LogisticsFamilyPdu implements Serializabl
 /** Constructor */
  public RepairCompletePdu()
  {
-    setPduType( DISPDUType.REPAIR_COMPLETE );
+    setPduType( DisPduType.REPAIR_COMPLETE );
  }
 
   /**

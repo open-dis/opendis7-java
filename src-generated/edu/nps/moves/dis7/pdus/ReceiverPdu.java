@@ -37,7 +37,7 @@ public class ReceiverPdu extends RadioCommunicationsFamilyPdu implements Seriali
 /** Constructor */
  public ReceiverPdu()
  {
-    setPduType( DISPDUType.RECEIVER );
+    setPduType( DisPduType.RECEIVER );
  }
 
   /**

@@ -37,7 +37,7 @@ public class EventReportPdu extends SimulationManagementFamilyPdu implements Ser
 /** Constructor */
  public EventReportPdu()
  {
-    setPduType( DISPDUType.EVENT_REPORT );
+    setPduType( DisPduType.EVENT_REPORT );
  }
 
   /**

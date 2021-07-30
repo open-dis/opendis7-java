@@ -55,7 +55,7 @@ public class MinefieldStatePdu extends MinefieldFamilyPdu implements Serializabl
 /** Constructor */
  public MinefieldStatePdu()
  {
-    setPduType( DISPDUType.MINEFIELD_STATE );
+    setPduType( DisPduType.MINEFIELD_STATE );
  }
 
   /**

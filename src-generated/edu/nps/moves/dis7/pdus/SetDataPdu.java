@@ -37,7 +37,7 @@ public class SetDataPdu extends SimulationManagementFamilyPdu implements Seriali
 /** Constructor */
  public SetDataPdu()
  {
-    setPduType( DISPDUType.SET_DATA );
+    setPduType( DisPduType.SET_DATA );
  }
 
   /**

@@ -22,7 +22,7 @@ public class RemoveEntityPdu extends SimulationManagementFamilyPdu implements Se
 /** Constructor */
  public RemoveEntityPdu()
  {
-    setPduType( DISPDUType.REMOVE_ENTITY );
+    setPduType( DisPduType.REMOVE_ENTITY );
  }
 
   /**

@@ -46,7 +46,7 @@ public class LEFirePdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public LEFirePdu()
  {
-    setPduType( DISPDUType.LIVE_ENTITY_FIRE );
+    setPduType( DisPduType.LIVE_ENTITY_FIRE );
  }
 
   /**

@@ -39,7 +39,7 @@ public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializabl
 /** Constructor */
  public IFFPdu()
  {
-    setPduType( DISPDUType.IDENTIFICATION_FRIEND_OR_FOE );
+    setPduType( DisPduType.IDENTIFICATION_FRIEND_OR_FOE );
  }
 
   /**

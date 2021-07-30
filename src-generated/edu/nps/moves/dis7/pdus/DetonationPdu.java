@@ -55,7 +55,7 @@ public class DetonationPdu extends WarfareFamilyPdu implements Serializable
 /** Constructor */
  public DetonationPdu()
  {
-    setPduType( DISPDUType.DETONATION );
+    setPduType( DisPduType.DETONATION );
  }
 
   /**

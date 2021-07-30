@@ -43,7 +43,7 @@ public class AppearancePdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public AppearancePdu()
  {
-    setPduType( DISPDUType.APPEARANCE );
+    setPduType( DisPduType.APPEARANCE );
  }
 
   /**

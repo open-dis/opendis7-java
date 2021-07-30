@@ -43,7 +43,7 @@ public class DataRPdu extends SimulationManagementWithReliabilityFamilyPdu imple
 /** Constructor */
  public DataRPdu()
  {
-    setPduType( DISPDUType.DATA_RELIABLE );
+    setPduType( DisPduType.DATA_RELIABLE );
  }
 
   /**

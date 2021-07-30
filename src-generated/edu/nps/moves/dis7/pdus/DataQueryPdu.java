@@ -37,7 +37,7 @@ public class DataQueryPdu extends SimulationManagementFamilyPdu implements Seria
 /** Constructor */
  public DataQueryPdu()
  {
-    setPduType( DISPDUType.DATA_QUERY );
+    setPduType( DisPduType.DATA_QUERY );
  }
 
   /**

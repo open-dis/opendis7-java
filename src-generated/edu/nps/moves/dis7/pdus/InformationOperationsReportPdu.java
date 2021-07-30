@@ -46,7 +46,7 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
 /** Constructor */
  public InformationOperationsReportPdu()
  {
-    setPduType( DISPDUType.INFORMATION_OPERATIONS_REPORT );
+    setPduType( DisPduType.INFORMATION_OPERATIONS_REPORT );
  }
 
   /**

@@ -37,7 +37,7 @@ public class ActionRequestPdu extends SimulationManagementFamilyPdu implements S
 /** Constructor */
  public ActionRequestPdu()
  {
-    setPduType( DISPDUType.ACTION_REQUEST );
+    setPduType( DisPduType.ACTION_REQUEST );
  }
 
   /**

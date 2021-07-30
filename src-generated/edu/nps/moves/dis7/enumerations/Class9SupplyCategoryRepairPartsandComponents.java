@@ -83,6 +83,22 @@ public enum Class9SupplyCategoryRepairPartsandComponents implements Category
        return null;
     }
 
+    private boolean TRACE = false;
+
+    /** Set tracing on/off for this object 
+     * @param value whether tracing is on or off */
+    public void setTRACE (boolean value)
+    {
+        TRACE = value;
+    }
+
+    /** Whether tracing is on or off for this object
+     * @return whether tracing is on or off */
+    public boolean getTRACE ()
+    {
+        return TRACE;
+    }
+
     /** Marshal value to DataOutputStream
      * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @param dos DataOutputStream for output
@@ -154,8 +170,12 @@ public enum Class9SupplyCategoryRepairPartsandComponents implements Category
     public String toString()
     {
         String padding = new String();
-        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+        if (this.getClass().getName().endsWith("DisPduType") && (getValue() < 10))
             padding = "0"; // leading zero for column spacing
-        return "Class9SupplyCategoryRepairPartsandComponents " + padding + getValue() + " " + name();
+        String result = "DisPduType " + padding + getValue() + " " + name();
+        if (getTRACE())
+            System.out.println ("*** enum " + this.getClass().getName() + " name=" + name() + ", value=" + getValue() + "; " +
+               result); // debug diagnostic
+        return result;
     }
 }

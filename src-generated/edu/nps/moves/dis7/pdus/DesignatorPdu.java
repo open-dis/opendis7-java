@@ -55,7 +55,7 @@ public class DesignatorPdu extends DistributedEmissionsFamilyPdu implements Seri
 /** Constructor */
  public DesignatorPdu()
  {
-    setPduType( DISPDUType.DESIGNATOR );
+    setPduType( DisPduType.DESIGNATOR );
  }
 
   /**

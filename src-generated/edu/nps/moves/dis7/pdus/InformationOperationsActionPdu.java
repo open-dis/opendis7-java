@@ -55,7 +55,7 @@ public class InformationOperationsActionPdu extends InformationOperationsFamilyP
 /** Constructor */
  public InformationOperationsActionPdu()
  {
-    setPduType( DISPDUType.INFORMATION_OPERATIONS_ACTION );
+    setPduType( DisPduType.INFORMATION_OPERATIONS_ACTION );
  }
 
   /**

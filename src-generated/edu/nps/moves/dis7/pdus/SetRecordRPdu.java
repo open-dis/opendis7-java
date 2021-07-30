@@ -40,7 +40,7 @@ public class SetRecordRPdu extends SimulationManagementWithReliabilityFamilyPdu 
 /** Constructor */
  public SetRecordRPdu()
  {
-    setPduType( DISPDUType.SET_RECORD_RELIABLE );
+    setPduType( DisPduType.SET_RECORD_RELIABLE );
  }
 
   /**

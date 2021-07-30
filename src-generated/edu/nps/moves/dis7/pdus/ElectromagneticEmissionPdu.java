@@ -37,7 +37,7 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsFamilyPdu im
 /** Constructor */
  public ElectromagneticEmissionPdu()
  {
-    setPduType( DISPDUType.ELECTROMAGNETIC_EMISSION );
+    setPduType( DisPduType.ELECTROMAGNETIC_EMISSION );
     setPaddingForEmissionsPdu( (short)0 );
  }
 

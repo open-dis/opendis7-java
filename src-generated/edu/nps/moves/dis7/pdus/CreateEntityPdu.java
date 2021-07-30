@@ -22,7 +22,7 @@ public class CreateEntityPdu extends SimulationManagementFamilyPdu implements Se
 /** Constructor */
  public CreateEntityPdu()
  {
-    setPduType( DISPDUType.CREATE_ENTITY );
+    setPduType( DisPduType.CREATE_ENTITY );
  }
 
   /**

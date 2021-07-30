@@ -37,7 +37,7 @@ public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu
 /** Constructor */
  public StopFreezeRPdu()
  {
-    setPduType( DISPDUType.STOP_FREEZE_RELIABLE );
+    setPduType( DisPduType.STOP_FREEZE_RELIABLE );
  }
 
   /**

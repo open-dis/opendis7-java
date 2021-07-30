@@ -49,7 +49,7 @@ public class MinefieldQueryPdu extends MinefieldFamilyPdu implements Serializabl
 /** Constructor */
  public MinefieldQueryPdu()
  {
-    setPduType( DISPDUType.MINEFIELD_QUERY );
+    setPduType( DisPduType.MINEFIELD_QUERY );
  }
 
   /**

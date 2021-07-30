@@ -46,7 +46,7 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
 /** Constructor */
  public ActionRequestRPdu()
  {
-    setPduType( DISPDUType.ACTION_REQUEST_RELIABLE );
+    setPduType( DisPduType.ACTION_REQUEST_RELIABLE );
  }
 
   /**

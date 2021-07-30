@@ -34,7 +34,7 @@ public class MinefieldResponseNACKPdu extends MinefieldFamilyPdu implements Seri
 /** Constructor */
  public MinefieldResponseNACKPdu()
  {
-    setPduType( DISPDUType.MINEFIELD_RESPONSE_NACK );
+    setPduType( DisPduType.MINEFIELD_RESPONSE_NACK );
  }
 
   /**

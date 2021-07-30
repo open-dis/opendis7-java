@@ -46,7 +46,7 @@ public class FirePdu extends WarfareFamilyPdu implements Serializable
 /** Constructor */
  public FirePdu()
  {
-    setPduType( DISPDUType.FIRE );
+    setPduType( DisPduType.FIRE );
  }
 
   /**

@@ -25,7 +25,7 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
    protected short  padding2;
 
    /** This field shall represent the type of the PDU that is being extended or updated, if applicable. It shall be represented by an 8-bit enumeration. uid 4 */
-   protected DISPDUType attributeRecordPduType = DISPDUType.values()[0];
+   protected DisPduType attributeRecordPduType = DisPduType.values()[0];
 
    /** This field shall indicate the Protocol Version associated with the Attribute Record PDU Type. It shall be represented by an 8-bit enumeration. uid 5 */
    protected DISProtocolFamily attributeRecordProtocolVersion = DISProtocolFamily.values()[0];
@@ -49,7 +49,7 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
 /** Constructor */
  public AttributePdu()
  {
-    setPduType( DISPDUType.ATTRIBUTE );
+    setPduType( DisPduType.ATTRIBUTE );
  }
 
   /**
@@ -139,7 +139,7 @@ public short getPadding2()
 /** Setter for {@link AttributePdu#attributeRecordPduType}
   * @param pAttributeRecordPduType new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setAttributeRecordPduType(DISPDUType pAttributeRecordPduType)
+public AttributePdu setAttributeRecordPduType(DisPduType pAttributeRecordPduType)
 {
     attributeRecordPduType = pAttributeRecordPduType;
     return this;
@@ -147,7 +147,7 @@ public AttributePdu setAttributeRecordPduType(DISPDUType pAttributeRecordPduType
 
 /** Getter for {@link AttributePdu#attributeRecordPduType}
   * @return value of interest */
-public DISPDUType getAttributeRecordPduType()
+public DisPduType getAttributeRecordPduType()
 {
     return attributeRecordPduType; 
 }
@@ -293,7 +293,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         padding2 = dis.readShort();
         uPosition += 4;
-        attributeRecordPduType = DISPDUType.unmarshalEnum(dis);
+        attributeRecordPduType = DisPduType.unmarshalEnum(dis);
         uPosition += attributeRecordPduType.getMarshalledSize();
         attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(dis);
         uPosition += attributeRecordProtocolVersion.getMarshalledSize();
@@ -365,7 +365,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     originatingSimulationAddress.unmarshal(byteBuffer);
     padding1 = byteBuffer.getInt();
     padding2 = byteBuffer.getShort();
-    attributeRecordPduType = DISPDUType.unmarshalEnum(byteBuffer);
+    attributeRecordPduType = DisPduType.unmarshalEnum(byteBuffer);
     attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(byteBuffer);
     masterAttributeRecordType = VariableRecordType.unmarshalEnum(byteBuffer);
     actionCode = DISAttributeActionCode.unmarshalEnum(byteBuffer);

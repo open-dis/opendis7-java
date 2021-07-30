@@ -34,7 +34,7 @@ public class StopFreezePdu extends SimulationManagementFamilyPdu implements Seri
 /** Constructor */
  public StopFreezePdu()
  {
-    setPduType( DISPDUType.STOP_FREEZE );
+    setPduType( DisPduType.STOP_FREEZE );
  }
 
   /**

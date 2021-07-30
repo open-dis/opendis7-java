@@ -57,7 +57,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    */
   public SignalPdu()
   {
-    setPduType(DISPDUType.SIGNAL);
+    setPduType(DisPduType.SIGNAL);
   }
 
   /**

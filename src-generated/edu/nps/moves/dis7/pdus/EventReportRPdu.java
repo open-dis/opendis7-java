@@ -37,7 +37,7 @@ public class EventReportRPdu extends SimulationManagementWithReliabilityFamilyPd
 /** Constructor */
  public EventReportRPdu()
  {
-    setPduType( DISPDUType.EVENT_REPORT_RELIABLE );
+    setPduType( DisPduType.EVENT_REPORT_RELIABLE );
  }
 
   /**

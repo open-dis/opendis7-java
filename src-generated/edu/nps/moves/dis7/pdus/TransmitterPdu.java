@@ -82,7 +82,7 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
 /** Constructor */
  public TransmitterPdu()
  {
-    setPduType( DISPDUType.TRANSMITTER );
+    setPduType( DisPduType.TRANSMITTER );
  }
 
   /**

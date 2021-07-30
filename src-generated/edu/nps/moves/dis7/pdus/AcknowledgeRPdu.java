@@ -28,7 +28,7 @@ public class AcknowledgeRPdu extends SimulationManagementWithReliabilityFamilyPd
 /** Constructor */
  public AcknowledgeRPdu()
  {
-    setPduType( DISPDUType.ACKNOWLEDGE_RELIABLE );
+    setPduType( DisPduType.ACKNOWLEDGE_RELIABLE );
  }
 
   /**

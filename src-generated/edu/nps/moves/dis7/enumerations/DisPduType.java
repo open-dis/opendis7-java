@@ -12,7 +12,7 @@ import edu.nps.moves.dis7.pdus.*;
  * UID 4 marshal size 8<br>
  * DISPDUType
  */
-public enum DISPDUType 
+public enum DisPduType 
 {
     /** Other */
     OTHER (0, "Other"),
@@ -165,7 +165,7 @@ public enum DISPDUType
     private final String description;
 
     /** Constructor */
-    DISPDUType(int value, String description)
+    DisPduType(int value, String description)
     {
         this.value = value;
         this.description = description;
@@ -197,16 +197,32 @@ public enum DISPDUType
      * @param i integer value of interest
      * @return enumeration corresponding to numeric value
      */
-    public static DISPDUType getEnumForValue(int i)
+    public static DisPduType getEnumForValue(int i)
     {
-       for(DISPDUType val: DISPDUType.values()) {
+       for(DisPduType val: DisPduType.values()) {
           if(val.getValue()==i)
               return val;
        }
        System.out.flush(); // ensure contiguous console outputs
-       System.err.println("No enumeration found for value " + i + " of enumeration DISPDUType");
+       System.err.println("No enumeration found for value " + i + " of enumeration DisPduType");
        System.err.flush(); // ensure contiguous console outputs
        return null;
+    }
+
+    private boolean TRACE = false;
+
+    /** Set tracing on/off for this object 
+     * @param value whether tracing is on or off */
+    public void setTRACE (boolean value)
+    {
+        TRACE = value;
+    }
+
+    /** Whether tracing is on or off for this object
+     * @return whether tracing is on or off */
+    public boolean getTRACE ()
+    {
+        return TRACE;
     }
 
     /** Marshal value to DataOutputStream
@@ -232,7 +248,7 @@ public enum DISPDUType
      * @param dis DataInputStream for input
      * @throws Exception unmarshalling input-output error
      * @return enumeration of interest */
-    public static DISPDUType unmarshalEnum (DataInputStream dis) throws Exception
+    public static DisPduType unmarshalEnum (DataInputStream dis) throws Exception
     {
        /* try {
             value = dis.readUnsignedByte();
@@ -249,7 +265,7 @@ public enum DISPDUType
      * @param byteBuffer ByteBuffer for input
      * @throws Exception unmarshalling input-output error
      * @return enumeration of interest */
-    public static DISPDUType unmarshalEnum(ByteBuffer byteBuffer) throws Exception
+    public static DisPduType unmarshalEnum(ByteBuffer byteBuffer) throws Exception
     {
         /*
         try {
@@ -280,8 +296,12 @@ public enum DISPDUType
     public String toString()
     {
         String padding = new String();
-        if (name().equalsIgnoreCase("DISPDUType") && getValue() < 10)
+        if (this.getClass().getName().endsWith("DisPduType") && (getValue() < 10))
             padding = "0"; // leading zero for column spacing
-        return "DISPDUType " + padding + getValue() + " " + name();
+        String result = "DisPduType " + padding + getValue() + " " + name();
+        if (getTRACE())
+            System.out.println ("*** enum " + this.getClass().getName() + " name=" + name() + ", value=" + getValue() + "; " +
+               result); // debug diagnostic
+        return result;
     }
 }

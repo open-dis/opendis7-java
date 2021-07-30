@@ -37,7 +37,7 @@ public class ActionResponsePdu extends SimulationManagementFamilyPdu implements 
 /** Constructor */
  public ActionResponsePdu()
  {
-    setPduType( DISPDUType.ACTION_RESPONSE );
+    setPduType( DisPduType.ACTION_RESPONSE );
  }
 
   /**

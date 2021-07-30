@@ -34,7 +34,7 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
 /** Constructor */
  public EntityDamageStatusPdu()
  {
-    setPduType( DISPDUType.ENTITY_DAMAGE_STATUS );
+    setPduType( DisPduType.ENTITY_DAMAGE_STATUS );
  }
 
   /**

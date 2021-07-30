@@ -40,7 +40,7 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
 /** Constructor */
  public IsGroupOfPdu()
  {
-    setPduType( DISPDUType.ISGROUPOF );
+    setPduType( DisPduType.ISGROUPOF );
  }
 
   /**

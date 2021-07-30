@@ -43,7 +43,7 @@ public class EntityStateUpdatePdu extends EntityInformationFamilyPdu implements 
 /** Constructor */
  public EntityStateUpdatePdu()
  {
-    setPduType( DISPDUType.ENTITY_STATE_UPDATE );
+    setPduType( DisPduType.ENTITY_STATE_UPDATE );
  }
 
   /**

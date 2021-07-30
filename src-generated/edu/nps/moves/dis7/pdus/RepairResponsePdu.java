@@ -34,7 +34,7 @@ public class RepairResponsePdu extends LogisticsFamilyPdu implements Serializabl
 /** Constructor */
  public RepairResponsePdu()
  {
-    setPduType( DISPDUType.REPAIR_RESPONSE );
+    setPduType( DisPduType.REPAIR_RESPONSE );
  }
 
   /**

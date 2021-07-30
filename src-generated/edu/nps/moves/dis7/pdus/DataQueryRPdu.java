@@ -46,7 +46,7 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
 /** Constructor */
  public DataQueryRPdu()
  {
-    setPduType( DISPDUType.DATA_QUERY_RELIABLE );
+    setPduType( DisPduType.DATA_QUERY_RELIABLE );
  }
 
   /**

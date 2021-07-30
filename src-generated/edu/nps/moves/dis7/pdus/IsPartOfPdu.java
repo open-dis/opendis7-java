@@ -37,7 +37,7 @@ public class IsPartOfPdu extends EntityManagementFamilyPdu implements Serializab
 /** Constructor */
  public IsPartOfPdu()
  {
-    setPduType( DISPDUType.ISPARTOF );
+    setPduType( DisPduType.ISPARTOF );
  }
 
   /**

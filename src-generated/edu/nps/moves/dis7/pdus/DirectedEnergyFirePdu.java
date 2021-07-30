@@ -73,7 +73,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
 /** Constructor */
  public DirectedEnergyFirePdu()
  {
-    setPduType( DISPDUType.DIRECTED_ENERGY_FIRE );
+    setPduType( DisPduType.DIRECTED_ENERGY_FIRE );
  }
 
   /**

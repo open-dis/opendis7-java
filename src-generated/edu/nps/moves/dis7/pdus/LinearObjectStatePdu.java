@@ -46,7 +46,7 @@ public class LinearObjectStatePdu extends SyntheticEnvironmentFamilyPdu implemen
 /** Constructor */
  public LinearObjectStatePdu()
  {
-    setPduType( DISPDUType.LINEAR_OBJECT_STATE );
+    setPduType( DisPduType.LINEAR_OBJECT_STATE );
  }
 
   /**

@@ -28,7 +28,7 @@ public class CommentRPdu extends SimulationManagementWithReliabilityFamilyPdu im
 /** Constructor */
  public CommentRPdu()
  {
-    setPduType( DISPDUType.COMMENT_RELIABLE );
+    setPduType( DisPduType.COMMENT_RELIABLE );
  }
 
   /**

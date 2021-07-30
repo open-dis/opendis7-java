@@ -37,7 +37,7 @@ public class ResupplyReceivedPdu extends LogisticsFamilyPdu implements Serializa
 /** Constructor */
  public ResupplyReceivedPdu()
  {
-    setPduType( DISPDUType.RESUPPLY_RECEIVED );
+    setPduType( DisPduType.RESUPPLY_RECEIVED );
  }
 
   /**

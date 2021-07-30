@@ -64,7 +64,7 @@ public class CollisionElasticPdu extends EntityInformationFamilyPdu implements S
 /** Constructor */
  public CollisionElasticPdu()
  {
-    setPduType( DISPDUType.COLLISION_ELASTIC );
+    setPduType( DisPduType.COLLISION_ELASTIC );
  }
 
   /**

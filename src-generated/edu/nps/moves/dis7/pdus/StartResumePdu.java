@@ -28,7 +28,7 @@ public class StartResumePdu extends SimulationManagementFamilyPdu implements Ser
 /** Constructor */
  public StartResumePdu()
  {
-    setPduType( DISPDUType.START_RESUME );
+    setPduType( DisPduType.START_RESUME );
  }
 
   /**

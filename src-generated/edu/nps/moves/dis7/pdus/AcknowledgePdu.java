@@ -28,7 +28,7 @@ public class AcknowledgePdu extends SimulationManagementFamilyPdu implements Ser
 /** Constructor */
  public AcknowledgePdu()
  {
-    setPduType( DISPDUType.ACKNOWLEDGE );
+    setPduType( DisPduType.ACKNOWLEDGE );
  }
 
   /**

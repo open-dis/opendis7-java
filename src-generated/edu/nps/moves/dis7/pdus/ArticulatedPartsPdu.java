@@ -28,7 +28,7 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
 /** Constructor */
  public ArticulatedPartsPdu()
  {
-    setPduType( DISPDUType.ARTICULATED_PARTS );
+    setPduType( DisPduType.ARTICULATED_PARTS );
  }
 
   /**

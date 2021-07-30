@@ -40,7 +40,7 @@ public class TransferOwnershipPdu extends EntityManagementFamilyPdu implements S
 /** Constructor */
  public TransferOwnershipPdu()
  {
-    setPduType( DISPDUType.TRANSFER_OWNERSHIP );
+    setPduType( DisPduType.TRANSFER_OWNERSHIP );
  }
 
   /**

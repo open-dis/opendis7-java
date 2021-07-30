@@ -22,7 +22,7 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
    protected byte  exerciseID = (byte)0;
 
    /** Type of pdu, unique for each PDU class uid 4 */
-   protected DISPDUType pduType = DISPDUType.values()[0];
+   protected DisPduType pduType = DisPduType.values()[0];
 
    /** value that refers to the protocol family, eg SimulationManagement, et uid 5 */
    protected DISProtocolFamily protocolFamily = DISProtocolFamily.values()[0];
@@ -101,7 +101,7 @@ public byte getExerciseID()
 /** Setter for {@link Pdu#pduType}
   * @param pPduType new value of interest
   * @return same object to permit progressive setters */
-public Pdu setPduType(DISPDUType pPduType)
+public Pdu setPduType(DisPduType pPduType)
 {
     pduType = pPduType;
     return this;
@@ -109,7 +109,7 @@ public Pdu setPduType(DISPDUType pPduType)
 
 /** Getter for {@link Pdu#pduType}
   * @return value of interest */
-public DISPDUType getPduType()
+public DisPduType getPduType()
 {
     return pduType; 
 }
@@ -209,7 +209,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += protocolVersion.getMarshalledSize();
         exerciseID = (byte)dis.readUnsignedByte();
         uPosition += 1;
-        pduType = DISPDUType.unmarshalEnum(dis);
+        pduType = DisPduType.unmarshalEnum(dis);
         uPosition += pduType.getMarshalledSize();
         protocolFamily = DISProtocolFamily.unmarshalEnum(dis);
         uPosition += protocolFamily.getMarshalledSize();
@@ -256,7 +256,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     protocolVersion = DISProtocolVersion.unmarshalEnum(byteBuffer);
     exerciseID = (byte)(byteBuffer.get() & 0xFF);
-    pduType = DISPDUType.unmarshalEnum(byteBuffer);
+    pduType = DisPduType.unmarshalEnum(byteBuffer);
     protocolFamily = DISProtocolFamily.unmarshalEnum(byteBuffer);
     timestamp = byteBuffer.getInt();
     length = (short)(byteBuffer.getShort() & 0xFFFF);

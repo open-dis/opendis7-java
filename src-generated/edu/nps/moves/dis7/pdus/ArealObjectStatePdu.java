@@ -55,7 +55,7 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
 /** Constructor */
  public ArealObjectStatePdu()
  {
-    setPduType( DISPDUType.AREAL_OBJECT_STATE );
+    setPduType( DisPduType.AREAL_OBJECT_STATE );
  }
 
   /**

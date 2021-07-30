@@ -37,7 +37,7 @@ public class DataPdu extends SimulationManagementFamilyPdu implements Serializab
 /** Constructor */
  public DataPdu()
  {
-    setPduType( DISPDUType.DATA );
+    setPduType( DisPduType.DATA );
  }
 
   /**

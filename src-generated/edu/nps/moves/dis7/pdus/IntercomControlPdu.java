@@ -58,7 +58,7 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
 /** Constructor */
  public IntercomControlPdu()
  {
-    setPduType( DISPDUType.INTERCOM_CONTROL );
+    setPduType( DisPduType.INTERCOM_CONTROL );
  }
 
   /**

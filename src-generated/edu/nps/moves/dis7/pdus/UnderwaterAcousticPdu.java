@@ -55,7 +55,7 @@ public class UnderwaterAcousticPdu extends DistributedEmissionsFamilyPdu impleme
 /** Constructor */
  public UnderwaterAcousticPdu()
  {
-    setPduType( DISPDUType.UNDERWATER_ACOUSTIC );
+    setPduType( DisPduType.UNDERWATER_ACOUSTIC );
  }
 
   /**

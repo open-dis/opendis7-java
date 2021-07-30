@@ -43,7 +43,7 @@ public class CollisionPdu extends EntityInformationFamilyPdu implements Serializ
 /** Constructor */
  public CollisionPdu()
  {
-    setPduType( DISPDUType.COLLISION );
+    setPduType( DisPduType.COLLISION );
  }
 
   /**

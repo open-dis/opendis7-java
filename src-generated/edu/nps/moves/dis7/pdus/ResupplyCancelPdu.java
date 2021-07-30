@@ -25,7 +25,7 @@ public class ResupplyCancelPdu extends LogisticsFamilyPdu implements Serializabl
 /** Constructor */
  public ResupplyCancelPdu()
  {
-    setPduType( DISPDUType.RESUPPLY_CANCEL );
+    setPduType( DisPduType.RESUPPLY_CANCEL );
  }
 
   /**

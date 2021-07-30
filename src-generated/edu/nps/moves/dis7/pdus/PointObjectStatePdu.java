@@ -61,7 +61,7 @@ public class PointObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
 /** Constructor */
  public PointObjectStatePdu()
  {
-    setPduType( DISPDUType.POINT_OBJECT_STATE );
+    setPduType( DisPduType.POINT_OBJECT_STATE );
  }
 
   /**

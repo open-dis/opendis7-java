@@ -37,7 +37,7 @@ public class ResupplyOfferPdu extends LogisticsFamilyPdu implements Serializable
 /** Constructor */
  public ResupplyOfferPdu()
  {
-    setPduType( DISPDUType.RESUPPLY_OFFER );
+    setPduType( DisPduType.RESUPPLY_OFFER );
  }
 
   /**

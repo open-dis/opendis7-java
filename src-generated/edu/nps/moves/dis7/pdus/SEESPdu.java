@@ -43,7 +43,7 @@ public class SEESPdu extends DistributedEmissionsFamilyPdu implements Serializab
 /** Constructor */
  public SEESPdu()
  {
-    setPduType( DISPDUType.SUPPLEMENTAL_EMISSION_ENTITY_STATE );
+    setPduType( DisPduType.SUPPLEMENTAL_EMISSION_ENTITY_STATE );
  }
 
   /**

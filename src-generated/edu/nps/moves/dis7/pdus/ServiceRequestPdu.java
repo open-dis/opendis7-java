@@ -37,7 +37,7 @@ public class ServiceRequestPdu extends LogisticsFamilyPdu implements Serializabl
 /** Constructor */
  public ServiceRequestPdu()
  {
-    setPduType( DISPDUType.SERVICE_REQUEST );
+    setPduType( DisPduType.SERVICE_REQUEST );
  }
 
   /**

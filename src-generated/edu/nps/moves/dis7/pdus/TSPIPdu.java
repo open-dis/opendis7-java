@@ -52,7 +52,7 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public TSPIPdu()
  {
-    setPduType( DISPDUType.TIME_SPACE_POSITION_INFORMATION );
+    setPduType( DisPduType.TIME_SPACE_POSITION_INFORMATION );
  }
 
   /**

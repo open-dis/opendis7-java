@@ -43,7 +43,7 @@ public class SetDataRPdu extends SimulationManagementWithReliabilityFamilyPdu im
 /** Constructor */
  public SetDataRPdu()
  {
-    setPduType( DISPDUType.SET_DATA_RELIABLE );
+    setPduType( DisPduType.SET_DATA_RELIABLE );
  }
 
   /**

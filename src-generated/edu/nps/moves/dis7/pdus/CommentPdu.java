@@ -28,7 +28,7 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
 /** Constructor */
  public CommentPdu()
  {
-    setPduType( DISPDUType.COMMENT );
+    setPduType( DisPduType.COMMENT );
  }
 
   /**

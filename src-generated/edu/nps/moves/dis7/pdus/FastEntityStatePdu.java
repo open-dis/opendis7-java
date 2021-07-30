@@ -139,7 +139,7 @@ public class FastEntityStatePdu extends EntityInformationFamilyPdu implements Se
 /** Constructor */
  public FastEntityStatePdu()
  {
-    setPduType( DISPDUType.ENTITY_STATE );
+    setPduType( DisPduType.ENTITY_STATE );
  }
 
   /**

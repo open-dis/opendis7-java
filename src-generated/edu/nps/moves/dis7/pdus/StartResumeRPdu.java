@@ -37,7 +37,7 @@ public class StartResumeRPdu extends SimulationManagementWithReliabilityFamilyPd
 /** Constructor */
  public StartResumeRPdu()
  {
-    setPduType( DISPDUType.START_RESUME_RELIABLE );
+    setPduType( DisPduType.START_RESUME_RELIABLE );
  }
 
   /**

@@ -55,7 +55,7 @@ public class LEDetonationPdu extends LiveEntityFamilyPdu implements Serializable
 /** Constructor */
  public LEDetonationPdu()
  {
-    setPduType( DISPDUType.LIVE_ENTITY_DETONATION );
+    setPduType( DisPduType.LIVE_ENTITY_DETONATION );
  }
 
   /**

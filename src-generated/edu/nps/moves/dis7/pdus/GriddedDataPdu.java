@@ -67,7 +67,7 @@ public class GriddedDataPdu extends SyntheticEnvironmentFamilyPdu implements Ser
 /** Constructor */
  public GriddedDataPdu()
  {
-    setPduType( DISPDUType.GRIDDED_DATA );
+    setPduType( DisPduType.GRIDDED_DATA );
  }
 
   /**

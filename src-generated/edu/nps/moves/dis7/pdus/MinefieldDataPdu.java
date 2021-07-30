@@ -109,7 +109,7 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
 /** Constructor */
  public MinefieldDataPdu()
  {
-    setPduType( DISPDUType.MINEFIELD_DATA );
+    setPduType( DisPduType.MINEFIELD_DATA );
  }
 
   /**

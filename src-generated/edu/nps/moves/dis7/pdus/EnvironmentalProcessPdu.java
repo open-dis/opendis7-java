@@ -40,7 +40,7 @@ public class EnvironmentalProcessPdu extends SyntheticEnvironmentFamilyPdu imple
 /** Constructor */
  public EnvironmentalProcessPdu()
  {
-    setPduType( DISPDUType.ENVIRONMENTAL_PROCESS );
+    setPduType( DisPduType.ENVIRONMENTAL_PROCESS );
  }
 
   /**
