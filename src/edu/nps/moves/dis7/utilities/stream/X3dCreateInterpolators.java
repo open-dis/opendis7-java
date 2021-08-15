@@ -122,8 +122,14 @@ public class X3dCreateInterpolators {
         //returnMap.putAll(testMap);
 
         //Writing all values from the KeyMap to a proper Position Interpolator String
-        System.out.println("Writing Position and Rotation Interpolator");
         Set<Double> keys = returnMap.keySet();
+        if  (keys.isEmpty())
+        {
+             System.out.println("Insufficient keys to create X3D interpolators");
+             return;
+        }
+        else System.out.println("Writing X3D PositionInterpolator and OrientationInterpolator");
+        
         //Set<Double> keys = tempKeyKeyValueSetPositionInterPolator.keySet();
         String positionKey = "key = '";
         String positionKeyValue = "keyValue = '";

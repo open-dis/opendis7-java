@@ -35,9 +35,10 @@ public class X3dSlidingWindowCompression {
      * Perform sliding window computations
      * @return double map of X3dCoordinates
      */
-    public Map<Double, X3dCoordinates> doSlidingWindow() {
-
-        System.out.println("DISTools.Regression.doRegression()");
+    public Map<Double, X3dCoordinates> doSlidingWindow()
+    {
+        System.out.println("edu.nps.moves.dis7.utilities.stream.X3dSlidingWindowCompression.doSlidingWindow() regression: " + 
+                           "localMap.size()=" + localMap.size());
         //Check whether points could be deleted to compress the stream
         //https://www.crashkurs-statistik.de/einfache-lineare-regression/
         Map<Double, X3dCoordinates> streamMap = new TreeMap<>(localMap);

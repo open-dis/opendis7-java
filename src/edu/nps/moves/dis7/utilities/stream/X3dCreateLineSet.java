@@ -118,8 +118,14 @@ public class X3dCreateLineSet {
         //returnMap.putAll(testMap);
 
         //Writing all values from the KeyMap to a proper Position Interpolator String
-        System.out.println("Writing X3D LineSet");
         Set<Double> keys = returnMap.keySet();
+        if  (keys.isEmpty())
+        {
+             System.out.println("Insufficient keys to create X3D LineSet");
+             return;
+        }
+        else System.out.println("Writing X3D LineSet");
+        
         String lineSetPoints = "";
         String lineSet = "<LineSet vertexCount='" + returnMap.size() + "'> \n <Coordinate point='";
 
