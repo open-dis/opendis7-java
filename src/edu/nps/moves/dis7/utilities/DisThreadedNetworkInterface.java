@@ -261,12 +261,12 @@ public class DisThreadedNetworkInterface
     {
         createDatagramSocket(); // common asset, synchronized to prevent interleaved reentry
 
-        receiver = new Thread(receiveThread, TRACE_PREFIX + " receive thread");
+        receiver = new Thread(receiveThread, TRACE_PREFIX + "receive thread");
         receiver.setDaemon(true);
         receiver.setPriority(Thread.NORM_PRIORITY);
         receiver.start();
 
-        sender = new Thread(sendThread, TRACE_PREFIX + " send thread");
+        sender = new Thread(sendThread, TRACE_PREFIX + "send thread");
         sender.setDaemon(true);
         sender.setPriority(Thread.NORM_PRIORITY);
         sender.start();
@@ -471,7 +471,7 @@ public class DisThreadedNetworkInterface
                         addr = addresses.nextElement();
                         if (addr instanceof Inet4Address && !addr.isLoopbackAddress() && !addr.isLinkLocalAddress()) 
                         {
-                            System.out.println(TRACE_PREFIX + " Using network interface " + nif.getDisplayName());
+                            System.out.println(TRACE_PREFIX + "Using network interface " + nif.getDisplayName());
                             return nif;
                         }
                     }
