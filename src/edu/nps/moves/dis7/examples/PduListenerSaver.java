@@ -55,51 +55,46 @@ public class PduListenerSaver
     }
 
     System.out.println("Beginning pdu save to directory " + outputDirectoryPath);
-    try {
-      PduRecorder recorder = new PduRecorder(outputDirectoryPath, multicastAddress, port); // assumes save
-      mystate state = mystate.RUNNING;
-      Scanner scan  = new Scanner(System.in);
+    
+    PduRecorder pduRecorder = new PduRecorder(outputDirectoryPath, multicastAddress, port); // assumes save
+    mystate state = mystate.RUNNING;
+    Scanner scan  = new Scanner(System.in);
 
-      while (true) 
-      {
+    while (true) // monitor user input via keyboard
+    {
         System.out.println("Type p/enter to pause, r/enter to resume, q/enter to quit");
         String line = scan.nextLine();
         if (line.equalsIgnoreCase("p") && state == mystate.RUNNING) 
         {
-          recorder.stopPause();
-          state = mystate.PAUSED;
-          System.out.println("... state is now PAUSED");
+            pduRecorder.stopPause();
+            state = mystate.PAUSED;
+            System.out.println("... state is now PAUSED");
         }
         else if (line.equalsIgnoreCase("p")) 
         {
-          recorder.stopPause();
-          state = mystate.PAUSED;
-          System.out.println("... state is still PAUSED");
+            pduRecorder.stopPause();
+            state = mystate.PAUSED;
+            System.out.println("... state is still PAUSED");
         }
         else if (line.equalsIgnoreCase("r") && state == mystate.PAUSED) 
         {
-          recorder.startResume();
-          state = mystate.RUNNING;
-          System.out.println("... state is now RUNNING");
+            pduRecorder.startResume();
+            state = mystate.RUNNING;
+            System.out.println("... state is now RUNNING");
         }
         else if (line.equalsIgnoreCase("r")) 
         {
-          recorder.startResume();
-          state = mystate.RUNNING;
-          System.out.println("... state is still RUNNING");
+            pduRecorder.startResume();
+            state = mystate.RUNNING;
+            System.out.println("... state is still RUNNING");
         }
         else if (line.equalsIgnoreCase("q")) 
         {
-          recorder.end();
-          System.out.println("... QUIT");
-          break;
+            pduRecorder.end();
+            System.out.println("... QUIT");
+            break;
         }
-      }
-      System.out.println("Ending pdu save to log file " + recorder.getLogFilePath());
     }
-    catch (IOException ex)
-    {
-      System.err.println("Exception: " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
-    }
+    System.out.println("Ending pdu save to log file " + pduRecorder.getLogFilePath());
   }
 }
