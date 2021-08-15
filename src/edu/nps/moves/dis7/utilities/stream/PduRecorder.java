@@ -86,17 +86,23 @@ public class PduRecorder implements PduReceiver
   
   /** Constructor to let the user specify all required parameters
    * 
-   * @param outputPath local path to the directory to write log files to
-   * @param multicastAddress the multicast group address to receive data from (TODO allow unicast UDP)
-   * @param port the port to receive data through
-   * @throws IOException if something goes wrong during instantiation
+   * @param outputDirectory local path for directory where the log files are written
+   * @param multicastAddress multicast group address to receive data from (TODO allow unicast UDP)
+   * @param port UDP port to listen for data
    */
   @SuppressWarnings("Convert2Lambda")
-  public PduRecorder(String outputPath, String multicastAddress, int port) throws IOException
+  public PduRecorder(String outputDirectory, String multicastAddress, int port)
   {
-    outputDirectoryPath = outputPath;
-    logFile       = createUniquePduLogFile(new File(outputPath).toPath(), DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
-    logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+    try {
+        Path outputDirectoryPath = new File(outputDirectory).toPath();
+        logFile       = createUniquePduLogFile(outputDirectoryPath, DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
+        logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+    }
+    catch (IOException ex)
+    {
+      System.err.println("Exception when creating log file in directory=" + outputDirectory + "\n" +
+                          "   " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
+    }
     
     disThreadedNetIF = new DisThreadedNetworkInterface(multicastAddress, port);
     
