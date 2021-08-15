@@ -1874,6 +1874,32 @@ public class PduFactory
             remaining = Arrays.copyOfRange(data, pduStartPointInData, length);
 
             try {
+                // first check remaining byte array for PDU bundle, might simply consist of additional padding
+                if (remaining.length <= 16)
+                {
+                    // remaining byte array is too short, smallest PDU is DisPduType 48 ARTICULATED_PARTS, size 17 bytes
+                    // TODO trace capability
+//                    System.out.println("pduBundle remaining byte array is too short for another PDU, length=" + remaining.length);
+                    break;
+                }
+                else
+                {
+                    boolean remainingNonZeroDataFound = false;
+                    for (byte nextByte : remaining)
+                    {
+                        if (nextByte != 0)
+                        {
+                            remainingNonZeroDataFound = true;
+                            continue;
+                        }
+                    }
+                    if (!remainingNonZeroDataFound)
+                    {
+                    // TODO trace capability
+//                        System.out.println("pduBundle remaining byte array (length=" + remaining.length + ") is all zeros, ignored");
+                        break;
+                    }
+                }
                 // Decode one PDU
                 pdu = this.createPdu(remaining);
 
