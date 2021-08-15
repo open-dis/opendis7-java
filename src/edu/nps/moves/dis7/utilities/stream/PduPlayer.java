@@ -59,7 +59,8 @@ public class PduPlayer {
      * @param sendToNet to capture X3D interpolator values - if desired
      * @throws IOException if something goes wrong processing files
      */
-    public PduPlayer(String ip, int port, Path disLogDirectory, boolean sendToNet) throws IOException {
+    public PduPlayer(String ip, int port, Path disLogDirectory, boolean sendToNet) throws IOException 
+    {
         this.disLogDirectory = disLogDirectory;
         this.ip = ip;
         this.port = port;
@@ -100,7 +101,7 @@ public class PduPlayer {
     @SuppressWarnings("StatementWithEmptyBody")
     public void begin() {
         try {
-            System.out.println("Replaying DIS logs.");
+            System.out.println("PduPlayer begin() playing DIS logs.");
             
             InetAddress addr = null;
             DatagramPacket datagramPacket;
@@ -423,5 +424,25 @@ public class PduPlayer {
             Thread.sleep(ms, ns);
         } catch (InterruptedException ex) {}
         // @formatter:on
+    }
+    
+    /** Test execution for debugging
+     * @param args command-line arguments (unused)
+     */
+    public static void main(String[] args) throws IOException // TODO fix exception handling
+    {
+        String DEFAULT_OUTPUT_DIRECTORY  = "pduLog";
+        /** Default multicast group address we send on.
+          * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
+        String  DEFAULT_MULTICAST_ADDRESS = "239.1.2.3";
+        /** @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
+        int     DEFAULT_MULTICAST_PORT    = 3000;
+        String  outputDirectory = DEFAULT_OUTPUT_DIRECTORY;
+        String multicastAddress = DEFAULT_MULTICAST_ADDRESS;
+        int       multicastPort = DEFAULT_MULTICAST_PORT;
+        boolean sendToNet = true;
+    
+        PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
+        pduPlayer.begin();
     }
 }
