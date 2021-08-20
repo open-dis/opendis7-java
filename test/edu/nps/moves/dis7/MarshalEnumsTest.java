@@ -140,7 +140,7 @@ public class MarshalEnumsTest
       marshalOne(DISPDUStatusLVCIndicatorLVC.values()[0]);
       marshalOne(DISPDUStatusRadioAttachedIndicatorRAI.values()[0]);
       marshalOne(DISPDUStatusTransferredEntityIndicatorTEI.values()[0]);
-      marshalOne(DISPDUType.values()[0]);
+      marshalOne(DisPduType.values()[0]);
       marshalOne(DISProtocolFamily.values()[0]);
       marshalOne(DISProtocolVersion.values()[0]);
       marshalOne(DRParametersType.values()[0]);
