@@ -32,7 +32,7 @@ public class VariableDatum extends Object implements Serializable
    */
   protected byte[] variableDatumValue = new byte[0];
 
-  /** bit padding */
+  /** bit padding to 64-bit boundary */
   private byte[] padding = new byte[0]; // pad to 64-bit boundary
 
   /**

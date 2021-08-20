@@ -62,7 +62,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    */
   public IntercomSignalPdu()
   {
-    setPduType(DISPDUType.INTERCOM_SIGNAL);
+    setPduType(DisPduType.INTERCOM_SIGNAL);
   }
 
   /**
