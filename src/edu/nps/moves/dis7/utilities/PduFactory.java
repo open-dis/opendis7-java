@@ -7,10 +7,12 @@ package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
-import edu.nps.moves.dis7.enumerations.DisPduType;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+
 import java.nio.ByteBuffer;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +41,6 @@ public class PduFactory
   private byte defaultExerciseId = 1;
   private short defaultSiteId = 2;
   private short defaultAppId = 3;
-  private boolean useAbsoluteTimestamp = true;
   private final DisTime disTime;
 
   private Method getTime;
@@ -128,9 +129,12 @@ public class PduFactory
     useFastPdu = tf;
   }
 
-  /* ***************************************************/
- /* utility methods*/
-  private int doTime()
+  /** Retrieve the current timestamp in the time stamp style set at factory 
+   * instantiation.
+   * @return the current timestamp in the time stamp style set at factory 
+   * instantiation
+   */
+  public int getTimestamp()
   {
     try {
       return (int) getTime.invoke(disTime, (Object[]) null);
@@ -140,11 +144,13 @@ public class PduFactory
     }
   }
 
+  /* ***************************************************/
+ /* utility methods*/
   private PduBase addBoilerPlate(PduBase pdu)
   {
     pdu.getPduStatus().setValue((byte) (PduStatus.AII_ACTIVE | PduStatus.CEI_COUPLED));
     pdu.setExerciseID(defaultExerciseId)
-      .setTimestamp(doTime())
+      .setTimestamp(getTimestamp())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
 
     return pdu;
@@ -153,7 +159,7 @@ public class PduFactory
   private LiveEntityFamilyPdu addBoilerPlate(LiveEntityFamilyPdu pdu)
   {
     pdu.setExerciseID(defaultExerciseId)
-      .setTimestamp(doTime())
+      .setTimestamp(getTimestamp())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
 
     return pdu;

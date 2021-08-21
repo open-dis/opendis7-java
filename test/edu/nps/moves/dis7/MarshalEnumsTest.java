@@ -6,8 +6,11 @@ package edu.nps.moves.dis7;
 
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.DisBitSet;
+
 import java.lang.reflect.Method;
+
 import java.nio.ByteBuffer;
+
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;

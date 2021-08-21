@@ -63,8 +63,10 @@ public class DisTime
 {
     /** mask for absolute timestamps */
     public static final int ABSOLUTE_TIMESTAMP_MASK = 0x00000001;
+    
     /** mask for relative timestamps */
     public static final int RELATIVE_TIMESTAMP_MASK = 0xfffffffe;
+    
     /** calendar instance */
     protected GregorianCalendar calendar;
 
@@ -83,7 +85,8 @@ public class DisTime
 
         return disTime;
     }
-*/
+    */
+    
     public DisTime()
     {
         calendar = new GregorianCalendar();
@@ -95,6 +98,7 @@ public class DisTime
      * @return integer DIS time units since the start of the hour.
      */
     private int getDisTimeUnitsSinceTopOfHour() {
+        
         // set calendar object to current time
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
         calendar.setTimeInMillis(currentTime);
@@ -191,6 +195,7 @@ public class DisTime
         t /= 1000l;   // NB: integer division, convert milliseconds to seconds
         return t;
     }
+    
     /**
      * Convert timestamp value to string for logging and diagnostics
      * @param timeStamp value in milliseconds
