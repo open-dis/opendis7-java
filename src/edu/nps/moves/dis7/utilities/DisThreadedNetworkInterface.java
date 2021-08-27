@@ -29,14 +29,18 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetworkInterface
 {
-    /** Default value */
-    public static String DEFAULT_MULTICAST_ADDRESS = "225.4.5.6";
+    /** Default multicast group address <code>229.1.2.3</code> for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
+    public static String DEFAULT_MULTICAST_ADDRESS = "229.1.2.3";
 
-    /** Default value */
+    /** Default socket port  <code>3000</code>, matches Wireshark DIS capture default
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
     public static int DEFAULT_DIS_PORT = 3000;
 
     private static final String TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getName() + "] ";
-    private boolean verbose = true;
+    private boolean verbose        = true;
+    private boolean verboseReceipt = true;
+    private boolean verboseSending = true;
     private boolean verboseIncludesTimestamp = false;
 
     /**
@@ -113,7 +117,7 @@ public class DisThreadedNetworkInterface
     private DatagramSocket datagramSocket = null;
 
     /**
-     * Default constructor using default port and multicast address
+     * Object constructor using default multicast address and port
      */
     public DisThreadedNetworkInterface()
     {
@@ -121,7 +125,7 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Constructor
+     * Object constructor using specified multicast address and port 
      * @param multicastGroup the multicast group address to utilize
      * @param port the multicast port to utilize
      */
@@ -223,20 +227,38 @@ public class DisThreadedNetworkInterface
         sleep(100l); // TODO needed?
     }
 
-    /**
-     * Get current port value
+    /** Deprecated, replaced by getPort()
      * @return current port value
      */
+    @Deprecated
     public int getDisPort()
+    {
+        return getPort();
+    }
+    /** Get network port used, multicast or unicast.
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @return current port value
+     */
+    public int getPort()
     {
         return disPort;
     }
 
     /**
-     * Get current multicast address value
+     * Deprecated, replaced by getAddress()
      * @return current multicast address value
      */
+    @Deprecated
     public String getMulticastGroup()
+    {
+        return getAddress();
+    }
+
+    /**
+     * Get current multicast (or unicast) address value
+     * @return current multicast address value
+     */
+    public String getAddress()
     {
         return multicastAddress;
     }
@@ -291,7 +313,7 @@ public class DisThreadedNetworkInterface
             try
             {
                 // The initial value of the SO_BROADCAST socket option is FALSE
-                datagramSocket = new MulticastSocket(getDisPort());
+                datagramSocket = new MulticastSocket(getPort());
                 ((MulticastSocket) datagramSocket).joinGroup(inetSocket, networkInterface);
             }
             catch (IOException ex)
@@ -303,7 +325,7 @@ public class DisThreadedNetworkInterface
   
     private Runnable receiveThread = () -> {
 
-        int counter = 0;
+        int pduReceiptCounter = 0;
 
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         // The raw listeners will strip off any extra padding and process what is
@@ -328,11 +350,11 @@ public class DisThreadedNetworkInterface
 
                     if (pdu != null)
                     {
-                        counter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
-                        if (isVerbose())
+                        pduReceiptCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
+                        if (hasVerboseOutput() && hasVerboseReceipt())
                         {
-                            String message = TRACE_PREFIX + counter + ". received " + pdu.getPduType().toString();
-                            if (isVerboseIncludesTimestamp())
+                            String message = TRACE_PREFIX + "[receipt " + pduReceiptCounter + "] " + pdu.getPduType().toString();
+                            if (hasVerboseOutputIncludesTimestamp())
                                 message += " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp());
                             message +=", size " + pdu.getMarshalledSize() + " bytes)";
                             System.out.println(message);
@@ -369,6 +391,8 @@ public class DisThreadedNetworkInterface
 
         Pdu pdu;
 
+        int pduSentCounter = 0;
+
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         ByteArrayOutputStream baos   = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
         DataOutputStream      dos    = new DataOutputStream(baos);
@@ -387,7 +411,17 @@ public class DisThreadedNetworkInterface
                     pdu.marshal(dos);
                     packet.setData(baos.toByteArray());
                     datagramSocket.send(packet);
-
+                    
+                    pduSentCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
+                    if (hasVerboseOutput() && hasVerboseSending())
+                    {
+                        String message = TRACE_PREFIX + "[sending " + pduSentCounter + "] " + pdu.getPduType().toString();
+                        if (hasVerboseOutputIncludesTimestamp())
+                            message += " (timestamp " + DisTime.timeStampToString(pdu.getTimestamp());
+                        message +=", size " + pdu.getMarshalledSize() + " bytes)";
+                        System.out.println(message);
+                        System.out.flush();
+                    }
                     dos.flush();  // immediately force pdu write
                     baos.reset();
                 }
@@ -399,7 +433,8 @@ public class DisThreadedNetworkInterface
         }
         try {
             dos.close();
-        } catch (IOException e) {}
+        }
+        catch (IOException e) {} // shutting down, no need to report exception
     };
 
     private void toListeners(Pdu pdu) {
@@ -430,8 +465,16 @@ public class DisThreadedNetworkInterface
     rawListeners.forEach(lis->lis.incomingPdu(bl));
   }
 
-  /** Terminate the instance */
+  /** Method renamed as <code>close()</code>.
+   */
+  @Deprecated
   public void kill()
+  {
+    close(); 
+  }
+
+  /** Terminate the instance after completion of pending send/receive activity. */
+  public void close()
   {
     killed = true; // set loop sentinel for threads
   }
@@ -484,30 +527,80 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * @return the verbose
+     * Set whether or not trace statements are provided when packets are sent or received.
+     * @param newValue the verbose status to set.  Also resets verboseReceipt and verboseSending to match.
+     * @see verboseReceipt
+     * @see verboseSending
      */
-    public boolean isVerbose()
+    public void setVerbose(boolean newValue)
+    {
+        this.verbose   = newValue;
+        verboseReceipt = verbose;
+        verboseSending = verbose;
+    }
+
+    /**
+     * Whether or not trace statements are provided when packets are sent or received.
+     * @return the verbose status
+     * @see verboseReceipt
+     * @see verboseSending
+     */
+    public boolean hasVerboseOutput()
     {
         return verbose;
     }
 
     /**
-     * @param verbose the verbose to set
+     * Set whether or not trace statements are provided when packets are received.
+     * @param newValue the verboseReceipt status to set
+     * @see verbose
+     * @see verboseSending
      */
-    public void setVerbose(boolean verbose)
+    public void setVerboseReceipt(boolean newValue)
     {
-        this.verbose = verbose;
+        this.verboseReceipt = newValue;
+        verbose = (verboseReceipt || verboseSending);
+    }
+    /**
+     * Whether or not trace statements are provided when packets are received.
+     * @return the verboseReceipt status
+     */
+    public boolean hasVerboseReceipt()
+    {
+        return verboseReceipt;
     }
 
     /**
+     * Set whether or not trace statements are provided when packets are sent.
+     * @param newValue the verboseSending status to set
+     * @see verbose
+     * @see verboseReceipt
+     */
+    public void setVerboseSending(boolean newValue)
+    {
+        this.verboseSending = newValue;
+        verbose = (verboseReceipt || verboseSending);
+    }
+    /**
+     * Whether or not trace statements are provided when packets are sent.
+     * @return the verboseSending status
+     */
+    public boolean hasVerboseSending()
+    {
+        return verboseSending;
+    }
+
+    /**
+     * Whether or not trace statements include timestamp values.
      * @return the verboseIncludesTimestamp value
      */
-    public boolean isVerboseIncludesTimestamp()
+    public boolean hasVerboseOutputIncludesTimestamp()
     {
         return verboseIncludesTimestamp;
     }
 
     /**
+     * Set whether or not trace statements include timestamp values.
      * @param verboseIncludesTimestamp the value to set
      */
     public void setVerboseIncludesTimestamp(boolean verboseIncludesTimestamp)
@@ -516,10 +609,12 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * @param disPort the disPort value to set
+    /** Set network port used, multicast or unicast.
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @param newPortValue the disPort value to set
      */
-    public void setDisPort(int disPort)
+    public void setPort(int newPortValue)
     {
-        this.disPort = disPort;
+        this.disPort = newPortValue;
     }
 }
