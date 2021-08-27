@@ -44,7 +44,6 @@ public class PduFactory
   private final DisTime disTime;
 
   private Method getTime;
-  private boolean useFastPdu = false;
   
   /** We can marshal the PDU with a timestamp set to any of several styles. 
    * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
@@ -119,15 +118,6 @@ public class PduFactory
             throw new RuntimeException(ex);
         }
     }
-
-  /**
-   * Use the default or fast method to create EntityState pdus from input byte streams.
-   * @param tf true if fast method
-   */
-  public void useFastEspdu(boolean tf)
-  {
-    useFastPdu = tf;
-  }
 
   /** Retrieve the current timestamp in the time stamp style set at factory 
    * instantiation.
@@ -1539,12 +1529,7 @@ public class PduFactory
       // NOTE: 'OTHER' is a valid pduTypeEnum, but has no corresponding object
       case ENTITY_STATE:
         // if the user has created the factory requesting that he get fast espdus back, give him those.
-        if (useFastPdu) {
-          aPdu = new FastEntityStatePdu();
-        }
-        else {
-          aPdu = new EntityStatePdu();
-        }
+        aPdu = new EntityStatePdu();
         break;
 
       case FIRE:
@@ -1896,7 +1881,7 @@ public class PduFactory
                         if (nextByte != 0)
                         {
                             remainingNonZeroDataFound = true;
-                            continue;
+//                            continue;
                         }
                     }
                     if (!remainingNonZeroDataFound)
