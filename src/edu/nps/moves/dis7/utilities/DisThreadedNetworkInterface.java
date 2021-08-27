@@ -315,6 +315,16 @@ public class DisThreadedNetworkInterface
                 // The initial value of the SO_BROADCAST socket option is FALSE
                 datagramSocket = new MulticastSocket(getPort());
                 ((MulticastSocket) datagramSocket).joinGroup(inetSocket, networkInterface);
+                
+                if (hasVerboseOutput())
+                {
+                    String message = TRACE_PREFIX;
+//                    if (hasVerboseOutputIncludesTimestamp())
+//                        message += " (timestamp " + getTimestamp()); // TODO
+                    message += "datagramSocket.joinGroup address=" + getAddress() + " port=" + getPort();
+                    System.out.println(message);
+                    System.out.flush();
+                }
             }
             catch (IOException ex)
             {
@@ -371,16 +381,7 @@ public class DisThreadedNetworkInterface
             } 
             finally
             {
-                if (datagramSocket != null && !datagramSocket.isClosed()) {
-                    try {
-                        ((MulticastSocket)datagramSocket).leaveGroup(inetSocket, networkInterface);
-                    } catch (IOException ex) {
-                        Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    datagramSocket.close();
-                    sleep(100l); // TODO needed?
-                    datagramSocket = null;
-                }
+                close();
             }
 //      if (!killed)
 //        sleep(250);
@@ -432,6 +433,7 @@ public class DisThreadedNetworkInterface
             }
         }
         try {
+            // operations are finished
             dos.close();
         }
         catch (IOException e) {} // shutting down, no need to report exception
@@ -470,13 +472,40 @@ public class DisThreadedNetworkInterface
   @Deprecated
   public void kill()
   {
-    close(); 
+    finishOperations(); 
+  }
+
+  /** Finish pending send/receive activity and then close. */
+  public void finishOperations()
+  {
+    killed = true; // set loop sentinel for threads
   }
 
   /** Terminate the instance after completion of pending send/receive activity. */
   public void close()
   {
-    killed = true; // set loop sentinel for threads
+    finishOperations();
+  
+    if (datagramSocket != null && !datagramSocket.isClosed()) {
+        try {
+            ((MulticastSocket)datagramSocket).leaveGroup(inetSocket, networkInterface);
+        } catch (IOException ex) {
+            Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        datagramSocket.close();
+        sleep(100l); // TODO needed?
+        datagramSocket = null;
+
+        if (hasVerboseOutput())
+        {
+            String message = TRACE_PREFIX;
+//                    if (hasVerboseOutputIncludesTimestamp())
+//                        message += " (timestamp " + getTimestamp()); // TODO
+            message += "datagramSocket.leaveGroup address=" + getAddress() + " port=" + getPort();
+            System.out.println(message);
+            System.out.flush();
+        }
+    }
   }
 
   /** Thread sleep for indicated interval
