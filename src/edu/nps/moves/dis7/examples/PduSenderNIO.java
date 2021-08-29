@@ -22,7 +22,7 @@ import java.net.MulticastSocket;
  *
  * @author DMcG
  */
-public class EspduSenderNIO
+public class PduSenderNIO
 {
   /** Command-line invocation (CLI)
     * @param args command-line arguments

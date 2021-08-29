@@ -22,7 +22,7 @@ import java.util.*;
  * @author DMcG
  * @author Mike Bailey
  */
-public class EspduSender
+public class PduSender
 {
   /** default value avoids unterminated zombie senders */
   public static final int NUMBER_TO_SEND = 5000;

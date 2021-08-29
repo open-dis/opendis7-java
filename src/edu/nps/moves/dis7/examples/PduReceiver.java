@@ -26,7 +26,7 @@ import java.util.List;
  * @author DMcG
  * @author Mike Bailey
  */
-public class EspduReceiver
+public class PduReceiver
 {
   /** Command-line invocation (CLI)
     * @param args command-line arguments

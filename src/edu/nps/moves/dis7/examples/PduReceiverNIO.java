@@ -19,7 +19,7 @@ import java.net.MulticastSocket;
  *
  * @author DMcG rharder
  */
-public class EspduReceiverNIO
+public class PduReceiverNIO
 {
   /** Command-line invocation (CLI)
     * @param args command-line arguments
