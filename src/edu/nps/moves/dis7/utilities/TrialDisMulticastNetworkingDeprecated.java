@@ -55,7 +55,7 @@ public class TrialDisMulticastNetworkingDeprecated
   /** deprecated do not use */
   public TrialDisMulticastNetworkingDeprecated()
   {
-    this(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+    this(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS);
   }
 
   /** deprecated do not use
