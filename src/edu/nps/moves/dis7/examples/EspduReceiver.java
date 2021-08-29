@@ -44,7 +44,7 @@ public class EspduReceiver
       // Specify the socket to receive data
       socket = new MulticastSocket(DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
       
-      InetAddress maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      InetAddress maddr = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS);
       InetSocketAddress group = new InetSocketAddress(maddr, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
 
       socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface());
@@ -68,7 +68,7 @@ public class EspduReceiver
           aPdu = it.next();
           pduCounter++;
 
-          System.out.print(pduCounter + ". got PDU of type: " + aPdu.getClass().getName());
+          System.out.print(pduCounter + ". got PDU of type " + aPdu.getClass().getSimpleName());
           if (aPdu instanceof EntityStatePdu) {
             eid = ((EntityStatePdu) aPdu).getEntityID();
             position = ((EntityStatePdu) aPdu).getEntityLocation();

@@ -39,7 +39,7 @@ public class EspduReceiverNIO
     {
       // Specify the socket to receive data
                 socket = new MulticastSocket(DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
-      multicastAddress = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      multicastAddress = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS);
                  group = new InetSocketAddress(multicastAddress, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
       socket.joinGroup(group, DisThreadedNetworkInterface.findIpv4Interface()); // picks best candidate
 

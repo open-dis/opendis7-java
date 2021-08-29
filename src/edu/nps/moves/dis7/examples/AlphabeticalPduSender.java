@@ -27,22 +27,21 @@ import java.util.List;
  */
 public class AlphabeticalPduSender
 {
-
-  private int port;
   InetAddress multicastAddress;
+  private int port;
 
   /** Constructor
      * @param port socket port number
      * @param multicast multicast address
      */
-  public AlphabeticalPduSender(int port, String multicast)
+  public AlphabeticalPduSender(String multicast, int port)
   {
     try {
-      this.port = port;
       multicastAddress = InetAddress.getByName(multicast);
       if (!multicastAddress.isMulticastAddress()) {
         System.out.println("Not a multicast address: " + multicast);
       }
+      this.port = port;
     }
     catch (UnknownHostException e) {
       System.err.println("Unable to open socket: " + e);
@@ -334,13 +333,16 @@ public class AlphabeticalPduSender
   public static void main(String args[])
   {
     AlphabeticalPduSender sender;
-    if (args.length == 2) {
-      sender = new AlphabeticalPduSender(Integer.parseInt(args[0]), args[1]);
+    if (args.length == 2) 
+    {
+        String address = args[0];
+        int    port    = Integer.parseInt(args[1]);
+        sender = new AlphabeticalPduSender(address, port);
     }
     else {
       System.out.println("Usage:   AlphabeticalPduSender <port> <multicast group>");
-      System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetworkInterface.DEFAULT_DIS_PORT + "   " + DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
-      sender = new AlphabeticalPduSender(DisThreadedNetworkInterface.DEFAULT_DIS_PORT, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      System.out.println("Default: AlphabeticalPduSender  " + DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS + "   " + DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+      sender =                 new AlphabeticalPduSender     (DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS,          DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
     }
     sender.run();
   }

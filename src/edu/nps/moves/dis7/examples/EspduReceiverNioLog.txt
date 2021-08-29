@@ -1,14 +1,12 @@
 ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/EspduReceiverNIO.java -Drun.class=edu.nps.moves.dis7.examples.EspduReceiverNIO run-single
 init:
-Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
 compile-single:
 run-single:
-Using network interface Intel(R) Dual Band Wireless-AC 8260
+[DisThreadedNetworkInterface] using network interface Intel(R) Centrino(R) Ultimate-N 6300 AGN
 1. got PDU of type: AcknowledgePdu
 2. got PDU of type: AcknowledgeReliablePdu
 3. got PDU of type: ActionRequestPdu

@@ -1,17 +1,15 @@
 ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/AlphabeticalPduSender.java -Drun.class=edu.nps.moves.dis7.examples.AlphabeticalPduSender run-single
 init:
-Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
 compile-single:
 run-single:
 Usage:   AlphabeticalPduSender <port> <multicast group>
-Default: AlphabeticalPduSender  3000   225.4.5.6
-PDU of type DISPDUType: 0 OTHER not created or sent 
-Using network interface Intel(R) Dual Band Wireless-AC 8260
+Default: AlphabeticalPduSender  239.1.2.3   3000
+PDU of type DisPduType 00 OTHER not created or sent 
+[DisThreadedNetworkInterface] using network interface Intel(R) Centrino(R) Ultimate-N 6300 AGN
 1.  Sent PDU of type 15 AcknowledgePdu
 2.  Sent PDU of type 55 AcknowledgeReliablePdu
 3.  Sent PDU of type 16 ActionRequestPdu

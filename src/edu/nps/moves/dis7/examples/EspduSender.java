@@ -60,7 +60,7 @@ public class EspduSender
     InetAddress destinationIp = null; // must be initialized, even if null
 
     try {
-      destinationIp = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS);
+      destinationIp = InetAddress.getByName(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS);
     }
     catch (UnknownHostException e) {
       System.err.println(e + " Cannot create multicast address");

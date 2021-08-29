@@ -1,83 +1,94 @@
-ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/EspduReceiverNIO.java -Drun.class=edu.nps.moves.dis7.examples.EspduReceiverNIO run-single
+ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/PduListenerSaver.java -Drun.class=edu.nps.moves.dis7.examples.PduListenerSaver run-single
 init:
-Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
 warning: [options] bootstrap class path not set in conjunction with -source 8
 1 warning
 compile-single:
 run-single:
-Using network interface Intel(R) Dual Band Wireless-AC 8260
-1. got PDU of type: AcknowledgePdu
-2. got PDU of type: AcknowledgeReliablePdu
-3. got PDU of type: ActionRequestPdu
-4. got PDU of type: ActionRequestReliablePdu
-5. got PDU of type: ActionResponsePdu
-6. got PDU of type: ActionResponseReliablePdu
-7. got PDU of type: AggregateStatePdu
-8. got PDU of type: AppearancePdu
-9. got PDU of type: ArealObjectStatePdu
-10. got PDU of type: ArticulatedPartsPdu
-11. got PDU of type: AttributePdu
-12. got PDU of type: CollisionElasticPdu
-13. got PDU of type: CollisionPdu
-14. got PDU of type: CommentPdu
-15. got PDU of type: CommentReliablePdu
-16. got PDU of type: CreateEntityPdu
-17. got PDU of type: CreateEntityReliablePdu
-18. got PDU of type: DataPdu
-19. got PDU of type: DataQueryPdu
-20. got PDU of type: DataQueryReliablePdu
-21. got PDU of type: DataReliablePdu
-22. got PDU of type: DesignatorPdu
-23. got PDU of type: DetonationPdu
-24. got PDU of type: DirectedEnergyFirePdu
-25. got PDU of type: ElectromagneticEmissionPdu
-26. got PDU of type: EntityDamageStatusPdu
-27. got PDU of type: EntityStatePdu
-28. got PDU of type: EntityStateUpdatePdu
-29. got PDU of type: EnvironmentalProcessPdu
-30. got PDU of type: EventReportPdu
-31. got PDU of type: EventReportReliablePdu
-32. got PDU of type: FirePdu
-33. got PDU of type: GriddedDataPdu
-34. got PDU of type: IFFPdu
-35. got PDU of type: InformationOperationsActionPdu
-36. got PDU of type: InformationOperationsReportPdu
-37. got PDU of type: IntercomControlPdu
-38. got PDU of type: IntercomSignalPdu
-39. got PDU of type: IsGroupOfPdu
-40. got PDU of type: IsPartOfPdu
-41. got PDU of type: LinearObjectStatePdu
-42. got PDU of type: LEDetonationPdu
-43. got PDU of type: LEFirePdu
-44. got PDU of type: MinefieldDataPdu
-45. got PDU of type: MinefieldQueryPdu
-46. got PDU of type: MinefieldResponseNACKPdu
-47. got PDU of type: MinefieldStatePdu
-48. got PDU of type: PointObjectStatePdu
-49. got PDU of type: ReceiverPdu
-50. got PDU of type: RecordQueryReliablePdu
-51. got PDU of type: RecordReliablePdu
-52. got PDU of type: RemoveEntityPdu
-53. got PDU of type: RemoveEntityReliablePdu
-54. got PDU of type: RepairCompletePdu
-55. got PDU of type: RepairResponsePdu
-56. got PDU of type: ResupplyCancelPdu
-57. got PDU of type: ResupplyOfferPdu
-58. got PDU of type: ResupplyReceivedPdu
-59. got PDU of type: ServiceRequestPdu
-60. got PDU of type: SetDataPdu
-61. got PDU of type: SetDataReliablePdu
-62. got PDU of type: SetRecordReliablePdu
-63. got PDU of type: SignalPdu
-64. got PDU of type: StartResumePdu
-65. got PDU of type: StartResumeReliablePdu
-66. got PDU of type: StopFreezePdu
-67. got PDU of type: StopFreezeReliablePdu
-68. got PDU of type: SEESPdu
-69. got PDU of type: TSPIPdu
-70. got PDU of type: TransferOwnershipPdu
-71. got PDU of type: TransmitterPdu
-72. got PDU of type: UnderwaterAcousticPdu
+edu.nps.moves.dis.examples.PduListenerSaver started...
+Beginning PduListenerSaver (239.1.2.3:3000) to directory ./pduLog
+Recorder log file open: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+[DisThreadedNetworkInterface] using network interface Intel(R) Centrino(R) Ultimate-N 6300 AGN
+[DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 start() complete
+[PduRecorder PduListenerSaver] listening to IP address 239.1.2.3 on port 3000
+Type p/enter to pause, r/enter to resume, q/enter to quit
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  1] DisPduType 15 ACKNOWLEDGE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  2] DisPduType 55 ACKNOWLEDGE_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  3] DisPduType 16 ACTION_REQUEST, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  4] DisPduType 56 ACTION_REQUEST_RELIABLE, size 44 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  5] DisPduType 17 ACTION_RESPONSE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  6] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  7] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  8] DisPduType 47 APPEARANCE, size 67 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt  9] DisPduType 45 AREAL_OBJECT_STATE, size 49 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 10] DisPduType 48 ARTICULATED_PARTS, size 17 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 11] DisPduType 72 ATTRIBUTE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 12] DisPduType 66 COLLISION_ELASTIC, size 100 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 13] DisPduType 04 COLLISION, size 60 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 14] DisPduType 22 COMMENT, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 15] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 16] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 17] DisPduType 51 CREATE_ENTITY_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 18] DisPduType 20 DATA, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 19] DisPduType 18 DATA_QUERY, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 20] DisPduType 58 DATA_QUERY_RELIABLE, size 44 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 21] DisPduType 60 DATA_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 22] DisPduType 24 DESIGNATOR, size 88 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 23] DisPduType 03 DETONATION, size 104 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 24] DisPduType 68 DIRECTED_ENERGY_FIRE, size 88 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 25] DisPduType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 27] DisPduType 01 ENTITY_STATE, size 144 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 30] DisPduType 21 EVENT_REPORT, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 31] DisPduType 61 EVENT_REPORT_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 32] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 33] DisPduType 42 GRIDDED_DATA, size 64 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 34] DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE, size 60 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 35] DisPduType 70 INFORMATION_OPERATIONS_ACTION, size 56 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 36] DisPduType 71 INFORMATION_OPERATIONS_REPORT, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 37] DisPduType 32 INTERCOM_CONTROL, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 38] DisPduType 31 INTERCOM_SIGNAL, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 39] DisPduType 34 ISGROUPOF, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 40] DisPduType 36 ISPARTOF, size 52 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 41] DisPduType 44 LINEAR_OBJECT_STATE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 42] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 43] DisPduType 49 LIVE_ENTITY_FIRE, size 67 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 44] DisPduType 39 MINEFIELD_DATA, size 44 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 45] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 46] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 47] DisPduType 37 MINEFIELD_STATE, size 72 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 48] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 49] DisPduType 27 RECEIVER, size 36 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 50] DisPduType 65 RECORD_QUERY_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 51] DisPduType 63 RECORD_RELIABLE, size 36 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 52] DisPduType 12 REMOVE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 53] DisPduType 52 REMOVE_ENTITY_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 54] DisPduType 09 REPAIR_COMPLETE, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 55] DisPduType 10 REPAIR_RESPONSE, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 56] DisPduType 08 RESUPPLY_CANCEL, size 24 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 57] DisPduType 06 RESUPPLY_OFFER, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 58] DisPduType 07 RESUPPLY_RECEIVED, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 59] DisPduType 05 SERVICE_REQUEST, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 60] DisPduType 19 SET_DATA, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 61] DisPduType 59 SET_DATA_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 62] DisPduType 64 SET_RECORD_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 63] DisPduType 26 SIGNAL, size 32 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 64] DisPduType 13 START_RESUME, size 44 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 65] DisPduType 53 START_RESUME_RELIABLE, size 48 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 66] DisPduType 14 STOP_FREEZE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 67] DisPduType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 68] DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE, size 28 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 69] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 70] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 71] DisPduType 25 TRANSMITTER, size 107 bytes)
+[DisThreadedNetworkInterface PduListenerSaver] [receipt 72] DisPduType 29 UNDERWATER_ACOUSTIC, size 32 bytes)
+Q
+
+Closing recorder log file: C:\x3d-github\open-dis7-java\pduLog\PduCaptureLog.dislog
+... QUIT
+Finished PduListenerSaver pdu recording, saved to file:
+C:\x3d-github\open-dis7-java\.\pduLog\PduCaptureLog.dislog
+BUILD SUCCESSFUL (total time: 33 seconds)
