@@ -28,12 +28,25 @@ import org.apache.commons.io.FilenameUtils;
  */
 public class PduRecorder implements PduReceiver
 {
+    /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
+    public static String DEFAULT_DIS_ADDRESS = DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS;
+
+    /** Default socket port  <code>3000</code>, matches Wireshark DIS capture default
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
+    public static int DEFAULT_DIS_PORT = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
+    
+  private String disAddress = DEFAULT_DIS_ADDRESS;
+  private int    disPort    = DEFAULT_DIS_PORT;
+    
   /** Character sentinel indicating remainder of line is a comment */
   public static final String COMMENT_MARKER = "#";
   
-  static String outputDirectoryPath   = "./pduLog";
-  static String DEFAULT_FILE_PREFIX   = "PduCaptureLog";
-  static String DISLOG_FILE_EXTENSION = ".dislog";
+  static final String OUTPUT_DIRECTORY_DEFAULT = "./pduLog";
+               String outputDirectory          = OUTPUT_DIRECTORY_DEFAULT;
+               Path   outputDirectoryPath;
+  static String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
+  static String DISLOG_FILE_EXTENSION    = ".dislog";
   
   static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
   static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
@@ -48,10 +61,13 @@ public class PduRecorder implements PduReceiver
   static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
   
   private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
+  
+  private String TRACE_PREFIX = ("[pduRecorder " + getDescriptor()).trim() + "] ";
+  private String  descriptor      = new String();
 
   private Writer logFileWriter;
   private File   logFile;
-  private DisThreadedNetworkInterface                disThreadedNetIF;
+  private DisThreadedNetworkInterface                disThreadedNetworkInterface;
   private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
   
   private Long      startNanoTime = null;
@@ -63,58 +79,54 @@ public class PduRecorder implements PduReceiver
   private boolean running         = true; // starts recording by default
   
   /**
-   * Default constructor that uses default values for output directory, multicast address and port.
-   * 
+   * Default constructor that uses default values for output directory, DIS address and port.
+   * Each instance must invoke start() to begin operations, pause() to suspend operations, 
+   * resume() to continue operations, and stop() to terminate operations.
    * @throws IOException if something goes wrong during instantiation
    */
   public PduRecorder() throws IOException
   {
-      this(outputDirectoryPath, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, port);
+        this (OUTPUT_DIRECTORY_DEFAULT, DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT);
   }
   
   /**
-   * Constructor to let the use specify an output directory. Uses default values 
-   * for multicast address and port.
+   * Constructor to let the use specify an output directory.
+   * Uses default values for multicast address and port.
+   * Each instance must invoke start() to begin operations, pause() to suspend operations, 
+   * resume() to continue operations, and stop() to terminate operations.
    * 
-   * @param directoryPath the directory to write log files to
+   * @param initialOutputDirectory the directory to write log files to
    * @throws IOException if something goes wrong during instantiation
    */
-  public PduRecorder(String directoryPath) throws IOException
+  public PduRecorder(String initialOutputDirectory) throws IOException
   {
-    this(directoryPath, DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT);
+        this(initialOutputDirectory, DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT);
   }
   
-  /** Constructor to let the user specify all required parameters
+  /** Constructor to let the user specify all required parameters.
+   * Each instance must invoke start() to begin operations, pause() to suspend operations, 
+   * resume() to continue operations, and stop() to terminate operations..
    * 
-   * @param outputDirectory local path for directory where the log files are written
-   * @param multicastAddress multicast group address to receive data from (TODO allow unicast UDP)
-   * @param port UDP port to listen for data
+   * @param initialOutputDirectory local path for directory where the log files are written
+   * @param initialAddress multicast group address to receive data from (TODO allow unicast UDP)
+   * @param initialPort UDP port to listen for data
    */
   @SuppressWarnings("Convert2Lambda")
-  public PduRecorder(String outputDirectory, String multicastAddress, int port)
+  public PduRecorder(String initialOutputDirectory, String initialAddress, int initialPort)
   {
     try {
-        Path outputDirectoryPath = new File(outputDirectory).toPath();
-        logFile       = createUniquePduLogFile(outputDirectoryPath, DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
-        logFileWriter = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+        outputDirectoryPath = new File(initialOutputDirectory).toPath();
+        this.descriptor = "PduRecorder"; // default
+        this.disAddress = initialAddress;
+        this.disPort    = initialPort;
+        logFile         = createUniquePduLogFile(outputDirectoryPath, DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
+        logFileWriter   = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
     }
     catch (IOException ex)
     {
-      System.err.println("Exception when creating log file in directory=" + outputDirectory + "\n" +
+      System.err.println("Exception when creating log file in directory=" + initialOutputDirectory + "\n" +
                           "   " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
     }
-    
-    disThreadedNetIF = new DisThreadedNetworkInterface(multicastAddress, port);
-    
-    disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
-        @Override
-        public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
-            receivePdu(bAndL.bufferByteArray, bAndL.length);
-        }
-    };
-    
-    disThreadedNetIF.addRawListener(disRawPduListener);
-    System.out.println(getClass() + " listening to IP address " + multicastAddress + " on port " + port);
   }
   
     /**
@@ -134,23 +146,65 @@ public class PduRecorder implements PduReceiver
         pduLogEncoding = newPduLogEncoding;
     }
 
-  /** Start or resume this instance */
-  public void startResume()
+  /** Resume instance operation
+   * @see start()
+   * @see stop()
+   * @see pause() */
+  public void resume()
   {
+    if  (disThreadedNetworkInterface == null)
+    {
+         System.out.println("** Warning, PduRecorder resume() failed to find running disThreadedNetworkInterface, repeating start()");
+         start(); // start me up
+    }
+    else running = true;
+  }
+
+  /** Start instance operation
+   * @see stop()
+   * @see pause()
+   * @see resume()
+   */
+  public void start()
+  {
+    if (disThreadedNetworkInterface == null)
+    {
+        disThreadedNetworkInterface = new DisThreadedNetworkInterface(getAddress(), getPort());
+        disThreadedNetworkInterface.setDescriptor (getDescriptor()); // pass it along
+        
+        disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
+            @Override
+            public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
+                receivePdu(bAndL.bufferByteArray, bAndL.length);
+            }
+        };
+        disThreadedNetworkInterface.addRawListener(disRawPduListener);
+        System.out.println("[" + (getClass().getSimpleName() + " " + getDescriptor()).trim() + "] listening to IP address " + getAddress() + " on port " + getPort());
+    }
     running = true;
   }
-  /** Stop or pause this instance */
-  public void stopPause()
+  /** Pause operation of this instance
+   * @see start()
+   * @see stop()
+   * @see resume()
+   */
+  public void pause()
   {
     running = false;
   }
-  /** End operation of this instance
-     * @return recorder logFile */
-  public File end()
+  /** End operation of this instance, removing interfaces
+    * @return recorder logFile
+   * @see start()
+   * @see pause()
+   * @see resume() */
+  public File stop()
   {
     running = false;
-    disThreadedNetIF.removeRawListener(disRawPduListener);
-    disThreadedNetIF.kill();
+    if (disThreadedNetworkInterface != null)
+    {
+        disThreadedNetworkInterface.removeRawListener(disRawPduListener);
+        disThreadedNetworkInterface.finishOperations();
+    }
 
     writeFooter();
     try {
@@ -163,8 +217,13 @@ public class PduRecorder implements PduReceiver
     }
     return logFile;
   }
+  
   byte[] oldBuffer;
   
+  /** receivePdu from DIS data stream
+   * @param newBuffer byte array for receiving data
+   * @param newLength length of byte array
+   */
   @Override
   public void receivePdu(byte[] newBuffer, int newLength)
   {
@@ -233,8 +292,8 @@ public class PduRecorder implements PduReceiver
     /**
      * @return an instance of this DisThreadedNetworkInterface
      */
-    public DisThreadedNetworkInterface getDisThreadedNetIF() {
-        return disThreadedNetIF;
+    public DisThreadedNetworkInterface getDisThreadedNetworkInterface() {
+        return disThreadedNetworkInterface;
     }
   
   private void writeHeader()
@@ -327,36 +386,104 @@ public class PduRecorder implements PduReceiver
    */
   public static void main(String[] args)
   {
-    System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs via port " + port);
-    port = 1; // avoid listening to other PDU streams during self test
+    System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs");
     
     PduFactory factory = new PduFactory(); //default appid, country, etc.
 
     PduRecorder pduRecorder;
     try {
         pduRecorder = new PduRecorder(); // default address, port, output directory path
+        pduRecorder.setDescriptor("PduRecorder main() self test");
+//      pduRecorder.setPort(1); // option to avoid listening to other PDU streams during self test
+        pduRecorder.start();
     } 
     catch(IOException ex) {
       System.err.println("Exception creating recorder: " + ex.getLocalizedMessage());
+      System.err.println(ex.getStackTrace());
       return;
     }
-    System.out.println("dis7.utilities.stream.PduRecorder pduRecorder created... isRunning()=" + pduRecorder.isRunning());
+    System.out.println("dis7.utilities.stream.PduRecorder pduRecorder started... isRunning()=" + pduRecorder.isRunning());
      
     DisPduType allPDUTypesArray[] = DisPduType.values();
     System.out.println("dis7.utilities.stream.PduRecorder allPDUTypesArray created, length=" + allPDUTypesArray.length + " ...");
-    Arrays.stream(allPDUTypesArray).forEach(pduTypeValue-> {
-      if(pduTypeValue != DisPduType.OTHER) 
+    System.out.flush(); // ensure all output sent
+    Arrays.stream(allPDUTypesArray).forEach((DisPduType pduTypeValue)-> 
+    {
+      if (pduTypeValue != DisPduType.OTHER) 
       {
         try {
-            pduRecorder.getDisThreadedNetIF().send(factory.createPdu(pduTypeValue));
+            pduRecorder.getDisThreadedNetworkInterface().send(factory.createPdu(pduTypeValue));
+            Thread.sleep (50L); // let send/receive threads and streams catch up
         }
-        catch(Exception ex) {
+        catch (InterruptedException ex) {
           System.err.println("Exception sending Pdu: "+ex.getLocalizedMessage());
         }
       }
+      else 
+      {
+          System.err.println("Found pduTypeValue=DisPduType.OTHER=" + pduTypeValue);
+      }
     });
+    System.out.flush();
     System.err.flush(); // ensure all output sent
-    pduRecorder.end();
+    pduRecorder.stop();
     System.out.println("dis7.utilities.stream.PduRecorder pduRecorder complete... isRunning()=" + pduRecorder.isRunning());
   }
+    /**
+     * Get current multicast (or unicast) network address for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
+     * @return current multicast address value
+     */
+    public String getAddress()
+    {
+        return this.disAddress;
+    }
+    /**
+     * Network address for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
+     * @param newAddress the new network address to set
+     */
+    public void setAddress(String newAddress) {
+        this.disAddress = newAddress;
+        if (isRunning())
+            System.out.println(TRACE_PREFIX + "*** warning, attempting to change network address while running...");
+        // TODO warn if netIF already created
+    }
+    /** Get network port used, multicast or unicast.
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @return current port value
+     */
+    public int getPort()
+    {
+        return this.disPort;
+    }
+    /**
+    /** Set network port used, multicast or unicast.
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @param newPortValue the disPort value to set
+     */
+    public void setPort(int newPortValue)
+    {
+        this.disPort = newPortValue;
+        if (isRunning())
+            System.out.println(TRACE_PREFIX + "*** warning, attempting to change network port while running...");
+        // TODO warn if netIF already created
+    }
+    /**
+     * Get simple descriptor (such as parent class name) for this network interface, used in trace statements
+     * @return simple descriptor name
+     */
+    public String getDescriptor() {
+        return descriptor;
+    }
+
+    /**
+     * Set new simple descriptor (such as parent class name) for this network interface, used in trace statements
+     * @param newDescriptor simple descriptor name
+     */
+    public void setDescriptor(String newDescriptor) 
+    {
+        this.descriptor = newDescriptor;
+        TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
+    }
 }
