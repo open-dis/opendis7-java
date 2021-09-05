@@ -620,7 +620,6 @@ public class DisThreadedNetworkInterface
         verboseReceipt = verbose;
         verboseSending = verbose;
     }
-
     /**
      * Whether or not trace statements are provided when packets are sent or received.
      * @return the verbose status
@@ -631,7 +630,6 @@ public class DisThreadedNetworkInterface
     {
         return verbose;
     }
-
     /**
      * Set whether or not trace statements are provided when packets are received.
      * @param newValue the verboseReceipt status to set
