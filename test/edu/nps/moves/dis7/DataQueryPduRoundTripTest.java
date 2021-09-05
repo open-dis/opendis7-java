@@ -50,8 +50,7 @@ public class DataQueryPduRoundTripTest
   public void tearDown()
   {
       disNetworkInterface.removeListener(pduListener);
-      disNetworkInterface.kill();
-      disNetworkInterface = null;
+      disNetworkInterface.close();
   }
 
   private static int REQUEST_ID = 0x00112233;

@@ -52,8 +52,7 @@ public class BitFieldRoundTripTest
   public void tearDown()
   {
       disNetworkInterface.removeListener(pduListener);
-      disNetworkInterface.kill();
-      disNetworkInterface = null;
+      disNetworkInterface.close();
   }
 
   @Test

@@ -36,10 +36,10 @@ public class SignalPdusTest {
     static DisThreadedNetworkInterface disNetworkInterface;
     static DisThreadedNetworkInterface.PduListener pduListener;
     static List<Pdu> receivedPdus;
-    static PduRecorder recorder;
+    static PduRecorder pduRecorder;
     
     static Semaphore mutex;
-    static PduFactory pduFac;
+    static PduFactory pduFactory;
     static List<Pdu> sentPdus;
     byte[] bufferByteArray;
     int size;
@@ -48,8 +48,8 @@ public class SignalPdusTest {
     public static void setUpClass() throws IOException {
         System.out.println("SignalPdusTest");
         
-        recorder = new PduRecorder(); // default dir
-        disNetworkInterface = recorder.getDisThreadedNetIF();
+        pduRecorder = new PduRecorder(); // default dir
+        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
         pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
           public void incomingPdu(Pdu pdu) {
@@ -60,24 +60,24 @@ public class SignalPdusTest {
         
         mutex = new Semaphore(1);
         
-        sentPdus = new ArrayList<>();
+        sentPdus     = new ArrayList<>();
         receivedPdus = new ArrayList<>();
-        pduFac = new PduFactory();
+        pduFactory = new PduFactory();
 
-        Pdu pdu = pduFac.makeSignalPdu();  // empty contents
+        Pdu pdu = pduFactory.makeSignalPdu();  // empty contents
         sentPdus.add(pdu);
 
-        pdu = pduFac.makeSignalPdu();
+        pdu = pduFactory.makeSignalPdu();
         ((SignalPdu) pdu).setEncodingScheme((short) 0x1111);
         ((SignalPdu) pdu).setSampleRate(0x22222222);
         ((SignalPdu) pdu).setSamples((short) 0x3333);
         ((SignalPdu) pdu).setData("SignalPdu-testdata".getBytes());
         sentPdus.add(pdu);
 
-        pdu = pduFac.makeIntercomSignalPdu();
+        pdu = pduFactory.makeIntercomSignalPdu();
         sentPdus.add(pdu);
 
-        pdu = pduFac.makeIntercomSignalPdu();
+        pdu = pduFactory.makeIntercomSignalPdu();
         ((IntercomSignalPdu) pdu).setEncodingScheme((short) 0x1111);
         ((IntercomSignalPdu) pdu).setSampleRate(0x22222222);
         ((IntercomSignalPdu) pdu).setSamples((short) 0x3333);
@@ -102,7 +102,7 @@ public class SignalPdusTest {
     @AfterEach
     public void tearDown() throws IOException {
         disNetworkInterface.removeListener(pduListener);
-        recorder.end(); // kills the disNetworkInterface as well
+        pduRecorder.stop(); // kills the disNetworkInterface as well
     }
 
     @Test
@@ -118,7 +118,7 @@ public class SignalPdusTest {
                 assertTrue(size > 0, "Unmarshalling error: Unmarshalled size: " + size);
 
                 // This also unmarshalls the pdu
-                pdu = pduFac.createPdu(bufferByteArray);
+                pdu = pduFactory.createPdu(bufferByteArray);
                 assertNotNull(pdu, "Unmarshalling error " + pdu);
             } catch (Exception ex) {
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
@@ -138,12 +138,12 @@ public class SignalPdusTest {
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer player = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, false);
-        player.addRawListener(ba -> {
+        PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, false);
+        pduPlayer.addRawListener(ba -> {
             if (ba != null)
-                assertNotNull(pduFac.createPdu(ba), "PDU creation failure");
+                assertNotNull(pduFactory.createPdu(ba), "PDU creation failure");
             else {
-                player.end();
+                pduPlayer.end();
                 mutex.release();
             }   
         });

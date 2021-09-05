@@ -49,8 +49,7 @@ public class FixedAndVariableDatumRoundTripTest
   public void tearDown()
   {
       disNetworkInterface.removeListener(pduListener);
-      disNetworkInterface.kill();
-      disNetworkInterface = null;
+      disNetworkInterface.close();
   }
 
   private static final FixedDatum fixedDatum1 = new FixedDatum();

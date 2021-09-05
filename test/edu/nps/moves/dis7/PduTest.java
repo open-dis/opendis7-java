@@ -90,8 +90,7 @@ abstract public class PduTest
     public void tearDown()
     {
         disNetworkInterface.removeListener(pduListener);
-        disNetworkInterface.kill();
-        disNetworkInterface = null;
+        disNetworkInterface.close();
         try // additional sleep, allowing teardown to proceed
         {
             Thread.sleep(getThreadSleepInterval());

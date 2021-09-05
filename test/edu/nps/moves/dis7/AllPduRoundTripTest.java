@@ -39,7 +39,7 @@ public class AllPduRoundTripTest
   List<Pdu> pdusReceived = new ArrayList<>();
   List<Pdu> pdusRead = new ArrayList<>();
   PduFactory pduFactory;
-  PduRecorder recorder;
+  PduRecorder pduRecorder;
 
   @BeforeAll
   public static void beforeAllTests()
@@ -176,8 +176,8 @@ public class AllPduRoundTripTest
   }
   
     private void setupSenderRecorder() throws Exception {
-        recorder = new PduRecorder(); // default mcaddr, port, logfile dir
-        disNetworkInterface = recorder.getDisThreadedNetIF();
+        pduRecorder = new PduRecorder(); // default network address, port, logfile dir
+        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
 
         // When the DisThreadedNetworkInterface receives a pdu, a call is made to the
         // everyTypeListeners which makes a lamba call back here to capture received
@@ -191,14 +191,14 @@ public class AllPduRoundTripTest
             }
         };
         disNetworkInterface.addListener(pduListener);
-        System.out.println("Recorder log at " + recorder.getLogFilePath());
+        System.out.println("Recorder log at " + pduRecorder.getLogFilePath());
     }
 
   /** Will shutdown the common send/receive network interface */
   private void shutDownSenderRecorder() throws Exception
   {
     disNetworkInterface.removeListener(pduListener);
-    recorder.end();
+    pduRecorder.stop();
   }
 
   private void testForEquals() throws Exception
@@ -212,8 +212,8 @@ public class AllPduRoundTripTest
   private void getAllFromRecorder(Semaphore sem) throws Exception
   {
     sem.acquire();
-    Path path = Path.of(recorder.getLogFilePath()).getParent();
-    PduPlayer player = new PduPlayer(disNetworkInterface.getMulticastGroup(), disNetworkInterface.getDisPort(), path, false);
+    Path path = Path.of(pduRecorder.getLogFilePath()).getParent();
+    PduPlayer player = new PduPlayer(disNetworkInterface.getAddress(), disNetworkInterface.getPort(), path, false);
     player.addRawListener(ba -> {
       if (ba != null) {
         Pdu pdu = pduFactory.createPdu(ba);

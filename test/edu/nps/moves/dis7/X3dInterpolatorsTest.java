@@ -62,7 +62,7 @@ public class X3dInterpolatorsTest {
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
-        PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_MULTICAST_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, true);
+        PduPlayer pduPlayer = new PduPlayer(DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS, DisThreadedNetworkInterface.DEFAULT_DIS_PORT, path, true);
         pduPlayer.addRawListener(ba -> {
             if (ba == null) {
                 pduPlayer.end();

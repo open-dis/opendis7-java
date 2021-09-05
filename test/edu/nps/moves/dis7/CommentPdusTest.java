@@ -46,8 +46,7 @@ public class CommentPdusTest
   public void tearDown()
   {
       disNetworkInterface.removeListener(pduListener);
-      disNetworkInterface.kill();
-      disNetworkInterface = null;
+      disNetworkInterface.close();
   }
 
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
