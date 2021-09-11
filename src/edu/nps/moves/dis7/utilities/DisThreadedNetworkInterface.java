@@ -322,6 +322,7 @@ public class DisThreadedNetworkInterface
      * Synchronized method to prevent interleaved reentry.
      * @see <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/syncmeth.html">Java Tutorials: Synchronized Methods</a>
      */
+    @SuppressWarnings("SleepWhileHoldingLock") // intentional
     private synchronized void createDatagramSocket()
     {
         boolean closedSocket = false;
@@ -369,6 +370,7 @@ public class DisThreadedNetworkInterface
         }
     }
   
+    @SuppressWarnings("SleepWhileInLoop") // intentional
     private Runnable receiverThreadRunnable = () -> {
 
         int pduReceiptCounter = 0;
@@ -515,7 +517,7 @@ public class DisThreadedNetworkInterface
     rawListeners.forEach(lis->lis.incomingPdu(bl));
   }
 
-  /** Method renamed as <code>close()</code>.
+  /** Method renamed as <code>close() so use that method instead.</code>.
    */
   @Deprecated
   public void kill()
