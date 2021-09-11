@@ -23,8 +23,10 @@
             <word>Netbeans</word>
             <word>pdu</word>
             <word>pdus</word>
+            <word>undescribed</word>
             <word>unicast</word>
             <word>unmarshalling</word>
+            <word>Wireshark</word>
         </spellchecker-wordlist>
     </configuration>
 </project>
