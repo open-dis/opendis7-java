@@ -226,6 +226,7 @@
         <antcall target="jar-pdus-classes"/>
         <antcall target="jar-pdus-source"/>
         <antcall target="jar-pdus-javadoc"/>
+        <antcall target="jar-full"/>
     <!--<antcall target="zip-full"/>-->
     </target>
 
@@ -343,7 +344,39 @@
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
-        </jar>        
+        </jar>
+    </target>
+    
+    <target name="jar-full" depends="compile" description="merges all dis7 subpackage assets">
+        <delete file="dist/open-dis7-full.jar" verbose="true"/>
+        <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
+        <jar destfile="dist/open-dis7-full.jar"
+               update="true"
+            zip64Mode="always">
+            <zipgroupfileset dir="dist">
+                <include name="open-dis7-*.jar"/>
+            <!--<exclude name="open-dis7-source.jar"/> only about 30MB -->
+                <exclude name="open-dis7-full.jar"/><!-- not self -->
+            </zipgroupfileset>
+            <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
+            <manifest>
+                <attribute name="description"            value="Full set of assets for ${manifest.name}"/>
+                <attribute name="Built-By"               value="${Built-By}"/>
+                <attribute name="Specification-Title"    value="${Specification-Title}"/>
+                <attribute name="Specification-Version"  value="${Specification-Version}"/>
+                <attribute name="Specification-Vendor"   value="${Specification-Vendor}"/>
+                <attribute name="Implementation-Title"   value="${Implementation-Title}"/>
+                <attribute name="Implementation-Version" value="${Implementation-Version}"/>
+                <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
+                
+                <section name="edu/nps/moves/dis7">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+                <section name="edu/nps/moves/spatial">
+                    <attribute name="Sealed" value="true"/>
+                </section>
+            </manifest>
+        </jar>
     </target>
     
     <target name="jar-pdus-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
