@@ -18,6 +18,27 @@
     <property name="Implementation-Version" value="${timestamp}"/>
     <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
     
+    <!-- ensure backwards compatibility to specified version of Java -->
+    <property name="java.source"                 value="1.8"/>
+    <property name="java.target"                 value="1.8"/>
+    
+    <property name="javadoc.additionalparam" value=""/>
+    <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
+    <property name="javadoc.dir"             value="dist/javadoc"/>
+    <property name="javadoc.encoding"        value="ISO-8859-1"/>
+    <property name="javadoc.copyright"       value="Copyright &#169;1995-2021 held by the authors, &lt;a href='https://www.www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=open-dis7%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.noindex"         value="false"/>
+    <property name="javadoc.nonavbar"        value="false"/>
+    <property name="javadoc.notree"          value="false"/>
+    <property name="javadoc.private"         value="false"/>
+    <property name="javadoc.source"          value="${java.source}"/>
+    <property name="javadoc.splitindex"      value="true"/>
+    <property name="javadoc.breakiterator"   value="true"/>
+    <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
+    <property name="javadoc.version"         value="true"/>
+    <property name="javadoc.windowtitle"     value="open-dis7 Javadoc"/>
+    <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
+    <!-- build.impl <javadoc additionalparam="-J-Dfile.encoding=${file.encoding} ${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"> -->
     <target description="Build and test the whole project, create distribution jar files." name="all">
         <echo message="timestamp ${timestamp}"/>
         <fail message="Please build using Ant 1.9.0 or higher.">
@@ -92,23 +113,7 @@
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
-    <target name="processScenes.javadoc.donotrun"><!-- copied as potential template -->
-		
-        <property name="javadoc.windowtitle"     value="${archive.name} Examples Archive Javadoc using X3DJSAIL, X3D Java Scene Access Interface Library"/>
-        <property name="javadoc.doctitle"        value="${archive.name} Examples Archive Javadoc"/>
-        <property name="javadoc.additionalparam" value=""/>
-        <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
-        <property name="javadoc.dir"             value="javadoc"/>
-        <property name="javadoc.encoding"        value="ISO-8859-1"/>
-        <property name="javadoc.copyright"       value="Copyright &#169;2005-2020 &lt;a href='https://www.web3d.org'&gt;Web3D Consortium&lt;/a&gt; under an &lt;a href='../../../../license.html'&gt;open-source license&lt;/a&gt;, free for any use. &lt;a href='mailto:x3d-public@web3D.org,brutzman@nps.edu?subject=X3D%20Examples%20Archive%20X3DJSAIL%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
-        <property name="javadoc.noindex"         value="false"/>
-        <property name="javadoc.nonavbar"        value="false"/>
-        <property name="javadoc.notree"          value="false"/>
-        <property name="javadoc.private"         value="false"/>
-        <property name="javadoc.splitindex"      value="true"/>
-        <property name="javadoc.breakiterator"   value="true"/>
-        <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
-        <property name="javadoc.version"         value="true"/>	
+    <target name="javadoc.custom" description="TODO testing, not ready for production">
 
         <javadoc     destdir="${javadoc.dir}"
                      author="${javadoc.author}"
@@ -348,15 +353,24 @@
     </target>
     
     <target name="jar-full" depends="compile" description="merges all dis7 subpackage assets">
-        <delete file="dist/open-dis7-full.jar" verbose="true"/>
+        <delete file="dist/open-dis7-full.jar" verbose="false"/>
         <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
         <jar destfile="dist/open-dis7-full.jar"
                update="true"
             zip64Mode="always">
             <zipgroupfileset dir="dist">
                 <include name="open-dis7-*.jar"/>
-            <!--<exclude name="open-dis7-source.jar"/> only about 30MB -->
+                <!-- TODO consider whether these dependencies are strictly needed -->
+                <include name="../lib/commons-io-2.6.jar"/>
+                <include name="../lib/guava-28.0-jre.jar"/>
+                <include name="../lib/srm-4.4.0.jar"/>
+            <!--<exclude name="open-dis7-source.jar"/> only about 30MB, keep it for debugging -->
                 <exclude name="open-dis7-full.jar"/><!-- not self -->
+            </zipgroupfileset>
+            <zipgroupfileset dir="lib">
+                <include name="commons-io-2.6.jar"/>
+                <include name="guava-28.0-jre.jar"/>
+                <include name="srm-4.4.0.jar"/>
             </zipgroupfileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
