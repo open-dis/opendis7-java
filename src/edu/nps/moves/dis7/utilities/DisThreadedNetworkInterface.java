@@ -517,7 +517,7 @@ public class DisThreadedNetworkInterface
     rawListeners.forEach(lis->lis.incomingPdu(bl));
   }
 
-  /** Method renamed as <code>close() so use that method instead.</code>.
+  /** Method renamed as <code>close()</code> so use that method instead.
    */
   @Deprecated
   public void kill()
