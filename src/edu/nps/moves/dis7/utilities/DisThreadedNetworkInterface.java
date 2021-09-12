@@ -244,7 +244,7 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Deprecated, replaced by getAddress()
+     * Method renamed as <code>getAddress()</code> so use that method instead.
      * @return current multicast address value
      */
     @Deprecated
@@ -690,7 +690,7 @@ public class DisThreadedNetworkInterface
         this.verboseIncludesTimestamp = verboseIncludesTimestamp;
     }
 
-    /** Deprecated, replaced by getPort()
+    /** Method renamed as <code>getPort()</code> so use that method instead.
      * @return current port value
      */
     @Deprecated
