@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28157173;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25704
+ * <p> Entity class <b><code>MQ9AReaper</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MQ9AReaper.createInstance()</code> or <code>new MQ9AReaper()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: MQ9Reaper  = <code>34</code>; </li>
+ *     <li> Specific: MQ9AReaper  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25704; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a32191e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class MQ9AReaper extends EntityType
+public final class MQ9AReaper extends EntityType
 {
     /** Default constructor */
     public MQ9AReaper()
@@ -26,5 +40,11 @@ public class MQ9AReaper extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)34); // uid 25703, MQ-9 Reaper
         setSpecific((byte)1); // uid 25704, MQ-9A Reaper
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MQ9AReaper createInstance()
+    {
+            return new MQ9AReaper();
     }
 }

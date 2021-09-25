@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63c99f7;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32740
+ * <p> Entity class <b><code>CivilianwSA16</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianwSA16.createInstance()</code> or <code>new CivilianwSA16()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Civilian = <code>130</code>; </li>
+ *     <li> SubCategory: ManPortableAirDefenseSystemMANPADS  = <code>85</code>; </li>
+ *     <li> Specific: CivilianwSA16  = <code>23</code>; </li>
+ *     <li> Entity type uid: 32740; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fa0ee7e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Civilian
+ * @see SubCategory
+
  */
-public class CivilianwSA16 extends EntityType
+public final class CivilianwSA16 extends EntityType
 {
     /** Default constructor */
     public CivilianwSA16()
@@ -26,5 +40,11 @@ public class CivilianwSA16 extends EntityType
         setCategory((byte)130); // uid 32731, Civilian
         setSubCategory((byte)85); // uid 32739, Man-Portable Air Defense System (MANPADS)
         setSpecific((byte)23); // uid 32740, Civilian w/ SA-16
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianwSA16 createInstance()
+    {
+            return new CivilianwSA16();
     }
 }

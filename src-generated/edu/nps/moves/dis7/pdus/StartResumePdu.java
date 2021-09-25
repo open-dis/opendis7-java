@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class StartResumePdu extends SimulationManagementFamilyPdu implements Ser
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public StartResumePdu()
  {
     setPduType( DisPduType.START_RESUME );
@@ -44,8 +43,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += realWorldTime.getMarshalledSize();
-   marshalSize += simulationTime.getMarshalledSize();
+   if (realWorldTime != null)
+       marshalSize += realWorldTime.getMarshalledSize();
+   if (simulationTime != null)
+       marshalSize += simulationTime.getMarshalledSize();
    marshalSize += 4;  // requestID
 
    return marshalSize;
@@ -177,9 +178,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    realWorldTime.unmarshal(byteBuffer);
-    simulationTime.unmarshal(byteBuffer);
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute realWorldTime marked as not serialized
+        realWorldTime.unmarshal(byteBuffer);
+        // attribute simulationTime marked as not serialized
+        simulationTime.unmarshal(byteBuffer);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

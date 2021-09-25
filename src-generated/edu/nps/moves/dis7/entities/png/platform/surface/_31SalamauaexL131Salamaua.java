@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20d11153;
- * Country: Papua New Guinea (PNG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31146
+ * <p> Entity class <b><code>_31SalamauaexL131Salamaua</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_31SalamauaexL131Salamaua.createInstance()</code> or <code>new _31SalamauaexL131Salamaua()</code>. </p>
+ * <ul>
+ *     <li> Country: Papua New Guinea (PNG) = <code>169</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: BalikpapanClass  = <code>1</code>; </li>
+ *     <li> Specific: _31SalamauaexL131Salamaua  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31146; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cd7f1ae. </p>
+ * @see Country#PAPUA_NEW_GUINEA_PNG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _31SalamauaexL131Salamaua extends EntityType
+public final class _31SalamauaexL131Salamaua extends EntityType
 {
     /** Default constructor */
     public _31SalamauaexL131Salamaua()
@@ -26,5 +40,11 @@ public class _31SalamauaexL131Salamaua extends EntityType
         setCategory((byte)11); // uid 31144, Landing Craft
         setSubCategory((byte)1); // uid 31145, Balikpapan Class
         setSpecific((byte)1); // uid 31146, 31 Salamaua (ex L 131 Salamaua)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _31SalamauaexL131Salamaua createInstance()
+    {
+            return new _31SalamauaexL131Salamaua();
     }
 }

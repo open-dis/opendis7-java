@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -55,7 +54,7 @@ public class MinefieldStatePdu extends MinefieldFamilyPdu implements Serializabl
    protected List< EntityType > mineType = new ArrayList< EntityType >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MinefieldStatePdu()
  {
     setPduType( DisPduType.MINEFIELD_STATE );
@@ -71,26 +70,35 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += minefieldID.getMarshalledSize();
+   if (minefieldID != null)
+       marshalSize += minefieldID.getMarshalledSize();
    marshalSize += 2;  // minefieldSequence
-   marshalSize += forceID.getMarshalledSize();
+   if (forceID != null)
+       marshalSize += forceID.getMarshalledSize();
    marshalSize += 1;  // numberOfPerimeterPoints
-   marshalSize += minefieldType.getMarshalledSize();
+   if (minefieldType != null)
+       marshalSize += minefieldType.getMarshalledSize();
    marshalSize += 2;  // numberOfMineTypes
-   marshalSize += minefieldLocation.getMarshalledSize();
-   marshalSize += minefieldOrientation.getMarshalledSize();
-   marshalSize += appearance.getMarshalledSize();
-   marshalSize += protocolMode.getMarshalledSize();
-   for(int idx=0; idx < perimeterPoints.size(); idx++)
-   {
-        Vector2Float listElement = perimeterPoints.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < mineType.size(); idx++)
-   {
-        EntityType listElement = mineType.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (minefieldLocation != null)
+       marshalSize += minefieldLocation.getMarshalledSize();
+   if (minefieldOrientation != null)
+       marshalSize += minefieldOrientation.getMarshalledSize();
+   if (appearance != null)
+       marshalSize += appearance.getMarshalledSize();
+   if (protocolMode != null)
+       marshalSize += protocolMode.getMarshalledSize();
+   if (perimeterPoints != null)
+       for (int idx=0; idx < perimeterPoints.size(); idx++)
+       {
+            Vector2Float listElement = perimeterPoints.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (mineType != null)
+       for (int idx=0; idx < mineType.size(); idx++)
+       {
+            EntityType listElement = mineType.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -285,14 +293,14 @@ public void marshal(DataOutputStream dos) throws Exception
        appearance.marshal(dos);
        protocolMode.marshal(dos);
 
-       for(int idx = 0; idx < perimeterPoints.size(); idx++)
+       for (int idx = 0; idx < perimeterPoints.size(); idx++)
        {
             Vector2Float aVector2Float = perimeterPoints.get(idx);
             aVector2Float.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < mineType.size(); idx++)
+       for (int idx = 0; idx < mineType.size(); idx++)
        {
             EntityType aEntityType = mineType.get(idx);
             aEntityType.marshal(dos);
@@ -334,14 +342,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += minefieldOrientation.unmarshal(dis);
         uPosition += appearance.unmarshal(dis);
         uPosition += protocolMode.unmarshal(dis);
-        for(int idx = 0; idx < numberOfPerimeterPoints; idx++)
+        for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
             Vector2Float anX = new Vector2Float();
             uPosition += anX.unmarshal(dis);
             perimeterPoints.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfMineTypes; idx++)
+        for (int idx = 0; idx < numberOfMineTypes; idx++)
         {
             EntityType anX = new EntityType();
             uPosition += anX.unmarshal(dis);
@@ -378,14 +386,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    appearance.marshal(byteBuffer);
    protocolMode.marshal(byteBuffer);
 
-   for(int idx = 0; idx < perimeterPoints.size(); idx++)
+   for (int idx = 0; idx < perimeterPoints.size(); idx++)
    {
         Vector2Float aVector2Float = perimeterPoints.get(idx);
         aVector2Float.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < mineType.size(); idx++)
+   for (int idx = 0; idx < mineType.size(); idx++)
    {
         EntityType aEntityType = mineType.get(idx);
         aEntityType.marshal(byteBuffer);
@@ -406,30 +414,49 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    minefieldID.unmarshal(byteBuffer);
-    minefieldSequence = (short)(byteBuffer.getShort() & 0xFFFF);
-    forceID = ForceID.unmarshalEnum(byteBuffer);
-    numberOfPerimeterPoints = (byte)(byteBuffer.get() & 0xFF);
-    minefieldType.unmarshal(byteBuffer);
-    numberOfMineTypes = (short)(byteBuffer.getShort() & 0xFFFF);
-    minefieldLocation.unmarshal(byteBuffer);
-    minefieldOrientation.unmarshal(byteBuffer);
-    appearance.unmarshal(byteBuffer);
-    protocolMode.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfPerimeterPoints; idx++)
+    try
     {
-    Vector2Float anX = new Vector2Float();
-    anX.unmarshal(byteBuffer);
-    perimeterPoints.add(anX);
-    }
+        // attribute minefieldID marked as not serialized
+        minefieldID.unmarshal(byteBuffer);
+        // attribute minefieldSequence marked as not serialized
+        minefieldSequence = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute forceID marked as not serialized
+        forceID = ForceID.unmarshalEnum(byteBuffer);
+        // attribute numberOfPerimeterPoints marked as not serialized
+        numberOfPerimeterPoints = (byte)(byteBuffer.get() & 0xFF);
+        // attribute minefieldType marked as not serialized
+        minefieldType.unmarshal(byteBuffer);
+        // attribute numberOfMineTypes marked as not serialized
+        numberOfMineTypes = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute minefieldLocation marked as not serialized
+        minefieldLocation.unmarshal(byteBuffer);
+        // attribute minefieldOrientation marked as not serialized
+        minefieldOrientation.unmarshal(byteBuffer);
+        // attribute appearance marked as not serialized
+        appearance.unmarshal(byteBuffer);
+        // attribute protocolMode marked as not serialized
+        protocolMode.unmarshal(byteBuffer);
+        // attribute perimeterPoints marked as not serialized
+        for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
+        {
+        Vector2Float anX = new Vector2Float();
+        anX.unmarshal(byteBuffer);
+        perimeterPoints.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfMineTypes; idx++)
+        // attribute mineType marked as not serialized
+        for (int idx = 0; idx < numberOfMineTypes; idx++)
+        {
+        EntityType anX = new EntityType();
+        anX.unmarshal(byteBuffer);
+        mineType.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    EntityType anX = new EntityType();
-    anX.unmarshal(byteBuffer);
-    mineType.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -467,11 +494,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (appearance.equals( rhs.appearance) )) ivarsEqual = false;
      if( ! (protocolMode.equals( rhs.protocolMode) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < perimeterPoints.size(); idx++)
+     for (int idx = 0; idx < perimeterPoints.size(); idx++)
         if( ! ( perimeterPoints.get(idx).equals(rhs.perimeterPoints.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < mineType.size(); idx++)
+     for (int idx = 0; idx < mineType.size(); idx++)
         if( ! ( mineType.get(idx).equals(rhs.mineType.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a37191a;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30260
+ * <p> Entity class <b><code>WildcatAH1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WildcatAH1.createInstance()</code> or <code>new WildcatAH1()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: AgustaWestlandAW159Wildcat  = <code>20</code>; </li>
+ *     <li> Specific: WildcatAH1  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30260; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11c3ff67. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class WildcatAH1 extends EntityType
+public final class WildcatAH1 extends EntityType
 {
     /** Default constructor */
     public WildcatAH1()
@@ -26,5 +40,11 @@ public class WildcatAH1 extends EntityType
         setCategory((byte)21); // uid 15091, Utility helicopter
         setSubCategory((byte)20); // uid 30259, AgustaWestland AW159 Wildcat
         setSpecific((byte)1); // uid 30260, Wildcat AH1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WildcatAH1 createInstance()
+    {
+            return new WildcatAH1();
     }
 }

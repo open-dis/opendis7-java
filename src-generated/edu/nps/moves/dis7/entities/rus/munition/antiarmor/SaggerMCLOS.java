@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a04ab05;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20429
+ * <p> Entity class <b><code>SaggerMCLOS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SaggerMCLOS.createInstance()</code> or <code>new SaggerMCLOS()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AT3Sagger  = <code>5</code>; </li>
+ *     <li> Specific: SaggerMCLOS  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20429; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b7facc7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SaggerMCLOS extends EntityType
+public final class SaggerMCLOS extends EntityType
 {
     /** Default constructor */
     public SaggerMCLOS()
@@ -26,5 +40,11 @@ public class SaggerMCLOS extends EntityType
         setCategory((byte)1); // uid 20421, Guided
         setSubCategory((byte)5); // uid 20428, AT-3 Sagger
         setSpecific((byte)1); // uid 20429, Sagger (MCLOS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SaggerMCLOS createInstance()
+    {
+            return new SaggerMCLOS();
     }
 }

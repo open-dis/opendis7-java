@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e1d03d7;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25421
+ * <p> Entity class <b><code>RBS90C3Vehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBS90C3Vehicle.createInstance()</code> or <code>new RBS90C3Vehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: RBS90SAMSystem  = <code>3</code>; </li>
+ *     <li> Specific: RBS90C3Vehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25421; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@711d1a52. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class RBS90C3Vehicle extends EntityType
+public final class RBS90C3Vehicle extends EntityType
 {
     /** Default constructor */
     public RBS90C3Vehicle()
@@ -26,5 +40,11 @@ public class RBS90C3Vehicle extends EntityType
         setCategory((byte)28); // uid 17483, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)3); // uid 25420, RBS 90 SAM System
         setSpecific((byte)1); // uid 25421, RBS 90 C3 Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBS90C3Vehicle createInstance()
+    {
+            return new RBS90C3Vehicle();
     }
 }

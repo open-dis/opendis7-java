@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52ecc989;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 28797
+ * <p> Entity class <b><code>Mistral2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mistral2.createInstance()</code> or <code>new Mistral2()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Mistral  = <code>5</code>; </li>
+ *     <li> Specific: Mistral2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28797; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@723e2d08. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Mistral2 extends EntityType
+public final class Mistral2 extends EntityType
 {
     /** Default constructor */
     public Mistral2()
@@ -26,5 +40,11 @@ public class Mistral2 extends EntityType
         setCategory((byte)1); // uid 21028, Guided
         setSubCategory((byte)5); // uid 21035, Mistral
         setSpecific((byte)1); // uid 28797, Mistral 2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mistral2 createInstance()
+    {
+            return new Mistral2();
     }
 }

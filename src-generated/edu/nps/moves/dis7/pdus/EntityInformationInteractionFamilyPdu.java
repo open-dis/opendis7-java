@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -13,21 +12,16 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * The live entity PDUs have a slightly different header
+ * Section 5.3.3. Common superclass for EntityState, Collision, collision-elastic, and entity state update PDUs.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public abstract class LiveEntityPdu extends Pdu implements Serializable
+public abstract class EntityInformationInteractionFamilyPdu extends PduBase implements Serializable
 {
-   /** Subprotocol used to decode the PDU. Section 13 of EBV. uid 417 */
-   protected DISLiveEntitySubprotocolNumber subprotocolNumber = DISLiveEntitySubprotocolNumber.values()[0];
 
-   /** zero-filled array of padding */
-   protected byte  padding = (byte)0;
-
-
-/** Constructor */
- public LiveEntityPdu()
+/** Constructor creates and configures a new instance object */
+ public EntityInformationInteractionFamilyPdu()
  {
+    setProtocolFamily( DISProtocolFamily.ENTITY_INFORMATION_INTERACTION );
  }
 
   /**
@@ -40,51 +34,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += subprotocolNumber.getMarshalledSize();
-   marshalSize += 1;  // padding
 
    return marshalSize;
 }
 
-
-/** Setter for {@link LiveEntityPdu#subprotocolNumber}
-  * @param pSubprotocolNumber new value of interest
-  * @return same object to permit progressive setters */
-public LiveEntityPdu setSubprotocolNumber(DISLiveEntitySubprotocolNumber pSubprotocolNumber)
-{
-    subprotocolNumber = pSubprotocolNumber;
-    return this;
-}
-
-/** Getter for {@link LiveEntityPdu#subprotocolNumber}
-  * @return value of interest */
-public DISLiveEntitySubprotocolNumber getSubprotocolNumber()
-{
-    return subprotocolNumber; 
-}
-
-/** Setter for {@link LiveEntityPdu#padding}
-  * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
-public LiveEntityPdu setPadding(byte pPadding)
-{
-    padding = pPadding;
-    return this;
-}
-/** Utility setter for {@link LiveEntityPdu#padding}
-  * @param pPadding new value of interest
-  * @return same object to permit progressive setters */
-public LiveEntityPdu setPadding(int pPadding){
-    padding = (byte) pPadding;
-    return this;
-}
-
-/** Getter for {@link LiveEntityPdu#padding}
-  * @return value of interest */
-public byte getPadding()
-{
-    return padding; 
-}
 
 /**
  * Serializes an object to a DataOutputStream.
@@ -97,8 +50,6 @@ public void marshal(DataOutputStream dos) throws Exception
     super.marshal(dos);
     try 
     {
-       subprotocolNumber.marshal(dos);
-       dos.writeByte(padding);
     }
     catch(Exception e)
     {
@@ -121,10 +72,6 @@ public int unmarshal(DataInputStream dis) throws Exception
 
     try 
     {
-        subprotocolNumber = DISLiveEntitySubprotocolNumber.unmarshalEnum(dis);
-        uPosition += subprotocolNumber.getMarshalledSize();
-        padding = (byte)dis.readUnsignedByte();
-        uPosition += 1;
     }
     catch(Exception e)
     { 
@@ -144,8 +91,6 @@ public int unmarshal(DataInputStream dis) throws Exception
 public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
-   subprotocolNumber.marshal(byteBuffer);
-   byteBuffer.put( (byte)padding);
 }
 
 /**
@@ -161,8 +106,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    subprotocolNumber = DISLiveEntitySubprotocolNumber.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -189,10 +139,8 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  {
      boolean ivarsEqual = true;
 
-     final LiveEntityPdu rhs = (LiveEntityPdu)obj;
+     final EntityInformationInteractionFamilyPdu rhs = (EntityInformationInteractionFamilyPdu)obj;
 
-     if( ! (subprotocolNumber == rhs.subprotocolNumber)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
     return ivarsEqual && super.equalsImpl(rhs);
  }
 
@@ -202,8 +150,6 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     StringBuilder sb = new StringBuilder();
     sb.append(getClass().getSimpleName()).append(":\n");
 
-    sb.append(" subprotocolNumber: ").append(subprotocolNumber).append("\n");
-    sb.append(" padding: ").append(padding).append("\n");
 
    return sb.toString();
  }

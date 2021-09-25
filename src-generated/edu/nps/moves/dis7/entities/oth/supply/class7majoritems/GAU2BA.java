@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1bdafb01;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30627
+ * <p> Entity class <b><code>GAU2BA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GAU2BA.createInstance()</code> or <code>new GAU2BA()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons = <code>9</code>; </li>
+ *     <li> SubCategory: _762mm30caliber  = <code>3</code>; </li>
+ *     <li> Specific: GAU2BA  = <code>4</code>; </li>
+ *     <li> Entity type uid: 30627; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e7b0bec. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeapons
+ * @see SubCategory
+
  */
-public class GAU2BA extends EntityType
+public final class GAU2BA extends EntityType
 {
     /** Default constructor */
     public GAU2BA()
@@ -26,5 +40,11 @@ public class GAU2BA extends EntityType
         setCategory((byte)9); // uid 30622, M - Weapons
         setSubCategory((byte)3); // uid 30623, 7.62 mm/.30 caliber
         setSpecific((byte)4); // uid 30627, GAU-2B/A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GAU2BA createInstance()
+    {
+            return new GAU2BA();
     }
 }

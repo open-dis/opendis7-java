@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@265c1a7c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31793
+ * <p> Entity class <b><code>CigaretteBoat42X</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CigaretteBoat42X.createInstance()</code> or <code>new CigaretteBoat42X()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other Vessels = <code>87</code>; </li>
+ *     <li> SubCategory: GoFastBoat  = <code>1</code>; </li>
+ *     <li> Specific: CigaretteBoats  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31793; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@646427f7. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OtherVessels
+ * @see SubCategory
+
  */
-public class CigaretteBoat42X extends EntityType
+public final class CigaretteBoat42X extends EntityType
 {
     /** Default constructor */
     public CigaretteBoat42X()
@@ -27,5 +41,11 @@ public class CigaretteBoat42X extends EntityType
         setSubCategory((byte)1); // uid 28470, Go-Fast Boat
         setSpecific((byte)4); // uid 31792, Cigarette Boats
         setExtra((byte)1); // uid 31793, Cigarette Boat 42 X
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CigaretteBoat42X createInstance()
+    {
+            return new CigaretteBoat42X();
     }
 }

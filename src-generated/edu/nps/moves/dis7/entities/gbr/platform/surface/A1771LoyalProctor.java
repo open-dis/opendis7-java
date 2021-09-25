@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71f1cc02;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15464
+ * <p> Entity class <b><code>A1771LoyalProctor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A1771LoyalProctor.createInstance()</code> or <code>new A1771LoyalProctor()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LoyalclassRNXsfleettenders  = <code>23</code>; </li>
+ *     <li> Specific: A1771LoyalProctor  = <code>8</code>; </li>
+ *     <li> Entity type uid: 15464; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f4ba1ae. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A1771LoyalProctor extends EntityType
+public final class A1771LoyalProctor extends EntityType
 {
     /** Default constructor */
     public A1771LoyalProctor()
@@ -26,5 +40,11 @@ public class A1771LoyalProctor extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)23); // uid 15456, Loyal class (RNXs) (fleet tenders)
         setSpecific((byte)8); // uid 15464, A 1771 Loyal Proctor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A1771LoyalProctor createInstance()
+    {
+            return new A1771LoyalProctor();
     }
 }

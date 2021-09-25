@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5652f555;
- * Country: Peru (PER);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28254
+ * <p> Entity class <b><code>ARL158Tacna</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ARL158Tacna.createInstance()</code> or <code>new ARL158Tacna()</code>. </p>
+ * <ul>
+ *     <li> Country: Peru (PER) = <code>172</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AmsterdamClass  = <code>1</code>; </li>
+ *     <li> Specific: ARL158Tacna  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28254; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f651cd8. </p>
+ * @see Country#PERU_PER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class ARL158Tacna extends EntityType
+public final class ARL158Tacna extends EntityType
 {
     /** Default constructor */
     public ARL158Tacna()
@@ -26,5 +40,11 @@ public class ARL158Tacna extends EntityType
         setCategory((byte)16); // uid 28252, Auxiliary
         setSubCategory((byte)1); // uid 28253, Amsterdam Class
         setSpecific((byte)1); // uid 28254, ARL-158 Tacna
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ARL158Tacna createInstance()
+    {
+            return new ARL158Tacna();
     }
 }

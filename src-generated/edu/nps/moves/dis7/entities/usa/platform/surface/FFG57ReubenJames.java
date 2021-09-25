@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@733fb462;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11546
+ * <p> Entity class <b><code>FFG57ReubenJames</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFG57ReubenJames.createInstance()</code> or <code>new FFG57ReubenJames()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: OliverPerryClass  = <code>1</code>; </li>
+ *     <li> Specific: FFG57ReubenJames  = <code>47</code>; </li>
+ *     <li> Entity type uid: 11546; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b2dd3df. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigate
+ * @see SubCategory
+
  */
-public class FFG57ReubenJames extends EntityType
+public final class FFG57ReubenJames extends EntityType
 {
     /** Default constructor */
     public FFG57ReubenJames()
@@ -26,5 +40,11 @@ public class FFG57ReubenJames extends EntityType
         setCategory((byte)6); // uid 11498, Guided Missile Frigate
         setSubCategory((byte)1); // uid 11499, Oliver Perry Class
         setSpecific((byte)47); // uid 11546, FFG 57 Reuben James
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFG57ReubenJames createInstance()
+    {
+            return new FFG57ReubenJames();
     }
 }

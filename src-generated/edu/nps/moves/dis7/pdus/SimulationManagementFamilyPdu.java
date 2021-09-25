@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public abstract class SimulationManagementFamilyPdu extends PduBase implements S
    protected SimulationIdentifier  receivingID = new SimulationIdentifier(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SimulationManagementFamilyPdu()
  {
     setProtocolFamily( DISProtocolFamily.SIMULATION_MANAGEMENT );
@@ -41,8 +40,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += originatingID.getMarshalledSize();
-   marshalSize += receivingID.getMarshalledSize();
+   if (originatingID != null)
+       marshalSize += originatingID.getMarshalledSize();
+   if (receivingID != null)
+       marshalSize += receivingID.getMarshalledSize();
 
    return marshalSize;
 }
@@ -153,8 +154,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    originatingID.unmarshal(byteBuffer);
-    receivingID.unmarshal(byteBuffer);
+    try
+    {
+        // attribute originatingID marked as not serialized
+        originatingID.unmarshal(byteBuffer);
+        // attribute receivingID marked as not serialized
+        receivingID.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

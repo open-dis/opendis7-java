@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42d6c12d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24949
+ * <p> Entity class <b><code>CargoTruck5TonwCanvasCoveredCargoBay</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CargoTruck5TonwCanvasCoveredCargoBay.createInstance()</code> or <code>new CargoTruck5TonwCanvasCoveredCargoBay()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: CargoTruckupto5Ton  = <code>12</code>; </li>
+ *     <li> Specific: CargoTruck5TonwCanvasCoveredCargoBay  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24949; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f5827d0. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class CargoTruck5TonwCanvasCoveredCargoBay extends EntityType
+public final class CargoTruck5TonwCanvasCoveredCargoBay extends EntityType
 {
     /** Default constructor */
     public CargoTruck5TonwCanvasCoveredCargoBay()
@@ -26,5 +40,11 @@ public class CargoTruck5TonwCanvasCoveredCargoBay extends EntityType
         setCategory((byte)83); // uid 24926, Single Unit Cargo Truck
         setSubCategory((byte)12); // uid 24946, Cargo Truck, up to 5 Ton
         setSpecific((byte)2); // uid 24949, Cargo Truck, 5 Ton w/ Canvas Covered Cargo Bay
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CargoTruck5TonwCanvasCoveredCargoBay createInstance()
+    {
+            return new CargoTruck5TonwCanvasCoveredCargoBay();
     }
 }

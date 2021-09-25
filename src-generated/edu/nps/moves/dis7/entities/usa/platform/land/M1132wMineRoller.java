@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@118dcbbd;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 33083
+ * <p> Entity class <b><code>M1132wMineRoller</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1132wMineRoller.createInstance()</code> or <code>new M1132wMineRoller()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: LightArmoredVehicleLAVStryker  = <code>5</code>; </li>
+ *     <li> Specific: M1132StrykerEngineerwMK240762mmmachinegun  = <code>29</code>; </li>
+ *     <li> Entity type uid: 33083; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@62b93086. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class M1132wMineRoller extends EntityType
+public final class M1132wMineRoller extends EntityType
 {
     /** Default constructor */
     public M1132wMineRoller()
@@ -27,5 +41,11 @@ public class M1132wMineRoller extends EntityType
         setSubCategory((byte)5); // uid 10115, Light Armored Vehicle (LAV) Stryker
         setSpecific((byte)29); // uid 10144, M1132 Stryker Engineer w/MK 240 7.62-mm machine gun
         setExtra((byte)5); // uid 33083, M1132 w/ Mine Roller
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1132wMineRoller createInstance()
+    {
+            return new M1132wMineRoller();
     }
 }

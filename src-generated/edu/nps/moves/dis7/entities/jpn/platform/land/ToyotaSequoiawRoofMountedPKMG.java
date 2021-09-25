@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5be067de;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24878
+ * <p> Entity class <b><code>ToyotaSequoiawRoofMountedPKMG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ToyotaSequoiawRoofMountedPKMG.createInstance()</code> or <code>new ToyotaSequoiawRoofMountedPKMG()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: SportsUtilityVehicleSUVFullPremiumLuxuryLarge  = <code>114</code>; </li>
+ *     <li> Specific: ToyotaSequoia  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24878; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@20b5f2ac. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class ToyotaSequoiawRoofMountedPKMG extends EntityType
+public final class ToyotaSequoiawRoofMountedPKMG extends EntityType
 {
     /** Default constructor */
     public ToyotaSequoiawRoofMountedPKMG()
@@ -27,5 +41,11 @@ public class ToyotaSequoiawRoofMountedPKMG extends EntityType
         setSubCategory((byte)114); // uid 24876, Sports Utility Vehicle (SUV), Full/Premium/Luxury (Large)
         setSpecific((byte)1); // uid 24877, Toyota Sequoia
         setExtra((byte)1); // uid 24878, Toyota Sequoia w/ Roof-Mounted PK MG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ToyotaSequoiawRoofMountedPKMG createInstance()
+    {
+            return new ToyotaSequoiawRoofMountedPKMG();
     }
 }

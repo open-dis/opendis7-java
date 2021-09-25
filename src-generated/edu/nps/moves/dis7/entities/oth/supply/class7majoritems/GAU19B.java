@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b33fff9;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30633
+ * <p> Entity class <b><code>GAU19B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GAU19B.createInstance()</code> or <code>new GAU19B()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons = <code>9</code>; </li>
+ *     <li> SubCategory: _127mm50caliber  = <code>4</code>; </li>
+ *     <li> Specific: GAU19B  = <code>4</code>; </li>
+ *     <li> Entity type uid: 30633; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc8adff. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeapons
+ * @see SubCategory
+
  */
-public class GAU19B extends EntityType
+public final class GAU19B extends EntityType
 {
     /** Default constructor */
     public GAU19B()
@@ -26,5 +40,11 @@ public class GAU19B extends EntityType
         setCategory((byte)9); // uid 30622, M - Weapons
         setSubCategory((byte)4); // uid 30629, 12.7 mm/.50 caliber
         setSpecific((byte)4); // uid 30633, GAU-19/B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GAU19B createInstance()
+    {
+            return new GAU19B();
     }
 }

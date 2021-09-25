@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5109e8cf;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13701
+ * <p> Entity class <b><code>Ivaclassfirepatrolcraft1544</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ivaclassfirepatrolcraft1544.createInstance()</code> or <code>new Ivaclassfirepatrolcraft1544()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: Ivaclassfirepatrolcraft  = <code>20</code>; </li>
+ *     <li> Specific: _1544  = <code>3</code>; </li>
+ *     <li> Entity type uid: 13701; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77c7ed8e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolcraft
+ * @see SubCategory
+
  */
-public class Ivaclassfirepatrolcraft1544 extends EntityType
+public final class Ivaclassfirepatrolcraft1544 extends EntityType
 {
     /** Default constructor */
     public Ivaclassfirepatrolcraft1544()
@@ -26,5 +40,11 @@ public class Ivaclassfirepatrolcraft1544 extends EntityType
         setCategory((byte)7); // uid 13670, Light/Patrol craft
         setSubCategory((byte)20); // uid 13698, Iva class (fire/patrol craft)
         setSpecific((byte)3); // uid 13701, 1544
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ivaclassfirepatrolcraft1544 createInstance()
+    {
+            return new Ivaclassfirepatrolcraft1544();
     }
 }

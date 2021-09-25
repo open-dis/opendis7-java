@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7069f076;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11441
+ * <p> Entity class <b><code>DDG39HobartAustralia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDG39HobartAustralia.createInstance()</code> or <code>new DDG39HobartAustralia()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: ModifiedCharlesFAdamsClass  = <code>5</code>; </li>
+ *     <li> Specific: DDG39HobartAustralia  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11441; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@125d47c4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class DDG39HobartAustralia extends EntityType
+public final class DDG39HobartAustralia extends EntityType
 {
     /** Default constructor */
     public DDG39HobartAustralia()
@@ -26,5 +40,11 @@ public class DDG39HobartAustralia extends EntityType
         setCategory((byte)4); // uid 11372, Guided Missile Destroyer
         setSubCategory((byte)5); // uid 11439, Modified Charles F. Adams Class
         setSpecific((byte)2); // uid 11441, DDG 39 Hobart (Australia)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDG39HobartAustralia createInstance()
+    {
+            return new DDG39HobartAustralia();
     }
 }

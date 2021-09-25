@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ccdacf5;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20239
+ * <p> Entity class <b><code>CBU59BAPAM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CBU59BAPAM.createInstance()</code> or <code>new CBU59BAPAM()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: Mk7Dispenser  = <code>71</code>; </li>
+ *     <li> Specific: CBU59BAPAM  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20239; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b5de9ac. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class CBU59BAPAM extends EntityType
+public final class CBU59BAPAM extends EntityType
 {
     /** Default constructor */
     public CBU59BAPAM()
@@ -26,5 +40,11 @@ public class CBU59BAPAM extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)71); // uid 20237, Mk-7 Dispenser
         setSpecific((byte)2); // uid 20239, CBU-59/B APAM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CBU59BAPAM createInstance()
+    {
+            return new CBU59BAPAM();
     }
 }

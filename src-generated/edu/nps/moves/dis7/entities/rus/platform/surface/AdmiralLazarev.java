@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a5905d9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13512
+ * <p> Entity class <b><code>AdmiralLazarev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AdmiralLazarev.createInstance()</code> or <code>new AdmiralLazarev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Cruiser = <code>3</code>; </li>
+ *     <li> SubCategory: Kirovclass  = <code>2</code>; </li>
+ *     <li> Specific: AdmiralLazarev  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13512; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f339eae. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileCruiser
+ * @see SubCategory
+
  */
-public class AdmiralLazarev extends EntityType
+public final class AdmiralLazarev extends EntityType
 {
     /** Default constructor */
     public AdmiralLazarev()
@@ -26,5 +40,11 @@ public class AdmiralLazarev extends EntityType
         setCategory((byte)3); // uid 13504, Guided-missile Cruiser
         setSubCategory((byte)2); // uid 13510, Kirov class
         setSpecific((byte)2); // uid 13512, Admiral Lazarev
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AdmiralLazarev createInstance()
+    {
+            return new AdmiralLazarev();
     }
 }

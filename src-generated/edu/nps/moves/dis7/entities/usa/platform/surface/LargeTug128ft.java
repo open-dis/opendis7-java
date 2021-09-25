@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@236fdf;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23694
+ * <p> Entity class <b><code>LargeTug128ft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LargeTug128ft.createInstance()</code> or <code>new LargeTug128ft()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: HarborTugs  = <code>25</code>; </li>
+ *     <li> Specific: LargeTug128ft  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23694; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cdba2ed. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class LargeTug128ft extends EntityType
+public final class LargeTug128ft extends EntityType
 {
     /** Default constructor */
     public LargeTug128ft()
@@ -26,5 +40,11 @@ public class LargeTug128ft extends EntityType
         setCategory((byte)16); // uid 11701, Auxiliary
         setSubCategory((byte)25); // uid 23693, Harbor Tugs
         setSpecific((byte)1); // uid 23694, Large Tug, 128ft
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LargeTug128ft createInstance()
+    {
+            return new LargeTug128ft();
     }
 }

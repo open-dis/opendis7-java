@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29fa6b65;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15152
+ * <p> Entity class <b><code>HASMk2FN</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HASMk2FN.createInstance()</code> or <code>new HASMk2FN()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: WestlandLynxNaval  = <code>2</code>; </li>
+ *     <li> Specific: HASMk2FN  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15152; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ee8130e. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class HASMk2FN extends EntityType
+public final class HASMk2FN extends EntityType
 {
     /** Default constructor */
     public HASMk2FN()
@@ -26,5 +40,11 @@ public class HASMk2FN extends EntityType
         setCategory((byte)22); // uid 15129, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)2); // uid 15149, Westland Lynx (Naval)
         setSpecific((byte)3); // uid 15152, HAS Mk 2 (FN)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HASMk2FN createInstance()
+    {
+            return new HASMk2FN();
     }
 }

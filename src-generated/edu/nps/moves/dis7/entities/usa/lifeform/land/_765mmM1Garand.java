@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@305aaedf;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32676
+ * <p> Entity class <b><code>_765mmM1Garand</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_765mmM1Garand.createInstance()</code> or <code>new _765mmM1Garand()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: HighPowerRifles  = <code>10</code>; </li>
+ *     <li> Specific: _765mmM1Garand  = <code>51</code>; </li>
+ *     <li> Entity type uid: 32676; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74fc3fc7. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class _765mmM1Garand extends EntityType
+public final class _765mmM1Garand extends EntityType
 {
     /** Default constructor */
     public _765mmM1Garand()
@@ -26,5 +40,11 @@ public class _765mmM1Garand extends EntityType
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)10); // uid 32675, High Power Rifles
         setSpecific((byte)51); // uid 32676, 7.65mm M1 Garand
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _765mmM1Garand createInstance()
+    {
+            return new _765mmM1Garand();
     }
 }

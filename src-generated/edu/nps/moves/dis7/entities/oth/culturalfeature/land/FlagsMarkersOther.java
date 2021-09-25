@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@280ecc33;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 21991
+ * <p> Entity class <b><code>FlagsMarkersOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlagsMarkersOther.createInstance()</code> or <code>new FlagsMarkersOther()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Flags/markers = <code>6</code>; </li>
+ *     <li> SubCategory: FlagsMarkersOther  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21991; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b65084e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flagsmarkers
+ * @see SubCategory
+
  */
-public class FlagsMarkersOther extends EntityType
+public final class FlagsMarkersOther extends EntityType
 {
     /** Default constructor */
     public FlagsMarkersOther()
@@ -25,5 +39,11 @@ public class FlagsMarkersOther extends EntityType
 
         setCategory((byte)6); // uid 21990, Flags/markers
         setSubCategory((byte)0); // uid 21991, Flags/Markers, Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlagsMarkersOther createInstance()
+    {
+            return new FlagsMarkersOther();
     }
 }

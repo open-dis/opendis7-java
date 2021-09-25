@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3451fc88;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_3_PETROLEUM_OILS_LUBRICANTS;
- *
- * Entity type uid: 30682
+ * <p> Entity class <b><code>DieselFuelF54DF2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DieselFuelF54DF2.createInstance()</code> or <code>new DieselFuelF54DF2()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_3_PETROLEUM_OILS_LUBRICANTS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: W - POL for Land Vehicles = <code>3</code>; </li>
+ *     <li> SubCategory: DieselFuelF54DF2  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30682; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f240187. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see WPOLforLandVehicles
+ * @see SubCategory
+
  */
-public class DieselFuelF54DF2 extends EntityType
+public final class DieselFuelF54DF2 extends EntityType
 {
     /** Default constructor */
     public DieselFuelF54DF2()
@@ -25,5 +39,11 @@ public class DieselFuelF54DF2 extends EntityType
 
         setCategory((byte)3); // uid 30680, W - POL for Land Vehicles
         setSubCategory((byte)2); // uid 30682, Diesel Fuel (F-54/DF-2)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DieselFuelF54DF2 createInstance()
+    {
+            return new DieselFuelF54DF2();
     }
 }

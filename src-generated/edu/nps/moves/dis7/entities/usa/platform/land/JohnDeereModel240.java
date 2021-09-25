@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7645f03e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26024
+ * <p> Entity class <b><code>JohnDeereModel240</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JohnDeereModel240.createInstance()</code> or <code>new JohnDeereModel240()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Construction Specialty Vehicle = <code>87</code>; </li>
+ *     <li> SubCategory: SkidSteer  = <code>23</code>; </li>
+ *     <li> Specific: JohnDeereModel240  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26024; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b916808. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ConstructionSpecialtyVehicle
+ * @see SubCategory
+
  */
-public class JohnDeereModel240 extends EntityType
+public final class JohnDeereModel240 extends EntityType
 {
     /** Default constructor */
     public JohnDeereModel240()
@@ -26,5 +40,11 @@ public class JohnDeereModel240 extends EntityType
         setCategory((byte)87); // uid 26009, Construction Specialty Vehicle
         setSubCategory((byte)23); // uid 26023, Skid Steer
         setSpecific((byte)1); // uid 26024, John Deere Model 240
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JohnDeereModel240 createInstance()
+    {
+            return new JohnDeereModel240();
     }
 }

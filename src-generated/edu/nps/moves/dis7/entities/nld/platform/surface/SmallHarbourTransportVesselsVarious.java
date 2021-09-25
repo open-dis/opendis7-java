@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@37d3d232;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28290
+ * <p> Entity class <b><code>SmallHarbourTransportVesselsVarious</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SmallHarbourTransportVesselsVarious.createInstance()</code> or <code>new SmallHarbourTransportVesselsVarious()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: SmallHarbourTransportVesselsVarious  = <code>15</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28290; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@43c67247. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SmallHarbourTransportVesselsVarious extends EntityType
+public final class SmallHarbourTransportVesselsVarious extends EntityType
 {
     /** Default constructor */
     public SmallHarbourTransportVesselsVarious()
@@ -25,5 +39,11 @@ public class SmallHarbourTransportVesselsVarious extends EntityType
 
         setCategory((byte)16); // uid 18942, Auxiliary
         setSubCategory((byte)15); // uid 28290, Small Harbour Transport Vessels (Various)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SmallHarbourTransportVesselsVarious createInstance()
+    {
+            return new SmallHarbourTransportVesselsVarious();
     }
 }

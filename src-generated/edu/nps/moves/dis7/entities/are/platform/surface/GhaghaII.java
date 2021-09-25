@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33063f5b;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18721
+ * <p> Entity class <b><code>GhaghaII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GhaghaII.createInstance()</code> or <code>new GhaghaII()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LCM  = <code>1</code>; </li>
+ *     <li> Specific: GhaghaII  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18721; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f69e2b. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class GhaghaII extends EntityType
+public final class GhaghaII extends EntityType
 {
     /** Default constructor */
     public GhaghaII()
@@ -26,5 +40,11 @@ public class GhaghaII extends EntityType
         setCategory((byte)11); // uid 18719, Landing Craft
         setSubCategory((byte)1); // uid 18720, LCM
         setSpecific((byte)1); // uid 18721, Ghagha II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GhaghaII createInstance()
+    {
+            return new GhaghaII();
     }
 }

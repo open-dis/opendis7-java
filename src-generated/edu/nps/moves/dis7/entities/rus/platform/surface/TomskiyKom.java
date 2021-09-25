@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73ad7e90;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13774
+ * <p> Entity class <b><code>TomskiyKom</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TomskiyKom.createInstance()</code> or <code>new TomskiyKom()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank landing ship = <code>10</code>; </li>
+ *     <li> SubCategory: AlligatorClass  = <code>2</code>; </li>
+ *     <li> Specific: TomskiyKom  = <code>10</code>; </li>
+ *     <li> Entity type uid: 13774; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5109e8cf. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tanklandingship
+ * @see SubCategory
+
  */
-public class TomskiyKom extends EntityType
+public final class TomskiyKom extends EntityType
 {
     /** Default constructor */
     public TomskiyKom()
@@ -26,5 +40,11 @@ public class TomskiyKom extends EntityType
         setCategory((byte)10); // uid 13758, Tank landing ship
         setSubCategory((byte)2); // uid 13764, Alligator Class
         setSpecific((byte)10); // uid 13774, Tomskiy Kom.
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TomskiyKom createInstance()
+    {
+            return new TomskiyKom();
     }
 }

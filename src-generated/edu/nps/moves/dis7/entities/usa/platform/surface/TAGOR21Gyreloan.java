@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16ee9aa7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11881
+ * <p> Entity class <b><code>TAGOR21Gyreloan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAGOR21Gyreloan.createInstance()</code> or <code>new TAGOR21Gyreloan()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: OceanographicResearchShipsSpecialMissionSupport  = <code>19</code>; </li>
+ *     <li> Specific: TAGOR21Gyreloan  = <code>6</code>; </li>
+ *     <li> Entity type uid: 11881; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16e99306. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAGOR21Gyreloan extends EntityType
+public final class TAGOR21Gyreloan extends EntityType
 {
     /** Default constructor */
     public TAGOR21Gyreloan()
@@ -26,5 +40,11 @@ public class TAGOR21Gyreloan extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)19); // uid 11875, Oceanographic Research Ships (Special Mission Support)
         setSpecific((byte)6); // uid 11881, TAGOR 21 Gyre (loan)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAGOR21Gyreloan createInstance()
+    {
+            return new TAGOR21Gyreloan();
     }
 }

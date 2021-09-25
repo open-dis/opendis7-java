@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64f857e7;
- * Country: Liberia (LBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24532
+ * <p> Entity class <b><code>Kuban</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Kuban.createInstance()</code> or <code>new Kuban()</code>. </p>
+ * <ul>
+ *     <li> Country: Liberia (LBR) = <code>125</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: LiquidNaturalGasLNGTanker  = <code>3</code>; </li>
+ *     <li> Specific: Kuban  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24532; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a2da905. </p>
+ * @see Country#LIBERIA_LBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class Kuban extends EntityType
+public final class Kuban extends EntityType
 {
     /** Default constructor */
     public Kuban()
@@ -26,5 +40,11 @@ public class Kuban extends EntityType
         setCategory((byte)82); // uid 24523, Tanker (Group 3 Merchant)
         setSubCategory((byte)3); // uid 24529, Liquid Natural Gas (LNG) Tanker
         setSpecific((byte)3); // uid 24532, Kuban
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Kuban createInstance()
+    {
+            return new Kuban();
     }
 }

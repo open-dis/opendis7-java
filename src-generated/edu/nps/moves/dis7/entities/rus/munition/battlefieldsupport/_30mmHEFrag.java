@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b9e69fb;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20912
+ * <p> Entity class <b><code>_30mmHEFrag</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_30mmHEFrag.createInstance()</code> or <code>new _30mmHEFrag()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _30mmautocannonammunition  = <code>47</code>; </li>
+ *     <li> Specific: _30mmHEFrag  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20912; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ef5dd23. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _30mmHEFrag extends EntityType
+public final class _30mmHEFrag extends EntityType
 {
     /** Default constructor */
     public _30mmHEFrag()
@@ -26,5 +40,11 @@ public class _30mmHEFrag extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)47); // uid 20911, 30mm autocannon ammunition
         setSpecific((byte)1); // uid 20912, 30mm HE-Frag
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _30mmHEFrag createInstance()
+    {
+            return new _30mmHEFrag();
     }
 }

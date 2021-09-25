@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class RecordQueryRPdu extends SimulationManagementWithReliabilityFamilyPd
    protected List< RecordQuerySpecification > recordIDs = new ArrayList< RecordQuerySpecification >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RecordQueryRPdu()
  {
     setPduType( DisPduType.RECORD_QUERY_RELIABLE );
@@ -57,16 +56,19 @@ public int getMarshalledSize()
 
    marshalSize = super.getMarshalledSize();
    marshalSize += 4;  // requestID
-   marshalSize += requiredReliabilityService.getMarshalledSize();
+   if (requiredReliabilityService != null)
+       marshalSize += requiredReliabilityService.getMarshalledSize();
    marshalSize += 1;  // pad1
-   marshalSize += eventType.getMarshalledSize();
+   if (eventType != null)
+       marshalSize += eventType.getMarshalledSize();
    marshalSize += 4;  // time
    marshalSize += 4;  // numberOfRecords
-   for(int idx=0; idx < recordIDs.size(); idx++)
-   {
-        RecordQuerySpecification listElement = recordIDs.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (recordIDs != null)
+       for (int idx=0; idx < recordIDs.size(); idx++)
+       {
+            RecordQuerySpecification listElement = recordIDs.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -193,7 +195,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(time);
        dos.writeInt(recordIDs.size());
 
-       for(int idx = 0; idx < recordIDs.size(); idx++)
+       for (int idx = 0; idx < recordIDs.size(); idx++)
        {
             RecordQuerySpecification aRecordQuerySpecification = recordIDs.get(idx);
             aRecordQuerySpecification.marshal(dos);
@@ -233,7 +235,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfRecords; idx++)
+        for (int idx = 0; idx < numberOfRecords; idx++)
         {
             RecordQuerySpecification anX = new RecordQuerySpecification();
             uPosition += anX.unmarshal(dis);
@@ -266,7 +268,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)time);
    byteBuffer.putInt( (int)recordIDs.size());
 
-   for(int idx = 0; idx < recordIDs.size(); idx++)
+   for (int idx = 0; idx < recordIDs.size(); idx++)
    {
         RecordQuerySpecification aRecordQuerySpecification = recordIDs.get(idx);
         aRecordQuerySpecification.marshal(byteBuffer);
@@ -287,19 +289,33 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    requestID = byteBuffer.getInt();
-    requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
-    pad1 = (byte)(byteBuffer.get() & 0xFF);
-    eventType = RecordQueryREventType.unmarshalEnum(byteBuffer);
-    time = byteBuffer.getInt();
-    numberOfRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfRecords; idx++)
+    try
     {
-    RecordQuerySpecification anX = new RecordQuerySpecification();
-    anX.unmarshal(byteBuffer);
-    recordIDs.add(anX);
-    }
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+        // attribute requiredReliabilityService marked as not serialized
+        requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
+        // attribute pad1 marked as not serialized
+        pad1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute eventType marked as not serialized
+        eventType = RecordQueryREventType.unmarshalEnum(byteBuffer);
+        // attribute time marked as not serialized
+        time = byteBuffer.getInt();
+        // attribute numberOfRecords marked as not serialized
+        numberOfRecords = byteBuffer.getInt();
+        // attribute recordIDs marked as not serialized
+        for (int idx = 0; idx < numberOfRecords; idx++)
+        {
+        RecordQuerySpecification anX = new RecordQuerySpecification();
+        anX.unmarshal(byteBuffer);
+        recordIDs.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -334,7 +350,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (eventType == rhs.eventType)) ivarsEqual = false;
      if( ! (time == rhs.time)) ivarsEqual = false;
 
-     for(int idx = 0; idx < recordIDs.size(); idx++)
+     for (int idx = 0; idx < recordIDs.size(); idx++)
         if( ! ( recordIDs.get(idx).equals(rhs.recordIDs.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

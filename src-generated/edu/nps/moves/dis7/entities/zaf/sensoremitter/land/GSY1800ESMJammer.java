@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5788722f;
- * Country: South Africa (ZAF);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23705
+ * <p> Entity class <b><code>GSY1800ESMJammer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GSY1800ESMJammer.createInstance()</code> or <code>new GSY1800ESMJammer()</code>. </p>
+ * <ul>
+ *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: Multifunction  = <code>1</code>; </li>
+ *     <li> Specific: GSY1800ESMJammer  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23705; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43ab0659. </p>
+ * @see Country#SOUTH_AFRICA_ZAF
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class GSY1800ESMJammer extends EntityType
+public final class GSY1800ESMJammer extends EntityType
 {
     /** Default constructor */
     public GSY1800ESMJammer()
@@ -26,5 +40,11 @@ public class GSY1800ESMJammer extends EntityType
         setCategory((byte)2); // uid 23703, RF Active
         setSubCategory((byte)1); // uid 23704, Multi-function
         setSpecific((byte)1); // uid 23705, GSY 1800 ESM/Jammer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GSY1800ESMJammer createInstance()
+    {
+            return new GSY1800ESMJammer();
     }
 }

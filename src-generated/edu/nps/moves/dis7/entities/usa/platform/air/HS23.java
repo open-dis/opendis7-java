@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e3ff233;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11148
+ * <p> Entity class <b><code>HS23</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HS23.createInstance()</code> or <code>new HS23()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/patrol helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: SikorskyS70B  = <code>3</code>; </li>
+ *     <li> Specific: HS23  = <code>5</code>; </li>
+ *     <li> Entity type uid: 11148; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2839e3c8. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarepatrolhelicopter
+ * @see SubCategory
+
  */
-public class HS23 extends EntityType
+public final class HS23 extends EntityType
 {
     /** Default constructor */
     public HS23()
@@ -26,5 +40,11 @@ public class HS23 extends EntityType
         setCategory((byte)22); // uid 11133, Anti-Submarine Warfare/patrol helicopter
         setSubCategory((byte)3); // uid 11143, Sikorsky S-70B
         setSpecific((byte)5); // uid 11148, HS.23
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HS23 createInstance()
+    {
+            return new HS23();
     }
 }

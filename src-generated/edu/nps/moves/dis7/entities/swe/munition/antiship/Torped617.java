@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a4af081;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29565
+ * <p> Entity class <b><code>Torped617</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Torped617.createInstance()</code> or <code>new Torped617()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Torped61TP61  = <code>3</code>; </li>
+ *     <li> Specific: Torped617  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29565; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54f2df29. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Torped617 extends EntityType
+public final class Torped617 extends EntityType
 {
     /** Default constructor */
     public Torped617()
@@ -26,5 +40,11 @@ public class Torped617 extends EntityType
         setCategory((byte)1); // uid 27301, Guided
         setSubCategory((byte)3); // uid 29563, Torped 61 (TP 61)
         setSpecific((byte)2); // uid 29565, Torped 617
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Torped617 createInstance()
+    {
+            return new Torped617();
     }
 }

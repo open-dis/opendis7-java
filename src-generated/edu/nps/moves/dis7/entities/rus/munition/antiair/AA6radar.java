@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26fadd98;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20315
+ * <p> Entity class <b><code>AA6radar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AA6radar.createInstance()</code> or <code>new AA6radar()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AA6Acrid  = <code>6</code>; </li>
+ *     <li> Specific: AA6radar  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20315; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27da994b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AA6radar extends EntityType
+public final class AA6radar extends EntityType
 {
     /** Default constructor */
     public AA6radar()
@@ -26,5 +40,11 @@ public class AA6radar extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)6); // uid 20313, AA-6 Acrid
         setSpecific((byte)2); // uid 20315, AA-6, radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AA6radar createInstance()
+    {
+            return new AA6radar();
     }
 }

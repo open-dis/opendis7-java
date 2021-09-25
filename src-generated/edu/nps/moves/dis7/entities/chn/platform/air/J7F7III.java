@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15d9bc04;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16971
+ * <p> Entity class <b><code>J7F7III</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>J7F7III.createInstance()</code> or <code>new J7F7III()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: XienJ7Fishbed  = <code>2</code>; </li>
+ *     <li> Specific: J7F7III  = <code>3</code>; </li>
+ *     <li> Entity type uid: 16971; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f51b3e0. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class J7F7III extends EntityType
+public final class J7F7III extends EntityType
 {
     /** Default constructor */
     public J7F7III()
@@ -26,5 +40,11 @@ public class J7F7III extends EntityType
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
         setSubCategory((byte)2); // uid 16968, Xien J-7 (Fishbed)
         setSpecific((byte)3); // uid 16971, J-7 / F-7 III
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static J7F7III createInstance()
+    {
+            return new J7F7III();
     }
 }

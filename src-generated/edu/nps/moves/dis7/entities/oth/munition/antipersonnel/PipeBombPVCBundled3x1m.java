@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@133aacbe;
- * Country: Other;
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 26357
+ * <p> Entity class <b><code>PipeBombPVCBundled3x1m</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PipeBombPVCBundled3x1m.createInstance()</code> or <code>new PipeBombPVCBundled3x1m()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: PipeBombPVC  = <code>3</code>; </li>
+ *     <li> Specific: PipeBombPVCBundled3x1m  = <code>10</code>; </li>
+ *     <li> Entity type uid: 26357; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2becfd4c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class PipeBombPVCBundled3x1m extends EntityType
+public final class PipeBombPVCBundled3x1m extends EntityType
 {
     /** Default constructor */
     public PipeBombPVCBundled3x1m()
@@ -26,5 +40,11 @@ public class PipeBombPVCBundled3x1m extends EntityType
         setCategory((byte)3); // uid 21697, Fixed
         setSubCategory((byte)3); // uid 26353, Pipe Bomb, PVC
         setSpecific((byte)10); // uid 26357, Pipe Bomb, PVC, Bundled (3 x .1m)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PipeBombPVCBundled3x1m createInstance()
+    {
+            return new PipeBombPVCBundled3x1m();
     }
 }

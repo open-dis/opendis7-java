@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bb6ab3a;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24584
+ * <p> Entity class <b><code>_1Hurizan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1Hurizan.createInstance()</code> or <code>new _1Hurizan()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: CrudeOilTankerupto159999DWT  = <code>5</code>; </li>
+ *     <li> Specific: _1Hurizan  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24584; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2101b44a. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class _1Hurizan extends EntityType
+public final class _1Hurizan extends EntityType
 {
     /** Default constructor */
     public _1Hurizan()
@@ -26,5 +40,11 @@ public class _1Hurizan extends EntityType
         setCategory((byte)82); // uid 24580, Tanker (Group 3 Merchant)
         setSubCategory((byte)5); // uid 24581, Crude Oil Tanker (up to 159,999 DWT)
         setSpecific((byte)3); // uid 24584, 1 Hurizan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1Hurizan createInstance()
+    {
+            return new _1Hurizan();
     }
 }

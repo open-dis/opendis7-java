@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@c827db;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24659
+ * <p> Entity class <b><code>GenericHydrofoilVessel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericHydrofoilVessel.createInstance()</code> or <code>new GenericHydrofoilVessel()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other Vessels = <code>87</code>; </li>
+ *     <li> SubCategory: GenericHydrofoilVessel  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24659; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@70d8de. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OtherVessels
+ * @see SubCategory
+
  */
-public class GenericHydrofoilVessel extends EntityType
+public final class GenericHydrofoilVessel extends EntityType
 {
     /** Default constructor */
     public GenericHydrofoilVessel()
@@ -25,5 +39,11 @@ public class GenericHydrofoilVessel extends EntityType
 
         setCategory((byte)87); // uid 24656, Other Vessels
         setSubCategory((byte)3); // uid 24659, Generic Hydrofoil Vessel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericHydrofoilVessel createInstance()
+    {
+            return new GenericHydrofoilVessel();
     }
 }

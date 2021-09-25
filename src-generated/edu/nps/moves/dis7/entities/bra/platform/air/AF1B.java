@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7085bdee;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 32099
+ * <p> Entity class <b><code>AF1B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AF1B.createInstance()</code> or <code>new AF1B()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasA4Skyhawk  = <code>2</code>; </li>
+ *     <li> Specific: AF1B  = <code>3</code>; </li>
+ *     <li> Entity type uid: 32099; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9629756. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class AF1B extends EntityType
+public final class AF1B extends EntityType
 {
     /** Default constructor */
     public AF1B()
@@ -26,5 +40,11 @@ public class AF1B extends EntityType
         setCategory((byte)2); // uid 25694, Attack/Strike
         setSubCategory((byte)2); // uid 32096, McDonnell-Douglas A-4 Skyhawk
         setSpecific((byte)3); // uid 32099, AF-1B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AF1B createInstance()
+    {
+            return new AF1B();
     }
 }

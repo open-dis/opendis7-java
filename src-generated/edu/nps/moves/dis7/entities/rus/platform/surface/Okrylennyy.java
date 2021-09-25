@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dca2615;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13552
+ * <p> Entity class <b><code>Okrylennyy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Okrylennyy.createInstance()</code> or <code>new Okrylennyy()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: Sovremennyyclass  = <code>2</code>; </li>
+ *     <li> Specific: Okrylennyy  = <code>8</code>; </li>
+ *     <li> Entity type uid: 13552; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58112bc4. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileDestroyer
+ * @see SubCategory
+
  */
-public class Okrylennyy extends EntityType
+public final class Okrylennyy extends EntityType
 {
     /** Default constructor */
     public Okrylennyy()
@@ -26,5 +40,11 @@ public class Okrylennyy extends EntityType
         setCategory((byte)4); // uid 13530, Guided-missile Destroyer
         setSubCategory((byte)2); // uid 13544, Sovremennyy class
         setSpecific((byte)8); // uid 13552, Okrylennyy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Okrylennyy createInstance()
+    {
+            return new Okrylennyy();
     }
 }

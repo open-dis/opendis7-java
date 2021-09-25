@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c011855;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30742
+ * <p> Entity class <b><code>SUU20AA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SUU20AA.createInstance()</code> or <code>new SUU20AA()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
+ *     <li> SubCategory: Pylon  = <code>3</code>; </li>
+ *     <li> Specific: SUU20AA  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30742; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d7b4e04. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see JRacksAdaptorsPylons
+ * @see SubCategory
+
  */
-public class SUU20AA extends EntityType
+public final class SUU20AA extends EntityType
 {
     /** Default constructor */
     public SUU20AA()
@@ -26,5 +40,11 @@ public class SUU20AA extends EntityType
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)3); // uid 30739, Pylon
         setSpecific((byte)3); // uid 30742, SUU-20AA
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SUU20AA createInstance()
+    {
+            return new SUU20AA();
     }
 }

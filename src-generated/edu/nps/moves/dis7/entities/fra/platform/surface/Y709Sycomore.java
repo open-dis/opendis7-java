@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@65f8f5ae;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16106
+ * <p> Entity class <b><code>Y709Sycomore</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y709Sycomore.createInstance()</code> or <code>new Y709Sycomore()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: HarbourtugsRemorqueursDePort  = <code>2</code>; </li>
+ *     <li> Specific: _105tontype  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16106; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7ce69770. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y709Sycomore extends EntityType
+public final class Y709Sycomore extends EntityType
 {
     /** Default constructor */
     public Y709Sycomore()
@@ -27,5 +41,11 @@ public class Y709Sycomore extends EntityType
         setSubCategory((byte)2); // uid 16087, Harbour tugs (Remorqueurs De Port)
         setSpecific((byte)1); // uid 16088, 105-ton type
         setExtra((byte)18); // uid 16106, Y 709 Sycomore
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y709Sycomore createInstance()
+    {
+            return new Y709Sycomore();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49cf9028;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31012
+ * <p> Entity class <b><code>_431AdmiralKasatonov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_431AdmiralKasatonov.createInstance()</code> or <code>new _431AdmiralKasatonov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: AdmiralGorshkovClassProject22350  = <code>14</code>; </li>
+ *     <li> Specific: _431AdmiralKasatonov  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31012; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46866946. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class _431AdmiralKasatonov extends EntityType
+public final class _431AdmiralKasatonov extends EntityType
 {
     /** Default constructor */
     public _431AdmiralKasatonov()
@@ -26,5 +40,11 @@ public class _431AdmiralKasatonov extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)14); // uid 29501, Admiral Gorshkov Class (Project 22350)
         setSpecific((byte)2); // uid 31012, 431 Admiral Kasatonov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _431AdmiralKasatonov createInstance()
+    {
+            return new _431AdmiralKasatonov();
     }
 }

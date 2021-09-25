@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bcb12e6;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10518
+ * <p> Entity class <b><code>M54cargo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M54cargo.createInstance()</code> or <code>new M54cargo()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: M546x65toncargotruckseries  = <code>14</code>; </li>
+ *     <li> Specific: M54cargo  = <code>4</code>; </li>
+ *     <li> Entity type uid: 10518; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d4fb213. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class M54cargo extends EntityType
+public final class M54cargo extends EntityType
 {
     /** Default constructor */
     public M54cargo()
@@ -26,5 +40,11 @@ public class M54cargo extends EntityType
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)14); // uid 10514, M54 6x6 5-ton cargo truck series
         setSpecific((byte)4); // uid 10518, M54, cargo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M54cargo createInstance()
+    {
+            return new M54cargo();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d13379e;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22418
+ * <p> Entity class <b><code>FlatFaceP15CASTA2E1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlatFaceP15CASTA2E1.createInstance()</code> or <code>new FlatFaceP15CASTA2E1()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
+ *     <li> Specific: FlatFaceP15CASTA2E1  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22418; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b0e9e0c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class FlatFaceP15CASTA2E1 extends EntityType
+public final class FlatFaceP15CASTA2E1 extends EntityType
 {
     /** Default constructor */
     public FlatFaceP15CASTA2E1()
@@ -26,5 +40,11 @@ public class FlatFaceP15CASTA2E1 extends EntityType
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)2); // uid 22415, Early Warning/Surveillance Radar
         setSpecific((byte)3); // uid 22418, Flat Face (P-15, CASTA-2E1)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlatFaceP15CASTA2E1 createInstance()
+    {
+            return new FlatFaceP15CASTA2E1();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72d818d1;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25700
+ * <p> Entity class <b><code>EmbraerEMB145MULTIINTELR99BR99</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EmbraerEMB145MULTIINTELR99BR99.createInstance()</code> or <code>new EmbraerEMB145MULTIINTELR99BR99()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: EmbraerEMB145MULTIINTELR99BR99  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25700; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2a5ca609. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class EmbraerEMB145MULTIINTELR99BR99 extends EntityType
+public final class EmbraerEMB145MULTIINTELR99BR99 extends EntityType
 {
     /** Default constructor */
     public EmbraerEMB145MULTIINTELR99BR99()
@@ -25,5 +39,11 @@ public class EmbraerEMB145MULTIINTELR99BR99 extends EntityType
 
         setCategory((byte)8); // uid 25698, Surveillance/C2 (Airborne Early Warning)
         setSubCategory((byte)2); // uid 25700, Embraer EMB 145 MULTI INTEL (R-99B/R-99)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EmbraerEMB145MULTIINTELR99BR99 createInstance()
+    {
+            return new EmbraerEMB145MULTIINTELR99BR99();
     }
 }

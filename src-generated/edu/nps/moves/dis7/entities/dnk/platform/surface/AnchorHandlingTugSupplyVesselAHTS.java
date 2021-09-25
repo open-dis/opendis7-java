@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e178745;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32981
+ * <p> Entity class <b><code>AnchorHandlingTugSupplyVesselAHTS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AnchorHandlingTugSupplyVesselAHTS.createInstance()</code> or <code>new AnchorHandlingTugSupplyVesselAHTS()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Support Vessel = <code>83</code>; </li>
+ *     <li> SubCategory: AnchorHandlingTugSupplyVesselAHTS  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32981; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@62ddbd7e. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SupportVessel
+ * @see SubCategory
+
  */
-public class AnchorHandlingTugSupplyVesselAHTS extends EntityType
+public final class AnchorHandlingTugSupplyVesselAHTS extends EntityType
 {
     /** Default constructor */
     public AnchorHandlingTugSupplyVesselAHTS()
@@ -25,5 +39,11 @@ public class AnchorHandlingTugSupplyVesselAHTS extends EntityType
 
         setCategory((byte)83); // uid 32582, Support Vessel
         setSubCategory((byte)7); // uid 32981, Anchor Handling Tug Supply Vessel (AHTS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AnchorHandlingTugSupplyVesselAHTS createInstance()
+    {
+            return new AnchorHandlingTugSupplyVesselAHTS();
     }
 }

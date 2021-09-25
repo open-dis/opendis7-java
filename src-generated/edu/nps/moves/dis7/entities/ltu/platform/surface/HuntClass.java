@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@790174f2;
- * Country: Lithuania (LTU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31794
+ * <p> Entity class <b><code>HuntClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HuntClass.createInstance()</code> or <code>new HuntClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Lithuania (LTU) = <code>255</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: HuntClass  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31794; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7a56812e. </p>
+ * @see Country#LITHUANIA_LTU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class HuntClass extends EntityType
+public final class HuntClass extends EntityType
 {
     /** Default constructor */
     public HuntClass()
@@ -25,5 +39,11 @@ public class HuntClass extends EntityType
 
         setCategory((byte)8); // uid 27782, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 31794, Hunt Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HuntClass createInstance()
+    {
+            return new HuntClass();
     }
 }

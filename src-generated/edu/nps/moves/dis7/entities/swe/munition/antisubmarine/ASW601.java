@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40faff12;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 27016
+ * <p> Entity class <b><code>ASW601</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASW601.createInstance()</code> or <code>new ASW601()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: ElmaAntiSubmarineMortar  = <code>1</code>; </li>
+ *     <li> Specific: ASW601  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27016; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2774dcf4. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class ASW601 extends EntityType
+public final class ASW601 extends EntityType
 {
     /** Default constructor */
     public ASW601()
@@ -26,5 +40,11 @@ public class ASW601 extends EntityType
         setCategory((byte)2); // uid 27012, Ballistic
         setSubCategory((byte)1); // uid 27013, Elma Anti-Submarine Mortar
         setSpecific((byte)3); // uid 27016, ASW-601
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASW601 createInstance()
+    {
+            return new ASW601();
     }
 }

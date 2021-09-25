@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -73,7 +72,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
    protected List< StandardVariableSpecification > dERecords = new ArrayList< StandardVariableSpecification >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DirectedEnergyFirePdu()
  {
     setPduType( DisPduType.DIRECTED_ENERGY_FIRE );
@@ -89,28 +88,36 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += firingEntityID.getMarshalledSize();
-   marshalSize += eventID.getMarshalledSize();
-   marshalSize += munitionType.getMarshalledSize();
-   marshalSize += shotStartTime.getMarshalledSize();
+   if (firingEntityID != null)
+       marshalSize += firingEntityID.getMarshalledSize();
+   if (eventID != null)
+       marshalSize += eventID.getMarshalledSize();
+   if (munitionType != null)
+       marshalSize += munitionType.getMarshalledSize();
+   if (shotStartTime != null)
+       marshalSize += shotStartTime.getMarshalledSize();
    marshalSize += 4;  // commulativeShotTime
-   marshalSize += apertureEmitterLocation.getMarshalledSize();
+   if (apertureEmitterLocation != null)
+       marshalSize += apertureEmitterLocation.getMarshalledSize();
    marshalSize += 4;  // apertureDiameter
    marshalSize += 4;  // wavelength
    marshalSize += 4;  // pad1
    marshalSize += 4;  // pulseRepititionFrequency
    marshalSize += 4;  // pulseWidth
-   marshalSize += flags.getMarshalledSize();
-   marshalSize += pulseShape.getMarshalledSize();
+   if (flags != null)
+       marshalSize += flags.getMarshalledSize();
+   if (pulseShape != null)
+       marshalSize += pulseShape.getMarshalledSize();
    marshalSize += 1;  // pad2
    marshalSize += 4;  // pad3
    marshalSize += 2;  // pad4
    marshalSize += 2;  // numberOfDERecords
-   for(int idx=0; idx < dERecords.size(); idx++)
-   {
-        StandardVariableSpecification listElement = dERecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (dERecords != null)
+       for (int idx=0; idx < dERecords.size(); idx++)
+       {
+            StandardVariableSpecification listElement = dERecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -431,7 +438,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(pad4);
        dos.writeShort(dERecords.size());
 
-       for(int idx = 0; idx < dERecords.size(); idx++)
+       for (int idx = 0; idx < dERecords.size(); idx++)
        {
             StandardVariableSpecification aStandardVariableSpecification = dERecords.get(idx);
             aStandardVariableSpecification.marshal(dos);
@@ -487,7 +494,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfDERecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfDERecords; idx++)
+        for (int idx = 0; idx < numberOfDERecords; idx++)
         {
             StandardVariableSpecification anX = new StandardVariableSpecification();
             uPosition += anX.unmarshal(dis);
@@ -531,7 +538,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)pad4);
    byteBuffer.putShort( (short)dERecords.size());
 
-   for(int idx = 0; idx < dERecords.size(); idx++)
+   for (int idx = 0; idx < dERecords.size(); idx++)
    {
         StandardVariableSpecification aStandardVariableSpecification = dERecords.get(idx);
         aStandardVariableSpecification.marshal(byteBuffer);
@@ -552,30 +559,55 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    firingEntityID.unmarshal(byteBuffer);
-    eventID.unmarshal(byteBuffer);
-    munitionType.unmarshal(byteBuffer);
-    shotStartTime.unmarshal(byteBuffer);
-    commulativeShotTime = byteBuffer.getFloat();
-    apertureEmitterLocation.unmarshal(byteBuffer);
-    apertureDiameter = byteBuffer.getFloat();
-    wavelength = byteBuffer.getFloat();
-    pad1 = byteBuffer.getInt();
-    pulseRepititionFrequency = byteBuffer.getFloat();
-    pulseWidth = byteBuffer.getFloat();
-    flags.unmarshal(byteBuffer);
-    pulseShape = DEFirePulseShape.unmarshalEnum(byteBuffer);
-    pad2 = (byte)(byteBuffer.get() & 0xFF);
-    pad3 = byteBuffer.getInt();
-    pad4 = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfDERecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfDERecords; idx++)
+    try
     {
-    StandardVariableSpecification anX = new StandardVariableSpecification();
-    anX.unmarshal(byteBuffer);
-    dERecords.add(anX);
-    }
+        // attribute firingEntityID marked as not serialized
+        firingEntityID.unmarshal(byteBuffer);
+        // attribute eventID marked as not serialized
+        eventID.unmarshal(byteBuffer);
+        // attribute munitionType marked as not serialized
+        munitionType.unmarshal(byteBuffer);
+        // attribute shotStartTime marked as not serialized
+        shotStartTime.unmarshal(byteBuffer);
+        // attribute commulativeShotTime marked as not serialized
+        commulativeShotTime = byteBuffer.getFloat();
+        // attribute apertureEmitterLocation marked as not serialized
+        apertureEmitterLocation.unmarshal(byteBuffer);
+        // attribute apertureDiameter marked as not serialized
+        apertureDiameter = byteBuffer.getFloat();
+        // attribute wavelength marked as not serialized
+        wavelength = byteBuffer.getFloat();
+        // attribute pad1 marked as not serialized
+        pad1 = byteBuffer.getInt();
+        // attribute pulseRepititionFrequency marked as not serialized
+        pulseRepititionFrequency = byteBuffer.getFloat();
+        // attribute pulseWidth marked as not serialized
+        pulseWidth = byteBuffer.getFloat();
+        // attribute flags marked as not serialized
+        flags.unmarshal(byteBuffer);
+        // attribute pulseShape marked as not serialized
+        pulseShape = DEFirePulseShape.unmarshalEnum(byteBuffer);
+        // attribute pad2 marked as not serialized
+        pad2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pad3 marked as not serialized
+        pad3 = byteBuffer.getInt();
+        // attribute pad4 marked as not serialized
+        pad4 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfDERecords marked as not serialized
+        numberOfDERecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute dERecords marked as not serialized
+        for (int idx = 0; idx < numberOfDERecords; idx++)
+        {
+        StandardVariableSpecification anX = new StandardVariableSpecification();
+        anX.unmarshal(byteBuffer);
+        dERecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -621,7 +653,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (pad3 == rhs.pad3)) ivarsEqual = false;
      if( ! (pad4 == rhs.pad4)) ivarsEqual = false;
 
-     for(int idx = 0; idx < dERecords.size(); idx++)
+     for (int idx = 0; idx < dERecords.size(); idx++)
         if( ! ( dERecords.get(idx).equals(rhs.dERecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

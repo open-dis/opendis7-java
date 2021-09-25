@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@75120e58;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26322
+ * <p> Entity class <b><code>Pinzgauer710T</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Pinzgauer710T.createInstance()</code> or <code>new Pinzgauer710T()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: PinzgauerHighMobilityAllTerrainVehicle  = <code>15</code>; </li>
+ *     <li> Specific: Pinzgauer7104x4  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26322; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@529c2a9a. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class Pinzgauer710T extends EntityType
+public final class Pinzgauer710T extends EntityType
 {
     /** Default constructor */
     public Pinzgauer710T()
@@ -27,5 +41,11 @@ public class Pinzgauer710T extends EntityType
         setSubCategory((byte)15); // uid 26319, Pinzgauer High-Mobility All-Terrain Vehicle
         setSpecific((byte)1); // uid 26320, Pinzgauer 710 4x4
         setExtra((byte)2); // uid 26322, Pinzgauer 710T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Pinzgauer710T createInstance()
+    {
+            return new Pinzgauer710T();
     }
 }

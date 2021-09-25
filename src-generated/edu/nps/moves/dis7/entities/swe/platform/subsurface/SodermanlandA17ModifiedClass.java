@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3bbf841e;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27286
+ * <p> Entity class <b><code>SodermanlandA17ModifiedClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SodermanlandA17ModifiedClass.createInstance()</code> or <code>new SodermanlandA17ModifiedClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: SodermanlandA17ModifiedClass  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27286; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@261ea657. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class SodermanlandA17ModifiedClass extends EntityType
+public final class SodermanlandA17ModifiedClass extends EntityType
 {
     /** Default constructor */
     public SodermanlandA17ModifiedClass()
@@ -25,5 +39,11 @@ public class SodermanlandA17ModifiedClass extends EntityType
 
         setCategory((byte)5); // uid 17502, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)3); // uid 27286, Sodermanland (A17 Modified) Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SodermanlandA17ModifiedClass createInstance()
+    {
+            return new SodermanlandA17ModifiedClass();
     }
 }

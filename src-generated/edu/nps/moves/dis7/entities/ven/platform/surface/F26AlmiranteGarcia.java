@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc64028;
- * Country: Venezuela (Bolivarian Republic of) (VEN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27767
+ * <p> Entity class <b><code>F26AlmiranteGarcia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F26AlmiranteGarcia.createInstance()</code> or <code>new F26AlmiranteGarcia()</code>. </p>
+ * <ul>
+ *     <li> Country: Venezuela (Bolivarian Republic of) (VEN) = <code>229</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: LupoClass  = <code>1</code>; </li>
+ *     <li> Specific: F26AlmiranteGarcia  = <code>6</code>; </li>
+ *     <li> Entity type uid: 27767; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39e53bef. </p>
+ * @see Country#VENEZUELA_BOLIVARIAN_REPUBLIC_OF_VEN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F26AlmiranteGarcia extends EntityType
+public final class F26AlmiranteGarcia extends EntityType
 {
     /** Default constructor */
     public F26AlmiranteGarcia()
@@ -26,5 +40,11 @@ public class F26AlmiranteGarcia extends EntityType
         setCategory((byte)6); // uid 27760, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 27761, Lupo Class
         setSpecific((byte)6); // uid 27767, F-26 Almirante Garcia
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F26AlmiranteGarcia createInstance()
+    {
+            return new F26AlmiranteGarcia();
     }
 }

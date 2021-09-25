@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -44,7 +43,7 @@ public class DataFilterRecord extends Object implements Serializable
    /** Default static instance variable */
    public static int  PAINT_SCHEME_BIT = 10;
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DataFilterRecord()
  {
  }
@@ -145,7 +144,26 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    bitFlags = byteBuffer.getInt();
+    try
+    {
+        // attribute bitFlags marked as not serialized
+        bitFlags = byteBuffer.getInt();
+        // attribute GROUND_BURIAL_DEPTH_OFFSET_BIT marked as not serialized
+        // attribute WATER_BURIAL_DEPTH_OFFSET_BIT marked as not serialized
+        // attribute SNOW_BURIAL_DEPTH_OFFSET_BIT marked as not serialized
+        // attribute MINE_ORIENTATION_BIT marked as not serialized
+        // attribute THERMAL_CONSTRAST_BIT marked as not serialized
+        // attribute REFLECTANCE_BIT marked as not serialized
+        // attribute MINE_EMPLACEMENT_TIME_BIT marked as not serialized
+        // attribute TRIP_DETONATION_WIRE_BIT marked as not serialized
+        // attribute FUSING_BIT marked as not serialized
+        // attribute SCALAR_DETECTION_COEFFICIENT_BIT marked as not serialized
+        // attribute PAINT_SCHEME_BIT marked as not serialized
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

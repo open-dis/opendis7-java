@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6eabe718;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 19930
+ * <p> Entity class <b><code>MGM140ABlockIM39</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MGM140ABlockIM39.createInstance()</code> or <code>new MGM140ABlockIM39()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: MGM140ArmyTacticalMissileSystemATacMS  = <code>17</code>; </li>
+ *     <li> Specific: MGM140ABlockIM39  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19930; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a9b92c6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class MGM140ABlockIM39 extends EntityType
+public final class MGM140ABlockIM39 extends EntityType
 {
     /** Default constructor */
     public MGM140ABlockIM39()
@@ -26,5 +40,11 @@ public class MGM140ABlockIM39 extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)17); // uid 19929, MGM-140 Army Tactical Missile System (ATacMS)
         setSpecific((byte)1); // uid 19930, MGM-140A - Block I (M39)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MGM140ABlockIM39 createInstance()
+    {
+            return new MGM140ABlockIM39();
     }
 }

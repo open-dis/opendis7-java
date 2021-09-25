@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8f2e3e6;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 26101
+ * <p> Entity class <b><code>SA15B9M331</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA15B9M331.createInstance()</code> or <code>new SA15B9M331()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SA15Gauntlet  = <code>27</code>; </li>
+ *     <li> Specific: SA15B9M331  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26101; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d70f312. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SA15B9M331 extends EntityType
+public final class SA15B9M331 extends EntityType
 {
     /** Default constructor */
     public SA15B9M331()
@@ -26,5 +40,11 @@ public class SA15B9M331 extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)27); // uid 20374, SA-15 Gauntlet
         setSpecific((byte)1); // uid 26101, SA-15B (9M331)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA15B9M331 createInstance()
+    {
+            return new SA15B9M331();
     }
 }

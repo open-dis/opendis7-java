@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1eb6749b;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18463
+ * <p> Entity class <b><code>A5302Caroly</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A5302Caroly.createInstance()</code> or <code>new A5302Caroly()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: TrainingShip  = <code>15</code>; </li>
+ *     <li> Specific: A5302Caroly  = <code>9</code>; </li>
+ *     <li> Entity type uid: 18463; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ea9b7c6. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A5302Caroly extends EntityType
+public final class A5302Caroly extends EntityType
 {
     /** Default constructor */
     public A5302Caroly()
@@ -26,5 +40,11 @@ public class A5302Caroly extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)15); // uid 18454, Training Ship
         setSpecific((byte)9); // uid 18463, A5302 Caroly
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A5302Caroly createInstance()
+    {
+            return new A5302Caroly();
     }
 }

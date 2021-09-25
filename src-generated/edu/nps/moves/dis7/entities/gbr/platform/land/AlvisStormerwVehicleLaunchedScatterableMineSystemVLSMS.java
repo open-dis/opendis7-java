@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c441290;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28151
+ * <p> Entity class <b><code>AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS.createInstance()</code> or <code>new AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: StormerHVMCarrier  = <code>6</code>; </li>
+ *     <li> Specific: AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28151; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12704e15. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS extends EntityType
+public final class AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS extends EntityType
 {
     /** Default constructor */
     public AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS()
@@ -26,5 +40,11 @@ public class AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS extends Enti
         setCategory((byte)4); // uid 14918, Self-Propelled Artillery
         setSubCategory((byte)6); // uid 14924, Stormer HVM Carrier
         setSpecific((byte)1); // uid 28151, Alvis Stormer w/ Vehicle-Launched Scatterable Mine System (VLSMS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS createInstance()
+    {
+            return new AlvisStormerwVehicleLaunchedScatterableMineSystemVLSMS();
     }
 }

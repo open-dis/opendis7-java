@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -82,7 +81,7 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
    protected List< VariableTransmitterParameters > antennaPatternList = new ArrayList< VariableTransmitterParameters >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public TransmitterPdu()
  {
     setPduType( DisPduType.TRANSMITTER );
@@ -98,35 +97,46 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += header.getMarshalledSize();
+   if (header != null)
+       marshalSize += header.getMarshalledSize();
    marshalSize += 2;  // radioNumber
-   marshalSize += radioEntityType.getMarshalledSize();
-   marshalSize += transmitState.getMarshalledSize();
-   marshalSize += inputSource.getMarshalledSize();
+   if (radioEntityType != null)
+       marshalSize += radioEntityType.getMarshalledSize();
+   if (transmitState != null)
+       marshalSize += transmitState.getMarshalledSize();
+   if (inputSource != null)
+       marshalSize += inputSource.getMarshalledSize();
    marshalSize += 2;  // variableTransmitterParameterCount
-   marshalSize += antennaLocation.getMarshalledSize();
-   marshalSize += relativeAntennaLocation.getMarshalledSize();
-   marshalSize += antennaPatternType.getMarshalledSize();
+   if (antennaLocation != null)
+       marshalSize += antennaLocation.getMarshalledSize();
+   if (relativeAntennaLocation != null)
+       marshalSize += relativeAntennaLocation.getMarshalledSize();
+   if (antennaPatternType != null)
+       marshalSize += antennaPatternType.getMarshalledSize();
    marshalSize += 2;  // antennaPatternCount
    marshalSize += 8;  // frequency
    marshalSize += 4;  // transmitFrequencyBandwidth
    marshalSize += 4;  // power
-   marshalSize += modulationType.getMarshalledSize();
-   marshalSize += cryptoSystem.getMarshalledSize();
+   if (modulationType != null)
+       marshalSize += modulationType.getMarshalledSize();
+   if (cryptoSystem != null)
+       marshalSize += cryptoSystem.getMarshalledSize();
    marshalSize += 2;  // cryptoKeyId
    marshalSize += 1;  // modulationParameterCount
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
-   for(int idx=0; idx < modulationParametersList.size(); idx++)
-   {
-        ModulationParameters listElement = modulationParametersList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < antennaPatternList.size(); idx++)
-   {
-        VariableTransmitterParameters listElement = antennaPatternList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (modulationParametersList != null)
+       for (int idx=0; idx < modulationParametersList.size(); idx++)
+       {
+            ModulationParameters listElement = modulationParametersList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (antennaPatternList != null)
+       for (int idx=0; idx < antennaPatternList.size(); idx++)
+       {
+            VariableTransmitterParameters listElement = antennaPatternList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -509,14 +519,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(padding1);
        dos.writeShort(padding2);
 
-       for(int idx = 0; idx < modulationParametersList.size(); idx++)
+       for (int idx = 0; idx < modulationParametersList.size(); idx++)
        {
             ModulationParameters aModulationParameters = modulationParametersList.get(idx);
             aModulationParameters.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < antennaPatternList.size(); idx++)
+       for (int idx = 0; idx < antennaPatternList.size(); idx++)
        {
             VariableTransmitterParameters aVariableTransmitterParameters = antennaPatternList.get(idx);
             aVariableTransmitterParameters.marshal(dos);
@@ -577,14 +587,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding2 = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < modulationParameterCount; idx++)
+        for (int idx = 0; idx < modulationParameterCount; idx++)
         {
             ModulationParameters anX = new ModulationParameters();
             uPosition += anX.unmarshal(dis);
             modulationParametersList.add(anX);
         }
 
-        for(int idx = 0; idx < antennaPatternCount; idx++)
+        for (int idx = 0; idx < antennaPatternCount; idx++)
         {
             VariableTransmitterParameters anX = new VariableTransmitterParameters();
             uPosition += anX.unmarshal(dis);
@@ -630,14 +640,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)padding1);
    byteBuffer.putShort( (short)padding2);
 
-   for(int idx = 0; idx < modulationParametersList.size(); idx++)
+   for (int idx = 0; idx < modulationParametersList.size(); idx++)
    {
         ModulationParameters aModulationParameters = modulationParametersList.get(idx);
         aModulationParameters.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < antennaPatternList.size(); idx++)
+   for (int idx = 0; idx < antennaPatternList.size(); idx++)
    {
         VariableTransmitterParameters aVariableTransmitterParameters = antennaPatternList.get(idx);
         aVariableTransmitterParameters.marshal(byteBuffer);
@@ -658,39 +668,67 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    header.unmarshal(byteBuffer);
-    radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    radioEntityType.unmarshal(byteBuffer);
-    transmitState = TransmitterTransmitState.unmarshalEnum(byteBuffer);
-    inputSource = TransmitterInputSource.unmarshalEnum(byteBuffer);
-    variableTransmitterParameterCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    antennaLocation.unmarshal(byteBuffer);
-    relativeAntennaLocation.unmarshal(byteBuffer);
-    antennaPatternType = TransmitterAntennaPatternType.unmarshalEnum(byteBuffer);
-    antennaPatternCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    frequency = byteBuffer.getLong();
-    transmitFrequencyBandwidth = byteBuffer.getFloat();
-    power = byteBuffer.getFloat();
-    modulationType.unmarshal(byteBuffer);
-    cryptoSystem = TransmitterCryptoSystem.unmarshalEnum(byteBuffer);
-    cryptoKeyId = (short)(byteBuffer.getShort() & 0xFFFF);
-    modulationParameterCount = (byte)(byteBuffer.get() & 0xFF);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < modulationParameterCount; idx++)
+    try
     {
-    ModulationParameters anX = new ModulationParameters();
-    anX.unmarshal(byteBuffer);
-    modulationParametersList.add(anX);
-    }
+        // attribute header marked as not serialized
+        header.unmarshal(byteBuffer);
+        // attribute radioNumber marked as not serialized
+        radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute radioEntityType marked as not serialized
+        radioEntityType.unmarshal(byteBuffer);
+        // attribute transmitState marked as not serialized
+        transmitState = TransmitterTransmitState.unmarshalEnum(byteBuffer);
+        // attribute inputSource marked as not serialized
+        inputSource = TransmitterInputSource.unmarshalEnum(byteBuffer);
+        // attribute variableTransmitterParameterCount marked as not serialized
+        variableTransmitterParameterCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute antennaLocation marked as not serialized
+        antennaLocation.unmarshal(byteBuffer);
+        // attribute relativeAntennaLocation marked as not serialized
+        relativeAntennaLocation.unmarshal(byteBuffer);
+        // attribute antennaPatternType marked as not serialized
+        antennaPatternType = TransmitterAntennaPatternType.unmarshalEnum(byteBuffer);
+        // attribute antennaPatternCount marked as not serialized
+        antennaPatternCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute frequency marked as not serialized
+        frequency = byteBuffer.getLong();
+        // attribute transmitFrequencyBandwidth marked as not serialized
+        transmitFrequencyBandwidth = byteBuffer.getFloat();
+        // attribute power marked as not serialized
+        power = byteBuffer.getFloat();
+        // attribute modulationType marked as not serialized
+        modulationType.unmarshal(byteBuffer);
+        // attribute cryptoSystem marked as not serialized
+        cryptoSystem = TransmitterCryptoSystem.unmarshalEnum(byteBuffer);
+        // attribute cryptoKeyId marked as not serialized
+        cryptoKeyId = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute modulationParameterCount marked as not serialized
+        modulationParameterCount = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute modulationParametersList marked as not serialized
+        for (int idx = 0; idx < modulationParameterCount; idx++)
+        {
+        ModulationParameters anX = new ModulationParameters();
+        anX.unmarshal(byteBuffer);
+        modulationParametersList.add(anX);
+        }
 
-    for(int idx = 0; idx < antennaPatternCount; idx++)
+        // attribute antennaPatternList marked as not serialized
+        for (int idx = 0; idx < antennaPatternCount; idx++)
+        {
+        VariableTransmitterParameters anX = new VariableTransmitterParameters();
+        anX.unmarshal(byteBuffer);
+        antennaPatternList.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    VariableTransmitterParameters anX = new VariableTransmitterParameters();
-    anX.unmarshal(byteBuffer);
-    antennaPatternList.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -737,11 +775,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < modulationParametersList.size(); idx++)
+     for (int idx = 0; idx < modulationParametersList.size(); idx++)
         if( ! ( modulationParametersList.get(idx).equals(rhs.modulationParametersList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < antennaPatternList.size(); idx++)
+     for (int idx = 0; idx < antennaPatternList.size(); idx++)
         if( ! ( antennaPatternList.get(idx).equals(rhs.antennaPatternList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

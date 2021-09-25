@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@242b836;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15897
+ * <p> Entity class <b><code>AerospatialeSA321SuperFrelon1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AerospatialeSA321SuperFrelon1.createInstance()</code> or <code>new AerospatialeSA321SuperFrelon1()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: AerospatialeSA321SuperFrelon  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 15897; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@66d3eec0. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class AerospatialeSA321SuperFrelon1 extends EntityType
+public final class AerospatialeSA321SuperFrelon1 extends EntityType
 {
     /** Default constructor */
     public AerospatialeSA321SuperFrelon1()
@@ -25,5 +39,11 @@ public class AerospatialeSA321SuperFrelon1 extends EntityType
 
         setCategory((byte)22); // uid 15895, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)2); // uid 15897, Aerospatiale SA 321 Super Frelon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AerospatialeSA321SuperFrelon1 createInstance()
+    {
+            return new AerospatialeSA321SuperFrelon1();
     }
 }

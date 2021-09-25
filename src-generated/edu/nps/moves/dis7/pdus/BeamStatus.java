@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -22,7 +21,7 @@ public class BeamStatus extends Object implements Serializable
    protected BeamStatusBeamState beamState = BeamStatusBeamState.values()[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public BeamStatus()
  {
  }
@@ -36,7 +35,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += beamState.getMarshalledSize();
+   if (beamState != null)
+       marshalSize += beamState.getMarshalledSize();
 
    return marshalSize;
 }
@@ -123,7 +123,15 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    beamState = BeamStatusBeamState.unmarshalEnum(byteBuffer);
+    try
+    {
+        // attribute beamState marked as not serialized
+        beamState = BeamStatusBeamState.unmarshalEnum(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

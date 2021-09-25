@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@638afcaa;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25382
+ * <p> Entity class <b><code>_130mmIllum</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_130mmIllum.createInstance()</code> or <code>new _130mmIllum()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _130mm  = <code>17</code>; </li>
+ *     <li> Specific: _130mmIllum  = <code>5</code>; </li>
+ *     <li> Entity type uid: 25382; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1cba0321. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _130mmIllum extends EntityType
+public final class _130mmIllum extends EntityType
 {
     /** Default constructor */
     public _130mmIllum()
@@ -26,5 +40,11 @@ public class _130mmIllum extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)17); // uid 20842, 130 mm
         setSpecific((byte)5); // uid 25382, 130mm Illum
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _130mmIllum createInstance()
+    {
+            return new _130mmIllum();
     }
 }

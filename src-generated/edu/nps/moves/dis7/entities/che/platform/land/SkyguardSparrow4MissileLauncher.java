@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f0f9947;
- * Country: Switzerland (CHE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26992
+ * <p> Entity class <b><code>SkyguardSparrow4MissileLauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SkyguardSparrow4MissileLauncher.createInstance()</code> or <code>new SkyguardSparrow4MissileLauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: OerlikonGDFSkyguardSkyshieldSystem  = <code>1</code>; </li>
+ *     <li> Specific: SkyguardSparrow4MissileLauncher  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26992; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4eba373c. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SkyguardSparrow4MissileLauncher extends EntityType
+public final class SkyguardSparrow4MissileLauncher extends EntityType
 {
     /** Default constructor */
     public SkyguardSparrow4MissileLauncher()
@@ -26,5 +40,11 @@ public class SkyguardSparrow4MissileLauncher extends EntityType
         setCategory((byte)28); // uid 19039, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 19040, Oerlikon GDF Skyguard Skyshield System
         setSpecific((byte)2); // uid 26992, Skyguard-Sparrow 4 Missile Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SkyguardSparrow4MissileLauncher createInstance()
+    {
+            return new SkyguardSparrow4MissileLauncher();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d483de4;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16396
+ * <p> Entity class <b><code>D182SchleswigHolstein</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D182SchleswigHolstein.createInstance()</code> or <code>new D182SchleswigHolstein()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer = <code>5</code>; </li>
+ *     <li> SubCategory: HamburgclassType101A  = <code>2</code>; </li>
+ *     <li> Specific: D182SchleswigHolstein  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16396; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ef782af. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Destroyer
+ * @see SubCategory
+
  */
-public class D182SchleswigHolstein extends EntityType
+public final class D182SchleswigHolstein extends EntityType
 {
     /** Default constructor */
     public D182SchleswigHolstein()
@@ -26,5 +40,11 @@ public class D182SchleswigHolstein extends EntityType
         setCategory((byte)5); // uid 16392, Destroyer
         setSubCategory((byte)2); // uid 16394, Hamburg class (Type 101A)
         setSpecific((byte)2); // uid 16396, D182 Schleswig-Holstein
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D182SchleswigHolstein createInstance()
+    {
+            return new D182SchleswigHolstein();
     }
 }

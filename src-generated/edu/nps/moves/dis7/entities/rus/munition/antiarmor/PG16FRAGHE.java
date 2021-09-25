@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17176b18;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 31895
+ * <p> Entity class <b><code>PG16FRAGHE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PG16FRAGHE.createInstance()</code> or <code>new PG16FRAGHE()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _58mm  = <code>25</code>; </li>
+ *     <li> Specific: PG16FRAGHE  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31895; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2eb1c615. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PG16FRAGHE extends EntityType
+public final class PG16FRAGHE extends EntityType
 {
     /** Default constructor */
     public PG16FRAGHE()
@@ -26,5 +40,11 @@ public class PG16FRAGHE extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)25); // uid 27440, 58 mm
         setSpecific((byte)1); // uid 31895, PG-16 FRAG-HE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PG16FRAGHE createInstance()
+    {
+            return new PG16FRAGHE();
     }
 }

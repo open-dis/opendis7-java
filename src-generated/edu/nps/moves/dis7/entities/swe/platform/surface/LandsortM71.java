@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@227a47;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26834
+ * <p> Entity class <b><code>LandsortM71</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LandsortM71.createInstance()</code> or <code>new LandsortM71()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: LandsortClass  = <code>1</code>; </li>
+ *     <li> Specific: LandsortM71  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26834; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@292158f8. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class LandsortM71 extends EntityType
+public final class LandsortM71 extends EntityType
 {
     /** Default constructor */
     public LandsortM71()
@@ -26,5 +40,11 @@ public class LandsortM71 extends EntityType
         setCategory((byte)8); // uid 26832, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 26833, Landsort Class
         setSpecific((byte)1); // uid 26834, Landsort (M71)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LandsortM71 createInstance()
+    {
+            return new LandsortM71();
     }
 }

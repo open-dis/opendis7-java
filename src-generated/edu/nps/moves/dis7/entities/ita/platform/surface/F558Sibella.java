@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40258c2f;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18632
+ * <p> Entity class <b><code>F558Sibella</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F558Sibella.createInstance()</code> or <code>new F558Sibella()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: Minervaclass  = <code>5</code>; </li>
+ *     <li> Specific: F558Sibella  = <code>8</code>; </li>
+ *     <li> Entity type uid: 18632; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22d6f11. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class F558Sibella extends EntityType
+public final class F558Sibella extends EntityType
 {
     /** Default constructor */
     public F558Sibella()
@@ -26,5 +40,11 @@ public class F558Sibella extends EntityType
         setCategory((byte)50); // uid 18601, Frigate (including Corvette)
         setSubCategory((byte)5); // uid 18624, Minerva class
         setSpecific((byte)8); // uid 18632, F 558 Sibella
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F558Sibella createInstance()
+    {
+            return new F558Sibella();
     }
 }

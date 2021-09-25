@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d71006f;
- * Country: Kazakhstan (KAZ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27548
+ * <p> Entity class <b><code>_2043Schambyl</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_2043Schambyl.createInstance()</code> or <code>new _2043Schambyl()</code>. </p>
+ * <ul>
+ *     <li> Country: Kazakhstan (KAZ) = <code>252</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Type369909Class  = <code>1</code>; </li>
+ *     <li> Specific: _2043Schambyl  = <code>4</code>; </li>
+ *     <li> Entity type uid: 27548; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a39fe6a. </p>
+ * @see Country#KAZAKHSTAN_KAZ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class _2043Schambyl extends EntityType
+public final class _2043Schambyl extends EntityType
 {
     /** Default constructor */
     public _2043Schambyl()
@@ -26,5 +40,11 @@ public class _2043Schambyl extends EntityType
         setCategory((byte)18); // uid 27543, Utility
         setSubCategory((byte)1); // uid 27544, Type 369/909 Class
         setSpecific((byte)4); // uid 27548, 2043 Schambyl
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _2043Schambyl createInstance()
+    {
+            return new _2043Schambyl();
     }
 }

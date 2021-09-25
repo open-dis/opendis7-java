@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d2a6eac;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31639
+ * <p> Entity class <b><code>TrailerFlatbed30Ton</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerFlatbed30Ton.createInstance()</code> or <code>new TrailerFlatbed30Ton()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trailer = <code>89</code>; </li>
+ *     <li> SubCategory: GenericTrailerFlatbed  = <code>1</code>; </li>
+ *     <li> Specific: TrailerFlatbed30Ton  = <code>6</code>; </li>
+ *     <li> Entity type uid: 31639; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1af05b03. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trailer
+ * @see SubCategory
+
  */
-public class TrailerFlatbed30Ton extends EntityType
+public final class TrailerFlatbed30Ton extends EntityType
 {
     /** Default constructor */
     public TrailerFlatbed30Ton()
@@ -26,5 +40,11 @@ public class TrailerFlatbed30Ton extends EntityType
         setCategory((byte)89); // uid 25929, Trailer
         setSubCategory((byte)1); // uid 25930, Generic Trailer, Flatbed
         setSpecific((byte)6); // uid 31639, Trailer, Flatbed 30 Ton
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerFlatbed30Ton createInstance()
+    {
+            return new TrailerFlatbed30Ton();
     }
 }

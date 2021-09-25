@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36361ddb;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14103
+ * <p> Entity class <b><code>Kamenkaclassnavalsurvey211</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Kamenkaclassnavalsurvey211.createInstance()</code> or <code>new Kamenkaclassnavalsurvey211()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Kamenkaclassnavalsurvey  = <code>35</code>; </li>
+ *     <li> Specific: _211  = <code>11</code>; </li>
+ *     <li> Entity type uid: 14103; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70f31322. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Kamenkaclassnavalsurvey211 extends EntityType
+public final class Kamenkaclassnavalsurvey211 extends EntityType
 {
     /** Default constructor */
     public Kamenkaclassnavalsurvey211()
@@ -26,5 +40,11 @@ public class Kamenkaclassnavalsurvey211 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)35); // uid 14092, Kamenka class (naval survey)
         setSpecific((byte)11); // uid 14103, 211
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Kamenkaclassnavalsurvey211 createInstance()
+    {
+            return new Kamenkaclassnavalsurvey211();
     }
 }

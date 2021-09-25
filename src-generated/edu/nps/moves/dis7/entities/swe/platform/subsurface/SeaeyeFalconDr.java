@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@455c1d8c;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 29276
+ * <p> Entity class <b><code>SeaeyeFalconDr</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SeaeyeFalconDr.createInstance()</code> or <code>new SeaeyeFalconDr()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned Underwater Vehicle (UUV) = <code>8</code>; </li>
+ *     <li> SubCategory: SAABSeaeye  = <code>5</code>; </li>
+ *     <li> Specific: SeaeyeFalconDr  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29276; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4649d70a. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UnmannedUnderwaterVehicleUUV
+ * @see SubCategory
+
  */
-public class SeaeyeFalconDr extends EntityType
+public final class SeaeyeFalconDr extends EntityType
 {
     /** Default constructor */
     public SeaeyeFalconDr()
@@ -26,5 +40,11 @@ public class SeaeyeFalconDr extends EntityType
         setCategory((byte)8); // uid 25264, Unmanned Underwater Vehicle (UUV)
         setSubCategory((byte)5); // uid 29274, SAAB Seaeye
         setSpecific((byte)2); // uid 29276, Seaeye Falcon Dr
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SeaeyeFalconDr createInstance()
+    {
+            return new SeaeyeFalconDr();
     }
 }

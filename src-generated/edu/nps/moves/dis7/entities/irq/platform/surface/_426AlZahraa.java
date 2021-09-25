@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70efb718;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18015
+ * <p> Entity class <b><code>_426AlZahraa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_426AlZahraa.createInstance()</code> or <code>new _426AlZahraa()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: TransportShip  = <code>1</code>; </li>
+ *     <li> Specific: _426AlZahraa  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18015; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4566d049. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _426AlZahraa extends EntityType
+public final class _426AlZahraa extends EntityType
 {
     /** Default constructor */
     public _426AlZahraa()
@@ -26,5 +40,11 @@ public class _426AlZahraa extends EntityType
         setCategory((byte)16); // uid 18013, Auxiliary
         setSubCategory((byte)1); // uid 18014, Transport Ship
         setSpecific((byte)1); // uid 18015, 426 Al Zahraa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _426AlZahraa createInstance()
+    {
+            return new _426AlZahraa();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bf570c;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 24006
+ * <p> Entity class <b><code>PG9VHEATFS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PG9VHEATFS.createInstance()</code> or <code>new PG9VHEATFS()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _73mm  = <code>4</code>; </li>
+ *     <li> Specific: PG9VHEATFS  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24006; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@388be5fd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PG9VHEATFS extends EntityType
+public final class PG9VHEATFS extends EntityType
 {
     /** Default constructor */
     public PG9VHEATFS()
@@ -26,5 +40,11 @@ public class PG9VHEATFS extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)4); // uid 20453, 73 mm
         setSpecific((byte)3); // uid 24006, PG-9V HEAT-FS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PG9VHEATFS createInstance()
+    {
+            return new PG9VHEATFS();
     }
 }

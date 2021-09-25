@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dfa819;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24104
+ * <p> Entity class <b><code>PFG1110TianDan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PFG1110TianDan.createInstance()</code> or <code>new PFG1110TianDan()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: ChengKungClassKwangHuaProject  = <code>1</code>; </li>
+ *     <li> Specific: PFG1110TianDan  = <code>8</code>; </li>
+ *     <li> Entity type uid: 24104; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5460b754. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class PFG1110TianDan extends EntityType
+public final class PFG1110TianDan extends EntityType
 {
     /** Default constructor */
     public PFG1110TianDan()
@@ -26,5 +40,11 @@ public class PFG1110TianDan extends EntityType
         setCategory((byte)6); // uid 19140, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 19141, Cheng Kung Class (Kwang Hua Project)
         setSpecific((byte)8); // uid 24104, PFG 1110 Tian Dan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PFG1110TianDan createInstance()
+    {
+            return new PFG1110TianDan();
     }
 }

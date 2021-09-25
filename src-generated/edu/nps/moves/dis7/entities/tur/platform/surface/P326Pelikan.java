@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@788ddc1f;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23231
+ * <p> Entity class <b><code>P326Pelikan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P326Pelikan.createInstance()</code> or <code>new P326Pelikan()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: Kartalclass  = <code>3</code>; </li>
+ *     <li> Specific: P326Pelikan  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23231; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f0d6038. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P326Pelikan extends EntityType
+public final class P326Pelikan extends EntityType
 {
     /** Default constructor */
     public P326Pelikan()
@@ -26,5 +40,11 @@ public class P326Pelikan extends EntityType
         setCategory((byte)7); // uid 19062, Light/Patrol Craft
         setSubCategory((byte)3); // uid 23226, Kartal class
         setSpecific((byte)5); // uid 23231, P326 Pelikan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P326Pelikan createInstance()
+    {
+            return new P326Pelikan();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55536d9e;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28793
+ * <p> Entity class <b><code>VLRA645STL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VLRA645STL.createInstance()</code> or <code>new VLRA645STL()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: VLRA2EscortReconnaissanceSupport6x6  = <code>6</code>; </li>
+ *     <li> Specific: VLRA645STL  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28793; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c83dc97. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class VLRA645STL extends EntityType
+public final class VLRA645STL extends EntityType
 {
     /** Default constructor */
     public VLRA645STL()
@@ -26,5 +40,11 @@ public class VLRA645STL extends EntityType
         setCategory((byte)6); // uid 15674, Small Wheeled Utility Vehicle
         setSubCategory((byte)6); // uid 28792, VLRA2 (Escort, Reconnaissance, Support) 6x6
         setSpecific((byte)1); // uid 28793, VLRA 645 STL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VLRA645STL createInstance()
+    {
+            return new VLRA645STL();
     }
 }

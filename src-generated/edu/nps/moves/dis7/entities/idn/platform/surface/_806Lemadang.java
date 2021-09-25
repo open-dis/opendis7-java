@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1477089c;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31056
+ * <p> Entity class <b><code>_806Lemadang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_806Lemadang.createInstance()</code> or <code>new _806Lemadang()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: TodakClassFPB57VariantV  = <code>8</code>; </li>
+ *     <li> Specific: _806Lemadang  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31056; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74eb909f. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _806Lemadang extends EntityType
+public final class _806Lemadang extends EntityType
 {
     /** Default constructor */
     public _806Lemadang()
@@ -26,5 +40,11 @@ public class _806Lemadang extends EntityType
         setCategory((byte)7); // uid 31038, Light/Patrol Craft
         setSubCategory((byte)8); // uid 31052, Todak Class (FPB 57 Variant V)
         setSpecific((byte)4); // uid 31056, 806 Lemadang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _806Lemadang createInstance()
+    {
+            return new _806Lemadang();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@20f63ddc;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23653
+ * <p> Entity class <b><code>ACADAwTelemetryLink</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ACADAwTelemetryLink.createInstance()</code> or <code>new ACADAwTelemetryLink()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Chemical, point detector = <code>7</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillance  = <code>2</code>; </li>
+ *     <li> Specific: ACADA  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23653; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4e9e0c6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Chemicalpointdetector
+ * @see SubCategory
+
  */
-public class ACADAwTelemetryLink extends EntityType
+public final class ACADAwTelemetryLink extends EntityType
 {
     /** Default constructor */
     public ACADAwTelemetryLink()
@@ -27,5 +41,11 @@ public class ACADAwTelemetryLink extends EntityType
         setSubCategory((byte)2); // uid 22362, Early Warning/Surveillance
         setSpecific((byte)2); // uid 23652, ACADA
         setExtra((byte)1); // uid 23653, ACADA w/Telemetry Link
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ACADAwTelemetryLink createInstance()
+    {
+            return new ACADAwTelemetryLink();
     }
 }

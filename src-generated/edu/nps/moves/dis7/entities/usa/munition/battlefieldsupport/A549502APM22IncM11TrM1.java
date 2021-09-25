@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e07b4db;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20147
+ * <p> Entity class <b><code>A549502APM22IncM11TrM1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A549502APM22IncM11TrM1.createInstance()</code> or <code>new A549502APM22IncM11TrM1()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _127mm  = <code>20</code>; </li>
+ *     <li> Specific: A549502APM22IncM11TrM1  = <code>16</code>; </li>
+ *     <li> Entity type uid: 20147; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d913116. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class A549502APM22IncM11TrM1 extends EntityType
+public final class A549502APM22IncM11TrM1 extends EntityType
 {
     /** Default constructor */
     public A549502APM22IncM11TrM1()
@@ -26,5 +40,11 @@ public class A549502APM22IncM11TrM1 extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)20); // uid 20131, 12.7 mm
         setSpecific((byte)16); // uid 20147, A549 .50 2 AP M2/2 Inc M1/1 Tr M1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A549502APM22IncM11TrM1 createInstance()
+    {
+            return new A549502APM22IncM11TrM1();
     }
 }

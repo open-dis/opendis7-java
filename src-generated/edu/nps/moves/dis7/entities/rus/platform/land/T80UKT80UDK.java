@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69c6161d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23538
+ * <p> Entity class <b><code>T80UKT80UDK</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T80UKT80UDK.createInstance()</code> or <code>new T80UKT80UDK()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: T80MBT  = <code>1</code>; </li>
+ *     <li> Specific: T80UKT80UDK  = <code>11</code>; </li>
+ *     <li> Entity type uid: 23538; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6dba847b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class T80UKT80UDK extends EntityType
+public final class T80UKT80UDK extends EntityType
 {
     /** Default constructor */
     public T80UKT80UDK()
@@ -26,5 +40,11 @@ public class T80UKT80UDK extends EntityType
         setCategory((byte)1); // uid 12510, Tank
         setSubCategory((byte)1); // uid 12511, T-80 MBT
         setSpecific((byte)11); // uid 23538, T-80UK / T-80UDK
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T80UKT80UDK createInstance()
+    {
+            return new T80UKT80UDK();
     }
 }

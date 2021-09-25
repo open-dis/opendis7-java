@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59a09be;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 24001
+ * <p> Entity class <b><code>FRAGHEO365K</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FRAGHEO365K.createInstance()</code> or <code>new FRAGHEO365K()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _85mm  = <code>51</code>; </li>
+ *     <li> Specific: FRAGHEO365K  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24001; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59f45950. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FRAGHEO365K extends EntityType
+public final class FRAGHEO365K extends EntityType
 {
     /** Default constructor */
     public FRAGHEO365K()
@@ -26,5 +40,11 @@ public class FRAGHEO365K extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)51); // uid 24000, 85mm
         setSpecific((byte)1); // uid 24001, FRAG-HE, O-365K
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FRAGHEO365K createInstance()
+    {
+            return new FRAGHEO365K();
     }
 }

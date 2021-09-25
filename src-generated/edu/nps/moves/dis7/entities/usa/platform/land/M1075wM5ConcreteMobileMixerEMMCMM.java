@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2404b5a;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30292
+ * <p> Entity class <b><code>M1075wM5ConcreteMobileMixerEMMCMM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1075wM5ConcreteMobileMixerEMMCMM.createInstance()</code> or <code>new M1075wM5ConcreteMobileMixerEMMCMM()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: TruckHeavyM1075PLS  = <code>38</code>; </li>
+ *     <li> Specific: M1075wM5ConcreteMobileMixerEMMCMM  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30292; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46911148. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class M1075wM5ConcreteMobileMixerEMMCMM extends EntityType
+public final class M1075wM5ConcreteMobileMixerEMMCMM extends EntityType
 {
     /** Default constructor */
     public M1075wM5ConcreteMobileMixerEMMCMM()
@@ -26,5 +40,11 @@ public class M1075wM5ConcreteMobileMixerEMMCMM extends EntityType
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)38); // uid 10576, Truck, Heavy, M1075 PLS
         setSpecific((byte)2); // uid 30292, M1075 w/ M5 Concrete Mobile Mixer (EMM-CMM)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1075wM5ConcreteMobileMixerEMMCMM createInstance()
+    {
+            return new M1075wM5ConcreteMobileMixerEMMCMM();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@488eb7f2;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18244
+ * <p> Entity class <b><code>AshdodClassLCT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AshdodClassLCT.createInstance()</code> or <code>new AshdodClassLCT()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: AshdodClassLCT  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18244; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@b7838a9. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class AshdodClassLCT extends EntityType
+public final class AshdodClassLCT extends EntityType
 {
     /** Default constructor */
     public AshdodClassLCT()
@@ -25,5 +39,11 @@ public class AshdodClassLCT extends EntityType
 
         setCategory((byte)11); // uid 18243, Landing Craft
         setSubCategory((byte)1); // uid 18244, Ashdod Class (LCT)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AshdodClassLCT createInstance()
+    {
+            return new AshdodClassLCT();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62150f9e;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17389
+ * <p> Entity class <b><code>_08Shuguang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_08Shuguang.createInstance()</code> or <code>new _08Shuguang()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Shuguang04classoceanographicresearch  = <code>7</code>; </li>
+ *     <li> Specific: _08Shuguang  = <code>5</code>; </li>
+ *     <li> Entity type uid: 17389; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29626d54. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class _08Shuguang extends EntityType
+public final class _08Shuguang extends EntityType
 {
     /** Default constructor */
     public _08Shuguang()
@@ -26,5 +40,11 @@ public class _08Shuguang extends EntityType
         setCategory((byte)17); // uid 17367, Auxiliary, Merchant Marine
         setSubCategory((byte)7); // uid 17384, Shuguang 04 class (oceanographic research)
         setSpecific((byte)5); // uid 17389, 08 Shuguang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _08Shuguang createInstance()
+    {
+            return new _08Shuguang();
     }
 }

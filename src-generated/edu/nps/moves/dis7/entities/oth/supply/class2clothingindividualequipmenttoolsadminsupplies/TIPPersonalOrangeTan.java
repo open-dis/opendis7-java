@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@503a7990;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES;
- *
- * Entity type uid: 30669
+ * <p> Entity class <b><code>TIPPersonalOrangeTan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TIPPersonalOrangeTan.createInstance()</code> or <code>new TIPPersonalOrangeTan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: B - Ground Support Materiel = <code>3</code>; </li>
+ *     <li> SubCategory: TIPPersonal  = <code>2</code>; </li>
+ *     <li> Specific: TIPPersonalOrangeTan  = <code>4</code>; </li>
+ *     <li> Entity type uid: 30669; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a1ddbf1. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see BGroundSupportMateriel
+ * @see SubCategory
+
  */
-public class TIPPersonalOrangeTan extends EntityType
+public final class TIPPersonalOrangeTan extends EntityType
 {
     /** Default constructor */
     public TIPPersonalOrangeTan()
@@ -26,5 +40,11 @@ public class TIPPersonalOrangeTan extends EntityType
         setCategory((byte)3); // uid 30659, B - Ground Support Materiel
         setSubCategory((byte)2); // uid 30665, TIP, Personal
         setSpecific((byte)4); // uid 30669, TIP, Personal Orange/Tan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TIPPersonalOrangeTan createInstance()
+    {
+            return new TIPPersonalOrangeTan();
     }
 }

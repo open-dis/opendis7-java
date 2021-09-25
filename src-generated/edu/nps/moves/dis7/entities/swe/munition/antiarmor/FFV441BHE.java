@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37b1149b;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21651
+ * <p> Entity class <b><code>FFV441BHE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFV441BHE.createInstance()</code> or <code>new FFV441BHE()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _84mmCarlGustavrounds  = <code>2</code>; </li>
+ *     <li> Specific: FFV441BHE  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21651; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@743bb39a. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FFV441BHE extends EntityType
+public final class FFV441BHE extends EntityType
 {
     /** Default constructor */
     public FFV441BHE()
@@ -26,5 +40,11 @@ public class FFV441BHE extends EntityType
         setCategory((byte)2); // uid 21647, Ballistic
         setSubCategory((byte)2); // uid 21650, 84mm Carl Gustav rounds
         setSpecific((byte)1); // uid 21651, FFV 441B HE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFV441BHE createInstance()
+    {
+            return new FFV441BHE();
     }
 }

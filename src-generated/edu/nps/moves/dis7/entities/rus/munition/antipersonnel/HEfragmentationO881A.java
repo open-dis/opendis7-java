@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5980fa73;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 20652
+ * <p> Entity class <b><code>HEfragmentationO881A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEfragmentationO881A.createInstance()</code> or <code>new HEfragmentationO881A()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _82mm  = <code>7</code>; </li>
+ *     <li> Specific: HEfragmentationO881A  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20652; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25533bba. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEfragmentationO881A extends EntityType
+public final class HEfragmentationO881A extends EntityType
 {
     /** Default constructor */
     public HEfragmentationO881A()
@@ -26,5 +40,11 @@ public class HEfragmentationO881A extends EntityType
         setCategory((byte)2); // uid 20637, Ballistic
         setSubCategory((byte)7); // uid 20651, 82 mm
         setSpecific((byte)1); // uid 20652, HE fragmentation (O-881A)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEfragmentationO881A createInstance()
+    {
+            return new HEfragmentationO881A();
     }
 }

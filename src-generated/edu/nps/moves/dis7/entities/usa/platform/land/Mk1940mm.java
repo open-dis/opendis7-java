@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20a7953c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10008
+ * <p> Entity class <b><code>Mk1940mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mk1940mm.createInstance()</code> or <code>new Mk1940mm()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: Grenadelaunchers  = <code>2</code>; </li>
+ *     <li> Specific: Mk1940mm  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10008; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44a085e5. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class Mk1940mm extends EntityType
+public final class Mk1940mm extends EntityType
 {
     /** Default constructor */
     public Mk1940mm()
@@ -26,5 +40,11 @@ public class Mk1940mm extends EntityType
         setCategory((byte)0); // uid 10001, Other
         setSubCategory((byte)2); // uid 10007, Grenade launchers
         setSpecific((byte)1); // uid 10008, Mk 19 40-mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mk1940mm createInstance()
+    {
+            return new Mk1940mm();
     }
 }

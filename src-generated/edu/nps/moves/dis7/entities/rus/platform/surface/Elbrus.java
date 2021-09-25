@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@96a75da;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14310
+ * <p> Entity class <b><code>Elbrus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Elbrus.createInstance()</code> or <code>new Elbrus()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Elbrusclasssubmarinerescueships  = <code>78</code>; </li>
+ *     <li> Specific: Elbrus  = <code>1</code>; </li>
+ *     <li> Entity type uid: 14310; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cb8437d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Elbrus extends EntityType
+public final class Elbrus extends EntityType
 {
     /** Default constructor */
     public Elbrus()
@@ -26,5 +40,11 @@ public class Elbrus extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)78); // uid 14309, Elbrus class (submarine rescue ships)
         setSpecific((byte)1); // uid 14310, Elbrus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Elbrus createInstance()
+    {
+            return new Elbrus();
     }
 }

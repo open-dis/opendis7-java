@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22a0d4ea;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32111
+ * <p> Entity class <b><code>_98Daring</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_98Daring.createInstance()</code> or <code>new _98Daring()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FearlessClass  = <code>1</code>; </li>
+ *     <li> Specific: _98Daring  = <code>9</code>; </li>
+ *     <li> Entity type uid: 32111; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a7ad6e5. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _98Daring extends EntityType
+public final class _98Daring extends EntityType
 {
     /** Default constructor */
     public _98Daring()
@@ -26,5 +40,11 @@ public class _98Daring extends EntityType
         setCategory((byte)7); // uid 32101, Light/Patrol Craft
         setSubCategory((byte)1); // uid 32102, Fearless Class
         setSpecific((byte)9); // uid 32111, 98 Daring
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _98Daring createInstance()
+    {
+            return new _98Daring();
     }
 }

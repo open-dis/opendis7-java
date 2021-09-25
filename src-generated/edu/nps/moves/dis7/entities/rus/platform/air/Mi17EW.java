@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fc645e4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13444
+ * <p> Entity class <b><code>Mi17EW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mi17EW.createInstance()</code> or <code>new Mi17EW()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Mi8917171Hip  = <code>1</code>; </li>
+ *     <li> Specific: Mi17EW  = <code>12</code>; </li>
+ *     <li> Entity type uid: 13444; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@515ebef3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Mi17EW extends EntityType
+public final class Mi17EW extends EntityType
 {
     /** Default constructor */
     public Mi17EW()
@@ -26,5 +40,11 @@ public class Mi17EW extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)1); // uid 13432, Mi-8/9/17/171 Hip
         setSpecific((byte)12); // uid 13444, Mi-17 (EW)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mi17EW createInstance()
+    {
+            return new Mi17EW();
     }
 }

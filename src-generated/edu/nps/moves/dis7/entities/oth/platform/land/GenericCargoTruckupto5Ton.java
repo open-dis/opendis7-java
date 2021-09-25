@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7ee55e70;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25826
+ * <p> Entity class <b><code>GenericCargoTruckupto5Ton</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericCargoTruckupto5Ton.createInstance()</code> or <code>new GenericCargoTruckupto5Ton()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: GenericCargoTruckupto5Ton  = <code>12</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25826; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@32c0915e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class GenericCargoTruckupto5Ton extends EntityType
+public final class GenericCargoTruckupto5Ton extends EntityType
 {
     /** Default constructor */
     public GenericCargoTruckupto5Ton()
@@ -25,5 +39,11 @@ public class GenericCargoTruckupto5Ton extends EntityType
 
         setCategory((byte)83); // uid 24831, Single Unit Cargo Truck
         setSubCategory((byte)12); // uid 25826, Generic Cargo Truck, up to 5 Ton
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericCargoTruckupto5Ton createInstance()
+    {
+            return new GenericCargoTruckupto5Ton();
     }
 }

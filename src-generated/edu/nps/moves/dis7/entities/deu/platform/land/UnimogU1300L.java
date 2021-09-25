@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1f760b47;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26337
+ * <p> Entity class <b><code>UnimogU1300L</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UnimogU1300L.createInstance()</code> or <code>new UnimogU1300L()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle (greater than 1.25 tons) = <code>7</code>; </li>
+ *     <li> SubCategory: MBUnimogTruck  = <code>5</code>; </li>
+ *     <li> Specific: UnimogU1300  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26337; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@49c90a9c. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehiclegreaterthan125tons
+ * @see SubCategory
+
  */
-public class UnimogU1300L extends EntityType
+public final class UnimogU1300L extends EntityType
 {
     /** Default constructor */
     public UnimogU1300L()
@@ -27,5 +41,11 @@ public class UnimogU1300L extends EntityType
         setSubCategory((byte)5); // uid 26335, MB Unimog Truck
         setSpecific((byte)1); // uid 26336, Unimog U1300
         setExtra((byte)1); // uid 26337, Unimog U1300/L
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UnimogU1300L createInstance()
+    {
+            return new UnimogU1300L();
     }
 }

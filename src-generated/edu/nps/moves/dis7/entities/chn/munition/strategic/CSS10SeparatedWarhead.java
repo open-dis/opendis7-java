@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a0ab480;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 31373
+ * <p> Entity class <b><code>CSS10SeparatedWarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSS10SeparatedWarhead.createInstance()</code> or <code>new CSS10SeparatedWarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSS10DF31  = <code>6</code>; </li>
+ *     <li> Specific: CSS10SeparatedWarhead  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31373; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7558633. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSS10SeparatedWarhead extends EntityType
+public final class CSS10SeparatedWarhead extends EntityType
 {
     /** Default constructor */
     public CSS10SeparatedWarhead()
@@ -26,5 +40,11 @@ public class CSS10SeparatedWarhead extends EntityType
         setCategory((byte)1); // uid 21556, Guided
         setSubCategory((byte)6); // uid 21569, CSS-10 (DF-31)
         setSpecific((byte)4); // uid 31373, CSS-10 Separated Warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSS10SeparatedWarhead createInstance()
+    {
+            return new CSS10SeparatedWarhead();
     }
 }

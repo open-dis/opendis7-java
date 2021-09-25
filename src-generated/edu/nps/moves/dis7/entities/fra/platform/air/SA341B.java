@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31fa1761;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15840
+ * <p> Entity class <b><code>SA341B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA341B.createInstance()</code> or <code>new SA341B()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: AerospatialeSA341Gazelle  = <code>6</code>; </li>
+ *     <li> Specific: SA341B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15840; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28f3b248. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class SA341B extends EntityType
+public final class SA341B extends EntityType
 {
     /** Default constructor */
     public SA341B()
@@ -26,5 +40,11 @@ public class SA341B extends EntityType
         setCategory((byte)21); // uid 15827, Utility Helicopter
         setSubCategory((byte)6); // uid 15838, Aerospatiale SA 341 Gazelle
         setSpecific((byte)2); // uid 15840, SA 341B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA341B createInstance()
+    {
+            return new SA341B();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class SeparationVP extends Object implements Serializable
    protected NamedLocationIdentification  stationLocation = new NamedLocationIdentification(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SeparationVP()
  {
  }
@@ -54,13 +53,18 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
-   marshalSize += reasonForSeparation.getMarshalledSize();
-   marshalSize += preEntityIndicator.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
+   if (reasonForSeparation != null)
+       marshalSize += reasonForSeparation.getMarshalledSize();
+   if (preEntityIndicator != null)
+       marshalSize += preEntityIndicator.getMarshalledSize();
    marshalSize += 1;  // padding1
-   marshalSize += parentEntityID.getMarshalledSize();
+   if (parentEntityID != null)
+       marshalSize += parentEntityID.getMarshalledSize();
    marshalSize += 2;  // padding2
-   marshalSize += stationLocation.getMarshalledSize();
+   if (stationLocation != null)
+       marshalSize += stationLocation.getMarshalledSize();
 
    return marshalSize;
 }
@@ -279,13 +283,27 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    reasonForSeparation = SeparationVPReasonforSeparation.unmarshalEnum(byteBuffer);
-    preEntityIndicator = SeparationVPPreEntityIndicator.unmarshalEnum(byteBuffer);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    parentEntityID.unmarshal(byteBuffer);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    stationLocation.unmarshal(byteBuffer);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute reasonForSeparation marked as not serialized
+        reasonForSeparation = SeparationVPReasonforSeparation.unmarshalEnum(byteBuffer);
+        // attribute preEntityIndicator marked as not serialized
+        preEntityIndicator = SeparationVPPreEntityIndicator.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute parentEntityID marked as not serialized
+        parentEntityID.unmarshal(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute stationLocation marked as not serialized
+        stationLocation.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

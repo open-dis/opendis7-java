@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f0f1111;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17197
+ * <p> Entity class <b><code>YukanclassType072930</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YukanclassType072930.createInstance()</code> or <code>new YukanclassType072930()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: YukanclassType072  = <code>2</code>; </li>
+ *     <li> Specific: _930  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17197; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79ad8b2f. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class YukanclassType072930 extends EntityType
+public final class YukanclassType072930 extends EntityType
 {
     /** Default constructor */
     public YukanclassType072930()
@@ -26,5 +40,11 @@ public class YukanclassType072930 extends EntityType
         setCategory((byte)10); // uid 17190, Tank Landing Ship
         setSubCategory((byte)2); // uid 17193, Yukan class Type 072
         setSpecific((byte)4); // uid 17197, 930
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YukanclassType072930 createInstance()
+    {
+            return new YukanclassType072930();
     }
 }

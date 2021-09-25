@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27f71195;
- * Country: Germany (DEU);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 21205
+ * <p> Entity class <b><code>Roland3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Roland3.createInstance()</code> or <code>new Roland3()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Roland  = <code>1</code>; </li>
+ *     <li> Specific: Roland3  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21205; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50cdfafa. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Roland3 extends EntityType
+public final class Roland3 extends EntityType
 {
     /** Default constructor */
     public Roland3()
@@ -26,5 +40,11 @@ public class Roland3 extends EntityType
         setCategory((byte)1); // uid 21201, Guided
         setSubCategory((byte)1); // uid 21202, Roland
         setSpecific((byte)3); // uid 21205, Roland 3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Roland3 createInstance()
+    {
+            return new Roland3();
     }
 }

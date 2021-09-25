@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f7d0008;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32033
+ * <p> Entity class <b><code>AvibrasLM0736RocketLauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AvibrasLM0736RocketLauncher.createInstance()</code> or <code>new AvibrasLM0736RocketLauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: AvibrasLM0736RocketLauncher  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32033; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3a82f6ef. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class AvibrasLM0736RocketLauncher extends EntityType
+public final class AvibrasLM0736RocketLauncher extends EntityType
 {
     /** Default constructor */
     public AvibrasLM0736RocketLauncher()
@@ -25,5 +39,11 @@ public class AvibrasLM0736RocketLauncher extends EntityType
 
         setCategory((byte)28); // uid 32032, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 32033, Avibras LM-07/36 Rocket Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AvibrasLM0736RocketLauncher createInstance()
+    {
+            return new AvibrasLM0736RocketLauncher();
     }
 }

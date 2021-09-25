@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e446d92;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27848
+ * <p> Entity class <b><code>U156Kremenchuk</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>U156Kremenchuk.createInstance()</code> or <code>new U156Kremenchuk()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: TarantulIIMolnyaClass  = <code>1</code>; </li>
+ *     <li> Specific: U156Kremenchuk  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27848; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63884e4. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class U156Kremenchuk extends EntityType
+public final class U156Kremenchuk extends EntityType
 {
     /** Default constructor */
     public U156Kremenchuk()
@@ -26,5 +40,11 @@ public class U156Kremenchuk extends EntityType
         setCategory((byte)50); // uid 27845, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27846, Tarantul II (Molnya) Class
         setSpecific((byte)2); // uid 27848, U-156 Kremenchuk
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static U156Kremenchuk createInstance()
+    {
+            return new U156Kremenchuk();
     }
 }

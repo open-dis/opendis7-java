@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51eb0e84;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25037
+ * <p> Entity class <b><code>DPICM9M27K1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DPICM9M27K1.createInstance()</code> or <code>new DPICM9M27K1()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _220mmrocket  = <code>23</code>; </li>
+ *     <li> Specific: DPICM9M27K1  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25037; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c5406b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class DPICM9M27K1 extends EntityType
+public final class DPICM9M27K1 extends EntityType
 {
     /** Default constructor */
     public DPICM9M27K1()
@@ -26,5 +40,11 @@ public class DPICM9M27K1 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)23); // uid 20874, 220-mm rocket
         setSpecific((byte)2); // uid 25037, DPICM, 9M27K1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DPICM9M27K1 createInstance()
+    {
+            return new DPICM9M27K1();
     }
 }

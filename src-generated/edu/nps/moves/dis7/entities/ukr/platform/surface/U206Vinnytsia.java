@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44b29496;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27851
+ * <p> Entity class <b><code>U206Vinnytsia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>U206Vinnytsia.createInstance()</code> or <code>new U206Vinnytsia()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: GrishaVClass  = <code>2</code>; </li>
+ *     <li> Specific: U206Vinnytsia  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27851; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a4f5433. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class U206Vinnytsia extends EntityType
+public final class U206Vinnytsia extends EntityType
 {
     /** Default constructor */
     public U206Vinnytsia()
@@ -26,5 +40,11 @@ public class U206Vinnytsia extends EntityType
         setCategory((byte)50); // uid 27845, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 27849, Grisha V Class
         setSpecific((byte)2); // uid 27851, U-206 Vinnytsia
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static U206Vinnytsia createInstance()
+    {
+            return new U206Vinnytsia();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1da6ee17;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24696
+ * <p> Entity class <b><code>GenericSmallSingleEngineTurboprop</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericSmallSingleEngineTurboprop.createInstance()</code> or <code>new GenericSmallSingleEngineTurboprop()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
+ *     <li> SubCategory: GenericSmallSingleEngineTurboprop  = <code>21</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24696; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7d2a6eac. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftSmallupto12500lbs5670kg
+ * @see SubCategory
+
  */
-public class GenericSmallSingleEngineTurboprop extends EntityType
+public final class GenericSmallSingleEngineTurboprop extends EntityType
 {
     /** Default constructor */
     public GenericSmallSingleEngineTurboprop()
@@ -25,5 +39,11 @@ public class GenericSmallSingleEngineTurboprop extends EntityType
 
         setCategory((byte)85); // uid 24693, Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg)
         setSubCategory((byte)21); // uid 24696, Generic Small Single Engine Turboprop
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericSmallSingleEngineTurboprop createInstance()
+    {
+            return new GenericSmallSingleEngineTurboprop();
     }
 }

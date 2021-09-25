@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class RecordSpecification extends Object implements Serializable
    protected List< RecordSpecificationElement > recordSets = new ArrayList< RecordSpecificationElement >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RecordSpecification()
  {
  }
@@ -40,11 +39,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 4;  // numberOfRecordSets
-   for(int idx=0; idx < recordSets.size(); idx++)
-   {
-        RecordSpecificationElement listElement = recordSets.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (recordSets != null)
+       for (int idx=0; idx < recordSets.size(); idx++)
+       {
+            RecordSpecificationElement listElement = recordSets.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -78,7 +78,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        dos.writeInt(recordSets.size());
 
-       for(int idx = 0; idx < recordSets.size(); idx++)
+       for (int idx = 0; idx < recordSets.size(); idx++)
        {
             RecordSpecificationElement aRecordSpecificationElement = recordSets.get(idx);
             aRecordSpecificationElement.marshal(dos);
@@ -106,7 +106,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfRecordSets = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfRecordSets; idx++)
+        for (int idx = 0; idx < numberOfRecordSets; idx++)
         {
             RecordSpecificationElement anX = new RecordSpecificationElement();
             uPosition += anX.unmarshal(dis);
@@ -133,7 +133,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    byteBuffer.putInt( (int)recordSets.size());
 
-   for(int idx = 0; idx < recordSets.size(); idx++)
+   for (int idx = 0; idx < recordSets.size(); idx++)
    {
         RecordSpecificationElement aRecordSpecificationElement = recordSets.get(idx);
         aRecordSpecificationElement.marshal(byteBuffer);
@@ -152,14 +152,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfRecordSets = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfRecordSets; idx++)
+    try
     {
-    RecordSpecificationElement anX = new RecordSpecificationElement();
-    anX.unmarshal(byteBuffer);
-    recordSets.add(anX);
-    }
+        // attribute numberOfRecordSets marked as not serialized
+        numberOfRecordSets = byteBuffer.getInt();
+        // attribute recordSets marked as not serialized
+        for (int idx = 0; idx < numberOfRecordSets; idx++)
+        {
+        RecordSpecificationElement anX = new RecordSpecificationElement();
+        anX.unmarshal(byteBuffer);
+        recordSets.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -194,7 +203,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final RecordSpecification rhs = (RecordSpecification)obj;
 
 
-     for(int idx = 0; idx < recordSets.size(); idx++)
+     for (int idx = 0; idx < recordSets.size(); idx++)
         if( ! ( recordSets.get(idx).equals(rhs.recordSets.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

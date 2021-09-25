@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@66fbc5e7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26106
+ * <p> Entity class <b><code>OH58DBlock2KiowaWarrior</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OH58DBlock2KiowaWarrior.createInstance()</code> or <code>new OH58DBlock2KiowaWarrior()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Observation helicopter = <code>24</code>; </li>
+ *     <li> SubCategory: BellModel406AHIP  = <code>2</code>; </li>
+ *     <li> Specific: OH58DKiowaKiowaWarrior  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26106; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2a02e34b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Observationhelicopter
+ * @see SubCategory
+
  */
-public class OH58DBlock2KiowaWarrior extends EntityType
+public final class OH58DBlock2KiowaWarrior extends EntityType
 {
     /** Default constructor */
     public OH58DBlock2KiowaWarrior()
@@ -27,5 +41,11 @@ public class OH58DBlock2KiowaWarrior extends EntityType
         setSubCategory((byte)2); // uid 11179, Bell Model 406 AHIP
         setSpecific((byte)1); // uid 11180, OH-58D Kiowa/Kiowa Warrior
         setExtra((byte)3); // uid 26106, OH-58D Block 2, Kiowa Warrior
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OH58DBlock2KiowaWarrior createInstance()
+    {
+            return new OH58DBlock2KiowaWarrior();
     }
 }

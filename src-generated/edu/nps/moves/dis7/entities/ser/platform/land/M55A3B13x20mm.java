@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a4ccef7;
- * Country: Serbia and Montenegro;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23675
+ * <p> Entity class <b><code>M55A3B13x20mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M55A3B13x20mm.createInstance()</code> or <code>new M55A3B13x20mm()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: TowedVSHORADGunMissileSystem  = <code>2</code>; </li>
+ *     <li> Specific: M55A3B13x20mm  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23675; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36c0d0bd. </p>
+ * @see Country#SERBIA_AND_MONTENEGRO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class M55A3B13x20mm extends EntityType
+public final class M55A3B13x20mm extends EntityType
 {
     /** Default constructor */
     public M55A3B13x20mm()
@@ -26,5 +40,11 @@ public class M55A3B13x20mm extends EntityType
         setCategory((byte)28); // uid 23670, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)2); // uid 23674, Towed VSHORAD Gun / Missile System
         setSpecific((byte)1); // uid 23675, M55A3B1 3 x 20-mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M55A3B13x20mm createInstance()
+    {
+            return new M55A3B13x20mm();
     }
 }

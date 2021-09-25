@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e974b9e;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20426
+ * <p> Entity class <b><code>SwatterABradiocommand</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SwatterABradiocommand.createInstance()</code> or <code>new SwatterABradiocommand()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AT2Swatter  = <code>4</code>; </li>
+ *     <li> Specific: SwatterABradiocommand  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20426; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c60ce47. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SwatterABradiocommand extends EntityType
+public final class SwatterABradiocommand extends EntityType
 {
     /** Default constructor */
     public SwatterABradiocommand()
@@ -26,5 +40,11 @@ public class SwatterABradiocommand extends EntityType
         setCategory((byte)1); // uid 20421, Guided
         setSubCategory((byte)4); // uid 20425, AT-2 Swatter
         setSpecific((byte)1); // uid 20426, Swatter A/B (radio command)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SwatterABradiocommand createInstance()
+    {
+            return new SwatterABradiocommand();
     }
 }

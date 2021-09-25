@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@589b028e;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25899
+ * <p> Entity class <b><code>GenericMiniExcavator</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericMiniExcavator.createInstance()</code> or <code>new GenericMiniExcavator()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Construction Specialty Vehicle = <code>87</code>; </li>
+ *     <li> SubCategory: GenericMiniExcavator  = <code>18</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25899; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71652c98. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ConstructionSpecialtyVehicle
+ * @see SubCategory
+
  */
-public class GenericMiniExcavator extends EntityType
+public final class GenericMiniExcavator extends EntityType
 {
     /** Default constructor */
     public GenericMiniExcavator()
@@ -25,5 +39,11 @@ public class GenericMiniExcavator extends EntityType
 
         setCategory((byte)87); // uid 25881, Construction Specialty Vehicle
         setSubCategory((byte)18); // uid 25899, Generic Mini Excavator
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericMiniExcavator createInstance()
+    {
+            return new GenericMiniExcavator();
     }
 }

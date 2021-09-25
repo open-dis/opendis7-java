@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e16b8b5;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31843
+ * <p> Entity class <b><code>DDG177Atago</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDG177Atago.createInstance()</code> or <code>new DDG177Atago()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: AtagoClassDDG  = <code>4</code>; </li>
+ *     <li> Specific: DDG177Atago  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31843; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e517165. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class DDG177Atago extends EntityType
+public final class DDG177Atago extends EntityType
 {
     /** Default constructor */
     public DDG177Atago()
@@ -26,5 +40,11 @@ public class DDG177Atago extends EntityType
         setCategory((byte)4); // uid 18886, Guided Missile Destroyer (DDG)
         setSubCategory((byte)4); // uid 31842, Atago Class (DDG)
         setSpecific((byte)1); // uid 31843, DDG-177 Atago
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDG177Atago createInstance()
+    {
+            return new DDG177Atago();
     }
 }

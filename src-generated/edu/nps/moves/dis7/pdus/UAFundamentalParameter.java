@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class UAFundamentalParameter extends Object implements Serializable
    protected float  depressionElevationBeamWidth;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public UAFundamentalParameter()
  {
  }
@@ -51,8 +50,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += activeEmissionParameterIndex.getMarshalledSize();
-   marshalSize += scanPattern.getMarshalledSize();
+   if (activeEmissionParameterIndex != null)
+       marshalSize += activeEmissionParameterIndex.getMarshalledSize();
+   if (scanPattern != null)
+       marshalSize += scanPattern.getMarshalledSize();
    marshalSize += 4;  // beamCenterAzimuthHorizontal
    marshalSize += 4;  // azimuthalBeamwidthHorizontal
    marshalSize += 4;  // beamCenterDepressionElevation
@@ -243,12 +244,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    activeEmissionParameterIndex = UAActiveEmissionParameterIndex.unmarshalEnum(byteBuffer);
-    scanPattern = UAScanPattern.unmarshalEnum(byteBuffer);
-    beamCenterAzimuthHorizontal = byteBuffer.getFloat();
-    azimuthalBeamwidthHorizontal = byteBuffer.getFloat();
-    beamCenterDepressionElevation = byteBuffer.getFloat();
-    depressionElevationBeamWidth = byteBuffer.getFloat();
+    try
+    {
+        // attribute activeEmissionParameterIndex marked as not serialized
+        activeEmissionParameterIndex = UAActiveEmissionParameterIndex.unmarshalEnum(byteBuffer);
+        // attribute scanPattern marked as not serialized
+        scanPattern = UAScanPattern.unmarshalEnum(byteBuffer);
+        // attribute beamCenterAzimuthHorizontal marked as not serialized
+        beamCenterAzimuthHorizontal = byteBuffer.getFloat();
+        // attribute azimuthalBeamwidthHorizontal marked as not serialized
+        azimuthalBeamwidthHorizontal = byteBuffer.getFloat();
+        // attribute beamCenterDepressionElevation marked as not serialized
+        beamCenterDepressionElevation = byteBuffer.getFloat();
+        // attribute depressionElevationBeamWidth marked as not serialized
+        depressionElevationBeamWidth = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

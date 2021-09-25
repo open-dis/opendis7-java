@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63b3ee82;
- * Country: Serbia (SRB);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30154
+ * <p> Entity class <b><code>JVBT55A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JVBT55A.createInstance()</code> or <code>new JVBT55A()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: JVBT55A  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30154; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@260a3a5e. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class JVBT55A extends EntityType
+public final class JVBT55A extends EntityType
 {
     /** Default constructor */
     public JVBT55A()
@@ -25,5 +39,11 @@ public class JVBT55A extends EntityType
 
         setCategory((byte)3); // uid 30152, Armored Utility Vehicle
         setSubCategory((byte)2); // uid 30154, JVBT-55A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JVBT55A createInstance()
+    {
+            return new JVBT55A();
     }
 }

@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5341e71a;
- * Country: Other;
- * Entity kind: Environmental;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23895
+ * <p> Entity class <b><code>Bioluminescence</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bioluminescence.createInstance()</code> or <code>new Bioluminescence()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Environmental = <code>4</code>; </li>
+ *     <li> Category: Biologics = <code>4</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific: Bioluminescence  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23895; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29c59b6e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#ENVIRONMENTAL
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Biologics
+
  */
-public class Bioluminescence extends EntityType
+public final class Bioluminescence extends EntityType
 {
     /** Default constructor */
     public Bioluminescence()
@@ -25,5 +38,11 @@ public class Bioluminescence extends EntityType
 
         setCategory((byte)4); // uid 21934, Biologics
         setSpecific((byte)1); // uid 23895, Bioluminescence
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bioluminescence createInstance()
+    {
+            return new Bioluminescence();
     }
 }

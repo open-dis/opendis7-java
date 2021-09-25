@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a22bad6;
- * Country: Serbia and Montenegro;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19078
+ * <p> Entity class <b><code>Kosmaj178</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Kosmaj178.createInstance()</code> or <code>new Kosmaj178()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: MirnaClassType140PCF  = <code>2</code>; </li>
+ *     <li> Specific: Kosmaj178  = <code>4</code>; </li>
+ *     <li> Entity type uid: 19078; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@295bf2a. </p>
+ * @see Country#SERBIA_AND_MONTENEGRO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class Kosmaj178 extends EntityType
+public final class Kosmaj178 extends EntityType
 {
     /** Default constructor */
     public Kosmaj178()
@@ -26,5 +40,11 @@ public class Kosmaj178 extends EntityType
         setCategory((byte)7); // uid 19072, Light/Patrol Craft
         setSubCategory((byte)2); // uid 19074, Mirna Class Type 140 PCF
         setSpecific((byte)4); // uid 19078, Kosmaj 178
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Kosmaj178 createInstance()
+    {
+            return new Kosmaj178();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55dfebeb;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31124
+ * <p> Entity class <b><code>_818Kalakae</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_818Kalakae.createInstance()</code> or <code>new _818Kalakae()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: BoaClassKAL36  = <code>4</code>; </li>
+ *     <li> Specific: _818Kalakae  = <code>8</code>; </li>
+ *     <li> Entity type uid: 31124; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12ed9db6. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _818Kalakae extends EntityType
+public final class _818Kalakae extends EntityType
 {
     /** Default constructor */
     public _818Kalakae()
@@ -26,5 +40,11 @@ public class _818Kalakae extends EntityType
         setCategory((byte)7); // uid 31038, Light/Patrol Craft
         setSubCategory((byte)4); // uid 31116, Boa Class (KAL-36)
         setSpecific((byte)8); // uid 31124, 818 Kalakae
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _818Kalakae createInstance()
+    {
+            return new _818Kalakae();
     }
 }

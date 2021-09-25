@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@512535ff;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 18822
+ * <p> Entity class <b><code>HALSA316AlouetteIII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HALSA316AlouetteIII.createInstance()</code> or <code>new HALSA316AlouetteIII()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: HALSA316AlouetteIII  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18822; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f9a2c08. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class HALSA316AlouetteIII extends EntityType
+public final class HALSA316AlouetteIII extends EntityType
 {
     /** Default constructor */
     public HALSA316AlouetteIII()
@@ -25,5 +39,11 @@ public class HALSA316AlouetteIII extends EntityType
 
         setCategory((byte)21); // uid 18821, Utility Helicopter
         setSubCategory((byte)1); // uid 18822, HAL SA 316 Alouette III
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HALSA316AlouetteIII createInstance()
+    {
+            return new HALSA316AlouetteIII();
     }
 }

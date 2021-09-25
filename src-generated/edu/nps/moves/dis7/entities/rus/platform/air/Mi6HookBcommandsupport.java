@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@258ee7de;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13456
+ * <p> Entity class <b><code>Mi6HookBcommandsupport</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mi6HookBcommandsupport.createInstance()</code> or <code>new Mi6HookBcommandsupport()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Mi6Hook  = <code>4</code>; </li>
+ *     <li> Specific: Mi6HookBcommandsupport  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13456; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65fd6708. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Mi6HookBcommandsupport extends EntityType
+public final class Mi6HookBcommandsupport extends EntityType
 {
     /** Default constructor */
     public Mi6HookBcommandsupport()
@@ -26,5 +40,11 @@ public class Mi6HookBcommandsupport extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)4); // uid 13454, Mi-6 Hook
         setSpecific((byte)2); // uid 13456, Mi-6 Hook B (command support)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mi6HookBcommandsupport createInstance()
+    {
+            return new Mi6HookBcommandsupport();
     }
 }

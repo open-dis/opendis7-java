@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4339baec;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27676
+ * <p> Entity class <b><code>Stripbv3021</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Stripbv3021.createInstance()</code> or <code>new Stripbv3021()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: Pansarbandvagn302Pbv302  = <code>2</code>; </li>
+ *     <li> Specific: Stripbv3021  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27676; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7915bca3. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class Stripbv3021 extends EntityType
+public final class Stripbv3021 extends EntityType
 {
     /** Default constructor */
     public Stripbv3021()
@@ -26,5 +40,11 @@ public class Stripbv3021 extends EntityType
         setCategory((byte)2); // uid 17470, Armored Fighting Vehicle
         setSubCategory((byte)2); // uid 17472, Pansarbandvagn 302 (Pbv 302)
         setSpecific((byte)2); // uid 27676, Stripbv 3021
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Stripbv3021 createInstance()
+    {
+            return new Stripbv3021();
     }
 }

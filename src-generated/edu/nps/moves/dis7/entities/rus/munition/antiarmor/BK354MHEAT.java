@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f42b194;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 23933
+ * <p> Entity class <b><code>BK354MHEAT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BK354MHEAT.createInstance()</code> or <code>new BK354MHEAT()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _76mm  = <code>5</code>; </li>
+ *     <li> Specific: BK354MHEAT  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23933; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b4814d0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class BK354MHEAT extends EntityType
+public final class BK354MHEAT extends EntityType
 {
     /** Default constructor */
     public BK354MHEAT()
@@ -26,5 +40,11 @@ public class BK354MHEAT extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)5); // uid 20456, 76 mm
         setSpecific((byte)3); // uid 23933, BK-354M HEAT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BK354MHEAT createInstance()
+    {
+            return new BK354MHEAT();
     }
 }

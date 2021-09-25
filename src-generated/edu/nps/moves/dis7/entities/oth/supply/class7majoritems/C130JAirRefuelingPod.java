@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2d38db6f;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30780
+ * <p> Entity class <b><code>C130JAirRefuelingPod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C130JAirRefuelingPod.createInstance()</code> or <code>new C130JAirRefuelingPod()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Air Refuelling Pod = <code>27</code>; </li>
+ *     <li> SubCategory: C130JAirRefuelingPod  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30780; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@ac417a2. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see AirRefuellingPod
+ * @see SubCategory
+
  */
-public class C130JAirRefuelingPod extends EntityType
+public final class C130JAirRefuelingPod extends EntityType
 {
     /** Default constructor */
     public C130JAirRefuelingPod()
@@ -25,5 +39,11 @@ public class C130JAirRefuelingPod extends EntityType
 
         setCategory((byte)27); // uid 30779, Air Refuelling Pod
         setSubCategory((byte)1); // uid 30780, C-130J Air Refueling Pod
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C130JAirRefuelingPod createInstance()
+    {
+            return new C130JAirRefuelingPod();
     }
 }

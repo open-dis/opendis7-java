@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4438938e;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20863
+ * <p> Entity class <b><code>HEBOMBF853A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEBOMBF853A.createInstance()</code> or <code>new HEBOMBF853A()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _160mmmortar  = <code>20</code>; </li>
+ *     <li> Specific: HEBOMBF853A  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20863; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2049e582. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEBOMBF853A extends EntityType
+public final class HEBOMBF853A extends EntityType
 {
     /** Default constructor */
     public HEBOMBF853A()
@@ -26,5 +40,11 @@ public class HEBOMBF853A extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)20); // uid 20861, 160 mm (mortar)
         setSpecific((byte)2); // uid 20863, HE BOMB F-853A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEBOMBF853A createInstance()
+    {
+            return new HEBOMBF853A();
     }
 }

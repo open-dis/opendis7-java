@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@52525845;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32286
+ * <p> Entity class <b><code>AlKhalidII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AlKhalidII.createInstance()</code> or <code>new AlKhalidII()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: Type90  = <code>13</code>; </li>
+ *     <li> Specific: AlKhalid  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32286; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@11758f2a. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class AlKhalidII extends EntityType
+public final class AlKhalidII extends EntityType
 {
     /** Default constructor */
     public AlKhalidII()
@@ -27,5 +41,11 @@ public class AlKhalidII extends EntityType
         setSubCategory((byte)13); // uid 32282, Type 90
         setSpecific((byte)2); // uid 32284, Al-Khalid
         setExtra((byte)2); // uid 32286, Al-Khalid II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AlKhalidII createInstance()
+    {
+            return new AlKhalidII();
     }
 }

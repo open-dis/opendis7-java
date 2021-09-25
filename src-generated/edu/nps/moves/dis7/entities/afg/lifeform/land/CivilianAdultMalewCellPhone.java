@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4ad1a276;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32216
+ * <p> Entity class <b><code>CivilianAdultMalewCellPhone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianAdultMalewCellPhone.createInstance()</code> or <code>new CivilianAdultMalewCellPhone()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Civilian = <code>130</code>; </li>
+ *     <li> SubCategory: PersonalElectronics  = <code>171</code>; </li>
+ *     <li> Specific: CellPhone  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32216; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@36238b12. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Civilian
+ * @see SubCategory
+
  */
-public class CivilianAdultMalewCellPhone extends EntityType
+public final class CivilianAdultMalewCellPhone extends EntityType
 {
     /** Default constructor */
     public CivilianAdultMalewCellPhone()
@@ -27,5 +41,11 @@ public class CivilianAdultMalewCellPhone extends EntityType
         setSubCategory((byte)171); // uid 32212, Personal Electronics
         setSpecific((byte)1); // uid 32213, Cell Phone
         setExtra((byte)70); // uid 32216, Civilian Adult, Male w/ Cell Phone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianAdultMalewCellPhone createInstance()
+    {
+            return new CivilianAdultMalewCellPhone();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1151e434;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15880
+ * <p> Entity class <b><code>UH12BEsquilo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UH12BEsquilo.createInstance()</code> or <code>new UH12BEsquilo()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: EurocopterAS355Ecureuil2TwinstarandAS555Fennec  = <code>14</code>; </li>
+ *     <li> Specific: UH12BEsquilo  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15880; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47faa49c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class UH12BEsquilo extends EntityType
+public final class UH12BEsquilo extends EntityType
 {
     /** Default constructor */
     public UH12BEsquilo()
@@ -26,5 +40,11 @@ public class UH12BEsquilo extends EntityType
         setCategory((byte)21); // uid 15827, Utility Helicopter
         setSubCategory((byte)14); // uid 15877, Eurocopter AS 355 Ecureuil 2 Twinstar and AS 555 Fennec
         setSpecific((byte)3); // uid 15880, UH-12B Esquilo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UH12BEsquilo createInstance()
+    {
+            return new UH12BEsquilo();
     }
 }

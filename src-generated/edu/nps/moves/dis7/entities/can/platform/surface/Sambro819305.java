@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33723e30;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30976
+ * <p> Entity class <b><code>Sambro819305</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Sambro819305.createInstance()</code> or <code>new Sambro819305()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Arunclasslifeboat  = <code>2</code>; </li>
+ *     <li> Specific: Sambro819305  = <code>5</code>; </li>
+ *     <li> Entity type uid: 30976; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a765367. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class Sambro819305 extends EntityType
+public final class Sambro819305 extends EntityType
 {
     /** Default constructor */
     public Sambro819305()
@@ -26,5 +40,11 @@ public class Sambro819305 extends EntityType
         setCategory((byte)63); // uid 26272, Coast Guard Boats
         setSubCategory((byte)2); // uid 30971, Arun-class lifeboat
         setSpecific((byte)5); // uid 30976, Sambro (819305)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Sambro819305 createInstance()
+    {
+            return new Sambro819305();
     }
 }

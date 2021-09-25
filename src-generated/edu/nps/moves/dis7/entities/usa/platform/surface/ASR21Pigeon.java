@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2506e949;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11765
+ * <p> Entity class <b><code>ASR21Pigeon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASR21Pigeon.createInstance()</code> or <code>new ASR21Pigeon()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: PigeonclassSubmarineRescue  = <code>23</code>; </li>
+ *     <li> Specific: ASR21Pigeon  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11765; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43245559. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class ASR21Pigeon extends EntityType
+public final class ASR21Pigeon extends EntityType
 {
     /** Default constructor */
     public ASR21Pigeon()
@@ -26,5 +40,11 @@ public class ASR21Pigeon extends EntityType
         setCategory((byte)16); // uid 11701, Auxiliary
         setSubCategory((byte)23); // uid 11764, Pigeon class (Submarine Rescue)
         setSpecific((byte)1); // uid 11765, ASR 21 Pigeon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASR21Pigeon createInstance()
+    {
+            return new ASR21Pigeon();
     }
 }

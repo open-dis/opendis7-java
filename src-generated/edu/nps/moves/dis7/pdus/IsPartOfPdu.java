@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class IsPartOfPdu extends EntityManagementFamilyPdu implements Serializab
    protected EntityType  partEntityType = new EntityType(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IsPartOfPdu()
  {
     setPduType( DisPduType.ISPARTOF );
@@ -53,12 +52,18 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += orginatingEntityID.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
-   marshalSize += relationship.getMarshalledSize();
-   marshalSize += partLocation.getMarshalledSize();
-   marshalSize += namedLocationID.getMarshalledSize();
-   marshalSize += partEntityType.getMarshalledSize();
+   if (orginatingEntityID != null)
+       marshalSize += orginatingEntityID.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
+   if (relationship != null)
+       marshalSize += relationship.getMarshalledSize();
+   if (partLocation != null)
+       marshalSize += partLocation.getMarshalledSize();
+   if (namedLocationID != null)
+       marshalSize += namedLocationID.getMarshalledSize();
+   if (partEntityType != null)
+       marshalSize += partEntityType.getMarshalledSize();
 
    return marshalSize;
 }
@@ -245,12 +250,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    orginatingEntityID.unmarshal(byteBuffer);
-    receivingEntityID.unmarshal(byteBuffer);
-    relationship.unmarshal(byteBuffer);
-    partLocation.unmarshal(byteBuffer);
-    namedLocationID.unmarshal(byteBuffer);
-    partEntityType.unmarshal(byteBuffer);
+    try
+    {
+        // attribute orginatingEntityID marked as not serialized
+        orginatingEntityID.unmarshal(byteBuffer);
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute relationship marked as not serialized
+        relationship.unmarshal(byteBuffer);
+        // attribute partLocation marked as not serialized
+        partLocation.unmarshal(byteBuffer);
+        // attribute namedLocationID marked as not serialized
+        namedLocationID.unmarshal(byteBuffer);
+        // attribute partEntityType marked as not serialized
+        partEntityType.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44536de4;
- * Country: Switzerland (CHE);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31131
+ * <p> Entity class <b><code>F5E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F5E.createInstance()</code> or <code>new F5E()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: F5FreedomFighterTigerII  = <code>1</code>; </li>
+ *     <li> Specific: F5E  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31131; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70228253. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class F5E extends EntityType
+public final class F5E extends EntityType
 {
     /** Default constructor */
     public F5E()
@@ -26,5 +40,11 @@ public class F5E extends EntityType
         setCategory((byte)1); // uid 31129, Fighter/Air Defense
         setSubCategory((byte)1); // uid 31130, F-5 Freedom Fighter/Tiger II
         setSpecific((byte)1); // uid 31131, F-5 E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F5E createInstance()
+    {
+            return new F5E();
     }
 }

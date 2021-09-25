@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3246fb96;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28778
+ * <p> Entity class <b><code>TPK650SH</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TPK650SH.createInstance()</code> or <code>new TPK650SH()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: VLRAEscortReconnaissanceSupport6x6  = <code>4</code>; </li>
+ *     <li> Specific: TPK650SH  = <code>10</code>; </li>
+ *     <li> Entity type uid: 28778; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76ed1b7c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class TPK650SH extends EntityType
+public final class TPK650SH extends EntityType
 {
     /** Default constructor */
     public TPK650SH()
@@ -26,5 +40,11 @@ public class TPK650SH extends EntityType
         setCategory((byte)6); // uid 15674, Small Wheeled Utility Vehicle
         setSubCategory((byte)4); // uid 28768, VLRA (Escort, Reconnaissance, Support) 6x6
         setSpecific((byte)10); // uid 28778, TPK 6.50 SH
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TPK650SH createInstance()
+    {
+            return new TPK650SH();
     }
 }

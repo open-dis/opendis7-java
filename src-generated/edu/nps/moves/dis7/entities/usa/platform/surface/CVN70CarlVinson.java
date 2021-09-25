@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4872669f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11297
+ * <p> Entity class <b><code>CVN70CarlVinson</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CVN70CarlVinson.createInstance()</code> or <code>new CVN70CarlVinson()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Carrier = <code>1</code>; </li>
+ *     <li> SubCategory: NimitzClass  = <code>1</code>; </li>
+ *     <li> Specific: CVN70CarlVinson  = <code>3</code>; </li>
+ *     <li> Entity type uid: 11297; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd413fb. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Carrier
+ * @see SubCategory
+
  */
-public class CVN70CarlVinson extends EntityType
+public final class CVN70CarlVinson extends EntityType
 {
     /** Default constructor */
     public CVN70CarlVinson()
@@ -26,5 +40,11 @@ public class CVN70CarlVinson extends EntityType
         setCategory((byte)1); // uid 11293, Carrier
         setSubCategory((byte)1); // uid 11294, Nimitz Class
         setSpecific((byte)3); // uid 11297, CVN 70 Carl Vinson
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CVN70CarlVinson createInstance()
+    {
+            return new CVN70CarlVinson();
     }
 }

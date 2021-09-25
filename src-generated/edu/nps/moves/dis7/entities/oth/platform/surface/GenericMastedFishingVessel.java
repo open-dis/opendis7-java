@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3569edd5;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24655
+ * <p> Entity class <b><code>GenericMastedFishingVessel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericMastedFishingVessel.createInstance()</code> or <code>new GenericMastedFishingVessel()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fishing Vessel = <code>86</code>; </li>
+ *     <li> SubCategory: GenericMastedFishingVessel  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24655; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@219f4597. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FishingVessel
+ * @see SubCategory
+
  */
-public class GenericMastedFishingVessel extends EntityType
+public final class GenericMastedFishingVessel extends EntityType
 {
     /** Default constructor */
     public GenericMastedFishingVessel()
@@ -25,5 +39,11 @@ public class GenericMastedFishingVessel extends EntityType
 
         setCategory((byte)86); // uid 24650, Fishing Vessel
         setSubCategory((byte)5); // uid 24655, Generic Masted Fishing Vessel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericMastedFishingVessel createInstance()
+    {
+            return new GenericMastedFishingVessel();
     }
 }

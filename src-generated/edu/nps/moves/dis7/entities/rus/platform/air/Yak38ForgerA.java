@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e4d2696;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13305
+ * <p> Entity class <b><code>Yak38ForgerA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Yak38ForgerA.createInstance()</code> or <code>new Yak38ForgerA()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: Yak38Forger  = <code>10</code>; </li>
+ *     <li> Specific: Yak38ForgerA  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13305; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bcde458. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class Yak38ForgerA extends EntityType
+public final class Yak38ForgerA extends EntityType
 {
     /** Default constructor */
     public Yak38ForgerA()
@@ -26,5 +40,11 @@ public class Yak38ForgerA extends EntityType
         setCategory((byte)2); // uid 13259, Attack/Strike
         setSubCategory((byte)10); // uid 13304, Yak-38 Forger
         setSpecific((byte)1); // uid 13305, Yak-38 Forger A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Yak38ForgerA createInstance()
+    {
+            return new Yak38ForgerA();
     }
 }

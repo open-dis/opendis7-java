@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62656be4;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22767
+ * <p> Entity class <b><code>Wolfambulance</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Wolfambulance.createInstance()</code> or <code>new Wolfambulance()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle (0 - 1.25 tons) = <code>6</code>; </li>
+ *     <li> SubCategory: WolfMercedesBenzGClass4x4  = <code>1</code>; </li>
+ *     <li> Specific: Wolfambulance  = <code>4</code>; </li>
+ *     <li> Entity type uid: 22767; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b66c0fb. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle0125tons
+ * @see SubCategory
+
  */
-public class Wolfambulance extends EntityType
+public final class Wolfambulance extends EntityType
 {
     /** Default constructor */
     public Wolfambulance()
@@ -26,5 +40,11 @@ public class Wolfambulance extends EntityType
         setCategory((byte)6); // uid 16277, Small Wheeled Utility Vehicle (0 - 1.25 tons)
         setSubCategory((byte)1); // uid 16278, Wolf (Mercedes Benz G-Class 4x4)
         setSpecific((byte)4); // uid 22767, Wolf ambulance
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Wolfambulance createInstance()
+    {
+            return new Wolfambulance();
     }
 }

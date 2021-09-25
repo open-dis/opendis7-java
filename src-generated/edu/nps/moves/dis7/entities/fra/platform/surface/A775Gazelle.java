@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d900ecf;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16065
+ * <p> Entity class <b><code>A775Gazelle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A775Gazelle.createInstance()</code> or <code>new A775Gazelle()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Chamoisclasssupplytenders  = <code>5</code>; </li>
+ *     <li> Specific: A775Gazelle  = <code>5</code>; </li>
+ *     <li> Entity type uid: 16065; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d901eb0. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A775Gazelle extends EntityType
+public final class A775Gazelle extends EntityType
 {
     /** Default constructor */
     public A775Gazelle()
@@ -26,5 +40,11 @@ public class A775Gazelle extends EntityType
         setCategory((byte)16); // uid 16040, Auxiliary
         setSubCategory((byte)5); // uid 16060, Chamois class (supply tenders)
         setSpecific((byte)5); // uid 16065, A 775 Gazelle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A775Gazelle createInstance()
+    {
+            return new A775Gazelle();
     }
 }

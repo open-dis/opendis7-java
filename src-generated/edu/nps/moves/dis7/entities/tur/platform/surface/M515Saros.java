@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72fd8a3c;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23267
+ * <p> Entity class <b><code>M515Saros</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M515Saros.createInstance()</code> or <code>new M515Saros()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MSC289class  = <code>1</code>; </li>
+ *     <li> Specific: M515Saros  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23267; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a369e14. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M515Saros extends EntityType
+public final class M515Saros extends EntityType
 {
     /** Default constructor */
     public M515Saros()
@@ -26,5 +40,11 @@ public class M515Saros extends EntityType
         setCategory((byte)8); // uid 23264, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 23265, MSC 289 class
         setSpecific((byte)2); // uid 23267, M 515 Saros
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M515Saros createInstance()
+    {
+            return new M515Saros();
     }
 }

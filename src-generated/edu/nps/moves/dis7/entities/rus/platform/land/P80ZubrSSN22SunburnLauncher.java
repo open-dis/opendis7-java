@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7e8a46b7;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27314
+ * <p> Entity class <b><code>P80ZubrSSN22SunburnLauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P80ZubrSSN22SunburnLauncher.createInstance()</code> or <code>new P80ZubrSSN22SunburnLauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: P80ZubrSSN22SunburnLauncher  = <code>57</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27314; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d467c87. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class P80ZubrSSN22SunburnLauncher extends EntityType
+public final class P80ZubrSSN22SunburnLauncher extends EntityType
 {
     /** Default constructor */
     public P80ZubrSSN22SunburnLauncher()
@@ -25,5 +39,11 @@ public class P80ZubrSSN22SunburnLauncher extends EntityType
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
         setSubCategory((byte)57); // uid 27314, P-80 Zubr / SS-N-22 Sunburn Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P80ZubrSSN22SunburnLauncher createInstance()
+    {
+            return new P80ZubrSSN22SunburnLauncher();
     }
 }

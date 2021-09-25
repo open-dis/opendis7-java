@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@d176a31;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13016
+ * <p> Entity class <b><code>Reloadvehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Reloadvehicle.createInstance()</code> or <code>new Reloadvehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Heavy equipment transport trailer = <code>19</code>; </li>
+ *     <li> SubCategory: Reloadvehicle  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 13016; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@c4c0b41. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Heavyequipmenttransporttrailer
+ * @see SubCategory
+
  */
-public class Reloadvehicle extends EntityType
+public final class Reloadvehicle extends EntityType
 {
     /** Default constructor */
     public Reloadvehicle()
@@ -25,5 +39,11 @@ public class Reloadvehicle extends EntityType
 
         setCategory((byte)19); // uid 13015, Heavy equipment transport trailer
         setSubCategory((byte)1); // uid 13016, Reload vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Reloadvehicle createInstance()
+    {
+            return new Reloadvehicle();
     }
 }

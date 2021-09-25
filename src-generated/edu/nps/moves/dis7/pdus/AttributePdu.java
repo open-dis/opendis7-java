@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.2.6. Information about individual attributes for a particular entity, other object, or event may be communicated using an Attribute PDU. The Attribute PDU shall not be used to exchange data available in any other PDU except where explicitly mentioned in the PDU issuance instructions within this standard. See 5.3.6.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class AttributePdu extends EntityInformationFamilyPdu implements Serializable
+public class AttributePdu extends EntityInformationInteractionFamilyPdu implements Serializable
 {
    /** This field shall identify the simulation issuing the Attribute PDU. It shall be represented by a Simulation Address record (see 6.2.79). */
    protected SimulationAddress  originatingSimulationAddress = new SimulationAddress(); 
@@ -49,7 +48,7 @@ public class AttributePdu extends EntityInformationFamilyPdu implements Serializ
    protected List< AttributeRecordSet > attributeRecordSets = new ArrayList< AttributeRecordSet >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AttributePdu()
  {
     setPduType( DisPduType.ATTRIBUTE );
@@ -65,20 +64,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += originatingSimulationAddress.getMarshalledSize();
+   if (originatingSimulationAddress != null)
+       marshalSize += originatingSimulationAddress.getMarshalledSize();
    marshalSize += 4;  // padding1
    marshalSize += 2;  // padding2
-   marshalSize += attributeRecordPduType.getMarshalledSize();
-   marshalSize += attributeRecordProtocolVersion.getMarshalledSize();
-   marshalSize += masterAttributeRecordType.getMarshalledSize();
-   marshalSize += actionCode.getMarshalledSize();
+   if (attributeRecordPduType != null)
+       marshalSize += attributeRecordPduType.getMarshalledSize();
+   if (attributeRecordProtocolVersion != null)
+       marshalSize += attributeRecordProtocolVersion.getMarshalledSize();
+   if (masterAttributeRecordType != null)
+       marshalSize += masterAttributeRecordType.getMarshalledSize();
+   if (actionCode != null)
+       marshalSize += actionCode.getMarshalledSize();
    marshalSize += 1;  // padding3
    marshalSize += 2;  // numberAttributeRecordSet
-   for(int idx=0; idx < attributeRecordSets.size(); idx++)
-   {
-        AttributeRecordSet listElement = attributeRecordSets.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (attributeRecordSets != null)
+       for (int idx=0; idx < attributeRecordSets.size(); idx++)
+       {
+            AttributeRecordSet listElement = attributeRecordSets.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -263,7 +268,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(padding3);
        dos.writeShort(attributeRecordSets.size());
 
-       for(int idx = 0; idx < attributeRecordSets.size(); idx++)
+       for (int idx = 0; idx < attributeRecordSets.size(); idx++)
        {
             AttributeRecordSet aAttributeRecordSet = attributeRecordSets.get(idx);
             aAttributeRecordSet.marshal(dos);
@@ -308,7 +313,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         numberAttributeRecordSet = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberAttributeRecordSet; idx++)
+        for (int idx = 0; idx < numberAttributeRecordSet; idx++)
         {
             AttributeRecordSet anX = new AttributeRecordSet();
             uPosition += anX.unmarshal(dis);
@@ -344,7 +349,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)padding3);
    byteBuffer.putShort( (short)attributeRecordSets.size());
 
-   for(int idx = 0; idx < attributeRecordSets.size(); idx++)
+   for (int idx = 0; idx < attributeRecordSets.size(); idx++)
    {
         AttributeRecordSet aAttributeRecordSet = attributeRecordSets.get(idx);
         aAttributeRecordSet.marshal(byteBuffer);
@@ -365,22 +370,39 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    originatingSimulationAddress.unmarshal(byteBuffer);
-    padding1 = byteBuffer.getInt();
-    padding2 = byteBuffer.getShort();
-    attributeRecordPduType = DisPduType.unmarshalEnum(byteBuffer);
-    attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(byteBuffer);
-    masterAttributeRecordType = VariableRecordType.unmarshalEnum(byteBuffer);
-    actionCode = DISAttributeActionCode.unmarshalEnum(byteBuffer);
-    padding3 = (byte)(byteBuffer.get() & 0xFF);
-    numberAttributeRecordSet = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberAttributeRecordSet; idx++)
+    try
     {
-    AttributeRecordSet anX = new AttributeRecordSet();
-    anX.unmarshal(byteBuffer);
-    attributeRecordSets.add(anX);
-    }
+        // attribute originatingSimulationAddress marked as not serialized
+        originatingSimulationAddress.unmarshal(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = byteBuffer.getInt();
+        // attribute padding2 marked as not serialized
+        padding2 = byteBuffer.getShort();
+        // attribute attributeRecordPduType marked as not serialized
+        attributeRecordPduType = DisPduType.unmarshalEnum(byteBuffer);
+        // attribute attributeRecordProtocolVersion marked as not serialized
+        attributeRecordProtocolVersion = DISProtocolFamily.unmarshalEnum(byteBuffer);
+        // attribute masterAttributeRecordType marked as not serialized
+        masterAttributeRecordType = VariableRecordType.unmarshalEnum(byteBuffer);
+        // attribute actionCode marked as not serialized
+        actionCode = DISAttributeActionCode.unmarshalEnum(byteBuffer);
+        // attribute padding3 marked as not serialized
+        padding3 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberAttributeRecordSet marked as not serialized
+        numberAttributeRecordSet = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute attributeRecordSets marked as not serialized
+        for (int idx = 0; idx < numberAttributeRecordSet; idx++)
+        {
+        AttributeRecordSet anX = new AttributeRecordSet();
+        anX.unmarshal(byteBuffer);
+        attributeRecordSets.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -418,7 +440,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (actionCode == rhs.actionCode)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
 
-     for(int idx = 0; idx < attributeRecordSets.size(); idx++)
+     for (int idx = 0; idx < attributeRecordSets.size(); idx++)
         if( ! ( attributeRecordSets.get(idx).equals(rhs.attributeRecordSets.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

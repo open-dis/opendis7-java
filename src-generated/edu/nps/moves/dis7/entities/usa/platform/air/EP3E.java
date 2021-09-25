@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@553da911;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10975
+ * <p> Entity class <b><code>EP3E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EP3E.createInstance()</code> or <code>new EP3E()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: LockheedModel185285Orion  = <code>1</code>; </li>
+ *     <li> Specific: EP3E  = <code>11</code>; </li>
+ *     <li> Entity type uid: 10975; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57efc6fd. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarinepatrolobservation
+ * @see SubCategory
+
  */
-public class EP3E extends EntityType
+public final class EP3E extends EntityType
 {
     /** Default constructor */
     public EP3E()
@@ -26,5 +40,11 @@ public class EP3E extends EntityType
         setCategory((byte)5); // uid 10963, Anti-Submarine/patrol/observation
         setSubCategory((byte)1); // uid 10964, Lockheed Model 185/285 Orion
         setSpecific((byte)11); // uid 10975, EP-3E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EP3E createInstance()
+    {
+            return new EP3E();
     }
 }

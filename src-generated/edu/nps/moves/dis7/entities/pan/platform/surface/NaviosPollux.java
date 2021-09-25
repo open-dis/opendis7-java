@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e598df9;
- * Country: Panama (PAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24547
+ * <p> Entity class <b><code>NaviosPollux</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NaviosPollux.createInstance()</code> or <code>new NaviosPollux()</code>. </p>
+ * <ul>
+ *     <li> Country: Panama (PAN) = <code>168</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: DryBulkCargoShip  = <code>2</code>; </li>
+ *     <li> Specific: NaviosPollux  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24547; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64a896b0. </p>
+ * @see Country#PANAMA_PAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class NaviosPollux extends EntityType
+public final class NaviosPollux extends EntityType
 {
     /** Default constructor */
     public NaviosPollux()
@@ -26,5 +40,11 @@ public class NaviosPollux extends EntityType
         setCategory((byte)81); // uid 24545, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)2); // uid 24546, Dry Bulk Cargo Ship
         setSpecific((byte)1); // uid 24547, Navios Pollux
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NaviosPollux createInstance()
+    {
+            return new NaviosPollux();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e8f23ad;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20183
+ * <p> Entity class <b><code>L8A1A3WPsmokegrenade</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L8A1A3WPsmokegrenade.createInstance()</code> or <code>new L8A1A3WPsmokegrenade()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: M257grenade  = <code>43</code>; </li>
+ *     <li> Specific: L8A1A3WPsmokegrenade  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20183; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23396fc0. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class L8A1A3WPsmokegrenade extends EntityType
+public final class L8A1A3WPsmokegrenade extends EntityType
 {
     /** Default constructor */
     public L8A1A3WPsmokegrenade()
@@ -26,5 +40,11 @@ public class L8A1A3WPsmokegrenade extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)43); // uid 20181, M257 grenade
         setSpecific((byte)2); // uid 20183, L8A1/A3 WP smoke grenade
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L8A1A3WPsmokegrenade createInstance()
+    {
+            return new L8A1A3WPsmokegrenade();
     }
 }

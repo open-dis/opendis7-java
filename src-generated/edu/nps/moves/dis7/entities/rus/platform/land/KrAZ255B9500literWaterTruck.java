@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@160396db;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23544
+ * <p> Entity class <b><code>KrAZ255B9500literWaterTruck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KrAZ255B9500literWaterTruck.createInstance()</code> or <code>new KrAZ255B9500literWaterTruck()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: KrAZ255B6x67500kgtruck  = <code>13</code>; </li>
+ *     <li> Specific: KrAZ255B9500literWaterTruck  = <code>6</code>; </li>
+ *     <li> Entity type uid: 23544; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@488b50ec. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class KrAZ255B9500literWaterTruck extends EntityType
+public final class KrAZ255B9500literWaterTruck extends EntityType
 {
     /** Default constructor */
     public KrAZ255B9500literWaterTruck()
@@ -26,5 +40,11 @@ public class KrAZ255B9500literWaterTruck extends EntityType
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)13); // uid 12904, KrAZ-255B 6x6 7500-kg truck
         setSpecific((byte)6); // uid 23544, KrAZ-255B 9500 liter Water Truck
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KrAZ255B9500literWaterTruck createInstance()
+    {
+            return new KrAZ255B9500literWaterTruck();
     }
 }

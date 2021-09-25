@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@578b2dec;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 32298
+ * <p> Entity class <b><code>AcquisitionDetection</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AcquisitionDetection.createInstance()</code> or <code>new AcquisitionDetection()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Optical (direct viewing with or without optics) = <code>4</code>; </li>
+ *     <li> SubCategory: AcquisitionDetection  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32298; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5df7a065. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Opticaldirectviewingwithorwithoutoptics
+ * @see SubCategory
+
  */
-public class AcquisitionDetection extends EntityType
+public final class AcquisitionDetection extends EntityType
 {
     /** Default constructor */
     public AcquisitionDetection()
@@ -25,5 +39,11 @@ public class AcquisitionDetection extends EntityType
 
         setCategory((byte)4); // uid 32297, Optical (direct viewing with or without optics)
         setSubCategory((byte)5); // uid 32298, Acquisition/Detection
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AcquisitionDetection createInstance()
+    {
+            return new AcquisitionDetection();
     }
 }

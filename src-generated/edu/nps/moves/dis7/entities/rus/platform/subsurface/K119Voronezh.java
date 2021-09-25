@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57402ba1;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27192
+ * <p> Entity class <b><code>K119Voronezh</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K119Voronezh.createInstance()</code> or <code>new K119Voronezh()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSGN (Nuclear Guided Missile) = <code>2</code>; </li>
+ *     <li> SubCategory: OscarIIClass  = <code>1</code>; </li>
+ *     <li> Specific: K119Voronezh  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27192; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17a703f5. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSGNNuclearGuidedMissile
+ * @see SubCategory
+
  */
-public class K119Voronezh extends EntityType
+public final class K119Voronezh extends EntityType
 {
     /** Default constructor */
     public K119Voronezh()
@@ -26,5 +40,11 @@ public class K119Voronezh extends EntityType
         setCategory((byte)2); // uid 14771, SSGN (Nuclear Guided Missile)
         setSubCategory((byte)1); // uid 14772, Oscar II Class
         setSpecific((byte)2); // uid 27192, K-119 Voronezh
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K119Voronezh createInstance()
+    {
+            return new K119Voronezh();
     }
 }

@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@76ba13c;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29182
+ * <p> Entity class <b><code>SurveillanceC2AirborneEarlyWarning</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SurveillanceC2AirborneEarlyWarning.createInstance()</code> or <code>new SurveillanceC2AirborneEarlyWarning()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29182; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4275c20c. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+
  */
-public class SurveillanceC2AirborneEarlyWarning extends EntityType
+public final class SurveillanceC2AirborneEarlyWarning extends EntityType
 {
     /** Default constructor */
     public SurveillanceC2AirborneEarlyWarning()
@@ -24,5 +37,11 @@ public class SurveillanceC2AirborneEarlyWarning extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)8); // uid 29182, Surveillance/C2 (Airborne Early Warning)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SurveillanceC2AirborneEarlyWarning createInstance()
+    {
+            return new SurveillanceC2AirborneEarlyWarning();
     }
 }

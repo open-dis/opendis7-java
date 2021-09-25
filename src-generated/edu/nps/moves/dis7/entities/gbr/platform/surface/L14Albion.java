@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b2df3aa;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15580
+ * <p> Entity class <b><code>L14Albion</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L14Albion.createInstance()</code> or <code>new L14Albion()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious transport dock = <code>56</code>; </li>
+ *     <li> SubCategory: AssaultshipsLPD  = <code>1</code>; </li>
+ *     <li> Specific: L14Albion  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15580; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34332b8d. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Amphibioustransportdock
+ * @see SubCategory
+
  */
-public class L14Albion extends EntityType
+public final class L14Albion extends EntityType
 {
     /** Default constructor */
     public L14Albion()
@@ -26,5 +40,11 @@ public class L14Albion extends EntityType
         setCategory((byte)56); // uid 15576, Amphibious transport dock
         setSubCategory((byte)1); // uid 15577, Assault ships (LPD)
         setSpecific((byte)3); // uid 15580, L 14 Albion
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L14Albion createInstance()
+    {
+            return new L14Albion();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ddc6915;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16385
+ * <p> Entity class <b><code>AlphaJet3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AlphaJet3.createInstance()</code> or <code>new AlphaJet3()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: DassaultDornierAlphaJet  = <code>1</code>; </li>
+ *     <li> Specific: AlphaJet3  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16385; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2205a05d. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class AlphaJet3 extends EntityType
+public final class AlphaJet3 extends EntityType
 {
     /** Default constructor */
     public AlphaJet3()
@@ -26,5 +40,11 @@ public class AlphaJet3 extends EntityType
         setCategory((byte)40); // uid 16382, Trainer
         setSubCategory((byte)1); // uid 16383, Dassault/Dornier Alpha Jet
         setSpecific((byte)2); // uid 16385, Alpha Jet 3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AlphaJet3 createInstance()
+    {
+            return new AlphaJet3();
     }
 }

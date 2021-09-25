@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@126f8f24;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12170
+ * <p> Entity class <b><code>KiskaWPB1336</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KiskaWPB1336.createInstance()</code> or <code>new KiskaWPB1336()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: IslandClassWPB  = <code>5</code>; </li>
+ *     <li> Specific: KiskaWPB1336  = <code>21</code>; </li>
+ *     <li> Entity type uid: 12170; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@587c5c1. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class KiskaWPB1336 extends EntityType
+public final class KiskaWPB1336 extends EntityType
 {
     /** Default constructor */
     public KiskaWPB1336()
@@ -26,5 +40,11 @@ public class KiskaWPB1336 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)5); // uid 12149, Island Class (WPB)
         setSpecific((byte)21); // uid 12170, Kiska (WPB 1336)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KiskaWPB1336 createInstance()
+    {
+            return new KiskaWPB1336();
     }
 }

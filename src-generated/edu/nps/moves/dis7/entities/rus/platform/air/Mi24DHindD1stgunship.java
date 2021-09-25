@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66c83fc8;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13414
+ * <p> Entity class <b><code>Mi24DHindD1stgunship</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mi24DHindD1stgunship.createInstance()</code> or <code>new Mi24DHindD1stgunship()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: Mi242535Hind  = <code>2</code>; </li>
+ *     <li> Specific: Mi24DHindD1stgunship  = <code>4</code>; </li>
+ *     <li> Entity type uid: 13414; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a389173. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Attackhelicopter
+ * @see SubCategory
+
  */
-public class Mi24DHindD1stgunship extends EntityType
+public final class Mi24DHindD1stgunship extends EntityType
 {
     /** Default constructor */
     public Mi24DHindD1stgunship()
@@ -26,5 +40,11 @@ public class Mi24DHindD1stgunship extends EntityType
         setCategory((byte)20); // uid 13407, Attack helicopter
         setSubCategory((byte)2); // uid 13410, Mi-24/25/35 Hind
         setSpecific((byte)4); // uid 13414, Mi-24D Hind D (1st gunship)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mi24DHindD1stgunship createInstance()
+    {
+            return new Mi24DHindD1stgunship();
     }
 }

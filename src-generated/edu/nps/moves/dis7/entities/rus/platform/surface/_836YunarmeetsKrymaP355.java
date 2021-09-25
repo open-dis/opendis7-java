@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62d73ead;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30408
+ * <p> Entity class <b><code>_836YunarmeetsKrymaP355</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_836YunarmeetsKrymaP355.createInstance()</code> or <code>new _836YunarmeetsKrymaP355()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: GrachonokClassProject21980AntiSaboteurShip  = <code>118</code>; </li>
+ *     <li> Specific: _836YunarmeetsKrymaP355  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30408; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51a8313b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _836YunarmeetsKrymaP355 extends EntityType
+public final class _836YunarmeetsKrymaP355 extends EntityType
 {
     /** Default constructor */
     public _836YunarmeetsKrymaP355()
@@ -26,5 +40,11 @@ public class _836YunarmeetsKrymaP355 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)118); // uid 30405, Grachonok Class (Project 21980) Anti-Saboteur Ship
         setSpecific((byte)3); // uid 30408, 836 Yunarmeets Kryma (P-355)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _836YunarmeetsKrymaP355 createInstance()
+    {
+            return new _836YunarmeetsKrymaP355();
     }
 }

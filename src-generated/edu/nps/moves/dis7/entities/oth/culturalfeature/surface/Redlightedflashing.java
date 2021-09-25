@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57f2e67;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 22129
+ * <p> Entity class <b><code>Redlightedflashing</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Redlightedflashing.createInstance()</code> or <code>new Redlightedflashing()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Buoy = <code>2</code>; </li>
+ *     <li> SubCategory: Lightedbuoy  = <code>1</code>; </li>
+ *     <li> Specific: Redlightedflashing  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22129; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@402a69f. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Buoy
+ * @see SubCategory
+
  */
-public class Redlightedflashing extends EntityType
+public final class Redlightedflashing extends EntityType
 {
     /** Default constructor */
     public Redlightedflashing()
@@ -26,5 +40,11 @@ public class Redlightedflashing extends EntityType
         setCategory((byte)2); // uid 22125, Buoy
         setSubCategory((byte)1); // uid 22126, Lighted buoy
         setSpecific((byte)3); // uid 22129, Red lighted (flashing)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Redlightedflashing createInstance()
+    {
+            return new Redlightedflashing();
     }
 }

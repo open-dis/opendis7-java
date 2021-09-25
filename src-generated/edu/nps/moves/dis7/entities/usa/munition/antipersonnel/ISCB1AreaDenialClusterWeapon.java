@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@ee2ae9a;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 19862
+ * <p> Entity class <b><code>ISCB1AreaDenialClusterWeapon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ISCB1AreaDenialClusterWeapon.createInstance()</code> or <code>new ISCB1AreaDenialClusterWeapon()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: ISCB1AreaDenialClusterWeapon  = <code>51</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19862; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d7b2319. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class ISCB1AreaDenialClusterWeapon extends EntityType
+public final class ISCB1AreaDenialClusterWeapon extends EntityType
 {
     /** Default constructor */
     public ISCB1AreaDenialClusterWeapon()
@@ -25,5 +39,11 @@ public class ISCB1AreaDenialClusterWeapon extends EntityType
 
         setCategory((byte)2); // uid 19810, Ballistic
         setSubCategory((byte)51); // uid 19862, ISCB-1 Area Denial Cluster Weapon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ISCB1AreaDenialClusterWeapon createInstance()
+    {
+            return new ISCB1AreaDenialClusterWeapon();
     }
 }

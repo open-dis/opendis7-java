@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60e9c3a5;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27857
+ * <p> Entity class <b><code>U401Rivne</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>U401Rivne.createInstance()</code> or <code>new U401Rivne()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: AlligatorTapirClass  = <code>2</code>; </li>
+ *     <li> Specific: U401Rivne  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27857; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@788ddc1f. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class U401Rivne extends EntityType
+public final class U401Rivne extends EntityType
 {
     /** Default constructor */
     public U401Rivne()
@@ -26,5 +40,11 @@ public class U401Rivne extends EntityType
         setCategory((byte)10); // uid 27853, Tank Landing Ship
         setSubCategory((byte)2); // uid 27856, Alligator (Tapir) Class
         setSpecific((byte)1); // uid 27857, U-401 Rivne
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static U401Rivne createInstance()
+    {
+            return new U401Rivne();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@28f154cc;
- * Country: Pakistan (PAK);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 29049
+ * <p> Entity class <b><code>HatfVIIIHaft8Raad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HatfVIIIHaft8Raad.createInstance()</code> or <code>new HatfVIIIHaft8Raad()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: HatfVIIIHaft8Raad  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29049; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79e10fb4. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class HatfVIIIHaft8Raad extends EntityType
+public final class HatfVIIIHaft8Raad extends EntityType
 {
     /** Default constructor */
     public HatfVIIIHaft8Raad()
@@ -25,5 +39,11 @@ public class HatfVIIIHaft8Raad extends EntityType
 
         setCategory((byte)1); // uid 29047, Guided
         setSubCategory((byte)2); // uid 29049, Hatf-VIII / Haft-8 (Raad)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HatfVIIIHaft8Raad createInstance()
+    {
+            return new HatfVIIIHaft8Raad();
     }
 }

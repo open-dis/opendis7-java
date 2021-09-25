@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79079097;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29464
+ * <p> Entity class <b><code>P562Viben</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P562Viben.createInstance()</code> or <code>new P562Viben()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/ Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FlyvefiskenClass  = <code>4</code>; </li>
+ *     <li> Specific: P562Viben  = <code>13</code>; </li>
+ *     <li> Entity type uid: 29464; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76505305. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P562Viben extends EntityType
+public final class P562Viben extends EntityType
 {
     /** Default constructor */
     public P562Viben()
@@ -26,5 +40,11 @@ public class P562Viben extends EntityType
         setCategory((byte)7); // uid 18790, Light/ Patrol Craft
         setSubCategory((byte)4); // uid 29451, Flyvefisken Class
         setSpecific((byte)13); // uid 29464, P562 Viben
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P562Viben createInstance()
+    {
+            return new P562Viben();
     }
 }

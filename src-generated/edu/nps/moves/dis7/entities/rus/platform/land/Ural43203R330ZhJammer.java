@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5d1e09bc;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31862
+ * <p> Entity class <b><code>Ural43203R330ZhJammer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ural43203R330ZhJammer.createInstance()</code> or <code>new Ural43203R330ZhJammer()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: Ural43206x64500kgtrucks  = <code>11</code>; </li>
+ *     <li> Specific: Ural43203  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31862; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6bcbf05b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class Ural43203R330ZhJammer extends EntityType
+public final class Ural43203R330ZhJammer extends EntityType
 {
     /** Default constructor */
     public Ural43203R330ZhJammer()
@@ -27,5 +41,11 @@ public class Ural43203R330ZhJammer extends EntityType
         setSubCategory((byte)11); // uid 12902, Ural-4320 6x6 4500-kg trucks
         setSpecific((byte)1); // uid 31861, Ural-43203
         setExtra((byte)1); // uid 31862, Ural-43203 R330Zh Jammer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ural43203R330ZhJammer createInstance()
+    {
+            return new Ural43203R330ZhJammer();
     }
 }

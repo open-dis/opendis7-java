@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c4b5ceb;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 23999
+ * <p> Entity class <b><code>BR365PHVAPT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BR365PHVAPT.createInstance()</code> or <code>new BR365PHVAPT()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _85mm  = <code>8</code>; </li>
+ *     <li> Specific: BR365PHVAPT  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23999; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46612bfc. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class BR365PHVAPT extends EntityType
+public final class BR365PHVAPT extends EntityType
 {
     /** Default constructor */
     public BR365PHVAPT()
@@ -26,5 +40,11 @@ public class BR365PHVAPT extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)8); // uid 20461, 85 mm
         setSpecific((byte)4); // uid 23999, BR-365P HVAP-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BR365PHVAPT createInstance()
+    {
+            return new BR365PHVAPT();
     }
 }

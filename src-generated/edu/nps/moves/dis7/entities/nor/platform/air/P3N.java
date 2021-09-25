@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40e4ea87;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29607
+ * <p> Entity class <b><code>P3N</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P3N.createInstance()</code> or <code>new P3N()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/Patrol/Observation = <code>5</code>; </li>
+ *     <li> SubCategory: P3Orion  = <code>1</code>; </li>
+ *     <li> Specific: P3N  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29607; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bbc9f97. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWPatrolObservation
+ * @see SubCategory
+
  */
-public class P3N extends EntityType
+public final class P3N extends EntityType
 {
     /** Default constructor */
     public P3N()
@@ -26,5 +40,11 @@ public class P3N extends EntityType
         setCategory((byte)5); // uid 29604, ASW/Patrol/Observation
         setSubCategory((byte)1); // uid 29605, P-3 Orion
         setSpecific((byte)2); // uid 29607, P-3N
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P3N createInstance()
+    {
+            return new P3N();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4eea94a4;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27684
+ * <p> Entity class <b><code>LightweightWaterPurificationSystem125Galh470Lh</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LightweightWaterPurificationSystem125Galh470Lh.createInstance()</code> or <code>new LightweightWaterPurificationSystem125Galh470Lh()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Engineer Equipment = <code>18</code>; </li>
+ *     <li> SubCategory: ROWPUReverseOsmosisWaterPurificationUnit  = <code>18</code>; </li>
+ *     <li> Specific: LightweightWaterPurificationSystem125Galh470Lh  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27684; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@550e9be6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see EngineerEquipment
+ * @see SubCategory
+
  */
-public class LightweightWaterPurificationSystem125Galh470Lh extends EntityType
+public final class LightweightWaterPurificationSystem125Galh470Lh extends EntityType
 {
     /** Default constructor */
     public LightweightWaterPurificationSystem125Galh470Lh()
@@ -26,5 +40,11 @@ public class LightweightWaterPurificationSystem125Galh470Lh extends EntityType
         setCategory((byte)18); // uid 10638, Engineer Equipment
         setSubCategory((byte)18); // uid 27262, ROWPU - Reverse Osmosis Water Purification Unit
         setSpecific((byte)1); // uid 27684, Lightweight Water Purification System (125 Gal/h / 470 L/h)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LightweightWaterPurificationSystem125Galh470Lh createInstance()
+    {
+            return new LightweightWaterPurificationSystem125Galh470Lh();
     }
 }

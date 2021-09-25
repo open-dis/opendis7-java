@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35aea049;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15796
+ * <p> Entity class <b><code>ReimsF406Vigilante</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ReimsF406Vigilante.createInstance()</code> or <code>new ReimsF406Vigilante()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: ReimsF406CaravanII  = <code>4</code>; </li>
+ *     <li> Specific: ReimsF406Vigilante  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15796; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b62d79. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class ReimsF406Vigilante extends EntityType
+public final class ReimsF406Vigilante extends EntityType
 {
     /** Default constructor */
     public ReimsF406Vigilante()
@@ -26,5 +40,11 @@ public class ReimsF406Vigilante extends EntityType
         setCategory((byte)4); // uid 15791, Cargo/Tanker
         setSubCategory((byte)4); // uid 15795, Reims F 406 Caravan II
         setSpecific((byte)1); // uid 15796, Reims F 406 Vigilante
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ReimsF406Vigilante createInstance()
+    {
+            return new ReimsF406Vigilante();
     }
 }

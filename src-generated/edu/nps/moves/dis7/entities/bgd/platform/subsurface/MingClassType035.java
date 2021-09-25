@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@224edc67;
- * Country: Bangladesh (BGD);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32632
+ * <p> Entity class <b><code>MingClassType035</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MingClassType035.createInstance()</code> or <code>new MingClassType035()</code>. </p>
+ * <ul>
+ *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: MingClassType035  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32632; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36f6e879. </p>
+ * @see Country#BANGLADESH_BGD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class MingClassType035 extends EntityType
+public final class MingClassType035 extends EntityType
 {
     /** Default constructor */
     public MingClassType035()
@@ -25,5 +39,11 @@ public class MingClassType035 extends EntityType
 
         setCategory((byte)5); // uid 32631, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 32632, Ming Class (Type 035)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MingClassType035 createInstance()
+    {
+            return new MingClassType035();
     }
 }

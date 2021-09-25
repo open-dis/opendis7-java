@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fe89c24;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29512
+ * <p> Entity class <b><code>DD102Harusame</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD102Harusame.createInstance()</code> or <code>new DD102Harusame()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: MurasameClass  = <code>8</code>; </li>
+ *     <li> Specific: DD102Harusame  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29512; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10650953. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class DD102Harusame extends EntityType
+public final class DD102Harusame extends EntityType
 {
     /** Default constructor */
     public DD102Harusame()
@@ -26,5 +40,11 @@ public class DD102Harusame extends EntityType
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)8); // uid 18898, Murasame Class
         setSpecific((byte)2); // uid 29512, DD-102 Harusame
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD102Harusame createInstance()
+    {
+            return new DD102Harusame();
     }
 }

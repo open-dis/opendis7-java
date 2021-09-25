@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a003cbe;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16013
+ * <p> Entity class <b><code>L9011Foudre</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L9011Foudre.createInstance()</code> or <code>new L9011Foudre()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dock Landing Ship = <code>9</code>; </li>
+ *     <li> SubCategory: FoudreclassTypeTCD90  = <code>1</code>; </li>
+ *     <li> Specific: L9011Foudre  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16013; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d0bf09b. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DockLandingShip
+ * @see SubCategory
+
  */
-public class L9011Foudre extends EntityType
+public final class L9011Foudre extends EntityType
 {
     /** Default constructor */
     public L9011Foudre()
@@ -26,5 +40,11 @@ public class L9011Foudre extends EntityType
         setCategory((byte)9); // uid 16011, Dock Landing Ship
         setSubCategory((byte)1); // uid 16012, Foudre class (Type TCD 90)
         setSpecific((byte)1); // uid 16013, L 9011 Foudre
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L9011Foudre createInstance()
+    {
+            return new L9011Foudre();
     }
 }

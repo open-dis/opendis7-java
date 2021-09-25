@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3899782c;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24118
+ * <p> Entity class <b><code>F263Oldenburg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F263Oldenburg.createInstance()</code> or <code>new F263Oldenburg()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate = <code>50</code>; </li>
+ *     <li> SubCategory: BraunschweigClassTypeK130  = <code>2</code>; </li>
+ *     <li> Specific: F263Oldenburg  = <code>4</code>; </li>
+ *     <li> Entity type uid: 24118; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3403e2ac. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Frigate
+ * @see SubCategory
+
  */
-public class F263Oldenburg extends EntityType
+public final class F263Oldenburg extends EntityType
 {
     /** Default constructor */
     public F263Oldenburg()
@@ -26,5 +40,11 @@ public class F263Oldenburg extends EntityType
         setCategory((byte)50); // uid 16751, Frigate
         setSubCategory((byte)2); // uid 24114, Braunschweig Class (Type K130)
         setSpecific((byte)4); // uid 24118, F 263 Oldenburg
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F263Oldenburg createInstance()
+    {
+            return new F263Oldenburg();
     }
 }

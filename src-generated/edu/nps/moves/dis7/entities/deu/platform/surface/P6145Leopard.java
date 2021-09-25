@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68f4865;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16444
+ * <p> Entity class <b><code>P6145Leopard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P6145Leopard.createInstance()</code> or <code>new P6145Leopard()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: TigerClassType148  = <code>3</code>; </li>
+ *     <li> Specific: P6145Leopard  = <code>5</code>; </li>
+ *     <li> Entity type uid: 16444; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f704591. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class P6145Leopard extends EntityType
+public final class P6145Leopard extends EntityType
 {
     /** Default constructor */
     public P6145Leopard()
@@ -26,5 +40,11 @@ public class P6145Leopard extends EntityType
         setCategory((byte)7); // uid 16416, Light/patrol craft
         setSubCategory((byte)3); // uid 16439, Tiger Class (Type 148)
         setSpecific((byte)5); // uid 16444, P6145 Leopard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P6145Leopard createInstance()
+    {
+            return new P6145Leopard();
     }
 }

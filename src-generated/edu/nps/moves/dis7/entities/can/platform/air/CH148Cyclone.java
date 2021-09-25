@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6acdbdf5;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29538
+ * <p> Entity class <b><code>CH148Cyclone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CH148Cyclone.createInstance()</code> or <code>new CH148Cyclone()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: CH148Cyclone  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29538; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@520a3426. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class CH148Cyclone extends EntityType
+public final class CH148Cyclone extends EntityType
 {
     /** Default constructor */
     public CH148Cyclone()
@@ -25,5 +39,11 @@ public class CH148Cyclone extends EntityType
 
         setCategory((byte)22); // uid 18774, Anti-Submarine Warfare/Patrol Helicopter
         setSubCategory((byte)2); // uid 29538, CH-148 Cyclone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CH148Cyclone createInstance()
+    {
+            return new CH148Cyclone();
     }
 }

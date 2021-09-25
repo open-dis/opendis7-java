@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b498842;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13808
+ * <p> Entity class <b><code>IvanVakhrameev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IvanVakhrameev.createInstance()</code> or <code>new IvanVakhrameev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Ugraclasssubmarinedepotships  = <code>1</code>; </li>
+ *     <li> Specific: IvanVakhrameev  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13808; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@151db587. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class IvanVakhrameev extends EntityType
+public final class IvanVakhrameev extends EntityType
 {
     /** Default constructor */
     public IvanVakhrameev()
@@ -26,5 +40,11 @@ public class IvanVakhrameev extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)1); // uid 13806, Ugra class (submarine depot ships)
         setSpecific((byte)2); // uid 13808, Ivan Vakhrameev
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IvanVakhrameev createInstance()
+    {
+            return new IvanVakhrameev();
     }
 }

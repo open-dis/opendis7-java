@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2da81754;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23819
+ * <p> Entity class <b><code>LockheedL1011</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LockheedL1011.createInstance()</code> or <code>new LockheedL1011()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Heavy (above 255,000 lbs / 115,666 kg) = <code>88</code>; </li>
+ *     <li> SubCategory: TriJet  = <code>33</code>; </li>
+ *     <li> Specific: LockheedL1011  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23819; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6042d663. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftHeavyabove255000lbs115666kg
+ * @see SubCategory
+
  */
-public class LockheedL1011 extends EntityType
+public final class LockheedL1011 extends EntityType
 {
     /** Default constructor */
     public LockheedL1011()
@@ -26,5 +40,11 @@ public class LockheedL1011 extends EntityType
         setCategory((byte)88); // uid 23813, Civilian Fixed Wing Aircraft, Heavy (above 255,000 lbs / 115,666 kg)
         setSubCategory((byte)33); // uid 23818, Tri Jet
         setSpecific((byte)1); // uid 23819, Lockheed L-1011
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LockheedL1011 createInstance()
+    {
+            return new LockheedL1011();
     }
 }

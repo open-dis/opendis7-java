@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c1ea7be;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 22255
+ * <p> Entity class <b><code>HighPowerFiberOpticTowedDecoyHPFOTD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HighPowerFiberOpticTowedDecoyHPFOTD.createInstance()</code> or <code>new HighPowerFiberOpticTowedDecoyHPFOTD()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active emitter = <code>4</code>; </li>
+ *     <li> SubCategory: TowedDecoy  = <code>1</code>; </li>
+ *     <li> Specific: HighPowerFiberOpticTowedDecoyHPFOTD  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22255; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e6cb932. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Activeemitter
+ * @see SubCategory
+
  */
-public class HighPowerFiberOpticTowedDecoyHPFOTD extends EntityType
+public final class HighPowerFiberOpticTowedDecoyHPFOTD extends EntityType
 {
     /** Default constructor */
     public HighPowerFiberOpticTowedDecoyHPFOTD()
@@ -26,5 +40,11 @@ public class HighPowerFiberOpticTowedDecoyHPFOTD extends EntityType
         setCategory((byte)4); // uid 22251, Active emitter
         setSubCategory((byte)1); // uid 22252, Towed Decoy
         setSpecific((byte)3); // uid 22255, High Power Fiber Optic Towed Decoy (HPFOTD)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HighPowerFiberOpticTowedDecoyHPFOTD createInstance()
+    {
+            return new HighPowerFiberOpticTowedDecoyHPFOTD();
     }
 }

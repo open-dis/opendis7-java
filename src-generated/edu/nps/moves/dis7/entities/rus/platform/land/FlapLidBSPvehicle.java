@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@57540fd0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13059
+ * <p> Entity class <b><code>FlapLidBSPvehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlapLidBSPvehicle.createInstance()</code> or <code>new FlapLidBSPvehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA10GrumbleSAMSystem  = <code>4</code>; </li>
+ *     <li> Specific: FlapLidEngagementRadar36N6E  = <code>3</code>; </li>
+ *     <li> Entity type uid: 13059; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3af356f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class FlapLidBSPvehicle extends EntityType
+public final class FlapLidBSPvehicle extends EntityType
 {
     /** Default constructor */
     public FlapLidBSPvehicle()
@@ -27,5 +41,11 @@ public class FlapLidBSPvehicle extends EntityType
         setSubCategory((byte)4); // uid 13052, SA-10 Grumble SAM System
         setSpecific((byte)3); // uid 13057, Flap Lid Engagement Radar (36N6E)
         setExtra((byte)2); // uid 13059, Flap Lid B (SP vehicle)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlapLidBSPvehicle createInstance()
+    {
+            return new FlapLidBSPvehicle();
     }
 }

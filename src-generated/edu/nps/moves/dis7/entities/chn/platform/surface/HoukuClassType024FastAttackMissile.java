@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2f112965;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17177
+ * <p> Entity class <b><code>HoukuClassType024FastAttackMissile</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HoukuClassType024FastAttackMissile.createInstance()</code> or <code>new HoukuClassType024FastAttackMissile()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: HoukuClassType024FastAttackMissile  = <code>13</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17177; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19d37183. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class HoukuClassType024FastAttackMissile extends EntityType
+public final class HoukuClassType024FastAttackMissile extends EntityType
 {
     /** Default constructor */
     public HoukuClassType024FastAttackMissile()
@@ -25,5 +39,11 @@ public class HoukuClassType024FastAttackMissile extends EntityType
 
         setCategory((byte)7); // uid 17120, Light/Patrol Craft
         setSubCategory((byte)13); // uid 17177, Houku Class Type 024 Fast Attack Missile
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HoukuClassType024FastAttackMissile createInstance()
+    {
+            return new HoukuClassType024FastAttackMissile();
     }
 }

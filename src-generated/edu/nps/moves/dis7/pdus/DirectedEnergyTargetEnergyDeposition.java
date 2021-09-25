@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class DirectedEnergyTargetEnergyDeposition extends Object implements Seri
    protected float  peakIrradiance;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DirectedEnergyTargetEnergyDeposition()
  {
  }
@@ -42,7 +41,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += targetEntityID.getMarshalledSize();
+   if (targetEntityID != null)
+       marshalSize += targetEntityID.getMarshalledSize();
    marshalSize += 2;  // padding
    marshalSize += 4;  // peakIrradiance
 
@@ -177,9 +177,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    targetEntityID.unmarshal(byteBuffer);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    peakIrradiance = byteBuffer.getFloat();
+    try
+    {
+        // attribute targetEntityID marked as not serialized
+        targetEntityID.unmarshal(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute peakIrradiance marked as not serialized
+        peakIrradiance = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

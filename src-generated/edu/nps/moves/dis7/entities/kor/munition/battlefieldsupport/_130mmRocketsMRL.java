@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@21002393;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 27437
+ * <p> Entity class <b><code>_130mmRocketsMRL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_130mmRocketsMRL.createInstance()</code> or <code>new _130mmRocketsMRL()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _130mmRocketsMRL  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27437; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@634e1b39. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _130mmRocketsMRL extends EntityType
+public final class _130mmRocketsMRL extends EntityType
 {
     /** Default constructor */
     public _130mmRocketsMRL()
@@ -25,5 +39,11 @@ public class _130mmRocketsMRL extends EntityType
 
         setCategory((byte)2); // uid 27436, Ballistic
         setSubCategory((byte)1); // uid 27437, 130mm Rockets (MRL)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _130mmRocketsMRL createInstance()
+    {
+            return new _130mmRocketsMRL();
     }
 }

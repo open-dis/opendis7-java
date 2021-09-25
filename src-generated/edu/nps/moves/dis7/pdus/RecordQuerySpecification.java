@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class RecordQuerySpecification extends Object implements Serializable
    protected List< VariableRecordType > recordIDs = new ArrayList< VariableRecordType >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RecordQuerySpecification()
  {
  }
@@ -40,11 +39,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 4;  // numberOfRecords
-   for(int idx=0; idx < recordIDs.size(); idx++)
-   {
-        VariableRecordType listElement = recordIDs.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (recordIDs != null)
+       for (int idx=0; idx < recordIDs.size(); idx++)
+       {
+            VariableRecordType listElement = recordIDs.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -78,7 +78,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        dos.writeInt(recordIDs.size());
 
-       for(int idx = 0; idx < recordIDs.size(); idx++)
+       for (int idx = 0; idx < recordIDs.size(); idx++)
        {
             VariableRecordType aVariableRecordType = recordIDs.get(idx);
             aVariableRecordType.marshal(dos);
@@ -106,7 +106,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfRecords; idx++)
+        for (int idx = 0; idx < numberOfRecords; idx++)
         {
             VariableRecordType anX = VariableRecordType.unmarshalEnum(dis);
             recordIDs.add(anX);
@@ -133,7 +133,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    byteBuffer.putInt( (int)recordIDs.size());
 
-   for(int idx = 0; idx < recordIDs.size(); idx++)
+   for (int idx = 0; idx < recordIDs.size(); idx++)
    {
         VariableRecordType aVariableRecordType = recordIDs.get(idx);
         aVariableRecordType.marshal(byteBuffer);
@@ -152,13 +152,22 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfRecords; idx++)
+    try
     {
-    VariableRecordType anX = VariableRecordType.unmarshalEnum(byteBuffer);
-    recordIDs.add(anX);
-    }
+        // attribute numberOfRecords marked as not serialized
+        numberOfRecords = byteBuffer.getInt();
+        // attribute recordIDs marked as not serialized
+        for (int idx = 0; idx < numberOfRecords; idx++)
+        {
+        VariableRecordType anX = VariableRecordType.unmarshalEnum(byteBuffer);
+        recordIDs.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -193,7 +202,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final RecordQuerySpecification rhs = (RecordQuerySpecification)obj;
 
 
-     for(int idx = 0; idx < recordIDs.size(); idx++)
+     for (int idx = 0; idx < recordIDs.size(); idx++)
         if( ! ( recordIDs.get(idx).equals(rhs.recordIDs.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5e3a39cd;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12779
+ * <p> Entity class <b><code>_152mm2S19akaMSTAS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_152mm2S19akaMSTAS.createInstance()</code> or <code>new _152mm2S19akaMSTAS()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: _152mm2S19akaMSTAS  = <code>26</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12779; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4905c46b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class _152mm2S19akaMSTAS extends EntityType
+public final class _152mm2S19akaMSTAS extends EntityType
 {
     /** Default constructor */
     public _152mm2S19akaMSTAS()
@@ -25,5 +39,11 @@ public class _152mm2S19akaMSTAS extends EntityType
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
         setSubCategory((byte)26); // uid 12779, 152-mm 2S19 (aka MSTA-S)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _152mm2S19akaMSTAS createInstance()
+    {
+            return new _152mm2S19akaMSTAS();
     }
 }

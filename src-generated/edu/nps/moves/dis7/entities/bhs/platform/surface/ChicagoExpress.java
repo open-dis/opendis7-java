@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@548b7f67;
- * Country: Bahamas (BHS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24484
+ * <p> Entity class <b><code>ChicagoExpress</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChicagoExpress.createInstance()</code> or <code>new ChicagoExpress()</code>. </p>
+ * <ul>
+ *     <li> Country: Bahamas (BHS) = <code>15</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
+ *     <li> Specific: ChicagoExpress  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24484; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6aaa5eb0. </p>
+ * @see Country#BAHAMAS_BHS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class ChicagoExpress extends EntityType
+public final class ChicagoExpress extends EntityType
 {
     /** Default constructor */
     public ChicagoExpress()
@@ -26,5 +40,11 @@ public class ChicagoExpress extends EntityType
         setCategory((byte)81); // uid 24482, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)3); // uid 24483, Container Ship
         setSpecific((byte)1); // uid 24484, Chicago Express
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChicagoExpress createInstance()
+    {
+            return new ChicagoExpress();
     }
 }

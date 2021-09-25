@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ae42248;
- * Country: France (FRA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22483
+ * <p> Entity class <b><code>TigerSTRS2100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TigerSTRS2100.createInstance()</code> or <code>new TigerSTRS2100()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
+ *     <li> Specific: TigerSTRS2100  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22483; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@246df37b. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class TigerSTRS2100 extends EntityType
+public final class TigerSTRS2100 extends EntityType
 {
     /** Default constructor */
     public TigerSTRS2100()
@@ -26,5 +40,11 @@ public class TigerSTRS2100 extends EntityType
         setCategory((byte)2); // uid 22477, RF Active
         setSubCategory((byte)2); // uid 22481, Early Warning/Surveillance Radar
         setSpecific((byte)2); // uid 22483, Tiger-S (TRS-2100)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TigerSTRS2100 createInstance()
+    {
+            return new TigerSTRS2100();
     }
 }

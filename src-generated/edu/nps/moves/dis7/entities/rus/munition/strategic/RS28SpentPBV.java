@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69eb544f;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32404
+ * <p> Entity class <b><code>RS28SpentPBV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RS28SpentPBV.createInstance()</code> or <code>new RS28SpentPBV()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: RS28Sarmat  = <code>46</code>; </li>
+ *     <li> Specific: RS28SpentPBV  = <code>7</code>; </li>
+ *     <li> Entity type uid: 32404; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b9697ae. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class RS28SpentPBV extends EntityType
+public final class RS28SpentPBV extends EntityType
 {
     /** Default constructor */
     public RS28SpentPBV()
@@ -26,5 +40,11 @@ public class RS28SpentPBV extends EntityType
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)46); // uid 32398, RS 28 Sarmat
         setSpecific((byte)7); // uid 32404, RS 28 Spent PBV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RS28SpentPBV createInstance()
+    {
+            return new RS28SpentPBV();
     }
 }

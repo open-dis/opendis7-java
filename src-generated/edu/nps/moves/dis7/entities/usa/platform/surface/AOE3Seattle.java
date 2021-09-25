@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4aebee4b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12085
+ * <p> Entity class <b><code>AOE3Seattle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AOE3Seattle.createInstance()</code> or <code>new AOE3Seattle()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Combat Support Ship = <code>60</code>; </li>
+ *     <li> SubCategory: SacramentoClass  = <code>1</code>; </li>
+ *     <li> Specific: AOE3Seattle  = <code>3</code>; </li>
+ *     <li> Entity type uid: 12085; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f10fec6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastCombatSupportShip
+ * @see SubCategory
+
  */
-public class AOE3Seattle extends EntityType
+public final class AOE3Seattle extends EntityType
 {
     /** Default constructor */
     public AOE3Seattle()
@@ -26,5 +40,11 @@ public class AOE3Seattle extends EntityType
         setCategory((byte)60); // uid 12081, Fast Combat Support Ship
         setSubCategory((byte)1); // uid 12082, Sacramento Class
         setSpecific((byte)3); // uid 12085, AOE 3 Seattle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AOE3Seattle createInstance()
+    {
+            return new AOE3Seattle();
     }
 }

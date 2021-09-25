@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39ab59f8;
- * Country: Panama (PAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26787
+ * <p> Entity class <b><code>HanjinMuscat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HanjinMuscat.createInstance()</code> or <code>new HanjinMuscat()</code>. </p>
+ * <ul>
+ *     <li> Country: Panama (PAN) = <code>168</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: LiquidNaturalGasLNGTanker  = <code>3</code>; </li>
+ *     <li> Specific: HanjinMuscat  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26787; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e36bb2a. </p>
+ * @see Country#PANAMA_PAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class HanjinMuscat extends EntityType
+public final class HanjinMuscat extends EntityType
 {
     /** Default constructor */
     public HanjinMuscat()
@@ -26,5 +40,11 @@ public class HanjinMuscat extends EntityType
         setCategory((byte)82); // uid 24556, Tanker (Group 3 Merchant)
         setSubCategory((byte)3); // uid 26786, Liquid Natural Gas (LNG) Tanker
         setSpecific((byte)1); // uid 26787, Hanjin Muscat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HanjinMuscat createInstance()
+    {
+            return new HanjinMuscat();
     }
 }

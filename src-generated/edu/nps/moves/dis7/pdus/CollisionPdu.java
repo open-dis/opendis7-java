@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.2.3 Collisions between entities shall be communicated by issuing a Collision PDU. See 5.3.3.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class CollisionPdu extends EntityInformationFamilyPdu implements Serializable
+public class CollisionPdu extends EntityInformationInteractionFamilyPdu implements Serializable
 {
    /** This field shall identify the entity that is issuing the PDU, and shall be represented by an Entity Identifier record (see 6.2.28). */
    protected EntityID  issuingEntityID = new EntityID(); 
@@ -43,7 +42,7 @@ public class CollisionPdu extends EntityInformationFamilyPdu implements Serializ
    protected Vector3Float  location = new Vector3Float(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public CollisionPdu()
  {
     setPduType( DisPduType.COLLISION );
@@ -59,14 +58,20 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += issuingEntityID.getMarshalledSize();
-   marshalSize += collidingEntityID.getMarshalledSize();
-   marshalSize += eventID.getMarshalledSize();
-   marshalSize += collisionType.getMarshalledSize();
+   if (issuingEntityID != null)
+       marshalSize += issuingEntityID.getMarshalledSize();
+   if (collidingEntityID != null)
+       marshalSize += collidingEntityID.getMarshalledSize();
+   if (eventID != null)
+       marshalSize += eventID.getMarshalledSize();
+   if (collisionType != null)
+       marshalSize += collisionType.getMarshalledSize();
    marshalSize += 1;  // pad
-   marshalSize += velocity.getMarshalledSize();
+   if (velocity != null)
+       marshalSize += velocity.getMarshalledSize();
    marshalSize += 4;  // mass
-   marshalSize += location.getMarshalledSize();
+   if (location != null)
+       marshalSize += location.getMarshalledSize();
 
    return marshalSize;
 }
@@ -301,14 +306,29 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    issuingEntityID.unmarshal(byteBuffer);
-    collidingEntityID.unmarshal(byteBuffer);
-    eventID.unmarshal(byteBuffer);
-    collisionType = CollisionType.unmarshalEnum(byteBuffer);
-    pad = (byte)(byteBuffer.get() & 0xFF);
-    velocity.unmarshal(byteBuffer);
-    mass = byteBuffer.getFloat();
-    location.unmarshal(byteBuffer);
+    try
+    {
+        // attribute issuingEntityID marked as not serialized
+        issuingEntityID.unmarshal(byteBuffer);
+        // attribute collidingEntityID marked as not serialized
+        collidingEntityID.unmarshal(byteBuffer);
+        // attribute eventID marked as not serialized
+        eventID.unmarshal(byteBuffer);
+        // attribute collisionType marked as not serialized
+        collisionType = CollisionType.unmarshalEnum(byteBuffer);
+        // attribute pad marked as not serialized
+        pad = (byte)(byteBuffer.get() & 0xFF);
+        // attribute velocity marked as not serialized
+        velocity.unmarshal(byteBuffer);
+        // attribute mass marked as not serialized
+        mass = byteBuffer.getFloat();
+        // attribute location marked as not serialized
+        location.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

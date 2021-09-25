@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c0e13b7;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19214
+ * <p> Entity class <b><code>_5PCL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_5PCL.createInstance()</code> or <code>new _5PCL()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: PCLType  = <code>3</code>; </li>
+ *     <li> Specific: _5PCL  = <code>4</code>; </li>
+ *     <li> Entity type uid: 19214; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4faa298. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _5PCL extends EntityType
+public final class _5PCL extends EntityType
 {
     /** Default constructor */
     public _5PCL()
@@ -26,5 +40,11 @@ public class _5PCL extends EntityType
         setCategory((byte)7); // uid 19156, Light/Patrol Craft
         setSubCategory((byte)3); // uid 19210, PCL Type
         setSpecific((byte)4); // uid 19214, 5 PCL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _5PCL createInstance()
+    {
+            return new _5PCL();
     }
 }

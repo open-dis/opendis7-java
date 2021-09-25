@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f303ecd;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13219
+ * <p> Entity class <b><code>MiG23PFloggerG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MiG23PFloggerG.createInstance()</code> or <code>new MiG23PFloggerG()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: MiG2324Flogger  = <code>5</code>; </li>
+ *     <li> Specific: MiG23PFloggerG  = <code>11</code>; </li>
+ *     <li> Entity type uid: 13219; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@765df79d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class MiG23PFloggerG extends EntityType
+public final class MiG23PFloggerG extends EntityType
 {
     /** Default constructor */
     public MiG23PFloggerG()
@@ -26,5 +40,11 @@ public class MiG23PFloggerG extends EntityType
         setCategory((byte)1); // uid 13174, Fighter/Air Defense
         setSubCategory((byte)5); // uid 13208, MiG-23/24 Flogger
         setSpecific((byte)11); // uid 13219, MiG-23P Flogger G
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MiG23PFloggerG createInstance()
+    {
+            return new MiG23PFloggerG();
     }
 }

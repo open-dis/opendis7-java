@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public abstract class PduBase extends Pdu implements Serializable
    protected byte  padding = (byte)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public PduBase()
  {
  }
@@ -40,7 +39,8 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += pduStatus.getMarshalledSize();
+   if (pduStatus != null)
+       marshalSize += pduStatus.getMarshalledSize();
    marshalSize += 1;  // padding
 
    return marshalSize;
@@ -160,8 +160,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    pduStatus.unmarshal(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute pduStatus marked as not serialized
+        pduStatus.unmarshal(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

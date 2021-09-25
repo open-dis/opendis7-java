@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77cd235b;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30764
+ * <p> Entity class <b><code>ALQ176ChaffDispenserPod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ALQ176ChaffDispenserPod.createInstance()</code> or <code>new ALQ176ChaffDispenserPod()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: ECM Pod = <code>23</code>; </li>
+ *     <li> SubCategory: ALQ176ChaffDispenserPod  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30764; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e4ecdf8. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see ECMPod
+ * @see SubCategory
+
  */
-public class ALQ176ChaffDispenserPod extends EntityType
+public final class ALQ176ChaffDispenserPod extends EntityType
 {
     /** Default constructor */
     public ALQ176ChaffDispenserPod()
@@ -25,5 +39,11 @@ public class ALQ176ChaffDispenserPod extends EntityType
 
         setCategory((byte)23); // uid 30763, ECM Pod
         setSubCategory((byte)1); // uid 30764, ALQ-176 Chaff Dispenser Pod
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ALQ176ChaffDispenserPod createInstance()
+    {
+            return new ALQ176ChaffDispenserPod();
     }
 }

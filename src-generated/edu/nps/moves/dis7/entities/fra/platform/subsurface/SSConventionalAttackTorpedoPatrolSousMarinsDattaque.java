@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@24c1b2d2;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16195
+ * <p> Entity class <b><code>SSConventionalAttackTorpedoPatrolSousMarinsDattaque</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSConventionalAttackTorpedoPatrolSousMarinsDattaque.createInstance()</code> or <code>new SSConventionalAttackTorpedoPatrolSousMarinsDattaque()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) (Sous-Marins Dattaque) = <code>5</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16195; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@15a34df2. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrolSousMarinsDattaque
+
  */
-public class SSConventionalAttackTorpedoPatrolSousMarinsDattaque extends EntityType
+public final class SSConventionalAttackTorpedoPatrolSousMarinsDattaque extends EntityType
 {
     /** Default constructor */
     public SSConventionalAttackTorpedoPatrolSousMarinsDattaque()
@@ -24,5 +37,11 @@ public class SSConventionalAttackTorpedoPatrolSousMarinsDattaque extends EntityT
         setDomain(Domain.inst(PlatformDomain.SUBSURFACE));
 
         setCategory((byte)5); // uid 16195, SS (Conventional Attack-Torpedo, Patrol) (Sous-Marins Dattaque)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSConventionalAttackTorpedoPatrolSousMarinsDattaque createInstance()
+    {
+            return new SSConventionalAttackTorpedoPatrolSousMarinsDattaque();
     }
 }

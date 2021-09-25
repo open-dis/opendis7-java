@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6c008c24;
- * Country: Spain (ESP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19013
+ * <p> Entity class <b><code>ServiolaClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ServiolaClass.createInstance()</code> or <code>new ServiolaClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Spain (ESP) = <code>198</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ServiolaClass  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19013; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@534c6767. </p>
+ * @see Country#SPAIN_ESP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ServiolaClass extends EntityType
+public final class ServiolaClass extends EntityType
 {
     /** Default constructor */
     public ServiolaClass()
@@ -25,5 +39,11 @@ public class ServiolaClass extends EntityType
 
         setCategory((byte)7); // uid 19011, Light/Patrol Craft
         setSubCategory((byte)2); // uid 19013, Serviola Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ServiolaClass createInstance()
+    {
+            return new ServiolaClass();
     }
 }

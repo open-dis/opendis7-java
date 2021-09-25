@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@435cc7f9;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32888
+ * <p> Entity class <b><code>ChallengerMBTMark2GunDorchesterL2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChallengerMBTMark2GunDorchesterL2.createInstance()</code> or <code>new ChallengerMBTMark2GunDorchesterL2()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: ChallengerMBT  = <code>2</code>; </li>
+ *     <li> Specific: MarkII  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32888; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2a869a16. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class ChallengerMBTMark2GunDorchesterL2 extends EntityType
+public final class ChallengerMBTMark2GunDorchesterL2 extends EntityType
 {
     /** Default constructor */
     public ChallengerMBTMark2GunDorchesterL2()
@@ -27,5 +41,11 @@ public class ChallengerMBTMark2GunDorchesterL2 extends EntityType
         setSubCategory((byte)2); // uid 14884, Challenger MBT
         setSpecific((byte)2); // uid 14886, Mark II
         setExtra((byte)5); // uid 32888, Challenger MBT Mark 2 Gun Dorchester L2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChallengerMBTMark2GunDorchesterL2 createInstance()
+    {
+            return new ChallengerMBTMark2GunDorchesterL2();
     }
 }

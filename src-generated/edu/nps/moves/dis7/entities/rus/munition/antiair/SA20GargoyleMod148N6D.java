@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15369d73;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 24034
+ * <p> Entity class <b><code>SA20GargoyleMod148N6D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA20GargoyleMod148N6D.createInstance()</code> or <code>new SA20GargoyleMod148N6D()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SA20Gargoyle  = <code>42</code>; </li>
+ *     <li> Specific: SA20GargoyleMod148N6D  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24034; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6af78a48. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SA20GargoyleMod148N6D extends EntityType
+public final class SA20GargoyleMod148N6D extends EntityType
 {
     /** Default constructor */
     public SA20GargoyleMod148N6D()
@@ -26,5 +40,11 @@ public class SA20GargoyleMod148N6D extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)42); // uid 20392, SA-20 Gargoyle
         setSpecific((byte)2); // uid 24034, SA-20 Gargoyle Mod 1 (48N6D)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA20GargoyleMod148N6D createInstance()
+    {
+            return new SA20GargoyleMod148N6D();
     }
 }

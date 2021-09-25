@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bb9efbc;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27602
+ * <p> Entity class <b><code>W322Andenes</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>W322Andenes.createInstance()</code> or <code>new W322Andenes()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Nordkappclass  = <code>1</code>; </li>
+ *     <li> Specific: W322Andenes  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27602; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1fe8d51b. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class W322Andenes extends EntityType
+public final class W322Andenes extends EntityType
 {
     /** Default constructor */
     public W322Andenes()
@@ -26,5 +40,11 @@ public class W322Andenes extends EntityType
         setCategory((byte)63); // uid 27598, Coast Guard Boats
         setSubCategory((byte)1); // uid 27599, Nordkapp class
         setSpecific((byte)3); // uid 27602, W322 Andenes
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static W322Andenes createInstance()
+    {
+            return new W322Andenes();
     }
 }

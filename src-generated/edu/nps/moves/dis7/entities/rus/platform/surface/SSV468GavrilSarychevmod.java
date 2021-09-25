@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e94d093;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13922
+ * <p> Entity class <b><code>SSV468GavrilSarychevmod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSV468GavrilSarychevmod.createInstance()</code> or <code>new SSV468GavrilSarychevmod()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: NikolayZubovclassAGIs  = <code>17</code>; </li>
+ *     <li> Specific: SSV468GavrilSarychevmod  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13922; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ff2e84b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SSV468GavrilSarychevmod extends EntityType
+public final class SSV468GavrilSarychevmod extends EntityType
 {
     /** Default constructor */
     public SSV468GavrilSarychevmod()
@@ -26,5 +40,11 @@ public class SSV468GavrilSarychevmod extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)17); // uid 13921, Nikolay Zubov class (AGIs)
         setSpecific((byte)1); // uid 13922, SSV 468 Gavril Sarychev (mod)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSV468GavrilSarychevmod createInstance()
+    {
+            return new SSV468GavrilSarychevmod();
     }
 }

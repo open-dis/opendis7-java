@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@11cadb32;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 22126
+ * <p> Entity class <b><code>Lightedbuoy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Lightedbuoy.createInstance()</code> or <code>new Lightedbuoy()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Buoy = <code>2</code>; </li>
+ *     <li> SubCategory: Lightedbuoy  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22126; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@59371066. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Buoy
+ * @see SubCategory
+
  */
-public class Lightedbuoy extends EntityType
+public final class Lightedbuoy extends EntityType
 {
     /** Default constructor */
     public Lightedbuoy()
@@ -25,5 +39,11 @@ public class Lightedbuoy extends EntityType
 
         setCategory((byte)2); // uid 22125, Buoy
         setSubCategory((byte)1); // uid 22126, Lighted buoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Lightedbuoy createInstance()
+    {
+            return new Lightedbuoy();
     }
 }

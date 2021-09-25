@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15a902e7;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17809
+ * <p> Entity class <b><code>HaeGumGongHo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaeGumGongHo.createInstance()</code> or <code>new HaeGumGongHo()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: DepotShipforMidgetSubmarine  = <code>1</code>; </li>
+ *     <li> Specific: HaeGumGongHo  = <code>7</code>; </li>
+ *     <li> Entity type uid: 17809; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@172ca72b. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class HaeGumGongHo extends EntityType
+public final class HaeGumGongHo extends EntityType
 {
     /** Default constructor */
     public HaeGumGongHo()
@@ -26,5 +40,11 @@ public class HaeGumGongHo extends EntityType
         setCategory((byte)16); // uid 17801, Auxiliary
         setSubCategory((byte)1); // uid 17802, Depot Ship for Midget Submarine
         setSpecific((byte)7); // uid 17809, Hae Gum Gong-Ho
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaeGumGongHo createInstance()
+    {
+            return new HaeGumGongHo();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class AttachedPartVP extends Object implements Serializable
    protected EntityType  attachedPartType = new EntityType(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AttachedPartVP()
  {
  }
@@ -48,11 +47,15 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
-   marshalSize += detachedIndicator.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
+   if (detachedIndicator != null)
+       marshalSize += detachedIndicator.getMarshalledSize();
    marshalSize += 2;  // partAttachedTo
-   marshalSize += parameterType.getMarshalledSize();
-   marshalSize += attachedPartType.getMarshalledSize();
+   if (parameterType != null)
+       marshalSize += parameterType.getMarshalledSize();
+   if (attachedPartType != null)
+       marshalSize += attachedPartType.getMarshalledSize();
 
    return marshalSize;
 }
@@ -225,11 +228,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    detachedIndicator = AttachedPartDetachedIndicator.unmarshalEnum(byteBuffer);
-    partAttachedTo = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameterType = AttachedParts.unmarshalEnum(byteBuffer);
-    attachedPartType.unmarshal(byteBuffer);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute detachedIndicator marked as not serialized
+        detachedIndicator = AttachedPartDetachedIndicator.unmarshalEnum(byteBuffer);
+        // attribute partAttachedTo marked as not serialized
+        partAttachedTo = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameterType marked as not serialized
+        parameterType = AttachedParts.unmarshalEnum(byteBuffer);
+        // attribute attachedPartType marked as not serialized
+        attachedPartType.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@391d28ea;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: AIR;
- *
- * Entity type uid: 26807
+ * <p> Entity class <b><code>ANURC138V1CLVT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANURC138V1CLVT.createInstance()</code> or <code>new ANURC138V1CLVT()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Link 16 Terminal = <code>21</code>; </li>
+ *     <li> SubCategory: JointElectronicsTypeDesignationSystemJETDSNonspecificSeries  = <code>1</code>; </li>
+ *     <li> Specific: ANURC138V1CLVT  = <code>21</code>; </li>
+ *     <li> Entity type uid: 26807; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d126083. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Link16Terminal
+ * @see SubCategory
+
  */
-public class ANURC138V1CLVT extends EntityType
+public final class ANURC138V1CLVT extends EntityType
 {
     /** Default constructor */
     public ANURC138V1CLVT()
@@ -26,5 +40,11 @@ public class ANURC138V1CLVT extends EntityType
         setCategory((byte)21); // uid 26798, Link 16 Terminal
         setSubCategory((byte)1); // uid 26799, Joint Electronics Type Designation System (JETDS) Non-specific Series
         setSpecific((byte)21); // uid 26807, AN/URC-138(V)1(C) LVT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANURC138V1CLVT createInstance()
+    {
+            return new ANURC138V1CLVT();
     }
 }

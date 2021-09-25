@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c90e579;
- * Country: Egypt (EGY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29808
+ * <p> Entity class <b><code>FFG1001TahyaMisr</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFG1001TahyaMisr.createInstance()</code> or <code>new FFG1001TahyaMisr()</code>. </p>
+ * <ul>
+ *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigates = <code>6</code>; </li>
+ *     <li> SubCategory: AquitaineClass  = <code>5</code>; </li>
+ *     <li> Specific: FFG1001TahyaMisr  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29808; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fbd1f6. </p>
+ * @see Country#COMMENT_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigates
+ * @see SubCategory
+
  */
-public class FFG1001TahyaMisr extends EntityType
+public final class FFG1001TahyaMisr extends EntityType
 {
     /** Default constructor */
     public FFG1001TahyaMisr()
@@ -26,5 +40,11 @@ public class FFG1001TahyaMisr extends EntityType
         setCategory((byte)6); // uid 18799, Guided Missile Frigates
         setSubCategory((byte)5); // uid 29807, Aquitaine Class
         setSpecific((byte)1); // uid 29808, FFG 1001 Tahya Misr
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFG1001TahyaMisr createInstance()
+    {
+            return new FFG1001TahyaMisr();
     }
 }

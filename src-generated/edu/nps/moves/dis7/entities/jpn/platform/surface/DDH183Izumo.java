@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53e211ee;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29271
+ * <p> Entity class <b><code>DDH183Izumo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDH183Izumo.createInstance()</code> or <code>new DDH183Izumo()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cruiser/Helicopter Carrier = <code>13</code>; </li>
+ *     <li> SubCategory: IzumoClassHelicopterDestroyer  = <code>2</code>; </li>
+ *     <li> Specific: DDH183Izumo  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29271; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18f20260. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CruiserHelicopterCarrier
+ * @see SubCategory
+
  */
-public class DDH183Izumo extends EntityType
+public final class DDH183Izumo extends EntityType
 {
     /** Default constructor */
     public DDH183Izumo()
@@ -26,5 +40,11 @@ public class DDH183Izumo extends EntityType
         setCategory((byte)13); // uid 28698, Cruiser/Helicopter Carrier
         setSubCategory((byte)2); // uid 29270, Izumo Class Helicopter Destroyer
         setSpecific((byte)1); // uid 29271, DDH-183 Izumo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDH183Izumo createInstance()
+    {
+            return new DDH183Izumo();
     }
 }

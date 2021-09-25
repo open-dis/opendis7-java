@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fcc3745;
- * Country: Sweden (SWE);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23708
+ * <p> Entity class <b><code>SORAS6SoundRangingSystem</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SORAS6SoundRangingSystem.createInstance()</code> or <code>new SORAS6SoundRangingSystem()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, Passive = <code>11</code>; </li>
+ *     <li> SubCategory: Firingpointlaunchpointlocation  = <code>8</code>; </li>
+ *     <li> Specific: SORAS6SoundRangingSystem  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23708; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62158991. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AcousticPassive
+ * @see SubCategory
+
  */
-public class SORAS6SoundRangingSystem extends EntityType
+public final class SORAS6SoundRangingSystem extends EntityType
 {
     /** Default constructor */
     public SORAS6SoundRangingSystem()
@@ -26,5 +40,11 @@ public class SORAS6SoundRangingSystem extends EntityType
         setCategory((byte)11); // uid 23706, Acoustic, Passive
         setSubCategory((byte)8); // uid 23707, Firing point/launch point location
         setSpecific((byte)1); // uid 23708, SORAS-6 Sound Ranging System
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SORAS6SoundRangingSystem createInstance()
+    {
+            return new SORAS6SoundRangingSystem();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67fac095;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20261
+ * <p> Entity class <b><code>MK84LowDragGeneralPurpose</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MK84LowDragGeneralPurpose.createInstance()</code> or <code>new MK84LowDragGeneralPurpose()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: Mk84  = <code>75</code>; </li>
+ *     <li> Specific: MK84LowDragGeneralPurpose  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20261; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38a96593. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class MK84LowDragGeneralPurpose extends EntityType
+public final class MK84LowDragGeneralPurpose extends EntityType
 {
     /** Default constructor */
     public MK84LowDragGeneralPurpose()
@@ -26,5 +40,11 @@ public class MK84LowDragGeneralPurpose extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)75); // uid 20257, Mk-84
         setSpecific((byte)2); // uid 20261, MK-84 Low Drag General Purpose
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MK84LowDragGeneralPurpose createInstance()
+    {
+            return new MK84LowDragGeneralPurpose();
     }
 }

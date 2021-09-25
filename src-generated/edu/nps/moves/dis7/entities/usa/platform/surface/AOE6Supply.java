@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@697a0948;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12088
+ * <p> Entity class <b><code>AOE6Supply</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AOE6Supply.createInstance()</code> or <code>new AOE6Supply()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Combat Support Ship = <code>60</code>; </li>
+ *     <li> SubCategory: SupplyClass  = <code>2</code>; </li>
+ *     <li> Specific: AOE6Supply  = <code>1</code>; </li>
+ *     <li> Entity type uid: 12088; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cff3f1d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastCombatSupportShip
+ * @see SubCategory
+
  */
-public class AOE6Supply extends EntityType
+public final class AOE6Supply extends EntityType
 {
     /** Default constructor */
     public AOE6Supply()
@@ -26,5 +40,11 @@ public class AOE6Supply extends EntityType
         setCategory((byte)60); // uid 12081, Fast Combat Support Ship
         setSubCategory((byte)2); // uid 12087, Supply Class
         setSpecific((byte)1); // uid 12088, AOE 6 Supply
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AOE6Supply createInstance()
+    {
+            return new AOE6Supply();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f4a3a8d;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 14913
+ * <p> Entity class <b><code>M3AmphibiousRig</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M3AmphibiousRig.createInstance()</code> or <code>new M3AmphibiousRig()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: MobileBridge  = <code>7</code>; </li>
+ *     <li> Specific: M3AmphibiousRig  = <code>2</code>; </li>
+ *     <li> Entity type uid: 14913; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f70a21b. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class M3AmphibiousRig extends EntityType
+public final class M3AmphibiousRig extends EntityType
 {
     /** Default constructor */
     public M3AmphibiousRig()
@@ -26,5 +40,11 @@ public class M3AmphibiousRig extends EntityType
         setCategory((byte)3); // uid 14904, Armored Utility Vehicle
         setSubCategory((byte)7); // uid 14911, Mobile Bridge
         setSpecific((byte)2); // uid 14913, M3 Amphibious Rig
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M3AmphibiousRig createInstance()
+    {
+            return new M3AmphibiousRig();
     }
 }

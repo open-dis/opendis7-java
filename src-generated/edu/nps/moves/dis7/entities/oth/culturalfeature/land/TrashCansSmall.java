@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c815fdc;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 23577
+ * <p> Entity class <b><code>TrashCansSmall</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrashCansSmall.createInstance()</code> or <code>new TrashCansSmall()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Obstacle = <code>5</code>; </li>
+ *     <li> SubCategory: TrashCans  = <code>19</code>; </li>
+ *     <li> Specific: TrashCansSmall  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23577; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4de91056. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Obstacle
+ * @see SubCategory
+
  */
-public class TrashCansSmall extends EntityType
+public final class TrashCansSmall extends EntityType
 {
     /** Default constructor */
     public TrashCansSmall()
@@ -26,5 +40,11 @@ public class TrashCansSmall extends EntityType
         setCategory((byte)5); // uid 21973, Obstacle
         setSubCategory((byte)19); // uid 23576, Trash Cans
         setSpecific((byte)1); // uid 23577, Trash Cans Small
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrashCansSmall createInstance()
+    {
+            return new TrashCansSmall();
     }
 }

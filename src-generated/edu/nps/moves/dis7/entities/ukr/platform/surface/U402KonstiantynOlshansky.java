@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@663bb8ef;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27855
+ * <p> Entity class <b><code>U402KonstiantynOlshansky</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>U402KonstiantynOlshansky.createInstance()</code> or <code>new U402KonstiantynOlshansky()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: RopuchaClass  = <code>1</code>; </li>
+ *     <li> Specific: U402KonstiantynOlshansky  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27855; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17f3eefb. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class U402KonstiantynOlshansky extends EntityType
+public final class U402KonstiantynOlshansky extends EntityType
 {
     /** Default constructor */
     public U402KonstiantynOlshansky()
@@ -26,5 +40,11 @@ public class U402KonstiantynOlshansky extends EntityType
         setCategory((byte)10); // uid 27853, Tank Landing Ship
         setSubCategory((byte)1); // uid 27854, Ropucha Class
         setSpecific((byte)1); // uid 27855, U-402 Konstiantyn Olshansky
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static U402KonstiantynOlshansky createInstance()
+    {
+            return new U402KonstiantynOlshansky();
     }
 }

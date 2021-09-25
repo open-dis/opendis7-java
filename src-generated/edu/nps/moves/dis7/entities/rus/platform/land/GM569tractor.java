@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@75b3673;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12951
+ * <p> Entity class <b><code>GM569tractor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GM569tractor.createInstance()</code> or <code>new GM569tractor()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Tracked Utility Vehicle = <code>9</code>; </li>
+ *     <li> SubCategory: GM569tractor  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12951; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b97cc1f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeTrackedUtilityVehicle
+ * @see SubCategory
+
  */
-public class GM569tractor extends EntityType
+public final class GM569tractor extends EntityType
 {
     /** Default constructor */
     public GM569tractor()
@@ -25,5 +39,11 @@ public class GM569tractor extends EntityType
 
         setCategory((byte)9); // uid 12944, Large Tracked Utility Vehicle
         setSubCategory((byte)7); // uid 12951, GM-569 tractor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GM569tractor createInstance()
+    {
+            return new GM569tractor();
     }
 }

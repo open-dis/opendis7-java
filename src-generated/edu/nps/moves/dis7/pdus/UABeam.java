@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -30,7 +29,7 @@ public class UABeam extends Object implements Serializable
    protected UAFundamentalParameter  fundamentalParameterData = new UAFundamentalParameter(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public UABeam()
  {
  }
@@ -47,7 +46,8 @@ public int getMarshalledSize()
    marshalSize += 1;  // beamDataLength
    marshalSize += 1;  // beamNumber
    marshalSize += 2;  // padding
-   marshalSize += fundamentalParameterData.getMarshalledSize();
+   if (fundamentalParameterData != null)
+       marshalSize += fundamentalParameterData.getMarshalledSize();
 
    return marshalSize;
 }
@@ -214,10 +214,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    beamDataLength = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    fundamentalParameterData.unmarshal(byteBuffer);
+    try
+    {
+        // attribute beamDataLength marked as not serialized
+        beamDataLength = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute fundamentalParameterData marked as not serialized
+        fundamentalParameterData.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

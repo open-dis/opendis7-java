@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e426dd2;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: SURFACE;
- *
- * Entity type uid: 32660
+ * <p> Entity class <b><code>MarkerBuoyiSLDMBLiferaft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MarkerBuoyiSLDMBLiferaft.createInstance()</code> or <code>new MarkerBuoyiSLDMBLiferaft()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: SAR Buoy = <code>14</code>; </li>
+ *     <li> SubCategory: GPS  = <code>1</code>; </li>
+ *     <li> Specific: MarkerBuoyiSLDMBLiferaft  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32660; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22899683. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SARBuoy
+ * @see SubCategory
+
  */
-public class MarkerBuoyiSLDMBLiferaft extends EntityType
+public final class MarkerBuoyiSLDMBLiferaft extends EntityType
 {
     /** Default constructor */
     public MarkerBuoyiSLDMBLiferaft()
@@ -26,5 +40,11 @@ public class MarkerBuoyiSLDMBLiferaft extends EntityType
         setCategory((byte)14); // uid 32658, SAR Buoy
         setSubCategory((byte)1); // uid 32659, GPS
         setSpecific((byte)1); // uid 32660, Marker Buoy iSLDMB Liferaft
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MarkerBuoyiSLDMBLiferaft createInstance()
+    {
+            return new MarkerBuoyiSLDMBLiferaft();
     }
 }

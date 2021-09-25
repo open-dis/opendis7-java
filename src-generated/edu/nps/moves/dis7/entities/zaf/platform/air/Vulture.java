@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48840594;
- * Country: South Africa (ZAF);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 19117
+ * <p> Entity class <b><code>Vulture</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Vulture.createInstance()</code> or <code>new Vulture()</code>. </p>
+ * <ul>
+ *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: RPV  = <code>1</code>; </li>
+ *     <li> Specific: Vulture  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19117; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2123064f. </p>
+ * @see Country#SOUTH_AFRICA_ZAF
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Vulture extends EntityType
+public final class Vulture extends EntityType
 {
     /** Default constructor */
     public Vulture()
@@ -26,5 +40,11 @@ public class Vulture extends EntityType
         setCategory((byte)50); // uid 19114, Unmanned
         setSubCategory((byte)1); // uid 19115, RPV
         setSpecific((byte)2); // uid 19117, Vulture
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Vulture createInstance()
+    {
+            return new Vulture();
     }
 }

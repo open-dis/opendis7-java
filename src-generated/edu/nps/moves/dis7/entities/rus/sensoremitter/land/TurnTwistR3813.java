@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4392362c;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22837
+ * <p> Entity class <b><code>TurnTwistR3813</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TurnTwistR3813.createInstance()</code> or <code>new TurnTwistR3813()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Passive (intercept and DF) = <code>3</code>; </li>
+ *     <li> SubCategory: IdentificationClassificationincludingIFF  = <code>16</code>; </li>
+ *     <li> Specific: TurnTwistR3813  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22837; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50672905. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFPassiveinterceptandDF
+ * @see SubCategory
+
  */
-public class TurnTwistR3813 extends EntityType
+public final class TurnTwistR3813 extends EntityType
 {
     /** Default constructor */
     public TurnTwistR3813()
@@ -26,5 +40,11 @@ public class TurnTwistR3813 extends EntityType
         setCategory((byte)3); // uid 22833, RF Passive (intercept and DF)
         setSubCategory((byte)16); // uid 22834, Identification/Classification (including IFF)
         setSpecific((byte)3); // uid 22837, Turn Twist R-381-3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TurnTwistR3813 createInstance()
+    {
+            return new TurnTwistR3813();
     }
 }

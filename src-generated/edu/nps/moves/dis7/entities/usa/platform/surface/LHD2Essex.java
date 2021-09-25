@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9df564f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11985
+ * <p> Entity class <b><code>LHD2Essex</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LHD2Essex.createInstance()</code> or <code>new LHD2Essex()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Assault Ship = <code>54</code>; </li>
+ *     <li> SubCategory: WaspClass  = <code>3</code>; </li>
+ *     <li> Specific: LHD2Essex  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11985; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@617449dd. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousAssaultShip
+ * @see SubCategory
+
  */
-public class LHD2Essex extends EntityType
+public final class LHD2Essex extends EntityType
 {
     /** Default constructor */
     public LHD2Essex()
@@ -26,5 +40,11 @@ public class LHD2Essex extends EntityType
         setCategory((byte)54); // uid 11968, Amphibious Assault Ship
         setSubCategory((byte)3); // uid 11983, Wasp Class
         setSpecific((byte)2); // uid 11985, LHD 2 Essex
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LHD2Essex createInstance()
+    {
+            return new LHD2Essex();
     }
 }

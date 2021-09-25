@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1f2586d6;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29466
+ * <p> Entity class <b><code>Leopard2A5A1DK</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Leopard2A5A1DK.createInstance()</code> or <code>new Leopard2A5A1DK()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: Leopard2A5A1DK  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29466; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@409bf450. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class Leopard2A5A1DK extends EntityType
+public final class Leopard2A5A1DK extends EntityType
 {
     /** Default constructor */
     public Leopard2A5A1DK()
@@ -25,5 +39,11 @@ public class Leopard2A5A1DK extends EntityType
 
         setCategory((byte)1); // uid 28832, Tank
         setSubCategory((byte)2); // uid 29466, Leopard 2A5A1 DK
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Leopard2A5A1DK createInstance()
+    {
+            return new Leopard2A5A1DK();
     }
 }

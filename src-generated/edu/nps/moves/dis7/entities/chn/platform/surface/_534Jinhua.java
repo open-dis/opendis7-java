@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a0dcaa;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25162
+ * <p> Entity class <b><code>_534Jinhua</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_534Jinhua.createInstance()</code> or <code>new _534Jinhua()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JianghuIIClassType053H1  = <code>2</code>; </li>
+ *     <li> Specific: _534Jinhua  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25162; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e67a849. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _534Jinhua extends EntityType
+public final class _534Jinhua extends EntityType
 {
     /** Default constructor */
     public _534Jinhua()
@@ -26,5 +40,11 @@ public class _534Jinhua extends EntityType
         setCategory((byte)6); // uid 17073, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 17100, Jianghu-II Class (Type 053H1)
         setSpecific((byte)3); // uid 25162, 534 Jinhua
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _534Jinhua createInstance()
+    {
+            return new _534Jinhua();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49038f97;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 20923
+ * <p> Entity class <b><code>SSN6Mod1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN6Mod1.createInstance()</code> or <code>new SSN6Mod1()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSN6Serb  = <code>2</code>; </li>
+ *     <li> Specific: SSN6Mod1  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20923; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4899799b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SSN6Mod1 extends EntityType
+public final class SSN6Mod1 extends EntityType
 {
     /** Default constructor */
     public SSN6Mod1()
@@ -26,5 +40,11 @@ public class SSN6Mod1 extends EntityType
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)2); // uid 20921, SS-N-6 Serb
         setSpecific((byte)2); // uid 20923, SS-N-6 Mod 1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN6Mod1 createInstance()
+    {
+            return new SSN6Mod1();
     }
 }

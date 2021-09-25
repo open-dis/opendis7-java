@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d43fe;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13424
+ * <p> Entity class <b><code>Ka50HokumBtandemtrainer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ka50HokumBtandemtrainer.createInstance()</code> or <code>new Ka50HokumBtandemtrainer()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: Ka50Hokum  = <code>3</code>; </li>
+ *     <li> Specific: Ka50HokumBtandemtrainer  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13424; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e0f7aad. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Attackhelicopter
+ * @see SubCategory
+
  */
-public class Ka50HokumBtandemtrainer extends EntityType
+public final class Ka50HokumBtandemtrainer extends EntityType
 {
     /** Default constructor */
     public Ka50HokumBtandemtrainer()
@@ -26,5 +40,11 @@ public class Ka50HokumBtandemtrainer extends EntityType
         setCategory((byte)20); // uid 13407, Attack helicopter
         setSubCategory((byte)3); // uid 13422, Ka-50 Hokum
         setSpecific((byte)2); // uid 13424, Ka-50 Hokum B tandem trainer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ka50HokumBtandemtrainer createInstance()
+    {
+            return new Ka50HokumBtandemtrainer();
     }
 }

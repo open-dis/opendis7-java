@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b7c473a;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23387
+ * <p> Entity class <b><code>M62Evropi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M62Evropi.createInstance()</code> or <code>new M62Evropi()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: EvropiHuntclass  = <code>1</code>; </li>
+ *     <li> Specific: M62Evropi  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23387; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@524f3b3a. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M62Evropi extends EntityType
+public final class M62Evropi extends EntityType
 {
     /** Default constructor */
     public M62Evropi()
@@ -26,5 +40,11 @@ public class M62Evropi extends EntityType
         setCategory((byte)8); // uid 23385, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 23386, Evropi (Hunt) class
         setSpecific((byte)1); // uid 23387, M62 Evropi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M62Evropi createInstance()
+    {
+            return new M62Evropi();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48e92c5c;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23372
+ * <p> Entity class <b><code>P18Armatolos</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P18Armatolos.createInstance()</code> or <code>new P18Armatolos()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ArmatolosOsprey55class  = <code>1</code>; </li>
+ *     <li> Specific: P18Armatolos  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23372; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e57b96d. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P18Armatolos extends EntityType
+public final class P18Armatolos extends EntityType
 {
     /** Default constructor */
     public P18Armatolos()
@@ -26,5 +40,11 @@ public class P18Armatolos extends EntityType
         setCategory((byte)7); // uid 23370, Light/Patrol Craft
         setSubCategory((byte)1); // uid 23371, Armatolos (Osprey 55) class
         setSpecific((byte)1); // uid 23372, P18 Armatolos
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P18Armatolos createInstance()
+    {
+            return new P18Armatolos();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4362d7df;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26240
+ * <p> Entity class <b><code>Fokker50</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Fokker50.createInstance()</code> or <code>new Fokker50()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
+ *     <li> Specific: Fokker50  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26240; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74f7d1d2. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class Fokker50 extends EntityType
+public final class Fokker50 extends EntityType
 {
     /** Default constructor */
     public Fokker50()
@@ -26,5 +40,11 @@ public class Fokker50 extends EntityType
         setCategory((byte)87); // uid 23872, Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg)
         setSubCategory((byte)22); // uid 26239, Twin Engine Turboprop
         setSpecific((byte)1); // uid 26240, Fokker 50
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Fokker50 createInstance()
+    {
+            return new Fokker50();
     }
 }

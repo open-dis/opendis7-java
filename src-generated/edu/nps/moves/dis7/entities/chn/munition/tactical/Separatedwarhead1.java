@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@595f9916;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 21585
+ * <p> Entity class <b><code>Separatedwarhead1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Separatedwarhead1.createInstance()</code> or <code>new Separatedwarhead1()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: M11DF11CSS7  = <code>2</code>; </li>
+ *     <li> Specific: Separatedwarhead  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21585; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ac45c0c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class Separatedwarhead1 extends EntityType
+public final class Separatedwarhead1 extends EntityType
 {
     /** Default constructor */
     public Separatedwarhead1()
@@ -26,5 +40,11 @@ public class Separatedwarhead1 extends EntityType
         setCategory((byte)2); // uid 21575, Ballistic
         setSubCategory((byte)2); // uid 21582, M-11 / DF-11 / CSS-7
         setSpecific((byte)3); // uid 21585, Separated warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Separatedwarhead1 createInstance()
+    {
+            return new Separatedwarhead1();
     }
 }

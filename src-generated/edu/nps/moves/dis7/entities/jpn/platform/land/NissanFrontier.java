@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bf22f18;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24897
+ * <p> Entity class <b><code>NissanFrontier</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NissanFrontier.createInstance()</code> or <code>new NissanFrontier()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMidSize  = <code>2</code>; </li>
+ *     <li> Specific: NissanFrontier  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24897; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69637b10. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class NissanFrontier extends EntityType
+public final class NissanFrontier extends EntityType
 {
     /** Default constructor */
     public NissanFrontier()
@@ -26,5 +40,11 @@ public class NissanFrontier extends EntityType
         setCategory((byte)83); // uid 24879, Single Unit Cargo Truck
         setSubCategory((byte)2); // uid 24889, Pickup Truck, Mid-Size
         setSpecific((byte)3); // uid 24897, Nissan Frontier
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NissanFrontier createInstance()
+    {
+            return new NissanFrontier();
     }
 }

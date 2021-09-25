@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1ddf42dd;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22019
+ * <p> Entity class <b><code>SAMSiteOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SAMSiteOther.createInstance()</code> or <code>new SAMSiteOther()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: SAM Site = <code>11</code>; </li>
+ *     <li> SubCategory: SAMSiteOther  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22019; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@57f0bfc3. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SAMSite
+ * @see SubCategory
+
  */
-public class SAMSiteOther extends EntityType
+public final class SAMSiteOther extends EntityType
 {
     /** Default constructor */
     public SAMSiteOther()
@@ -25,5 +39,11 @@ public class SAMSiteOther extends EntityType
 
         setCategory((byte)11); // uid 22018, SAM Site
         setSubCategory((byte)0); // uid 22019, SAM Site, Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SAMSiteOther createInstance()
+    {
+            return new SAMSiteOther();
     }
 }

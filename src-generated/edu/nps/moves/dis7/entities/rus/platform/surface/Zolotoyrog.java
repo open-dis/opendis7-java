@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68217d41;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14192
+ * <p> Entity class <b><code>Zolotoyrog</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Zolotoyrog.createInstance()</code> or <code>new Zolotoyrog()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Olekmaclassreplenishmenttankers  = <code>57</code>; </li>
+ *     <li> Specific: Zolotoyrog  = <code>3</code>; </li>
+ *     <li> Entity type uid: 14192; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ca8dbfa. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Zolotoyrog extends EntityType
+public final class Zolotoyrog extends EntityType
 {
     /** Default constructor */
     public Zolotoyrog()
@@ -26,5 +40,11 @@ public class Zolotoyrog extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)57); // uid 14189, Olekma class (replenishment tankers)
         setSpecific((byte)3); // uid 14192, Zolotoy rog
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Zolotoyrog createInstance()
+    {
+            return new Zolotoyrog();
     }
 }

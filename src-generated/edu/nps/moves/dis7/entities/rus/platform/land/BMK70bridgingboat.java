@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@203dd56b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12504
+ * <p> Entity class <b><code>BMK70bridgingboat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BMK70bridgingboat.createInstance()</code> or <code>new BMK70bridgingboat()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: Bridges  = <code>1</code>; </li>
+ *     <li> Specific: BMK70bridgingboat  = <code>26</code>; </li>
+ *     <li> Entity type uid: 12504; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d151a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class BMK70bridgingboat extends EntityType
+public final class BMK70bridgingboat extends EntityType
 {
     /** Default constructor */
     public BMK70bridgingboat()
@@ -26,5 +40,11 @@ public class BMK70bridgingboat extends EntityType
         setCategory((byte)0); // uid 12477, Other
         setSubCategory((byte)1); // uid 12478, Bridges
         setSpecific((byte)26); // uid 12504, BMK-70 bridging boat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BMK70bridgingboat createInstance()
+    {
+            return new BMK70bridgingboat();
     }
 }

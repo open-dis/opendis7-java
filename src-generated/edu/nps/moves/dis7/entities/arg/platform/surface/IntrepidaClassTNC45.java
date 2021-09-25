@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@21588809;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31270
+ * <p> Entity class <b><code>IntrepidaClassTNC45</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IntrepidaClassTNC45.createInstance()</code> or <code>new IntrepidaClassTNC45()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: IntrepidaClassTNC45  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31270; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@48533e64. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class IntrepidaClassTNC45 extends EntityType
+public final class IntrepidaClassTNC45 extends EntityType
 {
     /** Default constructor */
     public IntrepidaClassTNC45()
@@ -25,5 +39,11 @@ public class IntrepidaClassTNC45 extends EntityType
 
         setCategory((byte)64); // uid 31269, Fast Attack Craft
         setSubCategory((byte)1); // uid 31270, Intrepida Class (TNC 45)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IntrepidaClassTNC45 createInstance()
+    {
+            return new IntrepidaClassTNC45();
     }
 }

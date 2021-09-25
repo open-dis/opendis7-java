@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36d64342;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25229
+ * <p> Entity class <b><code>ACPB86Albany</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ACPB86Albany.createInstance()</code> or <code>new ACPB86Albany()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ArmidaleClass  = <code>3</code>; </li>
+ *     <li> Specific: ACPB86Albany  = <code>4</code>; </li>
+ *     <li> Entity type uid: 25229; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@282ba1e. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ACPB86Albany extends EntityType
+public final class ACPB86Albany extends EntityType
 {
     /** Default constructor */
     public ACPB86Albany()
@@ -26,5 +40,11 @@ public class ACPB86Albany extends EntityType
         setCategory((byte)7); // uid 17524, Light/Patrol Craft
         setSubCategory((byte)3); // uid 25225, Armidale Class
         setSpecific((byte)4); // uid 25229, ACPB 86 Albany
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ACPB86Albany createInstance()
+    {
+            return new ACPB86Albany();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c8e67b9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 14837
+ * <p> Entity class <b><code>SoyuzTM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SoyuzTM.createInstance()</code> or <code>new SoyuzTM()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Manned = <code>1</code>; </li>
+ *     <li> SubCategory: Spacevehicles  = <code>3</code>; </li>
+ *     <li> Specific: SoyuzTM  = <code>2</code>; </li>
+ *     <li> Entity type uid: 14837; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a9b9909. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Manned
+ * @see SubCategory
+
  */
-public class SoyuzTM extends EntityType
+public final class SoyuzTM extends EntityType
 {
     /** Default constructor */
     public SoyuzTM()
@@ -26,5 +40,11 @@ public class SoyuzTM extends EntityType
         setCategory((byte)1); // uid 14828, Manned
         setSubCategory((byte)3); // uid 14835, Space vehicles
         setSpecific((byte)2); // uid 14837, Soyuz-TM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SoyuzTM createInstance()
+    {
+            return new SoyuzTM();
     }
 }

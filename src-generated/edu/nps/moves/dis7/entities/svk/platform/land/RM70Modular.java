@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68880c21;
- * Country: Slovakia (SVK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30125
+ * <p> Entity class <b><code>RM70Modular</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RM70Modular.createInstance()</code> or <code>new RM70Modular()</code>. </p>
+ * <ul>
+ *     <li> Country: Slovakia (SVK) = <code>268</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: RM70  = <code>1</code>; </li>
+ *     <li> Specific: RM70Modular  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30125; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d0865a3. </p>
+ * @see Country#SLOVAKIA_SVK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class RM70Modular extends EntityType
+public final class RM70Modular extends EntityType
 {
     /** Default constructor */
     public RM70Modular()
@@ -26,5 +40,11 @@ public class RM70Modular extends EntityType
         setCategory((byte)4); // uid 30121, Self-Propelled Artillery
         setSubCategory((byte)1); // uid 30122, RM-70
         setSpecific((byte)3); // uid 30125, RM-70 Modular
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RM70Modular createInstance()
+    {
+            return new RM70Modular();
     }
 }

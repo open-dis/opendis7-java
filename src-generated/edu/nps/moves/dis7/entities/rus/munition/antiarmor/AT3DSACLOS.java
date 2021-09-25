@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a5abd3c;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 25343
+ * <p> Entity class <b><code>AT3DSACLOS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AT3DSACLOS.createInstance()</code> or <code>new AT3DSACLOS()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AT3Sagger  = <code>5</code>; </li>
+ *     <li> Specific: AT3DSACLOS  = <code>4</code>; </li>
+ *     <li> Entity type uid: 25343; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71b97eeb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AT3DSACLOS extends EntityType
+public final class AT3DSACLOS extends EntityType
 {
     /** Default constructor */
     public AT3DSACLOS()
@@ -26,5 +40,11 @@ public class AT3DSACLOS extends EntityType
         setCategory((byte)1); // uid 20421, Guided
         setSubCategory((byte)5); // uid 20428, AT-3 Sagger
         setSpecific((byte)4); // uid 25343, AT-3D (SACLOS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AT3DSACLOS createInstance()
+    {
+            return new AT3DSACLOS();
     }
 }

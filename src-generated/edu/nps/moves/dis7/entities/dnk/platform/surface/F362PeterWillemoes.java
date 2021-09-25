@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3eb25e1a;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25433
+ * <p> Entity class <b><code>F362PeterWillemoes</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F362PeterWillemoes.createInstance()</code> or <code>new F362PeterWillemoes()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: IverHuitfeldtClass  = <code>1</code>; </li>
+ *     <li> Specific: F362PeterWillemoes  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25433; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4562e04d. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F362PeterWillemoes extends EntityType
+public final class F362PeterWillemoes extends EntityType
 {
     /** Default constructor */
     public F362PeterWillemoes()
@@ -26,5 +40,11 @@ public class F362PeterWillemoes extends EntityType
         setCategory((byte)6); // uid 25430, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 25431, Iver Huitfeldt Class
         setSpecific((byte)2); // uid 25433, F362 Peter Willemoes
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F362PeterWillemoes createInstance()
+    {
+            return new F362PeterWillemoes();
     }
 }

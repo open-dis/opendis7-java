@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a7f959b;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25397
+ * <p> Entity class <b><code>Mirage20009</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mirage20009.createInstance()</code> or <code>new Mirage20009()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: Mirage2000  = <code>4</code>; </li>
+ *     <li> Specific: Mirage20009  = <code>17</code>; </li>
+ *     <li> Entity type uid: 25397; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7671cb68. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class Mirage20009 extends EntityType
+public final class Mirage20009 extends EntityType
 {
     /** Default constructor */
     public Mirage20009()
@@ -26,5 +40,11 @@ public class Mirage20009 extends EntityType
         setCategory((byte)1); // uid 15720, Fighter/Air Defense
         setSubCategory((byte)4); // uid 15752, Mirage 2000
         setSpecific((byte)17); // uid 25397, Mirage 2000-9
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mirage20009 createInstance()
+    {
+            return new Mirage20009();
     }
 }

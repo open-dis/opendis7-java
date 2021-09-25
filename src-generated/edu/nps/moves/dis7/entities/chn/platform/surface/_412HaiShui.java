@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9225652;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17301
+ * <p> Entity class <b><code>_412HaiShui</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_412HaiShui.createInstance()</code> or <code>new _412HaiShui()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Leizhouclasswatertransport  = <code>22</code>; </li>
+ *     <li> Specific: _412HaiShui  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17301; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78aab498. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _412HaiShui extends EntityType
+public final class _412HaiShui extends EntityType
 {
     /** Default constructor */
     public _412HaiShui()
@@ -26,5 +40,11 @@ public class _412HaiShui extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)22); // uid 17300, Leizhou class (water transport)
         setSpecific((byte)1); // uid 17301, 412 Hai Shui
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _412HaiShui createInstance()
+    {
+            return new _412HaiShui();
     }
 }

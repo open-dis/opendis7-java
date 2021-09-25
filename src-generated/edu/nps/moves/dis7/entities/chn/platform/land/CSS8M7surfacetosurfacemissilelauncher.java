@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15bfd87;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16899
+ * <p> Entity class <b><code>CSS8M7surfacetosurfacemissilelauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSS8M7surfacetosurfacemissilelauncher.createInstance()</code> or <code>new CSS8M7surfacetosurfacemissilelauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: CSS8M7surfacetosurfacemissilelauncher  = <code>15</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16899; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13eb8acf. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class CSS8M7surfacetosurfacemissilelauncher extends EntityType
+public final class CSS8M7surfacetosurfacemissilelauncher extends EntityType
 {
     /** Default constructor */
     public CSS8M7surfacetosurfacemissilelauncher()
@@ -25,5 +39,11 @@ public class CSS8M7surfacetosurfacemissilelauncher extends EntityType
 
         setCategory((byte)4); // uid 16884, Self-Propelled Artillery
         setSubCategory((byte)15); // uid 16899, CSS-8 (M-7) surface-to-surface missile launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSS8M7surfacetosurfacemissilelauncher createInstance()
+    {
+            return new CSS8M7surfacetosurfacemissilelauncher();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e07b95f;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25607
+ * <p> Entity class <b><code>HKP14Sweden</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HKP14Sweden.createInstance()</code> or <code>new HKP14Sweden()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: NH90  = <code>1</code>; </li>
+ *     <li> Specific: HKP14Sweden  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25607; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43015c69. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class HKP14Sweden extends EntityType
+public final class HKP14Sweden extends EntityType
 {
     /** Default constructor */
     public HKP14Sweden()
@@ -26,5 +40,11 @@ public class HKP14Sweden extends EntityType
         setCategory((byte)21); // uid 16366, Utility Helicopter
         setSubCategory((byte)1); // uid 16367, NH 90
         setSpecific((byte)2); // uid 25607, HKP14 (Sweden)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HKP14Sweden createInstance()
+    {
+            return new HKP14Sweden();
     }
 }

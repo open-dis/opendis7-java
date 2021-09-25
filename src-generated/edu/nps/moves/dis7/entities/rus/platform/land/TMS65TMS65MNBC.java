@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@777c350f;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22795
+ * <p> Entity class <b><code>TMS65TMS65MNBC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TMS65TMS65MNBC.createInstance()</code> or <code>new TMS65TMS65MNBC()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: Ural3756x64000kgtruck  = <code>9</code>; </li>
+ *     <li> Specific: TMS65TMS65MNBC  = <code>11</code>; </li>
+ *     <li> Entity type uid: 22795; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46c00568. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class TMS65TMS65MNBC extends EntityType
+public final class TMS65TMS65MNBC extends EntityType
 {
     /** Default constructor */
     public TMS65TMS65MNBC()
@@ -26,5 +40,11 @@ public class TMS65TMS65MNBC extends EntityType
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)9); // uid 12890, Ural-375 6x6 4000-kg truck
         setSpecific((byte)11); // uid 22795, TMS-65/TMS-65M NBC
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TMS65TMS65MNBC createInstance()
+    {
+            return new TMS65TMS65MNBC();
     }
 }

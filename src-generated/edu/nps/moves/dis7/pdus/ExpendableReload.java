@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class ExpendableReload extends Object implements Serializable
    protected int  maximumQuantityReloadTime;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ExpendableReload()
  {
  }
@@ -51,7 +50,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += expendable.getMarshalledSize();
+   if (expendable != null)
+       marshalSize += expendable.getMarshalledSize();
    marshalSize += 4;  // station
    marshalSize += 2;  // standardQuantity
    marshalSize += 2;  // maximumQuantity
@@ -256,12 +256,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    expendable.unmarshal(byteBuffer);
-    station = byteBuffer.getInt();
-    standardQuantity = (short)(byteBuffer.getShort() & 0xFFFF);
-    maximumQuantity = (short)(byteBuffer.getShort() & 0xFFFF);
-    standardQuantityReloadTime = byteBuffer.getInt();
-    maximumQuantityReloadTime = byteBuffer.getInt();
+    try
+    {
+        // attribute expendable marked as not serialized
+        expendable.unmarshal(byteBuffer);
+        // attribute station marked as not serialized
+        station = byteBuffer.getInt();
+        // attribute standardQuantity marked as not serialized
+        standardQuantity = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute maximumQuantity marked as not serialized
+        maximumQuantity = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute standardQuantityReloadTime marked as not serialized
+        standardQuantityReloadTime = byteBuffer.getInt();
+        // attribute maximumQuantityReloadTime marked as not serialized
+        maximumQuantityReloadTime = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f0a66bd;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10845
+ * <p> Entity class <b><code>AV8B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AV8B.createInstance()</code> or <code>new AV8B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasAV8BHarrierII  = <code>8</code>; </li>
+ *     <li> Specific: AV8B  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10845; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2da99821. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class AV8B extends EntityType
+public final class AV8B extends EntityType
 {
     /** Default constructor */
     public AV8B()
@@ -26,5 +40,11 @@ public class AV8B extends EntityType
         setCategory((byte)2); // uid 10824, Attack/Strike
         setSubCategory((byte)8); // uid 10844, McDonnell-Douglas AV-8B Harrier II
         setSpecific((byte)1); // uid 10845, AV-8B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AV8B createInstance()
+    {
+            return new AV8B();
     }
 }

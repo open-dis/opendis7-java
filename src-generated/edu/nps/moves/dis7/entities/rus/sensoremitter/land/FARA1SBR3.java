@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d764641;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22450
+ * <p> Entity class <b><code>FARA1SBR3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FARA1SBR3.createInstance()</code> or <code>new FARA1SBR3()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: BattlefieldSurveillance  = <code>24</code>; </li>
+ *     <li> Specific: FARA1SBR3  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22450; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fdac2a7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class FARA1SBR3 extends EntityType
+public final class FARA1SBR3 extends EntityType
 {
     /** Default constructor */
     public FARA1SBR3()
@@ -26,5 +40,11 @@ public class FARA1SBR3 extends EntityType
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)24); // uid 22448, Battlefield Surveillance
         setSpecific((byte)2); // uid 22450, FARA-1 (SBR-3)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FARA1SBR3 createInstance()
+    {
+            return new FARA1SBR3();
     }
 }

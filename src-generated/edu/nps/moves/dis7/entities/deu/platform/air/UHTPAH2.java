@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@266374ef;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16363
+ * <p> Entity class <b><code>UHTPAH2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UHTPAH2.createInstance()</code> or <code>new UHTPAH2()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack Helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: EurocopterTigre  = <code>2</code>; </li>
+ *     <li> Specific: UHTPAH2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16363; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6531a794. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackHelicopter
+ * @see SubCategory
+
  */
-public class UHTPAH2 extends EntityType
+public final class UHTPAH2 extends EntityType
 {
     /** Default constructor */
     public UHTPAH2()
@@ -26,5 +40,11 @@ public class UHTPAH2 extends EntityType
         setCategory((byte)20); // uid 16353, Attack Helicopter
         setSubCategory((byte)2); // uid 16362, Eurocopter Tigre
         setSpecific((byte)1); // uid 16363, UHT (PAH-2)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UHTPAH2 createInstance()
+    {
+            return new UHTPAH2();
     }
 }

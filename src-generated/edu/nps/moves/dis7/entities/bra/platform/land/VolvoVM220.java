@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@402a079c;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31799
+ * <p> Entity class <b><code>VolvoVM220</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VolvoVM220.createInstance()</code> or <code>new VolvoVM220()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: Tanker  = <code>20</code>; </li>
+ *     <li> Specific: VolvoVM220  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31799; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d00a15d. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class VolvoVM220 extends EntityType
+public final class VolvoVM220 extends EntityType
 {
     /** Default constructor */
     public VolvoVM220()
@@ -26,5 +40,11 @@ public class VolvoVM220 extends EntityType
         setCategory((byte)83); // uid 31797, Single Unit Cargo Truck
         setSubCategory((byte)20); // uid 31798, Tanker
         setSpecific((byte)1); // uid 31799, Volvo VM220
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VolvoVM220 createInstance()
+    {
+            return new VolvoVM220();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ebd78d1;
- * Country: New Zealand (NZL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30216
+ * <p> Entity class <b><code>P55Wellington</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P55Wellington.createInstance()</code> or <code>new P55Wellington()</code>. </p>
+ * <ul>
+ *     <li> Country: New Zealand (NZL) = <code>156</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ProtectorOtagoClassOffshorePatrolVessels  = <code>1</code>; </li>
+ *     <li> Specific: P55Wellington  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30216; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fdfa676. </p>
+ * @see Country#NEW_ZEALAND_NZL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P55Wellington extends EntityType
+public final class P55Wellington extends EntityType
 {
     /** Default constructor */
     public P55Wellington()
@@ -26,5 +40,11 @@ public class P55Wellington extends EntityType
         setCategory((byte)7); // uid 30213, Light/Patrol Craft
         setSubCategory((byte)1); // uid 30214, Protector/Otago Class (Offshore Patrol Vessels)
         setSpecific((byte)2); // uid 30216, P55 Wellington
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P55Wellington createInstance()
+    {
+            return new P55Wellington();
     }
 }

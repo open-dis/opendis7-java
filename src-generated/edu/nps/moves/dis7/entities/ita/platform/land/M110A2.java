@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@62e6b5c8;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 18288
+ * <p> Entity class <b><code>M110A2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M110A2.createInstance()</code> or <code>new M110A2()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self Propelled Artillery (guns and howitzers) = <code>4</code>; </li>
+ *     <li> SubCategory: M110A2  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18288; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4b7e96a. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillerygunsandhowitzers
+ * @see SubCategory
+
  */
-public class M110A2 extends EntityType
+public final class M110A2 extends EntityType
 {
     /** Default constructor */
     public M110A2()
@@ -25,5 +39,11 @@ public class M110A2 extends EntityType
 
         setCategory((byte)4); // uid 18285, Self Propelled Artillery (guns and howitzers)
         setSubCategory((byte)3); // uid 18288, M-110A2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M110A2 createInstance()
+    {
+            return new M110A2();
     }
 }

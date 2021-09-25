@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68dd39d2;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25319
+ * <p> Entity class <b><code>_10000lbRoughTerrainM10A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_10000lbRoughTerrainM10A.createInstance()</code> or <code>new _10000lbRoughTerrainM10A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: ForkLifts  = <code>40</code>; </li>
+ *     <li> Specific: _10000lbRoughTerrainM10A  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25319; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ca30b8a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class _10000lbRoughTerrainM10A extends EntityType
+public final class _10000lbRoughTerrainM10A extends EntityType
 {
     /** Default constructor */
     public _10000lbRoughTerrainM10A()
@@ -26,5 +40,11 @@ public class _10000lbRoughTerrainM10A extends EntityType
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)40); // uid 25316, Fork Lifts
         setSpecific((byte)3); // uid 25319, 10000 lb Rough Terrain, M10A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _10000lbRoughTerrainM10A createInstance()
+    {
+            return new _10000lbRoughTerrainM10A();
     }
 }

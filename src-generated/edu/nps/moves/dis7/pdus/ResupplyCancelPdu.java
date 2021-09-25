@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class ResupplyCancelPdu extends LogisticsFamilyPdu implements Serializabl
    protected EntityID  supplyingEntityID = new EntityID(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ResupplyCancelPdu()
  {
     setPduType( DisPduType.RESUPPLY_CANCEL );
@@ -41,8 +40,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
-   marshalSize += supplyingEntityID.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
+   if (supplyingEntityID != null)
+       marshalSize += supplyingEntityID.getMarshalledSize();
 
    return marshalSize;
 }
@@ -153,8 +154,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    receivingEntityID.unmarshal(byteBuffer);
-    supplyingEntityID.unmarshal(byteBuffer);
+    try
+    {
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute supplyingEntityID marked as not serialized
+        supplyingEntityID.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

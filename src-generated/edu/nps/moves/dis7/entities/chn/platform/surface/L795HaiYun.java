@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76508ed1;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17332
+ * <p> Entity class <b><code>L795HaiYun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L795HaiYun.createInstance()</code> or <code>new L795HaiYun()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Danlinclasscargo  = <code>32</code>; </li>
+ *     <li> Specific: L795HaiYun  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17332; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3cc2931c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class L795HaiYun extends EntityType
+public final class L795HaiYun extends EntityType
 {
     /** Default constructor */
     public L795HaiYun()
@@ -26,5 +40,11 @@ public class L795HaiYun extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)32); // uid 17328, Danlin class (cargo)
         setSpecific((byte)4); // uid 17332, L795 Hai Yun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L795HaiYun createInstance()
+    {
+            return new L795HaiYun();
     }
 }

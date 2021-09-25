@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ffe3d42;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 31916
+ * <p> Entity class <b><code>Bundle50lb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bundle50lb.createInstance()</code> or <code>new Bundle50lb()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Chaff = <code>1</code>; </li>
+ *     <li> SubCategory: Bundle  = <code>1</code>; </li>
+ *     <li> Specific: Bundle50lb  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31916; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fa879ed. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Chaff
+ * @see SubCategory
+
  */
-public class Bundle50lb extends EntityType
+public final class Bundle50lb extends EntityType
 {
     /** Default constructor */
     public Bundle50lb()
@@ -26,5 +40,11 @@ public class Bundle50lb extends EntityType
         setCategory((byte)1); // uid 31913, Chaff
         setSubCategory((byte)1); // uid 31914, Bundle
         setSpecific((byte)2); // uid 31916, Bundle 50lb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bundle50lb createInstance()
+    {
+            return new Bundle50lb();
     }
 }

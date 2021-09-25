@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51743cc0;
- * Country: Other;
- * Entity kind: Radio;
- * Domain: SURFACE;
- *
- * Entity type uid: 31912
+ * <p> Entity class <b><code>AISSARTRadio</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AISSARTRadio.createInstance()</code> or <code>new AISSARTRadio()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Automatic Identification System (AIS) = <code>37</code>; </li>
+ *     <li> SubCategory: Other  = <code>0</code>; </li>
+ *     <li> Specific: AISSARTRadio  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31912; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c9372ed. </p>
+ * @see Country#OTHER
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AutomaticIdentificationSystemAIS
+ * @see SubCategory
+
  */
-public class AISSARTRadio extends EntityType
+public final class AISSARTRadio extends EntityType
 {
     /** Default constructor */
     public AISSARTRadio()
@@ -26,5 +40,11 @@ public class AISSARTRadio extends EntityType
         setCategory((byte)37); // uid 31910, Automatic Identification System (AIS)
         setSubCategory((byte)0); // uid 31911, Other
         setSpecific((byte)1); // uid 31912, AIS-SART Radio
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AISSARTRadio createInstance()
+    {
+            return new AISSARTRadio();
     }
 }

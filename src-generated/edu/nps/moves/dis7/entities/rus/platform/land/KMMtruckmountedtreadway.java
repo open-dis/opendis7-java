@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d400943;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12485
+ * <p> Entity class <b><code>KMMtruckmountedtreadway</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KMMtruckmountedtreadway.createInstance()</code> or <code>new KMMtruckmountedtreadway()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: Bridges  = <code>1</code>; </li>
+ *     <li> Specific: KMMtruckmountedtreadway  = <code>7</code>; </li>
+ *     <li> Entity type uid: 12485; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@701a32. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class KMMtruckmountedtreadway extends EntityType
+public final class KMMtruckmountedtreadway extends EntityType
 {
     /** Default constructor */
     public KMMtruckmountedtreadway()
@@ -26,5 +40,11 @@ public class KMMtruckmountedtreadway extends EntityType
         setCategory((byte)0); // uid 12477, Other
         setSubCategory((byte)1); // uid 12478, Bridges
         setSpecific((byte)7); // uid 12485, KMM truck-mounted treadway
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KMMtruckmountedtreadway createInstance()
+    {
+            return new KMMtruckmountedtreadway();
     }
 }

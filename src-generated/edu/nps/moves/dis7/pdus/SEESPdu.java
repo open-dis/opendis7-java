@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.6.6 Certain supplemental information on an entity’s physical state and emissions. See 5.7.7
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class SEESPdu extends DistributedEmissionsFamilyPdu implements Serializable
+public class SEESPdu extends DistributedEmissionsRegenerationFamilyPdu implements Serializable
 {
    /** Originating entity ID */
    protected EntityID  orginatingEntityID = new EntityID(); 
@@ -43,7 +42,7 @@ public class SEESPdu extends DistributedEmissionsFamilyPdu implements Serializab
    protected List< VectoringNozzleSystem > vectoringSystemData = new ArrayList< VectoringNozzleSystem >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SEESPdu()
  {
     setPduType( DisPduType.SUPPLEMENTAL_EMISSION_ENTITY_STATE );
@@ -59,22 +58,25 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += orginatingEntityID.getMarshalledSize();
+   if (orginatingEntityID != null)
+       marshalSize += orginatingEntityID.getMarshalledSize();
    marshalSize += 2;  // infraredSignatureRepresentationIndex
    marshalSize += 2;  // acousticSignatureRepresentationIndex
    marshalSize += 2;  // radarCrossSectionSignatureRepresentationIndex
    marshalSize += 2;  // numberOfPropulsionSystems
    marshalSize += 2;  // numberOfVectoringNozzleSystems
-   for(int idx=0; idx < propulsionSystemData.size(); idx++)
-   {
-        PropulsionSystemData listElement = propulsionSystemData.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < vectoringSystemData.size(); idx++)
-   {
-        VectoringNozzleSystem listElement = vectoringSystemData.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (propulsionSystemData != null)
+       for (int idx=0; idx < propulsionSystemData.size(); idx++)
+       {
+            PropulsionSystemData listElement = propulsionSystemData.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (vectoringSystemData != null)
+       for (int idx=0; idx < vectoringSystemData.size(); idx++)
+       {
+            VectoringNozzleSystem listElement = vectoringSystemData.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -215,14 +217,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(propulsionSystemData.size());
        dos.writeShort(vectoringSystemData.size());
 
-       for(int idx = 0; idx < propulsionSystemData.size(); idx++)
+       for (int idx = 0; idx < propulsionSystemData.size(); idx++)
        {
             PropulsionSystemData aPropulsionSystemData = propulsionSystemData.get(idx);
             aPropulsionSystemData.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < vectoringSystemData.size(); idx++)
+       for (int idx = 0; idx < vectoringSystemData.size(); idx++)
        {
             VectoringNozzleSystem aVectoringNozzleSystem = vectoringSystemData.get(idx);
             aVectoringNozzleSystem.marshal(dos);
@@ -261,14 +263,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfVectoringNozzleSystems = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfPropulsionSystems; idx++)
+        for (int idx = 0; idx < numberOfPropulsionSystems; idx++)
         {
             PropulsionSystemData anX = new PropulsionSystemData();
             uPosition += anX.unmarshal(dis);
             propulsionSystemData.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
+        for (int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
         {
             VectoringNozzleSystem anX = new VectoringNozzleSystem();
             uPosition += anX.unmarshal(dis);
@@ -301,14 +303,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)propulsionSystemData.size());
    byteBuffer.putShort( (short)vectoringSystemData.size());
 
-   for(int idx = 0; idx < propulsionSystemData.size(); idx++)
+   for (int idx = 0; idx < propulsionSystemData.size(); idx++)
    {
         PropulsionSystemData aPropulsionSystemData = propulsionSystemData.get(idx);
         aPropulsionSystemData.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < vectoringSystemData.size(); idx++)
+   for (int idx = 0; idx < vectoringSystemData.size(); idx++)
    {
         VectoringNozzleSystem aVectoringNozzleSystem = vectoringSystemData.get(idx);
         aVectoringNozzleSystem.marshal(byteBuffer);
@@ -329,26 +331,41 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    orginatingEntityID.unmarshal(byteBuffer);
-    infraredSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
-    acousticSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
-    radarCrossSectionSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfPropulsionSystems = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfVectoringNozzleSystems = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfPropulsionSystems; idx++)
+    try
     {
-    PropulsionSystemData anX = new PropulsionSystemData();
-    anX.unmarshal(byteBuffer);
-    propulsionSystemData.add(anX);
-    }
+        // attribute orginatingEntityID marked as not serialized
+        orginatingEntityID.unmarshal(byteBuffer);
+        // attribute infraredSignatureRepresentationIndex marked as not serialized
+        infraredSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute acousticSignatureRepresentationIndex marked as not serialized
+        acousticSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute radarCrossSectionSignatureRepresentationIndex marked as not serialized
+        radarCrossSectionSignatureRepresentationIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfPropulsionSystems marked as not serialized
+        numberOfPropulsionSystems = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfVectoringNozzleSystems marked as not serialized
+        numberOfVectoringNozzleSystems = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute propulsionSystemData marked as not serialized
+        for (int idx = 0; idx < numberOfPropulsionSystems; idx++)
+        {
+        PropulsionSystemData anX = new PropulsionSystemData();
+        anX.unmarshal(byteBuffer);
+        propulsionSystemData.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
+        // attribute vectoringSystemData marked as not serialized
+        for (int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
+        {
+        VectoringNozzleSystem anX = new VectoringNozzleSystem();
+        anX.unmarshal(byteBuffer);
+        vectoringSystemData.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    VectoringNozzleSystem anX = new VectoringNozzleSystem();
-    anX.unmarshal(byteBuffer);
-    vectoringSystemData.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -382,11 +399,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (acousticSignatureRepresentationIndex == rhs.acousticSignatureRepresentationIndex)) ivarsEqual = false;
      if( ! (radarCrossSectionSignatureRepresentationIndex == rhs.radarCrossSectionSignatureRepresentationIndex)) ivarsEqual = false;
 
-     for(int idx = 0; idx < propulsionSystemData.size(); idx++)
+     for (int idx = 0; idx < propulsionSystemData.size(); idx++)
         if( ! ( propulsionSystemData.get(idx).equals(rhs.propulsionSystemData.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < vectoringSystemData.size(); idx++)
+     for (int idx = 0; idx < vectoringSystemData.size(); idx++)
         if( ! ( vectoringSystemData.get(idx).equals(rhs.vectoringSystemData.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

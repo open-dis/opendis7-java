@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c952a33;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11149
+ * <p> Entity class <b><code>XSH60J</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>XSH60J.createInstance()</code> or <code>new XSH60J()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/patrol helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: SikorskyS70B  = <code>3</code>; </li>
+ *     <li> Specific: XSH60J  = <code>6</code>; </li>
+ *     <li> Entity type uid: 11149; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66bf40e5. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarepatrolhelicopter
+ * @see SubCategory
+
  */
-public class XSH60J extends EntityType
+public final class XSH60J extends EntityType
 {
     /** Default constructor */
     public XSH60J()
@@ -26,5 +40,11 @@ public class XSH60J extends EntityType
         setCategory((byte)22); // uid 11133, Anti-Submarine Warfare/patrol helicopter
         setSubCategory((byte)3); // uid 11143, Sikorsky S-70B
         setSpecific((byte)6); // uid 11149, XSH-60J
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static XSH60J createInstance()
+    {
+            return new XSH60J();
     }
 }

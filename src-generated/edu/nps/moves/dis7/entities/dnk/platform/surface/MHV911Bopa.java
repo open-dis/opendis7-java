@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2df3b89c;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25484
+ * <p> Entity class <b><code>MHV911Bopa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MHV911Bopa.createInstance()</code> or <code>new MHV911Bopa()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: MHV900Class  = <code>1</code>; </li>
+ *     <li> Specific: MHV911Bopa  = <code>11</code>; </li>
+ *     <li> Entity type uid: 25484; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c41ed1d. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class MHV911Bopa extends EntityType
+public final class MHV911Bopa extends EntityType
 {
     /** Default constructor */
     public MHV911Bopa()
@@ -26,5 +40,11 @@ public class MHV911Bopa extends EntityType
         setCategory((byte)63); // uid 25472, Coast Guard Boats
         setSubCategory((byte)1); // uid 25473, MHV 900 Class
         setSpecific((byte)11); // uid 25484, MHV-911 Bopa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MHV911Bopa createInstance()
+    {
+            return new MHV911Bopa();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54d1608f;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15205
+ * <p> Entity class <b><code>D88Glasgow</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D88Glasgow.createInstance()</code> or <code>new D88Glasgow()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: Type42  = <code>1</code>; </li>
+ *     <li> Specific: D88Glasgow  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15205; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dd71b20. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileDestroyer
+ * @see SubCategory
+
  */
-public class D88Glasgow extends EntityType
+public final class D88Glasgow extends EntityType
 {
     /** Default constructor */
     public D88Glasgow()
@@ -26,5 +40,11 @@ public class D88Glasgow extends EntityType
         setCategory((byte)4); // uid 15201, Guided-missile Destroyer
         setSubCategory((byte)1); // uid 15202, Type 42
         setSpecific((byte)3); // uid 15205, D 88 Glasgow
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D88Glasgow createInstance()
+    {
+            return new D88Glasgow();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@d5ae57e;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29184
+ * <p> Entity class <b><code>MitsubishiT2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MitsubishiT2.createInstance()</code> or <code>new MitsubishiT2()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: MitsubishiT2  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@58bf8650. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class MitsubishiT2 extends EntityType
+public final class MitsubishiT2 extends EntityType
 {
     /** Default constructor */
     public MitsubishiT2()
@@ -25,5 +39,11 @@ public class MitsubishiT2 extends EntityType
 
         setCategory((byte)40); // uid 24779, Trainer
         setSubCategory((byte)3); // uid 29184, Mitsubishi T-2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MitsubishiT2 createInstance()
+    {
+            return new MitsubishiT2();
     }
 }

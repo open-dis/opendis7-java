@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e72fb04;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22085
+ * <p> Entity class <b><code>SingleLaneWoodGirderBridgeSpan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SingleLaneWoodGirderBridgeSpan.createInstance()</code> or <code>new SingleLaneWoodGirderBridgeSpan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Bridge Span = <code>19</code>; </li>
+ *     <li> SubCategory: SingleLaneEachWay  = <code>1</code>; </li>
+ *     <li> Specific: SingleLaneWoodGirderBridgeSpan  = <code>10</code>; </li>
+ *     <li> Entity type uid: 22085; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31b6b0c7. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see BridgeSpan
+ * @see SubCategory
+
  */
-public class SingleLaneWoodGirderBridgeSpan extends EntityType
+public final class SingleLaneWoodGirderBridgeSpan extends EntityType
 {
     /** Default constructor */
     public SingleLaneWoodGirderBridgeSpan()
@@ -26,5 +40,11 @@ public class SingleLaneWoodGirderBridgeSpan extends EntityType
         setCategory((byte)19); // uid 22073, Bridge Span
         setSubCategory((byte)1); // uid 22075, Single Lane Each Way
         setSpecific((byte)10); // uid 22085, Single Lane Wood Girder Bridge Span
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SingleLaneWoodGirderBridgeSpan createInstance()
+    {
+            return new SingleLaneWoodGirderBridgeSpan();
     }
 }

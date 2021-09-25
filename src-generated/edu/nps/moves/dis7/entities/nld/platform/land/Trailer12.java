@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@797501a;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27966
+ * <p> Entity class <b><code>Trailer12</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Trailer12.createInstance()</code> or <code>new Trailer12()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Heavy Equipment Transport Trailer = <code>19</code>; </li>
+ *     <li> SubCategory: DAFYTV2300280KN  = <code>3</code>; </li>
+ *     <li> Specific: Trailer  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27966; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b58ff9e. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see HeavyEquipmentTransportTrailer
+ * @see SubCategory
+
  */
-public class Trailer12 extends EntityType
+public final class Trailer12 extends EntityType
 {
     /** Default constructor */
     public Trailer12()
@@ -26,5 +40,11 @@ public class Trailer12 extends EntityType
         setCategory((byte)19); // uid 27957, Heavy Equipment Transport Trailer
         setSubCategory((byte)3); // uid 27964, DAF YTV 2300 280 KN
         setSpecific((byte)2); // uid 27966, Trailer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Trailer12 createInstance()
+    {
+            return new Trailer12();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
    protected List< DirectedEnergyDamage > damageDescriptionRecords = new ArrayList< DirectedEnergyDamage >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityDamageStatusPdu()
  {
     setPduType( DisPduType.ENTITY_DAMAGE_STATUS );
@@ -50,15 +49,17 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += damagedEntityID.getMarshalledSize();
+   if (damagedEntityID != null)
+       marshalSize += damagedEntityID.getMarshalledSize();
    marshalSize += 2;  // padding1
    marshalSize += 2;  // padding2
    marshalSize += 2;  // numberOfDamageDescription
-   for(int idx=0; idx < damageDescriptionRecords.size(); idx++)
-   {
-        DirectedEnergyDamage listElement = damageDescriptionRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (damageDescriptionRecords != null)
+       for (int idx=0; idx < damageDescriptionRecords.size(); idx++)
+       {
+            DirectedEnergyDamage listElement = damageDescriptionRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -158,7 +159,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(padding2);
        dos.writeShort(damageDescriptionRecords.size());
 
-       for(int idx = 0; idx < damageDescriptionRecords.size(); idx++)
+       for (int idx = 0; idx < damageDescriptionRecords.size(); idx++)
        {
             DirectedEnergyDamage aDirectedEnergyDamage = damageDescriptionRecords.get(idx);
             aDirectedEnergyDamage.marshal(dos);
@@ -193,7 +194,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfDamageDescription = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfDamageDescription; idx++)
+        for (int idx = 0; idx < numberOfDamageDescription; idx++)
         {
             DirectedEnergyDamage anX = new DirectedEnergyDamage();
             uPosition += anX.unmarshal(dis);
@@ -224,7 +225,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)padding2);
    byteBuffer.putShort( (short)damageDescriptionRecords.size());
 
-   for(int idx = 0; idx < damageDescriptionRecords.size(); idx++)
+   for (int idx = 0; idx < damageDescriptionRecords.size(); idx++)
    {
         DirectedEnergyDamage aDirectedEnergyDamage = damageDescriptionRecords.get(idx);
         aDirectedEnergyDamage.marshal(byteBuffer);
@@ -245,17 +246,29 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    damagedEntityID.unmarshal(byteBuffer);
-    padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfDamageDescription = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfDamageDescription; idx++)
+    try
     {
-    DirectedEnergyDamage anX = new DirectedEnergyDamage();
-    anX.unmarshal(byteBuffer);
-    damageDescriptionRecords.add(anX);
-    }
+        // attribute damagedEntityID marked as not serialized
+        damagedEntityID.unmarshal(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfDamageDescription marked as not serialized
+        numberOfDamageDescription = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute damageDescriptionRecords marked as not serialized
+        for (int idx = 0; idx < numberOfDamageDescription; idx++)
+        {
+        DirectedEnergyDamage anX = new DirectedEnergyDamage();
+        anX.unmarshal(byteBuffer);
+        damageDescriptionRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -288,7 +301,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < damageDescriptionRecords.size(); idx++)
+     for (int idx = 0; idx < damageDescriptionRecords.size(); idx++)
         if( ! ( damageDescriptionRecords.get(idx).equals(rhs.damageDescriptionRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

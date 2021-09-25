@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49e62b17;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 31838
+ * <p> Entity class <b><code>WDIGreenSARNightBallLight</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WDIGreenSARNightBallLight.createInstance()</code> or <code>new WDIGreenSARNightBallLight()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: SAR Night Light (SRNL) = <code>13</code>; </li>
+ *     <li> SubCategory: LEDSRNL  = <code>1</code>; </li>
+ *     <li> Specific: WDIGreenSARNightBallLight  = <code>3</code>; </li>
+ *     <li> Entity type uid: 31838; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2bb3f39e. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SARNightLightSRNL
+ * @see SubCategory
+
  */
-public class WDIGreenSARNightBallLight extends EntityType
+public final class WDIGreenSARNightBallLight extends EntityType
 {
     /** Default constructor */
     public WDIGreenSARNightBallLight()
@@ -26,5 +40,11 @@ public class WDIGreenSARNightBallLight extends EntityType
         setCategory((byte)13); // uid 31834, SAR Night Light (SRNL)
         setSubCategory((byte)1); // uid 31835, LED SRNL
         setSpecific((byte)3); // uid 31838, WDI Green SAR Night Ball Light
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WDIGreenSARNightBallLight createInstance()
+    {
+            return new WDIGreenSARNightBallLight();
     }
 }

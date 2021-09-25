@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62df0ff3;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31644
+ * <p> Entity class <b><code>LoaderFrontEnd</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LoaderFrontEnd.createInstance()</code> or <code>new LoaderFrontEnd()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Construction Specialty Vehicle = <code>87</code>; </li>
+ *     <li> SubCategory: GenericLoader  = <code>3</code>; </li>
+ *     <li> Specific: LoaderFrontEnd  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31644; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10567255. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ConstructionSpecialtyVehicle
+ * @see SubCategory
+
  */
-public class LoaderFrontEnd extends EntityType
+public final class LoaderFrontEnd extends EntityType
 {
     /** Default constructor */
     public LoaderFrontEnd()
@@ -26,5 +40,11 @@ public class LoaderFrontEnd extends EntityType
         setCategory((byte)87); // uid 25881, Construction Specialty Vehicle
         setSubCategory((byte)3); // uid 25884, Generic Loader
         setSpecific((byte)1); // uid 31644, Loader, Front End
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LoaderFrontEnd createInstance()
+    {
+            return new LoaderFrontEnd();
     }
 }

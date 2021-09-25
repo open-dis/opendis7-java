@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e1f584d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14098
+ * <p> Entity class <b><code>_108exVernier</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_108exVernier.createInstance()</code> or <code>new _108exVernier()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Kamenkaclassnavalsurvey  = <code>35</code>; </li>
+ *     <li> Specific: _108exVernier  = <code>6</code>; </li>
+ *     <li> Entity type uid: 14098; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3971f0fe. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _108exVernier extends EntityType
+public final class _108exVernier extends EntityType
 {
     /** Default constructor */
     public _108exVernier()
@@ -26,5 +40,11 @@ public class _108exVernier extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)35); // uid 14092, Kamenka class (naval survey)
         setSpecific((byte)6); // uid 14098, 108 (ex-Vernier)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _108exVernier createInstance()
+    {
+            return new _108exVernier();
     }
 }

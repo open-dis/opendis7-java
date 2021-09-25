@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -58,7 +57,7 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
    protected List< IntercomCommunicationsParameters > intercomParameters = new ArrayList< IntercomCommunicationsParameters >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IntercomControlPdu()
  {
     setPduType( DisPduType.INTERCOM_CONTROL );
@@ -74,23 +73,29 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += controlType.getMarshalledSize();
+   if (controlType != null)
+       marshalSize += controlType.getMarshalledSize();
    marshalSize += 1;  // communicationsChannelType
-   marshalSize += sourceEntityID.getMarshalledSize();
+   if (sourceEntityID != null)
+       marshalSize += sourceEntityID.getMarshalledSize();
    marshalSize += 2;  // sourceIntercomNumber
    marshalSize += 1;  // sourceLineID
    marshalSize += 1;  // transmitPriority
-   marshalSize += transmitLineState.getMarshalledSize();
-   marshalSize += command.getMarshalledSize();
-   marshalSize += masterIntercomReferenceID.getMarshalledSize();
+   if (transmitLineState != null)
+       marshalSize += transmitLineState.getMarshalledSize();
+   if (command != null)
+       marshalSize += command.getMarshalledSize();
+   if (masterIntercomReferenceID != null)
+       marshalSize += masterIntercomReferenceID.getMarshalledSize();
    marshalSize += 2;  // masterIntercomNumber
    marshalSize += 2;  // masterChannelID
    marshalSize += 4;  // intercomParametersLength
-   for(int idx=0; idx < intercomParameters.size(); idx++)
-   {
-        IntercomCommunicationsParameters listElement = intercomParameters.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (intercomParameters != null)
+       for (int idx=0; idx < intercomParameters.size(); idx++)
+       {
+            IntercomCommunicationsParameters listElement = intercomParameters.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -354,7 +359,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(masterChannelID);
        dos.writeInt(intercomParameters.size());
 
-       for(int idx = 0; idx < intercomParameters.size(); idx++)
+       for (int idx = 0; idx < intercomParameters.size(); idx++)
        {
             IntercomCommunicationsParameters aIntercomCommunicationsParameters = intercomParameters.get(idx);
             aIntercomCommunicationsParameters.marshal(dos);
@@ -404,7 +409,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         intercomParametersLength = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < intercomParametersLength; idx++)
+        for (int idx = 0; idx < intercomParametersLength; idx++)
         {
             IntercomCommunicationsParameters anX = new IntercomCommunicationsParameters();
             uPosition += anX.unmarshal(dis);
@@ -443,7 +448,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)masterChannelID);
    byteBuffer.putInt( (int)intercomParameters.size());
 
-   for(int idx = 0; idx < intercomParameters.size(); idx++)
+   for (int idx = 0; idx < intercomParameters.size(); idx++)
    {
         IntercomCommunicationsParameters aIntercomCommunicationsParameters = intercomParameters.get(idx);
         aIntercomCommunicationsParameters.marshal(byteBuffer);
@@ -464,25 +469,45 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    controlType = IntercomControlControlType.unmarshalEnum(byteBuffer);
-    communicationsChannelType = (byte)(byteBuffer.get() & 0xFF);
-    sourceEntityID.unmarshal(byteBuffer);
-    sourceIntercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    sourceLineID = (byte)(byteBuffer.get() & 0xFF);
-    transmitPriority = (byte)(byteBuffer.get() & 0xFF);
-    transmitLineState = IntercomControlTransmitLineState.unmarshalEnum(byteBuffer);
-    command = IntercomControlCommand.unmarshalEnum(byteBuffer);
-    masterIntercomReferenceID.unmarshal(byteBuffer);
-    masterIntercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    masterChannelID = (short)(byteBuffer.getShort() & 0xFFFF);
-    intercomParametersLength = byteBuffer.getInt();
-    for(int idx = 0; idx < intercomParametersLength; idx++)
+    try
     {
-    IntercomCommunicationsParameters anX = new IntercomCommunicationsParameters();
-    anX.unmarshal(byteBuffer);
-    intercomParameters.add(anX);
-    }
+        // attribute controlType marked as not serialized
+        controlType = IntercomControlControlType.unmarshalEnum(byteBuffer);
+        // attribute communicationsChannelType marked as not serialized
+        communicationsChannelType = (byte)(byteBuffer.get() & 0xFF);
+        // attribute sourceEntityID marked as not serialized
+        sourceEntityID.unmarshal(byteBuffer);
+        // attribute sourceIntercomNumber marked as not serialized
+        sourceIntercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute sourceLineID marked as not serialized
+        sourceLineID = (byte)(byteBuffer.get() & 0xFF);
+        // attribute transmitPriority marked as not serialized
+        transmitPriority = (byte)(byteBuffer.get() & 0xFF);
+        // attribute transmitLineState marked as not serialized
+        transmitLineState = IntercomControlTransmitLineState.unmarshalEnum(byteBuffer);
+        // attribute command marked as not serialized
+        command = IntercomControlCommand.unmarshalEnum(byteBuffer);
+        // attribute masterIntercomReferenceID marked as not serialized
+        masterIntercomReferenceID.unmarshal(byteBuffer);
+        // attribute masterIntercomNumber marked as not serialized
+        masterIntercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute masterChannelID marked as not serialized
+        masterChannelID = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute intercomParametersLength marked as not serialized
+        intercomParametersLength = byteBuffer.getInt();
+        // attribute intercomParameters marked as not serialized
+        for (int idx = 0; idx < intercomParametersLength; idx++)
+        {
+        IntercomCommunicationsParameters anX = new IntercomCommunicationsParameters();
+        anX.unmarshal(byteBuffer);
+        intercomParameters.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -523,7 +548,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (masterIntercomNumber == rhs.masterIntercomNumber)) ivarsEqual = false;
      if( ! (masterChannelID == rhs.masterChannelID)) ivarsEqual = false;
 
-     for(int idx = 0; idx < intercomParameters.size(); idx++)
+     for (int idx = 0; idx < intercomParameters.size(); idx++)
         if( ! ( intercomParameters.get(idx).equals(rhs.intercomParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

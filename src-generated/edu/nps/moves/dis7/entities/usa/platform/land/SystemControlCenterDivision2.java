@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1290ed28;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23481
+ * <p> Entity class <b><code>SystemControlCenterDivision2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SystemControlCenterDivision2.createInstance()</code> or <code>new SystemControlCenterDivision2()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Communications Facility = <code>33</code>; </li>
+ *     <li> SubCategory: MobileSubscriberEquipmentMSEPlatform  = <code>1</code>; </li>
+ *     <li> Specific: SystemControlCenterDivision2  = <code>9</code>; </li>
+ *     <li> Entity type uid: 23481; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@448b808a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommunicationsFacility
+ * @see SubCategory
+
  */
-public class SystemControlCenterDivision2 extends EntityType
+public final class SystemControlCenterDivision2 extends EntityType
 {
     /** Default constructor */
     public SystemControlCenterDivision2()
@@ -26,5 +40,11 @@ public class SystemControlCenterDivision2 extends EntityType
         setCategory((byte)33); // uid 10746, Communications Facility
         setSubCategory((byte)1); // uid 23472, Mobile Subscriber Equipment (MSE) Platform
         setSpecific((byte)9); // uid 23481, System Control Center (Division) - 2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SystemControlCenterDivision2 createInstance()
+    {
+            return new SystemControlCenterDivision2();
     }
 }

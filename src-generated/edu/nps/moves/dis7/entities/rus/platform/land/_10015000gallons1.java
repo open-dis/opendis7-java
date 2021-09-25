@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@267517e4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13009
+ * <p> Entity class <b><code>_10015000gallons1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_10015000gallons1.createInstance()</code> or <code>new _10015000gallons1()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Water trailer = <code>17</code>; </li>
+ *     <li> SubCategory: _10015000gallons  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 13009; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3028e50e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Watertrailer
+ * @see SubCategory
+
  */
-public class _10015000gallons1 extends EntityType
+public final class _10015000gallons1 extends EntityType
 {
     /** Default constructor */
     public _10015000gallons1()
@@ -25,5 +39,11 @@ public class _10015000gallons1 extends EntityType
 
         setCategory((byte)17); // uid 13005, Water trailer
         setSubCategory((byte)2); // uid 13009, 1001- 5000 gallons
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _10015000gallons1 createInstance()
+    {
+            return new _10015000gallons1();
     }
 }

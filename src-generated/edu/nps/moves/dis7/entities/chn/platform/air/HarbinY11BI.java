@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@40e6dfe1;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24748
+ * <p> Entity class <b><code>HarbinY11BI</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HarbinY11BI.createInstance()</code> or <code>new HarbinY11BI()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
+ *     <li> SubCategory: TwinPistonEngine  = <code>12</code>; </li>
+ *     <li> Specific: HarbinY11  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24748; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1e9e725a. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftSmallupto12500lbs5670kg
+ * @see SubCategory
+
  */
-public class HarbinY11BI extends EntityType
+public final class HarbinY11BI extends EntityType
 {
     /** Default constructor */
     public HarbinY11BI()
@@ -27,5 +41,11 @@ public class HarbinY11BI extends EntityType
         setSubCategory((byte)12); // uid 24746, Twin Piston Engine
         setSpecific((byte)1); // uid 24747, Harbin Y-11
         setExtra((byte)1); // uid 24748, Harbin Y-11B (I)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HarbinY11BI createInstance()
+    {
+            return new HarbinY11BI();
     }
 }

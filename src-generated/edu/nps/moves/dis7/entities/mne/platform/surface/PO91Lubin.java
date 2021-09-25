@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23c388c2;
- * Country: Montenegro (MNE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30140
+ * <p> Entity class <b><code>PO91Lubin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PO91Lubin.createInstance()</code> or <code>new PO91Lubin()</code>. </p>
+ * <ul>
+ *     <li> Country: Montenegro (MNE) = <code>259</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: POClass  = <code>1</code>; </li>
+ *     <li> Specific: PO91Lubin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30140; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dd69f5a. </p>
+ * @see Country#MONTENEGRO_MNE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class PO91Lubin extends EntityType
+public final class PO91Lubin extends EntityType
 {
     /** Default constructor */
     public PO91Lubin()
@@ -26,5 +40,11 @@ public class PO91Lubin extends EntityType
         setCategory((byte)10); // uid 30138, Tank Landing Ship
         setSubCategory((byte)1); // uid 30139, PO Class
         setSpecific((byte)1); // uid 30140, PO-91 Lubin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PO91Lubin createInstance()
+    {
+            return new PO91Lubin();
     }
 }

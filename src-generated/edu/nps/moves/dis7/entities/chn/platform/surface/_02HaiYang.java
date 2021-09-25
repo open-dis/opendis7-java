@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15ff3e9e;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17392
+ * <p> Entity class <b><code>_02HaiYang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_02HaiYang.createInstance()</code> or <code>new _02HaiYang()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: HaiYangclassoceanographicresearch  = <code>8</code>; </li>
+ *     <li> Specific: _02HaiYang  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17392; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34b7ac2f. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class _02HaiYang extends EntityType
+public final class _02HaiYang extends EntityType
 {
     /** Default constructor */
     public _02HaiYang()
@@ -26,5 +40,11 @@ public class _02HaiYang extends EntityType
         setCategory((byte)17); // uid 17367, Auxiliary, Merchant Marine
         setSubCategory((byte)8); // uid 17390, Hai Yang class (oceanographic research)
         setSpecific((byte)2); // uid 17392, 02 Hai Yang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _02HaiYang createInstance()
+    {
+            return new _02HaiYang();
     }
 }

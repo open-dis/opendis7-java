@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6a0f2853;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26164
+ * <p> Entity class <b><code>M1A1FEPwMinePlow</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1A1FEPwMinePlow.createInstance()</code> or <code>new M1A1FEPwMinePlow()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: M1Abrams  = <code>1</code>; </li>
+ *     <li> Specific: M1A1FirepowerEnhancementProgramFEP  = <code>14</code>; </li>
+ *     <li> Entity type uid: 26164; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@22f4f8f2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class M1A1FEPwMinePlow extends EntityType
+public final class M1A1FEPwMinePlow extends EntityType
 {
     /** Default constructor */
     public M1A1FEPwMinePlow()
@@ -27,5 +41,11 @@ public class M1A1FEPwMinePlow extends EntityType
         setSubCategory((byte)1); // uid 10019, M1 Abrams
         setSpecific((byte)14); // uid 26162, M1A1 Firepower Enhancement Program (FEP)
         setExtra((byte)2); // uid 26164, M1A1 FEP w/ Mine Plow
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1A1FEPwMinePlow createInstance()
+    {
+            return new M1A1FEPwMinePlow();
     }
 }

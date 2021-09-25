@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.2.4 Information about elastic collisions in a DIS exercise shall be communicated using a Collision-Elastic PDU. See 5.3.4.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class CollisionElasticPdu extends EntityInformationFamilyPdu implements Serializable
+public class CollisionElasticPdu extends EntityInformationInteractionFamilyPdu implements Serializable
 {
    /** This field shall identify the entity that is issuing the PDU and shall be represented by an Entity Identifier record (see 6.2.28) */
    protected EntityID  issuingEntityID = new EntityID(); 
@@ -64,7 +63,7 @@ public class CollisionElasticPdu extends EntityInformationFamilyPdu implements S
    protected float  coefficientOfRestitution;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public CollisionElasticPdu()
  {
     setPduType( DisPduType.COLLISION_ELASTIC );
@@ -80,20 +79,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += issuingEntityID.getMarshalledSize();
-   marshalSize += collidingEntityID.getMarshalledSize();
-   marshalSize += collisionEventID.getMarshalledSize();
+   if (issuingEntityID != null)
+       marshalSize += issuingEntityID.getMarshalledSize();
+   if (collidingEntityID != null)
+       marshalSize += collidingEntityID.getMarshalledSize();
+   if (collisionEventID != null)
+       marshalSize += collisionEventID.getMarshalledSize();
    marshalSize += 2;  // pad
-   marshalSize += contactVelocity.getMarshalledSize();
+   if (contactVelocity != null)
+       marshalSize += contactVelocity.getMarshalledSize();
    marshalSize += 4;  // mass
-   marshalSize += locationOfImpact.getMarshalledSize();
+   if (locationOfImpact != null)
+       marshalSize += locationOfImpact.getMarshalledSize();
    marshalSize += 4;  // collisionIntermediateResultXX
    marshalSize += 4;  // collisionIntermediateResultXY
    marshalSize += 4;  // collisionIntermediateResultXZ
    marshalSize += 4;  // collisionIntermediateResultYY
    marshalSize += 4;  // collisionIntermediateResultYZ
    marshalSize += 4;  // collisionIntermediateResultZZ
-   marshalSize += unitSurfaceNormal.getMarshalledSize();
+   if (unitSurfaceNormal != null)
+       marshalSize += unitSurfaceNormal.getMarshalledSize();
    marshalSize += 4;  // coefficientOfRestitution
 
    return marshalSize;
@@ -468,21 +473,43 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    issuingEntityID.unmarshal(byteBuffer);
-    collidingEntityID.unmarshal(byteBuffer);
-    collisionEventID.unmarshal(byteBuffer);
-    pad = (short)(byteBuffer.getShort() & 0xFFFF);
-    contactVelocity.unmarshal(byteBuffer);
-    mass = byteBuffer.getFloat();
-    locationOfImpact.unmarshal(byteBuffer);
-    collisionIntermediateResultXX = byteBuffer.getFloat();
-    collisionIntermediateResultXY = byteBuffer.getFloat();
-    collisionIntermediateResultXZ = byteBuffer.getFloat();
-    collisionIntermediateResultYY = byteBuffer.getFloat();
-    collisionIntermediateResultYZ = byteBuffer.getFloat();
-    collisionIntermediateResultZZ = byteBuffer.getFloat();
-    unitSurfaceNormal.unmarshal(byteBuffer);
-    coefficientOfRestitution = byteBuffer.getFloat();
+    try
+    {
+        // attribute issuingEntityID marked as not serialized
+        issuingEntityID.unmarshal(byteBuffer);
+        // attribute collidingEntityID marked as not serialized
+        collidingEntityID.unmarshal(byteBuffer);
+        // attribute collisionEventID marked as not serialized
+        collisionEventID.unmarshal(byteBuffer);
+        // attribute pad marked as not serialized
+        pad = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute contactVelocity marked as not serialized
+        contactVelocity.unmarshal(byteBuffer);
+        // attribute mass marked as not serialized
+        mass = byteBuffer.getFloat();
+        // attribute locationOfImpact marked as not serialized
+        locationOfImpact.unmarshal(byteBuffer);
+        // attribute collisionIntermediateResultXX marked as not serialized
+        collisionIntermediateResultXX = byteBuffer.getFloat();
+        // attribute collisionIntermediateResultXY marked as not serialized
+        collisionIntermediateResultXY = byteBuffer.getFloat();
+        // attribute collisionIntermediateResultXZ marked as not serialized
+        collisionIntermediateResultXZ = byteBuffer.getFloat();
+        // attribute collisionIntermediateResultYY marked as not serialized
+        collisionIntermediateResultYY = byteBuffer.getFloat();
+        // attribute collisionIntermediateResultYZ marked as not serialized
+        collisionIntermediateResultYZ = byteBuffer.getFloat();
+        // attribute collisionIntermediateResultZZ marked as not serialized
+        collisionIntermediateResultZZ = byteBuffer.getFloat();
+        // attribute unitSurfaceNormal marked as not serialized
+        unitSurfaceNormal.unmarshal(byteBuffer);
+        // attribute coefficientOfRestitution marked as not serialized
+        coefficientOfRestitution = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

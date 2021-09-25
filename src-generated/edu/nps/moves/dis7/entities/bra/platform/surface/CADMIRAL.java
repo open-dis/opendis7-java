@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2286778;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31905
+ * <p> Entity class <b><code>CADMIRAL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CADMIRAL.createInstance()</code> or <code>new CADMIRAL()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Support Vessel = <code>83</code>; </li>
+ *     <li> SubCategory: AnchorHandlingTugSupplyVesselAHTS  = <code>7</code>; </li>
+ *     <li> Specific: CADMIRAL  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31905; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@604ed9f0. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SupportVessel
+ * @see SubCategory
+
  */
-public class CADMIRAL extends EntityType
+public final class CADMIRAL extends EntityType
 {
     /** Default constructor */
     public CADMIRAL()
@@ -26,5 +40,11 @@ public class CADMIRAL extends EntityType
         setCategory((byte)83); // uid 31903, Support Vessel
         setSubCategory((byte)7); // uid 31904, Anchor Handling Tug Supply Vessel (AHTS)
         setSpecific((byte)1); // uid 31905, C ADMIRAL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CADMIRAL createInstance()
+    {
+            return new CADMIRAL();
     }
 }

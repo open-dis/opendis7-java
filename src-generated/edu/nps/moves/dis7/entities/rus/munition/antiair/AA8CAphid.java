@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23ad2d17;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20322
+ * <p> Entity class <b><code>AA8CAphid</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AA8CAphid.createInstance()</code> or <code>new AA8CAphid()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AA8Aphid  = <code>8</code>; </li>
+ *     <li> Specific: AA8CAphid  = <code>3</code>; </li>
+ *     <li> Entity type uid: 20322; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1537e43. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AA8CAphid extends EntityType
+public final class AA8CAphid extends EntityType
 {
     /** Default constructor */
     public AA8CAphid()
@@ -26,5 +40,11 @@ public class AA8CAphid extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)8); // uid 20319, AA-8 Aphid
         setSpecific((byte)3); // uid 20322, AA-8C Aphid
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AA8CAphid createInstance()
+    {
+            return new AA8CAphid();
     }
 }

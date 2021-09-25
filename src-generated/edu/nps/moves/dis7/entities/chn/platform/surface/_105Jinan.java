@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2aece37d;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17050
+ * <p> Entity class <b><code>_105Jinan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_105Jinan.createInstance()</code> or <code>new _105Jinan()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: LudaClassType051  = <code>2</code>; </li>
+ *     <li> Specific: _105Jinan  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17050; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ff2a664. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class _105Jinan extends EntityType
+public final class _105Jinan extends EntityType
 {
     /** Default constructor */
     public _105Jinan()
@@ -26,5 +40,11 @@ public class _105Jinan extends EntityType
         setCategory((byte)4); // uid 17046, Guided Missile Destroyer (DDG)
         setSubCategory((byte)2); // uid 17049, Luda Class (Type 051)
         setSpecific((byte)1); // uid 17050, 105 Jinan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _105Jinan createInstance()
+    {
+            return new _105Jinan();
     }
 }

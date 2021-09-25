@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bbb49b0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14215
+ * <p> Entity class <b><code>Lovat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Lovat.createInstance()</code> or <code>new Lovat()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: KhobiClassProject437NSupportTankers  = <code>62</code>; </li>
+ *     <li> Specific: Lovat  = <code>9</code>; </li>
+ *     <li> Entity type uid: 14215; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@771d1ffb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Lovat extends EntityType
+public final class Lovat extends EntityType
 {
     /** Default constructor */
     public Lovat()
@@ -26,5 +40,11 @@ public class Lovat extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)62); // uid 14206, Khobi Class (Project 437N) Support Tankers
         setSpecific((byte)9); // uid 14215, Lovat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Lovat createInstance()
+    {
+            return new Lovat();
     }
 }

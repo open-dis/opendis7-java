@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@150d80c4;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24679
+ * <p> Entity class <b><code>CivilianUltralightAircraftNonrigidWing</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianUltralightAircraftNonrigidWing.createInstance()</code> or <code>new CivilianUltralightAircraftNonrigidWing()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Ultralight Aircraft, Non-rigid Wing = <code>80</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24679; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@76f10035. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianUltralightAircraftNonrigidWing
+
  */
-public class CivilianUltralightAircraftNonrigidWing extends EntityType
+public final class CivilianUltralightAircraftNonrigidWing extends EntityType
 {
     /** Default constructor */
     public CivilianUltralightAircraftNonrigidWing()
@@ -24,5 +37,11 @@ public class CivilianUltralightAircraftNonrigidWing extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)80); // uid 24679, Civilian Ultralight Aircraft, Non-rigid Wing
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianUltralightAircraftNonrigidWing createInstance()
+    {
+            return new CivilianUltralightAircraftNonrigidWing();
     }
 }

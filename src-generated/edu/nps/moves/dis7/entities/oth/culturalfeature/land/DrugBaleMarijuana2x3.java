@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@269308cc;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 28514
+ * <p> Entity class <b><code>DrugBaleMarijuana2x3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DrugBaleMarijuana2x3.createInstance()</code> or <code>new DrugBaleMarijuana2x3()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Contraband = <code>28</code>; </li>
+ *     <li> SubCategory: DrugBale  = <code>1</code>; </li>
+ *     <li> Specific: DrugBaleMarijuana  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28514; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@761f234c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Contraband
+ * @see SubCategory
+
  */
-public class DrugBaleMarijuana2x3 extends EntityType
+public final class DrugBaleMarijuana2x3 extends EntityType
 {
     /** Default constructor */
     public DrugBaleMarijuana2x3()
@@ -27,5 +41,11 @@ public class DrugBaleMarijuana2x3 extends EntityType
         setSubCategory((byte)1); // uid 28512, Drug Bale
         setSpecific((byte)1); // uid 28513, Drug Bale, Marijuana
         setExtra((byte)1); // uid 28514, Drug Bale, Marijuana, 2x3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DrugBaleMarijuana2x3 createInstance()
+    {
+            return new DrugBaleMarijuana2x3();
     }
 }

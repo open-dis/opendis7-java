@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@329548d0;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15484
+ * <p> Entity class <b><code>A402Grasmere</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A402Grasmere.createInstance()</code> or <code>new A402Grasmere()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Clovellyclassfleettenders  = <code>24</code>; </li>
+ *     <li> Specific: A402Grasmere  = <code>19</code>; </li>
+ *     <li> Entity type uid: 15484; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42aae04d. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A402Grasmere extends EntityType
+public final class A402Grasmere extends EntityType
 {
     /** Default constructor */
     public A402Grasmere()
@@ -26,5 +40,11 @@ public class A402Grasmere extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)24); // uid 15465, Clovelly class (fleet tenders)
         setSpecific((byte)19); // uid 15484, A 402 Grasmere
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A402Grasmere createInstance()
+    {
+            return new A402Grasmere();
     }
 }

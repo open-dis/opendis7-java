@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40df6090;
- * Country: Uruguay (URY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27534
+ * <p> Entity class <b><code>_22Oyarvide</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_22Oyarvide.createInstance()</code> or <code>new _22Oyarvide()</code>. </p>
+ * <ul>
+ *     <li> Country: Uruguay (URY) = <code>226</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: HelgolandClassType720  = <code>3</code>; </li>
+ *     <li> Specific: _22Oyarvide  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27534; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@691541bc. </p>
+ * @see Country#URUGUAY_URY
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _22Oyarvide extends EntityType
+public final class _22Oyarvide extends EntityType
 {
     /** Default constructor */
     public _22Oyarvide()
@@ -26,5 +40,11 @@ public class _22Oyarvide extends EntityType
         setCategory((byte)16); // uid 27490, Auxiliary
         setSubCategory((byte)3); // uid 27533, Helgoland Class (Type 720)
         setSpecific((byte)1); // uid 27534, 22 Oyarvide
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _22Oyarvide createInstance()
+    {
+            return new _22Oyarvide();
     }
 }

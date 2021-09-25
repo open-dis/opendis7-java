@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fe1ce85;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31083
+ * <p> Entity class <b><code>_859Siribua</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_859Siribua.createInstance()</code> or <code>new _859Siribua()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: SibarauClass  = <code>2</code>; </li>
+ *     <li> Specific: _859Siribua  = <code>5</code>; </li>
+ *     <li> Entity type uid: 31083; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63798ca7. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _859Siribua extends EntityType
+public final class _859Siribua extends EntityType
 {
     /** Default constructor */
     public _859Siribua()
@@ -26,5 +40,11 @@ public class _859Siribua extends EntityType
         setCategory((byte)7); // uid 31038, Light/Patrol Craft
         setSubCategory((byte)2); // uid 31078, Sibarau Class
         setSpecific((byte)5); // uid 31083, 859 Siribua
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _859Siribua createInstance()
+    {
+            return new _859Siribua();
     }
 }

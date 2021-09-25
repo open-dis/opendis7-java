@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7cac93fe;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25634
+ * <p> Entity class <b><code>M1026A1P1wAddOnArmor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1026A1P1wAddOnArmor.createInstance()</code> or <code>new M1026A1P1wAddOnArmor()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: HighMobilityMultipurposeWheeledVehicleHMMWVHumvee  = <code>1</code>; </li>
+ *     <li> Specific: M1026ArmamentCarrierwWinch  = <code>8</code>; </li>
+ *     <li> Entity type uid: 25634; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@75156240. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class M1026A1P1wAddOnArmor extends EntityType
+public final class M1026A1P1wAddOnArmor extends EntityType
 {
     /** Default constructor */
     public M1026A1P1wAddOnArmor()
@@ -27,5 +41,11 @@ public class M1026A1P1wAddOnArmor extends EntityType
         setSubCategory((byte)1); // uid 10349, High Mobility Multipurpose Wheeled Vehicle (HMMWV) Humvee
         setSpecific((byte)8); // uid 10357, M1026 Armament Carrier w/ Winch
         setExtra((byte)2); // uid 25634, M1026A1P1 w/ Add-On Armor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1026A1P1wAddOnArmor createInstance()
+    {
+            return new M1026A1P1wAddOnArmor();
     }
 }

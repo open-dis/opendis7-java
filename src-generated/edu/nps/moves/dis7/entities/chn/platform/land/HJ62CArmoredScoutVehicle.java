@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a4041cc;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23528
+ * <p> Entity class <b><code>HJ62CArmoredScoutVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HJ62CArmoredScoutVehicle.createInstance()</code> or <code>new HJ62CArmoredScoutVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: NORINCOYW534ArmoredPersonnelCarrierAPC  = <code>3</code>; </li>
+ *     <li> Specific: HJ62CArmoredScoutVehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23528; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cbd213e. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class HJ62CArmoredScoutVehicle extends EntityType
+public final class HJ62CArmoredScoutVehicle extends EntityType
 {
     /** Default constructor */
     public HJ62CArmoredScoutVehicle()
@@ -26,5 +40,11 @@ public class HJ62CArmoredScoutVehicle extends EntityType
         setCategory((byte)2); // uid 16876, Armored Fighting Vehicle
         setSubCategory((byte)3); // uid 16879, NORINCO YW 534 Armored Personnel Carrier (APC)
         setSpecific((byte)1); // uid 23528, HJ-62C Armored Scout Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HJ62CArmoredScoutVehicle createInstance()
+    {
+            return new HJ62CArmoredScoutVehicle();
     }
 }

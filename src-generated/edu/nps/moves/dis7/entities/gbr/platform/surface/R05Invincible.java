@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@516462cc;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15366
+ * <p> Entity class <b><code>R05Invincible</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>R05Invincible.createInstance()</code> or <code>new R05Invincible()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light carrier = <code>12</code>; </li>
+ *     <li> SubCategory: LightaircraftcarrierCVSG  = <code>1</code>; </li>
+ *     <li> Specific: R05Invincible  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15366; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35ee466f. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightcarrier
+ * @see SubCategory
+
  */
-public class R05Invincible extends EntityType
+public final class R05Invincible extends EntityType
 {
     /** Default constructor */
     public R05Invincible()
@@ -26,5 +40,11 @@ public class R05Invincible extends EntityType
         setCategory((byte)12); // uid 15364, Light carrier
         setSubCategory((byte)1); // uid 15365, Light aircraft carrier (CVSG)
         setSpecific((byte)1); // uid 15366, R 05 Invincible
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static R05Invincible createInstance()
+    {
+            return new R05Invincible();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66ea1466;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17660
+ * <p> Entity class <b><code>_768YeeRee</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_768YeeRee.createInstance()</code> or <code>new _768YeeRee()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: PoHangClassCorvette  = <code>2</code>; </li>
+ *     <li> Specific: _768YeeRee  = <code>11</code>; </li>
+ *     <li> Entity type uid: 17660; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3954d008. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _768YeeRee extends EntityType
+public final class _768YeeRee extends EntityType
 {
     /** Default constructor */
     public _768YeeRee()
@@ -26,5 +40,11 @@ public class _768YeeRee extends EntityType
         setCategory((byte)6); // uid 17638, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 17649, Po Hang Class (Corvette)
         setSpecific((byte)11); // uid 17660, 768 Yee Ree
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _768YeeRee createInstance()
+    {
+            return new _768YeeRee();
     }
 }

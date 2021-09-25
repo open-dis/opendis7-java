@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3ac42916;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29411
+ * <p> Entity class <b><code>HaulmarkTrailerSemiMediumEquipmentTransporterPlant</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaulmarkTrailerSemiMediumEquipmentTransporterPlant.createInstance()</code> or <code>new HaulmarkTrailerSemiMediumEquipmentTransporterPlant()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Heavy Equipment Transport Trailer = <code>19</code>; </li>
+ *     <li> SubCategory: HaulmarkTrailerSemiMediumEquipmentTransporterPlant  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29411; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e5c649. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see HeavyEquipmentTransportTrailer
+ * @see SubCategory
+
  */
-public class HaulmarkTrailerSemiMediumEquipmentTransporterPlant extends EntityType
+public final class HaulmarkTrailerSemiMediumEquipmentTransporterPlant extends EntityType
 {
     /** Default constructor */
     public HaulmarkTrailerSemiMediumEquipmentTransporterPlant()
@@ -25,5 +39,11 @@ public class HaulmarkTrailerSemiMediumEquipmentTransporterPlant extends EntityTy
 
         setCategory((byte)19); // uid 29410, Heavy Equipment Transport Trailer
         setSubCategory((byte)1); // uid 29411, Haulmark - Trailer, Semi, Medium Equipment Transporter, Plant
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaulmarkTrailerSemiMediumEquipmentTransporterPlant createInstance()
+    {
+            return new HaulmarkTrailerSemiMediumEquipmentTransporterPlant();
     }
 }

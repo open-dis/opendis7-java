@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1813f3e9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12573
+ * <p> Entity class <b><code>T55MVK</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T55MVK.createInstance()</code> or <code>new T55MVK()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: T55MBT  = <code>6</code>; </li>
+ *     <li> Specific: T55MVK  = <code>12</code>; </li>
+ *     <li> Entity type uid: 12573; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35e478f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class T55MVK extends EntityType
+public final class T55MVK extends EntityType
 {
     /** Default constructor */
     public T55MVK()
@@ -26,5 +40,11 @@ public class T55MVK extends EntityType
         setCategory((byte)1); // uid 12510, Tank
         setSubCategory((byte)6); // uid 12561, T-55 MBT
         setSpecific((byte)12); // uid 12573, T-55MVK
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T55MVK createInstance()
+    {
+            return new T55MVK();
     }
 }

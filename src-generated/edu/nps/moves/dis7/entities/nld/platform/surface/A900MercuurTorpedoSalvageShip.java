@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1fc793c2;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28289
+ * <p> Entity class <b><code>A900MercuurTorpedoSalvageShip</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A900MercuurTorpedoSalvageShip.createInstance()</code> or <code>new A900MercuurTorpedoSalvageShip()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AuxiliarySalvageShips  = <code>14</code>; </li>
+ *     <li> Specific: A900MercuurTorpedoSalvageShip  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28289; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e3cee7b. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A900MercuurTorpedoSalvageShip extends EntityType
+public final class A900MercuurTorpedoSalvageShip extends EntityType
 {
     /** Default constructor */
     public A900MercuurTorpedoSalvageShip()
@@ -26,5 +40,11 @@ public class A900MercuurTorpedoSalvageShip extends EntityType
         setCategory((byte)16); // uid 18942, Auxiliary
         setSubCategory((byte)14); // uid 28288, Auxiliary (Salvage Ships)
         setSpecific((byte)1); // uid 28289, A900 Mercuur (Torpedo Salvage Ship)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A900MercuurTorpedoSalvageShip createInstance()
+    {
+            return new A900MercuurTorpedoSalvageShip();
     }
 }

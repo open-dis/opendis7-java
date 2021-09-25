@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5d878b25;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24324
+ * <p> Entity class <b><code>Boeing777300ER</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Boeing777300ER.createInstance()</code> or <code>new Boeing777300ER()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Heavy (above 255,000 lbs / 115,666 kg) = <code>88</code>; </li>
+ *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
+ *     <li> Specific: Boeing777  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24324; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@15d0d6c9. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftHeavyabove255000lbs115666kg
+ * @see SubCategory
+
  */
-public class Boeing777300ER extends EntityType
+public final class Boeing777300ER extends EntityType
 {
     /** Default constructor */
     public Boeing777300ER()
@@ -27,5 +41,11 @@ public class Boeing777300ER extends EntityType
         setSubCategory((byte)32); // uid 23814, Twin Jet
         setSpecific((byte)2); // uid 23816, Boeing 777
         setExtra((byte)5); // uid 24324, Boeing 777-300ER
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Boeing777300ER createInstance()
+    {
+            return new Boeing777300ER();
     }
 }

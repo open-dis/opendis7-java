@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3701e6e4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13771
+ * <p> Entity class <b><code>_50LetSheftsvaVlksm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_50LetSheftsvaVlksm.createInstance()</code> or <code>new _50LetSheftsvaVlksm()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank landing ship = <code>10</code>; </li>
+ *     <li> SubCategory: AlligatorClass  = <code>2</code>; </li>
+ *     <li> Specific: _50LetSheftsvaVlksm  = <code>7</code>; </li>
+ *     <li> Entity type uid: 13771; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@460510aa. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tanklandingship
+ * @see SubCategory
+
  */
-public class _50LetSheftsvaVlksm extends EntityType
+public final class _50LetSheftsvaVlksm extends EntityType
 {
     /** Default constructor */
     public _50LetSheftsvaVlksm()
@@ -26,5 +40,11 @@ public class _50LetSheftsvaVlksm extends EntityType
         setCategory((byte)10); // uid 13758, Tank landing ship
         setSubCategory((byte)2); // uid 13764, Alligator Class
         setSpecific((byte)7); // uid 13771, 50 Let Sheftsva Vlksm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _50LetSheftsvaVlksm createInstance()
+    {
+            return new _50LetSheftsvaVlksm();
     }
 }

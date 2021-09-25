@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -109,7 +108,7 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
    protected byte[]  numberOfVertices = new byte[0]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MinefieldDataPdu()
  {
     setPduType( DisPduType.MINEFIELD_DATA );
@@ -125,8 +124,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += minefieldID.getMarshalledSize();
-   marshalSize += requestingEntityID.getMarshalledSize();
+   if (minefieldID != null)
+       marshalSize += minefieldID.getMarshalledSize();
+   if (requestingEntityID != null)
+       marshalSize += requestingEntityID.getMarshalledSize();
    marshalSize += 2;  // minefieldSequenceNumbeer
    marshalSize += 1;  // requestID
    marshalSize += 1;  // pduSequenceNumber
@@ -134,50 +135,70 @@ public int getMarshalledSize()
    marshalSize += 1;  // numberOfMinesInThisPdu
    marshalSize += 1;  // numberOfSensorTypes
    marshalSize += 1;  // padding
-   marshalSize += dataFilter.getMarshalledSize();
-   marshalSize += mineType.getMarshalledSize();
-   for(int idx=0; idx < sensorTypes.size(); idx++)
-   {
-        MinefieldSensorType listElement = sensorTypes.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += padTo32.length;
-   for(int idx=0; idx < mineLocation.size(); idx++)
-   {
-        Vector3Float listElement = mineLocation.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += groundBurialDepthOffset.length * 4;
-   marshalSize += waterBurialDepthOffset.length * 4;
-   marshalSize += snowBurialDepthOffset.length * 4;
-   for(int idx=0; idx < mineOrientation.size(); idx++)
-   {
-        EulerAngles listElement = mineOrientation.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += thermalContrast.length * 4;
-   marshalSize += reflectance.length * 4;
-   for(int idx=0; idx < mineEmplacementTime.size(); idx++)
-   {
-        MineEmplacementTime listElement = mineEmplacementTime.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += mineEntityNumber.length * 2;
-   for(int idx=0; idx < fusing.size(); idx++)
-   {
-        MinefieldDataFusing listElement = fusing.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += scalarDetectionCoefficient.length * 1;
-   for(int idx=0; idx < paintScheme.size(); idx++)
-   {
-        MinefieldDataPaintScheme listElement = paintScheme.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += padTo32_2.length;
-   marshalSize += numberOfTripDetonationWires.length * 1;
-   marshalSize += padTo32_3.length;
-   marshalSize += numberOfVertices.length * 1;
+   if (dataFilter != null)
+       marshalSize += dataFilter.getMarshalledSize();
+   if (mineType != null)
+       marshalSize += mineType.getMarshalledSize();
+   if (sensorTypes != null)
+       for (int idx=0; idx < sensorTypes.size(); idx++)
+       {
+            MinefieldSensorType listElement = sensorTypes.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (padTo32 != null)
+       marshalSize += padTo32.length;
+   if (mineLocation != null)
+       for (int idx=0; idx < mineLocation.size(); idx++)
+       {
+            Vector3Float listElement = mineLocation.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (groundBurialDepthOffset != null)
+       marshalSize += groundBurialDepthOffset.length * 4;
+   if (waterBurialDepthOffset != null)
+       marshalSize += waterBurialDepthOffset.length * 4;
+   if (snowBurialDepthOffset != null)
+       marshalSize += snowBurialDepthOffset.length * 4;
+   if (mineOrientation != null)
+       for (int idx=0; idx < mineOrientation.size(); idx++)
+       {
+            EulerAngles listElement = mineOrientation.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (thermalContrast != null)
+       marshalSize += thermalContrast.length * 4;
+   if (reflectance != null)
+       marshalSize += reflectance.length * 4;
+   if (mineEmplacementTime != null)
+       for (int idx=0; idx < mineEmplacementTime.size(); idx++)
+       {
+            MineEmplacementTime listElement = mineEmplacementTime.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (mineEntityNumber != null)
+       marshalSize += mineEntityNumber.length * 2;
+   if (fusing != null)
+       for (int idx=0; idx < fusing.size(); idx++)
+       {
+            MinefieldDataFusing listElement = fusing.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (scalarDetectionCoefficient != null)
+       marshalSize += scalarDetectionCoefficient.length * 1;
+   if (paintScheme != null)
+       for (int idx=0; idx < paintScheme.size(); idx++)
+       {
+            MinefieldDataPaintScheme listElement = paintScheme.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (padTo32_2 != null)
+       marshalSize += padTo32_2.length;
+   if (numberOfTripDetonationWires != null)
+       marshalSize += numberOfTripDetonationWires.length * 1;
+   if (padTo32_3 != null)
+       marshalSize += padTo32_3.length;
+   if (numberOfVertices != null)
+       marshalSize += numberOfVertices.length * 1;
 
    return marshalSize;
 }
@@ -625,7 +646,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dataFilter.marshal(dos);
        mineType.marshal(dos);
 
-       for(int idx = 0; idx < sensorTypes.size(); idx++)
+       for (int idx = 0; idx < sensorTypes.size(); idx++)
        {
             MinefieldSensorType aMinefieldSensorType = sensorTypes.get(idx);
             aMinefieldSensorType.marshal(dos);
@@ -633,63 +654,63 @@ public void marshal(DataOutputStream dos) throws Exception
 
        padTo32 = new byte[Align.to32bits(dos)];
 
-       for(int idx = 0; idx < mineLocation.size(); idx++)
+       for (int idx = 0; idx < mineLocation.size(); idx++)
        {
             Vector3Float aVector3Float = mineLocation.get(idx);
             aVector3Float.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < groundBurialDepthOffset.length; idx++)
+       for (int idx = 0; idx < groundBurialDepthOffset.length; idx++)
            dos.writeFloat(groundBurialDepthOffset[idx]);
 
 
-       for(int idx = 0; idx < waterBurialDepthOffset.length; idx++)
+       for (int idx = 0; idx < waterBurialDepthOffset.length; idx++)
            dos.writeFloat(waterBurialDepthOffset[idx]);
 
 
-       for(int idx = 0; idx < snowBurialDepthOffset.length; idx++)
+       for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
            dos.writeFloat(snowBurialDepthOffset[idx]);
 
 
-       for(int idx = 0; idx < mineOrientation.size(); idx++)
+       for (int idx = 0; idx < mineOrientation.size(); idx++)
        {
             EulerAngles aEulerAngles = mineOrientation.get(idx);
             aEulerAngles.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < thermalContrast.length; idx++)
+       for (int idx = 0; idx < thermalContrast.length; idx++)
            dos.writeFloat(thermalContrast[idx]);
 
 
-       for(int idx = 0; idx < reflectance.length; idx++)
+       for (int idx = 0; idx < reflectance.length; idx++)
            dos.writeFloat(reflectance[idx]);
 
 
-       for(int idx = 0; idx < mineEmplacementTime.size(); idx++)
+       for (int idx = 0; idx < mineEmplacementTime.size(); idx++)
        {
             MineEmplacementTime aMineEmplacementTime = mineEmplacementTime.get(idx);
             aMineEmplacementTime.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < mineEntityNumber.length; idx++)
+       for (int idx = 0; idx < mineEntityNumber.length; idx++)
            dos.writeShort(mineEntityNumber[idx]);
 
 
-       for(int idx = 0; idx < fusing.size(); idx++)
+       for (int idx = 0; idx < fusing.size(); idx++)
        {
             MinefieldDataFusing aMinefieldDataFusing = fusing.get(idx);
             aMinefieldDataFusing.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
+       for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
            dos.writeByte(scalarDetectionCoefficient[idx]);
 
 
-       for(int idx = 0; idx < paintScheme.size(); idx++)
+       for (int idx = 0; idx < paintScheme.size(); idx++)
        {
             MinefieldDataPaintScheme aMinefieldDataPaintScheme = paintScheme.get(idx);
             aMinefieldDataPaintScheme.marshal(dos);
@@ -697,12 +718,12 @@ public void marshal(DataOutputStream dos) throws Exception
 
        padTo32_2 = new byte[Align.to32bits(dos)];
 
-       for(int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
+       for (int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
            dos.writeByte(numberOfTripDetonationWires[idx]);
 
        padTo32_3 = new byte[Align.to32bits(dos)];
 
-       for(int idx = 0; idx < numberOfVertices.length; idx++)
+       for (int idx = 0; idx < numberOfVertices.length; idx++)
            dos.writeByte(numberOfVertices[idx]);
 
     }
@@ -745,7 +766,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         uPosition += dataFilter.unmarshal(dis);
         uPosition += mineType.unmarshal(dis);
-        for(int idx = 0; idx < numberOfSensorTypes; idx++)
+        for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
             MinefieldSensorType anX = new MinefieldSensorType();
             uPosition += anX.unmarshal(dis);
@@ -754,56 +775,56 @@ public int unmarshal(DataInputStream dis) throws Exception
 
         padTo32 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32.length;
-        for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             Vector3Float anX = new Vector3Float();
             uPosition += anX.unmarshal(dis);
             mineLocation.add(anX);
         }
 
-        for(int idx = 0; idx < groundBurialDepthOffset.length; idx++)
+        for (int idx = 0; idx < groundBurialDepthOffset.length; idx++)
             groundBurialDepthOffset[idx] = dis.readFloat();
         uPosition += (groundBurialDepthOffset.length * 4);
-        for(int idx = 0; idx < waterBurialDepthOffset.length; idx++)
+        for (int idx = 0; idx < waterBurialDepthOffset.length; idx++)
             waterBurialDepthOffset[idx] = dis.readFloat();
         uPosition += (waterBurialDepthOffset.length * 4);
-        for(int idx = 0; idx < snowBurialDepthOffset.length; idx++)
+        for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
             snowBurialDepthOffset[idx] = dis.readFloat();
         uPosition += (snowBurialDepthOffset.length * 4);
-        for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             EulerAngles anX = new EulerAngles();
             uPosition += anX.unmarshal(dis);
             mineOrientation.add(anX);
         }
 
-        for(int idx = 0; idx < thermalContrast.length; idx++)
+        for (int idx = 0; idx < thermalContrast.length; idx++)
             thermalContrast[idx] = dis.readFloat();
         uPosition += (thermalContrast.length * 4);
-        for(int idx = 0; idx < reflectance.length; idx++)
+        for (int idx = 0; idx < reflectance.length; idx++)
             reflectance[idx] = dis.readFloat();
         uPosition += (reflectance.length * 4);
-        for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MineEmplacementTime anX = new MineEmplacementTime();
             uPosition += anX.unmarshal(dis);
             mineEmplacementTime.add(anX);
         }
 
-        for(int idx = 0; idx < mineEntityNumber.length; idx++)
+        for (int idx = 0; idx < mineEntityNumber.length; idx++)
             mineEntityNumber[idx] = dis.readShort();
         uPosition += (mineEntityNumber.length * 2);
-        for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataFusing anX = new MinefieldDataFusing();
             uPosition += anX.unmarshal(dis);
             fusing.add(anX);
         }
 
-        for(int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
+        for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
             scalarDetectionCoefficient[idx] = dis.readByte();
         uPosition += (scalarDetectionCoefficient.length * 1);
-        for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
             uPosition += anX.unmarshal(dis);
@@ -812,12 +833,12 @@ public int unmarshal(DataInputStream dis) throws Exception
 
         padTo32_2 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32_2.length;
-        for(int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
+        for (int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
             numberOfTripDetonationWires[idx] = dis.readByte();
         uPosition += (numberOfTripDetonationWires.length * 1);
         padTo32_3 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32_3.length;
-        for(int idx = 0; idx < numberOfVertices.length; idx++)
+        for (int idx = 0; idx < numberOfVertices.length; idx++)
             numberOfVertices[idx] = dis.readByte();
         uPosition += (numberOfVertices.length * 1);
     }
@@ -851,7 +872,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    dataFilter.marshal(byteBuffer);
    mineType.marshal(byteBuffer);
 
-   for(int idx = 0; idx < sensorTypes.size(); idx++)
+   for (int idx = 0; idx < sensorTypes.size(); idx++)
    {
         MinefieldSensorType aMinefieldSensorType = sensorTypes.get(idx);
         aMinefieldSensorType.marshal(byteBuffer);
@@ -859,63 +880,63 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    padTo32 = new byte[Align.to32bits(byteBuffer)];
 
-   for(int idx = 0; idx < mineLocation.size(); idx++)
+   for (int idx = 0; idx < mineLocation.size(); idx++)
    {
         Vector3Float aVector3Float = mineLocation.get(idx);
         aVector3Float.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < groundBurialDepthOffset.length; idx++)
+   for (int idx = 0; idx < groundBurialDepthOffset.length; idx++)
        byteBuffer.putFloat((float)groundBurialDepthOffset[idx]);
 
 
-   for(int idx = 0; idx < waterBurialDepthOffset.length; idx++)
+   for (int idx = 0; idx < waterBurialDepthOffset.length; idx++)
        byteBuffer.putFloat((float)waterBurialDepthOffset[idx]);
 
 
-   for(int idx = 0; idx < snowBurialDepthOffset.length; idx++)
+   for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
        byteBuffer.putFloat((float)snowBurialDepthOffset[idx]);
 
 
-   for(int idx = 0; idx < mineOrientation.size(); idx++)
+   for (int idx = 0; idx < mineOrientation.size(); idx++)
    {
         EulerAngles aEulerAngles = mineOrientation.get(idx);
         aEulerAngles.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < thermalContrast.length; idx++)
+   for (int idx = 0; idx < thermalContrast.length; idx++)
        byteBuffer.putFloat((float)thermalContrast[idx]);
 
 
-   for(int idx = 0; idx < reflectance.length; idx++)
+   for (int idx = 0; idx < reflectance.length; idx++)
        byteBuffer.putFloat((float)reflectance[idx]);
 
 
-   for(int idx = 0; idx < mineEmplacementTime.size(); idx++)
+   for (int idx = 0; idx < mineEmplacementTime.size(); idx++)
    {
         MineEmplacementTime aMineEmplacementTime = mineEmplacementTime.get(idx);
         aMineEmplacementTime.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < mineEntityNumber.length; idx++)
+   for (int idx = 0; idx < mineEntityNumber.length; idx++)
        byteBuffer.putShort((short)mineEntityNumber[idx]);
 
 
-   for(int idx = 0; idx < fusing.size(); idx++)
+   for (int idx = 0; idx < fusing.size(); idx++)
    {
         MinefieldDataFusing aMinefieldDataFusing = fusing.get(idx);
         aMinefieldDataFusing.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
+   for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
        byteBuffer.put((byte)scalarDetectionCoefficient[idx]);
 
 
-   for(int idx = 0; idx < paintScheme.size(); idx++)
+   for (int idx = 0; idx < paintScheme.size(); idx++)
    {
         MinefieldDataPaintScheme aMinefieldDataPaintScheme = paintScheme.get(idx);
         aMinefieldDataPaintScheme.marshal(byteBuffer);
@@ -923,12 +944,12 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    padTo32_2 = new byte[Align.to32bits(byteBuffer)];
 
-   for(int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
+   for (int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
        byteBuffer.put((byte)numberOfTripDetonationWires[idx]);
 
    padTo32_3 = new byte[Align.to32bits(byteBuffer)];
 
-   for(int idx = 0; idx < numberOfVertices.length; idx++)
+   for (int idx = 0; idx < numberOfVertices.length; idx++)
        byteBuffer.put((byte)numberOfVertices[idx]);
 
 }
@@ -946,80 +967,116 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    minefieldID.unmarshal(byteBuffer);
-    requestingEntityID.unmarshal(byteBuffer);
-    minefieldSequenceNumbeer = (short)(byteBuffer.getShort() & 0xFFFF);
-    requestID = (byte)(byteBuffer.get() & 0xFF);
-    pduSequenceNumber = (byte)(byteBuffer.get() & 0xFF);
-    numberOfPdus = (byte)(byteBuffer.get() & 0xFF);
-    numberOfMinesInThisPdu = (byte)(byteBuffer.get() & 0xFF);
-    numberOfSensorTypes = (byte)(byteBuffer.get() & 0xFF);
-    padding = (byte)(byteBuffer.get() & 0xFF);
-    dataFilter.unmarshal(byteBuffer);
-    mineType.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfSensorTypes; idx++)
+    try
     {
-    MinefieldSensorType anX = new MinefieldSensorType();
-    anX.unmarshal(byteBuffer);
-    sensorTypes.add(anX);
-    }
+        // attribute minefieldID marked as not serialized
+        minefieldID.unmarshal(byteBuffer);
+        // attribute requestingEntityID marked as not serialized
+        requestingEntityID.unmarshal(byteBuffer);
+        // attribute minefieldSequenceNumbeer marked as not serialized
+        minefieldSequenceNumbeer = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requestID marked as not serialized
+        requestID = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pduSequenceNumber marked as not serialized
+        pduSequenceNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfPdus marked as not serialized
+        numberOfPdus = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfMinesInThisPdu marked as not serialized
+        numberOfMinesInThisPdu = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfSensorTypes marked as not serialized
+        numberOfSensorTypes = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+        // attribute dataFilter marked as not serialized
+        dataFilter.unmarshal(byteBuffer);
+        // attribute mineType marked as not serialized
+        mineType.unmarshal(byteBuffer);
+        // attribute sensorTypes marked as not serialized
+        for (int idx = 0; idx < numberOfSensorTypes; idx++)
+        {
+        MinefieldSensorType anX = new MinefieldSensorType();
+        anX.unmarshal(byteBuffer);
+        sensorTypes.add(anX);
+        }
 
-    padTo32 = new byte[Align.from32bits(byteBuffer)];
-    for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        // attribute padTo32 marked as not serialized
+        padTo32 = new byte[Align.from32bits(byteBuffer)];
+        // attribute mineLocation marked as not serialized
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        {
+        Vector3Float anX = new Vector3Float();
+        anX.unmarshal(byteBuffer);
+        mineLocation.add(anX);
+        }
+
+        // attribute groundBurialDepthOffset marked as not serialized
+        for (int idx = 0; idx < groundBurialDepthOffset.length; idx++)
+            groundBurialDepthOffset[idx] = byteBuffer.getFloat();
+        // attribute waterBurialDepthOffset marked as not serialized
+        for (int idx = 0; idx < waterBurialDepthOffset.length; idx++)
+            waterBurialDepthOffset[idx] = byteBuffer.getFloat();
+        // attribute snowBurialDepthOffset marked as not serialized
+        for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
+            snowBurialDepthOffset[idx] = byteBuffer.getFloat();
+        // attribute mineOrientation marked as not serialized
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        {
+        EulerAngles anX = new EulerAngles();
+        anX.unmarshal(byteBuffer);
+        mineOrientation.add(anX);
+        }
+
+        // attribute thermalContrast marked as not serialized
+        for (int idx = 0; idx < thermalContrast.length; idx++)
+            thermalContrast[idx] = byteBuffer.getFloat();
+        // attribute reflectance marked as not serialized
+        for (int idx = 0; idx < reflectance.length; idx++)
+            reflectance[idx] = byteBuffer.getFloat();
+        // attribute mineEmplacementTime marked as not serialized
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        {
+        MineEmplacementTime anX = new MineEmplacementTime();
+        anX.unmarshal(byteBuffer);
+        mineEmplacementTime.add(anX);
+        }
+
+        // attribute mineEntityNumber marked as not serialized
+        for (int idx = 0; idx < mineEntityNumber.length; idx++)
+            mineEntityNumber[idx] = byteBuffer.getShort();
+        // attribute fusing marked as not serialized
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        {
+        MinefieldDataFusing anX = new MinefieldDataFusing();
+        anX.unmarshal(byteBuffer);
+        fusing.add(anX);
+        }
+
+        // attribute scalarDetectionCoefficient marked as not serialized
+        for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
+            scalarDetectionCoefficient[idx] = byteBuffer.get();
+        // attribute paintScheme marked as not serialized
+        for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
+        {
+        MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
+        anX.unmarshal(byteBuffer);
+        paintScheme.add(anX);
+        }
+
+        // attribute padTo32_2 marked as not serialized
+        padTo32_2 = new byte[Align.from32bits(byteBuffer)];
+        // attribute numberOfTripDetonationWires marked as not serialized
+        for (int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
+            numberOfTripDetonationWires[idx] = byteBuffer.get();
+        // attribute padTo32_3 marked as not serialized
+        padTo32_3 = new byte[Align.from32bits(byteBuffer)];
+        // attribute numberOfVertices marked as not serialized
+        for (int idx = 0; idx < numberOfVertices.length; idx++)
+            numberOfVertices[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    Vector3Float anX = new Vector3Float();
-    anX.unmarshal(byteBuffer);
-    mineLocation.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
-    for(int idx = 0; idx < groundBurialDepthOffset.length; idx++)
-        groundBurialDepthOffset[idx] = byteBuffer.getFloat();
-    for(int idx = 0; idx < waterBurialDepthOffset.length; idx++)
-        waterBurialDepthOffset[idx] = byteBuffer.getFloat();
-    for(int idx = 0; idx < snowBurialDepthOffset.length; idx++)
-        snowBurialDepthOffset[idx] = byteBuffer.getFloat();
-    for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
-    {
-    EulerAngles anX = new EulerAngles();
-    anX.unmarshal(byteBuffer);
-    mineOrientation.add(anX);
-    }
-
-    for(int idx = 0; idx < thermalContrast.length; idx++)
-        thermalContrast[idx] = byteBuffer.getFloat();
-    for(int idx = 0; idx < reflectance.length; idx++)
-        reflectance[idx] = byteBuffer.getFloat();
-    for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
-    {
-    MineEmplacementTime anX = new MineEmplacementTime();
-    anX.unmarshal(byteBuffer);
-    mineEmplacementTime.add(anX);
-    }
-
-    for(int idx = 0; idx < mineEntityNumber.length; idx++)
-        mineEntityNumber[idx] = byteBuffer.getShort();
-    for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
-    {
-    MinefieldDataFusing anX = new MinefieldDataFusing();
-    anX.unmarshal(byteBuffer);
-    fusing.add(anX);
-    }
-
-    for(int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
-        scalarDetectionCoefficient[idx] = byteBuffer.get();
-    for(int idx = 0; idx < numberOfMinesInThisPdu; idx++)
-    {
-    MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
-    anX.unmarshal(byteBuffer);
-    paintScheme.add(anX);
-    }
-
-    padTo32_2 = new byte[Align.from32bits(byteBuffer)];
-    for(int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
-        numberOfTripDetonationWires[idx] = byteBuffer.get();
-    padTo32_3 = new byte[Align.from32bits(byteBuffer)];
-    for(int idx = 0; idx < numberOfVertices.length; idx++)
-        numberOfVertices[idx] = byteBuffer.get();
     return getMarshalledSize();
 }
 
@@ -1058,79 +1115,79 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (dataFilter.equals( rhs.dataFilter) )) ivarsEqual = false;
      if( ! (mineType.equals( rhs.mineType) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < sensorTypes.size(); idx++)
+     for (int idx = 0; idx < sensorTypes.size(); idx++)
         if( ! ( sensorTypes.get(idx).equals(rhs.sensorTypes.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < mineLocation.size(); idx++)
+     for (int idx = 0; idx < mineLocation.size(); idx++)
         if( ! ( mineLocation.get(idx).equals(rhs.mineLocation.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(groundBurialDepthOffset[idx] == rhs.groundBurialDepthOffset[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(waterBurialDepthOffset[idx] == rhs.waterBurialDepthOffset[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(snowBurialDepthOffset[idx] == rhs.snowBurialDepthOffset[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < mineOrientation.size(); idx++)
+     for (int idx = 0; idx < mineOrientation.size(); idx++)
         if( ! ( mineOrientation.get(idx).equals(rhs.mineOrientation.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(thermalContrast[idx] == rhs.thermalContrast[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(reflectance[idx] == rhs.reflectance[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < mineEmplacementTime.size(); idx++)
+     for (int idx = 0; idx < mineEmplacementTime.size(); idx++)
         if( ! ( mineEmplacementTime.get(idx).equals(rhs.mineEmplacementTime.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(mineEntityNumber[idx] == rhs.mineEntityNumber[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < fusing.size(); idx++)
+     for (int idx = 0; idx < fusing.size(); idx++)
         if( ! ( fusing.get(idx).equals(rhs.fusing.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(scalarDetectionCoefficient[idx] == rhs.scalarDetectionCoefficient[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < paintScheme.size(); idx++)
+     for (int idx = 0; idx < paintScheme.size(); idx++)
         if( ! ( paintScheme.get(idx).equals(rhs.paintScheme.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(numberOfTripDetonationWires[idx] == rhs.numberOfTripDetonationWires[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(numberOfVertices[idx] == rhs.numberOfVertices[idx])) ivarsEqual = false;
      }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a69f9d;
- * Country: Russia (RUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32161
+ * <p> Entity class <b><code>_120mmAT4ASpigotA9M111Fagot</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_120mmAT4ASpigotA9M111Fagot.createInstance()</code> or <code>new _120mmAT4ASpigotA9M111Fagot()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Army = <code>11</code>; </li>
+ *     <li> SubCategory: AntiTankMissiles  = <code>50</code>; </li>
+ *     <li> Specific: _120mmAT4ASpigotA9M111Fagot  = <code>178</code>; </li>
+ *     <li> Entity type uid: 32161; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50de907a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Army
+ * @see SubCategory
+
  */
-public class _120mmAT4ASpigotA9M111Fagot extends EntityType
+public final class _120mmAT4ASpigotA9M111Fagot extends EntityType
 {
     /** Default constructor */
     public _120mmAT4ASpigotA9M111Fagot()
@@ -26,5 +40,11 @@ public class _120mmAT4ASpigotA9M111Fagot extends EntityType
         setCategory((byte)11); // uid 32132, Army
         setSubCategory((byte)50); // uid 32156, Anti-Tank Missiles
         setSpecific((byte)178); // uid 32161, 120mm AT-4A Spigot A/9M111 Fagot
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _120mmAT4ASpigotA9M111Fagot createInstance()
+    {
+            return new _120mmAT4ASpigotA9M111Fagot();
     }
 }

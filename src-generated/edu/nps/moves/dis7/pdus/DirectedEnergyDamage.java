@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -55,7 +54,7 @@ public class DirectedEnergyDamage extends Object implements Serializable
    protected short  padding2 = (short)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DirectedEnergyDamage()
  {
  }
@@ -72,14 +71,20 @@ public int getMarshalledSize()
    marshalSize += 4;  // recordType
    marshalSize += 2;  // recordLength
    marshalSize += 2;  // padding
-   marshalSize += damageLocation.getMarshalledSize();
+   if (damageLocation != null)
+       marshalSize += damageLocation.getMarshalledSize();
    marshalSize += 4;  // damageDiameter
    marshalSize += 4;  // temperature
-   marshalSize += componentIdentification.getMarshalledSize();
-   marshalSize += componentDamageStatus.getMarshalledSize();
-   marshalSize += componentVisualDamageStatus.getMarshalledSize();
-   marshalSize += componentVisualSmokeColor.getMarshalledSize();
-   marshalSize += fireEventID.getMarshalledSize();
+   if (componentIdentification != null)
+       marshalSize += componentIdentification.getMarshalledSize();
+   if (componentDamageStatus != null)
+       marshalSize += componentDamageStatus.getMarshalledSize();
+   if (componentVisualDamageStatus != null)
+       marshalSize += componentVisualDamageStatus.getMarshalledSize();
+   if (componentVisualSmokeColor != null)
+       marshalSize += componentVisualSmokeColor.getMarshalledSize();
+   if (fireEventID != null)
+       marshalSize += fireEventID.getMarshalledSize();
    marshalSize += 2;  // padding2
 
    return marshalSize;
@@ -405,18 +410,37 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    damageLocation.unmarshal(byteBuffer);
-    damageDiameter = byteBuffer.getFloat();
-    temperature = byteBuffer.getFloat();
-    componentIdentification = EntityDamageStatusComponentIdentification.unmarshalEnum(byteBuffer);
-    componentDamageStatus = DEDamageDescriptionComponentDamageStatus.unmarshalEnum(byteBuffer);
-    componentVisualDamageStatus.unmarshal(byteBuffer);
-    componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.unmarshalEnum(byteBuffer);
-    fireEventID.unmarshal(byteBuffer);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute damageLocation marked as not serialized
+        damageLocation.unmarshal(byteBuffer);
+        // attribute damageDiameter marked as not serialized
+        damageDiameter = byteBuffer.getFloat();
+        // attribute temperature marked as not serialized
+        temperature = byteBuffer.getFloat();
+        // attribute componentIdentification marked as not serialized
+        componentIdentification = EntityDamageStatusComponentIdentification.unmarshalEnum(byteBuffer);
+        // attribute componentDamageStatus marked as not serialized
+        componentDamageStatus = DEDamageDescriptionComponentDamageStatus.unmarshalEnum(byteBuffer);
+        // attribute componentVisualDamageStatus marked as not serialized
+        componentVisualDamageStatus.unmarshal(byteBuffer);
+        // attribute componentVisualSmokeColor marked as not serialized
+        componentVisualSmokeColor = DEDamageDescriptionComponentVisualSmokeColor.unmarshalEnum(byteBuffer);
+        // attribute fireEventID marked as not serialized
+        fireEventID.unmarshal(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

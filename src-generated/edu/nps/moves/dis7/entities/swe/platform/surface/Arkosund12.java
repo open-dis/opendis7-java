@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f5ac102;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26859
+ * <p> Entity class <b><code>Arkosund12</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Arkosund12.createInstance()</code> or <code>new Arkosund12()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: StaffandSupportShips  = <code>1</code>; </li>
+ *     <li> Specific: Arkosund12  = <code>3</code>; </li>
+ *     <li> Entity type uid: 26859; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2819c460. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Arkosund12 extends EntityType
+public final class Arkosund12 extends EntityType
 {
     /** Default constructor */
     public Arkosund12()
@@ -26,5 +40,11 @@ public class Arkosund12 extends EntityType
         setCategory((byte)16); // uid 26855, Auxiliary
         setSubCategory((byte)1); // uid 26856, Staff and Support Ships
         setSpecific((byte)3); // uid 26859, Arkosund (12)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Arkosund12 createInstance()
+    {
+            return new Arkosund12();
     }
 }

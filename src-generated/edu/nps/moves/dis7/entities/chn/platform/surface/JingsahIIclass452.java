@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c22fc4c;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17230
+ * <p> Entity class <b><code>JingsahIIclass452</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JingsahIIclass452.createInstance()</code> or <code>new JingsahIIclass452()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Cushion/Surface Effect = <code>15</code>; </li>
+ *     <li> SubCategory: JingsahIIclass  = <code>1</code>; </li>
+ *     <li> Specific: _452  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17230; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38c5cc4c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirCushionSurfaceEffect
+ * @see SubCategory
+
  */
-public class JingsahIIclass452 extends EntityType
+public final class JingsahIIclass452 extends EntityType
 {
     /** Default constructor */
     public JingsahIIclass452()
@@ -26,5 +40,11 @@ public class JingsahIIclass452 extends EntityType
         setCategory((byte)15); // uid 17228, Air Cushion/Surface Effect
         setSubCategory((byte)1); // uid 17229, Jingsah II class
         setSpecific((byte)1); // uid 17230, 452
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JingsahIIclass452 createInstance()
+    {
+            return new JingsahIIclass452();
     }
 }

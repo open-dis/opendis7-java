@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72efb5c1;
- * Country: Myanmar (MMR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32911
+ * <p> Entity class <b><code>_446YanYeAung</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_446YanYeAung.createInstance()</code> or <code>new _446YanYeAung()</code>. </p>
+ * <ul>
+ *     <li> Country: Myanmar (MMR) = <code>35</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: HainanClassType037  = <code>1</code>; </li>
+ *     <li> Specific: _446YanYeAung  = <code>5</code>; </li>
+ *     <li> Entity type uid: 32911; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b9ea3e3. </p>
+ * @see Country#MYANMAR_MMR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _446YanYeAung extends EntityType
+public final class _446YanYeAung extends EntityType
 {
     /** Default constructor */
     public _446YanYeAung()
@@ -26,5 +40,11 @@ public class _446YanYeAung extends EntityType
         setCategory((byte)7); // uid 32905, Light/Patrol Craft
         setSubCategory((byte)1); // uid 32906, Hainan Class (Type 037)
         setSpecific((byte)5); // uid 32911, 446 Yan Ye Aung
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _446YanYeAung createInstance()
+    {
+            return new _446YanYeAung();
     }
 }

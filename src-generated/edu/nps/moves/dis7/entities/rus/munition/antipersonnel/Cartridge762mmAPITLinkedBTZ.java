@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@621624b1;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 23983
+ * <p> Entity class <b><code>Cartridge762mmAPITLinkedBTZ</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Cartridge762mmAPITLinkedBTZ.createInstance()</code> or <code>new Cartridge762mmAPITLinkedBTZ()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _762mm  = <code>2</code>; </li>
+ *     <li> Specific: Cartridge762mmAPITLinkedBTZ  = <code>7</code>; </li>
+ *     <li> Entity type uid: 23983; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48ccbb32. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class Cartridge762mmAPITLinkedBTZ extends EntityType
+public final class Cartridge762mmAPITLinkedBTZ extends EntityType
 {
     /** Default constructor */
     public Cartridge762mmAPITLinkedBTZ()
@@ -26,5 +40,11 @@ public class Cartridge762mmAPITLinkedBTZ extends EntityType
         setCategory((byte)2); // uid 20637, Ballistic
         setSubCategory((byte)2); // uid 20641, 7.62 mm
         setSpecific((byte)7); // uid 23983, Cartridge, 7.62mm, API-T, Linked, BTZ
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Cartridge762mmAPITLinkedBTZ createInstance()
+    {
+            return new Cartridge762mmAPITLinkedBTZ();
     }
 }

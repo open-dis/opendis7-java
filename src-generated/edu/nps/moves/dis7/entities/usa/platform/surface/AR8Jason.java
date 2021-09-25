@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5696c927;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11726
+ * <p> Entity class <b><code>AR8Jason</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AR8Jason.createInstance()</code> or <code>new AR8Jason()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: VulcanclassRepairShip  = <code>12</code>; </li>
+ *     <li> Specific: AR8Jason  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11726; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a1ccaaf. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AR8Jason extends EntityType
+public final class AR8Jason extends EntityType
 {
     /** Default constructor */
     public AR8Jason()
@@ -26,5 +40,11 @@ public class AR8Jason extends EntityType
         setCategory((byte)16); // uid 11701, Auxiliary
         setSubCategory((byte)12); // uid 11725, Vulcan class (Repair Ship)
         setSpecific((byte)1); // uid 11726, AR 8 Jason
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AR8Jason createInstance()
+    {
+            return new AR8Jason();
     }
 }

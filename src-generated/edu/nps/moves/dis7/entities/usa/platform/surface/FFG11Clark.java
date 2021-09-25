@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35650279;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11504
+ * <p> Entity class <b><code>FFG11Clark</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFG11Clark.createInstance()</code> or <code>new FFG11Clark()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: OliverPerryClass  = <code>1</code>; </li>
+ *     <li> Specific: FFG11Clark  = <code>5</code>; </li>
+ *     <li> Entity type uid: 11504; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@456f7d9e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigate
+ * @see SubCategory
+
  */
-public class FFG11Clark extends EntityType
+public final class FFG11Clark extends EntityType
 {
     /** Default constructor */
     public FFG11Clark()
@@ -26,5 +40,11 @@ public class FFG11Clark extends EntityType
         setCategory((byte)6); // uid 11498, Guided Missile Frigate
         setSubCategory((byte)1); // uid 11499, Oliver Perry Class
         setSpecific((byte)5); // uid 11504, FFG 11 Clark
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFG11Clark createInstance()
+    {
+            return new FFG11Clark();
     }
 }

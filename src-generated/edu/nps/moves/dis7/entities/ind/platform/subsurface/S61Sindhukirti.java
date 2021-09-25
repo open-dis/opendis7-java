@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35f26e72;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23197
+ * <p> Entity class <b><code>S61Sindhukirti</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S61Sindhukirti.createInstance()</code> or <code>new S61Sindhukirti()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: SindhughoshKiloClass  = <code>1</code>; </li>
+ *     <li> Specific: S61Sindhukirti  = <code>7</code>; </li>
+ *     <li> Entity type uid: 23197; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33fe57a9. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S61Sindhukirti extends EntityType
+public final class S61Sindhukirti extends EntityType
 {
     /** Default constructor */
     public S61Sindhukirti()
@@ -26,5 +40,11 @@ public class S61Sindhukirti extends EntityType
         setCategory((byte)5); // uid 23189, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 23190, Sindhughosh (Kilo) Class
         setSpecific((byte)7); // uid 23197, S 61 Sindhukirti
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S61Sindhukirti createInstance()
+    {
+            return new S61Sindhukirti();
     }
 }

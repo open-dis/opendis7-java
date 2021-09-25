@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6615237;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20495
+ * <p> Entity class <b><code>PG29VHEATTandem</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PG29VHEATTandem.createInstance()</code> or <code>new PG29VHEATTandem()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _105mm  = <code>23</code>; </li>
+ *     <li> Specific: PG29VHEATTandem  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20495; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62e73ab6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PG29VHEATTandem extends EntityType
+public final class PG29VHEATTandem extends EntityType
 {
     /** Default constructor */
     public PG29VHEATTandem()
@@ -26,5 +40,11 @@ public class PG29VHEATTandem extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)23); // uid 20494, 105 mm
         setSpecific((byte)1); // uid 20495, PG-29V HEAT Tandem
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PG29VHEATTandem createInstance()
+    {
+            return new PG29VHEATTandem();
     }
 }

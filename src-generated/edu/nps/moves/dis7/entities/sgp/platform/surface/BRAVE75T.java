@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@435e60ff;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25560
+ * <p> Entity class <b><code>BRAVE75T</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BRAVE75T.createInstance()</code> or <code>new BRAVE75T()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: BRAVEFastLandingCraftforEquipmentandPersonnelFCEP  = <code>1</code>; </li>
+ *     <li> Specific: BRAVE75T  = <code>4</code>; </li>
+ *     <li> Entity type uid: 25560; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13741d5a. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class BRAVE75T extends EntityType
+public final class BRAVE75T extends EntityType
 {
     /** Default constructor */
     public BRAVE75T()
@@ -26,5 +40,11 @@ public class BRAVE75T extends EntityType
         setCategory((byte)11); // uid 25555, Landing Craft
         setSubCategory((byte)1); // uid 25556, BRAVE Fast Landing Craft for Equipment and Personnel (FCEP)
         setSpecific((byte)4); // uid 25560, BRAVE -75T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BRAVE75T createInstance()
+    {
+            return new BRAVE75T();
     }
 }

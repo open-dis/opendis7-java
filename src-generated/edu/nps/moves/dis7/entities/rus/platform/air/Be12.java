@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@518cf84a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13394
+ * <p> Entity class <b><code>Be12</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Be12.createInstance()</code> or <code>new Be12()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: Be12Mail  = <code>2</code>; </li>
+ *     <li> Specific: Be12  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13394; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7103ab0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarinepatrolobservation
+ * @see SubCategory
+
  */
-public class Be12 extends EntityType
+public final class Be12 extends EntityType
 {
     /** Default constructor */
     public Be12()
@@ -26,5 +40,11 @@ public class Be12 extends EntityType
         setCategory((byte)5); // uid 13390, Anti-Submarine/patrol/observation
         setSubCategory((byte)2); // uid 13393, Be-12 Mail
         setSpecific((byte)1); // uid 13394, Be-12
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Be12 createInstance()
+    {
+            return new Be12();
     }
 }

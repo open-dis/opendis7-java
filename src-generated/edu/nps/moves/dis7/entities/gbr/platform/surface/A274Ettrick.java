@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f8aba08;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15471
+ * <p> Entity class <b><code>A274Ettrick</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A274Ettrick.createInstance()</code> or <code>new A274Ettrick()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Clovellyclassfleettenders  = <code>24</code>; </li>
+ *     <li> Specific: A274Ettrick  = <code>6</code>; </li>
+ *     <li> Entity type uid: 15471; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@141d3d43. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A274Ettrick extends EntityType
+public final class A274Ettrick extends EntityType
 {
     /** Default constructor */
     public A274Ettrick()
@@ -26,5 +40,11 @@ public class A274Ettrick extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)24); // uid 15465, Clovelly class (fleet tenders)
         setSpecific((byte)6); // uid 15471, A 274 Ettrick
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A274Ettrick createInstance()
+    {
+            return new A274Ettrick();
     }
 }

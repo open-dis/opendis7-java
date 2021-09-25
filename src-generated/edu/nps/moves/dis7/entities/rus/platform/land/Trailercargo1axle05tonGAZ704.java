@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a29f290;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12989
+ * <p> Entity class <b><code>Trailercargo1axle05tonGAZ704</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Trailercargo1axle05tonGAZ704.createInstance()</code> or <code>new Trailercargo1axle05tonGAZ704()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _005ton  = <code>1</code>; </li>
+ *     <li> Specific: Trailercargo1axle05tonGAZ704  = <code>1</code>; </li>
+ *     <li> Entity type uid: 12989; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e38d975. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class Trailercargo1axle05tonGAZ704 extends EntityType
+public final class Trailercargo1axle05tonGAZ704 extends EntityType
 {
     /** Default constructor */
     public Trailercargo1axle05tonGAZ704()
@@ -26,5 +40,11 @@ public class Trailercargo1axle05tonGAZ704 extends EntityType
         setCategory((byte)14); // uid 12987, Cargo Trailer
         setSubCategory((byte)1); // uid 12988, 0 - 0.5 ton
         setSpecific((byte)1); // uid 12989, Trailer, cargo, 1 axle, 0.5 ton, GAZ-704
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Trailercargo1axle05tonGAZ704 createInstance()
+    {
+            return new Trailercargo1axle05tonGAZ704();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e2b3026;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 28824
+ * <p> Entity class <b><code>NATM9X</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NATM9X.createInstance()</code> or <code>new NATM9X()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AIM9Sidewinder  = <code>1</code>; </li>
+ *     <li> Specific: NATM9X  = <code>16</code>; </li>
+ *     <li> Entity type uid: 28824; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ba024cb. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class NATM9X extends EntityType
+public final class NATM9X extends EntityType
 {
     /** Default constructor */
     public NATM9X()
@@ -26,5 +40,11 @@ public class NATM9X extends EntityType
         setCategory((byte)1); // uid 19406, Guided
         setSubCategory((byte)1); // uid 19407, AIM-9 Sidewinder
         setSpecific((byte)16); // uid 28824, NATM-9X
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NATM9X createInstance()
+    {
+            return new NATM9X();
     }
 }

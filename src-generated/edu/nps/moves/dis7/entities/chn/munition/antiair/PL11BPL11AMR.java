@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76216830;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 28977
+ * <p> Entity class <b><code>PL11BPL11AMR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PL11BPL11AMR.createInstance()</code> or <code>new PL11BPL11AMR()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: PL11  = <code>18</code>; </li>
+ *     <li> Specific: PL11BPL11AMR  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28977; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3af2f846. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class PL11BPL11AMR extends EntityType
+public final class PL11BPL11AMR extends EntityType
 {
     /** Default constructor */
     public PL11BPL11AMR()
@@ -26,5 +40,11 @@ public class PL11BPL11AMR extends EntityType
         setCategory((byte)1); // uid 21308, Guided
         setSubCategory((byte)18); // uid 21334, PL-11
         setSpecific((byte)2); // uid 28977, PL-11B / PL-11 AMR
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PL11BPL11AMR createInstance()
+    {
+            return new PL11BPL11AMR();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79e2606f;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: SURFACE;
- *
- * Entity type uid: 28223
+ * <p> Entity class <b><code>RGB26</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RGB26.createInstance()</code> or <code>new RGB26()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, Passive = <code>11</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific: RGB26  = <code>6</code>; </li>
+ *     <li> Entity type uid: 28223; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e4f2300. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AcousticPassive
+ * @see SubCategory
+
  */
-public class RGB26 extends EntityType
+public final class RGB26 extends EntityType
 {
     /** Default constructor */
     public RGB26()
@@ -26,5 +40,11 @@ public class RGB26 extends EntityType
         setCategory((byte)11); // uid 28216, Acoustic, Passive
         setSubCategory((byte)77); // uid 28217, Sonobuoy
         setSpecific((byte)6); // uid 28223, RGB-26
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RGB26 createInstance()
+    {
+            return new RGB26();
     }
 }

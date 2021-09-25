@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@149f5761;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31874
+ * <p> Entity class <b><code>Tu243ReysD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tu243ReysD.createInstance()</code> or <code>new Tu243ReysD()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: TupolevSeriesUAVs  = <code>9</code>; </li>
+ *     <li> Specific: Tu243ReysD  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31874; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a2e0858. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Tu243ReysD extends EntityType
+public final class Tu243ReysD extends EntityType
 {
     /** Default constructor */
     public Tu243ReysD()
@@ -26,5 +40,11 @@ public class Tu243ReysD extends EntityType
         setCategory((byte)50); // uid 23446, Unmanned
         setSubCategory((byte)9); // uid 31873, Tupolev Series UAVs
         setSpecific((byte)1); // uid 31874, Tu-243 Reys-D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tu243ReysD createInstance()
+    {
+            return new Tu243ReysD();
     }
 }

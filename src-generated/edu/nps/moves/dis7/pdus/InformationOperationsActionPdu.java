@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -55,7 +54,7 @@ public class InformationOperationsActionPdu extends InformationOperationsFamilyP
    protected List< IORecord > ioRecords = new ArrayList< IORecord >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public InformationOperationsActionPdu()
  {
     setPduType( DisPduType.INFORMATION_OPERATIONS_ACTION );
@@ -71,22 +70,30 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += receivingSimID.getMarshalledSize();
+   if (receivingSimID != null)
+       marshalSize += receivingSimID.getMarshalledSize();
    marshalSize += 4;  // requestID
-   marshalSize += IOWarfareType.getMarshalledSize();
-   marshalSize += IOSimulationSource.getMarshalledSize();
-   marshalSize += IOActionType.getMarshalledSize();
-   marshalSize += IOActionPhase.getMarshalledSize();
+   if (IOWarfareType != null)
+       marshalSize += IOWarfareType.getMarshalledSize();
+   if (IOSimulationSource != null)
+       marshalSize += IOSimulationSource.getMarshalledSize();
+   if (IOActionType != null)
+       marshalSize += IOActionType.getMarshalledSize();
+   if (IOActionPhase != null)
+       marshalSize += IOActionPhase.getMarshalledSize();
    marshalSize += 4;  // padding1
-   marshalSize += ioAttackerID.getMarshalledSize();
-   marshalSize += ioPrimaryTargetID.getMarshalledSize();
+   if (ioAttackerID != null)
+       marshalSize += ioAttackerID.getMarshalledSize();
+   if (ioPrimaryTargetID != null)
+       marshalSize += ioPrimaryTargetID.getMarshalledSize();
    marshalSize += 2;  // padding2
    marshalSize += 2;  // numberOfIORecords
-   for(int idx=0; idx < ioRecords.size(); idx++)
-   {
-        IORecord listElement = ioRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (ioRecords != null)
+       for (int idx=0; idx < ioRecords.size(); idx++)
+       {
+            IORecord listElement = ioRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -298,7 +305,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(padding2);
        dos.writeShort(ioRecords.size());
 
-       for(int idx = 0; idx < ioRecords.size(); idx++)
+       for (int idx = 0; idx < ioRecords.size(); idx++)
        {
             IORecord aIORecord = ioRecords.get(idx);
             aIORecord.marshal(dos);
@@ -345,7 +352,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfIORecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfIORecords; idx++)
+        for (int idx = 0; idx < numberOfIORecords; idx++)
         {
             IORecord anX = new IORecord();
             uPosition += anX.unmarshal(dis);
@@ -383,7 +390,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)padding2);
    byteBuffer.putShort( (short)ioRecords.size());
 
-   for(int idx = 0; idx < ioRecords.size(); idx++)
+   for (int idx = 0; idx < ioRecords.size(); idx++)
    {
         IORecord aIORecord = ioRecords.get(idx);
         aIORecord.marshal(byteBuffer);
@@ -404,24 +411,43 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    receivingSimID.unmarshal(byteBuffer);
-    requestID = byteBuffer.getInt();
-    IOWarfareType = IOActionIOWarfareType.unmarshalEnum(byteBuffer);
-    IOSimulationSource = IOActionIOSimulationSource.unmarshalEnum(byteBuffer);
-    IOActionType = IOActionIOActionType.unmarshalEnum(byteBuffer);
-    IOActionPhase = IOActionIOActionPhase.unmarshalEnum(byteBuffer);
-    padding1 = byteBuffer.getInt();
-    ioAttackerID.unmarshal(byteBuffer);
-    ioPrimaryTargetID.unmarshal(byteBuffer);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfIORecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfIORecords; idx++)
+    try
     {
-    IORecord anX = new IORecord();
-    anX.unmarshal(byteBuffer);
-    ioRecords.add(anX);
-    }
+        // attribute receivingSimID marked as not serialized
+        receivingSimID.unmarshal(byteBuffer);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+        // attribute IOWarfareType marked as not serialized
+        IOWarfareType = IOActionIOWarfareType.unmarshalEnum(byteBuffer);
+        // attribute IOSimulationSource marked as not serialized
+        IOSimulationSource = IOActionIOSimulationSource.unmarshalEnum(byteBuffer);
+        // attribute IOActionType marked as not serialized
+        IOActionType = IOActionIOActionType.unmarshalEnum(byteBuffer);
+        // attribute IOActionPhase marked as not serialized
+        IOActionPhase = IOActionIOActionPhase.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = byteBuffer.getInt();
+        // attribute ioAttackerID marked as not serialized
+        ioAttackerID.unmarshal(byteBuffer);
+        // attribute ioPrimaryTargetID marked as not serialized
+        ioPrimaryTargetID.unmarshal(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfIORecords marked as not serialized
+        numberOfIORecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute ioRecords marked as not serialized
+        for (int idx = 0; idx < numberOfIORecords; idx++)
+        {
+        IORecord anX = new IORecord();
+        anX.unmarshal(byteBuffer);
+        ioRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -461,7 +487,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (ioPrimaryTargetID.equals( rhs.ioPrimaryTargetID) )) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < ioRecords.size(); idx++)
+     for (int idx = 0; idx < ioRecords.size(); idx++)
         if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

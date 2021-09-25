@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3243b914;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31673
+ * <p> Entity class <b><code>_584NusaUtara</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_584NusaUtara.createInstance()</code> or <code>new _584NusaUtara()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: KupangClass  = <code>2</code>; </li>
+ *     <li> Specific: _584NusaUtara  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31673; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35f26e72. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _584NusaUtara extends EntityType
+public final class _584NusaUtara extends EntityType
 {
     /** Default constructor */
     public _584NusaUtara()
@@ -26,5 +40,11 @@ public class _584NusaUtara extends EntityType
         setCategory((byte)11); // uid 31668, Landing Craft
         setSubCategory((byte)2); // uid 31671, Kupang Class
         setSpecific((byte)2); // uid 31673, 584 Nusa Utara
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _584NusaUtara createInstance()
+    {
+            return new _584NusaUtara();
     }
 }

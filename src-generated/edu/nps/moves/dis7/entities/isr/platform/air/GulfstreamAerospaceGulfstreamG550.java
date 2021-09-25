@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@e98770d;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29164
+ * <p> Entity class <b><code>GulfstreamAerospaceGulfstreamG550</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GulfstreamAerospaceGulfstreamG550.createInstance()</code> or <code>new GulfstreamAerospaceGulfstreamG550()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: GulfstreamAerospaceGulfstreamG550  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29164; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e554a3b. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class GulfstreamAerospaceGulfstreamG550 extends EntityType
+public final class GulfstreamAerospaceGulfstreamG550 extends EntityType
 {
     /** Default constructor */
     public GulfstreamAerospaceGulfstreamG550()
@@ -25,5 +39,11 @@ public class GulfstreamAerospaceGulfstreamG550 extends EntityType
 
         setCategory((byte)8); // uid 18191, Surveillance/C2 (Airborne Early Warning)
         setSubCategory((byte)5); // uid 29164, Gulfstream Aerospace - Gulfstream G550
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GulfstreamAerospaceGulfstreamG550 createInstance()
+    {
+            return new GulfstreamAerospaceGulfstreamG550();
     }
 }

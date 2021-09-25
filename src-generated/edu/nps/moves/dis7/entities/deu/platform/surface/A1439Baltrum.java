@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12359a82;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16651
+ * <p> Entity class <b><code>A1439Baltrum</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A1439Baltrum.createInstance()</code> or <code>new A1439Baltrum()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: WangeroogeClassType722Type754  = <code>15</code>; </li>
+ *     <li> Specific: A1439Baltrum  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16651; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ceb3185. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A1439Baltrum extends EntityType
+public final class A1439Baltrum extends EntityType
 {
     /** Default constructor */
     public A1439Baltrum()
@@ -26,5 +40,11 @@ public class A1439Baltrum extends EntityType
         setCategory((byte)16); // uid 16594, Auxiliary
         setSubCategory((byte)15); // uid 16650, Wangerooge Class (Type 722, Type 754)
         setSpecific((byte)1); // uid 16651, A 1439 Baltrum
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A1439Baltrum createInstance()
+    {
+            return new A1439Baltrum();
     }
 }

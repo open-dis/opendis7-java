@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2471cca7;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29402
+ * <p> Entity class <b><code>HaulmarkTrailerSemiBulkFuel20000L</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaulmarkTrailerSemiBulkFuel20000L.createInstance()</code> or <code>new HaulmarkTrailerSemiBulkFuel20000L()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fuel Trailer = <code>15</code>; </li>
+ *     <li> SubCategory: Greaterthan5000Gallons  = <code>3</code>; </li>
+ *     <li> Specific: HaulmarkTrailerSemiBulkFuel20000L  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29402; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ed3ef1. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FuelTrailer
+ * @see SubCategory
+
  */
-public class HaulmarkTrailerSemiBulkFuel20000L extends EntityType
+public final class HaulmarkTrailerSemiBulkFuel20000L extends EntityType
 {
     /** Default constructor */
     public HaulmarkTrailerSemiBulkFuel20000L()
@@ -26,5 +40,11 @@ public class HaulmarkTrailerSemiBulkFuel20000L extends EntityType
         setCategory((byte)15); // uid 29396, Fuel Trailer
         setSubCategory((byte)3); // uid 29401, Greater than 5000 Gallons
         setSpecific((byte)1); // uid 29402, Haulmark - Trailer, Semi, Bulk Fuel, 20000L
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaulmarkTrailerSemiBulkFuel20000L createInstance()
+    {
+            return new HaulmarkTrailerSemiBulkFuel20000L();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45905bff;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18215
+ * <p> Entity class <b><code>AliyaSaar45fastattackcraftmissile</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AliyaSaar45fastattackcraftmissile.createInstance()</code> or <code>new AliyaSaar45fastattackcraftmissile()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: AliyaSaar45fastattackcraftmissile  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18215; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@78365cfa. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class AliyaSaar45fastattackcraftmissile extends EntityType
+public final class AliyaSaar45fastattackcraftmissile extends EntityType
 {
     /** Default constructor */
     public AliyaSaar45fastattackcraftmissile()
@@ -25,5 +39,11 @@ public class AliyaSaar45fastattackcraftmissile extends EntityType
 
         setCategory((byte)7); // uid 18214, Light/Patrol Craft
         setSubCategory((byte)1); // uid 18215, Aliya (Saar 4.5) (fast attack craft-missile)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AliyaSaar45fastattackcraftmissile createInstance()
+    {
+            return new AliyaSaar45fastattackcraftmissile();
     }
 }

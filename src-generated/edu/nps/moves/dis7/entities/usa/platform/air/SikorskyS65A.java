@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@62b57479;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11168
+ * <p> Entity class <b><code>SikorskyS65A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SikorskyS65A.createInstance()</code> or <code>new SikorskyS65A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo helicopter = <code>23</code>; </li>
+ *     <li> SubCategory: SikorskyS65A  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 11168; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4dadd690. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Cargohelicopter
+ * @see SubCategory
+
  */
-public class SikorskyS65A extends EntityType
+public final class SikorskyS65A extends EntityType
 {
     /** Default constructor */
     public SikorskyS65A()
@@ -25,5 +39,11 @@ public class SikorskyS65A extends EntityType
 
         setCategory((byte)23); // uid 11153, Cargo helicopter
         setSubCategory((byte)3); // uid 11168, Sikorsky S-65A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SikorskyS65A createInstance()
+    {
+            return new SikorskyS65A();
     }
 }

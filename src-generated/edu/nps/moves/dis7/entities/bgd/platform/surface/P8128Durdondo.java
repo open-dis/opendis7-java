@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b9e13df;
- * Country: Bangladesh (BGD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32612
+ * <p> Entity class <b><code>P8128Durdondo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P8128Durdondo.createInstance()</code> or <code>new P8128Durdondo()</code>. </p>
+ * <ul>
+ *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: DurdharshaClassType021  = <code>1</code>; </li>
+ *     <li> Specific: P8128Durdondo  = <code>3</code>; </li>
+ *     <li> Entity type uid: 32612; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@366e2eef. </p>
+ * @see Country#BANGLADESH_BGD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class P8128Durdondo extends EntityType
+public final class P8128Durdondo extends EntityType
 {
     /** Default constructor */
     public P8128Durdondo()
@@ -26,5 +40,11 @@ public class P8128Durdondo extends EntityType
         setCategory((byte)64); // uid 32608, Fast Attack Craft
         setSubCategory((byte)1); // uid 32609, Durdharsha Class (Type 021)
         setSpecific((byte)3); // uid 32612, P8128 Durdondo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P8128Durdondo createInstance()
+    {
+            return new P8128Durdondo();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49e4cb85;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17554
+ * <p> Entity class <b><code>SaveaTonga</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SaveaTonga.createInstance()</code> or <code>new SaveaTonga()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: PacificClassPatrolBoat  = <code>2</code>; </li>
+ *     <li> Specific: SaveaTonga  = <code>12</code>; </li>
+ *     <li> Entity type uid: 17554; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d6a9952. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class SaveaTonga extends EntityType
+public final class SaveaTonga extends EntityType
 {
     /** Default constructor */
     public SaveaTonga()
@@ -26,5 +40,11 @@ public class SaveaTonga extends EntityType
         setCategory((byte)7); // uid 17524, Light/Patrol Craft
         setSubCategory((byte)2); // uid 17542, Pacific Class Patrol Boat
         setSpecific((byte)12); // uid 17554, Savea (Tonga)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SaveaTonga createInstance()
+    {
+            return new SaveaTonga();
     }
 }

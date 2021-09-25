@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class SimulationAddress extends Object implements Serializable
    protected short  application;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SimulationAddress()
  {
  }
@@ -161,8 +160,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    site = (short)(byteBuffer.getShort() & 0xFFFF);
-    application = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute site marked as not serialized
+        site = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute application marked as not serialized
+        application = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23ec2bdc;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30732
+ * <p> Entity class <b><code>AA37UTowTarget</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AA37UTowTarget.createInstance()</code> or <code>new AA37UTowTarget()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
+ *     <li> SubCategory: AirtoAirAAWeaponRack  = <code>2</code>; </li>
+ *     <li> Specific: AA37UTowTarget  = <code>11</code>; </li>
+ *     <li> Entity type uid: 30732; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@780129bc. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see JRacksAdaptorsPylons
+ * @see SubCategory
+
  */
-public class AA37UTowTarget extends EntityType
+public final class AA37UTowTarget extends EntityType
 {
     /** Default constructor */
     public AA37UTowTarget()
@@ -26,5 +40,11 @@ public class AA37UTowTarget extends EntityType
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)2); // uid 30721, Air to Air (A/A) Weapon Rack
         setSpecific((byte)11); // uid 30732, AA 37U Tow Target
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AA37UTowTarget createInstance()
+    {
+            return new AA37UTowTarget();
     }
 }

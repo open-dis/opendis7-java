@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2616b618;
- * Country: Japan (JPN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29038
+ * <p> Entity class <b><code>Type80ASM1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type80ASM1.createInstance()</code> or <code>new Type80ASM1()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: ASM11CType8091  = <code>3</code>; </li>
+ *     <li> Specific: Type80ASM1  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29038; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7af327e3. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Type80ASM1 extends EntityType
+public final class Type80ASM1 extends EntityType
 {
     /** Default constructor */
     public Type80ASM1()
@@ -26,5 +40,11 @@ public class Type80ASM1 extends EntityType
         setCategory((byte)1); // uid 21690, Guided
         setSubCategory((byte)3); // uid 29037, ASM-1/1C (Type 80/91)
         setSpecific((byte)1); // uid 29038, Type 80 (ASM-1)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type80ASM1 createInstance()
+    {
+            return new Type80ASM1();
     }
 }

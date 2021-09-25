@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@676cf48;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 16845
+ * <p> Entity class <b><code>Texus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Texus.createInstance()</code> or <code>new Texus()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>2</code>; </li>
+ *     <li> SubCategory: MicrogravitySatellite  = <code>15</code>; </li>
+ *     <li> Specific: Texus  = <code>5</code>; </li>
+ *     <li> Entity type uid: 16845; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ba88be8. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Texus extends EntityType
+public final class Texus extends EntityType
 {
     /** Default constructor */
     public Texus()
@@ -26,5 +40,11 @@ public class Texus extends EntityType
         setCategory((byte)2); // uid 16811, Unmanned
         setSubCategory((byte)15); // uid 16840, Microgravity Satellite
         setSpecific((byte)5); // uid 16845, Texus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Texus createInstance()
+    {
+            return new Texus();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2729bb71;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 21956
+ * <p> Entity class <b><code>TrapezoidalAircraftShelterTrihangar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrapezoidalAircraftShelterTrihangar.createInstance()</code> or <code>new TrapezoidalAircraftShelterTrihangar()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Building = <code>2</code>; </li>
+ *     <li> SubCategory: Onestory  = <code>1</code>; </li>
+ *     <li> Specific: TrapezoidalAircraftShelterTrihangar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21956; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@531a716c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Building
+ * @see SubCategory
+
  */
-public class TrapezoidalAircraftShelterTrihangar extends EntityType
+public final class TrapezoidalAircraftShelterTrihangar extends EntityType
 {
     /** Default constructor */
     public TrapezoidalAircraftShelterTrihangar()
@@ -26,5 +40,11 @@ public class TrapezoidalAircraftShelterTrihangar extends EntityType
         setCategory((byte)2); // uid 21953, Building
         setSubCategory((byte)1); // uid 21955, One-story
         setSpecific((byte)1); // uid 21956, Trapezoidal Aircraft Shelter (Trihangar)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrapezoidalAircraftShelterTrihangar createInstance()
+    {
+            return new TrapezoidalAircraftShelterTrihangar();
     }
 }

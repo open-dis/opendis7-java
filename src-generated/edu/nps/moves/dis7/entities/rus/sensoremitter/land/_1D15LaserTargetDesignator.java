@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@404009df;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23719
+ * <p> Entity class <b><code>_1D15LaserTargetDesignator</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1D15LaserTargetDesignator.createInstance()</code> or <code>new _1D15LaserTargetDesignator()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Electro-Optical = <code>5</code>; </li>
+ *     <li> SubCategory: MissileGuidance  = <code>60</code>; </li>
+ *     <li> Specific: _1D15LaserTargetDesignator  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23719; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@341ccfd1. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectroOptical
+ * @see SubCategory
+
  */
-public class _1D15LaserTargetDesignator extends EntityType
+public final class _1D15LaserTargetDesignator extends EntityType
 {
     /** Default constructor */
     public _1D15LaserTargetDesignator()
@@ -26,5 +40,11 @@ public class _1D15LaserTargetDesignator extends EntityType
         setCategory((byte)5); // uid 23715, Electro-Optical
         setSubCategory((byte)60); // uid 23718, Missile Guidance
         setSpecific((byte)1); // uid 23719, 1D15 Laser Target Designator
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1D15LaserTargetDesignator createInstance()
+    {
+            return new _1D15LaserTargetDesignator();
     }
 }

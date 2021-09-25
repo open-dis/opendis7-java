@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@705a8dbc;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10245
+ * <p> Entity class <b><code>M104Wolverine</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M104Wolverine.createInstance()</code> or <code>new M104Wolverine()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: AVLB  = <code>4</code>; </li>
+ *     <li> Specific: M104Wolverine  = <code>5</code>; </li>
+ *     <li> Entity type uid: 10245; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4baed682. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class M104Wolverine extends EntityType
+public final class M104Wolverine extends EntityType
 {
     /** Default constructor */
     public M104Wolverine()
@@ -26,5 +40,11 @@ public class M104Wolverine extends EntityType
         setCategory((byte)3); // uid 10233, Armored Utility Vehicle
         setSubCategory((byte)4); // uid 10240, AVLB
         setSpecific((byte)5); // uid 10245, M104 Wolverine
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M104Wolverine createInstance()
+    {
+            return new M104Wolverine();
     }
 }

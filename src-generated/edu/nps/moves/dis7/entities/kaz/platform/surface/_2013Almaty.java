@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6865c751;
- * Country: Kazakhstan (KAZ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27545
+ * <p> Entity class <b><code>_2013Almaty</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_2013Almaty.createInstance()</code> or <code>new _2013Almaty()</code>. </p>
+ * <ul>
+ *     <li> Country: Kazakhstan (KAZ) = <code>252</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Type369909Class  = <code>1</code>; </li>
+ *     <li> Specific: _2013Almaty  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27545; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@180e6ac4. </p>
+ * @see Country#KAZAKHSTAN_KAZ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class _2013Almaty extends EntityType
+public final class _2013Almaty extends EntityType
 {
     /** Default constructor */
     public _2013Almaty()
@@ -26,5 +40,11 @@ public class _2013Almaty extends EntityType
         setCategory((byte)18); // uid 27543, Utility
         setSubCategory((byte)1); // uid 27544, Type 369/909 Class
         setSpecific((byte)1); // uid 27545, 2013 Almaty
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _2013Almaty createInstance()
+    {
+            return new _2013Almaty();
     }
 }

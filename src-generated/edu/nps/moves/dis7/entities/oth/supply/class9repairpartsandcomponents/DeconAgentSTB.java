@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a8fb023;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_9_REPAIR_PARTS_AND_COMPONENTS;
- *
- * Entity type uid: 30801
+ * <p> Entity class <b><code>DeconAgentSTB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DeconAgentSTB.createInstance()</code> or <code>new DeconAgentSTB()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_9_REPAIR_PARTS_AND_COMPONENTS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Other = <code>1</code>; </li>
+ *     <li> SubCategory: Decontaminationsupplies  = <code>1</code>; </li>
+ *     <li> Specific: DeconAgentSTB  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30801; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71b3ba5a. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class DeconAgentSTB extends EntityType
+public final class DeconAgentSTB extends EntityType
 {
     /** Default constructor */
     public DeconAgentSTB()
@@ -26,5 +40,11 @@ public class DeconAgentSTB extends EntityType
         setCategory((byte)1); // uid 30615, Other
         setSubCategory((byte)1); // uid 30800, Decontamination supplies
         setSpecific((byte)1); // uid 30801, Decon Agent STB
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DeconAgentSTB createInstance()
+    {
+            return new DeconAgentSTB();
     }
 }

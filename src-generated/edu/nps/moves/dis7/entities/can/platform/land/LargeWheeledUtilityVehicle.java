@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@23faf8f2;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27893
+ * <p> Entity class <b><code>LargeWheeledUtilityVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LargeWheeledUtilityVehicle.createInstance()</code> or <code>new LargeWheeledUtilityVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27893; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@52a86356. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+
  */
-public class LargeWheeledUtilityVehicle extends EntityType
+public final class LargeWheeledUtilityVehicle extends EntityType
 {
     /** Default constructor */
     public LargeWheeledUtilityVehicle()
@@ -24,5 +37,11 @@ public class LargeWheeledUtilityVehicle extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 27893, Large Wheeled Utility Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LargeWheeledUtilityVehicle createInstance()
+    {
+            return new LargeWheeledUtilityVehicle();
     }
 }

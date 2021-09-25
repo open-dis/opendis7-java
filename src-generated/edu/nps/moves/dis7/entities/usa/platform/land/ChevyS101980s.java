@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1934ad7c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24929
+ * <p> Entity class <b><code>ChevyS101980s</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChevyS101980s.createInstance()</code> or <code>new ChevyS101980s()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMini  = <code>1</code>; </li>
+ *     <li> Specific: ChevyS10  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24929; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@a9c5b75. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class ChevyS101980s extends EntityType
+public final class ChevyS101980s extends EntityType
 {
     /** Default constructor */
     public ChevyS101980s()
@@ -27,5 +41,11 @@ public class ChevyS101980s extends EntityType
         setSubCategory((byte)1); // uid 24927, Pickup Truck, Mini
         setSpecific((byte)1); // uid 24928, Chevy S-10
         setExtra((byte)1); // uid 24929, Chevy S-10, 1980s
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChevyS101980s createInstance()
+    {
+            return new ChevyS101980s();
     }
 }

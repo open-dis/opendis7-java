@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53fb3dab;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15932
+ * <p> Entity class <b><code>D641Dupleix</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D641Dupleix.createInstance()</code> or <code>new D641Dupleix()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (Fregates or Escorteurs Descadres) = <code>4</code>; </li>
+ *     <li> SubCategory: GeorgesLeyguesClassTypef70ASW  = <code>1</code>; </li>
+ *     <li> Specific: D641Dupleix  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15932; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a38c7fe. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerFregatesorEscorteursDescadres
+ * @see SubCategory
+
  */
-public class D641Dupleix extends EntityType
+public final class D641Dupleix extends EntityType
 {
     /** Default constructor */
     public D641Dupleix()
@@ -26,5 +40,11 @@ public class D641Dupleix extends EntityType
         setCategory((byte)4); // uid 15929, Guided Missile Destroyer (Fregates or Escorteurs Descadres)
         setSubCategory((byte)1); // uid 15930, Georges Leygues Class (Type f 70 (ASW))
         setSpecific((byte)2); // uid 15932, D 641 Dupleix
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D641Dupleix createInstance()
+    {
+            return new D641Dupleix();
     }
 }

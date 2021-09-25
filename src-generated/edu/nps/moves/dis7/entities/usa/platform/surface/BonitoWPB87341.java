@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5aa781f2;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12208
+ * <p> Entity class <b><code>BonitoWPB87341</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BonitoWPB87341.createInstance()</code> or <code>new BonitoWPB87341()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: MarineProtectorClassWPB  = <code>6</code>; </li>
+ *     <li> Specific: BonitoWPB87341  = <code>9</code>; </li>
+ *     <li> Entity type uid: 12208; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@773c2214. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class BonitoWPB87341 extends EntityType
+public final class BonitoWPB87341 extends EntityType
 {
     /** Default constructor */
     public BonitoWPB87341()
@@ -26,5 +40,11 @@ public class BonitoWPB87341 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)6); // uid 12199, Marine Protector Class (WPB)
         setSpecific((byte)9); // uid 12208, Bonito (WPB 87341)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BonitoWPB87341 createInstance()
+    {
+            return new BonitoWPB87341();
     }
 }

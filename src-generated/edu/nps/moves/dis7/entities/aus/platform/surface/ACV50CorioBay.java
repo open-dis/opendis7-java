@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d6e8792;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28886
+ * <p> Entity class <b><code>ACV50CorioBay</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ACV50CorioBay.createInstance()</code> or <code>new ACV50CorioBay()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: BayClassPatrolBoat  = <code>4</code>; </li>
+ *     <li> Specific: ACV50CorioBay  = <code>5</code>; </li>
+ *     <li> Entity type uid: 28886; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fc14f68. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ACV50CorioBay extends EntityType
+public final class ACV50CorioBay extends EntityType
 {
     /** Default constructor */
     public ACV50CorioBay()
@@ -26,5 +40,11 @@ public class ACV50CorioBay extends EntityType
         setCategory((byte)7); // uid 17524, Light/Patrol Craft
         setSubCategory((byte)4); // uid 28881, Bay Class Patrol Boat
         setSpecific((byte)5); // uid 28886, ACV 50 Corio Bay
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ACV50CorioBay createInstance()
+    {
+            return new ACV50CorioBay();
     }
 }

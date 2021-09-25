@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e1eb85f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11584
+ * <p> Entity class <b><code>PC10Firebolt</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PC10Firebolt.createInstance()</code> or <code>new PC10Firebolt()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: PCClass  = <code>1</code>; </li>
+ *     <li> Specific: PC10Firebolt  = <code>10</code>; </li>
+ *     <li> Entity type uid: 11584; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77b3752b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class PC10Firebolt extends EntityType
+public final class PC10Firebolt extends EntityType
 {
     /** Default constructor */
     public PC10Firebolt()
@@ -26,5 +40,11 @@ public class PC10Firebolt extends EntityType
         setCategory((byte)7); // uid 11573, Light/patrol craft
         setSubCategory((byte)1); // uid 11574, PC Class
         setSpecific((byte)10); // uid 11584, PC 10 Firebolt
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PC10Firebolt createInstance()
+    {
+            return new PC10Firebolt();
     }
 }

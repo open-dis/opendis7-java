@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67a6a2d0;
- * Country: Russia (RUS);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 22302
+ * <p> Entity class <b><code>FlareOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlareOther.createInstance()</code> or <code>new FlareOther()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Flare = <code>2</code>; </li>
+ *     <li> SubCategory: FlareOther  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22302; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5fc1e4fb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flare
+ * @see SubCategory
+
  */
-public class FlareOther extends EntityType
+public final class FlareOther extends EntityType
 {
     /** Default constructor */
     public FlareOther()
@@ -25,5 +39,11 @@ public class FlareOther extends EntityType
 
         setCategory((byte)2); // uid 22301, Flare
         setSubCategory((byte)0); // uid 22302, Flare, Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlareOther createInstance()
+    {
+            return new FlareOther();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -43,7 +42,7 @@ public class EngineFuelReload extends Object implements Serializable
    protected byte  padding = (byte)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EngineFuelReload()
  {
  }
@@ -61,9 +60,12 @@ public int getMarshalledSize()
    marshalSize += 4;  // maximumQuantity
    marshalSize += 4;  // standardQuantityReloadTime
    marshalSize += 4;  // maximumQuantityReloadTime
-   marshalSize += fuelMeasurmentUnits.getMarshalledSize();
-   marshalSize += fuelType.getMarshalledSize();
-   marshalSize += fuelLocation.getMarshalledSize();
+   if (fuelMeasurmentUnits != null)
+       marshalSize += fuelMeasurmentUnits.getMarshalledSize();
+   if (fuelType != null)
+       marshalSize += fuelType.getMarshalledSize();
+   if (fuelLocation != null)
+       marshalSize += fuelLocation.getMarshalledSize();
    marshalSize += 1;  // padding
 
    return marshalSize;
@@ -298,14 +300,29 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    standardQuantity = byteBuffer.getInt();
-    maximumQuantity = byteBuffer.getInt();
-    standardQuantityReloadTime = byteBuffer.getInt();
-    maximumQuantityReloadTime = byteBuffer.getInt();
-    fuelMeasurmentUnits = FuelMeasurementUnits.unmarshalEnum(byteBuffer);
-    fuelType = SupplyFuelType.unmarshalEnum(byteBuffer);
-    fuelLocation = FuelLocation.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute standardQuantity marked as not serialized
+        standardQuantity = byteBuffer.getInt();
+        // attribute maximumQuantity marked as not serialized
+        maximumQuantity = byteBuffer.getInt();
+        // attribute standardQuantityReloadTime marked as not serialized
+        standardQuantityReloadTime = byteBuffer.getInt();
+        // attribute maximumQuantityReloadTime marked as not serialized
+        maximumQuantityReloadTime = byteBuffer.getInt();
+        // attribute fuelMeasurmentUnits marked as not serialized
+        fuelMeasurmentUnits = FuelMeasurementUnits.unmarshalEnum(byteBuffer);
+        // attribute fuelType marked as not serialized
+        fuelType = SupplyFuelType.unmarshalEnum(byteBuffer);
+        // attribute fuelLocation marked as not serialized
+        fuelLocation = FuelLocation.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

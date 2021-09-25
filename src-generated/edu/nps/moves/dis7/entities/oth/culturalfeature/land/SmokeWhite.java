@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ff8a3ad;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 23738
+ * <p> Entity class <b><code>SmokeWhite</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SmokeWhite.createInstance()</code> or <code>new SmokeWhite()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Flags/markers = <code>6</code>; </li>
+ *     <li> SubCategory: Smoke  = <code>6</code>; </li>
+ *     <li> Specific: SmokeWhite  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23738; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a4df251. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flagsmarkers
+ * @see SubCategory
+
  */
-public class SmokeWhite extends EntityType
+public final class SmokeWhite extends EntityType
 {
     /** Default constructor */
     public SmokeWhite()
@@ -26,5 +40,11 @@ public class SmokeWhite extends EntityType
         setCategory((byte)6); // uid 21990, Flags/markers
         setSubCategory((byte)6); // uid 23737, Smoke
         setSpecific((byte)1); // uid 23738, Smoke, White
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SmokeWhite createInstance()
+    {
+            return new SmokeWhite();
     }
 }

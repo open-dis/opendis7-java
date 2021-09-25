@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@724bade8;
- * Country: Liberia (LBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24526
+ * <p> Entity class <b><code>AlphardStar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AlphardStar.createInstance()</code> or <code>new AlphardStar()</code>. </p>
+ * <ul>
+ *     <li> Country: Liberia (LBR) = <code>125</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: LiquidPetroleumGasLPGTanker  = <code>1</code>; </li>
+ *     <li> Specific: AlphardStar  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24526; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@782a4fff. </p>
+ * @see Country#LIBERIA_LBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class AlphardStar extends EntityType
+public final class AlphardStar extends EntityType
 {
     /** Default constructor */
     public AlphardStar()
@@ -26,5 +40,11 @@ public class AlphardStar extends EntityType
         setCategory((byte)82); // uid 24523, Tanker (Group 3 Merchant)
         setSubCategory((byte)1); // uid 24524, Liquid Petroleum Gas (LPG)Tanker
         setSpecific((byte)2); // uid 24526, Alphard Star
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AlphardStar createInstance()
+    {
+            return new AlphardStar();
     }
 }

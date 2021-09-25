@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6e0c6a7a;
- * Country: Switzerland (CHE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32946
+ * <p> Entity class <b><code>PiranhaIII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PiranhaIII.createInstance()</code> or <code>new PiranhaIII()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: PiranhaIII  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32946; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5fa23c. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class PiranhaIII extends EntityType
+public final class PiranhaIII extends EntityType
 {
     /** Default constructor */
     public PiranhaIII()
@@ -25,5 +39,11 @@ public class PiranhaIII extends EntityType
 
         setCategory((byte)2); // uid 32943, Armored Fighting Vehicle
         setSubCategory((byte)3); // uid 32946, Piranha III
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PiranhaIII createInstance()
+    {
+            return new PiranhaIII();
     }
 }

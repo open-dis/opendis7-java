@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1fb2d5e;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19187
+ * <p> Entity class <b><code>FABG37</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FABG37.createInstance()</code> or <code>new FABG37()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: HaiOuClass  = <code>1</code>; </li>
+ *     <li> Specific: FABG37  = <code>30</code>; </li>
+ *     <li> Entity type uid: 19187; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@524a076e. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class FABG37 extends EntityType
+public final class FABG37 extends EntityType
 {
     /** Default constructor */
     public FABG37()
@@ -26,5 +40,11 @@ public class FABG37 extends EntityType
         setCategory((byte)7); // uid 19156, Light/Patrol Craft
         setSubCategory((byte)1); // uid 19157, Hai Ou Class
         setSpecific((byte)30); // uid 19187, FABG 37
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FABG37 createInstance()
+    {
+            return new FABG37();
     }
 }

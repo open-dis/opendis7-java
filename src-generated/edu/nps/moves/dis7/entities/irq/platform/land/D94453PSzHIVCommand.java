@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63fdab07;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23534
+ * <p> Entity class <b><code>D94453PSzHIVCommand</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D94453PSzHIVCommand.createInstance()</code> or <code>new D94453PSzHIVCommand()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: D944PSzHIV  = <code>4</code>; </li>
+ *     <li> Specific: D94453PSzHIVCommand  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23534; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60975100. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class D94453PSzHIVCommand extends EntityType
+public final class D94453PSzHIVCommand extends EntityType
 {
     /** Default constructor */
     public D94453PSzHIVCommand()
@@ -26,5 +40,11 @@ public class D94453PSzHIVCommand extends EntityType
         setCategory((byte)2); // uid 17986, Armored Fighting Vehicle
         setSubCategory((byte)4); // uid 23532, D-944 PSzH-IV
         setSpecific((byte)2); // uid 23534, D-944.53 PSzH-IV Command
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D94453PSzHIVCommand createInstance()
+    {
+            return new D94453PSzHIVCommand();
     }
 }

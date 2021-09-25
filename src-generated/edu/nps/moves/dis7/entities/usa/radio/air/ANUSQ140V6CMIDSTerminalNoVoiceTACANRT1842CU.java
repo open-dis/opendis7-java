@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@459bf87c;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: AIR;
- *
- * Entity type uid: 26804
+ * <p> Entity class <b><code>ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU.createInstance()</code> or <code>new ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Link 16 Terminal = <code>21</code>; </li>
+ *     <li> SubCategory: JointElectronicsTypeDesignationSystemJETDSNonspecificSeries  = <code>1</code>; </li>
+ *     <li> Specific: ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU  = <code>16</code>; </li>
+ *     <li> Entity type uid: 26804; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38667005. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Link16Terminal
+ * @see SubCategory
+
  */
-public class ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU extends EntityType
+public final class ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU extends EntityType
 {
     /** Default constructor */
     public ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU()
@@ -26,5 +40,11 @@ public class ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU extends EntityType
         setCategory((byte)21); // uid 26798, Link 16 Terminal
         setSubCategory((byte)1); // uid 26799, Joint Electronics Type Designation System (JETDS) Non-specific Series
         setSpecific((byte)16); // uid 26804, AN/USQ-140(V)6(C) MIDS Terminal, No Voice TACAN (RT-1842(C)/U)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU createInstance()
+    {
+            return new ANUSQ140V6CMIDSTerminalNoVoiceTACANRT1842CU();
     }
 }

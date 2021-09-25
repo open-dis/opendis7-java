@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dff6d05;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14099
+ * <p> Entity class <b><code>_113exBelbeck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_113exBelbeck.createInstance()</code> or <code>new _113exBelbeck()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Kamenkaclassnavalsurvey  = <code>35</code>; </li>
+ *     <li> Specific: _113exBelbeck  = <code>7</code>; </li>
+ *     <li> Entity type uid: 14099; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23940f86. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _113exBelbeck extends EntityType
+public final class _113exBelbeck extends EntityType
 {
     /** Default constructor */
     public _113exBelbeck()
@@ -26,5 +40,11 @@ public class _113exBelbeck extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)35); // uid 14092, Kamenka class (naval survey)
         setSpecific((byte)7); // uid 14099, 113 (ex-Belbeck)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _113exBelbeck createInstance()
+    {
+            return new _113exBelbeck();
     }
 }

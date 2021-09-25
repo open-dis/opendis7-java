@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6531a794;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25025
+ * <p> Entity class <b><code>Roland2MAN6x6chassis</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Roland2MAN6x6chassis.createInstance()</code> or <code>new Roland2MAN6x6chassis()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>1</code>; </li>
+ *     <li> Specific: RolandSAMSystem  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25025; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3e2055d6. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class Roland2MAN6x6chassis extends EntityType
+public final class Roland2MAN6x6chassis extends EntityType
 {
     /** Default constructor */
     public Roland2MAN6x6chassis()
@@ -27,5 +41,11 @@ public class Roland2MAN6x6chassis extends EntityType
         setSubCategory((byte)1); // uid 16322, Self-Propelled VSHORAD Gun/Missile System
         setSpecific((byte)1); // uid 16323, Roland SAM System
         setExtra((byte)3); // uid 25025, Roland 2, MAN 6x6 chassis
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Roland2MAN6x6chassis createInstance()
+    {
+            return new Roland2MAN6x6chassis();
     }
 }

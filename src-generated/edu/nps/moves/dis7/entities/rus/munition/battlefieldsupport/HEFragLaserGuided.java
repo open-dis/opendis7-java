@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d43a1b7;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20906
+ * <p> Entity class <b><code>HEFragLaserGuided</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEFragLaserGuided.createInstance()</code> or <code>new HEFragLaserGuided()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _120mmgunmortar  = <code>43</code>; </li>
+ *     <li> Specific: HEFragLaserGuided  = <code>6</code>; </li>
+ *     <li> Entity type uid: 20906; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@221b77d7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEFragLaserGuided extends EntityType
+public final class HEFragLaserGuided extends EntityType
 {
     /** Default constructor */
     public HEFragLaserGuided()
@@ -26,5 +40,11 @@ public class HEFragLaserGuided extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)43); // uid 20900, 120mm (gun/mortar)
         setSpecific((byte)6); // uid 20906, HE-Frag-Laser Guided
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEFragLaserGuided createInstance()
+    {
+            return new HEFragLaserGuided();
     }
 }

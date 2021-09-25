@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class CommunicationsNodeID extends Object implements Serializable
    protected short  elementID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public CommunicationsNodeID()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityID.getMarshalledSize();
+   if (entityID != null)
+       marshalSize += entityID.getMarshalledSize();
    marshalSize += 2;  // elementID
 
    return marshalSize;
@@ -153,8 +153,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityID.unmarshal(byteBuffer);
-    elementID = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute entityID marked as not serialized
+        entityID.unmarshal(byteBuffer);
+        // attribute elementID marked as not serialized
+        elementID = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

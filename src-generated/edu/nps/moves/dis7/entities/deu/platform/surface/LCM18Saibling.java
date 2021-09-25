@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73302995;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16570
+ * <p> Entity class <b><code>LCM18Saibling</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LCM18Saibling.createInstance()</code> or <code>new LCM18Saibling()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: Type521LCMs  = <code>1</code>; </li>
+ *     <li> Specific: LCM18Saibling  = <code>7</code>; </li>
+ *     <li> Entity type uid: 16570; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b978d10. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class LCM18Saibling extends EntityType
+public final class LCM18Saibling extends EntityType
 {
     /** Default constructor */
     public LCM18Saibling()
@@ -26,5 +40,11 @@ public class LCM18Saibling extends EntityType
         setCategory((byte)11); // uid 16562, Landing Craft
         setSubCategory((byte)1); // uid 16563, Type 521 (LCMs)
         setSpecific((byte)7); // uid 16570, LCM 18 Saibling
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LCM18Saibling createInstance()
+    {
+            return new LCM18Saibling();
     }
 }

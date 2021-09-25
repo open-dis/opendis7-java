@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70c205bf;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 29681
+ * <p> Entity class <b><code>AsgardA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AsgardA.createInstance()</code> or <code>new AsgardA()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Oil Platform = <code>1</code>; </li>
+ *     <li> SubCategory: OilPlatformFloatingProductionStorageandOffloadingFPSO  = <code>6</code>; </li>
+ *     <li> Specific: AsgardA  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29681; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63bca84d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OilPlatform
+ * @see SubCategory
+
  */
-public class AsgardA extends EntityType
+public final class AsgardA extends EntityType
 {
     /** Default constructor */
     public AsgardA()
@@ -26,5 +40,11 @@ public class AsgardA extends EntityType
         setCategory((byte)1); // uid 22124, Oil Platform
         setSubCategory((byte)6); // uid 25249, Oil Platform, Floating Production, Storage, and Offloading (FPSO)
         setSpecific((byte)1); // uid 29681, Asgard A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AsgardA createInstance()
+    {
+            return new AsgardA();
     }
 }

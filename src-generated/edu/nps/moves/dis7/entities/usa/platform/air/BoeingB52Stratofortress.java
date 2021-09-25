@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27e2287c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10864
+ * <p> Entity class <b><code>BoeingB52Stratofortress</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BoeingB52Stratofortress.createInstance()</code> or <code>new BoeingB52Stratofortress()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bomber = <code>3</code>; </li>
+ *     <li> SubCategory: BoeingB52Stratofortress  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 10864; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63f9b562. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bomber
+ * @see SubCategory
+
  */
-public class BoeingB52Stratofortress extends EntityType
+public final class BoeingB52Stratofortress extends EntityType
 {
     /** Default constructor */
     public BoeingB52Stratofortress()
@@ -25,5 +39,11 @@ public class BoeingB52Stratofortress extends EntityType
 
         setCategory((byte)3); // uid 10860, Bomber
         setSubCategory((byte)3); // uid 10864, Boeing B-52 Stratofortress
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BoeingB52Stratofortress createInstance()
+    {
+            return new BoeingB52Stratofortress();
     }
 }

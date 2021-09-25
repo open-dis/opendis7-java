@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a187f14;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23113
+ * <p> Entity class <b><code>_333Toronto</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_333Toronto.createInstance()</code> or <code>new _333Toronto()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: HalifaxClassFFG  = <code>1</code>; </li>
+ *     <li> Specific: _333Toronto  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23113; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a883ce7. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _333Toronto extends EntityType
+public final class _333Toronto extends EntityType
 {
     /** Default constructor */
     public _333Toronto()
@@ -26,5 +40,11 @@ public class _333Toronto extends EntityType
         setCategory((byte)6); // uid 18782, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 18783, Halifax Class (FFG)
         setSpecific((byte)4); // uid 23113, 333 Toronto
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _333Toronto createInstance()
+    {
+            return new _333Toronto();
     }
 }

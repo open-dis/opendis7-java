@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50448409;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15501
+ * <p> Entity class <b><code>A115Lodestone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A115Lodestone.createInstance()</code> or <code>new A115Lodestone()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Magnetclassdegaussingvessels  = <code>26</code>; </li>
+ *     <li> Specific: A115Lodestone  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15501; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ba17be6. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A115Lodestone extends EntityType
+public final class A115Lodestone extends EntityType
 {
     /** Default constructor */
     public A115Lodestone()
@@ -26,5 +40,11 @@ public class A115Lodestone extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)26); // uid 15499, Magnet class (degaussing vessels)
         setSpecific((byte)2); // uid 15501, A 115 Lodestone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A115Lodestone createInstance()
+    {
+            return new A115Lodestone();
     }
 }

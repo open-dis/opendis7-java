@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2de366bb;
- * Country: Latvia (LVA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28305
+ * <p> Entity class <b><code>M07Visvaldis</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M07Visvaldis.createInstance()</code> or <code>new M07Visvaldis()</code>. </p>
+ * <ul>
+ *     <li> Country: Latvia (LVA) = <code>254</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: AlkmaarTripartiteClass  = <code>3</code>; </li>
+ *     <li> Specific: M07Visvaldis  = <code>4</code>; </li>
+ *     <li> Entity type uid: 28305; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47428937. </p>
+ * @see Country#LATVIA_LVA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M07Visvaldis extends EntityType
+public final class M07Visvaldis extends EntityType
 {
     /** Default constructor */
     public M07Visvaldis()
@@ -26,5 +40,11 @@ public class M07Visvaldis extends EntityType
         setCategory((byte)8); // uid 27786, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 28301, Alkmaar (Tripartite) Class
         setSpecific((byte)4); // uid 28305, M-07 Visvaldis
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M07Visvaldis createInstance()
+    {
+            return new M07Visvaldis();
     }
 }

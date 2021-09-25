@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@712ca57b;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24220
+ * <p> Entity class <b><code>KontradmiralXCzernicki</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KontradmiralXCzernicki.createInstance()</code> or <code>new KontradmiralXCzernicki()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Project890Class  = <code>3</code>; </li>
+ *     <li> Specific: KontradmiralXCzernicki  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24220; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3088660d. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class KontradmiralXCzernicki extends EntityType
+public final class KontradmiralXCzernicki extends EntityType
 {
     /** Default constructor */
     public KontradmiralXCzernicki()
@@ -26,5 +40,11 @@ public class KontradmiralXCzernicki extends EntityType
         setCategory((byte)8); // uid 23062, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 24219, Project 890 Class
         setSpecific((byte)1); // uid 24220, Kontradmiral X Czernicki
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KontradmiralXCzernicki createInstance()
+    {
+            return new KontradmiralXCzernicki();
     }
 }

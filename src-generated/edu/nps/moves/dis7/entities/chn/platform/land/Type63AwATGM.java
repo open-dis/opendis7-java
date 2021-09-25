@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@545997b1;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31220
+ * <p> Entity class <b><code>Type63AwATGM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type63AwATGM.createInstance()</code> or <code>new Type63AwATGM()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: Type63LightAmphibious  = <code>6</code>; </li>
+ *     <li> Specific: Type63AwATGM  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31220; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bcea91b. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class Type63AwATGM extends EntityType
+public final class Type63AwATGM extends EntityType
 {
     /** Default constructor */
     public Type63AwATGM()
@@ -26,5 +40,11 @@ public class Type63AwATGM extends EntityType
         setCategory((byte)1); // uid 16857, Tank
         setSubCategory((byte)6); // uid 16873, Type 63 (Light Amphibious)
         setSpecific((byte)2); // uid 31220, Type 63A (w/ATGM)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type63AwATGM createInstance()
+    {
+            return new Type63AwATGM();
     }
 }

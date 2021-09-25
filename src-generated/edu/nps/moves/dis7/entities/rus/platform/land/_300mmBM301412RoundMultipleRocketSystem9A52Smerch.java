@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5d58c727;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12782
+ * <p> Entity class <b><code>_300mmBM301412RoundMultipleRocketSystem9A52Smerch</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_300mmBM301412RoundMultipleRocketSystem9A52Smerch.createInstance()</code> or <code>new _300mmBM301412RoundMultipleRocketSystem9A52Smerch()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: _300mmBM301412RoundMultipleRocketSystem9A52Smerch  = <code>29</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12782; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6579c3d9. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class _300mmBM301412RoundMultipleRocketSystem9A52Smerch extends EntityType
+public final class _300mmBM301412RoundMultipleRocketSystem9A52Smerch extends EntityType
 {
     /** Default constructor */
     public _300mmBM301412RoundMultipleRocketSystem9A52Smerch()
@@ -25,5 +39,11 @@ public class _300mmBM301412RoundMultipleRocketSystem9A52Smerch extends EntityTyp
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
         setSubCategory((byte)29); // uid 12782, 300-mm BM-30 14/12-Round Multiple Rocket System (9A52 Smerch)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _300mmBM301412RoundMultipleRocketSystem9A52Smerch createInstance()
+    {
+            return new _300mmBM301412RoundMultipleRocketSystem9A52Smerch();
     }
 }

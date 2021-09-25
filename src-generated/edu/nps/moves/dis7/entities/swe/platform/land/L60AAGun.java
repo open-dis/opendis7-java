@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1dba4e06;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 17487
+ * <p> Entity class <b><code>L60AAGun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L60AAGun.createInstance()</code> or <code>new L60AAGun()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: TowedVSHORADGunMissileSystem  = <code>1</code>; </li>
+ *     <li> Specific: _40mmBofors  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17487; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1f0b3cfe. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class L60AAGun extends EntityType
+public final class L60AAGun extends EntityType
 {
     /** Default constructor */
     public L60AAGun()
@@ -27,5 +41,11 @@ public class L60AAGun extends EntityType
         setSubCategory((byte)1); // uid 17484, Towed VSHORAD Gun/Missile System
         setSpecific((byte)1); // uid 17485, 40mm Bofors
         setExtra((byte)2); // uid 17487, L/60 AA Gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L60AAGun createInstance()
+    {
+            return new L60AAGun();
     }
 }

@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@758c83d8;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28496
+ * <p> Entity class <b><code>CivilianHelicopterSmallupto7000lbs3175kg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianHelicopterSmallupto7000lbs3175kg.createInstance()</code> or <code>new CivilianHelicopterSmallupto7000lbs3175kg()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg) = <code>90</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28496; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3f0846c6. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterSmallupto7000lbs3175kg
+
  */
-public class CivilianHelicopterSmallupto7000lbs3175kg extends EntityType
+public final class CivilianHelicopterSmallupto7000lbs3175kg extends EntityType
 {
     /** Default constructor */
     public CivilianHelicopterSmallupto7000lbs3175kg()
@@ -24,5 +37,11 @@ public class CivilianHelicopterSmallupto7000lbs3175kg extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)90); // uid 28496, Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianHelicopterSmallupto7000lbs3175kg createInstance()
+    {
+            return new CivilianHelicopterSmallupto7000lbs3175kg();
     }
 }

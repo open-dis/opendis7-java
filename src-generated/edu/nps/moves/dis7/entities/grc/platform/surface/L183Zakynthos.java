@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ca20101;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23336
+ * <p> Entity class <b><code>L183Zakynthos</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L183Zakynthos.createInstance()</code> or <code>new L183Zakynthos()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Cushion/Surface Effect = <code>15</code>; </li>
+ *     <li> SubCategory: ZubrClass  = <code>1</code>; </li>
+ *     <li> Specific: L183Zakynthos  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23336; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64a40280. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirCushionSurfaceEffect
+ * @see SubCategory
+
  */
-public class L183Zakynthos extends EntityType
+public final class L183Zakynthos extends EntityType
 {
     /** Default constructor */
     public L183Zakynthos()
@@ -26,5 +40,11 @@ public class L183Zakynthos extends EntityType
         setCategory((byte)15); // uid 23331, Air Cushion/Surface Effect
         setSubCategory((byte)1); // uid 23332, Zubr Class
         setSpecific((byte)4); // uid 23336, L183 Zakynthos
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L183Zakynthos createInstance()
+    {
+            return new L183Zakynthos();
     }
 }

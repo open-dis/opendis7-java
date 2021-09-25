@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7708b66a;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32827
+ * <p> Entity class <b><code>TaepoDongIISecondStageVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TaepoDongIISecondStageVehicle.createInstance()</code> or <code>new TaepoDongIISecondStageVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: TaepoDongII2stageversion  = <code>17</code>; </li>
+ *     <li> Specific: TaepoDongIISecondStageVehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32827; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42cf6349. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TaepoDongIISecondStageVehicle extends EntityType
+public final class TaepoDongIISecondStageVehicle extends EntityType
 {
     /** Default constructor */
     public TaepoDongIISecondStageVehicle()
@@ -26,5 +40,11 @@ public class TaepoDongIISecondStageVehicle extends EntityType
         setCategory((byte)1); // uid 21602, Guided
         setSubCategory((byte)17); // uid 32826, Taepo Dong II (2-stage version)
         setSpecific((byte)1); // uid 32827, Taepo Dong II Second Stage Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TaepoDongIISecondStageVehicle createInstance()
+    {
+            return new TaepoDongIISecondStageVehicle();
     }
 }

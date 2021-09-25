@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cb0f763;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13293
+ * <p> Entity class <b><code>Su24KFencerK</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Su24KFencerK.createInstance()</code> or <code>new Su24KFencerK()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: Su24Fencer  = <code>7</code>; </li>
+ *     <li> Specific: Su24KFencerK  = <code>6</code>; </li>
+ *     <li> Entity type uid: 13293; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d755813. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class Su24KFencerK extends EntityType
+public final class Su24KFencerK extends EntityType
 {
     /** Default constructor */
     public Su24KFencerK()
@@ -26,5 +40,11 @@ public class Su24KFencerK extends EntityType
         setCategory((byte)2); // uid 13259, Attack/Strike
         setSubCategory((byte)7); // uid 13287, Su-24 Fencer
         setSpecific((byte)6); // uid 13293, Su-24K Fencer K
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Su24KFencerK createInstance()
+    {
+            return new Su24KFencerK();
     }
 }

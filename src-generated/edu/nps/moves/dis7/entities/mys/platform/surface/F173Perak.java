@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27eb3298;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28455
+ * <p> Entity class <b><code>F173Perak</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F173Perak.createInstance()</code> or <code>new F173Perak()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: KedahClass  = <code>2</code>; </li>
+ *     <li> Specific: F173Perak  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28455; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7df587ef. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class F173Perak extends EntityType
+public final class F173Perak extends EntityType
 {
     /** Default constructor */
     public F173Perak()
@@ -26,5 +40,11 @@ public class F173Perak extends EntityType
         setCategory((byte)50); // uid 27457, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 28452, Kedah Class
         setSpecific((byte)3); // uid 28455, F173 Perak
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F173Perak createInstance()
+    {
+            return new F173Perak();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class JammingTechnique extends Object implements Serializable
    protected byte  specific;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public JammingTechnique()
  {
  }
@@ -223,10 +222,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    kind = (byte)(byteBuffer.get() & 0xFF);
-    category = (byte)(byteBuffer.get() & 0xFF);
-    subCategory = (byte)(byteBuffer.get() & 0xFF);
-    specific = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute kind marked as not serialized
+        kind = (byte)(byteBuffer.get() & 0xFF);
+        // attribute category marked as not serialized
+        category = (byte)(byteBuffer.get() & 0xFF);
+        // attribute subCategory marked as not serialized
+        subCategory = (byte)(byteBuffer.get() & 0xFF);
+        // attribute specific marked as not serialized
+        specific = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

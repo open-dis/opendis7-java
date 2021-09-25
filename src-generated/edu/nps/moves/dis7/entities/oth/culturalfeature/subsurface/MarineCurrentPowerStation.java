@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6cc8adff;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 29784
+ * <p> Entity class <b><code>MarineCurrentPowerStation</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MarineCurrentPowerStation.createInstance()</code> or <code>new MarineCurrentPowerStation()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Electrical Power Installation = <code>5</code>; </li>
+ *     <li> SubCategory: MarineCurrentPowerStation  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29784; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@126675fd. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectricalPowerInstallation
+ * @see SubCategory
+
  */
-public class MarineCurrentPowerStation extends EntityType
+public final class MarineCurrentPowerStation extends EntityType
 {
     /** Default constructor */
     public MarineCurrentPowerStation()
@@ -25,5 +39,11 @@ public class MarineCurrentPowerStation extends EntityType
 
         setCategory((byte)5); // uid 29783, Electrical Power Installation
         setSubCategory((byte)1); // uid 29784, Marine Current Power Station
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MarineCurrentPowerStation createInstance()
+    {
+            return new MarineCurrentPowerStation();
     }
 }

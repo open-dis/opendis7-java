@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2539cd1c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 33071
+ * <p> Entity class <b><code>TrailerMK593</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerMK593.createInstance()</code> or <code>new TrailerMK593()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _50210ton  = <code>4</code>; </li>
+ *     <li> Specific: TrailerMK593  = <code>4</code>; </li>
+ *     <li> Entity type uid: 33071; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13c8ac77. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class TrailerMK593 extends EntityType
+public final class TrailerMK593 extends EntityType
 {
     /** Default constructor */
     public TrailerMK593()
@@ -26,5 +40,11 @@ public class TrailerMK593 extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)4); // uid 10623, 5.02 - 10 ton
         setSpecific((byte)4); // uid 33071, Trailer, MK593
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerMK593 createInstance()
+    {
+            return new TrailerMK593();
     }
 }

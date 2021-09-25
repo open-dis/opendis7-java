@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@338a4c61;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22838
+ * <p> Entity class <b><code>TurnPoleR3814</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TurnPoleR3814.createInstance()</code> or <code>new TurnPoleR3814()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Passive (intercept and DF) = <code>3</code>; </li>
+ *     <li> SubCategory: IdentificationClassificationincludingIFF  = <code>16</code>; </li>
+ *     <li> Specific: TurnPoleR3814  = <code>4</code>; </li>
+ *     <li> Entity type uid: 22838; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@430d3021. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFPassiveinterceptandDF
+ * @see SubCategory
+
  */
-public class TurnPoleR3814 extends EntityType
+public final class TurnPoleR3814 extends EntityType
 {
     /** Default constructor */
     public TurnPoleR3814()
@@ -26,5 +40,11 @@ public class TurnPoleR3814 extends EntityType
         setCategory((byte)3); // uid 22833, RF Passive (intercept and DF)
         setSubCategory((byte)16); // uid 22834, Identification/Classification (including IFF)
         setSpecific((byte)4); // uid 22838, Turn Pole R-381-4
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TurnPoleR3814 createInstance()
+    {
+            return new TurnPoleR3814();
     }
 }

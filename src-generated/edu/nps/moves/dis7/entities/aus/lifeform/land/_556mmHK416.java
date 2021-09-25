@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c6a692e;
- * Country: Australia (AUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 31473
+ * <p> Entity class <b><code>_556mmHK416</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_556mmHK416.createInstance()</code> or <code>new _556mmHK416()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Australian Army = <code>11</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: _556mmHK416  = <code>64</code>; </li>
+ *     <li> Entity type uid: 31473; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7757a37f. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AustralianArmy
+ * @see SubCategory
+
  */
-public class _556mmHK416 extends EntityType
+public final class _556mmHK416 extends EntityType
 {
     /** Default constructor */
     public _556mmHK416()
@@ -26,5 +40,11 @@ public class _556mmHK416 extends EntityType
         setCategory((byte)11); // uid 31462, Australian Army
         setSubCategory((byte)5); // uid 31463, Assault Rifles
         setSpecific((byte)64); // uid 31473, 5.56mm HK416
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _556mmHK416 createInstance()
+    {
+            return new _556mmHK416();
     }
 }

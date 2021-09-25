@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e04abc5;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22082
+ * <p> Entity class <b><code>SingleLaneSteelSuspensionBridgeSpan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SingleLaneSteelSuspensionBridgeSpan.createInstance()</code> or <code>new SingleLaneSteelSuspensionBridgeSpan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Bridge Span = <code>19</code>; </li>
+ *     <li> SubCategory: SingleLaneEachWay  = <code>1</code>; </li>
+ *     <li> Specific: SingleLaneSteelSuspensionBridgeSpan  = <code>7</code>; </li>
+ *     <li> Entity type uid: 22082; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@271e851e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see BridgeSpan
+ * @see SubCategory
+
  */
-public class SingleLaneSteelSuspensionBridgeSpan extends EntityType
+public final class SingleLaneSteelSuspensionBridgeSpan extends EntityType
 {
     /** Default constructor */
     public SingleLaneSteelSuspensionBridgeSpan()
@@ -26,5 +40,11 @@ public class SingleLaneSteelSuspensionBridgeSpan extends EntityType
         setCategory((byte)19); // uid 22073, Bridge Span
         setSubCategory((byte)1); // uid 22075, Single Lane Each Way
         setSpecific((byte)7); // uid 22082, Single Lane Steel Suspension Bridge Span
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SingleLaneSteelSuspensionBridgeSpan createInstance()
+    {
+            return new SingleLaneSteelSuspensionBridgeSpan();
     }
 }

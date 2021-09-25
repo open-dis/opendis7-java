@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c70b7c3;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22048
+ * <p> Entity class <b><code>Hotel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hotel.createInstance()</code> or <code>new Hotel()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Camp Lejeune MOUT Collective Training Facility (CTF) = <code>14</code>; </li>
+ *     <li> SubCategory: CommercialBuilding  = <code>2</code>; </li>
+ *     <li> Specific: Hotel  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22048; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46524ebe. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CampLejeuneMOUTCollectiveTrainingFacilityCTF
+ * @see SubCategory
+
  */
-public class Hotel extends EntityType
+public final class Hotel extends EntityType
 {
     /** Default constructor */
     public Hotel()
@@ -26,5 +40,11 @@ public class Hotel extends EntityType
         setCategory((byte)14); // uid 22040, Camp Lejeune MOUT Collective Training Facility (CTF)
         setSubCategory((byte)2); // uid 22046, Commercial Building
         setSpecific((byte)2); // uid 22048, Hotel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hotel createInstance()
+    {
+            return new Hotel();
     }
 }

@@ -9,13 +9,13 @@ package edu.nps.moves.dis7.pdus;
 public interface SubCategory
 {
     /**
-     * 
+     * Value for this field
      * @return the value of this SubCategory
      */
     int getValue();
     
     /**
-     * 
+     * Description for this field
      * @return the description of this SubCategory
      */
     String getDescription();

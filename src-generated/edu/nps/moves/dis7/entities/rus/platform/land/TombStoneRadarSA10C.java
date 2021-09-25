@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5cf8edcf;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13060
+ * <p> Entity class <b><code>TombStoneRadarSA10C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TombStoneRadarSA10C.createInstance()</code> or <code>new TombStoneRadarSA10C()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA10GrumbleSAMSystem  = <code>4</code>; </li>
+ *     <li> Specific: FlapLidEngagementRadar36N6E  = <code>3</code>; </li>
+ *     <li> Entity type uid: 13060; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4443ef6f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class TombStoneRadarSA10C extends EntityType
+public final class TombStoneRadarSA10C extends EntityType
 {
     /** Default constructor */
     public TombStoneRadarSA10C()
@@ -27,5 +41,11 @@ public class TombStoneRadarSA10C extends EntityType
         setSubCategory((byte)4); // uid 13052, SA-10 Grumble SAM System
         setSpecific((byte)3); // uid 13057, Flap Lid Engagement Radar (36N6E)
         setExtra((byte)3); // uid 13060, Tomb Stone Radar (SA-10C)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TombStoneRadarSA10C createInstance()
+    {
+            return new TombStoneRadarSA10C();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5910de75;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27461
+ * <p> Entity class <b><code>F136LaksamanaMuhammedAmin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F136LaksamanaMuhammedAmin.createInstance()</code> or <code>new F136LaksamanaMuhammedAmin()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: LaksamanaClass  = <code>1</code>; </li>
+ *     <li> Specific: F136LaksamanaMuhammedAmin  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27461; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9f46d94. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class F136LaksamanaMuhammedAmin extends EntityType
+public final class F136LaksamanaMuhammedAmin extends EntityType
 {
     /** Default constructor */
     public F136LaksamanaMuhammedAmin()
@@ -26,5 +40,11 @@ public class F136LaksamanaMuhammedAmin extends EntityType
         setCategory((byte)50); // uid 27457, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27458, Laksamana Class
         setSpecific((byte)3); // uid 27461, F136 Laksamana Muhammed Amin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F136LaksamanaMuhammedAmin createInstance()
+    {
+            return new F136LaksamanaMuhammedAmin();
     }
 }

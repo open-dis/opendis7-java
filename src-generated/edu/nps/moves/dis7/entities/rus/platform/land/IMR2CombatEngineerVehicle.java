@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d39f2d8;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12731
+ * <p> Entity class <b><code>IMR2CombatEngineerVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IMR2CombatEngineerVehicle.createInstance()</code> or <code>new IMR2CombatEngineerVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: IMRCombatEngineerVehicle  = <code>3</code>; </li>
+ *     <li> Specific: IMR2CombatEngineerVehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 12731; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ad5923a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class IMR2CombatEngineerVehicle extends EntityType
+public final class IMR2CombatEngineerVehicle extends EntityType
 {
     /** Default constructor */
     public IMR2CombatEngineerVehicle()
@@ -26,5 +40,11 @@ public class IMR2CombatEngineerVehicle extends EntityType
         setCategory((byte)3); // uid 12727, Armored Utility Vehicle
         setSubCategory((byte)3); // uid 12730, IMR Combat Engineer Vehicle
         setSpecific((byte)1); // uid 12731, IMR-2 Combat Engineer Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IMR2CombatEngineerVehicle createInstance()
+    {
+            return new IMR2CombatEngineerVehicle();
     }
 }

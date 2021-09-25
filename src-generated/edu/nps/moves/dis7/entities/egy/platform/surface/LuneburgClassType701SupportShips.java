@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1ebd319f;
- * Country: Egypt (EGY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27494
+ * <p> Entity class <b><code>LuneburgClassType701SupportShips</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LuneburgClassType701SupportShips.createInstance()</code> or <code>new LuneburgClassType701SupportShips()</code>. </p>
+ * <ul>
+ *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LuneburgClassType701SupportShips  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27494; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65e98b1c. </p>
+ * @see Country#COMMENT_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class LuneburgClassType701SupportShips extends EntityType
+public final class LuneburgClassType701SupportShips extends EntityType
 {
     /** Default constructor */
     public LuneburgClassType701SupportShips()
@@ -25,5 +39,11 @@ public class LuneburgClassType701SupportShips extends EntityType
 
         setCategory((byte)16); // uid 27493, Auxiliary
         setSubCategory((byte)1); // uid 27494, Luneburg Class (Type 701, Support Ships)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LuneburgClassType701SupportShips createInstance()
+    {
+            return new LuneburgClassType701SupportShips();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@370225c7;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32222
+ * <p> Entity class <b><code>CellPhone1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CellPhone1.createInstance()</code> or <code>new CellPhone1()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Press = <code>133</code>; </li>
+ *     <li> SubCategory: PersonalElectronics  = <code>171</code>; </li>
+ *     <li> Specific: CellPhone  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32222; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74764622. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Press
+ * @see SubCategory
+
  */
-public class CellPhone1 extends EntityType
+public final class CellPhone1 extends EntityType
 {
     /** Default constructor */
     public CellPhone1()
@@ -26,5 +40,11 @@ public class CellPhone1 extends EntityType
         setCategory((byte)133); // uid 32220, Press
         setSubCategory((byte)171); // uid 32221, Personal Electronics
         setSpecific((byte)1); // uid 32222, Cell Phone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CellPhone1 createInstance()
+    {
+            return new CellPhone1();
     }
 }

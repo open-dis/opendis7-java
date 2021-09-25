@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c8e8fed;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22851
+ * <p> Entity class <b><code>IL220UCMCBRadar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IL220UCMCBRadar.createInstance()</code> or <code>new IL220UCMCBRadar()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: Firingpointlaunchpointlocation  = <code>8</code>; </li>
+ *     <li> Specific: IL220UCMCBRadar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22851; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5402612e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class IL220UCMCBRadar extends EntityType
+public final class IL220UCMCBRadar extends EntityType
 {
     /** Default constructor */
     public IL220UCMCBRadar()
@@ -26,5 +40,11 @@ public class IL220UCMCBRadar extends EntityType
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)8); // uid 22850, Firing point/launch point location
         setSpecific((byte)1); // uid 22851, IL-220U CM/CB Radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IL220UCMCBRadar createInstance()
+    {
+            return new IL220UCMCBRadar();
     }
 }

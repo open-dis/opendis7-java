@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6dc1484;
- * Country: Portugal (PRT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30462
+ * <p> Entity class <b><code>P591Douro</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P591Douro.createInstance()</code> or <code>new P591Douro()</code>. </p>
+ * <ul>
+ *     <li> Country: Portugal (PRT) = <code>176</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: TejoClass  = <code>1</code>; </li>
+ *     <li> Specific: P591Douro  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30462; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46baf579. </p>
+ * @see Country#PORTUGAL_PRT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P591Douro extends EntityType
+public final class P591Douro extends EntityType
 {
     /** Default constructor */
     public P591Douro()
@@ -26,5 +40,11 @@ public class P591Douro extends EntityType
         setCategory((byte)7); // uid 30459, Light/Patrol Craft
         setSubCategory((byte)1); // uid 30460, Tejo Class
         setSpecific((byte)2); // uid 30462, P591 Douro
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P591Douro createInstance()
+    {
+            return new P591Douro();
     }
 }

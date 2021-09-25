@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class AngularVelocityVector extends Object implements Serializable
    protected float  z = (float)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AngularVelocityVector()
  {
  }
@@ -171,9 +170,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    x = byteBuffer.getFloat();
-    y = byteBuffer.getFloat();
-    z = byteBuffer.getFloat();
+    try
+    {
+        // attribute x marked as not serialized
+        x = byteBuffer.getFloat();
+        // attribute y marked as not serialized
+        y = byteBuffer.getFloat();
+        // attribute z marked as not serialized
+        z = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

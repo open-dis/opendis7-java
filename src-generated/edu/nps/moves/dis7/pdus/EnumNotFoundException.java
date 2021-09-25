@@ -6,7 +6,7 @@
 package edu.nps.moves.dis7.pdus;
 
 /**
- * EnumNotFoundException.java created on Apr 15, 2019
+ * EnumNotFoundException indicates that the enumeration of interest was not found
  */
 public class EnumNotFoundException extends Exception
 {

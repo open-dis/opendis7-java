@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a788fe0;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 27434
+ * <p> Entity class <b><code>OCC9062HEATT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OCC9062HEATT.createInstance()</code> or <code>new OCC9062HEATT()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _90mm  = <code>9</code>; </li>
+ *     <li> Specific: OCC9062HEATT  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27434; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6750e381. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class OCC9062HEATT extends EntityType
+public final class OCC9062HEATT extends EntityType
 {
     /** Default constructor */
     public OCC9062HEATT()
@@ -26,5 +40,11 @@ public class OCC9062HEATT extends EntityType
         setCategory((byte)2); // uid 21065, Ballistic
         setSubCategory((byte)9); // uid 21074, 90 mm
         setSpecific((byte)2); // uid 27434, OCC-90-62 HEAT-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OCC9062HEATT createInstance()
+    {
+            return new OCC9062HEATT();
     }
 }

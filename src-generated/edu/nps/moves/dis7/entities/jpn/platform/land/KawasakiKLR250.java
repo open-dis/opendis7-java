@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1991f767;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24862
+ * <p> Entity class <b><code>KawasakiKLR250</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KawasakiKLR250.createInstance()</code> or <code>new KawasakiKLR250()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Motorcycle = <code>80</code>; </li>
+ *     <li> SubCategory: SportStreetMidSize  = <code>2</code>; </li>
+ *     <li> Specific: KawasakiKLR250  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24862; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7829b776. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Motorcycle
+ * @see SubCategory
+
  */
-public class KawasakiKLR250 extends EntityType
+public final class KawasakiKLR250 extends EntityType
 {
     /** Default constructor */
     public KawasakiKLR250()
@@ -26,5 +40,11 @@ public class KawasakiKLR250 extends EntityType
         setCategory((byte)80); // uid 24860, Motorcycle
         setSubCategory((byte)2); // uid 24861, Sport/Street (Mid-Size)
         setSpecific((byte)1); // uid 24862, Kawasaki KLR 250
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KawasakiKLR250 createInstance()
+    {
+            return new KawasakiKLR250();
     }
 }

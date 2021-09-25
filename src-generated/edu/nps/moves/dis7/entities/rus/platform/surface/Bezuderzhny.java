@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33cbfa57;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13558
+ * <p> Entity class <b><code>Bezuderzhny</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bezuderzhny.createInstance()</code> or <code>new Bezuderzhny()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: Sovremennyyclass  = <code>2</code>; </li>
+ *     <li> Specific: Bezuderzhny  = <code>14</code>; </li>
+ *     <li> Entity type uid: 13558; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a84bc3f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileDestroyer
+ * @see SubCategory
+
  */
-public class Bezuderzhny extends EntityType
+public final class Bezuderzhny extends EntityType
 {
     /** Default constructor */
     public Bezuderzhny()
@@ -26,5 +40,11 @@ public class Bezuderzhny extends EntityType
         setCategory((byte)4); // uid 13530, Guided-missile Destroyer
         setSubCategory((byte)2); // uid 13544, Sovremennyy class
         setSpecific((byte)14); // uid 13558, Bezuderzhny
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bezuderzhny createInstance()
+    {
+            return new Bezuderzhny();
     }
 }

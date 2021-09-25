@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fd953a6;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16738
+ * <p> Entity class <b><code>Y830KW16</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y830KW16.createInstance()</code> or <code>new Y830KW16()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Type369909Class  = <code>13</code>; </li>
+ *     <li> Specific: Y830KW16  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16738; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36cda2c2. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Y830KW16 extends EntityType
+public final class Y830KW16 extends EntityType
 {
     /** Default constructor */
     public Y830KW16()
@@ -26,5 +40,11 @@ public class Y830KW16 extends EntityType
         setCategory((byte)18); // uid 16684, Utility
         setSubCategory((byte)13); // uid 16736, Type 369/909 Class
         setSpecific((byte)2); // uid 16738, Y 830 KW 16
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y830KW16 createInstance()
+    {
+            return new Y830KW16();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f8caaf3;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25925
+ * <p> Entity class <b><code>GenericLawnMowerOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericLawnMowerOther.createInstance()</code> or <code>new GenericLawnMowerOther()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Farm Specialty Vehicle = <code>88</code>; </li>
+ *     <li> SubCategory: GenericLawnMowerOther  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25925; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@9257031. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FarmSpecialtyVehicle
+ * @see SubCategory
+
  */
-public class GenericLawnMowerOther extends EntityType
+public final class GenericLawnMowerOther extends EntityType
 {
     /** Default constructor */
     public GenericLawnMowerOther()
@@ -25,5 +39,11 @@ public class GenericLawnMowerOther extends EntityType
 
         setCategory((byte)88); // uid 25920, Farm Specialty Vehicle
         setSubCategory((byte)5); // uid 25925, Generic Lawn Mower, Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericLawnMowerOther createInstance()
+    {
+            return new GenericLawnMowerOther();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36790bec;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11027
+ * <p> Entity class <b><code>RC12HGuardrailCommonSensor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RC12HGuardrailCommonSensor.createInstance()</code> or <code>new RC12HGuardrailCommonSensor()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Reconnaissance = <code>7</code>; </li>
+ *     <li> SubCategory: BeechcraftSuperKingAIR200B200  = <code>8</code>; </li>
+ *     <li> Specific: RC12HGuardrailCommonSensor  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11027; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54336976. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reconnaissance
+ * @see SubCategory
+
  */
-public class RC12HGuardrailCommonSensor extends EntityType
+public final class RC12HGuardrailCommonSensor extends EntityType
 {
     /** Default constructor */
     public RC12HGuardrailCommonSensor()
@@ -26,5 +40,11 @@ public class RC12HGuardrailCommonSensor extends EntityType
         setCategory((byte)7); // uid 11003, Reconnaissance
         setSubCategory((byte)8); // uid 11026, Beechcraft Super King AIR 200/B200
         setSpecific((byte)1); // uid 11027, RC-12H Guardrail Common Sensor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RC12HGuardrailCommonSensor createInstance()
+    {
+            return new RC12HGuardrailCommonSensor();
     }
 }

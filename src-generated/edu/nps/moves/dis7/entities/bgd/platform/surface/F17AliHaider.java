@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28feb3fa;
- * Country: Bangladesh (BGD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32607
+ * <p> Entity class <b><code>F17AliHaider</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F17AliHaider.createInstance()</code> or <code>new F17AliHaider()</code>. </p>
+ * <ul>
+ *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JianghuIIIClassType053H2  = <code>2</code>; </li>
+ *     <li> Specific: F17AliHaider  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32607; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@614c5515. </p>
+ * @see Country#BANGLADESH_BGD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F17AliHaider extends EntityType
+public final class F17AliHaider extends EntityType
 {
     /** Default constructor */
     public F17AliHaider()
@@ -26,5 +40,11 @@ public class F17AliHaider extends EntityType
         setCategory((byte)6); // uid 26771, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 32605, Jianghu-III Class (Type 053H2)
         setSpecific((byte)2); // uid 32607, F17 Ali Haider
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F17AliHaider createInstance()
+    {
+            return new F17AliHaider();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7f4037ed;
- * Country: Pakistan (PAK);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29199
+ * <p> Entity class <b><code>PACMFI395SuperMushshak</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PACMFI395SuperMushshak.createInstance()</code> or <code>new PACMFI395SuperMushshak()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: PACMFI395SuperMushshak  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29199; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@253c1256. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class PACMFI395SuperMushshak extends EntityType
+public final class PACMFI395SuperMushshak extends EntityType
 {
     /** Default constructor */
     public PACMFI395SuperMushshak()
@@ -25,5 +39,11 @@ public class PACMFI395SuperMushshak extends EntityType
 
         setCategory((byte)40); // uid 29197, Trainer
         setSubCategory((byte)2); // uid 29199, PAC MFI-395 Super Mushshak
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PACMFI395SuperMushshak createInstance()
+    {
+            return new PACMFI395SuperMushshak();
     }
 }

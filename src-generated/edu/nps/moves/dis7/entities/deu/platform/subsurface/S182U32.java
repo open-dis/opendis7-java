@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a1234bf;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16796
+ * <p> Entity class <b><code>S182U32</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S182U32.createInstance()</code> or <code>new S182U32()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional attack-torpedo patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Type212A  = <code>6</code>; </li>
+ *     <li> Specific: S182U32  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16796; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6af9fcb2. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalattacktorpedopatrol
+ * @see SubCategory
+
  */
-public class S182U32 extends EntityType
+public final class S182U32 extends EntityType
 {
     /** Default constructor */
     public S182U32()
@@ -26,5 +40,11 @@ public class S182U32 extends EntityType
         setCategory((byte)5); // uid 16757, SS (Conventional attack-torpedo patrol)
         setSubCategory((byte)6); // uid 16794, Type 212A
         setSpecific((byte)2); // uid 16796, S 182 U 32
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S182U32 createInstance()
+    {
+            return new S182U32();
     }
 }

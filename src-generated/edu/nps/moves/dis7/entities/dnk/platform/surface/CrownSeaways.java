@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66d18979;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32953
+ * <p> Entity class <b><code>CrownSeaways</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CrownSeaways.createInstance()</code> or <code>new CrownSeaways()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Passenger Vessel (Group 1 Merchant) = <code>80</code>; </li>
+ *     <li> SubCategory: CruiseFerry  = <code>2</code>; </li>
+ *     <li> Specific: CrownSeaways  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32953; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dd05255. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PassengerVesselGroup1Merchant
+ * @see SubCategory
+
  */
-public class CrownSeaways extends EntityType
+public final class CrownSeaways extends EntityType
 {
     /** Default constructor */
     public CrownSeaways()
@@ -26,5 +40,11 @@ public class CrownSeaways extends EntityType
         setCategory((byte)80); // uid 32951, Passenger Vessel (Group 1 Merchant)
         setSubCategory((byte)2); // uid 32952, Cruise Ferry
         setSpecific((byte)1); // uid 32953, Crown Seaways
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CrownSeaways createInstance()
+    {
+            return new CrownSeaways();
     }
 }

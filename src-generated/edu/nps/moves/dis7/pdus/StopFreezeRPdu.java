@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public StopFreezeRPdu()
  {
     setPduType( DisPduType.STOP_FREEZE_RELIABLE );
@@ -53,10 +52,14 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += realWorldTime.getMarshalledSize();
-   marshalSize += reason.getMarshalledSize();
-   marshalSize += frozenBehavior.getMarshalledSize();
-   marshalSize += requiredReliabilityService.getMarshalledSize();
+   if (realWorldTime != null)
+       marshalSize += realWorldTime.getMarshalledSize();
+   if (reason != null)
+       marshalSize += reason.getMarshalledSize();
+   if (frozenBehavior != null)
+       marshalSize += frozenBehavior.getMarshalledSize();
+   if (requiredReliabilityService != null)
+       marshalSize += requiredReliabilityService.getMarshalledSize();
    marshalSize += 1;  // pad1
    marshalSize += 4;  // requestID
 
@@ -256,12 +259,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    realWorldTime.unmarshal(byteBuffer);
-    reason = StopFreezeReason.unmarshalEnum(byteBuffer);
-    frozenBehavior.unmarshal(byteBuffer);
-    requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
-    pad1 = (byte)(byteBuffer.get() & 0xFF);
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute realWorldTime marked as not serialized
+        realWorldTime.unmarshal(byteBuffer);
+        // attribute reason marked as not serialized
+        reason = StopFreezeReason.unmarshalEnum(byteBuffer);
+        // attribute frozenBehavior marked as not serialized
+        frozenBehavior.unmarshal(byteBuffer);
+        // attribute requiredReliabilityService marked as not serialized
+        requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
+        // attribute pad1 marked as not serialized
+        pad1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

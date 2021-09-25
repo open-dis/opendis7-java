@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fe34b86;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32334
+ * <p> Entity class <b><code>FV103SpartanAPCEPBAArmour</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FV103SpartanAPCEPBAArmour.createInstance()</code> or <code>new FV103SpartanAPCEPBAArmour()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: FV103SpartanAPC  = <code>2</code>; </li>
+ *     <li> Specific: FV103SpartanAPCEPBAArmour  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32334; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d5c2745. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class FV103SpartanAPCEPBAArmour extends EntityType
+public final class FV103SpartanAPCEPBAArmour extends EntityType
 {
     /** Default constructor */
     public FV103SpartanAPCEPBAArmour()
@@ -26,5 +40,11 @@ public class FV103SpartanAPCEPBAArmour extends EntityType
         setCategory((byte)2); // uid 14887, Armored Fighting Vehicle
         setSubCategory((byte)2); // uid 14891, FV 103 Spartan (APC)
         setSpecific((byte)1); // uid 32334, FV 103 Spartan (APC) EPBA Armour
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FV103SpartanAPCEPBAArmour createInstance()
+    {
+            return new FV103SpartanAPCEPBAArmour();
     }
 }

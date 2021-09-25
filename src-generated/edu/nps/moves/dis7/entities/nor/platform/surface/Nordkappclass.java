@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1cefc4b3;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27599
+ * <p> Entity class <b><code>Nordkappclass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Nordkappclass.createInstance()</code> or <code>new Nordkappclass()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Nordkappclass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27599; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@781e7326. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class Nordkappclass extends EntityType
+public final class Nordkappclass extends EntityType
 {
     /** Default constructor */
     public Nordkappclass()
@@ -25,5 +39,11 @@ public class Nordkappclass extends EntityType
 
         setCategory((byte)63); // uid 27598, Coast Guard Boats
         setSubCategory((byte)1); // uid 27599, Nordkapp class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Nordkappclass createInstance()
+    {
+            return new Nordkappclass();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38f116f6;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18006
+ * <p> Entity class <b><code>F212TariqlbnZiad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F212TariqlbnZiad.createInstance()</code> or <code>new F212TariqlbnZiad()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: AssadClass  = <code>1</code>; </li>
+ *     <li> Specific: F212TariqlbnZiad  = <code>2</code>; </li>
+ *     <li> Entity type uid: 18006; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cf8b2dc. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigate
+ * @see SubCategory
+
  */
-public class F212TariqlbnZiad extends EntityType
+public final class F212TariqlbnZiad extends EntityType
 {
     /** Default constructor */
     public F212TariqlbnZiad()
@@ -26,5 +40,11 @@ public class F212TariqlbnZiad extends EntityType
         setCategory((byte)6); // uid 18003, Guided Missile Frigate
         setSubCategory((byte)1); // uid 18004, Assad Class
         setSpecific((byte)2); // uid 18006, F212 Tariq lbn Ziad
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F212TariqlbnZiad createInstance()
+    {
+            return new F212TariqlbnZiad();
     }
 }

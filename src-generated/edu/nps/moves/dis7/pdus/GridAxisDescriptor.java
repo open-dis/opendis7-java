@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -33,7 +32,7 @@ public class GridAxisDescriptor extends Object implements Serializable
    protected GridAxisDescriptorAxisType axisType = GridAxisDescriptorAxisType.values()[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GridAxisDescriptor()
  {
  }
@@ -51,7 +50,8 @@ public int getMarshalledSize()
    marshalSize += 8;  // domainFinalXi
    marshalSize += 2;  // domainPointsXi
    marshalSize += 1;  // interleafFactor
-   marshalSize += axisType.getMarshalledSize();
+   if (axisType != null)
+       marshalSize += axisType.getMarshalledSize();
 
    return marshalSize;
 }
@@ -232,11 +232,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    domainInitialXi = byteBuffer.getDouble();
-    domainFinalXi = byteBuffer.getDouble();
-    domainPointsXi = (short)(byteBuffer.getShort() & 0xFFFF);
-    interleafFactor = (byte)(byteBuffer.get() & 0xFF);
-    axisType = GridAxisDescriptorAxisType.unmarshalEnum(byteBuffer);
+    try
+    {
+        // attribute domainInitialXi marked as not serialized
+        domainInitialXi = byteBuffer.getDouble();
+        // attribute domainFinalXi marked as not serialized
+        domainFinalXi = byteBuffer.getDouble();
+        // attribute domainPointsXi marked as not serialized
+        domainPointsXi = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute interleafFactor marked as not serialized
+        interleafFactor = (byte)(byteBuffer.get() & 0xFF);
+        // attribute axisType marked as not serialized
+        axisType = GridAxisDescriptorAxisType.unmarshalEnum(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

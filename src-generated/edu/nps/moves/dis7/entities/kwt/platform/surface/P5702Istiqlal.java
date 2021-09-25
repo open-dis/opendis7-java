@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e57e95e;
- * Country: Kuwait (KWT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17922
+ * <p> Entity class <b><code>P5702Istiqlal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P5702Istiqlal.createInstance()</code> or <code>new P5702Istiqlal()</code>. </p>
+ * <ul>
+ *     <li> Country: Kuwait (KWT) = <code>121</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FPB57Typefastattackcraftmissile  = <code>4</code>; </li>
+ *     <li> Specific: P5702Istiqlal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17922; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21526f6c. </p>
+ * @see Country#KUWAIT_KWT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P5702Istiqlal extends EntityType
+public final class P5702Istiqlal extends EntityType
 {
     /** Default constructor */
     public P5702Istiqlal()
@@ -26,5 +40,11 @@ public class P5702Istiqlal extends EntityType
         setCategory((byte)7); // uid 17912, Light/Patrol Craft
         setSubCategory((byte)4); // uid 17921, FPB 57 Type (fast attack craft-missile)
         setSpecific((byte)1); // uid 17922, P5702 Istiqlal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P5702Istiqlal createInstance()
+    {
+            return new P5702Istiqlal();
     }
 }

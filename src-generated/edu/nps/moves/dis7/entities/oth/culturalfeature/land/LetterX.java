@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4bf8b77;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 23734
+ * <p> Entity class <b><code>LetterX</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LetterX.createInstance()</code> or <code>new LetterX()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Flags/markers = <code>6</code>; </li>
+ *     <li> SubCategory: GroundMarkings  = <code>4</code>; </li>
+ *     <li> Specific: Letters  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23734; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6e364f1f. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flagsmarkers
+ * @see SubCategory
+
  */
-public class LetterX extends EntityType
+public final class LetterX extends EntityType
 {
     /** Default constructor */
     public LetterX()
@@ -27,5 +41,11 @@ public class LetterX extends EntityType
         setSubCategory((byte)4); // uid 22889, Ground Markings
         setSpecific((byte)3); // uid 23731, Letters
         setExtra((byte)3); // uid 23734, Letter, X
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LetterX createInstance()
+    {
+            return new LetterX();
     }
 }

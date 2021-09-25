@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@643d2dae;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15300
+ * <p> Entity class <b><code>P273Pursuer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P273Pursuer.createInstance()</code> or <code>new P273Pursuer()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: Archerclasstrainingandpatrolcraft  = <code>6</code>; </li>
+ *     <li> Specific: P273Pursuer  = <code>4</code>; </li>
+ *     <li> Entity type uid: 15300; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51b01550. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class P273Pursuer extends EntityType
+public final class P273Pursuer extends EntityType
 {
     /** Default constructor */
     public P273Pursuer()
@@ -26,5 +40,11 @@ public class P273Pursuer extends EntityType
         setCategory((byte)7); // uid 15274, Light/patrol craft
         setSubCategory((byte)6); // uid 15296, Archer class (training and patrol craft)
         setSpecific((byte)4); // uid 15300, P 273 Pursuer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P273Pursuer createInstance()
+    {
+            return new P273Pursuer();
     }
 }

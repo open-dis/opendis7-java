@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f353d99;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25610
+ * <p> Entity class <b><code>SaabTp100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SaabTp100.createInstance()</code> or <code>new SaabTp100()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: Saab340  = <code>1</code>; </li>
+ *     <li> Specific: SaabTp100  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25610; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e0895f5. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class SaabTp100 extends EntityType
+public final class SaabTp100 extends EntityType
 {
     /** Default constructor */
     public SaabTp100()
@@ -26,5 +40,11 @@ public class SaabTp100 extends EntityType
         setCategory((byte)4); // uid 25608, Cargo/Tanker
         setSubCategory((byte)1); // uid 25609, Saab 340
         setSpecific((byte)1); // uid 25610, Saab Tp 100
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SaabTp100 createInstance()
+    {
+            return new SaabTp100();
     }
 }

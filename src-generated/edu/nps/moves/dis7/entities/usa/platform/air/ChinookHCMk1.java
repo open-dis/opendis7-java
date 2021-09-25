@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f366587;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11160
+ * <p> Entity class <b><code>ChinookHCMk1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChinookHCMk1.createInstance()</code> or <code>new ChinookHCMk1()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo helicopter = <code>23</code>; </li>
+ *     <li> SubCategory: BoeingModels114414  = <code>1</code>; </li>
+ *     <li> Specific: ChinookHCMk1  = <code>6</code>; </li>
+ *     <li> Entity type uid: 11160; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79476a4e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Cargohelicopter
+ * @see SubCategory
+
  */
-public class ChinookHCMk1 extends EntityType
+public final class ChinookHCMk1 extends EntityType
 {
     /** Default constructor */
     public ChinookHCMk1()
@@ -26,5 +40,11 @@ public class ChinookHCMk1 extends EntityType
         setCategory((byte)23); // uid 11153, Cargo helicopter
         setSubCategory((byte)1); // uid 11154, Boeing Models 114/414
         setSpecific((byte)6); // uid 11160, Chinook HC.Mk 1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChinookHCMk1 createInstance()
+    {
+            return new ChinookHCMk1();
     }
 }

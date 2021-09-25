@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@319c3a25;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14740
+ * <p> Entity class <b><code>ImenilXXLetiyaVchkKgb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ImenilXXLetiyaVchkKgb.createInstance()</code> or <code>new ImenilXXLetiyaVchkKgb()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate = <code>50</code>; </li>
+ *     <li> SubCategory: KrivakIIIZalivKerch  = <code>9</code>; </li>
+ *     <li> Specific: ImenilXXLetiyaVchkKgb  = <code>4</code>; </li>
+ *     <li> Entity type uid: 14740; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53b8afea. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Frigate
+ * @see SubCategory
+
  */
-public class ImenilXXLetiyaVchkKgb extends EntityType
+public final class ImenilXXLetiyaVchkKgb extends EntityType
 {
     /** Default constructor */
     public ImenilXXLetiyaVchkKgb()
@@ -26,5 +40,11 @@ public class ImenilXXLetiyaVchkKgb extends EntityType
         setCategory((byte)50); // uid 14715, Frigate
         setSubCategory((byte)9); // uid 14736, Krivak III (Zaliv (Kerch))
         setSpecific((byte)4); // uid 14740, Imeni lXX Letiya Vchk-Kgb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ImenilXXLetiyaVchkKgb createInstance()
+    {
+            return new ImenilXXLetiyaVchkKgb();
     }
 }

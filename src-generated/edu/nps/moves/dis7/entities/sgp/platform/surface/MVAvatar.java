@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6850b758;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28173
+ * <p> Entity class <b><code>MVAvatar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MVAvatar.createInstance()</code> or <code>new MVAvatar()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: DryBulkCargoShip  = <code>2</code>; </li>
+ *     <li> Specific: MVAvatar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28173; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a2909ae. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class MVAvatar extends EntityType
+public final class MVAvatar extends EntityType
 {
     /** Default constructor */
     public MVAvatar()
@@ -26,5 +40,11 @@ public class MVAvatar extends EntityType
         setCategory((byte)81); // uid 28171, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)2); // uid 28172, Dry Bulk Cargo Ship
         setSpecific((byte)1); // uid 28173, M V Avatar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MVAvatar createInstance()
+    {
+            return new MVAvatar();
     }
 }

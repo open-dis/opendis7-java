@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66b6873f;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 31858
+ * <p> Entity class <b><code>TrashCanIED</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrashCanIED.createInstance()</code> or <code>new TrashCanIED()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Obstacle = <code>5</code>; </li>
+ *     <li> SubCategory: ExposedOrdnance  = <code>30</code>; </li>
+ *     <li> Specific: TrashCanIED  = <code>10</code>; </li>
+ *     <li> Entity type uid: 31858; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@405d8a80. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Obstacle
+ * @see SubCategory
+
  */
-public class TrashCanIED extends EntityType
+public final class TrashCanIED extends EntityType
 {
     /** Default constructor */
     public TrashCanIED()
@@ -26,5 +40,11 @@ public class TrashCanIED extends EntityType
         setCategory((byte)5); // uid 21973, Obstacle
         setSubCategory((byte)30); // uid 26175, Exposed Ordnance
         setSpecific((byte)10); // uid 31858, Trash Can, IED
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrashCanIED createInstance()
+    {
+            return new TrashCanIED();
     }
 }

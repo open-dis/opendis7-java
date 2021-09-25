@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2100d047;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18694
+ * <p> Entity class <b><code>P561Kawkab</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P561Kawkab.createInstance()</code> or <code>new P561Kawkab()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: KawkabClasscoastalpatrolcraft  = <code>1</code>; </li>
+ *     <li> Specific: P561Kawkab  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18694; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79a04e5f. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P561Kawkab extends EntityType
+public final class P561Kawkab extends EntityType
 {
     /** Default constructor */
     public P561Kawkab()
@@ -26,5 +40,11 @@ public class P561Kawkab extends EntityType
         setCategory((byte)7); // uid 18692, Light/Patrol Craft
         setSubCategory((byte)1); // uid 18693, Kawkab Class (coastal patrol craft)
         setSpecific((byte)1); // uid 18694, P561 Kawkab
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P561Kawkab createInstance()
+    {
+            return new P561Kawkab();
     }
 }

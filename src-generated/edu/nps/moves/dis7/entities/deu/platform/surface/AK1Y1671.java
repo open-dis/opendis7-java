@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@413f69cc;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16629
+ * <p> Entity class <b><code>AK1Y1671</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AK1Y1671.createInstance()</code> or <code>new AK1Y1671()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Towinglaunchestype946  = <code>8</code>; </li>
+ *     <li> Specific: AK1Y1671  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16629; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60b4beb4. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AK1Y1671 extends EntityType
+public final class AK1Y1671 extends EntityType
 {
     /** Default constructor */
     public AK1Y1671()
@@ -26,5 +40,11 @@ public class AK1Y1671 extends EntityType
         setCategory((byte)16); // uid 16594, Auxiliary
         setSubCategory((byte)8); // uid 16628, Towing launches (type 946)
         setSpecific((byte)1); // uid 16629, AK 1 Y 1671
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AK1Y1671 createInstance()
+    {
+            return new AK1Y1671();
     }
 }

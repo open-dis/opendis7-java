@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67e0fd6d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28467
+ * <p> Entity class <b><code>CharlesWSextonWPC1108</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CharlesWSextonWPC1108.createInstance()</code> or <code>new CharlesWSextonWPC1108()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: SentinelClassWPC  = <code>10</code>; </li>
+ *     <li> Specific: CharlesWSextonWPC1108  = <code>8</code>; </li>
+ *     <li> Entity type uid: 28467; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c48b72c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class CharlesWSextonWPC1108 extends EntityType
+public final class CharlesWSextonWPC1108 extends EntityType
 {
     /** Default constructor */
     public CharlesWSextonWPC1108()
@@ -26,5 +40,11 @@ public class CharlesWSextonWPC1108 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)10); // uid 28459, Sentinel Class (WPC)
         setSpecific((byte)8); // uid 28467, Charles W. Sexton (WPC-1108)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CharlesWSextonWPC1108 createInstance()
+    {
+            return new CharlesWSextonWPC1108();
     }
 }

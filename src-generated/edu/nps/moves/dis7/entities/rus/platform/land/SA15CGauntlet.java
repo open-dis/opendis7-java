@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4af46df3;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32130
+ * <p> Entity class <b><code>SA15CGauntlet</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA15CGauntlet.createInstance()</code> or <code>new SA15CGauntlet()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA15GauntletSAMSystem  = <code>10</code>; </li>
+ *     <li> Specific: SA15TELAR  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32130; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@21325036. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA15CGauntlet extends EntityType
+public final class SA15CGauntlet extends EntityType
 {
     /** Default constructor */
     public SA15CGauntlet()
@@ -27,5 +41,11 @@ public class SA15CGauntlet extends EntityType
         setSubCategory((byte)10); // uid 13098, SA-15 Gauntlet SAM System
         setSpecific((byte)2); // uid 13100, SA-15 TELAR
         setExtra((byte)2); // uid 32130, SA-15C Gauntlet
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA15CGauntlet createInstance()
+    {
+            return new SA15CGauntlet();
     }
 }

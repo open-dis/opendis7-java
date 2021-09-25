@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class LiveSimulationAddress extends Object implements Serializable
    protected byte  liveApplicationNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveSimulationAddress()
  {
  }
@@ -161,8 +160,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    liveSiteNumber = (byte)(byteBuffer.get() & 0xFF);
-    liveApplicationNumber = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute liveSiteNumber marked as not serialized
+        liveSiteNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute liveApplicationNumber marked as not serialized
+        liveApplicationNumber = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

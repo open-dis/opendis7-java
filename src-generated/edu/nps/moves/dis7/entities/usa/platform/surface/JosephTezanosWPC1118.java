@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d28fb02;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30433
+ * <p> Entity class <b><code>JosephTezanosWPC1118</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JosephTezanosWPC1118.createInstance()</code> or <code>new JosephTezanosWPC1118()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: SentinelClassWPC  = <code>10</code>; </li>
+ *     <li> Specific: JosephTezanosWPC1118  = <code>18</code>; </li>
+ *     <li> Entity type uid: 30433; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@243bf087. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class JosephTezanosWPC1118 extends EntityType
+public final class JosephTezanosWPC1118 extends EntityType
 {
     /** Default constructor */
     public JosephTezanosWPC1118()
@@ -26,5 +40,11 @@ public class JosephTezanosWPC1118 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)10); // uid 28459, Sentinel Class (WPC)
         setSpecific((byte)18); // uid 30433, Joseph Tezanos (WPC-1118)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JosephTezanosWPC1118 createInstance()
+    {
+            return new JosephTezanosWPC1118();
     }
 }

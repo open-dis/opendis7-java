@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1144a02b;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20403
+ * <p> Entity class <b><code>VYaAPIBZ</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VYaAPIBZ.createInstance()</code> or <code>new VYaAPIBZ()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _23mm  = <code>3</code>; </li>
+ *     <li> Specific: VYaAPIBZ  = <code>4</code>; </li>
+ *     <li> Entity type uid: 20403; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2baac4a7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class VYaAPIBZ extends EntityType
+public final class VYaAPIBZ extends EntityType
 {
     /** Default constructor */
     public VYaAPIBZ()
@@ -26,5 +40,11 @@ public class VYaAPIBZ extends EntityType
         setCategory((byte)2); // uid 20393, Ballistic
         setSubCategory((byte)3); // uid 20399, 23 mm
         setSpecific((byte)4); // uid 20403, VYa AP-I BZ
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VYaAPIBZ createInstance()
+    {
+            return new VYaAPIBZ();
     }
 }

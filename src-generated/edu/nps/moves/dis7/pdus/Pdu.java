@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
    protected short  length;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Pdu()
  {
  }
@@ -51,10 +50,13 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += protocolVersion.getMarshalledSize();
+   if (protocolVersion != null)
+       marshalSize += protocolVersion.getMarshalledSize();
    marshalSize += 1;  // exerciseID
-   marshalSize += pduType.getMarshalledSize();
-   marshalSize += protocolFamily.getMarshalledSize();
+   if (pduType != null)
+       marshalSize += pduType.getMarshalledSize();
+   if (protocolFamily != null)
+       marshalSize += protocolFamily.getMarshalledSize();
    marshalSize += 4;  // timestamp
    marshalSize += 2;  // length
 
@@ -257,12 +259,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    protocolVersion = DISProtocolVersion.unmarshalEnum(byteBuffer);
-    exerciseID = (byte)(byteBuffer.get() & 0xFF);
-    pduType = DisPduType.unmarshalEnum(byteBuffer);
-    protocolFamily = DISProtocolFamily.unmarshalEnum(byteBuffer);
-    timestamp = byteBuffer.getInt();
-    length = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute protocolVersion marked as not serialized
+        protocolVersion = DISProtocolVersion.unmarshalEnum(byteBuffer);
+        // attribute exerciseID marked as not serialized
+        exerciseID = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pduType marked as not serialized
+        pduType = DisPduType.unmarshalEnum(byteBuffer);
+        // attribute protocolFamily marked as not serialized
+        protocolFamily = DISProtocolFamily.unmarshalEnum(byteBuffer);
+        // attribute timestamp marked as not serialized
+        timestamp = byteBuffer.getInt();
+        // attribute length marked as not serialized
+        length = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

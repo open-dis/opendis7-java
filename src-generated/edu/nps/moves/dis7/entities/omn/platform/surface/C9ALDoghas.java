@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13c612bd;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17965
+ * <p> Entity class <b><code>C9ALDoghas</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C9ALDoghas.createInstance()</code> or <code>new C9ALDoghas()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LCM  = <code>1</code>; </li>
+ *     <li> Specific: C9ALDoghas  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17965; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@733037. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class C9ALDoghas extends EntityType
+public final class C9ALDoghas extends EntityType
 {
     /** Default constructor */
     public C9ALDoghas()
@@ -26,5 +40,11 @@ public class C9ALDoghas extends EntityType
         setCategory((byte)11); // uid 17962, Landing Craft
         setSubCategory((byte)1); // uid 17963, LCM
         setSpecific((byte)2); // uid 17965, C9 AL Doghas
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C9ALDoghas createInstance()
+    {
+            return new C9ALDoghas();
     }
 }

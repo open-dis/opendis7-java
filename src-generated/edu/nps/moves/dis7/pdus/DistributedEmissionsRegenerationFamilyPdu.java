@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,11 +15,11 @@ import edu.nps.moves.dis7.enumerations.*;
  * Section 5.3.7. Electronic Emissions. Abstract superclass for distributed emissions PDU
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public abstract class DistributedEmissionsFamilyPdu extends PduBase implements Serializable
+public abstract class DistributedEmissionsRegenerationFamilyPdu extends PduBase implements Serializable
 {
 
-/** Constructor */
- public DistributedEmissionsFamilyPdu()
+/** Constructor creates and configures a new instance object */
+ public DistributedEmissionsRegenerationFamilyPdu()
  {
     setProtocolFamily( DISProtocolFamily.DISTRIBUTED_EMISSION_REGENERATION );
  }
@@ -107,6 +106,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
+    try
+    {
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -133,7 +139,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  {
      boolean ivarsEqual = true;
 
-     final DistributedEmissionsFamilyPdu rhs = (DistributedEmissionsFamilyPdu)obj;
+     final DistributedEmissionsRegenerationFamilyPdu rhs = (DistributedEmissionsRegenerationFamilyPdu)obj;
 
     return ivarsEqual && super.equalsImpl(rhs);
  }

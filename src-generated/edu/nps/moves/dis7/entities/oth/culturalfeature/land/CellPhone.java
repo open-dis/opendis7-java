@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc8c13c;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26528
+ * <p> Entity class <b><code>CellPhone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CellPhone.createInstance()</code> or <code>new CellPhone()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Electronics = <code>27</code>; </li>
+ *     <li> SubCategory: Audio  = <code>3</code>; </li>
+ *     <li> Specific: CellPhone  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26528; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@100eeedc. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Electronics
+ * @see SubCategory
+
  */
-public class CellPhone extends EntityType
+public final class CellPhone extends EntityType
 {
     /** Default constructor */
     public CellPhone()
@@ -26,5 +40,11 @@ public class CellPhone extends EntityType
         setCategory((byte)27); // uid 26518, Electronics
         setSubCategory((byte)3); // uid 26526, Audio
         setSpecific((byte)2); // uid 26528, Cell Phone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CellPhone createInstance()
+    {
+            return new CellPhone();
     }
 }

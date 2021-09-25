@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5fa5c8cf;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24155
+ * <p> Entity class <b><code>RR188AL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RR188AL.createInstance()</code> or <code>new RR188AL()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Chaff = <code>1</code>; </li>
+ *     <li> SubCategory: Bundle  = <code>1</code>; </li>
+ *     <li> Specific: RR188Chaff  = <code>8</code>; </li>
+ *     <li> Entity type uid: 24155; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3a54638b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Chaff
+ * @see SubCategory
+
  */
-public class RR188AL extends EntityType
+public final class RR188AL extends EntityType
 {
     /** Default constructor */
     public RR188AL()
@@ -27,5 +41,11 @@ public class RR188AL extends EntityType
         setSubCategory((byte)1); // uid 22221, Bundle
         setSpecific((byte)8); // uid 22231, RR-188 Chaff
         setExtra((byte)1); // uid 24155, RR-188/AL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RR188AL createInstance()
+    {
+            return new RR188AL();
     }
 }

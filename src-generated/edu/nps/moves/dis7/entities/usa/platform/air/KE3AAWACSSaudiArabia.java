@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@180b3819;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11043
+ * <p> Entity class <b><code>KE3AAWACSSaudiArabia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KE3AAWACSSaudiArabia.createInstance()</code> or <code>new KE3AAWACSSaudiArabia()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance / C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: BoeingE3SentryAirborneWarningandControlSystemAWACS  = <code>4</code>; </li>
+ *     <li> Specific: KE3AAWACSSaudiArabia  = <code>6</code>; </li>
+ *     <li> Entity type uid: 11043; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1dad01fe. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class KE3AAWACSSaudiArabia extends EntityType
+public final class KE3AAWACSSaudiArabia extends EntityType
 {
     /** Default constructor */
     public KE3AAWACSSaudiArabia()
@@ -26,5 +40,11 @@ public class KE3AAWACSSaudiArabia extends EntityType
         setCategory((byte)8); // uid 11029, Surveillance / C2 (Airborne Early Warning)
         setSubCategory((byte)4); // uid 11037, Boeing E-3 Sentry Airborne Warning and Control System (AWACS)
         setSpecific((byte)6); // uid 11043, KE-3A AWACS (Saudi Arabia)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KE3AAWACSSaudiArabia createInstance()
+    {
+            return new KE3AAWACSSaudiArabia();
     }
 }

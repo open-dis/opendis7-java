@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@455cbf18;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: DIRECTED_ENERGY_DE_WEAPON;
- *
- * Entity type uid: 20299
+ * <p> Entity class <b><code>HighPowerMicrowaveHPMWeapon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HighPowerMicrowaveHPMWeapon.createInstance()</code> or <code>new HighPowerMicrowaveHPMWeapon()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>DIRECTED_ENERGY_DE_WEAPON</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Area Effect DE Weapon = <code>2</code>; </li>
+ *     <li> SubCategory: HighPowerMicrowaveHPMWeapon  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 20299; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5d84e363. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see AreaEffectDEWeapon
+ * @see SubCategory
+
  */
-public class HighPowerMicrowaveHPMWeapon extends EntityType
+public final class HighPowerMicrowaveHPMWeapon extends EntityType
 {
     /** Default constructor */
     public HighPowerMicrowaveHPMWeapon()
@@ -25,5 +39,11 @@ public class HighPowerMicrowaveHPMWeapon extends EntityType
 
         setCategory((byte)2); // uid 20298, Area Effect DE Weapon
         setSubCategory((byte)1); // uid 20299, High Power Microwave (HPM) Weapon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HighPowerMicrowaveHPMWeapon createInstance()
+    {
+            return new HighPowerMicrowaveHPMWeapon();
     }
 }

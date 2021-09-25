@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class Relationship extends Object implements Serializable
    protected IsPartOfPosition position = IsPartOfPosition.values()[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Relationship()
  {
  }
@@ -39,8 +38,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += nature.getMarshalledSize();
-   marshalSize += position.getMarshalledSize();
+   if (nature != null)
+       marshalSize += nature.getMarshalledSize();
+   if (position != null)
+       marshalSize += position.getMarshalledSize();
 
    return marshalSize;
 }
@@ -147,8 +148,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    nature = IsPartOfNature.unmarshalEnum(byteBuffer);
-    position = IsPartOfPosition.unmarshalEnum(byteBuffer);
+    try
+    {
+        // attribute nature marked as not serialized
+        nature = IsPartOfNature.unmarshalEnum(byteBuffer);
+        // attribute position marked as not serialized
+        position = IsPartOfPosition.unmarshalEnum(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

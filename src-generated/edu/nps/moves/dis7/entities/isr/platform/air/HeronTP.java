@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bff34c6;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24223
+ * <p> Entity class <b><code>HeronTP</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HeronTP.createInstance()</code> or <code>new HeronTP()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: IAIHeronUAVFamily  = <code>5</code>; </li>
+ *     <li> Specific: HeronTP  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24223; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e8ac0e1. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class HeronTP extends EntityType
+public final class HeronTP extends EntityType
 {
     /** Default constructor */
     public HeronTP()
@@ -26,5 +40,11 @@ public class HeronTP extends EntityType
         setCategory((byte)50); // uid 23487, Unmanned
         setSubCategory((byte)5); // uid 24221, IAI Heron UAV Family
         setSpecific((byte)2); // uid 24223, Heron TP
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HeronTP createInstance()
+    {
+            return new HeronTP();
     }
 }

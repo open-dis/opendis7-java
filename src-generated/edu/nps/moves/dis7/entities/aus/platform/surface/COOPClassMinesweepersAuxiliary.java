@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79b4d0f;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17577
+ * <p> Entity class <b><code>COOPClassMinesweepersAuxiliary</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>COOPClassMinesweepersAuxiliary.createInstance()</code> or <code>new COOPClassMinesweepersAuxiliary()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: COOPClassMinesweepersAuxiliary  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17577; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2aaf7cc2. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class COOPClassMinesweepersAuxiliary extends EntityType
+public final class COOPClassMinesweepersAuxiliary extends EntityType
 {
     /** Default constructor */
     public COOPClassMinesweepersAuxiliary()
@@ -25,5 +39,11 @@ public class COOPClassMinesweepersAuxiliary extends EntityType
 
         setCategory((byte)8); // uid 17565, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 17577, COOP Class (Minesweepers - Auxiliary)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static COOPClassMinesweepersAuxiliary createInstance()
+    {
+            return new COOPClassMinesweepersAuxiliary();
     }
 }

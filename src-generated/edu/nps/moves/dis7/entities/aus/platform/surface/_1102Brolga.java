@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@668bc3d5;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17578
+ * <p> Entity class <b><code>_1102Brolga</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1102Brolga.createInstance()</code> or <code>new _1102Brolga()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: COOPClassMinesweepersAuxiliary  = <code>3</code>; </li>
+ *     <li> Specific: _1102Brolga  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17578; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ea6d14e. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _1102Brolga extends EntityType
+public final class _1102Brolga extends EntityType
 {
     /** Default constructor */
     public _1102Brolga()
@@ -26,5 +40,11 @@ public class _1102Brolga extends EntityType
         setCategory((byte)8); // uid 17565, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 17577, COOP Class (Minesweepers - Auxiliary)
         setSpecific((byte)1); // uid 17578, 1102 Brolga
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1102Brolga createInstance()
+    {
+            return new _1102Brolga();
     }
 }

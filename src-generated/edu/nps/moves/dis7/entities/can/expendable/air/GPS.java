@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19ac93d2;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 32655
+ * <p> Entity class <b><code>GPS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GPS.createInstance()</code> or <code>new GPS()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: SAR Buoy = <code>14</code>; </li>
+ *     <li> SubCategory: GPS  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32655; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@11c3ce6a. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SARBuoy
+ * @see SubCategory
+
  */
-public class GPS extends EntityType
+public final class GPS extends EntityType
 {
     /** Default constructor */
     public GPS()
@@ -25,5 +39,11 @@ public class GPS extends EntityType
 
         setCategory((byte)14); // uid 32654, SAR Buoy
         setSubCategory((byte)1); // uid 32655, GPS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GPS createInstance()
+    {
+            return new GPS();
     }
 }

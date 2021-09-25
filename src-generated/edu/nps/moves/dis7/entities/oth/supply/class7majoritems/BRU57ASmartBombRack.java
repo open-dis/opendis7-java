@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71b3ba5a;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30702
+ * <p> Entity class <b><code>BRU57ASmartBombRack</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BRU57ASmartBombRack.createInstance()</code> or <code>new BRU57ASmartBombRack()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
+ *     <li> SubCategory: AirtoGroundAGWeaponRack  = <code>1</code>; </li>
+ *     <li> Specific: BRU57ASmartBombRack  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30702; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14df5253. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see JRacksAdaptorsPylons
+ * @see SubCategory
+
  */
-public class BRU57ASmartBombRack extends EntityType
+public final class BRU57ASmartBombRack extends EntityType
 {
     /** Default constructor */
     public BRU57ASmartBombRack()
@@ -26,5 +40,11 @@ public class BRU57ASmartBombRack extends EntityType
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)1); // uid 30699, Air to Ground (A/G) Weapon Rack
         setSpecific((byte)3); // uid 30702, BRU-57A Smart Bomb Rack
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BRU57ASmartBombRack createInstance()
+    {
+            return new BRU57ASmartBombRack();
     }
 }

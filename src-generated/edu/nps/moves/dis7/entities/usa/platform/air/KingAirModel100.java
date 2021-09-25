@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1775c4e7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23793
+ * <p> Entity class <b><code>KingAirModel100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KingAirModel100.createInstance()</code> or <code>new KingAirModel100()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
+ *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
+ *     <li> Specific: BeechcraftKingAir  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23793; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@c1050f2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftSmallupto12500lbs5670kg
+ * @see SubCategory
+
  */
-public class KingAirModel100 extends EntityType
+public final class KingAirModel100 extends EntityType
 {
     /** Default constructor */
     public KingAirModel100()
@@ -27,5 +41,11 @@ public class KingAirModel100 extends EntityType
         setSubCategory((byte)22); // uid 23790, Twin Engine Turboprop
         setSpecific((byte)1); // uid 23791, Beechcraft King Air
         setExtra((byte)2); // uid 23793, King Air Model 100
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KingAirModel100 createInstance()
+    {
+            return new KingAirModel100();
     }
 }

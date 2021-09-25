@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -52,7 +51,7 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
    protected byte[]  systemSpecificData = new byte[0]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public TSPIPdu()
  {
     setPduType( DisPduType.TIME_SPACE_POSITION_INFORMATION );
@@ -68,17 +67,25 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += liveEntityId.getMarshalledSize();
+   if (liveEntityId != null)
+       marshalSize += liveEntityId.getMarshalledSize();
    marshalSize += 1;  // TSPIFlag
-   marshalSize += entityLocation.getMarshalledSize();
-   marshalSize += entityLinearVelocity.getMarshalledSize();
-   marshalSize += entityOrientation.getMarshalledSize();
-   marshalSize += positionError.getMarshalledSize();
-   marshalSize += orientationError.getMarshalledSize();
-   marshalSize += deadReckoningParameters.getMarshalledSize();
+   if (entityLocation != null)
+       marshalSize += entityLocation.getMarshalledSize();
+   if (entityLinearVelocity != null)
+       marshalSize += entityLinearVelocity.getMarshalledSize();
+   if (entityOrientation != null)
+       marshalSize += entityOrientation.getMarshalledSize();
+   if (positionError != null)
+       marshalSize += positionError.getMarshalledSize();
+   if (orientationError != null)
+       marshalSize += orientationError.getMarshalledSize();
+   if (deadReckoningParameters != null)
+       marshalSize += deadReckoningParameters.getMarshalledSize();
    marshalSize += 2;  // measuredSpeed
    marshalSize += 1;  // systemSpecificDataLength
-   marshalSize += systemSpecificData.length * 1;
+   if (systemSpecificData != null)
+       marshalSize += systemSpecificData.length * 1;
 
    return marshalSize;
 }
@@ -280,7 +287,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(measuredSpeed);
        dos.writeByte(systemSpecificData.length);
 
-       for(int idx = 0; idx < systemSpecificData.length; idx++)
+       for (int idx = 0; idx < systemSpecificData.length; idx++)
            dos.writeByte(systemSpecificData[idx]);
 
     }
@@ -318,7 +325,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         systemSpecificDataLength = (byte)dis.readUnsignedByte();
         uPosition += 1;
-        for(int idx = 0; idx < systemSpecificData.length; idx++)
+        for (int idx = 0; idx < systemSpecificData.length; idx++)
             systemSpecificData[idx] = dis.readByte();
         uPosition += (systemSpecificData.length * 1);
     }
@@ -351,7 +358,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)measuredSpeed);
    byteBuffer.put( (byte)systemSpecificData.length);
 
-   for(int idx = 0; idx < systemSpecificData.length; idx++)
+   for (int idx = 0; idx < systemSpecificData.length; idx++)
        byteBuffer.put((byte)systemSpecificData[idx]);
 
 }
@@ -369,18 +376,36 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    liveEntityId.unmarshal(byteBuffer);
-    TSPIFlag = (byte)(byteBuffer.get() & 0xFF);
-    entityLocation.unmarshal(byteBuffer);
-    entityLinearVelocity.unmarshal(byteBuffer);
-    entityOrientation.unmarshal(byteBuffer);
-    positionError.unmarshal(byteBuffer);
-    orientationError.unmarshal(byteBuffer);
-    deadReckoningParameters.unmarshal(byteBuffer);
-    measuredSpeed = (short)(byteBuffer.getShort() & 0xFFFF);
-    systemSpecificDataLength = (byte)(byteBuffer.get() & 0xFF);
-    for(int idx = 0; idx < systemSpecificData.length; idx++)
-        systemSpecificData[idx] = byteBuffer.get();
+    try
+    {
+        // attribute liveEntityId marked as not serialized
+        liveEntityId.unmarshal(byteBuffer);
+        // attribute TSPIFlag marked as not serialized
+        TSPIFlag = (byte)(byteBuffer.get() & 0xFF);
+        // attribute entityLocation marked as not serialized
+        entityLocation.unmarshal(byteBuffer);
+        // attribute entityLinearVelocity marked as not serialized
+        entityLinearVelocity.unmarshal(byteBuffer);
+        // attribute entityOrientation marked as not serialized
+        entityOrientation.unmarshal(byteBuffer);
+        // attribute positionError marked as not serialized
+        positionError.unmarshal(byteBuffer);
+        // attribute orientationError marked as not serialized
+        orientationError.unmarshal(byteBuffer);
+        // attribute deadReckoningParameters marked as not serialized
+        deadReckoningParameters.unmarshal(byteBuffer);
+        // attribute measuredSpeed marked as not serialized
+        measuredSpeed = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute systemSpecificDataLength marked as not serialized
+        systemSpecificDataLength = (byte)(byteBuffer.get() & 0xFF);
+        // attribute systemSpecificData marked as not serialized
+        for (int idx = 0; idx < systemSpecificData.length; idx++)
+            systemSpecificData[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -419,7 +444,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (deadReckoningParameters.equals( rhs.deadReckoningParameters) )) ivarsEqual = false;
      if( ! (measuredSpeed == rhs.measuredSpeed)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) ivarsEqual = false;
      }

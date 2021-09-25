@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3204e238;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 19240
+ * <p> Entity class <b><code>_791HaiShih</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_791HaiShih.createInstance()</code> or <code>new _791HaiShih()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: HaiShihexGuppyII  = <code>1</code>; </li>
+ *     <li> Specific: _791HaiShih  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19240; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@118ffcfd. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class _791HaiShih extends EntityType
+public final class _791HaiShih extends EntityType
 {
     /** Default constructor */
     public _791HaiShih()
@@ -26,5 +40,11 @@ public class _791HaiShih extends EntityType
         setCategory((byte)5); // uid 19238, SS (Conventional Attack-Torpedo Patrol)
         setSubCategory((byte)1); // uid 19239, Hai Shih (ex. Guppy II)
         setSpecific((byte)1); // uid 19240, 791 Hai Shih
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _791HaiShih createInstance()
+    {
+            return new _791HaiShih();
     }
 }

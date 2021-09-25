@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a225dd7;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24078
+ * <p> Entity class <b><code>EurocopterEC1351</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EurocopterEC1351.createInstance()</code> or <code>new EurocopterEC1351()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg) = <code>90</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineShroudedTailRotor  = <code>13</code>; </li>
+ *     <li> Specific: EurocopterEC135  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24078; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a00d9cf. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterSmallupto7000lbs3175kg
+ * @see SubCategory
+
  */
-public class EurocopterEC1351 extends EntityType
+public final class EurocopterEC1351 extends EntityType
 {
     /** Default constructor */
     public EurocopterEC1351()
@@ -26,5 +40,11 @@ public class EurocopterEC1351 extends EntityType
         setCategory((byte)90); // uid 24076, Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg)
         setSubCategory((byte)13); // uid 24077, Single Rotor, Turboshaft Engine, Shrouded Tail Rotor
         setSpecific((byte)1); // uid 24078, Eurocopter EC135
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EurocopterEC1351 createInstance()
+    {
+            return new EurocopterEC1351();
     }
 }

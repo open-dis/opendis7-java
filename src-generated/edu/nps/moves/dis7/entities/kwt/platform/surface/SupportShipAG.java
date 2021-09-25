@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7a11c4c7;
- * Country: Kuwait (KWT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17930
+ * <p> Entity class <b><code>SupportShipAG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SupportShipAG.createInstance()</code> or <code>new SupportShipAG()</code>. </p>
+ * <ul>
+ *     <li> Country: Kuwait (KWT) = <code>121</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: SupportShipAG  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17930; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@142eef62. </p>
+ * @see Country#KUWAIT_KWT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SupportShipAG extends EntityType
+public final class SupportShipAG extends EntityType
 {
     /** Default constructor */
     public SupportShipAG()
@@ -25,5 +39,11 @@ public class SupportShipAG extends EntityType
 
         setCategory((byte)16); // uid 17927, Auxiliary
         setSubCategory((byte)2); // uid 17930, Support Ship (AG)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SupportShipAG createInstance()
+    {
+            return new SupportShipAG();
     }
 }

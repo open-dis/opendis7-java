@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class SilentEntitySystem extends Object implements Serializable
    protected int[]  appearanceRecordList = new int[0]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SilentEntitySystem()
  {
  }
@@ -47,8 +46,10 @@ public int getMarshalledSize()
 
    marshalSize += 2;  // numberOfEntities
    marshalSize += 2;  // numberOfAppearanceRecords
-   marshalSize += entityType.getMarshalledSize();
-   marshalSize += appearanceRecordList.length * 4;
+   if (entityType != null)
+       marshalSize += entityType.getMarshalledSize();
+   if (appearanceRecordList != null)
+       marshalSize += appearanceRecordList.length * 4;
 
    return marshalSize;
 }
@@ -123,7 +124,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(appearanceRecordList.length);
        entityType.marshal(dos);
 
-       for(int idx = 0; idx < appearanceRecordList.length; idx++)
+       for (int idx = 0; idx < appearanceRecordList.length; idx++)
            dos.writeInt(appearanceRecordList[idx]);
 
     }
@@ -151,7 +152,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         numberOfAppearanceRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
         uPosition += entityType.unmarshal(dis);
-        for(int idx = 0; idx < appearanceRecordList.length; idx++)
+        for (int idx = 0; idx < appearanceRecordList.length; idx++)
             appearanceRecordList[idx] = dis.readInt();
         uPosition += (appearanceRecordList.length * 4);
     }
@@ -176,7 +177,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)appearanceRecordList.length);
    entityType.marshal(byteBuffer);
 
-   for(int idx = 0; idx < appearanceRecordList.length; idx++)
+   for (int idx = 0; idx < appearanceRecordList.length; idx++)
        byteBuffer.putInt((int)appearanceRecordList[idx]);
 
 }
@@ -192,11 +193,22 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfEntities = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfAppearanceRecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    entityType.unmarshal(byteBuffer);
-    for(int idx = 0; idx < appearanceRecordList.length; idx++)
-        appearanceRecordList[idx] = byteBuffer.getInt();
+    try
+    {
+        // attribute numberOfEntities marked as not serialized
+        numberOfEntities = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfAppearanceRecords marked as not serialized
+        numberOfAppearanceRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute entityType marked as not serialized
+        entityType.unmarshal(byteBuffer);
+        // attribute appearanceRecordList marked as not serialized
+        for (int idx = 0; idx < appearanceRecordList.length; idx++)
+            appearanceRecordList[idx] = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -233,7 +245,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (numberOfEntities == rhs.numberOfEntities)) ivarsEqual = false;
      if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(appearanceRecordList[idx] == rhs.appearanceRecordList[idx])) ivarsEqual = false;
      }

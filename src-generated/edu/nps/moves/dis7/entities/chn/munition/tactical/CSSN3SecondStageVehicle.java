@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bfc79cb;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32456
+ * <p> Entity class <b><code>CSSN3SecondStageVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSSN3SecondStageVehicle.createInstance()</code> or <code>new CSSN3SecondStageVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSSN3JL1  = <code>43</code>; </li>
+ *     <li> Specific: CSSN3SecondStageVehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32456; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a914089. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSSN3SecondStageVehicle extends EntityType
+public final class CSSN3SecondStageVehicle extends EntityType
 {
     /** Default constructor */
     public CSSN3SecondStageVehicle()
@@ -26,5 +40,11 @@ public class CSSN3SecondStageVehicle extends EntityType
         setCategory((byte)1); // uid 32412, Guided
         setSubCategory((byte)43); // uid 32455, CSS-N-3 (JL-1)
         setSpecific((byte)1); // uid 32456, CSS-N-3 Second Stage Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSSN3SecondStageVehicle createInstance()
+    {
+            return new CSSN3SecondStageVehicle();
     }
 }

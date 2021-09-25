@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@350da119;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29119
+ * <p> Entity class <b><code>C802AKYJ83K</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C802AKYJ83K.createInstance()</code> or <code>new C802AKYJ83K()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: YJ2C802CSSN8Saccade  = <code>11</code>; </li>
+ *     <li> Specific: C802AKYJ83K  = <code>5</code>; </li>
+ *     <li> Entity type uid: 29119; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@585513a8. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class C802AKYJ83K extends EntityType
+public final class C802AKYJ83K extends EntityType
 {
     /** Default constructor */
     public C802AKYJ83K()
@@ -26,5 +40,11 @@ public class C802AKYJ83K extends EntityType
         setCategory((byte)1); // uid 21409, Guided
         setSubCategory((byte)11); // uid 21431, YJ-2/C-802/CSS-N-8 Saccade
         setSpecific((byte)5); // uid 29119, C-802AK / YJ-83K
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C802AKYJ83K createInstance()
+    {
+            return new C802AKYJ83K();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@526b2f3e;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15230
+ * <p> Entity class <b><code>F236Montrose</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F236Montrose.createInstance()</code> or <code>new F236Montrose()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: DukeclassType23  = <code>1</code>; </li>
+ *     <li> Specific: F236Montrose  = <code>7</code>; </li>
+ *     <li> Entity type uid: 15230; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5853ca50. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigate
+ * @see SubCategory
+
  */
-public class F236Montrose extends EntityType
+public final class F236Montrose extends EntityType
 {
     /** Default constructor */
     public F236Montrose()
@@ -26,5 +40,11 @@ public class F236Montrose extends EntityType
         setCategory((byte)6); // uid 15222, Guided-missile Frigate
         setSubCategory((byte)1); // uid 15223, Duke class (Type 23)
         setSpecific((byte)7); // uid 15230, F 236 Montrose
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F236Montrose createInstance()
+    {
+            return new F236Montrose();
     }
 }

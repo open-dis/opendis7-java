@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37cd92d6;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30509
+ * <p> Entity class <b><code>F29Jebat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F29Jebat.createInstance()</code> or <code>new F29Jebat()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: LekiuClassTypeF2000Frigate  = <code>2</code>; </li>
+ *     <li> Specific: F29Jebat  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30509; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4da855dd. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F29Jebat extends EntityType
+public final class F29Jebat extends EntityType
 {
     /** Default constructor */
     public F29Jebat()
@@ -26,5 +40,11 @@ public class F29Jebat extends EntityType
         setCategory((byte)6); // uid 27399, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 30508, Lekiu Class (Type F2000 Frigate)
         setSpecific((byte)1); // uid 30509, F29 Jebat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F29Jebat createInstance()
+    {
+            return new F29Jebat();
     }
 }

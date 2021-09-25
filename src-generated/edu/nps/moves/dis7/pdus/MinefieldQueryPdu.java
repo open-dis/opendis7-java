@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -49,7 +48,7 @@ public class MinefieldQueryPdu extends MinefieldFamilyPdu implements Serializabl
    protected List< MinefieldSensorType > sensorTypes = new ArrayList< MinefieldSensorType >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MinefieldQueryPdu()
  {
     setPduType( DisPduType.MINEFIELD_QUERY );
@@ -65,24 +64,30 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += minefieldID.getMarshalledSize();
-   marshalSize += requestingEntityID.getMarshalledSize();
+   if (minefieldID != null)
+       marshalSize += minefieldID.getMarshalledSize();
+   if (requestingEntityID != null)
+       marshalSize += requestingEntityID.getMarshalledSize();
    marshalSize += 1;  // requestID
    marshalSize += 1;  // numberOfPerimeterPoints
    marshalSize += 1;  // padding
    marshalSize += 1;  // numberOfSensorTypes
-   marshalSize += dataFilter.getMarshalledSize();
-   marshalSize += requestedMineType.getMarshalledSize();
-   for(int idx=0; idx < requestedPerimeterPoints.size(); idx++)
-   {
-        Vector2Float listElement = requestedPerimeterPoints.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < sensorTypes.size(); idx++)
-   {
-        MinefieldSensorType listElement = sensorTypes.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (dataFilter != null)
+       marshalSize += dataFilter.getMarshalledSize();
+   if (requestedMineType != null)
+       marshalSize += requestedMineType.getMarshalledSize();
+   if (requestedPerimeterPoints != null)
+       for (int idx=0; idx < requestedPerimeterPoints.size(); idx++)
+       {
+            Vector2Float listElement = requestedPerimeterPoints.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (sensorTypes != null)
+       for (int idx=0; idx < sensorTypes.size(); idx++)
+       {
+            MinefieldSensorType listElement = sensorTypes.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -250,14 +255,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dataFilter.marshal(dos);
        requestedMineType.marshal(dos);
 
-       for(int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
+       for (int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
        {
             Vector2Float aVector2Float = requestedPerimeterPoints.get(idx);
             aVector2Float.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < sensorTypes.size(); idx++)
+       for (int idx = 0; idx < sensorTypes.size(); idx++)
        {
             MinefieldSensorType aMinefieldSensorType = sensorTypes.get(idx);
             aMinefieldSensorType.marshal(dos);
@@ -297,14 +302,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         uPosition += dataFilter.unmarshal(dis);
         uPosition += requestedMineType.unmarshal(dis);
-        for(int idx = 0; idx < numberOfPerimeterPoints; idx++)
+        for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
             Vector2Float anX = new Vector2Float();
             uPosition += anX.unmarshal(dis);
             requestedPerimeterPoints.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfSensorTypes; idx++)
+        for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
             MinefieldSensorType anX = new MinefieldSensorType();
             uPosition += anX.unmarshal(dis);
@@ -339,14 +344,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    dataFilter.marshal(byteBuffer);
    requestedMineType.marshal(byteBuffer);
 
-   for(int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
+   for (int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
    {
         Vector2Float aVector2Float = requestedPerimeterPoints.get(idx);
         aVector2Float.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < sensorTypes.size(); idx++)
+   for (int idx = 0; idx < sensorTypes.size(); idx++)
    {
         MinefieldSensorType aMinefieldSensorType = sensorTypes.get(idx);
         aMinefieldSensorType.marshal(byteBuffer);
@@ -367,28 +372,45 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    minefieldID.unmarshal(byteBuffer);
-    requestingEntityID.unmarshal(byteBuffer);
-    requestID = (byte)(byteBuffer.get() & 0xFF);
-    numberOfPerimeterPoints = (byte)(byteBuffer.get() & 0xFF);
-    padding = (byte)(byteBuffer.get() & 0xFF);
-    numberOfSensorTypes = (byte)(byteBuffer.get() & 0xFF);
-    dataFilter.unmarshal(byteBuffer);
-    requestedMineType.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfPerimeterPoints; idx++)
+    try
     {
-    Vector2Float anX = new Vector2Float();
-    anX.unmarshal(byteBuffer);
-    requestedPerimeterPoints.add(anX);
-    }
+        // attribute minefieldID marked as not serialized
+        minefieldID.unmarshal(byteBuffer);
+        // attribute requestingEntityID marked as not serialized
+        requestingEntityID.unmarshal(byteBuffer);
+        // attribute requestID marked as not serialized
+        requestID = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfPerimeterPoints marked as not serialized
+        numberOfPerimeterPoints = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfSensorTypes marked as not serialized
+        numberOfSensorTypes = (byte)(byteBuffer.get() & 0xFF);
+        // attribute dataFilter marked as not serialized
+        dataFilter.unmarshal(byteBuffer);
+        // attribute requestedMineType marked as not serialized
+        requestedMineType.unmarshal(byteBuffer);
+        // attribute requestedPerimeterPoints marked as not serialized
+        for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
+        {
+        Vector2Float anX = new Vector2Float();
+        anX.unmarshal(byteBuffer);
+        requestedPerimeterPoints.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfSensorTypes; idx++)
+        // attribute sensorTypes marked as not serialized
+        for (int idx = 0; idx < numberOfSensorTypes; idx++)
+        {
+        MinefieldSensorType anX = new MinefieldSensorType();
+        anX.unmarshal(byteBuffer);
+        sensorTypes.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    MinefieldSensorType anX = new MinefieldSensorType();
-    anX.unmarshal(byteBuffer);
-    sensorTypes.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -424,11 +446,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (dataFilter.equals( rhs.dataFilter) )) ivarsEqual = false;
      if( ! (requestedMineType.equals( rhs.requestedMineType) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
+     for (int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
         if( ! ( requestedPerimeterPoints.get(idx).equals(rhs.requestedPerimeterPoints.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < sensorTypes.size(); idx++)
+     for (int idx = 0; idx < sensorTypes.size(); idx++)
         if( ! ( sensorTypes.get(idx).equals(rhs.sensorTypes.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ee5b2d9;
- * Country: Spain (ESP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19030
+ * <p> Entity class <b><code>A04MartinPosadillo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A04MartinPosadillo.createInstance()</code> or <code>new A04MartinPosadillo()</code>. </p>
+ * <ul>
+ *     <li> Country: Spain (ESP) = <code>198</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: TransportShipAP  = <code>2</code>; </li>
+ *     <li> Specific: A04MartinPosadillo  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19030; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b22d8a1. </p>
+ * @see Country#SPAIN_ESP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A04MartinPosadillo extends EntityType
+public final class A04MartinPosadillo extends EntityType
 {
     /** Default constructor */
     public A04MartinPosadillo()
@@ -26,5 +40,11 @@ public class A04MartinPosadillo extends EntityType
         setCategory((byte)16); // uid 19026, Auxiliary
         setSubCategory((byte)2); // uid 19029, Transport Ship (AP)
         setSpecific((byte)1); // uid 19030, A04 Martin Posadillo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A04MartinPosadillo createInstance()
+    {
+            return new A04MartinPosadillo();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class Expendable extends Object implements Serializable
    protected byte  padding = (byte)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Expendable()
  {
  }
@@ -48,10 +47,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += expendable.getMarshalledSize();
+   if (expendable != null)
+       marshalSize += expendable.getMarshalledSize();
    marshalSize += 4;  // station
    marshalSize += 2;  // quantity
-   marshalSize += expendableStatus.getMarshalledSize();
+   if (expendableStatus != null)
+       marshalSize += expendableStatus.getMarshalledSize();
    marshalSize += 1;  // padding
 
    return marshalSize;
@@ -232,11 +233,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    expendable.unmarshal(byteBuffer);
-    station = byteBuffer.getInt();
-    quantity = (short)(byteBuffer.getShort() & 0xFFFF);
-    expendableStatus = MunitionExpendableStatus.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute expendable marked as not serialized
+        expendable.unmarshal(byteBuffer);
+        // attribute station marked as not serialized
+        station = byteBuffer.getInt();
+        // attribute quantity marked as not serialized
+        quantity = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute expendableStatus marked as not serialized
+        expendableStatus = MunitionExpendableStatus.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

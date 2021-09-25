@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a78dacd;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30873
+ * <p> Entity class <b><code>GenericLiferaftOpen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericLiferaftOpen.createInstance()</code> or <code>new GenericLiferaftOpen()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Life-Saving Equipment = <code>101</code>; </li>
+ *     <li> SubCategory: GenericLiferaft  = <code>2</code>; </li>
+ *     <li> Specific: GenericLiferaftOpen  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30873; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6826c41e. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LifeSavingEquipment
+ * @see SubCategory
+
  */
-public class GenericLiferaftOpen extends EntityType
+public final class GenericLiferaftOpen extends EntityType
 {
     /** Default constructor */
     public GenericLiferaftOpen()
@@ -26,5 +40,11 @@ public class GenericLiferaftOpen extends EntityType
         setCategory((byte)101); // uid 30867, Life-Saving Equipment
         setSubCategory((byte)2); // uid 30872, Generic Liferaft
         setSpecific((byte)1); // uid 30873, Generic Liferaft Open
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericLiferaftOpen createInstance()
+    {
+            return new GenericLiferaftOpen();
     }
 }

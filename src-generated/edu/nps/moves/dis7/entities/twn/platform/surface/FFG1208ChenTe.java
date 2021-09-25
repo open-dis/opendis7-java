@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@517a2b0;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19155
+ * <p> Entity class <b><code>FFG1208ChenTe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFG1208ChenTe.createInstance()</code> or <code>new FFG1208ChenTe()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: KangDingLaFayetteClass  = <code>2</code>; </li>
+ *     <li> Specific: FFG1208ChenTe  = <code>6</code>; </li>
+ *     <li> Entity type uid: 19155; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12fcc71f. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class FFG1208ChenTe extends EntityType
+public final class FFG1208ChenTe extends EntityType
 {
     /** Default constructor */
     public FFG1208ChenTe()
@@ -26,5 +40,11 @@ public class FFG1208ChenTe extends EntityType
         setCategory((byte)6); // uid 19140, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 19149, Kang Ding (La Fayette) Class
         setSpecific((byte)6); // uid 19155, FFG 1208 Chen Te
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFG1208ChenTe createInstance()
+    {
+            return new FFG1208ChenTe();
     }
 }

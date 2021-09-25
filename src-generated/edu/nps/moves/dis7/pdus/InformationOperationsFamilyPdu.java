@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -13,6 +12,7 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
+ * Information operations (IO) are the integrated employment of electronic warfare (EW), computer network operations (CNO), psychological operations (PSYOP), military deception (MILDEC), and operations security (OPSEC), along with specific supporting capabilities, to influence, disrupt, corrupt, or otherwise affect enemy information and decision making while protecting friendly information operations.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
 public abstract class InformationOperationsFamilyPdu extends PduBase implements Serializable
@@ -21,7 +21,7 @@ public abstract class InformationOperationsFamilyPdu extends PduBase implements 
    protected EntityID  originatingSimID = new EntityID(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public InformationOperationsFamilyPdu()
  {
     setProtocolFamily( DISProtocolFamily.INFORMATION_OPERATIONS );
@@ -37,7 +37,8 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += originatingSimID.getMarshalledSize();
+   if (originatingSimID != null)
+       marshalSize += originatingSimID.getMarshalledSize();
 
    return marshalSize;
 }
@@ -129,7 +130,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    originatingSimID.unmarshal(byteBuffer);
+    try
+    {
+        // attribute originatingSimID marked as not serialized
+        originatingSimID.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

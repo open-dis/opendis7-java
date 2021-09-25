@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4fa8bebb;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 23590
+ * <p> Entity class <b><code>WeaponsStack20CountAKRPKRPG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WeaponsStack20CountAKRPKRPG.createInstance()</code> or <code>new WeaponsStack20CountAKRPKRPG()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Obstacle = <code>5</code>; </li>
+ *     <li> SubCategory: WeaponsStack20CountAKRPKRPG  = <code>24</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23590; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@24a8e40d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Obstacle
+ * @see SubCategory
+
  */
-public class WeaponsStack20CountAKRPKRPG extends EntityType
+public final class WeaponsStack20CountAKRPKRPG extends EntityType
 {
     /** Default constructor */
     public WeaponsStack20CountAKRPKRPG()
@@ -25,5 +39,11 @@ public class WeaponsStack20CountAKRPKRPG extends EntityType
 
         setCategory((byte)5); // uid 21973, Obstacle
         setSubCategory((byte)24); // uid 23590, Weapons Stack, 20 Count, AK/RPK/RPG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WeaponsStack20CountAKRPKRPG createInstance()
+    {
+            return new WeaponsStack20CountAKRPKRPG();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a59ca5e;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16055
+ * <p> Entity class <b><code>A615Loire</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A615Loire.createInstance()</code> or <code>new A615Loire()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Rhinclassdepotandsupportships  = <code>4</code>; </li>
+ *     <li> Specific: A615Loire  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16055; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c60d6e9. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A615Loire extends EntityType
+public final class A615Loire extends EntityType
 {
     /** Default constructor */
     public A615Loire()
@@ -26,5 +40,11 @@ public class A615Loire extends EntityType
         setCategory((byte)16); // uid 16040, Auxiliary
         setSubCategory((byte)4); // uid 16054, Rhin class (depot and support ships)
         setSpecific((byte)1); // uid 16055, A 615 Loire
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A615Loire createInstance()
+    {
+            return new A615Loire();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@66f0548d;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25556
+ * <p> Entity class <b><code>BRAVEFastLandingCraftforEquipmentandPersonnelFCEP</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BRAVEFastLandingCraftforEquipmentandPersonnelFCEP.createInstance()</code> or <code>new BRAVEFastLandingCraftforEquipmentandPersonnelFCEP()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: BRAVEFastLandingCraftforEquipmentandPersonnelFCEP  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25556; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5c7668ba. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class BRAVEFastLandingCraftforEquipmentandPersonnelFCEP extends EntityType
+public final class BRAVEFastLandingCraftforEquipmentandPersonnelFCEP extends EntityType
 {
     /** Default constructor */
     public BRAVEFastLandingCraftforEquipmentandPersonnelFCEP()
@@ -25,5 +39,11 @@ public class BRAVEFastLandingCraftforEquipmentandPersonnelFCEP extends EntityTyp
 
         setCategory((byte)11); // uid 25555, Landing Craft
         setSubCategory((byte)1); // uid 25556, BRAVE Fast Landing Craft for Equipment and Personnel (FCEP)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BRAVEFastLandingCraftforEquipmentandPersonnelFCEP createInstance()
+    {
+            return new BRAVEFastLandingCraftforEquipmentandPersonnelFCEP();
     }
 }

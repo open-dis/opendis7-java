@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@aeab9a1;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18211
+ * <p> Entity class <b><code>_501Eilat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_501Eilat.createInstance()</code> or <code>new _501Eilat()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: EilatSaar5ClassCorvette  = <code>1</code>; </li>
+ *     <li> Specific: _501Eilat  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18211; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@315f43d5. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _501Eilat extends EntityType
+public final class _501Eilat extends EntityType
 {
     /** Default constructor */
     public _501Eilat()
@@ -26,5 +40,11 @@ public class _501Eilat extends EntityType
         setCategory((byte)6); // uid 18209, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 18210, Eilat (Saar 5) Class (Corvette)
         setSpecific((byte)1); // uid 18211, 501 Eilat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _501Eilat createInstance()
+    {
+            return new _501Eilat();
     }
 }

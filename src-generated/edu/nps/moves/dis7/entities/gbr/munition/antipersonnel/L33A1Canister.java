@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4af12a63;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 24017
+ * <p> Entity class <b><code>L33A1Canister</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L33A1Canister.createInstance()</code> or <code>new L33A1Canister()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _76mm  = <code>3</code>; </li>
+ *     <li> Specific: L33A1Canister  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24017; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fca3eb5. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class L33A1Canister extends EntityType
+public final class L33A1Canister extends EntityType
 {
     /** Default constructor */
     public L33A1Canister()
@@ -26,5 +40,11 @@ public class L33A1Canister extends EntityType
         setCategory((byte)2); // uid 21010, Ballistic
         setSubCategory((byte)3); // uid 24016, 76 mm
         setSpecific((byte)1); // uid 24017, L33A1 Canister
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L33A1Canister createInstance()
+    {
+            return new L33A1Canister();
     }
 }

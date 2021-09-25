@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@15f861ee;
- * Country: Other;
- * Entity kind: Environmental;
- * Domain: SURFACE;
- *
- * Entity type uid: 25215
+ * <p> Entity class <b><code>Log</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Log.createInstance()</code> or <code>new Log()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Environmental = <code>4</code>; </li>
+ *     <li> Category: Log = <code>8</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25215; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1a6dc5ea. </p>
+ * @see Country#OTHER
+ * @see EntityKind#ENVIRONMENTAL
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Log
+
  */
-public class Log extends EntityType
+public final class Log extends EntityType
 {
     /** Default constructor */
     public Log()
@@ -24,5 +37,11 @@ public class Log extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)8); // uid 25215, Log
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Log createInstance()
+    {
+            return new Log();
     }
 }

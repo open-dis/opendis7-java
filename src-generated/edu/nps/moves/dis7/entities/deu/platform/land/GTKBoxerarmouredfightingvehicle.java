@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2bdd8394;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22743
+ * <p> Entity class <b><code>GTKBoxerarmouredfightingvehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GTKBoxerarmouredfightingvehicle.createInstance()</code> or <code>new GTKBoxerarmouredfightingvehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: GTKBoxerarmouredfightingvehicle  = <code>10</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22743; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2584b82d. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class GTKBoxerarmouredfightingvehicle extends EntityType
+public final class GTKBoxerarmouredfightingvehicle extends EntityType
 {
     /** Default constructor */
     public GTKBoxerarmouredfightingvehicle()
@@ -25,5 +39,11 @@ public class GTKBoxerarmouredfightingvehicle extends EntityType
 
         setCategory((byte)3); // uid 16263, Armored Utility Vehicle
         setSubCategory((byte)10); // uid 22743, GTK Boxer armoured fighting vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GTKBoxerarmouredfightingvehicle createInstance()
+    {
+            return new GTKBoxerarmouredfightingvehicle();
     }
 }

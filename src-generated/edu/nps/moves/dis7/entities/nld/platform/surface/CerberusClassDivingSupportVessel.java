@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1fe8d51b;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28274
+ * <p> Entity class <b><code>CerberusClassDivingSupportVessel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CerberusClassDivingSupportVessel.createInstance()</code> or <code>new CerberusClassDivingSupportVessel()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: CerberusClassDivingSupportVessel  = <code>10</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28274; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b1bb3ab. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class CerberusClassDivingSupportVessel extends EntityType
+public final class CerberusClassDivingSupportVessel extends EntityType
 {
     /** Default constructor */
     public CerberusClassDivingSupportVessel()
@@ -25,5 +39,11 @@ public class CerberusClassDivingSupportVessel extends EntityType
 
         setCategory((byte)16); // uid 18942, Auxiliary
         setSubCategory((byte)10); // uid 28274, Cerberus Class (Diving Support Vessel)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CerberusClassDivingSupportVessel createInstance()
+    {
+            return new CerberusClassDivingSupportVessel();
     }
 }

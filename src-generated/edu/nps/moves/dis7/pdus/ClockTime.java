@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class ClockTime extends Object implements Serializable
    protected int  timePastHour;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ClockTime()
  {
  }
@@ -147,8 +146,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    hour = byteBuffer.getInt();
-    timePastHour = byteBuffer.getInt();
+    try
+    {
+        // attribute hour marked as not serialized
+        hour = byteBuffer.getInt();
+        // attribute timePastHour marked as not serialized
+        timePastHour = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

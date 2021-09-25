@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a30d1e6;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30979
+ * <p> Entity class <b><code>WGGeorge817949</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WGGeorge817949.createInstance()</code> or <code>new WGGeorge817949()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Arunclasslifeboat  = <code>2</code>; </li>
+ *     <li> Specific: WGGeorge817949  = <code>8</code>; </li>
+ *     <li> Entity type uid: 30979; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3043fe0e. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class WGGeorge817949 extends EntityType
+public final class WGGeorge817949 extends EntityType
 {
     /** Default constructor */
     public WGGeorge817949()
@@ -26,5 +40,11 @@ public class WGGeorge817949 extends EntityType
         setCategory((byte)63); // uid 26272, Coast Guard Boats
         setSubCategory((byte)2); // uid 30971, Arun-class lifeboat
         setSpecific((byte)8); // uid 30979, W.G. George (817949)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WGGeorge817949 createInstance()
+    {
+            return new WGGeorge817949();
     }
 }

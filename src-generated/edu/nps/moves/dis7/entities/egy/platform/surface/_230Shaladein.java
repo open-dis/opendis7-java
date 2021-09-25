@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b02881e;
- * Country: Egypt (EGY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27495
+ * <p> Entity class <b><code>_230Shaladein</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_230Shaladein.createInstance()</code> or <code>new _230Shaladein()</code>. </p>
+ * <ul>
+ *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LuneburgClassType701SupportShips  = <code>1</code>; </li>
+ *     <li> Specific: _230Shaladein  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27495; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ff4931d. </p>
+ * @see Country#COMMENT_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _230Shaladein extends EntityType
+public final class _230Shaladein extends EntityType
 {
     /** Default constructor */
     public _230Shaladein()
@@ -26,5 +40,11 @@ public class _230Shaladein extends EntityType
         setCategory((byte)16); // uid 27493, Auxiliary
         setSubCategory((byte)1); // uid 27494, Luneburg Class (Type 701, Support Ships)
         setSpecific((byte)1); // uid 27495, 230 Shaladein
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _230Shaladein createInstance()
+    {
+            return new _230Shaladein();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@629ae7e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23827
+ * <p> Entity class <b><code>YakovlevYak42Clobber</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YakovlevYak42Clobber.createInstance()</code> or <code>new YakovlevYak42Clobber()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TriJet  = <code>33</code>; </li>
+ *     <li> Specific: YakovlevYak42Clobber  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23827; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6edcd0d8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class YakovlevYak42Clobber extends EntityType
+public final class YakovlevYak42Clobber extends EntityType
 {
     /** Default constructor */
     public YakovlevYak42Clobber()
@@ -26,5 +40,11 @@ public class YakovlevYak42Clobber extends EntityType
         setCategory((byte)87); // uid 23823, Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg)
         setSubCategory((byte)33); // uid 23824, Tri Jet
         setSpecific((byte)2); // uid 23827, Yakovlev Yak-42 Clobber
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YakovlevYak42Clobber createInstance()
+    {
+            return new YakovlevYak42Clobber();
     }
 }

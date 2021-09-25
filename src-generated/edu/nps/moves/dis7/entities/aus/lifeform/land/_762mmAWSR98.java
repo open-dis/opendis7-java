@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12214f2f;
- * Country: Australia (AUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 31484
+ * <p> Entity class <b><code>_762mmAWSR98</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_762mmAWSR98.createInstance()</code> or <code>new _762mmAWSR98()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Australian Army = <code>11</code>; </li>
+ *     <li> SubCategory: SniperRifles  = <code>15</code>; </li>
+ *     <li> Specific: _762mmAWSR98  = <code>43</code>; </li>
+ *     <li> Entity type uid: 31484; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7198ab9a. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AustralianArmy
+ * @see SubCategory
+
  */
-public class _762mmAWSR98 extends EntityType
+public final class _762mmAWSR98 extends EntityType
 {
     /** Default constructor */
     public _762mmAWSR98()
@@ -26,5 +40,11 @@ public class _762mmAWSR98 extends EntityType
         setCategory((byte)11); // uid 31462, Australian Army
         setSubCategory((byte)15); // uid 31482, Sniper Rifles
         setSpecific((byte)43); // uid 31484, 7.62mm AW SR-98
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _762mmAWSR98 createInstance()
+    {
+            return new _762mmAWSR98();
     }
 }

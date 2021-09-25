@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bb11784;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26268
+ * <p> Entity class <b><code>E7AWedgetail</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>E7AWedgetail.createInstance()</code> or <code>new E7AWedgetail()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: Boeing7377ESAEWC  = <code>1</code>; </li>
+ *     <li> Specific: E7AWedgetail  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26268; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1996cd68. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class E7AWedgetail extends EntityType
+public final class E7AWedgetail extends EntityType
 {
     /** Default constructor */
     public E7AWedgetail()
@@ -26,5 +40,11 @@ public class E7AWedgetail extends EntityType
         setCategory((byte)8); // uid 26266, Surveillance/C2 (Airborne Early Warning)
         setSubCategory((byte)1); // uid 26267, Boeing 737-7ES AEW&C
         setSpecific((byte)1); // uid 26268, E-7A Wedgetail
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static E7AWedgetail createInstance()
+    {
+            return new E7AWedgetail();
     }
 }

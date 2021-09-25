@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c77ba8f;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24907
+ * <p> Entity class <b><code>MotorcoachScaniaIrizar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MotorcoachScaniaIrizar.createInstance()</code> or <code>new MotorcoachScaniaIrizar()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bus = <code>82</code>; </li>
+ *     <li> SubCategory: Motorcoach  = <code>10</code>; </li>
+ *     <li> Specific: MotorcoachScaniaIrizar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24907; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7718a40f. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bus
+ * @see SubCategory
+
  */
-public class MotorcoachScaniaIrizar extends EntityType
+public final class MotorcoachScaniaIrizar extends EntityType
 {
     /** Default constructor */
     public MotorcoachScaniaIrizar()
@@ -26,5 +40,11 @@ public class MotorcoachScaniaIrizar extends EntityType
         setCategory((byte)82); // uid 24905, Bus
         setSubCategory((byte)10); // uid 24906, Motorcoach
         setSpecific((byte)1); // uid 24907, Motorcoach, Scania-Irizar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MotorcoachScaniaIrizar createInstance()
+    {
+            return new MotorcoachScaniaIrizar();
     }
 }

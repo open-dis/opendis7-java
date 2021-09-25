@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72ade7e3;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28050
+ * <p> Entity class <b><code>SAMOCCommsUnit</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SAMOCCommsUnit.createInstance()</code> or <code>new SAMOCCommsUnit()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Missile Defense Facility = <code>38</code>; </li>
+ *     <li> SubCategory: SAMOC  = <code>2</code>; </li>
+ *     <li> Specific: SAMOCCommsUnit  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28050; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@376a0d86. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MissileDefenseFacility
+ * @see SubCategory
+
  */
-public class SAMOCCommsUnit extends EntityType
+public final class SAMOCCommsUnit extends EntityType
 {
     /** Default constructor */
     public SAMOCCommsUnit()
@@ -26,5 +40,11 @@ public class SAMOCCommsUnit extends EntityType
         setCategory((byte)38); // uid 28047, Missile Defense Facility
         setSubCategory((byte)2); // uid 28048, SAMOC
         setSpecific((byte)2); // uid 28050, SAMOC Comms-Unit
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SAMOCCommsUnit createInstance()
+    {
+            return new SAMOCCommsUnit();
     }
 }

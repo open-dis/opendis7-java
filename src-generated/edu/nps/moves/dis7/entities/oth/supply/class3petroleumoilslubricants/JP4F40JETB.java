@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b7b0b57;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_3_PETROLEUM_OILS_LUBRICANTS;
- *
- * Entity type uid: 30675
+ * <p> Entity class <b><code>JP4F40JETB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JP4F40JETB.createInstance()</code> or <code>new JP4F40JETB()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_3_PETROLEUM_OILS_LUBRICANTS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: A - POL for Air Vehicles = <code>2</code>; </li>
+ *     <li> SubCategory: JP4F40JETB  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30675; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2520aa05. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see APOLforAirVehicles
+ * @see SubCategory
+
  */
-public class JP4F40JETB extends EntityType
+public final class JP4F40JETB extends EntityType
 {
     /** Default constructor */
     public JP4F40JETB()
@@ -25,5 +39,11 @@ public class JP4F40JETB extends EntityType
 
         setCategory((byte)2); // uid 30674, A - POL for Air Vehicles
         setSubCategory((byte)1); // uid 30675, JP-4 (F-40/JET B)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JP4F40JETB createInstance()
+    {
+            return new JP4F40JETB();
     }
 }

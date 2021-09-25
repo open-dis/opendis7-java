@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@166e5a6d;
- * Country: Russia (RUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32153
+ * <p> Entity class <b><code>_40mmPSRL1RPG7USA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_40mmPSRL1RPG7USA.createInstance()</code> or <code>new _40mmPSRL1RPG7USA()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Army = <code>11</code>; </li>
+ *     <li> SubCategory: AntiTankRockets  = <code>45</code>; </li>
+ *     <li> Specific: _40mmPSRL1RPG7USA  = <code>111</code>; </li>
+ *     <li> Entity type uid: 32153; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6eaa6b0c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Army
+ * @see SubCategory
+
  */
-public class _40mmPSRL1RPG7USA extends EntityType
+public final class _40mmPSRL1RPG7USA extends EntityType
 {
     /** Default constructor */
     public _40mmPSRL1RPG7USA()
@@ -26,5 +40,11 @@ public class _40mmPSRL1RPG7USA extends EntityType
         setCategory((byte)11); // uid 32132, Army
         setSubCategory((byte)45); // uid 32145, Anti-Tank Rockets
         setSpecific((byte)111); // uid 32153, 40mm PSRL-1 (RPG-7USA)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _40mmPSRL1RPG7USA createInstance()
+    {
+            return new _40mmPSRL1RPG7USA();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f07b12c;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 18183
+ * <p> Entity class <b><code>C7</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C7.createInstance()</code> or <code>new C7()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: IsraelAircraftIndustriesC7Kifr  = <code>2</code>; </li>
+ *     <li> Specific: C7  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18183; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58ffcbd7. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class C7 extends EntityType
+public final class C7 extends EntityType
 {
     /** Default constructor */
     public C7()
@@ -26,5 +40,11 @@ public class C7 extends EntityType
         setCategory((byte)1); // uid 18180, Fighter/Air Defense
         setSubCategory((byte)2); // uid 18182, Israel Aircraft Industries C-7 Kifr
         setSpecific((byte)1); // uid 18183, C-7
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C7 createInstance()
+    {
+            return new C7();
     }
 }

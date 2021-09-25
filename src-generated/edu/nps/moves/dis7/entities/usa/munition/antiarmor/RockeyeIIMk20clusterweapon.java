@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49190ed6;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 19648
+ * <p> Entity class <b><code>RockeyeIIMk20clusterweapon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RockeyeIIMk20clusterweapon.createInstance()</code> or <code>new RockeyeIIMk20clusterweapon()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: RockeyeIIMk20clusterweapon  = <code>50</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19648; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@472c9f88. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class RockeyeIIMk20clusterweapon extends EntityType
+public final class RockeyeIIMk20clusterweapon extends EntityType
 {
     /** Default constructor */
     public RockeyeIIMk20clusterweapon()
@@ -25,5 +39,11 @@ public class RockeyeIIMk20clusterweapon extends EntityType
 
         setCategory((byte)2); // uid 19553, Ballistic
         setSubCategory((byte)50); // uid 19648, Rockeye II Mk 20 cluster weapon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RockeyeIIMk20clusterweapon createInstance()
+    {
+            return new RockeyeIIMk20clusterweapon();
     }
 }

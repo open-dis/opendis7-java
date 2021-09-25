@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10bbd20a;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30989
+ * <p> Entity class <b><code>CF188A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CF188A.createInstance()</code> or <code>new CF188A()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasCF18Hornet  = <code>1</code>; </li>
+ *     <li> Specific: CF188A  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30989; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fe3c938. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class CF188A extends EntityType
+public final class CF188A extends EntityType
 {
     /** Default constructor */
     public CF188A()
@@ -26,5 +40,11 @@ public class CF188A extends EntityType
         setCategory((byte)1); // uid 30987, Fighter/Air Defense
         setSubCategory((byte)1); // uid 30988, McDonnell Douglas CF-18 Hornet
         setSpecific((byte)1); // uid 30989, CF-188 A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CF188A createInstance()
+    {
+            return new CF188A();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4d354a3e;
- * Country: Brazil (BRA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21784
+ * <p> Entity class <b><code>HEIncendiary</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEIncendiary.createInstance()</code> or <code>new HEIncendiary()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: RocketASTROS  = <code>1</code>; </li>
+ *     <li> Specific: _180mmSS40  = <code>2</code>; </li>
+ *     <li> Entity type uid: 21784; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1edccfd4. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEIncendiary extends EntityType
+public final class HEIncendiary extends EntityType
 {
     /** Default constructor */
     public HEIncendiary()
@@ -27,5 +41,11 @@ public class HEIncendiary extends EntityType
         setSubCategory((byte)1); // uid 21779, Rocket ASTROS
         setSpecific((byte)2); // uid 21782, 180 mm SS-40
         setExtra((byte)2); // uid 21784, HE Incendiary
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEIncendiary createInstance()
+    {
+            return new HEIncendiary();
     }
 }

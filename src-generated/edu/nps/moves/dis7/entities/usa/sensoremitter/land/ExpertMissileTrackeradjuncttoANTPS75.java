@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77ea960f;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22358
+ * <p> Entity class <b><code>ExpertMissileTrackeradjuncttoANTPS75</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ExpertMissileTrackeradjuncttoANTPS75.createInstance()</code> or <code>new ExpertMissileTrackeradjuncttoANTPS75()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Passive = <code>3</code>; </li>
+ *     <li> SubCategory: FiringPointLaunchPointDeterminationSensor  = <code>8</code>; </li>
+ *     <li> Specific: ExpertMissileTrackeradjuncttoANTPS75  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22358; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2acb1264. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFPassive
+ * @see SubCategory
+
  */
-public class ExpertMissileTrackeradjuncttoANTPS75 extends EntityType
+public final class ExpertMissileTrackeradjuncttoANTPS75 extends EntityType
 {
     /** Default constructor */
     public ExpertMissileTrackeradjuncttoANTPS75()
@@ -26,5 +40,11 @@ public class ExpertMissileTrackeradjuncttoANTPS75 extends EntityType
         setCategory((byte)3); // uid 22356, RF Passive
         setSubCategory((byte)8); // uid 22357, Firing Point/Launch Point Determination Sensor
         setSpecific((byte)1); // uid 22358, Expert Missile Tracker (adjunct to AN/TPS-75)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ExpertMissileTrackeradjuncttoANTPS75 createInstance()
+    {
+            return new ExpertMissileTrackeradjuncttoANTPS75();
     }
 }

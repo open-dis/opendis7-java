@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32bb0072;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10635
+ * <p> Entity class <b><code>M149A2WaterBuffalo400gal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M149A2WaterBuffalo400gal.createInstance()</code> or <code>new M149A2WaterBuffalo400gal()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Water trailer = <code>17</code>; </li>
+ *     <li> SubCategory: _11000gallons  = <code>1</code>; </li>
+ *     <li> Specific: M149A2WaterBuffalo400gal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10635; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ead6ba4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Watertrailer
+ * @see SubCategory
+
  */
-public class M149A2WaterBuffalo400gal extends EntityType
+public final class M149A2WaterBuffalo400gal extends EntityType
 {
     /** Default constructor */
     public M149A2WaterBuffalo400gal()
@@ -26,5 +40,11 @@ public class M149A2WaterBuffalo400gal extends EntityType
         setCategory((byte)17); // uid 10633, Water trailer
         setSubCategory((byte)1); // uid 10634, 1-1000 gallons
         setSpecific((byte)1); // uid 10635, M149A2 Water Buffalo (400 gal)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M149A2WaterBuffalo400gal createInstance()
+    {
+            return new M149A2WaterBuffalo400gal();
     }
 }

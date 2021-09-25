@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class BeamData extends Object implements Serializable
    protected float  beamSweepSync;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public BeamData()
  {
  }
@@ -219,11 +218,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    beamAzimuthCenter = byteBuffer.getFloat();
-    beamAzimuthSweep = byteBuffer.getFloat();
-    beamElevationCenter = byteBuffer.getFloat();
-    beamElevationSweep = byteBuffer.getFloat();
-    beamSweepSync = byteBuffer.getFloat();
+    try
+    {
+        // attribute beamAzimuthCenter marked as not serialized
+        beamAzimuthCenter = byteBuffer.getFloat();
+        // attribute beamAzimuthSweep marked as not serialized
+        beamAzimuthSweep = byteBuffer.getFloat();
+        // attribute beamElevationCenter marked as not serialized
+        beamElevationCenter = byteBuffer.getFloat();
+        // attribute beamElevationSweep marked as not serialized
+        beamElevationSweep = byteBuffer.getFloat();
+        // attribute beamSweepSync marked as not serialized
+        beamSweepSync = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

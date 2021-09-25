@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5f2bd6d9;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 32008
+ * <p> Entity class <b><code>BombardierDash8300MPA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BombardierDash8300MPA.createInstance()</code> or <code>new BombardierDash8300MPA()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/Patrol/Observation = <code>5</code>; </li>
+ *     <li> SubCategory: BombardierDash8300MPA  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32008; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68868328. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWPatrolObservation
+ * @see SubCategory
+
  */
-public class BombardierDash8300MPA extends EntityType
+public final class BombardierDash8300MPA extends EntityType
 {
     /** Default constructor */
     public BombardierDash8300MPA()
@@ -25,5 +39,11 @@ public class BombardierDash8300MPA extends EntityType
 
         setCategory((byte)5); // uid 32007, ASW/Patrol/Observation
         setSubCategory((byte)1); // uid 32008, Bombardier Dash 8 300 MPA
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BombardierDash8300MPA createInstance()
+    {
+            return new BombardierDash8300MPA();
     }
 }

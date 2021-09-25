@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17d238b1;
- * Country: Qatar (QAT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17835
+ * <p> Entity class <b><code>Q12Hwar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Q12Hwar.createInstance()</code> or <code>new Q12Hwar()</code>. </p>
+ * <ul>
+ *     <li> Country: Qatar (QAT) = <code>178</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: BarzanClasslargepatrolcraft  = <code>2</code>; </li>
+ *     <li> Specific: Q12Hwar  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17835; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f63c44f. </p>
+ * @see Country#QATAR_QAT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class Q12Hwar extends EntityType
+public final class Q12Hwar extends EntityType
 {
     /** Default constructor */
     public Q12Hwar()
@@ -26,5 +40,11 @@ public class Q12Hwar extends EntityType
         setCategory((byte)7); // uid 17828, Light/Patrol Craft
         setSubCategory((byte)2); // uid 17833, Barzan Class (large patrol craft)
         setSpecific((byte)2); // uid 17835, Q12 Hwar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Q12Hwar createInstance()
+    {
+            return new Q12Hwar();
     }
 }

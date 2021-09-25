@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4b360972;
- * Country: Russia (RUS);
- * Entity kind: Expendable;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22308
+ * <p> Entity class <b><code>UC2S</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UC2S.createInstance()</code> or <code>new UC2S()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active Emitter = <code>4</code>; </li>
+ *     <li> SubCategory: UC2S  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22308; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3ce7490a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ActiveEmitter
+ * @see SubCategory
+
  */
-public class UC2S extends EntityType
+public final class UC2S extends EntityType
 {
     /** Default constructor */
     public UC2S()
@@ -25,5 +39,11 @@ public class UC2S extends EntityType
 
         setCategory((byte)4); // uid 22307, Active Emitter
         setSubCategory((byte)1); // uid 22308, UC-2S
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UC2S createInstance()
+    {
+            return new UC2S();
     }
 }

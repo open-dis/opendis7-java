@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@401e02b4;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20354
+ * <p> Entity class <b><code>SA7BSpetsnazmod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA7BSpetsnazmod.createInstance()</code> or <code>new SA7BSpetsnazmod()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SA7Grail  = <code>19</code>; </li>
+ *     <li> Specific: SA7BSpetsnazmod  = <code>3</code>; </li>
+ *     <li> Entity type uid: 20354; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13516600. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SA7BSpetsnazmod extends EntityType
+public final class SA7BSpetsnazmod extends EntityType
 {
     /** Default constructor */
     public SA7BSpetsnazmod()
@@ -26,5 +40,11 @@ public class SA7BSpetsnazmod extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)19); // uid 20351, SA-7 Grail
         setSpecific((byte)3); // uid 20354, SA-7B (Spetsnaz mod)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA7BSpetsnazmod createInstance()
+    {
+            return new SA7BSpetsnazmod();
     }
 }

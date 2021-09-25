@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@64beebb7;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29177
+ * <p> Entity class <b><code>MitsubishiATDXShinshin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MitsubishiATDXShinshin.createInstance()</code> or <code>new MitsubishiATDXShinshin()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: MitsubishiATDXShinshin  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29177; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1de5f0ef. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class MitsubishiATDXShinshin extends EntityType
+public final class MitsubishiATDXShinshin extends EntityType
 {
     /** Default constructor */
     public MitsubishiATDXShinshin()
@@ -25,5 +39,11 @@ public class MitsubishiATDXShinshin extends EntityType
 
         setCategory((byte)1); // uid 24798, Fighter/Air Defense
         setSubCategory((byte)4); // uid 29177, Mitsubishi ATD-X Shinshin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MitsubishiATDXShinshin createInstance()
+    {
+            return new MitsubishiATDXShinshin();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e6ba49a;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31689
+ * <p> Entity class <b><code>RosomakM2APCwMk19</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RosomakM2APCwMk19.createInstance()</code> or <code>new RosomakM2APCwMk19()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: KTORosomakIFV  = <code>1</code>; </li>
+ *     <li> Specific: RosomakM2APCwMk19  = <code>5</code>; </li>
+ *     <li> Entity type uid: 31689; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56f2bbea. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class RosomakM2APCwMk19 extends EntityType
+public final class RosomakM2APCwMk19 extends EntityType
 {
     /** Default constructor */
     public RosomakM2APCwMk19()
@@ -26,5 +40,11 @@ public class RosomakM2APCwMk19 extends EntityType
         setCategory((byte)2); // uid 31683, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 31684, KTO Rosomak IFV
         setSpecific((byte)5); // uid 31689, Rosomak M2 APC w/Mk. 19
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RosomakM2APCwMk19 createInstance()
+    {
+            return new RosomakM2APCwMk19();
     }
 }

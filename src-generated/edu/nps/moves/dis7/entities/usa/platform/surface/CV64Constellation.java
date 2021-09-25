@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@174721c4;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11308
+ * <p> Entity class <b><code>CV64Constellation</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CV64Constellation.createInstance()</code> or <code>new CV64Constellation()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Carrier = <code>1</code>; </li>
+ *     <li> SubCategory: KittyHawkJohnFKennedyClass  = <code>3</code>; </li>
+ *     <li> Specific: CV64Constellation  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11308; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e3b0369. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Carrier
+ * @see SubCategory
+
  */
-public class CV64Constellation extends EntityType
+public final class CV64Constellation extends EntityType
 {
     /** Default constructor */
     public CV64Constellation()
@@ -26,5 +40,11 @@ public class CV64Constellation extends EntityType
         setCategory((byte)1); // uid 11293, Carrier
         setSubCategory((byte)3); // uid 11306, Kitty Hawk/John F. Kennedy Class
         setSpecific((byte)2); // uid 11308, CV 64 Constellation
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CV64Constellation createInstance()
+    {
+            return new CV64Constellation();
     }
 }

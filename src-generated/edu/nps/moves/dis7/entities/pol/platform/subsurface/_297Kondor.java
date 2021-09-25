@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e93f3d5;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23044
+ * <p> Entity class <b><code>_297Kondor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_297Kondor.createInstance()</code> or <code>new _297Kondor()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: SokolClass  = <code>2</code>; </li>
+ *     <li> Specific: _297Kondor  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23044; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1286528d. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class _297Kondor extends EntityType
+public final class _297Kondor extends EntityType
 {
     /** Default constructor */
     public _297Kondor()
@@ -26,5 +40,11 @@ public class _297Kondor extends EntityType
         setCategory((byte)5); // uid 23037, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)2); // uid 23040, Sokol Class
         setSpecific((byte)4); // uid 23044, 297 Kondor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _297Kondor createInstance()
+    {
+            return new _297Kondor();
     }
 }

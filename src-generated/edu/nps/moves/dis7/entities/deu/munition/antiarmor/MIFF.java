@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3de79067;
- * Country: Germany (DEU);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21231
+ * <p> Entity class <b><code>MIFF</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MIFF.createInstance()</code> or <code>new MIFF()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: AntiTankmine  = <code>1</code>; </li>
+ *     <li> Specific: MIFF  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21231; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@124eb83d. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class MIFF extends EntityType
+public final class MIFF extends EntityType
 {
     /** Default constructor */
     public MIFF()
@@ -26,5 +40,11 @@ public class MIFF extends EntityType
         setCategory((byte)3); // uid 21229, Fixed
         setSubCategory((byte)1); // uid 21230, Anti-Tank mine
         setSpecific((byte)1); // uid 21231, MIFF
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MIFF createInstance()
+    {
+            return new MIFF();
     }
 }

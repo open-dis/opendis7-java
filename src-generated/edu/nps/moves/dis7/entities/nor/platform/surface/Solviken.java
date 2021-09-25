@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f6a7463;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24611
+ * <p> Entity class <b><code>Solviken</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Solviken.createInstance()</code> or <code>new Solviken()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: LiquidPetroleumGasLPGTanker  = <code>1</code>; </li>
+ *     <li> Specific: Solviken  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24611; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60d84f61. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class Solviken extends EntityType
+public final class Solviken extends EntityType
 {
     /** Default constructor */
     public Solviken()
@@ -26,5 +40,11 @@ public class Solviken extends EntityType
         setCategory((byte)82); // uid 24609, Tanker (Group 3 Merchant)
         setSubCategory((byte)1); // uid 24610, Liquid Petroleum Gas (LPG)Tanker
         setSpecific((byte)1); // uid 24611, Solviken
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Solviken createInstance()
+    {
+            return new Solviken();
     }
 }

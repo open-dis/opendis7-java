@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ac0cdb0;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 27639
+ * <p> Entity class <b><code>RBS70Mk2BOLIDE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBS70Mk2BOLIDE.createInstance()</code> or <code>new RBS70Mk2BOLIDE()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: RBS70  = <code>1</code>; </li>
+ *     <li> Specific: RBS70Mk2BOLIDE  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27639; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c5747db. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class RBS70Mk2BOLIDE extends EntityType
+public final class RBS70Mk2BOLIDE extends EntityType
 {
     /** Default constructor */
     public RBS70Mk2BOLIDE()
@@ -26,5 +40,11 @@ public class RBS70Mk2BOLIDE extends EntityType
         setCategory((byte)1); // uid 21630, Guided
         setSubCategory((byte)1); // uid 21631, RBS-70
         setSpecific((byte)3); // uid 27639, RBS-70 Mk 2 BOLIDE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBS70Mk2BOLIDE createInstance()
+    {
+            return new RBS70Mk2BOLIDE();
     }
 }

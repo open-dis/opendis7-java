@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@783b3aa0;
- * Country: Pakistan (PAK);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 31394
+ * <p> Entity class <b><code>ShaheenIAHatf4</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShaheenIAHatf4.createInstance()</code> or <code>new ShaheenIAHatf4()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: ShaheenIAHatf4  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31394; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5ba1b62e. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class ShaheenIAHatf4 extends EntityType
+public final class ShaheenIAHatf4 extends EntityType
 {
     /** Default constructor */
     public ShaheenIAHatf4()
@@ -25,5 +39,11 @@ public class ShaheenIAHatf4 extends EntityType
 
         setCategory((byte)1); // uid 31392, Guided
         setSubCategory((byte)2); // uid 31394, Shaheen IA (Hatf-4)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShaheenIAHatf4 createInstance()
+    {
+            return new ShaheenIAHatf4();
     }
 }

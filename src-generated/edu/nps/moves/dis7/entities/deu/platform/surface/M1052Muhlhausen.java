@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65b104b9;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16639
+ * <p> Entity class <b><code>M1052Muhlhausen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1052Muhlhausen.createInstance()</code> or <code>new M1052Muhlhausen()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: WalthervonLedeburMulhausenClassType742742A  = <code>10</code>; </li>
+ *     <li> Specific: M1052Muhlhausen  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16639; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@571c5681. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class M1052Muhlhausen extends EntityType
+public final class M1052Muhlhausen extends EntityType
 {
     /** Default constructor */
     public M1052Muhlhausen()
@@ -26,5 +40,11 @@ public class M1052Muhlhausen extends EntityType
         setCategory((byte)16); // uid 16594, Auxiliary
         setSubCategory((byte)10); // uid 16638, Walther von Ledebur / Mulhausen Class (Type 742/742A)
         setSpecific((byte)1); // uid 16639, M1052 Muhlhausen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1052Muhlhausen createInstance()
+    {
+            return new M1052Muhlhausen();
     }
 }

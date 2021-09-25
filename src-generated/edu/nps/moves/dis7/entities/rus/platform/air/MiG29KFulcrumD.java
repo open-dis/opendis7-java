@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e9456ae;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13182
+ * <p> Entity class <b><code>MiG29KFulcrumD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MiG29KFulcrumD.createInstance()</code> or <code>new MiG29KFulcrumD()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: MiG29Fulcrum  = <code>2</code>; </li>
+ *     <li> Specific: MiG29KFulcrumD  = <code>4</code>; </li>
+ *     <li> Entity type uid: 13182; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b569985. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class MiG29KFulcrumD extends EntityType
+public final class MiG29KFulcrumD extends EntityType
 {
     /** Default constructor */
     public MiG29KFulcrumD()
@@ -26,5 +40,11 @@ public class MiG29KFulcrumD extends EntityType
         setCategory((byte)1); // uid 13174, Fighter/Air Defense
         setSubCategory((byte)2); // uid 13178, MiG-29 Fulcrum
         setSpecific((byte)4); // uid 13182, MiG-29K Fulcrum D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MiG29KFulcrumD createInstance()
+    {
+            return new MiG29KFulcrumD();
     }
 }

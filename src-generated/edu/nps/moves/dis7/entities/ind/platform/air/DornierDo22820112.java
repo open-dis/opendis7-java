@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@691939c9;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31708
+ * <p> Entity class <b><code>DornierDo22820112</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DornierDo22820112.createInstance()</code> or <code>new DornierDo22820112()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: DornierDo228  = <code>2</code>; </li>
+ *     <li> Specific: DornierDo228201  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31708; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41709512. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class DornierDo22820112 extends EntityType
+public final class DornierDo22820112 extends EntityType
 {
     /** Default constructor */
     public DornierDo22820112()
@@ -26,5 +40,11 @@ public class DornierDo22820112 extends EntityType
         setCategory((byte)8); // uid 30217, Surveillance/C2 (Airborne Early Warning)
         setSubCategory((byte)2); // uid 31707, Dornier Do 228
         setSpecific((byte)1); // uid 31708, Dornier Do 228-201
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DornierDo22820112 createInstance()
+    {
+            return new DornierDo22820112();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6063d80a;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17706
+ * <p> Entity class <b><code>MSC557SamKok</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MSC557SamKok.createInstance()</code> or <code>new MSC557SamKok()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: USMSC389Classminesweepercoastal  = <code>3</code>; </li>
+ *     <li> Specific: MSC557SamKok  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17706; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72e34f77. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MSC557SamKok extends EntityType
+public final class MSC557SamKok extends EntityType
 {
     /** Default constructor */
     public MSC557SamKok()
@@ -26,5 +40,11 @@ public class MSC557SamKok extends EntityType
         setCategory((byte)8); // uid 17691, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 17703, US MSC 389 Class (minesweeper-coastal)
         setSpecific((byte)3); // uid 17706, MSC 557 Sam Kok
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MSC557SamKok createInstance()
+    {
+            return new MSC557SamKok();
     }
 }

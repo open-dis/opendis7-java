@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -35,7 +34,7 @@ public class GridDataType1 extends GridData implements Serializable
    private byte[] padding = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GridDataType1()
  {
  }
@@ -53,8 +52,10 @@ public int getMarshalledSize()
    marshalSize += 4;  // fieldScale
    marshalSize += 4;  // fieldOffset
    marshalSize += 2;  // numberOfValues
-   marshalSize += dataValues.length * 2;
-   marshalSize += padding.length;
+   if (dataValues != null)
+       marshalSize += dataValues.length * 2;
+   if (padding != null)
+       marshalSize += padding.length;
 
    return marshalSize;
 }
@@ -123,7 +124,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeFloat(fieldOffset);
        dos.writeShort(dataValues.length);
 
-       for(int idx = 0; idx < dataValues.length; idx++)
+       for (int idx = 0; idx < dataValues.length; idx++)
            dos.writeShort(dataValues[idx]);
 
        padding = new byte[Align.to32bits(dos)];
@@ -155,7 +156,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfValues = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < dataValues.length; idx++)
+        for (int idx = 0; idx < dataValues.length; idx++)
             dataValues[idx] = dis.readShort();
         uPosition += (dataValues.length * 2);
         padding = new byte[Align.from32bits(uPosition,dis)];
@@ -183,7 +184,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putFloat( (float)fieldOffset);
    byteBuffer.putShort( (short)dataValues.length);
 
-   for(int idx = 0; idx < dataValues.length; idx++)
+   for (int idx = 0; idx < dataValues.length; idx++)
        byteBuffer.putShort((short)dataValues[idx]);
 
    padding = new byte[Align.to32bits(byteBuffer)];
@@ -202,12 +203,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    fieldScale = byteBuffer.getFloat();
-    fieldOffset = byteBuffer.getFloat();
-    numberOfValues = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < dataValues.length; idx++)
-        dataValues[idx] = byteBuffer.getShort();
-    padding = new byte[Align.from32bits(byteBuffer)];
+    try
+    {
+        // attribute fieldScale marked as not serialized
+        fieldScale = byteBuffer.getFloat();
+        // attribute fieldOffset marked as not serialized
+        fieldOffset = byteBuffer.getFloat();
+        // attribute numberOfValues marked as not serialized
+        numberOfValues = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute dataValues marked as not serialized
+        for (int idx = 0; idx < dataValues.length; idx++)
+            dataValues[idx] = byteBuffer.getShort();
+        // attribute padding marked as not serialized
+        padding = new byte[Align.from32bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -239,7 +252,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (fieldScale == rhs.fieldScale)) ivarsEqual = false;
      if( ! (fieldOffset == rhs.fieldOffset)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(dataValues[idx] == rhs.dataValues[idx])) ivarsEqual = false;
      }

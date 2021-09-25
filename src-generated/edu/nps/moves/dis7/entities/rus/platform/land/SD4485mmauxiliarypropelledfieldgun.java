@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@783ec989;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12819
+ * <p> Entity class <b><code>SD4485mmauxiliarypropelledfieldgun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SD4485mmauxiliarypropelledfieldgun.createInstance()</code> or <code>new SD4485mmauxiliarypropelledfieldgun()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed artillery = <code>5</code>; </li>
+ *     <li> SubCategory: SD44gun  = <code>8</code>; </li>
+ *     <li> Specific: SD4485mmauxiliarypropelledfieldgun  = <code>1</code>; </li>
+ *     <li> Entity type uid: 12819; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11653e3b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Towedartillery
+ * @see SubCategory
+
  */
-public class SD4485mmauxiliarypropelledfieldgun extends EntityType
+public final class SD4485mmauxiliarypropelledfieldgun extends EntityType
 {
     /** Default constructor */
     public SD4485mmauxiliarypropelledfieldgun()
@@ -26,5 +40,11 @@ public class SD4485mmauxiliarypropelledfieldgun extends EntityType
         setCategory((byte)5); // uid 12810, Towed artillery
         setSubCategory((byte)8); // uid 12818, SD-44 gun
         setSpecific((byte)1); // uid 12819, SD-44 85-mm auxiliary-propelled field gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SD4485mmauxiliarypropelledfieldgun createInstance()
+    {
+            return new SD4485mmauxiliarypropelledfieldgun();
     }
 }

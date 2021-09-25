@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@685d7ba5;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29061
+ * <p> Entity class <b><code>_3M80</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_3M80.createInstance()</code> or <code>new _3M80()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSN22Sunburn  = <code>13</code>; </li>
+ *     <li> Specific: _3M80  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29061; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28989415. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class _3M80 extends EntityType
+public final class _3M80 extends EntityType
 {
     /** Default constructor */
     public _3M80()
@@ -26,5 +40,11 @@ public class _3M80 extends EntityType
         setCategory((byte)1); // uid 20530, Guided
         setSubCategory((byte)13); // uid 20553, SS-N-22 Sunburn
         setSpecific((byte)1); // uid 29061, 3M80
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _3M80 createInstance()
+    {
+            return new _3M80();
     }
 }

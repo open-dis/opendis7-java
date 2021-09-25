@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4bbc21bd;
- * Country: Russia (RUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32143
+ * <p> Entity class <b><code>MachineGuns</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MachineGuns.createInstance()</code> or <code>new MachineGuns()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Army = <code>11</code>; </li>
+ *     <li> SubCategory: MachineGuns  = <code>35</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32143; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f289728. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Army
+ * @see SubCategory
+
  */
-public class MachineGuns extends EntityType
+public final class MachineGuns extends EntityType
 {
     /** Default constructor */
     public MachineGuns()
@@ -25,5 +39,11 @@ public class MachineGuns extends EntityType
 
         setCategory((byte)11); // uid 32132, Army
         setSubCategory((byte)35); // uid 32143, Machine Guns
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MachineGuns createInstance()
+    {
+            return new MachineGuns();
     }
 }

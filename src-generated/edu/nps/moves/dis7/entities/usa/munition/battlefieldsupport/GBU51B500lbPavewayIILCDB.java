@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b4bd341;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 24612
+ * <p> Entity class <b><code>GBU51B500lbPavewayIILCDB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GBU51B500lbPavewayIILCDB.createInstance()</code> or <code>new GBU51B500lbPavewayIILCDB()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Mk82  = <code>14</code>; </li>
+ *     <li> Specific: GBU51B500lbPavewayIILCDB  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24612; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49e479da. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class GBU51B500lbPavewayIILCDB extends EntityType
+public final class GBU51B500lbPavewayIILCDB extends EntityType
 {
     /** Default constructor */
     public GBU51B500lbPavewayIILCDB()
@@ -26,5 +40,11 @@ public class GBU51B500lbPavewayIILCDB extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)14); // uid 19909, Mk-82
         setSpecific((byte)3); // uid 24612, GBU-51/B 500-lb Paveway II LCDB
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GBU51B500lbPavewayIILCDB createInstance()
+    {
+            return new GBU51B500lbPavewayIILCDB();
     }
 }

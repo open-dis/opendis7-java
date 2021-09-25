@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b3056a6;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 24013
+ * <p> Entity class <b><code>FROG7Nuclear9M21B3kt</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FROG7Nuclear9M21B3kt.createInstance()</code> or <code>new FROG7Nuclear9M21B3kt()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: Frog7  = <code>37</code>; </li>
+ *     <li> Specific: FROG7Nuclear9M21B3kt  = <code>4</code>; </li>
+ *     <li> Entity type uid: 24013; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49653791. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FROG7Nuclear9M21B3kt extends EntityType
+public final class FROG7Nuclear9M21B3kt extends EntityType
 {
     /** Default constructor */
     public FROG7Nuclear9M21B3kt()
@@ -26,5 +40,11 @@ public class FROG7Nuclear9M21B3kt extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)37); // uid 20889, Frog-7
         setSpecific((byte)4); // uid 24013, FROG-7, Nuclear, 9M21B, 3kt
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FROG7Nuclear9M21B3kt createInstance()
+    {
+            return new FROG7Nuclear9M21B3kt();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b40ff9c;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15997
+ * <p> Entity class <b><code>M712Cybele</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M712Cybele.createInstance()</code> or <code>new M712Cybele()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Circeclassminehunters  = <code>3</code>; </li>
+ *     <li> Specific: M712Cybele  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15997; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15bb5034. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M712Cybele extends EntityType
+public final class M712Cybele extends EntityType
 {
     /** Default constructor */
     public M712Cybele()
@@ -26,5 +40,11 @@ public class M712Cybele extends EntityType
         setCategory((byte)8); // uid 15978, Mine Countermeasure Ship / Craft
         setSubCategory((byte)3); // uid 15996, Circe class (minehunters)
         setSpecific((byte)1); // uid 15997, M 712 Cybele
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M712Cybele createInstance()
+    {
+            return new M712Cybele();
     }
 }

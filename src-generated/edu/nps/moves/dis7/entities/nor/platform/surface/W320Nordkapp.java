@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42deb43a;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27600
+ * <p> Entity class <b><code>W320Nordkapp</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>W320Nordkapp.createInstance()</code> or <code>new W320Nordkapp()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Nordkappclass  = <code>1</code>; </li>
+ *     <li> Specific: W320Nordkapp  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27600; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52d10fb8. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class W320Nordkapp extends EntityType
+public final class W320Nordkapp extends EntityType
 {
     /** Default constructor */
     public W320Nordkapp()
@@ -26,5 +40,11 @@ public class W320Nordkapp extends EntityType
         setCategory((byte)63); // uid 27598, Coast Guard Boats
         setSubCategory((byte)1); // uid 27599, Nordkapp class
         setSpecific((byte)1); // uid 27600, W320 Nordkapp
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static W320Nordkapp createInstance()
+    {
+            return new W320Nordkapp();
     }
 }

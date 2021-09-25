@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ca3d826;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21367
+ * <p> Entity class <b><code>HEforType69MBT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEforType69MBT.createInstance()</code> or <code>new HEforType69MBT()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _100mm  = <code>3</code>; </li>
+ *     <li> Specific: HEforType69MBT  = <code>8</code>; </li>
+ *     <li> Entity type uid: 21367; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@604d28c6. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEforType69MBT extends EntityType
+public final class HEforType69MBT extends EntityType
 {
     /** Default constructor */
     public HEforType69MBT()
@@ -26,5 +40,11 @@ public class HEforType69MBT extends EntityType
         setCategory((byte)2); // uid 21356, Ballistic
         setSubCategory((byte)3); // uid 21359, 100 mm
         setSpecific((byte)8); // uid 21367, HE (for Type 69 MBT)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEforType69MBT createInstance()
+    {
+            return new HEforType69MBT();
     }
 }

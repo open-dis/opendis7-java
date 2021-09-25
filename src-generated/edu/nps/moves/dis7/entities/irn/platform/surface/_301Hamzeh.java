@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a5b3fee;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27824
+ * <p> Entity class <b><code>_301Hamzeh</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_301Hamzeh.createInstance()</code> or <code>new _301Hamzeh()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MSC268292Class  = <code>2</code>; </li>
+ *     <li> Specific: _301Hamzeh  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27824; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4af0df05. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _301Hamzeh extends EntityType
+public final class _301Hamzeh extends EntityType
 {
     /** Default constructor */
     public _301Hamzeh()
@@ -26,5 +40,11 @@ public class _301Hamzeh extends EntityType
         setCategory((byte)8); // uid 18093, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 18097, MSC 268/292 Class
         setSpecific((byte)1); // uid 27824, 301 Hamzeh
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _301Hamzeh createInstance()
+    {
+            return new _301Hamzeh();
     }
 }

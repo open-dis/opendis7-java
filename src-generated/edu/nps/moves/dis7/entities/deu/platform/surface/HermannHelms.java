@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@484094a5;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30273
+ * <p> Entity class <b><code>HermannHelms</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HermannHelms.createInstance()</code> or <code>new HermannHelms()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Search and Rescue Vessels = <code>100</code>; </li>
+ *     <li> SubCategory: _275mClass  = <code>3</code>; </li>
+ *     <li> Specific: HermannHelms  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30273; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2796aeae. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SearchandRescueVessels
+ * @see SubCategory
+
  */
-public class HermannHelms extends EntityType
+public final class HermannHelms extends EntityType
 {
     /** Default constructor */
     public HermannHelms()
@@ -26,5 +40,11 @@ public class HermannHelms extends EntityType
         setCategory((byte)100); // uid 30266, Search and Rescue Vessels
         setSubCategory((byte)3); // uid 30271, 27.5m Class
         setSpecific((byte)2); // uid 30273, Hermann Helms
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HermannHelms createInstance()
+    {
+            return new HermannHelms();
     }
 }

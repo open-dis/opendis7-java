@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4693a9ef;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24294
+ * <p> Entity class <b><code>BritishAerospace146200AvroRJ85</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BritishAerospace146200AvroRJ85.createInstance()</code> or <code>new BritishAerospace146200AvroRJ85()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: FourEngineJet  = <code>34</code>; </li>
+ *     <li> Specific: BritishAerospace146  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24294; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@642413d4. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class BritishAerospace146200AvroRJ85 extends EntityType
+public final class BritishAerospace146200AvroRJ85 extends EntityType
 {
     /** Default constructor */
     public BritishAerospace146200AvroRJ85()
@@ -27,5 +41,11 @@ public class BritishAerospace146200AvroRJ85 extends EntityType
         setSubCategory((byte)34); // uid 23836, Four Engine Jet
         setSpecific((byte)1); // uid 23837, British Aerospace 146
         setExtra((byte)1); // uid 24294, British Aerospace 146-200 (Avro RJ85)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BritishAerospace146200AvroRJ85 createInstance()
+    {
+            return new BritishAerospace146200AvroRJ85();
     }
 }

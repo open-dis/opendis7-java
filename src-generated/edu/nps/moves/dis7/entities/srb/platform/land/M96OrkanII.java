@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b34e38c;
- * Country: Serbia (SRB);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30159
+ * <p> Entity class <b><code>M96OrkanII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M96OrkanII.createInstance()</code> or <code>new M96OrkanII()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: M96OrkanII  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30159; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2e51d054. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class M96OrkanII extends EntityType
+public final class M96OrkanII extends EntityType
 {
     /** Default constructor */
     public M96OrkanII()
@@ -25,5 +39,11 @@ public class M96OrkanII extends EntityType
 
         setCategory((byte)4); // uid 30155, Self-Propelled Artillery
         setSubCategory((byte)3); // uid 30159, M-96 Orkan II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M96OrkanII createInstance()
+    {
+            return new M96OrkanII();
     }
 }

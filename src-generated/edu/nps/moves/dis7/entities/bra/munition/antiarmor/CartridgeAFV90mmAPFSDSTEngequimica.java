@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c7b137a;
- * Country: Brazil (BRA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 26954
+ * <p> Entity class <b><code>CartridgeAFV90mmAPFSDSTEngequimica</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CartridgeAFV90mmAPFSDSTEngequimica.createInstance()</code> or <code>new CartridgeAFV90mmAPFSDSTEngequimica()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _90mm  = <code>1</code>; </li>
+ *     <li> Specific: CartridgeAFV90mmAPFSDSTEngequimica  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26954; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dbed7fd. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class CartridgeAFV90mmAPFSDSTEngequimica extends EntityType
+public final class CartridgeAFV90mmAPFSDSTEngequimica extends EntityType
 {
     /** Default constructor */
     public CartridgeAFV90mmAPFSDSTEngequimica()
@@ -26,5 +40,11 @@ public class CartridgeAFV90mmAPFSDSTEngequimica extends EntityType
         setCategory((byte)2); // uid 26952, Ballistic
         setSubCategory((byte)1); // uid 26953, 90mm
         setSpecific((byte)1); // uid 26954, Cartridge, AFV, 90mm, APFSDS-T, Engequimica
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CartridgeAFV90mmAPFSDSTEngequimica createInstance()
+    {
+            return new CartridgeAFV90mmAPFSDSTEngequimica();
     }
 }

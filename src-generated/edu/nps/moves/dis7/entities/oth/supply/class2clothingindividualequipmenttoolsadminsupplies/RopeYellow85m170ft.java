@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35329a05;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES;
- *
- * Entity type uid: 31920
+ * <p> Entity class <b><code>RopeYellow85m170ft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RopeYellow85m170ft.createInstance()</code> or <code>new RopeYellow85m170ft()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: B - Ground Support Materiel = <code>3</code>; </li>
+ *     <li> SubCategory: Rope  = <code>4</code>; </li>
+ *     <li> Specific: RopeYellow85m170ft  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31920; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1958c0d9. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see BGroundSupportMateriel
+ * @see SubCategory
+
  */
-public class RopeYellow85m170ft extends EntityType
+public final class RopeYellow85m170ft extends EntityType
 {
     /** Default constructor */
     public RopeYellow85m170ft()
@@ -26,5 +40,11 @@ public class RopeYellow85m170ft extends EntityType
         setCategory((byte)3); // uid 30659, B - Ground Support Materiel
         setSubCategory((byte)4); // uid 31919, Rope
         setSpecific((byte)1); // uid 31920, Rope Yellow 85m/170ft
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RopeYellow85m170ft createInstance()
+    {
+            return new RopeYellow85m170ft();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f6f6701;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15900
+ * <p> Entity class <b><code>AS532SC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AS532SC.createInstance()</code> or <code>new AS532SC()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: EurocopterAS532Cougar  = <code>3</code>; </li>
+ *     <li> Specific: AS532SC  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15900; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e04fa0a. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class AS532SC extends EntityType
+public final class AS532SC extends EntityType
 {
     /** Default constructor */
     public AS532SC()
@@ -26,5 +40,11 @@ public class AS532SC extends EntityType
         setCategory((byte)22); // uid 15895, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)3); // uid 15899, Eurocopter AS 532 Cougar
         setSpecific((byte)1); // uid 15900, AS 532SC
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AS532SC createInstance()
+    {
+            return new AS532SC();
     }
 }

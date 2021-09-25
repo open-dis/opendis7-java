@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@df7d1d4;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32208
+ * <p> Entity class <b><code>TerroristCombatantTeenagerFemalewExplosiveVest</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TerroristCombatantTeenagerFemalewExplosiveVest.createInstance()</code> or <code>new TerroristCombatantTeenagerFemalewExplosiveVest()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Terrorist Combatant = <code>101</code>; </li>
+ *     <li> SubCategory: WeaponNonspecific  = <code>1</code>; </li>
+ *     <li> Specific: ExplosiveVest  = <code>100</code>; </li>
+ *     <li> Entity type uid: 32208; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1e477944. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TerroristCombatant
+ * @see SubCategory
+
  */
-public class TerroristCombatantTeenagerFemalewExplosiveVest extends EntityType
+public final class TerroristCombatantTeenagerFemalewExplosiveVest extends EntityType
 {
     /** Default constructor */
     public TerroristCombatantTeenagerFemalewExplosiveVest()
@@ -27,5 +41,11 @@ public class TerroristCombatantTeenagerFemalewExplosiveVest extends EntityType
         setSubCategory((byte)1); // uid 32205, Weapon, Non-specific
         setSpecific((byte)100); // uid 32206, Explosive Vest
         setExtra((byte)150); // uid 32208, Terrorist Combatant Teenager, Female w/ Explosive Vest
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TerroristCombatantTeenagerFemalewExplosiveVest createInstance()
+    {
+            return new TerroristCombatantTeenagerFemalewExplosiveVest();
     }
 }

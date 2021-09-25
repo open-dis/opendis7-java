@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5707c1cb;
- * Country: Myanmar (MMR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26769
+ * <p> Entity class <b><code>F23MaharThihaThura</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F23MaharThihaThura.createInstance()</code> or <code>new F23MaharThihaThura()</code>. </p>
+ * <ul>
+ *     <li> Country: Myanmar (MMR) = <code>35</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JianghuIIClassType053H1  = <code>1</code>; </li>
+ *     <li> Specific: F23MaharThihaThura  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26769; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42257bdd. </p>
+ * @see Country#MYANMAR_MMR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F23MaharThihaThura extends EntityType
+public final class F23MaharThihaThura extends EntityType
 {
     /** Default constructor */
     public F23MaharThihaThura()
@@ -26,5 +40,11 @@ public class F23MaharThihaThura extends EntityType
         setCategory((byte)6); // uid 26766, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 26767, Jianghu-II Class (Type 053H1)
         setSpecific((byte)2); // uid 26769, F23 Mahar Thiha Thura
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F23MaharThihaThura createInstance()
+    {
+            return new F23MaharThihaThura();
     }
 }

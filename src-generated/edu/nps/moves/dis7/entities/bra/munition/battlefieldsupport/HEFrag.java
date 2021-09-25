@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@14efa279;
- * Country: Brazil (BRA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21781
+ * <p> Entity class <b><code>HEFrag</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEFrag.createInstance()</code> or <code>new HEFrag()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: RocketASTROS  = <code>1</code>; </li>
+ *     <li> Specific: _127mmSS30  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21781; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1d2fb82. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEFrag extends EntityType
+public final class HEFrag extends EntityType
 {
     /** Default constructor */
     public HEFrag()
@@ -27,5 +41,11 @@ public class HEFrag extends EntityType
         setSubCategory((byte)1); // uid 21779, Rocket ASTROS
         setSpecific((byte)1); // uid 21780, 127 mm SS-30
         setExtra((byte)1); // uid 21781, HE Frag
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEFrag createInstance()
+    {
+            return new HEFrag();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@996a546;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11239
+ * <p> Entity class <b><code>MQ1LArmedPredator</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MQ1LArmedPredator.createInstance()</code> or <code>new MQ1LArmedPredator()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: PredatorMediumAltitudeEnduranceUAV  = <code>4</code>; </li>
+ *     <li> Specific: MQ1LArmedPredator  = <code>3</code>; </li>
+ *     <li> Entity type uid: 11239; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65629ac6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class MQ1LArmedPredator extends EntityType
+public final class MQ1LArmedPredator extends EntityType
 {
     /** Default constructor */
     public MQ1LArmedPredator()
@@ -26,5 +40,11 @@ public class MQ1LArmedPredator extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)4); // uid 11236, Predator Medium Altitude Endurance UAV
         setSpecific((byte)3); // uid 11239, MQ-1L Armed Predator
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MQ1LArmedPredator createInstance()
+    {
+            return new MQ1LArmedPredator();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dd45c93;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 19960
+ * <p> Entity class <b><code>WCMDwithCombinedEffectsMunitionBLU97B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WCMDwithCombinedEffectsMunitionBLU97B.createInstance()</code> or <code>new WCMDwithCombinedEffectsMunitionBLU97B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: WindCorrectedMunitionsDispenserWCMD  = <code>22</code>; </li>
+ *     <li> Specific: WCMDwithCombinedEffectsMunitionBLU97B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19960; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@316d30ad. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class WCMDwithCombinedEffectsMunitionBLU97B extends EntityType
+public final class WCMDwithCombinedEffectsMunitionBLU97B extends EntityType
 {
     /** Default constructor */
     public WCMDwithCombinedEffectsMunitionBLU97B()
@@ -26,5 +40,11 @@ public class WCMDwithCombinedEffectsMunitionBLU97B extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)22); // uid 19958, Wind-Corrected Munitions Dispenser (WCMD)
         setSpecific((byte)2); // uid 19960, WCMD with Combined Effects Munition (BLU-97/B)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WCMDwithCombinedEffectsMunitionBLU97B createInstance()
+    {
+            return new WCMDwithCombinedEffectsMunitionBLU97B();
     }
 }

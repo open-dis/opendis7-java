@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class VariableParameter extends Object implements Serializable
    protected byte[]  recordSpecificFields = new byte[15]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public VariableParameter()
  {
  }
@@ -39,8 +38,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
-   marshalSize += recordSpecificFields.length * 1;
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
+   if (recordSpecificFields != null)
+       marshalSize += recordSpecificFields.length * 1;
 
    return marshalSize;
 }
@@ -90,7 +91,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        recordType.marshal(dos);
 
-       for(int idx = 0; idx < recordSpecificFields.length; idx++)
+       for (int idx = 0; idx < recordSpecificFields.length; idx++)
            dos.writeByte(recordSpecificFields[idx]);
 
     }
@@ -115,7 +116,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         recordType = VariableParameterRecordType.unmarshalEnum(dis);
         uPosition += recordType.getMarshalledSize();
-        for(int idx = 0; idx < recordSpecificFields.length; idx++)
+        for (int idx = 0; idx < recordSpecificFields.length; idx++)
             recordSpecificFields[idx] = dis.readByte();
         uPosition += (recordSpecificFields.length * 1);
     }
@@ -138,7 +139,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    recordType.marshal(byteBuffer);
 
-   for(int idx = 0; idx < recordSpecificFields.length; idx++)
+   for (int idx = 0; idx < recordSpecificFields.length; idx++)
        byteBuffer.put((byte)recordSpecificFields[idx]);
 
 }
@@ -154,9 +155,18 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    for(int idx = 0; idx < recordSpecificFields.length; idx++)
-        recordSpecificFields[idx] = byteBuffer.get();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute recordSpecificFields marked as not serialized
+        for (int idx = 0; idx < recordSpecificFields.length; idx++)
+            recordSpecificFields[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -192,7 +202,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 15; idx++)
+     for (int idx = 0; idx < 15; idx++)
      {
           if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) ivarsEqual = false;
      }

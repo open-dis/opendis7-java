@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f2ef586;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23140
+ * <p> Entity class <b><code>DE230Jintsu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DE230Jintsu.createInstance()</code> or <code>new DE230Jintsu()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: AbukumaClassFF  = <code>1</code>; </li>
+ *     <li> Specific: DE230Jintsu  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23140; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f28bd56. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class DE230Jintsu extends EntityType
+public final class DE230Jintsu extends EntityType
 {
     /** Default constructor */
     public DE230Jintsu()
@@ -26,5 +40,11 @@ public class DE230Jintsu extends EntityType
         setCategory((byte)6); // uid 23137, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 23138, Abukuma Class (FF)
         setSpecific((byte)2); // uid 23140, DE 230 Jintsu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DE230Jintsu createInstance()
+    {
+            return new DE230Jintsu();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LiveEntityOrientation extends Object implements Serializable
    protected byte  phi;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityOrientation()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    psi = (byte)(byteBuffer.get() & 0xFF);
-    theta = (byte)(byteBuffer.get() & 0xFF);
-    phi = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute psi marked as not serialized
+        psi = (byte)(byteBuffer.get() & 0xFF);
+        // attribute theta marked as not serialized
+        theta = (byte)(byteBuffer.get() & 0xFF);
+        // attribute phi marked as not serialized
+        phi = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

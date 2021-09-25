@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10993713;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18331
+ * <p> Entity class <b><code>C550Cavour</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C550Cavour.createInstance()</code> or <code>new C550Cavour()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Carrier = <code>1</code>; </li>
+ *     <li> SubCategory: CavourClassCV  = <code>1</code>; </li>
+ *     <li> Specific: C550Cavour  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18331; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e22550a. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Carrier
+ * @see SubCategory
+
  */
-public class C550Cavour extends EntityType
+public final class C550Cavour extends EntityType
 {
     /** Default constructor */
     public C550Cavour()
@@ -26,5 +40,11 @@ public class C550Cavour extends EntityType
         setCategory((byte)1); // uid 18329, Carrier
         setSubCategory((byte)1); // uid 18330, Cavour Class (CV)
         setSpecific((byte)1); // uid 18331, C 550 Cavour
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C550Cavour createInstance()
+    {
+            return new C550Cavour();
     }
 }

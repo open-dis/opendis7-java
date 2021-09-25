@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d6d8735;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29393
+ * <p> Entity class <b><code>HaulmarkTrailerHeavyContainer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaulmarkTrailerHeavyContainer.createInstance()</code> or <code>new HaulmarkTrailerHeavyContainer()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: Greaterthan10Tons  = <code>5</code>; </li>
+ *     <li> Specific: HaulmarkTrailerHeavyContainer  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29393; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21588809. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class HaulmarkTrailerHeavyContainer extends EntityType
+public final class HaulmarkTrailerHeavyContainer extends EntityType
 {
     /** Default constructor */
     public HaulmarkTrailerHeavyContainer()
@@ -26,5 +40,11 @@ public class HaulmarkTrailerHeavyContainer extends EntityType
         setCategory((byte)14); // uid 29384, Cargo Trailer
         setSubCategory((byte)5); // uid 29392, Greater than 10 Tons
         setSpecific((byte)1); // uid 29393, Haulmark - Trailer, Heavy Container
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaulmarkTrailerHeavyContainer createInstance()
+    {
+            return new HaulmarkTrailerHeavyContainer();
     }
 }

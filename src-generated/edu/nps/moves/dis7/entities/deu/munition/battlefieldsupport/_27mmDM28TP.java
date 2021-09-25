@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25a5c8e;
- * Country: Germany (DEU);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25738
+ * <p> Entity class <b><code>_27mmDM28TP</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_27mmDM28TP.createInstance()</code> or <code>new _27mmDM28TP()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _27mm  = <code>7</code>; </li>
+ *     <li> Specific: _27mmDM28TP  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25738; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7364f68. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _27mmDM28TP extends EntityType
+public final class _27mmDM28TP extends EntityType
 {
     /** Default constructor */
     public _27mmDM28TP()
@@ -26,5 +40,11 @@ public class _27mmDM28TP extends EntityType
         setCategory((byte)2); // uid 21257, Ballistic
         setSubCategory((byte)7); // uid 25737, 27 mm
         setSpecific((byte)1); // uid 25738, 27 mm DM 28 (TP)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _27mmDM28TP createInstance()
+    {
+            return new _27mmDM28TP();
     }
 }

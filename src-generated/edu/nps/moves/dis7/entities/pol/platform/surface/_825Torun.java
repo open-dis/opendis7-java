@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a1ed4e5;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23061
+ * <p> Entity class <b><code>_825Torun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_825Torun.createInstance()</code> or <code>new _825Torun()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: LublinClass  = <code>1</code>; </li>
+ *     <li> Specific: _825Torun  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23061; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@111610e6. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class _825Torun extends EntityType
+public final class _825Torun extends EntityType
 {
     /** Default constructor */
     public _825Torun()
@@ -26,5 +40,11 @@ public class _825Torun extends EntityType
         setCategory((byte)10); // uid 23055, Tank Landing Ship
         setSubCategory((byte)1); // uid 23056, Lublin Class
         setSpecific((byte)5); // uid 23061, 825 Torun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _825Torun createInstance()
+    {
+            return new _825Torun();
     }
 }

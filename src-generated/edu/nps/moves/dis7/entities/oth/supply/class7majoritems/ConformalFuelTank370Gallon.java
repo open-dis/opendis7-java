@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@abc7005;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30758
+ * <p> Entity class <b><code>ConformalFuelTank370Gallon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ConformalFuelTank370Gallon.createInstance()</code> or <code>new ConformalFuelTank370Gallon()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Conformal Fuel Tank = <code>21</code>; </li>
+ *     <li> SubCategory: ConformalFuelTank370Gallon  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30758; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3bf5911d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see ConformalFuelTank
+ * @see SubCategory
+
  */
-public class ConformalFuelTank370Gallon extends EntityType
+public final class ConformalFuelTank370Gallon extends EntityType
 {
     /** Default constructor */
     public ConformalFuelTank370Gallon()
@@ -25,5 +39,11 @@ public class ConformalFuelTank370Gallon extends EntityType
 
         setCategory((byte)21); // uid 30755, Conformal Fuel Tank
         setSubCategory((byte)3); // uid 30758, Conformal Fuel Tank - 370 Gallon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ConformalFuelTank370Gallon createInstance()
+    {
+            return new ConformalFuelTank370Gallon();
     }
 }

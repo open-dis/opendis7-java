@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22d8f4ed;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11852
+ * <p> Entity class <b><code>TAOT1124RichardGMatthieson</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAOT1124RichardGMatthieson.createInstance()</code> or <code>new TAOT1124RichardGMatthieson()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: TankersOceanTransportation  = <code>13</code>; </li>
+ *     <li> Specific: TAOT1124RichardGMatthieson  = <code>12</code>; </li>
+ *     <li> Entity type uid: 11852; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54ffa561. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAOT1124RichardGMatthieson extends EntityType
+public final class TAOT1124RichardGMatthieson extends EntityType
 {
     /** Default constructor */
     public TAOT1124RichardGMatthieson()
@@ -26,5 +40,11 @@ public class TAOT1124RichardGMatthieson extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)13); // uid 11840, Tankers (Ocean Transportation)
         setSpecific((byte)12); // uid 11852, TAOT 1124 Richard G. Matthieson
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAOT1124RichardGMatthieson createInstance()
+    {
+            return new TAOT1124RichardGMatthieson();
     }
 }

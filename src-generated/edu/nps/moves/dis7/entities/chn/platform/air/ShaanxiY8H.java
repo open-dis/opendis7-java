@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@12d3a4e9;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24755
+ * <p> Entity class <b><code>ShaanxiY8H</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShaanxiY8H.createInstance()</code> or <code>new ShaanxiY8H()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: FourEngineTurboprop  = <code>24</code>; </li>
+ *     <li> Specific: ShaanxiY8  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24755; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@70b0b186. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class ShaanxiY8H extends EntityType
+public final class ShaanxiY8H extends EntityType
 {
     /** Default constructor */
     public ShaanxiY8H()
@@ -27,5 +41,11 @@ public class ShaanxiY8H extends EntityType
         setSubCategory((byte)24); // uid 23865, Four Engine Turboprop
         setSpecific((byte)1); // uid 23866, Shaanxi Y-8
         setExtra((byte)4); // uid 24755, Shaanxi Y-8H
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShaanxiY8H createInstance()
+    {
+            return new ShaanxiY8H();
     }
 }

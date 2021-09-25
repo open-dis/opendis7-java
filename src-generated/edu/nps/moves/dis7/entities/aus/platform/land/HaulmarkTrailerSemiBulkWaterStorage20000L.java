@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@17ed40e0;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29409
+ * <p> Entity class <b><code>HaulmarkTrailerSemiBulkWaterStorage20000L</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaulmarkTrailerSemiBulkWaterStorage20000L.createInstance()</code> or <code>new HaulmarkTrailerSemiBulkWaterStorage20000L()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Water Trailer = <code>17</code>; </li>
+ *     <li> SubCategory: Greaterthan5000Gallons  = <code>3</code>; </li>
+ *     <li> Specific: HaulmarkTrailerSemiBulkWaterStorage20000L  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29409; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@383534aa. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see WaterTrailer
+ * @see SubCategory
+
  */
-public class HaulmarkTrailerSemiBulkWaterStorage20000L extends EntityType
+public final class HaulmarkTrailerSemiBulkWaterStorage20000L extends EntityType
 {
     /** Default constructor */
     public HaulmarkTrailerSemiBulkWaterStorage20000L()
@@ -26,5 +40,11 @@ public class HaulmarkTrailerSemiBulkWaterStorage20000L extends EntityType
         setCategory((byte)17); // uid 29403, Water Trailer
         setSubCategory((byte)3); // uid 29408, Greater than 5000 Gallons
         setSpecific((byte)1); // uid 29409, Haulmark - Trailer, Semi, Bulk Water Storage, 20000L
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaulmarkTrailerSemiBulkWaterStorage20000L createInstance()
+    {
+            return new HaulmarkTrailerSemiBulkWaterStorage20000L();
     }
 }

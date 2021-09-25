@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c13da15;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31260
+ * <p> Entity class <b><code>P32Guerrico</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P32Guerrico.createInstance()</code> or <code>new P32Guerrico()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: DrummondClassA69  = <code>1</code>; </li>
+ *     <li> Specific: P32Guerrico  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31260; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1376c05c. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class P32Guerrico extends EntityType
+public final class P32Guerrico extends EntityType
 {
     /** Default constructor */
     public P32Guerrico()
@@ -26,5 +40,11 @@ public class P32Guerrico extends EntityType
         setCategory((byte)50); // uid 31257, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 31258, Drummond Class (A-69)
         setSpecific((byte)2); // uid 31260, P 32 Guerrico
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P32Guerrico createInstance()
+    {
+            return new P32Guerrico();
     }
 }

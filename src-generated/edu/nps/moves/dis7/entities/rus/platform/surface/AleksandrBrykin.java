@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56ac5c80;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13821
+ * <p> Entity class <b><code>AleksandrBrykin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AleksandrBrykin.createInstance()</code> or <code>new AleksandrBrykin()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AleksandrBrykinclassmissilesupportship  = <code>3</code>; </li>
+ *     <li> Specific: AleksandrBrykin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13821; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d98d138. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AleksandrBrykin extends EntityType
+public final class AleksandrBrykin extends EntityType
 {
     /** Default constructor */
     public AleksandrBrykin()
@@ -26,5 +40,11 @@ public class AleksandrBrykin extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)3); // uid 13820, Aleksandr Brykin class (missile support ship)
         setSpecific((byte)1); // uid 13821, Aleksandr Brykin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AleksandrBrykin createInstance()
+    {
+            return new AleksandrBrykin();
     }
 }

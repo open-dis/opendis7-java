@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4d4d48a6;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25758
+ * <p> Entity class <b><code>GenericCarIntermediateStandardMedium</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericCarIntermediateStandardMedium.createInstance()</code> or <code>new GenericCarIntermediateStandardMedium()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: GenericCarIntermediateStandardMedium  = <code>13</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25758; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@47d93e0d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class GenericCarIntermediateStandardMedium extends EntityType
+public final class GenericCarIntermediateStandardMedium extends EntityType
 {
     /** Default constructor */
     public GenericCarIntermediateStandardMedium()
@@ -25,5 +39,11 @@ public class GenericCarIntermediateStandardMedium extends EntityType
 
         setCategory((byte)81); // uid 25754, Car
         setSubCategory((byte)13); // uid 25758, Generic Car, Intermediate/Standard (Medium)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericCarIntermediateStandardMedium createInstance()
+    {
+            return new GenericCarIntermediateStandardMedium();
     }
 }

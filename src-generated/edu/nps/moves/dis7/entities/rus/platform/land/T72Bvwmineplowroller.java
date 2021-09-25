@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64e1dd11;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12533
+ * <p> Entity class <b><code>T72Bvwmineplowroller</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T72Bvwmineplowroller.createInstance()</code> or <code>new T72Bvwmineplowroller()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: T72MBT  = <code>2</code>; </li>
+ *     <li> Specific: T72Bvwmineplowroller  = <code>11</code>; </li>
+ *     <li> Entity type uid: 12533; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62515a47. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class T72Bvwmineplowroller extends EntityType
+public final class T72Bvwmineplowroller extends EntityType
 {
     /** Default constructor */
     public T72Bvwmineplowroller()
@@ -26,5 +40,11 @@ public class T72Bvwmineplowroller extends EntityType
         setCategory((byte)1); // uid 12510, Tank
         setSubCategory((byte)2); // uid 12522, T-72 MBT
         setSpecific((byte)11); // uid 12533, T-72 Bv w/mine plow roller
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T72Bvwmineplowroller createInstance()
+    {
+            return new T72Bvwmineplowroller();
     }
 }

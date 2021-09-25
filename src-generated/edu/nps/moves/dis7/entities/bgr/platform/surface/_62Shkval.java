@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7791a895;
- * Country: Bulgaria (BGR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29951
+ * <p> Entity class <b><code>_62Shkval</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_62Shkval.createInstance()</code> or <code>new _62Shkval()</code>. </p>
+ * <ul>
+ *     <li> Country: Bulgaria (BGR) = <code>33</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: SonyaClass  = <code>2</code>; </li>
+ *     <li> Specific: _62Shkval  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29951; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3abbfa04. </p>
+ * @see Country#BULGARIA_BGR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _62Shkval extends EntityType
+public final class _62Shkval extends EntityType
 {
     /** Default constructor */
     public _62Shkval()
@@ -26,5 +40,11 @@ public class _62Shkval extends EntityType
         setCategory((byte)8); // uid 27886, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 29949, Sonya Class
         setSpecific((byte)2); // uid 29951, 62 Shkval
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _62Shkval createInstance()
+    {
+            return new _62Shkval();
     }
 }

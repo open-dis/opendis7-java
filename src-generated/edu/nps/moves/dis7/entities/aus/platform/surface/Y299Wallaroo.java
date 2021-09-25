@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3fb6a447;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17581
+ * <p> Entity class <b><code>Y299Wallaroo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y299Wallaroo.createInstance()</code> or <code>new Y299Wallaroo()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: COOPClassMinesweepersAuxiliary  = <code>3</code>; </li>
+ *     <li> Specific: Y299Wallaroo  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17581; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@725bef66. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class Y299Wallaroo extends EntityType
+public final class Y299Wallaroo extends EntityType
 {
     /** Default constructor */
     public Y299Wallaroo()
@@ -26,5 +40,11 @@ public class Y299Wallaroo extends EntityType
         setCategory((byte)8); // uid 17565, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 17577, COOP Class (Minesweepers - Auxiliary)
         setSpecific((byte)4); // uid 17581, Y 299 Wallaroo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y299Wallaroo createInstance()
+    {
+            return new Y299Wallaroo();
     }
 }

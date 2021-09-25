@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39d77de9;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 23955
+ * <p> Entity class <b><code>HOT2T</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HOT2T.createInstance()</code> or <code>new HOT2T()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: HOTmissile  = <code>3</code>; </li>
+ *     <li> Specific: HOT2T  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23955; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19b5214b. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class HOT2T extends EntityType
+public final class HOT2T extends EntityType
 {
     /** Default constructor */
     public HOT2T()
@@ -26,5 +40,11 @@ public class HOT2T extends EntityType
         setCategory((byte)1); // uid 21055, Guided
         setSubCategory((byte)3); // uid 21058, HOT missile
         setSpecific((byte)3); // uid 23955, HOT 2T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HOT2T createInstance()
+    {
+            return new HOT2T();
     }
 }

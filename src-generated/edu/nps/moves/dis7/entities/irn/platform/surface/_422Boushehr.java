@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a1dd365;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18157
+ * <p> Entity class <b><code>_422Boushehr</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_422Boushehr.createInstance()</code> or <code>new _422Boushehr()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Combat Stores Ship = <code>58</code>; </li>
+ *     <li> SubCategory: FleetSupplyShip  = <code>1</code>; </li>
+ *     <li> Specific: _422Boushehr  = <code>2</code>; </li>
+ *     <li> Entity type uid: 18157; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3724af13. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CombatStoresShip
+ * @see SubCategory
+
  */
-public class _422Boushehr extends EntityType
+public final class _422Boushehr extends EntityType
 {
     /** Default constructor */
     public _422Boushehr()
@@ -26,5 +40,11 @@ public class _422Boushehr extends EntityType
         setCategory((byte)58); // uid 18154, Combat Stores Ship
         setSubCategory((byte)1); // uid 18155, Fleet Supply Ship
         setSpecific((byte)2); // uid 18157, 422 Boushehr
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _422Boushehr createInstance()
+    {
+            return new _422Boushehr();
     }
 }

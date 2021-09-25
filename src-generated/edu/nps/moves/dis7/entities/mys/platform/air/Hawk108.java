@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@733c423e;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28560
+ * <p> Entity class <b><code>Hawk108</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hawk108.createInstance()</code> or <code>new Hawk108()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: BAESystemsHawk  = <code>1</code>; </li>
+ *     <li> Specific: Hawk108  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28560; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e70bd39. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class Hawk108 extends EntityType
+public final class Hawk108 extends EntityType
 {
     /** Default constructor */
     public Hawk108()
@@ -26,5 +40,11 @@ public class Hawk108 extends EntityType
         setCategory((byte)40); // uid 28558, Trainer
         setSubCategory((byte)1); // uid 28559, BAE Systems Hawk
         setSpecific((byte)1); // uid 28560, Hawk 108
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hawk108 createInstance()
+    {
+            return new Hawk108();
     }
 }

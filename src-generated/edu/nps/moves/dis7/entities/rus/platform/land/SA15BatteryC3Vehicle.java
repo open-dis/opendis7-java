@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@415156bf;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13099
+ * <p> Entity class <b><code>SA15BatteryC3Vehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA15BatteryC3Vehicle.createInstance()</code> or <code>new SA15BatteryC3Vehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA15GauntletSAMSystem  = <code>10</code>; </li>
+ *     <li> Specific: SA15BatteryC3Vehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13099; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@417d6615. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA15BatteryC3Vehicle extends EntityType
+public final class SA15BatteryC3Vehicle extends EntityType
 {
     /** Default constructor */
     public SA15BatteryC3Vehicle()
@@ -26,5 +40,11 @@ public class SA15BatteryC3Vehicle extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)10); // uid 13098, SA-15 Gauntlet SAM System
         setSpecific((byte)1); // uid 13099, SA-15 Battery C3 Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA15BatteryC3Vehicle createInstance()
+    {
+            return new SA15BatteryC3Vehicle();
     }
 }

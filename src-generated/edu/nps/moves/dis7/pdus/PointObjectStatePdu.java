@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -61,7 +60,7 @@ public class PointObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
    protected int  pad2;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public PointObjectStatePdu()
  {
     setPduType( DisPduType.POINT_OBJECT_STATE );
@@ -77,19 +76,29 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += objectID.getMarshalledSize();
-   marshalSize += referencedObjectID.getMarshalledSize();
+   if (objectID != null)
+       marshalSize += objectID.getMarshalledSize();
+   if (referencedObjectID != null)
+       marshalSize += referencedObjectID.getMarshalledSize();
    marshalSize += 4;  // updateNumber
-   marshalSize += forceID.getMarshalledSize();
-   marshalSize += modifications.getMarshalledSize();
-   marshalSize += objectType.getMarshalledSize();
-   marshalSize += objectLocation.getMarshalledSize();
-   marshalSize += objectOrientation.getMarshalledSize();
+   if (forceID != null)
+       marshalSize += forceID.getMarshalledSize();
+   if (modifications != null)
+       marshalSize += modifications.getMarshalledSize();
+   if (objectType != null)
+       marshalSize += objectType.getMarshalledSize();
+   if (objectLocation != null)
+       marshalSize += objectLocation.getMarshalledSize();
+   if (objectOrientation != null)
+       marshalSize += objectOrientation.getMarshalledSize();
    marshalSize += 4;  // specificObjectAppearance
-   marshalSize += generObjectAppearance.getMarshalledSize();
+   if (generObjectAppearance != null)
+       marshalSize += generObjectAppearance.getMarshalledSize();
    marshalSize += 2;  // padding1
-   marshalSize += requesterID.getMarshalledSize();
-   marshalSize += receivingID.getMarshalledSize();
+   if (requesterID != null)
+       marshalSize += requesterID.getMarshalledSize();
+   if (receivingID != null)
+       marshalSize += receivingID.getMarshalledSize();
    marshalSize += 4;  // pad2
 
    return marshalSize;
@@ -441,20 +450,41 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    objectID.unmarshal(byteBuffer);
-    referencedObjectID.unmarshal(byteBuffer);
-    updateNumber = byteBuffer.getInt();
-    forceID = ForceID.unmarshalEnum(byteBuffer);
-    modifications.unmarshal(byteBuffer);
-    objectType.unmarshal(byteBuffer);
-    objectLocation.unmarshal(byteBuffer);
-    objectOrientation.unmarshal(byteBuffer);
-    specificObjectAppearance = byteBuffer.getInt();
-    generObjectAppearance.unmarshal(byteBuffer);
-    padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
-    requesterID.unmarshal(byteBuffer);
-    receivingID.unmarshal(byteBuffer);
-    pad2 = byteBuffer.getInt();
+    try
+    {
+        // attribute objectID marked as not serialized
+        objectID.unmarshal(byteBuffer);
+        // attribute referencedObjectID marked as not serialized
+        referencedObjectID.unmarshal(byteBuffer);
+        // attribute updateNumber marked as not serialized
+        updateNumber = byteBuffer.getInt();
+        // attribute forceID marked as not serialized
+        forceID = ForceID.unmarshalEnum(byteBuffer);
+        // attribute modifications marked as not serialized
+        modifications.unmarshal(byteBuffer);
+        // attribute objectType marked as not serialized
+        objectType.unmarshal(byteBuffer);
+        // attribute objectLocation marked as not serialized
+        objectLocation.unmarshal(byteBuffer);
+        // attribute objectOrientation marked as not serialized
+        objectOrientation.unmarshal(byteBuffer);
+        // attribute specificObjectAppearance marked as not serialized
+        specificObjectAppearance = byteBuffer.getInt();
+        // attribute generObjectAppearance marked as not serialized
+        generObjectAppearance.unmarshal(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requesterID marked as not serialized
+        requesterID.unmarshal(byteBuffer);
+        // attribute receivingID marked as not serialized
+        receivingID.unmarshal(byteBuffer);
+        // attribute pad2 marked as not serialized
+        pad2 = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

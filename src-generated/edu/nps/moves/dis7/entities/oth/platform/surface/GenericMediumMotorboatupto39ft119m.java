@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a4ed68f;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24642
+ * <p> Entity class <b><code>GenericMediumMotorboatupto39ft119m</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericMediumMotorboatupto39ft119m.createInstance()</code> or <code>new GenericMediumMotorboatupto39ft119m()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Private Motorboat = <code>84</code>; </li>
+ *     <li> SubCategory: GenericMediumMotorboatupto39ft119m  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24642; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5e63cad. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PrivateMotorboat
+ * @see SubCategory
+
  */
-public class GenericMediumMotorboatupto39ft119m extends EntityType
+public final class GenericMediumMotorboatupto39ft119m extends EntityType
 {
     /** Default constructor */
     public GenericMediumMotorboatupto39ft119m()
@@ -25,5 +39,11 @@ public class GenericMediumMotorboatupto39ft119m extends EntityType
 
         setCategory((byte)84); // uid 24640, Private Motorboat
         setSubCategory((byte)2); // uid 24642, Generic Medium Motorboat (up to 39ft/11.9m)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericMediumMotorboatupto39ft119m createInstance()
+    {
+            return new GenericMediumMotorboatupto39ft119m();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7637f22;
- * Country: Algeria (DZA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27041
+ * <p> Entity class <b><code>_901MouradRais1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_901MouradRais1.createInstance()</code> or <code>new _901MouradRais1()</code>. </p>
+ * <ul>
+ *     <li> Country: Algeria (DZA) = <code>3</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: MouradRaisKoniclass  = <code>1</code>; </li>
+ *     <li> Specific: _901MouradRais  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27041; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fa7e7ff. </p>
+ * @see Country#ALGERIA_DZA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _901MouradRais1 extends EntityType
+public final class _901MouradRais1 extends EntityType
 {
     /** Default constructor */
     public _901MouradRais1()
@@ -26,5 +40,11 @@ public class _901MouradRais1 extends EntityType
         setCategory((byte)50); // uid 27039, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27040, Mourad Rais (Koni) class
         setSpecific((byte)1); // uid 27041, 901 Mourad Rais
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _901MouradRais1 createInstance()
+    {
+            return new _901MouradRais1();
     }
 }

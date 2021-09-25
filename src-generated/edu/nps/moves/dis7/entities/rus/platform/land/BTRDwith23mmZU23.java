@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7808fb9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12689
+ * <p> Entity class <b><code>BTRDwith23mmZU23</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BTRDwith23mmZU23.createInstance()</code> or <code>new BTRDwith23mmZU23()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BMDairbornefiresupportvehicle  = <code>11</code>; </li>
+ *     <li> Specific: BTRDwith23mmZU23  = <code>10</code>; </li>
+ *     <li> Entity type uid: 12689; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67207d8a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class BTRDwith23mmZU23 extends EntityType
+public final class BTRDwith23mmZU23 extends EntityType
 {
     /** Default constructor */
     public BTRDwith23mmZU23()
@@ -26,5 +40,11 @@ public class BTRDwith23mmZU23 extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)11); // uid 12679, BMD airborne fire support vehicle
         setSpecific((byte)10); // uid 12689, BTR-D with 23-mm ZU-23
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BTRDwith23mmZU23 createInstance()
+    {
+            return new BTRDwith23mmZU23();
     }
 }

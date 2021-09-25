@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@323659f8;
- * Country: Philippines (PHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31151
+ * <p> Entity class <b><code>_288WarayexL133Betano</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_288WarayexL133Betano.createInstance()</code> or <code>new _288WarayexL133Betano()</code>. </p>
+ * <ul>
+ *     <li> Country: Philippines (PHL) = <code>173</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: IvatanClassexBalikpapanClass  = <code>1</code>; </li>
+ *     <li> Specific: _288WarayexL133Betano  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31151; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@238ad8c. </p>
+ * @see Country#PHILIPPINES_PHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _288WarayexL133Betano extends EntityType
+public final class _288WarayexL133Betano extends EntityType
 {
     /** Default constructor */
     public _288WarayexL133Betano()
@@ -26,5 +40,11 @@ public class _288WarayexL133Betano extends EntityType
         setCategory((byte)11); // uid 31149, Landing Craft
         setSubCategory((byte)1); // uid 31150, Ivatan Class (ex Balikpapan Class)
         setSpecific((byte)1); // uid 31151, 288 Waray (ex L 133 Betano)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _288WarayexL133Betano createInstance()
+    {
+            return new _288WarayexL133Betano();
     }
 }

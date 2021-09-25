@@ -10,8 +10,7 @@ import java.io.DataOutputStream;
 import java.nio.ByteBuffer;
 
 /**
- * Marshaller.java created on Apr 22, 2019.
- * MOVES Institute, Naval Postgraduate School (NPS), Monterey California USA https://www.nps.edu.
+ * Marshaller performs serialization.
  */
 public interface Marshaller
 {

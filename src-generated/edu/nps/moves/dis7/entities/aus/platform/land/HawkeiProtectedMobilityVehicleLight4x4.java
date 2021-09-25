@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7cef4e59;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29414
+ * <p> Entity class <b><code>HawkeiProtectedMobilityVehicleLight4x4</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HawkeiProtectedMobilityVehicleLight4x4.createInstance()</code> or <code>new HawkeiProtectedMobilityVehicleLight4x4()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: HawkeiProtectedMobilityVehicleLight4x4  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29414; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@515f550a. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class HawkeiProtectedMobilityVehicleLight4x4 extends EntityType
+public final class HawkeiProtectedMobilityVehicleLight4x4 extends EntityType
 {
     /** Default constructor */
     public HawkeiProtectedMobilityVehicleLight4x4()
@@ -25,5 +39,11 @@ public class HawkeiProtectedMobilityVehicleLight4x4 extends EntityType
 
         setCategory((byte)6); // uid 28910, Small Wheeled Utility Vehicle
         setSubCategory((byte)3); // uid 29414, Hawkei Protected Mobility Vehicle - Light 4x4
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HawkeiProtectedMobilityVehicleLight4x4 createInstance()
+    {
+            return new HawkeiProtectedMobilityVehicleLight4x4();
     }
 }

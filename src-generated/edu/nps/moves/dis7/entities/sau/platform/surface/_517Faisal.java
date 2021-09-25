@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15b82644;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17873
+ * <p> Entity class <b><code>_517Faisal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_517Faisal.createInstance()</code> or <code>new _517Faisal()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: AlSiddiqfastattackcraftmissile  = <code>4</code>; </li>
+ *     <li> Specific: _517Faisal  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17873; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7187bac9. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _517Faisal extends EntityType
+public final class _517Faisal extends EntityType
 {
     /** Default constructor */
     public _517Faisal()
@@ -26,5 +40,11 @@ public class _517Faisal extends EntityType
         setCategory((byte)7); // uid 17862, Light/Patrol Craft
         setSubCategory((byte)4); // uid 17869, Al Siddiq (fast attack craft-missile)
         setSpecific((byte)4); // uid 17873, 517 Faisal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _517Faisal createInstance()
+    {
+            return new _517Faisal();
     }
 }

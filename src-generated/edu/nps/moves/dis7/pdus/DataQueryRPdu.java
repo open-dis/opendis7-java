@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
    protected List< VariableDatum > variableDatumRecords = new ArrayList< VariableDatum >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DataQueryRPdu()
  {
     setPduType( DisPduType.DATA_QUERY_RELIABLE );
@@ -62,23 +61,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += requiredReliabilityService.getMarshalledSize();
+   if (requiredReliabilityService != null)
+       marshalSize += requiredReliabilityService.getMarshalledSize();
    marshalSize += 1;  // pad1
    marshalSize += 2;  // pad2
    marshalSize += 4;  // requestID
    marshalSize += 4;  // timeInterval
    marshalSize += 4;  // numberOfFixedDatumRecords
    marshalSize += 4;  // numberOfVariableDatumRecords
-   for(int idx=0; idx < fixedDatumRecords.size(); idx++)
-   {
-        FixedDatum listElement = fixedDatumRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < variableDatumRecords.size(); idx++)
-   {
-        VariableDatum listElement = variableDatumRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (fixedDatumRecords != null)
+       for (int idx=0; idx < fixedDatumRecords.size(); idx++)
+       {
+            FixedDatum listElement = fixedDatumRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (variableDatumRecords != null)
+       for (int idx=0; idx < variableDatumRecords.size(); idx++)
+       {
+            VariableDatum listElement = variableDatumRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -229,14 +231,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(fixedDatumRecords.size());
        dos.writeInt(variableDatumRecords.size());
 
-       for(int idx = 0; idx < fixedDatumRecords.size(); idx++)
+       for (int idx = 0; idx < fixedDatumRecords.size(); idx++)
        {
             FixedDatum aFixedDatum = fixedDatumRecords.get(idx);
             aFixedDatum.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+       for (int idx = 0; idx < variableDatumRecords.size(); idx++)
        {
             VariableDatum aVariableDatum = variableDatumRecords.get(idx);
             aVariableDatum.marshal(dos);
@@ -278,14 +280,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
         {
             FixedDatum anX = new FixedDatum();
             uPosition += anX.unmarshal(dis);
             fixedDatumRecords.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
             uPosition += anX.unmarshal(dis);
@@ -319,14 +321,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)fixedDatumRecords.size());
    byteBuffer.putInt( (int)variableDatumRecords.size());
 
-   for(int idx = 0; idx < fixedDatumRecords.size(); idx++)
+   for (int idx = 0; idx < fixedDatumRecords.size(); idx++)
    {
         FixedDatum aFixedDatum = fixedDatumRecords.get(idx);
         aFixedDatum.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+   for (int idx = 0; idx < variableDatumRecords.size(); idx++)
    {
         VariableDatum aVariableDatum = variableDatumRecords.get(idx);
         aVariableDatum.marshal(byteBuffer);
@@ -347,27 +349,43 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
-    pad1 = (byte)(byteBuffer.get() & 0xFF);
-    pad2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    requestID = byteBuffer.getInt();
-    timeInterval = byteBuffer.getInt();
-    numberOfFixedDatumRecords = byteBuffer.getInt();
-    numberOfVariableDatumRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+    try
     {
-    FixedDatum anX = new FixedDatum();
-    anX.unmarshal(byteBuffer);
-    fixedDatumRecords.add(anX);
-    }
+        // attribute requiredReliabilityService marked as not serialized
+        requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
+        // attribute pad1 marked as not serialized
+        pad1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pad2 marked as not serialized
+        pad2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+        // attribute timeInterval marked as not serialized
+        timeInterval = byteBuffer.getInt();
+        // attribute numberOfFixedDatumRecords marked as not serialized
+        numberOfFixedDatumRecords = byteBuffer.getInt();
+        // attribute numberOfVariableDatumRecords marked as not serialized
+        numberOfVariableDatumRecords = byteBuffer.getInt();
+        // attribute fixedDatumRecords marked as not serialized
+        for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+        {
+        FixedDatum anX = new FixedDatum();
+        anX.unmarshal(byteBuffer);
+        fixedDatumRecords.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        // attribute variableDatumRecords marked as not serialized
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        {
+        VariableDatum anX = new VariableDatum();
+        anX.unmarshal(byteBuffer);
+        variableDatumRecords.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    VariableDatum anX = new VariableDatum();
-    anX.unmarshal(byteBuffer);
-    variableDatumRecords.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -402,11 +420,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (requestID == rhs.requestID)) ivarsEqual = false;
      if( ! (timeInterval == rhs.timeInterval)) ivarsEqual = false;
 
-     for(int idx = 0; idx < fixedDatumRecords.size(); idx++)
+     for (int idx = 0; idx < fixedDatumRecords.size(); idx++)
         if( ! ( fixedDatumRecords.get(idx).equals(rhs.fixedDatumRecords.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+     for (int idx = 0; idx < variableDatumRecords.size(); idx++)
         if( ! ( variableDatumRecords.get(idx).equals(rhs.variableDatumRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

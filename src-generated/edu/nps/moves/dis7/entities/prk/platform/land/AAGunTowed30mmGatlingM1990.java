@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37f21974;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23459
+ * <p> Entity class <b><code>AAGunTowed30mmGatlingM1990</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AAGunTowed30mmGatlingM1990.createInstance()</code> or <code>new AAGunTowed30mmGatlingM1990()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: TowedVSHORADGunMissileSystem  = <code>2</code>; </li>
+ *     <li> Specific: AAGunTowed30mmGatlingM1990  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23459; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@625e134e. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class AAGunTowed30mmGatlingM1990 extends EntityType
+public final class AAGunTowed30mmGatlingM1990 extends EntityType
 {
     /** Default constructor */
     public AAGunTowed30mmGatlingM1990()
@@ -26,5 +40,11 @@ public class AAGunTowed30mmGatlingM1990 extends EntityType
         setCategory((byte)28); // uid 23454, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)2); // uid 23458, Towed VSHORAD Gun/Missile System
         setSpecific((byte)1); // uid 23459, AA Gun, Towed, 30mm Gatling, M1990
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AAGunTowed30mmGatlingM1990 createInstance()
+    {
+            return new AAGunTowed30mmGatlingM1990();
     }
 }

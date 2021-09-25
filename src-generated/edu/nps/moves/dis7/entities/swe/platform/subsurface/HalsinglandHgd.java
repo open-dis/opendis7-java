@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59dc36d4;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27285
+ * <p> Entity class <b><code>HalsinglandHgd</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HalsinglandHgd.createInstance()</code> or <code>new HalsinglandHgd()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: VastergotlandA17Class  = <code>2</code>; </li>
+ *     <li> Specific: HalsinglandHgd  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27285; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b1f5012. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class HalsinglandHgd extends EntityType
+public final class HalsinglandHgd extends EntityType
 {
     /** Default constructor */
     public HalsinglandHgd()
@@ -26,5 +40,11 @@ public class HalsinglandHgd extends EntityType
         setCategory((byte)5); // uid 17502, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)2); // uid 27280, Vastergotland (A17) Class
         setSpecific((byte)2); // uid 27285, Halsingland (Hgd)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HalsinglandHgd createInstance()
+    {
+            return new HalsinglandHgd();
     }
 }

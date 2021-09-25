@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51751e5f;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12945
+ * <p> Entity class <b><code>PTSamphibioustransport</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PTSamphibioustransport.createInstance()</code> or <code>new PTSamphibioustransport()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Tracked Utility Vehicle = <code>9</code>; </li>
+ *     <li> SubCategory: PTSamphibioustransport  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12945; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3241713e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeTrackedUtilityVehicle
+ * @see SubCategory
+
  */
-public class PTSamphibioustransport extends EntityType
+public final class PTSamphibioustransport extends EntityType
 {
     /** Default constructor */
     public PTSamphibioustransport()
@@ -25,5 +39,11 @@ public class PTSamphibioustransport extends EntityType
 
         setCategory((byte)9); // uid 12944, Large Tracked Utility Vehicle
         setSubCategory((byte)1); // uid 12945, PTS amphibious transport
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PTSamphibioustransport createInstance()
+    {
+            return new PTSamphibioustransport();
     }
 }

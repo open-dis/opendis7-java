@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55421b8d;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20493
+ * <p> Entity class <b><code>_3BR540APCT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_3BR540APCT.createInstance()</code> or <code>new _3BR540APCT()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _152mm  = <code>22</code>; </li>
+ *     <li> Specific: _3BR540APCT  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20493; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e17442f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _3BR540APCT extends EntityType
+public final class _3BR540APCT extends EntityType
 {
     /** Default constructor */
     public _3BR540APCT()
@@ -26,5 +40,11 @@ public class _3BR540APCT extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)22); // uid 20491, 152 mm
         setSpecific((byte)2); // uid 20493, 3BR-540 APC-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _3BR540APCT createInstance()
+    {
+            return new _3BR540APCT();
     }
 }

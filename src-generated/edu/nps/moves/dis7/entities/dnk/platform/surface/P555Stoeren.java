@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15de0b3c;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29457
+ * <p> Entity class <b><code>P555Stoeren</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P555Stoeren.createInstance()</code> or <code>new P555Stoeren()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/ Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FlyvefiskenClass  = <code>4</code>; </li>
+ *     <li> Specific: P555Stoeren  = <code>6</code>; </li>
+ *     <li> Entity type uid: 29457; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47eaca72. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P555Stoeren extends EntityType
+public final class P555Stoeren extends EntityType
 {
     /** Default constructor */
     public P555Stoeren()
@@ -26,5 +40,11 @@ public class P555Stoeren extends EntityType
         setCategory((byte)7); // uid 18790, Light/ Patrol Craft
         setSubCategory((byte)4); // uid 29451, Flyvefisken Class
         setSpecific((byte)6); // uid 29457, P555 Stoeren
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P555Stoeren createInstance()
+    {
+            return new P555Stoeren();
     }
 }

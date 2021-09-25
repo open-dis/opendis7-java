@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11c3ff67;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29592
+ * <p> Entity class <b><code>TyphoonF2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TyphoonF2.createInstance()</code> or <code>new TyphoonF2()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: EurofighterTyphoon  = <code>3</code>; </li>
+ *     <li> Specific: TyphoonF2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29592; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63dfada0. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class TyphoonF2 extends EntityType
+public final class TyphoonF2 extends EntityType
 {
     /** Default constructor */
     public TyphoonF2()
@@ -26,5 +40,11 @@ public class TyphoonF2 extends EntityType
         setCategory((byte)1); // uid 14987, Fighter/Air Defense
         setSubCategory((byte)3); // uid 14993, Eurofighter Typhoon
         setSpecific((byte)1); // uid 29592, Typhoon F2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TyphoonF2 createInstance()
+    {
+            return new TyphoonF2();
     }
 }

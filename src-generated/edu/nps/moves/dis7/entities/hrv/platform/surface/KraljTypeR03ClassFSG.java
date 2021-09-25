@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3590fc5b;
- * Country: Croatia (HRV);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19336
+ * <p> Entity class <b><code>KraljTypeR03ClassFSG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KraljTypeR03ClassFSG.createInstance()</code> or <code>new KraljTypeR03ClassFSG()</code>. </p>
+ * <ul>
+ *     <li> Country: Croatia (HRV) = <code>249</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvettes) = <code>50</code>; </li>
+ *     <li> SubCategory: KraljTypeR03ClassFSG  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19336; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5c5eefef. </p>
+ * @see Country#CROATIA_HRV
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvettes
+ * @see SubCategory
+
  */
-public class KraljTypeR03ClassFSG extends EntityType
+public final class KraljTypeR03ClassFSG extends EntityType
 {
     /** Default constructor */
     public KraljTypeR03ClassFSG()
@@ -25,5 +39,11 @@ public class KraljTypeR03ClassFSG extends EntityType
 
         setCategory((byte)50); // uid 19335, Frigate (including Corvettes)
         setSubCategory((byte)1); // uid 19336, Kralj (Type R-03) Class (FSG)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KraljTypeR03ClassFSG createInstance()
+    {
+            return new KraljTypeR03ClassFSG();
     }
 }

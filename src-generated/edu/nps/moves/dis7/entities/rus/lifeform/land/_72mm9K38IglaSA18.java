@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d9de284;
- * Country: Russia (RUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32172
+ * <p> Entity class <b><code>_72mm9K38IglaSA18</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_72mm9K38IglaSA18.createInstance()</code> or <code>new _72mm9K38IglaSA18()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Army = <code>11</code>; </li>
+ *     <li> SubCategory: ManPortableAirDefenseSystemMANPADS  = <code>85</code>; </li>
+ *     <li> Specific: _72mm9K38IglaSA18  = <code>22</code>; </li>
+ *     <li> Entity type uid: 32172; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7254838. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Army
+ * @see SubCategory
+
  */
-public class _72mm9K38IglaSA18 extends EntityType
+public final class _72mm9K38IglaSA18 extends EntityType
 {
     /** Default constructor */
     public _72mm9K38IglaSA18()
@@ -26,5 +40,11 @@ public class _72mm9K38IglaSA18 extends EntityType
         setCategory((byte)11); // uid 32132, Army
         setSubCategory((byte)85); // uid 32169, Man-Portable Air Defense System (MANPADS)
         setSpecific((byte)22); // uid 32172, 72mm 9K38 Igla (SA-18)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _72mm9K38IglaSA18 createInstance()
+    {
+            return new _72mm9K38IglaSA18();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4da4253;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28762
+ * <p> Entity class <b><code>TPK430BUS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TPK430BUS.createInstance()</code> or <code>new TPK430BUS()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: VLRAEscortReconnaissanceSupport4x4  = <code>3</code>; </li>
+ *     <li> Specific: TPK430BUS  = <code>18</code>; </li>
+ *     <li> Entity type uid: 28762; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a2b953e. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class TPK430BUS extends EntityType
+public final class TPK430BUS extends EntityType
 {
     /** Default constructor */
     public TPK430BUS()
@@ -26,5 +40,11 @@ public class TPK430BUS extends EntityType
         setCategory((byte)6); // uid 15674, Small Wheeled Utility Vehicle
         setSubCategory((byte)3); // uid 28744, VLRA (Escort, Reconnaissance, Support) 4x4
         setSpecific((byte)18); // uid 28762, TPK 4.30 BUS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TPK430BUS createInstance()
+    {
+            return new TPK430BUS();
     }
 }

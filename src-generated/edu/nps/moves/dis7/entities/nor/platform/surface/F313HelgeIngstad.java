@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47d93e0d;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27608
+ * <p> Entity class <b><code>F313HelgeIngstad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F313HelgeIngstad.createInstance()</code> or <code>new F313HelgeIngstad()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: FridtjofNansenClass  = <code>1</code>; </li>
+ *     <li> Specific: F313HelgeIngstad  = <code>4</code>; </li>
+ *     <li> Entity type uid: 27608; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65f87a2c. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F313HelgeIngstad extends EntityType
+public final class F313HelgeIngstad extends EntityType
 {
     /** Default constructor */
     public F313HelgeIngstad()
@@ -26,5 +40,11 @@ public class F313HelgeIngstad extends EntityType
         setCategory((byte)6); // uid 27603, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 27604, Fridtjof Nansen Class
         setSpecific((byte)4); // uid 27608, F313 Helge Ingstad
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F313HelgeIngstad createInstance()
+    {
+            return new F313HelgeIngstad();
     }
 }

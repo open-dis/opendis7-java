@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -32,7 +31,7 @@ public class Attribute extends Object implements Serializable
    private byte[] padding = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Attribute()
  {
  }
@@ -48,8 +47,10 @@ public int getMarshalledSize()
 
    marshalSize += 4;  // recordType
    marshalSize += 2;  // recordLength
-   marshalSize += recordSpecificFields.length * 1;
-   marshalSize += padding.length;
+   if (recordSpecificFields != null)
+       marshalSize += recordSpecificFields.length * 1;
+   if (padding != null)
+       marshalSize += padding.length;
 
    return marshalSize;
 }
@@ -100,7 +101,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(recordType);
        dos.writeShort(recordSpecificFields.length);
 
-       for(int idx = 0; idx < recordSpecificFields.length; idx++)
+       for (int idx = 0; idx < recordSpecificFields.length; idx++)
            dos.writeByte(recordSpecificFields[idx]);
 
        padding = new byte[Align.to64bits(dos)];
@@ -128,7 +129,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < recordSpecificFields.length; idx++)
+        for (int idx = 0; idx < recordSpecificFields.length; idx++)
             recordSpecificFields[idx] = dis.readByte();
         uPosition += (recordSpecificFields.length * 1);
         padding = new byte[Align.from64bits(uPosition,dis)];
@@ -154,7 +155,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)recordType);
    byteBuffer.putShort( (short)recordSpecificFields.length);
 
-   for(int idx = 0; idx < recordSpecificFields.length; idx++)
+   for (int idx = 0; idx < recordSpecificFields.length; idx++)
        byteBuffer.put((byte)recordSpecificFields[idx]);
 
    padding = new byte[Align.to64bits(byteBuffer)];
@@ -171,11 +172,22 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < recordSpecificFields.length; idx++)
-        recordSpecificFields[idx] = byteBuffer.get();
-    padding = new byte[Align.from64bits(byteBuffer)];
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute recordSpecificFields marked as not serialized
+        for (int idx = 0; idx < recordSpecificFields.length; idx++)
+            recordSpecificFields[idx] = byteBuffer.get();
+        // attribute padding marked as not serialized
+        padding = new byte[Align.from64bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -211,7 +223,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) ivarsEqual = false;
      }

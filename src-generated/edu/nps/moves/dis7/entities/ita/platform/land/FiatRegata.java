@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60a2630a;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24858
+ * <p> Entity class <b><code>FiatRegata</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FiatRegata.createInstance()</code> or <code>new FiatRegata()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: _4DoorSedanEconomyCompactSmall  = <code>42</code>; </li>
+ *     <li> Specific: FiatRegata  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24858; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57ac5227. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class FiatRegata extends EntityType
+public final class FiatRegata extends EntityType
 {
     /** Default constructor */
     public FiatRegata()
@@ -26,5 +40,11 @@ public class FiatRegata extends EntityType
         setCategory((byte)81); // uid 24856, Car
         setSubCategory((byte)42); // uid 24857, 4-Door Sedan, Economy/Compact (Small)
         setSpecific((byte)1); // uid 24858, Fiat Regata
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FiatRegata createInstance()
+    {
+            return new FiatRegata();
     }
 }

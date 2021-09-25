@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b9ea3e3;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27401
+ * <p> Entity class <b><code>F25Kasturi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F25Kasturi.createInstance()</code> or <code>new F25Kasturi()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: KasturiClass  = <code>1</code>; </li>
+ *     <li> Specific: F25Kasturi  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27401; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43ed0ff3. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F25Kasturi extends EntityType
+public final class F25Kasturi extends EntityType
 {
     /** Default constructor */
     public F25Kasturi()
@@ -26,5 +40,11 @@ public class F25Kasturi extends EntityType
         setCategory((byte)6); // uid 27399, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 27400, Kasturi Class
         setSpecific((byte)1); // uid 27401, F25 Kasturi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F25Kasturi createInstance()
+    {
+            return new F25Kasturi();
     }
 }

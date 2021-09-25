@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c2c22f3;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31293
+ * <p> Entity class <b><code>MackMC3BituminousDistributor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MackMC3BituminousDistributor.createInstance()</code> or <code>new MackMC3BituminousDistributor()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: MackMC36x6HeavyUtilityTruck  = <code>6</code>; </li>
+ *     <li> Specific: MackMC3BituminousDistributor  = <code>9</code>; </li>
+ *     <li> Entity type uid: 31293; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@368239c8. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class MackMC3BituminousDistributor extends EntityType
+public final class MackMC3BituminousDistributor extends EntityType
 {
     /** Default constructor */
     public MackMC3BituminousDistributor()
@@ -26,5 +40,11 @@ public class MackMC3BituminousDistributor extends EntityType
         setCategory((byte)7); // uid 29715, Large Wheeled Utility Vehicle
         setSubCategory((byte)6); // uid 31284, Mack MC3 6x6 Heavy Utility Truck
         setSpecific((byte)9); // uid 31293, Mack MC3 Bituminous Distributor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MackMC3BituminousDistributor createInstance()
+    {
+            return new MackMC3BituminousDistributor();
     }
 }

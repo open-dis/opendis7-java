@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46b61c56;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16622
+ * <p> Entity class <b><code>A1416Nienburg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A1416Nienburg.createInstance()</code> or <code>new A1416Nienburg()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Luneburgclasstype701supportships  = <code>6</code>; </li>
+ *     <li> Specific: A1416Nienburg  = <code>5</code>; </li>
+ *     <li> Entity type uid: 16622; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48793bef. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A1416Nienburg extends EntityType
+public final class A1416Nienburg extends EntityType
 {
     /** Default constructor */
     public A1416Nienburg()
@@ -26,5 +40,11 @@ public class A1416Nienburg extends EntityType
         setCategory((byte)16); // uid 16594, Auxiliary
         setSubCategory((byte)6); // uid 16617, Luneburg class (type 701, support ships)
         setSpecific((byte)5); // uid 16622, A 1416 Nienburg
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A1416Nienburg createInstance()
+    {
+            return new A1416Nienburg();
     }
 }

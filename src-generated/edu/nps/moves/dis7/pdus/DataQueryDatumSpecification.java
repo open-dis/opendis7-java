@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class DataQueryDatumSpecification extends Object implements Serializable
    protected List< UnsignedDISInteger > variableDatumIDList = new ArrayList< UnsignedDISInteger >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DataQueryDatumSpecification()
  {
  }
@@ -47,16 +46,18 @@ public int getMarshalledSize()
 
    marshalSize += 4;  // numberOfFixedDatums
    marshalSize += 4;  // numberOfVariableDatums
-   for(int idx=0; idx < fixedDatumIDList.size(); idx++)
-   {
-        UnsignedDISInteger listElement = fixedDatumIDList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < variableDatumIDList.size(); idx++)
-   {
-        UnsignedDISInteger listElement = variableDatumIDList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (fixedDatumIDList != null)
+       for (int idx=0; idx < fixedDatumIDList.size(); idx++)
+       {
+            UnsignedDISInteger listElement = fixedDatumIDList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (variableDatumIDList != null)
+       for (int idx=0; idx < variableDatumIDList.size(); idx++)
+       {
+            UnsignedDISInteger listElement = variableDatumIDList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -107,14 +108,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(fixedDatumIDList.size());
        dos.writeInt(variableDatumIDList.size());
 
-       for(int idx = 0; idx < fixedDatumIDList.size(); idx++)
+       for (int idx = 0; idx < fixedDatumIDList.size(); idx++)
        {
             UnsignedDISInteger aUnsignedDISInteger = fixedDatumIDList.get(idx);
             aUnsignedDISInteger.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < variableDatumIDList.size(); idx++)
+       for (int idx = 0; idx < variableDatumIDList.size(); idx++)
        {
             UnsignedDISInteger aUnsignedDISInteger = variableDatumIDList.get(idx);
             aUnsignedDISInteger.marshal(dos);
@@ -144,14 +145,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatums = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfFixedDatums; idx++)
+        for (int idx = 0; idx < numberOfFixedDatums; idx++)
         {
             UnsignedDISInteger anX = new UnsignedDISInteger();
             uPosition += anX.unmarshal(dis);
             fixedDatumIDList.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfVariableDatums; idx++)
+        for (int idx = 0; idx < numberOfVariableDatums; idx++)
         {
             UnsignedDISInteger anX = new UnsignedDISInteger();
             uPosition += anX.unmarshal(dis);
@@ -179,14 +180,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)fixedDatumIDList.size());
    byteBuffer.putInt( (int)variableDatumIDList.size());
 
-   for(int idx = 0; idx < fixedDatumIDList.size(); idx++)
+   for (int idx = 0; idx < fixedDatumIDList.size(); idx++)
    {
         UnsignedDISInteger aUnsignedDISInteger = fixedDatumIDList.get(idx);
         aUnsignedDISInteger.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < variableDatumIDList.size(); idx++)
+   for (int idx = 0; idx < variableDatumIDList.size(); idx++)
    {
         UnsignedDISInteger aUnsignedDISInteger = variableDatumIDList.get(idx);
         aUnsignedDISInteger.marshal(byteBuffer);
@@ -205,22 +206,33 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfFixedDatums = byteBuffer.getInt();
-    numberOfVariableDatums = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfFixedDatums; idx++)
+    try
     {
-    UnsignedDISInteger anX = new UnsignedDISInteger();
-    anX.unmarshal(byteBuffer);
-    fixedDatumIDList.add(anX);
-    }
+        // attribute numberOfFixedDatums marked as not serialized
+        numberOfFixedDatums = byteBuffer.getInt();
+        // attribute numberOfVariableDatums marked as not serialized
+        numberOfVariableDatums = byteBuffer.getInt();
+        // attribute fixedDatumIDList marked as not serialized
+        for (int idx = 0; idx < numberOfFixedDatums; idx++)
+        {
+        UnsignedDISInteger anX = new UnsignedDISInteger();
+        anX.unmarshal(byteBuffer);
+        fixedDatumIDList.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfVariableDatums; idx++)
+        // attribute variableDatumIDList marked as not serialized
+        for (int idx = 0; idx < numberOfVariableDatums; idx++)
+        {
+        UnsignedDISInteger anX = new UnsignedDISInteger();
+        anX.unmarshal(byteBuffer);
+        variableDatumIDList.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    UnsignedDISInteger anX = new UnsignedDISInteger();
-    anX.unmarshal(byteBuffer);
-    variableDatumIDList.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -255,11 +267,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final DataQueryDatumSpecification rhs = (DataQueryDatumSpecification)obj;
 
 
-     for(int idx = 0; idx < fixedDatumIDList.size(); idx++)
+     for (int idx = 0; idx < fixedDatumIDList.size(); idx++)
         if( ! ( fixedDatumIDList.get(idx).equals(rhs.fixedDatumIDList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < variableDatumIDList.size(); idx++)
+     for (int idx = 0; idx < variableDatumIDList.size(); idx++)
         if( ! ( variableDatumIDList.get(idx).equals(rhs.variableDatumIDList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -44,7 +43,7 @@ public class DirectedEnergyAreaAimpoint extends Object implements Serializable
    private byte[] padding2 = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DirectedEnergyAreaAimpoint()
  {
  }
@@ -63,17 +62,20 @@ public int getMarshalledSize()
    marshalSize += 2;  // padding
    marshalSize += 2;  // beamAntennaPatternRecordCount
    marshalSize += 2;  // directedEnergyTargetEnergyDepositionRecordCount
-   for(int idx=0; idx < beamAntennaParameterList.size(); idx++)
-   {
-        BeamAntennaPattern listElement = beamAntennaParameterList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
-   {
-        DirectedEnergyTargetEnergyDeposition listElement = directedEnergyTargetEnergyDepositionRecordList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += padding2.length;
+   if (beamAntennaParameterList != null)
+       for (int idx=0; idx < beamAntennaParameterList.size(); idx++)
+       {
+            BeamAntennaPattern listElement = beamAntennaParameterList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (directedEnergyTargetEnergyDepositionRecordList != null)
+       for (int idx=0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
+       {
+            DirectedEnergyTargetEnergyDeposition listElement = directedEnergyTargetEnergyDepositionRecordList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (padding2 != null)
+       marshalSize += padding2.length;
 
    return marshalSize;
 }
@@ -189,14 +191,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(beamAntennaParameterList.size());
        dos.writeShort(directedEnergyTargetEnergyDepositionRecordList.size());
 
-       for(int idx = 0; idx < beamAntennaParameterList.size(); idx++)
+       for (int idx = 0; idx < beamAntennaParameterList.size(); idx++)
        {
             BeamAntennaPattern aBeamAntennaPattern = beamAntennaParameterList.get(idx);
             aBeamAntennaPattern.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
+       for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
        {
             DirectedEnergyTargetEnergyDeposition aDirectedEnergyTargetEnergyDeposition = directedEnergyTargetEnergyDepositionRecordList.get(idx);
             aDirectedEnergyTargetEnergyDeposition.marshal(dos);
@@ -233,14 +235,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         directedEnergyTargetEnergyDepositionRecordCount = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
+        for (int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
         {
             BeamAntennaPattern anX = new BeamAntennaPattern();
             uPosition += anX.unmarshal(dis);
             beamAntennaParameterList.add(anX);
         }
 
-        for(int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
+        for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
         {
             DirectedEnergyTargetEnergyDeposition anX = new DirectedEnergyTargetEnergyDeposition();
             uPosition += anX.unmarshal(dis);
@@ -273,14 +275,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)beamAntennaParameterList.size());
    byteBuffer.putShort( (short)directedEnergyTargetEnergyDepositionRecordList.size());
 
-   for(int idx = 0; idx < beamAntennaParameterList.size(); idx++)
+   for (int idx = 0; idx < beamAntennaParameterList.size(); idx++)
    {
         BeamAntennaPattern aBeamAntennaPattern = beamAntennaParameterList.get(idx);
         aBeamAntennaPattern.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
+   for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
    {
         DirectedEnergyTargetEnergyDeposition aDirectedEnergyTargetEnergyDeposition = directedEnergyTargetEnergyDepositionRecordList.get(idx);
         aDirectedEnergyTargetEnergyDeposition.marshal(byteBuffer);
@@ -300,26 +302,41 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    beamAntennaPatternRecordCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    directedEnergyTargetEnergyDepositionRecordCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
+    try
     {
-    BeamAntennaPattern anX = new BeamAntennaPattern();
-    anX.unmarshal(byteBuffer);
-    beamAntennaParameterList.add(anX);
-    }
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute beamAntennaPatternRecordCount marked as not serialized
+        beamAntennaPatternRecordCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute directedEnergyTargetEnergyDepositionRecordCount marked as not serialized
+        directedEnergyTargetEnergyDepositionRecordCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute beamAntennaParameterList marked as not serialized
+        for (int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
+        {
+        BeamAntennaPattern anX = new BeamAntennaPattern();
+        anX.unmarshal(byteBuffer);
+        beamAntennaParameterList.add(anX);
+        }
 
-    for(int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
+        // attribute directedEnergyTargetEnergyDepositionRecordList marked as not serialized
+        for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
+        {
+        DirectedEnergyTargetEnergyDeposition anX = new DirectedEnergyTargetEnergyDeposition();
+        anX.unmarshal(byteBuffer);
+        directedEnergyTargetEnergyDepositionRecordList.add(anX);
+        }
+
+        // attribute padding2 marked as not serialized
+        padding2 = new byte[Align.from64bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    DirectedEnergyTargetEnergyDeposition anX = new DirectedEnergyTargetEnergyDeposition();
-    anX.unmarshal(byteBuffer);
-    directedEnergyTargetEnergyDepositionRecordList.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
-    padding2 = new byte[Align.from64bits(byteBuffer)];
     return getMarshalledSize();
 }
 
@@ -357,11 +374,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
      if( ! (padding == rhs.padding)) ivarsEqual = false;
 
-     for(int idx = 0; idx < beamAntennaParameterList.size(); idx++)
+     for (int idx = 0; idx < beamAntennaParameterList.size(); idx++)
         if( ! ( beamAntennaParameterList.get(idx).equals(rhs.beamAntennaParameterList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
+     for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
         if( ! ( directedEnergyTargetEnergyDepositionRecordList.get(idx).equals(rhs.directedEnergyTargetEnergyDepositionRecordList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

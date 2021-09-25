@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f3f02ee;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23405
+ * <p> Entity class <b><code>L104Inouse</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L104Inouse.createInstance()</code> or <code>new L104Inouse()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: TerrebonneParishclass  = <code>2</code>; </li>
+ *     <li> Specific: L104Inouse  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23405; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f9342d4. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class L104Inouse extends EntityType
+public final class L104Inouse extends EntityType
 {
     /** Default constructor */
     public L104Inouse()
@@ -26,5 +40,11 @@ public class L104Inouse extends EntityType
         setCategory((byte)10); // uid 23354, Tank Landing Ship
         setSubCategory((byte)2); // uid 23404, Terrebonne Parish class
         setSpecific((byte)1); // uid 23405, L104 Inouse
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L104Inouse createInstance()
+    {
+            return new L104Inouse();
     }
 }

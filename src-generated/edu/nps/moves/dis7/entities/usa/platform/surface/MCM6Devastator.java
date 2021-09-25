@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@160e99e0;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11608
+ * <p> Entity class <b><code>MCM6Devastator</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MCM6Devastator.createInstance()</code> or <code>new MCM6Devastator()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine countermeasure ship/craft = <code>8</code>; </li>
+ *     <li> SubCategory: AvengerClass  = <code>2</code>; </li>
+ *     <li> Specific: MCM6Devastator  = <code>6</code>; </li>
+ *     <li> Entity type uid: 11608; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d615b2e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Minecountermeasureshipcraft
+ * @see SubCategory
+
  */
-public class MCM6Devastator extends EntityType
+public final class MCM6Devastator extends EntityType
 {
     /** Default constructor */
     public MCM6Devastator()
@@ -26,5 +40,11 @@ public class MCM6Devastator extends EntityType
         setCategory((byte)8); // uid 11588, Mine countermeasure ship/craft
         setSubCategory((byte)2); // uid 11602, Avenger Class
         setSpecific((byte)6); // uid 11608, MCM 6 Devastator
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MCM6Devastator createInstance()
+    {
+            return new MCM6Devastator();
     }
 }

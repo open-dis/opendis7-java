@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.6.3 Handles designating operations. See 5.3.7.2.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class DesignatorPdu extends DistributedEmissionsFamilyPdu implements Serializable
+public class DesignatorPdu extends DistributedEmissionsRegenerationFamilyPdu implements Serializable
 {
    /** ID of the entity designating */
    protected EntityID  designatingEntityID = new EntityID(); 
@@ -55,7 +54,7 @@ public class DesignatorPdu extends DistributedEmissionsFamilyPdu implements Seri
    protected Vector3Float  entityLinearAcceleration = new Vector3Float(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DesignatorPdu()
  {
     setPduType( DisPduType.DESIGNATOR );
@@ -71,18 +70,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += designatingEntityID.getMarshalledSize();
-   marshalSize += codeName.getMarshalledSize();
-   marshalSize += designatedEntityID.getMarshalledSize();
-   marshalSize += designatorCode.getMarshalledSize();
+   if (designatingEntityID != null)
+       marshalSize += designatingEntityID.getMarshalledSize();
+   if (codeName != null)
+       marshalSize += codeName.getMarshalledSize();
+   if (designatedEntityID != null)
+       marshalSize += designatedEntityID.getMarshalledSize();
+   if (designatorCode != null)
+       marshalSize += designatorCode.getMarshalledSize();
    marshalSize += 4;  // designatorPower
    marshalSize += 4;  // designatorWavelength
-   marshalSize += designatorSpotWrtDesignated.getMarshalledSize();
-   marshalSize += designatorSpotLocation.getMarshalledSize();
-   marshalSize += deadReckoningAlgorithm.getMarshalledSize();
+   if (designatorSpotWrtDesignated != null)
+       marshalSize += designatorSpotWrtDesignated.getMarshalledSize();
+   if (designatorSpotLocation != null)
+       marshalSize += designatorSpotLocation.getMarshalledSize();
+   if (deadReckoningAlgorithm != null)
+       marshalSize += deadReckoningAlgorithm.getMarshalledSize();
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
-   marshalSize += entityLinearAcceleration.getMarshalledSize();
+   if (entityLinearAcceleration != null)
+       marshalSize += entityLinearAcceleration.getMarshalledSize();
 
    return marshalSize;
 }
@@ -404,18 +411,37 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    designatingEntityID.unmarshal(byteBuffer);
-    codeName = DesignatorSystemName.unmarshalEnum(byteBuffer);
-    designatedEntityID.unmarshal(byteBuffer);
-    designatorCode = DesignatorDesignatorCode.unmarshalEnum(byteBuffer);
-    designatorPower = byteBuffer.getFloat();
-    designatorWavelength = byteBuffer.getFloat();
-    designatorSpotWrtDesignated.unmarshal(byteBuffer);
-    designatorSpotLocation.unmarshal(byteBuffer);
-    deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    entityLinearAcceleration.unmarshal(byteBuffer);
+    try
+    {
+        // attribute designatingEntityID marked as not serialized
+        designatingEntityID.unmarshal(byteBuffer);
+        // attribute codeName marked as not serialized
+        codeName = DesignatorSystemName.unmarshalEnum(byteBuffer);
+        // attribute designatedEntityID marked as not serialized
+        designatedEntityID.unmarshal(byteBuffer);
+        // attribute designatorCode marked as not serialized
+        designatorCode = DesignatorDesignatorCode.unmarshalEnum(byteBuffer);
+        // attribute designatorPower marked as not serialized
+        designatorPower = byteBuffer.getFloat();
+        // attribute designatorWavelength marked as not serialized
+        designatorWavelength = byteBuffer.getFloat();
+        // attribute designatorSpotWrtDesignated marked as not serialized
+        designatorSpotWrtDesignated.unmarshal(byteBuffer);
+        // attribute designatorSpotLocation marked as not serialized
+        designatorSpotLocation.unmarshal(byteBuffer);
+        // attribute deadReckoningAlgorithm marked as not serialized
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute entityLinearAcceleration marked as not serialized
+        entityLinearAcceleration.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

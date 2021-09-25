@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ed17bee;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31268
+ * <p> Entity class <b><code>P46GomezRoca</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P46GomezRoca.createInstance()</code> or <code>new P46GomezRoca()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: EsporaClassMeko140  = <code>2</code>; </li>
+ *     <li> Specific: P46GomezRoca  = <code>6</code>; </li>
+ *     <li> Entity type uid: 31268; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20fa23c1. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class P46GomezRoca extends EntityType
+public final class P46GomezRoca extends EntityType
 {
     /** Default constructor */
     public P46GomezRoca()
@@ -26,5 +40,11 @@ public class P46GomezRoca extends EntityType
         setCategory((byte)50); // uid 31257, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 31262, Espora Class (Meko 140)
         setSpecific((byte)6); // uid 31268, P 46 Gomez Roca
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P46GomezRoca createInstance()
+    {
+            return new P46GomezRoca();
     }
 }

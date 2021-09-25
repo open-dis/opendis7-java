@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53bc1328;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17954
+ * <p> Entity class <b><code>B23Khassab</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B23Khassab.createInstance()</code> or <code>new B23Khassab()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: SeebVosper25Classinshorepatrolcraft  = <code>3</code>; </li>
+ *     <li> Specific: B23Khassab  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17954; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d8f2f3a. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class B23Khassab extends EntityType
+public final class B23Khassab extends EntityType
 {
     /** Default constructor */
     public B23Khassab()
@@ -26,5 +40,11 @@ public class B23Khassab extends EntityType
         setCategory((byte)7); // uid 17942, Light/Patrol Craft
         setSubCategory((byte)3); // uid 17950, Seeb (Vosper 25) Class (inshore patrol craft)
         setSpecific((byte)4); // uid 17954, B23 Khassab
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B23Khassab createInstance()
+    {
+            return new B23Khassab();
     }
 }

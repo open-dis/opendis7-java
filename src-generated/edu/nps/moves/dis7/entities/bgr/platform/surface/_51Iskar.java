@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d16f93d;
- * Country: Bulgaria (BGR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32897
+ * <p> Entity class <b><code>_51Iskar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_51Iskar.createInstance()</code> or <code>new _51Iskar()</code>. </p>
+ * <ul>
+ *     <li> Country: Bulgaria (BGR) = <code>33</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: OlyaClassProject1259  = <code>3</code>; </li>
+ *     <li> Specific: _51Iskar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32897; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@598067a5. </p>
+ * @see Country#BULGARIA_BGR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _51Iskar extends EntityType
+public final class _51Iskar extends EntityType
 {
     /** Default constructor */
     public _51Iskar()
@@ -26,5 +40,11 @@ public class _51Iskar extends EntityType
         setCategory((byte)8); // uid 27886, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 32896, Olya Class (Project 1259)
         setSpecific((byte)1); // uid 32897, 51 Iskar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _51Iskar createInstance()
+    {
+            return new _51Iskar();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1bc53649;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27606
+ * <p> Entity class <b><code>F311RoaldAmundsen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F311RoaldAmundsen.createInstance()</code> or <code>new F311RoaldAmundsen()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: FridtjofNansenClass  = <code>1</code>; </li>
+ *     <li> Specific: F311RoaldAmundsen  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27606; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@210386e0. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F311RoaldAmundsen extends EntityType
+public final class F311RoaldAmundsen extends EntityType
 {
     /** Default constructor */
     public F311RoaldAmundsen()
@@ -26,5 +40,11 @@ public class F311RoaldAmundsen extends EntityType
         setCategory((byte)6); // uid 27603, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 27604, Fridtjof Nansen Class
         setSpecific((byte)2); // uid 27606, F311 Roald Amundsen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F311RoaldAmundsen createInstance()
+    {
+            return new F311RoaldAmundsen();
     }
 }

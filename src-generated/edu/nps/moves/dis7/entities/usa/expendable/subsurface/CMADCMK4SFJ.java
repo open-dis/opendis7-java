@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68d8ae27;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22281
+ * <p> Entity class <b><code>CMADCMK4SFJ</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CMADCMK4SFJ.createInstance()</code> or <code>new CMADCMK4SFJ()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active Emitter = <code>4</code>; </li>
+ *     <li> SubCategory: CMADCMK4  = <code>5</code>; </li>
+ *     <li> Specific: CMADCMK4SFJ  = <code>4</code>; </li>
+ *     <li> Entity type uid: 22281; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f6fd101. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ActiveEmitter
+ * @see SubCategory
+
  */
-public class CMADCMK4SFJ extends EntityType
+public final class CMADCMK4SFJ extends EntityType
 {
     /** Default constructor */
     public CMADCMK4SFJ()
@@ -26,5 +40,11 @@ public class CMADCMK4SFJ extends EntityType
         setCategory((byte)4); // uid 22272, Active Emitter
         setSubCategory((byte)5); // uid 22277, CM ADC MK 4
         setSpecific((byte)4); // uid 22281, CM ADC MK 4 SFJ
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CMADCMK4SFJ createInstance()
+    {
+            return new CMADCMK4SFJ();
     }
 }

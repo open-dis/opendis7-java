@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54a67a45;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18134
+ * <p> Entity class <b><code>ShahidMarjani</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShahidMarjani.createInstance()</code> or <code>new ShahidMarjani()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: KanganClasswatertanker  = <code>3</code>; </li>
+ *     <li> Specific: ShahidMarjani  = <code>3</code>; </li>
+ *     <li> Entity type uid: 18134; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b068087. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class ShahidMarjani extends EntityType
+public final class ShahidMarjani extends EntityType
 {
     /** Default constructor */
     public ShahidMarjani()
@@ -26,5 +40,11 @@ public class ShahidMarjani extends EntityType
         setCategory((byte)16); // uid 18114, Auxiliary
         setSubCategory((byte)3); // uid 18131, Kangan Class (water tanker)
         setSpecific((byte)3); // uid 18134, Shahid Marjani
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShahidMarjani createInstance()
+    {
+            return new ShahidMarjani();
     }
 }

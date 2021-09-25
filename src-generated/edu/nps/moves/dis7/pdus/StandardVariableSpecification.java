@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class StandardVariableSpecification extends Object implements Serializabl
    protected List< StandardVariableRecord > standardVariables = new ArrayList< StandardVariableRecord >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public StandardVariableSpecification()
  {
  }
@@ -40,11 +39,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 2;  // numberOfStandardVariableRecords
-   for(int idx=0; idx < standardVariables.size(); idx++)
-   {
-        StandardVariableRecord listElement = standardVariables.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (standardVariables != null)
+       for (int idx=0; idx < standardVariables.size(); idx++)
+       {
+            StandardVariableRecord listElement = standardVariables.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -97,7 +97,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        dos.writeShort(standardVariables.size());
 
-       for(int idx = 0; idx < standardVariables.size(); idx++)
+       for (int idx = 0; idx < standardVariables.size(); idx++)
        {
             StandardVariableRecord aStandardVariableRecord = standardVariables.get(idx);
             aStandardVariableRecord.marshal(dos);
@@ -125,7 +125,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfStandardVariableRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfStandardVariableRecords; idx++)
+        for (int idx = 0; idx < numberOfStandardVariableRecords; idx++)
         {
             StandardVariableRecord anX = new StandardVariableRecord();
             uPosition += anX.unmarshal(dis);
@@ -152,7 +152,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    byteBuffer.putShort( (short)standardVariables.size());
 
-   for(int idx = 0; idx < standardVariables.size(); idx++)
+   for (int idx = 0; idx < standardVariables.size(); idx++)
    {
         StandardVariableRecord aStandardVariableRecord = standardVariables.get(idx);
         aStandardVariableRecord.marshal(byteBuffer);
@@ -171,14 +171,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfStandardVariableRecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfStandardVariableRecords; idx++)
+    try
     {
-    StandardVariableRecord anX = new StandardVariableRecord();
-    anX.unmarshal(byteBuffer);
-    standardVariables.add(anX);
-    }
+        // attribute numberOfStandardVariableRecords marked as not serialized
+        numberOfStandardVariableRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute standardVariables marked as not serialized
+        for (int idx = 0; idx < numberOfStandardVariableRecords; idx++)
+        {
+        StandardVariableRecord anX = new StandardVariableRecord();
+        anX.unmarshal(byteBuffer);
+        standardVariables.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -214,7 +223,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (numberOfStandardVariableRecords == rhs.numberOfStandardVariableRecords)) ivarsEqual = false;
 
-     for(int idx = 0; idx < standardVariables.size(); idx++)
+     for (int idx = 0; idx < standardVariables.size(); idx++)
         if( ! ( standardVariables.get(idx).equals(rhs.standardVariables.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

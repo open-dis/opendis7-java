@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -27,7 +26,7 @@ public class AttributeRecordSet extends Object implements Serializable
    protected List< Attribute > attributeRecords = new ArrayList< Attribute >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AttributeRecordSet()
  {
  }
@@ -41,13 +40,15 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityId.getMarshalledSize();
+   if (entityId != null)
+       marshalSize += entityId.getMarshalledSize();
    marshalSize += 2;  // numberOfAttributeRecords
-   for(int idx=0; idx < attributeRecords.size(); idx++)
-   {
-        Attribute listElement = attributeRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (attributeRecords != null)
+       for (int idx=0; idx < attributeRecords.size(); idx++)
+       {
+            Attribute listElement = attributeRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -98,7 +99,7 @@ public void marshal(DataOutputStream dos) throws Exception
        entityId.marshal(dos);
        dos.writeShort(attributeRecords.size());
 
-       for(int idx = 0; idx < attributeRecords.size(); idx++)
+       for (int idx = 0; idx < attributeRecords.size(); idx++)
        {
             Attribute aAttribute = attributeRecords.get(idx);
             aAttribute.marshal(dos);
@@ -127,7 +128,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += entityId.unmarshal(dis);
         numberOfAttributeRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfAttributeRecords; idx++)
+        for (int idx = 0; idx < numberOfAttributeRecords; idx++)
         {
             Attribute anX = new Attribute();
             uPosition += anX.unmarshal(dis);
@@ -155,7 +156,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    entityId.marshal(byteBuffer);
    byteBuffer.putShort( (short)attributeRecords.size());
 
-   for(int idx = 0; idx < attributeRecords.size(); idx++)
+   for (int idx = 0; idx < attributeRecords.size(); idx++)
    {
         Attribute aAttribute = attributeRecords.get(idx);
         aAttribute.marshal(byteBuffer);
@@ -174,15 +175,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityId.unmarshal(byteBuffer);
-    numberOfAttributeRecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfAttributeRecords; idx++)
+    try
     {
-    Attribute anX = new Attribute();
-    anX.unmarshal(byteBuffer);
-    attributeRecords.add(anX);
-    }
+        // attribute entityId marked as not serialized
+        entityId.unmarshal(byteBuffer);
+        // attribute numberOfAttributeRecords marked as not serialized
+        numberOfAttributeRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute attributeRecords marked as not serialized
+        for (int idx = 0; idx < numberOfAttributeRecords; idx++)
+        {
+        Attribute anX = new Attribute();
+        anX.unmarshal(byteBuffer);
+        attributeRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -218,7 +229,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (entityId.equals( rhs.entityId) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < attributeRecords.size(); idx++)
+     for (int idx = 0; idx < attributeRecords.size(); idx++)
         if( ! ( attributeRecords.get(idx).equals(rhs.attributeRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5ca17ab0;
- * Country: Montenegro (MNE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30135
+ * <p> Entity class <b><code>KoncarClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KoncarClass.createInstance()</code> or <code>new KoncarClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Montenegro (MNE) = <code>259</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: KoncarClass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30135; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@724bade8. </p>
+ * @see Country#MONTENEGRO_MNE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class KoncarClass extends EntityType
+public final class KoncarClass extends EntityType
 {
     /** Default constructor */
     public KoncarClass()
@@ -25,5 +39,11 @@ public class KoncarClass extends EntityType
 
         setCategory((byte)64); // uid 30134, Fast Attack Craft
         setSubCategory((byte)1); // uid 30135, Koncar Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KoncarClass createInstance()
+    {
+            return new KoncarClass();
     }
 }

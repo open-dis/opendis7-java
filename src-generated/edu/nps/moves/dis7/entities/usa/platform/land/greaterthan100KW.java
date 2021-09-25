@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@b61edb9;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10632
+ * <p> Entity class <b><code>greaterthan100KW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>greaterthan100KW.createInstance()</code> or <code>new greaterthan100KW()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Generator trailer = <code>16</code>; </li>
+ *     <li> SubCategory: greaterthan100KW  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 10632; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2404b5a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Generatortrailer
+ * @see SubCategory
+
  */
-public class greaterthan100KW extends EntityType
+public final class greaterthan100KW extends EntityType
 {
     /** Default constructor */
     public greaterthan100KW()
@@ -25,5 +39,11 @@ public class greaterthan100KW extends EntityType
 
         setCategory((byte)16); // uid 10630, Generator trailer
         setSubCategory((byte)2); // uid 10632, greater than 100 KW
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static greaterthan100KW createInstance()
+    {
+            return new greaterthan100KW();
     }
 }

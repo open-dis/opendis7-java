@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57a78e3;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15974
+ * <p> Entity class <b><code>B1AIBushraOMAN</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B1AIBushraOMAN.createInstance()</code> or <code>new B1AIBushraOMAN()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: P400classfastattackcraftpatrol  = <code>1</code>; </li>
+ *     <li> Specific: B1AIBushraOMAN  = <code>11</code>; </li>
+ *     <li> Entity type uid: 15974; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ddc9a9f. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class B1AIBushraOMAN extends EntityType
+public final class B1AIBushraOMAN extends EntityType
 {
     /** Default constructor */
     public B1AIBushraOMAN()
@@ -26,5 +40,11 @@ public class B1AIBushraOMAN extends EntityType
         setCategory((byte)7); // uid 15962, Light/patrol craft
         setSubCategory((byte)1); // uid 15963, P 400 class (fast attack craft--patrol)
         setSpecific((byte)11); // uid 15974, B1 AI Bushra (OMAN)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B1AIBushraOMAN createInstance()
+    {
+            return new B1AIBushraOMAN();
     }
 }

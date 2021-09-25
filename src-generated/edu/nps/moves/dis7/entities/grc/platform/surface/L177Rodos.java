@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ce1d6d0;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23360
+ * <p> Entity class <b><code>L177Rodos</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L177Rodos.createInstance()</code> or <code>new L177Rodos()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: Jasonclass  = <code>1</code>; </li>
+ *     <li> Specific: L177Rodos  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23360; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58be6e8. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class L177Rodos extends EntityType
+public final class L177Rodos extends EntityType
 {
     /** Default constructor */
     public L177Rodos()
@@ -26,5 +40,11 @@ public class L177Rodos extends EntityType
         setCategory((byte)10); // uid 23354, Tank Landing Ship
         setSubCategory((byte)1); // uid 23355, Jason class
         setSpecific((byte)5); // uid 23360, L177 Rodos
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L177Rodos createInstance()
+    {
+            return new L177Rodos();
     }
 }

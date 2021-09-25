@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f333739;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32598
+ * <p> Entity class <b><code>S41SantaCruz</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S41SantaCruz.createInstance()</code> or <code>new S41SantaCruz()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol = <code>5</code>; </li>
+ *     <li> SubCategory: SantaCruzTR1700ClassSS  = <code>1</code>; </li>
+ *     <li> Specific: S41SantaCruz  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32598; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e0b37bc. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S41SantaCruz extends EntityType
+public final class S41SantaCruz extends EntityType
 {
     /** Default constructor */
     public S41SantaCruz()
@@ -26,5 +40,11 @@ public class S41SantaCruz extends EntityType
         setCategory((byte)5); // uid 18761, SS (Conventional Attack - Torpedo, Patrol
         setSubCategory((byte)1); // uid 18762, Santa Cruz (TR 1700) Class (SS)
         setSpecific((byte)1); // uid 32598, S41 Santa Cruz
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S41SantaCruz createInstance()
+    {
+            return new S41SantaCruz();
     }
 }

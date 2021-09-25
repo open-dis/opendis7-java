@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ea94d6a;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23066
+ * <p> Entity class <b><code>_632Bukowo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_632Bukowo.createInstance()</code> or <code>new _632Bukowo()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: GoploNotecClass  = <code>1</code>; </li>
+ *     <li> Specific: _632Bukowo  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23066; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36453307. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _632Bukowo extends EntityType
+public final class _632Bukowo extends EntityType
 {
     /** Default constructor */
     public _632Bukowo()
@@ -26,5 +40,11 @@ public class _632Bukowo extends EntityType
         setCategory((byte)8); // uid 23062, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 23063, Goplo (Notec) Class
         setSpecific((byte)3); // uid 23066, 632 Bukowo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _632Bukowo createInstance()
+    {
+            return new _632Bukowo();
     }
 }

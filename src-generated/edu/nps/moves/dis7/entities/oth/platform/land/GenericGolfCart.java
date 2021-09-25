@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36c54a56;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25958
+ * <p> Entity class <b><code>GenericGolfCart</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericGolfCart.createInstance()</code> or <code>new GenericGolfCart()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Recreational = <code>90</code>; </li>
+ *     <li> SubCategory: GenericGolfCart  = <code>8</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25958; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@b273a59. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Recreational
+ * @see SubCategory
+
  */
-public class GenericGolfCart extends EntityType
+public final class GenericGolfCart extends EntityType
 {
     /** Default constructor */
     public GenericGolfCart()
@@ -25,5 +39,11 @@ public class GenericGolfCart extends EntityType
 
         setCategory((byte)90); // uid 24835, Recreational
         setSubCategory((byte)8); // uid 25958, Generic Golf Cart
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericGolfCart createInstance()
+    {
+            return new GenericGolfCart();
     }
 }

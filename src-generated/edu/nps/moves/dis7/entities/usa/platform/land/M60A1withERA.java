@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4694f434;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10033
+ * <p> Entity class <b><code>M60A1withERA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M60A1withERA.createInstance()</code> or <code>new M60A1withERA()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: M60MainBattleTankMBT  = <code>2</code>; </li>
+ *     <li> Specific: M60A1withERA  = <code>4</code>; </li>
+ *     <li> Entity type uid: 10033; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@575b5f7d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class M60A1withERA extends EntityType
+public final class M60A1withERA extends EntityType
 {
     /** Default constructor */
     public M60A1withERA()
@@ -26,5 +40,11 @@ public class M60A1withERA extends EntityType
         setCategory((byte)1); // uid 10018, Tank
         setSubCategory((byte)2); // uid 10029, M60 Main Battle Tank (MBT)
         setSpecific((byte)4); // uid 10033, M60A1 with ERA
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M60A1withERA createInstance()
+    {
+            return new M60A1withERA();
     }
 }

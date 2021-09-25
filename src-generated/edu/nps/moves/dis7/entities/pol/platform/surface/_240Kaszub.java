@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@988246e;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23054
+ * <p> Entity class <b><code>_240Kaszub</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_240Kaszub.createInstance()</code> or <code>new _240Kaszub()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: KaszubClass  = <code>3</code>; </li>
+ *     <li> Specific: _240Kaszub  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23054; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78dc4696. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _240Kaszub extends EntityType
+public final class _240Kaszub extends EntityType
 {
     /** Default constructor */
     public _240Kaszub()
@@ -26,5 +40,11 @@ public class _240Kaszub extends EntityType
         setCategory((byte)50); // uid 23045, Frigate (including Corvette)
         setSubCategory((byte)3); // uid 23053, Kaszub Class
         setSpecific((byte)1); // uid 23054, 240 Kaszub
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _240Kaszub createInstance()
+    {
+            return new _240Kaszub();
     }
 }

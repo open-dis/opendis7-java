@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ac13091;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30551
+ * <p> Entity class <b><code>_842TaishanType081A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_842TaishanType081A.createInstance()</code> or <code>new _842TaishanType081A()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: WochiClassType081081A  = <code>8</code>; </li>
+ *     <li> Specific: _842TaishanType081A  = <code>6</code>; </li>
+ *     <li> Entity type uid: 30551; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b44655e. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _842TaishanType081A extends EntityType
+public final class _842TaishanType081A extends EntityType
 {
     /** Default constructor */
     public _842TaishanType081A()
@@ -26,5 +40,11 @@ public class _842TaishanType081A extends EntityType
         setCategory((byte)8); // uid 17178, Mine Countermeasure Ship/Craft
         setSubCategory((byte)8); // uid 30545, Wochi Class (Type 081/081A)
         setSpecific((byte)6); // uid 30551, 842 Taishan (Type 081A)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _842TaishanType081A createInstance()
+    {
+            return new _842TaishanType081A();
     }
 }

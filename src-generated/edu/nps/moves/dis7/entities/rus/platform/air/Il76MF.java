@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b7b05a8;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29204
+ * <p> Entity class <b><code>Il76MF</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Il76MF.createInstance()</code> or <code>new Il76MF()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: Il76Candid  = <code>3</code>; </li>
+ *     <li> Specific: Il76MF  = <code>6</code>; </li>
+ *     <li> Entity type uid: 29204; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ac9af2a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class Il76MF extends EntityType
+public final class Il76MF extends EntityType
 {
     /** Default constructor */
     public Il76MF()
@@ -26,5 +40,11 @@ public class Il76MF extends EntityType
         setCategory((byte)4); // uid 13350, Cargo/Tanker
         setSubCategory((byte)3); // uid 13355, Il-76 Candid
         setSpecific((byte)6); // uid 29204, Il-76MF
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Il76MF createInstance()
+    {
+            return new Il76MF();
     }
 }

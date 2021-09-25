@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68e24e7;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 19600
+ * <p> Entity class <b><code>M348A1HEAT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M348A1HEAT.createInstance()</code> or <code>new M348A1HEAT()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _90mm  = <code>9</code>; </li>
+ *     <li> Specific: M348A1HEAT  = <code>7</code>; </li>
+ *     <li> Entity type uid: 19600; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5cdf221a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M348A1HEAT extends EntityType
+public final class M348A1HEAT extends EntityType
 {
     /** Default constructor */
     public M348A1HEAT()
@@ -26,5 +40,11 @@ public class M348A1HEAT extends EntityType
         setCategory((byte)2); // uid 19553, Ballistic
         setSubCategory((byte)9); // uid 19593, 90 mm
         setSpecific((byte)7); // uid 19600, M348A1 HEAT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M348A1HEAT createInstance()
+    {
+            return new M348A1HEAT();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@311bf055;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22717
+ * <p> Entity class <b><code>Leopard1A5Observer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Leopard1A5Observer.createInstance()</code> or <code>new Leopard1A5Observer()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: Leopard1MBT  = <code>1</code>; </li>
+ *     <li> Specific: Leopard1A5Observer  = <code>6</code>; </li>
+ *     <li> Entity type uid: 22717; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e990ed7. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class Leopard1A5Observer extends EntityType
+public final class Leopard1A5Observer extends EntityType
 {
     /** Default constructor */
     public Leopard1A5Observer()
@@ -26,5 +40,11 @@ public class Leopard1A5Observer extends EntityType
         setCategory((byte)1); // uid 16240, Tank
         setSubCategory((byte)1); // uid 16241, Leopard 1 MBT
         setSpecific((byte)6); // uid 22717, Leopard 1 A5 Observer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Leopard1A5Observer createInstance()
+    {
+            return new Leopard1A5Observer();
     }
 }

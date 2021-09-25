@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e94e331;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 30582
+ * <p> Entity class <b><code>_84RURPK4MetelU</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_84RURPK4MetelU.createInstance()</code> or <code>new _84RURPK4MetelU()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSN14Silex  = <code>2</code>; </li>
+ *     <li> Specific: _84RURPK4MetelU  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30582; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e2f20b8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class _84RURPK4MetelU extends EntityType
+public final class _84RURPK4MetelU extends EntityType
 {
     /** Default constructor */
     public _84RURPK4MetelU()
@@ -26,5 +40,11 @@ public class _84RURPK4MetelU extends EntityType
         setCategory((byte)1); // uid 20606, Guided
         setSubCategory((byte)2); // uid 20608, SS-N-14 Silex
         setSpecific((byte)2); // uid 30582, 84R/URPK-4 Metel-U
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _84RURPK4MetelU createInstance()
+    {
+            return new _84RURPK4MetelU();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a1ddbf1;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 33028
+ * <p> Entity class <b><code>Brage</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Brage.createInstance()</code> or <code>new Brage()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Oil Platform = <code>1</code>; </li>
+ *     <li> SubCategory: OilPlatformFixed  = <code>1</code>; </li>
+ *     <li> Specific: Brage  = <code>3</code>; </li>
+ *     <li> Entity type uid: 33028; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28b5662d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OilPlatform
+ * @see SubCategory
+
  */
-public class Brage extends EntityType
+public final class Brage extends EntityType
 {
     /** Default constructor */
     public Brage()
@@ -26,5 +40,11 @@ public class Brage extends EntityType
         setCategory((byte)1); // uid 22124, Oil Platform
         setSubCategory((byte)1); // uid 25244, Oil Platform, Fixed
         setSpecific((byte)3); // uid 33028, Brage
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Brage createInstance()
+    {
+            return new Brage();
     }
 }

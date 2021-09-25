@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
    protected List< IORecord > ioRecords = new ArrayList< IORecord >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public InformationOperationsReportPdu()
  {
     setPduType( DisPduType.INFORMATION_OPERATIONS_REPORT );
@@ -62,19 +61,24 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += ioSimSource.getMarshalledSize();
-   marshalSize += ioReportType.getMarshalledSize();
+   if (ioSimSource != null)
+       marshalSize += ioSimSource.getMarshalledSize();
+   if (ioReportType != null)
+       marshalSize += ioReportType.getMarshalledSize();
    marshalSize += 1;  // padding1
-   marshalSize += ioAttackerID.getMarshalledSize();
-   marshalSize += ioPrimaryTargetID.getMarshalledSize();
+   if (ioAttackerID != null)
+       marshalSize += ioAttackerID.getMarshalledSize();
+   if (ioPrimaryTargetID != null)
+       marshalSize += ioPrimaryTargetID.getMarshalledSize();
    marshalSize += 2;  // padding2
    marshalSize += 2;  // padding3
    marshalSize += 2;  // numberOfIORecords
-   for(int idx=0; idx < ioRecords.size(); idx++)
-   {
-        IORecord listElement = ioRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (ioRecords != null)
+       for (int idx=0; idx < ioRecords.size(); idx++)
+       {
+            IORecord listElement = ioRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -249,7 +253,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(padding3);
        dos.writeShort(ioRecords.size());
 
-       for(int idx = 0; idx < ioRecords.size(); idx++)
+       for (int idx = 0; idx < ioRecords.size(); idx++)
        {
             IORecord aIORecord = ioRecords.get(idx);
             aIORecord.marshal(dos);
@@ -291,7 +295,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfIORecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfIORecords; idx++)
+        for (int idx = 0; idx < numberOfIORecords; idx++)
         {
             IORecord anX = new IORecord();
             uPosition += anX.unmarshal(dis);
@@ -326,7 +330,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)padding3);
    byteBuffer.putShort( (short)ioRecords.size());
 
-   for(int idx = 0; idx < ioRecords.size(); idx++)
+   for (int idx = 0; idx < ioRecords.size(); idx++)
    {
         IORecord aIORecord = ioRecords.get(idx);
         aIORecord.marshal(byteBuffer);
@@ -347,21 +351,37 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    ioSimSource = IOActionIOSimulationSource.unmarshalEnum(byteBuffer);
-    ioReportType = IOReportIOReportType.unmarshalEnum(byteBuffer);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    ioAttackerID.unmarshal(byteBuffer);
-    ioPrimaryTargetID.unmarshal(byteBuffer);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfIORecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfIORecords; idx++)
+    try
     {
-    IORecord anX = new IORecord();
-    anX.unmarshal(byteBuffer);
-    ioRecords.add(anX);
-    }
+        // attribute ioSimSource marked as not serialized
+        ioSimSource = IOActionIOSimulationSource.unmarshalEnum(byteBuffer);
+        // attribute ioReportType marked as not serialized
+        ioReportType = IOReportIOReportType.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute ioAttackerID marked as not serialized
+        ioAttackerID.unmarshal(byteBuffer);
+        // attribute ioPrimaryTargetID marked as not serialized
+        ioPrimaryTargetID.unmarshal(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding3 marked as not serialized
+        padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfIORecords marked as not serialized
+        numberOfIORecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute ioRecords marked as not serialized
+        for (int idx = 0; idx < numberOfIORecords; idx++)
+        {
+        IORecord anX = new IORecord();
+        anX.unmarshal(byteBuffer);
+        ioRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -398,7 +418,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
      if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
 
-     for(int idx = 0; idx < ioRecords.size(); idx++)
+     for (int idx = 0; idx < ioRecords.size(); idx++)
         if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4da9f723;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14266
+ * <p> Entity class <b><code>KIL164</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KIL164.createInstance()</code> or <code>new KIL164()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Kashtanclassbuoytenders  = <code>72</code>; </li>
+ *     <li> Specific: KIL164  = <code>3</code>; </li>
+ *     <li> Entity type uid: 14266; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41bf79da. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class KIL164 extends EntityType
+public final class KIL164 extends EntityType
 {
     /** Default constructor */
     public KIL164()
@@ -26,5 +40,11 @@ public class KIL164 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)72); // uid 14263, Kashtan class (buoy tenders)
         setSpecific((byte)3); // uid 14266, KIL 164
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KIL164 createInstance()
+    {
+            return new KIL164();
     }
 }

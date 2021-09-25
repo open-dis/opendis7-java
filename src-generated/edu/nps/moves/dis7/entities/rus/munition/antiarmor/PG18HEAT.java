@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23564dd2;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20452
+ * <p> Entity class <b><code>PG18HEAT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PG18HEAT.createInstance()</code> or <code>new PG18HEAT()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _64mm  = <code>3</code>; </li>
+ *     <li> Specific: PG18HEAT  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20452; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@167a21b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PG18HEAT extends EntityType
+public final class PG18HEAT extends EntityType
 {
     /** Default constructor */
     public PG18HEAT()
@@ -26,5 +40,11 @@ public class PG18HEAT extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)3); // uid 20451, 64 mm
         setSpecific((byte)1); // uid 20452, PG-18 HEAT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PG18HEAT createInstance()
+    {
+            return new PG18HEAT();
     }
 }

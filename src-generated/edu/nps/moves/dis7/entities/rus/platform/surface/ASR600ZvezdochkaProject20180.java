@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c35c345;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30398
+ * <p> Entity class <b><code>ASR600ZvezdochkaProject20180</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASR600ZvezdochkaProject20180.createInstance()</code> or <code>new ASR600ZvezdochkaProject20180()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ASRAGEZvezdochkaclassProject201802018120183  = <code>115</code>; </li>
+ *     <li> Specific: ASR600ZvezdochkaProject20180  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30398; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@188b6035. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class ASR600ZvezdochkaProject20180 extends EntityType
+public final class ASR600ZvezdochkaProject20180 extends EntityType
 {
     /** Default constructor */
     public ASR600ZvezdochkaProject20180()
@@ -26,5 +40,11 @@ public class ASR600ZvezdochkaProject20180 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)115); // uid 30397, ASR/AGE Zvezdochka class (Project 20180/20181/20183)
         setSpecific((byte)1); // uid 30398, ASR600 Zvezdochka (Project 20180)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASR600ZvezdochkaProject20180 createInstance()
+    {
+            return new ASR600ZvezdochkaProject20180();
     }
 }

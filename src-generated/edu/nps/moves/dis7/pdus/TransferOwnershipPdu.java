@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class TransferOwnershipPdu extends EntityManagementFamilyPdu implements S
    protected RecordSpecification  recordSets = new RecordSpecification(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public TransferOwnershipPdu()
  {
     setPduType( DisPduType.TRANSFER_OWNERSHIP );
@@ -56,13 +55,19 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += originatingEntityID.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
+   if (originatingEntityID != null)
+       marshalSize += originatingEntityID.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
    marshalSize += 4;  // requestID
-   marshalSize += requiredReliabilityService.getMarshalledSize();
-   marshalSize += transferType.getMarshalledSize();
-   marshalSize += transferEntityID.getMarshalledSize();
-   marshalSize += recordSets.getMarshalledSize();
+   if (requiredReliabilityService != null)
+       marshalSize += requiredReliabilityService.getMarshalledSize();
+   if (transferType != null)
+       marshalSize += transferType.getMarshalledSize();
+   if (transferEntityID != null)
+       marshalSize += transferEntityID.getMarshalledSize();
+   if (recordSets != null)
+       marshalSize += recordSets.getMarshalledSize();
 
    return marshalSize;
 }
@@ -271,13 +276,27 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    originatingEntityID.unmarshal(byteBuffer);
-    receivingEntityID.unmarshal(byteBuffer);
-    requestID = byteBuffer.getInt();
-    requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
-    transferType = TransferControlTransferType.unmarshalEnum(byteBuffer);
-    transferEntityID.unmarshal(byteBuffer);
-    recordSets.unmarshal(byteBuffer);
+    try
+    {
+        // attribute originatingEntityID marked as not serialized
+        originatingEntityID.unmarshal(byteBuffer);
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+        // attribute requiredReliabilityService marked as not serialized
+        requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
+        // attribute transferType marked as not serialized
+        transferType = TransferControlTransferType.unmarshalEnum(byteBuffer);
+        // attribute transferEntityID marked as not serialized
+        transferEntityID.unmarshal(byteBuffer);
+        // attribute recordSets marked as not serialized
+        recordSets.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

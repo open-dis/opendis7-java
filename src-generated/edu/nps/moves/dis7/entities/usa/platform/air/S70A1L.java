@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72906e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11108
+ * <p> Entity class <b><code>S70A1L</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S70A1L.createInstance()</code> or <code>new S70A1L()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: SikorskyS70A  = <code>2</code>; </li>
+ *     <li> Specific: S70A1L  = <code>8</code>; </li>
+ *     <li> Entity type uid: 11108; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@716185fe. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class S70A1L extends EntityType
+public final class S70A1L extends EntityType
 {
     /** Default constructor */
     public S70A1L()
@@ -26,5 +40,11 @@ public class S70A1L extends EntityType
         setCategory((byte)21); // uid 11088, Utility helicopter
         setSubCategory((byte)2); // uid 11100, Sikorsky S-70A
         setSpecific((byte)8); // uid 11108, S-70A-1L
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S70A1L createInstance()
+    {
+            return new S70A1L();
     }
 }

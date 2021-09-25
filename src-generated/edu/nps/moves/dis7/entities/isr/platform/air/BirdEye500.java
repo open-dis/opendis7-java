@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4351c8c3;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31783
+ * <p> Entity class <b><code>BirdEye500</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BirdEye500.createInstance()</code> or <code>new BirdEye500()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: IAIBirdEyeUAVFamily  = <code>8</code>; </li>
+ *     <li> Specific: BirdEye500  = <code>3</code>; </li>
+ *     <li> Entity type uid: 31783; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18b0930f. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class BirdEye500 extends EntityType
+public final class BirdEye500 extends EntityType
 {
     /** Default constructor */
     public BirdEye500()
@@ -26,5 +40,11 @@ public class BirdEye500 extends EntityType
         setCategory((byte)50); // uid 23487, Unmanned
         setSubCategory((byte)8); // uid 31780, IAI Bird Eye UAV Family
         setSpecific((byte)3); // uid 31783, Bird Eye 500
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BirdEye500 createInstance()
+    {
+            return new BirdEye500();
     }
 }

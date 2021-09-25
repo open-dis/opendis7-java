@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13805618;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 32176
+ * <p> Entity class <b><code>WestlandLynxNaval</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WestlandLynxNaval.createInstance()</code> or <code>new WestlandLynxNaval()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: WestlandLynxNaval  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32176; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@482f8f11. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class WestlandLynxNaval extends EntityType
+public final class WestlandLynxNaval extends EntityType
 {
     /** Default constructor */
     public WestlandLynxNaval()
@@ -25,5 +39,11 @@ public class WestlandLynxNaval extends EntityType
 
         setCategory((byte)22); // uid 31996, Anti-Submarine Warfare/Patrol Helicopter
         setSubCategory((byte)2); // uid 32176, Westland Lynx (Naval)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WestlandLynxNaval createInstance()
+    {
+            return new WestlandLynxNaval();
     }
 }

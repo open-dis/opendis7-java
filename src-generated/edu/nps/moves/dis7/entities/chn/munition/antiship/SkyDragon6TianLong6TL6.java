@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45037e16;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29140
+ * <p> Entity class <b><code>SkyDragon6TianLong6TL6</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SkyDragon6TianLong6TL6.createInstance()</code> or <code>new SkyDragon6TianLong6TL6()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SkyDragon6TianLong6TL6  = <code>19</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29140; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@257f30f7. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SkyDragon6TianLong6TL6 extends EntityType
+public final class SkyDragon6TianLong6TL6 extends EntityType
 {
     /** Default constructor */
     public SkyDragon6TianLong6TL6()
@@ -25,5 +39,11 @@ public class SkyDragon6TianLong6TL6 extends EntityType
 
         setCategory((byte)1); // uid 21409, Guided
         setSubCategory((byte)19); // uid 29140, Sky Dragon 6 / TianLong-6 / TL-6
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SkyDragon6TianLong6TL6 createInstance()
+    {
+            return new SkyDragon6TianLong6TL6();
     }
 }

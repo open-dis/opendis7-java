@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55b5e331;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29670
+ * <p> Entity class <b><code>FlatcarPiggybackwSemiTrailer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlatcarPiggybackwSemiTrailer.createInstance()</code> or <code>new FlatcarPiggybackwSemiTrailer()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trains = <code>92</code>; </li>
+ *     <li> SubCategory: GenericFlatcar  = <code>4</code>; </li>
+ *     <li> Specific: FlatcarPiggybackwSemiTrailer  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29670; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fa47fea. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trains
+ * @see SubCategory
+
  */
-public class FlatcarPiggybackwSemiTrailer extends EntityType
+public final class FlatcarPiggybackwSemiTrailer extends EntityType
 {
     /** Default constructor */
     public FlatcarPiggybackwSemiTrailer()
@@ -26,5 +40,11 @@ public class FlatcarPiggybackwSemiTrailer extends EntityType
         setCategory((byte)92); // uid 25990, Trains
         setSubCategory((byte)4); // uid 25994, Generic Flatcar
         setSpecific((byte)3); // uid 29670, Flatcar, Piggyback w/ Semi-Trailer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlatcarPiggybackwSemiTrailer createInstance()
+    {
+            return new FlatcarPiggybackwSemiTrailer();
     }
 }

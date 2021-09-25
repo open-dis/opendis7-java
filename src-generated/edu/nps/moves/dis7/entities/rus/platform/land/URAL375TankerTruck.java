@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a18e8d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12896
+ * <p> Entity class <b><code>URAL375TankerTruck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>URAL375TankerTruck.createInstance()</code> or <code>new URAL375TankerTruck()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: Ural3756x64000kgtruck  = <code>9</code>; </li>
+ *     <li> Specific: URAL375TankerTruck  = <code>6</code>; </li>
+ *     <li> Entity type uid: 12896; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bff2185. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class URAL375TankerTruck extends EntityType
+public final class URAL375TankerTruck extends EntityType
 {
     /** Default constructor */
     public URAL375TankerTruck()
@@ -26,5 +40,11 @@ public class URAL375TankerTruck extends EntityType
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)9); // uid 12890, Ural-375 6x6 4000-kg truck
         setSpecific((byte)6); // uid 12896, URAL-375 Tanker Truck
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static URAL375TankerTruck createInstance()
+    {
+            return new URAL375TankerTruck();
     }
 }

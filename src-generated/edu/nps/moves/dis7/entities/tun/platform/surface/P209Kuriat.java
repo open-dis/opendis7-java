@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e4f263e;
- * Country: Tunisia (TUN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23019
+ * <p> Entity class <b><code>P209Kuriat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P209Kuriat.createInstance()</code> or <code>new P209Kuriat()</code>. </p>
+ * <ul>
+ *     <li> Country: Tunisia (TUN) = <code>217</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ModifiedHaizhuiclass  = <code>3</code>; </li>
+ *     <li> Specific: P209Kuriat  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23019; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27d33393. </p>
+ * @see Country#TUNISIA_TUN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P209Kuriat extends EntityType
+public final class P209Kuriat extends EntityType
 {
     /** Default constructor */
     public P209Kuriat()
@@ -26,5 +40,11 @@ public class P209Kuriat extends EntityType
         setCategory((byte)7); // uid 23006, Light/Patrol Craft
         setSubCategory((byte)3); // uid 23016, Modified Haizhui class
         setSpecific((byte)3); // uid 23019, P209 Kuriat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P209Kuriat createInstance()
+    {
+            return new P209Kuriat();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class SystemIdentifier extends Object implements Serializable
    protected ChangeOptions  changeOptions = new ChangeOptions(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SystemIdentifier()
  {
  }
@@ -45,10 +44,14 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += systemType.getMarshalledSize();
-   marshalSize += systemName.getMarshalledSize();
-   marshalSize += systemMode.getMarshalledSize();
-   marshalSize += changeOptions.getMarshalledSize();
+   if (systemType != null)
+       marshalSize += systemType.getMarshalledSize();
+   if (systemName != null)
+       marshalSize += systemName.getMarshalledSize();
+   if (systemMode != null)
+       marshalSize += systemMode.getMarshalledSize();
+   if (changeOptions != null)
+       marshalSize += changeOptions.getMarshalledSize();
 
    return marshalSize;
 }
@@ -194,10 +197,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    systemType = IFFSystemType.unmarshalEnum(byteBuffer);
-    systemName = IFFSystemName.unmarshalEnum(byteBuffer);
-    systemMode = IFFSystemMode.unmarshalEnum(byteBuffer);
-    changeOptions.unmarshal(byteBuffer);
+    try
+    {
+        // attribute systemType marked as not serialized
+        systemType = IFFSystemType.unmarshalEnum(byteBuffer);
+        // attribute systemName marked as not serialized
+        systemName = IFFSystemName.unmarshalEnum(byteBuffer);
+        // attribute systemMode marked as not serialized
+        systemMode = IFFSystemMode.unmarshalEnum(byteBuffer);
+        // attribute changeOptions marked as not serialized
+        changeOptions.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

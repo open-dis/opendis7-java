@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@767e20cf;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31105
+ * <p> Entity class <b><code>_544TelukSabang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_544TelukSabang.createInstance()</code> or <code>new _544TelukSabang()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: TelukGilimanukClassFroschIIConfiguration  = <code>2</code>; </li>
+ *     <li> Specific: _544TelukSabang  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31105; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dd02341. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class _544TelukSabang extends EntityType
+public final class _544TelukSabang extends EntityType
 {
     /** Default constructor */
     public _544TelukSabang()
@@ -26,5 +40,11 @@ public class _544TelukSabang extends EntityType
         setCategory((byte)10); // uid 31090, Tank Landing Ship
         setSubCategory((byte)2); // uid 31103, Teluk Gilimanuk Class (Frosch II Configuration)
         setSpecific((byte)2); // uid 31105, 544 Teluk Sabang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _544TelukSabang createInstance()
+    {
+            return new _544TelukSabang();
     }
 }

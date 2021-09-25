@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@765d55d5;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15395
+ * <p> Entity class <b><code>A270Bluerover</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A270Bluerover.createInstance()</code> or <code>new A270Bluerover()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: RoverclasssmallfleettankersAOL  = <code>9</code>; </li>
+ *     <li> Specific: A270Bluerover  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15395; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6af91cc8. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A270Bluerover extends EntityType
+public final class A270Bluerover extends EntityType
 {
     /** Default constructor */
     public A270Bluerover()
@@ -26,5 +40,11 @@ public class A270Bluerover extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)9); // uid 15393, Rover class (small fleet tankers (AOL))
         setSpecific((byte)2); // uid 15395, A 270 Blue rover
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A270Bluerover createInstance()
+    {
+            return new A270Bluerover();
     }
 }

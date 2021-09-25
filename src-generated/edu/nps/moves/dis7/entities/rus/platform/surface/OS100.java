@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ce7e83c;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13689
+ * <p> Entity class <b><code>OS100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OS100.createInstance()</code> or <code>new OS100()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: Potokclasstorpedoexperimentalships  = <code>16</code>; </li>
+ *     <li> Specific: OS100  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13689; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c6a6c1d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolcraft
+ * @see SubCategory
+
  */
-public class OS100 extends EntityType
+public final class OS100 extends EntityType
 {
     /** Default constructor */
     public OS100()
@@ -26,5 +40,11 @@ public class OS100 extends EntityType
         setCategory((byte)7); // uid 13670, Light/Patrol craft
         setSubCategory((byte)16); // uid 13688, Potok class (torpedo experimental ships)
         setSpecific((byte)1); // uid 13689, OS-100
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OS100 createInstance()
+    {
+            return new OS100();
     }
 }

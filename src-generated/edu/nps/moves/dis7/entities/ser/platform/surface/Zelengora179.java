@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56afdf9a;
- * Country: Serbia and Montenegro;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19079
+ * <p> Entity class <b><code>Zelengora179</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Zelengora179.createInstance()</code> or <code>new Zelengora179()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: MirnaClassType140PCF  = <code>2</code>; </li>
+ *     <li> Specific: Zelengora179  = <code>5</code>; </li>
+ *     <li> Entity type uid: 19079; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bbf9e07. </p>
+ * @see Country#SERBIA_AND_MONTENEGRO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class Zelengora179 extends EntityType
+public final class Zelengora179 extends EntityType
 {
     /** Default constructor */
     public Zelengora179()
@@ -26,5 +40,11 @@ public class Zelengora179 extends EntityType
         setCategory((byte)7); // uid 19072, Light/Patrol Craft
         setSubCategory((byte)2); // uid 19074, Mirna Class Type 140 PCF
         setSpecific((byte)5); // uid 19079, Zelengora 179
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Zelengora179 createInstance()
+    {
+            return new Zelengora179();
     }
 }

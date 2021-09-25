@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75d0911a;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28662
+ * <p> Entity class <b><code>F590CarloBergamini</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F590CarloBergamini.createInstance()</code> or <code>new F590CarloBergamini()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: BergaminiClass  = <code>1</code>; </li>
+ *     <li> Specific: F590CarloBergamini  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28662; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@320de594. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F590CarloBergamini extends EntityType
+public final class F590CarloBergamini extends EntityType
 {
     /** Default constructor */
     public F590CarloBergamini()
@@ -26,5 +40,11 @@ public class F590CarloBergamini extends EntityType
         setCategory((byte)6); // uid 28660, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 28661, Bergamini Class
         setSpecific((byte)1); // uid 28662, F590 Carlo Bergamini
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F590CarloBergamini createInstance()
+    {
+            return new F590CarloBergamini();
     }
 }

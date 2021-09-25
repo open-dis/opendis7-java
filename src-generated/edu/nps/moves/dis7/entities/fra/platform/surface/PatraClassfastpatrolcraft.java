@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2de56eb2;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16082
+ * <p> Entity class <b><code>PatraClassfastpatrolcraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PatraClassfastpatrolcraft.createInstance()</code> or <code>new PatraClassfastpatrolcraft()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: GovernmentMaritimeForces  = <code>1</code>; </li>
+ *     <li> Specific: PatraClassfastpatrolcraft  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16082; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16eb3ea3. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class PatraClassfastpatrolcraft extends EntityType
+public final class PatraClassfastpatrolcraft extends EntityType
 {
     /** Default constructor */
     public PatraClassfastpatrolcraft()
@@ -26,5 +40,11 @@ public class PatraClassfastpatrolcraft extends EntityType
         setCategory((byte)17); // uid 16080, Auxiliary, Merchant Marine
         setSubCategory((byte)1); // uid 16081, Government Maritime Forces
         setSpecific((byte)1); // uid 16082, Patra Class (fast patrol craft)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PatraClassfastpatrolcraft createInstance()
+    {
+            return new PatraClassfastpatrolcraft();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -64,7 +63,7 @@ public class FalseTargetsAttribute extends Object implements Serializable
    protected float  firstTargetOffset;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public FalseTargetsAttribute()
  {
  }
@@ -83,7 +82,8 @@ public int getMarshalledSize()
    marshalSize += 2;  // padding
    marshalSize += 1;  // emitterNumber
    marshalSize += 1;  // beamNumber
-   marshalSize += stateIndicator.getMarshalledSize();
+   if (stateIndicator != null)
+       marshalSize += stateIndicator.getMarshalledSize();
    marshalSize += 1;  // padding2
    marshalSize += 2;  // padding3
    marshalSize += 2;  // falseTargetCount
@@ -508,21 +508,43 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    emitterNumber = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
-    stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
-    padding2 = (byte)(byteBuffer.get() & 0xFF);
-    padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
-    falseTargetCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    walkSpeed = byteBuffer.getFloat();
-    walkAcceleration = byteBuffer.getFloat();
-    maximumWalkDistance = byteBuffer.getFloat();
-    keepTime = byteBuffer.getFloat();
-    echoSpacing = byteBuffer.getFloat();
-    firstTargetOffset = byteBuffer.getFloat();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute emitterNumber marked as not serialized
+        emitterNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute stateIndicator marked as not serialized
+        stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding3 marked as not serialized
+        padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute falseTargetCount marked as not serialized
+        falseTargetCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute walkSpeed marked as not serialized
+        walkSpeed = byteBuffer.getFloat();
+        // attribute walkAcceleration marked as not serialized
+        walkAcceleration = byteBuffer.getFloat();
+        // attribute maximumWalkDistance marked as not serialized
+        maximumWalkDistance = byteBuffer.getFloat();
+        // attribute keepTime marked as not serialized
+        keepTime = byteBuffer.getFloat();
+        // attribute echoSpacing marked as not serialized
+        echoSpacing = byteBuffer.getFloat();
+        // attribute firstTargetOffset marked as not serialized
+        firstTargetOffset = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4a453f8d;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 31718
+ * <p> Entity class <b><code>YLC2VRadarHighGuard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YLC2VRadarHighGuard.createInstance()</code> or <code>new YLC2VRadarHighGuard()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
+ *     <li> Specific: YLC2Radar  = <code>15</code>; </li>
+ *     <li> Entity type uid: 31718; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4ec0229c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class YLC2VRadarHighGuard extends EntityType
+public final class YLC2VRadarHighGuard extends EntityType
 {
     /** Default constructor */
     public YLC2VRadarHighGuard()
@@ -27,5 +41,11 @@ public class YLC2VRadarHighGuard extends EntityType
         setSubCategory((byte)2); // uid 22510, Early Warning / Surveillance Radar
         setSpecific((byte)15); // uid 31716, YLC-2 Radar
         setExtra((byte)2); // uid 31718, YLC-2V Radar High Guard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YLC2VRadarHighGuard createInstance()
+    {
+            return new YLC2VRadarHighGuard();
     }
 }

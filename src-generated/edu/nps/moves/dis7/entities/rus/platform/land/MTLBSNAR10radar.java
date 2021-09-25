@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ac97b84;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12641
+ * <p> Entity class <b><code>MTLBSNAR10radar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MTLBSNAR10radar.createInstance()</code> or <code>new MTLBSNAR10radar()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: MTLBtrackedvehicle  = <code>7</code>; </li>
+ *     <li> Specific: MTLBSNAR10radar  = <code>18</code>; </li>
+ *     <li> Entity type uid: 12641; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3eb631b8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class MTLBSNAR10radar extends EntityType
+public final class MTLBSNAR10radar extends EntityType
 {
     /** Default constructor */
     public MTLBSNAR10radar()
@@ -26,5 +40,11 @@ public class MTLBSNAR10radar extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)7); // uid 12623, MT-LB tracked vehicle
         setSpecific((byte)18); // uid 12641, MT-LB SNAR-10 radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MTLBSNAR10radar createInstance()
+    {
+            return new MTLBSNAR10radar();
     }
 }

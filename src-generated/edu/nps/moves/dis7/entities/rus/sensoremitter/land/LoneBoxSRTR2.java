@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2328ec73;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22841
+ * <p> Entity class <b><code>LoneBoxSRTR2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LoneBoxSRTR2.createInstance()</code> or <code>new LoneBoxSRTR2()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Passive (intercept and DF) = <code>3</code>; </li>
+ *     <li> SubCategory: IdentificationClassificationincludingIFF  = <code>16</code>; </li>
+ *     <li> Specific: LoneBoxSRTR2  = <code>7</code>; </li>
+ *     <li> Entity type uid: 22841; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ae42248. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFPassiveinterceptandDF
+ * @see SubCategory
+
  */
-public class LoneBoxSRTR2 extends EntityType
+public final class LoneBoxSRTR2 extends EntityType
 {
     /** Default constructor */
     public LoneBoxSRTR2()
@@ -26,5 +40,11 @@ public class LoneBoxSRTR2 extends EntityType
         setCategory((byte)3); // uid 22833, RF Passive (intercept and DF)
         setSubCategory((byte)16); // uid 22834, Identification/Classification (including IFF)
         setSpecific((byte)7); // uid 22841, Lone Box SRTR-2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LoneBoxSRTR2 createInstance()
+    {
+            return new LoneBoxSRTR2();
     }
 }

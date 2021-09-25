@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2dd178f3;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21516
+ * <p> Entity class <b><code>MinelayingType84</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MinelayingType84.createInstance()</code> or <code>new MinelayingType84()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _122mmRocket  = <code>14</code>; </li>
+ *     <li> Specific: MinelayingType84  = <code>7</code>; </li>
+ *     <li> Entity type uid: 21516; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b96de8d. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class MinelayingType84 extends EntityType
+public final class MinelayingType84 extends EntityType
 {
     /** Default constructor */
     public MinelayingType84()
@@ -26,5 +40,11 @@ public class MinelayingType84 extends EntityType
         setCategory((byte)2); // uid 21465, Ballistic
         setSubCategory((byte)14); // uid 21509, 122 mm Rocket
         setSpecific((byte)7); // uid 21516, Minelaying Type 84
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MinelayingType84 createInstance()
+    {
+            return new MinelayingType84();
     }
 }

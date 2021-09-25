@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *  7.2.2. Represents the position and state of one entity in the world. See 5.3.2.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class EntityStatePdu extends EntityInformationFamilyPdu implements Serializable
+public class EntityStatePdu extends EntityInformationInteractionFamilyPdu implements Serializable
 {
    /** Unique ID for an entity that is tied to this state information */
    protected EntityID  entityID = new EntityID(); 
@@ -48,7 +47,7 @@ public class EntityStatePdu extends EntityInformationFamilyPdu implements Serial
    /** parameters used for dead reckoning */
    protected DeadReckoningParameters  deadReckoningParameters = new DeadReckoningParameters(); 
 
-   /** characters that can be used for debugging, or to draw unique strings on the side of entities in the world */
+   /** 11 characters that can be used for entity identifiication, debugging, or to draw unique strings on the side of entities in the world */
    protected EntityMarking  marking = new EntityMarking(); 
 
    /** a series of bit flags uid 55 */
@@ -58,7 +57,7 @@ public class EntityStatePdu extends EntityInformationFamilyPdu implements Serial
    protected List< VariableParameter > variableParameters = new ArrayList< VariableParameter >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityStatePdu()
  {
     setPduType( DisPduType.ENTITY_STATE );
@@ -74,23 +73,34 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += entityID.getMarshalledSize();
-   marshalSize += forceId.getMarshalledSize();
+   if (entityID != null)
+       marshalSize += entityID.getMarshalledSize();
+   if (forceId != null)
+       marshalSize += forceId.getMarshalledSize();
    marshalSize += 1;  // numberOfVariableParameters
-   marshalSize += entityType.getMarshalledSize();
-   marshalSize += alternativeEntityType.getMarshalledSize();
-   marshalSize += entityLinearVelocity.getMarshalledSize();
-   marshalSize += entityLocation.getMarshalledSize();
-   marshalSize += entityOrientation.getMarshalledSize();
+   if (entityType != null)
+       marshalSize += entityType.getMarshalledSize();
+   if (alternativeEntityType != null)
+       marshalSize += alternativeEntityType.getMarshalledSize();
+   if (entityLinearVelocity != null)
+       marshalSize += entityLinearVelocity.getMarshalledSize();
+   if (entityLocation != null)
+       marshalSize += entityLocation.getMarshalledSize();
+   if (entityOrientation != null)
+       marshalSize += entityOrientation.getMarshalledSize();
    marshalSize += 4;  // entityAppearance
-   marshalSize += deadReckoningParameters.getMarshalledSize();
-   marshalSize += marking.getMarshalledSize();
-   marshalSize += capabilities.getMarshalledSize();
-   for(int idx=0; idx < variableParameters.size(); idx++)
-   {
-        VariableParameter listElement = variableParameters.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (deadReckoningParameters != null)
+       marshalSize += deadReckoningParameters.getMarshalledSize();
+   if (marking != null)
+       marshalSize += marking.getMarshalledSize();
+   if (capabilities != null)
+       marshalSize += capabilities.getMarshalledSize();
+   if (variableParameters != null)
+       for (int idx=0; idx < variableParameters.size(); idx++)
+       {
+            VariableParameter listElement = variableParameters.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -312,7 +322,7 @@ public void marshal(DataOutputStream dos) throws Exception
        marking.marshal(dos);
        capabilities.marshal(dos);
 
-       for(int idx = 0; idx < variableParameters.size(); idx++)
+       for (int idx = 0; idx < variableParameters.size(); idx++)
        {
             VariableParameter aVariableParameter = variableParameters.get(idx);
             aVariableParameter.marshal(dos);
@@ -355,7 +365,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += deadReckoningParameters.unmarshal(dis);
         uPosition += marking.unmarshal(dis);
         uPosition += capabilities.unmarshal(dis);
-        for(int idx = 0; idx < numberOfVariableParameters; idx++)
+        for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
             VariableParameter anX = new VariableParameter();
             uPosition += anX.unmarshal(dis);
@@ -394,7 +404,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    marking.marshal(byteBuffer);
    capabilities.marshal(byteBuffer);
 
-   for(int idx = 0; idx < variableParameters.size(); idx++)
+   for (int idx = 0; idx < variableParameters.size(); idx++)
    {
         VariableParameter aVariableParameter = variableParameters.get(idx);
         aVariableParameter.marshal(byteBuffer);
@@ -415,25 +425,45 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    entityID.unmarshal(byteBuffer);
-    forceId = ForceID.unmarshalEnum(byteBuffer);
-    numberOfVariableParameters = (byte)(byteBuffer.get() & 0xFF);
-    entityType.unmarshal(byteBuffer);
-    alternativeEntityType.unmarshal(byteBuffer);
-    entityLinearVelocity.unmarshal(byteBuffer);
-    entityLocation.unmarshal(byteBuffer);
-    entityOrientation.unmarshal(byteBuffer);
-    entityAppearance = byteBuffer.getInt();
-    deadReckoningParameters.unmarshal(byteBuffer);
-    marking.unmarshal(byteBuffer);
-    capabilities.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfVariableParameters; idx++)
+    try
     {
-    VariableParameter anX = new VariableParameter();
-    anX.unmarshal(byteBuffer);
-    variableParameters.add(anX);
-    }
+        // attribute entityID marked as not serialized
+        entityID.unmarshal(byteBuffer);
+        // attribute forceId marked as not serialized
+        forceId = ForceID.unmarshalEnum(byteBuffer);
+        // attribute numberOfVariableParameters marked as not serialized
+        numberOfVariableParameters = (byte)(byteBuffer.get() & 0xFF);
+        // attribute entityType marked as not serialized
+        entityType.unmarshal(byteBuffer);
+        // attribute alternativeEntityType marked as not serialized
+        alternativeEntityType.unmarshal(byteBuffer);
+        // attribute entityLinearVelocity marked as not serialized
+        entityLinearVelocity.unmarshal(byteBuffer);
+        // attribute entityLocation marked as not serialized
+        entityLocation.unmarshal(byteBuffer);
+        // attribute entityOrientation marked as not serialized
+        entityOrientation.unmarshal(byteBuffer);
+        // attribute entityAppearance marked as not serialized
+        entityAppearance = byteBuffer.getInt();
+        // attribute deadReckoningParameters marked as not serialized
+        deadReckoningParameters.unmarshal(byteBuffer);
+        // attribute marking marked as not serialized
+        marking.unmarshal(byteBuffer);
+        // attribute capabilities marked as not serialized
+        capabilities.unmarshal(byteBuffer);
+        // attribute variableParameters marked as not serialized
+        for (int idx = 0; idx < numberOfVariableParameters; idx++)
+        {
+        VariableParameter anX = new VariableParameter();
+        anX.unmarshal(byteBuffer);
+        variableParameters.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -474,7 +504,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (marking.equals( rhs.marking) )) ivarsEqual = false;
      if( ! (capabilities.equals( rhs.capabilities) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < variableParameters.size(); idx++)
+     for (int idx = 0; idx < variableParameters.size(); idx++)
         if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

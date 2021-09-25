@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79c5636f;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25980
+ * <p> Entity class <b><code>GenericSkateboard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericSkateboard.createInstance()</code> or <code>new GenericSkateboard()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Non-motorized = <code>91</code>; </li>
+ *     <li> SubCategory: GenericSkateboard  = <code>15</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25980; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71b1a49c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Nonmotorized
+ * @see SubCategory
+
  */
-public class GenericSkateboard extends EntityType
+public final class GenericSkateboard extends EntityType
 {
     /** Default constructor */
     public GenericSkateboard()
@@ -25,5 +39,11 @@ public class GenericSkateboard extends EntityType
 
         setCategory((byte)91); // uid 25965, Non-motorized
         setSubCategory((byte)15); // uid 25980, Generic Skateboard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericSkateboard createInstance()
+    {
+            return new GenericSkateboard();
     }
 }

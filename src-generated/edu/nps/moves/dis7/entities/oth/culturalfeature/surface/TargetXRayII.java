@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6dc2279c;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 29921
+ * <p> Entity class <b><code>TargetXRayII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TargetXRayII.createInstance()</code> or <code>new TargetXRayII()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Target = <code>8</code>; </li>
+ *     <li> SubCategory: NavalGunneryTargetSurfaceBallons  = <code>1</code>; </li>
+ *     <li> Specific: TargetXRayII  = <code>4</code>; </li>
+ *     <li> Entity type uid: 29921; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@686b1e2d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Target
+ * @see SubCategory
+
  */
-public class TargetXRayII extends EntityType
+public final class TargetXRayII extends EntityType
 {
     /** Default constructor */
     public TargetXRayII()
@@ -26,5 +40,11 @@ public class TargetXRayII extends EntityType
         setCategory((byte)8); // uid 29916, Target
         setSubCategory((byte)1); // uid 29917, Naval Gunnery Target Surface Ballons
         setSpecific((byte)4); // uid 29921, Target X-Ray II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TargetXRayII createInstance()
+    {
+            return new TargetXRayII();
     }
 }

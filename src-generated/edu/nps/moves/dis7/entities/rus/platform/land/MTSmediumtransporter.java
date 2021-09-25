@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4e8e8621;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12940
+ * <p> Entity class <b><code>MTSmediumtransporter</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MTSmediumtransporter.createInstance()</code> or <code>new MTSmediumtransporter()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small tracked utility vehicle = <code>8</code>; </li>
+ *     <li> SubCategory: MTSmediumtransporter  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12940; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1c025cb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Smalltrackedutilityvehicle
+ * @see SubCategory
+
  */
-public class MTSmediumtransporter extends EntityType
+public final class MTSmediumtransporter extends EntityType
 {
     /** Default constructor */
     public MTSmediumtransporter()
@@ -25,5 +39,11 @@ public class MTSmediumtransporter extends EntityType
 
         setCategory((byte)8); // uid 12935, Small tracked utility vehicle
         setSubCategory((byte)5); // uid 12940, MT-S medium transporter
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MTSmediumtransporter createInstance()
+    {
+            return new MTSmediumtransporter();
     }
 }

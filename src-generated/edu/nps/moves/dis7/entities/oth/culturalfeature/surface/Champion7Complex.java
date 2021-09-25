@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7da77305;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 26946
+ * <p> Entity class <b><code>Champion7Complex</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Champion7Complex.createInstance()</code> or <code>new Champion7Complex()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Oil Platform = <code>1</code>; </li>
+ *     <li> SubCategory: OilPlatformFixed  = <code>1</code>; </li>
+ *     <li> Specific: Champion7Complex  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26946; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7717b4a0. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OilPlatform
+ * @see SubCategory
+
  */
-public class Champion7Complex extends EntityType
+public final class Champion7Complex extends EntityType
 {
     /** Default constructor */
     public Champion7Complex()
@@ -26,5 +40,11 @@ public class Champion7Complex extends EntityType
         setCategory((byte)1); // uid 22124, Oil Platform
         setSubCategory((byte)1); // uid 25244, Oil Platform, Fixed
         setSpecific((byte)1); // uid 26946, Champion-7 Complex
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Champion7Complex createInstance()
+    {
+            return new Champion7Complex();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7eae3764;
- * Country: Serbia and Montenegro;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23669
+ * <p> Entity class <b><code>BOV1PoloM83wAT3ATGM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BOV1PoloM83wAT3ATGM.createInstance()</code> or <code>new BOV1PoloM83wAT3ATGM()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle - (IFV, APC, SP mortars, armored cars, chemical reconnaissance, Anti-Tank guided missile launchers, etc.) = <code>2</code>; </li>
+ *     <li> SubCategory: BOVAPC  = <code>3</code>; </li>
+ *     <li> Specific: BOV1PoloM83wAT3ATGM  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23669; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2af4129d. </p>
+ * @see Country#SERBIA_AND_MONTENEGRO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicleIFVAPCSPmortarsarmoredcarschemicalreconnaissanceAntiTankguidedmissilelaunchersetc
+ * @see SubCategory
+
  */
-public class BOV1PoloM83wAT3ATGM extends EntityType
+public final class BOV1PoloM83wAT3ATGM extends EntityType
 {
     /** Default constructor */
     public BOV1PoloM83wAT3ATGM()
@@ -26,5 +40,11 @@ public class BOV1PoloM83wAT3ATGM extends EntityType
         setCategory((byte)2); // uid 23663, Armored Fighting Vehicle - (IFV, APC, SP mortars, armored cars, chemical reconnaissance, Anti-Tank guided missile launchers, etc.)
         setSubCategory((byte)3); // uid 23668, BOV APC
         setSpecific((byte)1); // uid 23669, BOV-1 Polo M-83 w/ AT-3 ATGM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BOV1PoloM83wAT3ATGM createInstance()
+    {
+            return new BOV1PoloM83wAT3ATGM();
     }
 }

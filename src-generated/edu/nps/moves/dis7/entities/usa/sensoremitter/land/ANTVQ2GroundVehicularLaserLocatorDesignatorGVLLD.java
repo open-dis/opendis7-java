@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a80c534;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23723
+ * <p> Entity class <b><code>ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD.createInstance()</code> or <code>new ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Electro-Optical = <code>5</code>; </li>
+ *     <li> SubCategory: MissileGuidance  = <code>60</code>; </li>
+ *     <li> Specific: ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23723; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5788722f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectroOptical
+ * @see SubCategory
+
  */
-public class ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD extends EntityType
+public final class ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD extends EntityType
 {
     /** Default constructor */
     public ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD()
@@ -26,5 +40,11 @@ public class ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD extends EntityType
         setCategory((byte)5); // uid 23721, Electro-Optical
         setSubCategory((byte)60); // uid 23722, Missile Guidance
         setSpecific((byte)1); // uid 23723, AN/TVQ-2 Ground/Vehicular Laser Locator Designator (G/VLLD)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD createInstance()
+    {
+            return new ANTVQ2GroundVehicularLaserLocatorDesignatorGVLLD();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@ceb7701;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 21196
+ * <p> Entity class <b><code>SSBSTypeS30DTN61</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSBSTypeS30DTN61.createInstance()</code> or <code>new SSBSTypeS30DTN61()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSBSTypeS30DTN61  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21196; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6650a6c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SSBSTypeS30DTN61 extends EntityType
+public final class SSBSTypeS30DTN61 extends EntityType
 {
     /** Default constructor */
     public SSBSTypeS30DTN61()
@@ -25,5 +39,11 @@ public class SSBSTypeS30DTN61 extends EntityType
 
         setCategory((byte)1); // uid 21195, Guided
         setSubCategory((byte)1); // uid 21196, SSBS Type S-30D/TN-61
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSBSTypeS30DTN61 createInstance()
+    {
+            return new SSBSTypeS30DTN61();
     }
 }

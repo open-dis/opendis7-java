@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c58255;
- * Country: Togo (TGO);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24595
+ * <p> Entity class <b><code>Amatory</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Amatory.createInstance()</code> or <code>new Amatory()</code>. </p>
+ * <ul>
+ *     <li> Country: Togo (TGO) = <code>211</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: DryBulkCargoShip  = <code>2</code>; </li>
+ *     <li> Specific: Amatory  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24595; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36c2b646. </p>
+ * @see Country#TOGO_TGO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class Amatory extends EntityType
+public final class Amatory extends EntityType
 {
     /** Default constructor */
     public Amatory()
@@ -26,5 +40,11 @@ public class Amatory extends EntityType
         setCategory((byte)81); // uid 24593, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)2); // uid 24594, Dry Bulk Cargo Ship
         setSpecific((byte)1); // uid 24595, Amatory
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Amatory createInstance()
+    {
+            return new Amatory();
     }
 }

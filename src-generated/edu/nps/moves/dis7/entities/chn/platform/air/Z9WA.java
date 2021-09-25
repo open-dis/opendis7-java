@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44a664f2;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30501
+ * <p> Entity class <b><code>Z9WA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Z9WA.createInstance()</code> or <code>new Z9WA()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack Helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: HarbinZ9  = <code>1</code>; </li>
+ *     <li> Specific: Z9WA  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30501; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62fdb4a6. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackHelicopter
+ * @see SubCategory
+
  */
-public class Z9WA extends EntityType
+public final class Z9WA extends EntityType
 {
     /** Default constructor */
     public Z9WA()
@@ -26,5 +40,11 @@ public class Z9WA extends EntityType
         setCategory((byte)20); // uid 30498, Attack Helicopter
         setSubCategory((byte)1); // uid 30499, Harbin Z-9
         setSpecific((byte)2); // uid 30501, Z-9WA
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Z9WA createInstance()
+    {
+            return new Z9WA();
     }
 }

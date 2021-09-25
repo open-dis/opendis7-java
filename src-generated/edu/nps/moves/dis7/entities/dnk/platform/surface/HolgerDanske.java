@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71e9ddb4;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32967
+ * <p> Entity class <b><code>HolgerDanske</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HolgerDanske.createInstance()</code> or <code>new HolgerDanske()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Passenger Vessel (Group 1 Merchant) = <code>80</code>; </li>
+ *     <li> SubCategory: Ferry  = <code>4</code>; </li>
+ *     <li> Specific: HolgerDanske  = <code>6</code>; </li>
+ *     <li> Entity type uid: 32967; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31190526. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PassengerVesselGroup1Merchant
+ * @see SubCategory
+
  */
-public class HolgerDanske extends EntityType
+public final class HolgerDanske extends EntityType
 {
     /** Default constructor */
     public HolgerDanske()
@@ -26,5 +40,11 @@ public class HolgerDanske extends EntityType
         setCategory((byte)80); // uid 32951, Passenger Vessel (Group 1 Merchant)
         setSubCategory((byte)4); // uid 32961, Ferry
         setSpecific((byte)6); // uid 32967, Holger Danske
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HolgerDanske createInstance()
+    {
+            return new HolgerDanske();
     }
 }

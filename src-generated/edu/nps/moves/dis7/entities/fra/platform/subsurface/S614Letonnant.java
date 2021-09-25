@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@626abbd0;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16184
+ * <p> Entity class <b><code>S614Letonnant</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S614Letonnant.createInstance()</code> or <code>new S614Letonnant()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSGN (Nuclear Guided Missile) = <code>2</code>; </li>
+ *     <li> SubCategory: LinflexibleclassSNLE  = <code>1</code>; </li>
+ *     <li> Specific: S614Letonnant  = <code>4</code>; </li>
+ *     <li> Entity type uid: 16184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5965d37. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSGNNuclearGuidedMissile
+ * @see SubCategory
+
  */
-public class S614Letonnant extends EntityType
+public final class S614Letonnant extends EntityType
 {
     /** Default constructor */
     public S614Letonnant()
@@ -26,5 +40,11 @@ public class S614Letonnant extends EntityType
         setCategory((byte)2); // uid 16179, SSGN (Nuclear Guided Missile)
         setSubCategory((byte)1); // uid 16180, Linflexible class (SNLE)
         setSpecific((byte)4); // uid 16184, S 614 Le tonnant
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S614Letonnant createInstance()
+    {
+            return new S614Letonnant();
     }
 }

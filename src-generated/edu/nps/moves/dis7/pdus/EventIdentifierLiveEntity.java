@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class EventIdentifierLiveEntity extends Object implements Serializable
    protected short  eventNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EventIdentifierLiveEntity()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    siteNumber = (byte)(byteBuffer.get() & 0xFF);
-    applicationNumber = (byte)(byteBuffer.get() & 0xFF);
-    eventNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute siteNumber marked as not serialized
+        siteNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute applicationNumber marked as not serialized
+        applicationNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute eventNumber marked as not serialized
+        eventNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

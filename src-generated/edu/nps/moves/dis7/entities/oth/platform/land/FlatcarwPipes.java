@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@33a053d;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29667
+ * <p> Entity class <b><code>FlatcarwPipes</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlatcarwPipes.createInstance()</code> or <code>new FlatcarwPipes()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trains = <code>92</code>; </li>
+ *     <li> SubCategory: GenericFlatcar  = <code>4</code>; </li>
+ *     <li> Specific: FlatcarNonSpecialized  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29667; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2a415aa9. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trains
+ * @see SubCategory
+
  */
-public class FlatcarwPipes extends EntityType
+public final class FlatcarwPipes extends EntityType
 {
     /** Default constructor */
     public FlatcarwPipes()
@@ -27,5 +41,11 @@ public class FlatcarwPipes extends EntityType
         setSubCategory((byte)4); // uid 25994, Generic Flatcar
         setSpecific((byte)1); // uid 29666, Flatcar, Non-Specialized
         setExtra((byte)1); // uid 29667, Flatcar w/ Pipes
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlatcarwPipes createInstance()
+    {
+            return new FlatcarwPipes();
     }
 }

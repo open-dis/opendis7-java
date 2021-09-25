@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b8ec001;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10137
+ * <p> Entity class <b><code>M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun.createInstance()</code> or <code>new M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: LightArmoredVehicleLAVStryker  = <code>5</code>; </li>
+ *     <li> Specific: M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun  = <code>22</code>; </li>
+ *     <li> Entity type uid: 10137; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@316acbb5. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun extends EntityType
+public final class M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun extends EntityType
 {
     /** Default constructor */
     public M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun()
@@ -26,5 +40,11 @@ public class M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmach
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)5); // uid 10115, Light Armored Vehicle (LAV) Stryker
         setSpecific((byte)22); // uid 10137, M1128 Stryker Mobile Gun System w/M68A1E4 105-mm cannon, MK 240 7.62 mm co-axial machine gun, and M2 .50 cal heavy machine gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun createInstance()
+    {
+            return new M1128StrykerMobileGunSystemwM68A1E4105mmcannonMK240762mmcoaxialmachinegunandM250calheavymachinegun();
     }
 }

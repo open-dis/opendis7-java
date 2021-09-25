@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e9469b8;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23202
+ * <p> Entity class <b><code>S353Preveze</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S353Preveze.createInstance()</code> or <code>new S353Preveze()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Prevezeclass  = <code>2</code>; </li>
+ *     <li> Specific: S353Preveze  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23202; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74ea46e2. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S353Preveze extends EntityType
+public final class S353Preveze extends EntityType
 {
     /** Default constructor */
     public S353Preveze()
@@ -26,5 +40,11 @@ public class S353Preveze extends EntityType
         setCategory((byte)5); // uid 19067, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)2); // uid 23201, Preveze class
         setSpecific((byte)1); // uid 23202, S353 Preveze
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S353Preveze createInstance()
+    {
+            return new S353Preveze();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a401749;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10865
+ * <p> Entity class <b><code>B52G</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B52G.createInstance()</code> or <code>new B52G()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bomber = <code>3</code>; </li>
+ *     <li> SubCategory: BoeingB52Stratofortress  = <code>3</code>; </li>
+ *     <li> Specific: B52G  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10865; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@daf22f0. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bomber
+ * @see SubCategory
+
  */
-public class B52G extends EntityType
+public final class B52G extends EntityType
 {
     /** Default constructor */
     public B52G()
@@ -26,5 +40,11 @@ public class B52G extends EntityType
         setCategory((byte)3); // uid 10860, Bomber
         setSubCategory((byte)3); // uid 10864, Boeing B-52 Stratofortress
         setSpecific((byte)1); // uid 10865, B-52G
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B52G createInstance()
+    {
+            return new B52G();
     }
 }

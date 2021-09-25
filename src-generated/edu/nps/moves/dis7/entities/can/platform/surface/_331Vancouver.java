@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2173f6d9;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23111
+ * <p> Entity class <b><code>_331Vancouver</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_331Vancouver.createInstance()</code> or <code>new _331Vancouver()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: HalifaxClassFFG  = <code>1</code>; </li>
+ *     <li> Specific: _331Vancouver  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23111; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49fc609f. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _331Vancouver extends EntityType
+public final class _331Vancouver extends EntityType
 {
     /** Default constructor */
     public _331Vancouver()
@@ -26,5 +40,11 @@ public class _331Vancouver extends EntityType
         setCategory((byte)6); // uid 18782, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 18783, Halifax Class (FFG)
         setSpecific((byte)2); // uid 23111, 331 Vancouver
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _331Vancouver createInstance()
+    {
+            return new _331Vancouver();
     }
 }

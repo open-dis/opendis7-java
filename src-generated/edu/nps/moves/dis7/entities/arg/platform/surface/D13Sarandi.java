@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59f95c5d;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31256
+ * <p> Entity class <b><code>D13Sarandi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D13Sarandi.createInstance()</code> or <code>new D13Sarandi()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: AlmiranteBrownClassMeko360H2  = <code>1</code>; </li>
+ *     <li> Specific: D13Sarandi  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31256; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32a1bec0. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class D13Sarandi extends EntityType
+public final class D13Sarandi extends EntityType
 {
     /** Default constructor */
     public D13Sarandi()
@@ -26,5 +40,11 @@ public class D13Sarandi extends EntityType
         setCategory((byte)4); // uid 18755, Guided Missile Destroyer
         setSubCategory((byte)1); // uid 18756, Almirante Brown Class (Meko 360H2)
         setSpecific((byte)4); // uid 31256, D 13 Sarandi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D13Sarandi createInstance()
+    {
+            return new D13Sarandi();
     }
 }

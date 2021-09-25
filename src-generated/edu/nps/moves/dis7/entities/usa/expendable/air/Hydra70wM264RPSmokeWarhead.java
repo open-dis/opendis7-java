@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cc4d454;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24985
+ * <p> Entity class <b><code>Hydra70wM264RPSmokeWarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hydra70wM264RPSmokeWarhead.createInstance()</code> or <code>new Hydra70wM264RPSmokeWarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Smoke Generator = <code>8</code>; </li>
+ *     <li> SubCategory: SmokeScreen  = <code>1</code>; </li>
+ *     <li> Specific: Hydra70wM264RPSmokeWarhead  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24985; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@579f3c8e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmokeGenerator
+ * @see SubCategory
+
  */
-public class Hydra70wM264RPSmokeWarhead extends EntityType
+public final class Hydra70wM264RPSmokeWarhead extends EntityType
 {
     /** Default constructor */
     public Hydra70wM264RPSmokeWarhead()
@@ -26,5 +40,11 @@ public class Hydra70wM264RPSmokeWarhead extends EntityType
         setCategory((byte)8); // uid 24983, Smoke Generator
         setSubCategory((byte)1); // uid 24984, Smoke Screen
         setSpecific((byte)1); // uid 24985, Hydra 70 w/ M264 RP Smoke Warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hydra70wM264RPSmokeWarhead createInstance()
+    {
+            return new Hydra70wM264RPSmokeWarhead();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -67,7 +66,7 @@ public class AngleDeception extends Object implements Serializable
    protected int  padding3 = (int)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AngleDeception()
  {
  }
@@ -86,7 +85,8 @@ public int getMarshalledSize()
    marshalSize += 2;  // padding
    marshalSize += 1;  // emitterNumber
    marshalSize += 1;  // beamNumber
-   marshalSize += stateIndicator.getMarshalledSize();
+   if (stateIndicator != null)
+       marshalSize += stateIndicator.getMarshalledSize();
    marshalSize += 1;  // padding2
    marshalSize += 4;  // azimuthOffset
    marshalSize += 4;  // azimuthWidth
@@ -518,22 +518,45 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    emitterNumber = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
-    stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
-    padding2 = (byte)(byteBuffer.get() & 0xFF);
-    azimuthOffset = byteBuffer.getFloat();
-    azimuthWidth = byteBuffer.getFloat();
-    azimuthPullRate = byteBuffer.getFloat();
-    azimuthPullAcceleration = byteBuffer.getFloat();
-    elevationOffset = byteBuffer.getFloat();
-    elevationWidth = byteBuffer.getFloat();
-    elevationPullRate = byteBuffer.getFloat();
-    elevationPullAcceleration = byteBuffer.getFloat();
-    padding3 = byteBuffer.getInt();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute emitterNumber marked as not serialized
+        emitterNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute stateIndicator marked as not serialized
+        stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute azimuthOffset marked as not serialized
+        azimuthOffset = byteBuffer.getFloat();
+        // attribute azimuthWidth marked as not serialized
+        azimuthWidth = byteBuffer.getFloat();
+        // attribute azimuthPullRate marked as not serialized
+        azimuthPullRate = byteBuffer.getFloat();
+        // attribute azimuthPullAcceleration marked as not serialized
+        azimuthPullAcceleration = byteBuffer.getFloat();
+        // attribute elevationOffset marked as not serialized
+        elevationOffset = byteBuffer.getFloat();
+        // attribute elevationWidth marked as not serialized
+        elevationWidth = byteBuffer.getFloat();
+        // attribute elevationPullRate marked as not serialized
+        elevationPullRate = byteBuffer.getFloat();
+        // attribute elevationPullAcceleration marked as not serialized
+        elevationPullAcceleration = byteBuffer.getFloat();
+        // attribute padding3 marked as not serialized
+        padding3 = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

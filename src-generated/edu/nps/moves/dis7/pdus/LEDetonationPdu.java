@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -55,7 +54,7 @@ public class LEDetonationPdu extends LiveEntityFamilyPdu implements Serializable
    protected byte  detonationResult;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LEDetonationPdu()
  {
     setPduType( DisPduType.LIVE_ENTITY_DETONATION );
@@ -71,17 +70,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += firingLiveEntityId.getMarshalledSize();
+   if (firingLiveEntityId != null)
+       marshalSize += firingLiveEntityId.getMarshalledSize();
    marshalSize += 1;  // detonationFlag1
    marshalSize += 1;  // detonationFlag2
-   marshalSize += targetLiveEntityId.getMarshalledSize();
-   marshalSize += munitionLiveEntityId.getMarshalledSize();
-   marshalSize += eventId.getMarshalledSize();
-   marshalSize += worldLocation.getMarshalledSize();
-   marshalSize += velocity.getMarshalledSize();
-   marshalSize += munitionOrientation.getMarshalledSize();
-   marshalSize += munitionDescriptor.getMarshalledSize();
-   marshalSize += entityLocation.getMarshalledSize();
+   if (targetLiveEntityId != null)
+       marshalSize += targetLiveEntityId.getMarshalledSize();
+   if (munitionLiveEntityId != null)
+       marshalSize += munitionLiveEntityId.getMarshalledSize();
+   if (eventId != null)
+       marshalSize += eventId.getMarshalledSize();
+   if (worldLocation != null)
+       marshalSize += worldLocation.getMarshalledSize();
+   if (velocity != null)
+       marshalSize += velocity.getMarshalledSize();
+   if (munitionOrientation != null)
+       marshalSize += munitionOrientation.getMarshalledSize();
+   if (munitionDescriptor != null)
+       marshalSize += munitionDescriptor.getMarshalledSize();
+   if (entityLocation != null)
+       marshalSize += entityLocation.getMarshalledSize();
    marshalSize += 1;  // detonationResult
 
    return marshalSize;
@@ -407,18 +415,37 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    firingLiveEntityId.unmarshal(byteBuffer);
-    detonationFlag1 = (byte)(byteBuffer.get() & 0xFF);
-    detonationFlag2 = (byte)(byteBuffer.get() & 0xFF);
-    targetLiveEntityId.unmarshal(byteBuffer);
-    munitionLiveEntityId.unmarshal(byteBuffer);
-    eventId.unmarshal(byteBuffer);
-    worldLocation.unmarshal(byteBuffer);
-    velocity.unmarshal(byteBuffer);
-    munitionOrientation.unmarshal(byteBuffer);
-    munitionDescriptor.unmarshal(byteBuffer);
-    entityLocation.unmarshal(byteBuffer);
-    detonationResult = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute firingLiveEntityId marked as not serialized
+        firingLiveEntityId.unmarshal(byteBuffer);
+        // attribute detonationFlag1 marked as not serialized
+        detonationFlag1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute detonationFlag2 marked as not serialized
+        detonationFlag2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute targetLiveEntityId marked as not serialized
+        targetLiveEntityId.unmarshal(byteBuffer);
+        // attribute munitionLiveEntityId marked as not serialized
+        munitionLiveEntityId.unmarshal(byteBuffer);
+        // attribute eventId marked as not serialized
+        eventId.unmarshal(byteBuffer);
+        // attribute worldLocation marked as not serialized
+        worldLocation.unmarshal(byteBuffer);
+        // attribute velocity marked as not serialized
+        velocity.unmarshal(byteBuffer);
+        // attribute munitionOrientation marked as not serialized
+        munitionOrientation.unmarshal(byteBuffer);
+        // attribute munitionDescriptor marked as not serialized
+        munitionDescriptor.unmarshal(byteBuffer);
+        // attribute entityLocation marked as not serialized
+        entityLocation.unmarshal(byteBuffer);
+        // attribute detonationResult marked as not serialized
+        detonationResult = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

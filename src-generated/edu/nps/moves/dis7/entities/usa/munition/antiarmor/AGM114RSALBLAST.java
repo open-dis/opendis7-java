@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2cd3fc29;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 29366
+ * <p> Entity class <b><code>AGM114RSALBLAST</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AGM114RSALBLAST.createInstance()</code> or <code>new AGM114RSALBLAST()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AGM114Hellfire  = <code>3</code>; </li>
+ *     <li> Specific: AGM114RSAL  = <code>11</code>; </li>
+ *     <li> Entity type uid: 29366; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@baa227e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AGM114RSALBLAST extends EntityType
+public final class AGM114RSALBLAST extends EntityType
 {
     /** Default constructor */
     public AGM114RSALBLAST()
@@ -27,5 +41,11 @@ public class AGM114RSALBLAST extends EntityType
         setSubCategory((byte)3); // uid 19530, AGM-114 Hellfire
         setSpecific((byte)11); // uid 25522, AGM-114R SAL
         setExtra((byte)2); // uid 29366, AGM-114R SAL BLAST
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AGM114RSALBLAST createInstance()
+    {
+            return new AGM114RSALBLAST();
     }
 }

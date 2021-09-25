@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ddc67d0;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32825
+ * <p> Entity class <b><code>MusudanSpentBooster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MusudanSpentBooster.createInstance()</code> or <code>new MusudanSpentBooster()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Musudan  = <code>10</code>; </li>
+ *     <li> Specific: MusudanSpentBooster  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32825; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ec3a8bd. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class MusudanSpentBooster extends EntityType
+public final class MusudanSpentBooster extends EntityType
 {
     /** Default constructor */
     public MusudanSpentBooster()
@@ -26,5 +40,11 @@ public class MusudanSpentBooster extends EntityType
         setCategory((byte)1); // uid 21602, Guided
         setSubCategory((byte)10); // uid 32823, Musudan
         setSpecific((byte)2); // uid 32825, Musudan Spent Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MusudanSpentBooster createInstance()
+    {
+            return new MusudanSpentBooster();
     }
 }

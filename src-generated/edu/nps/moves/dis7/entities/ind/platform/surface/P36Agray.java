@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f40e5db;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23169
+ * <p> Entity class <b><code>P36Agray</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P36Agray.createInstance()</code> or <code>new P36Agray()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft(PC) = <code>7</code>; </li>
+ *     <li> SubCategory: AbhayPaukIIClassFS  = <code>3</code>; </li>
+ *     <li> Specific: P36Agray  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23169; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42bc14c1. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraftPC
+ * @see SubCategory
+
  */
-public class P36Agray extends EntityType
+public final class P36Agray extends EntityType
 {
     /** Default constructor */
     public P36Agray()
@@ -26,5 +40,11 @@ public class P36Agray extends EntityType
         setCategory((byte)7); // uid 18833, Light/Patrol Craft(PC)
         setSubCategory((byte)3); // uid 18836, Abhay (Pauk II) Class (FS)
         setSpecific((byte)4); // uid 23169, P36 Agray
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P36Agray createInstance()
+    {
+            return new P36Agray();
     }
 }

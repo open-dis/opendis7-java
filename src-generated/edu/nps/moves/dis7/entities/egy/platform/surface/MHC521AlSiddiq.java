@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10d68fcd;
- * Country: Egypt (EGY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26763
+ * <p> Entity class <b><code>MHC521AlSiddiq</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MHC521AlSiddiq.createInstance()</code> or <code>new MHC521AlSiddiq()</code>. </p>
+ * <ul>
+ *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: CoastalMinehunterClass  = <code>1</code>; </li>
+ *     <li> Specific: MHC521AlSiddiq  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26763; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b3ca52e. </p>
+ * @see Country#COMMENT_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MHC521AlSiddiq extends EntityType
+public final class MHC521AlSiddiq extends EntityType
 {
     /** Default constructor */
     public MHC521AlSiddiq()
@@ -26,5 +40,11 @@ public class MHC521AlSiddiq extends EntityType
         setCategory((byte)8); // uid 26761, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 26762, Coastal Minehunter Class
         setSpecific((byte)1); // uid 26763, MHC 521 Al Siddiq
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MHC521AlSiddiq createInstance()
+    {
+            return new MHC521AlSiddiq();
     }
 }

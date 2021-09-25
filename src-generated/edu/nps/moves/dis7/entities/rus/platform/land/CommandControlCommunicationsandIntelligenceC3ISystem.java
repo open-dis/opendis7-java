@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@13047d7d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13151
+ * <p> Entity class <b><code>CommandControlCommunicationsandIntelligenceC3ISystem</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CommandControlCommunicationsandIntelligenceC3ISystem.createInstance()</code> or <code>new CommandControlCommunicationsandIntelligenceC3ISystem()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Command, Control, Communications and Intelligence (C3I) System = <code>29</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 13151; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@20ed3303. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommandControlCommunicationsandIntelligenceC3ISystem
+
  */
-public class CommandControlCommunicationsandIntelligenceC3ISystem extends EntityType
+public final class CommandControlCommunicationsandIntelligenceC3ISystem extends EntityType
 {
     /** Default constructor */
     public CommandControlCommunicationsandIntelligenceC3ISystem()
@@ -24,5 +37,11 @@ public class CommandControlCommunicationsandIntelligenceC3ISystem extends Entity
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)29); // uid 13151, Command, Control, Communications and Intelligence (C3I) System
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CommandControlCommunicationsandIntelligenceC3ISystem createInstance()
+    {
+            return new CommandControlCommunicationsandIntelligenceC3ISystem();
     }
 }

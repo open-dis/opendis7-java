@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@75b38c36;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10988
+ * <p> Entity class <b><code>BoeingP8MultiMissionMaritimeAircraftMMA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BoeingP8MultiMissionMaritimeAircraftMMA.createInstance()</code> or <code>new BoeingP8MultiMissionMaritimeAircraftMMA()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: BoeingP8MultiMissionMaritimeAircraftMMA  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 10988; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6dee8ae6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarinepatrolobservation
+ * @see SubCategory
+
  */
-public class BoeingP8MultiMissionMaritimeAircraftMMA extends EntityType
+public final class BoeingP8MultiMissionMaritimeAircraftMMA extends EntityType
 {
     /** Default constructor */
     public BoeingP8MultiMissionMaritimeAircraftMMA()
@@ -25,5 +39,11 @@ public class BoeingP8MultiMissionMaritimeAircraftMMA extends EntityType
 
         setCategory((byte)5); // uid 10963, Anti-Submarine/patrol/observation
         setSubCategory((byte)5); // uid 10988, Boeing P-8 Multi-Mission Maritime Aircraft (MMA)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BoeingP8MultiMissionMaritimeAircraftMMA createInstance()
+    {
+            return new BoeingP8MultiMissionMaritimeAircraftMMA();
     }
 }

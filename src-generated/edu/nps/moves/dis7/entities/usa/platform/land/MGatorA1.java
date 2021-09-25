@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@17e9bc9e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22872
+ * <p> Entity class <b><code>MGatorA1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MGatorA1.createInstance()</code> or <code>new MGatorA1()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: AllTerrainVehicleATV  = <code>26</code>; </li>
+ *     <li> Specific: ATV6X4  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7316523a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class MGatorA1 extends EntityType
+public final class MGatorA1 extends EntityType
 {
     /** Default constructor */
     public MGatorA1()
@@ -27,5 +41,11 @@ public class MGatorA1 extends EntityType
         setSubCategory((byte)26); // uid 10408, All Terrain Vehicle (ATV)
         setSpecific((byte)3); // uid 22871, ATV 6X4
         setExtra((byte)1); // uid 22872, M-Gator A1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MGatorA1 createInstance()
+    {
+            return new MGatorA1();
     }
 }

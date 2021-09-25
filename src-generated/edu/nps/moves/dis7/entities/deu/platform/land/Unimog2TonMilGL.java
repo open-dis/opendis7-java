@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33f676f6;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28074
+ * <p> Entity class <b><code>Unimog2TonMilGL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Unimog2TonMilGL.createInstance()</code> or <code>new Unimog2TonMilGL()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle (greater than 1.25 tons) = <code>7</code>; </li>
+ *     <li> SubCategory: MBUnimogTruck  = <code>5</code>; </li>
+ *     <li> Specific: Unimog2TonMilGL  = <code>4</code>; </li>
+ *     <li> Entity type uid: 28074; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f36c2f0. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehiclegreaterthan125tons
+ * @see SubCategory
+
  */
-public class Unimog2TonMilGL extends EntityType
+public final class Unimog2TonMilGL extends EntityType
 {
     /** Default constructor */
     public Unimog2TonMilGL()
@@ -26,5 +40,11 @@ public class Unimog2TonMilGL extends EntityType
         setCategory((byte)7); // uid 16279, Large Wheeled Utility Vehicle (greater than 1.25 tons)
         setSubCategory((byte)5); // uid 26335, MB Unimog Truck
         setSpecific((byte)4); // uid 28074, Unimog 2 Ton Mil GL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Unimog2TonMilGL createInstance()
+    {
+            return new Unimog2TonMilGL();
     }
 }

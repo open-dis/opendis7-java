@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@f973499;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12820
+ * <p> Entity class <b><code>M1966762mmmountaingun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1966762mmmountaingun.createInstance()</code> or <code>new M1966762mmmountaingun()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed artillery = <code>5</code>; </li>
+ *     <li> SubCategory: M1966762mmmountaingun  = <code>9</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12820; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1b9c1b51. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Towedartillery
+ * @see SubCategory
+
  */
-public class M1966762mmmountaingun extends EntityType
+public final class M1966762mmmountaingun extends EntityType
 {
     /** Default constructor */
     public M1966762mmmountaingun()
@@ -25,5 +39,11 @@ public class M1966762mmmountaingun extends EntityType
 
         setCategory((byte)5); // uid 12810, Towed artillery
         setSubCategory((byte)9); // uid 12820, M-1966 76.2-mm mountain gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1966762mmmountaingun createInstance()
+    {
+            return new M1966762mmmountaingun();
     }
 }

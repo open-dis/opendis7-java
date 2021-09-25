@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15043a2f;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15945
+ * <p> Entity class <b><code>D610Tourville</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D610Tourville.createInstance()</code> or <code>new D610Tourville()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (Fregates or Escorteurs Descadres) = <code>4</code>; </li>
+ *     <li> SubCategory: TourvilleclassTypeF67  = <code>4</code>; </li>
+ *     <li> Specific: D610Tourville  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15945; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18df8434. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerFregatesorEscorteursDescadres
+ * @see SubCategory
+
  */
-public class D610Tourville extends EntityType
+public final class D610Tourville extends EntityType
 {
     /** Default constructor */
     public D610Tourville()
@@ -26,5 +40,11 @@ public class D610Tourville extends EntityType
         setCategory((byte)4); // uid 15929, Guided Missile Destroyer (Fregates or Escorteurs Descadres)
         setSubCategory((byte)4); // uid 15944, Tourville class (Type F 67)
         setSpecific((byte)1); // uid 15945, D 610 Tourville
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D610Tourville createInstance()
+    {
+            return new D610Tourville();
     }
 }

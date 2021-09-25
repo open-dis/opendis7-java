@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7eb200ce;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10211
+ * <p> Entity class <b><code>AAVC7A1commandvehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AAVC7A1commandvehicle.createInstance()</code> or <code>new AAVC7A1commandvehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: FMCAAV7A1LVTP7A1  = <code>26</code>; </li>
+ *     <li> Specific: AAVC7A1commandvehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10211; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f362135. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class AAVC7A1commandvehicle extends EntityType
+public final class AAVC7A1commandvehicle extends EntityType
 {
     /** Default constructor */
     public AAVC7A1commandvehicle()
@@ -26,5 +40,11 @@ public class AAVC7A1commandvehicle extends EntityType
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)26); // uid 10210, FMC AAV7A1 (LVTP7A1)
         setSpecific((byte)1); // uid 10211, AAVC7A1 command vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AAVC7A1commandvehicle createInstance()
+    {
+            return new AAVC7A1commandvehicle();
     }
 }

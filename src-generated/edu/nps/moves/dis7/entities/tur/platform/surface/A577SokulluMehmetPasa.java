@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e4c0d8c;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27482
+ * <p> Entity class <b><code>A577SokulluMehmetPasa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A577SokulluMehmetPasa.createInstance()</code> or <code>new A577SokulluMehmetPasa()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: MoselClassType402FastMinesweeperTender  = <code>2</code>; </li>
+ *     <li> Specific: A577SokulluMehmetPasa  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27482; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76ad6715. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A577SokulluMehmetPasa extends EntityType
+public final class A577SokulluMehmetPasa extends EntityType
 {
     /** Default constructor */
     public A577SokulluMehmetPasa()
@@ -26,5 +40,11 @@ public class A577SokulluMehmetPasa extends EntityType
         setCategory((byte)16); // uid 27478, Auxiliary
         setSubCategory((byte)2); // uid 27481, Mosel Class (Type 402 Fast Minesweeper Tender)
         setSpecific((byte)1); // uid 27482, A-577 Sokullu Mehmet Pasa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A577SokulluMehmetPasa createInstance()
+    {
+            return new A577SokulluMehmetPasa();
     }
 }

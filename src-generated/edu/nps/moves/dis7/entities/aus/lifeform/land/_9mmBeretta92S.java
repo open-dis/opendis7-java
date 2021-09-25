@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23bd047f;
- * Country: Australia (AUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 31508
+ * <p> Entity class <b><code>_9mmBeretta92S</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_9mmBeretta92S.createInstance()</code> or <code>new _9mmBeretta92S()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Australian Army = <code>11</code>; </li>
+ *     <li> SubCategory: HandGuns  = <code>80</code>; </li>
+ *     <li> Specific: _9mmBeretta92S  = <code>31</code>; </li>
+ *     <li> Entity type uid: 31508; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e517c9e. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AustralianArmy
+ * @see SubCategory
+
  */
-public class _9mmBeretta92S extends EntityType
+public final class _9mmBeretta92S extends EntityType
 {
     /** Default constructor */
     public _9mmBeretta92S()
@@ -26,5 +40,11 @@ public class _9mmBeretta92S extends EntityType
         setCategory((byte)11); // uid 31462, Australian Army
         setSubCategory((byte)80); // uid 31506, Hand Guns
         setSpecific((byte)31); // uid 31508, 9mm Beretta 92S
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _9mmBeretta92S createInstance()
+    {
+            return new _9mmBeretta92S();
     }
 }

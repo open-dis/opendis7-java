@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7acfb656;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14386
+ * <p> Entity class <b><code>Munaclasstransports94</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Munaclasstransports94.createInstance()</code> or <code>new Munaclasstransports94()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Munaclasstransports  = <code>91</code>; </li>
+ *     <li> Specific: _94  = <code>12</code>; </li>
+ *     <li> Entity type uid: 14386; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d49fd31. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Munaclasstransports94 extends EntityType
+public final class Munaclasstransports94 extends EntityType
 {
     /** Default constructor */
     public Munaclasstransports94()
@@ -26,5 +40,11 @@ public class Munaclasstransports94 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)91); // uid 14374, Muna class (transports)
         setSpecific((byte)12); // uid 14386, 94
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Munaclasstransports94 createInstance()
+    {
+            return new Munaclasstransports94();
     }
 }

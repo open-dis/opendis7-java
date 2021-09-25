@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@502f8b57;
- * Country: Papua New Guinea (PNG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31144
+ * <p> Entity class <b><code>LandingCraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LandingCraft.createInstance()</code> or <code>new LandingCraft()</code>. </p>
+ * <ul>
+ *     <li> Country: Papua New Guinea (PNG) = <code>169</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31144; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3569edd5. </p>
+ * @see Country#PAPUA_NEW_GUINEA_PNG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+
  */
-public class LandingCraft extends EntityType
+public final class LandingCraft extends EntityType
 {
     /** Default constructor */
     public LandingCraft()
@@ -24,5 +37,11 @@ public class LandingCraft extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)11); // uid 31144, Landing Craft
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LandingCraft createInstance()
+    {
+            return new LandingCraft();
     }
 }

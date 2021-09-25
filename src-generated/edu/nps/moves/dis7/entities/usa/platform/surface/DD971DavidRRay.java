@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@309dcdf3;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11466
+ * <p> Entity class <b><code>DD971DavidRRay</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD971DavidRRay.createInstance()</code> or <code>new DD971DavidRRay()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer = <code>5</code>; </li>
+ *     <li> SubCategory: SpruanceClass  = <code>1</code>; </li>
+ *     <li> Specific: DD971DavidRRay  = <code>9</code>; </li>
+ *     <li> Entity type uid: 11466; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52d3fafd. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Destroyer
+ * @see SubCategory
+
  */
-public class DD971DavidRRay extends EntityType
+public final class DD971DavidRRay extends EntityType
 {
     /** Default constructor */
     public DD971DavidRRay()
@@ -26,5 +40,11 @@ public class DD971DavidRRay extends EntityType
         setCategory((byte)5); // uid 11456, Destroyer
         setSubCategory((byte)1); // uid 11457, Spruance Class
         setSpecific((byte)9); // uid 11466, DD 971 David R. Ray
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD971DavidRRay createInstance()
+    {
+            return new DD971DavidRRay();
     }
 }

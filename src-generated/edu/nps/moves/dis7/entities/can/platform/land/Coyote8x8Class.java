@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b084709;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31200
+ * <p> Entity class <b><code>Coyote8x8Class</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Coyote8x8Class.createInstance()</code> or <code>new Coyote8x8Class()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: Coyote8x8Class  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31200; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@69ea3742. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class Coyote8x8Class extends EntityType
+public final class Coyote8x8Class extends EntityType
 {
     /** Default constructor */
     public Coyote8x8Class()
@@ -25,5 +39,11 @@ public class Coyote8x8Class extends EntityType
 
         setCategory((byte)2); // uid 30991, Armored Fighting Vehicle
         setSubCategory((byte)4); // uid 31200, Coyote 8x8 Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Coyote8x8Class createInstance()
+    {
+            return new Coyote8x8Class();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ab39c39;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29310
+ * <p> Entity class <b><code>CH47D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CH47D.createInstance()</code> or <code>new CH47D()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Helicopter = <code>23</code>; </li>
+ *     <li> SubCategory: BoeingModels114414  = <code>1</code>; </li>
+ *     <li> Specific: CH47D  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29310; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3419866c. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoHelicopter
+ * @see SubCategory
+
  */
-public class CH47D extends EntityType
+public final class CH47D extends EntityType
 {
     /** Default constructor */
     public CH47D()
@@ -26,5 +40,11 @@ public class CH47D extends EntityType
         setCategory((byte)23); // uid 29308, Cargo Helicopter
         setSubCategory((byte)1); // uid 29309, Boeing Models 114/414
         setSpecific((byte)1); // uid 29310, CH-47D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CH47D createInstance()
+    {
+            return new CH47D();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55d9b8f0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 26543
+ * <p> Entity class <b><code>K84Yekaterinburg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K84Yekaterinburg.createInstance()</code> or <code>new K84Yekaterinburg()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missile) = <code>1</code>; </li>
+ *     <li> SubCategory: DeltaIVclass  = <code>2</code>; </li>
+ *     <li> Specific: K84Yekaterinburg  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26543; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11b455e5. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissile
+ * @see SubCategory
+
  */
-public class K84Yekaterinburg extends EntityType
+public final class K84Yekaterinburg extends EntityType
 {
     /** Default constructor */
     public K84Yekaterinburg()
@@ -26,5 +40,11 @@ public class K84Yekaterinburg extends EntityType
         setCategory((byte)1); // uid 14759, SSBN (Nuclear Ballistic Missile)
         setSubCategory((byte)2); // uid 14761, Delta IV class
         setSpecific((byte)2); // uid 26543, K84 Yekaterinburg
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K84Yekaterinburg createInstance()
+    {
+            return new K84Yekaterinburg();
     }
 }

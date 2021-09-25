@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18bf3d14;
- * Country: Chile (CHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28687
+ * <p> Entity class <b><code>Type22Boxerclass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type22Boxerclass.createInstance()</code> or <code>new Type22Boxerclass()</code>. </p>
+ * <ul>
+ *     <li> Country: Chile (CHL) = <code>44</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: Type22Boxerclass  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28687; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@fad74ee. </p>
+ * @see Country#CHILE_CHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class Type22Boxerclass extends EntityType
+public final class Type22Boxerclass extends EntityType
 {
     /** Default constructor */
     public Type22Boxerclass()
@@ -25,5 +39,11 @@ public class Type22Boxerclass extends EntityType
 
         setCategory((byte)6); // uid 27464, Guided Missile Frigate (FFG)
         setSubCategory((byte)4); // uid 28687, Type 22 (Boxer) class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type22Boxerclass createInstance()
+    {
+            return new Type22Boxerclass();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70807224;
- * Country: Romania (ROU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27816
+ * <p> Entity class <b><code>_190Lastunul</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_190Lastunul.createInstance()</code> or <code>new _190Lastunul()</code>. </p>
+ * <ul>
+ *     <li> Country: Romania (ROU) = <code>180</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: ZborulTarantulIClass  = <code>1</code>; </li>
+ *     <li> Specific: _190Lastunul  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27816; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3249a1ce. </p>
+ * @see Country#ROMANIA_ROU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _190Lastunul extends EntityType
+public final class _190Lastunul extends EntityType
 {
     /** Default constructor */
     public _190Lastunul()
@@ -26,5 +40,11 @@ public class _190Lastunul extends EntityType
         setCategory((byte)50); // uid 27812, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27813, Zborul (Tarantul I) Class
         setSpecific((byte)3); // uid 27816, 190 Lastunul
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _190Lastunul createInstance()
+    {
+            return new _190Lastunul();
     }
 }

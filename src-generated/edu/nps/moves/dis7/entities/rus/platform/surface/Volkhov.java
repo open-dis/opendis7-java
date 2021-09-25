@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c59e45e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14175
+ * <p> Entity class <b><code>Volkhov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Volkhov.createInstance()</code> or <code>new Volkhov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ModKazbekclassreplenishmenttankers  = <code>54</code>; </li>
+ *     <li> Specific: Volkhov  = <code>3</code>; </li>
+ *     <li> Entity type uid: 14175; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71f96dfb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Volkhov extends EntityType
+public final class Volkhov extends EntityType
 {
     /** Default constructor */
     public Volkhov()
@@ -26,5 +40,11 @@ public class Volkhov extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)54); // uid 14172, Mod Kazbek class (replenishment tankers)
         setSpecific((byte)3); // uid 14175, Volkhov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Volkhov createInstance()
+    {
+            return new Volkhov();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class EnvironmentalProcessPdu extends SyntheticEnvironmentFamilyPdu imple
    protected List< Environment > environmentRecords = new ArrayList< Environment >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EnvironmentalProcessPdu()
  {
     setPduType( DisPduType.ENVIRONMENTAL_PROCESS );
@@ -56,17 +55,22 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += environementalProcessID.getMarshalledSize();
-   marshalSize += environmentType.getMarshalledSize();
-   marshalSize += modelType.getMarshalledSize();
-   marshalSize += environmentStatus.getMarshalledSize();
+   if (environementalProcessID != null)
+       marshalSize += environementalProcessID.getMarshalledSize();
+   if (environmentType != null)
+       marshalSize += environmentType.getMarshalledSize();
+   if (modelType != null)
+       marshalSize += modelType.getMarshalledSize();
+   if (environmentStatus != null)
+       marshalSize += environmentStatus.getMarshalledSize();
    marshalSize += 2;  // numberOfEnvironmentRecords
    marshalSize += 2;  // sequenceNumber
-   for(int idx=0; idx < environmentRecords.size(); idx++)
-   {
-        Environment listElement = environmentRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (environmentRecords != null)
+       for (int idx=0; idx < environmentRecords.size(); idx++)
+       {
+            Environment listElement = environmentRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -193,7 +197,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(environmentRecords.size());
        dos.writeShort(sequenceNumber);
 
-       for(int idx = 0; idx < environmentRecords.size(); idx++)
+       for (int idx = 0; idx < environmentRecords.size(); idx++)
        {
             Environment aEnvironment = environmentRecords.get(idx);
             aEnvironment.marshal(dos);
@@ -230,7 +234,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         sequenceNumber = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfEnvironmentRecords; idx++)
+        for (int idx = 0; idx < numberOfEnvironmentRecords; idx++)
         {
             Environment anX = new Environment();
             uPosition += anX.unmarshal(dis);
@@ -263,7 +267,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)environmentRecords.size());
    byteBuffer.putShort( (short)sequenceNumber);
 
-   for(int idx = 0; idx < environmentRecords.size(); idx++)
+   for (int idx = 0; idx < environmentRecords.size(); idx++)
    {
         Environment aEnvironment = environmentRecords.get(idx);
         aEnvironment.marshal(byteBuffer);
@@ -284,19 +288,33 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    environementalProcessID.unmarshal(byteBuffer);
-    environmentType.unmarshal(byteBuffer);
-    modelType = EnvironmentalProcessModelType.unmarshalEnum(byteBuffer);
-    environmentStatus.unmarshal(byteBuffer);
-    numberOfEnvironmentRecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    sequenceNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfEnvironmentRecords; idx++)
+    try
     {
-    Environment anX = new Environment();
-    anX.unmarshal(byteBuffer);
-    environmentRecords.add(anX);
-    }
+        // attribute environementalProcessID marked as not serialized
+        environementalProcessID.unmarshal(byteBuffer);
+        // attribute environmentType marked as not serialized
+        environmentType.unmarshal(byteBuffer);
+        // attribute modelType marked as not serialized
+        modelType = EnvironmentalProcessModelType.unmarshalEnum(byteBuffer);
+        // attribute environmentStatus marked as not serialized
+        environmentStatus.unmarshal(byteBuffer);
+        // attribute numberOfEnvironmentRecords marked as not serialized
+        numberOfEnvironmentRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute sequenceNumber marked as not serialized
+        sequenceNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute environmentRecords marked as not serialized
+        for (int idx = 0; idx < numberOfEnvironmentRecords; idx++)
+        {
+        Environment anX = new Environment();
+        anX.unmarshal(byteBuffer);
+        environmentRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -331,7 +349,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (environmentStatus.equals( rhs.environmentStatus) )) ivarsEqual = false;
      if( ! (sequenceNumber == rhs.sequenceNumber)) ivarsEqual = false;
 
-     for(int idx = 0; idx < environmentRecords.size(); idx++)
+     for (int idx = 0; idx < environmentRecords.size(); idx++)
         if( ! ( environmentRecords.get(idx).equals(rhs.environmentRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

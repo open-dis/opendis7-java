@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66a53104;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28319
+ * <p> Entity class <b><code>PoliceVanFordEconoline</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PoliceVanFordEconoline.createInstance()</code> or <code>new PoliceVanFordEconoline()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Utility/Emergency Truck = <code>84</code>; </li>
+ *     <li> SubCategory: PolicePaddyWagon  = <code>20</code>; </li>
+ *     <li> Specific: PoliceVanFordEconoline  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28319; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46e3559f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitUtilityEmergencyTruck
+ * @see SubCategory
+
  */
-public class PoliceVanFordEconoline extends EntityType
+public final class PoliceVanFordEconoline extends EntityType
 {
     /** Default constructor */
     public PoliceVanFordEconoline()
@@ -26,5 +40,11 @@ public class PoliceVanFordEconoline extends EntityType
         setCategory((byte)84); // uid 24952, Single Unit Utility/Emergency Truck
         setSubCategory((byte)20); // uid 28318, Police Paddy Wagon
         setSpecific((byte)1); // uid 28319, Police Van, Ford Econoline
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PoliceVanFordEconoline createInstance()
+    {
+            return new PoliceVanFordEconoline();
     }
 }

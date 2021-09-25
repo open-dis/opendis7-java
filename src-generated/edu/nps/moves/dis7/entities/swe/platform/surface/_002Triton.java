@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@277b8fa4;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32894
+ * <p> Entity class <b><code>_002Triton</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_002Triton.createInstance()</code> or <code>new _002Triton()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: KBV001Class  = <code>2</code>; </li>
+ *     <li> Specific: _002Triton  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32894; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@587a1cfb. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class _002Triton extends EntityType
+public final class _002Triton extends EntityType
 {
     /** Default constructor */
     public _002Triton()
@@ -26,5 +40,11 @@ public class _002Triton extends EntityType
         setCategory((byte)62); // uid 26889, Coast Guard Cutters
         setSubCategory((byte)2); // uid 32892, KBV 001 Class
         setSpecific((byte)2); // uid 32894, 002 Triton
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _002Triton createInstance()
+    {
+            return new _002Triton();
     }
 }

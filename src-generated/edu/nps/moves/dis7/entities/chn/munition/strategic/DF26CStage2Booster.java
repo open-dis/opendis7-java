@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3820cfe;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32816
+ * <p> Entity class <b><code>DF26CStage2Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DF26CStage2Booster.createInstance()</code> or <code>new DF26CStage2Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: DF26C  = <code>44</code>; </li>
+ *     <li> Specific: DF26CStage2Booster  = <code>5</code>; </li>
+ *     <li> Entity type uid: 32816; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@afde064. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class DF26CStage2Booster extends EntityType
+public final class DF26CStage2Booster extends EntityType
 {
     /** Default constructor */
     public DF26CStage2Booster()
@@ -26,5 +40,11 @@ public class DF26CStage2Booster extends EntityType
         setCategory((byte)1); // uid 21556, Guided
         setSubCategory((byte)44); // uid 32812, DF-26C
         setSpecific((byte)5); // uid 32816, DF-26C Stage 2 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DF26CStage2Booster createInstance()
+    {
+            return new DF26CStage2Booster();
     }
 }

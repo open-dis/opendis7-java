@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fe5c68b;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22117
+ * <p> Entity class <b><code>IntersectionTwoLanetoThreeLane</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IntersectionTwoLanetoThreeLane.createInstance()</code> or <code>new IntersectionTwoLanetoThreeLane()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Road element = <code>20</code>; </li>
+ *     <li> SubCategory: Intersection  = <code>3</code>; </li>
+ *     <li> Specific: IntersectionTwoLanetoThreeLane  = <code>23</code>; </li>
+ *     <li> Entity type uid: 22117; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44492c06. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Roadelement
+ * @see SubCategory
+
  */
-public class IntersectionTwoLanetoThreeLane extends EntityType
+public final class IntersectionTwoLanetoThreeLane extends EntityType
 {
     /** Default constructor */
     public IntersectionTwoLanetoThreeLane()
@@ -26,5 +40,11 @@ public class IntersectionTwoLanetoThreeLane extends EntityType
         setCategory((byte)20); // uid 22100, Road element
         setSubCategory((byte)3); // uid 22111, Intersection
         setSpecific((byte)23); // uid 22117, Intersection, Two Lane to Three Lane
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IntersectionTwoLanetoThreeLane createInstance()
+    {
+            return new IntersectionTwoLanetoThreeLane();
     }
 }

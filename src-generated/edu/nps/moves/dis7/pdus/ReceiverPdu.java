@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class ReceiverPdu extends RadioCommunicationsFamilyPdu implements Seriali
    protected short  transmitterRadioId;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ReceiverPdu()
  {
     setPduType( DisPduType.RECEIVER );
@@ -53,11 +52,14 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += header.getMarshalledSize();
-   marshalSize += receiverState.getMarshalledSize();
+   if (header != null)
+       marshalSize += header.getMarshalledSize();
+   if (receiverState != null)
+       marshalSize += receiverState.getMarshalledSize();
    marshalSize += 2;  // padding1
    marshalSize += 4;  // receivedPower
-   marshalSize += transmitterEntityId.getMarshalledSize();
+   if (transmitterEntityId != null)
+       marshalSize += transmitterEntityId.getMarshalledSize();
    marshalSize += 2;  // transmitterRadioId
 
    return marshalSize;
@@ -263,12 +265,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    header.unmarshal(byteBuffer);
-    receiverState = ReceiverReceiverState.unmarshalEnum(byteBuffer);
-    padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
-    receivedPower = byteBuffer.getFloat();
-    transmitterEntityId.unmarshal(byteBuffer);
-    transmitterRadioId = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute header marked as not serialized
+        header.unmarshal(byteBuffer);
+        // attribute receiverState marked as not serialized
+        receiverState = ReceiverReceiverState.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute receivedPower marked as not serialized
+        receivedPower = byteBuffer.getFloat();
+        // attribute transmitterEntityId marked as not serialized
+        transmitterEntityId.unmarshal(byteBuffer);
+        // attribute transmitterRadioId marked as not serialized
+        transmitterRadioId = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

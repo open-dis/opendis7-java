@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@482d776b;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24893
+ * <p> Entity class <b><code>MitsubishiMidSizePickupwCans</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MitsubishiMidSizePickupwCans.createInstance()</code> or <code>new MitsubishiMidSizePickupwCans()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMidSize  = <code>2</code>; </li>
+ *     <li> Specific: MitsubishiMidSizePickup  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24893; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@665e9289. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class MitsubishiMidSizePickupwCans extends EntityType
+public final class MitsubishiMidSizePickupwCans extends EntityType
 {
     /** Default constructor */
     public MitsubishiMidSizePickupwCans()
@@ -27,5 +41,11 @@ public class MitsubishiMidSizePickupwCans extends EntityType
         setSubCategory((byte)2); // uid 24889, Pickup Truck, Mid-Size
         setSpecific((byte)1); // uid 24890, Mitsubishi Mid-Size Pickup
         setExtra((byte)3); // uid 24893, Mitsubishi Mid-Size Pickup w/ Cans
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MitsubishiMidSizePickupwCans createInstance()
+    {
+            return new MitsubishiMidSizePickupwCans();
     }
 }

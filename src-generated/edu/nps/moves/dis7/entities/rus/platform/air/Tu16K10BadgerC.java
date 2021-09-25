@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48c3205a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13317
+ * <p> Entity class <b><code>Tu16K10BadgerC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tu16K10BadgerC.createInstance()</code> or <code>new Tu16K10BadgerC()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bomber = <code>3</code>; </li>
+ *     <li> SubCategory: Tu16Badger  = <code>2</code>; </li>
+ *     <li> Specific: Tu16K10BadgerC  = <code>6</code>; </li>
+ *     <li> Entity type uid: 13317; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30506c0d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bomber
+ * @see SubCategory
+
  */
-public class Tu16K10BadgerC extends EntityType
+public final class Tu16K10BadgerC extends EntityType
 {
     /** Default constructor */
     public Tu16K10BadgerC()
@@ -26,5 +40,11 @@ public class Tu16K10BadgerC extends EntityType
         setCategory((byte)3); // uid 13309, Bomber
         setSubCategory((byte)2); // uid 13311, Tu-16 Badger
         setSpecific((byte)6); // uid 13317, Tu-16 K-10 Badger C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tu16K10BadgerC createInstance()
+    {
+            return new Tu16K10BadgerC();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f150435;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31184
+ * <p> Entity class <b><code>GenericDirtBikeforAustralianArmy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericDirtBikeforAustralianArmy.createInstance()</code> or <code>new GenericDirtBikeforAustralianArmy()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Motorcycle = <code>80</code>; </li>
+ *     <li> SubCategory: DirtBike  = <code>4</code>; </li>
+ *     <li> Specific: GenericDirtBikeforAustralianArmy  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43556938. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Motorcycle
+ * @see SubCategory
+
  */
-public class GenericDirtBikeforAustralianArmy extends EntityType
+public final class GenericDirtBikeforAustralianArmy extends EntityType
 {
     /** Default constructor */
     public GenericDirtBikeforAustralianArmy()
@@ -26,5 +40,11 @@ public class GenericDirtBikeforAustralianArmy extends EntityType
         setCategory((byte)80); // uid 31182, Motorcycle
         setSubCategory((byte)4); // uid 31183, Dirt Bike
         setSpecific((byte)1); // uid 31184, Generic Dirt Bike for Australian Army
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericDirtBikeforAustralianArmy createInstance()
+    {
+            return new GenericDirtBikeforAustralianArmy();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3a00b15d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26103
+ * <p> Entity class <b><code>CH47DwithATIRCM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CH47DwithATIRCM.createInstance()</code> or <code>new CH47DwithATIRCM()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo helicopter = <code>23</code>; </li>
+ *     <li> SubCategory: BoeingModels114414  = <code>1</code>; </li>
+ *     <li> Specific: CH47D  = <code>4</code>; </li>
+ *     <li> Entity type uid: 26103; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@32f32623. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Cargohelicopter
+ * @see SubCategory
+
  */
-public class CH47DwithATIRCM extends EntityType
+public final class CH47DwithATIRCM extends EntityType
 {
     /** Default constructor */
     public CH47DwithATIRCM()
@@ -27,5 +41,11 @@ public class CH47DwithATIRCM extends EntityType
         setSubCategory((byte)1); // uid 11154, Boeing Models 114/414
         setSpecific((byte)4); // uid 11158, CH-47D
         setExtra((byte)2); // uid 26103, CH-47D with ATIRCM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CH47DwithATIRCM createInstance()
+    {
+            return new CH47DwithATIRCM();
     }
 }

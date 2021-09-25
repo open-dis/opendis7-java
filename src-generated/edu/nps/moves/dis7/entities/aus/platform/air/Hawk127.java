@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@721e0f4f;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28522
+ * <p> Entity class <b><code>Hawk127</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hawk127.createInstance()</code> or <code>new Hawk127()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: BAESystemsHawk  = <code>1</code>; </li>
+ *     <li> Specific: Hawk127  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28522; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2eafffde. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class Hawk127 extends EntityType
+public final class Hawk127 extends EntityType
 {
     /** Default constructor */
     public Hawk127()
@@ -26,5 +40,11 @@ public class Hawk127 extends EntityType
         setCategory((byte)40); // uid 28520, Trainer
         setSubCategory((byte)1); // uid 28521, BAE Systems Hawk
         setSpecific((byte)1); // uid 28522, Hawk 127
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hawk127 createInstance()
+    {
+            return new Hawk127();
     }
 }

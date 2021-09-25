@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1857fe6c;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 28211
+ * <p> Entity class <b><code>MILVANEmpty40ft122m</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MILVANEmpty40ft122m.createInstance()</code> or <code>new MILVANEmpty40ft122m()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Cargo Container = <code>16</code>; </li>
+ *     <li> SubCategory: MILVAN  = <code>1</code>; </li>
+ *     <li> Specific: MILVANEmpty40ft122m  = <code>10</code>; </li>
+ *     <li> Entity type uid: 28211; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11ad095c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoContainer
+ * @see SubCategory
+
  */
-public class MILVANEmpty40ft122m extends EntityType
+public final class MILVANEmpty40ft122m extends EntityType
 {
     /** Default constructor */
     public MILVANEmpty40ft122m()
@@ -26,5 +40,11 @@ public class MILVANEmpty40ft122m extends EntityType
         setCategory((byte)16); // uid 22062, Cargo Container
         setSubCategory((byte)1); // uid 22915, MILVAN
         setSpecific((byte)10); // uid 28211, MILVAN, Empty, 40ft (12.2m)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MILVANEmpty40ft122m createInstance()
+    {
+            return new MILVANEmpty40ft122m();
     }
 }

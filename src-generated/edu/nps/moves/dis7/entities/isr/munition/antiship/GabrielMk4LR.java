@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47fb7ec9;
- * Country: Israel (ISR);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 21300
+ * <p> Entity class <b><code>GabrielMk4LR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GabrielMk4LR.createInstance()</code> or <code>new GabrielMk4LR()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Gabriel  = <code>1</code>; </li>
+ *     <li> Specific: GabrielMk4LR  = <code>4</code>; </li>
+ *     <li> Entity type uid: 21300; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3344d163. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class GabrielMk4LR extends EntityType
+public final class GabrielMk4LR extends EntityType
 {
     /** Default constructor */
     public GabrielMk4LR()
@@ -26,5 +40,11 @@ public class GabrielMk4LR extends EntityType
         setCategory((byte)1); // uid 21295, Guided
         setSubCategory((byte)1); // uid 21296, Gabriel
         setSpecific((byte)4); // uid 21300, Gabriel Mk 4 LR
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GabrielMk4LR createInstance()
+    {
+            return new GabrielMk4LR();
     }
 }

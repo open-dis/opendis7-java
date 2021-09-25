@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3271ec2a;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25136
+ * <p> Entity class <b><code>LaserSmelchak</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LaserSmelchak.createInstance()</code> or <code>new LaserSmelchak()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: _240mmMortar  = <code>20</code>; </li>
+ *     <li> Specific: LaserSmelchak  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25136; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@621624b1. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class LaserSmelchak extends EntityType
+public final class LaserSmelchak extends EntityType
 {
     /** Default constructor */
     public LaserSmelchak()
@@ -26,5 +40,11 @@ public class LaserSmelchak extends EntityType
         setCategory((byte)1); // uid 20760, Guided
         setSubCategory((byte)20); // uid 25135, 240 mm Mortar
         setSpecific((byte)1); // uid 25136, Laser Smelchak
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LaserSmelchak createInstance()
+    {
+            return new LaserSmelchak();
     }
 }

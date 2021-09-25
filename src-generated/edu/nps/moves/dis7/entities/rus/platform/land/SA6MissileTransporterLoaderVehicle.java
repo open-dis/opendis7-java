@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31cb96e1;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13074
+ * <p> Entity class <b><code>SA6MissileTransporterLoaderVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA6MissileTransporterLoaderVehicle.createInstance()</code> or <code>new SA6MissileTransporterLoaderVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA6GainfulSAMSystem  = <code>6</code>; </li>
+ *     <li> Specific: SA6MissileTransporterLoaderVehicle  = <code>4</code>; </li>
+ *     <li> Entity type uid: 13074; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12db3386. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA6MissileTransporterLoaderVehicle extends EntityType
+public final class SA6MissileTransporterLoaderVehicle extends EntityType
 {
     /** Default constructor */
     public SA6MissileTransporterLoaderVehicle()
@@ -26,5 +40,11 @@ public class SA6MissileTransporterLoaderVehicle extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)6); // uid 13068, SA-6 Gainful SAM System
         setSpecific((byte)4); // uid 13074, SA-6 Missile Transporter/Loader Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA6MissileTransporterLoaderVehicle createInstance()
+    {
+            return new SA6MissileTransporterLoaderVehicle();
     }
 }

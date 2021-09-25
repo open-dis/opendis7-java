@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -49,7 +48,7 @@ public class BeamAntennaPattern extends Object implements Serializable
    protected int  padding3 = (int)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public BeamAntennaPattern()
  {
  }
@@ -63,10 +62,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += beamDirection.getMarshalledSize();
+   if (beamDirection != null)
+       marshalSize += beamDirection.getMarshalledSize();
    marshalSize += 4;  // azimuthBeamwidth
    marshalSize += 4;  // elevationBeamwidth
-   marshalSize += referenceSystem.getMarshalledSize();
+   if (referenceSystem != null)
+       marshalSize += referenceSystem.getMarshalledSize();
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
    marshalSize += 4;  // ez
@@ -352,16 +353,33 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    beamDirection.unmarshal(byteBuffer);
-    azimuthBeamwidth = byteBuffer.getFloat();
-    elevationBeamwidth = byteBuffer.getFloat();
-    referenceSystem = TransmitterAntennaPatternReferenceSystem.unmarshalEnum(byteBuffer);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    ez = byteBuffer.getFloat();
-    ex = byteBuffer.getFloat();
-    phase = byteBuffer.getFloat();
-    padding3 = byteBuffer.getInt();
+    try
+    {
+        // attribute beamDirection marked as not serialized
+        beamDirection.unmarshal(byteBuffer);
+        // attribute azimuthBeamwidth marked as not serialized
+        azimuthBeamwidth = byteBuffer.getFloat();
+        // attribute elevationBeamwidth marked as not serialized
+        elevationBeamwidth = byteBuffer.getFloat();
+        // attribute referenceSystem marked as not serialized
+        referenceSystem = TransmitterAntennaPatternReferenceSystem.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute ez marked as not serialized
+        ez = byteBuffer.getFloat();
+        // attribute ex marked as not serialized
+        ex = byteBuffer.getFloat();
+        // attribute phase marked as not serialized
+        phase = byteBuffer.getFloat();
+        // attribute padding3 marked as not serialized
+        padding3 = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

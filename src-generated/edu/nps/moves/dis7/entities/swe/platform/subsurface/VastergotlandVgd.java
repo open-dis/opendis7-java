@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68d7a2df;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27284
+ * <p> Entity class <b><code>VastergotlandVgd</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VastergotlandVgd.createInstance()</code> or <code>new VastergotlandVgd()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: VastergotlandA17Class  = <code>2</code>; </li>
+ *     <li> Specific: VastergotlandVgd  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27284; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a0ef219. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class VastergotlandVgd extends EntityType
+public final class VastergotlandVgd extends EntityType
 {
     /** Default constructor */
     public VastergotlandVgd()
@@ -26,5 +40,11 @@ public class VastergotlandVgd extends EntityType
         setCategory((byte)5); // uid 17502, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)2); // uid 27280, Vastergotland (A17) Class
         setSpecific((byte)1); // uid 27284, Vastergotland (Vgd)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VastergotlandVgd createInstance()
+    {
+            return new VastergotlandVgd();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@477b4cdf;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25434
+ * <p> Entity class <b><code>F363NielsJuel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F363NielsJuel.createInstance()</code> or <code>new F363NielsJuel()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: IverHuitfeldtClass  = <code>1</code>; </li>
+ *     <li> Specific: F363NielsJuel  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25434; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a65fe7c. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F363NielsJuel extends EntityType
+public final class F363NielsJuel extends EntityType
 {
     /** Default constructor */
     public F363NielsJuel()
@@ -26,5 +40,11 @@ public class F363NielsJuel extends EntityType
         setCategory((byte)6); // uid 25430, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 25431, Iver Huitfeldt Class
         setSpecific((byte)3); // uid 25434, F363 Niels Juel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F363NielsJuel createInstance()
+    {
+            return new F363NielsJuel();
     }
 }

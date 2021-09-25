@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@522bf64e;
- * Country: Switzerland (CHE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 19043
+ * <p> Entity class <b><code>Skyshield35RevolverGunMountRGM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Skyshield35RevolverGunMountRGM.createInstance()</code> or <code>new Skyshield35RevolverGunMountRGM()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: OerlikonGDFSkyguardSkyshieldSystem  = <code>1</code>; </li>
+ *     <li> Specific: OerlikonContraves35mm  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19043; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6403e24c. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class Skyshield35RevolverGunMountRGM extends EntityType
+public final class Skyshield35RevolverGunMountRGM extends EntityType
 {
     /** Default constructor */
     public Skyshield35RevolverGunMountRGM()
@@ -27,5 +41,11 @@ public class Skyshield35RevolverGunMountRGM extends EntityType
         setSubCategory((byte)1); // uid 19040, Oerlikon GDF Skyguard Skyshield System
         setSpecific((byte)1); // uid 19041, Oerlikon-Contraves 35mm
         setExtra((byte)2); // uid 19043, Skyshield 35 Revolver Gun Mount (RGM)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Skyshield35RevolverGunMountRGM createInstance()
+    {
+            return new Skyshield35RevolverGunMountRGM();
     }
 }

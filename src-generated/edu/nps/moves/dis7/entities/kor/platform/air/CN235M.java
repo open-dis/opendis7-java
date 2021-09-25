@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e46d9f4;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 17628
+ * <p> Entity class <b><code>CN235M</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CN235M.createInstance()</code> or <code>new CN235M()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: AircraftTechnologiesIndustriesAirtechCN235  = <code>1</code>; </li>
+ *     <li> Specific: CN235M  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17628; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@464649c. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class CN235M extends EntityType
+public final class CN235M extends EntityType
 {
     /** Default constructor */
     public CN235M()
@@ -26,5 +40,11 @@ public class CN235M extends EntityType
         setCategory((byte)4); // uid 17626, Cargo/Tanker
         setSubCategory((byte)1); // uid 17627, Aircraft Technologies Industries (Airtech) CN-235
         setSpecific((byte)1); // uid 17628, CN-235 M
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CN235M createInstance()
+    {
+            return new CN235M();
     }
 }

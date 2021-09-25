@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b2a01d4;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29890
+ * <p> Entity class <b><code>Ababil1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ababil1.createInstance()</code> or <code>new Ababil1()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: Ababil  = <code>2</code>; </li>
+ *     <li> Specific: Ababil1  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29890; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28e8dde3. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Ababil1 extends EntityType
+public final class Ababil1 extends EntityType
 {
     /** Default constructor */
     public Ababil1()
@@ -26,5 +40,11 @@ public class Ababil1 extends EntityType
         setCategory((byte)50); // uid 29882, Unmanned
         setSubCategory((byte)2); // uid 29889, Ababil
         setSpecific((byte)1); // uid 29890, Ababil-1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ababil1 createInstance()
+    {
+            return new Ababil1();
     }
 }

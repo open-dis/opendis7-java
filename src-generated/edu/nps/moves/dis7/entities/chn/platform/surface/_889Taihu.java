@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6eda5c9;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29623
+ * <p> Entity class <b><code>_889Taihu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_889Taihu.createInstance()</code> or <code>new _889Taihu()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: FuchiClassReplenishmentShip  = <code>42</code>; </li>
+ *     <li> Specific: _889Taihu  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29623; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2473d930. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _889Taihu extends EntityType
+public final class _889Taihu extends EntityType
 {
     /** Default constructor */
     public _889Taihu()
@@ -26,5 +40,11 @@ public class _889Taihu extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)42); // uid 29620, Fuchi Class (Replenishment Ship)
         setSpecific((byte)3); // uid 29623, 889 Taihu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _889Taihu createInstance()
+    {
+            return new _889Taihu();
     }
 }

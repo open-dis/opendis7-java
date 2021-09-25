@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@106cc338;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16680
+ * <p> Entity class <b><code>Y1656exA45</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y1656exA45.createInstance()</code> or <code>new Y1656exA45()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Harbortugstype414  = <code>3</code>; </li>
+ *     <li> Specific: Y1656exA45  = <code>5</code>; </li>
+ *     <li> Entity type uid: 16680; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43b9fd5. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y1656exA45 extends EntityType
+public final class Y1656exA45 extends EntityType
 {
     /** Default constructor */
     public Y1656exA45()
@@ -26,5 +40,11 @@ public class Y1656exA45 extends EntityType
         setCategory((byte)17); // uid 16659, Auxiliary, Merchant Marine
         setSubCategory((byte)3); // uid 16675, Harbor tugs (type 414)
         setSpecific((byte)5); // uid 16680, Y 1656 (ex-A 45)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y1656exA45 createInstance()
+    {
+            return new Y1656exA45();
     }
 }

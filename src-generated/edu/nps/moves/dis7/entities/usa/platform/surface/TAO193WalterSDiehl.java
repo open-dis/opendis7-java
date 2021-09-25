@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72028a45;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11793
+ * <p> Entity class <b><code>TAO193WalterSDiehl</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAO193WalterSDiehl.createInstance()</code> or <code>new TAO193WalterSDiehl()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: HenryJKaiserclassNavalFleetOilers  = <code>6</code>; </li>
+ *     <li> Specific: TAO193WalterSDiehl  = <code>7</code>; </li>
+ *     <li> Entity type uid: 11793; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ab2e6d2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAO193WalterSDiehl extends EntityType
+public final class TAO193WalterSDiehl extends EntityType
 {
     /** Default constructor */
     public TAO193WalterSDiehl()
@@ -26,5 +40,11 @@ public class TAO193WalterSDiehl extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)6); // uid 11786, Henry J. Kaiser class (Naval Fleet Oilers)
         setSpecific((byte)7); // uid 11793, TAO 193 Walter S. Diehl
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAO193WalterSDiehl createInstance()
+    {
+            return new TAO193WalterSDiehl();
     }
 }

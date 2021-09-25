@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@503df2d0;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 14985
+ * <p> Entity class <b><code>DaggerSurveillanceRadarRapier2000JERNAS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DaggerSurveillanceRadarRapier2000JERNAS.createInstance()</code> or <code>new DaggerSurveillanceRadarRapier2000JERNAS()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: RapierSAMSystem  = <code>1</code>; </li>
+ *     <li> Specific: DaggerSurveillanceRadarRapier2000JERNAS  = <code>4</code>; </li>
+ *     <li> Entity type uid: 14985; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e26af6. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class DaggerSurveillanceRadarRapier2000JERNAS extends EntityType
+public final class DaggerSurveillanceRadarRapier2000JERNAS extends EntityType
 {
     /** Default constructor */
     public DaggerSurveillanceRadarRapier2000JERNAS()
@@ -26,5 +40,11 @@ public class DaggerSurveillanceRadarRapier2000JERNAS extends EntityType
         setCategory((byte)28); // uid 14976, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 14977, Rapier SAM System
         setSpecific((byte)4); // uid 14985, Dagger Surveillance Radar (Rapier 2000/JERNAS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DaggerSurveillanceRadarRapier2000JERNAS createInstance()
+    {
+            return new DaggerSurveillanceRadarRapier2000JERNAS();
     }
 }

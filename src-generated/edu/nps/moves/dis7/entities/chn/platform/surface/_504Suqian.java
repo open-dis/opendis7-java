@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35cabb2a;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30468
+ * <p> Entity class <b><code>_504Suqian</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_504Suqian.createInstance()</code> or <code>new _504Suqian()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: JiangdaoClassType056Type056AASW  = <code>1</code>; </li>
+ *     <li> Specific: _504Suqian  = <code>22</code>; </li>
+ *     <li> Entity type uid: 30468; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7722c3c3. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _504Suqian extends EntityType
+public final class _504Suqian extends EntityType
 {
     /** Default constructor */
     public _504Suqian()
@@ -26,5 +40,11 @@ public class _504Suqian extends EntityType
         setCategory((byte)50); // uid 28428, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 28429, Jiangdao Class (Type 056/Type 056A (ASW))
         setSpecific((byte)22); // uid 30468, 504 Suqian
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _504Suqian createInstance()
+    {
+            return new _504Suqian();
     }
 }

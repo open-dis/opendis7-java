@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -83,7 +82,7 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
    protected List< VariableDatum > variableDatumList = new ArrayList< VariableDatum >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AggregateStatePdu()
  {
     setPduType( DisPduType.AGGREGATE_STATE );
@@ -99,47 +98,63 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += aggregateID.getMarshalledSize();
-   marshalSize += forceID.getMarshalledSize();
-   marshalSize += aggregateState.getMarshalledSize();
-   marshalSize += aggregateType.getMarshalledSize();
-   marshalSize += formation.getMarshalledSize();
-   marshalSize += aggregateMarking.getMarshalledSize();
-   marshalSize += dimensions.getMarshalledSize();
-   marshalSize += orientation.getMarshalledSize();
-   marshalSize += centerOfMass.getMarshalledSize();
-   marshalSize += velocity.getMarshalledSize();
+   if (aggregateID != null)
+       marshalSize += aggregateID.getMarshalledSize();
+   if (forceID != null)
+       marshalSize += forceID.getMarshalledSize();
+   if (aggregateState != null)
+       marshalSize += aggregateState.getMarshalledSize();
+   if (aggregateType != null)
+       marshalSize += aggregateType.getMarshalledSize();
+   if (formation != null)
+       marshalSize += formation.getMarshalledSize();
+   if (aggregateMarking != null)
+       marshalSize += aggregateMarking.getMarshalledSize();
+   if (dimensions != null)
+       marshalSize += dimensions.getMarshalledSize();
+   if (orientation != null)
+       marshalSize += orientation.getMarshalledSize();
+   if (centerOfMass != null)
+       marshalSize += centerOfMass.getMarshalledSize();
+   if (velocity != null)
+       marshalSize += velocity.getMarshalledSize();
    marshalSize += 2;  // numberOfDisAggregates
    marshalSize += 2;  // numberOfDisEntities
    marshalSize += 2;  // numberOfSilentAggregateTypes
    marshalSize += 2;  // numberOfSilentEntityTypes
-   for(int idx=0; idx < aggregateIDList.size(); idx++)
-   {
-        AggregateIdentifier listElement = aggregateIDList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < entityIDList.size(); idx++)
-   {
-        EntityID listElement = entityIDList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   marshalSize += padTo32.length;
-   for(int idx=0; idx < silentAggregateSystemList.size(); idx++)
-   {
-        EntityType listElement = silentAggregateSystemList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < silentEntitySystemList.size(); idx++)
-   {
-        EntityType listElement = silentEntitySystemList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (aggregateIDList != null)
+       for (int idx=0; idx < aggregateIDList.size(); idx++)
+       {
+            AggregateIdentifier listElement = aggregateIDList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (entityIDList != null)
+       for (int idx=0; idx < entityIDList.size(); idx++)
+       {
+            EntityID listElement = entityIDList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (padTo32 != null)
+       marshalSize += padTo32.length;
+   if (silentAggregateSystemList != null)
+       for (int idx=0; idx < silentAggregateSystemList.size(); idx++)
+       {
+            EntityType listElement = silentAggregateSystemList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (silentEntitySystemList != null)
+       for (int idx=0; idx < silentEntitySystemList.size(); idx++)
+       {
+            EntityType listElement = silentEntitySystemList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
    marshalSize += 4;  // numberOfVariableDatumRecords
-   for(int idx=0; idx < variableDatumList.size(); idx++)
-   {
-        VariableDatum listElement = variableDatumList.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (variableDatumList != null)
+       for (int idx=0; idx < variableDatumList.size(); idx++)
+       {
+            VariableDatum listElement = variableDatumList.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -411,14 +426,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(silentAggregateSystemList.size());
        dos.writeShort(silentEntitySystemList.size());
 
-       for(int idx = 0; idx < aggregateIDList.size(); idx++)
+       for (int idx = 0; idx < aggregateIDList.size(); idx++)
        {
             AggregateIdentifier aAggregateIdentifier = aggregateIDList.get(idx);
             aAggregateIdentifier.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < entityIDList.size(); idx++)
+       for (int idx = 0; idx < entityIDList.size(); idx++)
        {
             EntityID aEntityID = entityIDList.get(idx);
             aEntityID.marshal(dos);
@@ -426,14 +441,14 @@ public void marshal(DataOutputStream dos) throws Exception
 
        padTo32 = new byte[Align.to32bits(dos)];
 
-       for(int idx = 0; idx < silentAggregateSystemList.size(); idx++)
+       for (int idx = 0; idx < silentAggregateSystemList.size(); idx++)
        {
             EntityType aEntityType = silentAggregateSystemList.get(idx);
             aEntityType.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < silentEntitySystemList.size(); idx++)
+       for (int idx = 0; idx < silentEntitySystemList.size(); idx++)
        {
             EntityType aEntityType = silentEntitySystemList.get(idx);
             aEntityType.marshal(dos);
@@ -441,7 +456,7 @@ public void marshal(DataOutputStream dos) throws Exception
 
        dos.writeInt(variableDatumList.size());
 
-       for(int idx = 0; idx < variableDatumList.size(); idx++)
+       for (int idx = 0; idx < variableDatumList.size(); idx++)
        {
             VariableDatum aVariableDatum = variableDatumList.get(idx);
             aVariableDatum.marshal(dos);
@@ -490,14 +505,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfSilentEntityTypes = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfDisAggregates; idx++)
+        for (int idx = 0; idx < numberOfDisAggregates; idx++)
         {
             AggregateIdentifier anX = new AggregateIdentifier();
             uPosition += anX.unmarshal(dis);
             aggregateIDList.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfDisEntities; idx++)
+        for (int idx = 0; idx < numberOfDisEntities; idx++)
         {
             EntityID anX = new EntityID();
             uPosition += anX.unmarshal(dis);
@@ -506,14 +521,14 @@ public int unmarshal(DataInputStream dis) throws Exception
 
         padTo32 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32.length;
-        for(int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
+        for (int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
         {
             EntityType anX = new EntityType();
             uPosition += anX.unmarshal(dis);
             silentAggregateSystemList.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfSilentEntityTypes; idx++)
+        for (int idx = 0; idx < numberOfSilentEntityTypes; idx++)
         {
             EntityType anX = new EntityType();
             uPosition += anX.unmarshal(dis);
@@ -522,7 +537,7 @@ public int unmarshal(DataInputStream dis) throws Exception
 
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
             uPosition += anX.unmarshal(dis);
@@ -563,14 +578,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)silentAggregateSystemList.size());
    byteBuffer.putShort( (short)silentEntitySystemList.size());
 
-   for(int idx = 0; idx < aggregateIDList.size(); idx++)
+   for (int idx = 0; idx < aggregateIDList.size(); idx++)
    {
         AggregateIdentifier aAggregateIdentifier = aggregateIDList.get(idx);
         aAggregateIdentifier.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < entityIDList.size(); idx++)
+   for (int idx = 0; idx < entityIDList.size(); idx++)
    {
         EntityID aEntityID = entityIDList.get(idx);
         aEntityID.marshal(byteBuffer);
@@ -578,14 +593,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    padTo32 = new byte[Align.to32bits(byteBuffer)];
 
-   for(int idx = 0; idx < silentAggregateSystemList.size(); idx++)
+   for (int idx = 0; idx < silentAggregateSystemList.size(); idx++)
    {
         EntityType aEntityType = silentAggregateSystemList.get(idx);
         aEntityType.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < silentEntitySystemList.size(); idx++)
+   for (int idx = 0; idx < silentEntitySystemList.size(); idx++)
    {
         EntityType aEntityType = silentEntitySystemList.get(idx);
         aEntityType.marshal(byteBuffer);
@@ -593,7 +608,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    byteBuffer.putInt( (int)variableDatumList.size());
 
-   for(int idx = 0; idx < variableDatumList.size(); idx++)
+   for (int idx = 0; idx < variableDatumList.size(); idx++)
    {
         VariableDatum aVariableDatum = variableDatumList.get(idx);
         aVariableDatum.marshal(byteBuffer);
@@ -614,57 +629,85 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    aggregateID.unmarshal(byteBuffer);
-    forceID = ForceID.unmarshalEnum(byteBuffer);
-    aggregateState = AggregateStateAggregateState.unmarshalEnum(byteBuffer);
-    aggregateType.unmarshal(byteBuffer);
-    formation = AggregateStateFormation.unmarshalEnum(byteBuffer);
-    aggregateMarking.unmarshal(byteBuffer);
-    dimensions.unmarshal(byteBuffer);
-    orientation.unmarshal(byteBuffer);
-    centerOfMass.unmarshal(byteBuffer);
-    velocity.unmarshal(byteBuffer);
-    numberOfDisAggregates = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfDisEntities = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfSilentAggregateTypes = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfSilentEntityTypes = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfDisAggregates; idx++)
+    try
     {
-    AggregateIdentifier anX = new AggregateIdentifier();
-    anX.unmarshal(byteBuffer);
-    aggregateIDList.add(anX);
-    }
+        // attribute aggregateID marked as not serialized
+        aggregateID.unmarshal(byteBuffer);
+        // attribute forceID marked as not serialized
+        forceID = ForceID.unmarshalEnum(byteBuffer);
+        // attribute aggregateState marked as not serialized
+        aggregateState = AggregateStateAggregateState.unmarshalEnum(byteBuffer);
+        // attribute aggregateType marked as not serialized
+        aggregateType.unmarshal(byteBuffer);
+        // attribute formation marked as not serialized
+        formation = AggregateStateFormation.unmarshalEnum(byteBuffer);
+        // attribute aggregateMarking marked as not serialized
+        aggregateMarking.unmarshal(byteBuffer);
+        // attribute dimensions marked as not serialized
+        dimensions.unmarshal(byteBuffer);
+        // attribute orientation marked as not serialized
+        orientation.unmarshal(byteBuffer);
+        // attribute centerOfMass marked as not serialized
+        centerOfMass.unmarshal(byteBuffer);
+        // attribute velocity marked as not serialized
+        velocity.unmarshal(byteBuffer);
+        // attribute numberOfDisAggregates marked as not serialized
+        numberOfDisAggregates = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfDisEntities marked as not serialized
+        numberOfDisEntities = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfSilentAggregateTypes marked as not serialized
+        numberOfSilentAggregateTypes = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfSilentEntityTypes marked as not serialized
+        numberOfSilentEntityTypes = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute aggregateIDList marked as not serialized
+        for (int idx = 0; idx < numberOfDisAggregates; idx++)
+        {
+        AggregateIdentifier anX = new AggregateIdentifier();
+        anX.unmarshal(byteBuffer);
+        aggregateIDList.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfDisEntities; idx++)
+        // attribute entityIDList marked as not serialized
+        for (int idx = 0; idx < numberOfDisEntities; idx++)
+        {
+        EntityID anX = new EntityID();
+        anX.unmarshal(byteBuffer);
+        entityIDList.add(anX);
+        }
+
+        // attribute padTo32 marked as not serialized
+        padTo32 = new byte[Align.from32bits(byteBuffer)];
+        // attribute silentAggregateSystemList marked as not serialized
+        for (int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
+        {
+        EntityType anX = new EntityType();
+        anX.unmarshal(byteBuffer);
+        silentAggregateSystemList.add(anX);
+        }
+
+        // attribute silentEntitySystemList marked as not serialized
+        for (int idx = 0; idx < numberOfSilentEntityTypes; idx++)
+        {
+        EntityType anX = new EntityType();
+        anX.unmarshal(byteBuffer);
+        silentEntitySystemList.add(anX);
+        }
+
+        // attribute numberOfVariableDatumRecords marked as not serialized
+        numberOfVariableDatumRecords = byteBuffer.getInt();
+        // attribute variableDatumList marked as not serialized
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        {
+        VariableDatum anX = new VariableDatum();
+        anX.unmarshal(byteBuffer);
+        variableDatumList.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    EntityID anX = new EntityID();
-    anX.unmarshal(byteBuffer);
-    entityIDList.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
-    padTo32 = new byte[Align.from32bits(byteBuffer)];
-    for(int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
-    {
-    EntityType anX = new EntityType();
-    anX.unmarshal(byteBuffer);
-    silentAggregateSystemList.add(anX);
-    }
-
-    for(int idx = 0; idx < numberOfSilentEntityTypes; idx++)
-    {
-    EntityType anX = new EntityType();
-    anX.unmarshal(byteBuffer);
-    silentEntitySystemList.add(anX);
-    }
-
-    numberOfVariableDatumRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
-    {
-    VariableDatum anX = new VariableDatum();
-    anX.unmarshal(byteBuffer);
-    variableDatumList.add(anX);
-    }
-
     return getMarshalledSize();
 }
 
@@ -704,23 +747,23 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (centerOfMass.equals( rhs.centerOfMass) )) ivarsEqual = false;
      if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < aggregateIDList.size(); idx++)
+     for (int idx = 0; idx < aggregateIDList.size(); idx++)
         if( ! ( aggregateIDList.get(idx).equals(rhs.aggregateIDList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < entityIDList.size(); idx++)
+     for (int idx = 0; idx < entityIDList.size(); idx++)
         if( ! ( entityIDList.get(idx).equals(rhs.entityIDList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < silentAggregateSystemList.size(); idx++)
+     for (int idx = 0; idx < silentAggregateSystemList.size(); idx++)
         if( ! ( silentAggregateSystemList.get(idx).equals(rhs.silentAggregateSystemList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < silentEntitySystemList.size(); idx++)
+     for (int idx = 0; idx < silentEntitySystemList.size(); idx++)
         if( ! ( silentEntitySystemList.get(idx).equals(rhs.silentEntitySystemList.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < variableDatumList.size(); idx++)
+     for (int idx = 0; idx < variableDatumList.size(); idx++)
         if( ! ( variableDatumList.get(idx).equals(rhs.variableDatumList.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

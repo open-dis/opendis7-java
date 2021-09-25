@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37eeec90;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17677
+ * <p> Entity class <b><code>PGM585PaeKu55</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PGM585PaeKu55.createInstance()</code> or <code>new PGM585PaeKu55()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: PaeKuPSMM5Classfastattackcraftmissile  = <code>1</code>; </li>
+ *     <li> Specific: PGM585PaeKu55  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17677; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2cab9998. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class PGM585PaeKu55 extends EntityType
+public final class PGM585PaeKu55 extends EntityType
 {
     /** Default constructor */
     public PGM585PaeKu55()
@@ -26,5 +40,11 @@ public class PGM585PaeKu55 extends EntityType
         setCategory((byte)7); // uid 17673, Light/Patrol Craft
         setSubCategory((byte)1); // uid 17674, Pae Ku (PSMM 5) Class (fast attack craft-missile)
         setSpecific((byte)3); // uid 17677, PGM 585 Pae Ku 55
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PGM585PaeKu55 createInstance()
+    {
+            return new PGM585PaeKu55();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@909217e;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15957
+ * <p> Entity class <b><code>F731Prairial</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F731Prairial.createInstance()</code> or <code>new F731Prairial()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: Florealclasspatrolfrigates  = <code>2</code>; </li>
+ *     <li> Specific: F731Prairial  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15957; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ffaf86. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigate
+ * @see SubCategory
+
  */
-public class F731Prairial extends EntityType
+public final class F731Prairial extends EntityType
 {
     /** Default constructor */
     public F731Prairial()
@@ -26,5 +40,11 @@ public class F731Prairial extends EntityType
         setCategory((byte)6); // uid 15950, Guided-missile Frigate
         setSubCategory((byte)2); // uid 15955, Floreal class (patrol frigates)
         setSpecific((byte)2); // uid 15957, F 731 Prairial
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F731Prairial createInstance()
+    {
+            return new F731Prairial();
     }
 }

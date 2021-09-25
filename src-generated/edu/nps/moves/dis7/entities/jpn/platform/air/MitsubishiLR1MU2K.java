@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@545de5a4;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29179
+ * <p> Entity class <b><code>MitsubishiLR1MU2K</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MitsubishiLR1MU2K.createInstance()</code> or <code>new MitsubishiLR1MU2K()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: MitsubishiLR1MU2K  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29179; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@38f57b3d. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class MitsubishiLR1MU2K extends EntityType
+public final class MitsubishiLR1MU2K extends EntityType
 {
     /** Default constructor */
     public MitsubishiLR1MU2K()
@@ -25,5 +39,11 @@ public class MitsubishiLR1MU2K extends EntityType
 
         setCategory((byte)4); // uid 24785, Cargo/Tanker
         setSubCategory((byte)3); // uid 29179, Mitsubishi LR-1 / MU-2K
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MitsubishiLR1MU2K createInstance()
+    {
+            return new MitsubishiLR1MU2K();
     }
 }

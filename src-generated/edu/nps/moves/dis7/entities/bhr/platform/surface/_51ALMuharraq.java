@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36d4b5c;
- * Country: Bahrain (BHR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18669
+ * <p> Entity class <b><code>_51ALMuharraq</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_51ALMuharraq.createInstance()</code> or <code>new _51ALMuharraq()</code>. </p>
+ * <ul>
+ *     <li> Country: Bahrain (BHR) = <code>16</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALManamaFPB62Classfastattackcraftmissile  = <code>1</code>; </li>
+ *     <li> Specific: _51ALMuharraq  = <code>2</code>; </li>
+ *     <li> Entity type uid: 18669; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42d3bd8b. </p>
+ * @see Country#BAHRAIN_BHR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _51ALMuharraq extends EntityType
+public final class _51ALMuharraq extends EntityType
 {
     /** Default constructor */
     public _51ALMuharraq()
@@ -26,5 +40,11 @@ public class _51ALMuharraq extends EntityType
         setCategory((byte)7); // uid 18666, Light/Patrol Craft
         setSubCategory((byte)1); // uid 18667, AL Manama (FPB 62) Class (fast attack craft-missile)
         setSpecific((byte)2); // uid 18669, 51 AL Muharraq
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _51ALMuharraq createInstance()
+    {
+            return new _51ALMuharraq();
     }
 }

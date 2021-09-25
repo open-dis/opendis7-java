@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65cc5252;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21462
+ * <p> Entity class <b><code>CSSC5YJ16C101Saples</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSSC5YJ16C101Saples.createInstance()</code> or <code>new CSSC5YJ16C101Saples()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSSC5YJ16C101Saples  = <code>14</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21462; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3e5beab5. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSSC5YJ16C101Saples extends EntityType
+public final class CSSC5YJ16C101Saples extends EntityType
 {
     /** Default constructor */
     public CSSC5YJ16C101Saples()
@@ -25,5 +39,11 @@ public class CSSC5YJ16C101Saples extends EntityType
 
         setCategory((byte)1); // uid 21448, Guided
         setSubCategory((byte)14); // uid 21462, CSSC-5 (YJ-16/C-101) Saples
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSSC5YJ16C101Saples createInstance()
+    {
+            return new CSSC5YJ16C101Saples();
     }
 }
