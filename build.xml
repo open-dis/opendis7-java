@@ -24,7 +24,7 @@
     
     <property name="javadoc.additionalparam" value=""/>
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
-    <property name="javadoc.dir"             value="dist/javadoc"/>
+    <property name="javadoc.dir"             value="${dist.javadoc.dir}"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
     <property name="javadoc.copyright"       value="Copyright &#169;1995-2021 held by the authors, &lt;a href='https://www.www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=open-dis7%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
@@ -69,10 +69,9 @@
         </delete>
     </target>
     
-    <target name="clean" description="clean assets created by this project">
-        <mkdir dir="dist" description="ensure necessary directory present"/>
+    <target name="clean" depends="init" description="clean assets created by this project">
         <delete verbose="true">
-            <fileset dir="dist">
+            <fileset dir="${dist.dir}">
                 <include name="open-dis7-pdus-classes.jar"/>
                 <include name="open-dis7-pdus-source.jar"/>
                 <include name="open-dis7-pdus-javadoc.jar"/>
@@ -85,11 +84,9 @@
                 <exclude name="README.md"/>
             </fileset>
         </delete>
-        <delete dir="dist/javadoc" description="get rid of all prior files"/>
-        <mkdir  dir="dist/javadoc" description="restore directory"/>
-        <mkdir  dir="build/classes" description="ensure necessary directory present"/>
+        <delete dir="${dist.javadoc.dir}" description="get rid of all prior files"/>
         <delete verbose="false" includeemptydirs="false">
-            <fileset dir="build/classes" includes="**/*"/>
+            <fileset dir="${build.classes.dir}" includes="**/*"/>
         </delete>
     </target>
     
@@ -108,8 +105,8 @@
     </target>
     
     <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
-        <echo message="view local javadoc in dist/javadoc subdirectory"/>
-        <nbbrowse file="dist/javadoc/index.html" />
+        <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
+        <nbbrowse file="${dist.javadoc.dir}/index.html" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
@@ -237,24 +234,24 @@
 
     <target name="zip-full" description="full set of everything, pdus and enumerations">
         <!-- TODO README -->
-        <delete  file="dist/open-dis7-full.zip"/>
-        <zip destfile="dist/open-dis7-full.zip"
+        <delete  file="${dist.dir}/open-dis7-full.zip"/>
+        <zip destfile="${dist.dir}/open-dis7-full.zip"
                update="true"
             zip64Mode="always">
             <!-- zip64Mode https://stackoverflow.com/questions/39524481/error-creating-jar-archive-contains-more-than-65535-entries/ -->
             <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
-            <zipfileset src="dist/open-dis7-enumerations-classes.jar"/>
-            <zipfileset src="dist/open-dis7-enumerations-javadoc.jar"/>
-            <zipfileset src="dist/open-dis7-enumerations-source.jar"/>
-            <zipfileset src="dist/open-dis7-pdus-classes.jar"/>
-            <zipfileset src="dist/open-dis7-pdus-javadoc.jar"/>
-            <zipfileset src="dist/open-dis7-pdus-source.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-enumerations-classes.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-enumerations-javadoc.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-enumerations-source.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-pdus-classes.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-pdus-javadoc.jar"/>
+            <zipfileset src="${dist.dir}/open-dis7-pdus-source.jar"/>
 
 <!--            <fileset dir="build" defaultexcludes="yes">
                 <include name="classes/**/*"/>
                 <exclude name="test/*"/>
             </fileset>-->
-            <fileset dir="dist" defaultexcludes="yes">
+            <fileset dir="${dist.dir}" defaultexcludes="yes">
                 <exclude name="javadoc/**"/>
             </fileset>
 <!--            <fileset dir="src" defaultexcludes="yes">
@@ -287,12 +284,12 @@
     </target>
 
     <target name="jar-pdus-javadoc" description="full set of javadoc"> <!-- avoid performing multiple times: depends="javadoc" -->
-        <echo message="(note that generated javadoc subdirectory is found within dist subdirectory)"/>
-        <delete  file="dist/open-dis7-pdus-javadoc.jar"/>
-        <jar destfile="dist/open-dis7-pdus-javadoc.jar"
+        <echo message="(note that generated javadoc subdirectory is found within ${dist.dir} subdirectory)"/>
+        <delete  file="${dist.dir}/open-dis7-pdus-javadoc.jar"/>
+        <jar destfile="${dist.dir}/open-dis7-pdus-javadoc.jar"
                update="true"
             zip64Mode="always">
-            <fileset dir="dist/javadoc" defaultexcludes="yes">
+            <fileset dir="${dist.javadoc.dir}" defaultexcludes="yes">
                 <include name="**/*"/>
                 <exclude name="edu/nps/moves/dis7/entities/**"/>
                 <exclude name="edu/nps/moves/dis7/enumerations/**"/>
@@ -318,8 +315,8 @@
     </target>
     
     <target name="jar-pdus-source">
-        <delete  file="dist/open-dis7-pdus-source.jar"/>
-        <jar destfile="dist/open-dis7-pdus-source.jar"
+        <delete  file="${dist.dir}/open-dis7-pdus-source.jar"/>
+        <jar destfile="${dist.dir}/open-dis7-pdus-source.jar"
                update="true"
             zip64Mode="always">
             <fileset dir="src" defaultexcludes="yes">
@@ -353,12 +350,12 @@
     </target>
     
     <target name="jar-full" depends="compile" description="merges all dis7 subpackage assets">
-        <delete file="dist/open-dis7-full.jar" verbose="false"/>
+        <delete file="${dist.dir}/open-dis7-full.jar" verbose="false"/>
         <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
-        <jar destfile="dist/open-dis7-full.jar"
+        <jar destfile="${dist.dir}/open-dis7-full.jar"
                update="true"
             zip64Mode="always">
-            <zipgroupfileset dir="dist">
+            <zipgroupfileset dir="${dist.dir}">
                 <include name="open-dis7-*.jar"/>
                 <!-- TODO consider whether these dependencies are strictly needed -->
                 <include name="../lib/commons-io-2.6.jar"/>
@@ -394,8 +391,8 @@
     </target>
     
     <target name="jar-pdus-classes" depends="compile" description="merges all dis7 subpackage classes except for enumerations">
-        <delete  file="dist/open-dis7-pdus-classes.jar"/>
-        <jar destfile="dist/open-dis7-pdus-classes.jar"
+        <delete  file="${dist.jar}"/>
+        <jar destfile="${dist.jar}"
                update="true"
             zip64Mode="always">
             <fileset dir="build/classes" defaultexcludes="yes">
