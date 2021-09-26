@@ -49,6 +49,7 @@ public class SignalPdusTest {
         System.out.println("SignalPdusTest");
         
         pduRecorder = new PduRecorder(); // default dir
+        pduRecorder.start();
         disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
         pduListener = new DisThreadedNetworkInterface.PduListener() {
           @Override
