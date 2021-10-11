@@ -143,7 +143,7 @@ public class DisThreadedNetworkInterface
         {
             Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
         }
-        inetSocket = new InetSocketAddress(disAddress, disPort); // tests that accessor methods are working as set
+        inetSocket = new InetSocketAddress(inetAddress, disPort); // tests that accessor methods are working as set
         networkInterface = findIpv4Interface();
         initializeSocketSenderReceiverThreads();
     }
