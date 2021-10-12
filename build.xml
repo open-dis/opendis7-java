@@ -112,6 +112,12 @@
         <nbbrowse file="dist/javadoc/index.html" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
+    
+    <target name="view.javadoc.online" description="view online package javadoc in web browser (Netbeans only)">
+        <echo message="view online javadoc in dist/javadoc subdirectory"/>
+        <nbbrowse url="https://savage.nps.edu/open-dis7-java/javadoc" />
+        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+    </target>
 
     <target name="javadoc.custom" description="TODO testing, not ready for production">
 
