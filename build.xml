@@ -70,7 +70,7 @@
     </target>
     
     <target name="clean" depends="init" description="clean assets created by this project">
-        <delete verbose="true">
+        <delete verbose="true" failonerror="false">
             <fileset dir="${dist.dir}">
                 <include name="open-dis7-pdus-classes.jar"/>
                 <include name="open-dis7-pdus-source.jar"/>
@@ -84,8 +84,8 @@
                 <exclude name="README.md"/>
             </fileset>
         </delete>
-        <delete dir="${dist.javadoc.dir}" description="get rid of all prior files"/>
-        <delete verbose="false" includeemptydirs="false">
+        <delete dir="${dist.javadoc.dir}" description="get rid of all prior files" failonerror="false"/>
+        <delete verbose="false" includeemptydirs="false" failonerror="false">
             <fileset dir="${build.classes.dir}" includes="**/*"/>
         </delete>
     </target>
