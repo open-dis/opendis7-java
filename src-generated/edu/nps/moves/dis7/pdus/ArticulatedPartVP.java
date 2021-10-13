@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class ArticulatedPartVP extends Object implements Serializable
    protected int  padding;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ArticulatedPartVP()
  {
  }
@@ -51,7 +50,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
    marshalSize += 1;  // changeIndicator
    marshalSize += 2;  // partAttachedTo
    marshalSize += 4;  // parameterType
@@ -257,12 +257,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    changeIndicator = (byte)(byteBuffer.get() & 0xFF);
-    partAttachedTo = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameterType = byteBuffer.getInt();
-    parameterValue = byteBuffer.getFloat();
-    padding = byteBuffer.getInt();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute changeIndicator marked as not serialized
+        changeIndicator = (byte)(byteBuffer.get() & 0xFF);
+        // attribute partAttachedTo marked as not serialized
+        partAttachedTo = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameterType marked as not serialized
+        parameterType = byteBuffer.getInt();
+        // attribute parameterValue marked as not serialized
+        parameterValue = byteBuffer.getFloat();
+        // attribute padding marked as not serialized
+        padding = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

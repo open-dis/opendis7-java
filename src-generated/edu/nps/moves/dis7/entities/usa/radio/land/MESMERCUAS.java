@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b1c501d;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: LAND;
- *
- * Entity type uid: 31311
+ * <p> Entity class <b><code>MESMERCUAS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MESMERCUAS.createInstance()</code> or <code>new MESMERCUAS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Counter Unmanned Aircraft System (C-UAS) Radio = <code>41</code>; </li>
+ *     <li> SubCategory: ManufacturerDesignation  = <code>2</code>; </li>
+ *     <li> Specific: MESMERCUAS  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31311; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7462ba4b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CounterUnmannedAircraftSystemCUASRadio
+ * @see SubCategory
+
  */
-public class MESMERCUAS extends EntityType
+public final class MESMERCUAS extends EntityType
 {
     /** Default constructor */
     public MESMERCUAS()
@@ -26,5 +40,11 @@ public class MESMERCUAS extends EntityType
         setCategory((byte)41); // uid 31309, Counter Unmanned Aircraft System (C-UAS) Radio
         setSubCategory((byte)2); // uid 31310, Manufacturer Designation
         setSpecific((byte)1); // uid 31311, MESMER C-UAS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MESMERCUAS createInstance()
+    {
+            return new MESMERCUAS();
     }
 }

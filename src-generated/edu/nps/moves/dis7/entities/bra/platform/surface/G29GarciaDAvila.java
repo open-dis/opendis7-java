@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66480dd7;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32641
+ * <p> Entity class <b><code>G29GarciaDAvila</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>G29GarciaDAvila.createInstance()</code> or <code>new G29GarciaDAvila()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Cargo Ship = <code>55</code>; </li>
+ *     <li> SubCategory: RoundTableClass  = <code>1</code>; </li>
+ *     <li> Specific: G29GarciaDAvila  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32641; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59f99ea. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousCargoShip
+ * @see SubCategory
+
  */
-public class G29GarciaDAvila extends EntityType
+public final class G29GarciaDAvila extends EntityType
 {
     /** Default constructor */
     public G29GarciaDAvila()
@@ -26,5 +40,11 @@ public class G29GarciaDAvila extends EntityType
         setCategory((byte)55); // uid 32638, Amphibious Cargo Ship
         setSubCategory((byte)1); // uid 32639, Round Table Class
         setSpecific((byte)2); // uid 32641, G29 Garcia DAvila
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static G29GarciaDAvila createInstance()
+    {
+            return new G29GarciaDAvila();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@eb91027;
- * Country: Switzerland (CHE);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22497
+ * <p> Entity class <b><code>SuperFledermaus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SuperFledermaus.createInstance()</code> or <code>new SuperFledermaus()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: FireControlRadar  = <code>4</code>; </li>
+ *     <li> Specific: SuperFledermaus  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22497; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38e46765. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class SuperFledermaus extends EntityType
+public final class SuperFledermaus extends EntityType
 {
     /** Default constructor */
     public SuperFledermaus()
@@ -26,5 +40,11 @@ public class SuperFledermaus extends EntityType
         setCategory((byte)2); // uid 22494, RF Active
         setSubCategory((byte)4); // uid 22495, Fire Control Radar
         setSpecific((byte)2); // uid 22497, Super Fledermaus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SuperFledermaus createInstance()
+    {
+            return new SuperFledermaus();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@647fb583;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20899
+ * <p> Entity class <b><code>HEFRAG1234</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEFRAG1234.createInstance()</code> or <code>new HEFRAG1234()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _115mm  = <code>42</code>; </li>
+ *     <li> Specific: HEFRAG  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20899; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e18ced7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEFRAG1234 extends EntityType
+public final class HEFRAG1234 extends EntityType
 {
     /** Default constructor */
     public HEFRAG1234()
@@ -26,5 +40,11 @@ public class HEFRAG1234 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)42); // uid 20898, 115mm
         setSpecific((byte)1); // uid 20899, HE FRAG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEFRAG1234 createInstance()
+    {
+            return new HEFRAG1234();
     }
 }

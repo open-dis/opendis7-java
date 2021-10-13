@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a8fa663;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18483
+ * <p> Entity class <b><code>Tarantola</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tarantola.createInstance()</code> or <code>new Tarantola()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Ferry  = <code>19</code>; </li>
+ *     <li> Specific: Tarantola  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18483; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c3b6c6e. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Tarantola extends EntityType
+public final class Tarantola extends EntityType
 {
     /** Default constructor */
     public Tarantola()
@@ -26,5 +40,11 @@ public class Tarantola extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)19); // uid 18482, Ferry
         setSpecific((byte)1); // uid 18483, Tarantola
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tarantola createInstance()
+    {
+            return new Tarantola();
     }
 }

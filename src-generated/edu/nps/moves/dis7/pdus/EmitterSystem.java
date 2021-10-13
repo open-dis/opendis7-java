@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class EmitterSystem extends Object implements Serializable
    protected byte  emitterIDNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EmitterSystem()
  {
  }
@@ -42,8 +41,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += emitterName.getMarshalledSize();
-   marshalSize += emitterFunction.getMarshalledSize();
+   if (emitterName != null)
+       marshalSize += emitterName.getMarshalledSize();
+   if (emitterFunction != null)
+       marshalSize += emitterFunction.getMarshalledSize();
    marshalSize += 1;  // emitterIDNumber
 
    return marshalSize;
@@ -178,9 +179,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    emitterName = EmitterName.unmarshalEnum(byteBuffer);
-    emitterFunction = EmitterSystemFunction.unmarshalEnum(byteBuffer);
-    emitterIDNumber = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute emitterName marked as not serialized
+        emitterName = EmitterName.unmarshalEnum(byteBuffer);
+        // attribute emitterFunction marked as not serialized
+        emitterFunction = EmitterSystemFunction.unmarshalEnum(byteBuffer);
+        // attribute emitterIDNumber marked as not serialized
+        emitterIDNumber = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

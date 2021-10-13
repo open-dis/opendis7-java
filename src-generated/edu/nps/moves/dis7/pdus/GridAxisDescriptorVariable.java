@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -38,7 +37,7 @@ public class GridAxisDescriptorVariable extends GridAxisDescriptor implements Se
    private byte[] padding = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GridAxisDescriptorVariable()
  {
  }
@@ -57,8 +56,10 @@ public int getMarshalledSize()
    marshalSize += 2;  // initialIndex
    marshalSize += 8;  // coordinateScaleXi
    marshalSize += 8;  // coordinateOffsetXi
-   marshalSize += xiValues.length * 2;
-   marshalSize += padding.length;
+   if (xiValues != null)
+       marshalSize += xiValues.length * 2;
+   if (padding != null)
+       marshalSize += padding.length;
 
    return marshalSize;
 }
@@ -174,7 +175,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeDouble(coordinateScaleXi);
        dos.writeDouble(coordinateOffsetXi);
 
-       for(int idx = 0; idx < xiValues.length; idx++)
+       for (int idx = 0; idx < xiValues.length; idx++)
            dos.writeShort(xiValues[idx]);
 
        padding = new byte[Align.to64bits(dos)];
@@ -208,7 +209,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         coordinateOffsetXi = dis.readDouble();
         uPosition += 4;
-        for(int idx = 0; idx < xiValues.length; idx++)
+        for (int idx = 0; idx < xiValues.length; idx++)
             xiValues[idx] = dis.readShort();
         uPosition += (xiValues.length * 2);
         padding = new byte[Align.from64bits(uPosition,dis)];
@@ -237,7 +238,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putDouble( (double)coordinateScaleXi);
    byteBuffer.putDouble( (double)coordinateOffsetXi);
 
-   for(int idx = 0; idx < xiValues.length; idx++)
+   for (int idx = 0; idx < xiValues.length; idx++)
        byteBuffer.putShort((short)xiValues[idx]);
 
    padding = new byte[Align.to64bits(byteBuffer)];
@@ -256,13 +257,26 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    numberOfPointsOnXiAxis = (short)(byteBuffer.getShort() & 0xFFFF);
-    initialIndex = (short)(byteBuffer.getShort() & 0xFFFF);
-    coordinateScaleXi = byteBuffer.getDouble();
-    coordinateOffsetXi = byteBuffer.getDouble();
-    for(int idx = 0; idx < xiValues.length; idx++)
-        xiValues[idx] = byteBuffer.getShort();
-    padding = new byte[Align.from64bits(byteBuffer)];
+    try
+    {
+        // attribute numberOfPointsOnXiAxis marked as not serialized
+        numberOfPointsOnXiAxis = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute initialIndex marked as not serialized
+        initialIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute coordinateScaleXi marked as not serialized
+        coordinateScaleXi = byteBuffer.getDouble();
+        // attribute coordinateOffsetXi marked as not serialized
+        coordinateOffsetXi = byteBuffer.getDouble();
+        // attribute xiValues marked as not serialized
+        for (int idx = 0; idx < xiValues.length; idx++)
+            xiValues[idx] = byteBuffer.getShort();
+        // attribute padding marked as not serialized
+        padding = new byte[Align.from64bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -296,7 +310,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (coordinateScaleXi == rhs.coordinateScaleXi)) ivarsEqual = false;
      if( ! (coordinateOffsetXi == rhs.coordinateOffsetXi)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(xiValues[idx] == rhs.xiValues[idx])) ivarsEqual = false;
      }

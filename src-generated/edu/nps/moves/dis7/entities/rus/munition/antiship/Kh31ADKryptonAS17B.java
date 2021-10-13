@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@781dac73;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 20571
+ * <p> Entity class <b><code>Kh31ADKryptonAS17B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Kh31ADKryptonAS17B.createInstance()</code> or <code>new Kh31ADKryptonAS17B()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Kh31KryptonAS17NonARM  = <code>26</code>; </li>
+ *     <li> Specific: Kh31ADKryptonAS17B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20571; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e38c472. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Kh31ADKryptonAS17B extends EntityType
+public final class Kh31ADKryptonAS17B extends EntityType
 {
     /** Default constructor */
     public Kh31ADKryptonAS17B()
@@ -26,5 +40,11 @@ public class Kh31ADKryptonAS17B extends EntityType
         setCategory((byte)1); // uid 20530, Guided
         setSubCategory((byte)26); // uid 20569, Kh-31 Krypton (AS-17) Non-ARM
         setSpecific((byte)2); // uid 20571, Kh-31AD Krypton (AS-17B)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Kh31ADKryptonAS17B createInstance()
+    {
+            return new Kh31ADKryptonAS17B();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f18837a;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17416
+ * <p> Entity class <b><code>Yenlaiclasssurvey426</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Yenlaiclasssurvey426.createInstance()</code> or <code>new Yenlaiclasssurvey426()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Yenlaiclasssurvey  = <code>15</code>; </li>
+ *     <li> Specific: _426  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17416; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30ee2816. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Yenlaiclasssurvey426 extends EntityType
+public final class Yenlaiclasssurvey426 extends EntityType
 {
     /** Default constructor */
     public Yenlaiclasssurvey426()
@@ -26,5 +40,11 @@ public class Yenlaiclasssurvey426 extends EntityType
         setCategory((byte)17); // uid 17367, Auxiliary, Merchant Marine
         setSubCategory((byte)15); // uid 17413, Yenlai class (survey)
         setSpecific((byte)3); // uid 17416, 426
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Yenlaiclasssurvey426 createInstance()
+    {
+            return new Yenlaiclasssurvey426();
     }
 }

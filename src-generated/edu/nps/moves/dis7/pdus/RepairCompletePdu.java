@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class RepairCompletePdu extends LogisticsFamilyPdu implements Serializabl
    protected short  padding4 = (short)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RepairCompletePdu()
  {
     setPduType( DisPduType.REPAIR_COMPLETE );
@@ -47,9 +46,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
-   marshalSize += repairingEntityID.getMarshalledSize();
-   marshalSize += repair.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
+   if (repairingEntityID != null)
+       marshalSize += repairingEntityID.getMarshalledSize();
+   if (repair != null)
+       marshalSize += repair.getMarshalledSize();
    marshalSize += 2;  // padding4
 
    return marshalSize;
@@ -208,10 +210,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    receivingEntityID.unmarshal(byteBuffer);
-    repairingEntityID.unmarshal(byteBuffer);
-    repair = RepairCompleteRepair.unmarshalEnum(byteBuffer);
-    padding4 = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute repairingEntityID marked as not serialized
+        repairingEntityID.unmarshal(byteBuffer);
+        // attribute repair marked as not serialized
+        repair = RepairCompleteRepair.unmarshalEnum(byteBuffer);
+        // attribute padding4 marked as not serialized
+        padding4 = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

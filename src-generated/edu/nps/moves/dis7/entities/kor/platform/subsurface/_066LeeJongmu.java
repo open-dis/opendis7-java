@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c95ac9e;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23152
+ * <p> Entity class <b><code>_066LeeJongmu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_066LeeJongmu.createInstance()</code> or <code>new _066LeeJongmu()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: ChangBogoType209Class  = <code>1</code>; </li>
+ *     <li> Specific: _066LeeJongmu  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23152; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74bdc168. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class _066LeeJongmu extends EntityType
+public final class _066LeeJongmu extends EntityType
 {
     /** Default constructor */
     public _066LeeJongmu()
@@ -26,5 +40,11 @@ public class _066LeeJongmu extends EntityType
         setCategory((byte)5); // uid 17737, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)1); // uid 17738, Chang Bogo (Type 209) Class)
         setSpecific((byte)5); // uid 23152, 066 Lee Jongmu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _066LeeJongmu createInstance()
+    {
+            return new _066LeeJongmu();
     }
 }

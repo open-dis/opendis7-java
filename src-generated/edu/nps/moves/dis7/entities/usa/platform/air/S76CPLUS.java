@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@d13960e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31733
+ * <p> Entity class <b><code>S76CPLUS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S76CPLUS.createInstance()</code> or <code>new S76CPLUS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Medium (up to 20,000 lbs / 9,072 kg) = <code>91</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific: SikorskyS76  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31733; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2921199d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterMediumupto20000lbs9072kg
+ * @see SubCategory
+
  */
-public class S76CPLUS extends EntityType
+public final class S76CPLUS extends EntityType
 {
     /** Default constructor */
     public S76CPLUS()
@@ -27,5 +41,11 @@ public class S76CPLUS extends EntityType
         setSubCategory((byte)12); // uid 26276, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
         setSpecific((byte)4); // uid 31725, Sikorsky S-76
         setExtra((byte)8); // uid 31733, S-76C+
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S76CPLUS createInstance()
+    {
+            return new S76CPLUS();
     }
 }

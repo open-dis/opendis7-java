@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4667ae56;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32029
+ * <p> Entity class <b><code>M114155AR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M114155AR.createInstance()</code> or <code>new M114155AR()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: M114155AR  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32029; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7c0e2abd. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class M114155AR extends EntityType
+public final class M114155AR extends EntityType
 {
     /** Default constructor */
     public M114155AR()
@@ -25,5 +39,11 @@ public class M114155AR extends EntityType
 
         setCategory((byte)5); // uid 32028, Towed Artillery
         setSubCategory((byte)1); // uid 32029, M114 (155 AR)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M114155AR createInstance()
+    {
+            return new M114155AR();
     }
 }

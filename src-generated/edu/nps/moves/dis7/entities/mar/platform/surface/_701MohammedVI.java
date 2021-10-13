@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d411036;
- * Country: Morocco (MAR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28669
+ * <p> Entity class <b><code>_701MohammedVI</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_701MohammedVI.createInstance()</code> or <code>new _701MohammedVI()</code>. </p>
+ * <ul>
+ *     <li> Country: Morocco (MAR) = <code>147</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: FREMMFrigate  = <code>3</code>; </li>
+ *     <li> Specific: _701MohammedVI  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28669; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67427b69. </p>
+ * @see Country#MOROCCO_MAR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _701MohammedVI extends EntityType
+public final class _701MohammedVI extends EntityType
 {
     /** Default constructor */
     public _701MohammedVI()
@@ -26,5 +40,11 @@ public class _701MohammedVI extends EntityType
         setCategory((byte)6); // uid 27691, Guided Missile Frigate (FFG)
         setSubCategory((byte)3); // uid 28668, FREMM Frigate
         setSpecific((byte)1); // uid 28669, 701 Mohammed VI
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _701MohammedVI createInstance()
+    {
+            return new _701MohammedVI();
     }
 }

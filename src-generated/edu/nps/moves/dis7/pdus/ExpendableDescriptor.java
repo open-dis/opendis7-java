@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class ExpendableDescriptor extends Object implements Serializable
    protected long  padding = (long)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ExpendableDescriptor()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += expendableType.getMarshalledSize();
+   if (expendableType != null)
+       marshalSize += expendableType.getMarshalledSize();
    marshalSize += 8;  // padding
 
    return marshalSize;
@@ -153,8 +153,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    expendableType.unmarshal(byteBuffer);
-    padding = byteBuffer.getLong();
+    try
+    {
+        // attribute expendableType marked as not serialized
+        expendableType.unmarshal(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = byteBuffer.getLong();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

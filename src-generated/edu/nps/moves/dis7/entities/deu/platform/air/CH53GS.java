@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26df6e3a;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28029
+ * <p> Entity class <b><code>CH53GS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CH53GS.createInstance()</code> or <code>new CH53GS()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: SikorskyS65A  = <code>9</code>; </li>
+ *     <li> Specific: CH53GS  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28029; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2bec854f. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class CH53GS extends EntityType
+public final class CH53GS extends EntityType
 {
     /** Default constructor */
     public CH53GS()
@@ -26,5 +40,11 @@ public class CH53GS extends EntityType
         setCategory((byte)21); // uid 16366, Utility Helicopter
         setSubCategory((byte)9); // uid 28025, Sikorsky S-65A
         setSpecific((byte)2); // uid 28029, CH-53GS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CH53GS createInstance()
+    {
+            return new CH53GS();
     }
 }

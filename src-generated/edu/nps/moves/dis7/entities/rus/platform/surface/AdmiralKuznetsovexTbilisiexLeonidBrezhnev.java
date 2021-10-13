@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9255c05;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13500
+ * <p> Entity class <b><code>AdmiralKuznetsovexTbilisiexLeonidBrezhnev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AdmiralKuznetsovexTbilisiexLeonidBrezhnev.createInstance()</code> or <code>new AdmiralKuznetsovexTbilisiexLeonidBrezhnev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Carrier = <code>1</code>; </li>
+ *     <li> SubCategory: KuznetsovclassCV  = <code>3</code>; </li>
+ *     <li> Specific: AdmiralKuznetsovexTbilisiexLeonidBrezhnev  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13500; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6892cc6f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Carrier
+ * @see SubCategory
+
  */
-public class AdmiralKuznetsovexTbilisiexLeonidBrezhnev extends EntityType
+public final class AdmiralKuznetsovexTbilisiexLeonidBrezhnev extends EntityType
 {
     /** Default constructor */
     public AdmiralKuznetsovexTbilisiexLeonidBrezhnev()
@@ -26,5 +40,11 @@ public class AdmiralKuznetsovexTbilisiexLeonidBrezhnev extends EntityType
         setCategory((byte)1); // uid 13496, Carrier
         setSubCategory((byte)3); // uid 13499, Kuznetsov class (CV)
         setSpecific((byte)1); // uid 13500, Admiral Kuznetsov (ex-Tbilisi, ex-Leonid Brezhnev)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AdmiralKuznetsovexTbilisiexLeonidBrezhnev createInstance()
+    {
+            return new AdmiralKuznetsovexTbilisiexLeonidBrezhnev();
     }
 }

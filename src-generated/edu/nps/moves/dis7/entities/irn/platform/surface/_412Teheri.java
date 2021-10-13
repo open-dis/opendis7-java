@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e554a3b;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18133
+ * <p> Entity class <b><code>_412Teheri</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_412Teheri.createInstance()</code> or <code>new _412Teheri()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: KanganClasswatertanker  = <code>3</code>; </li>
+ *     <li> Specific: _412Teheri  = <code>2</code>; </li>
+ *     <li> Entity type uid: 18133; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70ab2d48. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _412Teheri extends EntityType
+public final class _412Teheri extends EntityType
 {
     /** Default constructor */
     public _412Teheri()
@@ -26,5 +40,11 @@ public class _412Teheri extends EntityType
         setCategory((byte)16); // uid 18114, Auxiliary
         setSubCategory((byte)3); // uid 18131, Kangan Class (water tanker)
         setSpecific((byte)2); // uid 18133, 412 Teheri
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _412Teheri createInstance()
+    {
+            return new _412Teheri();
     }
 }

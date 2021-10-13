@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d10e0b1;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 31810
+ * <p> Entity class <b><code>SS509Seiryu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SS509Seiryu.createInstance()</code> or <code>new SS509Seiryu()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSP (Attack Submarine - Diesel Air-Independent Propulsion) = <code>11</code>; </li>
+ *     <li> SubCategory: SoryuClass  = <code>1</code>; </li>
+ *     <li> Specific: SS509Seiryu  = <code>9</code>; </li>
+ *     <li> Entity type uid: 31810; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68d6972f. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSPAttackSubmarineDieselAirIndependentPropulsion
+ * @see SubCategory
+
  */
-public class SS509Seiryu extends EntityType
+public final class SS509Seiryu extends EntityType
 {
     /** Default constructor */
     public SS509Seiryu()
@@ -26,5 +40,11 @@ public class SS509Seiryu extends EntityType
         setCategory((byte)11); // uid 31800, SSP (Attack Submarine - Diesel Air-Independent Propulsion)
         setSubCategory((byte)1); // uid 31801, Soryu Class
         setSpecific((byte)9); // uid 31810, SS-509 Seiryu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SS509Seiryu createInstance()
+    {
+            return new SS509Seiryu();
     }
 }

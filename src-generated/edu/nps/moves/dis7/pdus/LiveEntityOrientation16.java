@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LiveEntityOrientation16 extends Object implements Serializable
    protected short  phi;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityOrientation16()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    psi = (short)(byteBuffer.getShort() & 0xFFFF);
-    theta = (short)(byteBuffer.getShort() & 0xFFFF);
-    phi = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute psi marked as not serialized
+        psi = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute theta marked as not serialized
+        theta = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute phi marked as not serialized
+        phi = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

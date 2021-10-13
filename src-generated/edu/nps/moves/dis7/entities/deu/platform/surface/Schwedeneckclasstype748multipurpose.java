@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2f67b837;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16704
+ * <p> Entity class <b><code>Schwedeneckclasstype748multipurpose</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Schwedeneckclasstype748multipurpose.createInstance()</code> or <code>new Schwedeneckclasstype748multipurpose()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Schwedeneckclasstype748multipurpose  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16704; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@ae3540e. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Schwedeneckclasstype748multipurpose extends EntityType
+public final class Schwedeneckclasstype748multipurpose extends EntityType
 {
     /** Default constructor */
     public Schwedeneckclasstype748multipurpose()
@@ -25,5 +39,11 @@ public class Schwedeneckclasstype748multipurpose extends EntityType
 
         setCategory((byte)18); // uid 16684, Utility
         setSubCategory((byte)6); // uid 16704, Schwedeneck class (type 748, multipurpose)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Schwedeneckclasstype748multipurpose createInstance()
+    {
+            return new Schwedeneckclasstype748multipurpose();
     }
 }

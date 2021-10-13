@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5733f295;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18023
+ * <p> Entity class <b><code>_507lbnMarjid</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_507lbnMarjid.createInstance()</code> or <code>new _507lbnMarjid()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: YugoslavType  = <code>1</code>; </li>
+ *     <li> Specific: _507lbnMarjid  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18023; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4097cac. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _507lbnMarjid extends EntityType
+public final class _507lbnMarjid extends EntityType
 {
     /** Default constructor */
     public _507lbnMarjid()
@@ -26,5 +40,11 @@ public class _507lbnMarjid extends EntityType
         setCategory((byte)50); // uid 18021, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 18022, Yugoslav Type
         setSpecific((byte)1); // uid 18023, 507 lbn Marjid
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _507lbnMarjid createInstance()
+    {
+            return new _507lbnMarjid();
     }
 }

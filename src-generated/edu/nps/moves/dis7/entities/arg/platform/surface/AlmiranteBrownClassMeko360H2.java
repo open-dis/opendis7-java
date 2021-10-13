@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5ccd43c2;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18756
+ * <p> Entity class <b><code>AlmiranteBrownClassMeko360H2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AlmiranteBrownClassMeko360H2.createInstance()</code> or <code>new AlmiranteBrownClassMeko360H2()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: AlmiranteBrownClassMeko360H2  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18756; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@22927a81. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class AlmiranteBrownClassMeko360H2 extends EntityType
+public final class AlmiranteBrownClassMeko360H2 extends EntityType
 {
     /** Default constructor */
     public AlmiranteBrownClassMeko360H2()
@@ -25,5 +39,11 @@ public class AlmiranteBrownClassMeko360H2 extends EntityType
 
         setCategory((byte)4); // uid 18755, Guided Missile Destroyer
         setSubCategory((byte)1); // uid 18756, Almirante Brown Class (Meko 360H2)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AlmiranteBrownClassMeko360H2 createInstance()
+    {
+            return new AlmiranteBrownClassMeko360H2();
     }
 }

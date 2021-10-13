@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class FixedDatum extends Object implements Serializable
    protected int  fixedDatumValue;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public FixedDatum()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += fixedDatumID.getMarshalledSize();
+   if (fixedDatumID != null)
+       marshalSize += fixedDatumID.getMarshalledSize();
    marshalSize += 4;  // fixedDatumValue
 
    return marshalSize;
@@ -147,8 +147,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    fixedDatumID = VariableRecordType.unmarshalEnum(byteBuffer);
-    fixedDatumValue = byteBuffer.getInt();
+    try
+    {
+        // attribute fixedDatumID marked as not serialized
+        fixedDatumID = VariableRecordType.unmarshalEnum(byteBuffer);
+        // attribute fixedDatumValue marked as not serialized
+        fixedDatumValue = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

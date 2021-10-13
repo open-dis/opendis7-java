@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c732e1c;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 19601
+ * <p> Entity class <b><code>M431HEATT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M431HEATT.createInstance()</code> or <code>new M431HEATT()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _90mm  = <code>9</code>; </li>
+ *     <li> Specific: M431HEATT  = <code>8</code>; </li>
+ *     <li> Entity type uid: 19601; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e27f603. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M431HEATT extends EntityType
+public final class M431HEATT extends EntityType
 {
     /** Default constructor */
     public M431HEATT()
@@ -26,5 +40,11 @@ public class M431HEATT extends EntityType
         setCategory((byte)2); // uid 19553, Ballistic
         setSubCategory((byte)9); // uid 19593, 90 mm
         setSpecific((byte)8); // uid 19601, M431 HEAT-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M431HEATT createInstance()
+    {
+            return new M431HEATT();
     }
 }

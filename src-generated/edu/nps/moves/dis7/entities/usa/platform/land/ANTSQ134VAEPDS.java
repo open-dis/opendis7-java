@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72a2312e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23514
+ * <p> Entity class <b><code>ANTSQ134VAEPDS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANTSQ134VAEPDS.createInstance()</code> or <code>new ANTSQ134VAEPDS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Intelligence Facility = <code>31</code>; </li>
+ *     <li> SubCategory: ANTSQ134VAEPDS  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23514; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65f40689. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see IntelligenceFacility
+ * @see SubCategory
+
  */
-public class ANTSQ134VAEPDS extends EntityType
+public final class ANTSQ134VAEPDS extends EntityType
 {
     /** Default constructor */
     public ANTSQ134VAEPDS()
@@ -25,5 +39,11 @@ public class ANTSQ134VAEPDS extends EntityType
 
         setCategory((byte)31); // uid 10741, Intelligence Facility
         setSubCategory((byte)7); // uid 23514, AN/TSQ-134(V) AEPDS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANTSQ134VAEPDS createInstance()
+    {
+            return new ANTSQ134VAEPDS();
     }
 }

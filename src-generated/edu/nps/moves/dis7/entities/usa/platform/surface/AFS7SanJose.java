@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a1b36a1;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12048
+ * <p> Entity class <b><code>AFS7SanJose</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AFS7SanJose.createInstance()</code> or <code>new AFS7SanJose()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Combat Stores Ship = <code>58</code>; </li>
+ *     <li> SubCategory: MarsClass  = <code>2</code>; </li>
+ *     <li> Specific: AFS7SanJose  = <code>7</code>; </li>
+ *     <li> Entity type uid: 12048; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59096b66. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CombatStoresShip
+ * @see SubCategory
+
  */
-public class AFS7SanJose extends EntityType
+public final class AFS7SanJose extends EntityType
 {
     /** Default constructor */
     public AFS7SanJose()
@@ -26,5 +40,11 @@ public class AFS7SanJose extends EntityType
         setCategory((byte)58); // uid 12039, Combat Stores Ship
         setSubCategory((byte)2); // uid 12041, Mars Class
         setSpecific((byte)7); // uid 12048, AFS 7 San Jose
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AFS7SanJose createInstance()
+    {
+            return new AFS7SanJose();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c1a8622;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27001
+ * <p> Entity class <b><code>_136Hangzhou</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_136Hangzhou.createInstance()</code> or <code>new _136Hangzhou()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: SovremennyClass  = <code>9</code>; </li>
+ *     <li> Specific: _136Hangzhou  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27001; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bb58ca3. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class _136Hangzhou extends EntityType
+public final class _136Hangzhou extends EntityType
 {
     /** Default constructor */
     public _136Hangzhou()
@@ -26,5 +40,11 @@ public class _136Hangzhou extends EntityType
         setCategory((byte)4); // uid 17046, Guided Missile Destroyer (DDG)
         setSubCategory((byte)9); // uid 27000, Sovremenny Class
         setSpecific((byte)1); // uid 27001, 136 Hangzhou
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _136Hangzhou createInstance()
+    {
+            return new _136Hangzhou();
     }
 }

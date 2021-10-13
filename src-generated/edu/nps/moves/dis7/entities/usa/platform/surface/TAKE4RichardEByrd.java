@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6371cf2f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31755
+ * <p> Entity class <b><code>TAKE4RichardEByrd</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAKE4RichardEByrd.createInstance()</code> or <code>new TAKE4RichardEByrd()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: LewisandClarkClass  = <code>30</code>; </li>
+ *     <li> Specific: TAKE4RichardEByrd  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31755; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b033eac. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAKE4RichardEByrd extends EntityType
+public final class TAKE4RichardEByrd extends EntityType
 {
     /** Default constructor */
     public TAKE4RichardEByrd()
@@ -26,5 +40,11 @@ public class TAKE4RichardEByrd extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)30); // uid 31751, Lewis and Clark Class
         setSpecific((byte)4); // uid 31755, T-AKE-4 Richard E. Byrd
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAKE4RichardEByrd createInstance()
+    {
+            return new TAKE4RichardEByrd();
     }
 }

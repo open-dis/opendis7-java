@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@333e5fb6;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES;
- *
- * Entity type uid: 31295
+ * <p> Entity class <b><code>MWeaponsHumans</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MWeaponsHumans.createInstance()</code> or <code>new MWeaponsHumans()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons (Humans) = <code>7</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31295; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@43ab9ae9. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeaponsHumans
+
  */
-public class MWeaponsHumans extends EntityType
+public final class MWeaponsHumans extends EntityType
 {
     /** Default constructor */
     public MWeaponsHumans()
@@ -24,5 +37,11 @@ public class MWeaponsHumans extends EntityType
         setDomain(Domain.inst(SupplyDomain.CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES));
 
         setCategory((byte)7); // uid 31295, M - Weapons (Humans)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MWeaponsHumans createInstance()
+    {
+            return new MWeaponsHumans();
     }
 }

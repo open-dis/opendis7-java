@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@452c8a40;
- * Country: Pakistan (PAK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28250
+ * <p> Entity class <b><code>Moawin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Moawin.createInstance()</code> or <code>new Moawin()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: PoolsterClass  = <code>3</code>; </li>
+ *     <li> Specific: Moawin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28250; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c000e0c. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Moawin extends EntityType
+public final class Moawin extends EntityType
 {
     /** Default constructor */
     public Moawin()
@@ -26,5 +40,11 @@ public class Moawin extends EntityType
         setCategory((byte)16); // uid 19343, Auxiliary
         setSubCategory((byte)3); // uid 28249, Poolster Class
         setSpecific((byte)1); // uid 28250, Moawin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Moawin createInstance()
+    {
+            return new Moawin();
     }
 }

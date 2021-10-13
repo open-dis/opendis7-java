@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5489b1f7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10764
+ * <p> Entity class <b><code>F16C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F16C.createInstance()</code> or <code>new F16C()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: GeneralDynamicsF16FightingFalcon  = <code>3</code>; </li>
+ *     <li> Specific: F16C  = <code>3</code>; </li>
+ *     <li> Entity type uid: 10764; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cfa83f9. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class F16C extends EntityType
+public final class F16C extends EntityType
 {
     /** Default constructor */
     public F16C()
@@ -26,5 +40,11 @@ public class F16C extends EntityType
         setCategory((byte)1); // uid 10755, Fighter/Air Defense
         setSubCategory((byte)3); // uid 10761, General Dynamics F-16 Fighting Falcon
         setSpecific((byte)3); // uid 10764, F-16C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F16C createInstance()
+    {
+            return new F16C();
     }
 }

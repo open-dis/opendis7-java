@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class ShaftRPM extends Object implements Serializable
    protected int  RPMrateOfChange;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ShaftRPM()
  {
  }
@@ -185,9 +184,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    currentRPM = (short)(byteBuffer.getShort() & 0xFFFF);
-    orderedRPM = (short)(byteBuffer.getShort() & 0xFFFF);
-    RPMrateOfChange = byteBuffer.getInt();
+    try
+    {
+        // attribute currentRPM marked as not serialized
+        currentRPM = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute orderedRPM marked as not serialized
+        orderedRPM = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute RPMrateOfChange marked as not serialized
+        RPMrateOfChange = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

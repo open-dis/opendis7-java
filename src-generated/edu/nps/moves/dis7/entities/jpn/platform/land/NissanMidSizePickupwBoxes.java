@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@132ddbab;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24895
+ * <p> Entity class <b><code>NissanMidSizePickupwBoxes</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NissanMidSizePickupwBoxes.createInstance()</code> or <code>new NissanMidSizePickupwBoxes()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMidSize  = <code>2</code>; </li>
+ *     <li> Specific: NissanMidSizePickup  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24895; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6f603e89. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class NissanMidSizePickupwBoxes extends EntityType
+public final class NissanMidSizePickupwBoxes extends EntityType
 {
     /** Default constructor */
     public NissanMidSizePickupwBoxes()
@@ -27,5 +41,11 @@ public class NissanMidSizePickupwBoxes extends EntityType
         setSubCategory((byte)2); // uid 24889, Pickup Truck, Mid-Size
         setSpecific((byte)2); // uid 24894, Nissan Mid-Size Pickup
         setExtra((byte)1); // uid 24895, Nissan Mid-Size Pickup w/ Boxes
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NissanMidSizePickupwBoxes createInstance()
+    {
+            return new NissanMidSizePickupwBoxes();
     }
 }

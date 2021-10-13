@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54acff7d;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23079
+ * <p> Entity class <b><code>_644Wigry</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_644Wigry.createInstance()</code> or <code>new _644Wigry()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MamryNotecIIClass  = <code>2</code>; </li>
+ *     <li> Specific: _644Wigry  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23079; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31611954. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _644Wigry extends EntityType
+public final class _644Wigry extends EntityType
 {
     /** Default constructor */
     public _644Wigry()
@@ -26,5 +40,11 @@ public class _644Wigry extends EntityType
         setCategory((byte)8); // uid 23062, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 23077, Mamry (Notec II) Class
         setSpecific((byte)2); // uid 23079, 644 Wigry
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _644Wigry createInstance()
+    {
+            return new _644Wigry();
     }
 }

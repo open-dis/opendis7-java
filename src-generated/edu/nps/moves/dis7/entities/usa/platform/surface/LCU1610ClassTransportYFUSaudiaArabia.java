@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1283ca23;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11691
+ * <p> Entity class <b><code>LCU1610ClassTransportYFUSaudiaArabia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LCU1610ClassTransportYFUSaudiaArabia.createInstance()</code> or <code>new LCU1610ClassTransportYFUSaudiaArabia()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LCU1610ClassTransportYFUSaudiaArabia  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 11691; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@733fb462. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class LCU1610ClassTransportYFUSaudiaArabia extends EntityType
+public final class LCU1610ClassTransportYFUSaudiaArabia extends EntityType
 {
     /** Default constructor */
     public LCU1610ClassTransportYFUSaudiaArabia()
@@ -25,5 +39,11 @@ public class LCU1610ClassTransportYFUSaudiaArabia extends EntityType
 
         setCategory((byte)11); // uid 11685, Landing Craft
         setSubCategory((byte)6); // uid 11691, LCU 1610 Class (Transport) (YFU) (Saudia Arabia)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LCU1610ClassTransportYFUSaudiaArabia createInstance()
+    {
+            return new LCU1610ClassTransportYFUSaudiaArabia();
     }
 }

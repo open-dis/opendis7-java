@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@23121d14;
- * Country: Israel (ISR);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32532
+ * <p> Entity class <b><code>ExtendedRangeArtilleryEXTRA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ExtendedRangeArtilleryEXTRA.createInstance()</code> or <code>new ExtendedRangeArtilleryEXTRA()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: ExtendedRangeArtilleryEXTRA  = <code>12</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32532; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30508066. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class ExtendedRangeArtilleryEXTRA extends EntityType
+public final class ExtendedRangeArtilleryEXTRA extends EntityType
 {
     /** Default constructor */
     public ExtendedRangeArtilleryEXTRA()
@@ -25,5 +39,11 @@ public class ExtendedRangeArtilleryEXTRA extends EntityType
 
         setCategory((byte)1); // uid 29011, Guided
         setSubCategory((byte)12); // uid 32532, Extended Range Artillery (EXTRA)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ExtendedRangeArtilleryEXTRA createInstance()
+    {
+            return new ExtendedRangeArtilleryEXTRA();
     }
 }

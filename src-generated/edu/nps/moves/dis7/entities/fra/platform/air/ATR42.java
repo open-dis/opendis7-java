@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65c7a252;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24281
+ * <p> Entity class <b><code>ATR42</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ATR42.createInstance()</code> or <code>new ATR42()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg) = <code>86</code>; </li>
+ *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
+ *     <li> Specific: ATR42  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24281; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@342c38f8. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftMediumupto41000lbs18597kg
+ * @see SubCategory
+
  */
-public class ATR42 extends EntityType
+public final class ATR42 extends EntityType
 {
     /** Default constructor */
     public ATR42()
@@ -26,5 +40,11 @@ public class ATR42 extends EntityType
         setCategory((byte)86); // uid 24279, Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg)
         setSubCategory((byte)22); // uid 24280, Twin Engine Turboprop
         setSpecific((byte)1); // uid 24281, ATR 42
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ATR42 createInstance()
+    {
+            return new ATR42();
     }
 }

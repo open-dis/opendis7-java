@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d0bfb24;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12645
+ * <p> Entity class <b><code>MTLBRrepair</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MTLBRrepair.createInstance()</code> or <code>new MTLBRrepair()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: MTLBtrackedvehicle  = <code>7</code>; </li>
+ *     <li> Specific: MTLBRrepair  = <code>22</code>; </li>
+ *     <li> Entity type uid: 12645; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41e1455d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class MTLBRrepair extends EntityType
+public final class MTLBRrepair extends EntityType
 {
     /** Default constructor */
     public MTLBRrepair()
@@ -26,5 +40,11 @@ public class MTLBRrepair extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)7); // uid 12623, MT-LB tracked vehicle
         setSpecific((byte)22); // uid 12645, MT-LBR repair
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MTLBRrepair createInstance()
+    {
+            return new MTLBRrepair();
     }
 }

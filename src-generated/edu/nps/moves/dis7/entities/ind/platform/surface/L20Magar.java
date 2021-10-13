@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6127a7e;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18864
+ * <p> Entity class <b><code>L20Magar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L20Magar.createInstance()</code> or <code>new L20Magar()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Assault Ship = <code>54</code>; </li>
+ *     <li> SubCategory: MagarClassLST  = <code>1</code>; </li>
+ *     <li> Specific: L20Magar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18864; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53dbe163. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousAssaultShip
+ * @see SubCategory
+
  */
-public class L20Magar extends EntityType
+public final class L20Magar extends EntityType
 {
     /** Default constructor */
     public L20Magar()
@@ -26,5 +40,11 @@ public class L20Magar extends EntityType
         setCategory((byte)54); // uid 18862, Amphibious Assault Ship
         setSubCategory((byte)1); // uid 18863, Magar Class (LST)
         setSpecific((byte)1); // uid 18864, L20 Magar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L20Magar createInstance()
+    {
+            return new L20Magar();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@329bad59;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 14902
+ * <p> Entity class <b><code>FV101Scorpion</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FV101Scorpion.createInstance()</code> or <code>new FV101Scorpion()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: FV101Scorpion  = <code>13</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 14902; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4b74b35. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class FV101Scorpion extends EntityType
+public final class FV101Scorpion extends EntityType
 {
     /** Default constructor */
     public FV101Scorpion()
@@ -25,5 +39,11 @@ public class FV101Scorpion extends EntityType
 
         setCategory((byte)2); // uid 14887, Armored Fighting Vehicle
         setSubCategory((byte)13); // uid 14902, FV 101 Scorpion
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FV101Scorpion createInstance()
+    {
+            return new FV101Scorpion();
     }
 }

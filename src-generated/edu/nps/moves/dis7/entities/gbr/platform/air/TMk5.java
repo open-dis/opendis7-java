@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@869d87c;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15195
+ * <p> Entity class <b><code>TMk5</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TMk5.createInstance()</code> or <code>new TMk5()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: Provost  = <code>10</code>; </li>
+ *     <li> Specific: TMk5  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15195; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37c41ec0. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class TMk5 extends EntityType
+public final class TMk5 extends EntityType
 {
     /** Default constructor */
     public TMk5()
@@ -26,5 +40,11 @@ public class TMk5 extends EntityType
         setCategory((byte)40); // uid 15173, Trainer
         setSubCategory((byte)10); // uid 15194, Provost
         setSpecific((byte)1); // uid 15195, T Mk 5
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TMk5 createInstance()
+    {
+            return new TMk5();
     }
 }

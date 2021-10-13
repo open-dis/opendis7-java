@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3cfdd820;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16307
+ * <p> Entity class <b><code>Mineclearinglinecharge</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mineclearinglinecharge.createInstance()</code> or <code>new Mineclearinglinecharge()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Engineer Equipment = <code>18</code>; </li>
+ *     <li> SubCategory: Mineclearinglinecharge  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16307; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@461ad730. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see EngineerEquipment
+ * @see SubCategory
+
  */
-public class Mineclearinglinecharge extends EntityType
+public final class Mineclearinglinecharge extends EntityType
 {
     /** Default constructor */
     public Mineclearinglinecharge()
@@ -25,5 +39,11 @@ public class Mineclearinglinecharge extends EntityType
 
         setCategory((byte)18); // uid 16306, Engineer Equipment
         setSubCategory((byte)1); // uid 16307, Mine clearing line charge
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mineclearinglinecharge createInstance()
+    {
+            return new Mineclearinglinecharge();
     }
 }

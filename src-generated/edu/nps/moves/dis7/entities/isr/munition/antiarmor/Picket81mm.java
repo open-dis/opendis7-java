@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65600fb3;
- * Country: Israel (ISR);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21289
+ * <p> Entity class <b><code>Picket81mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Picket81mm.createInstance()</code> or <code>new Picket81mm()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Picket81mm  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21289; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1edfedf1. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Picket81mm extends EntityType
+public final class Picket81mm extends EntityType
 {
     /** Default constructor */
     public Picket81mm()
@@ -25,5 +39,11 @@ public class Picket81mm extends EntityType
 
         setCategory((byte)1); // uid 21287, Guided
         setSubCategory((byte)2); // uid 21289, Picket 81 mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Picket81mm createInstance()
+    {
+            return new Picket81mm();
     }
 }

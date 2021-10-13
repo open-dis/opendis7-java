@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@320be73;
- * Country: Belgium (BEL);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 30322
+ * <p> Entity class <b><code>FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead.createInstance()</code> or <code>new FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: Belgium (BEL) = <code>21</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: FZFZ68FZ67FFAR70mm275inwAPKWS  = <code>2</code>; </li>
+ *     <li> Specific: FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead  = <code>5</code>; </li>
+ *     <li> Entity type uid: 30322; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53a50b0a. </p>
+ * @see Country#BELGIUM_BEL
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead extends EntityType
+public final class FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead extends EntityType
 {
     /** Default constructor */
     public FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead()
@@ -26,5 +40,11 @@ public class FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead extends EntityType
         setCategory((byte)1); // uid 30309, Guided
         setSubCategory((byte)2); // uid 30317, FZ FZ68/FZ67 FFAR (70 mm, 2.75 in) w/APKWS
         setSpecific((byte)5); // uid 30322, FZ68/FZ67 w/APKWS w/ FZ149 MULTIDART Warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead createInstance()
+    {
+            return new FZ68FZ67wAPKWSwFZ149MULTIDARTWarhead();
     }
 }

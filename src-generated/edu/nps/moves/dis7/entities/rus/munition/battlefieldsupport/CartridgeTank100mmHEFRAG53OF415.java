@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d4fb0d8;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 23944
+ * <p> Entity class <b><code>CartridgeTank100mmHEFRAG53OF415</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CartridgeTank100mmHEFRAG53OF415.createInstance()</code> or <code>new CartridgeTank100mmHEFRAG53OF415()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _100mm  = <code>11</code>; </li>
+ *     <li> Specific: CartridgeTank100mmHEFRAG53OF415  = <code>6</code>; </li>
+ *     <li> Entity type uid: 23944; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@722787b5. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class CartridgeTank100mmHEFRAG53OF415 extends EntityType
+public final class CartridgeTank100mmHEFRAG53OF415 extends EntityType
 {
     /** Default constructor */
     public CartridgeTank100mmHEFRAG53OF415()
@@ -26,5 +40,11 @@ public class CartridgeTank100mmHEFRAG53OF415 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)11); // uid 20805, 100 mm
         setSpecific((byte)6); // uid 23944, Cartridge, Tank, 100mm, HE-FRAG, 53OF-415
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CartridgeTank100mmHEFRAG53OF415 createInstance()
+    {
+            return new CartridgeTank100mmHEFRAG53OF415();
     }
 }

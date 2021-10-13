@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class GridDataType2 extends GridData implements Serializable
    protected float[]  dataValues = new float[0]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GridDataType2()
  {
  }
@@ -45,7 +44,8 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    marshalSize += 2;  // numberOfValues
    marshalSize += 2;  // padding
-   marshalSize += dataValues.length * 4;
+   if (dataValues != null)
+       marshalSize += dataValues.length * 4;
 
    return marshalSize;
 }
@@ -104,7 +104,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(dataValues.length);
        dos.writeShort(padding);
 
-       for(int idx = 0; idx < dataValues.length; idx++)
+       for (int idx = 0; idx < dataValues.length; idx++)
            dos.writeFloat(dataValues[idx]);
 
     }
@@ -133,7 +133,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         padding = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < dataValues.length; idx++)
+        for (int idx = 0; idx < dataValues.length; idx++)
             dataValues[idx] = dis.readFloat();
         uPosition += (dataValues.length * 4);
     }
@@ -158,7 +158,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)dataValues.length);
    byteBuffer.putShort( (short)padding);
 
-   for(int idx = 0; idx < dataValues.length; idx++)
+   for (int idx = 0; idx < dataValues.length; idx++)
        byteBuffer.putFloat((float)dataValues[idx]);
 
 }
@@ -176,10 +176,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    numberOfValues = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < dataValues.length; idx++)
-        dataValues[idx] = byteBuffer.getFloat();
+    try
+    {
+        // attribute numberOfValues marked as not serialized
+        numberOfValues = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute dataValues marked as not serialized
+        for (int idx = 0; idx < dataValues.length; idx++)
+            dataValues[idx] = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -210,7 +220,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (padding == rhs.padding)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(dataValues[idx] == rhs.dataValues[idx])) ivarsEqual = false;
      }

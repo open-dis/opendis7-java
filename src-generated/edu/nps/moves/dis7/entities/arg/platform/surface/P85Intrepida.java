@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11028347;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31271
+ * <p> Entity class <b><code>P85Intrepida</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P85Intrepida.createInstance()</code> or <code>new P85Intrepida()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: IntrepidaClassTNC45  = <code>1</code>; </li>
+ *     <li> Specific: P85Intrepida  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31271; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2530c12. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class P85Intrepida extends EntityType
+public final class P85Intrepida extends EntityType
 {
     /** Default constructor */
     public P85Intrepida()
@@ -26,5 +40,11 @@ public class P85Intrepida extends EntityType
         setCategory((byte)64); // uid 31269, Fast Attack Craft
         setSubCategory((byte)1); // uid 31270, Intrepida Class (TNC 45)
         setSpecific((byte)1); // uid 31271, P 85 Intrepida
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P85Intrepida createInstance()
+    {
+            return new P85Intrepida();
     }
 }

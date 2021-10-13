@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ceddaf8;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 15617
+ * <p> Entity class <b><code>S41Unseen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S41Unseen.createInstance()</code> or <code>new S41Unseen()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: UpholderclassType2400  = <code>1</code>; </li>
+ *     <li> Specific: S41Unseen  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15617; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ddeaa5f. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S41Unseen extends EntityType
+public final class S41Unseen extends EntityType
 {
     /** Default constructor */
     public S41Unseen()
@@ -26,5 +40,11 @@ public class S41Unseen extends EntityType
         setCategory((byte)5); // uid 15614, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)1); // uid 15615, Upholder class (Type 2400)
         setSpecific((byte)2); // uid 15617, S 41 Unseen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S41Unseen createInstance()
+    {
+            return new S41Unseen();
     }
 }

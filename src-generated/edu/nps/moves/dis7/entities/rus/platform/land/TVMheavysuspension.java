@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@267bbe1a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12493
+ * <p> Entity class <b><code>TVMheavysuspension</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TVMheavysuspension.createInstance()</code> or <code>new TVMheavysuspension()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: Bridges  = <code>1</code>; </li>
+ *     <li> Specific: TVMheavysuspension  = <code>15</code>; </li>
+ *     <li> Entity type uid: 12493; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49b07ee3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class TVMheavysuspension extends EntityType
+public final class TVMheavysuspension extends EntityType
 {
     /** Default constructor */
     public TVMheavysuspension()
@@ -26,5 +40,11 @@ public class TVMheavysuspension extends EntityType
         setCategory((byte)0); // uid 12477, Other
         setSubCategory((byte)1); // uid 12478, Bridges
         setSpecific((byte)15); // uid 12493, TVM heavy suspension
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TVMheavysuspension createInstance()
+    {
+            return new TVMheavysuspension();
     }
 }

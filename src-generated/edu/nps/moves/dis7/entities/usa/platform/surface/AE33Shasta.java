@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@528c8c1;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12026
+ * <p> Entity class <b><code>AE33Shasta</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AE33Shasta.createInstance()</code> or <code>new AE33Shasta()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Ammunition Ship = <code>57</code>; </li>
+ *     <li> SubCategory: KilaueaClass  = <code>1</code>; </li>
+ *     <li> Specific: AE33Shasta  = <code>6</code>; </li>
+ *     <li> Entity type uid: 12026; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ac730cd. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmmunitionShip
+ * @see SubCategory
+
  */
-public class AE33Shasta extends EntityType
+public final class AE33Shasta extends EntityType
 {
     /** Default constructor */
     public AE33Shasta()
@@ -26,5 +40,11 @@ public class AE33Shasta extends EntityType
         setCategory((byte)57); // uid 12019, Ammunition Ship
         setSubCategory((byte)1); // uid 12020, Kilauea Class
         setSpecific((byte)6); // uid 12026, AE 33 Shasta
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AE33Shasta createInstance()
+    {
+            return new AE33Shasta();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ab3a8c8;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31274
+ * <p> Entity class <b><code>_885Qinghaihu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_885Qinghaihu.createInstance()</code> or <code>new _885Qinghaihu()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: FusuClassType908NancangReplenishmentShip  = <code>44</code>; </li>
+ *     <li> Specific: _885Qinghaihu  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31274; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@be64738. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _885Qinghaihu extends EntityType
+public final class _885Qinghaihu extends EntityType
 {
     /** Default constructor */
     public _885Qinghaihu()
@@ -26,5 +40,11 @@ public class _885Qinghaihu extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)44); // uid 31273, Fusu Class (Type 908, Nancang) (Replenishment Ship)
         setSpecific((byte)1); // uid 31274, 885 Qinghaihu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _885Qinghaihu createInstance()
+    {
+            return new _885Qinghaihu();
     }
 }

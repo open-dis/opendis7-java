@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26ba2a48;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17586
+ * <p> Entity class <b><code>LandingCraftOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LandingCraftOther.createInstance()</code> or <code>new LandingCraftOther()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LandingCraftOther  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17586; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@256216b3. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft1
+ * @see SubCategory
+
  */
-public class LandingCraftOther extends EntityType
+public final class LandingCraftOther extends EntityType
 {
     /** Default constructor */
     public LandingCraftOther()
@@ -25,5 +39,11 @@ public class LandingCraftOther extends EntityType
 
         setCategory((byte)11); // uid 17585, Landing Craft
         setSubCategory((byte)0); // uid 17586, Landing Craft, Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LandingCraftOther createInstance()
+    {
+            return new LandingCraftOther();
     }
 }

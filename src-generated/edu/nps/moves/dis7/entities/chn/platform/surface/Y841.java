@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ed7259e;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28417
+ * <p> Entity class <b><code>Y841</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y841.createInstance()</code> or <code>new Y841()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Damenclasscargo  = <code>34</code>; </li>
+ *     <li> Specific: Y841  = <code>9</code>; </li>
+ *     <li> Entity type uid: 28417; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ea227af. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Y841 extends EntityType
+public final class Y841 extends EntityType
 {
     /** Default constructor */
     public Y841()
@@ -26,5 +40,11 @@ public class Y841 extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)34); // uid 17338, Damen class (cargo)
         setSpecific((byte)9); // uid 28417, Y841
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y841 createInstance()
+    {
+            return new Y841();
     }
 }

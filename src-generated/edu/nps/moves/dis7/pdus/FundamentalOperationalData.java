@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -49,7 +48,7 @@ public class FundamentalOperationalData extends Object implements Serializable
    protected short  parameter6;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public FundamentalOperationalData()
  {
  }
@@ -409,16 +408,33 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    systemStatus = (byte)(byteBuffer.get() & 0xFF);
-    dataField1 = (byte)(byteBuffer.get() & 0xFF);
-    informationLayers = (byte)(byteBuffer.get() & 0xFF);
-    dataField2 = (byte)(byteBuffer.get() & 0xFF);
-    parameter1 = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameter2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameter3 = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameter4 = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameter5 = (short)(byteBuffer.getShort() & 0xFFFF);
-    parameter6 = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute systemStatus marked as not serialized
+        systemStatus = (byte)(byteBuffer.get() & 0xFF);
+        // attribute dataField1 marked as not serialized
+        dataField1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute informationLayers marked as not serialized
+        informationLayers = (byte)(byteBuffer.get() & 0xFF);
+        // attribute dataField2 marked as not serialized
+        dataField2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute parameter1 marked as not serialized
+        parameter1 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameter2 marked as not serialized
+        parameter2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameter3 marked as not serialized
+        parameter3 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameter4 marked as not serialized
+        parameter4 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameter5 marked as not serialized
+        parameter5 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute parameter6 marked as not serialized
+        parameter6 = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

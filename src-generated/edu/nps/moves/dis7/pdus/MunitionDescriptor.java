@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class MunitionDescriptor extends Object implements Serializable
    protected short  rate;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MunitionDescriptor()
  {
  }
@@ -48,9 +47,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += munitionType.getMarshalledSize();
-   marshalSize += warhead.getMarshalledSize();
-   marshalSize += fuse.getMarshalledSize();
+   if (munitionType != null)
+       marshalSize += munitionType.getMarshalledSize();
+   if (warhead != null)
+       marshalSize += warhead.getMarshalledSize();
+   if (fuse != null)
+       marshalSize += fuse.getMarshalledSize();
    marshalSize += 2;  // quantity
    marshalSize += 2;  // rate
 
@@ -232,11 +234,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    munitionType.unmarshal(byteBuffer);
-    warhead = MunitionDescriptorWarhead.unmarshalEnum(byteBuffer);
-    fuse = MunitionDescriptorFuse.unmarshalEnum(byteBuffer);
-    quantity = (short)(byteBuffer.getShort() & 0xFFFF);
-    rate = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute munitionType marked as not serialized
+        munitionType.unmarshal(byteBuffer);
+        // attribute warhead marked as not serialized
+        warhead = MunitionDescriptorWarhead.unmarshalEnum(byteBuffer);
+        // attribute fuse marked as not serialized
+        fuse = MunitionDescriptorFuse.unmarshalEnum(byteBuffer);
+        // attribute quantity marked as not serialized
+        quantity = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute rate marked as not serialized
+        rate = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

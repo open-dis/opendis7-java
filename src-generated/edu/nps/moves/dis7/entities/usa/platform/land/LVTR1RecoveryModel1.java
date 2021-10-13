@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@668625f5;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10221
+ * <p> Entity class <b><code>LVTR1RecoveryModel1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LVTR1RecoveryModel1.createInstance()</code> or <code>new LVTR1RecoveryModel1()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: LVTP5A1ArmoredAAV  = <code>27</code>; </li>
+ *     <li> Specific: LVTR1RecoveryModel1  = <code>4</code>; </li>
+ *     <li> Entity type uid: 10221; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a916402. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class LVTR1RecoveryModel1 extends EntityType
+public final class LVTR1RecoveryModel1 extends EntityType
 {
     /** Default constructor */
     public LVTR1RecoveryModel1()
@@ -26,5 +40,11 @@ public class LVTR1RecoveryModel1 extends EntityType
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)27); // uid 10217, LVTP5A1 Armored AAV
         setSpecific((byte)4); // uid 10221, LVTR1 (Recovery, Model 1)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LVTR1RecoveryModel1 createInstance()
+    {
+            return new LVTR1RecoveryModel1();
     }
 }

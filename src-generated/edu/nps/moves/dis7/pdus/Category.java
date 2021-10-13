@@ -6,19 +6,18 @@
 package edu.nps.moves.dis7.pdus;
 
 /**
- * Category.java created on May 7, 2019.
- * Marker interface to polymorphize category field in Pdus.
+ * Category is a marker interface to polymorphize category field in Pdus.
  */
 public interface Category
 {
     /**
-     * 
+     * Value for this field
      * @return the value of this SubCategory
      */
     int getValue();
     
     /**
-     * 
+     * Description for this field
      * @return the description of this SubCategory
      */
     String getDescription();

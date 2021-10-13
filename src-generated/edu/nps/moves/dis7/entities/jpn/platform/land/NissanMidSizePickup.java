@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@acb0951;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24894
+ * <p> Entity class <b><code>NissanMidSizePickup</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NissanMidSizePickup.createInstance()</code> or <code>new NissanMidSizePickup()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMidSize  = <code>2</code>; </li>
+ *     <li> Specific: NissanMidSizePickup  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24894; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@350ec41e. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class NissanMidSizePickup extends EntityType
+public final class NissanMidSizePickup extends EntityType
 {
     /** Default constructor */
     public NissanMidSizePickup()
@@ -26,5 +40,11 @@ public class NissanMidSizePickup extends EntityType
         setCategory((byte)83); // uid 24879, Single Unit Cargo Truck
         setSubCategory((byte)2); // uid 24889, Pickup Truck, Mid-Size
         setSpecific((byte)2); // uid 24894, Nissan Mid-Size Pickup
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NissanMidSizePickup createInstance()
+    {
+            return new NissanMidSizePickup();
     }
 }

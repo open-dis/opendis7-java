@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68f0f72c;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23257
+ * <p> Entity class <b><code>F246Salihreis</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F246Salihreis.createInstance()</code> or <code>new F246Salihreis()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: Barbarosclass  = <code>1</code>; </li>
+ *     <li> Specific: F246Salihreis  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23257; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1716e8c5. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F246Salihreis extends EntityType
+public final class F246Salihreis extends EntityType
 {
     /** Default constructor */
     public F246Salihreis()
@@ -26,5 +40,11 @@ public class F246Salihreis extends EntityType
         setCategory((byte)6); // uid 23253, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 23254, Barbaros class
         setSpecific((byte)3); // uid 23257, F246 Salihreis
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F246Salihreis createInstance()
+    {
+            return new F246Salihreis();
     }
 }

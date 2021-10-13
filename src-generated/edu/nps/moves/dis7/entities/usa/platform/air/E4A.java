@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73fbdf68;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11045
+ * <p> Entity class <b><code>E4A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>E4A.createInstance()</code> or <code>new E4A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance / C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: BoeingE4AdvancedAirborneCommandPostAABNCP  = <code>5</code>; </li>
+ *     <li> Specific: E4A  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11045; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1de0641b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class E4A extends EntityType
+public final class E4A extends EntityType
 {
     /** Default constructor */
     public E4A()
@@ -26,5 +40,11 @@ public class E4A extends EntityType
         setCategory((byte)8); // uid 11029, Surveillance / C2 (Airborne Early Warning)
         setSubCategory((byte)5); // uid 11044, Boeing E-4 Advanced Airborne Command Post (AABNCP)
         setSpecific((byte)1); // uid 11045, E-4A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static E4A createInstance()
+    {
+            return new E4A();
     }
 }

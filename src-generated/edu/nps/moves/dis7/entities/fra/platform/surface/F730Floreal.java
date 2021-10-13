@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72035809;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15956
+ * <p> Entity class <b><code>F730Floreal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F730Floreal.createInstance()</code> or <code>new F730Floreal()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: Florealclasspatrolfrigates  = <code>2</code>; </li>
+ *     <li> Specific: F730Floreal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15956; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13e344d. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigate
+ * @see SubCategory
+
  */
-public class F730Floreal extends EntityType
+public final class F730Floreal extends EntityType
 {
     /** Default constructor */
     public F730Floreal()
@@ -26,5 +40,11 @@ public class F730Floreal extends EntityType
         setCategory((byte)6); // uid 15950, Guided-missile Frigate
         setSubCategory((byte)2); // uid 15955, Floreal class (patrol frigates)
         setSpecific((byte)1); // uid 15956, F 730 Floreal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F730Floreal createInstance()
+    {
+            return new F730Floreal();
     }
 }

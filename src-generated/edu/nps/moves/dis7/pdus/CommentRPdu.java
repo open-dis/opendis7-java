@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class CommentRPdu extends SimulationManagementWithReliabilityFamilyPdu im
    protected List< VariableDatum > variableDatumRecords = new ArrayList< VariableDatum >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public CommentRPdu()
  {
     setPduType( DisPduType.COMMENT_RELIABLE );
@@ -46,11 +45,12 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    marshalSize += 4;  // numberOfFixedDatumRecords
    marshalSize += 4;  // numberOfVariableDatumRecords
-   for(int idx=0; idx < variableDatumRecords.size(); idx++)
-   {
-        VariableDatum listElement = variableDatumRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (variableDatumRecords != null)
+       for (int idx=0; idx < variableDatumRecords.size(); idx++)
+       {
+            VariableDatum listElement = variableDatumRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -86,7 +86,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(numberOfFixedDatumRecords);
        dos.writeInt(variableDatumRecords.size());
 
-       for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+       for (int idx = 0; idx < variableDatumRecords.size(); idx++)
        {
             VariableDatum aVariableDatum = variableDatumRecords.get(idx);
             aVariableDatum.marshal(dos);
@@ -118,7 +118,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
             uPosition += anX.unmarshal(dis);
@@ -147,7 +147,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)numberOfFixedDatumRecords);
    byteBuffer.putInt( (int)variableDatumRecords.size());
 
-   for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+   for (int idx = 0; idx < variableDatumRecords.size(); idx++)
    {
         VariableDatum aVariableDatum = variableDatumRecords.get(idx);
         aVariableDatum.marshal(byteBuffer);
@@ -168,15 +168,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    numberOfFixedDatumRecords = byteBuffer.getInt();
-    numberOfVariableDatumRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+    try
     {
-    VariableDatum anX = new VariableDatum();
-    anX.unmarshal(byteBuffer);
-    variableDatumRecords.add(anX);
-    }
+        // attribute numberOfFixedDatumRecords marked as not serialized
+        numberOfFixedDatumRecords = byteBuffer.getInt();
+        // attribute numberOfVariableDatumRecords marked as not serialized
+        numberOfVariableDatumRecords = byteBuffer.getInt();
+        // attribute variableDatumRecords marked as not serialized
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        {
+        VariableDatum anX = new VariableDatum();
+        anX.unmarshal(byteBuffer);
+        variableDatumRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -206,7 +216,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final CommentRPdu rhs = (CommentRPdu)obj;
 
 
-     for(int idx = 0; idx < variableDatumRecords.size(); idx++)
+     for (int idx = 0; idx < variableDatumRecords.size(); idx++)
         if( ! ( variableDatumRecords.get(idx).equals(rhs.variableDatumRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

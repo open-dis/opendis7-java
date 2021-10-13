@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@748741cb;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24853
+ * <p> Entity class <b><code>PoliceCarMercedesC240</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PoliceCarMercedesC240.createInstance()</code> or <code>new PoliceCarMercedesC240()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility/Emergency Car = <code>93</code>; </li>
+ *     <li> SubCategory: PoliceCar  = <code>2</code>; </li>
+ *     <li> Specific: PoliceCarMercedesC240  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24853; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@747f281. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityEmergencyCar
+ * @see SubCategory
+
  */
-public class PoliceCarMercedesC240 extends EntityType
+public final class PoliceCarMercedesC240 extends EntityType
 {
     /** Default constructor */
     public PoliceCarMercedesC240()
@@ -26,5 +40,11 @@ public class PoliceCarMercedesC240 extends EntityType
         setCategory((byte)93); // uid 24851, Utility/Emergency Car
         setSubCategory((byte)2); // uid 24852, Police Car
         setSpecific((byte)1); // uid 24853, Police Car, Mercedes C240
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PoliceCarMercedesC240 createInstance()
+    {
+            return new PoliceCarMercedesC240();
     }
 }

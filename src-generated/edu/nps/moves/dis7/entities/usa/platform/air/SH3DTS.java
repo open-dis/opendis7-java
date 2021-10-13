@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56b8aaf1;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11139
+ * <p> Entity class <b><code>SH3DTS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SH3DTS.createInstance()</code> or <code>new SH3DTS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/patrol helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: AgustaSikorskyAS61ASH3HSeaKing  = <code>2</code>; </li>
+ *     <li> Specific: SH3DTS  = <code>3</code>; </li>
+ *     <li> Entity type uid: 11139; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73fbdf68. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarepatrolhelicopter
+ * @see SubCategory
+
  */
-public class SH3DTS extends EntityType
+public final class SH3DTS extends EntityType
 {
     /** Default constructor */
     public SH3DTS()
@@ -26,5 +40,11 @@ public class SH3DTS extends EntityType
         setCategory((byte)22); // uid 11133, Anti-Submarine Warfare/patrol helicopter
         setSubCategory((byte)2); // uid 11136, Agusta Sikorsky AS-61/ASH-3H Sea King
         setSpecific((byte)3); // uid 11139, SH-3D/TS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SH3DTS createInstance()
+    {
+            return new SH3DTS();
     }
 }

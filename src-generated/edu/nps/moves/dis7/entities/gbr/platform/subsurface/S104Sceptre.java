@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b38b1f;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 15607
+ * <p> Entity class <b><code>S104Sceptre</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S104Sceptre.createInstance()</code> or <code>new S104Sceptre()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: SwiftsureClass  = <code>2</code>; </li>
+ *     <li> Specific: S104Sceptre  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15607; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55651434. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class S104Sceptre extends EntityType
+public final class S104Sceptre extends EntityType
 {
     /** Default constructor */
     public S104Sceptre()
@@ -26,5 +40,11 @@ public class S104Sceptre extends EntityType
         setCategory((byte)3); // uid 15597, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)2); // uid 15606, Swiftsure Class
         setSpecific((byte)1); // uid 15607, S 104 Sceptre
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S104Sceptre createInstance()
+    {
+            return new S104Sceptre();
     }
 }

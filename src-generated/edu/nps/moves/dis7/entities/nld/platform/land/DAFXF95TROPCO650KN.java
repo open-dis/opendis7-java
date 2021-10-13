@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@14bb2297;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27961
+ * <p> Entity class <b><code>DAFXF95TROPCO650KN</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DAFXF95TROPCO650KN.createInstance()</code> or <code>new DAFXF95TROPCO650KN()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Heavy Equipment Transport Trailer = <code>19</code>; </li>
+ *     <li> SubCategory: DAFXF95TROPCO650KN  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27961; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63f34b70. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see HeavyEquipmentTransportTrailer
+ * @see SubCategory
+
  */
-public class DAFXF95TROPCO650KN extends EntityType
+public final class DAFXF95TROPCO650KN extends EntityType
 {
     /** Default constructor */
     public DAFXF95TROPCO650KN()
@@ -25,5 +39,11 @@ public class DAFXF95TROPCO650KN extends EntityType
 
         setCategory((byte)19); // uid 27957, Heavy Equipment Transport Trailer
         setSubCategory((byte)2); // uid 27961, DAF XF95 TROPCO 650 KN
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DAFXF95TROPCO650KN createInstance()
+    {
+            return new DAFXF95TROPCO650KN();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52b56a3e;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26254
+ * <p> Entity class <b><code>DD122Hatsuyuki</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD122Hatsuyuki.createInstance()</code> or <code>new DD122Hatsuyuki()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: HatsuyukiClassDD  = <code>4</code>; </li>
+ *     <li> Specific: DD122Hatsuyuki  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26254; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10fde30a. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class DD122Hatsuyuki extends EntityType
+public final class DD122Hatsuyuki extends EntityType
 {
     /** Default constructor */
     public DD122Hatsuyuki()
@@ -26,5 +40,11 @@ public class DD122Hatsuyuki extends EntityType
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)4); // uid 18894, Hatsuyuki Class (DD)
         setSpecific((byte)1); // uid 26254, DD-122 Hatsuyuki
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD122Hatsuyuki createInstance()
+    {
+            return new DD122Hatsuyuki();
     }
 }

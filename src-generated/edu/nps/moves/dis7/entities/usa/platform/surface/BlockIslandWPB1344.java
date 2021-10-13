@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1142d377;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12157
+ * <p> Entity class <b><code>BlockIslandWPB1344</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BlockIslandWPB1344.createInstance()</code> or <code>new BlockIslandWPB1344()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: IslandClassWPB  = <code>5</code>; </li>
+ *     <li> Specific: BlockIslandWPB1344  = <code>8</code>; </li>
+ *     <li> Entity type uid: 12157; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42679fc2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class BlockIslandWPB1344 extends EntityType
+public final class BlockIslandWPB1344 extends EntityType
 {
     /** Default constructor */
     public BlockIslandWPB1344()
@@ -26,5 +40,11 @@ public class BlockIslandWPB1344 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)5); // uid 12149, Island Class (WPB)
         setSpecific((byte)8); // uid 12157, Block Island (WPB 1344)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BlockIslandWPB1344 createInstance()
+    {
+            return new BlockIslandWPB1344();
     }
 }

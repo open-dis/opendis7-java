@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2349f14d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10998
+ * <p> Entity class <b><code>EF111A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EF111A.createInstance()</code> or <code>new EF111A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Electronic Warfare (EW) = <code>6</code>; </li>
+ *     <li> SubCategory: GrummanGeneralDynamicsEF111Raven  = <code>7</code>; </li>
+ *     <li> Specific: EF111A  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10998; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e7e962d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectronicWarfareEW
+ * @see SubCategory
+
  */
-public class EF111A extends EntityType
+public final class EF111A extends EntityType
 {
     /** Default constructor */
     public EF111A()
@@ -26,5 +40,11 @@ public class EF111A extends EntityType
         setCategory((byte)6); // uid 10990, Electronic Warfare (EW)
         setSubCategory((byte)7); // uid 10997, Grumman (General Dynamics) EF-111 Raven
         setSpecific((byte)1); // uid 10998, EF-111A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EF111A createInstance()
+    {
+            return new EF111A();
     }
 }

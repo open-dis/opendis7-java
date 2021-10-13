@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5eed2d86;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30400
+ * <p> Entity class <b><code>AGSVaygachClassProject19910</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AGSVaygachClassProject19910.createInstance()</code> or <code>new AGSVaygachClassProject19910()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AGSVaygachClassProject19910  = <code>116</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30400; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6240651f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AGSVaygachClassProject19910 extends EntityType
+public final class AGSVaygachClassProject19910 extends EntityType
 {
     /** Default constructor */
     public AGSVaygachClassProject19910()
@@ -25,5 +39,11 @@ public class AGSVaygachClassProject19910 extends EntityType
 
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)116); // uid 30400, AGS Vaygach Class (Project 19910)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AGSVaygachClassProject19910 createInstance()
+    {
+            return new AGSVaygachClassProject19910();
     }
 }

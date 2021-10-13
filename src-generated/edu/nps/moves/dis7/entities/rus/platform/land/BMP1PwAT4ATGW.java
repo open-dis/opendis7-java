@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f462e3b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12585
+ * <p> Entity class <b><code>BMP1PwAT4ATGW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BMP1PwAT4ATGW.createInstance()</code> or <code>new BMP1PwAT4ATGW()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BMP1  = <code>1</code>; </li>
+ *     <li> Specific: BMP1PwAT4ATGW  = <code>4</code>; </li>
+ *     <li> Entity type uid: 12585; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23cd4ff2. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class BMP1PwAT4ATGW extends EntityType
+public final class BMP1PwAT4ATGW extends EntityType
 {
     /** Default constructor */
     public BMP1PwAT4ATGW()
@@ -26,5 +40,11 @@ public class BMP1PwAT4ATGW extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 12581, BMP-1
         setSpecific((byte)4); // uid 12585, BMP-1P w/ AT-4 ATGW
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BMP1PwAT4ATGW createInstance()
+    {
+            return new BMP1PwAT4ATGW();
     }
 }

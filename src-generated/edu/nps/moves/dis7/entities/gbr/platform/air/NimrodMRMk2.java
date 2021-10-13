@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@506a1372;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15060
+ * <p> Entity class <b><code>NimrodMRMk2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NimrodMRMk2.createInstance()</code> or <code>new NimrodMRMk2()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: Nimrod  = <code>1</code>; </li>
+ *     <li> Specific: NimrodMRMk2  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15060; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e6d4780. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWpatrolobservation
+ * @see SubCategory
+
  */
-public class NimrodMRMk2 extends EntityType
+public final class NimrodMRMk2 extends EntityType
 {
     /** Default constructor */
     public NimrodMRMk2()
@@ -26,5 +40,11 @@ public class NimrodMRMk2 extends EntityType
         setCategory((byte)5); // uid 15057, ASW/patrol/observation
         setSubCategory((byte)1); // uid 15058, Nimrod
         setSpecific((byte)2); // uid 15060, Nimrod MR Mk 2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NimrodMRMk2 createInstance()
+    {
+            return new NimrodMRMk2();
     }
 }

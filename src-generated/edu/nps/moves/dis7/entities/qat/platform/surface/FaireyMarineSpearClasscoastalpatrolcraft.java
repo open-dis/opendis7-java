@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5d05ef57;
- * Country: Qatar (QAT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17842
+ * <p> Entity class <b><code>FaireyMarineSpearClasscoastalpatrolcraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FaireyMarineSpearClasscoastalpatrolcraft.createInstance()</code> or <code>new FaireyMarineSpearClasscoastalpatrolcraft()</code>. </p>
+ * <ul>
+ *     <li> Country: Qatar (QAT) = <code>178</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FaireyMarineSpearClasscoastalpatrolcraft  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17842; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4a60ee36. </p>
+ * @see Country#QATAR_QAT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class FaireyMarineSpearClasscoastalpatrolcraft extends EntityType
+public final class FaireyMarineSpearClasscoastalpatrolcraft extends EntityType
 {
     /** Default constructor */
     public FaireyMarineSpearClasscoastalpatrolcraft()
@@ -25,5 +39,11 @@ public class FaireyMarineSpearClasscoastalpatrolcraft extends EntityType
 
         setCategory((byte)7); // uid 17828, Light/Patrol Craft
         setSubCategory((byte)4); // uid 17842, Fairey Marine Spear Class (coastal patrol craft)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FaireyMarineSpearClasscoastalpatrolcraft createInstance()
+    {
+            return new FaireyMarineSpearClasscoastalpatrolcraft();
     }
 }

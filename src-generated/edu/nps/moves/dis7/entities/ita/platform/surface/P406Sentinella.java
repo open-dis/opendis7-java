@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ed3068a;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27059
+ * <p> Entity class <b><code>P406Sentinella</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P406Sentinella.createInstance()</code> or <code>new P406Sentinella()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: EsploratoreClass  = <code>2</code>; </li>
+ *     <li> Specific: P406Sentinella  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27059; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@aa549e5. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P406Sentinella extends EntityType
+public final class P406Sentinella extends EntityType
 {
     /** Default constructor */
     public P406Sentinella()
@@ -26,5 +40,11 @@ public class P406Sentinella extends EntityType
         setCategory((byte)7); // uid 18341, Light/Patrol Craft
         setSubCategory((byte)2); // uid 27057, Esploratore Class
         setSpecific((byte)2); // uid 27059, P406 Sentinella
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P406Sentinella createInstance()
+    {
+            return new P406Sentinella();
     }
 }

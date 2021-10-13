@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a9b9909;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 26542
+ * <p> Entity class <b><code>K51Verkhoturye</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K51Verkhoturye.createInstance()</code> or <code>new K51Verkhoturye()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missile) = <code>1</code>; </li>
+ *     <li> SubCategory: DeltaIVclass  = <code>2</code>; </li>
+ *     <li> Specific: K51Verkhoturye  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26542; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c518474. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissile
+ * @see SubCategory
+
  */
-public class K51Verkhoturye extends EntityType
+public final class K51Verkhoturye extends EntityType
 {
     /** Default constructor */
     public K51Verkhoturye()
@@ -26,5 +40,11 @@ public class K51Verkhoturye extends EntityType
         setCategory((byte)1); // uid 14759, SSBN (Nuclear Ballistic Missile)
         setSubCategory((byte)2); // uid 14761, Delta IV class
         setSpecific((byte)1); // uid 26542, K51 Verkhoturye
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K51Verkhoturye createInstance()
+    {
+            return new K51Verkhoturye();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20801cbb;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11322
+ * <p> Entity class <b><code>AGF3LaSalle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AGF3LaSalle.createInstance()</code> or <code>new AGF3LaSalle()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Command Ship/Cruiser = <code>2</code>; </li>
+ *     <li> SubCategory: RaleighandAustinClasses  = <code>2</code>; </li>
+ *     <li> Specific: AGF3LaSalle  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11322; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27fe059d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommandShipCruiser
+ * @see SubCategory
+
  */
-public class AGF3LaSalle extends EntityType
+public final class AGF3LaSalle extends EntityType
 {
     /** Default constructor */
     public AGF3LaSalle()
@@ -26,5 +40,11 @@ public class AGF3LaSalle extends EntityType
         setCategory((byte)2); // uid 11316, Command Ship/Cruiser
         setSubCategory((byte)2); // uid 11320, Raleigh and Austin Classes
         setSpecific((byte)2); // uid 11322, AGF 3 La Salle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AGF3LaSalle createInstance()
+    {
+            return new AGF3LaSalle();
     }
 }

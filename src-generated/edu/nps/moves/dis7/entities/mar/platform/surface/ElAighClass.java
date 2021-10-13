@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3676ac27;
- * Country: Morocco (MAR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27729
+ * <p> Entity class <b><code>ElAighClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ElAighClass.createInstance()</code> or <code>new ElAighClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Morocco (MAR) = <code>147</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ElAighClass  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27729; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3a4b0e5d. </p>
+ * @see Country#MOROCCO_MAR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class ElAighClass extends EntityType
+public final class ElAighClass extends EntityType
 {
     /** Default constructor */
     public ElAighClass()
@@ -25,5 +39,11 @@ public class ElAighClass extends EntityType
 
         setCategory((byte)16); // uid 27726, Auxiliary
         setSubCategory((byte)2); // uid 27729, El Aigh Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ElAighClass createInstance()
+    {
+            return new ElAighClass();
     }
 }

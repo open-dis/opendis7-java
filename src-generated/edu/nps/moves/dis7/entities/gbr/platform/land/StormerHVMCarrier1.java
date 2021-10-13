@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d38edfd;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32320
+ * <p> Entity class <b><code>StormerHVMCarrier1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>StormerHVMCarrier1.createInstance()</code> or <code>new StormerHVMCarrier1()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: StarstreakSAMSystem  = <code>2</code>; </li>
+ *     <li> Specific: StormerHVMCarrier  = <code>3</code>; </li>
+ *     <li> Entity type uid: 32320; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32177fa5. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class StormerHVMCarrier1 extends EntityType
+public final class StormerHVMCarrier1 extends EntityType
 {
     /** Default constructor */
     public StormerHVMCarrier1()
@@ -26,5 +40,11 @@ public class StormerHVMCarrier1 extends EntityType
         setCategory((byte)28); // uid 14976, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)2); // uid 27687, Starstreak SAM System
         setSpecific((byte)3); // uid 32320, Stormer HVM Carrier
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static StormerHVMCarrier1 createInstance()
+    {
+            return new StormerHVMCarrier1();
     }
 }

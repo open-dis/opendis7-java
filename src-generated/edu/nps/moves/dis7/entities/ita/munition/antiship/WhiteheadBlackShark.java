@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55d8c2c4;
- * Country: Italy (ITA);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 31030
+ * <p> Entity class <b><code>WhiteheadBlackShark</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WhiteheadBlackShark.createInstance()</code> or <code>new WhiteheadBlackShark()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: _533mmTorpedo  = <code>6</code>; </li>
+ *     <li> Specific: WhiteheadBlackShark  = <code>3</code>; </li>
+ *     <li> Entity type uid: 31030; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25a5c8e. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class WhiteheadBlackShark extends EntityType
+public final class WhiteheadBlackShark extends EntityType
 {
     /** Default constructor */
     public WhiteheadBlackShark()
@@ -26,5 +40,11 @@ public class WhiteheadBlackShark extends EntityType
         setCategory((byte)1); // uid 21670, Guided
         setSubCategory((byte)6); // uid 31027, 533 mm Torpedo
         setSpecific((byte)3); // uid 31030, Whitehead Black Shark
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WhiteheadBlackShark createInstance()
+    {
+            return new WhiteheadBlackShark();
     }
 }

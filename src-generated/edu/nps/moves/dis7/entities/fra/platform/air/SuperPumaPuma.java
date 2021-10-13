@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1de5f259;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15837
+ * <p> Entity class <b><code>SuperPumaPuma</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SuperPumaPuma.createInstance()</code> or <code>new SuperPumaPuma()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: AerospatialeSA330Puma  = <code>5</code>; </li>
+ *     <li> Specific: SuperPumaPuma  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15837; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e5afaa6. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class SuperPumaPuma extends EntityType
+public final class SuperPumaPuma extends EntityType
 {
     /** Default constructor */
     public SuperPumaPuma()
@@ -26,5 +40,11 @@ public class SuperPumaPuma extends EntityType
         setCategory((byte)21); // uid 15827, Utility Helicopter
         setSubCategory((byte)5); // uid 15834, Aerospatiale SA 330 Puma
         setSpecific((byte)3); // uid 15837, Super Puma/Puma
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SuperPumaPuma createInstance()
+    {
+            return new SuperPumaPuma();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36916eb0;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15845
+ * <p> Entity class <b><code>EurocopterAS332LSuperPumaMKIIandAS532CougarMkII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EurocopterAS332LSuperPumaMKIIandAS532CougarMkII.createInstance()</code> or <code>new EurocopterAS332LSuperPumaMKIIandAS532CougarMkII()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: EurocopterAS332LSuperPumaMKIIandAS532CougarMkII  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 15845; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67c33749. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class EurocopterAS332LSuperPumaMKIIandAS532CougarMkII extends EntityType
+public final class EurocopterAS332LSuperPumaMKIIandAS532CougarMkII extends EntityType
 {
     /** Default constructor */
     public EurocopterAS332LSuperPumaMKIIandAS532CougarMkII()
@@ -25,5 +39,11 @@ public class EurocopterAS332LSuperPumaMKIIandAS532CougarMkII extends EntityType
 
         setCategory((byte)21); // uid 15827, Utility Helicopter
         setSubCategory((byte)7); // uid 15845, Eurocopter AS 332L Super Puma MK II and AS 532 Cougar MkII
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EurocopterAS332LSuperPumaMKIIandAS532CougarMkII createInstance()
+    {
+            return new EurocopterAS332LSuperPumaMKIIandAS532CougarMkII();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dd4520b;
- * Country: Bulgaria (BGR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27872
+ * <p> Entity class <b><code>_43Gordi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_43Gordi.createInstance()</code> or <code>new _43Gordi()</code>. </p>
+ * <ul>
+ *     <li> Country: Bulgaria (BGR) = <code>33</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: WielingenClass  = <code>1</code>; </li>
+ *     <li> Specific: _43Gordi  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3fee9989. </p>
+ * @see Country#BULGARIA_BGR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _43Gordi extends EntityType
+public final class _43Gordi extends EntityType
 {
     /** Default constructor */
     public _43Gordi()
@@ -26,5 +40,11 @@ public class _43Gordi extends EntityType
         setCategory((byte)50); // uid 27868, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27869, Wielingen Class
         setSpecific((byte)3); // uid 27872, 43 Gordi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _43Gordi createInstance()
+    {
+            return new _43Gordi();
     }
 }

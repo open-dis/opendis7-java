@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a3f96ab;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32422
+ * <p> Entity class <b><code>CSS5Mod4SeparatedWarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSS5Mod4SeparatedWarhead.createInstance()</code> or <code>new CSS5Mod4SeparatedWarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSS5Mod4DF21C  = <code>3</code>; </li>
+ *     <li> Specific: CSS5Mod4SeparatedWarhead  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32422; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69a40b3c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSS5Mod4SeparatedWarhead extends EntityType
+public final class CSS5Mod4SeparatedWarhead extends EntityType
 {
     /** Default constructor */
     public CSS5Mod4SeparatedWarhead()
@@ -26,5 +40,11 @@ public class CSS5Mod4SeparatedWarhead extends EntityType
         setCategory((byte)1); // uid 32412, Guided
         setSubCategory((byte)3); // uid 32420, CSS-5 Mod-4 (DF-21C)
         setSpecific((byte)2); // uid 32422, CSS-5 Mod-4 Separated Warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSS5Mod4SeparatedWarhead createInstance()
+    {
+            return new CSS5Mod4SeparatedWarhead();
     }
 }

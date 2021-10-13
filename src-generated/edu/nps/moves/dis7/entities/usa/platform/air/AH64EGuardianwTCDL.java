@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@52ae997b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29368
+ * <p> Entity class <b><code>AH64EGuardianwTCDL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AH64EGuardianwTCDL.createInstance()</code> or <code>new AH64EGuardianwTCDL()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasAH64Apache  = <code>1</code>; </li>
+ *     <li> Specific: AH64EGuardianwithLongbowRadar  = <code>7</code>; </li>
+ *     <li> Entity type uid: 29368; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@c7f4457. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Attackhelicopter
+ * @see SubCategory
+
  */
-public class AH64EGuardianwTCDL extends EntityType
+public final class AH64EGuardianwTCDL extends EntityType
 {
     /** Default constructor */
     public AH64EGuardianwTCDL()
@@ -27,5 +41,11 @@ public class AH64EGuardianwTCDL extends EntityType
         setSubCategory((byte)1); // uid 11057, McDonnell-Douglas AH-64 Apache
         setSpecific((byte)7); // uid 24071, AH-64E Guardian with Longbow Radar
         setExtra((byte)1); // uid 29368, AH-64E Guardian w/ TCDL
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AH64EGuardianwTCDL createInstance()
+    {
+            return new AH64EGuardianwTCDL();
     }
 }

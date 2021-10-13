@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45cff11c;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18448
+ * <p> Entity class <b><code>MTP104</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MTP104.createInstance()</code> or <code>new MTP104()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: MTP96ClassLCVP  = <code>13</code>; </li>
+ *     <li> Specific: MTP104  = <code>9</code>; </li>
+ *     <li> Entity type uid: 18448; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14b030a0. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class MTP104 extends EntityType
+public final class MTP104 extends EntityType
 {
     /** Default constructor */
     public MTP104()
@@ -26,5 +40,11 @@ public class MTP104 extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)13); // uid 18439, MTP 96 Class (LCVP)
         setSpecific((byte)9); // uid 18448, MTP 104
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MTP104 createInstance()
+    {
+            return new MTP104();
     }
 }

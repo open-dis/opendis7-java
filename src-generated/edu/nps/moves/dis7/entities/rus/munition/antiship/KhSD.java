@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55bf35e5;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29066
+ * <p> Entity class <b><code>KhSD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KhSD.createInstance()</code> or <code>new KhSD()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AS15Kent  = <code>7</code>; </li>
+ *     <li> Specific: KhSD  = <code>6</code>; </li>
+ *     <li> Entity type uid: 29066; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@267ff4df. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class KhSD extends EntityType
+public final class KhSD extends EntityType
 {
     /** Default constructor */
     public KhSD()
@@ -26,5 +40,11 @@ public class KhSD extends EntityType
         setCategory((byte)1); // uid 20530, Guided
         setSubCategory((byte)7); // uid 20537, AS-15 Kent
         setSpecific((byte)6); // uid 29066, Kh-SD
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KhSD createInstance()
+    {
+            return new KhSD();
     }
 }

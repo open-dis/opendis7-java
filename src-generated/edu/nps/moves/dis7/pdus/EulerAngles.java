@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class EulerAngles extends Object implements Serializable
    protected float  phi;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EulerAngles()
  {
  }
@@ -171,9 +170,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    psi = byteBuffer.getFloat();
-    theta = byteBuffer.getFloat();
-    phi = byteBuffer.getFloat();
+    try
+    {
+        // attribute psi marked as not serialized
+        psi = byteBuffer.getFloat();
+        // attribute theta marked as not serialized
+        theta = byteBuffer.getFloat();
+        // attribute phi marked as not serialized
+        phi = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bb8aabc;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13461
+ * <p> Entity class <b><code>Mi4</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mi4.createInstance()</code> or <code>new Mi4()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Mi4Hound  = <code>6</code>; </li>
+ *     <li> Specific: Mi4  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13461; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4349754. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Mi4 extends EntityType
+public final class Mi4 extends EntityType
 {
     /** Default constructor */
     public Mi4()
@@ -26,5 +40,11 @@ public class Mi4 extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)6); // uid 13460, Mi-4 Hound
         setSpecific((byte)1); // uid 13461, Mi-4
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mi4 createInstance()
+    {
+            return new Mi4();
     }
 }

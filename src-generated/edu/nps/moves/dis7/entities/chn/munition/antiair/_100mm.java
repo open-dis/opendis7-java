@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@33ec2c0c;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 21346
+ * <p> Entity class <b><code>_100mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_100mm.createInstance()</code> or <code>new _100mm()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _100mm  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21346; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5287ba5f. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _100mm extends EntityType
+public final class _100mm extends EntityType
 {
     /** Default constructor */
     public _100mm()
@@ -25,5 +39,11 @@ public class _100mm extends EntityType
 
         setCategory((byte)2); // uid 21335, Ballistic
         setSubCategory((byte)6); // uid 21346, 100 mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _100mm createInstance()
+    {
+            return new _100mm();
     }
 }

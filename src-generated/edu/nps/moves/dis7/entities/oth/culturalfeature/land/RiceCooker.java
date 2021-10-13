@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c544c9;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26478
+ * <p> Entity class <b><code>RiceCooker</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RiceCooker.createInstance()</code> or <code>new RiceCooker()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Appliances = <code>22</code>; </li>
+ *     <li> SubCategory: Countertop  = <code>1</code>; </li>
+ *     <li> Specific: RiceCooker  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26478; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6076c66. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Appliances
+ * @see SubCategory
+
  */
-public class RiceCooker extends EntityType
+public final class RiceCooker extends EntityType
 {
     /** Default constructor */
     public RiceCooker()
@@ -26,5 +40,11 @@ public class RiceCooker extends EntityType
         setCategory((byte)22); // uid 26475, Appliances
         setSubCategory((byte)1); // uid 26476, Countertop
         setSpecific((byte)2); // uid 26478, Rice Cooker
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RiceCooker createInstance()
+    {
+            return new RiceCooker();
     }
 }

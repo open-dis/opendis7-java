@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5dd91bca;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24857
+ * <p> Entity class <b><code>_4DoorSedanEconomyCompactSmall</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_4DoorSedanEconomyCompactSmall.createInstance()</code> or <code>new _4DoorSedanEconomyCompactSmall()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: _4DoorSedanEconomyCompactSmall  = <code>42</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24857; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@e98770d. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class _4DoorSedanEconomyCompactSmall extends EntityType
+public final class _4DoorSedanEconomyCompactSmall extends EntityType
 {
     /** Default constructor */
     public _4DoorSedanEconomyCompactSmall()
@@ -25,5 +39,11 @@ public class _4DoorSedanEconomyCompactSmall extends EntityType
 
         setCategory((byte)81); // uid 24856, Car
         setSubCategory((byte)42); // uid 24857, 4-Door Sedan, Economy/Compact (Small)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _4DoorSedanEconomyCompactSmall createInstance()
+    {
+            return new _4DoorSedanEconomyCompactSmall();
     }
 }

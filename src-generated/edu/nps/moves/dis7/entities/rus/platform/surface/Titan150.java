@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b2e3e8f;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14214
+ * <p> Entity class <b><code>Titan150</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Titan150.createInstance()</code> or <code>new Titan150()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: KhobiClassProject437NSupportTankers  = <code>62</code>; </li>
+ *     <li> Specific: Titan150  = <code>8</code>; </li>
+ *     <li> Entity type uid: 14214; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48cd9a2c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Titan150 extends EntityType
+public final class Titan150 extends EntityType
 {
     /** Default constructor */
     public Titan150()
@@ -26,5 +40,11 @@ public class Titan150 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)62); // uid 14206, Khobi Class (Project 437N) Support Tankers
         setSpecific((byte)8); // uid 14214, Titan 150
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Titan150 createInstance()
+    {
+            return new Titan150();
     }
 }

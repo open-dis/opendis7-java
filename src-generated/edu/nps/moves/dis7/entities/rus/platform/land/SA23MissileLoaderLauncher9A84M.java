@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1698d7c0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29864
+ * <p> Entity class <b><code>SA23MissileLoaderLauncher9A84M</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA23MissileLoaderLauncher9A84M.createInstance()</code> or <code>new SA23MissileLoaderLauncher9A84M()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA23GladiatorGiantSAMSystemS300VMAntey2500  = <code>26</code>; </li>
+ *     <li> Specific: SA23MultichannelMissileGuidanceStationMMGS  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29864; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@15923407. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA23MissileLoaderLauncher9A84M extends EntityType
+public final class SA23MissileLoaderLauncher9A84M extends EntityType
 {
     /** Default constructor */
     public SA23MissileLoaderLauncher9A84M()
@@ -27,5 +41,11 @@ public class SA23MissileLoaderLauncher9A84M extends EntityType
         setSubCategory((byte)26); // uid 29855, SA-23 Gladiator/Giant SAM System (S-300VM/Antey-2500)
         setSpecific((byte)2); // uid 29860, SA-23 Multichannel Missile Guidance Station (MMGS)
         setExtra((byte)4); // uid 29864, SA-23 Missile Loader/Launcher (9A84M)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA23MissileLoaderLauncher9A84M createInstance()
+    {
+            return new SA23MissileLoaderLauncher9A84M();
     }
 }

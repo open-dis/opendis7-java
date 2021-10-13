@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class IFFFundamentalParameterData extends Object implements Serializable
    protected byte[]  systemSpecificData = new byte[3]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IFFFundamentalParameterData()
  {
  }
@@ -59,8 +58,10 @@ public int getMarshalledSize()
    marshalSize += 4;  // pgrf
    marshalSize += 4;  // pulseWidth
    marshalSize += 4;  // burstLength
-   marshalSize += applicableModes.getMarshalledSize();
-   marshalSize += systemSpecificData.length * 1;
+   if (applicableModes != null)
+       marshalSize += applicableModes.getMarshalledSize();
+   if (systemSpecificData != null)
+       marshalSize += systemSpecificData.length * 1;
 
    return marshalSize;
 }
@@ -195,7 +196,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(burstLength);
        applicableModes.marshal(dos);
 
-       for(int idx = 0; idx < systemSpecificData.length; idx++)
+       for (int idx = 0; idx < systemSpecificData.length; idx++)
            dos.writeByte(systemSpecificData[idx]);
 
     }
@@ -230,7 +231,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         applicableModes = IFFApplicableModes.unmarshalEnum(dis);
         uPosition += applicableModes.getMarshalledSize();
-        for(int idx = 0; idx < systemSpecificData.length; idx++)
+        for (int idx = 0; idx < systemSpecificData.length; idx++)
             systemSpecificData[idx] = dis.readByte();
         uPosition += (systemSpecificData.length * 1);
     }
@@ -258,7 +259,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)burstLength);
    applicableModes.marshal(byteBuffer);
 
-   for(int idx = 0; idx < systemSpecificData.length; idx++)
+   for (int idx = 0; idx < systemSpecificData.length; idx++)
        byteBuffer.put((byte)systemSpecificData[idx]);
 
 }
@@ -274,14 +275,28 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    erp = byteBuffer.getFloat();
-    frequency = byteBuffer.getFloat();
-    pgrf = byteBuffer.getFloat();
-    pulseWidth = byteBuffer.getFloat();
-    burstLength = byteBuffer.getInt();
-    applicableModes = IFFApplicableModes.unmarshalEnum(byteBuffer);
-    for(int idx = 0; idx < systemSpecificData.length; idx++)
-        systemSpecificData[idx] = byteBuffer.get();
+    try
+    {
+        // attribute erp marked as not serialized
+        erp = byteBuffer.getFloat();
+        // attribute frequency marked as not serialized
+        frequency = byteBuffer.getFloat();
+        // attribute pgrf marked as not serialized
+        pgrf = byteBuffer.getFloat();
+        // attribute pulseWidth marked as not serialized
+        pulseWidth = byteBuffer.getFloat();
+        // attribute burstLength marked as not serialized
+        burstLength = byteBuffer.getInt();
+        // attribute applicableModes marked as not serialized
+        applicableModes = IFFApplicableModes.unmarshalEnum(byteBuffer);
+        // attribute systemSpecificData marked as not serialized
+        for (int idx = 0; idx < systemSpecificData.length; idx++)
+            systemSpecificData[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -322,7 +337,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (burstLength == rhs.burstLength)) ivarsEqual = false;
      if( ! (applicableModes == rhs.applicableModes)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 3; idx++)
+     for (int idx = 0; idx < 3; idx++)
      {
           if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) ivarsEqual = false;
      }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -19,7 +18,7 @@ import edu.nps.moves.dis7.enumerations.*;
 public abstract class RadioCommunicationsFamilyPdu extends PduBase implements Serializable
 {
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RadioCommunicationsFamilyPdu()
  {
     setProtocolFamily( DISProtocolFamily.RADIO_COMMUNICATIONS );
@@ -107,6 +106,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
+    try
+    {
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

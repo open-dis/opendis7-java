@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ce53f6a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27204
+ * <p> Entity class <b><code>K534NizhniyNovgorod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K534NizhniyNovgorod.createInstance()</code> or <code>new K534NizhniyNovgorod()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: SierraIIClass  = <code>5</code>; </li>
+ *     <li> Specific: K534NizhniyNovgorod  = <code>4</code>; </li>
+ *     <li> Entity type uid: 27204; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d1f1ff5. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class K534NizhniyNovgorod extends EntityType
+public final class K534NizhniyNovgorod extends EntityType
 {
     /** Default constructor */
     public K534NizhniyNovgorod()
@@ -26,5 +40,11 @@ public class K534NizhniyNovgorod extends EntityType
         setCategory((byte)3); // uid 14779, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)5); // uid 14784, Sierra II Class
         setSpecific((byte)4); // uid 27204, K-534 Nizhniy Novgorod
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K534NizhniyNovgorod createInstance()
+    {
+            return new K534NizhniyNovgorod();
     }
 }

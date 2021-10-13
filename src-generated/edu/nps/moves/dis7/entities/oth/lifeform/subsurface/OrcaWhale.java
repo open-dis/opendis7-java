@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@698f4aa;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32272
+ * <p> Entity class <b><code>OrcaWhale</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OrcaWhale.createInstance()</code> or <code>new OrcaWhale()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Mammal = <code>201</code>; </li>
+ *     <li> SubCategory: OrcaWhale  = <code>19</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32272; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@40bf0e15. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Mammal
+ * @see SubCategory
+
  */
-public class OrcaWhale extends EntityType
+public final class OrcaWhale extends EntityType
 {
     /** Default constructor */
     public OrcaWhale()
@@ -25,5 +39,11 @@ public class OrcaWhale extends EntityType
 
         setCategory((byte)201); // uid 32270, Mammal
         setSubCategory((byte)19); // uid 32272, Orca Whale
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OrcaWhale createInstance()
+    {
+            return new OrcaWhale();
     }
 }

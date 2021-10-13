@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ec2bf82;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28260
+ * <p> Entity class <b><code>A875Regge</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A875Regge.createInstance()</code> or <code>new A875Regge()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LingeClassOffshoreTugs  = <code>6</code>; </li>
+ *     <li> Specific: A875Regge  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28260; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d511b5f. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A875Regge extends EntityType
+public final class A875Regge extends EntityType
 {
     /** Default constructor */
     public A875Regge()
@@ -26,5 +40,11 @@ public class A875Regge extends EntityType
         setCategory((byte)16); // uid 18942, Auxiliary
         setSubCategory((byte)6); // uid 28258, Linge Class (Off-shore Tugs)
         setSpecific((byte)2); // uid 28260, A875 Regge
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A875Regge createInstance()
+    {
+            return new A875Regge();
     }
 }

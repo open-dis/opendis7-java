@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6325f352;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29246
+ * <p> Entity class <b><code>AntonovAn140</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AntonovAn140.createInstance()</code> or <code>new AntonovAn140()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
+ *     <li> Specific: AntonovAn140  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29246; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12d5c30e. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class AntonovAn140 extends EntityType
+public final class AntonovAn140 extends EntityType
 {
     /** Default constructor */
     public AntonovAn140()
@@ -26,5 +40,11 @@ public class AntonovAn140 extends EntityType
         setCategory((byte)87); // uid 29244, Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg)
         setSubCategory((byte)22); // uid 29245, Twin Engine Turboprop
         setSpecific((byte)1); // uid 29246, Antonov An-140
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AntonovAn140 createInstance()
+    {
+            return new AntonovAn140();
     }
 }

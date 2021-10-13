@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f3928ac;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12054
+ * <p> Entity class <b><code>TAGOS21Effective</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAGOS21Effective.createInstance()</code> or <code>new TAGOS21Effective()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance Towed Array Sonar System (SURTASS) = <code>59</code>; </li>
+ *     <li> SubCategory: SWATHSSmallclass  = <code>2</code>; </li>
+ *     <li> Specific: TAGOS21Effective  = <code>3</code>; </li>
+ *     <li> Entity type uid: 12054; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70997a94. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceTowedArraySonarSystemSURTASS
+ * @see SubCategory
+
  */
-public class TAGOS21Effective extends EntityType
+public final class TAGOS21Effective extends EntityType
 {
     /** Default constructor */
     public TAGOS21Effective()
@@ -26,5 +40,11 @@ public class TAGOS21Effective extends EntityType
         setCategory((byte)59); // uid 12049, Surveillance Towed Array Sonar System (SURTASS)
         setSubCategory((byte)2); // uid 12051, SWATH-S (Small) class
         setSpecific((byte)3); // uid 12054, TAGOS 21 Effective
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAGOS21Effective createInstance()
+    {
+            return new TAGOS21Effective();
     }
 }

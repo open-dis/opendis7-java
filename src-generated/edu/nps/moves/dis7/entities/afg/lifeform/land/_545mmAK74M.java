@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29d3d0fb;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32184
+ * <p> Entity class <b><code>_545mmAK74M</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_545mmAK74M.createInstance()</code> or <code>new _545mmAK74M()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Afghan National Army (ANA) = <code>11</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: _545mmAK74M  = <code>12</code>; </li>
+ *     <li> Entity type uid: 32184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47fa3671. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AfghanNationalArmyANA
+ * @see SubCategory
+
  */
-public class _545mmAK74M extends EntityType
+public final class _545mmAK74M extends EntityType
 {
     /** Default constructor */
     public _545mmAK74M()
@@ -26,5 +40,11 @@ public class _545mmAK74M extends EntityType
         setCategory((byte)11); // uid 32180, Afghan National Army (ANA)
         setSubCategory((byte)5); // uid 32181, Assault Rifles
         setSpecific((byte)12); // uid 32184, 5.45mm AK-74M
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _545mmAK74M createInstance()
+    {
+            return new _545mmAK74M();
     }
 }

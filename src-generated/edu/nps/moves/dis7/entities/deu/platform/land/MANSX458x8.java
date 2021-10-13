@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72d6b3ba;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29358
+ * <p> Entity class <b><code>MANSX458x8</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MANSX458x8.createInstance()</code> or <code>new MANSX458x8()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle (greater than 1.25 tons) = <code>7</code>; </li>
+ *     <li> SubCategory: MANSX45Series  = <code>10</code>; </li>
+ *     <li> Specific: MANSX458x8  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29358; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@415b0b49. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehiclegreaterthan125tons
+ * @see SubCategory
+
  */
-public class MANSX458x8 extends EntityType
+public final class MANSX458x8 extends EntityType
 {
     /** Default constructor */
     public MANSX458x8()
@@ -26,5 +40,11 @@ public class MANSX458x8 extends EntityType
         setCategory((byte)7); // uid 16279, Large Wheeled Utility Vehicle (greater than 1.25 tons)
         setSubCategory((byte)10); // uid 29357, MAN SX45 Series
         setSpecific((byte)1); // uid 29358, MAN SX45 - 8x8
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MANSX458x8 createInstance()
+    {
+            return new MANSX458x8();
     }
 }

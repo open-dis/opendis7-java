@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1bb740f2;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15156
+ * <p> Entity class <b><code>Mk25Netherlands</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mk25Netherlands.createInstance()</code> or <code>new Mk25Netherlands()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: WestlandLynxNaval  = <code>2</code>; </li>
+ *     <li> Specific: Mk25Netherlands  = <code>7</code>; </li>
+ *     <li> Entity type uid: 15156; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@285c6918. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class Mk25Netherlands extends EntityType
+public final class Mk25Netherlands extends EntityType
 {
     /** Default constructor */
     public Mk25Netherlands()
@@ -26,5 +40,11 @@ public class Mk25Netherlands extends EntityType
         setCategory((byte)22); // uid 15129, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)2); // uid 15149, Westland Lynx (Naval)
         setSpecific((byte)7); // uid 15156, Mk 25 (Netherlands)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mk25Netherlands createInstance()
+    {
+            return new Mk25Netherlands();
     }
 }

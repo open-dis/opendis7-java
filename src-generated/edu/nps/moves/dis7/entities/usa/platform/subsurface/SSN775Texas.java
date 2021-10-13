@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f8a9454;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 12407
+ * <p> Entity class <b><code>SSN775Texas</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN775Texas.createInstance()</code> or <code>new SSN775Texas()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: VirginiaClass  = <code>5</code>; </li>
+ *     <li> Specific: SSN775Texas  = <code>2</code>; </li>
+ *     <li> Entity type uid: 12407; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@805e72e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class SSN775Texas extends EntityType
+public final class SSN775Texas extends EntityType
 {
     /** Default constructor */
     public SSN775Texas()
@@ -26,5 +40,11 @@ public class SSN775Texas extends EntityType
         setCategory((byte)3); // uid 12301, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)5); // uid 12405, Virginia Class
         setSpecific((byte)2); // uid 12407, SSN 775 Texas
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN775Texas createInstance()
+    {
+            return new SSN775Texas();
     }
 }

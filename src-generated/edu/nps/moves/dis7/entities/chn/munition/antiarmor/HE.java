@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b96de8d;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21374
+ * <p> Entity class <b><code>HE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HE.createInstance()</code> or <code>new HE()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _105mm  = <code>5</code>; </li>
+ *     <li> Specific: HE  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21374; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a62062a. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HE extends EntityType
+public final class HE extends EntityType
 {
     /** Default constructor */
     public HE()
@@ -26,5 +40,11 @@ public class HE extends EntityType
         setCategory((byte)2); // uid 21356, Ballistic
         setSubCategory((byte)5); // uid 21373, 105 mm
         setSpecific((byte)1); // uid 21374, HE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HE createInstance()
+    {
+            return new HE();
     }
 }

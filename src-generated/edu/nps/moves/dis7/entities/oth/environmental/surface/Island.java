@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@13c90c06;
- * Country: Other;
- * Entity kind: Environmental;
- * Domain: SURFACE;
- *
- * Entity type uid: 21928
+ * <p> Entity class <b><code>Island</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Island.createInstance()</code> or <code>new Island()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Environmental = <code>4</code>; </li>
+ *     <li> Category: Island = <code>6</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21928; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@740c4868. </p>
+ * @see Country#OTHER
+ * @see EntityKind#ENVIRONMENTAL
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Island
+
  */
-public class Island extends EntityType
+public final class Island extends EntityType
 {
     /** Default constructor */
     public Island()
@@ -24,5 +37,11 @@ public class Island extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)6); // uid 21928, Island
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Island createInstance()
+    {
+            return new Island();
     }
 }

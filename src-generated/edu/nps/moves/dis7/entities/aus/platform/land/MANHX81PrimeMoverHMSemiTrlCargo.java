@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ca8195f;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29748
+ * <p> Entity class <b><code>MANHX81PrimeMoverHMSemiTrlCargo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MANHX81PrimeMoverHMSemiTrlCargo.createInstance()</code> or <code>new MANHX81PrimeMoverHMSemiTrlCargo()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: MANHX81PrimeMover  = <code>4</code>; </li>
+ *     <li> Specific: MANHX81PrimeMoverHMSemiTrlCargo  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29748; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5680a178. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class MANHX81PrimeMoverHMSemiTrlCargo extends EntityType
+public final class MANHX81PrimeMoverHMSemiTrlCargo extends EntityType
 {
     /** Default constructor */
     public MANHX81PrimeMoverHMSemiTrlCargo()
@@ -26,5 +40,11 @@ public class MANHX81PrimeMoverHMSemiTrlCargo extends EntityType
         setCategory((byte)7); // uid 29715, Large Wheeled Utility Vehicle
         setSubCategory((byte)4); // uid 29747, MAN HX81 - Prime Mover
         setSpecific((byte)1); // uid 29748, MAN HX81 Prime Mover, HM Semi Trl Cargo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MANHX81PrimeMoverHMSemiTrlCargo createInstance()
+    {
+            return new MANHX81PrimeMoverHMSemiTrlCargo();
     }
 }

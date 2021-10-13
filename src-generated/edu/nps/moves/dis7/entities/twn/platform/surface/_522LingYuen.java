@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25aeb5ac;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19228
+ * <p> Entity class <b><code>_522LingYuen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_522LingYuen.createInstance()</code> or <code>new _522LingYuen()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: TaiWuClass  = <code>1</code>; </li>
+ *     <li> Specific: _522LingYuen  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19228; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@296e281a. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class _522LingYuen extends EntityType
+public final class _522LingYuen extends EntityType
 {
     /** Default constructor */
     public _522LingYuen()
@@ -26,5 +40,11 @@ public class _522LingYuen extends EntityType
         setCategory((byte)56); // uid 19225, Amphibious Transport Dock
         setSubCategory((byte)1); // uid 19226, Tai Wu Class
         setSpecific((byte)2); // uid 19228, 522 Ling Yuen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _522LingYuen createInstance()
+    {
+            return new _522LingYuen();
     }
 }

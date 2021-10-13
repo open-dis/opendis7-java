@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dffda8b;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15406
+ * <p> Entity class <b><code>A486Regent</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A486Regent.createInstance()</code> or <code>new A486Regent()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: RegentclassAFSH  = <code>12</code>; </li>
+ *     <li> Specific: A486Regent  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15406; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@404eca05. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A486Regent extends EntityType
+public final class A486Regent extends EntityType
 {
     /** Default constructor */
     public A486Regent()
@@ -26,5 +40,11 @@ public class A486Regent extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)12); // uid 15404, Regent class (AFS(H))
         setSpecific((byte)2); // uid 15406, A 486 Regent
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A486Regent createInstance()
+    {
+            return new A486Regent();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@137a4b54;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_9_REPAIR_PARTS_AND_COMPONENTS;
- *
- * Entity type uid: 30806
+ * <p> Entity class <b><code>MineFlail</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MineFlail.createInstance()</code> or <code>new MineFlail()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_9_REPAIR_PARTS_AND_COMPONENTS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: K - Tactical Vehicles = <code>6</code>; </li>
+ *     <li> SubCategory: MineFlail  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30806; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51f34185. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see KTacticalVehicles
+ * @see SubCategory
+
  */
-public class MineFlail extends EntityType
+public final class MineFlail extends EntityType
 {
     /** Default constructor */
     public MineFlail()
@@ -25,5 +39,11 @@ public class MineFlail extends EntityType
 
         setCategory((byte)6); // uid 30803, K - Tactical Vehicles
         setSubCategory((byte)3); // uid 30806, Mine Flail
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MineFlail createInstance()
+    {
+            return new MineFlail();
     }
 }

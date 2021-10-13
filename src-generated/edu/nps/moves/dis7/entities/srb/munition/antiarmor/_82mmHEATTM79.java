@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@634aa81e;
- * Country: Serbia (SRB);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 30180
+ * <p> Entity class <b><code>_82mmHEATTM79</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_82mmHEATTM79.createInstance()</code> or <code>new _82mmHEATTM79()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _82mmRecoillessAmmunition  = <code>1</code>; </li>
+ *     <li> Specific: _82mmHEATTM79  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30180; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c579202. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _82mmHEATTM79 extends EntityType
+public final class _82mmHEATTM79 extends EntityType
 {
     /** Default constructor */
     public _82mmHEATTM79()
@@ -26,5 +40,11 @@ public class _82mmHEATTM79 extends EntityType
         setCategory((byte)2); // uid 30178, Ballistic
         setSubCategory((byte)1); // uid 30179, 82mm Recoilless Ammunition
         setSpecific((byte)1); // uid 30180, 82mm HEAT-T M79
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _82mmHEATTM79 createInstance()
+    {
+            return new _82mmHEATTM79();
     }
 }

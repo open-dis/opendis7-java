@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56826a75;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28953
+ * <p> Entity class <b><code>LCU2033PaulusHook</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LCU2033PaulusHook.createInstance()</code> or <code>new LCU2033PaulusHook()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LandingCraftUtilityLCU2000RunnymedeClass  = <code>11</code>; </li>
+ *     <li> Specific: LCU2033PaulusHook  = <code>33</code>; </li>
+ *     <li> Entity type uid: 28953; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a4f8009. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class LCU2033PaulusHook extends EntityType
+public final class LCU2033PaulusHook extends EntityType
 {
     /** Default constructor */
     public LCU2033PaulusHook()
@@ -26,5 +40,11 @@ public class LCU2033PaulusHook extends EntityType
         setCategory((byte)11); // uid 11685, Landing Craft
         setSubCategory((byte)11); // uid 23692, Landing Craft Utility, LCU-2000, Runnymede Class
         setSpecific((byte)33); // uid 28953, LCU 2033 Paulus Hook
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LCU2033PaulusHook createInstance()
+    {
+            return new LCU2033PaulusHook();
     }
 }

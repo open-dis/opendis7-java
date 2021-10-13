@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58015e56;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29450
+ * <p> Entity class <b><code>MexefloteSmaller</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MexefloteSmaller.createInstance()</code> or <code>new MexefloteSmaller()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: MexefloteLandingRaft  = <code>1</code>; </li>
+ *     <li> Specific: MexefloteSmaller  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29450; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a0c5e9. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class MexefloteSmaller extends EntityType
+public final class MexefloteSmaller extends EntityType
 {
     /** Default constructor */
     public MexefloteSmaller()
@@ -26,5 +40,11 @@ public class MexefloteSmaller extends EntityType
         setCategory((byte)11); // uid 29446, Landing Craft
         setSubCategory((byte)1); // uid 29447, Mexeflote - Landing Raft
         setSpecific((byte)3); // uid 29450, Mexeflote Smaller
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MexefloteSmaller createInstance()
+    {
+            return new MexefloteSmaller();
     }
 }

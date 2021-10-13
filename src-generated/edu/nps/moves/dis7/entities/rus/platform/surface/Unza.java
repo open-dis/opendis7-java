@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2009f9b0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14371
+ * <p> Entity class <b><code>Unza</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Unza.createInstance()</code> or <code>new Unza()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Keylaclasstransports  = <code>90</code>; </li>
+ *     <li> Specific: Unza  = <code>8</code>; </li>
+ *     <li> Entity type uid: 14371; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b2e0f78. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Unza extends EntityType
+public final class Unza extends EntityType
 {
     /** Default constructor */
     public Unza()
@@ -26,5 +40,11 @@ public class Unza extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)90); // uid 14363, Keyla class (transports)
         setSpecific((byte)8); // uid 14371, Unza
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Unza createInstance()
+    {
+            return new Unza();
     }
 }

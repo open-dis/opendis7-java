@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@545607f2;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13329
+ * <p> Entity class <b><code>Tu22M2BackfireB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tu22M2BackfireB.createInstance()</code> or <code>new Tu22M2BackfireB()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bomber = <code>3</code>; </li>
+ *     <li> SubCategory: Tu26Tu22MBackfire  = <code>3</code>; </li>
+ *     <li> Specific: Tu22M2BackfireB  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13329; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62e6a3ec. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bomber
+ * @see SubCategory
+
  */
-public class Tu22M2BackfireB extends EntityType
+public final class Tu22M2BackfireB extends EntityType
 {
     /** Default constructor */
     public Tu22M2BackfireB()
@@ -26,5 +40,11 @@ public class Tu22M2BackfireB extends EntityType
         setCategory((byte)3); // uid 13309, Bomber
         setSubCategory((byte)3); // uid 13327, Tu-26 (Tu-22M) Backfire
         setSpecific((byte)2); // uid 13329, Tu-22M-2 Backfire B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tu22M2BackfireB createInstance()
+    {
+            return new Tu22M2BackfireB();
     }
 }

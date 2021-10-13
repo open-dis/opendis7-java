@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LiveDeadReckoningParameters extends Object implements Serializable
    protected LEVector3FixedByte  entityAngularVelocity = new LEVector3FixedByte(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveDeadReckoningParameters()
  {
  }
@@ -42,9 +41,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += deadReckoningAlgorithm.getMarshalledSize();
-   marshalSize += entityLinearAcceleration.getMarshalledSize();
-   marshalSize += entityAngularVelocity.getMarshalledSize();
+   if (deadReckoningAlgorithm != null)
+       marshalSize += deadReckoningAlgorithm.getMarshalledSize();
+   if (entityLinearAcceleration != null)
+       marshalSize += entityLinearAcceleration.getMarshalledSize();
+   if (entityAngularVelocity != null)
+       marshalSize += entityAngularVelocity.getMarshalledSize();
 
    return marshalSize;
 }
@@ -169,9 +171,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
-    entityLinearAcceleration.unmarshal(byteBuffer);
-    entityAngularVelocity.unmarshal(byteBuffer);
+    try
+    {
+        // attribute deadReckoningAlgorithm marked as not serialized
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
+        // attribute entityLinearAcceleration marked as not serialized
+        entityLinearAcceleration.unmarshal(byteBuffer);
+        // attribute entityAngularVelocity marked as not serialized
+        entityAngularVelocity.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

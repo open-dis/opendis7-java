@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3abfe836;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31170
+ * <p> Entity class <b><code>M777155mmLWTHAUS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M777155mmLWTHAUS.createInstance()</code> or <code>new M777155mmLWTHAUS()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: M777155mmLWTHAUS  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31170; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15615099. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class M777155mmLWTHAUS extends EntityType
+public final class M777155mmLWTHAUS extends EntityType
 {
     /** Default constructor */
     public M777155mmLWTHAUS()
@@ -25,5 +39,11 @@ public class M777155mmLWTHAUS extends EntityType
 
         setCategory((byte)5); // uid 31169, Towed Artillery
         setSubCategory((byte)1); // uid 31170, M777 155mm LWTH (AUS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M777155mmLWTHAUS createInstance()
+    {
+            return new M777155mmLWTHAUS();
     }
 }

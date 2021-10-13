@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@204b0f07;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30771
+ * <p> Entity class <b><code>ParaDrogueKC767Tanker</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ParaDrogueKC767Tanker.createInstance()</code> or <code>new ParaDrogueKC767Tanker()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Para-Drogue = <code>24</code>; </li>
+ *     <li> SubCategory: ParaDrogueKC767Tanker  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30771; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@273293c8. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see ParaDrogue
+ * @see SubCategory
+
  */
-public class ParaDrogueKC767Tanker extends EntityType
+public final class ParaDrogueKC767Tanker extends EntityType
 {
     /** Default constructor */
     public ParaDrogueKC767Tanker()
@@ -25,5 +39,11 @@ public class ParaDrogueKC767Tanker extends EntityType
 
         setCategory((byte)24); // uid 30769, Para-Drogue
         setSubCategory((byte)2); // uid 30771, Para-Drogue KC-767 Tanker
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ParaDrogueKC767Tanker createInstance()
+    {
+            return new ParaDrogueKC767Tanker();
     }
 }

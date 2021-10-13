@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@e2d56bf;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 32593
+ * <p> Entity class <b><code>IA63Pampa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IA63Pampa.createInstance()</code> or <code>new IA63Pampa()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: IA63Pampa  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32593; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7506e922. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class IA63Pampa extends EntityType
+public final class IA63Pampa extends EntityType
 {
     /** Default constructor */
     public IA63Pampa()
@@ -25,5 +39,11 @@ public class IA63Pampa extends EntityType
 
         setCategory((byte)2); // uid 29147, Attack/Strike
         setSubCategory((byte)2); // uid 32593, IA-63 Pampa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IA63Pampa createInstance()
+    {
+            return new IA63Pampa();
     }
 }

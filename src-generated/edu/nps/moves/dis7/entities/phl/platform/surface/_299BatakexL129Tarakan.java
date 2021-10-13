@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@265c5d69;
- * Country: Philippines (PHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31155
+ * <p> Entity class <b><code>_299BatakexL129Tarakan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_299BatakexL129Tarakan.createInstance()</code> or <code>new _299BatakexL129Tarakan()</code>. </p>
+ * <ul>
+ *     <li> Country: Philippines (PHL) = <code>173</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: IvatanClassexBalikpapanClass  = <code>1</code>; </li>
+ *     <li> Specific: _299BatakexL129Tarakan  = <code>5</code>; </li>
+ *     <li> Entity type uid: 31155; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@654c1a54. </p>
+ * @see Country#PHILIPPINES_PHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _299BatakexL129Tarakan extends EntityType
+public final class _299BatakexL129Tarakan extends EntityType
 {
     /** Default constructor */
     public _299BatakexL129Tarakan()
@@ -26,5 +40,11 @@ public class _299BatakexL129Tarakan extends EntityType
         setCategory((byte)11); // uid 31149, Landing Craft
         setSubCategory((byte)1); // uid 31150, Ivatan Class (ex Balikpapan Class)
         setSpecific((byte)5); // uid 31155, 299 Batak (ex L 129 Tarakan)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _299BatakexL129Tarakan createInstance()
+    {
+            return new _299BatakexL129Tarakan();
     }
 }

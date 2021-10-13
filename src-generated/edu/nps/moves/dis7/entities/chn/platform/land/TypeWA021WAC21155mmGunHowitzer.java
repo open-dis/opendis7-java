@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7181ae3f;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16911
+ * <p> Entity class <b><code>TypeWA021WAC21155mmGunHowitzer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TypeWA021WAC21155mmGunHowitzer.createInstance()</code> or <code>new TypeWA021WAC21155mmGunHowitzer()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: TypeWA021WAC21155mmGunHowitzer  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16911; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4cf4d528. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class TypeWA021WAC21155mmGunHowitzer extends EntityType
+public final class TypeWA021WAC21155mmGunHowitzer extends EntityType
 {
     /** Default constructor */
     public TypeWA021WAC21155mmGunHowitzer()
@@ -25,5 +39,11 @@ public class TypeWA021WAC21155mmGunHowitzer extends EntityType
 
         setCategory((byte)5); // uid 16904, Towed Artillery
         setSubCategory((byte)5); // uid 16911, Type WA 021 (WAC 21) 155mm Gun-Howitzer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TypeWA021WAC21155mmGunHowitzer createInstance()
+    {
+            return new TypeWA021WAC21155mmGunHowitzer();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f3e19b3;
- * Country: Slovakia (SVK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30128
+ * <p> Entity class <b><code>_155mmShKHZuzana2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_155mmShKHZuzana2.createInstance()</code> or <code>new _155mmShKHZuzana2()</code>. </p>
+ * <ul>
+ *     <li> Country: Slovakia (SVK) = <code>268</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: _155mmShKHZuzana  = <code>2</code>; </li>
+ *     <li> Specific: _155mmShKHZuzana2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30128; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10dc7d6. </p>
+ * @see Country#SLOVAKIA_SVK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class _155mmShKHZuzana2 extends EntityType
+public final class _155mmShKHZuzana2 extends EntityType
 {
     /** Default constructor */
     public _155mmShKHZuzana2()
@@ -26,5 +40,11 @@ public class _155mmShKHZuzana2 extends EntityType
         setCategory((byte)4); // uid 30121, Self-Propelled Artillery
         setSubCategory((byte)2); // uid 30127, 155 mm ShKH Zuzana
         setSpecific((byte)1); // uid 30128, 155 mm ShKH Zuzana 2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _155mmShKHZuzana2 createInstance()
+    {
+            return new _155mmShKHZuzana2();
     }
 }

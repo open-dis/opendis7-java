@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a87ba34;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11900
+ * <p> Entity class <b><code>TAG194Vanguard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAG194Vanguard.createInstance()</code> or <code>new TAG194Vanguard()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: NavigationTestSupportShipSpecialMissionSupport  = <code>21</code>; </li>
+ *     <li> Specific: TAG194Vanguard  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11900; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@88b76f2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAG194Vanguard extends EntityType
+public final class TAG194Vanguard extends EntityType
 {
     /** Default constructor */
     public TAG194Vanguard()
@@ -26,5 +40,11 @@ public class TAG194Vanguard extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)21); // uid 11899, Navigation Test Support Ship (Special Mission Support)
         setSpecific((byte)1); // uid 11900, TAG 194 Vanguard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAG194Vanguard createInstance()
+    {
+            return new TAG194Vanguard();
     }
 }

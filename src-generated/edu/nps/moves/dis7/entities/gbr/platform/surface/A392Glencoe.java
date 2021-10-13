@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d55e826;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15481
+ * <p> Entity class <b><code>A392Glencoe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A392Glencoe.createInstance()</code> or <code>new A392Glencoe()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Clovellyclassfleettenders  = <code>24</code>; </li>
+ *     <li> Specific: A392Glencoe  = <code>16</code>; </li>
+ *     <li> Entity type uid: 15481; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68ed3f30. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A392Glencoe extends EntityType
+public final class A392Glencoe extends EntityType
 {
     /** Default constructor */
     public A392Glencoe()
@@ -26,5 +40,11 @@ public class A392Glencoe extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)24); // uid 15465, Clovelly class (fleet tenders)
         setSpecific((byte)16); // uid 15481, A 392 Glencoe
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A392Glencoe createInstance()
+    {
+            return new A392Glencoe();
     }
 }

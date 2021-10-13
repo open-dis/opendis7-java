@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d3bf8db;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Munition;
- * Domain: ANTI_GUIDED_WEAPON;
- *
- * Entity type uid: 20992
+ * <p> Entity class <b><code>Towedradardecoy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Towedradardecoy.createInstance()</code> or <code>new Towedradardecoy()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_GUIDED_WEAPON</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Decoys  = <code>1</code>; </li>
+ *     <li> Specific: Towedradardecoy  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20992; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cfd5cd2. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Towedradardecoy extends EntityType
+public final class Towedradardecoy extends EntityType
 {
     /** Default constructor */
     public Towedradardecoy()
@@ -26,5 +40,11 @@ public class Towedradardecoy extends EntityType
         setCategory((byte)1); // uid 20990, Guided
         setSubCategory((byte)1); // uid 20991, Decoys
         setSpecific((byte)1); // uid 20992, Towed radar decoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Towedradardecoy createInstance()
+    {
+            return new Towedradardecoy();
     }
 }

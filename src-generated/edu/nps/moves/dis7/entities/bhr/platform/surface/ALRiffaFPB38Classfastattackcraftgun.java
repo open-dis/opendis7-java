@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@735b5592;
- * Country: Bahrain (BHR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18675
+ * <p> Entity class <b><code>ALRiffaFPB38Classfastattackcraftgun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ALRiffaFPB38Classfastattackcraftgun.createInstance()</code> or <code>new ALRiffaFPB38Classfastattackcraftgun()</code>. </p>
+ * <ul>
+ *     <li> Country: Bahrain (BHR) = <code>16</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALRiffaFPB38Classfastattackcraftgun  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18675; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@735f7ae5. </p>
+ * @see Country#BAHRAIN_BHR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ALRiffaFPB38Classfastattackcraftgun extends EntityType
+public final class ALRiffaFPB38Classfastattackcraftgun extends EntityType
 {
     /** Default constructor */
     public ALRiffaFPB38Classfastattackcraftgun()
@@ -25,5 +39,11 @@ public class ALRiffaFPB38Classfastattackcraftgun extends EntityType
 
         setCategory((byte)7); // uid 18666, Light/Patrol Craft
         setSubCategory((byte)3); // uid 18675, AL Riffa (FPB 38) Class (fast attack craft-gun)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ALRiffaFPB38Classfastattackcraftgun createInstance()
+    {
+            return new ALRiffaFPB38Classfastattackcraftgun();
     }
 }

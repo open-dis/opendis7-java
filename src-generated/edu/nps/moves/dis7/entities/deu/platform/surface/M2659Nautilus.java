@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fcf2fc1;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16509
+ * <p> Entity class <b><code>M2659Nautilus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M2659Nautilus.createInstance()</code> or <code>new M2659Nautilus()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: FrauenlobClassType394  = <code>4</code>; </li>
+ *     <li> Specific: M2659Nautilus  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16509; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c669da8. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M2659Nautilus extends EntityType
+public final class M2659Nautilus extends EntityType
 {
     /** Default constructor */
     public M2659Nautilus()
@@ -26,5 +40,11 @@ public class M2659Nautilus extends EntityType
         setCategory((byte)8); // uid 16484, Mine Countermeasure Ship / Craft
         setSubCategory((byte)4); // uid 16507, Frauenlob Class (Type 394)
         setSpecific((byte)2); // uid 16509, M 2659 Nautilus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M2659Nautilus createInstance()
+    {
+            return new M2659Nautilus();
     }
 }

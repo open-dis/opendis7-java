@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ccb4b1b;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18095
+ * <p> Entity class <b><code>_311Harischi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_311Harischi.createInstance()</code> or <code>new _311Harischi()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: CapeClassminesweeperinshore  = <code>1</code>; </li>
+ *     <li> Specific: _311Harischi  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18095; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fc258b1. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _311Harischi extends EntityType
+public final class _311Harischi extends EntityType
 {
     /** Default constructor */
     public _311Harischi()
@@ -26,5 +40,11 @@ public class _311Harischi extends EntityType
         setCategory((byte)8); // uid 18093, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 18094, Cape Class (minesweeper-inshore)
         setSpecific((byte)1); // uid 18095, 311 Harischi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _311Harischi createInstance()
+    {
+            return new _311Harischi();
     }
 }

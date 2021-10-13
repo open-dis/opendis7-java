@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26be92ad;
- * Country: Bangladesh (BGD);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32633
+ * <p> Entity class <b><code>S161Nabajatra</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S161Nabajatra.createInstance()</code> or <code>new S161Nabajatra()</code>. </p>
+ * <ul>
+ *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: MingClassType035  = <code>1</code>; </li>
+ *     <li> Specific: S161Nabajatra  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32633; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7225790e. </p>
+ * @see Country#BANGLADESH_BGD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S161Nabajatra extends EntityType
+public final class S161Nabajatra extends EntityType
 {
     /** Default constructor */
     public S161Nabajatra()
@@ -26,5 +40,11 @@ public class S161Nabajatra extends EntityType
         setCategory((byte)5); // uid 32631, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 32632, Ming Class (Type 035)
         setSpecific((byte)1); // uid 32633, S161 Nabajatra
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S161Nabajatra createInstance()
+    {
+            return new S161Nabajatra();
     }
 }

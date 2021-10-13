@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@56e8b606;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18058
+ * <p> Entity class <b><code>ParvinPGM71Classlargepatrolcraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ParvinPGM71Classlargepatrolcraft.createInstance()</code> or <code>new ParvinPGM71Classlargepatrolcraft()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ParvinPGM71Classlargepatrolcraft  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18058; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5aac4250. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ParvinPGM71Classlargepatrolcraft extends EntityType
+public final class ParvinPGM71Classlargepatrolcraft extends EntityType
 {
     /** Default constructor */
     public ParvinPGM71Classlargepatrolcraft()
@@ -25,5 +39,11 @@ public class ParvinPGM71Classlargepatrolcraft extends EntityType
 
         setCategory((byte)7); // uid 18046, Light/Patrol Craft
         setSubCategory((byte)2); // uid 18058, Parvin (PGM-71) Class (large patrol craft)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ParvinPGM71Classlargepatrolcraft createInstance()
+    {
+            return new ParvinPGM71Classlargepatrolcraft();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ae126d1;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15000
+ * <p> Entity class <b><code>HarrierGRMk3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HarrierGRMk3.createInstance()</code> or <code>new HarrierGRMk3()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: Harrier  = <code>2</code>; </li>
+ *     <li> Specific: HarrierGRMk3  = <code>1</code>; </li>
+ *     <li> Entity type uid: 15000; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71926a36. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class HarrierGRMk3 extends EntityType
+public final class HarrierGRMk3 extends EntityType
 {
     /** Default constructor */
     public HarrierGRMk3()
@@ -26,5 +40,11 @@ public class HarrierGRMk3 extends EntityType
         setCategory((byte)2); // uid 14994, Attack/Strike
         setSubCategory((byte)2); // uid 14999, Harrier
         setSpecific((byte)1); // uid 15000, Harrier GR. Mk 3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HarrierGRMk3 createInstance()
+    {
+            return new HarrierGRMk3();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39ed3c8d;
- * Country: Algeria (DZA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27047
+ * <p> Entity class <b><code>_353ElKirch</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_353ElKirch.createInstance()</code> or <code>new _353ElKirch()</code>. </p>
+ * <ul>
+ *     <li> Country: Algeria (DZA) = <code>3</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: DjebelChenouaC58class  = <code>2</code>; </li>
+ *     <li> Specific: _353ElKirch  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27047; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4534b60d. </p>
+ * @see Country#ALGERIA_DZA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _353ElKirch extends EntityType
+public final class _353ElKirch extends EntityType
 {
     /** Default constructor */
     public _353ElKirch()
@@ -26,5 +40,11 @@ public class _353ElKirch extends EntityType
         setCategory((byte)50); // uid 27039, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 27044, Djebel Chenoua (C 58) class
         setSpecific((byte)3); // uid 27047, 353 El Kirch
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _353ElKirch createInstance()
+    {
+            return new _353ElKirch();
     }
 }

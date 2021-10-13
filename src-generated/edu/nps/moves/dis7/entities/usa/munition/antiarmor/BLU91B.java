@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d284f15;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 25328
+ * <p> Entity class <b><code>BLU91B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BLU91B.createInstance()</code> or <code>new BLU91B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: GATORAntiArmorSystem  = <code>3</code>; </li>
+ *     <li> Specific: BLU91B  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25328; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a6fb62f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class BLU91B extends EntityType
+public final class BLU91B extends EntityType
 {
     /** Default constructor */
     public BLU91B()
@@ -26,5 +40,11 @@ public class BLU91B extends EntityType
         setCategory((byte)3); // uid 19650, Fixed
         setSubCategory((byte)3); // uid 19653, GATOR Anti-Armor System
         setSpecific((byte)1); // uid 25328, BLU-91/B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BLU91B createInstance()
+    {
+            return new BLU91B();
     }
 }

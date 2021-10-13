@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a1568d6;
- * Country: Viet Nam (VNM);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28605
+ * <p> Entity class <b><code>HQ012LyThaiTo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HQ012LyThaiTo.createInstance()</code> or <code>new HQ012LyThaiTo()</code>. </p>
+ * <ul>
+ *     <li> Country: Viet Nam (VNM) = <code>230</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: Gepard39Class  = <code>1</code>; </li>
+ *     <li> Specific: HQ012LyThaiTo  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28605; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b29ab61. </p>
+ * @see Country#VIET_NAM_VNM
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class HQ012LyThaiTo extends EntityType
+public final class HQ012LyThaiTo extends EntityType
 {
     /** Default constructor */
     public HQ012LyThaiTo()
@@ -26,5 +40,11 @@ public class HQ012LyThaiTo extends EntityType
         setCategory((byte)6); // uid 28602, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 28603, Gepard 3.9 Class
         setSpecific((byte)2); // uid 28605, HQ-012 Ly Thai To
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HQ012LyThaiTo createInstance()
+    {
+            return new HQ012LyThaiTo();
     }
 }

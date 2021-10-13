@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4c56644f;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20972
+ * <p> Entity class <b><code>ASRAAM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASRAAM.createInstance()</code> or <code>new ASRAAM()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: ASRAAM  = <code>11</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 20972; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@d70e9a. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class ASRAAM extends EntityType
+public final class ASRAAM extends EntityType
 {
     /** Default constructor */
     public ASRAAM()
@@ -25,5 +39,11 @@ public class ASRAAM extends EntityType
 
         setCategory((byte)1); // uid 20956, Guided
         setSubCategory((byte)11); // uid 20972, ASRAAM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASRAAM createInstance()
+    {
+            return new ASRAAM();
     }
 }

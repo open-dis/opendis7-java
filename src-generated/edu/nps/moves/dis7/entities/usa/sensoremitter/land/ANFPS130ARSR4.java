@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58ec8271;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 31406
+ * <p> Entity class <b><code>ANFPS130ARSR4</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANFPS130ARSR4.createInstance()</code> or <code>new ANFPS130ARSR4()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: AirTrafficControl  = <code>22</code>; </li>
+ *     <li> Specific: ANFPS130ARSR4  = <code>6</code>; </li>
+ *     <li> Entity type uid: 31406; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b25d695. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class ANFPS130ARSR4 extends EntityType
+public final class ANFPS130ARSR4 extends EntityType
 {
     /** Default constructor */
     public ANFPS130ARSR4()
@@ -26,5 +40,11 @@ public class ANFPS130ARSR4 extends EntityType
         setCategory((byte)2); // uid 22317, RF Active
         setSubCategory((byte)22); // uid 31400, Air Traffic Control
         setSpecific((byte)6); // uid 31406, AN/FPS-130 (ARSR 4)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANFPS130ARSR4 createInstance()
+    {
+            return new ANFPS130ARSR4();
     }
 }

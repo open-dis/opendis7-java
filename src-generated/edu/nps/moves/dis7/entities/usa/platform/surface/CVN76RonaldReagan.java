@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@186d8a71;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11303
+ * <p> Entity class <b><code>CVN76RonaldReagan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CVN76RonaldReagan.createInstance()</code> or <code>new CVN76RonaldReagan()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Carrier = <code>1</code>; </li>
+ *     <li> SubCategory: NimitzClass  = <code>1</code>; </li>
+ *     <li> Specific: CVN76RonaldReagan  = <code>9</code>; </li>
+ *     <li> Entity type uid: 11303; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c1a8f0f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Carrier
+ * @see SubCategory
+
  */
-public class CVN76RonaldReagan extends EntityType
+public final class CVN76RonaldReagan extends EntityType
 {
     /** Default constructor */
     public CVN76RonaldReagan()
@@ -26,5 +40,11 @@ public class CVN76RonaldReagan extends EntityType
         setCategory((byte)1); // uid 11293, Carrier
         setSubCategory((byte)1); // uid 11294, Nimitz Class
         setSpecific((byte)9); // uid 11303, CVN 76 Ronald Reagan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CVN76RonaldReagan createInstance()
+    {
+            return new CVN76RonaldReagan();
     }
 }

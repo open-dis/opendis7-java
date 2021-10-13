@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f03482;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25455
+ * <p> Entity class <b><code>P520Diana</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P520Diana.createInstance()</code> or <code>new P520Diana()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/ Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: DianaClass  = <code>3</code>; </li>
+ *     <li> Specific: P520Diana  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25455; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@459e9125. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P520Diana extends EntityType
+public final class P520Diana extends EntityType
 {
     /** Default constructor */
     public P520Diana()
@@ -26,5 +40,11 @@ public class P520Diana extends EntityType
         setCategory((byte)7); // uid 18790, Light/ Patrol Craft
         setSubCategory((byte)3); // uid 25454, Diana Class
         setSpecific((byte)1); // uid 25455, P520 Diana
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P520Diana createInstance()
+    {
+            return new P520Diana();
     }
 }

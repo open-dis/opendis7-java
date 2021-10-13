@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4985cbcb;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17814
+ * <p> Entity class <b><code>_201Sohai</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_201Sohai.createInstance()</code> or <code>new _201Sohai()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: SurveyingShip  = <code>2</code>; </li>
+ *     <li> Specific: _201Sohai  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17814; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51df223b. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _201Sohai extends EntityType
+public final class _201Sohai extends EntityType
 {
     /** Default constructor */
     public _201Sohai()
@@ -26,5 +40,11 @@ public class _201Sohai extends EntityType
         setCategory((byte)16); // uid 17801, Auxiliary
         setSubCategory((byte)2); // uid 17811, Surveying Ship
         setSpecific((byte)3); // uid 17814, 201 Sohai
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _201Sohai createInstance()
+    {
+            return new _201Sohai();
     }
 }

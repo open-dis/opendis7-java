@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@443dbe42;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27468
+ * <p> Entity class <b><code>KarelDoormanClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KarelDoormanClass.createInstance()</code> or <code>new KarelDoormanClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: KarelDoormanClass  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27468; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@fff25f1. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class KarelDoormanClass extends EntityType
+public final class KarelDoormanClass extends EntityType
 {
     /** Default constructor */
     public KarelDoormanClass()
@@ -25,5 +39,11 @@ public class KarelDoormanClass extends EntityType
 
         setCategory((byte)6); // uid 18938, Guided Missile Frigate (FFG)
         setSubCategory((byte)6); // uid 27468, Karel Doorman Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KarelDoormanClass createInstance()
+    {
+            return new KarelDoormanClass();
     }
 }

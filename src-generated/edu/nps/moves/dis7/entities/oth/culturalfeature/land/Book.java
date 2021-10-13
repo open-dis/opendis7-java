@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@42f9873e;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26505
+ * <p> Entity class <b><code>Book</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Book.createInstance()</code> or <code>new Book()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Informational = <code>24</code>; </li>
+ *     <li> SubCategory: Book  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 26505; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d3a03fe. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Informational
+ * @see SubCategory
+
  */
-public class Book extends EntityType
+public final class Book extends EntityType
 {
     /** Default constructor */
     public Book()
@@ -25,5 +39,11 @@ public class Book extends EntityType
 
         setCategory((byte)24); // uid 26504, Informational
         setSubCategory((byte)1); // uid 26505, Book
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Book createInstance()
+    {
+            return new Book();
     }
 }

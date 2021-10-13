@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@627bcd7e;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22096
+ * <p> Entity class <b><code>DoubleLaneSteelTrestleBridgeSpan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DoubleLaneSteelTrestleBridgeSpan.createInstance()</code> or <code>new DoubleLaneSteelTrestleBridgeSpan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Bridge Span = <code>19</code>; </li>
+ *     <li> SubCategory: DoubleLaneEachWay  = <code>2</code>; </li>
+ *     <li> Specific: DoubleLaneSteelTrestleBridgeSpan  = <code>8</code>; </li>
+ *     <li> Entity type uid: 22096; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5368e981. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see BridgeSpan
+ * @see SubCategory
+
  */
-public class DoubleLaneSteelTrestleBridgeSpan extends EntityType
+public final class DoubleLaneSteelTrestleBridgeSpan extends EntityType
 {
     /** Default constructor */
     public DoubleLaneSteelTrestleBridgeSpan()
@@ -26,5 +40,11 @@ public class DoubleLaneSteelTrestleBridgeSpan extends EntityType
         setCategory((byte)19); // uid 22073, Bridge Span
         setSubCategory((byte)2); // uid 22088, Double Lane Each Way
         setSpecific((byte)8); // uid 22096, Double Lane Steel Trestle Bridge Span
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DoubleLaneSteelTrestleBridgeSpan createInstance()
+    {
+            return new DoubleLaneSteelTrestleBridgeSpan();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b799640;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16073
+ * <p> Entity class <b><code>A749Panthere</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A749Panthere.createInstance()</code> or <code>new A749Panthere()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Leopardclasstrainingships  = <code>7</code>; </li>
+ *     <li> Specific: A749Panthere  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16073; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18271936. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A749Panthere extends EntityType
+public final class A749Panthere extends EntityType
 {
     /** Default constructor */
     public A749Panthere()
@@ -26,5 +40,11 @@ public class A749Panthere extends EntityType
         setCategory((byte)16); // uid 16040, Auxiliary
         setSubCategory((byte)7); // uid 16071, Leopard class (training ships)
         setSpecific((byte)2); // uid 16073, A 749 Panthere
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A749Panthere createInstance()
+    {
+            return new A749Panthere();
     }
 }

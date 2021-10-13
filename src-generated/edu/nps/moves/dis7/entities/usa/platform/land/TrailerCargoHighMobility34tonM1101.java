@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4887de2b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25284
+ * <p> Entity class <b><code>TrailerCargoHighMobility34tonM1101</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerCargoHighMobility34tonM1101.createInstance()</code> or <code>new TrailerCargoHighMobility34tonM1101()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _0512ton  = <code>2</code>; </li>
+ *     <li> Specific: TrailerCargoHighMobility34tonM1101  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25284; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5416f8db. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class TrailerCargoHighMobility34tonM1101 extends EntityType
+public final class TrailerCargoHighMobility34tonM1101 extends EntityType
 {
     /** Default constructor */
     public TrailerCargoHighMobility34tonM1101()
@@ -26,5 +40,11 @@ public class TrailerCargoHighMobility34tonM1101 extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)2); // uid 10618, 0.51 - 2 ton
         setSpecific((byte)2); // uid 25284, Trailer, Cargo, High Mobility, 3/4 ton, M1101
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerCargoHighMobility34tonM1101 createInstance()
+    {
+            return new TrailerCargoHighMobility34tonM1101();
     }
 }

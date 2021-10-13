@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e57b5e9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27216
+ * <p> Entity class <b><code>R125</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>R125.createInstance()</code> or <code>new R125()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: TarantulIIClassProject12411  = <code>6</code>; </li>
+ *     <li> Specific: R125  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27216; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ba33e2c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class R125 extends EntityType
+public final class R125 extends EntityType
 {
     /** Default constructor */
     public R125()
@@ -26,5 +40,11 @@ public class R125 extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)6); // uid 13635, Tarantul II Class (Project 1241.1)
         setSpecific((byte)1); // uid 27216, R-125
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static R125 createInstance()
+    {
+            return new R125();
     }
 }

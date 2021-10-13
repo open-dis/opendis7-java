@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ab06251;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16552
+ * <p> Entity class <b><code>BG31Templin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BG31Templin.createInstance()</code> or <code>new BG31Templin()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: KondorIClass  = <code>11</code>; </li>
+ *     <li> Specific: BG31Templin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16552; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c7045b9. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class BG31Templin extends EntityType
+public final class BG31Templin extends EntityType
 {
     /** Default constructor */
     public BG31Templin()
@@ -26,5 +40,11 @@ public class BG31Templin extends EntityType
         setCategory((byte)8); // uid 16484, Mine Countermeasure Ship / Craft
         setSubCategory((byte)11); // uid 16551, Kondor I Class
         setSpecific((byte)1); // uid 16552, BG 31 Templin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BG31Templin createInstance()
+    {
+            return new BG31Templin();
     }
 }

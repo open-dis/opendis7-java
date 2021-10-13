@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ff5b51f;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23889
+ * <p> Entity class <b><code>EmbraerEMB120Brasilia</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EmbraerEMB120Brasilia.createInstance()</code> or <code>new EmbraerEMB120Brasilia()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg) = <code>86</code>; </li>
+ *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
+ *     <li> Specific: EmbraerEMB120Brasilia  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23889; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cc0edeb. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftMediumupto41000lbs18597kg
+ * @see SubCategory
+
  */
-public class EmbraerEMB120Brasilia extends EntityType
+public final class EmbraerEMB120Brasilia extends EntityType
 {
     /** Default constructor */
     public EmbraerEMB120Brasilia()
@@ -26,5 +40,11 @@ public class EmbraerEMB120Brasilia extends EntityType
         setCategory((byte)86); // uid 23887, Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg)
         setSubCategory((byte)22); // uid 23888, Twin Engine Turboprop
         setSpecific((byte)1); // uid 23889, Embraer EMB 120 Brasilia
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EmbraerEMB120Brasilia createInstance()
+    {
+            return new EmbraerEMB120Brasilia();
     }
 }

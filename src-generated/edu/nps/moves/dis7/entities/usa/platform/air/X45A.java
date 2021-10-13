@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11dcd42c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11264
+ * <p> Entity class <b><code>X45A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>X45A.createInstance()</code> or <code>new X45A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: X45UCAV  = <code>24</code>; </li>
+ *     <li> Specific: X45A  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11264; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dcbae55. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class X45A extends EntityType
+public final class X45A extends EntityType
 {
     /** Default constructor */
     public X45A()
@@ -26,5 +40,11 @@ public class X45A extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)24); // uid 11263, X-45 UCAV
         setSpecific((byte)1); // uid 11264, X-45A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static X45A createInstance()
+    {
+            return new X45A();
     }
 }

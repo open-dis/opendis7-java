@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56c8e6f0;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28363
+ * <p> Entity class <b><code>SutphenSP70AerialPlatform</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SutphenSP70AerialPlatform.createInstance()</code> or <code>new SutphenSP70AerialPlatform()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Utility/Emergency Truck = <code>84</code>; </li>
+ *     <li> SubCategory: AerialLadderFireEngine  = <code>11</code>; </li>
+ *     <li> Specific: SutphenSP70AerialPlatform  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28363; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f438904. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitUtilityEmergencyTruck
+ * @see SubCategory
+
  */
-public class SutphenSP70AerialPlatform extends EntityType
+public final class SutphenSP70AerialPlatform extends EntityType
 {
     /** Default constructor */
     public SutphenSP70AerialPlatform()
@@ -26,5 +40,11 @@ public class SutphenSP70AerialPlatform extends EntityType
         setCategory((byte)84); // uid 24952, Single Unit Utility/Emergency Truck
         setSubCategory((byte)11); // uid 28362, Aerial Ladder Fire Engine
         setSpecific((byte)1); // uid 28363, Sutphen SP70 Aerial Platform
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SutphenSP70AerialPlatform createInstance()
+    {
+            return new SutphenSP70AerialPlatform();
     }
 }

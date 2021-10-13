@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c089b2f;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12534
+ * <p> Entity class <b><code>T72wmineplowroller</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T72wmineplowroller.createInstance()</code> or <code>new T72wmineplowroller()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: T72MBT  = <code>2</code>; </li>
+ *     <li> Specific: T72wmineplowroller  = <code>12</code>; </li>
+ *     <li> Entity type uid: 12534; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c5a54b7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class T72wmineplowroller extends EntityType
+public final class T72wmineplowroller extends EntityType
 {
     /** Default constructor */
     public T72wmineplowroller()
@@ -26,5 +40,11 @@ public class T72wmineplowroller extends EntityType
         setCategory((byte)1); // uid 12510, Tank
         setSubCategory((byte)2); // uid 12522, T-72 MBT
         setSpecific((byte)12); // uid 12534, T-72 w/mine plow roller
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T72wmineplowroller createInstance()
+    {
+            return new T72wmineplowroller();
     }
 }

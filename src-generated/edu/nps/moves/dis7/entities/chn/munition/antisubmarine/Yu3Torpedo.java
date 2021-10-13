@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1595d2b2;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 21440
+ * <p> Entity class <b><code>Yu3Torpedo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Yu3Torpedo.createInstance()</code> or <code>new Yu3Torpedo()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Yu3Torpedo  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21440; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35025a0a. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Yu3Torpedo extends EntityType
+public final class Yu3Torpedo extends EntityType
 {
     /** Default constructor */
     public Yu3Torpedo()
@@ -25,5 +39,11 @@ public class Yu3Torpedo extends EntityType
 
         setCategory((byte)1); // uid 21437, Guided
         setSubCategory((byte)3); // uid 21440, Yu-3 Torpedo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Yu3Torpedo createInstance()
+    {
+            return new Yu3Torpedo();
     }
 }

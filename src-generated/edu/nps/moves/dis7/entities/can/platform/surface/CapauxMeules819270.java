@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ecd23d9;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30973
+ * <p> Entity class <b><code>CapauxMeules819270</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CapauxMeules819270.createInstance()</code> or <code>new CapauxMeules819270()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Arunclasslifeboat  = <code>2</code>; </li>
+ *     <li> Specific: CapauxMeules819270  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30973; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33c7e1bb. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class CapauxMeules819270 extends EntityType
+public final class CapauxMeules819270 extends EntityType
 {
     /** Default constructor */
     public CapauxMeules819270()
@@ -26,5 +40,11 @@ public class CapauxMeules819270 extends EntityType
         setCategory((byte)63); // uid 26272, Coast Guard Boats
         setSubCategory((byte)2); // uid 30971, Arun-class lifeboat
         setSpecific((byte)2); // uid 30973, Cap-aux-Meules (819270)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CapauxMeules819270 createInstance()
+    {
+            return new CapauxMeules819270();
     }
 }

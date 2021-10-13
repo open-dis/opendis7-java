@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25be7b63;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16042
+ * <p> Entity class <b><code>A791Laperouse</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A791Laperouse.createInstance()</code> or <code>new A791Laperouse()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: BH2classBatimentsHydrographiquesDe2Eclassoceanographicsurvey  = <code>1</code>; </li>
+ *     <li> Specific: A791Laperouse  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16042; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b013c76. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A791Laperouse extends EntityType
+public final class A791Laperouse extends EntityType
 {
     /** Default constructor */
     public A791Laperouse()
@@ -26,5 +40,11 @@ public class A791Laperouse extends EntityType
         setCategory((byte)16); // uid 16040, Auxiliary
         setSubCategory((byte)1); // uid 16041, BH2 class (Batiments Hydrographiques De 2E class) (oceanographic & survey)
         setSpecific((byte)1); // uid 16042, A 791 Laperouse
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A791Laperouse createInstance()
+    {
+            return new A791Laperouse();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@629f0666;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31303
+ * <p> Entity class <b><code>MAPSMULE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MAPSMULE.createInstance()</code> or <code>new MAPSMULE()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: MissionAdaptablePlatformSystemUnmannedGroundVehicleMAPSUGV  = <code>1</code>; </li>
+ *     <li> Specific: MAPSMULE  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31303; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e6ea0c6. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class MAPSMULE extends EntityType
+public final class MAPSMULE extends EntityType
 {
     /** Default constructor */
     public MAPSMULE()
@@ -26,5 +40,11 @@ public class MAPSMULE extends EntityType
         setCategory((byte)50); // uid 31300, Unmanned
         setSubCategory((byte)1); // uid 31301, Mission Adaptable Platform System Unmanned Ground Vehicle (MAPS UGV)
         setSpecific((byte)2); // uid 31303, MAPS MULE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MAPSMULE createInstance()
+    {
+            return new MAPSMULE();
     }
 }

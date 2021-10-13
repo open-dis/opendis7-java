@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a55e82a;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 30011
+ * <p> Entity class <b><code>MJU51AB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MJU51AB.createInstance()</code> or <code>new MJU51AB()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Flare = <code>2</code>; </li>
+ *     <li> SubCategory: MJU51Flare  = <code>19</code>; </li>
+ *     <li> Specific: MJU51AB  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30011; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36871e98. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flare
+ * @see SubCategory
+
  */
-public class MJU51AB extends EntityType
+public final class MJU51AB extends EntityType
 {
     /** Default constructor */
     public MJU51AB()
@@ -26,5 +40,11 @@ public class MJU51AB extends EntityType
         setCategory((byte)2); // uid 22242, Flare
         setSubCategory((byte)19); // uid 24187, MJU-51 Flare
         setSpecific((byte)2); // uid 30011, MJU-51A/B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MJU51AB createInstance()
+    {
+            return new MJU51AB();
     }
 }

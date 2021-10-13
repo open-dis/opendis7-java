@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cb0755b;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15933
+ * <p> Entity class <b><code>D642Montcalm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D642Montcalm.createInstance()</code> or <code>new D642Montcalm()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (Fregates or Escorteurs Descadres) = <code>4</code>; </li>
+ *     <li> SubCategory: GeorgesLeyguesClassTypef70ASW  = <code>1</code>; </li>
+ *     <li> Specific: D642Montcalm  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15933; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fdbe764. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerFregatesorEscorteursDescadres
+ * @see SubCategory
+
  */
-public class D642Montcalm extends EntityType
+public final class D642Montcalm extends EntityType
 {
     /** Default constructor */
     public D642Montcalm()
@@ -26,5 +40,11 @@ public class D642Montcalm extends EntityType
         setCategory((byte)4); // uid 15929, Guided Missile Destroyer (Fregates or Escorteurs Descadres)
         setSubCategory((byte)1); // uid 15930, Georges Leygues Class (Type f 70 (ASW))
         setSpecific((byte)3); // uid 15933, D 642 Montcalm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D642Montcalm createInstance()
+    {
+            return new D642Montcalm();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fee14b;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30831
+ * <p> Entity class <b><code>SlingLoadHMMWVM998SingleHook</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadHMMWVM998SingleHook.createInstance()</code> or <code>new SlingLoadHMMWVM998SingleHook()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Vehicles = <code>5</code>; </li>
+ *     <li> SubCategory: SlingLoadHighMobilityMultipurposeWheeledVehicleHMMWV  = <code>1</code>; </li>
+ *     <li> Specific: SlingLoadHMMWVM998SingleHook  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30831; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37d3aa8c. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadVehicles
+ * @see SubCategory
+
  */
-public class SlingLoadHMMWVM998SingleHook extends EntityType
+public final class SlingLoadHMMWVM998SingleHook extends EntityType
 {
     /** Default constructor */
     public SlingLoadHMMWVM998SingleHook()
@@ -26,5 +40,11 @@ public class SlingLoadHMMWVM998SingleHook extends EntityType
         setCategory((byte)5); // uid 30829, Sling Load, Vehicles
         setSubCategory((byte)1); // uid 30830, Sling Load, High Mobility Multipurpose Wheeled Vehicle (HMMWV)
         setSpecific((byte)1); // uid 30831, Sling Load, HMMWV, M998, Single Hook
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadHMMWVM998SingleHook createInstance()
+    {
+            return new SlingLoadHMMWVM998SingleHook();
     }
 }

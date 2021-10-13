@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15d58530;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: SURFACE;
- *
- * Entity type uid: 28221
+ * <p> Entity class <b><code>RGB16</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RGB16.createInstance()</code> or <code>new RGB16()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, Passive = <code>11</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific: RGB16  = <code>4</code>; </li>
+ *     <li> Entity type uid: 28221; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19a7906c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AcousticPassive
+ * @see SubCategory
+
  */
-public class RGB16 extends EntityType
+public final class RGB16 extends EntityType
 {
     /** Default constructor */
     public RGB16()
@@ -26,5 +40,11 @@ public class RGB16 extends EntityType
         setCategory((byte)11); // uid 28216, Acoustic, Passive
         setSubCategory((byte)77); // uid 28217, Sonobuoy
         setSpecific((byte)4); // uid 28221, RGB-16
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RGB16 createInstance()
+    {
+            return new RGB16();
     }
 }

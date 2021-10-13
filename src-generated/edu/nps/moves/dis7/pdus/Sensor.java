@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class Sensor extends Object implements Serializable
    protected short  padding = (short)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Sensor()
  {
  }
@@ -51,8 +50,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += sensorTypeSource.getMarshalledSize();
-   marshalSize += sensorOnOffStatus.getMarshalledSize();
+   if (sensorTypeSource != null)
+       marshalSize += sensorTypeSource.getMarshalledSize();
+   if (sensorOnOffStatus != null)
+       marshalSize += sensorOnOffStatus.getMarshalledSize();
    marshalSize += 2;  // sensorType
    marshalSize += 4;  // station
    marshalSize += 2;  // quantity
@@ -264,12 +265,25 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    sensorTypeSource = SensorTypeSource.unmarshalEnum(byteBuffer);
-    sensorOnOffStatus = SensorOnOffStatus.unmarshalEnum(byteBuffer);
-    sensorType = (short)(byteBuffer.getShort() & 0xFFFF);
-    station = byteBuffer.getInt();
-    quantity = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute sensorTypeSource marked as not serialized
+        sensorTypeSource = SensorTypeSource.unmarshalEnum(byteBuffer);
+        // attribute sensorOnOffStatus marked as not serialized
+        sensorOnOffStatus = SensorOnOffStatus.unmarshalEnum(byteBuffer);
+        // attribute sensorType marked as not serialized
+        sensorType = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute station marked as not serialized
+        station = byteBuffer.getInt();
+        // attribute quantity marked as not serialized
+        quantity = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

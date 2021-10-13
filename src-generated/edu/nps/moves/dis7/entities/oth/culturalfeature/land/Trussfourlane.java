@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4537880f;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 21950
+ * <p> Entity class <b><code>Trussfourlane</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Trussfourlane.createInstance()</code> or <code>new Trussfourlane()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Bridge = <code>1</code>; </li>
+ *     <li> SubCategory: Trussfourlane  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21950; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55638165. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bridge
+ * @see SubCategory
+
  */
-public class Trussfourlane extends EntityType
+public final class Trussfourlane extends EntityType
 {
     /** Default constructor */
     public Trussfourlane()
@@ -25,5 +39,11 @@ public class Trussfourlane extends EntityType
 
         setCategory((byte)1); // uid 21945, Bridge
         setSubCategory((byte)4); // uid 21950, Truss, four-lane
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Trussfourlane createInstance()
+    {
+            return new Trussfourlane();
     }
 }

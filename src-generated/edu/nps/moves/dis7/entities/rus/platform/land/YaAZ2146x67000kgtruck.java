@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6dd93a21;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12917
+ * <p> Entity class <b><code>YaAZ2146x67000kgtruck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YaAZ2146x67000kgtruck.createInstance()</code> or <code>new YaAZ2146x67000kgtruck()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: YaAZ2146x67000kgtruck  = <code>20</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12917; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5e3a39cd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class YaAZ2146x67000kgtruck extends EntityType
+public final class YaAZ2146x67000kgtruck extends EntityType
 {
     /** Default constructor */
     public YaAZ2146x67000kgtruck()
@@ -25,5 +39,11 @@ public class YaAZ2146x67000kgtruck extends EntityType
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)20); // uid 12917, YaAZ-214 6x6 7000-kg truck
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YaAZ2146x67000kgtruck createInstance()
+    {
+            return new YaAZ2146x67000kgtruck();
     }
 }

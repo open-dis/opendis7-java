@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27896d3b;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 25330
+ * <p> Entity class <b><code>M73RemoteAntiArmorMunitionRAAM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M73RemoteAntiArmorMunitionRAAM.createInstance()</code> or <code>new M73RemoteAntiArmorMunitionRAAM()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: M73RemoteAntiArmorMunitionRAAM  = <code>11</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25330; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4b5ad306. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class M73RemoteAntiArmorMunitionRAAM extends EntityType
+public final class M73RemoteAntiArmorMunitionRAAM extends EntityType
 {
     /** Default constructor */
     public M73RemoteAntiArmorMunitionRAAM()
@@ -25,5 +39,11 @@ public class M73RemoteAntiArmorMunitionRAAM extends EntityType
 
         setCategory((byte)3); // uid 19650, Fixed
         setSubCategory((byte)11); // uid 25330, M73 Remote Anti-Armor Munition (RAAM)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M73RemoteAntiArmorMunitionRAAM createInstance()
+    {
+            return new M73RemoteAntiArmorMunitionRAAM();
     }
 }

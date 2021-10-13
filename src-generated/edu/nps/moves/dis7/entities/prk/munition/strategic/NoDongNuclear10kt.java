@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@9a9aa68;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32822
+ * <p> Entity class <b><code>NoDongNuclear10kt</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NoDongNuclear10kt.createInstance()</code> or <code>new NoDongNuclear10kt()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: NoDong  = <code>2</code>; </li>
+ *     <li> Specific: NoDongSeparatedWarhead  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32822; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@19ad75e5. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class NoDongNuclear10kt extends EntityType
+public final class NoDongNuclear10kt extends EntityType
 {
     /** Default constructor */
     public NoDongNuclear10kt()
@@ -27,5 +41,11 @@ public class NoDongNuclear10kt extends EntityType
         setSubCategory((byte)2); // uid 21609, No Dong
         setSpecific((byte)1); // uid 21610, No Dong Separated Warhead
         setExtra((byte)6); // uid 32822, No Dong, Nuclear, 10 kt
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NoDongNuclear10kt createInstance()
+    {
+            return new NoDongNuclear10kt();
     }
 }

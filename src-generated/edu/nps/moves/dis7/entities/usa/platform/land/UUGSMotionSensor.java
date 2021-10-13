@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@485caa8f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22882
+ * <p> Entity class <b><code>UUGSMotionSensor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UUGSMotionSensor.createInstance()</code> or <code>new UUGSMotionSensor()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Warning System = <code>23</code>; </li>
+ *     <li> SubCategory: UrbanUnattendedGroundSensorUUGS  = <code>4</code>; </li>
+ *     <li> Specific: UUGSMotionSensor  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22882; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@796f632b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see WarningSystem
+ * @see SubCategory
+
  */
-public class UUGSMotionSensor extends EntityType
+public final class UUGSMotionSensor extends EntityType
 {
     /** Default constructor */
     public UUGSMotionSensor()
@@ -26,5 +40,11 @@ public class UUGSMotionSensor extends EntityType
         setCategory((byte)23); // uid 10653, Warning System
         setSubCategory((byte)4); // uid 10657, Urban Unattended Ground Sensor (U-UGS)
         setSpecific((byte)2); // uid 22882, U-UGS Motion Sensor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UUGSMotionSensor createInstance()
+    {
+            return new UUGSMotionSensor();
     }
 }

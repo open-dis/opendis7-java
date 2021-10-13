@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21a66d45;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13614
+ * <p> Entity class <b><code>Zadorny</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Zadorny.createInstance()</code> or <code>new Zadorny()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: KrivakIclass  = <code>1</code>; </li>
+ *     <li> Specific: Zadorny  = <code>20</code>; </li>
+ *     <li> Entity type uid: 13614; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a67e962. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class Zadorny extends EntityType
+public final class Zadorny extends EntityType
 {
     /** Default constructor */
     public Zadorny()
@@ -26,5 +40,11 @@ public class Zadorny extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)1); // uid 13594, Krivak I class
         setSpecific((byte)20); // uid 13614, Zadorny
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Zadorny createInstance()
+    {
+            return new Zadorny();
     }
 }

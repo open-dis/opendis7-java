@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@eb507b9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14224
+ * <p> Entity class <b><code>SovietskyPogranichnik</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SovietskyPogranichnik.createInstance()</code> or <code>new SovietskyPogranichnik()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Baskunchakclasssupporttankers  = <code>64</code>; </li>
+ *     <li> Specific: SovietskyPogranichnik  = <code>2</code>; </li>
+ *     <li> Entity type uid: 14224; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45d64d27. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SovietskyPogranichnik extends EntityType
+public final class SovietskyPogranichnik extends EntityType
 {
     /** Default constructor */
     public SovietskyPogranichnik()
@@ -26,5 +40,11 @@ public class SovietskyPogranichnik extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)64); // uid 14222, Baskunchak class (support tankers)
         setSpecific((byte)2); // uid 14224, Sovietsky Pogranichnik
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SovietskyPogranichnik createInstance()
+    {
+            return new SovietskyPogranichnik();
     }
 }

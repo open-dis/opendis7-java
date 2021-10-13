@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class GroupID extends Object implements Serializable
    protected short  groupNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GroupID()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += simulationAddress.getMarshalledSize();
+   if (simulationAddress != null)
+       marshalSize += simulationAddress.getMarshalledSize();
    marshalSize += 2;  // groupNumber
 
    return marshalSize;
@@ -153,8 +153,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    simulationAddress.unmarshal(byteBuffer);
-    groupNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute simulationAddress marked as not serialized
+        simulationAddress.unmarshal(byteBuffer);
+        // attribute groupNumber marked as not serialized
+        groupNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

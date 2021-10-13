@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@70f98f7a;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22850
+ * <p> Entity class <b><code>Firingpointlaunchpointlocation</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Firingpointlaunchpointlocation.createInstance()</code> or <code>new Firingpointlaunchpointlocation()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: Firingpointlaunchpointlocation  = <code>8</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22850; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@43445fc6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class Firingpointlaunchpointlocation extends EntityType
+public final class Firingpointlaunchpointlocation extends EntityType
 {
     /** Default constructor */
     public Firingpointlaunchpointlocation()
@@ -25,5 +39,11 @@ public class Firingpointlaunchpointlocation extends EntityType
 
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)8); // uid 22850, Firing point/launch point location
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Firingpointlaunchpointlocation createInstance()
+    {
+            return new Firingpointlaunchpointlocation();
     }
 }

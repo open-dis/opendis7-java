@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e7c4815;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 14826
+ * <p> Entity class <b><code>Spektrum</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Spektrum.createInstance()</code> or <code>new Spektrum()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: AstronomicalModule  = <code>1</code>; </li>
+ *     <li> Specific: Spektrum  = <code>4</code>; </li>
+ *     <li> Entity type uid: 14826; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7173ae5b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class Spektrum extends EntityType
+public final class Spektrum extends EntityType
 {
     /** Default constructor */
     public Spektrum()
@@ -26,5 +40,11 @@ public class Spektrum extends EntityType
         setCategory((byte)0); // uid 14821, Other
         setSubCategory((byte)1); // uid 14822, Astronomical Module
         setSpecific((byte)4); // uid 14826, Spektrum
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Spektrum createInstance()
+    {
+            return new Spektrum();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16a9eb2e;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32865
+ * <p> Entity class <b><code>VikingRRV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VikingRRV.createInstance()</code> or <code>new VikingRRV()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Tracked Utility Vehicle = <code>9</code>; </li>
+ *     <li> SubCategory: BvS10Viking  = <code>1</code>; </li>
+ *     <li> Specific: VikingRRV  = <code>3</code>; </li>
+ *     <li> Entity type uid: 32865; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@440e3ce6. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeTrackedUtilityVehicle
+ * @see SubCategory
+
  */
-public class VikingRRV extends EntityType
+public final class VikingRRV extends EntityType
 {
     /** Default constructor */
     public VikingRRV()
@@ -26,5 +40,11 @@ public class VikingRRV extends EntityType
         setCategory((byte)9); // uid 14942, Large Tracked Utility Vehicle
         setSubCategory((byte)1); // uid 28156, BvS 10 Viking
         setSpecific((byte)3); // uid 32865, Viking RRV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VikingRRV createInstance()
+    {
+            return new VikingRRV();
     }
 }

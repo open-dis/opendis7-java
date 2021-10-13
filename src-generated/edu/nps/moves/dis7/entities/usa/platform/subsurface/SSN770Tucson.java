@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ab2a07e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 12401
+ * <p> Entity class <b><code>SSN770Tucson</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN770Tucson.createInstance()</code> or <code>new SSN770Tucson()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: LosAngelesclass  = <code>4</code>; </li>
+ *     <li> Specific: SSN770Tucson  = <code>59</code>; </li>
+ *     <li> Entity type uid: 12401; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f857e08. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class SSN770Tucson extends EntityType
+public final class SSN770Tucson extends EntityType
 {
     /** Default constructor */
     public SSN770Tucson()
@@ -26,5 +40,11 @@ public class SSN770Tucson extends EntityType
         setCategory((byte)3); // uid 12301, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)4); // uid 12342, Los Angeles class
         setSpecific((byte)59); // uid 12401, SSN 770 Tucson
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN770Tucson createInstance()
+    {
+            return new SSN770Tucson();
     }
 }

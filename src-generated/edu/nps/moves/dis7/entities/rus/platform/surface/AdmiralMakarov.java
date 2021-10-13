@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a231dfd;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28673
+ * <p> Entity class <b><code>AdmiralMakarov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AdmiralMakarov.createInstance()</code> or <code>new AdmiralMakarov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: AdmiralGrigorovichProject11356MKrivakVClass  = <code>13</code>; </li>
+ *     <li> Specific: AdmiralMakarov  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28673; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c4fc2bf. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class AdmiralMakarov extends EntityType
+public final class AdmiralMakarov extends EntityType
 {
     /** Default constructor */
     public AdmiralMakarov()
@@ -26,5 +40,11 @@ public class AdmiralMakarov extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)13); // uid 28670, Admiral Grigorovich (Project 11356M, Krivak V) Class
         setSpecific((byte)3); // uid 28673, Admiral Makarov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AdmiralMakarov createInstance()
+    {
+            return new AdmiralMakarov();
     }
 }

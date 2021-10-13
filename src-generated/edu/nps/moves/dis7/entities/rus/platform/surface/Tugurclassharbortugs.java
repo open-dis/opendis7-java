@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@d8d9199;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14713
+ * <p> Entity class <b><code>Tugurclassharbortugs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tugurclassharbortugs.createInstance()</code> or <code>new Tugurclassharbortugs()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Tugurclassharbortugs  = <code>16</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 14713; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67fc2aad. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Tugurclassharbortugs extends EntityType
+public final class Tugurclassharbortugs extends EntityType
 {
     /** Default constructor */
     public Tugurclassharbortugs()
@@ -25,5 +39,11 @@ public class Tugurclassharbortugs extends EntityType
 
         setCategory((byte)18); // uid 14570, Utility
         setSubCategory((byte)16); // uid 14713, Tugur class (harbor tugs)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tugurclassharbortugs createInstance()
+    {
+            return new Tugurclassharbortugs();
     }
 }

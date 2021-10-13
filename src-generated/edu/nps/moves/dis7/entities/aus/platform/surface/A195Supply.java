@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3cbbc1e0;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32939
+ * <p> Entity class <b><code>A195Supply</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A195Supply.createInstance()</code> or <code>new A195Supply()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: SupplyClassAOR  = <code>12</code>; </li>
+ *     <li> Specific: A195Supply  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32939; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1cd072a9. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A195Supply extends EntityType
+public final class A195Supply extends EntityType
 {
     /** Default constructor */
     public A195Supply()
@@ -26,5 +40,11 @@ public class A195Supply extends EntityType
         setCategory((byte)16); // uid 17594, Auxiliary
         setSubCategory((byte)12); // uid 32938, Supply Class (AOR)
         setSpecific((byte)1); // uid 32939, A195 Supply
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A195Supply createInstance()
+    {
+            return new A195Supply();
     }
 }

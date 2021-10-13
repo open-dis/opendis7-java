@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5dd903be;
- * Country: Syrian Arab Republic (SYR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29956
+ * <p> Entity class <b><code>SonyaClass532</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SonyaClass532.createInstance()</code> or <code>new SonyaClass532()</code>. </p>
+ * <ul>
+ *     <li> Country: Syrian Arab Republic (SYR) = <code>207</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: SonyaClass  = <code>1</code>; </li>
+ *     <li> Specific: _532  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29956; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@117525fe. </p>
+ * @see Country#SYRIAN_ARAB_REPUBLIC_SYR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class SonyaClass532 extends EntityType
+public final class SonyaClass532 extends EntityType
 {
     /** Default constructor */
     public SonyaClass532()
@@ -26,5 +40,11 @@ public class SonyaClass532 extends EntityType
         setCategory((byte)8); // uid 29954, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 29955, Sonya Class
         setSpecific((byte)1); // uid 29956, 532
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SonyaClass532 createInstance()
+    {
+            return new SonyaClass532();
     }
 }

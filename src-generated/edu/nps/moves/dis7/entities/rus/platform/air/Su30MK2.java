@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48b22fd4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28310
+ * <p> Entity class <b><code>Su30MK2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Su30MK2.createInstance()</code> or <code>new Su30MK2()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: Su30FlankerC  = <code>19</code>; </li>
+ *     <li> Specific: Su30MK2  = <code>11</code>; </li>
+ *     <li> Entity type uid: 28310; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41c204a0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class Su30MK2 extends EntityType
+public final class Su30MK2 extends EntityType
 {
     /** Default constructor */
     public Su30MK2()
@@ -26,5 +40,11 @@ public class Su30MK2 extends EntityType
         setCategory((byte)1); // uid 13174, Fighter/Air Defense
         setSubCategory((byte)19); // uid 25399, Su-30 Flanker C
         setSpecific((byte)11); // uid 28310, Su-30MK2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Su30MK2 createInstance()
+    {
+            return new Su30MK2();
     }
 }

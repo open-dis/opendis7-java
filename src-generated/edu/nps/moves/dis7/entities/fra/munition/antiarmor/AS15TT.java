@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@743c3520;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21063
+ * <p> Entity class <b><code>AS15TT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AS15TT.createInstance()</code> or <code>new AS15TT()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AS15  = <code>7</code>; </li>
+ *     <li> Specific: AS15TT  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21063; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ec9eefa. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AS15TT extends EntityType
+public final class AS15TT extends EntityType
 {
     /** Default constructor */
     public AS15TT()
@@ -26,5 +40,11 @@ public class AS15TT extends EntityType
         setCategory((byte)1); // uid 21055, Guided
         setSubCategory((byte)7); // uid 21062, AS-15
         setSpecific((byte)1); // uid 21063, AS-15 TT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AS15TT createInstance()
+    {
+            return new AS15TT();
     }
 }

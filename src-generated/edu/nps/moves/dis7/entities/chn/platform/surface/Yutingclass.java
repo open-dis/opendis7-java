@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e802ef9;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17191
+ * <p> Entity class <b><code>Yutingclass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Yutingclass.createInstance()</code> or <code>new Yutingclass()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: Yutingclass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17191; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b4a4e18. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class Yutingclass extends EntityType
+public final class Yutingclass extends EntityType
 {
     /** Default constructor */
     public Yutingclass()
@@ -25,5 +39,11 @@ public class Yutingclass extends EntityType
 
         setCategory((byte)10); // uid 17190, Tank Landing Ship
         setSubCategory((byte)1); // uid 17191, Yuting class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Yutingclass createInstance()
+    {
+            return new Yutingclass();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10b9db7b;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31088
+ * <p> Entity class <b><code>T43Class</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T43Class.createInstance()</code> or <code>new T43Class()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: T43Class  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31088; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13d9b21f. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class T43Class extends EntityType
+public final class T43Class extends EntityType
 {
     /** Default constructor */
     public T43Class()
@@ -25,5 +39,11 @@ public class T43Class extends EntityType
 
         setCategory((byte)8); // uid 31057, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 31088, T-43 Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T43Class createInstance()
+    {
+            return new T43Class();
     }
 }

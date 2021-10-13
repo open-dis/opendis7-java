@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class IffDataSpecification extends Object implements Serializable
    protected List< IFFData > iffDataRecords = new ArrayList< IFFData >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IffDataSpecification()
  {
  }
@@ -40,11 +39,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 2;  // numberOfIffDataRecords
-   for(int idx=0; idx < iffDataRecords.size(); idx++)
-   {
-        IFFData listElement = iffDataRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (iffDataRecords != null)
+       for (int idx=0; idx < iffDataRecords.size(); idx++)
+       {
+            IFFData listElement = iffDataRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -78,7 +78,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        dos.writeShort(iffDataRecords.size());
 
-       for(int idx = 0; idx < iffDataRecords.size(); idx++)
+       for (int idx = 0; idx < iffDataRecords.size(); idx++)
        {
             IFFData aIFFData = iffDataRecords.get(idx);
             aIFFData.marshal(dos);
@@ -106,7 +106,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfIffDataRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfIffDataRecords; idx++)
+        for (int idx = 0; idx < numberOfIffDataRecords; idx++)
         {
             IFFData anX = new IFFData();
             uPosition += anX.unmarshal(dis);
@@ -133,7 +133,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    byteBuffer.putShort( (short)iffDataRecords.size());
 
-   for(int idx = 0; idx < iffDataRecords.size(); idx++)
+   for (int idx = 0; idx < iffDataRecords.size(); idx++)
    {
         IFFData aIFFData = iffDataRecords.get(idx);
         aIFFData.marshal(byteBuffer);
@@ -152,14 +152,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    numberOfIffDataRecords = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfIffDataRecords; idx++)
+    try
     {
-    IFFData anX = new IFFData();
-    anX.unmarshal(byteBuffer);
-    iffDataRecords.add(anX);
-    }
+        // attribute numberOfIffDataRecords marked as not serialized
+        numberOfIffDataRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute iffDataRecords marked as not serialized
+        for (int idx = 0; idx < numberOfIffDataRecords; idx++)
+        {
+        IFFData anX = new IFFData();
+        anX.unmarshal(byteBuffer);
+        iffDataRecords.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -194,7 +203,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final IffDataSpecification rhs = (IffDataSpecification)obj;
 
 
-     for(int idx = 0; idx < iffDataRecords.size(); idx++)
+     for (int idx = 0; idx < iffDataRecords.size(); idx++)
         if( ! ( iffDataRecords.get(idx).equals(rhs.iffDataRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

@@ -177,6 +177,8 @@ public class AllPduRoundTripTest
   
     private void setupSenderRecorder() throws Exception {
         pduRecorder = new PduRecorder(); // default network address, port, logfile dir
+        pduRecorder.setDescriptor(this.getClass().getName() + "unit test");
+        pduRecorder.start();
         disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
 
         // When the DisThreadedNetworkInterface receives a pdu, a call is made to the

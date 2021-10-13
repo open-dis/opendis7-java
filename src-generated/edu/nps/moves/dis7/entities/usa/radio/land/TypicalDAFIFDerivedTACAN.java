@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6630dd28;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: LAND;
- *
- * Entity type uid: 22212
+ * <p> Entity class <b><code>TypicalDAFIFDerivedTACAN</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TypicalDAFIFDerivedTACAN.createInstance()</code> or <code>new TypicalDAFIFDerivedTACAN()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Tactical Air Navigation (TACAN) Transmitter (Ground Fixed Equipment) = <code>10</code>; </li>
+ *     <li> SubCategory: TACANTransmitterGroundFixedEquipmentOther  = <code>0</code>; </li>
+ *     <li> Specific: TypicalDAFIFDerivedTACAN  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22212; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f53fc38. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TacticalAirNavigationTACANTransmitterGroundFixedEquipment
+ * @see SubCategory
+
  */
-public class TypicalDAFIFDerivedTACAN extends EntityType
+public final class TypicalDAFIFDerivedTACAN extends EntityType
 {
     /** Default constructor */
     public TypicalDAFIFDerivedTACAN()
@@ -26,5 +40,11 @@ public class TypicalDAFIFDerivedTACAN extends EntityType
         setCategory((byte)10); // uid 22210, Tactical Air Navigation (TACAN) Transmitter (Ground Fixed Equipment)
         setSubCategory((byte)0); // uid 22211, TACAN Transmitter (Ground Fixed Equipment), Other
         setSpecific((byte)3); // uid 22212, Typical DAFIF Derived TACAN
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TypicalDAFIFDerivedTACAN createInstance()
+    {
+            return new TypicalDAFIFDerivedTACAN();
     }
 }

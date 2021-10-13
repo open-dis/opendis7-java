@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fb4f2a9;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16176
+ * <p> Entity class <b><code>S616LeTriomphant</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S616LeTriomphant.createInstance()</code> or <code>new S616LeTriomphant()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missile) = <code>1</code>; </li>
+ *     <li> SubCategory: LeTriomphantclassSNLENG  = <code>1</code>; </li>
+ *     <li> Specific: S616LeTriomphant  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16176; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b695b06. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissile
+ * @see SubCategory
+
  */
-public class S616LeTriomphant extends EntityType
+public final class S616LeTriomphant extends EntityType
 {
     /** Default constructor */
     public S616LeTriomphant()
@@ -26,5 +40,11 @@ public class S616LeTriomphant extends EntityType
         setCategory((byte)1); // uid 16174, SSBN (Nuclear Ballistic Missile)
         setSubCategory((byte)1); // uid 16175, Le Triomphant class (SNLE-NG)
         setSpecific((byte)1); // uid 16176, S 616 Le Triomphant
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S616LeTriomphant createInstance()
+    {
+            return new S616LeTriomphant();
     }
 }

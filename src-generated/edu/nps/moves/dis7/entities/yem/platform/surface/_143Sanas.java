@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@797fcf9;
- * Country: Yemen (YEM);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18742
+ * <p> Entity class <b><code>_143Sanas</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_143Sanas.createInstance()</code> or <code>new _143Sanas()</code>. </p>
+ * <ul>
+ *     <li> Country: Yemen (YEM) = <code>237</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: BroadswordClasscoastalpatrolcraft  = <code>1</code>; </li>
+ *     <li> Specific: _143Sanas  = <code>3</code>; </li>
+ *     <li> Entity type uid: 18742; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58aa1d72. </p>
+ * @see Country#YEMEN_YEM
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _143Sanas extends EntityType
+public final class _143Sanas extends EntityType
 {
     /** Default constructor */
     public _143Sanas()
@@ -26,5 +40,11 @@ public class _143Sanas extends EntityType
         setCategory((byte)7); // uid 18738, Light/Patrol Craft
         setSubCategory((byte)1); // uid 18739, Broadsword Class (coastal patrol craft)
         setSpecific((byte)3); // uid 18742, 143 Sanas
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _143Sanas createInstance()
+    {
+            return new _143Sanas();
     }
 }

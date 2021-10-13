@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b5a19ed;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 21130
+ * <p> Entity class <b><code>Ballistic3006</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ballistic3006.createInstance()</code> or <code>new Ballistic3006()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _3006  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21130; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18ffca6c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class Ballistic3006 extends EntityType
+public final class Ballistic3006 extends EntityType
 {
     /** Default constructor */
     public Ballistic3006()
@@ -25,5 +39,11 @@ public class Ballistic3006 extends EntityType
 
         setCategory((byte)2); // uid 21128, Ballistic
         setSubCategory((byte)2); // uid 21130, .30-06
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ballistic3006 createInstance()
+    {
+            return new Ballistic3006();
     }
 }

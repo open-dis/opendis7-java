@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@42dafa95;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24392
+ * <p> Entity class <b><code>ASTROSFireControlVehicleAVVCC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASTROSFireControlVehicleAVVCC.createInstance()</code> or <code>new ASTROSFireControlVehicleAVVCC()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fire Control Facility = <code>37</code>; </li>
+ *     <li> SubCategory: ASTROSFireControlVehicleAVVCC  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24392; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2ef5e5e3. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FireControlFacility
+ * @see SubCategory
+
  */
-public class ASTROSFireControlVehicleAVVCC extends EntityType
+public final class ASTROSFireControlVehicleAVVCC extends EntityType
 {
     /** Default constructor */
     public ASTROSFireControlVehicleAVVCC()
@@ -25,5 +39,11 @@ public class ASTROSFireControlVehicleAVVCC extends EntityType
 
         setCategory((byte)37); // uid 24391, Fire Control Facility
         setSubCategory((byte)1); // uid 24392, ASTROS Fire Control Vehicle AV-VCC
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASTROSFireControlVehicleAVVCC createInstance()
+    {
+            return new ASTROSFireControlVehicleAVVCC();
     }
 }

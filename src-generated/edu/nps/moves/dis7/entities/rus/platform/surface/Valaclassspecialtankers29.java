@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f98635e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14239
+ * <p> Entity class <b><code>Valaclassspecialtankers29</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Valaclassspecialtankers29.createInstance()</code> or <code>new Valaclassspecialtankers29()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Valaclassspecialtankers  = <code>66</code>; </li>
+ *     <li> Specific: _29  = <code>7</code>; </li>
+ *     <li> Entity type uid: 14239; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d7835a8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Valaclassspecialtankers29 extends EntityType
+public final class Valaclassspecialtankers29 extends EntityType
 {
     /** Default constructor */
     public Valaclassspecialtankers29()
@@ -26,5 +40,11 @@ public class Valaclassspecialtankers29 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)66); // uid 14232, Vala class (special tankers)
         setSpecific((byte)7); // uid 14239, 29
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Valaclassspecialtankers29 createInstance()
+    {
+            return new Valaclassspecialtankers29();
     }
 }

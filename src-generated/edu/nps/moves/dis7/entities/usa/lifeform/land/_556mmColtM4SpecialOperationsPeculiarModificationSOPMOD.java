@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3cf4dec7;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32673
+ * <p> Entity class <b><code>_556mmColtM4SpecialOperationsPeculiarModificationSOPMOD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_556mmColtM4SpecialOperationsPeculiarModificationSOPMOD.createInstance()</code> or <code>new _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD  = <code>43</code>; </li>
+ *     <li> Entity type uid: 32673; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20c3b34b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD extends EntityType
+public final class _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD extends EntityType
 {
     /** Default constructor */
     public _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD()
@@ -26,5 +40,11 @@ public class _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD extends Ent
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)5); // uid 32669, Assault Rifles
         setSpecific((byte)43); // uid 32673, 5.56mm Colt M4 Special Operations Peculiar Modification (SOPMOD)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD createInstance()
+    {
+            return new _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a898881;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23176
+ * <p> Entity class <b><code>L22Kumbhir</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L22Kumbhir.createInstance()</code> or <code>new L22Kumbhir()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: Polnochnyclass  = <code>1</code>; </li>
+ *     <li> Specific: L22Kumbhir  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23176; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f1de2d6. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class L22Kumbhir extends EntityType
+public final class L22Kumbhir extends EntityType
 {
     /** Default constructor */
     public L22Kumbhir()
@@ -26,5 +40,11 @@ public class L22Kumbhir extends EntityType
         setCategory((byte)10); // uid 23170, Tank Landing Ship
         setSubCategory((byte)1); // uid 23171, Polnochny class
         setSpecific((byte)5); // uid 23176, L22 Kumbhir
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L22Kumbhir createInstance()
+    {
+            return new L22Kumbhir();
     }
 }

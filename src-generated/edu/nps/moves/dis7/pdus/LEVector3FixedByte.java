@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LEVector3FixedByte extends Object implements Serializable
    protected byte  z;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LEVector3FixedByte()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    x = (byte)(byteBuffer.get() & 0xFF);
-    y = (byte)(byteBuffer.get() & 0xFF);
-    z = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute x marked as not serialized
+        x = (byte)(byteBuffer.get() & 0xFF);
+        // attribute y marked as not serialized
+        y = (byte)(byteBuffer.get() & 0xFF);
+        // attribute z marked as not serialized
+        z = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

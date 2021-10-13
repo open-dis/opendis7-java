@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@766a49c7;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15554
+ * <p> Entity class <b><code>A174Lilah</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A174Lilah.createInstance()</code> or <code>new A174Lilah()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Tritonclass  = <code>5</code>; </li>
+ *     <li> Specific: A174Lilah  = <code>4</code>; </li>
+ *     <li> Entity type uid: 15554; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5740ff5e. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class A174Lilah extends EntityType
+public final class A174Lilah extends EntityType
 {
     /** Default constructor */
     public A174Lilah()
@@ -26,5 +40,11 @@ public class A174Lilah extends EntityType
         setCategory((byte)17); // uid 15513, Auxiliary, Merchant Marine
         setSubCategory((byte)5); // uid 15550, Triton class
         setSpecific((byte)4); // uid 15554, A 174 Lilah
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A174Lilah createInstance()
+    {
+            return new A174Lilah();
     }
 }

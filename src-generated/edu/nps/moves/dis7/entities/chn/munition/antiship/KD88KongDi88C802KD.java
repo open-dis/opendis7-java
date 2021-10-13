@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ce25e47;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29117
+ * <p> Entity class <b><code>KD88KongDi88C802KD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KD88KongDi88C802KD.createInstance()</code> or <code>new KD88KongDi88C802KD()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: YJ2C802CSSN8Saccade  = <code>11</code>; </li>
+ *     <li> Specific: KD88KongDi88C802KD  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29117; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59c43561. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class KD88KongDi88C802KD extends EntityType
+public final class KD88KongDi88C802KD extends EntityType
 {
     /** Default constructor */
     public KD88KongDi88C802KD()
@@ -26,5 +40,11 @@ public class KD88KongDi88C802KD extends EntityType
         setCategory((byte)1); // uid 21409, Guided
         setSubCategory((byte)11); // uid 21431, YJ-2/C-802/CSS-N-8 Saccade
         setSpecific((byte)3); // uid 29117, KD-88 / KongDi-88 / C-802KD
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KD88KongDi88C802KD createInstance()
+    {
+            return new KD88KongDi88C802KD();
     }
 }

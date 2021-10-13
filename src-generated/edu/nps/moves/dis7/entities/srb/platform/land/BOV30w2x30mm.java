@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78010562;
- * Country: Serbia (SRB);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30170
+ * <p> Entity class <b><code>BOV30w2x30mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BOV30w2x30mm.createInstance()</code> or <code>new BOV30w2x30mm()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>2</code>; </li>
+ *     <li> Specific: BOV30w2x30mm  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30170; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49fe3142. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class BOV30w2x30mm extends EntityType
+public final class BOV30w2x30mm extends EntityType
 {
     /** Default constructor */
     public BOV30w2x30mm()
@@ -26,5 +40,11 @@ public class BOV30w2x30mm extends EntityType
         setCategory((byte)28); // uid 30166, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)2); // uid 30168, Self -Propelled VSHORAD Gun / Missile System
         setSpecific((byte)2); // uid 30170, BOV-30 w/ 2 x 30-mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BOV30w2x30mm createInstance()
+    {
+            return new BOV30w2x30mm();
     }
 }

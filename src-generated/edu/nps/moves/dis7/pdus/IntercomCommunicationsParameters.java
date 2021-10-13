@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -32,7 +31,7 @@ public class IntercomCommunicationsParameters extends Object implements Serializ
    private byte[] padding = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IntercomCommunicationsParameters()
  {
  }
@@ -46,10 +45,13 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
    marshalSize += 2;  // recordLength
-   marshalSize += recordSpecificField.length * 1;
-   marshalSize += padding.length;
+   if (recordSpecificField != null)
+       marshalSize += recordSpecificField.length * 1;
+   if (padding != null)
+       marshalSize += padding.length;
 
    return marshalSize;
 }
@@ -123,7 +125,7 @@ public void marshal(DataOutputStream dos) throws Exception
        recordType.marshal(dos);
        dos.writeShort(recordLength);
 
-       for(int idx = 0; idx < recordSpecificField.length; idx++)
+       for (int idx = 0; idx < recordSpecificField.length; idx++)
            dos.writeByte(recordSpecificField[idx]);
 
        padding = new byte[Align.to32bits(dos)];
@@ -151,7 +153,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += recordType.getMarshalledSize();
         recordLength = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < recordSpecificField.length; idx++)
+        for (int idx = 0; idx < recordSpecificField.length; idx++)
             recordSpecificField[idx] = dis.readByte();
         uPosition += (recordSpecificField.length * 1);
         padding = new byte[Align.from32bits(uPosition,dis)];
@@ -177,7 +179,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    recordType.marshal(byteBuffer);
    byteBuffer.putShort( (short)recordLength);
 
-   for(int idx = 0; idx < recordSpecificField.length; idx++)
+   for (int idx = 0; idx < recordSpecificField.length; idx++)
        byteBuffer.put((byte)recordSpecificField[idx]);
 
    padding = new byte[Align.to32bits(byteBuffer)];
@@ -194,11 +196,22 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = IntercomControlRecordType.unmarshalEnum(byteBuffer);
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < recordSpecificField.length; idx++)
-        recordSpecificField[idx] = byteBuffer.get();
-    padding = new byte[Align.from32bits(byteBuffer)];
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = IntercomControlRecordType.unmarshalEnum(byteBuffer);
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute recordSpecificField marked as not serialized
+        for (int idx = 0; idx < recordSpecificField.length; idx++)
+            recordSpecificField[idx] = byteBuffer.get();
+        // attribute padding marked as not serialized
+        padding = new byte[Align.from32bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -235,7 +248,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (recordType == rhs.recordType)) ivarsEqual = false;
      if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(recordSpecificField[idx] == rhs.recordSpecificField[idx])) ivarsEqual = false;
      }

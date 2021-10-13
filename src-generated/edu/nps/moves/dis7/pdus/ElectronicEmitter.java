@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -33,7 +32,7 @@ public class ElectronicEmitter extends Object implements Serializable
    protected List< EmitterBeam > beams = new ArrayList< EmitterBeam >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ElectronicEmitter()
  {
  }
@@ -49,13 +48,16 @@ public int getMarshalledSize()
 
    marshalSize += 1;  // systemDataLength
    marshalSize += 1;  // numberOfBeams
-   marshalSize += emitterSystem.getMarshalledSize();
-   marshalSize += location.getMarshalledSize();
-   for(int idx=0; idx < beams.size(); idx++)
-   {
-        EmitterBeam listElement = beams.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (emitterSystem != null)
+       marshalSize += emitterSystem.getMarshalledSize();
+   if (location != null)
+       marshalSize += location.getMarshalledSize();
+   if (beams != null)
+       for (int idx=0; idx < beams.size(); idx++)
+       {
+            EmitterBeam listElement = beams.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -147,7 +149,7 @@ public void marshal(DataOutputStream dos) throws Exception
        emitterSystem.marshal(dos);
        location.marshal(dos);
 
-       for(int idx = 0; idx < beams.size(); idx++)
+       for (int idx = 0; idx < beams.size(); idx++)
        {
             EmitterBeam aEmitterBeam = beams.get(idx);
             aEmitterBeam.marshal(dos);
@@ -179,7 +181,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         uPosition += emitterSystem.unmarshal(dis);
         uPosition += location.unmarshal(dis);
-        for(int idx = 0; idx < numberOfBeams; idx++)
+        for (int idx = 0; idx < numberOfBeams; idx++)
         {
             EmitterBeam anX = new EmitterBeam();
             uPosition += anX.unmarshal(dis);
@@ -209,7 +211,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    emitterSystem.marshal(byteBuffer);
    location.marshal(byteBuffer);
 
-   for(int idx = 0; idx < beams.size(); idx++)
+   for (int idx = 0; idx < beams.size(); idx++)
    {
         EmitterBeam aEmitterBeam = beams.get(idx);
         aEmitterBeam.marshal(byteBuffer);
@@ -228,17 +230,29 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    systemDataLength = (byte)(byteBuffer.get() & 0xFF);
-    numberOfBeams = (byte)(byteBuffer.get() & 0xFF);
-    emitterSystem.unmarshal(byteBuffer);
-    location.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfBeams; idx++)
+    try
     {
-    EmitterBeam anX = new EmitterBeam();
-    anX.unmarshal(byteBuffer);
-    beams.add(anX);
-    }
+        // attribute systemDataLength marked as not serialized
+        systemDataLength = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfBeams marked as not serialized
+        numberOfBeams = (byte)(byteBuffer.get() & 0xFF);
+        // attribute emitterSystem marked as not serialized
+        emitterSystem.unmarshal(byteBuffer);
+        // attribute location marked as not serialized
+        location.unmarshal(byteBuffer);
+        // attribute beams marked as not serialized
+        for (int idx = 0; idx < numberOfBeams; idx++)
+        {
+        EmitterBeam anX = new EmitterBeam();
+        anX.unmarshal(byteBuffer);
+        beams.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -276,7 +290,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (emitterSystem.equals( rhs.emitterSystem) )) ivarsEqual = false;
      if( ! (location.equals( rhs.location) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < beams.size(); idx++)
+     for (int idx = 0; idx < beams.size(); idx++)
         if( ! ( beams.get(idx).equals(rhs.beams.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

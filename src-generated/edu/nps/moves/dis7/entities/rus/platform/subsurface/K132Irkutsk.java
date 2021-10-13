@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62573c86;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27199
+ * <p> Entity class <b><code>K132Irkutsk</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K132Irkutsk.createInstance()</code> or <code>new K132Irkutsk()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSGN (Nuclear Guided Missile) = <code>2</code>; </li>
+ *     <li> SubCategory: OscarIIClass  = <code>1</code>; </li>
+ *     <li> Specific: K132Irkutsk  = <code>9</code>; </li>
+ *     <li> Entity type uid: 27199; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65f2f9b0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSGNNuclearGuidedMissile
+ * @see SubCategory
+
  */
-public class K132Irkutsk extends EntityType
+public final class K132Irkutsk extends EntityType
 {
     /** Default constructor */
     public K132Irkutsk()
@@ -26,5 +40,11 @@ public class K132Irkutsk extends EntityType
         setCategory((byte)2); // uid 14771, SSGN (Nuclear Guided Missile)
         setSubCategory((byte)1); // uid 14772, Oscar II Class
         setSpecific((byte)9); // uid 27199, K-132 Irkutsk
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K132Irkutsk createInstance()
+    {
+            return new K132Irkutsk();
     }
 }

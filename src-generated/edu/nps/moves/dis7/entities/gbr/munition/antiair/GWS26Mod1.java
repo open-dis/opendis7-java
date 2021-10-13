@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@729cd862;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20970
+ * <p> Entity class <b><code>GWS26Mod1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GWS26Mod1.createInstance()</code> or <code>new GWS26Mod1()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SeaWolf  = <code>9</code>; </li>
+ *     <li> Specific: GWS26Mod1  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20970; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ef41ca2. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class GWS26Mod1 extends EntityType
+public final class GWS26Mod1 extends EntityType
 {
     /** Default constructor */
     public GWS26Mod1()
@@ -26,5 +40,11 @@ public class GWS26Mod1 extends EntityType
         setCategory((byte)1); // uid 20956, Guided
         setSubCategory((byte)9); // uid 20968, Sea Wolf
         setSpecific((byte)2); // uid 20970, GWS 26 Mod 1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GWS26Mod1 createInstance()
+    {
+            return new GWS26Mod1();
     }
 }

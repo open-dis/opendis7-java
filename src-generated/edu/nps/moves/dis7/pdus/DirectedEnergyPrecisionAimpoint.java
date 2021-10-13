@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -64,7 +63,7 @@ public class DirectedEnergyPrecisionAimpoint extends Object implements Serializa
    protected int  padding2 = (int)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DirectedEnergyPrecisionAimpoint()
  {
  }
@@ -81,13 +80,19 @@ public int getMarshalledSize()
    marshalSize += 4;  // recordType
    marshalSize += 2;  // recordLength
    marshalSize += 2;  // padding
-   marshalSize += targetSpotLocation.getMarshalledSize();
-   marshalSize += targetSpotEntityLocation.getMarshalledSize();
-   marshalSize += targetSpotVelocity.getMarshalledSize();
-   marshalSize += targetSpotAcceleration.getMarshalledSize();
-   marshalSize += targetEntityID.getMarshalledSize();
+   if (targetSpotLocation != null)
+       marshalSize += targetSpotLocation.getMarshalledSize();
+   if (targetSpotEntityLocation != null)
+       marshalSize += targetSpotEntityLocation.getMarshalledSize();
+   if (targetSpotVelocity != null)
+       marshalSize += targetSpotVelocity.getMarshalledSize();
+   if (targetSpotAcceleration != null)
+       marshalSize += targetSpotAcceleration.getMarshalledSize();
+   if (targetEntityID != null)
+       marshalSize += targetEntityID.getMarshalledSize();
    marshalSize += 1;  // targetComponentID
-   marshalSize += beamSpotType.getMarshalledSize();
+   if (beamSpotType != null)
+       marshalSize += beamSpotType.getMarshalledSize();
    marshalSize += 4;  // beamSpotCrossSectionSemiMajorAxis
    marshalSize += 4;  // beamSpotCrossSectionSemiMinorAxis
    marshalSize += 4;  // beamSpotCrossSectionOrientationAngle
@@ -475,21 +480,43 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    targetSpotLocation.unmarshal(byteBuffer);
-    targetSpotEntityLocation.unmarshal(byteBuffer);
-    targetSpotVelocity.unmarshal(byteBuffer);
-    targetSpotAcceleration.unmarshal(byteBuffer);
-    targetEntityID.unmarshal(byteBuffer);
-    targetComponentID = (byte)(byteBuffer.get() & 0xFF);
-    beamSpotType = DEPrecisionAimpointBeamSpotType.unmarshalEnum(byteBuffer);
-    beamSpotCrossSectionSemiMajorAxis = byteBuffer.getFloat();
-    beamSpotCrossSectionSemiMinorAxis = byteBuffer.getFloat();
-    beamSpotCrossSectionOrientationAngle = byteBuffer.getFloat();
-    peakIrradiance = byteBuffer.getFloat();
-    padding2 = byteBuffer.getInt();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute targetSpotLocation marked as not serialized
+        targetSpotLocation.unmarshal(byteBuffer);
+        // attribute targetSpotEntityLocation marked as not serialized
+        targetSpotEntityLocation.unmarshal(byteBuffer);
+        // attribute targetSpotVelocity marked as not serialized
+        targetSpotVelocity.unmarshal(byteBuffer);
+        // attribute targetSpotAcceleration marked as not serialized
+        targetSpotAcceleration.unmarshal(byteBuffer);
+        // attribute targetEntityID marked as not serialized
+        targetEntityID.unmarshal(byteBuffer);
+        // attribute targetComponentID marked as not serialized
+        targetComponentID = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamSpotType marked as not serialized
+        beamSpotType = DEPrecisionAimpointBeamSpotType.unmarshalEnum(byteBuffer);
+        // attribute beamSpotCrossSectionSemiMajorAxis marked as not serialized
+        beamSpotCrossSectionSemiMajorAxis = byteBuffer.getFloat();
+        // attribute beamSpotCrossSectionSemiMinorAxis marked as not serialized
+        beamSpotCrossSectionSemiMinorAxis = byteBuffer.getFloat();
+        // attribute beamSpotCrossSectionOrientationAngle marked as not serialized
+        beamSpotCrossSectionOrientationAngle = byteBuffer.getFloat();
+        // attribute peakIrradiance marked as not serialized
+        peakIrradiance = byteBuffer.getFloat();
+        // attribute padding2 marked as not serialized
+        padding2 = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

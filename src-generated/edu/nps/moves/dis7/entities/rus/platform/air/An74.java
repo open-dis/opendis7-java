@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a27cb34;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13404
+ * <p> Entity class <b><code>An74</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>An74.createInstance()</code> or <code>new An74()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 = <code>8</code>; </li>
+ *     <li> SubCategory: An74Madcap  = <code>2</code>; </li>
+ *     <li> Specific: An74  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13404; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42435b98. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2
+ * @see SubCategory
+
  */
-public class An74 extends EntityType
+public final class An74 extends EntityType
 {
     /** Default constructor */
     public An74()
@@ -26,5 +40,11 @@ public class An74 extends EntityType
         setCategory((byte)8); // uid 13400, Surveillance/C2
         setSubCategory((byte)2); // uid 13403, An-74 Madcap
         setSpecific((byte)1); // uid 13404, An-74
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static An74 createInstance()
+    {
+            return new An74();
     }
 }

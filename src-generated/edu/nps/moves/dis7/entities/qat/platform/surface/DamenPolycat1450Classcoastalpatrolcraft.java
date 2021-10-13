@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49096b06;
- * Country: Qatar (QAT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17840
+ * <p> Entity class <b><code>DamenPolycat1450Classcoastalpatrolcraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DamenPolycat1450Classcoastalpatrolcraft.createInstance()</code> or <code>new DamenPolycat1450Classcoastalpatrolcraft()</code>. </p>
+ * <ul>
+ *     <li> Country: Qatar (QAT) = <code>178</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: DamenPolycat1450Classcoastalpatrolcraft  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17840; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18388a3c. </p>
+ * @see Country#QATAR_QAT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class DamenPolycat1450Classcoastalpatrolcraft extends EntityType
+public final class DamenPolycat1450Classcoastalpatrolcraft extends EntityType
 {
     /** Default constructor */
     public DamenPolycat1450Classcoastalpatrolcraft()
@@ -25,5 +39,11 @@ public class DamenPolycat1450Classcoastalpatrolcraft extends EntityType
 
         setCategory((byte)7); // uid 17828, Light/Patrol Craft
         setSubCategory((byte)3); // uid 17840, Damen Polycat 1450 Class (coastal patrolcraft)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DamenPolycat1450Classcoastalpatrolcraft createInstance()
+    {
+            return new DamenPolycat1450Classcoastalpatrolcraft();
     }
 }

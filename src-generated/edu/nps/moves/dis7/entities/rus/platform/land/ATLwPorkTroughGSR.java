@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34523d46;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22846
+ * <p> Entity class <b><code>ATLwPorkTroughGSR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ATLwPorkTroughGSR.createInstance()</code> or <code>new ATLwPorkTroughGSR()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small tracked utility vehicle = <code>8</code>; </li>
+ *     <li> SubCategory: ATLlightartillerytractor  = <code>1</code>; </li>
+ *     <li> Specific: ATLwPorkTroughGSR  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22846; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ddd3478. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Smalltrackedutilityvehicle
+ * @see SubCategory
+
  */
-public class ATLwPorkTroughGSR extends EntityType
+public final class ATLwPorkTroughGSR extends EntityType
 {
     /** Default constructor */
     public ATLwPorkTroughGSR()
@@ -26,5 +40,11 @@ public class ATLwPorkTroughGSR extends EntityType
         setCategory((byte)8); // uid 12935, Small tracked utility vehicle
         setSubCategory((byte)1); // uid 12936, AT-L light artillery tractor
         setSpecific((byte)1); // uid 22846, AT-L w/ Pork Trough GSR
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ATLwPorkTroughGSR createInstance()
+    {
+            return new ATLwPorkTroughGSR();
     }
 }

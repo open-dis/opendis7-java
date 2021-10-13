@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class RepairResponsePdu extends LogisticsFamilyPdu implements Serializabl
    protected short  padding2 = (short)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RepairResponsePdu()
  {
     setPduType( DisPduType.REPAIR_RESPONSE );
@@ -50,9 +49,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
-   marshalSize += repairingEntityID.getMarshalledSize();
-   marshalSize += repairResult.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
+   if (repairingEntityID != null)
+       marshalSize += repairingEntityID.getMarshalledSize();
+   if (repairResult != null)
+       marshalSize += repairResult.getMarshalledSize();
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
 
@@ -239,11 +241,23 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    receivingEntityID.unmarshal(byteBuffer);
-    repairingEntityID.unmarshal(byteBuffer);
-    repairResult = RepairResponseRepairResult.unmarshalEnum(byteBuffer);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute repairingEntityID marked as not serialized
+        repairingEntityID.unmarshal(byteBuffer);
+        // attribute repairResult marked as not serialized
+        repairResult = RepairResponseRepairResult.unmarshalEnum(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

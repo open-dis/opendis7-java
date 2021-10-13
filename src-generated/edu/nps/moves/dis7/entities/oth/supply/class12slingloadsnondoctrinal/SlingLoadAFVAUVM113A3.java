@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c8f047a;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30840
+ * <p> Entity class <b><code>SlingLoadAFVAUVM113A3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadAFVAUVM113A3.createInstance()</code> or <code>new SlingLoadAFVAUVM113A3()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Vehicles = <code>5</code>; </li>
+ *     <li> SubCategory: SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV  = <code>2</code>; </li>
+ *     <li> Specific: SlingLoadAFVAUVM113A3  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30840; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd87c22. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadVehicles
+ * @see SubCategory
+
  */
-public class SlingLoadAFVAUVM113A3 extends EntityType
+public final class SlingLoadAFVAUVM113A3 extends EntityType
 {
     /** Default constructor */
     public SlingLoadAFVAUVM113A3()
@@ -26,5 +40,11 @@ public class SlingLoadAFVAUVM113A3 extends EntityType
         setCategory((byte)5); // uid 30829, Sling Load, Vehicles
         setSubCategory((byte)2); // uid 30837, Sling Load, Armoured Fighting Vehicle (AFV) / Armoured Utiliity Vehicle (AUV)
         setSpecific((byte)3); // uid 30840, Sling Load, AFV/AUV, M113A3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadAFVAUVM113A3 createInstance()
+    {
+            return new SlingLoadAFVAUVM113A3();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9e30f9a;
- * Country: Other;
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 21699
+ * <p> Entity class <b><code>_1000lbsExplosive</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1000lbsExplosive.createInstance()</code> or <code>new _1000lbsExplosive()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: ANFO94pctammoniumnitrate6pctfueloil  = <code>1</code>; </li>
+ *     <li> Specific: _1000lbsExplosive  = <code>1</code>; </li>
+ *     <li> Entity type uid: 21699; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47569167. </p>
+ * @see Country#OTHER
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class _1000lbsExplosive extends EntityType
+public final class _1000lbsExplosive extends EntityType
 {
     /** Default constructor */
     public _1000lbsExplosive()
@@ -26,5 +40,11 @@ public class _1000lbsExplosive extends EntityType
         setCategory((byte)3); // uid 21697, Fixed
         setSubCategory((byte)1); // uid 21698, AN/FO (94% ammonium nitrate, 6% fuel oil)
         setSpecific((byte)1); // uid 21699, 1 000 lbs. Explosive
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1000lbsExplosive createInstance()
+    {
+            return new _1000lbsExplosive();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2001e48c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11092
+ * <p> Entity class <b><code>UH1C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UH1C.createInstance()</code> or <code>new UH1C()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Bellmodel204Iroquois  = <code>1</code>; </li>
+ *     <li> Specific: UH1C  = <code>3</code>; </li>
+ *     <li> Entity type uid: 11092; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@553da911. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class UH1C extends EntityType
+public final class UH1C extends EntityType
 {
     /** Default constructor */
     public UH1C()
@@ -26,5 +40,11 @@ public class UH1C extends EntityType
         setCategory((byte)21); // uid 11088, Utility helicopter
         setSubCategory((byte)1); // uid 11089, Bell model 204 Iroquois
         setSpecific((byte)3); // uid 11092, UH-1C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UH1C createInstance()
+    {
+            return new UH1C();
     }
 }

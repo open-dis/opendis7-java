@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a37aefe;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16361
+ * <p> Entity class <b><code>Hkp9</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hkp9.createInstance()</code> or <code>new Hkp9()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack Helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: EurocopterBO105PAH1VBHBSH1  = <code>1</code>; </li>
+ *     <li> Specific: Hkp9  = <code>7</code>; </li>
+ *     <li> Entity type uid: 16361; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bc222e. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackHelicopter
+ * @see SubCategory
+
  */
-public class Hkp9 extends EntityType
+public final class Hkp9 extends EntityType
 {
     /** Default constructor */
     public Hkp9()
@@ -26,5 +40,11 @@ public class Hkp9 extends EntityType
         setCategory((byte)20); // uid 16353, Attack Helicopter
         setSubCategory((byte)1); // uid 16354, Eurocopter BO 105/PAH-1/VBH/BSH-1
         setSpecific((byte)7); // uid 16361, Hkp 9
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hkp9 createInstance()
+    {
+            return new Hkp9();
     }
 }

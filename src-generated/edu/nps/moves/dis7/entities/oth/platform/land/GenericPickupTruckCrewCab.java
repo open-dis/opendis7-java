@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4837595f;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25820
+ * <p> Entity class <b><code>GenericPickupTruckCrewCab</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericPickupTruckCrewCab.createInstance()</code> or <code>new GenericPickupTruckCrewCab()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: GenericPickupTruckCrewCab  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25820; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@36dce7ed. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class GenericPickupTruckCrewCab extends EntityType
+public final class GenericPickupTruckCrewCab extends EntityType
 {
     /** Default constructor */
     public GenericPickupTruckCrewCab()
@@ -25,5 +39,11 @@ public class GenericPickupTruckCrewCab extends EntityType
 
         setCategory((byte)83); // uid 24831, Single Unit Cargo Truck
         setSubCategory((byte)4); // uid 25820, Generic Pickup Truck, Crew Cab
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericPickupTruckCrewCab createInstance()
+    {
+            return new GenericPickupTruckCrewCab();
     }
 }

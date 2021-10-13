@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fa0450e;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18710
+ * <p> Entity class <b><code>P1103Murban</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P1103Murban.createInstance()</code> or <code>new P1103Murban()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ArdhanaClasslargepatrolcraft  = <code>4</code>; </li>
+ *     <li> Specific: P1103Murban  = <code>3</code>; </li>
+ *     <li> Entity type uid: 18710; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@885e7ff. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P1103Murban extends EntityType
+public final class P1103Murban extends EntityType
 {
     /** Default constructor */
     public P1103Murban()
@@ -26,5 +40,11 @@ public class P1103Murban extends EntityType
         setCategory((byte)7); // uid 18692, Light/Patrol Craft
         setSubCategory((byte)4); // uid 18707, Ardhana Class (large patrol craft)
         setSpecific((byte)3); // uid 18710, P1103 Murban
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P1103Murban createInstance()
+    {
+            return new P1103Murban();
     }
 }

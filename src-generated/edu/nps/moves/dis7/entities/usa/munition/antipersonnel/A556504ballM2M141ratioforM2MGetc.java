@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f935d49;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 19837
+ * <p> Entity class <b><code>A556504ballM2M141ratioforM2MGetc</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A556504ballM2M141ratioforM2MGetc.createInstance()</code> or <code>new A556504ballM2M141ratioforM2MGetc()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _127mm  = <code>5</code>; </li>
+ *     <li> Specific: A556504ballM2M14_1ratioforM2MGetc  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19837; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49631cfb. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class A556504ballM2M141ratioforM2MGetc extends EntityType
+public final class A556504ballM2M141ratioforM2MGetc extends EntityType
 {
     /** Default constructor */
     public A556504ballM2M141ratioforM2MGetc()
@@ -26,5 +40,11 @@ public class A556504ballM2M141ratioforM2MGetc extends EntityType
         setCategory((byte)2); // uid 19810, Ballistic
         setSubCategory((byte)5); // uid 19835, 12.7 mm
         setSpecific((byte)2); // uid 19837, A556 .50 4 ball M2/M1 4:1 ratio (for M2 MG, etc.)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A556504ballM2M141ratioforM2MGetc createInstance()
+    {
+            return new A556504ballM2M141ratioforM2MGetc();
     }
 }

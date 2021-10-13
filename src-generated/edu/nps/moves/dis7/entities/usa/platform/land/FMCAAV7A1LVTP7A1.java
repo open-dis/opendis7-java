@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3f81621c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10210
+ * <p> Entity class <b><code>FMCAAV7A1LVTP7A1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FMCAAV7A1LVTP7A1.createInstance()</code> or <code>new FMCAAV7A1LVTP7A1()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: FMCAAV7A1LVTP7A1  = <code>26</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 10210; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@53c1179a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class FMCAAV7A1LVTP7A1 extends EntityType
+public final class FMCAAV7A1LVTP7A1 extends EntityType
 {
     /** Default constructor */
     public FMCAAV7A1LVTP7A1()
@@ -25,5 +39,11 @@ public class FMCAAV7A1LVTP7A1 extends EntityType
 
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)26); // uid 10210, FMC AAV7A1 (LVTP7A1)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FMCAAV7A1LVTP7A1 createInstance()
+    {
+            return new FMCAAV7A1LVTP7A1();
     }
 }

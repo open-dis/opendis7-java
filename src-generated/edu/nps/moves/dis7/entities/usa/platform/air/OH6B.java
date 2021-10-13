@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6436e181;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26317
+ * <p> Entity class <b><code>OH6B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OH6B.createInstance()</code> or <code>new OH6B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Observation helicopter = <code>24</code>; </li>
+ *     <li> SubCategory: HughesOH6Cayuse  = <code>5</code>; </li>
+ *     <li> Specific: OH6B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26317; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@494c8f29. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Observationhelicopter
+ * @see SubCategory
+
  */
-public class OH6B extends EntityType
+public final class OH6B extends EntityType
 {
     /** Default constructor */
     public OH6B()
@@ -26,5 +40,11 @@ public class OH6B extends EntityType
         setCategory((byte)24); // uid 11174, Observation helicopter
         setSubCategory((byte)5); // uid 26315, Hughes OH-6 Cayuse
         setSpecific((byte)2); // uid 26317, OH-6B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OH6B createInstance()
+    {
+            return new OH6B();
     }
 }

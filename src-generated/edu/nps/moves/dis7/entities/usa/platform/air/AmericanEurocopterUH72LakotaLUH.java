@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7d42542;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23566
+ * <p> Entity class <b><code>AmericanEurocopterUH72LakotaLUH</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AmericanEurocopterUH72LakotaLUH.createInstance()</code> or <code>new AmericanEurocopterUH72LakotaLUH()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: AmericanEurocopterUH72LakotaLUH  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23566; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7944b8b4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class AmericanEurocopterUH72LakotaLUH extends EntityType
+public final class AmericanEurocopterUH72LakotaLUH extends EntityType
 {
     /** Default constructor */
     public AmericanEurocopterUH72LakotaLUH()
@@ -25,5 +39,11 @@ public class AmericanEurocopterUH72LakotaLUH extends EntityType
 
         setCategory((byte)21); // uid 11088, Utility helicopter
         setSubCategory((byte)7); // uid 23566, American Eurocopter UH-72 Lakota (LUH)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AmericanEurocopterUH72LakotaLUH createInstance()
+    {
+            return new AmericanEurocopterUH72LakotaLUH();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@677ce519;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11973
+ * <p> Entity class <b><code>LHA4Nassau</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LHA4Nassau.createInstance()</code> or <code>new LHA4Nassau()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Assault Ship = <code>54</code>; </li>
+ *     <li> SubCategory: TarawaClass  = <code>1</code>; </li>
+ *     <li> Specific: LHA4Nassau  = <code>4</code>; </li>
+ *     <li> Entity type uid: 11973; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42ed89da. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousAssaultShip
+ * @see SubCategory
+
  */
-public class LHA4Nassau extends EntityType
+public final class LHA4Nassau extends EntityType
 {
     /** Default constructor */
     public LHA4Nassau()
@@ -26,5 +40,11 @@ public class LHA4Nassau extends EntityType
         setCategory((byte)54); // uid 11968, Amphibious Assault Ship
         setSubCategory((byte)1); // uid 11969, Tarawa Class
         setSpecific((byte)4); // uid 11973, LHA 4 Nassau
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LHA4Nassau createInstance()
+    {
+            return new LHA4Nassau();
     }
 }

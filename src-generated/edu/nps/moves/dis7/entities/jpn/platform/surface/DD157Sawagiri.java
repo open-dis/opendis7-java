@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@649725e3;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29509
+ * <p> Entity class <b><code>DD157Sawagiri</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD157Sawagiri.createInstance()</code> or <code>new DD157Sawagiri()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: AsagiriClassDD  = <code>3</code>; </li>
+ *     <li> Specific: DD157Sawagiri  = <code>7</code>; </li>
+ *     <li> Entity type uid: 29509; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@419a20a6. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class DD157Sawagiri extends EntityType
+public final class DD157Sawagiri extends EntityType
 {
     /** Default constructor */
     public DD157Sawagiri()
@@ -26,5 +40,11 @@ public class DD157Sawagiri extends EntityType
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)3); // uid 18893, Asagiri Class (DD)
         setSpecific((byte)7); // uid 29509, DD-157 Sawagiri
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD157Sawagiri createInstance()
+    {
+            return new DD157Sawagiri();
     }
 }

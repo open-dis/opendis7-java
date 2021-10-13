@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4ca0b9b1;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30641
+ * <p> Entity class <b><code>_30mmCaliber</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_30mmCaliber.createInstance()</code> or <code>new _30mmCaliber()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons = <code>9</code>; </li>
+ *     <li> SubCategory: _30mmCaliber  = <code>7</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30641; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@d1f23a0. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeapons
+ * @see SubCategory
+
  */
-public class _30mmCaliber extends EntityType
+public final class _30mmCaliber extends EntityType
 {
     /** Default constructor */
     public _30mmCaliber()
@@ -25,5 +39,11 @@ public class _30mmCaliber extends EntityType
 
         setCategory((byte)9); // uid 30622, M - Weapons
         setSubCategory((byte)7); // uid 30641, 30mm Caliber
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _30mmCaliber createInstance()
+    {
+            return new _30mmCaliber();
     }
 }

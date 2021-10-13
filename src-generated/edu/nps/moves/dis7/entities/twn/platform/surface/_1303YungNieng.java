@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1457fde;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19223
+ * <p> Entity class <b><code>_1303YungNieng</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1303YungNieng.createInstance()</code> or <code>new _1303YungNieng()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Coutermeasures Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: YunFengClass  = <code>1</code>; </li>
+ *     <li> Specific: _1303YungNieng  = <code>3</code>; </li>
+ *     <li> Entity type uid: 19223; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b680207. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCoutermeasuresShipCraft
+ * @see SubCategory
+
  */
-public class _1303YungNieng extends EntityType
+public final class _1303YungNieng extends EntityType
 {
     /** Default constructor */
     public _1303YungNieng()
@@ -26,5 +40,11 @@ public class _1303YungNieng extends EntityType
         setCategory((byte)8); // uid 19219, Mine Coutermeasures Ship/Craft
         setSubCategory((byte)1); // uid 19220, Yun Feng Class
         setSpecific((byte)3); // uid 19223, 1303 Yung Nieng
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1303YungNieng createInstance()
+    {
+            return new _1303YungNieng();
     }
 }

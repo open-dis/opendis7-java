@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f2f2cc1;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30244
+ * <p> Entity class <b><code>_155Nanjing</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_155Nanjing.createInstance()</code> or <code>new _155Nanjing()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: LuyangIIIClassType052D  = <code>8</code>; </li>
+ *     <li> Specific: _155Nanjing  = <code>9</code>; </li>
+ *     <li> Entity type uid: 30244; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6279cee3. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class _155Nanjing extends EntityType
+public final class _155Nanjing extends EntityType
 {
     /** Default constructor */
     public _155Nanjing()
@@ -26,5 +40,11 @@ public class _155Nanjing extends EntityType
         setCategory((byte)4); // uid 17046, Guided Missile Destroyer (DDG)
         setSubCategory((byte)8); // uid 29489, Luyang III Class (Type 052D)
         setSpecific((byte)9); // uid 30244, 155 Nanjing
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _155Nanjing createInstance()
+    {
+            return new _155Nanjing();
     }
 }

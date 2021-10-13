@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40620d8e;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23034
+ * <p> Entity class <b><code>_272GeneralKazmierzPulaski</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_272GeneralKazmierzPulaski.createInstance()</code> or <code>new _272GeneralKazmierzPulaski()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: OliverPerryClass  = <code>1</code>; </li>
+ *     <li> Specific: _272GeneralKazmierzPulaski  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23034; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53b98ff6. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _272GeneralKazmierzPulaski extends EntityType
+public final class _272GeneralKazmierzPulaski extends EntityType
 {
     /** Default constructor */
     public _272GeneralKazmierzPulaski()
@@ -26,5 +40,11 @@ public class _272GeneralKazmierzPulaski extends EntityType
         setCategory((byte)6); // uid 23032, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 23033, Oliver Perry Class
         setSpecific((byte)1); // uid 23034, 272 General Kazmierz Pulaski
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _272GeneralKazmierzPulaski createInstance()
+    {
+            return new _272GeneralKazmierzPulaski();
     }
 }

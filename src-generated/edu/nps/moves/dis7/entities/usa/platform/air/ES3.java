@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b90fee4;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10981
+ * <p> Entity class <b><code>ES3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ES3.createInstance()</code> or <code>new ES3()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: LockheedS3Viking  = <code>2</code>; </li>
+ *     <li> Specific: ES3  = <code>2</code>; </li>
+ *     <li> Entity type uid: 10981; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ff15a50. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarinepatrolobservation
+ * @see SubCategory
+
  */
-public class ES3 extends EntityType
+public final class ES3 extends EntityType
 {
     /** Default constructor */
     public ES3()
@@ -26,5 +40,11 @@ public class ES3 extends EntityType
         setCategory((byte)5); // uid 10963, Anti-Submarine/patrol/observation
         setSubCategory((byte)2); // uid 10979, Lockheed S-3 Viking
         setSpecific((byte)2); // uid 10981, ES-3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ES3 createInstance()
+    {
+            return new ES3();
     }
 }

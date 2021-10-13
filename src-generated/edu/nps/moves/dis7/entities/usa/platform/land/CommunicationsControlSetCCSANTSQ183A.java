@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dd90166;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22967
+ * <p> Entity class <b><code>CommunicationsControlSetCCSANTSQ183A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CommunicationsControlSetCCSANTSQ183A.createInstance()</code> or <code>new CommunicationsControlSetCCSANTSQ183A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: ADAC2FixedPosition  = <code>8</code>; </li>
+ *     <li> Specific: CommunicationsControlSetCCSANTSQ183A  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22967; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32ec9c90. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class CommunicationsControlSetCCSANTSQ183A extends EntityType
+public final class CommunicationsControlSetCCSANTSQ183A extends EntityType
 {
     /** Default constructor */
     public CommunicationsControlSetCCSANTSQ183A()
@@ -26,5 +40,11 @@ public class CommunicationsControlSetCCSANTSQ183A extends EntityType
         setCategory((byte)28); // uid 10679, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)8); // uid 22964, ADA C2 Fixed Position
         setSpecific((byte)3); // uid 22967, Communications Control Set (CCS) AN/TSQ-183A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CommunicationsControlSetCCSANTSQ183A createInstance()
+    {
+            return new CommunicationsControlSetCCSANTSQ183A();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -38,7 +37,7 @@ public class Environment extends Object implements Serializable
    private byte[] padding2 = new byte[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Environment()
  {
  }
@@ -52,12 +51,15 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += environmentType.getMarshalledSize();
+   if (environmentType != null)
+       marshalSize += environmentType.getMarshalledSize();
    marshalSize += 2;  // length
    marshalSize += 1;  // index
    marshalSize += 1;  // padding1
-   marshalSize += geometry.length * 1;
-   marshalSize += padding2.length;
+   if (geometry != null)
+       marshalSize += geometry.length * 1;
+   if (padding2 != null)
+       marshalSize += padding2.length;
 
    return marshalSize;
 }
@@ -179,7 +181,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(index);
        dos.writeByte(padding1);
 
-       for(int idx = 0; idx < geometry.length; idx++)
+       for (int idx = 0; idx < geometry.length; idx++)
            dos.writeByte(geometry[idx]);
 
        padding2 = new byte[Align.to64bits(dos)];
@@ -211,7 +213,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding1 = (byte)dis.readUnsignedByte();
         uPosition += 1;
-        for(int idx = 0; idx < geometry.length; idx++)
+        for (int idx = 0; idx < geometry.length; idx++)
             geometry[idx] = dis.readByte();
         uPosition += (geometry.length * 1);
         padding2 = new byte[Align.from64bits(uPosition,dis)];
@@ -239,7 +241,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)index);
    byteBuffer.put( (byte)padding1);
 
-   for(int idx = 0; idx < geometry.length; idx++)
+   for (int idx = 0; idx < geometry.length; idx++)
        byteBuffer.put((byte)geometry[idx]);
 
    padding2 = new byte[Align.to64bits(byteBuffer)];
@@ -256,13 +258,26 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    environmentType = EnvironmentalProcessRecordType.unmarshalEnum(byteBuffer);
-    length = (short)(byteBuffer.getShort() & 0xFFFF);
-    index = (byte)(byteBuffer.get() & 0xFF);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    for(int idx = 0; idx < geometry.length; idx++)
-        geometry[idx] = byteBuffer.get();
-    padding2 = new byte[Align.from64bits(byteBuffer)];
+    try
+    {
+        // attribute environmentType marked as not serialized
+        environmentType = EnvironmentalProcessRecordType.unmarshalEnum(byteBuffer);
+        // attribute length marked as not serialized
+        length = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute index marked as not serialized
+        index = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute geometry marked as not serialized
+        for (int idx = 0; idx < geometry.length; idx++)
+            geometry[idx] = byteBuffer.get();
+        // attribute padding2 marked as not serialized
+        padding2 = new byte[Align.from64bits(byteBuffer)];
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -301,7 +316,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (index == rhs.index)) ivarsEqual = false;
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(geometry[idx] == rhs.geometry[idx])) ivarsEqual = false;
      }

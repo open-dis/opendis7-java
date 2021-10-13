@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c956dda;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30724
+ * <p> Entity class <b><code>LAU114A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LAU114A.createInstance()</code> or <code>new LAU114A()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
+ *     <li> SubCategory: AirtoAirAAWeaponRack  = <code>2</code>; </li>
+ *     <li> Specific: LAU114A  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30724; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15be68b. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see JRacksAdaptorsPylons
+ * @see SubCategory
+
  */
-public class LAU114A extends EntityType
+public final class LAU114A extends EntityType
 {
     /** Default constructor */
     public LAU114A()
@@ -26,5 +40,11 @@ public class LAU114A extends EntityType
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)2); // uid 30721, Air to Air (A/A) Weapon Rack
         setSpecific((byte)3); // uid 30724, LAU-114/A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LAU114A createInstance()
+    {
+            return new LAU114A();
     }
 }

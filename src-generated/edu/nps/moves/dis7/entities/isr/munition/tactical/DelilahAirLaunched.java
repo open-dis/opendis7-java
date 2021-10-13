@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10ed037a;
- * Country: Israel (ISR);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32530
+ * <p> Entity class <b><code>DelilahAirLaunched</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DelilahAirLaunched.createInstance()</code> or <code>new DelilahAirLaunched()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: DelilahAirLaunched  = <code>10</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32530; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@33e3bd2e. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class DelilahAirLaunched extends EntityType
+public final class DelilahAirLaunched extends EntityType
 {
     /** Default constructor */
     public DelilahAirLaunched()
@@ -25,5 +39,11 @@ public class DelilahAirLaunched extends EntityType
 
         setCategory((byte)1); // uid 29011, Guided
         setSubCategory((byte)10); // uid 32530, Delilah (Air Launched)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DelilahAirLaunched createInstance()
+    {
+            return new DelilahAirLaunched();
     }
 }

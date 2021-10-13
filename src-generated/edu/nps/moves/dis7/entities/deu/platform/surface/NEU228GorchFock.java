@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58326051;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30389
+ * <p> Entity class <b><code>NEU228GorchFock</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NEU228GorchFock.createInstance()</code> or <code>new NEU228GorchFock()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fishing Vessel = <code>86</code>; </li>
+ *     <li> SubCategory: MediumFishingVesselupto65ft198m  = <code>2</code>; </li>
+ *     <li> Specific: NEU228GorchFock  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30389; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a220c9a. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FishingVessel
+ * @see SubCategory
+
  */
-public class NEU228GorchFock extends EntityType
+public final class NEU228GorchFock extends EntityType
 {
     /** Default constructor */
     public NEU228GorchFock()
@@ -26,5 +40,11 @@ public class NEU228GorchFock extends EntityType
         setCategory((byte)86); // uid 27584, Fishing Vessel
         setSubCategory((byte)2); // uid 30387, Medium Fishing Vessel (up to 65ft/19.8m)
         setSpecific((byte)2); // uid 30389, NEU 228 Gorch Fock
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NEU228GorchFock createInstance()
+    {
+            return new NEU228GorchFock();
     }
 }

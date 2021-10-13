@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@47ef5a33;
- * Country: Russia (RUS);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 22293
+ * <p> Entity class <b><code>TACCSFnotionalhostilechaff</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TACCSFnotionalhostilechaff.createInstance()</code> or <code>new TACCSFnotionalhostilechaff()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Chaff = <code>1</code>; </li>
+ *     <li> SubCategory: Bundle  = <code>1</code>; </li>
+ *     <li> Specific: BundleOther  = <code>0</code>; </li>
+ *     <li> Entity type uid: 22293; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5b1ff8cd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Chaff
+ * @see SubCategory
+
  */
-public class TACCSFnotionalhostilechaff extends EntityType
+public final class TACCSFnotionalhostilechaff extends EntityType
 {
     /** Default constructor */
     public TACCSFnotionalhostilechaff()
@@ -27,5 +41,11 @@ public class TACCSFnotionalhostilechaff extends EntityType
         setSubCategory((byte)1); // uid 22291, Bundle
         setSpecific((byte)0); // uid 22292, Bundle, Other
         setExtra((byte)1); // uid 22293, TACCSF notional hostile chaff
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TACCSFnotionalhostilechaff createInstance()
+    {
+            return new TACCSFnotionalhostilechaff();
     }
 }

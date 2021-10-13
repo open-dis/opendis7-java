@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c5747db;
- * Country: Serbia (SRB);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 30186
+ * <p> Entity class <b><code>_82mmHEFRAGM81</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_82mmHEFRAGM81.createInstance()</code> or <code>new _82mmHEFRAGM81()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _82mmRecoillessAmmunition  = <code>1</code>; </li>
+ *     <li> Specific: _82mmHEFRAGM81  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30186; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a85b4e6. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _82mmHEFRAGM81 extends EntityType
+public final class _82mmHEFRAGM81 extends EntityType
 {
     /** Default constructor */
     public _82mmHEFRAGM81()
@@ -26,5 +40,11 @@ public class _82mmHEFRAGM81 extends EntityType
         setCategory((byte)2); // uid 30184, Ballistic
         setSubCategory((byte)1); // uid 30185, 82mm Recoilless Ammunition
         setSpecific((byte)1); // uid 30186, 82mm HE-FRAG M81
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _82mmHEFRAGM81 createInstance()
+    {
+            return new _82mmHEFRAGM81();
     }
 }

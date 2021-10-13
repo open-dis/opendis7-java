@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6581dc0a;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27588
+ * <p> Entity class <b><code>RoRoShipRollonRolloffShip</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RoRoShipRollonRolloffShip.createInstance()</code> or <code>new RoRoShipRollonRolloffShip()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: RoRoShipRollonRolloffShip  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27588; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@479460a6. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class RoRoShipRollonRolloffShip extends EntityType
+public final class RoRoShipRollonRolloffShip extends EntityType
 {
     /** Default constructor */
     public RoRoShipRollonRolloffShip()
@@ -25,5 +39,11 @@ public class RoRoShipRollonRolloffShip extends EntityType
 
         setCategory((byte)81); // uid 27585, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)5); // uid 27588, Ro-Ro Ship (Roll-on/Roll-off Ship)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RoRoShipRollonRolloffShip createInstance()
+    {
+            return new RoRoShipRollonRolloffShip();
     }
 }

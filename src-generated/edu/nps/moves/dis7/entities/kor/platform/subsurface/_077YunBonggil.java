@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@388ffbc2;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 30427
+ * <p> Entity class <b><code>_077YunBonggil</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_077YunBonggil.createInstance()</code> or <code>new _077YunBonggil()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSP (Attack Submarine - Diesel Air-Independent Propulsion) = <code>11</code>; </li>
+ *     <li> SubCategory: SohnWonilClassType214  = <code>1</code>; </li>
+ *     <li> Specific: _077YunBonggil  = <code>5</code>; </li>
+ *     <li> Entity type uid: 30427; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a067c25. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSPAttackSubmarineDieselAirIndependentPropulsion
+ * @see SubCategory
+
  */
-public class _077YunBonggil extends EntityType
+public final class _077YunBonggil extends EntityType
 {
     /** Default constructor */
     public _077YunBonggil()
@@ -26,5 +40,11 @@ public class _077YunBonggil extends EntityType
         setCategory((byte)11); // uid 30421, SSP (Attack Submarine - Diesel Air-Independent Propulsion)
         setSubCategory((byte)1); // uid 30422, Sohn Won-il Class (Type 214)
         setSpecific((byte)5); // uid 30427, 077 Yun Bong-gil
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _077YunBonggil createInstance()
+    {
+            return new _077YunBonggil();
     }
 }

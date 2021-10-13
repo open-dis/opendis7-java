@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@126945f9;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23175
+ * <p> Entity class <b><code>L21Guldar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L21Guldar.createInstance()</code> or <code>new L21Guldar()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: Polnochnyclass  = <code>1</code>; </li>
+ *     <li> Specific: L21Guldar  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23175; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a55299e. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class L21Guldar extends EntityType
+public final class L21Guldar extends EntityType
 {
     /** Default constructor */
     public L21Guldar()
@@ -26,5 +40,11 @@ public class L21Guldar extends EntityType
         setCategory((byte)10); // uid 23170, Tank Landing Ship
         setSubCategory((byte)1); // uid 23171, Polnochny class
         setSpecific((byte)4); // uid 23175, L21 Guldar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L21Guldar createInstance()
+    {
+            return new L21Guldar();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5b3f61ff;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26407
+ * <p> Entity class <b><code>BO105C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BO105C.createInstance()</code> or <code>new BO105C()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg) = <code>90</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific: BO105  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26407; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1130520d. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterSmallupto7000lbs3175kg
+ * @see SubCategory
+
  */
-public class BO105C extends EntityType
+public final class BO105C extends EntityType
 {
     /** Default constructor */
     public BO105C()
@@ -27,5 +41,11 @@ public class BO105C extends EntityType
         setSubCategory((byte)12); // uid 26404, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
         setSpecific((byte)1); // uid 26405, BO-105
         setExtra((byte)2); // uid 26407, BO-105C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BO105C createInstance()
+    {
+            return new BO105C();
     }
 }

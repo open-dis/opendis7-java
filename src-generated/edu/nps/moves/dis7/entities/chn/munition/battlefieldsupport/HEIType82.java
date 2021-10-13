@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2801827a;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21525
+ * <p> Entity class <b><code>HEIType82</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEIType82.createInstance()</code> or <code>new HEIType82()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _130mmrocket  = <code>16</code>; </li>
+ *     <li> Specific: HEIType82  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21525; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7aa01bd9. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEIType82 extends EntityType
+public final class HEIType82 extends EntityType
 {
     /** Default constructor */
     public HEIType82()
@@ -26,5 +40,11 @@ public class HEIType82 extends EntityType
         setCategory((byte)2); // uid 21465, Ballistic
         setSubCategory((byte)16); // uid 21522, 130 mm rocket
         setSpecific((byte)3); // uid 21525, HEI Type 82
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEIType82 createInstance()
+    {
+            return new HEIType82();
     }
 }

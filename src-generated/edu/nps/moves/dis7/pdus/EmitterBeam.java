@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -51,7 +50,7 @@ public class EmitterBeam extends Object implements Serializable
    protected List< TrackJamData > trackJamData = new ArrayList< TrackJamData >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EmitterBeam()
  {
  }
@@ -68,18 +67,25 @@ public int getMarshalledSize()
    marshalSize += 1;  // beamDataLength
    marshalSize += 1;  // beamNumber
    marshalSize += 2;  // beamParameterIndex
-   marshalSize += fundamentalParameterData.getMarshalledSize();
-   marshalSize += beamData.getMarshalledSize();
-   marshalSize += beamFunction.getMarshalledSize();
+   if (fundamentalParameterData != null)
+       marshalSize += fundamentalParameterData.getMarshalledSize();
+   if (beamData != null)
+       marshalSize += beamData.getMarshalledSize();
+   if (beamFunction != null)
+       marshalSize += beamFunction.getMarshalledSize();
    marshalSize += 1;  // numberOfTargets
-   marshalSize += highDensityTrackJam.getMarshalledSize();
-   marshalSize += beamStatus.getMarshalledSize();
-   marshalSize += jammingTechnique.getMarshalledSize();
-   for(int idx=0; idx < trackJamData.size(); idx++)
-   {
-        TrackJamData listElement = trackJamData.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (highDensityTrackJam != null)
+       marshalSize += highDensityTrackJam.getMarshalledSize();
+   if (beamStatus != null)
+       marshalSize += beamStatus.getMarshalledSize();
+   if (jammingTechnique != null)
+       marshalSize += jammingTechnique.getMarshalledSize();
+   if (trackJamData != null)
+       for (int idx=0; idx < trackJamData.size(); idx++)
+       {
+            TrackJamData listElement = trackJamData.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -287,7 +293,7 @@ public void marshal(DataOutputStream dos) throws Exception
        beamStatus.marshal(dos);
        jammingTechnique.marshal(dos);
 
-       for(int idx = 0; idx < trackJamData.size(); idx++)
+       for (int idx = 0; idx < trackJamData.size(); idx++)
        {
             TrackJamData aTrackJamData = trackJamData.get(idx);
             aTrackJamData.marshal(dos);
@@ -329,7 +335,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += highDensityTrackJam.getMarshalledSize();
         uPosition += beamStatus.unmarshal(dis);
         uPosition += jammingTechnique.unmarshal(dis);
-        for(int idx = 0; idx < numberOfTargets; idx++)
+        for (int idx = 0; idx < numberOfTargets; idx++)
         {
             TrackJamData anX = new TrackJamData();
             uPosition += anX.unmarshal(dis);
@@ -365,7 +371,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    beamStatus.marshal(byteBuffer);
    jammingTechnique.marshal(byteBuffer);
 
-   for(int idx = 0; idx < trackJamData.size(); idx++)
+   for (int idx = 0; idx < trackJamData.size(); idx++)
    {
         TrackJamData aTrackJamData = trackJamData.get(idx);
         aTrackJamData.marshal(byteBuffer);
@@ -384,23 +390,41 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    beamDataLength = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
-    beamParameterIndex = (short)(byteBuffer.getShort() & 0xFFFF);
-    fundamentalParameterData.unmarshal(byteBuffer);
-    beamData.unmarshal(byteBuffer);
-    beamFunction = ElectromagneticEmissionBeamFunction.unmarshalEnum(byteBuffer);
-    numberOfTargets = (byte)(byteBuffer.get() & 0xFF);
-    highDensityTrackJam = HighDensityTrackJam.unmarshalEnum(byteBuffer);
-    beamStatus.unmarshal(byteBuffer);
-    jammingTechnique.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfTargets; idx++)
+    try
     {
-    TrackJamData anX = new TrackJamData();
-    anX.unmarshal(byteBuffer);
-    trackJamData.add(anX);
-    }
+        // attribute beamDataLength marked as not serialized
+        beamDataLength = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamParameterIndex marked as not serialized
+        beamParameterIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute fundamentalParameterData marked as not serialized
+        fundamentalParameterData.unmarshal(byteBuffer);
+        // attribute beamData marked as not serialized
+        beamData.unmarshal(byteBuffer);
+        // attribute beamFunction marked as not serialized
+        beamFunction = ElectromagneticEmissionBeamFunction.unmarshalEnum(byteBuffer);
+        // attribute numberOfTargets marked as not serialized
+        numberOfTargets = (byte)(byteBuffer.get() & 0xFF);
+        // attribute highDensityTrackJam marked as not serialized
+        highDensityTrackJam = HighDensityTrackJam.unmarshalEnum(byteBuffer);
+        // attribute beamStatus marked as not serialized
+        beamStatus.unmarshal(byteBuffer);
+        // attribute jammingTechnique marked as not serialized
+        jammingTechnique.unmarshal(byteBuffer);
+        // attribute trackJamData marked as not serialized
+        for (int idx = 0; idx < numberOfTargets; idx++)
+        {
+        TrackJamData anX = new TrackJamData();
+        anX.unmarshal(byteBuffer);
+        trackJamData.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -444,7 +468,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (beamStatus.equals( rhs.beamStatus) )) ivarsEqual = false;
      if( ! (jammingTechnique.equals( rhs.jammingTechnique) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < trackJamData.size(); idx++)
+     for (int idx = 0; idx < trackJamData.size(); idx++)
         if( ! ( trackJamData.get(idx).equals(rhs.trackJamData.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

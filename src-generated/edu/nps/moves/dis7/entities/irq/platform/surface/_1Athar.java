@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19553973;
- * Country: Iraq (IRQ);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24583
+ * <p> Entity class <b><code>_1Athar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_1Athar.createInstance()</code> or <code>new _1Athar()</code>. </p>
+ * <ul>
+ *     <li> Country: Iraq (IRQ) = <code>102</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: CrudeOilTankerupto159999DWT  = <code>5</code>; </li>
+ *     <li> Specific: _1Athar  = <code>2</code>; </li>
+ *     <li> Entity type uid: 24583; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52d645b1. </p>
+ * @see Country#IRAQ_IRQ
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class _1Athar extends EntityType
+public final class _1Athar extends EntityType
 {
     /** Default constructor */
     public _1Athar()
@@ -26,5 +40,11 @@ public class _1Athar extends EntityType
         setCategory((byte)82); // uid 24580, Tanker (Group 3 Merchant)
         setSubCategory((byte)5); // uid 24581, Crude Oil Tanker (up to 159,999 DWT)
         setSpecific((byte)2); // uid 24583, 1 Athar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _1Athar createInstance()
+    {
+            return new _1Athar();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4206a205;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24377
+ * <p> Entity class <b><code>ShaanxiAircraftCompanyY8X</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShaanxiAircraftCompanyY8X.createInstance()</code> or <code>new ShaanxiAircraftCompanyY8X()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/Patrol/Observation = <code>5</code>; </li>
+ *     <li> SubCategory: ShaanxiAircraftCompanyY8X  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24377; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4e41089d. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWPatrolObservation
+ * @see SubCategory
+
  */
-public class ShaanxiAircraftCompanyY8X extends EntityType
+public final class ShaanxiAircraftCompanyY8X extends EntityType
 {
     /** Default constructor */
     public ShaanxiAircraftCompanyY8X()
@@ -25,5 +39,11 @@ public class ShaanxiAircraftCompanyY8X extends EntityType
 
         setCategory((byte)5); // uid 24375, ASW/Patrol/Observation
         setSubCategory((byte)2); // uid 24377, Shaanxi Aircraft Company Y-8X
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShaanxiAircraftCompanyY8X createInstance()
+    {
+            return new ShaanxiAircraftCompanyY8X();
     }
 }

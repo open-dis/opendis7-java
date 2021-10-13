@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bdb04c8;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32734
+ * <p> Entity class <b><code>Civilianw762AK47</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Civilianw762AK47.createInstance()</code> or <code>new Civilianw762AK47()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Civilian = <code>130</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: Civilianw762AK47  = <code>112</code>; </li>
+ *     <li> Entity type uid: 32734; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a120c88. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Civilian
+ * @see SubCategory
+
  */
-public class Civilianw762AK47 extends EntityType
+public final class Civilianw762AK47 extends EntityType
 {
     /** Default constructor */
     public Civilianw762AK47()
@@ -26,5 +40,11 @@ public class Civilianw762AK47 extends EntityType
         setCategory((byte)130); // uid 32731, Civilian
         setSubCategory((byte)5); // uid 32732, Assault Rifles
         setSpecific((byte)112); // uid 32734, Civilian w/ 7.62 AK-47
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Civilianw762AK47 createInstance()
+    {
+            return new Civilianw762AK47();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5db0003d;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 26892
+ * <p> Entity class <b><code>PG7VMHEAT70mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PG7VMHEAT70mm.createInstance()</code> or <code>new PG7VMHEAT70mm()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _73mm  = <code>4</code>; </li>
+ *     <li> Specific: PG7VMHEAT70mm  = <code>7</code>; </li>
+ *     <li> Entity type uid: 26892; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f315b08. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PG7VMHEAT70mm extends EntityType
+public final class PG7VMHEAT70mm extends EntityType
 {
     /** Default constructor */
     public PG7VMHEAT70mm()
@@ -26,5 +40,11 @@ public class PG7VMHEAT70mm extends EntityType
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)4); // uid 20453, 73 mm
         setSpecific((byte)7); // uid 26892, PG-7VM HEAT (70 mm)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PG7VMHEAT70mm createInstance()
+    {
+            return new PG7VMHEAT70mm();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1488a861;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: SURFACE;
- *
- * Entity type uid: 27178
+ * <p> Entity class <b><code>YellowFishingBuoy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YellowFishingBuoy.createInstance()</code> or <code>new YellowFishingBuoy()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Buoy = <code>2</code>; </li>
+ *     <li> SubCategory: FishingBuoys  = <code>7</code>; </li>
+ *     <li> Specific: YellowFishingBuoy  = <code>4</code>; </li>
+ *     <li> Entity type uid: 27178; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd4459b. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Buoy
+ * @see SubCategory
+
  */
-public class YellowFishingBuoy extends EntityType
+public final class YellowFishingBuoy extends EntityType
 {
     /** Default constructor */
     public YellowFishingBuoy()
@@ -26,5 +40,11 @@ public class YellowFishingBuoy extends EntityType
         setCategory((byte)2); // uid 22125, Buoy
         setSubCategory((byte)7); // uid 27174, Fishing Buoys
         setSpecific((byte)4); // uid 27178, Yellow Fishing Buoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YellowFishingBuoy createInstance()
+    {
+            return new YellowFishingBuoy();
     }
 }

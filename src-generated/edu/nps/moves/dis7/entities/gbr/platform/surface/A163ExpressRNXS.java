@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f0ed952;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15309
+ * <p> Entity class <b><code>A163ExpressRNXS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A163ExpressRNXS.createInstance()</code> or <code>new A163ExpressRNXS()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: Archerclasstrainingandpatrolcraft  = <code>6</code>; </li>
+ *     <li> Specific: A163ExpressRNXS  = <code>13</code>; </li>
+ *     <li> Entity type uid: 15309; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c447c09. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class A163ExpressRNXS extends EntityType
+public final class A163ExpressRNXS extends EntityType
 {
     /** Default constructor */
     public A163ExpressRNXS()
@@ -26,5 +40,11 @@ public class A163ExpressRNXS extends EntityType
         setCategory((byte)7); // uid 15274, Light/patrol craft
         setSubCategory((byte)6); // uid 15296, Archer class (training and patrol craft)
         setSpecific((byte)13); // uid 15309, A 163 Express (RNXS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A163ExpressRNXS createInstance()
+    {
+            return new A163ExpressRNXS();
     }
 }

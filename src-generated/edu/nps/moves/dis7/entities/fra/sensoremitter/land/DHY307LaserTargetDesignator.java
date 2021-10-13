@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67e11bda;
- * Country: France (FRA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23699
+ * <p> Entity class <b><code>DHY307LaserTargetDesignator</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DHY307LaserTargetDesignator.createInstance()</code> or <code>new DHY307LaserTargetDesignator()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Electro-Optical = <code>5</code>; </li>
+ *     <li> SubCategory: MissileGuidance  = <code>60</code>; </li>
+ *     <li> Specific: DHY307LaserTargetDesignator  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23699; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b336cc8. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectroOptical
+ * @see SubCategory
+
  */
-public class DHY307LaserTargetDesignator extends EntityType
+public final class DHY307LaserTargetDesignator extends EntityType
 {
     /** Default constructor */
     public DHY307LaserTargetDesignator()
@@ -26,5 +40,11 @@ public class DHY307LaserTargetDesignator extends EntityType
         setCategory((byte)5); // uid 23697, Electro-Optical
         setSubCategory((byte)60); // uid 23698, Missile Guidance
         setSpecific((byte)1); // uid 23699, DHY-307 Laser Target Designator
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DHY307LaserTargetDesignator createInstance()
+    {
+            return new DHY307LaserTargetDesignator();
     }
 }

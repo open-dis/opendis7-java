@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class StorageFuel extends Object implements Serializable
    protected byte  padding = (byte)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public StorageFuel()
  {
  }
@@ -49,9 +48,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 4;  // fuelQuantity
-   marshalSize += fuelMeasurementUnits.getMarshalledSize();
-   marshalSize += fuelType.getMarshalledSize();
-   marshalSize += fuelLocation.getMarshalledSize();
+   if (fuelMeasurementUnits != null)
+       marshalSize += fuelMeasurementUnits.getMarshalledSize();
+   if (fuelType != null)
+       marshalSize += fuelType.getMarshalledSize();
+   if (fuelLocation != null)
+       marshalSize += fuelLocation.getMarshalledSize();
    marshalSize += 1;  // padding
 
    return marshalSize;
@@ -226,11 +228,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    fuelQuantity = byteBuffer.getInt();
-    fuelMeasurementUnits = FuelMeasurementUnits.unmarshalEnum(byteBuffer);
-    fuelType = SupplyFuelType.unmarshalEnum(byteBuffer);
-    fuelLocation = FuelLocation.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute fuelQuantity marked as not serialized
+        fuelQuantity = byteBuffer.getInt();
+        // attribute fuelMeasurementUnits marked as not serialized
+        fuelMeasurementUnits = FuelMeasurementUnits.unmarshalEnum(byteBuffer);
+        // attribute fuelType marked as not serialized
+        fuelType = SupplyFuelType.unmarshalEnum(byteBuffer);
+        // attribute fuelLocation marked as not serialized
+        fuelLocation = FuelLocation.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

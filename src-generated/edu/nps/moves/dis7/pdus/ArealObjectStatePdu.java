@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -55,7 +54,7 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
    protected List< Vector3Double > objectLocation = new ArrayList< Vector3Double >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ArealObjectStatePdu()
  {
     setPduType( DisPduType.AREAL_OBJECT_STATE );
@@ -71,22 +70,30 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += objectID.getMarshalledSize();
-   marshalSize += referencedObjectID.getMarshalledSize();
+   if (objectID != null)
+       marshalSize += objectID.getMarshalledSize();
+   if (referencedObjectID != null)
+       marshalSize += referencedObjectID.getMarshalledSize();
    marshalSize += 2;  // updateNumber
-   marshalSize += forceID.getMarshalledSize();
-   marshalSize += modifications.getMarshalledSize();
-   marshalSize += objectType.getMarshalledSize();
+   if (forceID != null)
+       marshalSize += forceID.getMarshalledSize();
+   if (modifications != null)
+       marshalSize += modifications.getMarshalledSize();
+   if (objectType != null)
+       marshalSize += objectType.getMarshalledSize();
    marshalSize += 4;  // specificObjectAppearance
    marshalSize += 2;  // generalObjectAppearance
    marshalSize += 2;  // numberOfPoints
-   marshalSize += requesterID.getMarshalledSize();
-   marshalSize += receivingID.getMarshalledSize();
-   for(int idx=0; idx < objectLocation.size(); idx++)
-   {
-        Vector3Double listElement = objectLocation.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (requesterID != null)
+       marshalSize += requesterID.getMarshalledSize();
+   if (receivingID != null)
+       marshalSize += receivingID.getMarshalledSize();
+   if (objectLocation != null)
+       for (int idx=0; idx < objectLocation.size(); idx++)
+       {
+            Vector3Double listElement = objectLocation.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -305,7 +312,7 @@ public void marshal(DataOutputStream dos) throws Exception
        requesterID.marshal(dos);
        receivingID.marshal(dos);
 
-       for(int idx = 0; idx < objectLocation.size(); idx++)
+       for (int idx = 0; idx < objectLocation.size(); idx++)
        {
             Vector3Double aVector3Double = objectLocation.get(idx);
             aVector3Double.marshal(dos);
@@ -349,7 +356,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         uPosition += requesterID.unmarshal(dis);
         uPosition += receivingID.unmarshal(dis);
-        for(int idx = 0; idx < numberOfPoints; idx++)
+        for (int idx = 0; idx < numberOfPoints; idx++)
         {
             Vector3Double anX = new Vector3Double();
             uPosition += anX.unmarshal(dis);
@@ -387,7 +394,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    requesterID.marshal(byteBuffer);
    receivingID.marshal(byteBuffer);
 
-   for(int idx = 0; idx < objectLocation.size(); idx++)
+   for (int idx = 0; idx < objectLocation.size(); idx++)
    {
         Vector3Double aVector3Double = objectLocation.get(idx);
         aVector3Double.marshal(byteBuffer);
@@ -408,24 +415,43 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    objectID.unmarshal(byteBuffer);
-    referencedObjectID.unmarshal(byteBuffer);
-    updateNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    forceID = ForceID.unmarshalEnum(byteBuffer);
-    modifications.unmarshal(byteBuffer);
-    objectType.unmarshal(byteBuffer);
-    specificObjectAppearance = byteBuffer.getInt();
-    generalObjectAppearance = (short)(byteBuffer.getShort() & 0xFFFF);
-    numberOfPoints = (short)(byteBuffer.getShort() & 0xFFFF);
-    requesterID.unmarshal(byteBuffer);
-    receivingID.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfPoints; idx++)
+    try
     {
-    Vector3Double anX = new Vector3Double();
-    anX.unmarshal(byteBuffer);
-    objectLocation.add(anX);
-    }
+        // attribute objectID marked as not serialized
+        objectID.unmarshal(byteBuffer);
+        // attribute referencedObjectID marked as not serialized
+        referencedObjectID.unmarshal(byteBuffer);
+        // attribute updateNumber marked as not serialized
+        updateNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute forceID marked as not serialized
+        forceID = ForceID.unmarshalEnum(byteBuffer);
+        // attribute modifications marked as not serialized
+        modifications.unmarshal(byteBuffer);
+        // attribute objectType marked as not serialized
+        objectType.unmarshal(byteBuffer);
+        // attribute specificObjectAppearance marked as not serialized
+        specificObjectAppearance = byteBuffer.getInt();
+        // attribute generalObjectAppearance marked as not serialized
+        generalObjectAppearance = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfPoints marked as not serialized
+        numberOfPoints = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requesterID marked as not serialized
+        requesterID.unmarshal(byteBuffer);
+        // attribute receivingID marked as not serialized
+        receivingID.unmarshal(byteBuffer);
+        // attribute objectLocation marked as not serialized
+        for (int idx = 0; idx < numberOfPoints; idx++)
+        {
+        Vector3Double anX = new Vector3Double();
+        anX.unmarshal(byteBuffer);
+        objectLocation.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -465,7 +491,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (requesterID.equals( rhs.requesterID) )) ivarsEqual = false;
      if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < objectLocation.size(); idx++)
+     for (int idx = 0; idx < objectLocation.size(); idx++)
         if( ! ( objectLocation.get(idx).equals(rhs.objectLocation.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

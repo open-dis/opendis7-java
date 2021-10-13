@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2715644a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13392
+ * <p> Entity class <b><code>Il38</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Il38.createInstance()</code> or <code>new Il38()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine/patrol/observation = <code>5</code>; </li>
+ *     <li> SubCategory: II38May  = <code>1</code>; </li>
+ *     <li> Specific: Il38  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13392; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26e412ef. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarinepatrolobservation
+ * @see SubCategory
+
  */
-public class Il38 extends EntityType
+public final class Il38 extends EntityType
 {
     /** Default constructor */
     public Il38()
@@ -26,5 +40,11 @@ public class Il38 extends EntityType
         setCategory((byte)5); // uid 13390, Anti-Submarine/patrol/observation
         setSubCategory((byte)1); // uid 13391, II-38 May
         setSpecific((byte)1); // uid 13392, Il-38
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Il38 createInstance()
+    {
+            return new Il38();
     }
 }

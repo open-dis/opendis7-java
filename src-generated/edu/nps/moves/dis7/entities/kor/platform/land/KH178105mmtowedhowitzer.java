@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@8a589a2;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23763
+ * <p> Entity class <b><code>KH178105mmtowedhowitzer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KH178105mmtowedhowitzer.createInstance()</code> or <code>new KH178105mmtowedhowitzer()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery - (Anti-Tank guns, guns and howitzers) = <code>5</code>; </li>
+ *     <li> SubCategory: KH178105mmtowedhowitzer  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23763; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35fe2125. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtilleryAntiTankgunsgunsandhowitzers
+ * @see SubCategory
+
  */
-public class KH178105mmtowedhowitzer extends EntityType
+public final class KH178105mmtowedhowitzer extends EntityType
 {
     /** Default constructor */
     public KH178105mmtowedhowitzer()
@@ -25,5 +39,11 @@ public class KH178105mmtowedhowitzer extends EntityType
 
         setCategory((byte)5); // uid 23762, Towed Artillery - (Anti-Tank guns, guns and howitzers)
         setSubCategory((byte)1); // uid 23763, KH-178 105mm towed howitzer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KH178105mmtowedhowitzer createInstance()
+    {
+            return new KH178105mmtowedhowitzer();
     }
 }

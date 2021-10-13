@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65d09a04;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32971
+ * <p> Entity class <b><code>AneLaesoe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AneLaesoe.createInstance()</code> or <code>new AneLaesoe()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Passenger Vessel (Group 1 Merchant) = <code>80</code>; </li>
+ *     <li> SubCategory: Ferry  = <code>4</code>; </li>
+ *     <li> Specific: AneLaesoe  = <code>10</code>; </li>
+ *     <li> Entity type uid: 32971; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@477b4cdf. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PassengerVesselGroup1Merchant
+ * @see SubCategory
+
  */
-public class AneLaesoe extends EntityType
+public final class AneLaesoe extends EntityType
 {
     /** Default constructor */
     public AneLaesoe()
@@ -26,5 +40,11 @@ public class AneLaesoe extends EntityType
         setCategory((byte)80); // uid 32951, Passenger Vessel (Group 1 Merchant)
         setSubCategory((byte)4); // uid 32961, Ferry
         setSpecific((byte)10); // uid 32971, Ane Laesoe
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AneLaesoe createInstance()
+    {
+            return new AneLaesoe();
     }
 }

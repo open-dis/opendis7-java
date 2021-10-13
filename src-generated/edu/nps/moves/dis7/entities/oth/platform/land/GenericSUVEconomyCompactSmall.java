@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35e52059;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25794
+ * <p> Entity class <b><code>GenericSUVEconomyCompactSmall</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericSUVEconomyCompactSmall.createInstance()</code> or <code>new GenericSUVEconomyCompactSmall()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: GenericSUVEconomyCompactSmall  = <code>112</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25794; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3aaf4f07. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class GenericSUVEconomyCompactSmall extends EntityType
+public final class GenericSUVEconomyCompactSmall extends EntityType
 {
     /** Default constructor */
     public GenericSUVEconomyCompactSmall()
@@ -25,5 +39,11 @@ public class GenericSUVEconomyCompactSmall extends EntityType
 
         setCategory((byte)81); // uid 25754, Car
         setSubCategory((byte)112); // uid 25794, Generic SUV, Economy/Compact (Small)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericSUVEconomyCompactSmall createInstance()
+    {
+            return new GenericSUVEconomyCompactSmall();
     }
 }

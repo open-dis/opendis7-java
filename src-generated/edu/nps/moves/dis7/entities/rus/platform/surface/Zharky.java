@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f966492;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13615
+ * <p> Entity class <b><code>Zharky</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Zharky.createInstance()</code> or <code>new Zharky()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: KrivakIclass  = <code>1</code>; </li>
+ *     <li> Specific: Zharky  = <code>21</code>; </li>
+ *     <li> Entity type uid: 13615; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@545e57d7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class Zharky extends EntityType
+public final class Zharky extends EntityType
 {
     /** Default constructor */
     public Zharky()
@@ -26,5 +40,11 @@ public class Zharky extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)1); // uid 13594, Krivak I class
         setSpecific((byte)21); // uid 13615, Zharky
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Zharky createInstance()
+    {
+            return new Zharky();
     }
 }

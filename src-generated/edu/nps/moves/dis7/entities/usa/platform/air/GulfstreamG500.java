@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@27fe059d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30044
+ * <p> Entity class <b><code>GulfstreamG500</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GulfstreamG500.createInstance()</code> or <code>new GulfstreamG500()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
+ *     <li> Specific: GulfstreamV  = <code>8</code>; </li>
+ *     <li> Entity type uid: 30044; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2a47597. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class GulfstreamG500 extends EntityType
+public final class GulfstreamG500 extends EntityType
 {
     /** Default constructor */
     public GulfstreamG500()
@@ -27,5 +41,11 @@ public class GulfstreamG500 extends EntityType
         setSubCategory((byte)32); // uid 23800, Twin Jet
         setSpecific((byte)8); // uid 30042, Gulfstream V
         setExtra((byte)2); // uid 30044, Gulfstream G500
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GulfstreamG500 createInstance()
+    {
+            return new GulfstreamG500();
     }
 }

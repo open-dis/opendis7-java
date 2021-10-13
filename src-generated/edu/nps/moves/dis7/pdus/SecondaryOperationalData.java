@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class SecondaryOperationalData extends Object implements Serializable
    protected short  numberOfIFFFundamentalParameterRecords;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SecondaryOperationalData()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    operationalData1 = (byte)(byteBuffer.get() & 0xFF);
-    operationalData2 = (byte)(byteBuffer.get() & 0xFF);
-    numberOfIFFFundamentalParameterRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute operationalData1 marked as not serialized
+        operationalData1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute operationalData2 marked as not serialized
+        operationalData2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfIFFFundamentalParameterRecords marked as not serialized
+        numberOfIFFFundamentalParameterRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

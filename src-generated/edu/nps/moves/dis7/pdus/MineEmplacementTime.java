@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -24,7 +23,7 @@ public class MineEmplacementTime extends Object implements Serializable
    protected int  timePastTheHour;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MineEmplacementTime()
  {
  }
@@ -146,8 +145,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    hour = byteBuffer.getInt();
-    timePastTheHour = byteBuffer.getInt();
+    try
+    {
+        // attribute hour marked as not serialized
+        hour = byteBuffer.getInt();
+        // attribute timePastTheHour marked as not serialized
+        timePastTheHour = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

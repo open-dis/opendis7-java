@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e077866;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27058
+ * <p> Entity class <b><code>P405Esploratore</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P405Esploratore.createInstance()</code> or <code>new P405Esploratore()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: EsploratoreClass  = <code>2</code>; </li>
+ *     <li> Specific: P405Esploratore  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27058; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4044fb95. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P405Esploratore extends EntityType
+public final class P405Esploratore extends EntityType
 {
     /** Default constructor */
     public P405Esploratore()
@@ -26,5 +40,11 @@ public class P405Esploratore extends EntityType
         setCategory((byte)7); // uid 18341, Light/Patrol Craft
         setSubCategory((byte)2); // uid 27057, Esploratore Class
         setSpecific((byte)1); // uid 27058, P405 Esploratore
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P405Esploratore createInstance()
+    {
+            return new P405Esploratore();
     }
 }

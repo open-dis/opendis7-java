@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8f6b4ab;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32730
+ * <p> Entity class <b><code>TerroristCombatantwSA16</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TerroristCombatantwSA16.createInstance()</code> or <code>new TerroristCombatantwSA16()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Terrorist Combatant = <code>101</code>; </li>
+ *     <li> SubCategory: ManPortableAirDefenseSystemMANPADS  = <code>85</code>; </li>
+ *     <li> Specific: TerroristCombatantwSA16  = <code>23</code>; </li>
+ *     <li> Entity type uid: 32730; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@559fd5ec. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TerroristCombatant
+ * @see SubCategory
+
  */
-public class TerroristCombatantwSA16 extends EntityType
+public final class TerroristCombatantwSA16 extends EntityType
 {
     /** Default constructor */
     public TerroristCombatantwSA16()
@@ -26,5 +40,11 @@ public class TerroristCombatantwSA16 extends EntityType
         setCategory((byte)101); // uid 32719, Terrorist Combatant
         setSubCategory((byte)85); // uid 32729, Man-Portable Air Defense System (MANPADS)
         setSpecific((byte)23); // uid 32730, Terrorist Combatant w/ SA-16
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TerroristCombatantwSA16 createInstance()
+    {
+            return new TerroristCombatantwSA16();
     }
 }

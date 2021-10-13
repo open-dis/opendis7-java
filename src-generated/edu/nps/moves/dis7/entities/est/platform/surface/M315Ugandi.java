@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a1cdc6d;
- * Country: Estonia (EST);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27775
+ * <p> Entity class <b><code>M315Ugandi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M315Ugandi.createInstance()</code> or <code>new M315Ugandi()</code>. </p>
+ * <ul>
+ *     <li> Country: Estonia (EST) = <code>250</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: SandownClass  = <code>1</code>; </li>
+ *     <li> Specific: M315Ugandi  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27775; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24313fcc. </p>
+ * @see Country#ESTONIA_EST
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M315Ugandi extends EntityType
+public final class M315Ugandi extends EntityType
 {
     /** Default constructor */
     public M315Ugandi()
@@ -26,5 +40,11 @@ public class M315Ugandi extends EntityType
         setCategory((byte)8); // uid 27555, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 27772, Sandown Class
         setSpecific((byte)3); // uid 27775, M315 Ugandi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M315Ugandi createInstance()
+    {
+            return new M315Ugandi();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@719843e5;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13447
+ * <p> Entity class <b><code>Mi14PWPolishMi14PL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mi14PWPolishMi14PL.createInstance()</code> or <code>new Mi14PWPolishMi14PL()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Mi14Haze  = <code>2</code>; </li>
+ *     <li> Specific: Mi14PWPolishMi14PL  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13447; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34dc85a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Mi14PWPolishMi14PL extends EntityType
+public final class Mi14PWPolishMi14PL extends EntityType
 {
     /** Default constructor */
     public Mi14PWPolishMi14PL()
@@ -26,5 +40,11 @@ public class Mi14PWPolishMi14PL extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)2); // uid 13445, Mi-14 Haze
         setSpecific((byte)2); // uid 13447, Mi-14PW (Polish Mi-14PL)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mi14PWPolishMi14PL createInstance()
+    {
+            return new Mi14PWPolishMi14PL();
     }
 }

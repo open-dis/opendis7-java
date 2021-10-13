@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@69ea3742;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24344
+ * <p> Entity class <b><code>EmbraerERJ170100E170</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EmbraerERJ170100E170.createInstance()</code> or <code>new EmbraerERJ170100E170()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
+ *     <li> Specific: EmbraerEMB170  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24344; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@39aeed2f. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class EmbraerERJ170100E170 extends EntityType
+public final class EmbraerERJ170100E170 extends EntityType
 {
     /** Default constructor */
     public EmbraerERJ170100E170()
@@ -27,5 +41,11 @@ public class EmbraerERJ170100E170 extends EntityType
         setSubCategory((byte)32); // uid 23891, Twin Jet
         setSpecific((byte)1); // uid 23892, Embraer EMB 170
         setExtra((byte)1); // uid 24344, Embraer ERJ170-100 (E-170)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EmbraerERJ170100E170 createInstance()
+    {
+            return new EmbraerERJ170100E170();
     }
 }

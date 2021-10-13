@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68ac9ec5;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 14916
+ * <p> Entity class <b><code>FV512WarriorRepairVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FV512WarriorRepairVehicle.createInstance()</code> or <code>new FV512WarriorRepairVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: FV512WarriorRepairVehicle  = <code>10</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 14916; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@265bd546. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class FV512WarriorRepairVehicle extends EntityType
+public final class FV512WarriorRepairVehicle extends EntityType
 {
     /** Default constructor */
     public FV512WarriorRepairVehicle()
@@ -25,5 +39,11 @@ public class FV512WarriorRepairVehicle extends EntityType
 
         setCategory((byte)3); // uid 14904, Armored Utility Vehicle
         setSubCategory((byte)10); // uid 14916, FV 512 Warrior Repair Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FV512WarriorRepairVehicle createInstance()
+    {
+            return new FV512WarriorRepairVehicle();
     }
 }

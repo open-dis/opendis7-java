@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e392345;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 22941
+ * <p> Entity class <b><code>SkjoldClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SkjoldClass.createInstance()</code> or <code>new SkjoldClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: SkjoldClass  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22941; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@cc62a3b. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class SkjoldClass extends EntityType
+public final class SkjoldClass extends EntityType
 {
     /** Default constructor */
     public SkjoldClass()
@@ -25,5 +39,11 @@ public class SkjoldClass extends EntityType
 
         setCategory((byte)7); // uid 18957, Light/Patrol Craft
         setSubCategory((byte)3); // uid 22941, Skjold Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SkjoldClass createInstance()
+    {
+            return new SkjoldClass();
     }
 }

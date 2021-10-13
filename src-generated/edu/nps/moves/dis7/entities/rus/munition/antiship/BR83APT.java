@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@537b3b2e;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 20595
+ * <p> Entity class <b><code>BR83APT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BR83APT.createInstance()</code> or <code>new BR83APT()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _30mm  = <code>5</code>; </li>
+ *     <li> Specific: BR83APT  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20595; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b5ac347. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class BR83APT extends EntityType
+public final class BR83APT extends EntityType
 {
     /** Default constructor */
     public BR83APT()
@@ -26,5 +40,11 @@ public class BR83APT extends EntityType
         setCategory((byte)2); // uid 20589, Ballistic
         setSubCategory((byte)5); // uid 20594, 30 mm
         setSpecific((byte)1); // uid 20595, BR-83 AP-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BR83APT createInstance()
+    {
+            return new BR83APT();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f2f577;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28700
+ * <p> Entity class <b><code>DDH181Hyuga</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDH181Hyuga.createInstance()</code> or <code>new DDH181Hyuga()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cruiser/Helicopter Carrier = <code>13</code>; </li>
+ *     <li> SubCategory: HyugaClassHelicopterDestroyer  = <code>1</code>; </li>
+ *     <li> Specific: DDH181Hyuga  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28700; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48c35007. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CruiserHelicopterCarrier
+ * @see SubCategory
+
  */
-public class DDH181Hyuga extends EntityType
+public final class DDH181Hyuga extends EntityType
 {
     /** Default constructor */
     public DDH181Hyuga()
@@ -26,5 +40,11 @@ public class DDH181Hyuga extends EntityType
         setCategory((byte)13); // uid 28698, Cruiser/Helicopter Carrier
         setSubCategory((byte)1); // uid 28699, Hyuga Class Helicopter Destroyer
         setSpecific((byte)1); // uid 28700, DDH-181 Hyuga
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDH181Hyuga createInstance()
+    {
+            return new DDH181Hyuga();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@38cfecf3;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32850
+ * <p> Entity class <b><code>Hwasong14</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hwasong14.createInstance()</code> or <code>new Hwasong14()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Hwasong14  = <code>132</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32850; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7ac5b4c. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Hwasong14 extends EntityType
+public final class Hwasong14 extends EntityType
 {
     /** Default constructor */
     public Hwasong14()
@@ -25,5 +39,11 @@ public class Hwasong14 extends EntityType
 
         setCategory((byte)1); // uid 21602, Guided
         setSubCategory((byte)132); // uid 32850, Hwasong 14
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hwasong14 createInstance()
+    {
+            return new Hwasong14();
     }
 }

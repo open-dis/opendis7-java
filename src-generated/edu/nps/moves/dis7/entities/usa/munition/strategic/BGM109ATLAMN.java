@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b362f1;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 20287
+ * <p> Entity class <b><code>BGM109ATLAMN</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BGM109ATLAMN.createInstance()</code> or <code>new BGM109ATLAMN()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Tomahawk  = <code>4</code>; </li>
+ *     <li> Specific: BGM109ATLAMN  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20287; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ec13984. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class BGM109ATLAMN extends EntityType
+public final class BGM109ATLAMN extends EntityType
 {
     /** Default constructor */
     public BGM109ATLAMN()
@@ -26,5 +40,11 @@ public class BGM109ATLAMN extends EntityType
         setCategory((byte)1); // uid 20282, Guided
         setSubCategory((byte)4); // uid 20286, Tomahawk
         setSpecific((byte)1); // uid 20287, BGM-109A (TLAM-N)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BGM109ATLAMN createInstance()
+    {
+            return new BGM109ATLAMN();
     }
 }

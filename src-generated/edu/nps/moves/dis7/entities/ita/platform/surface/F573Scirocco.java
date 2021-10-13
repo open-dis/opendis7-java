@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f1c5af9;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18609
+ * <p> Entity class <b><code>F573Scirocco</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F573Scirocco.createInstance()</code> or <code>new F573Scirocco()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: Maestraleclass  = <code>2</code>; </li>
+ *     <li> Specific: F573Scirocco  = <code>4</code>; </li>
+ *     <li> Entity type uid: 18609; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ce33a58. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class F573Scirocco extends EntityType
+public final class F573Scirocco extends EntityType
 {
     /** Default constructor */
     public F573Scirocco()
@@ -26,5 +40,11 @@ public class F573Scirocco extends EntityType
         setCategory((byte)50); // uid 18601, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 18605, Maestrale class
         setSpecific((byte)4); // uid 18609, F 573 Scirocco
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F573Scirocco createInstance()
+    {
+            return new F573Scirocco();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21ba2445;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26212
+ * <p> Entity class <b><code>CloseSupportTankerWater18000Litre</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CloseSupportTankerWater18000Litre.createInstance()</code> or <code>new CloseSupportTankerWater18000Litre()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: OshkoshCloseSupportTanker  = <code>17</code>; </li>
+ *     <li> Specific: CloseSupportTankerWater18000Litre  = <code>3</code>; </li>
+ *     <li> Entity type uid: 26212; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@507d64aa. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class CloseSupportTankerWater18000Litre extends EntityType
+public final class CloseSupportTankerWater18000Litre extends EntityType
 {
     /** Default constructor */
     public CloseSupportTankerWater18000Litre()
@@ -26,5 +40,11 @@ public class CloseSupportTankerWater18000Litre extends EntityType
         setCategory((byte)7); // uid 14935, Large Wheeled Utility Vehicle
         setSubCategory((byte)17); // uid 26209, Oshkosh Close Support Tanker
         setSpecific((byte)3); // uid 26212, Close Support Tanker (Water) (18000 Litre)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CloseSupportTankerWater18000Litre createInstance()
+    {
+            return new CloseSupportTankerWater18000Litre();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@374b6e33;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 19961
+ * <p> Entity class <b><code>CBU105WCMDwBLU108SFW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CBU105WCMDwBLU108SFW.createInstance()</code> or <code>new CBU105WCMDwBLU108SFW()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: WindCorrectedMunitionsDispenserWCMD  = <code>22</code>; </li>
+ *     <li> Specific: CBU105WCMDwBLU108SFW  = <code>3</code>; </li>
+ *     <li> Entity type uid: 19961; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ea75b05. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CBU105WCMDwBLU108SFW extends EntityType
+public final class CBU105WCMDwBLU108SFW extends EntityType
 {
     /** Default constructor */
     public CBU105WCMDwBLU108SFW()
@@ -26,5 +40,11 @@ public class CBU105WCMDwBLU108SFW extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)22); // uid 19958, Wind-Corrected Munitions Dispenser (WCMD)
         setSpecific((byte)3); // uid 19961, CBU-105 (WCMD w/BLU-108 SFW)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CBU105WCMDwBLU108SFW createInstance()
+    {
+            return new CBU105WCMDwBLU108SFW();
     }
 }

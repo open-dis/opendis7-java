@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d6bbd35;
- * Country: Tuvalu (TUV);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26725
+ * <p> Entity class <b><code>TeMataili</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TeMataili.createInstance()</code> or <code>new TeMataili()</code>. </p>
+ * <ul>
+ *     <li> Country: Tuvalu (TUV) = <code>220</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: PacificClassPatrolBoat  = <code>1</code>; </li>
+ *     <li> Specific: TeMataili  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26725; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4996c99. </p>
+ * @see Country#TUVALU_TUV
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class TeMataili extends EntityType
+public final class TeMataili extends EntityType
 {
     /** Default constructor */
     public TeMataili()
@@ -26,5 +40,11 @@ public class TeMataili extends EntityType
         setCategory((byte)7); // uid 26723, Light/Patrol Craft
         setSubCategory((byte)1); // uid 26724, Pacific Class Patrol Boat
         setSpecific((byte)1); // uid 26725, Te Mataili
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TeMataili createInstance()
+    {
+            return new TeMataili();
     }
 }

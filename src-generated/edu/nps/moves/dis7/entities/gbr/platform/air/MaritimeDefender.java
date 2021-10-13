@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@597f0937;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15042
+ * <p> Entity class <b><code>MaritimeDefender</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MaritimeDefender.createInstance()</code> or <code>new MaritimeDefender()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: PilatusBrittenNormanDefender  = <code>11</code>; </li>
+ *     <li> Specific: MaritimeDefender  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15042; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f1a4795. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class MaritimeDefender extends EntityType
+public final class MaritimeDefender extends EntityType
 {
     /** Default constructor */
     public MaritimeDefender()
@@ -26,5 +40,11 @@ public class MaritimeDefender extends EntityType
         setCategory((byte)4); // uid 15019, Cargo/Tanker
         setSubCategory((byte)11); // uid 15039, Pilatus Britten-Norman Defender
         setSpecific((byte)3); // uid 15042, Maritime Defender
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MaritimeDefender createInstance()
+    {
+            return new MaritimeDefender();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
    protected List< VariableParameter > variableParameters = new ArrayList< VariableParameter >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ArticulatedPartsPdu()
  {
     setPduType( DisPduType.ARTICULATED_PARTS );
@@ -44,13 +43,15 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += liveEntityId.getMarshalledSize();
+   if (liveEntityId != null)
+       marshalSize += liveEntityId.getMarshalledSize();
    marshalSize += 1;  // numberOfParameterRecords
-   for(int idx=0; idx < variableParameters.size(); idx++)
-   {
-        VariableParameter listElement = variableParameters.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (variableParameters != null)
+       for (int idx=0; idx < variableParameters.size(); idx++)
+       {
+            VariableParameter listElement = variableParameters.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -102,7 +103,7 @@ public void marshal(DataOutputStream dos) throws Exception
        liveEntityId.marshal(dos);
        dos.writeByte(variableParameters.size());
 
-       for(int idx = 0; idx < variableParameters.size(); idx++)
+       for (int idx = 0; idx < variableParameters.size(); idx++)
        {
             VariableParameter aVariableParameter = variableParameters.get(idx);
             aVariableParameter.marshal(dos);
@@ -133,7 +134,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += liveEntityId.unmarshal(dis);
         numberOfParameterRecords = (byte)dis.readUnsignedByte();
         uPosition += 1;
-        for(int idx = 0; idx < numberOfParameterRecords; idx++)
+        for (int idx = 0; idx < numberOfParameterRecords; idx++)
         {
             VariableParameter anX = new VariableParameter();
             uPosition += anX.unmarshal(dis);
@@ -162,7 +163,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    liveEntityId.marshal(byteBuffer);
    byteBuffer.put( (byte)variableParameters.size());
 
-   for(int idx = 0; idx < variableParameters.size(); idx++)
+   for (int idx = 0; idx < variableParameters.size(); idx++)
    {
         VariableParameter aVariableParameter = variableParameters.get(idx);
         aVariableParameter.marshal(byteBuffer);
@@ -183,15 +184,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    liveEntityId.unmarshal(byteBuffer);
-    numberOfParameterRecords = (byte)(byteBuffer.get() & 0xFF);
-    for(int idx = 0; idx < numberOfParameterRecords; idx++)
+    try
     {
-    VariableParameter anX = new VariableParameter();
-    anX.unmarshal(byteBuffer);
-    variableParameters.add(anX);
-    }
+        // attribute liveEntityId marked as not serialized
+        liveEntityId.unmarshal(byteBuffer);
+        // attribute numberOfParameterRecords marked as not serialized
+        numberOfParameterRecords = (byte)(byteBuffer.get() & 0xFF);
+        // attribute variableParameters marked as not serialized
+        for (int idx = 0; idx < numberOfParameterRecords; idx++)
+        {
+        VariableParameter anX = new VariableParameter();
+        anX.unmarshal(byteBuffer);
+        variableParameters.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -222,7 +233,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (liveEntityId.equals( rhs.liveEntityId) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < variableParameters.size(); idx++)
+     for (int idx = 0; idx < variableParameters.size(); idx++)
         if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@140d1230;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27215
+ * <p> Entity class <b><code>K335Gepard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K335Gepard.createInstance()</code> or <code>new K335Gepard()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: AkulaIIIClass  = <code>10</code>; </li>
+ *     <li> Specific: K335Gepard  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27215; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@316a598d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class K335Gepard extends EntityType
+public final class K335Gepard extends EntityType
 {
     /** Default constructor */
     public K335Gepard()
@@ -26,5 +40,11 @@ public class K335Gepard extends EntityType
         setCategory((byte)3); // uid 14779, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)10); // uid 27214, Akula III Class
         setSpecific((byte)1); // uid 27215, K-335 Gepard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K335Gepard createInstance()
+    {
+            return new K335Gepard();
     }
 }

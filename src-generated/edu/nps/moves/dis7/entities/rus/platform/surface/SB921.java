@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@112d1c8e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14261
+ * <p> Entity class <b><code>SB921</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SB921.createInstance()</code> or <code>new SB921()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Slivaclasssalvagerescuemooring  = <code>71</code>; </li>
+ *     <li> Specific: SB921  = <code>3</code>; </li>
+ *     <li> Entity type uid: 14261; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75308740. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SB921 extends EntityType
+public final class SB921 extends EntityType
 {
     /** Default constructor */
     public SB921()
@@ -26,5 +40,11 @@ public class SB921 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)71); // uid 14258, Sliva class (salvage, rescue & mooring)
         setSpecific((byte)3); // uid 14261, SB 921
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SB921 createInstance()
+    {
+            return new SB921();
     }
 }

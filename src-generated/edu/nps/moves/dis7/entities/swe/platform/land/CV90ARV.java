@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53ec2968;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27671
+ * <p> Entity class <b><code>CV90ARV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CV90ARV.createInstance()</code> or <code>new CV90ARV()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: CombatVehicle90CV90  = <code>1</code>; </li>
+ *     <li> Specific: CV90ARV  = <code>11</code>; </li>
+ *     <li> Entity type uid: 27671; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@304d0259. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class CV90ARV extends EntityType
+public final class CV90ARV extends EntityType
 {
     /** Default constructor */
     public CV90ARV()
@@ -26,5 +40,11 @@ public class CV90ARV extends EntityType
         setCategory((byte)2); // uid 17470, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 17471, Combat Vehicle 90 (CV90)
         setSpecific((byte)11); // uid 27671, CV90 ARV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CV90ARV createInstance()
+    {
+            return new CV90ARV();
     }
 }

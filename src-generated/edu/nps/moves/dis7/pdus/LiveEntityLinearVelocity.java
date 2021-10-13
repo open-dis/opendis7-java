@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LiveEntityLinearVelocity extends Object implements Serializable
    protected short  zComponent;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityLinearVelocity()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    xComponent = (short)(byteBuffer.getShort() & 0xFFFF);
-    yComponent = (short)(byteBuffer.getShort() & 0xFFFF);
-    zComponent = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute xComponent marked as not serialized
+        xComponent = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute yComponent marked as not serialized
+        yComponent = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute zComponent marked as not serialized
+        zComponent = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4288d98e;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 25351
+ * <p> Entity class <b><code>HawkMk200</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HawkMk200.createInstance()</code> or <code>new HawkMk200()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: BAESystemsHawk  = <code>6</code>; </li>
+ *     <li> Specific: HawkMk200  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25351; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4784efd9. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class HawkMk200 extends EntityType
+public final class HawkMk200 extends EntityType
 {
     /** Default constructor */
     public HawkMk200()
@@ -26,5 +40,11 @@ public class HawkMk200 extends EntityType
         setCategory((byte)2); // uid 14994, Attack/Strike
         setSubCategory((byte)6); // uid 15016, BAE Systems Hawk
         setSpecific((byte)3); // uid 25351, Hawk Mk 200
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HawkMk200 createInstance()
+    {
+            return new HawkMk200();
     }
 }

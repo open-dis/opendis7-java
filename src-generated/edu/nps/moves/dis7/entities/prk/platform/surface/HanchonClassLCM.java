@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61078690;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17797
+ * <p> Entity class <b><code>HanchonClassLCM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HanchonClassLCM.createInstance()</code> or <code>new HanchonClassLCM()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: HanchonClassLCM  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17797; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26fb628. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class HanchonClassLCM extends EntityType
+public final class HanchonClassLCM extends EntityType
 {
     /** Default constructor */
     public HanchonClassLCM()
@@ -25,5 +39,11 @@ public class HanchonClassLCM extends EntityType
 
         setCategory((byte)11); // uid 17796, Landing Craft
         setSubCategory((byte)1); // uid 17797, Hanchon Class (LCM)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HanchonClassLCM createInstance()
+    {
+            return new HanchonClassLCM();
     }
 }

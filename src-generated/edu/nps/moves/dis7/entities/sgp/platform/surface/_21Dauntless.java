@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29138d3a;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32124
+ * <p> Entity class <b><code>_21Dauntless</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_21Dauntless.createInstance()</code> or <code>new _21Dauntless()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: IndependenceClassLittoralMissionVessels  = <code>2</code>; </li>
+ *     <li> Specific: _21Dauntless  = <code>7</code>; </li>
+ *     <li> Entity type uid: 32124; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@181e72d3. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _21Dauntless extends EntityType
+public final class _21Dauntless extends EntityType
 {
     /** Default constructor */
     public _21Dauntless()
@@ -26,5 +40,11 @@ public class _21Dauntless extends EntityType
         setCategory((byte)7); // uid 32101, Light/Patrol Craft
         setSubCategory((byte)2); // uid 32117, Independence Class Littoral Mission Vessels
         setSpecific((byte)7); // uid 32124, 21 Dauntless
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _21Dauntless createInstance()
+    {
+            return new _21Dauntless();
     }
 }

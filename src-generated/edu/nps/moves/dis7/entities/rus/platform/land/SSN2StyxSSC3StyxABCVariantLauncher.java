@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27b22f74;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27312
+ * <p> Entity class <b><code>SSN2StyxSSC3StyxABCVariantLauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN2StyxSSC3StyxABCVariantLauncher.createInstance()</code> or <code>new SSN2StyxSSC3StyxABCVariantLauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: SSN2StyxSSC3StyxABCVariantLauncher  = <code>55</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27312; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@75f2099. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class SSN2StyxSSC3StyxABCVariantLauncher extends EntityType
+public final class SSN2StyxSSC3StyxABCVariantLauncher extends EntityType
 {
     /** Default constructor */
     public SSN2StyxSSC3StyxABCVariantLauncher()
@@ -25,5 +39,11 @@ public class SSN2StyxSSC3StyxABCVariantLauncher extends EntityType
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
         setSubCategory((byte)55); // uid 27312, SS-N-2 Styx / SSC-3 Styx A/B/C Variant Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN2StyxSSC3StyxABCVariantLauncher createInstance()
+    {
+            return new SSN2StyxSSC3StyxABCVariantLauncher();
     }
 }

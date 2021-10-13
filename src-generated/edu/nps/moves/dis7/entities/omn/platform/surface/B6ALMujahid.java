@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10ad20cb;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17948
+ * <p> Entity class <b><code>B6ALMujahid</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B6ALMujahid.createInstance()</code> or <code>new B6ALMujahid()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALWaafiBrookeMarineClassfastattackcraftgun  = <code>2</code>; </li>
+ *     <li> Specific: B6ALMujahid  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17948; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b39fd82. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class B6ALMujahid extends EntityType
+public final class B6ALMujahid extends EntityType
 {
     /** Default constructor */
     public B6ALMujahid()
@@ -26,5 +40,11 @@ public class B6ALMujahid extends EntityType
         setCategory((byte)7); // uid 17942, Light/Patrol Craft
         setSubCategory((byte)2); // uid 17945, AL Waafi (Brooke Marine) Class (fast attack craft-gun)
         setSpecific((byte)3); // uid 17948, B6 AL Mujahid
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B6ALMujahid createInstance()
+    {
+            return new B6ALMujahid();
     }
 }

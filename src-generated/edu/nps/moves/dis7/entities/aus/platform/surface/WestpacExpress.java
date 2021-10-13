@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4cb2c100;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17598
+ * <p> Entity class <b><code>WestpacExpress</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WestpacExpress.createInstance()</code> or <code>new WestpacExpress()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AustalclassFastSealiftCatamaran  = <code>2</code>; </li>
+ *     <li> Specific: WestpacExpress  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17598; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cf10a6f. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class WestpacExpress extends EntityType
+public final class WestpacExpress extends EntityType
 {
     /** Default constructor */
     public WestpacExpress()
@@ -26,5 +40,11 @@ public class WestpacExpress extends EntityType
         setCategory((byte)16); // uid 17594, Auxiliary
         setSubCategory((byte)2); // uid 17597, Austal class: Fast Sealift Catamaran
         setSpecific((byte)1); // uid 17598, Westpac Express
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WestpacExpress createInstance()
+    {
+            return new WestpacExpress();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a572ea0;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 20406
+ * <p> Entity class <b><code>M1940HEITUOZR132</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1940HEITUOZR132.createInstance()</code> or <code>new M1940HEITUOZR132()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _25mm  = <code>5</code>; </li>
+ *     <li> Specific: M1940HEITUOZR132  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20406; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bce4140. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M1940HEITUOZR132 extends EntityType
+public final class M1940HEITUOZR132 extends EntityType
 {
     /** Default constructor */
     public M1940HEITUOZR132()
@@ -26,5 +40,11 @@ public class M1940HEITUOZR132 extends EntityType
         setCategory((byte)2); // uid 20393, Ballistic
         setSubCategory((byte)5); // uid 20405, 25 mm
         setSpecific((byte)1); // uid 20406, M1940 HE-I-T UOZR-132
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1940HEITUOZR132 createInstance()
+    {
+            return new M1940HEITUOZR132();
     }
 }

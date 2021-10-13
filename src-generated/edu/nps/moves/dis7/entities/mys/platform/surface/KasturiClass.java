@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55e7a35c;
- * Country: Malaysia (MYS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27400
+ * <p> Entity class <b><code>KasturiClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KasturiClass.createInstance()</code> or <code>new KasturiClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Malaysia (MYS) = <code>132</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: KasturiClass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27400; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@a50b09c. </p>
+ * @see Country#MALAYSIA_MYS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class KasturiClass extends EntityType
+public final class KasturiClass extends EntityType
 {
     /** Default constructor */
     public KasturiClass()
@@ -25,5 +39,11 @@ public class KasturiClass extends EntityType
 
         setCategory((byte)6); // uid 27399, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 27400, Kasturi Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KasturiClass createInstance()
+    {
+            return new KasturiClass();
     }
 }

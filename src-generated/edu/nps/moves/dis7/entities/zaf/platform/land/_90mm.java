@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a331b46;
- * Country: South Africa (ZAF);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 19100
+ * <p> Entity class <b><code>_90mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_90mm.createInstance()</code> or <code>new _90mm()</code>. </p>
+ * <ul>
+ *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: Ratel  = <code>2</code>; </li>
+ *     <li> Specific: _90mm  = <code>3</code>; </li>
+ *     <li> Entity type uid: 19100; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70cccd8f. </p>
+ * @see Country#SOUTH_AFRICA_ZAF
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class _90mm extends EntityType
+public final class _90mm extends EntityType
 {
     /** Default constructor */
     public _90mm()
@@ -26,5 +40,11 @@ public class _90mm extends EntityType
         setCategory((byte)2); // uid 19094, Armored Fighting Vehicle
         setSubCategory((byte)2); // uid 19097, Ratel
         setSpecific((byte)3); // uid 19100, 90 mm
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _90mm createInstance()
+    {
+            return new _90mm();
     }
 }

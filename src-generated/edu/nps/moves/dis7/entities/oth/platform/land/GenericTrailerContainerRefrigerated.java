@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@88a8218;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25932
+ * <p> Entity class <b><code>GenericTrailerContainerRefrigerated</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericTrailerContainerRefrigerated.createInstance()</code> or <code>new GenericTrailerContainerRefrigerated()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trailer = <code>89</code>; </li>
+ *     <li> SubCategory: GenericTrailerContainerRefrigerated  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25932; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4a8b5227. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trailer
+ * @see SubCategory
+
  */
-public class GenericTrailerContainerRefrigerated extends EntityType
+public final class GenericTrailerContainerRefrigerated extends EntityType
 {
     /** Default constructor */
     public GenericTrailerContainerRefrigerated()
@@ -25,5 +39,11 @@ public class GenericTrailerContainerRefrigerated extends EntityType
 
         setCategory((byte)89); // uid 25929, Trailer
         setSubCategory((byte)3); // uid 25932, Generic Trailer, Container, Refrigerated
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericTrailerContainerRefrigerated createInstance()
+    {
+            return new GenericTrailerContainerRefrigerated();
     }
 }

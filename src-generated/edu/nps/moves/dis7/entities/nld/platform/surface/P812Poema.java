@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cd1ac19;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28300
+ * <p> Entity class <b><code>P812Poema</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P812Poema.createInstance()</code> or <code>new P812Poema()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: DAMENStanPatrol4100  = <code>1</code>; </li>
+ *     <li> Specific: P812Poema  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28300; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51650883. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class P812Poema extends EntityType
+public final class P812Poema extends EntityType
 {
     /** Default constructor */
     public P812Poema()
@@ -26,5 +40,11 @@ public class P812Poema extends EntityType
         setCategory((byte)62); // uid 28296, Coast Guard Cutters
         setSubCategory((byte)1); // uid 28297, DAMEN Stan Patrol 4100
         setSpecific((byte)3); // uid 28300, P812 Poema
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P812Poema createInstance()
+    {
+            return new P812Poema();
     }
 }

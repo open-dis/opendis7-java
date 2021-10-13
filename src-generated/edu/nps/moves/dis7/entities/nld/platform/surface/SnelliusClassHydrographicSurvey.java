@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@433ffad1;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28285
+ * <p> Entity class <b><code>SnelliusClassHydrographicSurvey</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SnelliusClassHydrographicSurvey.createInstance()</code> or <code>new SnelliusClassHydrographicSurvey()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: SnelliusClassHydrographicSurvey  = <code>13</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28285; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@384fc774. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SnelliusClassHydrographicSurvey extends EntityType
+public final class SnelliusClassHydrographicSurvey extends EntityType
 {
     /** Default constructor */
     public SnelliusClassHydrographicSurvey()
@@ -25,5 +39,11 @@ public class SnelliusClassHydrographicSurvey extends EntityType
 
         setCategory((byte)16); // uid 18942, Auxiliary
         setSubCategory((byte)13); // uid 28285, Snellius Class (Hydrographic Survey)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SnelliusClassHydrographicSurvey createInstance()
+    {
+            return new SnelliusClassHydrographicSurvey();
     }
 }

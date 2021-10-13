@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4d18b73a;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28239
+ * <p> Entity class <b><code>AbuDhabiSwift135</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AbuDhabiSwift135.createInstance()</code> or <code>new AbuDhabiSwift135()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Private Motorboat = <code>84</code>; </li>
+ *     <li> SubCategory: VeryLargeMotorboatgreaterthan65ft198m  = <code>4</code>; </li>
+ *     <li> Specific: SwiftClassSuperyacht  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28239; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6325f352. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PrivateMotorboat
+ * @see SubCategory
+
  */
-public class AbuDhabiSwift135 extends EntityType
+public final class AbuDhabiSwift135 extends EntityType
 {
     /** Default constructor */
     public AbuDhabiSwift135()
@@ -27,5 +41,11 @@ public class AbuDhabiSwift135 extends EntityType
         setSubCategory((byte)4); // uid 28236, Very Large Motorboat (greater than 65ft/19.8m)
         setSpecific((byte)1); // uid 28237, Swift Class Superyacht
         setExtra((byte)2); // uid 28239, Abu Dhabi / Swift135
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AbuDhabiSwift135 createInstance()
+    {
+            return new AbuDhabiSwift135();
     }
 }

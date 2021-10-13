@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4047d2d9;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25422
+ * <p> Entity class <b><code>RBS90Launcher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBS90Launcher.createInstance()</code> or <code>new RBS90Launcher()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: RBS90SAMSystem  = <code>3</code>; </li>
+ *     <li> Specific: RBS90Launcher  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25422; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@612e21b9. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class RBS90Launcher extends EntityType
+public final class RBS90Launcher extends EntityType
 {
     /** Default constructor */
     public RBS90Launcher()
@@ -26,5 +40,11 @@ public class RBS90Launcher extends EntityType
         setCategory((byte)28); // uid 17483, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)3); // uid 25420, RBS 90 SAM System
         setSpecific((byte)2); // uid 25422, RBS 90 Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBS90Launcher createInstance()
+    {
+            return new RBS90Launcher();
     }
 }

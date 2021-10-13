@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@25e2ab5a;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18106
+ * <p> Entity class <b><code>MIGS3700ClassLCT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MIGS3700ClassLCT.createInstance()</code> or <code>new MIGS3700ClassLCT()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: MIGS3700ClassLCT  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18106; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35a9782c. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class MIGS3700ClassLCT extends EntityType
+public final class MIGS3700ClassLCT extends EntityType
 {
     /** Default constructor */
     public MIGS3700ClassLCT()
@@ -25,5 +39,11 @@ public class MIGS3700ClassLCT extends EntityType
 
         setCategory((byte)11); // uid 18104, Landing Craft
         setSubCategory((byte)2); // uid 18106, MIG-S-3700 Class (LCT)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MIGS3700ClassLCT createInstance()
+    {
+            return new MIGS3700ClassLCT();
     }
 }

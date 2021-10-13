@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7db12bb6;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24820
+ * <p> Entity class <b><code>NHIndustriesNH90</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NHIndustriesNH90.createInstance()</code> or <code>new NHIndustriesNH90()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: NHIndustriesNH90  = <code>16</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24820; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1a18644. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class NHIndustriesNH90 extends EntityType
+public final class NHIndustriesNH90 extends EntityType
 {
     /** Default constructor */
     public NHIndustriesNH90()
@@ -25,5 +39,11 @@ public class NHIndustriesNH90 extends EntityType
 
         setCategory((byte)21); // uid 15827, Utility Helicopter
         setSubCategory((byte)16); // uid 24820, NH-Industries NH-90
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NHIndustriesNH90 createInstance()
+    {
+            return new NHIndustriesNH90();
     }
 }

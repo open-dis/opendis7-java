@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@396639b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27197
+ * <p> Entity class <b><code>K186Omsk</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K186Omsk.createInstance()</code> or <code>new K186Omsk()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSGN (Nuclear Guided Missile) = <code>2</code>; </li>
+ *     <li> SubCategory: OscarIIClass  = <code>1</code>; </li>
+ *     <li> Specific: K186Omsk  = <code>7</code>; </li>
+ *     <li> Entity type uid: 27197; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fcf294e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSGNNuclearGuidedMissile
+ * @see SubCategory
+
  */
-public class K186Omsk extends EntityType
+public final class K186Omsk extends EntityType
 {
     /** Default constructor */
     public K186Omsk()
@@ -26,5 +40,11 @@ public class K186Omsk extends EntityType
         setCategory((byte)2); // uid 14771, SSGN (Nuclear Guided Missile)
         setSubCategory((byte)1); // uid 14772, Oscar II Class
         setSpecific((byte)7); // uid 27197, K-186 Omsk
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K186Omsk createInstance()
+    {
+            return new K186Omsk();
     }
 }

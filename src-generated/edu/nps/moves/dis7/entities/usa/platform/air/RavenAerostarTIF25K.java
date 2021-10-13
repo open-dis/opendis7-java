@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78da899f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26936
+ * <p> Entity class <b><code>RavenAerostarTIF25K</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RavenAerostarTIF25K.createInstance()</code> or <code>new RavenAerostarTIF25K()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Lighter than Air, Balloon = <code>100</code>; </li>
+ *     <li> SubCategory: Gasfilledtethered  = <code>2</code>; </li>
+ *     <li> Specific: RavenAerostarTIF25K  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26936; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c40ffef. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianLighterthanAirBalloon
+ * @see SubCategory
+
  */
-public class RavenAerostarTIF25K extends EntityType
+public final class RavenAerostarTIF25K extends EntityType
 {
     /** Default constructor */
     public RavenAerostarTIF25K()
@@ -26,5 +40,11 @@ public class RavenAerostarTIF25K extends EntityType
         setCategory((byte)100); // uid 26934, Civilian Lighter than Air, Balloon
         setSubCategory((byte)2); // uid 26935, Gas-filled, tethered
         setSpecific((byte)1); // uid 26936, Raven Aerostar TIF-25K
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RavenAerostarTIF25K createInstance()
+    {
+            return new RavenAerostarTIF25K();
     }
 }

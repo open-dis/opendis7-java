@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@58cbafc2;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26605
+ * <p> Entity class <b><code>SingleRotorTurboshaftEngineConventionalTailRotor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SingleRotorTurboshaftEngineConventionalTailRotor.createInstance()</code> or <code>new SingleRotorTurboshaftEngineConventionalTailRotor()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Medium (up to 20,000 lbs / 9,072 kg) = <code>91</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 26605; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@242b836. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterMediumupto20000lbs9072kg
+ * @see SubCategory
+
  */
-public class SingleRotorTurboshaftEngineConventionalTailRotor extends EntityType
+public final class SingleRotorTurboshaftEngineConventionalTailRotor extends EntityType
 {
     /** Default constructor */
     public SingleRotorTurboshaftEngineConventionalTailRotor()
@@ -25,5 +39,11 @@ public class SingleRotorTurboshaftEngineConventionalTailRotor extends EntityType
 
         setCategory((byte)91); // uid 26604, Civilian Helicopter, Medium (up to 20,000 lbs / 9,072 kg)
         setSubCategory((byte)12); // uid 26605, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SingleRotorTurboshaftEngineConventionalTailRotor createInstance()
+    {
+            return new SingleRotorTurboshaftEngineConventionalTailRotor();
     }
 }

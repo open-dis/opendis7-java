@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@230232b0;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 23749
+ * <p> Entity class <b><code>AA2B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AA2B.createInstance()</code> or <code>new AA2B()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: AA2Atoll  = <code>2</code>; </li>
+ *     <li> Specific: AA2B  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23749; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68bd8ca7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class AA2B extends EntityType
+public final class AA2B extends EntityType
 {
     /** Default constructor */
     public AA2B()
@@ -26,5 +40,11 @@ public class AA2B extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)2); // uid 20303, AA-2 Atoll
         setSpecific((byte)3); // uid 23749, AA-2B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AA2B createInstance()
+    {
+            return new AA2B();
     }
 }

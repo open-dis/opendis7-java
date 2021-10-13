@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@48fc0211;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32248
+ * <p> Entity class <b><code>Taipan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Taipan.createInstance()</code> or <code>new Taipan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Reptile = <code>201</code>; </li>
+ *     <li> SubCategory: Taipan  = <code>64</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32248; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4751cd3. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reptile
+ * @see SubCategory
+
  */
-public class Taipan extends EntityType
+public final class Taipan extends EntityType
 {
     /** Default constructor */
     public Taipan()
@@ -25,5 +39,11 @@ public class Taipan extends EntityType
 
         setCategory((byte)201); // uid 32241, Reptile
         setSubCategory((byte)64); // uid 32248, Taipan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Taipan createInstance()
+    {
+            return new Taipan();
     }
 }

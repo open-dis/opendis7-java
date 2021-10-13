@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@504b8705;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32710
+ * <p> Entity class <b><code>SlingLoadPendant</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadPendant.createInstance()</code> or <code>new SlingLoadPendant()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: LogisticsEquipment  = <code>172</code>; </li>
+ *     <li> Specific: SlingLoadPendant  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32710; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47198524. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class SlingLoadPendant extends EntityType
+public final class SlingLoadPendant extends EntityType
 {
     /** Default constructor */
     public SlingLoadPendant()
@@ -26,5 +40,11 @@ public class SlingLoadPendant extends EntityType
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)172); // uid 32709, Logistics Equipment
         setSpecific((byte)1); // uid 32710, Sling Load Pendant
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadPendant createInstance()
+    {
+            return new SlingLoadPendant();
     }
 }

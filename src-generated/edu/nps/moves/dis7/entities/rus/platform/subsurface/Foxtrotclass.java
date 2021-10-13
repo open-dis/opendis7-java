@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@718dbd79;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 14802
+ * <p> Entity class <b><code>Foxtrotclass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Foxtrotclass.createInstance()</code> or <code>new Foxtrotclass()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Foxtrotclass  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 14802; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@319c3a25. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class Foxtrotclass extends EntityType
+public final class Foxtrotclass extends EntityType
 {
     /** Default constructor */
     public Foxtrotclass()
@@ -25,5 +39,11 @@ public class Foxtrotclass extends EntityType
 
         setCategory((byte)5); // uid 14799, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)3); // uid 14802, Foxtrot class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Foxtrotclass createInstance()
+    {
+            return new Foxtrotclass();
     }
 }

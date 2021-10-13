@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d20616a;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 19821
+ * <p> Entity class <b><code>_308Winchester</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_308Winchester.createInstance()</code> or <code>new _308Winchester()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _762mm  = <code>2</code>; </li>
+ *     <li> Specific: _308Winchester  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19821; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f59da34. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _308Winchester extends EntityType
+public final class _308Winchester extends EntityType
 {
     /** Default constructor */
     public _308Winchester()
@@ -26,5 +40,11 @@ public class _308Winchester extends EntityType
         setCategory((byte)2); // uid 19810, Ballistic
         setSubCategory((byte)2); // uid 19819, 7.62 mm
         setSpecific((byte)2); // uid 19821, .308 Winchester
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _308Winchester createInstance()
+    {
+            return new _308Winchester();
     }
 }

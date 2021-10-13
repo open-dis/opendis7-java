@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6db66836;
- * Country: Latvia (LVA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28303
+ * <p> Entity class <b><code>M05Viesturs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M05Viesturs.createInstance()</code> or <code>new M05Viesturs()</code>. </p>
+ * <ul>
+ *     <li> Country: Latvia (LVA) = <code>254</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: AlkmaarTripartiteClass  = <code>3</code>; </li>
+ *     <li> Specific: M05Viesturs  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28303; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d78795. </p>
+ * @see Country#LATVIA_LVA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M05Viesturs extends EntityType
+public final class M05Viesturs extends EntityType
 {
     /** Default constructor */
     public M05Viesturs()
@@ -26,5 +40,11 @@ public class M05Viesturs extends EntityType
         setCategory((byte)8); // uid 27786, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 28301, Alkmaar (Tripartite) Class
         setSpecific((byte)2); // uid 28303, M-05 Viesturs
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M05Viesturs createInstance()
+    {
+            return new M05Viesturs();
     }
 }

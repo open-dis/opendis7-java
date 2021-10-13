@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@674bd420;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29636
+ * <p> Entity class <b><code>_648Terapang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_648Terapang.createInstance()</code> or <code>new _648Terapang()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: KCR40FastAttackMissileBoat  = <code>2</code>; </li>
+ *     <li> Specific: _648Terapang  = <code>8</code>; </li>
+ *     <li> Entity type uid: 29636; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1cdc4c27. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class _648Terapang extends EntityType
+public final class _648Terapang extends EntityType
 {
     /** Default constructor */
     public _648Terapang()
@@ -26,5 +40,11 @@ public class _648Terapang extends EntityType
         setCategory((byte)64); // uid 29615, Fast Attack Craft
         setSubCategory((byte)2); // uid 29628, KCR-40 (Fast Attack Missile Boat)
         setSpecific((byte)8); // uid 29636, 648 Terapang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _648Terapang createInstance()
+    {
+            return new _648Terapang();
     }
 }

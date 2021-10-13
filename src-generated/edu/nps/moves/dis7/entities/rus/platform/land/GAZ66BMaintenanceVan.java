@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@551de37d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26672
+ * <p> Entity class <b><code>GAZ66BMaintenanceVan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GAZ66BMaintenanceVan.createInstance()</code> or <code>new GAZ66BMaintenanceVan()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: GAZ664x42000kgtruck  = <code>8</code>; </li>
+ *     <li> Specific: GAZ66BMaintenanceVan  = <code>8</code>; </li>
+ *     <li> Entity type uid: 26672; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71c905a3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class GAZ66BMaintenanceVan extends EntityType
+public final class GAZ66BMaintenanceVan extends EntityType
 {
     /** Default constructor */
     public GAZ66BMaintenanceVan()
@@ -26,5 +40,11 @@ public class GAZ66BMaintenanceVan extends EntityType
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)8); // uid 12884, GAZ-66 4x4 2000-kg truck
         setSpecific((byte)8); // uid 26672, GAZ-66B Maintenance Van
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GAZ66BMaintenanceVan createInstance()
+    {
+            return new GAZ66BMaintenanceVan();
     }
 }

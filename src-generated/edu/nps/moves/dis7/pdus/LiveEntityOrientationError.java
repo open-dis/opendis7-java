@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LiveEntityOrientationError extends Object implements Serializable
    protected short  rotationError;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityOrientationError()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    azimuthError = (short)(byteBuffer.getShort() & 0xFFFF);
-    elevationError = (short)(byteBuffer.getShort() & 0xFFFF);
-    rotationError = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute azimuthError marked as not serialized
+        azimuthError = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute elevationError marked as not serialized
+        elevationError = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute rotationError marked as not serialized
+        rotationError = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

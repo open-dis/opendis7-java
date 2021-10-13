@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49754e74;
- * Country: Japan (JPN);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 30227
+ * <p> Entity class <b><code>Type12LightWeightTorpedo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type12LightWeightTorpedo.createInstance()</code> or <code>new Type12LightWeightTorpedo()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Type12LightWeightTorpedo  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30227; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@123307c4. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Type12LightWeightTorpedo extends EntityType
+public final class Type12LightWeightTorpedo extends EntityType
 {
     /** Default constructor */
     public Type12LightWeightTorpedo()
@@ -25,5 +39,11 @@ public class Type12LightWeightTorpedo extends EntityType
 
         setCategory((byte)1); // uid 30226, Guided
         setSubCategory((byte)1); // uid 30227, Type 12 Light Weight Torpedo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type12LightWeightTorpedo createInstance()
+    {
+            return new Type12LightWeightTorpedo();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@716ae973;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 32662
+ * <p> Entity class <b><code>BlockLoad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BlockLoad.createInstance()</code> or <code>new BlockLoad()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Concrete Block = <code>12</code>; </li>
+ *     <li> SubCategory: BlockLoad  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32662; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@302da330. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadConcreteBlock
+ * @see SubCategory
+
  */
-public class BlockLoad extends EntityType
+public final class BlockLoad extends EntityType
 {
     /** Default constructor */
     public BlockLoad()
@@ -25,5 +39,11 @@ public class BlockLoad extends EntityType
 
         setCategory((byte)12); // uid 32661, Sling Load, Concrete Block
         setSubCategory((byte)1); // uid 32662, Block Load
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BlockLoad createInstance()
+    {
+            return new BlockLoad();
     }
 }

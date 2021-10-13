@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a66e67e;
- * Country: Tunisia (TUN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27578
+ * <p> Entity class <b><code>_601ElBlais</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_601ElBlais.createInstance()</code> or <code>new _601ElBlais()</code>. </p>
+ * <ul>
+ *     <li> Country: Tunisia (TUN) = <code>217</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: KondorIClass  = <code>1</code>; </li>
+ *     <li> Specific: _601ElBlais  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27578; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@762637be. </p>
+ * @see Country#TUNISIA_TUN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _601ElBlais extends EntityType
+public final class _601ElBlais extends EntityType
 {
     /** Default constructor */
     public _601ElBlais()
@@ -26,5 +40,11 @@ public class _601ElBlais extends EntityType
         setCategory((byte)8); // uid 27576, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 27577, Kondor I Class
         setSpecific((byte)1); // uid 27578, 601 El Blais
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _601ElBlais createInstance()
+    {
+            return new _601ElBlais();
     }
 }

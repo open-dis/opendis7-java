@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2eee3069;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18853
+ * <p> Entity class <b><code>A59Aditya</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A59Aditya.createInstance()</code> or <code>new A59Aditya()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AdityaClassReplenishmentandRepairShipAORAR  = <code>3</code>; </li>
+ *     <li> Specific: A59Aditya  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18853; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c51cf28. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A59Aditya extends EntityType
+public final class A59Aditya extends EntityType
 {
     /** Default constructor */
     public A59Aditya()
@@ -26,5 +40,11 @@ public class A59Aditya extends EntityType
         setCategory((byte)16); // uid 18847, Auxiliary
         setSubCategory((byte)3); // uid 18852, Aditya Class (Replenishment and Repair Ship) (AOR/AR)
         setSpecific((byte)1); // uid 18853, A59 Aditya
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A59Aditya createInstance()
+    {
+            return new A59Aditya();
     }
 }

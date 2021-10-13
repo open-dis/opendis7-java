@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4315e9af;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14058
+ * <p> Entity class <b><code>Finikclassnavalsurvey260</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Finikclassnavalsurvey260.createInstance()</code> or <code>new Finikclassnavalsurvey260()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Finikclassnavalsurvey  = <code>33</code>; </li>
+ *     <li> Specific: _260  = <code>6</code>; </li>
+ *     <li> Entity type uid: 14058; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c1fa7d4. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Finikclassnavalsurvey260 extends EntityType
+public final class Finikclassnavalsurvey260 extends EntityType
 {
     /** Default constructor */
     public Finikclassnavalsurvey260()
@@ -26,5 +40,11 @@ public class Finikclassnavalsurvey260 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)33); // uid 14052, Finik class (naval survey)
         setSpecific((byte)6); // uid 14058, 260
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Finikclassnavalsurvey260 createInstance()
+    {
+            return new Finikclassnavalsurvey260();
     }
 }

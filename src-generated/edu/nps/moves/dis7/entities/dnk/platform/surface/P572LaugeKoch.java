@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e800aaa;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31126
+ * <p> Entity class <b><code>P572LaugeKoch</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P572LaugeKoch.createInstance()</code> or <code>new P572LaugeKoch()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/ Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: KnudRasmussenClass  = <code>2</code>; </li>
+ *     <li> Specific: P572LaugeKoch  = <code>3</code>; </li>
+ *     <li> Entity type uid: 31126; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c6648b0. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P572LaugeKoch extends EntityType
+public final class P572LaugeKoch extends EntityType
 {
     /** Default constructor */
     public P572LaugeKoch()
@@ -26,5 +40,11 @@ public class P572LaugeKoch extends EntityType
         setCategory((byte)7); // uid 18790, Light/ Patrol Craft
         setSubCategory((byte)2); // uid 25441, Knud Rasmussen Class
         setSpecific((byte)3); // uid 31126, P572 Lauge Koch
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P572LaugeKoch createInstance()
+    {
+            return new P572LaugeKoch();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@687e4c93;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17886
+ * <p> Entity class <b><code>MSC414AlQuysumah</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MSC414AlQuysumah.createInstance()</code> or <code>new MSC414AlQuysumah()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure/Ship Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MSC322Classminesweeperhuntercoastal  = <code>2</code>; </li>
+ *     <li> Specific: MSC414AlQuysumah  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17886; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76889e60. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MSC414AlQuysumah extends EntityType
+public final class MSC414AlQuysumah extends EntityType
 {
     /** Default constructor */
     public MSC414AlQuysumah()
@@ -26,5 +40,11 @@ public class MSC414AlQuysumah extends EntityType
         setCategory((byte)8); // uid 17879, Mine Countermeasure/Ship Craft
         setSubCategory((byte)2); // uid 17884, MSC 322 Class (minesweeper/hunter-coastal)
         setSpecific((byte)2); // uid 17886, MSC 414 Al Quysumah
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MSC414AlQuysumah createInstance()
+    {
+            return new MSC414AlQuysumah();
     }
 }

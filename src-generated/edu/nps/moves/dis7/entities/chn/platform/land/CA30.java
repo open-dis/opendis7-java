@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@799d4f69;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16931
+ * <p> Entity class <b><code>CA30</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CA30.createInstance()</code> or <code>new CA30()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle (greater than 1.25 tons) = <code>7</code>; </li>
+ *     <li> SubCategory: JiefangCA306x62500kgcargoutilitytruck  = <code>2</code>; </li>
+ *     <li> Specific: CA30  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16931; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5579bb86. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehiclegreaterthan125tons
+ * @see SubCategory
+
  */
-public class CA30 extends EntityType
+public final class CA30 extends EntityType
 {
     /** Default constructor */
     public CA30()
@@ -26,5 +40,11 @@ public class CA30 extends EntityType
         setCategory((byte)7); // uid 16928, Large Wheeled Utility Vehicle (greater than 1.25 tons)
         setSubCategory((byte)2); // uid 16930, Jiefang CA-30 6x6 2500kg cargo/utility truck
         setSpecific((byte)1); // uid 16931, CA-30
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CA30 createInstance()
+    {
+            return new CA30();
     }
 }

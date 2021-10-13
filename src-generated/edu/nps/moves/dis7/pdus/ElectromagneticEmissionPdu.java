@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -16,7 +15,7 @@ import edu.nps.moves.dis7.enumerations.*;
  * 7.6.2 Communicate active electromagnetic emissions, including radar and radar-related electronic warfare (e.g., jamming). Exceptions include IFF interrogations and replies, navigation aids, voice, beacon and data radio communications, directed energy weapons, and laser ranging and designation systems, which are handled by other PDUs. Section 5.3.7.1.
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class ElectromagneticEmissionPdu extends DistributedEmissionsFamilyPdu implements Serializable
+public class ElectromagneticEmissionPdu extends DistributedEmissionsRegenerationFamilyPdu implements Serializable
 {
    /** ID of the entity emitting */
    protected EntityID  emittingEntityID = new EntityID(); 
@@ -37,7 +36,7 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsFamilyPdu im
    protected List< ElectronicEmitter > systems = new ArrayList< ElectronicEmitter >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ElectromagneticEmissionPdu()
  {
     setPduType( DisPduType.ELECTROMAGNETIC_EMISSION );
@@ -54,16 +53,20 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += emittingEntityID.getMarshalledSize();
-   marshalSize += eventID.getMarshalledSize();
-   marshalSize += stateUpdateIndicator.getMarshalledSize();
+   if (emittingEntityID != null)
+       marshalSize += emittingEntityID.getMarshalledSize();
+   if (eventID != null)
+       marshalSize += eventID.getMarshalledSize();
+   if (stateUpdateIndicator != null)
+       marshalSize += stateUpdateIndicator.getMarshalledSize();
    marshalSize += 1;  // numberOfSystems
    marshalSize += 2;  // paddingForEmissionsPdu
-   for(int idx=0; idx < systems.size(); idx++)
-   {
-        ElectronicEmitter listElement = systems.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (systems != null)
+       for (int idx=0; idx < systems.size(); idx++)
+       {
+            ElectronicEmitter listElement = systems.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -173,7 +176,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(systems.size());
        dos.writeShort(paddingForEmissionsPdu);
 
-       for(int idx = 0; idx < systems.size(); idx++)
+       for (int idx = 0; idx < systems.size(); idx++)
        {
             ElectronicEmitter aElectronicEmitter = systems.get(idx);
             aElectronicEmitter.marshal(dos);
@@ -209,7 +212,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         paddingForEmissionsPdu = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfSystems; idx++)
+        for (int idx = 0; idx < numberOfSystems; idx++)
         {
             ElectronicEmitter anX = new ElectronicEmitter();
             uPosition += anX.unmarshal(dis);
@@ -241,7 +244,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)systems.size());
    byteBuffer.putShort( (short)paddingForEmissionsPdu);
 
-   for(int idx = 0; idx < systems.size(); idx++)
+   for (int idx = 0; idx < systems.size(); idx++)
    {
         ElectronicEmitter aElectronicEmitter = systems.get(idx);
         aElectronicEmitter.marshal(byteBuffer);
@@ -262,18 +265,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    emittingEntityID.unmarshal(byteBuffer);
-    eventID.unmarshal(byteBuffer);
-    stateUpdateIndicator = ElectromagneticEmissionStateUpdateIndicator.unmarshalEnum(byteBuffer);
-    numberOfSystems = (byte)(byteBuffer.get() & 0xFF);
-    paddingForEmissionsPdu = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfSystems; idx++)
+    try
     {
-    ElectronicEmitter anX = new ElectronicEmitter();
-    anX.unmarshal(byteBuffer);
-    systems.add(anX);
-    }
+        // attribute emittingEntityID marked as not serialized
+        emittingEntityID.unmarshal(byteBuffer);
+        // attribute eventID marked as not serialized
+        eventID.unmarshal(byteBuffer);
+        // attribute stateUpdateIndicator marked as not serialized
+        stateUpdateIndicator = ElectromagneticEmissionStateUpdateIndicator.unmarshalEnum(byteBuffer);
+        // attribute numberOfSystems marked as not serialized
+        numberOfSystems = (byte)(byteBuffer.get() & 0xFF);
+        // attribute paddingForEmissionsPdu marked as not serialized
+        paddingForEmissionsPdu = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute systems marked as not serialized
+        for (int idx = 0; idx < numberOfSystems; idx++)
+        {
+        ElectronicEmitter anX = new ElectronicEmitter();
+        anX.unmarshal(byteBuffer);
+        systems.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -307,7 +323,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (stateUpdateIndicator == rhs.stateUpdateIndicator)) ivarsEqual = false;
      if( ! (paddingForEmissionsPdu == rhs.paddingForEmissionsPdu)) ivarsEqual = false;
 
-     for(int idx = 0; idx < systems.size(); idx++)
+     for (int idx = 0; idx < systems.size(); idx++)
         if( ! ( systems.get(idx).equals(rhs.systems.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

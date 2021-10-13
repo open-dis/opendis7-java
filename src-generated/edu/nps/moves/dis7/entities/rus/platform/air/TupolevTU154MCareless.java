@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3b36e000;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23826
+ * <p> Entity class <b><code>TupolevTU154MCareless</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TupolevTU154MCareless.createInstance()</code> or <code>new TupolevTU154MCareless()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TriJet  = <code>33</code>; </li>
+ *     <li> Specific: TupolevTU154Careless  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23826; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@518cf84a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class TupolevTU154MCareless extends EntityType
+public final class TupolevTU154MCareless extends EntityType
 {
     /** Default constructor */
     public TupolevTU154MCareless()
@@ -27,5 +41,11 @@ public class TupolevTU154MCareless extends EntityType
         setSubCategory((byte)33); // uid 23824, Tri Jet
         setSpecific((byte)1); // uid 23825, Tupolev TU-154 Careless
         setExtra((byte)1); // uid 23826, Tupolev TU-154M Careless
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TupolevTU154MCareless createInstance()
+    {
+            return new TupolevTU154MCareless();
     }
 }

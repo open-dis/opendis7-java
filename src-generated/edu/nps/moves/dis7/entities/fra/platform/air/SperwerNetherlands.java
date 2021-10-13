@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52719fb6;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28206
+ * <p> Entity class <b><code>SperwerNetherlands</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SperwerNetherlands.createInstance()</code> or <code>new SperwerNetherlands()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: SAGEMSperwer  = <code>2</code>; </li>
+ *     <li> Specific: SperwerNetherlands  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28206; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f2b503c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class SperwerNetherlands extends EntityType
+public final class SperwerNetherlands extends EntityType
 {
     /** Default constructor */
     public SperwerNetherlands()
@@ -26,5 +40,11 @@ public class SperwerNetherlands extends EntityType
         setCategory((byte)50); // uid 23676, Unmanned
         setSubCategory((byte)2); // uid 28205, SAGEM Sperwer
         setSpecific((byte)1); // uid 28206, Sperwer (Netherlands)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SperwerNetherlands createInstance()
+    {
+            return new SperwerNetherlands();
     }
 }

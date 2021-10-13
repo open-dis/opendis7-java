@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6de0f580;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13750
+ * <p> Entity class <b><code>K8classminesweepingboat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K8classminesweepingboat.createInstance()</code> or <code>new K8classminesweepingboat()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: K8classminesweepingboat  = <code>18</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 13750; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@a52ca2e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class K8classminesweepingboat extends EntityType
+public final class K8classminesweepingboat extends EntityType
 {
     /** Default constructor */
     public K8classminesweepingboat()
@@ -25,5 +39,11 @@ public class K8classminesweepingboat extends EntityType
 
         setCategory((byte)8); // uid 13709, Mine Countermeasure Ship / Craft
         setSubCategory((byte)18); // uid 13750, K 8 class (minesweeping boat)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K8classminesweepingboat createInstance()
+    {
+            return new K8classminesweepingboat();
     }
 }

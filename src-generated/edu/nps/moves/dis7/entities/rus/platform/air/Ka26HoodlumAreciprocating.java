@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57d0fc89;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13477
+ * <p> Entity class <b><code>Ka26HoodlumAreciprocating</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ka26HoodlumAreciprocating.createInstance()</code> or <code>new Ka26HoodlumAreciprocating()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Ka26126Hoodlum  = <code>12</code>; </li>
+ *     <li> Specific: Ka26HoodlumAreciprocating  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13477; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d36dff4. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Ka26HoodlumAreciprocating extends EntityType
+public final class Ka26HoodlumAreciprocating extends EntityType
 {
     /** Default constructor */
     public Ka26HoodlumAreciprocating()
@@ -26,5 +40,11 @@ public class Ka26HoodlumAreciprocating extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)12); // uid 13476, Ka-26/126 Hoodlum
         setSpecific((byte)1); // uid 13477, Ka-26 Hoodlum A (reciprocating)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ka26HoodlumAreciprocating createInstance()
+    {
+            return new Ka26HoodlumAreciprocating();
     }
 }

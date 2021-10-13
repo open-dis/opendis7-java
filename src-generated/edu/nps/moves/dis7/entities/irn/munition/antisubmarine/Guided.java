@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@6e3dd5ce;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 30578
+ * <p> Entity class <b><code>Guided</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Guided.createInstance()</code> or <code>new Guided()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30578; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2c8b8de0. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+
  */
-public class Guided extends EntityType
+public final class Guided extends EntityType
 {
     /** Default constructor */
     public Guided()
@@ -24,5 +37,11 @@ public class Guided extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_SUBMARINE));
 
         setCategory((byte)1); // uid 30578, Guided
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Guided createInstance()
+    {
+            return new Guided();
     }
 }

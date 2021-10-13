@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@426131d7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 12364
+ * <p> Entity class <b><code>SSN709HymanGRickover</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN709HymanGRickover.createInstance()</code> or <code>new SSN709HymanGRickover()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: LosAngelesclass  = <code>4</code>; </li>
+ *     <li> Specific: SSN709HymanGRickover  = <code>22</code>; </li>
+ *     <li> Entity type uid: 12364; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d28fb02. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class SSN709HymanGRickover extends EntityType
+public final class SSN709HymanGRickover extends EntityType
 {
     /** Default constructor */
     public SSN709HymanGRickover()
@@ -26,5 +40,11 @@ public class SSN709HymanGRickover extends EntityType
         setCategory((byte)3); // uid 12301, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)4); // uid 12342, Los Angeles class
         setSpecific((byte)22); // uid 12364, SSN 709 Hyman G. Rickover
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN709HymanGRickover createInstance()
+    {
+            return new SSN709HymanGRickover();
     }
 }

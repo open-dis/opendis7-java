@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32057e6;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17693
+ * <p> Entity class <b><code>_561KangKeong</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_561KangKeong.createInstance()</code> or <code>new _561KangKeong()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: SwallowClassminehunter  = <code>1</code>; </li>
+ *     <li> Specific: _561KangKeong  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17693; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4985cbcb. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _561KangKeong extends EntityType
+public final class _561KangKeong extends EntityType
 {
     /** Default constructor */
     public _561KangKeong()
@@ -26,5 +40,11 @@ public class _561KangKeong extends EntityType
         setCategory((byte)8); // uid 17691, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 17692, Swallow Class (minehunter)
         setSpecific((byte)1); // uid 17693, 561 Kang Keong
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _561KangKeong createInstance()
+    {
+            return new _561KangKeong();
     }
 }

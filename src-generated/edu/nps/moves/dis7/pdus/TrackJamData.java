@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class TrackJamData extends Object implements Serializable
    protected byte  beamNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public TrackJamData()
  {
  }
@@ -42,7 +41,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityID.getMarshalledSize();
+   if (entityID != null)
+       marshalSize += entityID.getMarshalledSize();
    marshalSize += 1;  // emitterNumber
    marshalSize += 1;  // beamNumber
 
@@ -184,9 +184,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityID.unmarshal(byteBuffer);
-    emitterNumber = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute entityID marked as not serialized
+        entityID.unmarshal(byteBuffer);
+        // attribute emitterNumber marked as not serialized
+        emitterNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

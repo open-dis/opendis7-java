@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c20be82;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17964
+ * <p> Entity class <b><code>C8SabaALBahr</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C8SabaALBahr.createInstance()</code> or <code>new C8SabaALBahr()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LCM  = <code>1</code>; </li>
+ *     <li> Specific: C8SabaALBahr  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17964; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d0566ba. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class C8SabaALBahr extends EntityType
+public final class C8SabaALBahr extends EntityType
 {
     /** Default constructor */
     public C8SabaALBahr()
@@ -26,5 +40,11 @@ public class C8SabaALBahr extends EntityType
         setCategory((byte)11); // uid 17962, Landing Craft
         setSubCategory((byte)1); // uid 17963, LCM
         setSpecific((byte)1); // uid 17964, C8 Saba AL Bahr
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C8SabaALBahr createInstance()
+    {
+            return new C8SabaALBahr();
     }
 }

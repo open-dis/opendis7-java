@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2257fadf;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28601
+ * <p> Entity class <b><code>_693Dagestan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_693Dagestan.createInstance()</code> or <code>new _693Dagestan()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> SubCategory: GepardClass  = <code>11</code>; </li>
+ *     <li> Specific: _693Dagestan  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28601; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b4d25e7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigateincludesCorvette
+ * @see SubCategory
+
  */
-public class _693Dagestan extends EntityType
+public final class _693Dagestan extends EntityType
 {
     /** Default constructor */
     public _693Dagestan()
@@ -26,5 +40,11 @@ public class _693Dagestan extends EntityType
         setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
         setSubCategory((byte)11); // uid 13667, Gepard Class
         setSpecific((byte)3); // uid 28601, 693 Dagestan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _693Dagestan createInstance()
+    {
+            return new _693Dagestan();
     }
 }

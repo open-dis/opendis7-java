@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76a362a4;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32461
+ * <p> Entity class <b><code>M45SecondStageVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M45SecondStageVehicle.createInstance()</code> or <code>new M45SecondStageVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: M45SLBM  = <code>5</code>; </li>
+ *     <li> Specific: M45SecondStageVehicle  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32461; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a30722c. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class M45SecondStageVehicle extends EntityType
+public final class M45SecondStageVehicle extends EntityType
 {
     /** Default constructor */
     public M45SecondStageVehicle()
@@ -26,5 +40,11 @@ public class M45SecondStageVehicle extends EntityType
         setCategory((byte)1); // uid 21195, Guided
         setSubCategory((byte)5); // uid 29001, M45 SLBM
         setSpecific((byte)1); // uid 32461, M45 Second Stage Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M45SecondStageVehicle createInstance()
+    {
+            return new M45SecondStageVehicle();
     }
 }

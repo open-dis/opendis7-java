@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61009542;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24383
+ * <p> Entity class <b><code>XianKJ2000Mainring</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>XianKJ2000Mainring.createInstance()</code> or <code>new XianKJ2000Mainring()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: XianKJ2000Mainring  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24383; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71a794e5. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class XianKJ2000Mainring extends EntityType
+public final class XianKJ2000Mainring extends EntityType
 {
     /** Default constructor */
     public XianKJ2000Mainring()
@@ -25,5 +39,11 @@ public class XianKJ2000Mainring extends EntityType
 
         setCategory((byte)8); // uid 24382, Surveillance/C2 (Airborne Early Warning)
         setSubCategory((byte)1); // uid 24383, Xian KJ-2000 (Mainring)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static XianKJ2000Mainring createInstance()
+    {
+            return new XianKJ2000Mainring();
     }
 }

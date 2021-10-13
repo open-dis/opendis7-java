@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20de05e5;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 14872
+ * <p> Entity class <b><code>C2164</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C2164.createInstance()</code> or <code>new C2164()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>2</code>; </li>
+ *     <li> SubCategory: Minormilitarysatellite  = <code>10</code>; </li>
+ *     <li> Specific: C2164  = <code>6</code>; </li>
+ *     <li> Entity type uid: 14872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12d1f1d4. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class C2164 extends EntityType
+public final class C2164 extends EntityType
 {
     /** Default constructor */
     public C2164()
@@ -26,5 +40,11 @@ public class C2164 extends EntityType
         setCategory((byte)2); // uid 14850, Unmanned
         setSubCategory((byte)10); // uid 14866, Minor military satellite
         setSpecific((byte)6); // uid 14872, C2164
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C2164 createInstance()
+    {
+            return new C2164();
     }
 }

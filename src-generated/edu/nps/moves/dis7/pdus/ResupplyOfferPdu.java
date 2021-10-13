@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class ResupplyOfferPdu extends LogisticsFamilyPdu implements Serializable
    protected List< SupplyQuantity > supplies = new ArrayList< SupplyQuantity >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ResupplyOfferPdu()
  {
     setPduType( DisPduType.RESUPPLY_OFFER );
@@ -53,16 +52,19 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += receivingEntityID.getMarshalledSize();
-   marshalSize += supplyingEntityID.getMarshalledSize();
+   if (receivingEntityID != null)
+       marshalSize += receivingEntityID.getMarshalledSize();
+   if (supplyingEntityID != null)
+       marshalSize += supplyingEntityID.getMarshalledSize();
    marshalSize += 1;  // numberOfSupplyTypes
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
-   for(int idx=0; idx < supplies.size(); idx++)
-   {
-        SupplyQuantity listElement = supplies.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (supplies != null)
+       for (int idx=0; idx < supplies.size(); idx++)
+       {
+            SupplyQuantity listElement = supplies.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -179,7 +181,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(padding1);
        dos.writeShort(padding2);
 
-       for(int idx = 0; idx < supplies.size(); idx++)
+       for (int idx = 0; idx < supplies.size(); idx++)
        {
             SupplyQuantity aSupplyQuantity = supplies.get(idx);
             aSupplyQuantity.marshal(dos);
@@ -215,7 +217,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding2 = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfSupplyTypes; idx++)
+        for (int idx = 0; idx < numberOfSupplyTypes; idx++)
         {
             SupplyQuantity anX = new SupplyQuantity();
             uPosition += anX.unmarshal(dis);
@@ -247,7 +249,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)padding1);
    byteBuffer.putShort( (short)padding2);
 
-   for(int idx = 0; idx < supplies.size(); idx++)
+   for (int idx = 0; idx < supplies.size(); idx++)
    {
         SupplyQuantity aSupplyQuantity = supplies.get(idx);
         aSupplyQuantity.marshal(byteBuffer);
@@ -268,18 +270,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    receivingEntityID.unmarshal(byteBuffer);
-    supplyingEntityID.unmarshal(byteBuffer);
-    numberOfSupplyTypes = (byte)(byteBuffer.get() & 0xFF);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfSupplyTypes; idx++)
+    try
     {
-    SupplyQuantity anX = new SupplyQuantity();
-    anX.unmarshal(byteBuffer);
-    supplies.add(anX);
-    }
+        // attribute receivingEntityID marked as not serialized
+        receivingEntityID.unmarshal(byteBuffer);
+        // attribute supplyingEntityID marked as not serialized
+        supplyingEntityID.unmarshal(byteBuffer);
+        // attribute numberOfSupplyTypes marked as not serialized
+        numberOfSupplyTypes = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute supplies marked as not serialized
+        for (int idx = 0; idx < numberOfSupplyTypes; idx++)
+        {
+        SupplyQuantity anX = new SupplyQuantity();
+        anX.unmarshal(byteBuffer);
+        supplies.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -313,7 +328,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < supplies.size(); idx++)
+     for (int idx = 0; idx < supplies.size(); idx++)
         if( ! ( supplies.get(idx).equals(rhs.supplies.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

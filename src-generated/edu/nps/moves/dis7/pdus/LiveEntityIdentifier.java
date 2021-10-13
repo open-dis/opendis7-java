@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class LiveEntityIdentifier extends Object implements Serializable
    protected short  entityNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityIdentifier()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += liveSimulationAddress.getMarshalledSize();
+   if (liveSimulationAddress != null)
+       marshalSize += liveSimulationAddress.getMarshalledSize();
    marshalSize += 2;  // entityNumber
 
    return marshalSize;
@@ -153,8 +153,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    liveSimulationAddress.unmarshal(byteBuffer);
-    entityNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute liveSimulationAddress marked as not serialized
+        liveSimulationAddress.unmarshal(byteBuffer);
+        // attribute entityNumber marked as not serialized
+        entityNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

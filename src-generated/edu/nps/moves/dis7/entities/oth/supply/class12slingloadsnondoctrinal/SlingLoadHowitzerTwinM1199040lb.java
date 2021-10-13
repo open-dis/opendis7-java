@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@93ce24d;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30842
+ * <p> Entity class <b><code>SlingLoadHowitzerTwinM1199040lb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadHowitzerTwinM1199040lb.createInstance()</code> or <code>new SlingLoadHowitzerTwinM1199040lb()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Howitzer = <code>6</code>; </li>
+ *     <li> SubCategory: SlingLoadHowitzerTwinM1199040lb  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30842; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b9c9b8b. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadHowitzer
+ * @see SubCategory
+
  */
-public class SlingLoadHowitzerTwinM1199040lb extends EntityType
+public final class SlingLoadHowitzerTwinM1199040lb extends EntityType
 {
     /** Default constructor */
     public SlingLoadHowitzerTwinM1199040lb()
@@ -25,5 +39,11 @@ public class SlingLoadHowitzerTwinM1199040lb extends EntityType
 
         setCategory((byte)6); // uid 30841, Sling Load, Howitzer
         setSubCategory((byte)1); // uid 30842, Sling Load, Howitzer, Twin M119, 9040 lb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadHowitzerTwinM1199040lb createInstance()
+    {
+            return new SlingLoadHowitzerTwinM1199040lb();
     }
 }

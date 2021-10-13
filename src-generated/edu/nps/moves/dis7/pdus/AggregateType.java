@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class AggregateType extends Object implements Serializable
    protected byte  extra;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AggregateType()
  {
  }
@@ -54,12 +53,17 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += aggregateKind.getMarshalledSize();
-   marshalSize += domain.getMarshalledSize();
-   marshalSize += country.getMarshalledSize();
+   if (aggregateKind != null)
+       marshalSize += aggregateKind.getMarshalledSize();
+   if (domain != null)
+       marshalSize += domain.getMarshalledSize();
+   if (country != null)
+       marshalSize += country.getMarshalledSize();
    marshalSize += 1;  // category
-   marshalSize += subcategory.getMarshalledSize();
-   marshalSize += specificInfo.getMarshalledSize();
+   if (subcategory != null)
+       marshalSize += subcategory.getMarshalledSize();
+   if (specificInfo != null)
+       marshalSize += specificInfo.getMarshalledSize();
    marshalSize += 1;  // extra
 
    return marshalSize;
@@ -281,13 +285,27 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    aggregateKind = AggregateStateAggregateKind.unmarshalEnum(byteBuffer);
-    domain = PlatformDomain.unmarshalEnum(byteBuffer);
-    country = Country.unmarshalEnum(byteBuffer);
-    category = (byte)(byteBuffer.get() & 0xFF);
-    subcategory = AggregateStateSubcategory.unmarshalEnum(byteBuffer);
-    specificInfo = AggregateStateSpecific.unmarshalEnum(byteBuffer);
-    extra = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute aggregateKind marked as not serialized
+        aggregateKind = AggregateStateAggregateKind.unmarshalEnum(byteBuffer);
+        // attribute domain marked as not serialized
+        domain = PlatformDomain.unmarshalEnum(byteBuffer);
+        // attribute country marked as not serialized
+        country = Country.unmarshalEnum(byteBuffer);
+        // attribute category marked as not serialized
+        category = (byte)(byteBuffer.get() & 0xFF);
+        // attribute subcategory marked as not serialized
+        subcategory = AggregateStateSubcategory.unmarshalEnum(byteBuffer);
+        // attribute specificInfo marked as not serialized
+        specificInfo = AggregateStateSpecific.unmarshalEnum(byteBuffer);
+        // attribute extra marked as not serialized
+        extra = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

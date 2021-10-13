@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63411512;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14698
+ * <p> Entity class <b><code>Pochetny</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Pochetny.createInstance()</code> or <code>new Pochetny()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Okhtenskyclasstugs  = <code>12</code>; </li>
+ *     <li> Specific: Pochetny  = <code>5</code>; </li>
+ *     <li> Entity type uid: 14698; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cbc8d0f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Pochetny extends EntityType
+public final class Pochetny extends EntityType
 {
     /** Default constructor */
     public Pochetny()
@@ -26,5 +40,11 @@ public class Pochetny extends EntityType
         setCategory((byte)18); // uid 14570, Utility
         setSubCategory((byte)12); // uid 14693, Okhtensky class (tugs)
         setSpecific((byte)5); // uid 14698, Pochetny
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Pochetny createInstance()
+    {
+            return new Pochetny();
     }
 }

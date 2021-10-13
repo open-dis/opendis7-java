@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4345fd45;
- * Country: Germany (DEU);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 28115
+ * <p> Entity class <b><code>MPR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MPR.createInstance()</code> or <code>new MPR()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillance  = <code>2</code>; </li>
+ *     <li> Specific: MPR  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28115; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f030c72. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class MPR extends EntityType
+public final class MPR extends EntityType
 {
     /** Default constructor */
     public MPR()
@@ -26,5 +40,11 @@ public class MPR extends EntityType
         setCategory((byte)2); // uid 22489, RF Active
         setSubCategory((byte)2); // uid 28112, Early Warning/Surveillance
         setSpecific((byte)3); // uid 28115, MPR
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MPR createInstance()
+    {
+            return new MPR();
     }
 }

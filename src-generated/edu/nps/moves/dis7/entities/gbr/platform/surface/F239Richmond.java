@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c50ad4b;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15233
+ * <p> Entity class <b><code>F239Richmond</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F239Richmond.createInstance()</code> or <code>new F239Richmond()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: DukeclassType23  = <code>1</code>; </li>
+ *     <li> Specific: F239Richmond  = <code>10</code>; </li>
+ *     <li> Entity type uid: 15233; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a3e5cd3. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigate
+ * @see SubCategory
+
  */
-public class F239Richmond extends EntityType
+public final class F239Richmond extends EntityType
 {
     /** Default constructor */
     public F239Richmond()
@@ -26,5 +40,11 @@ public class F239Richmond extends EntityType
         setCategory((byte)6); // uid 15222, Guided-missile Frigate
         setSubCategory((byte)1); // uid 15223, Duke class (Type 23)
         setSpecific((byte)10); // uid 15233, F 239 Richmond
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F239Richmond createInstance()
+    {
+            return new F239Richmond();
     }
 }

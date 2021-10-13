@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@67fe380b;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24722
+ * <p> Entity class <b><code>GenericSmallHelicopterIntermeshingRotor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericSmallHelicopterIntermeshingRotor.createInstance()</code> or <code>new GenericSmallHelicopterIntermeshingRotor()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg) = <code>90</code>; </li>
+ *     <li> SubCategory: GenericSmallHelicopterIntermeshingRotor  = <code>23</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24722; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7cf7aee. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterSmallupto7000lbs3175kg
+ * @see SubCategory
+
  */
-public class GenericSmallHelicopterIntermeshingRotor extends EntityType
+public final class GenericSmallHelicopterIntermeshingRotor extends EntityType
 {
     /** Default constructor */
     public GenericSmallHelicopterIntermeshingRotor()
@@ -25,5 +39,11 @@ public class GenericSmallHelicopterIntermeshingRotor extends EntityType
 
         setCategory((byte)90); // uid 24716, Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg)
         setSubCategory((byte)23); // uid 24722, Generic Small Helicopter, Intermeshing Rotor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericSmallHelicopterIntermeshingRotor createInstance()
+    {
+            return new GenericSmallHelicopterIntermeshingRotor();
     }
 }

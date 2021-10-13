@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e57cd70;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31007
+ * <p> Entity class <b><code>GooseBayMM707</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GooseBayMM707.createInstance()</code> or <code>new GooseBayMM707()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: KingstonClassMaritimeCoastalDefenceVessel  = <code>1</code>; </li>
+ *     <li> Specific: GooseBayMM707  = <code>8</code>; </li>
+ *     <li> Entity type uid: 31007; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9660f4e. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class GooseBayMM707 extends EntityType
+public final class GooseBayMM707 extends EntityType
 {
     /** Default constructor */
     public GooseBayMM707()
@@ -26,5 +40,11 @@ public class GooseBayMM707 extends EntityType
         setCategory((byte)7); // uid 30998, Light/Patrol Craft
         setSubCategory((byte)1); // uid 30999, Kingston Class Maritime Coastal Defence Vessel
         setSpecific((byte)8); // uid 31007, Goose Bay (MM 707)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GooseBayMM707 createInstance()
+    {
+            return new GooseBayMM707();
     }
 }

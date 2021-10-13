@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class AcknowledgePdu extends SimulationManagementFamilyPdu implements Ser
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AcknowledgePdu()
  {
     setPduType( DisPduType.ACKNOWLEDGE );
@@ -44,8 +43,10 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += acknowledgeFlag.getMarshalledSize();
-   marshalSize += responseFlag.getMarshalledSize();
+   if (acknowledgeFlag != null)
+       marshalSize += acknowledgeFlag.getMarshalledSize();
+   if (responseFlag != null)
+       marshalSize += responseFlag.getMarshalledSize();
    marshalSize += 4;  // requestID
 
    return marshalSize;
@@ -179,9 +180,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    acknowledgeFlag = AcknowledgeAcknowledgeFlag.unmarshalEnum(byteBuffer);
-    responseFlag = AcknowledgeResponseFlag.unmarshalEnum(byteBuffer);
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute acknowledgeFlag marked as not serialized
+        acknowledgeFlag = AcknowledgeAcknowledgeFlag.unmarshalEnum(byteBuffer);
+        // attribute responseFlag marked as not serialized
+        responseFlag = AcknowledgeResponseFlag.unmarshalEnum(byteBuffer);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

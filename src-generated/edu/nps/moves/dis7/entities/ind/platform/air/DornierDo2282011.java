@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@149dd36b;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31712
+ * <p> Entity class <b><code>DornierDo2282011</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DornierDo2282011.createInstance()</code> or <code>new DornierDo2282011()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Reconnaissance = <code>7</code>; </li>
+ *     <li> SubCategory: DornierDo228  = <code>1</code>; </li>
+ *     <li> Specific: DornierDo228201  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31712; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8ad6665. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reconnaissance
+ * @see SubCategory
+
  */
-public class DornierDo2282011 extends EntityType
+public final class DornierDo2282011 extends EntityType
 {
     /** Default constructor */
     public DornierDo2282011()
@@ -26,5 +40,11 @@ public class DornierDo2282011 extends EntityType
         setCategory((byte)7); // uid 31709, Reconnaissance
         setSubCategory((byte)1); // uid 31710, Dornier Do 228
         setSpecific((byte)2); // uid 31712, Dornier Do 228-201
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DornierDo2282011 createInstance()
+    {
+            return new DornierDo2282011();
     }
 }

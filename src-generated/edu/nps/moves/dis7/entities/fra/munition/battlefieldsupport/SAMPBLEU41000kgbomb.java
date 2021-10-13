@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@624b3544;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21186
+ * <p> Entity class <b><code>SAMPBLEU41000kgbomb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SAMPBLEU41000kgbomb.createInstance()</code> or <code>new SAMPBLEU41000kgbomb()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: SAMPBLEU41000kgbomb  = <code>61</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21186; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@231df705. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class SAMPBLEU41000kgbomb extends EntityType
+public final class SAMPBLEU41000kgbomb extends EntityType
 {
     /** Default constructor */
     public SAMPBLEU41000kgbomb()
@@ -25,5 +39,11 @@ public class SAMPBLEU41000kgbomb extends EntityType
 
         setCategory((byte)2); // uid 21159, Ballistic
         setSubCategory((byte)61); // uid 21186, SAMP BL EU4 1000-kg bomb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SAMPBLEU41000kgbomb createInstance()
+    {
+            return new SAMPBLEU41000kgbomb();
     }
 }

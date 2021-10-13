@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2f9addd4;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30696
+ * <p> Entity class <b><code>BGroundSupportMateriel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BGroundSupportMateriel.createInstance()</code> or <code>new BGroundSupportMateriel()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: B - Ground Support Materiel = <code>3</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30696; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@37986daf. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see BGroundSupportMateriel
+
  */
-public class BGroundSupportMateriel extends EntityType
+public final class BGroundSupportMateriel extends EntityType
 {
     /** Default constructor */
     public BGroundSupportMateriel()
@@ -24,5 +37,11 @@ public class BGroundSupportMateriel extends EntityType
         setDomain(Domain.inst(SupplyDomain.CLASS_7_MAJOR_ITEMS));
 
         setCategory((byte)3); // uid 30696, B - Ground Support Materiel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BGroundSupportMateriel createInstance()
+    {
+            return new BGroundSupportMateriel();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@533377b;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 18656
+ * <p> Entity class <b><code>S518NazarioSauro</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S518NazarioSauro.createInstance()</code> or <code>new S518NazarioSauro()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: SauroClass1081Type  = <code>2</code>; </li>
+ *     <li> Specific: S518NazarioSauro  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18656; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e38a7fe. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S518NazarioSauro extends EntityType
+public final class S518NazarioSauro extends EntityType
 {
     /** Default constructor */
     public S518NazarioSauro()
@@ -26,5 +40,11 @@ public class S518NazarioSauro extends EntityType
         setCategory((byte)5); // uid 18649, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)2); // uid 18655, Sauro Class (1081 Type)
         setSpecific((byte)1); // uid 18656, S 518 Nazario Sauro
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S518NazarioSauro createInstance()
+    {
+            return new S518NazarioSauro();
     }
 }

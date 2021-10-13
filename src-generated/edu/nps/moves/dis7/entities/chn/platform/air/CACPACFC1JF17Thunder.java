@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@61d47554;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24769
+ * <p> Entity class <b><code>CACPACFC1JF17Thunder</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CACPACFC1JF17Thunder.createInstance()</code> or <code>new CACPACFC1JF17Thunder()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: CACPACFC1JF17Thunder  = <code>9</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24769; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@74294adb. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class CACPACFC1JF17Thunder extends EntityType
+public final class CACPACFC1JF17Thunder extends EntityType
 {
     /** Default constructor */
     public CACPACFC1JF17Thunder()
@@ -25,5 +39,11 @@ public class CACPACFC1JF17Thunder extends EntityType
 
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
         setSubCategory((byte)9); // uid 24769, CAC/PAC FC-1/JF-17 Thunder
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CACPACFC1JF17Thunder createInstance()
+    {
+            return new CACPACFC1JF17Thunder();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30404dba;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12934
+ * <p> Entity class <b><code>LBU200mobilewelldrillingequipment</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LBU200mobilewelldrillingequipment.createInstance()</code> or <code>new LBU200mobilewelldrillingequipment()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: LBU200mobilewelldrillingequipment  = <code>37</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12934; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e6308a9. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class LBU200mobilewelldrillingequipment extends EntityType
+public final class LBU200mobilewelldrillingequipment extends EntityType
 {
     /** Default constructor */
     public LBU200mobilewelldrillingequipment()
@@ -25,5 +39,11 @@ public class LBU200mobilewelldrillingequipment extends EntityType
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)37); // uid 12934, LBU-200 mobile well-drilling equipment
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LBU200mobilewelldrillingequipment createInstance()
+    {
+            return new LBU200mobilewelldrillingequipment();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2fc14f68;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29329
+ * <p> Entity class <b><code>G222C27Spartan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>G222C27Spartan.createInstance()</code> or <code>new G222C27Spartan()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: G222C27Spartan  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29329; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5679c6c6. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class G222C27Spartan extends EntityType
+public final class G222C27Spartan extends EntityType
 {
     /** Default constructor */
     public G222C27Spartan()
@@ -25,5 +39,11 @@ public class G222C27Spartan extends EntityType
 
         setCategory((byte)4); // uid 17505, Cargo/Tanker
         setSubCategory((byte)6); // uid 29329, G.222/C-27 Spartan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static G222C27Spartan createInstance()
+    {
+            return new G222C27Spartan();
     }
 }

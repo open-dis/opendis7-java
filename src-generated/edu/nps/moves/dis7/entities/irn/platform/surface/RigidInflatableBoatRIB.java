@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@315f43d5;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30542
+ * <p> Entity class <b><code>RigidInflatableBoatRIB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RigidInflatableBoatRIB.createInstance()</code> or <code>new RigidInflatableBoatRIB()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: RigidInflatableBoatRIB  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30542; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@340da44c. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class RigidInflatableBoatRIB extends EntityType
+public final class RigidInflatableBoatRIB extends EntityType
 {
     /** Default constructor */
     public RigidInflatableBoatRIB()
@@ -25,5 +39,11 @@ public class RigidInflatableBoatRIB extends EntityType
 
         setCategory((byte)64); // uid 30541, Fast Attack Craft
         setSubCategory((byte)1); // uid 30542, Rigid-Inflatable Boat (RIB)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RigidInflatableBoatRIB createInstance()
+    {
+            return new RigidInflatableBoatRIB();
     }
 }

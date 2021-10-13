@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@517cd4b;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16924
+ * <p> Entity class <b><code>HY2CSSC3Seersuckerlauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HY2CSSC3Seersuckerlauncher.createInstance()</code> or <code>new HY2CSSC3Seersuckerlauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: HYseriesASCMlauncher  = <code>16</code>; </li>
+ *     <li> Specific: HY2CSSC3Seersuckerlauncher  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16924; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16f7c8c1. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class HY2CSSC3Seersuckerlauncher extends EntityType
+public final class HY2CSSC3Seersuckerlauncher extends EntityType
 {
     /** Default constructor */
     public HY2CSSC3Seersuckerlauncher()
@@ -26,5 +40,11 @@ public class HY2CSSC3Seersuckerlauncher extends EntityType
         setCategory((byte)5); // uid 16904, Towed Artillery
         setSubCategory((byte)16); // uid 16922, HY-series ASCM launcher
         setSpecific((byte)2); // uid 16924, HY-2/CSSC-3 Seersucker launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HY2CSSC3Seersuckerlauncher createInstance()
+    {
+            return new HY2CSSC3Seersuckerlauncher();
     }
 }

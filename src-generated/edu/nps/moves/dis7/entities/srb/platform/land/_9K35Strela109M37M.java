@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5527b211;
- * Country: Serbia (SRB);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30167
+ * <p> Entity class <b><code>_9K35Strela109M37M</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_9K35Strela109M37M.createInstance()</code> or <code>new _9K35Strela109M37M()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: _9K35Strela109M37M  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30167; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79316f3a. </p>
+ * @see Country#SERBIA_SRB
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class _9K35Strela109M37M extends EntityType
+public final class _9K35Strela109M37M extends EntityType
 {
     /** Default constructor */
     public _9K35Strela109M37M()
@@ -25,5 +39,11 @@ public class _9K35Strela109M37M extends EntityType
 
         setCategory((byte)28); // uid 30166, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 30167, 9K35 Strela-10 9M37M
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _9K35Strela109M37M createInstance()
+    {
+            return new _9K35Strela109M37M();
     }
 }

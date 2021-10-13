@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73cd37c0;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16719
+ * <p> Entity class <b><code>BY879Schwimmdocks</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BY879Schwimmdocks.createInstance()</code> or <code>new BY879Schwimmdocks()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Floatingdockstypes712715andcranestype711  = <code>9</code>; </li>
+ *     <li> Specific: BY879Schwimmdocks  = <code>3</code>; </li>
+ *     <li> Entity type uid: 16719; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71e9ebae. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class BY879Schwimmdocks extends EntityType
+public final class BY879Schwimmdocks extends EntityType
 {
     /** Default constructor */
     public BY879Schwimmdocks()
@@ -26,5 +40,11 @@ public class BY879Schwimmdocks extends EntityType
         setCategory((byte)18); // uid 16684, Utility
         setSubCategory((byte)9); // uid 16716, Floating docks (types 712-715) and cranes (type 711)
         setSpecific((byte)3); // uid 16719, B Y 879 Schwimmdocks
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BY879Schwimmdocks createInstance()
+    {
+            return new BY879Schwimmdocks();
     }
 }

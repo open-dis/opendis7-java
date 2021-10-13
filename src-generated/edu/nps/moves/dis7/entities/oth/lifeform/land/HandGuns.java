@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@37d6dddc;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32727
+ * <p> Entity class <b><code>HandGuns</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HandGuns.createInstance()</code> or <code>new HandGuns()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Terrorist Combatant = <code>101</code>; </li>
+ *     <li> SubCategory: HandGuns  = <code>80</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32727; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@625264ed. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TerroristCombatant
+ * @see SubCategory
+
  */
-public class HandGuns extends EntityType
+public final class HandGuns extends EntityType
 {
     /** Default constructor */
     public HandGuns()
@@ -25,5 +39,11 @@ public class HandGuns extends EntityType
 
         setCategory((byte)101); // uid 32719, Terrorist Combatant
         setSubCategory((byte)80); // uid 32727, Hand Guns
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HandGuns createInstance()
+    {
+            return new HandGuns();
     }
 }

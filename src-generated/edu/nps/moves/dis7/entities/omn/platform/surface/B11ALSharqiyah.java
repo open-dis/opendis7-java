@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b770e40;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17957
+ * <p> Entity class <b><code>B11ALSharqiyah</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B11ALSharqiyah.createInstance()</code> or <code>new B11ALSharqiyah()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: DhofarProvinceClassfastattackcraftmissile  = <code>4</code>; </li>
+ *     <li> Specific: B11ALSharqiyah  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17957; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c074c0c. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class B11ALSharqiyah extends EntityType
+public final class B11ALSharqiyah extends EntityType
 {
     /** Default constructor */
     public B11ALSharqiyah()
@@ -26,5 +40,11 @@ public class B11ALSharqiyah extends EntityType
         setCategory((byte)7); // uid 17942, Light/Patrol Craft
         setSubCategory((byte)4); // uid 17955, Dhofar (Province) Class (fast attack craft-missile)
         setSpecific((byte)2); // uid 17957, B11 AL Sharqiyah
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B11ALSharqiyah createInstance()
+    {
+            return new B11ALSharqiyah();
     }
 }

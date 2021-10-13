@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d4df0f4;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 21644
+ * <p> Entity class <b><code>_3P</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_3P.createInstance()</code> or <code>new _3P()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _40mm  = <code>1</code>; </li>
+ *     <li> Specific: _3P  = <code>2</code>; </li>
+ *     <li> Entity type uid: 21644; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21be14c2. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _3P extends EntityType
+public final class _3P extends EntityType
 {
     /** Default constructor */
     public _3P()
@@ -26,5 +40,11 @@ public class _3P extends EntityType
         setCategory((byte)2); // uid 21641, Ballistic
         setSubCategory((byte)1); // uid 21642, 40 mm
         setSpecific((byte)2); // uid 21644, 3P
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _3P createInstance()
+    {
+            return new _3P();
     }
 }

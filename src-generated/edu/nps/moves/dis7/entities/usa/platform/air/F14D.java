@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1526f71;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10759
+ * <p> Entity class <b><code>F14D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F14D.createInstance()</code> or <code>new F14D()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: GrummanF14Tomcat  = <code>2</code>; </li>
+ *     <li> Specific: F14D  = <code>2</code>; </li>
+ *     <li> Entity type uid: 10759; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e91ed74. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class F14D extends EntityType
+public final class F14D extends EntityType
 {
     /** Default constructor */
     public F14D()
@@ -26,5 +40,11 @@ public class F14D extends EntityType
         setCategory((byte)1); // uid 10755, Fighter/Air Defense
         setSubCategory((byte)2); // uid 10757, Grumman F-14 Tomcat
         setSpecific((byte)2); // uid 10759, F-14D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F14D createInstance()
+    {
+            return new F14D();
     }
 }

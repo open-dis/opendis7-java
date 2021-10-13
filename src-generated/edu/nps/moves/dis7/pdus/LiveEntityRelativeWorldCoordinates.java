@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class LiveEntityRelativeWorldCoordinates extends Object implements Serial
    protected short  deltaZ;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LiveEntityRelativeWorldCoordinates()
  {
  }
@@ -223,10 +222,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    referencePoint = (short)(byteBuffer.getShort() & 0xFFFF);
-    deltaX = (short)(byteBuffer.getShort() & 0xFFFF);
-    deltaY = (short)(byteBuffer.getShort() & 0xFFFF);
-    deltaZ = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute referencePoint marked as not serialized
+        referencePoint = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute deltaX marked as not serialized
+        deltaX = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute deltaY marked as not serialized
+        deltaY = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute deltaZ marked as not serialized
+        deltaZ = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

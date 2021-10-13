@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6734ff92;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25036
+ * <p> Entity class <b><code>HE9M27F</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HE9M27F.createInstance()</code> or <code>new HE9M27F()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _220mmrocket  = <code>23</code>; </li>
+ *     <li> Specific: HE9M27F  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25036; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45984654. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HE9M27F extends EntityType
+public final class HE9M27F extends EntityType
 {
     /** Default constructor */
     public HE9M27F()
@@ -26,5 +40,11 @@ public class HE9M27F extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)23); // uid 20874, 220-mm rocket
         setSpecific((byte)1); // uid 25036, HE, 9M27F
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HE9M27F createInstance()
+    {
+            return new HE9M27F();
     }
 }

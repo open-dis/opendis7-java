@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@59717824;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16967
+ * <p> Entity class <b><code>ShenyangJ6F6Farmer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShenyangJ6F6Farmer.createInstance()</code> or <code>new ShenyangJ6F6Farmer()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: ShenyangJ6F6Farmer  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16967; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d7acb34. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class ShenyangJ6F6Farmer extends EntityType
+public final class ShenyangJ6F6Farmer extends EntityType
 {
     /** Default constructor */
     public ShenyangJ6F6Farmer()
@@ -25,5 +39,11 @@ public class ShenyangJ6F6Farmer extends EntityType
 
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
         setSubCategory((byte)1); // uid 16967, Shenyang J-6/F-6 (Farmer)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShenyangJ6F6Farmer createInstance()
+    {
+            return new ShenyangJ6F6Farmer();
     }
 }

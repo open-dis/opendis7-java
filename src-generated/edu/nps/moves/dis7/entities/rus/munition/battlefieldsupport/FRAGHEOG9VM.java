@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@586843bc;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 24009
+ * <p> Entity class <b><code>FRAGHEOG9VM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FRAGHEOG9VM.createInstance()</code> or <code>new FRAGHEOG9VM()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _73mm  = <code>39</code>; </li>
+ *     <li> Specific: FRAGHEOG9VM  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24009; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27358a19. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FRAGHEOG9VM extends EntityType
+public final class FRAGHEOG9VM extends EntityType
 {
     /** Default constructor */
     public FRAGHEOG9VM()
@@ -26,5 +40,11 @@ public class FRAGHEOG9VM extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)39); // uid 20892, 73mm
         setSpecific((byte)3); // uid 24009, FRAG-HE, OG-9VM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FRAGHEOG9VM createInstance()
+    {
+            return new FRAGHEOG9VM();
     }
 }

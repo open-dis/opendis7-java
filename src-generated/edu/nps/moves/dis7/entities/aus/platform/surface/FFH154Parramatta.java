@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66d33a;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17518
+ * <p> Entity class <b><code>FFH154Parramatta</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFH154Parramatta.createInstance()</code> or <code>new FFH154Parramatta()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: ANZACClassMeko200  = <code>1</code>; </li>
+ *     <li> Specific: FFH154Parramatta  = <code>5</code>; </li>
+ *     <li> Entity type uid: 17518; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b1d2887. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class FFH154Parramatta extends EntityType
+public final class FFH154Parramatta extends EntityType
 {
     /** Default constructor */
     public FFH154Parramatta()
@@ -26,5 +40,11 @@ public class FFH154Parramatta extends EntityType
         setCategory((byte)6); // uid 17511, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 17513, ANZAC Class (Meko 200)
         setSpecific((byte)5); // uid 17518, FFH 154 Parramatta
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFH154Parramatta createInstance()
+    {
+            return new FFH154Parramatta();
     }
 }

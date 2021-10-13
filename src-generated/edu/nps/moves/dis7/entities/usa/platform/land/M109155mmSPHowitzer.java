@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@12b5736c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10276
+ * <p> Entity class <b><code>M109155mmSPHowitzer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M109155mmSPHowitzer.createInstance()</code> or <code>new M109155mmSPHowitzer()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: M109155mmSPHowitzer  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 10276; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63cf9de0. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class M109155mmSPHowitzer extends EntityType
+public final class M109155mmSPHowitzer extends EntityType
 {
     /** Default constructor */
     public M109155mmSPHowitzer()
@@ -25,5 +39,11 @@ public class M109155mmSPHowitzer extends EntityType
 
         setCategory((byte)4); // uid 10270, Self-Propelled Artillery
         setSubCategory((byte)3); // uid 10276, M109 155-mm SP Howitzer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M109155mmSPHowitzer createInstance()
+    {
+            return new M109155mmSPHowitzer();
     }
 }

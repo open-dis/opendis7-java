@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b5a078a;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15218
+ * <p> Entity class <b><code>D34Diamond</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D34Diamond.createInstance()</code> or <code>new D34Diamond()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: Type45  = <code>2</code>; </li>
+ *     <li> Specific: D34Diamond  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15218; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34aeacd1. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileDestroyer
+ * @see SubCategory
+
  */
-public class D34Diamond extends EntityType
+public final class D34Diamond extends EntityType
 {
     /** Default constructor */
     public D34Diamond()
@@ -26,5 +40,11 @@ public class D34Diamond extends EntityType
         setCategory((byte)4); // uid 15201, Guided-missile Destroyer
         setSubCategory((byte)2); // uid 15215, Type 45
         setSpecific((byte)3); // uid 15218, D 34 Diamond
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D34Diamond createInstance()
+    {
+            return new D34Diamond();
     }
 }

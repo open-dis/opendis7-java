@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27e21083;
- * Country: Russia (RUS);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 22303
+ * <p> Entity class <b><code>TACCSFnotionalhostileflare</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TACCSFnotionalhostileflare.createInstance()</code> or <code>new TACCSFnotionalhostileflare()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Flare = <code>2</code>; </li>
+ *     <li> SubCategory: FlareOther  = <code>0</code>; </li>
+ *     <li> Specific: TACCSFnotionalhostileflare  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22303; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4468fda8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flare
+ * @see SubCategory
+
  */
-public class TACCSFnotionalhostileflare extends EntityType
+public final class TACCSFnotionalhostileflare extends EntityType
 {
     /** Default constructor */
     public TACCSFnotionalhostileflare()
@@ -26,5 +40,11 @@ public class TACCSFnotionalhostileflare extends EntityType
         setCategory((byte)2); // uid 22301, Flare
         setSubCategory((byte)0); // uid 22302, Flare, Other
         setSpecific((byte)1); // uid 22303, TACCSF notional hostile flare
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TACCSFnotionalhostileflare createInstance()
+    {
+            return new TACCSFnotionalhostileflare();
     }
 }

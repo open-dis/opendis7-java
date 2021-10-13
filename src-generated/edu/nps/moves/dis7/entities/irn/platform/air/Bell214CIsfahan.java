@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61e94def;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29878
+ * <p> Entity class <b><code>Bell214CIsfahan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bell214CIsfahan.createInstance()</code> or <code>new Bell214CIsfahan()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: Bell214  = <code>3</code>; </li>
+ *     <li> Specific: Bell214CIsfahan  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29878; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4372b9b6. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class Bell214CIsfahan extends EntityType
+public final class Bell214CIsfahan extends EntityType
 {
     /** Default constructor */
     public Bell214CIsfahan()
@@ -26,5 +40,11 @@ public class Bell214CIsfahan extends EntityType
         setCategory((byte)21); // uid 29873, Utility Helicopter
         setSubCategory((byte)3); // uid 29876, Bell 214
         setSpecific((byte)2); // uid 29878, Bell 214C Isfahan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bell214CIsfahan createInstance()
+    {
+            return new Bell214CIsfahan();
     }
 }

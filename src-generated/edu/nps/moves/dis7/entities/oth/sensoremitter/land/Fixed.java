@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38e7860c;
- * Country: Other;
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22563
+ * <p> Entity class <b><code>Fixed</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Fixed.createInstance()</code> or <code>new Fixed()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: Multifunction  = <code>1</code>; </li>
+ *     <li> Specific: Fixed  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22563; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2be50bba. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class Fixed extends EntityType
+public final class Fixed extends EntityType
 {
     /** Default constructor */
     public Fixed()
@@ -26,5 +40,11 @@ public class Fixed extends EntityType
         setCategory((byte)2); // uid 22561, RF Active
         setSubCategory((byte)1); // uid 22562, Multi-function
         setSpecific((byte)1); // uid 22563, Fixed
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Fixed createInstance()
+    {
+            return new Fixed();
     }
 }

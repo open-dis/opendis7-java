@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@cb7fa71;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26885
+ * <p> Entity class <b><code>HelsingborgK32</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HelsingborgK32.createInstance()</code> or <code>new HelsingborgK32()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: VisbyClass  = <code>3</code>; </li>
+ *     <li> Specific: HelsingborgK32  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26885; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@277bf091. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class HelsingborgK32 extends EntityType
+public final class HelsingborgK32 extends EntityType
 {
     /** Default constructor */
     public HelsingborgK32()
@@ -26,5 +40,11 @@ public class HelsingborgK32 extends EntityType
         setCategory((byte)50); // uid 26874, Frigate (including Corvette)
         setSubCategory((byte)3); // uid 26883, Visby Class
         setSpecific((byte)2); // uid 26885, Helsingborg (K32)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HelsingborgK32 createInstance()
+    {
+            return new HelsingborgK32();
     }
 }

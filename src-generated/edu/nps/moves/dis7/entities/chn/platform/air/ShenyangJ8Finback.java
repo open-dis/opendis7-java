@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@19dc67c2;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16973
+ * <p> Entity class <b><code>ShenyangJ8Finback</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShenyangJ8Finback.createInstance()</code> or <code>new ShenyangJ8Finback()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: ShenyangJ8Finback  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16973; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1cab0bfb. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class ShenyangJ8Finback extends EntityType
+public final class ShenyangJ8Finback extends EntityType
 {
     /** Default constructor */
     public ShenyangJ8Finback()
@@ -25,5 +39,11 @@ public class ShenyangJ8Finback extends EntityType
 
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
         setSubCategory((byte)3); // uid 16973, Shenyang J-8 (Finback)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShenyangJ8Finback createInstance()
+    {
+            return new ShenyangJ8Finback();
     }
 }

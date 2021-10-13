@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59f45950;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25070
+ * <p> Entity class <b><code>HEFRAG3VOF72</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEFRAG3VOF72.createInstance()</code> or <code>new HEFRAG3VOF72()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _152mm  = <code>19</code>; </li>
+ *     <li> Specific: HEFRAG3VOF72  = <code>15</code>; </li>
+ *     <li> Entity type uid: 25070; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3070f3e6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEFRAG3VOF72 extends EntityType
+public final class HEFRAG3VOF72 extends EntityType
 {
     /** Default constructor */
     public HEFRAG3VOF72()
@@ -26,5 +40,11 @@ public class HEFRAG3VOF72 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)19); // uid 20846, 152 mm
         setSpecific((byte)15); // uid 25070, HE-FRAG, 3VOF-72
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEFRAG3VOF72 createInstance()
+    {
+            return new HEFRAG3VOF72();
     }
 }

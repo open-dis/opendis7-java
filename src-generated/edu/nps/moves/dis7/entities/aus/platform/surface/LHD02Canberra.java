@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@97e1986;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28652
+ * <p> Entity class <b><code>LHD02Canberra</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LHD02Canberra.createInstance()</code> or <code>new LHD02Canberra()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: CanberraClassLandingHelicopterDock  = <code>1</code>; </li>
+ *     <li> Specific: LHD02Canberra  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28652; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f3afe78. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class LHD02Canberra extends EntityType
+public final class LHD02Canberra extends EntityType
 {
     /** Default constructor */
     public LHD02Canberra()
@@ -26,5 +40,11 @@ public class LHD02Canberra extends EntityType
         setCategory((byte)56); // uid 28650, Amphibious Transport Dock
         setSubCategory((byte)1); // uid 28651, Canberra Class (Landing Helicopter Dock)
         setSpecific((byte)1); // uid 28652, LHD 02 Canberra
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LHD02Canberra createInstance()
+    {
+            return new LHD02Canberra();
     }
 }

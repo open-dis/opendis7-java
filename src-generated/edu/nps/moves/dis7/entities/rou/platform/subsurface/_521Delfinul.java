@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9f6e406;
- * Country: Romania (ROU);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27820
+ * <p> Entity class <b><code>_521Delfinul</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_521Delfinul.createInstance()</code> or <code>new _521Delfinul()</code>. </p>
+ * <ul>
+ *     <li> Country: Romania (ROU) = <code>180</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: KiloClass  = <code>1</code>; </li>
+ *     <li> Specific: _521Delfinul  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27820; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a8a8b75. </p>
+ * @see Country#ROMANIA_ROU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class _521Delfinul extends EntityType
+public final class _521Delfinul extends EntityType
 {
     /** Default constructor */
     public _521Delfinul()
@@ -26,5 +40,11 @@ public class _521Delfinul extends EntityType
         setCategory((byte)5); // uid 27818, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 27819, Kilo Class
         setSpecific((byte)1); // uid 27820, 521 Delfinul
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _521Delfinul createInstance()
+    {
+            return new _521Delfinul();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71ae31b0;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18636
+ * <p> Entity class <b><code>SanGiorgioClassLPDs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SanGiorgioClassLPDs.createInstance()</code> or <code>new SanGiorgioClassLPDs()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: SanGiorgioClassLPDs  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18636; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@62fe6067. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class SanGiorgioClassLPDs extends EntityType
+public final class SanGiorgioClassLPDs extends EntityType
 {
     /** Default constructor */
     public SanGiorgioClassLPDs()
@@ -25,5 +39,11 @@ public class SanGiorgioClassLPDs extends EntityType
 
         setCategory((byte)56); // uid 18635, Amphibious Transport Dock
         setSubCategory((byte)1); // uid 18636, San Giorgio Class (LPDs)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SanGiorgioClassLPDs createInstance()
+    {
+            return new SanGiorgioClassLPDs();
     }
 }

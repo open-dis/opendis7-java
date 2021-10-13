@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32c4e8b2;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30390
+ * <p> Entity class <b><code>GRE22FriedaLuise</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GRE22FriedaLuise.createInstance()</code> or <code>new GRE22FriedaLuise()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fishing Vessel = <code>86</code>; </li>
+ *     <li> SubCategory: MediumFishingVesselupto65ft198m  = <code>2</code>; </li>
+ *     <li> Specific: GRE22FriedaLuise  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30390; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2421cc4. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FishingVessel
+ * @see SubCategory
+
  */
-public class GRE22FriedaLuise extends EntityType
+public final class GRE22FriedaLuise extends EntityType
 {
     /** Default constructor */
     public GRE22FriedaLuise()
@@ -26,5 +40,11 @@ public class GRE22FriedaLuise extends EntityType
         setCategory((byte)86); // uid 27584, Fishing Vessel
         setSubCategory((byte)2); // uid 30387, Medium Fishing Vessel (up to 65ft/19.8m)
         setSpecific((byte)3); // uid 30390, GRE 22 Frieda Luise
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GRE22FriedaLuise createInstance()
+    {
+            return new GRE22FriedaLuise();
     }
 }

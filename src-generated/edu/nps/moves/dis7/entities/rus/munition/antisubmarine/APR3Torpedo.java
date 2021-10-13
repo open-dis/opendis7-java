@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a7b6b75;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 20627
+ * <p> Entity class <b><code>APR3Torpedo</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>APR3Torpedo.createInstance()</code> or <code>new APR3Torpedo()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: APR3Torpedo  = <code>17</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 20627; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6bb4cc0e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class APR3Torpedo extends EntityType
+public final class APR3Torpedo extends EntityType
 {
     /** Default constructor */
     public APR3Torpedo()
@@ -25,5 +39,11 @@ public class APR3Torpedo extends EntityType
 
         setCategory((byte)1); // uid 20606, Guided
         setSubCategory((byte)17); // uid 20627, APR-3 Torpedo
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static APR3Torpedo createInstance()
+    {
+            return new APR3Torpedo();
     }
 }

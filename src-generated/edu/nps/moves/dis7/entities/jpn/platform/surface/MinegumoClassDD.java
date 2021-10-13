@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@625e134e;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18895
+ * <p> Entity class <b><code>MinegumoClassDD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MinegumoClassDD.createInstance()</code> or <code>new MinegumoClassDD()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: MinegumoClassDD  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18895; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18518ccf. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class MinegumoClassDD extends EntityType
+public final class MinegumoClassDD extends EntityType
 {
     /** Default constructor */
     public MinegumoClassDD()
@@ -25,5 +39,11 @@ public class MinegumoClassDD extends EntityType
 
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)5); // uid 18895, Minegumo Class (DD)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MinegumoClassDD createInstance()
+    {
+            return new MinegumoClassDD();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1686f0b4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29994
+ * <p> Entity class <b><code>_565BT100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_565BT100.createInstance()</code> or <code>new _565BT100()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Sonyaclass  = <code>6</code>; </li>
+ *     <li> Specific: _565BT100  = <code>20</code>; </li>
+ *     <li> Entity type uid: 29994; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49cf9028. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _565BT100 extends EntityType
+public final class _565BT100 extends EntityType
 {
     /** Default constructor */
     public _565BT100()
@@ -26,5 +40,11 @@ public class _565BT100 extends EntityType
         setCategory((byte)8); // uid 13709, Mine Countermeasure Ship / Craft
         setSubCategory((byte)6); // uid 13738, Sonya class
         setSpecific((byte)20); // uid 29994, 565 BT-100
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _565BT100 createInstance()
+    {
+            return new _565BT100();
     }
 }

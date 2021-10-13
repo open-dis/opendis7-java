@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40f35e52;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 15595
+ * <p> Entity class <b><code>S26Renown</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S26Renown.createInstance()</code> or <code>new S26Renown()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missiles) = <code>1</code>; </li>
+ *     <li> SubCategory: ResolutionClass  = <code>2</code>; </li>
+ *     <li> Specific: S26Renown  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15595; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d247660. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissiles
+ * @see SubCategory
+
  */
-public class S26Renown extends EntityType
+public final class S26Renown extends EntityType
 {
     /** Default constructor */
     public S26Renown()
@@ -26,5 +40,11 @@ public class S26Renown extends EntityType
         setCategory((byte)1); // uid 15586, SSBN (Nuclear Ballistic Missiles)
         setSubCategory((byte)2); // uid 15592, Resolution Class
         setSpecific((byte)3); // uid 15595, S 26 Renown
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S26Renown createInstance()
+    {
+            return new S26Renown();
     }
 }

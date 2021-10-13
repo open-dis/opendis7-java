@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -58,7 +57,7 @@ public class BlankingSector extends Object implements Serializable
    protected long  padding3 = (long)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public BlankingSector()
  {
  }
@@ -77,7 +76,8 @@ public int getMarshalledSize()
    marshalSize += 2;  // padding
    marshalSize += 1;  // emitterNumber
    marshalSize += 1;  // beamNumber
-   marshalSize += stateIndicator.getMarshalledSize();
+   if (stateIndicator != null)
+       marshalSize += stateIndicator.getMarshalledSize();
    marshalSize += 1;  // padding2
    marshalSize += 4;  // leftAzimuth
    marshalSize += 4;  // rightAzimuth
@@ -453,19 +453,39 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    emitterNumber = (byte)(byteBuffer.get() & 0xFF);
-    beamNumber = (byte)(byteBuffer.get() & 0xFF);
-    stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
-    padding2 = (byte)(byteBuffer.get() & 0xFF);
-    leftAzimuth = byteBuffer.getFloat();
-    rightAzimuth = byteBuffer.getFloat();
-    lowerElevation = byteBuffer.getFloat();
-    upperElevation = byteBuffer.getFloat();
-    residualPower = byteBuffer.getFloat();
-    padding3 = byteBuffer.getLong();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute emitterNumber marked as not serialized
+        emitterNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute beamNumber marked as not serialized
+        beamNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute stateIndicator marked as not serialized
+        stateIndicator = EEAttributeStateIndicator.unmarshalEnum(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute leftAzimuth marked as not serialized
+        leftAzimuth = byteBuffer.getFloat();
+        // attribute rightAzimuth marked as not serialized
+        rightAzimuth = byteBuffer.getFloat();
+        // attribute lowerElevation marked as not serialized
+        lowerElevation = byteBuffer.getFloat();
+        // attribute upperElevation marked as not serialized
+        upperElevation = byteBuffer.getFloat();
+        // attribute residualPower marked as not serialized
+        residualPower = byteBuffer.getFloat();
+        // attribute padding3 marked as not serialized
+        padding3 = byteBuffer.getLong();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class Appearance extends Object implements Serializable
    protected int  audio;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Appearance()
  {
  }
@@ -195,10 +194,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    visual = byteBuffer.getInt();
-    ir = byteBuffer.getInt();
-    em = byteBuffer.getInt();
-    audio = byteBuffer.getInt();
+    try
+    {
+        // attribute visual marked as not serialized
+        visual = byteBuffer.getInt();
+        // attribute ir marked as not serialized
+        ir = byteBuffer.getInt();
+        // attribute em marked as not serialized
+        em = byteBuffer.getInt();
+        // attribute audio marked as not serialized
+        audio = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

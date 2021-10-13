@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4201a617;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25766
+ * <p> Entity class <b><code>Generic3DoorHatchbackMiniMicrocarTiny</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Generic3DoorHatchbackMiniMicrocarTiny.createInstance()</code> or <code>new Generic3DoorHatchbackMiniMicrocarTiny()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: Generic3DoorHatchbackMiniMicrocarTiny  = <code>31</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25766; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3704122f. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class Generic3DoorHatchbackMiniMicrocarTiny extends EntityType
+public final class Generic3DoorHatchbackMiniMicrocarTiny extends EntityType
 {
     /** Default constructor */
     public Generic3DoorHatchbackMiniMicrocarTiny()
@@ -25,5 +39,11 @@ public class Generic3DoorHatchbackMiniMicrocarTiny extends EntityType
 
         setCategory((byte)81); // uid 25754, Car
         setSubCategory((byte)31); // uid 25766, Generic 3-Door Hatchback, Mini/Microcar (Tiny)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Generic3DoorHatchbackMiniMicrocarTiny createInstance()
+    {
+            return new Generic3DoorHatchbackMiniMicrocarTiny();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2f879bab;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32291
+ * <p> Entity class <b><code>T16ArmataBREM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>T16ArmataBREM.createInstance()</code> or <code>new T16ArmataBREM()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: T16ArmataBREM  = <code>19</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32291; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@710d7aff. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class T16ArmataBREM extends EntityType
+public final class T16ArmataBREM extends EntityType
 {
     /** Default constructor */
     public T16ArmataBREM()
@@ -25,5 +39,11 @@ public class T16ArmataBREM extends EntityType
 
         setCategory((byte)3); // uid 12727, Armored Utility Vehicle
         setSubCategory((byte)19); // uid 32291, T-16 Armata BREM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static T16ArmataBREM createInstance()
+    {
+            return new T16ArmataBREM();
     }
 }

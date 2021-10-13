@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@fde487b;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24986
+ * <p> Entity class <b><code>M264RPSmokeWarheadSubmunitionRPPellet</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M264RPSmokeWarheadSubmunitionRPPellet.createInstance()</code> or <code>new M264RPSmokeWarheadSubmunitionRPPellet()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Smoke Generator = <code>8</code>; </li>
+ *     <li> SubCategory: SmokeScreen  = <code>1</code>; </li>
+ *     <li> Specific: Hydra70wM264RPSmokeWarhead  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24986; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3c64339f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmokeGenerator
+ * @see SubCategory
+
  */
-public class M264RPSmokeWarheadSubmunitionRPPellet extends EntityType
+public final class M264RPSmokeWarheadSubmunitionRPPellet extends EntityType
 {
     /** Default constructor */
     public M264RPSmokeWarheadSubmunitionRPPellet()
@@ -27,5 +41,11 @@ public class M264RPSmokeWarheadSubmunitionRPPellet extends EntityType
         setSubCategory((byte)1); // uid 24984, Smoke Screen
         setSpecific((byte)1); // uid 24985, Hydra 70 w/ M264 RP Smoke Warhead
         setExtra((byte)1); // uid 24986, M264 RP Smoke Warhead Submunition (RP Pellet)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M264RPSmokeWarheadSubmunitionRPPellet createInstance()
+    {
+            return new M264RPSmokeWarheadSubmunitionRPPellet();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@363c32cc;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24923
+ * <p> Entity class <b><code>MercuryWagon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MercuryWagon.createInstance()</code> or <code>new MercuryWagon()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Car = <code>81</code>; </li>
+ *     <li> SubCategory: WagonIntermediateStandardMedium  = <code>63</code>; </li>
+ *     <li> Specific: MercuryWagon  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24923; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26837057. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Car
+ * @see SubCategory
+
  */
-public class MercuryWagon extends EntityType
+public final class MercuryWagon extends EntityType
 {
     /** Default constructor */
     public MercuryWagon()
@@ -26,5 +40,11 @@ public class MercuryWagon extends EntityType
         setCategory((byte)81); // uid 24919, Car
         setSubCategory((byte)63); // uid 24922, Wagon, Intermediate/Standard (Medium)
         setSpecific((byte)1); // uid 24923, Mercury Wagon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MercuryWagon createInstance()
+    {
+            return new MercuryWagon();
     }
 }

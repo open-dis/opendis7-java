@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37496720;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15234
+ * <p> Entity class <b><code>F82Somerset</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F82Somerset.createInstance()</code> or <code>new F82Somerset()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: DukeclassType23  = <code>1</code>; </li>
+ *     <li> Specific: F82Somerset  = <code>11</code>; </li>
+ *     <li> Entity type uid: 15234; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c79088e. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileFrigate
+ * @see SubCategory
+
  */
-public class F82Somerset extends EntityType
+public final class F82Somerset extends EntityType
 {
     /** Default constructor */
     public F82Somerset()
@@ -26,5 +40,11 @@ public class F82Somerset extends EntityType
         setCategory((byte)6); // uid 15222, Guided-missile Frigate
         setSubCategory((byte)1); // uid 15223, Duke class (Type 23)
         setSpecific((byte)11); // uid 15234, F 82 Somerset
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F82Somerset createInstance()
+    {
+            return new F82Somerset();
     }
 }

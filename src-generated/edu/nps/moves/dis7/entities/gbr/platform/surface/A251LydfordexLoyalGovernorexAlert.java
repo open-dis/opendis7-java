@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34332b8d;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15469
+ * <p> Entity class <b><code>A251LydfordexLoyalGovernorexAlert</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A251LydfordexLoyalGovernorexAlert.createInstance()</code> or <code>new A251LydfordexLoyalGovernorexAlert()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Clovellyclassfleettenders  = <code>24</code>; </li>
+ *     <li> Specific: A251LydfordexLoyalGovernorexAlert  = <code>4</code>; </li>
+ *     <li> Entity type uid: 15469; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b6924cb. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A251LydfordexLoyalGovernorexAlert extends EntityType
+public final class A251LydfordexLoyalGovernorexAlert extends EntityType
 {
     /** Default constructor */
     public A251LydfordexLoyalGovernorexAlert()
@@ -26,5 +40,11 @@ public class A251LydfordexLoyalGovernorexAlert extends EntityType
         setCategory((byte)16); // uid 15370, Auxiliary
         setSubCategory((byte)24); // uid 15465, Clovelly class (fleet tenders)
         setSpecific((byte)4); // uid 15469, A 251 Lydford (ex-Loyal Governor, ex-Alert)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A251LydfordexLoyalGovernorexAlert createInstance()
+    {
+            return new A251LydfordexLoyalGovernorexAlert();
     }
 }

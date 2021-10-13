@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16e7b402;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27294
+ * <p> Entity class <b><code>Centurion</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Centurion.createInstance()</code> or <code>new Centurion()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: ChallengerClass  = <code>1</code>; </li>
+ *     <li> Specific: Centurion  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27294; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c8d5312. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class Centurion extends EntityType
+public final class Centurion extends EntityType
 {
     /** Default constructor */
     public Centurion()
@@ -26,5 +40,11 @@ public class Centurion extends EntityType
         setCategory((byte)5); // uid 26615, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 26616, Challenger Class
         setSpecific((byte)2); // uid 27294, Centurion
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Centurion createInstance()
+    {
+            return new Centurion();
     }
 }

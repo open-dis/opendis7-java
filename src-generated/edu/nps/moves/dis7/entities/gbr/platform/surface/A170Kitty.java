@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7523a3dc;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15552
+ * <p> Entity class <b><code>A170Kitty</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A170Kitty.createInstance()</code> or <code>new A170Kitty()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Tritonclass  = <code>5</code>; </li>
+ *     <li> Specific: A170Kitty  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15552; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6848a051. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class A170Kitty extends EntityType
+public final class A170Kitty extends EntityType
 {
     /** Default constructor */
     public A170Kitty()
@@ -26,5 +40,11 @@ public class A170Kitty extends EntityType
         setCategory((byte)17); // uid 15513, Auxiliary, Merchant Marine
         setSubCategory((byte)5); // uid 15550, Triton class
         setSpecific((byte)2); // uid 15552, A 170 Kitty
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A170Kitty createInstance()
+    {
+            return new A170Kitty();
     }
 }

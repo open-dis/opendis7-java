@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37d871c2;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14538
+ * <p> Entity class <b><code>KapitanBukayev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KapitanBukayev.createInstance()</code> or <code>new KapitanBukayev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: KapitanChechkinclassicebreakers  = <code>9</code>; </li>
+ *     <li> Specific: KapitanBukayev  = <code>5</code>; </li>
+ *     <li> Entity type uid: 14538; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71466383. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class KapitanBukayev extends EntityType
+public final class KapitanBukayev extends EntityType
 {
     /** Default constructor */
     public KapitanBukayev()
@@ -26,5 +40,11 @@ public class KapitanBukayev extends EntityType
         setCategory((byte)17); // uid 14477, Auxiliary, Merchant Marine
         setSubCategory((byte)9); // uid 14533, Kapitan Chechkin class (ice breakers)
         setSpecific((byte)5); // uid 14538, Kapitan Bukayev
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KapitanBukayev createInstance()
+    {
+            return new KapitanBukayev();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f79caec;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29399
+ * <p> Entity class <b><code>HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS.createInstance()</code> or <code>new HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fuel Trailer = <code>15</code>; </li>
+ *     <li> SubCategory: _10015000Gallons  = <code>2</code>; </li>
+ *     <li> Specific: HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29399; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a7b0070. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FuelTrailer
+ * @see SubCategory
+
  */
-public class HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS extends EntityType
+public final class HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS extends EntityType
 {
     /** Default constructor */
     public HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS()
@@ -26,5 +40,11 @@ public class HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS extends Enti
         setCategory((byte)15); // uid 29396, Fuel Trailer
         setSubCategory((byte)2); // uid 29398, 1001 - 5000 Gallons
         setSpecific((byte)1); // uid 29399, Haulmark - Trailer, Heavy Cargo, Bulk Fuel Pump & Storage, 9000L (HBFP&S)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS createInstance()
+    {
+            return new HaulmarkTrailerHeavyCargoBulkFuelPumpStorage9000LHBFPS();
     }
 }

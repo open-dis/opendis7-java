@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@186978a6;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24891
+ * <p> Entity class <b><code>MitsubishiMidSizePickupw60mmMortar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MitsubishiMidSizePickupw60mmMortar.createInstance()</code> or <code>new MitsubishiMidSizePickupw60mmMortar()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Cargo Truck = <code>83</code>; </li>
+ *     <li> SubCategory: PickupTruckMidSize  = <code>2</code>; </li>
+ *     <li> Specific: MitsubishiMidSizePickup  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24891; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@773cbf4f. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitCargoTruck
+ * @see SubCategory
+
  */
-public class MitsubishiMidSizePickupw60mmMortar extends EntityType
+public final class MitsubishiMidSizePickupw60mmMortar extends EntityType
 {
     /** Default constructor */
     public MitsubishiMidSizePickupw60mmMortar()
@@ -27,5 +41,11 @@ public class MitsubishiMidSizePickupw60mmMortar extends EntityType
         setSubCategory((byte)2); // uid 24889, Pickup Truck, Mid-Size
         setSpecific((byte)1); // uid 24890, Mitsubishi Mid-Size Pickup
         setExtra((byte)1); // uid 24891, Mitsubishi Mid-Size Pickup w/ 60mm Mortar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MitsubishiMidSizePickupw60mmMortar createInstance()
+    {
+            return new MitsubishiMidSizePickupw60mmMortar();
     }
 }

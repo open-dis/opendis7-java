@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1fdfafd2;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18367
+ * <p> Entity class <b><code>SparvieroClassHydrofoilMissile</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SparvieroClassHydrofoilMissile.createInstance()</code> or <code>new SparvieroClassHydrofoilMissile()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Hydrofoil = <code>14</code>; </li>
+ *     <li> SubCategory: SparvieroClassHydrofoilMissile  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18367; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7756c3cd. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Hydrofoil
+ * @see SubCategory
+
  */
-public class SparvieroClassHydrofoilMissile extends EntityType
+public final class SparvieroClassHydrofoilMissile extends EntityType
 {
     /** Default constructor */
     public SparvieroClassHydrofoilMissile()
@@ -25,5 +39,11 @@ public class SparvieroClassHydrofoilMissile extends EntityType
 
         setCategory((byte)14); // uid 18366, Hydrofoil
         setSubCategory((byte)1); // uid 18367, Sparviero Class (Hydrofoil-Missile)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SparvieroClassHydrofoilMissile createInstance()
+    {
+            return new SparvieroClassHydrofoilMissile();
     }
 }

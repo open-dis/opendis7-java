@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class EEFundamentalParameterData extends Object implements Serializable
    protected float  pulseWidth;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EEFundamentalParameterData()
  {
  }
@@ -219,11 +218,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    frequency = byteBuffer.getFloat();
-    frequencyRange = byteBuffer.getFloat();
-    effectiveRadiatedPower = byteBuffer.getFloat();
-    pulseRepetitionFrequency = byteBuffer.getFloat();
-    pulseWidth = byteBuffer.getFloat();
+    try
+    {
+        // attribute frequency marked as not serialized
+        frequency = byteBuffer.getFloat();
+        // attribute frequencyRange marked as not serialized
+        frequencyRange = byteBuffer.getFloat();
+        // attribute effectiveRadiatedPower marked as not serialized
+        effectiveRadiatedPower = byteBuffer.getFloat();
+        // attribute pulseRepetitionFrequency marked as not serialized
+        pulseRepetitionFrequency = byteBuffer.getFloat();
+        // attribute pulseWidth marked as not serialized
+        pulseWidth = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

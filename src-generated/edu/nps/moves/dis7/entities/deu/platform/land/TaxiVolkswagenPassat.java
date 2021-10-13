@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@295cf707;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24855
+ * <p> Entity class <b><code>TaxiVolkswagenPassat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TaxiVolkswagenPassat.createInstance()</code> or <code>new TaxiVolkswagenPassat()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility/Emergency Car = <code>93</code>; </li>
+ *     <li> SubCategory: Taxi  = <code>5</code>; </li>
+ *     <li> Specific: TaxiVolkswagenPassat  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24855; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ca26d77. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityEmergencyCar
+ * @see SubCategory
+
  */
-public class TaxiVolkswagenPassat extends EntityType
+public final class TaxiVolkswagenPassat extends EntityType
 {
     /** Default constructor */
     public TaxiVolkswagenPassat()
@@ -26,5 +40,11 @@ public class TaxiVolkswagenPassat extends EntityType
         setCategory((byte)93); // uid 24851, Utility/Emergency Car
         setSubCategory((byte)5); // uid 24854, Taxi
         setSpecific((byte)1); // uid 24855, Taxi, Volkswagen Passat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TaxiVolkswagenPassat createInstance()
+    {
+            return new TaxiVolkswagenPassat();
     }
 }

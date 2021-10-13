@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c0f79f0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13518
+ * <p> Entity class <b><code>Kerch</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Kerch.createInstance()</code> or <code>new Kerch()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Cruiser = <code>3</code>; </li>
+ *     <li> SubCategory: Karaclass  = <code>3</code>; </li>
+ *     <li> Specific: Kerch  = <code>3</code>; </li>
+ *     <li> Entity type uid: 13518; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e9da981. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileCruiser
+ * @see SubCategory
+
  */
-public class Kerch extends EntityType
+public final class Kerch extends EntityType
 {
     /** Default constructor */
     public Kerch()
@@ -26,5 +40,11 @@ public class Kerch extends EntityType
         setCategory((byte)3); // uid 13504, Guided-missile Cruiser
         setSubCategory((byte)3); // uid 13515, Kara class
         setSpecific((byte)3); // uid 13518, Kerch
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Kerch createInstance()
+    {
+            return new Kerch();
     }
 }

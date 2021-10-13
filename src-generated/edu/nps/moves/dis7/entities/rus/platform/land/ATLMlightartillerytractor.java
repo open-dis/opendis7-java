@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3e83c18;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12937
+ * <p> Entity class <b><code>ATLMlightartillerytractor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ATLMlightartillerytractor.createInstance()</code> or <code>new ATLMlightartillerytractor()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small tracked utility vehicle = <code>8</code>; </li>
+ *     <li> SubCategory: ATLMlightartillerytractor  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12937; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4d33940d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Smalltrackedutilityvehicle
+ * @see SubCategory
+
  */
-public class ATLMlightartillerytractor extends EntityType
+public final class ATLMlightartillerytractor extends EntityType
 {
     /** Default constructor */
     public ATLMlightartillerytractor()
@@ -25,5 +39,11 @@ public class ATLMlightartillerytractor extends EntityType
 
         setCategory((byte)8); // uid 12935, Small tracked utility vehicle
         setSubCategory((byte)2); // uid 12937, AT-LM light artillery tractor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ATLMlightartillerytractor createInstance()
+    {
+            return new ATLMlightartillerytractor();
     }
 }

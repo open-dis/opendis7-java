@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@201b6b6f;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 18327
+ * <p> Entity class <b><code>ASH3H</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ASH3H.createInstance()</code> or <code>new ASH3H()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: ASH3H  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18327; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b2c0e88. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class ASH3H extends EntityType
+public final class ASH3H extends EntityType
 {
     /** Default constructor */
     public ASH3H()
@@ -25,5 +39,11 @@ public class ASH3H extends EntityType
 
         setCategory((byte)22); // uid 18324, Anti-Submarine Warfare/Patrol Helicopter
         setSubCategory((byte)3); // uid 18327, ASH-3H
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ASH3H createInstance()
+    {
+            return new ASH3H();
     }
 }

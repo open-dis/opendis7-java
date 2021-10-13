@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@780ec4a5;
- * Country: Lebanon (LBN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17980
+ * <p> Entity class <b><code>TrackerMk2coastalpatrolcraft</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrackerMk2coastalpatrolcraft.createInstance()</code> or <code>new TrackerMk2coastalpatrolcraft()</code>. </p>
+ * <ul>
+ *     <li> Country: Lebanon (LBN) = <code>123</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: TrackerMk2coastalpatrolcraft  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17980; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@72b16078. </p>
+ * @see Country#LEBANON_LBN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class TrackerMk2coastalpatrolcraft extends EntityType
+public final class TrackerMk2coastalpatrolcraft extends EntityType
 {
     /** Default constructor */
     public TrackerMk2coastalpatrolcraft()
@@ -25,5 +39,11 @@ public class TrackerMk2coastalpatrolcraft extends EntityType
 
         setCategory((byte)7); // uid 17979, Light/Patrol Craft
         setSubCategory((byte)1); // uid 17980, Tracker Mk2 (coastal patrol craft)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrackerMk2coastalpatrolcraft createInstance()
+    {
+            return new TrackerMk2coastalpatrolcraft();
     }
 }

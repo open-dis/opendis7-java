@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27b45ea;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27064
+ * <p> Entity class <b><code>_243MPK227</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_243MPK227.createInstance()</code> or <code>new _243MPK227()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate = <code>50</code>; </li>
+ *     <li> SubCategory: ParchimIIClass  = <code>10</code>; </li>
+ *     <li> Specific: _243MPK227  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27064; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28501a4b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Frigate
+ * @see SubCategory
+
  */
-public class _243MPK227 extends EntityType
+public final class _243MPK227 extends EntityType
 {
     /** Default constructor */
     public _243MPK227()
@@ -26,5 +40,11 @@ public class _243MPK227 extends EntityType
         setCategory((byte)50); // uid 14715, Frigate
         setSubCategory((byte)10); // uid 14746, Parchim II Class
         setSpecific((byte)3); // uid 27064, 243 MPK-227
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _243MPK227 createInstance()
+    {
+            return new _243MPK227();
     }
 }

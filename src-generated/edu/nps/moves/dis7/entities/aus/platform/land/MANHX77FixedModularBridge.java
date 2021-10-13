@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44e81672;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29746
+ * <p> Entity class <b><code>MANHX77FixedModularBridge</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MANHX77FixedModularBridge.createInstance()</code> or <code>new MANHX77FixedModularBridge()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: MANHX778x8  = <code>3</code>; </li>
+ *     <li> Specific: MANHX77FixedModularBridge  = <code>6</code>; </li>
+ *     <li> Entity type uid: 29746; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e2d56bf. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class MANHX77FixedModularBridge extends EntityType
+public final class MANHX77FixedModularBridge extends EntityType
 {
     /** Default constructor */
     public MANHX77FixedModularBridge()
@@ -26,5 +40,11 @@ public class MANHX77FixedModularBridge extends EntityType
         setCategory((byte)7); // uid 29715, Large Wheeled Utility Vehicle
         setSubCategory((byte)3); // uid 29730, MAN HX77 - 8x8
         setSpecific((byte)6); // uid 29746, MAN HX77 Fixed Modular Bridge
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MANHX77FixedModularBridge createInstance()
+    {
+            return new MANHX77FixedModularBridge();
     }
 }

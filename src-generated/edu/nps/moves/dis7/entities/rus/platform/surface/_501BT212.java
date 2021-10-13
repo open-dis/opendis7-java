@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f51431;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29984
+ * <p> Entity class <b><code>_501BT212</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_501BT212.createInstance()</code> or <code>new _501BT212()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Sonyaclass  = <code>6</code>; </li>
+ *     <li> Specific: _501BT212  = <code>10</code>; </li>
+ *     <li> Entity type uid: 29984; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bc4d5e1. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _501BT212 extends EntityType
+public final class _501BT212 extends EntityType
 {
     /** Default constructor */
     public _501BT212()
@@ -26,5 +40,11 @@ public class _501BT212 extends EntityType
         setCategory((byte)8); // uid 13709, Mine Countermeasure Ship / Craft
         setSubCategory((byte)6); // uid 13738, Sonya class
         setSpecific((byte)10); // uid 29984, 501 BT-212
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _501BT212 createInstance()
+    {
+            return new _501BT212();
     }
 }

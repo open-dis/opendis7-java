@@ -13,8 +13,14 @@ import java.lang.reflect.InvocationTargetException;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
+ * Which domain does this PDU belong to:
  * An example approximating a Java enum "superclass". Can't use an interface, because we need the two
  * static methods, which can't go into an interface
+ * @see AircraftPresentDomain
+ * @see AnimalLifeformGroupSizeRangeEnumerationforallDomains
+ * @see MunitionDomain
+ * @see PlatformDomain
+ * @see SupplyDomain
  */
 public class Domain
 {

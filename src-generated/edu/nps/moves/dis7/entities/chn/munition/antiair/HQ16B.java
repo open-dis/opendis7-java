@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a8dd942;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 30570
+ * <p> Entity class <b><code>HQ16B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HQ16B.createInstance()</code> or <code>new HQ16B()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: HQ16SAM  = <code>26</code>; </li>
+ *     <li> Specific: HQ16B  = <code>3</code>; </li>
+ *     <li> Entity type uid: 30570; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e9a0bea. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class HQ16B extends EntityType
+public final class HQ16B extends EntityType
 {
     /** Default constructor */
     public HQ16B()
@@ -26,5 +40,11 @@ public class HQ16B extends EntityType
         setCategory((byte)1); // uid 21308, Guided
         setSubCategory((byte)26); // uid 30567, HQ-16 SAM
         setSpecific((byte)3); // uid 30570, HQ-16B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HQ16B createInstance()
+    {
+            return new HQ16B();
     }
 }

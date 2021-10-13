@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f2c488;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23078
+ * <p> Entity class <b><code>_643Mamry</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_643Mamry.createInstance()</code> or <code>new _643Mamry()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MamryNotecIIClass  = <code>2</code>; </li>
+ *     <li> Specific: _643Mamry  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23078; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@81ff872. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _643Mamry extends EntityType
+public final class _643Mamry extends EntityType
 {
     /** Default constructor */
     public _643Mamry()
@@ -26,5 +40,11 @@ public class _643Mamry extends EntityType
         setCategory((byte)8); // uid 23062, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 23077, Mamry (Notec II) Class
         setSpecific((byte)1); // uid 23078, 643 Mamry
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _643Mamry createInstance()
+    {
+            return new _643Mamry();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2a492f2a;
- * Country: Marshall Islands (MHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28169
+ * <p> Entity class <b><code>ContainerShip</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ContainerShip.createInstance()</code> or <code>new ContainerShip()</code>. </p>
+ * <ul>
+ *     <li> Country: Marshall Islands (MHL) = <code>137</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28169; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3574e198. </p>
+ * @see Country#MARSHALL_ISLANDS_MHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class ContainerShip extends EntityType
+public final class ContainerShip extends EntityType
 {
     /** Default constructor */
     public ContainerShip()
@@ -25,5 +39,11 @@ public class ContainerShip extends EntityType
 
         setCategory((byte)81); // uid 28168, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)3); // uid 28169, Container Ship
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ContainerShip createInstance()
+    {
+            return new ContainerShip();
     }
 }

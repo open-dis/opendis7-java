@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2272cbb0;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11041
+ * <p> Entity class <b><code>E3DSentryAEWMk1UK</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>E3DSentryAEWMk1UK.createInstance()</code> or <code>new E3DSentryAEWMk1UK()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance / C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: BoeingE3SentryAirborneWarningandControlSystemAWACS  = <code>4</code>; </li>
+ *     <li> Specific: E3DSentryAEWMk1UK  = <code>4</code>; </li>
+ *     <li> Entity type uid: 11041; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4099209b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class E3DSentryAEWMk1UK extends EntityType
+public final class E3DSentryAEWMk1UK extends EntityType
 {
     /** Default constructor */
     public E3DSentryAEWMk1UK()
@@ -26,5 +40,11 @@ public class E3DSentryAEWMk1UK extends EntityType
         setCategory((byte)8); // uid 11029, Surveillance / C2 (Airborne Early Warning)
         setSubCategory((byte)4); // uid 11037, Boeing E-3 Sentry Airborne Warning and Control System (AWACS)
         setSpecific((byte)4); // uid 11041, E-3D Sentry AEW. Mk 1 (U.K.)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static E3DSentryAEWMk1UK createInstance()
+    {
+            return new E3DSentryAEWMk1UK();
     }
 }

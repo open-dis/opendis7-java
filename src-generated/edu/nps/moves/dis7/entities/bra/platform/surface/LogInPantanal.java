@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fe3c938;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31882
+ * <p> Entity class <b><code>LogInPantanal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LogInPantanal.createInstance()</code> or <code>new LogInPantanal()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
+ *     <li> Specific: LogInPantanal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31882; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66a3ffec. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class LogInPantanal extends EntityType
+public final class LogInPantanal extends EntityType
 {
     /** Default constructor */
     public LogInPantanal()
@@ -26,5 +40,11 @@ public class LogInPantanal extends EntityType
         setCategory((byte)81); // uid 31880, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)3); // uid 31881, Container Ship
         setSpecific((byte)1); // uid 31882, Log In Pantanal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LogInPantanal createInstance()
+    {
+            return new LogInPantanal();
     }
 }

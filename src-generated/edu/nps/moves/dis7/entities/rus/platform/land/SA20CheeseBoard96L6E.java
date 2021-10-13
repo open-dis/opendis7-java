@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d12b024;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25715
+ * <p> Entity class <b><code>SA20CheeseBoard96L6E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA20CheeseBoard96L6E.createInstance()</code> or <code>new SA20CheeseBoard96L6E()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA20GargoyleSAMSystem  = <code>21</code>; </li>
+ *     <li> Specific: SA20CheeseBoard96L6E  = <code>6</code>; </li>
+ *     <li> Entity type uid: 25715; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@460b6d54. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA20CheeseBoard96L6E extends EntityType
+public final class SA20CheeseBoard96L6E extends EntityType
 {
     /** Default constructor */
     public SA20CheeseBoard96L6E()
@@ -26,5 +40,11 @@ public class SA20CheeseBoard96L6E extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)21); // uid 13145, SA-20 Gargoyle SAM System
         setSpecific((byte)6); // uid 25715, SA-20 Cheese Board (96L6E)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA20CheeseBoard96L6E createInstance()
+    {
+            return new SA20CheeseBoard96L6E();
     }
 }

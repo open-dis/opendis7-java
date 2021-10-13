@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@740b6628;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30043
+ * <p> Entity class <b><code>GulfstreamGVSPG550</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GulfstreamGVSPG550.createInstance()</code> or <code>new GulfstreamGVSPG550()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
+ *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
+ *     <li> Specific: GulfstreamV  = <code>8</code>; </li>
+ *     <li> Entity type uid: 30043; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@75aea2ba. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLargeupto255000lbs115666kg
+ * @see SubCategory
+
  */
-public class GulfstreamGVSPG550 extends EntityType
+public final class GulfstreamGVSPG550 extends EntityType
 {
     /** Default constructor */
     public GulfstreamGVSPG550()
@@ -27,5 +41,11 @@ public class GulfstreamGVSPG550 extends EntityType
         setSubCategory((byte)32); // uid 23800, Twin Jet
         setSpecific((byte)8); // uid 30042, Gulfstream V
         setExtra((byte)1); // uid 30043, Gulfstream GV-SP - G550
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GulfstreamGVSPG550 createInstance()
+    {
+            return new GulfstreamGVSPG550();
     }
 }

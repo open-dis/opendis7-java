@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34585ac9;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 15632
+ * <p> Entity class <b><code>Skynet4A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Skynet4A.createInstance()</code> or <code>new Skynet4A()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>2</code>; </li>
+ *     <li> SubCategory: Communicationsatellite  = <code>1</code>; </li>
+ *     <li> Specific: Skynet4A  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15632; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@355c94be. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Skynet4A extends EntityType
+public final class Skynet4A extends EntityType
 {
     /** Default constructor */
     public Skynet4A()
@@ -26,5 +40,11 @@ public class Skynet4A extends EntityType
         setCategory((byte)2); // uid 15629, Unmanned
         setSubCategory((byte)1); // uid 15630, Communication satellite
         setSpecific((byte)2); // uid 15632, Skynet 4A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Skynet4A createInstance()
+    {
+            return new Skynet4A();
     }
 }

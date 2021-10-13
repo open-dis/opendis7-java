@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2fe88a09;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27315
+ * <p> Entity class <b><code>SSC5SSN26StrobileLauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSC5SSN26StrobileLauncher.createInstance()</code> or <code>new SSC5SSN26StrobileLauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: SSC5SSN26StrobileLauncher  = <code>58</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27315; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@29182679. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class SSC5SSN26StrobileLauncher extends EntityType
+public final class SSC5SSN26StrobileLauncher extends EntityType
 {
     /** Default constructor */
     public SSC5SSN26StrobileLauncher()
@@ -25,5 +39,11 @@ public class SSC5SSN26StrobileLauncher extends EntityType
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
         setSubCategory((byte)58); // uid 27315, SSC-5 / SS-N-26 Strobile Launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSC5SSN26StrobileLauncher createInstance()
+    {
+            return new SSC5SSN26StrobileLauncher();
     }
 }

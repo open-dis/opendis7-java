@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4d266391;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31037
+ * <p> Entity class <b><code>LandCeptorLauncherVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LandCeptorLauncherVehicle.createInstance()</code> or <code>new LandCeptorLauncherVehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: LandCeptorLauncherVehicle  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31037; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1fdca564. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class LandCeptorLauncherVehicle extends EntityType
+public final class LandCeptorLauncherVehicle extends EntityType
 {
     /** Default constructor */
     public LandCeptorLauncherVehicle()
@@ -25,5 +39,11 @@ public class LandCeptorLauncherVehicle extends EntityType
 
         setCategory((byte)28); // uid 14976, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)4); // uid 31037, Land Ceptor Launcher Vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LandCeptorLauncherVehicle createInstance()
+    {
+            return new LandCeptorLauncherVehicle();
     }
 }

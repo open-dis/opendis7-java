@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@56aac163;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 18768
+ * <p> Entity class <b><code>CC144Challenger</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CC144Challenger.createInstance()</code> or <code>new CC144Challenger()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: CC144Challenger  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18768; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@20398b7c. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class CC144Challenger extends EntityType
+public final class CC144Challenger extends EntityType
 {
     /** Default constructor */
     public CC144Challenger()
@@ -25,5 +39,11 @@ public class CC144Challenger extends EntityType
 
         setCategory((byte)4); // uid 18767, Cargo/Tanker
         setSubCategory((byte)1); // uid 18768, CC144 Challenger
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CC144Challenger createInstance()
+    {
+            return new CC144Challenger();
     }
 }

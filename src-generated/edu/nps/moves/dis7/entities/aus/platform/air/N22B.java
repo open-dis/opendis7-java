@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21a06946;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 17508
+ * <p> Entity class <b><code>N22B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>N22B.createInstance()</code> or <code>new N22B()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: GAFNomad  = <code>1</code>; </li>
+ *     <li> Specific: N22B  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17508; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@57fa26b7. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class N22B extends EntityType
+public final class N22B extends EntityType
 {
     /** Default constructor */
     public N22B()
@@ -26,5 +40,11 @@ public class N22B extends EntityType
         setCategory((byte)4); // uid 17505, Cargo/Tanker
         setSubCategory((byte)1); // uid 17507, GAF Nomad
         setSpecific((byte)1); // uid 17508, N22B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static N22B createInstance()
+    {
+            return new N22B();
     }
 }

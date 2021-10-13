@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c20cdd0;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 33072
+ * <p> Entity class <b><code>TrailerMMC20DSS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerMMC20DSS.createInstance()</code> or <code>new TrailerMMC20DSS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _50210ton  = <code>4</code>; </li>
+ *     <li> Specific: TrailerMMC20DSS  = <code>5</code>; </li>
+ *     <li> Entity type uid: 33072; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bdf. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class TrailerMMC20DSS extends EntityType
+public final class TrailerMMC20DSS extends EntityType
 {
     /** Default constructor */
     public TrailerMMC20DSS()
@@ -26,5 +40,11 @@ public class TrailerMMC20DSS extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)4); // uid 10623, 5.02 - 10 ton
         setSpecific((byte)5); // uid 33072, Trailer, MMC20 DSS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerMMC20DSS createInstance()
+    {
+            return new TrailerMMC20DSS();
     }
 }

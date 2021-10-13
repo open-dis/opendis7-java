@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ec7bce0;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17888
+ * <p> Entity class <b><code>MSC418Safwa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MSC418Safwa.createInstance()</code> or <code>new MSC418Safwa()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure/Ship Craft = <code>8</code>; </li>
+ *     <li> SubCategory: MSC322Classminesweeperhuntercoastal  = <code>2</code>; </li>
+ *     <li> Specific: MSC418Safwa  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17888; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c15e8c7. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MSC418Safwa extends EntityType
+public final class MSC418Safwa extends EntityType
 {
     /** Default constructor */
     public MSC418Safwa()
@@ -26,5 +40,11 @@ public class MSC418Safwa extends EntityType
         setCategory((byte)8); // uid 17879, Mine Countermeasure/Ship Craft
         setSubCategory((byte)2); // uid 17884, MSC 322 Class (minesweeper/hunter-coastal)
         setSpecific((byte)4); // uid 17888, MSC 418 Safwa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MSC418Safwa createInstance()
+    {
+            return new MSC418Safwa();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4909b8da;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30377
+ * <p> Entity class <b><code>SeahorseStandard</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SeahorseStandard.createInstance()</code> or <code>new SeahorseStandard()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: GeneralPurposeTenders  = <code>8</code>; </li>
+ *     <li> Specific: SeahorseStandard  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30377; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d041cf. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SeahorseStandard extends EntityType
+public final class SeahorseStandard extends EntityType
 {
     /** Default constructor */
     public SeahorseStandard()
@@ -26,5 +40,11 @@ public class SeahorseStandard extends EntityType
         setCategory((byte)16); // uid 17594, Auxiliary
         setSubCategory((byte)8); // uid 30375, General-Purpose Tenders
         setSpecific((byte)2); // uid 30377, Seahorse Standard
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SeahorseStandard createInstance()
+    {
+            return new SeahorseStandard();
     }
 }

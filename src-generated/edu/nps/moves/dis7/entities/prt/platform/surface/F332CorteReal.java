@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73eb8672;
- * Country: Portugal (PRT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23094
+ * <p> Entity class <b><code>F332CorteReal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F332CorteReal.createInstance()</code> or <code>new F332CorteReal()</code>. </p>
+ * <ul>
+ *     <li> Country: Portugal (PRT) = <code>176</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: VascoDaGamaMeko200Class  = <code>1</code>; </li>
+ *     <li> Specific: F332CorteReal  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23094; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48b0e701. </p>
+ * @see Country#PORTUGAL_PRT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F332CorteReal extends EntityType
+public final class F332CorteReal extends EntityType
 {
     /** Default constructor */
     public F332CorteReal()
@@ -26,5 +40,11 @@ public class F332CorteReal extends EntityType
         setCategory((byte)6); // uid 23090, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 23091, Vasco Da Gama (Meko 200) Class
         setSpecific((byte)3); // uid 23094, F332 Corte Real
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F332CorteReal createInstance()
+    {
+            return new F332CorteReal();
     }
 }

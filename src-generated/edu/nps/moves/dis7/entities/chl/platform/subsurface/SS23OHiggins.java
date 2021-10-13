@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7276c8cd;
- * Country: Chile (CHL);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 26247
+ * <p> Entity class <b><code>SS23OHiggins</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SS23OHiggins.createInstance()</code> or <code>new SS23OHiggins()</code>. </p>
+ * <ul>
+ *     <li> Country: Chile (CHL) = <code>44</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: ScorpeneClass  = <code>1</code>; </li>
+ *     <li> Specific: SS23OHiggins  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26247; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9a7504c. </p>
+ * @see Country#CHILE_CHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class SS23OHiggins extends EntityType
+public final class SS23OHiggins extends EntityType
 {
     /** Default constructor */
     public SS23OHiggins()
@@ -26,5 +40,11 @@ public class SS23OHiggins extends EntityType
         setCategory((byte)5); // uid 26245, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 26246, Scorpene Class
         setSpecific((byte)1); // uid 26247, SS-23 OHiggins
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SS23OHiggins createInstance()
+    {
+            return new SS23OHiggins();
     }
 }

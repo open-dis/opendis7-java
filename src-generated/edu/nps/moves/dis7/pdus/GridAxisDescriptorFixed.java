@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class GridAxisDescriptorFixed extends GridAxisDescriptor implements Seria
    protected short  initialIndex;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GridAxisDescriptorFixed()
  {
  }
@@ -168,8 +167,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    numberOfPointsOnXiAxis = (short)(byteBuffer.getShort() & 0xFFFF);
-    initialIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute numberOfPointsOnXiAxis marked as not serialized
+        numberOfPointsOnXiAxis = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute initialIndex marked as not serialized
+        initialIndex = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

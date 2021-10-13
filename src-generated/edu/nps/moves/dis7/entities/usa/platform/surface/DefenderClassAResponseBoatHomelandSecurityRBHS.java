@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@be164d8;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26783
+ * <p> Entity class <b><code>DefenderClassAResponseBoatHomelandSecurityRBHS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DefenderClassAResponseBoatHomelandSecurityRBHS.createInstance()</code> or <code>new DefenderClassAResponseBoatHomelandSecurityRBHS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: DefenderClassAResponseBoatHomelandSecurityRBHS  = <code>17</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 26783; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@66e827a8. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class DefenderClassAResponseBoatHomelandSecurityRBHS extends EntityType
+public final class DefenderClassAResponseBoatHomelandSecurityRBHS extends EntityType
 {
     /** Default constructor */
     public DefenderClassAResponseBoatHomelandSecurityRBHS()
@@ -25,5 +39,11 @@ public class DefenderClassAResponseBoatHomelandSecurityRBHS extends EntityType
 
         setCategory((byte)63); // uid 12252, Coast Guard Boats
         setSubCategory((byte)17); // uid 26783, Defender Class A (Response Boat - Homeland Security (RB-HS))
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DefenderClassAResponseBoatHomelandSecurityRBHS createInstance()
+    {
+            return new DefenderClassAResponseBoatHomelandSecurityRBHS();
     }
 }

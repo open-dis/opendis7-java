@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e397ed7;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 32015
+ * <p> Entity class <b><code>P3AMOrion</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P3AMOrion.createInstance()</code> or <code>new P3AMOrion()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/Patrol/Observation = <code>5</code>; </li>
+ *     <li> SubCategory: P3Orion  = <code>3</code>; </li>
+ *     <li> Specific: P3AMOrion  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32015; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@548a9f61. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWPatrolObservation
+ * @see SubCategory
+
  */
-public class P3AMOrion extends EntityType
+public final class P3AMOrion extends EntityType
 {
     /** Default constructor */
     public P3AMOrion()
@@ -26,5 +40,11 @@ public class P3AMOrion extends EntityType
         setCategory((byte)5); // uid 25696, ASW/Patrol/Observation
         setSubCategory((byte)3); // uid 32014, P-3 Orion
         setSpecific((byte)1); // uid 32015, P-3AM Orion
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P3AMOrion createInstance()
+    {
+            return new P3AMOrion();
     }
 }

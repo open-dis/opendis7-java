@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@767191b1;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27656
+ * <p> Entity class <b><code>Bandvagn308Bv308BV206S</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bandvagn308Bv308BV206S.createInstance()</code> or <code>new Bandvagn308Bv308BV206S()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Tracked Utility Vehicle = <code>9</code>; </li>
+ *     <li> SubCategory: Bandvagn308Bv308BV206S  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27656; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@42373389. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeTrackedUtilityVehicle
+ * @see SubCategory
+
  */
-public class Bandvagn308Bv308BV206S extends EntityType
+public final class Bandvagn308Bv308BV206S extends EntityType
 {
     /** Default constructor */
     public Bandvagn308Bv308BV206S()
@@ -25,5 +39,11 @@ public class Bandvagn308Bv308BV206S extends EntityType
 
         setCategory((byte)9); // uid 27646, Large Tracked Utility Vehicle
         setSubCategory((byte)2); // uid 27656, Bandvagn 308 (Bv 308 / BV 206S)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bandvagn308Bv308BV206S createInstance()
+    {
+            return new Bandvagn308Bv308BV206S();
     }
 }

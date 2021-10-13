@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77ea806f;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 20940
+ * <p> Entity class <b><code>SS16Sinner</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SS16Sinner.createInstance()</code> or <code>new SS16Sinner()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SS16Sinner  = <code>16</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 20940; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@12cd129c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SS16Sinner extends EntityType
+public final class SS16Sinner extends EntityType
 {
     /** Default constructor */
     public SS16Sinner()
@@ -25,5 +39,11 @@ public class SS16Sinner extends EntityType
 
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)16); // uid 20940, SS-16 Sinner
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SS16Sinner createInstance()
+    {
+            return new SS16Sinner();
     }
 }

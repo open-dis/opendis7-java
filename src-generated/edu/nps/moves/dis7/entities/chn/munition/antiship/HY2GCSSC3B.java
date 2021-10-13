@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@691567ea;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 21425
+ * <p> Entity class <b><code>HY2GCSSC3B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HY2GCSSC3B.createInstance()</code> or <code>new HY2GCSSC3B()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: HY2CSSC3  = <code>9</code>; </li>
+ *     <li> Specific: HY2GCSSC3B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 21425; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@570a62a5. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class HY2GCSSC3B extends EntityType
+public final class HY2GCSSC3B extends EntityType
 {
     /** Default constructor */
     public HY2GCSSC3B()
@@ -26,5 +40,11 @@ public class HY2GCSSC3B extends EntityType
         setCategory((byte)1); // uid 21409, Guided
         setSubCategory((byte)9); // uid 21423, HY-2/CSSC-3
         setSpecific((byte)2); // uid 21425, HY-2G/CSSC-3B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HY2GCSSC3B createInstance()
+    {
+            return new HY2GCSSC3B();
     }
 }

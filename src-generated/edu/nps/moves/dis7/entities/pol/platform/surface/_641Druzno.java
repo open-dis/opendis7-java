@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5300f14a;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23075
+ * <p> Entity class <b><code>_641Druzno</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_641Druzno.createInstance()</code> or <code>new _641Druzno()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: GoploNotecClass  = <code>1</code>; </li>
+ *     <li> Specific: _641Druzno  = <code>12</code>; </li>
+ *     <li> Entity type uid: 23075; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@607b2792. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _641Druzno extends EntityType
+public final class _641Druzno extends EntityType
 {
     /** Default constructor */
     public _641Druzno()
@@ -26,5 +40,11 @@ public class _641Druzno extends EntityType
         setCategory((byte)8); // uid 23062, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 23063, Goplo (Notec) Class
         setSpecific((byte)12); // uid 23075, 641 Druzno
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _641Druzno createInstance()
+    {
+            return new _641Druzno();
     }
 }

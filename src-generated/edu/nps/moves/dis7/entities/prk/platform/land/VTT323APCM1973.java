@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@94f6bfb;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25305
+ * <p> Entity class <b><code>VTT323APCM1973</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VTT323APCM1973.createInstance()</code> or <code>new VTT323APCM1973()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: VTT323APCM1973  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25305; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@25ddbbbb. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class VTT323APCM1973 extends EntityType
+public final class VTT323APCM1973 extends EntityType
 {
     /** Default constructor */
     public VTT323APCM1973()
@@ -25,5 +39,11 @@ public class VTT323APCM1973 extends EntityType
 
         setCategory((byte)2); // uid 25304, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 25305, VTT-323 APC (M1973)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VTT323APCM1973 createInstance()
+    {
+            return new VTT323APCM1973();
     }
 }

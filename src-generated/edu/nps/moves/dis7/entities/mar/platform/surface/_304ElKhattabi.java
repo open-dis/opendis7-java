@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51768776;
- * Country: Morocco (MAR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27714
+ * <p> Entity class <b><code>_304ElKhattabi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_304ElKhattabi.createInstance()</code> or <code>new _304ElKhattabi()</code>. </p>
+ * <ul>
+ *     <li> Country: Morocco (MAR) = <code>147</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: LazagaClass  = <code>4</code>; </li>
+ *     <li> Specific: _304ElKhattabi  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27714; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@617fe9e1. </p>
+ * @see Country#MOROCCO_MAR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _304ElKhattabi extends EntityType
+public final class _304ElKhattabi extends EntityType
 {
     /** Default constructor */
     public _304ElKhattabi()
@@ -26,5 +40,11 @@ public class _304ElKhattabi extends EntityType
         setCategory((byte)7); // uid 27697, Light/Patrol Craft
         setSubCategory((byte)4); // uid 27713, Lazaga Class
         setSpecific((byte)1); // uid 27714, 304 El Khattabi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _304ElKhattabi createInstance()
+    {
+            return new _304ElKhattabi();
     }
 }

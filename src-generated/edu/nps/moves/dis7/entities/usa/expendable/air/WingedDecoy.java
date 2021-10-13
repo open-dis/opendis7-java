@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@495da9a7;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 22257
+ * <p> Entity class <b><code>WingedDecoy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WingedDecoy.createInstance()</code> or <code>new WingedDecoy()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Winged Decoy = <code>6</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22257; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@12a6e8ed. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see WingedDecoy
+
  */
-public class WingedDecoy extends EntityType
+public final class WingedDecoy extends EntityType
 {
     /** Default constructor */
     public WingedDecoy()
@@ -24,5 +37,11 @@ public class WingedDecoy extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)6); // uid 22257, Winged Decoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WingedDecoy createInstance()
+    {
+            return new WingedDecoy();
     }
 }

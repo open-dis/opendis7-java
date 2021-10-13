@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b4711e2;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16667
+ * <p> Entity class <b><code>Y1682Ellerbek</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y1682Ellerbek.createInstance()</code> or <code>new Y1682Ellerbek()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: SyltClassType724  = <code>1</code>; </li>
+ *     <li> Specific: Y1682Ellerbek  = <code>7</code>; </li>
+ *     <li> Entity type uid: 16667; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@768fc0f2. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y1682Ellerbek extends EntityType
+public final class Y1682Ellerbek extends EntityType
 {
     /** Default constructor */
     public Y1682Ellerbek()
@@ -26,5 +40,11 @@ public class Y1682Ellerbek extends EntityType
         setCategory((byte)17); // uid 16659, Auxiliary, Merchant Marine
         setSubCategory((byte)1); // uid 16660, Sylt Class (Type 724)
         setSpecific((byte)7); // uid 16667, Y 1682 Ellerbek
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y1682Ellerbek createInstance()
+    {
+            return new Y1682Ellerbek();
     }
 }

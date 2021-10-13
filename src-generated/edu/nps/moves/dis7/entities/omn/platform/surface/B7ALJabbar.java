@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dd712e8;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17949
+ * <p> Entity class <b><code>B7ALJabbar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B7ALJabbar.createInstance()</code> or <code>new B7ALJabbar()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALWaafiBrookeMarineClassfastattackcraftgun  = <code>2</code>; </li>
+ *     <li> Specific: B7ALJabbar  = <code>4</code>; </li>
+ *     <li> Entity type uid: 17949; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e2fc448. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class B7ALJabbar extends EntityType
+public final class B7ALJabbar extends EntityType
 {
     /** Default constructor */
     public B7ALJabbar()
@@ -26,5 +40,11 @@ public class B7ALJabbar extends EntityType
         setCategory((byte)7); // uid 17942, Light/Patrol Craft
         setSubCategory((byte)2); // uid 17945, AL Waafi (Brooke Marine) Class (fast attack craft-gun)
         setSpecific((byte)4); // uid 17949, B7 AL Jabbar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B7ALJabbar createInstance()
+    {
+            return new B7ALJabbar();
     }
 }

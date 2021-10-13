@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class ExplosionDescriptor extends Object implements Serializable
    protected float  explosiveForce;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ExplosionDescriptor()
  {
  }
@@ -45,8 +44,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += explodingObject.getMarshalledSize();
-   marshalSize += explosiveMaterial.getMarshalledSize();
+   if (explodingObject != null)
+       marshalSize += explodingObject.getMarshalledSize();
+   if (explosiveMaterial != null)
+       marshalSize += explosiveMaterial.getMarshalledSize();
    marshalSize += 2;  // padding
    marshalSize += 4;  // explosiveForce
 
@@ -201,10 +202,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    explodingObject.unmarshal(byteBuffer);
-    explosiveMaterial = ExplosiveMaterialCategories.unmarshalEnum(byteBuffer);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    explosiveForce = byteBuffer.getFloat();
+    try
+    {
+        // attribute explodingObject marked as not serialized
+        explodingObject.unmarshal(byteBuffer);
+        // attribute explosiveMaterial marked as not serialized
+        explosiveMaterial = ExplosiveMaterialCategories.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute explosiveForce marked as not serialized
+        explosiveForce = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

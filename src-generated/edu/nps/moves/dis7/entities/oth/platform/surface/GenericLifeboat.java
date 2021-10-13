@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1358b28e;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30868
+ * <p> Entity class <b><code>GenericLifeboat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericLifeboat.createInstance()</code> or <code>new GenericLifeboat()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Life-Saving Equipment = <code>101</code>; </li>
+ *     <li> SubCategory: GenericLifeboat  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30868; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@150d80c4. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LifeSavingEquipment
+ * @see SubCategory
+
  */
-public class GenericLifeboat extends EntityType
+public final class GenericLifeboat extends EntityType
 {
     /** Default constructor */
     public GenericLifeboat()
@@ -25,5 +39,11 @@ public class GenericLifeboat extends EntityType
 
         setCategory((byte)101); // uid 30867, Life-Saving Equipment
         setSubCategory((byte)1); // uid 30868, Generic Lifeboat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericLifeboat createInstance()
+    {
+            return new GenericLifeboat();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class RecordSpecificationElement extends Object implements Serializable
    protected byte[]  padTo64 = new byte[0]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RecordSpecificationElement()
  {
  }
@@ -54,13 +53,16 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordID.getMarshalledSize();
+   if (recordID != null)
+       marshalSize += recordID.getMarshalledSize();
    marshalSize += 4;  // recordSetSerialNumber
    marshalSize += 4;  // padding
    marshalSize += 2;  // recordLength
    marshalSize += 2;  // recordCount
-   marshalSize += recordValues.length * 1;
-   marshalSize += padTo64.length * 1;
+   if (recordValues != null)
+       marshalSize += recordValues.length * 1;
+   if (padTo64 != null)
+       marshalSize += padTo64.length * 1;
 
    return marshalSize;
 }
@@ -208,11 +210,11 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeShort(recordLength);
        dos.writeShort(recordCount);
 
-       for(int idx = 0; idx < recordValues.length; idx++)
+       for (int idx = 0; idx < recordValues.length; idx++)
            dos.writeByte(recordValues[idx]);
 
 
-       for(int idx = 0; idx < padTo64.length; idx++)
+       for (int idx = 0; idx < padTo64.length; idx++)
            dos.writeByte(padTo64[idx]);
 
     }
@@ -245,10 +247,10 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         recordCount = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < recordValues.length; idx++)
+        for (int idx = 0; idx < recordValues.length; idx++)
             recordValues[idx] = dis.readByte();
         uPosition += (recordValues.length * 1);
-        for(int idx = 0; idx < padTo64.length; idx++)
+        for (int idx = 0; idx < padTo64.length; idx++)
             padTo64[idx] = dis.readByte();
         uPosition += (padTo64.length * 1);
     }
@@ -275,11 +277,11 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putShort( (short)recordLength);
    byteBuffer.putShort( (short)recordCount);
 
-   for(int idx = 0; idx < recordValues.length; idx++)
+   for (int idx = 0; idx < recordValues.length; idx++)
        byteBuffer.put((byte)recordValues[idx]);
 
 
-   for(int idx = 0; idx < padTo64.length; idx++)
+   for (int idx = 0; idx < padTo64.length; idx++)
        byteBuffer.put((byte)padTo64[idx]);
 
 }
@@ -295,15 +297,29 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordID = VariableRecordType.unmarshalEnum(byteBuffer);
-    recordSetSerialNumber = byteBuffer.getInt();
-    padding = byteBuffer.getInt();
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    recordCount = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < recordValues.length; idx++)
-        recordValues[idx] = byteBuffer.get();
-    for(int idx = 0; idx < padTo64.length; idx++)
-        padTo64[idx] = byteBuffer.get();
+    try
+    {
+        // attribute recordID marked as not serialized
+        recordID = VariableRecordType.unmarshalEnum(byteBuffer);
+        // attribute recordSetSerialNumber marked as not serialized
+        recordSetSerialNumber = byteBuffer.getInt();
+        // attribute padding marked as not serialized
+        padding = byteBuffer.getInt();
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute recordCount marked as not serialized
+        recordCount = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute recordValues marked as not serialized
+        for (int idx = 0; idx < recordValues.length; idx++)
+            recordValues[idx] = byteBuffer.get();
+        // attribute padTo64 marked as not serialized
+        for (int idx = 0; idx < padTo64.length; idx++)
+            padTo64[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -343,13 +359,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
      if( ! (recordCount == rhs.recordCount)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(recordValues[idx] == rhs.recordValues[idx])) ivarsEqual = false;
      }
 
 
-     for(int idx = 0; idx < 0; idx++)
+     for (int idx = 0; idx < 0; idx++)
      {
           if(!(padTo64[idx] == rhs.padTo64[idx])) ivarsEqual = false;
      }

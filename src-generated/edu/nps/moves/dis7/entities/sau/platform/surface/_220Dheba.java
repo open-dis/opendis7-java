@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13741d5a;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17894
+ * <p> Entity class <b><code>_220Dheba</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_220Dheba.createInstance()</code> or <code>new _220Dheba()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LCM6Class  = <code>2</code>; </li>
+ *     <li> Specific: _220Dheba  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17894; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55e2fe3c. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _220Dheba extends EntityType
+public final class _220Dheba extends EntityType
 {
     /** Default constructor */
     public _220Dheba()
@@ -26,5 +40,11 @@ public class _220Dheba extends EntityType
         setCategory((byte)16); // uid 17889, Auxiliary
         setSubCategory((byte)2); // uid 17893, LCM 6 Class
         setSpecific((byte)1); // uid 17894, 220 Dheba
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _220Dheba createInstance()
+    {
+            return new _220Dheba();
     }
 }

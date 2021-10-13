@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@579d011c;
- * Country: Lithuania (LTU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27784
+ * <p> Entity class <b><code>N42Jotvingis</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>N42Jotvingis.createInstance()</code> or <code>new N42Jotvingis()</code>. </p>
+ * <ul>
+ *     <li> Country: Lithuania (LTU) = <code>255</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: VidarClass  = <code>1</code>; </li>
+ *     <li> Specific: N42Jotvingis  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27784; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@459f7aa3. </p>
+ * @see Country#LITHUANIA_LTU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class N42Jotvingis extends EntityType
+public final class N42Jotvingis extends EntityType
 {
     /** Default constructor */
     public N42Jotvingis()
@@ -26,5 +40,11 @@ public class N42Jotvingis extends EntityType
         setCategory((byte)8); // uid 27782, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 27783, Vidar Class
         setSpecific((byte)1); // uid 27784, N42 Jotvingis
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static N42Jotvingis createInstance()
+    {
+            return new N42Jotvingis();
     }
 }

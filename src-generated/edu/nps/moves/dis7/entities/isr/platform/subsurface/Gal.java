@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6035b93b;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 18251
+ * <p> Entity class <b><code>Gal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Gal.createInstance()</code> or <code>new Gal()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSG (Conventional Guided Missile) = <code>4</code>; </li>
+ *     <li> SubCategory: GalVickersType540Class  = <code>1</code>; </li>
+ *     <li> Specific: Gal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18251; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f478a81. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSGConventionalGuidedMissile
+ * @see SubCategory
+
  */
-public class Gal extends EntityType
+public final class Gal extends EntityType
 {
     /** Default constructor */
     public Gal()
@@ -26,5 +40,11 @@ public class Gal extends EntityType
         setCategory((byte)4); // uid 18249, SSG (Conventional Guided Missile)
         setSubCategory((byte)1); // uid 18250, Gal (Vickers Type 540) Class
         setSpecific((byte)1); // uid 18251, Gal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Gal createInstance()
+    {
+            return new Gal();
     }
 }

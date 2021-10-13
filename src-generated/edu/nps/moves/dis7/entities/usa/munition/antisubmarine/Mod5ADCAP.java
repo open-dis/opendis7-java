@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2969a9a6;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 19796
+ * <p> Entity class <b><code>Mod5ADCAP</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mod5ADCAP.createInstance()</code> or <code>new Mod5ADCAP()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Mk48ADCAPtorpedo  = <code>10</code>; </li>
+ *     <li> Specific: Mod5ADCAP  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19796; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30517a57. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Mod5ADCAP extends EntityType
+public final class Mod5ADCAP extends EntityType
 {
     /** Default constructor */
     public Mod5ADCAP()
@@ -26,5 +40,11 @@ public class Mod5ADCAP extends EntityType
         setCategory((byte)1); // uid 19775, Guided
         setSubCategory((byte)10); // uid 19795, Mk 48 ADCAP torpedo
         setSpecific((byte)1); // uid 19796, Mod 5 ADCAP
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mod5ADCAP createInstance()
+    {
+            return new Mod5ADCAP();
     }
 }

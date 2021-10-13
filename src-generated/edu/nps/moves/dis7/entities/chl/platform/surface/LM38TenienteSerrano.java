@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1990a65e;
- * Country: Chile (CHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27516
+ * <p> Entity class <b><code>LM38TenienteSerrano</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LM38TenienteSerrano.createInstance()</code> or <code>new LM38TenienteSerrano()</code>. </p>
+ * <ul>
+ *     <li> Country: Chile (CHL) = <code>44</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: TigerClassType148  = <code>1</code>; </li>
+ *     <li> Specific: LM38TenienteSerrano  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27516; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@436e852b. </p>
+ * @see Country#CHILE_CHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class LM38TenienteSerrano extends EntityType
+public final class LM38TenienteSerrano extends EntityType
 {
     /** Default constructor */
     public LM38TenienteSerrano()
@@ -26,5 +40,11 @@ public class LM38TenienteSerrano extends EntityType
         setCategory((byte)7); // uid 27512, Light/Patrol Craft
         setSubCategory((byte)1); // uid 27513, Tiger Class (Type 148)
         setSpecific((byte)3); // uid 27516, LM-38 Teniente Serrano
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LM38TenienteSerrano createInstance()
+    {
+            return new LM38TenienteSerrano();
     }
 }

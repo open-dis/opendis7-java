@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b9dfc5a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13008
+ * <p> Entity class <b><code>Trailerwater950literVMG4051</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Trailerwater950literVMG4051.createInstance()</code> or <code>new Trailerwater950literVMG4051()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Water trailer = <code>17</code>; </li>
+ *     <li> SubCategory: _11000gallons  = <code>1</code>; </li>
+ *     <li> Specific: Trailerwater950literVMG4051  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13008; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@273842a6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Watertrailer
+ * @see SubCategory
+
  */
-public class Trailerwater950literVMG4051 extends EntityType
+public final class Trailerwater950literVMG4051 extends EntityType
 {
     /** Default constructor */
     public Trailerwater950literVMG4051()
@@ -26,5 +40,11 @@ public class Trailerwater950literVMG4051 extends EntityType
         setCategory((byte)17); // uid 13005, Water trailer
         setSubCategory((byte)1); // uid 13006, 1-1000 gallons
         setSpecific((byte)2); // uid 13008, Trailer, water, 950 liter, VMG-40-51
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Trailerwater950literVMG4051 createInstance()
+    {
+            return new Trailerwater950literVMG4051();
     }
 }

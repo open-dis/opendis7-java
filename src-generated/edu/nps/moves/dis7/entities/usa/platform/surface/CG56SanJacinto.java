@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e546734;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11334
+ * <p> Entity class <b><code>CG56SanJacinto</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CG56SanJacinto.createInstance()</code> or <code>new CG56SanJacinto()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Cruiser = <code>3</code>; </li>
+ *     <li> SubCategory: TiconderogaClass  = <code>1</code>; </li>
+ *     <li> Specific: CG56SanJacinto  = <code>10</code>; </li>
+ *     <li> Entity type uid: 11334; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@157d3a45. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileCruiser
+ * @see SubCategory
+
  */
-public class CG56SanJacinto extends EntityType
+public final class CG56SanJacinto extends EntityType
 {
     /** Default constructor */
     public CG56SanJacinto()
@@ -26,5 +40,11 @@ public class CG56SanJacinto extends EntityType
         setCategory((byte)3); // uid 11323, Guided Missile Cruiser
         setSubCategory((byte)1); // uid 11324, Ticonderoga Class
         setSpecific((byte)10); // uid 11334, CG 56 San Jacinto
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CG56SanJacinto createInstance()
+    {
+            return new CG56SanJacinto();
     }
 }

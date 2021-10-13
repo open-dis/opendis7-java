@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@294f9d50;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 33060
+ * <p> Entity class <b><code>TrailerSchuttLTT15ton</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerSchuttLTT15ton.createInstance()</code> or <code>new TrailerSchuttLTT15ton()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _0512ton  = <code>2</code>; </li>
+ *     <li> Specific: TrailerSchuttLTT15ton  = <code>9</code>; </li>
+ *     <li> Entity type uid: 33060; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1319bc2a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class TrailerSchuttLTT15ton extends EntityType
+public final class TrailerSchuttLTT15ton extends EntityType
 {
     /** Default constructor */
     public TrailerSchuttLTT15ton()
@@ -26,5 +40,11 @@ public class TrailerSchuttLTT15ton extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)2); // uid 10618, 0.51 - 2 ton
         setSpecific((byte)9); // uid 33060, Trailer, Schutt LTT 1.5 ton
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerSchuttLTT15ton createInstance()
+    {
+            return new TrailerSchuttLTT15ton();
     }
 }

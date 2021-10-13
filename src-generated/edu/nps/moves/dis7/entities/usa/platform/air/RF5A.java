@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5503de1;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10815
+ * <p> Entity class <b><code>RF5A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RF5A.createInstance()</code> or <code>new RF5A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: NorthropF5FreedomFighterTigerII  = <code>10</code>; </li>
+ *     <li> Specific: RF5A  = <code>5</code>; </li>
+ *     <li> Entity type uid: 10815; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b42121d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class RF5A extends EntityType
+public final class RF5A extends EntityType
 {
     /** Default constructor */
     public RF5A()
@@ -26,5 +40,11 @@ public class RF5A extends EntityType
         setCategory((byte)1); // uid 10755, Fighter/Air Defense
         setSubCategory((byte)10); // uid 10810, Northrop F-5 Freedom Fighter/Tiger II
         setSpecific((byte)5); // uid 10815, RF-5A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RF5A createInstance()
+    {
+            return new RF5A();
     }
 }

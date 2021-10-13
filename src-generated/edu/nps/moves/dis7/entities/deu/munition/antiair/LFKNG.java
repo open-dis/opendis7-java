@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c8b8de0;
- * Country: Germany (DEU);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 29009
+ * <p> Entity class <b><code>LFKNG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LFKNG.createInstance()</code> or <code>new LFKNG()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: LFKNG  = <code>5</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29009; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@509a6095. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class LFKNG extends EntityType
+public final class LFKNG extends EntityType
 {
     /** Default constructor */
     public LFKNG()
@@ -25,5 +39,11 @@ public class LFKNG extends EntityType
 
         setCategory((byte)1); // uid 21201, Guided
         setSubCategory((byte)5); // uid 29009, LFK NG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LFKNG createInstance()
+    {
+            return new LFKNG();
     }
 }

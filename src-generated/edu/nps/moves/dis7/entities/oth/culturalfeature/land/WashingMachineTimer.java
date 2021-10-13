@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@51a719e7;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26493
+ * <p> Entity class <b><code>WashingMachineTimer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WashingMachineTimer.createInstance()</code> or <code>new WashingMachineTimer()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Appliances = <code>22</code>; </li>
+ *     <li> SubCategory: Indoor  = <code>2</code>; </li>
+ *     <li> Specific: WashingMachine  = <code>5</code>; </li>
+ *     <li> Entity type uid: 26493; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@48277712. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Appliances
+ * @see SubCategory
+
  */
-public class WashingMachineTimer extends EntityType
+public final class WashingMachineTimer extends EntityType
 {
     /** Default constructor */
     public WashingMachineTimer()
@@ -27,5 +41,11 @@ public class WashingMachineTimer extends EntityType
         setSubCategory((byte)2); // uid 26487, Indoor
         setSpecific((byte)5); // uid 26492, Washing Machine
         setExtra((byte)1); // uid 26493, Washing Machine Timer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WashingMachineTimer createInstance()
+    {
+            return new WashingMachineTimer();
     }
 }

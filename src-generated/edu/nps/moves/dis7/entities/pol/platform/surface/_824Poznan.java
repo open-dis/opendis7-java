@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69e308c6;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23060
+ * <p> Entity class <b><code>_824Poznan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_824Poznan.createInstance()</code> or <code>new _824Poznan()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: LublinClass  = <code>1</code>; </li>
+ *     <li> Specific: _824Poznan  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23060; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64e92d61. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class _824Poznan extends EntityType
+public final class _824Poznan extends EntityType
 {
     /** Default constructor */
     public _824Poznan()
@@ -26,5 +40,11 @@ public class _824Poznan extends EntityType
         setCategory((byte)10); // uid 23055, Tank Landing Ship
         setSubCategory((byte)1); // uid 23056, Lublin Class
         setSpecific((byte)4); // uid 23060, 824 Poznan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _824Poznan createInstance()
+    {
+            return new _824Poznan();
     }
 }

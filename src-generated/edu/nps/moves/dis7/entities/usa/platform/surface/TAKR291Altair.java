@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@267f9765;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11859
+ * <p> Entity class <b><code>TAKR291Altair</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAKR291Altair.createInstance()</code> or <code>new TAKR291Altair()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: FastSealiftShipsStrategicSealift  = <code>14</code>; </li>
+ *     <li> Specific: TAKR291Altair  = <code>5</code>; </li>
+ *     <li> Entity type uid: 11859; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1cb9ef52. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAKR291Altair extends EntityType
+public final class TAKR291Altair extends EntityType
 {
     /** Default constructor */
     public TAKR291Altair()
@@ -26,5 +40,11 @@ public class TAKR291Altair extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)14); // uid 11854, Fast Sealift Ships (Strategic Sealift)
         setSpecific((byte)5); // uid 11859, TAKR 291 Altair
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAKR291Altair createInstance()
+    {
+            return new TAKR291Altair();
     }
 }

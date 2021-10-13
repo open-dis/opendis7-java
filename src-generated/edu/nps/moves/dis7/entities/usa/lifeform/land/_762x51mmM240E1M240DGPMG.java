@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d71e10b;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32687
+ * <p> Entity class <b><code>_762x51mmM240E1M240DGPMG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_762x51mmM240E1M240DGPMG.createInstance()</code> or <code>new _762x51mmM240E1M240DGPMG()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: MachineGuns  = <code>35</code>; </li>
+ *     <li> Specific: _762x51mmM240E1M240DGPMG  = <code>60</code>; </li>
+ *     <li> Entity type uid: 32687; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c5ae8fd. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class _762x51mmM240E1M240DGPMG extends EntityType
+public final class _762x51mmM240E1M240DGPMG extends EntityType
 {
     /** Default constructor */
     public _762x51mmM240E1M240DGPMG()
@@ -26,5 +40,11 @@ public class _762x51mmM240E1M240DGPMG extends EntityType
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)35); // uid 32683, Machine Guns
         setSpecific((byte)60); // uid 32687, 7.62x51mm M240E1/M240D GPMG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _762x51mmM240E1M240DGPMG createInstance()
+    {
+            return new _762x51mmM240E1M240DGPMG();
     }
 }

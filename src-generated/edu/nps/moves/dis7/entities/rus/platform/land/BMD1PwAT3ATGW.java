@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16fe9c29;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12681
+ * <p> Entity class <b><code>BMD1PwAT3ATGW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BMD1PwAT3ATGW.createInstance()</code> or <code>new BMD1PwAT3ATGW()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BMDairbornefiresupportvehicle  = <code>11</code>; </li>
+ *     <li> Specific: BMD1PwAT3ATGW  = <code>2</code>; </li>
+ *     <li> Entity type uid: 12681; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bb8f9e2. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class BMD1PwAT3ATGW extends EntityType
+public final class BMD1PwAT3ATGW extends EntityType
 {
     /** Default constructor */
     public BMD1PwAT3ATGW()
@@ -26,5 +40,11 @@ public class BMD1PwAT3ATGW extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)11); // uid 12679, BMD airborne fire support vehicle
         setSpecific((byte)2); // uid 12681, BMD-1P w/ AT-3 ATGW
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BMD1PwAT3ATGW createInstance()
+    {
+            return new BMD1PwAT3ATGW();
     }
 }

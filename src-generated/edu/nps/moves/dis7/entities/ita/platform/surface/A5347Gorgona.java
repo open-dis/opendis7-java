@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14c01636;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18388
+ * <p> Entity class <b><code>A5347Gorgona</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A5347Gorgona.createInstance()</code> or <code>new A5347Gorgona()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: MTC1011ClassRampedTransport  = <code>5</code>; </li>
+ *     <li> Specific: A5347Gorgona  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18388; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62163b39. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A5347Gorgona extends EntityType
+public final class A5347Gorgona extends EntityType
 {
     /** Default constructor */
     public A5347Gorgona()
@@ -26,5 +40,11 @@ public class A5347Gorgona extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)5); // uid 18387, MTC 1011 Class (Ramped Transport)
         setSpecific((byte)1); // uid 18388, A5347 Gorgona
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A5347Gorgona createInstance()
+    {
+            return new A5347Gorgona();
     }
 }

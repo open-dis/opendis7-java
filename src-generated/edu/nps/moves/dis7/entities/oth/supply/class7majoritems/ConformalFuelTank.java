@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@63c84d31;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30755
+ * <p> Entity class <b><code>ConformalFuelTank</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ConformalFuelTank.createInstance()</code> or <code>new ConformalFuelTank()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Conformal Fuel Tank = <code>21</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30755; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@1cc93da4. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see ConformalFuelTank
+
  */
-public class ConformalFuelTank extends EntityType
+public final class ConformalFuelTank extends EntityType
 {
     /** Default constructor */
     public ConformalFuelTank()
@@ -24,5 +37,11 @@ public class ConformalFuelTank extends EntityType
         setDomain(Domain.inst(SupplyDomain.CLASS_7_MAJOR_ITEMS));
 
         setCategory((byte)21); // uid 30755, Conformal Fuel Tank
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ConformalFuelTank createInstance()
+    {
+            return new ConformalFuelTank();
     }
 }

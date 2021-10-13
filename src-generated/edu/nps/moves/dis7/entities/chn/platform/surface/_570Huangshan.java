@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b4a4e18;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25175
+ * <p> Entity class <b><code>_570Huangshan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_570Huangshan.createInstance()</code> or <code>new _570Huangshan()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JiangkaiIIClassType054A  = <code>9</code>; </li>
+ *     <li> Specific: _570Huangshan  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25175; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55a1c291. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _570Huangshan extends EntityType
+public final class _570Huangshan extends EntityType
 {
     /** Default constructor */
     public _570Huangshan()
@@ -26,5 +40,11 @@ public class _570Huangshan extends EntityType
         setCategory((byte)6); // uid 17073, Guided Missile Frigate (FFG)
         setSubCategory((byte)9); // uid 25172, Jiangkai-II Class (Type 054A)
         setSpecific((byte)3); // uid 25175, 570 Huangshan
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _570Huangshan createInstance()
+    {
+            return new _570Huangshan();
     }
 }

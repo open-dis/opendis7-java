@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@51f49060;
- * Country: Libya (LBY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18919
+ * <p> Entity class <b><code>Combattante2GClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Combattante2GClass.createInstance()</code> or <code>new Combattante2GClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Libya (LBY) = <code>126</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft (PC) = <code>7</code>; </li>
+ *     <li> SubCategory: Combattante2GClass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18919; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@21ec5d87. </p>
+ * @see Country#LIBYA_LBY
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraftPC
+ * @see SubCategory
+
  */
-public class Combattante2GClass extends EntityType
+public final class Combattante2GClass extends EntityType
 {
     /** Default constructor */
     public Combattante2GClass()
@@ -25,5 +39,11 @@ public class Combattante2GClass extends EntityType
 
         setCategory((byte)7); // uid 18918, Light/Patrol Craft (PC)
         setSubCategory((byte)1); // uid 18919, Combattante 2 G Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Combattante2GClass createInstance()
+    {
+            return new Combattante2GClass();
     }
 }

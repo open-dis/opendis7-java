@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2788d0fe;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13263
+ * <p> Entity class <b><code>MiG27DFloggerJ</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MiG27DFloggerJ.createInstance()</code> or <code>new MiG27DFloggerJ()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: MiG27Flogger  = <code>1</code>; </li>
+ *     <li> Specific: MiG27DFloggerJ  = <code>3</code>; </li>
+ *     <li> Entity type uid: 13263; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f443fae. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class MiG27DFloggerJ extends EntityType
+public final class MiG27DFloggerJ extends EntityType
 {
     /** Default constructor */
     public MiG27DFloggerJ()
@@ -26,5 +40,11 @@ public class MiG27DFloggerJ extends EntityType
         setCategory((byte)2); // uid 13259, Attack/Strike
         setSubCategory((byte)1); // uid 13260, MiG-27 Flogger
         setSpecific((byte)3); // uid 13263, MiG-27D Flogger J
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MiG27DFloggerJ createInstance()
+    {
+            return new MiG27DFloggerJ();
     }
 }

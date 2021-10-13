@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@39de9bda;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10872
+ * <p> Entity class <b><code>AC130E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AC130E.createInstance()</code> or <code>new AC130E()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: LockheedC130Model382Hercules  = <code>1</code>; </li>
+ *     <li> Specific: AC130  = <code>2</code>; </li>
+ *     <li> Entity type uid: 10872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2e1b374c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class AC130E extends EntityType
+public final class AC130E extends EntityType
 {
     /** Default constructor */
     public AC130E()
@@ -27,5 +41,11 @@ public class AC130E extends EntityType
         setSubCategory((byte)1); // uid 10868, Lockheed C-130 (Model 382) Hercules
         setSpecific((byte)2); // uid 10870, AC-130
         setExtra((byte)2); // uid 10872, AC-130E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AC130E createInstance()
+    {
+            return new AC130E();
     }
 }

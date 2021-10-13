@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f84abe8;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 26678
+ * <p> Entity class <b><code>UAZ469Bw127mmNSV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>UAZ469Bw127mmNSV.createInstance()</code> or <code>new UAZ469Bw127mmNSV()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: UAZ469BUAZ31512  = <code>2</code>; </li>
+ *     <li> Specific: UAZ469Bw127mmNSV  = <code>7</code>; </li>
+ *     <li> Entity type uid: 26678; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@71a3a190. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class UAZ469Bw127mmNSV extends EntityType
+public final class UAZ469Bw127mmNSV extends EntityType
 {
     /** Default constructor */
     public UAZ469Bw127mmNSV()
@@ -26,5 +40,11 @@ public class UAZ469Bw127mmNSV extends EntityType
         setCategory((byte)6); // uid 12854, Small Wheeled Utility Vehicle
         setSubCategory((byte)2); // uid 12857, UAZ-469B (UAZ-31512)
         setSpecific((byte)7); // uid 26678, UAZ-469B w/ 12.7 mm NSV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static UAZ469Bw127mmNSV createInstance()
+    {
+            return new UAZ469Bw127mmNSV();
     }
 }

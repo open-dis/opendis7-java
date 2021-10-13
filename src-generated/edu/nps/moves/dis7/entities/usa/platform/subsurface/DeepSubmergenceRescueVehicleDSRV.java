@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@551be9f6;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22949
+ * <p> Entity class <b><code>DeepSubmergenceRescueVehicleDSRV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DeepSubmergenceRescueVehicleDSRV.createInstance()</code> or <code>new DeepSubmergenceRescueVehicleDSRV()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSA(Conventional Auxiliary) = <code>7</code>; </li>
+ *     <li> SubCategory: DeepSubmergenceRescueVehicleDSRV  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22949; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@57bd6a8f. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSAConventionalAuxiliary
+ * @see SubCategory
+
  */
-public class DeepSubmergenceRescueVehicleDSRV extends EntityType
+public final class DeepSubmergenceRescueVehicleDSRV extends EntityType
 {
     /** Default constructor */
     public DeepSubmergenceRescueVehicleDSRV()
@@ -25,5 +39,11 @@ public class DeepSubmergenceRescueVehicleDSRV extends EntityType
 
         setCategory((byte)7); // uid 12410, SSA(Conventional Auxiliary)
         setSubCategory((byte)3); // uid 22949, Deep Submergence Rescue Vehicle (DSRV)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DeepSubmergenceRescueVehicleDSRV createInstance()
+    {
+            return new DeepSubmergenceRescueVehicleDSRV();
     }
 }

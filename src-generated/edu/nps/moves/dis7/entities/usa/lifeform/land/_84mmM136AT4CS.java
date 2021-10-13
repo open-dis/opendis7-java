@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f0d8937;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32708
+ * <p> Entity class <b><code>_84mmM136AT4CS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_84mmM136AT4CS.createInstance()</code> or <code>new _84mmM136AT4CS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: RecoillessRifles  = <code>90</code>; </li>
+ *     <li> Specific: _84mmM136AT4CS  = <code>15</code>; </li>
+ *     <li> Entity type uid: 32708; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@674aa626. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class _84mmM136AT4CS extends EntityType
+public final class _84mmM136AT4CS extends EntityType
 {
     /** Default constructor */
     public _84mmM136AT4CS()
@@ -26,5 +40,11 @@ public class _84mmM136AT4CS extends EntityType
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)90); // uid 32707, Recoilless Rifles
         setSpecific((byte)15); // uid 32708, 84mm M136 AT-4 CS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _84mmM136AT4CS createInstance()
+    {
+            return new _84mmM136AT4CS();
     }
 }

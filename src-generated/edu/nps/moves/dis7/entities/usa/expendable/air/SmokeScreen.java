@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3add5e17;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24984
+ * <p> Entity class <b><code>SmokeScreen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SmokeScreen.createInstance()</code> or <code>new SmokeScreen()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Smoke Generator = <code>8</code>; </li>
+ *     <li> SubCategory: SmokeScreen  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24984; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4eb1943b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmokeGenerator
+ * @see SubCategory
+
  */
-public class SmokeScreen extends EntityType
+public final class SmokeScreen extends EntityType
 {
     /** Default constructor */
     public SmokeScreen()
@@ -25,5 +39,11 @@ public class SmokeScreen extends EntityType
 
         setCategory((byte)8); // uid 24983, Smoke Generator
         setSubCategory((byte)1); // uid 24984, Smoke Screen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SmokeScreen createInstance()
+    {
+            return new SmokeScreen();
     }
 }

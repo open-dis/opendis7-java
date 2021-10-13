@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class IOCommsNodeRecord extends IORecord implements Serializable
    protected CommunicationsNodeID  commsNodeId = new CommunicationsNodeID(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IOCommsNodeRecord()
  {
  }
@@ -49,11 +48,14 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += recordType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
    marshalSize += 2;  // recordLength
-   marshalSize += commsNodeType.getMarshalledSize();
+   if (commsNodeType != null)
+       marshalSize += commsNodeType.getMarshalledSize();
    marshalSize += 1;  // padding
-   marshalSize += commsNodeId.getMarshalledSize();
+   if (commsNodeId != null)
+       marshalSize += commsNodeId.getMarshalledSize();
 
    return marshalSize;
 }
@@ -239,11 +241,23 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    recordType = VariableRecordType.unmarshalEnum(byteBuffer);
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    commsNodeType = IOCommsNodeRecordCommsNodeType.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
-    commsNodeId.unmarshal(byteBuffer);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableRecordType.unmarshalEnum(byteBuffer);
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute commsNodeType marked as not serialized
+        commsNodeType = IOCommsNodeRecordCommsNodeType.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+        // attribute commsNodeId marked as not serialized
+        commsNodeId.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d74c3ba;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29207
+ * <p> Entity class <b><code>SA24StreletsTruckMounted</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA24StreletsTruckMounted.createInstance()</code> or <code>new SA24StreletsTruckMounted()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA24SAMSystem  = <code>25</code>; </li>
+ *     <li> Specific: SA24StreletsTruckMounted  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29207; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25d3cfc8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA24StreletsTruckMounted extends EntityType
+public final class SA24StreletsTruckMounted extends EntityType
 {
     /** Default constructor */
     public SA24StreletsTruckMounted()
@@ -26,5 +40,11 @@ public class SA24StreletsTruckMounted extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)25); // uid 28996, SA-24 SAM System
         setSpecific((byte)2); // uid 29207, SA-24 Strelets, Truck Mounted
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA24StreletsTruckMounted createInstance()
+    {
+            return new SA24StreletsTruckMounted();
     }
 }

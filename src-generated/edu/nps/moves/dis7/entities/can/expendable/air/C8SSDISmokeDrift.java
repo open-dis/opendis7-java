@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@236fd411;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 31946
+ * <p> Entity class <b><code>C8SSDISmokeDrift</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C8SSDISmokeDrift.createInstance()</code> or <code>new C8SSDISmokeDrift()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Smoke Generator = <code>8</code>; </li>
+ *     <li> SubCategory: TargetSpotMarker  = <code>2</code>; </li>
+ *     <li> Specific: C8SSDISmokeDrift  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31946; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@661db63e. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmokeGenerator
+ * @see SubCategory
+
  */
-public class C8SSDISmokeDrift extends EntityType
+public final class C8SSDISmokeDrift extends EntityType
 {
     /** Default constructor */
     public C8SSDISmokeDrift()
@@ -26,5 +40,11 @@ public class C8SSDISmokeDrift extends EntityType
         setCategory((byte)8); // uid 31944, Smoke Generator
         setSubCategory((byte)2); // uid 31945, Target/Spot Marker
         setSpecific((byte)1); // uid 31946, C8 SSDI Smoke Drift
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C8SSDISmokeDrift createInstance()
+    {
+            return new C8SSDISmokeDrift();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@709d6de5;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30711
+ * <p> Entity class <b><code>M310</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M310.createInstance()</code> or <code>new M310()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
+ *     <li> SubCategory: AirtoGroundAGWeaponRack  = <code>1</code>; </li>
+ *     <li> Specific: M310  = <code>12</code>; </li>
+ *     <li> Entity type uid: 30711; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@604f376a. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see JRacksAdaptorsPylons
+ * @see SubCategory
+
  */
-public class M310 extends EntityType
+public final class M310 extends EntityType
 {
     /** Default constructor */
     public M310()
@@ -26,5 +40,11 @@ public class M310 extends EntityType
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)1); // uid 30699, Air to Ground (A/G) Weapon Rack
         setSpecific((byte)12); // uid 30711, M310
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M310 createInstance()
+    {
+            return new M310();
     }
 }

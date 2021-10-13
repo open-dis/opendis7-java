@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@585811a4;
- * Country: Marshall Islands (MHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24574
+ * <p> Entity class <b><code>Navig8Fidelity</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Navig8Fidelity.createInstance()</code> or <code>new Navig8Fidelity()</code>. </p>
+ * <ul>
+ *     <li> Country: Marshall Islands (MHL) = <code>137</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: LiquidPetroleumGasLPGTanker  = <code>1</code>; </li>
+ *     <li> Specific: Navig8Fidelity  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24574; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@db44aa2. </p>
+ * @see Country#MARSHALL_ISLANDS_MHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class Navig8Fidelity extends EntityType
+public final class Navig8Fidelity extends EntityType
 {
     /** Default constructor */
     public Navig8Fidelity()
@@ -26,5 +40,11 @@ public class Navig8Fidelity extends EntityType
         setCategory((byte)82); // uid 24572, Tanker (Group 3 Merchant)
         setSubCategory((byte)1); // uid 24573, Liquid Petroleum Gas (LPG)Tanker
         setSpecific((byte)1); // uid 24574, Navig8 Fidelity
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Navig8Fidelity createInstance()
+    {
+            return new Navig8Fidelity();
     }
 }

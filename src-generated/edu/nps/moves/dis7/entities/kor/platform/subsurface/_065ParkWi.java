@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a9e6faf;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23151
+ * <p> Entity class <b><code>_065ParkWi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_065ParkWi.createInstance()</code> or <code>new _065ParkWi()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: ChangBogoType209Class  = <code>1</code>; </li>
+ *     <li> Specific: _065ParkWi  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23151; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bab2585. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class _065ParkWi extends EntityType
+public final class _065ParkWi extends EntityType
 {
     /** Default constructor */
     public _065ParkWi()
@@ -26,5 +40,11 @@ public class _065ParkWi extends EntityType
         setCategory((byte)5); // uid 17737, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)1); // uid 17738, Chang Bogo (Type 209) Class)
         setSpecific((byte)4); // uid 23151, 065 Park Wi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _065ParkWi createInstance()
+    {
+            return new _065ParkWi();
     }
 }

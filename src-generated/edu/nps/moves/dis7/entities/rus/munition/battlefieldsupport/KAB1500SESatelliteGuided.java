@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@314b7945;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 32560
+ * <p> Entity class <b><code>KAB1500SESatelliteGuided</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KAB1500SESatelliteGuided.createInstance()</code> or <code>new KAB1500SESatelliteGuided()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: KAB1500  = <code>23</code>; </li>
+ *     <li> Specific: KAB1500SESatelliteGuided  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32560; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4357524b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class KAB1500SESatelliteGuided extends EntityType
+public final class KAB1500SESatelliteGuided extends EntityType
 {
     /** Default constructor */
     public KAB1500SESatelliteGuided()
@@ -26,5 +40,11 @@ public class KAB1500SESatelliteGuided extends EntityType
         setCategory((byte)1); // uid 20760, Guided
         setSubCategory((byte)23); // uid 32558, KAB-1500
         setSpecific((byte)2); // uid 32560, KAB-1500S-E, Satellite Guided
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KAB1500SESatelliteGuided createInstance()
+    {
+            return new KAB1500SESatelliteGuided();
     }
 }

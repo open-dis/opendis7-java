@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b7ab7ab;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: AIR;
- *
- * Entity type uid: 26815
+ * <p> Entity class <b><code>ANURC107V5Class2HTerminal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANURC107V5Class2HTerminal.createInstance()</code> or <code>new ANURC107V5Class2HTerminal()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Link 16 Terminal = <code>21</code>; </li>
+ *     <li> SubCategory: JointElectronicsTypeDesignationSystemJETDSNonspecificSeries  = <code>1</code>; </li>
+ *     <li> Specific: ANURC107V5Class2HTerminal  = <code>45</code>; </li>
+ *     <li> Entity type uid: 26815; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a9e754e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Link16Terminal
+ * @see SubCategory
+
  */
-public class ANURC107V5Class2HTerminal extends EntityType
+public final class ANURC107V5Class2HTerminal extends EntityType
 {
     /** Default constructor */
     public ANURC107V5Class2HTerminal()
@@ -26,5 +40,11 @@ public class ANURC107V5Class2HTerminal extends EntityType
         setCategory((byte)21); // uid 26798, Link 16 Terminal
         setSubCategory((byte)1); // uid 26799, Joint Electronics Type Designation System (JETDS) Non-specific Series
         setSpecific((byte)45); // uid 26815, AN/URC-107(V)5 Class 2H Terminal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANURC107V5Class2HTerminal createInstance()
+    {
+            return new ANURC107V5Class2HTerminal();
     }
 }

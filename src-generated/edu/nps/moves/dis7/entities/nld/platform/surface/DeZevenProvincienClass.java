@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7957dc72;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23305
+ * <p> Entity class <b><code>DeZevenProvincienClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DeZevenProvincienClass.createInstance()</code> or <code>new DeZevenProvincienClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: DeZevenProvincienClass  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23305; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@13006998. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class DeZevenProvincienClass extends EntityType
+public final class DeZevenProvincienClass extends EntityType
 {
     /** Default constructor */
     public DeZevenProvincienClass()
@@ -25,5 +39,11 @@ public class DeZevenProvincienClass extends EntityType
 
         setCategory((byte)6); // uid 18938, Guided Missile Frigate (FFG)
         setSubCategory((byte)4); // uid 23305, De Zeven Provincien Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DeZevenProvincienClass createInstance()
+    {
+            return new DeZevenProvincienClass();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f59da34;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 19702
+ * <p> Entity class <b><code>RGM84E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RGM84E.createInstance()</code> or <code>new RGM84E()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Harpoon  = <code>1</code>; </li>
+ *     <li> Specific: RGM84E  = <code>12</code>; </li>
+ *     <li> Entity type uid: 19702; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@be6d228. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class RGM84E extends EntityType
+public final class RGM84E extends EntityType
 {
     /** Default constructor */
     public RGM84E()
@@ -26,5 +40,11 @@ public class RGM84E extends EntityType
         setCategory((byte)1); // uid 19689, Guided
         setSubCategory((byte)1); // uid 19690, Harpoon
         setSpecific((byte)12); // uid 19702, RGM-84E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RGM84E createInstance()
+    {
+            return new RGM84E();
     }
 }

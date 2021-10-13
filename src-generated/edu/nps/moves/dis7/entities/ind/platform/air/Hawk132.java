@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22295ec4;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28537
+ * <p> Entity class <b><code>Hawk132</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hawk132.createInstance()</code> or <code>new Hawk132()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: BAESystemsHawk  = <code>1</code>; </li>
+ *     <li> Specific: Hawk132  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28537; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63787180. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class Hawk132 extends EntityType
+public final class Hawk132 extends EntityType
 {
     /** Default constructor */
     public Hawk132()
@@ -26,5 +40,11 @@ public class Hawk132 extends EntityType
         setCategory((byte)40); // uid 28535, Trainer
         setSubCategory((byte)1); // uid 28536, BAE Systems Hawk
         setSpecific((byte)1); // uid 28537, Hawk 132
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hawk132 createInstance()
+    {
+            return new Hawk132();
     }
 }

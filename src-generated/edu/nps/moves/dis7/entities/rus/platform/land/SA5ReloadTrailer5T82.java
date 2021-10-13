@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@677b8e13;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25283
+ * <p> Entity class <b><code>SA5ReloadTrailer5T82</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA5ReloadTrailer5T82.createInstance()</code> or <code>new SA5ReloadTrailer5T82()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA5GammonSAMSystem  = <code>3</code>; </li>
+ *     <li> Specific: SA5ReloadTrailer5T82  = <code>4</code>; </li>
+ *     <li> Entity type uid: 25283; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34523d46. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA5ReloadTrailer5T82 extends EntityType
+public final class SA5ReloadTrailer5T82 extends EntityType
 {
     /** Default constructor */
     public SA5ReloadTrailer5T82()
@@ -26,5 +40,11 @@ public class SA5ReloadTrailer5T82 extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)3); // uid 13048, SA-5 Gammon SAM System
         setSpecific((byte)4); // uid 25283, SA-5 Reload Trailer, 5T82
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA5ReloadTrailer5T82 createInstance()
+    {
+            return new SA5ReloadTrailer5T82();
     }
 }

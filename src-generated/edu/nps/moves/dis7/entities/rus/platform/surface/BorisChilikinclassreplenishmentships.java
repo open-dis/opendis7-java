@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7bc6d27a;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14160
+ * <p> Entity class <b><code>BorisChilikinclassreplenishmentships</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BorisChilikinclassreplenishmentships.createInstance()</code> or <code>new BorisChilikinclassreplenishmentships()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: BorisChilikinclassreplenishmentships  = <code>52</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 14160; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@299270eb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class BorisChilikinclassreplenishmentships extends EntityType
+public final class BorisChilikinclassreplenishmentships extends EntityType
 {
     /** Default constructor */
     public BorisChilikinclassreplenishmentships()
@@ -25,5 +39,11 @@ public class BorisChilikinclassreplenishmentships extends EntityType
 
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)52); // uid 14160, Boris Chilikin class (replenishment ships)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BorisChilikinclassreplenishmentships createInstance()
+    {
+            return new BorisChilikinclassreplenishmentships();
     }
 }

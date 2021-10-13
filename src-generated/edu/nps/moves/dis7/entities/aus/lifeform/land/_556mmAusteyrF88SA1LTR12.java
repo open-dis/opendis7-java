@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32e830a0;
- * Country: Australia (AUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 31538
+ * <p> Entity class <b><code>_556mmAusteyrF88SA1LTR12</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_556mmAusteyrF88SA1LTR12.createInstance()</code> or <code>new _556mmAusteyrF88SA1LTR12()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Royal Australian Navy (RAN) = <code>14</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: _556mmAusteyrF88SA1LTR  = <code>61</code>; </li>
+ *     <li> Entity type uid: 31538; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@260d48f5. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RoyalAustralianNavyRAN
+ * @see SubCategory
+
  */
-public class _556mmAusteyrF88SA1LTR12 extends EntityType
+public final class _556mmAusteyrF88SA1LTR12 extends EntityType
 {
     /** Default constructor */
     public _556mmAusteyrF88SA1LTR12()
@@ -26,5 +40,11 @@ public class _556mmAusteyrF88SA1LTR12 extends EntityType
         setCategory((byte)14); // uid 31530, Royal Australian Navy (RAN)
         setSubCategory((byte)5); // uid 31531, Assault Rifles
         setSpecific((byte)61); // uid 31538, 5.56mm Austeyr F88-S-A1 LTR
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _556mmAusteyrF88SA1LTR12 createInstance()
+    {
+            return new _556mmAusteyrF88SA1LTR12();
     }
 }

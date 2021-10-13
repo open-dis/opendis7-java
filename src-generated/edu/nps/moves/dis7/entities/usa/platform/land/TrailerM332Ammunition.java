@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40ac6b76;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 33055
+ * <p> Entity class <b><code>TrailerM332Ammunition</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerM332Ammunition.createInstance()</code> or <code>new TrailerM332Ammunition()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo Trailer = <code>14</code>; </li>
+ *     <li> SubCategory: _0512ton  = <code>2</code>; </li>
+ *     <li> Specific: TrailerM332Ammunition  = <code>4</code>; </li>
+ *     <li> Entity type uid: 33055; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b0fd744. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTrailer
+ * @see SubCategory
+
  */
-public class TrailerM332Ammunition extends EntityType
+public final class TrailerM332Ammunition extends EntityType
 {
     /** Default constructor */
     public TrailerM332Ammunition()
@@ -26,5 +40,11 @@ public class TrailerM332Ammunition extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)2); // uid 10618, 0.51 - 2 ton
         setSpecific((byte)4); // uid 33055, Trailer, M332, Ammunition
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerM332Ammunition createInstance()
+    {
+            return new TrailerM332Ammunition();
     }
 }

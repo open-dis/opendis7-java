@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b005a0b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13301
+ * <p> Entity class <b><code>Su25TSu34AntiTank</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Su25TSu34AntiTank.createInstance()</code> or <code>new Su25TSu34AntiTank()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: Su25Frogfoot  = <code>8</code>; </li>
+ *     <li> Specific: Su25TSu34AntiTank  = <code>7</code>; </li>
+ *     <li> Entity type uid: 13301; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16a9a4f1. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class Su25TSu34AntiTank extends EntityType
+public final class Su25TSu34AntiTank extends EntityType
 {
     /** Default constructor */
     public Su25TSu34AntiTank()
@@ -26,5 +40,11 @@ public class Su25TSu34AntiTank extends EntityType
         setCategory((byte)2); // uid 13259, Attack/Strike
         setSubCategory((byte)8); // uid 13294, Su-25 Frogfoot
         setSpecific((byte)7); // uid 13301, Su-25T (Su-34) (Anti-Tank)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Su25TSu34AntiTank createInstance()
+    {
+            return new Su25TSu34AntiTank();
     }
 }

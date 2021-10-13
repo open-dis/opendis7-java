@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28daf506;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 25368
+ * <p> Entity class <b><code>SA21Growler9M96E2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA21Growler9M96E2.createInstance()</code> or <code>new SA21Growler9M96E2()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SA21Growler  = <code>44</code>; </li>
+ *     <li> Specific: SA21Growler9M96E2  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25368; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ec85a25. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SA21Growler9M96E2 extends EntityType
+public final class SA21Growler9M96E2 extends EntityType
 {
     /** Default constructor */
     public SA21Growler9M96E2()
@@ -26,5 +40,11 @@ public class SA21Growler9M96E2 extends EntityType
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)44); // uid 25366, SA-21 Growler
         setSpecific((byte)2); // uid 25368, SA-21 Growler (9M96E2)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA21Growler9M96E2 createInstance()
+    {
+            return new SA21Growler9M96E2();
     }
 }

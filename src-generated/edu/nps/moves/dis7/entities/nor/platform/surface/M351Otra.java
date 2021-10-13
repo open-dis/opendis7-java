@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6831d8fd;
- * Country: Norway (NOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27615
+ * <p> Entity class <b><code>M351Otra</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M351Otra.createInstance()</code> or <code>new M351Otra()</code>. </p>
+ * <ul>
+ *     <li> Country: Norway (NOR) = <code>163</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: OksoeyAltaclass  = <code>2</code>; </li>
+ *     <li> Specific: M351Otra  = <code>5</code>; </li>
+ *     <li> Entity type uid: 27615; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51a06cbe. </p>
+ * @see Country#NORWAY_NOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M351Otra extends EntityType
+public final class M351Otra extends EntityType
 {
     /** Default constructor */
     public M351Otra()
@@ -26,5 +40,11 @@ public class M351Otra extends EntityType
         setCategory((byte)8); // uid 18974, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 27610, Oksoey/Alta class
         setSpecific((byte)5); // uid 27615, M351 Otra
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M351Otra createInstance()
+    {
+            return new M351Otra();
     }
 }

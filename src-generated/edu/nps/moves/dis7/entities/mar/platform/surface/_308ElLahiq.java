@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10027fc9;
- * Country: Morocco (MAR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27706
+ * <p> Entity class <b><code>_308ElLahiq</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_308ElLahiq.createInstance()</code> or <code>new _308ElLahiq()</code>. </p>
+ * <ul>
+ *     <li> Country: Morocco (MAR) = <code>147</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: Osprey55Class  = <code>2</code>; </li>
+ *     <li> Specific: _308ElLahiq  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27706; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73511076. </p>
+ * @see Country#MOROCCO_MAR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _308ElLahiq extends EntityType
+public final class _308ElLahiq extends EntityType
 {
     /** Default constructor */
     public _308ElLahiq()
@@ -26,5 +40,11 @@ public class _308ElLahiq extends EntityType
         setCategory((byte)7); // uid 27697, Light/Patrol Craft
         setSubCategory((byte)2); // uid 27705, Osprey 55 Class
         setSpecific((byte)1); // uid 27706, 308 El Lahiq
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _308ElLahiq createInstance()
+    {
+            return new _308ElLahiq();
     }
 }

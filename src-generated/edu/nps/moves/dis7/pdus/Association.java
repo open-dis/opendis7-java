@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class Association extends Object implements Serializable
    protected Vector3Double  associatedLocation = new Vector3Double(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Association()
  {
  }
@@ -45,10 +44,13 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += associationType.getMarshalledSize();
+   if (associationType != null)
+       marshalSize += associationType.getMarshalledSize();
    marshalSize += 1;  // padding
-   marshalSize += associatedEntityID.getMarshalledSize();
-   marshalSize += associatedLocation.getMarshalledSize();
+   if (associatedEntityID != null)
+       marshalSize += associatedEntityID.getMarshalledSize();
+   if (associatedLocation != null)
+       marshalSize += associatedLocation.getMarshalledSize();
 
    return marshalSize;
 }
@@ -200,10 +202,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    associationType = EntityAssociationAssociationType.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
-    associatedEntityID.unmarshal(byteBuffer);
-    associatedLocation.unmarshal(byteBuffer);
+    try
+    {
+        // attribute associationType marked as not serialized
+        associationType = EntityAssociationAssociationType.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+        // attribute associatedEntityID marked as not serialized
+        associatedEntityID.unmarshal(byteBuffer);
+        // attribute associatedLocation marked as not serialized
+        associatedLocation.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class ActionResponsePdu extends SimulationManagementFamilyPdu implements 
    protected List< VariableDatum > variableDatums = new ArrayList< VariableDatum >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ActionResponsePdu()
  {
     setPduType( DisPduType.ACTION_RESPONSE );
@@ -54,19 +53,22 @@ public int getMarshalledSize()
 
    marshalSize = super.getMarshalledSize();
    marshalSize += 4;  // requestID
-   marshalSize += requestStatus.getMarshalledSize();
+   if (requestStatus != null)
+       marshalSize += requestStatus.getMarshalledSize();
    marshalSize += 4;  // numberOfFixedDatumRecords
    marshalSize += 4;  // numberOfVariableDatumRecords
-   for(int idx=0; idx < fixedDatums.size(); idx++)
-   {
-        FixedDatum listElement = fixedDatums.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < variableDatums.size(); idx++)
-   {
-        VariableDatum listElement = variableDatums.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (fixedDatums != null)
+       for (int idx=0; idx < fixedDatums.size(); idx++)
+       {
+            FixedDatum listElement = fixedDatums.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (variableDatums != null)
+       for (int idx=0; idx < variableDatums.size(); idx++)
+       {
+            VariableDatum listElement = variableDatums.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -152,14 +154,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeInt(fixedDatums.size());
        dos.writeInt(variableDatums.size());
 
-       for(int idx = 0; idx < fixedDatums.size(); idx++)
+       for (int idx = 0; idx < fixedDatums.size(); idx++)
        {
             FixedDatum aFixedDatum = fixedDatums.get(idx);
             aFixedDatum.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < variableDatums.size(); idx++)
+       for (int idx = 0; idx < variableDatums.size(); idx++)
        {
             VariableDatum aVariableDatum = variableDatums.get(idx);
             aVariableDatum.marshal(dos);
@@ -195,14 +197,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
         {
             FixedDatum anX = new FixedDatum();
             uPosition += anX.unmarshal(dis);
             fixedDatums.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
             uPosition += anX.unmarshal(dis);
@@ -233,14 +235,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putInt( (int)fixedDatums.size());
    byteBuffer.putInt( (int)variableDatums.size());
 
-   for(int idx = 0; idx < fixedDatums.size(); idx++)
+   for (int idx = 0; idx < fixedDatums.size(); idx++)
    {
         FixedDatum aFixedDatum = fixedDatums.get(idx);
         aFixedDatum.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < variableDatums.size(); idx++)
+   for (int idx = 0; idx < variableDatums.size(); idx++)
    {
         VariableDatum aVariableDatum = variableDatums.get(idx);
         aVariableDatum.marshal(byteBuffer);
@@ -261,24 +263,37 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    requestID = byteBuffer.getInt();
-    requestStatus = ActionResponseRequestStatus.unmarshalEnum(byteBuffer);
-    numberOfFixedDatumRecords = byteBuffer.getInt();
-    numberOfVariableDatumRecords = byteBuffer.getInt();
-    for(int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+    try
     {
-    FixedDatum anX = new FixedDatum();
-    anX.unmarshal(byteBuffer);
-    fixedDatums.add(anX);
-    }
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+        // attribute requestStatus marked as not serialized
+        requestStatus = ActionResponseRequestStatus.unmarshalEnum(byteBuffer);
+        // attribute numberOfFixedDatumRecords marked as not serialized
+        numberOfFixedDatumRecords = byteBuffer.getInt();
+        // attribute numberOfVariableDatumRecords marked as not serialized
+        numberOfVariableDatumRecords = byteBuffer.getInt();
+        // attribute fixedDatums marked as not serialized
+        for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
+        {
+        FixedDatum anX = new FixedDatum();
+        anX.unmarshal(byteBuffer);
+        fixedDatums.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        // attribute variableDatums marked as not serialized
+        for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
+        {
+        VariableDatum anX = new VariableDatum();
+        anX.unmarshal(byteBuffer);
+        variableDatums.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    VariableDatum anX = new VariableDatum();
-    anX.unmarshal(byteBuffer);
-    variableDatums.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -310,11 +325,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (requestID == rhs.requestID)) ivarsEqual = false;
      if( ! (requestStatus == rhs.requestStatus)) ivarsEqual = false;
 
-     for(int idx = 0; idx < fixedDatums.size(); idx++)
+     for (int idx = 0; idx < fixedDatums.size(); idx++)
         if( ! ( fixedDatums.get(idx).equals(rhs.fixedDatums.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < variableDatums.size(); idx++)
+     for (int idx = 0; idx < variableDatums.size(); idx++)
         if( ! ( variableDatums.get(idx).equals(rhs.variableDatums.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

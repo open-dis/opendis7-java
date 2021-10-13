@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6821ea29;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28508
+ * <p> Entity class <b><code>AW109Trekker</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AW109Trekker.createInstance()</code> or <code>new AW109Trekker()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Small (up to 7,000 lbs / 3,175 kg) = <code>90</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific: AgustaWestlandAW109  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28508; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3a3e4aff. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterSmallupto7000lbs3175kg
+ * @see SubCategory
+
  */
-public class AW109Trekker extends EntityType
+public final class AW109Trekker extends EntityType
 {
     /** Default constructor */
     public AW109Trekker()
@@ -27,5 +41,11 @@ public class AW109Trekker extends EntityType
         setSubCategory((byte)12); // uid 28497, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
         setSpecific((byte)1); // uid 28498, Agusta Westland AW109
         setExtra((byte)10); // uid 28508, AW109 Trekker
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AW109Trekker createInstance()
+    {
+            return new AW109Trekker();
     }
 }

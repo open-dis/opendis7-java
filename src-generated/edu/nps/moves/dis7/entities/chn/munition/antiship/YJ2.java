@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50ec4bfc;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 29122
+ * <p> Entity class <b><code>YJ2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>YJ2.createInstance()</code> or <code>new YJ2()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: YJ2C802CSSN8Saccade  = <code>11</code>; </li>
+ *     <li> Specific: YJ2  = <code>8</code>; </li>
+ *     <li> Entity type uid: 29122; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a1f79ce. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class YJ2 extends EntityType
+public final class YJ2 extends EntityType
 {
     /** Default constructor */
     public YJ2()
@@ -26,5 +40,11 @@ public class YJ2 extends EntityType
         setCategory((byte)1); // uid 21409, Guided
         setSubCategory((byte)11); // uid 21431, YJ-2/C-802/CSS-N-8 Saccade
         setSpecific((byte)8); // uid 29122, YJ-2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static YJ2 createInstance()
+    {
+            return new YJ2();
     }
 }

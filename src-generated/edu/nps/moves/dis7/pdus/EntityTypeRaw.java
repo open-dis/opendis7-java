@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class EntityTypeRaw extends Object implements Serializable
    protected byte  extra;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityTypeRaw()
  {
  }
@@ -54,7 +53,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityKind.getMarshalledSize();
+   if (entityKind != null)
+       marshalSize += entityKind.getMarshalledSize();
    marshalSize += 1;  // domain
    marshalSize += 2;  // country
    marshalSize += 1;  // category
@@ -309,13 +309,27 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityKind = EntityKind.unmarshalEnum(byteBuffer);
-    domain = (byte)(byteBuffer.get() & 0xFF);
-    country = (short)(byteBuffer.getShort() & 0xFFFF);
-    category = (byte)(byteBuffer.get() & 0xFF);
-    subCategory = (byte)(byteBuffer.get() & 0xFF);
-    specific = (byte)(byteBuffer.get() & 0xFF);
-    extra = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute entityKind marked as not serialized
+        entityKind = EntityKind.unmarshalEnum(byteBuffer);
+        // attribute domain marked as not serialized
+        domain = (byte)(byteBuffer.get() & 0xFF);
+        // attribute country marked as not serialized
+        country = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute category marked as not serialized
+        category = (byte)(byteBuffer.get() & 0xFF);
+        // attribute subCategory marked as not serialized
+        subCategory = (byte)(byteBuffer.get() & 0xFF);
+        // attribute specific marked as not serialized
+        specific = (byte)(byteBuffer.get() & 0xFF);
+        // attribute extra marked as not serialized
+        extra = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

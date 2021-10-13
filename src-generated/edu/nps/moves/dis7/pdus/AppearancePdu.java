@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -43,7 +42,7 @@ public class AppearancePdu extends LiveEntityFamilyPdu implements Serializable
    protected Appearance  appearanceFields = new Appearance(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AppearancePdu()
  {
     setPduType( DisPduType.APPEARANCE );
@@ -59,14 +58,21 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += liveEntityId.getMarshalledSize();
+   if (liveEntityId != null)
+       marshalSize += liveEntityId.getMarshalledSize();
    marshalSize += 2;  // appearanceFlags
-   marshalSize += forceId.getMarshalledSize();
-   marshalSize += entityType.getMarshalledSize();
-   marshalSize += alternateEntityType.getMarshalledSize();
-   marshalSize += entityMarking.getMarshalledSize();
-   marshalSize += capabilities.getMarshalledSize();
-   marshalSize += appearanceFields.getMarshalledSize();
+   if (forceId != null)
+       marshalSize += forceId.getMarshalledSize();
+   if (entityType != null)
+       marshalSize += entityType.getMarshalledSize();
+   if (alternateEntityType != null)
+       marshalSize += alternateEntityType.getMarshalledSize();
+   if (entityMarking != null)
+       marshalSize += entityMarking.getMarshalledSize();
+   if (capabilities != null)
+       marshalSize += capabilities.getMarshalledSize();
+   if (appearanceFields != null)
+       marshalSize += appearanceFields.getMarshalledSize();
 
    return marshalSize;
 }
@@ -300,14 +306,29 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    liveEntityId.unmarshal(byteBuffer);
-    appearanceFlags = (short)(byteBuffer.getShort() & 0xFFFF);
-    forceId = ForceID.unmarshalEnum(byteBuffer);
-    entityType.unmarshal(byteBuffer);
-    alternateEntityType.unmarshal(byteBuffer);
-    entityMarking.unmarshal(byteBuffer);
-    capabilities.unmarshal(byteBuffer);
-    appearanceFields.unmarshal(byteBuffer);
+    try
+    {
+        // attribute liveEntityId marked as not serialized
+        liveEntityId.unmarshal(byteBuffer);
+        // attribute appearanceFlags marked as not serialized
+        appearanceFlags = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute forceId marked as not serialized
+        forceId = ForceID.unmarshalEnum(byteBuffer);
+        // attribute entityType marked as not serialized
+        entityType.unmarshal(byteBuffer);
+        // attribute alternateEntityType marked as not serialized
+        alternateEntityType.unmarshal(byteBuffer);
+        // attribute entityMarking marked as not serialized
+        entityMarking.unmarshal(byteBuffer);
+        // attribute capabilities marked as not serialized
+        capabilities.unmarshal(byteBuffer);
+        // attribute appearanceFields marked as not serialized
+        appearanceFields.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

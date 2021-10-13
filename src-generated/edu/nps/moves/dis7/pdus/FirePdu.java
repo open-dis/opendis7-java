@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class FirePdu extends WarfareFamilyPdu implements Serializable
    protected float  range;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public FirePdu()
  {
     setPduType( DisPduType.FIRE );
@@ -62,14 +61,21 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += firingEntityID.getMarshalledSize();
-   marshalSize += targetEntityID.getMarshalledSize();
-   marshalSize += munitionExpendibleID.getMarshalledSize();
-   marshalSize += eventID.getMarshalledSize();
+   if (firingEntityID != null)
+       marshalSize += firingEntityID.getMarshalledSize();
+   if (targetEntityID != null)
+       marshalSize += targetEntityID.getMarshalledSize();
+   if (munitionExpendibleID != null)
+       marshalSize += munitionExpendibleID.getMarshalledSize();
+   if (eventID != null)
+       marshalSize += eventID.getMarshalledSize();
    marshalSize += 4;  // fireMissionIndex
-   marshalSize += locationInWorldCoordinates.getMarshalledSize();
-   marshalSize += descriptor.getMarshalledSize();
-   marshalSize += velocity.getMarshalledSize();
+   if (locationInWorldCoordinates != null)
+       marshalSize += locationInWorldCoordinates.getMarshalledSize();
+   if (descriptor != null)
+       marshalSize += descriptor.getMarshalledSize();
+   if (velocity != null)
+       marshalSize += velocity.getMarshalledSize();
    marshalSize += 4;  // range
 
    return marshalSize;
@@ -316,15 +322,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    firingEntityID.unmarshal(byteBuffer);
-    targetEntityID.unmarshal(byteBuffer);
-    munitionExpendibleID.unmarshal(byteBuffer);
-    eventID.unmarshal(byteBuffer);
-    fireMissionIndex = byteBuffer.getInt();
-    locationInWorldCoordinates.unmarshal(byteBuffer);
-    descriptor.unmarshal(byteBuffer);
-    velocity.unmarshal(byteBuffer);
-    range = byteBuffer.getFloat();
+    try
+    {
+        // attribute firingEntityID marked as not serialized
+        firingEntityID.unmarshal(byteBuffer);
+        // attribute targetEntityID marked as not serialized
+        targetEntityID.unmarshal(byteBuffer);
+        // attribute munitionExpendibleID marked as not serialized
+        munitionExpendibleID.unmarshal(byteBuffer);
+        // attribute eventID marked as not serialized
+        eventID.unmarshal(byteBuffer);
+        // attribute fireMissionIndex marked as not serialized
+        fireMissionIndex = byteBuffer.getInt();
+        // attribute locationInWorldCoordinates marked as not serialized
+        locationInWorldCoordinates.unmarshal(byteBuffer);
+        // attribute descriptor marked as not serialized
+        descriptor.unmarshal(byteBuffer);
+        // attribute velocity marked as not serialized
+        velocity.unmarshal(byteBuffer);
+        // attribute range marked as not serialized
+        range = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

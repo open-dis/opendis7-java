@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b435211;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 25142
+ * <p> Entity class <b><code>SSN783Minnesota</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN783Minnesota.createInstance()</code> or <code>new SSN783Minnesota()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: VirginiaClass  = <code>5</code>; </li>
+ *     <li> Specific: SSN783Minnesota  = <code>10</code>; </li>
+ *     <li> Entity type uid: 25142; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50211483. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class SSN783Minnesota extends EntityType
+public final class SSN783Minnesota extends EntityType
 {
     /** Default constructor */
     public SSN783Minnesota()
@@ -26,5 +40,11 @@ public class SSN783Minnesota extends EntityType
         setCategory((byte)3); // uid 12301, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)5); // uid 12405, Virginia Class
         setSpecific((byte)10); // uid 25142, SSN 783 Minnesota
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN783Minnesota createInstance()
+    {
+            return new SSN783Minnesota();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51fadaff;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16671
+ * <p> Entity class <b><code>Y815Scharhorn</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y815Scharhorn.createInstance()</code> or <code>new Y815Scharhorn()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: Harbortugstype725  = <code>2</code>; </li>
+ *     <li> Specific: Y815Scharhorn  = <code>3</code>; </li>
+ *     <li> Entity type uid: 16671; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ddbbdf8. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y815Scharhorn extends EntityType
+public final class Y815Scharhorn extends EntityType
 {
     /** Default constructor */
     public Y815Scharhorn()
@@ -26,5 +40,11 @@ public class Y815Scharhorn extends EntityType
         setCategory((byte)17); // uid 16659, Auxiliary, Merchant Marine
         setSubCategory((byte)2); // uid 16668, Harbor tugs (type 725)
         setSpecific((byte)3); // uid 16671, Y 815 Scharhorn
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y815Scharhorn createInstance()
+    {
+            return new Y815Scharhorn();
     }
 }

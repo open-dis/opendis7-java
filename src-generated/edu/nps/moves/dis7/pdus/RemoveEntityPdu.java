@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -22,7 +21,7 @@ public class RemoveEntityPdu extends SimulationManagementFamilyPdu implements Se
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RemoveEntityPdu()
  {
     setPduType( DisPduType.REMOVE_ENTITY );
@@ -131,7 +130,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

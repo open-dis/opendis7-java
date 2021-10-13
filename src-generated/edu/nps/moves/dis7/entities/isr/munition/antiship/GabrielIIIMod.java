@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62ea8931;
- * Country: Israel (ISR);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 21299
+ * <p> Entity class <b><code>GabrielIIIMod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GabrielIIIMod.createInstance()</code> or <code>new GabrielIIIMod()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Gabriel  = <code>1</code>; </li>
+ *     <li> Specific: GabrielIIIMod  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21299; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27ab206. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class GabrielIIIMod extends EntityType
+public final class GabrielIIIMod extends EntityType
 {
     /** Default constructor */
     public GabrielIIIMod()
@@ -26,5 +40,11 @@ public class GabrielIIIMod extends EntityType
         setCategory((byte)1); // uid 21295, Guided
         setSubCategory((byte)1); // uid 21296, Gabriel
         setSpecific((byte)3); // uid 21299, Gabriel III (Mod)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GabrielIIIMod createInstance()
+    {
+            return new GabrielIIIMod();
     }
 }

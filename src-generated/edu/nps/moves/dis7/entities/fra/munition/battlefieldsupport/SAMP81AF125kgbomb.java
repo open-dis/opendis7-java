@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55a0f011;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21192
+ * <p> Entity class <b><code>SAMP81AF125kgbomb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SAMP81AF125kgbomb.createInstance()</code> or <code>new SAMP81AF125kgbomb()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: SAMP81AF125kgbomb  = <code>67</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21192; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@29c53c4f. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class SAMP81AF125kgbomb extends EntityType
+public final class SAMP81AF125kgbomb extends EntityType
 {
     /** Default constructor */
     public SAMP81AF125kgbomb()
@@ -25,5 +39,11 @@ public class SAMP81AF125kgbomb extends EntityType
 
         setCategory((byte)2); // uid 21159, Ballistic
         setSubCategory((byte)67); // uid 21192, SAMP 81 AF 125-kg bomb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SAMP81AF125kgbomb createInstance()
+    {
+            return new SAMP81AF125kgbomb();
     }
 }

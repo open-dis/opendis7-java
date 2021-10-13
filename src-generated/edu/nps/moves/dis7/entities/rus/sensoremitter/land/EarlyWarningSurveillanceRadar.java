@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@70ee1963;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22415
+ * <p> Entity class <b><code>EarlyWarningSurveillanceRadar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EarlyWarningSurveillanceRadar.createInstance()</code> or <code>new EarlyWarningSurveillanceRadar()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22415; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@78b9155e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class EarlyWarningSurveillanceRadar extends EntityType
+public final class EarlyWarningSurveillanceRadar extends EntityType
 {
     /** Default constructor */
     public EarlyWarningSurveillanceRadar()
@@ -25,5 +39,11 @@ public class EarlyWarningSurveillanceRadar extends EntityType
 
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)2); // uid 22415, Early Warning/Surveillance Radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EarlyWarningSurveillanceRadar createInstance()
+    {
+            return new EarlyWarningSurveillanceRadar();
     }
 }

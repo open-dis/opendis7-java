@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class OwnershipStatusRecord extends Object implements Serializable
    protected byte  padding = (byte)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public OwnershipStatusRecord()
  {
  }
@@ -42,8 +41,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityId.getMarshalledSize();
-   marshalSize += ownershipStatus.getMarshalledSize();
+   if (entityId != null)
+       marshalSize += entityId.getMarshalledSize();
+   if (ownershipStatus != null)
+       marshalSize += ownershipStatus.getMarshalledSize();
    marshalSize += 1;  // padding
 
    return marshalSize;
@@ -177,9 +178,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityId.unmarshal(byteBuffer);
-    ownershipStatus = OwnershipStatus.unmarshalEnum(byteBuffer);
-    padding = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute entityId marked as not serialized
+        entityId.unmarshal(byteBuffer);
+        // attribute ownershipStatus marked as not serialized
+        ownershipStatus = OwnershipStatus.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

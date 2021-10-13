@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e4f2300;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Sensor/Emitter;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 26688
+ * <p> Entity class <b><code>ANSSQ47B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANSSQ47B.createInstance()</code> or <code>new ANSSQ47B()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, Active = <code>10</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific: ANSSQ47B  = <code>5</code>; </li>
+ *     <li> Entity type uid: 26688; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75a9cc24. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AcousticActive
+ * @see SubCategory
+
  */
-public class ANSSQ47B extends EntityType
+public final class ANSSQ47B extends EntityType
 {
     /** Default constructor */
     public ANSSQ47B()
@@ -26,5 +40,11 @@ public class ANSSQ47B extends EntityType
         setCategory((byte)10); // uid 26686, Acoustic, Active
         setSubCategory((byte)77); // uid 26687, Sonobuoy
         setSpecific((byte)5); // uid 26688, AN/SSQ-47B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANSSQ47B createInstance()
+    {
+            return new ANSSQ47B();
     }
 }

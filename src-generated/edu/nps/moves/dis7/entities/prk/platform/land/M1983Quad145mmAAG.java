@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3af17be2;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24056
+ * <p> Entity class <b><code>M1983Quad145mmAAG</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1983Quad145mmAAG.createInstance()</code> or <code>new M1983Quad145mmAAG()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>1</code>; </li>
+ *     <li> Specific: M1983Quad145mmAAG  = <code>5</code>; </li>
+ *     <li> Entity type uid: 24056; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e809b79. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class M1983Quad145mmAAG extends EntityType
+public final class M1983Quad145mmAAG extends EntityType
 {
     /** Default constructor */
     public M1983Quad145mmAAG()
@@ -26,5 +40,11 @@ public class M1983Quad145mmAAG extends EntityType
         setCategory((byte)28); // uid 23454, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 23455, Self-Propelled VSHORAD Gun/Missile System
         setSpecific((byte)5); // uid 24056, M1983 Quad 14.5mm AAG
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1983Quad145mmAAG createInstance()
+    {
+            return new M1983Quad145mmAAG();
     }
 }

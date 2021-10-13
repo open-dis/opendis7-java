@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@521441d5;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11965
+ * <p> Entity class <b><code>AD15Prairie</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AD15Prairie.createInstance()</code> or <code>new AD15Prairie()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer Tender = <code>53</code>; </li>
+ *     <li> SubCategory: DixieClass  = <code>2</code>; </li>
+ *     <li> Specific: AD15Prairie  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11965; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d0cc83e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerTender
+ * @see SubCategory
+
  */
-public class AD15Prairie extends EntityType
+public final class AD15Prairie extends EntityType
 {
     /** Default constructor */
     public AD15Prairie()
@@ -26,5 +40,11 @@ public class AD15Prairie extends EntityType
         setCategory((byte)53); // uid 11956, Destroyer Tender
         setSubCategory((byte)2); // uid 11964, Dixie Class
         setSpecific((byte)1); // uid 11965, AD 15 Prairie
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AD15Prairie createInstance()
+    {
+            return new AD15Prairie();
     }
 }

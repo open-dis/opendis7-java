@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42039326;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23380
+ * <p> Entity class <b><code>F462Kountouriotis</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F462Kountouriotis.createInstance()</code> or <code>new F462Kountouriotis()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: ElliClassKortenaerClass  = <code>2</code>; </li>
+ *     <li> Specific: F462Kountouriotis  = <code>6</code>; </li>
+ *     <li> Entity type uid: 23380; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ae42ce3. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F462Kountouriotis extends EntityType
+public final class F462Kountouriotis extends EntityType
 {
     /** Default constructor */
     public F462Kountouriotis()
@@ -26,5 +40,11 @@ public class F462Kountouriotis extends EntityType
         setCategory((byte)6); // uid 23348, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 23374, Elli Class (Kortenaer Class)
         setSpecific((byte)6); // uid 23380, F462 Kountouriotis
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F462Kountouriotis createInstance()
+    {
+            return new F462Kountouriotis();
     }
 }

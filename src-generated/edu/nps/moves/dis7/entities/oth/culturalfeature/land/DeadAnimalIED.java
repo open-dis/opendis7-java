@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b32465;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 31856
+ * <p> Entity class <b><code>DeadAnimalIED</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DeadAnimalIED.createInstance()</code> or <code>new DeadAnimalIED()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Obstacle = <code>5</code>; </li>
+ *     <li> SubCategory: ExposedOrdnance  = <code>30</code>; </li>
+ *     <li> Specific: DeadAnimalIED  = <code>8</code>; </li>
+ *     <li> Entity type uid: 31856; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29892a77. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Obstacle
+ * @see SubCategory
+
  */
-public class DeadAnimalIED extends EntityType
+public final class DeadAnimalIED extends EntityType
 {
     /** Default constructor */
     public DeadAnimalIED()
@@ -26,5 +40,11 @@ public class DeadAnimalIED extends EntityType
         setCategory((byte)5); // uid 21973, Obstacle
         setSubCategory((byte)30); // uid 26175, Exposed Ordnance
         setSpecific((byte)8); // uid 31856, Dead Animal, IED
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DeadAnimalIED createInstance()
+    {
+            return new DeadAnimalIED();
     }
 }

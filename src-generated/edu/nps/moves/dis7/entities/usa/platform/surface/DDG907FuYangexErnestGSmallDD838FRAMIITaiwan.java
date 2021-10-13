@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22da2fe6;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11452
+ * <p> Entity class <b><code>DDG907FuYangexErnestGSmallDD838FRAMIITaiwan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDG907FuYangexErnestGSmallDD838FRAMIITaiwan.createInstance()</code> or <code>new DDG907FuYangexErnestGSmallDD838FRAMIITaiwan()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: GearingWuChinIandIIConversionsFRAMIandIIClass  = <code>7</code>; </li>
+ *     <li> Specific: DDG907FuYangexErnestGSmallDD838FRAMIITaiwan  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11452; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69cd7630. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class DDG907FuYangexErnestGSmallDD838FRAMIITaiwan extends EntityType
+public final class DDG907FuYangexErnestGSmallDD838FRAMIITaiwan extends EntityType
 {
     /** Default constructor */
     public DDG907FuYangexErnestGSmallDD838FRAMIITaiwan()
@@ -26,5 +40,11 @@ public class DDG907FuYangexErnestGSmallDD838FRAMIITaiwan extends EntityType
         setCategory((byte)4); // uid 11372, Guided Missile Destroyer
         setSubCategory((byte)7); // uid 11451, Gearing (Wu Chin I and II Conversions) (FRAM I and II) Class
         setSpecific((byte)1); // uid 11452, DDG 907 Fu Yang (ex. Ernest G. Small DD 838) (FRAM II) (Taiwan)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDG907FuYangexErnestGSmallDD838FRAMIITaiwan createInstance()
+    {
+            return new DDG907FuYangexErnestGSmallDD838FRAMIITaiwan();
     }
 }

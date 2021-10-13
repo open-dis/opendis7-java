@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a7e81;
- * Country: France (FRA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 23701
+ * <p> Entity class <b><code>RasitGroundSurveillanceRadar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RasitGroundSurveillanceRadar.createInstance()</code> or <code>new RasitGroundSurveillanceRadar()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: BattlefieldSurveillance  = <code>24</code>; </li>
+ *     <li> Specific: RasitGroundSurveillanceRadar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23701; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75b363c3. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class RasitGroundSurveillanceRadar extends EntityType
+public final class RasitGroundSurveillanceRadar extends EntityType
 {
     /** Default constructor */
     public RasitGroundSurveillanceRadar()
@@ -26,5 +40,11 @@ public class RasitGroundSurveillanceRadar extends EntityType
         setCategory((byte)2); // uid 22477, RF Active
         setSubCategory((byte)24); // uid 23700, Battlefield Surveillance
         setSpecific((byte)1); // uid 23701, Rasit Ground Surveillance Radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RasitGroundSurveillanceRadar createInstance()
+    {
+            return new RasitGroundSurveillanceRadar();
     }
 }

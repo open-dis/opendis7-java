@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1c025cb;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12828
+ * <p> Entity class <b><code>M1937ML20152mmgunHowitzer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1937ML20152mmgunHowitzer.createInstance()</code> or <code>new M1937ML20152mmgunHowitzer()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed artillery = <code>5</code>; </li>
+ *     <li> SubCategory: M1937ML20152mmgunHowitzer  = <code>17</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12828; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4525d1d3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Towedartillery
+ * @see SubCategory
+
  */
-public class M1937ML20152mmgunHowitzer extends EntityType
+public final class M1937ML20152mmgunHowitzer extends EntityType
 {
     /** Default constructor */
     public M1937ML20152mmgunHowitzer()
@@ -25,5 +39,11 @@ public class M1937ML20152mmgunHowitzer extends EntityType
 
         setCategory((byte)5); // uid 12810, Towed artillery
         setSubCategory((byte)17); // uid 12828, M1937 (ML-20) 152-mm gun/Howitzer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1937ML20152mmgunHowitzer createInstance()
+    {
+            return new M1937ML20152mmgunHowitzer();
     }
 }

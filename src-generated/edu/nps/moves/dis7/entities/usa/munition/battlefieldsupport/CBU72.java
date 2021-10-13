@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@708dfe10;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20224
+ * <p> Entity class <b><code>CBU72</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CBU72.createInstance()</code> or <code>new CBU72()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: CBU55  = <code>60</code>; </li>
+ *     <li> Specific: CBU72  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20224; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30eedaa4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class CBU72 extends EntityType
+public final class CBU72 extends EntityType
 {
     /** Default constructor */
     public CBU72()
@@ -26,5 +40,11 @@ public class CBU72 extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)60); // uid 20222, CBU-55
         setSpecific((byte)2); // uid 20224, CBU-72
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CBU72 createInstance()
+    {
+            return new CBU72();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19650aa6;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27203
+ * <p> Entity class <b><code>K336Pskov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K336Pskov.createInstance()</code> or <code>new K336Pskov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: SierraIIClass  = <code>5</code>; </li>
+ *     <li> Specific: K336Pskov  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27203; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1de0a46c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class K336Pskov extends EntityType
+public final class K336Pskov extends EntityType
 {
     /** Default constructor */
     public K336Pskov()
@@ -26,5 +40,11 @@ public class K336Pskov extends EntityType
         setCategory((byte)3); // uid 14779, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)5); // uid 14784, Sierra II Class
         setSpecific((byte)3); // uid 27203, K-336 Pskov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K336Pskov createInstance()
+    {
+            return new K336Pskov();
     }
 }

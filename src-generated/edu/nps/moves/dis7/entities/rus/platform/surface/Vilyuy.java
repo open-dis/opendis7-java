@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15f2eda3;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13843
+ * <p> Entity class <b><code>Vilyuy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Vilyuy.createInstance()</code> or <code>new Vilyuy()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ModifiedAndizhanclassmissilesupportships  = <code>8</code>; </li>
+ *     <li> Specific: Vilyuy  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13843; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@627d8516. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Vilyuy extends EntityType
+public final class Vilyuy extends EntityType
 {
     /** Default constructor */
     public Vilyuy()
@@ -26,5 +40,11 @@ public class Vilyuy extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)8); // uid 13841, Modified Andizhan class (missile support ships)
         setSpecific((byte)2); // uid 13843, Vilyuy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Vilyuy createInstance()
+    {
+            return new Vilyuy();
     }
 }

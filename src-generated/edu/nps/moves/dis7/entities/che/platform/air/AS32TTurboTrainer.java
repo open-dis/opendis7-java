@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@733aa9d8;
- * Country: Switzerland (CHE);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29216
+ * <p> Entity class <b><code>AS32TTurboTrainer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AS32TTurboTrainer.createInstance()</code> or <code>new AS32TTurboTrainer()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
+ *     <li> SubCategory: SinglePistonEngine  = <code>11</code>; </li>
+ *     <li> Specific: FFAAS202Bravo  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29216; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5df778c3. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftSmallupto12500lbs5670kg
+ * @see SubCategory
+
  */
-public class AS32TTurboTrainer extends EntityType
+public final class AS32TTurboTrainer extends EntityType
 {
     /** Default constructor */
     public AS32TTurboTrainer()
@@ -27,5 +41,11 @@ public class AS32TTurboTrainer extends EntityType
         setSubCategory((byte)11); // uid 29210, Single Piston Engine
         setSpecific((byte)1); // uid 29211, FFA AS 202 Bravo
         setExtra((byte)5); // uid 29216, AS 32T Turbo Trainer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AS32TTurboTrainer createInstance()
+    {
+            return new AS32TTurboTrainer();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2570b316;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22273
+ * <p> Entity class <b><code>CMNAE</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CMNAE.createInstance()</code> or <code>new CMNAE()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active Emitter = <code>4</code>; </li>
+ *     <li> SubCategory: CMNAE  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22273; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6df37f7a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ActiveEmitter
+ * @see SubCategory
+
  */
-public class CMNAE extends EntityType
+public final class CMNAE extends EntityType
 {
     /** Default constructor */
     public CMNAE()
@@ -25,5 +39,11 @@ public class CMNAE extends EntityType
 
         setCategory((byte)4); // uid 22272, Active Emitter
         setSubCategory((byte)1); // uid 22273, CM NAE
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CMNAE createInstance()
+    {
+            return new CMNAE();
     }
 }

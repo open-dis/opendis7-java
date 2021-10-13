@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f15f52a;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32502
+ * <p> Entity class <b><code>CSS6Car</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSS6Car.createInstance()</code> or <code>new CSS6Car()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSS6DF15  = <code>9</code>; </li>
+ *     <li> Specific: CSS6Car  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32502; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54ccb3. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSS6Car extends EntityType
+public final class CSS6Car extends EntityType
 {
     /** Default constructor */
     public CSS6Car()
@@ -26,5 +40,11 @@ public class CSS6Car extends EntityType
         setCategory((byte)1); // uid 32499, Guided
         setSubCategory((byte)9); // uid 32501, CSS-6 (DF-15)
         setSpecific((byte)1); // uid 32502, CSS-6 Car
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSS6Car createInstance()
+    {
+            return new CSS6Car();
     }
 }

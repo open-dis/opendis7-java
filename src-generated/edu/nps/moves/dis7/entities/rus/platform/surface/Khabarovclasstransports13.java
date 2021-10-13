@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@444cc791;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14421
+ * <p> Entity class <b><code>Khabarovclasstransports13</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Khabarovclasstransports13.createInstance()</code> or <code>new Khabarovclasstransports13()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Khabarovclasstransports  = <code>97</code>; </li>
+ *     <li> Specific: _13  = <code>2</code>; </li>
+ *     <li> Entity type uid: 14421; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@756b58a7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Khabarovclasstransports13 extends EntityType
+public final class Khabarovclasstransports13 extends EntityType
 {
     /** Default constructor */
     public Khabarovclasstransports13()
@@ -26,5 +40,11 @@ public class Khabarovclasstransports13 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)97); // uid 14419, Khabarov class (transports)
         setSpecific((byte)2); // uid 14421, 13
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Khabarovclasstransports13 createInstance()
+    {
+            return new Khabarovclasstransports13();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c3ebc6b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13506
+ * <p> Entity class <b><code>_121Moskva</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_121Moskva.createInstance()</code> or <code>new _121Moskva()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Cruiser = <code>3</code>; </li>
+ *     <li> SubCategory: SlavaclassCG  = <code>1</code>; </li>
+ *     <li> Specific: _121Moskva  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13506; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64aad6db. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileCruiser
+ * @see SubCategory
+
  */
-public class _121Moskva extends EntityType
+public final class _121Moskva extends EntityType
 {
     /** Default constructor */
     public _121Moskva()
@@ -26,5 +40,11 @@ public class _121Moskva extends EntityType
         setCategory((byte)3); // uid 13504, Guided-missile Cruiser
         setSubCategory((byte)1); // uid 13505, Slava class (CG)
         setSpecific((byte)1); // uid 13506, 121 Moskva
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _121Moskva createInstance()
+    {
+            return new _121Moskva();
     }
 }

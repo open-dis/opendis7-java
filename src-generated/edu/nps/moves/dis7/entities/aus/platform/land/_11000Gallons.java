@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1ef7fe8e;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29397
+ * <p> Entity class <b><code>_11000Gallons</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_11000Gallons.createInstance()</code> or <code>new _11000Gallons()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fuel Trailer = <code>15</code>; </li>
+ *     <li> SubCategory: _11000Gallons  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29397; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4cc77c2e. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FuelTrailer
+ * @see SubCategory
+
  */
-public class _11000Gallons extends EntityType
+public final class _11000Gallons extends EntityType
 {
     /** Default constructor */
     public _11000Gallons()
@@ -25,5 +39,11 @@ public class _11000Gallons extends EntityType
 
         setCategory((byte)15); // uid 29396, Fuel Trailer
         setSubCategory((byte)1); // uid 29397, 1-1000 Gallons
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _11000Gallons createInstance()
+    {
+            return new _11000Gallons();
     }
 }

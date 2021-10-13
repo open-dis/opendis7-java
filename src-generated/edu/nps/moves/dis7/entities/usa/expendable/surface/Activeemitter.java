@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@31b6fb14;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: SURFACE;
- *
- * Entity type uid: 22267
+ * <p> Entity class <b><code>Activeemitter</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Activeemitter.createInstance()</code> or <code>new Activeemitter()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active emitter = <code>4</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22267; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@59f76e56. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Activeemitter
+
  */
-public class Activeemitter extends EntityType
+public final class Activeemitter extends EntityType
 {
     /** Default constructor */
     public Activeemitter()
@@ -24,5 +37,11 @@ public class Activeemitter extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)4); // uid 22267, Active emitter
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Activeemitter createInstance()
+    {
+            return new Activeemitter();
     }
 }

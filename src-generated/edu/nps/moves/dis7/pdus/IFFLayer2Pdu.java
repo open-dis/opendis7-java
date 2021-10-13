@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -37,7 +36,7 @@ public class IFFLayer2Pdu extends IFFPdu implements Serializable
    protected List< IFFFundamentalParameterData > fundamentalIFFParameters = new ArrayList< IFFFundamentalParameterData >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IFFLayer2Pdu()
  {
  }
@@ -52,16 +51,19 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += layerHeader.getMarshalledSize();
-   marshalSize += beamData.getMarshalledSize();
+   if (layerHeader != null)
+       marshalSize += layerHeader.getMarshalledSize();
+   if (beamData != null)
+       marshalSize += beamData.getMarshalledSize();
    marshalSize += 1;  // secondaryOpParameter1
    marshalSize += 1;  // secondaryOpParameter2
    marshalSize += 2;  // numberOfParameters
-   for(int idx=0; idx < fundamentalIFFParameters.size(); idx++)
-   {
-        IFFFundamentalParameterData listElement = fundamentalIFFParameters.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (fundamentalIFFParameters != null)
+       for (int idx=0; idx < fundamentalIFFParameters.size(); idx++)
+       {
+            IFFFundamentalParameterData listElement = fundamentalIFFParameters.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -178,7 +180,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(secondaryOpParameter2);
        dos.writeShort(fundamentalIFFParameters.size());
 
-       for(int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
+       for (int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
        {
             IFFFundamentalParameterData aIFFFundamentalParameterData = fundamentalIFFParameters.get(idx);
             aIFFFundamentalParameterData.marshal(dos);
@@ -214,7 +216,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         numberOfParameters = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfParameters; idx++)
+        for (int idx = 0; idx < numberOfParameters; idx++)
         {
             IFFFundamentalParameterData anX = new IFFFundamentalParameterData();
             uPosition += anX.unmarshal(dis);
@@ -246,7 +248,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)secondaryOpParameter2);
    byteBuffer.putShort( (short)fundamentalIFFParameters.size());
 
-   for(int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
+   for (int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
    {
         IFFFundamentalParameterData aIFFFundamentalParameterData = fundamentalIFFParameters.get(idx);
         aIFFFundamentalParameterData.marshal(byteBuffer);
@@ -267,18 +269,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    layerHeader.unmarshal(byteBuffer);
-    beamData.unmarshal(byteBuffer);
-    secondaryOpParameter1 = (byte)(byteBuffer.get() & 0xFF);
-    secondaryOpParameter2 = (byte)(byteBuffer.get() & 0xFF);
-    numberOfParameters = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfParameters; idx++)
+    try
     {
-    IFFFundamentalParameterData anX = new IFFFundamentalParameterData();
-    anX.unmarshal(byteBuffer);
-    fundamentalIFFParameters.add(anX);
-    }
+        // attribute layerHeader marked as not serialized
+        layerHeader.unmarshal(byteBuffer);
+        // attribute beamData marked as not serialized
+        beamData.unmarshal(byteBuffer);
+        // attribute secondaryOpParameter1 marked as not serialized
+        secondaryOpParameter1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute secondaryOpParameter2 marked as not serialized
+        secondaryOpParameter2 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfParameters marked as not serialized
+        numberOfParameters = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute fundamentalIFFParameters marked as not serialized
+        for (int idx = 0; idx < numberOfParameters; idx++)
+        {
+        IFFFundamentalParameterData anX = new IFFFundamentalParameterData();
+        anX.unmarshal(byteBuffer);
+        fundamentalIFFParameters.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -312,7 +327,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (secondaryOpParameter1 == rhs.secondaryOpParameter1)) ivarsEqual = false;
      if( ! (secondaryOpParameter2 == rhs.secondaryOpParameter2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
+     for (int idx = 0; idx < fundamentalIFFParameters.size(); idx++)
         if( ! ( fundamentalIFFParameters.get(idx).equals(rhs.fundamentalIFFParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

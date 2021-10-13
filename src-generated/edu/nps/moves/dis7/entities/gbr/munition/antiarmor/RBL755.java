@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dd737ea;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 28717
+ * <p> Entity class <b><code>RBL755</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBL755.createInstance()</code> or <code>new RBL755()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: BL755ClusterBomb  = <code>8</code>; </li>
+ *     <li> Specific: RBL755  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28717; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26bb92e2. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class RBL755 extends EntityType
+public final class RBL755 extends EntityType
 {
     /** Default constructor */
     public RBL755()
@@ -26,5 +40,11 @@ public class RBL755 extends EntityType
         setCategory((byte)2); // uid 20984, Ballistic
         setSubCategory((byte)8); // uid 28714, BL755 Cluster Bomb
         setSpecific((byte)3); // uid 28717, RBL755
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBL755 createInstance()
+    {
+            return new RBL755();
     }
 }

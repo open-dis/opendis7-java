@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@582a764a;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27674
+ * <p> Entity class <b><code>CV90FOV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CV90FOV.createInstance()</code> or <code>new CV90FOV()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: CombatVehicle90CV90  = <code>1</code>; </li>
+ *     <li> Specific: CV90FOV  = <code>8</code>; </li>
+ *     <li> Entity type uid: 27674; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2241f05b. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class CV90FOV extends EntityType
+public final class CV90FOV extends EntityType
 {
     /** Default constructor */
     public CV90FOV()
@@ -26,5 +40,11 @@ public class CV90FOV extends EntityType
         setCategory((byte)2); // uid 17470, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 17471, Combat Vehicle 90 (CV90)
         setSpecific((byte)8); // uid 27674, CV90 FOV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CV90FOV createInstance()
+    {
+            return new CV90FOV();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10f7f7de;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16464
+ * <p> Entity class <b><code>Sellinex592</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Sellinex592.createInstance()</code> or <code>new Sellinex592()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: SassnitzclassCoastGuardvessels  = <code>5</code>; </li>
+ *     <li> Specific: Sellinex592  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16464; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@34f6515b. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class Sellinex592 extends EntityType
+public final class Sellinex592 extends EntityType
 {
     /** Default constructor */
     public Sellinex592()
@@ -26,5 +40,11 @@ public class Sellinex592 extends EntityType
         setCategory((byte)7); // uid 16416, Light/patrol craft
         setSubCategory((byte)5); // uid 16462, Sassnitz class (Coast Guard vessels)
         setSpecific((byte)2); // uid 16464, Sellin (ex-592)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Sellinex592 createInstance()
+    {
+            return new Sellinex592();
     }
 }

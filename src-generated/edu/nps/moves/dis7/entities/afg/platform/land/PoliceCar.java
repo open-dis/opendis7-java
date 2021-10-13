@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@f2a0b8e;
- * Country: Afghanistan (AFG);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31164
+ * <p> Entity class <b><code>PoliceCar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PoliceCar.createInstance()</code> or <code>new PoliceCar()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility/Emergency Car = <code>93</code>; </li>
+ *     <li> SubCategory: PoliceCar  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 31164; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@238e0d81. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityEmergencyCar
+ * @see SubCategory
+
  */
-public class PoliceCar extends EntityType
+public final class PoliceCar extends EntityType
 {
     /** Default constructor */
     public PoliceCar()
@@ -25,5 +39,11 @@ public class PoliceCar extends EntityType
 
         setCategory((byte)93); // uid 31163, Utility/Emergency Car
         setSubCategory((byte)2); // uid 31164, Police Car
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PoliceCar createInstance()
+    {
+            return new PoliceCar();
     }
 }

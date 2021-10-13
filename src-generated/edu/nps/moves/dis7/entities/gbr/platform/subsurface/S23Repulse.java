@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@480b57e2;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 15594
+ * <p> Entity class <b><code>S23Repulse</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S23Repulse.createInstance()</code> or <code>new S23Repulse()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missiles) = <code>1</code>; </li>
+ *     <li> SubCategory: ResolutionClass  = <code>2</code>; </li>
+ *     <li> Specific: S23Repulse  = <code>2</code>; </li>
+ *     <li> Entity type uid: 15594; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29b40b3. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissiles
+ * @see SubCategory
+
  */
-public class S23Repulse extends EntityType
+public final class S23Repulse extends EntityType
 {
     /** Default constructor */
     public S23Repulse()
@@ -26,5 +40,11 @@ public class S23Repulse extends EntityType
         setCategory((byte)1); // uid 15586, SSBN (Nuclear Ballistic Missiles)
         setSubCategory((byte)2); // uid 15592, Resolution Class
         setSpecific((byte)2); // uid 15594, S 23 Repulse
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S23Repulse createInstance()
+    {
+            return new S23Repulse();
     }
 }

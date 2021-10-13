@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@32cf48b7;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16925
+ * <p> Entity class <b><code>C801YJ1CSSN4Sardinelauncher</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C801YJ1CSSN4Sardinelauncher.createInstance()</code> or <code>new C801YJ1CSSN4Sardinelauncher()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: C801YJ1CSSN4Sardinelauncher  = <code>17</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16925; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@319b92f3. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class C801YJ1CSSN4Sardinelauncher extends EntityType
+public final class C801YJ1CSSN4Sardinelauncher extends EntityType
 {
     /** Default constructor */
     public C801YJ1CSSN4Sardinelauncher()
@@ -25,5 +39,11 @@ public class C801YJ1CSSN4Sardinelauncher extends EntityType
 
         setCategory((byte)5); // uid 16904, Towed Artillery
         setSubCategory((byte)17); // uid 16925, C-801/YJ-1/CSS-N-4 Sardine launcher
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C801YJ1CSSN4Sardinelauncher createInstance()
+    {
+            return new C801YJ1CSSN4Sardinelauncher();
     }
 }

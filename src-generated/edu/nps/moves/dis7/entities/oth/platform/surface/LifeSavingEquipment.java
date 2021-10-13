@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@537b32ef;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30867
+ * <p> Entity class <b><code>LifeSavingEquipment</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LifeSavingEquipment.createInstance()</code> or <code>new LifeSavingEquipment()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Life-Saving Equipment = <code>101</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30867; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3c818ac4. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LifeSavingEquipment
+
  */
-public class LifeSavingEquipment extends EntityType
+public final class LifeSavingEquipment extends EntityType
 {
     /** Default constructor */
     public LifeSavingEquipment()
@@ -24,5 +37,11 @@ public class LifeSavingEquipment extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)101); // uid 30867, Life-Saving Equipment
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LifeSavingEquipment createInstance()
+    {
+            return new LifeSavingEquipment();
     }
 }

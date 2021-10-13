@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f857e08;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24400
+ * <p> Entity class <b><code>PresidentTruman</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PresidentTruman.createInstance()</code> or <code>new PresidentTruman()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
+ *     <li> Specific: PresidentTruman  = <code>7</code>; </li>
+ *     <li> Entity type uid: 24400; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21a46ff1. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class PresidentTruman extends EntityType
+public final class PresidentTruman extends EntityType
 {
     /** Default constructor */
     public PresidentTruman()
@@ -26,5 +40,11 @@ public class PresidentTruman extends EntityType
         setCategory((byte)81); // uid 24393, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)3); // uid 24394, Container Ship
         setSpecific((byte)7); // uid 24400, President Truman
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PresidentTruman createInstance()
+    {
+            return new PresidentTruman();
     }
 }

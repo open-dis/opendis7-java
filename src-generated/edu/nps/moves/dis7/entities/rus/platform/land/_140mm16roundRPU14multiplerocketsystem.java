@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@18324f97;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12853
+ * <p> Entity class <b><code>_140mm16roundRPU14multiplerocketsystem</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_140mm16roundRPU14multiplerocketsystem.createInstance()</code> or <code>new _140mm16roundRPU14multiplerocketsystem()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed artillery = <code>5</code>; </li>
+ *     <li> SubCategory: _140mm16roundRPU14multiplerocketsystem  = <code>39</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12853; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@a567e72. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Towedartillery
+ * @see SubCategory
+
  */
-public class _140mm16roundRPU14multiplerocketsystem extends EntityType
+public final class _140mm16roundRPU14multiplerocketsystem extends EntityType
 {
     /** Default constructor */
     public _140mm16roundRPU14multiplerocketsystem()
@@ -25,5 +39,11 @@ public class _140mm16roundRPU14multiplerocketsystem extends EntityType
 
         setCategory((byte)5); // uid 12810, Towed artillery
         setSubCategory((byte)39); // uid 12853, 140-mm 16-round RPU-14 multiple rocket system
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _140mm16roundRPU14multiplerocketsystem createInstance()
+    {
+            return new _140mm16roundRPU14multiplerocketsystem();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19dfb72a;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25236
+ * <p> Entity class <b><code>ACPB93Childers</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ACPB93Childers.createInstance()</code> or <code>new ACPB93Childers()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ArmidaleClass  = <code>3</code>; </li>
+ *     <li> Specific: ACPB93Childers  = <code>11</code>; </li>
+ *     <li> Entity type uid: 25236; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21a06946. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ACPB93Childers extends EntityType
+public final class ACPB93Childers extends EntityType
 {
     /** Default constructor */
     public ACPB93Childers()
@@ -26,5 +40,11 @@ public class ACPB93Childers extends EntityType
         setCategory((byte)7); // uid 17524, Light/Patrol Craft
         setSubCategory((byte)3); // uid 25225, Armidale Class
         setSpecific((byte)11); // uid 25236, ACPB 93 Childers
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ACPB93Childers createInstance()
+    {
+            return new ACPB93Childers();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class AcousticEmitter extends Object implements Serializable
    protected byte  acousticIDNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AcousticEmitter()
  {
  }
@@ -42,8 +41,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += acousticSystemName.getMarshalledSize();
-   marshalSize += acousticFunction.getMarshalledSize();
+   if (acousticSystemName != null)
+       marshalSize += acousticSystemName.getMarshalledSize();
+   if (acousticFunction != null)
+       marshalSize += acousticFunction.getMarshalledSize();
    marshalSize += 1;  // acousticIDNumber
 
    return marshalSize;
@@ -178,9 +179,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    acousticSystemName = UAAcousticSystemName.unmarshalEnum(byteBuffer);
-    acousticFunction = UAAcousticEmitterSystemFunction.unmarshalEnum(byteBuffer);
-    acousticIDNumber = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute acousticSystemName marked as not serialized
+        acousticSystemName = UAAcousticSystemName.unmarshalEnum(byteBuffer);
+        // attribute acousticFunction marked as not serialized
+        acousticFunction = UAAcousticEmitterSystemFunction.unmarshalEnum(byteBuffer);
+        // attribute acousticIDNumber marked as not serialized
+        acousticIDNumber = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

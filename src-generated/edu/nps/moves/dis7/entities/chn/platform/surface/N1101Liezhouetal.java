@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@10e41621;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17293
+ * <p> Entity class <b><code>N1101Liezhouetal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>N1101Liezhouetal.createInstance()</code> or <code>new N1101Liezhouetal()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Leizhouclasstransportoilerlight  = <code>20</code>; </li>
+ *     <li> Specific: N1101Liezhouetal  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17293; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@419c5f1a. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class N1101Liezhouetal extends EntityType
+public final class N1101Liezhouetal extends EntityType
 {
     /** Default constructor */
     public N1101Liezhouetal()
@@ -26,5 +40,11 @@ public class N1101Liezhouetal extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)20); // uid 17292, Leizhou class (transport oiler-light)
         setSpecific((byte)1); // uid 17293, N1101 Liezhou et al
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static N1101Liezhouetal createInstance()
+    {
+            return new N1101Liezhouetal();
     }
 }

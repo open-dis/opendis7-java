@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@181e731e;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16604
+ * <p> Entity class <b><code>A61Elbe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A61Elbe.createInstance()</code> or <code>new A61Elbe()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Rheinclasstype401tenders  = <code>2</code>; </li>
+ *     <li> Specific: A61Elbe  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16604; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6853425f. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A61Elbe extends EntityType
+public final class A61Elbe extends EntityType
 {
     /** Default constructor */
     public A61Elbe()
@@ -26,5 +40,11 @@ public class A61Elbe extends EntityType
         setCategory((byte)16); // uid 16594, Auxiliary
         setSubCategory((byte)2); // uid 16602, Rhein class (type 401, tenders)
         setSpecific((byte)2); // uid 16604, A61 Elbe
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A61Elbe createInstance()
+    {
+            return new A61Elbe();
     }
 }

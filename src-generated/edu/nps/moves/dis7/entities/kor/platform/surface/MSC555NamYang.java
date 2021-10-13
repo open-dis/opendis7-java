@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fd1731c;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17704
+ * <p> Entity class <b><code>MSC555NamYang</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MSC555NamYang.createInstance()</code> or <code>new MSC555NamYang()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: USMSC389Classminesweepercoastal  = <code>3</code>; </li>
+ *     <li> Specific: MSC555NamYang  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17704; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fa590ba. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MSC555NamYang extends EntityType
+public final class MSC555NamYang extends EntityType
 {
     /** Default constructor */
     public MSC555NamYang()
@@ -26,5 +40,11 @@ public class MSC555NamYang extends EntityType
         setCategory((byte)8); // uid 17691, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 17703, US MSC 389 Class (minesweeper-coastal)
         setSpecific((byte)1); // uid 17704, MSC 555 Nam Yang
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MSC555NamYang createInstance()
+    {
+            return new MSC555NamYang();
     }
 }

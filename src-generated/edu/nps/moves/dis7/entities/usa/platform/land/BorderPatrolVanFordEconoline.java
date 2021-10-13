@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@54a2d96e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28320
+ * <p> Entity class <b><code>BorderPatrolVanFordEconoline</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BorderPatrolVanFordEconoline.createInstance()</code> or <code>new BorderPatrolVanFordEconoline()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Utility/Emergency Truck = <code>84</code>; </li>
+ *     <li> SubCategory: PolicePaddyWagon  = <code>20</code>; </li>
+ *     <li> Specific: PoliceVanFordEconoline  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28320; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@91f565d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitUtilityEmergencyTruck
+ * @see SubCategory
+
  */
-public class BorderPatrolVanFordEconoline extends EntityType
+public final class BorderPatrolVanFordEconoline extends EntityType
 {
     /** Default constructor */
     public BorderPatrolVanFordEconoline()
@@ -27,5 +41,11 @@ public class BorderPatrolVanFordEconoline extends EntityType
         setSubCategory((byte)20); // uid 28318, Police Paddy Wagon
         setSpecific((byte)1); // uid 28319, Police Van, Ford Econoline
         setExtra((byte)1); // uid 28320, Border Patrol Van, Ford Econoline
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BorderPatrolVanFordEconoline createInstance()
+    {
+            return new BorderPatrolVanFordEconoline();
     }
 }

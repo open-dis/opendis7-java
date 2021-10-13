@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e8bccfb;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 22847
+ * <p> Entity class <b><code>PorkTroughSNAR126</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PorkTroughSNAR126.createInstance()</code> or <code>new PorkTroughSNAR126()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: BattlefieldSurveillance  = <code>24</code>; </li>
+ *     <li> Specific: PorkTroughSNAR126  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22847; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8debe42. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class PorkTroughSNAR126 extends EntityType
+public final class PorkTroughSNAR126 extends EntityType
 {
     /** Default constructor */
     public PorkTroughSNAR126()
@@ -26,5 +40,11 @@ public class PorkTroughSNAR126 extends EntityType
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)24); // uid 22448, Battlefield Surveillance
         setSpecific((byte)3); // uid 22847, Pork Trough (SNAR-1/2/6)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PorkTroughSNAR126 createInstance()
+    {
+            return new PorkTroughSNAR126();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45cd7bc5;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15130
+ * <p> Entity class <b><code>WestlandSeaKing</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WestlandSeaKing.createInstance()</code> or <code>new WestlandSeaKing()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: WestlandSeaKing  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 15130; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@606f81b5. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class WestlandSeaKing extends EntityType
+public final class WestlandSeaKing extends EntityType
 {
     /** Default constructor */
     public WestlandSeaKing()
@@ -25,5 +39,11 @@ public class WestlandSeaKing extends EntityType
 
         setCategory((byte)22); // uid 15129, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)1); // uid 15130, Westland Sea King
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WestlandSeaKing createInstance()
+    {
+            return new WestlandSeaKing();
     }
 }

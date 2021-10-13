@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@c0c2f8d;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25504
+ * <p> Entity class <b><code>MHV851Sabotoeren</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MHV851Sabotoeren.createInstance()</code> or <code>new MHV851Sabotoeren()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: MHV850Class  = <code>3</code>; </li>
+ *     <li> Specific: MHV851Sabotoeren  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25504; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6150c3ec. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class MHV851Sabotoeren extends EntityType
+public final class MHV851Sabotoeren extends EntityType
 {
     /** Default constructor */
     public MHV851Sabotoeren()
@@ -26,5 +40,11 @@ public class MHV851Sabotoeren extends EntityType
         setCategory((byte)63); // uid 25472, Coast Guard Boats
         setSubCategory((byte)3); // uid 25503, MHV 850 Class
         setSpecific((byte)1); // uid 25504, MHV-851 Sabotoeren
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MHV851Sabotoeren createInstance()
+    {
+            return new MHV851Sabotoeren();
     }
 }

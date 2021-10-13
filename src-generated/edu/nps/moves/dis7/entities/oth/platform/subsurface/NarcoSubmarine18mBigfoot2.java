@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dc51783;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 29697
+ * <p> Entity class <b><code>NarcoSubmarine18mBigfoot2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NarcoSubmarine18mBigfoot2.createInstance()</code> or <code>new NarcoSubmarine18mBigfoot2()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Semi-Submersible Boats = <code>82</code>; </li>
+ *     <li> SubCategory: GenericNarcoSubmarine  = <code>1</code>; </li>
+ *     <li> Specific: NarcoSubmarine18mBigfoot2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29697; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b69d40d. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SemiSubmersibleBoats
+ * @see SubCategory
+
  */
-public class NarcoSubmarine18mBigfoot2 extends EntityType
+public final class NarcoSubmarine18mBigfoot2 extends EntityType
 {
     /** Default constructor */
     public NarcoSubmarine18mBigfoot2()
@@ -26,5 +40,11 @@ public class NarcoSubmarine18mBigfoot2 extends EntityType
         setCategory((byte)82); // uid 29695, Semi-Submersible Boats
         setSubCategory((byte)1); // uid 29696, Generic Narco-Submarine
         setSpecific((byte)1); // uid 29697, Narco-Submarine, 18m, Bigfoot-2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NarcoSubmarine18mBigfoot2 createInstance()
+    {
+            return new NarcoSubmarine18mBigfoot2();
     }
 }

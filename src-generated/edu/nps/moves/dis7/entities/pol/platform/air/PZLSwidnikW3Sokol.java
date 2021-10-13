@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2c42b421;
- * Country: Poland (POL);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24805
+ * <p> Entity class <b><code>PZLSwidnikW3Sokol</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PZLSwidnikW3Sokol.createInstance()</code> or <code>new PZLSwidnikW3Sokol()</code>. </p>
+ * <ul>
+ *     <li> Country: Poland (POL) = <code>175</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: PZLSwidnikW3Sokol  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24805; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5b56b654. </p>
+ * @see Country#POLAND_POL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class PZLSwidnikW3Sokol extends EntityType
+public final class PZLSwidnikW3Sokol extends EntityType
 {
     /** Default constructor */
     public PZLSwidnikW3Sokol()
@@ -25,5 +39,11 @@ public class PZLSwidnikW3Sokol extends EntityType
 
         setCategory((byte)21); // uid 24803, Utility Helicopter
         setSubCategory((byte)2); // uid 24805, PZL-Swidnik W-3 Sokol
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PZLSwidnikW3Sokol createInstance()
+    {
+            return new PZLSwidnikW3Sokol();
     }
 }

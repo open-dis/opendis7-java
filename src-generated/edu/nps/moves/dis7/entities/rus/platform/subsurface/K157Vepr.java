@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@481e91b6;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27213
+ * <p> Entity class <b><code>K157Vepr</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K157Vepr.createInstance()</code> or <code>new K157Vepr()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: AkulaIIClass  = <code>9</code>; </li>
+ *     <li> Specific: K157Vepr  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27213; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63411512. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class K157Vepr extends EntityType
+public final class K157Vepr extends EntityType
 {
     /** Default constructor */
     public K157Vepr()
@@ -26,5 +40,11 @@ public class K157Vepr extends EntityType
         setCategory((byte)3); // uid 14779, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)9); // uid 14796, Akula II Class
         setSpecific((byte)1); // uid 27213, K-157 Vepr
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K157Vepr createInstance()
+    {
+            return new K157Vepr();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@14b95942;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 29088
+ * <p> Entity class <b><code>SM2ERBlockIIIRIM67D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SM2ERBlockIIIRIM67D.createInstance()</code> or <code>new SM2ERBlockIIIRIM67D()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: StandardMissile  = <code>27</code>; </li>
+ *     <li> Specific: StandardERRIM67RIM156  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29088; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2326180c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SM2ERBlockIIIRIM67D extends EntityType
+public final class SM2ERBlockIIIRIM67D extends EntityType
 {
     /** Default constructor */
     public SM2ERBlockIIIRIM67D()
@@ -27,5 +41,11 @@ public class SM2ERBlockIIIRIM67D extends EntityType
         setSubCategory((byte)27); // uid 19475, Standard Missile
         setSpecific((byte)2); // uid 19486, Standard ER (RIM-67 / RIM-156)
         setExtra((byte)3); // uid 29088, SM-2ER Block III (RIM-67D)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SM2ERBlockIIIRIM67D createInstance()
+    {
+            return new SM2ERBlockIIIRIM67D();
     }
 }

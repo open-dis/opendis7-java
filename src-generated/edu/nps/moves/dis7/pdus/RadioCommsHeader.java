@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -24,7 +23,7 @@ public class RadioCommsHeader extends Object implements Serializable
    protected short  radioNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public RadioCommsHeader()
  {
  }
@@ -38,7 +37,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += radioReferenceID.getMarshalledSize();
+   if (radioReferenceID != null)
+       marshalSize += radioReferenceID.getMarshalledSize();
    marshalSize += 2;  // radioNumber
 
    return marshalSize;
@@ -152,8 +152,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    radioReferenceID.unmarshal(byteBuffer);
-    radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute radioReferenceID marked as not serialized
+        radioReferenceID.unmarshal(byteBuffer);
+        // attribute radioNumber marked as not serialized
+        radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

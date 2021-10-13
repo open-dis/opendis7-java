@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@532721fd;
- * Country: Libya (LBY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27796
+ * <p> Entity class <b><code>_524Shehab</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_524Shehab.createInstance()</code> or <code>new _524Shehab()</code>. </p>
+ * <ul>
+ *     <li> Country: Libya (LBY) = <code>126</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft (PC) = <code>7</code>; </li>
+ *     <li> SubCategory: Combattante2GClass  = <code>1</code>; </li>
+ *     <li> Specific: _524Shehab  = <code>4</code>; </li>
+ *     <li> Entity type uid: 27796; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cea706c. </p>
+ * @see Country#LIBYA_LBY
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraftPC
+ * @see SubCategory
+
  */
-public class _524Shehab extends EntityType
+public final class _524Shehab extends EntityType
 {
     /** Default constructor */
     public _524Shehab()
@@ -26,5 +40,11 @@ public class _524Shehab extends EntityType
         setCategory((byte)7); // uid 18918, Light/Patrol Craft (PC)
         setSubCategory((byte)1); // uid 18919, Combattante 2 G Class
         setSpecific((byte)4); // uid 27796, 524 Shehab
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _524Shehab createInstance()
+    {
+            return new _524Shehab();
     }
 }

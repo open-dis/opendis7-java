@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73613ae5;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10822
+ * <p> Entity class <b><code>F35CNaval</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F35CNaval.createInstance()</code> or <code>new F35CNaval()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: F35JointStrikeFighterJSF  = <code>12</code>; </li>
+ *     <li> Specific: F35CNaval  = <code>2</code>; </li>
+ *     <li> Entity type uid: 10822; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c8f60f3. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class F35CNaval extends EntityType
+public final class F35CNaval extends EntityType
 {
     /** Default constructor */
     public F35CNaval()
@@ -26,5 +40,11 @@ public class F35CNaval extends EntityType
         setCategory((byte)1); // uid 10755, Fighter/Air Defense
         setSubCategory((byte)12); // uid 10820, F-35 Joint Strike Fighter (JSF)
         setSpecific((byte)2); // uid 10822, F-35C Naval
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F35CNaval createInstance()
+    {
+            return new F35CNaval();
     }
 }

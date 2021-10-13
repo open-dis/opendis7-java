@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ef41c66;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17966
+ * <p> Entity class <b><code>C10ALTemsah</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C10ALTemsah.createInstance()</code> or <code>new C10ALTemsah()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: LCM  = <code>1</code>; </li>
+ *     <li> Specific: C10ALTemsah  = <code>3</code>; </li>
+ *     <li> Entity type uid: 17966; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7728643a. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class C10ALTemsah extends EntityType
+public final class C10ALTemsah extends EntityType
 {
     /** Default constructor */
     public C10ALTemsah()
@@ -26,5 +40,11 @@ public class C10ALTemsah extends EntityType
         setCategory((byte)11); // uid 17962, Landing Craft
         setSubCategory((byte)1); // uid 17963, LCM
         setSpecific((byte)3); // uid 17966, C10 AL Temsah
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C10ALTemsah createInstance()
+    {
+            return new C10ALTemsah();
     }
 }

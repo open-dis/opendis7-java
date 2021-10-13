@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d28bcd5;
- * Country: Papua New Guinea (PNG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31699
+ * <p> Entity class <b><code>_401TedDiro</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_401TedDiro.createInstance()</code> or <code>new _401TedDiro()</code>. </p>
+ * <ul>
+ *     <li> Country: Papua New Guinea (PNG) = <code>169</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: GuardianClassPacificPatrolBoatsPPBR  = <code>2</code>; </li>
+ *     <li> Specific: _401TedDiro  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31699; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@100f9bbe. </p>
+ * @see Country#PAPUA_NEW_GUINEA_PNG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _401TedDiro extends EntityType
+public final class _401TedDiro extends EntityType
 {
     /** Default constructor */
     public _401TedDiro()
@@ -26,5 +40,11 @@ public class _401TedDiro extends EntityType
         setCategory((byte)7); // uid 26739, Light/Patrol Craft
         setSubCategory((byte)2); // uid 31698, Guardian Class, Pacific Patrol Boats (PPB-R)
         setSpecific((byte)1); // uid 31699, 401 Ted Diro
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _401TedDiro createInstance()
+    {
+            return new _401TedDiro();
     }
 }

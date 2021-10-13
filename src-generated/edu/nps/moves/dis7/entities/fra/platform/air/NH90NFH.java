@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60bd273d;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28190
+ * <p> Entity class <b><code>NH90NFH</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NH90NFH.createInstance()</code> or <code>new NH90NFH()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: NHIndustriesNH90  = <code>5</code>; </li>
+ *     <li> Specific: NH90NFH  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28190; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fb3ee4e. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class NH90NFH extends EntityType
+public final class NH90NFH extends EntityType
 {
     /** Default constructor */
     public NH90NFH()
@@ -26,5 +40,11 @@ public class NH90NFH extends EntityType
         setCategory((byte)22); // uid 15895, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)5); // uid 24822, NH-Industries NH-90
         setSpecific((byte)2); // uid 28190, NH-90 NFH
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NH90NFH createInstance()
+    {
+            return new NH90NFH();
     }
 }

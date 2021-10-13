@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@257ef9ed;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29943
+ * <p> Entity class <b><code>CTarget9</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CTarget9.createInstance()</code> or <code>new CTarget9()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned Surface Vehicle (USV) = <code>19</code>; </li>
+ *     <li> SubCategory: RemoteControlledSurfaceTarget  = <code>1</code>; </li>
+ *     <li> Specific: CTarget9  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29943; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@290e8cab. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UnmannedSurfaceVehicleUSV
+ * @see SubCategory
+
  */
-public class CTarget9 extends EntityType
+public final class CTarget9 extends EntityType
 {
     /** Default constructor */
     public CTarget9()
@@ -26,5 +40,11 @@ public class CTarget9 extends EntityType
         setCategory((byte)19); // uid 29939, Unmanned Surface Vehicle (USV)
         setSubCategory((byte)1); // uid 29940, Remote Controlled Surface Target
         setSpecific((byte)3); // uid 29943, C-Target 9
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CTarget9 createInstance()
+    {
+            return new CTarget9();
     }
 }

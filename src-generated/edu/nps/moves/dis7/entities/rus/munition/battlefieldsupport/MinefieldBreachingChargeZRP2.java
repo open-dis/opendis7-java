@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a3cf824;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 25113
+ * <p> Entity class <b><code>MinefieldBreachingChargeZRP2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MinefieldBreachingChargeZRP2.createInstance()</code> or <code>new MinefieldBreachingChargeZRP2()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: ChargesandDemolitions  = <code>2</code>; </li>
+ *     <li> Specific: MinefieldBreachingChargeZRP2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25113; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@629b780f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class MinefieldBreachingChargeZRP2 extends EntityType
+public final class MinefieldBreachingChargeZRP2 extends EntityType
 {
     /** Default constructor */
     public MinefieldBreachingChargeZRP2()
@@ -26,5 +40,11 @@ public class MinefieldBreachingChargeZRP2 extends EntityType
         setCategory((byte)3); // uid 25056, Fixed
         setSubCategory((byte)2); // uid 25112, Charges and Demolitions
         setSpecific((byte)1); // uid 25113, Minefield Breaching Charge, ZRP-2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MinefieldBreachingChargeZRP2 createInstance()
+    {
+            return new MinefieldBreachingChargeZRP2();
     }
 }

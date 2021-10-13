@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4130a648;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29926
+ * <p> Entity class <b><code>TGXLightAugmentedRadarTowTarget</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TGXLightAugmentedRadarTowTarget.createInstance()</code> or <code>new TGXLightAugmentedRadarTowTarget()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: TowedAirTarget  = <code>39</code>; </li>
+ *     <li> Specific: TGXLightAugmentedRadarTowTarget  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29926; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58a84a12. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class TGXLightAugmentedRadarTowTarget extends EntityType
+public final class TGXLightAugmentedRadarTowTarget extends EntityType
 {
     /** Default constructor */
     public TGXLightAugmentedRadarTowTarget()
@@ -26,5 +40,11 @@ public class TGXLightAugmentedRadarTowTarget extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)39); // uid 29924, Towed Air Target
         setSpecific((byte)2); // uid 29926, TGX Light Augmented Radar Tow Target
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TGXLightAugmentedRadarTowTarget createInstance()
+    {
+            return new TGXLightAugmentedRadarTowTarget();
     }
 }

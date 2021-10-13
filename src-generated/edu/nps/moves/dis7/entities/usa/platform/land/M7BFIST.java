@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ebffb44;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10076
+ * <p> Entity class <b><code>M7BFIST</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M7BFIST.createInstance()</code> or <code>new M7BFIST()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: FMCM2M3Bradley  = <code>1</code>; </li>
+ *     <li> Specific: M7BFIST  = <code>8</code>; </li>
+ *     <li> Entity type uid: 10076; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@138aa3cc. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class M7BFIST extends EntityType
+public final class M7BFIST extends EntityType
 {
     /** Default constructor */
     public M7BFIST()
@@ -26,5 +40,11 @@ public class M7BFIST extends EntityType
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 10068, FMC M2/M3 Bradley
         setSpecific((byte)8); // uid 10076, M7 BFIST
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M7BFIST createInstance()
+    {
+            return new M7BFIST();
     }
 }

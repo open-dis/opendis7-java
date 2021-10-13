@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b3755f4;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30624
+ * <p> Entity class <b><code>M60D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M60D.createInstance()</code> or <code>new M60D()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons = <code>9</code>; </li>
+ *     <li> SubCategory: _762mm30caliber  = <code>3</code>; </li>
+ *     <li> Specific: M60D  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30624; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67ceeffd. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeapons
+ * @see SubCategory
+
  */
-public class M60D extends EntityType
+public final class M60D extends EntityType
 {
     /** Default constructor */
     public M60D()
@@ -26,5 +40,11 @@ public class M60D extends EntityType
         setCategory((byte)9); // uid 30622, M - Weapons
         setSubCategory((byte)3); // uid 30623, 7.62 mm/.30 caliber
         setSpecific((byte)1); // uid 30624, M60D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M60D createInstance()
+    {
+            return new M60D();
     }
 }

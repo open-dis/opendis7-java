@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class EntityType extends Object implements Serializable
    protected byte  extra;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityType()
  {
  }
@@ -54,9 +53,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += entityKind.getMarshalledSize();
-   marshalSize += domain.getMarshalledSize();
-   marshalSize += country.getMarshalledSize();
+   if (entityKind != null)
+       marshalSize += entityKind.getMarshalledSize();
+   if (domain != null)
+       marshalSize += domain.getMarshalledSize();
+   if (country != null)
+       marshalSize += country.getMarshalledSize();
    marshalSize += 1;  // category
    marshalSize += 1;  // subCategory
    marshalSize += 1;  // specific
@@ -294,13 +296,27 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    entityKind = EntityKind.unmarshalEnum(byteBuffer);
-    domain.unmarshal(byteBuffer);
-    country = Country.unmarshalEnum(byteBuffer);
-    category = (byte)(byteBuffer.get() & 0xFF);
-    subCategory = (byte)(byteBuffer.get() & 0xFF);
-    specific = (byte)(byteBuffer.get() & 0xFF);
-    extra = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute entityKind marked as not serialized
+        entityKind = EntityKind.unmarshalEnum(byteBuffer);
+        // attribute domain marked as not serialized
+        domain.unmarshal(byteBuffer);
+        // attribute country marked as not serialized
+        country = Country.unmarshalEnum(byteBuffer);
+        // attribute category marked as not serialized
+        category = (byte)(byteBuffer.get() & 0xFF);
+        // attribute subCategory marked as not serialized
+        subCategory = (byte)(byteBuffer.get() & 0xFF);
+        // attribute specific marked as not serialized
+        specific = (byte)(byteBuffer.get() & 0xFF);
+        // attribute extra marked as not serialized
+        extra = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e1b061;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15333
+ * <p> Entity class <b><code>M2009Itchen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M2009Itchen.createInstance()</code> or <code>new M2009Itchen()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Riverclassminesweeperscoastal  = <code>2</code>; </li>
+ *     <li> Specific: M2009Itchen  = <code>7</code>; </li>
+ *     <li> Entity type uid: 15333; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a2d3909. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M2009Itchen extends EntityType
+public final class M2009Itchen extends EntityType
 {
     /** Default constructor */
     public M2009Itchen()
@@ -26,5 +40,11 @@ public class M2009Itchen extends EntityType
         setCategory((byte)8); // uid 15311, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 15326, River class (minesweepers, coastal)
         setSpecific((byte)7); // uid 15333, M 2009 Itchen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M2009Itchen createInstance()
+    {
+            return new M2009Itchen();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f36e8d1;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 15591
+ * <p> Entity class <b><code>S31Vengeance</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S31Vengeance.createInstance()</code> or <code>new S31Vengeance()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missiles) = <code>1</code>; </li>
+ *     <li> SubCategory: VanguardClass  = <code>1</code>; </li>
+ *     <li> Specific: S31Vengeance  = <code>4</code>; </li>
+ *     <li> Entity type uid: 15591; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45f756e6. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissiles
+ * @see SubCategory
+
  */
-public class S31Vengeance extends EntityType
+public final class S31Vengeance extends EntityType
 {
     /** Default constructor */
     public S31Vengeance()
@@ -26,5 +40,11 @@ public class S31Vengeance extends EntityType
         setCategory((byte)1); // uid 15586, SSBN (Nuclear Ballistic Missiles)
         setSubCategory((byte)1); // uid 15587, Vanguard Class
         setSpecific((byte)4); // uid 15591, S31 Vengeance
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S31Vengeance createInstance()
+    {
+            return new S31Vengeance();
     }
 }

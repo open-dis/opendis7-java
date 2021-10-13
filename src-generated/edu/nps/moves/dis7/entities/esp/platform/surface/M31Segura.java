@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dc79225;
- * Country: Spain (ESP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19023
+ * <p> Entity class <b><code>M31Segura</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M31Segura.createInstance()</code> or <code>new M31Segura()</code>. </p>
+ * <ul>
+ *     <li> Country: Spain (ESP) = <code>198</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship = <code>8</code>; </li>
+ *     <li> SubCategory: SeguraClassMinehuntersMHC  = <code>1</code>; </li>
+ *     <li> Specific: M31Segura  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19023; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d3ca6c7. </p>
+ * @see Country#SPAIN_ESP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShip
+ * @see SubCategory
+
  */
-public class M31Segura extends EntityType
+public final class M31Segura extends EntityType
 {
     /** Default constructor */
     public M31Segura()
@@ -26,5 +40,11 @@ public class M31Segura extends EntityType
         setCategory((byte)8); // uid 19021, Mine Countermeasure Ship
         setSubCategory((byte)1); // uid 19022, Segura Class (Minehunters) (MHC)
         setSpecific((byte)1); // uid 19023, M31 Segura
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M31Segura createInstance()
+    {
+            return new M31Segura();
     }
 }

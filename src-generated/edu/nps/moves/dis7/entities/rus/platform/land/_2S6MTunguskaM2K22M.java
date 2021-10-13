@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@388b401d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32359
+ * <p> Entity class <b><code>_2S6MTunguskaM2K22M</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_2S6MTunguskaM2K22M.createInstance()</code> or <code>new _2S6MTunguskaM2K22M()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>12</code>; </li>
+ *     <li> Specific: _2S6TunguskaSA19Grison2K22  = <code>4</code>; </li>
+ *     <li> Entity type uid: 32359; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6f8e0cee. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class _2S6MTunguskaM2K22M extends EntityType
+public final class _2S6MTunguskaM2K22M extends EntityType
 {
     /** Default constructor */
     public _2S6MTunguskaM2K22M()
@@ -27,5 +41,11 @@ public class _2S6MTunguskaM2K22M extends EntityType
         setSubCategory((byte)12); // uid 13112, Self-Propelled VSHORAD Gun/Missile System
         setSpecific((byte)4); // uid 13120, 2S6 Tunguska SA-19 Grison (2K22)
         setExtra((byte)1); // uid 32359, 2S6M Tunguska-M (2K22M)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _2S6MTunguskaM2K22M createInstance()
+    {
+            return new _2S6MTunguskaM2K22M();
     }
 }

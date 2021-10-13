@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d75e7af;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27187
+ * <p> Entity class <b><code>K506Zelenograd</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K506Zelenograd.createInstance()</code> or <code>new K506Zelenograd()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSBN (Nuclear Ballistic Missile) = <code>1</code>; </li>
+ *     <li> SubCategory: DeltaIIIClass  = <code>3</code>; </li>
+ *     <li> Specific: K506Zelenograd  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27187; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79d06bbd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSBNNuclearBallisticMissile
+ * @see SubCategory
+
  */
-public class K506Zelenograd extends EntityType
+public final class K506Zelenograd extends EntityType
 {
     /** Default constructor */
     public K506Zelenograd()
@@ -26,5 +40,11 @@ public class K506Zelenograd extends EntityType
         setCategory((byte)1); // uid 14759, SSBN (Nuclear Ballistic Missile)
         setSubCategory((byte)3); // uid 14762, Delta III Class
         setSpecific((byte)3); // uid 27187, K-506 Zelenograd
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K506Zelenograd createInstance()
+    {
+            return new K506Zelenograd();
     }
 }

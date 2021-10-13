@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bf9ea6b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11872
+ * <p> Entity class <b><code>TAGM20Redstone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAGM20Redstone.createInstance()</code> or <code>new TAGM20Redstone()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: MissileRangeInstrumentationShipsSpecialMissionSupport  = <code>18</code>; </li>
+ *     <li> Specific: TAGM20Redstone  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1416ff46. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAGM20Redstone extends EntityType
+public final class TAGM20Redstone extends EntityType
 {
     /** Default constructor */
     public TAGM20Redstone()
@@ -26,5 +40,11 @@ public class TAGM20Redstone extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)18); // uid 11871, Missile Range Instrumentation Ships (Special Mission Support)
         setSpecific((byte)1); // uid 11872, TAGM 20 Redstone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAGM20Redstone createInstance()
+    {
+            return new TAGM20Redstone();
     }
 }

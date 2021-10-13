@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1de12397;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30855
+ * <p> Entity class <b><code>SlingLoadPalletofCrates7500lbs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadPalletofCrates7500lbs.createInstance()</code> or <code>new SlingLoadPalletofCrates7500lbs()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Pallet of Crates = <code>9</code>; </li>
+ *     <li> SubCategory: SlingLoadPalletofCrates7500lbs  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30855; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@563263a. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadPalletofCrates
+ * @see SubCategory
+
  */
-public class SlingLoadPalletofCrates7500lbs extends EntityType
+public final class SlingLoadPalletofCrates7500lbs extends EntityType
 {
     /** Default constructor */
     public SlingLoadPalletofCrates7500lbs()
@@ -25,5 +39,11 @@ public class SlingLoadPalletofCrates7500lbs extends EntityType
 
         setCategory((byte)9); // uid 30853, Sling Load, Pallet of Crates
         setSubCategory((byte)2); // uid 30855, Sling Load, Pallet of Crates, 7500 lbs
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadPalletofCrates7500lbs createInstance()
+    {
+            return new SlingLoadPalletofCrates7500lbs();
     }
 }

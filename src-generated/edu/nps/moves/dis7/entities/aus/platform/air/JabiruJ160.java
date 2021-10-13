@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28f67ac7;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29572
+ * <p> Entity class <b><code>JabiruJ160</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>JabiruJ160.createInstance()</code> or <code>new JabiruJ160()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Light Sport (up to 1320 lbs / 600 kg) = <code>84</code>; </li>
+ *     <li> SubCategory: SinglePistonEngine  = <code>11</code>; </li>
+ *     <li> Specific: JabiruJ160  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29572; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29444d75. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftLightSportupto1320lbs600kg
+ * @see SubCategory
+
  */
-public class JabiruJ160 extends EntityType
+public final class JabiruJ160 extends EntityType
 {
     /** Default constructor */
     public JabiruJ160()
@@ -26,5 +40,11 @@ public class JabiruJ160 extends EntityType
         setCategory((byte)84); // uid 29569, Civilian Fixed Wing Aircraft, Light Sport (up to 1320 lbs / 600 kg)
         setSubCategory((byte)11); // uid 29570, Single Piston Engine
         setSpecific((byte)2); // uid 29572, Jabiru J160
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static JabiruJ160 createInstance()
+    {
+            return new JabiruJ160();
     }
 }

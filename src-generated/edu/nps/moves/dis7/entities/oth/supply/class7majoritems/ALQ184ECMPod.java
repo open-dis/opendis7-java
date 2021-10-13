@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3568ea59;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_7_MAJOR_ITEMS;
- *
- * Entity type uid: 30766
+ * <p> Entity class <b><code>ALQ184ECMPod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ALQ184ECMPod.createInstance()</code> or <code>new ALQ184ECMPod()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: ECM Pod = <code>23</code>; </li>
+ *     <li> SubCategory: ALQ184ECMPod  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30766; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@69a90b81. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see ECMPod
+ * @see SubCategory
+
  */
-public class ALQ184ECMPod extends EntityType
+public final class ALQ184ECMPod extends EntityType
 {
     /** Default constructor */
     public ALQ184ECMPod()
@@ -25,5 +39,11 @@ public class ALQ184ECMPod extends EntityType
 
         setCategory((byte)23); // uid 30763, ECM Pod
         setSubCategory((byte)3); // uid 30766, ALQ-184 ECM Pod
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ALQ184ECMPod createInstance()
+    {
+            return new ALQ184ECMPod();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3eb3232b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22862
+ * <p> Entity class <b><code>M93A1Fox</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M93A1Fox.createInstance()</code> or <code>new M93A1Fox()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: M93ArmoredReconnaissanceVehicle  = <code>30</code>; </li>
+ *     <li> Specific: M93A1Fox  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22862; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62d1dc3c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class M93A1Fox extends EntityType
+public final class M93A1Fox extends EntityType
 {
     /** Default constructor */
     public M93A1Fox()
@@ -26,5 +40,11 @@ public class M93A1Fox extends EntityType
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)30); // uid 10224, M93 Armored Reconnaissance Vehicle
         setSpecific((byte)1); // uid 22862, M93A1 Fox
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M93A1Fox createInstance()
+    {
+            return new M93A1Fox();
     }
 }

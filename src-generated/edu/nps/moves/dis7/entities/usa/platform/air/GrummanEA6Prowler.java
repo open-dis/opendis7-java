@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@628b819d;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11000
+ * <p> Entity class <b><code>GrummanEA6Prowler</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GrummanEA6Prowler.createInstance()</code> or <code>new GrummanEA6Prowler()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Electronic Warfare (EW) = <code>6</code>; </li>
+ *     <li> SubCategory: GrummanEA6Prowler  = <code>9</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 11000; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f5e16cf. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectronicWarfareEW
+ * @see SubCategory
+
  */
-public class GrummanEA6Prowler extends EntityType
+public final class GrummanEA6Prowler extends EntityType
 {
     /** Default constructor */
     public GrummanEA6Prowler()
@@ -25,5 +39,11 @@ public class GrummanEA6Prowler extends EntityType
 
         setCategory((byte)6); // uid 10990, Electronic Warfare (EW)
         setSubCategory((byte)9); // uid 11000, Grumman EA-6 Prowler
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GrummanEA6Prowler createInstance()
+    {
+            return new GrummanEA6Prowler();
     }
 }

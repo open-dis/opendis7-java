@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@450794b4;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25855
+ * <p> Entity class <b><code>GenericWreckerNormalIntegrated</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericWreckerNormalIntegrated.createInstance()</code> or <code>new GenericWreckerNormalIntegrated()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Utility/Emergency Truck = <code>84</code>; </li>
+ *     <li> SubCategory: GenericWreckerNormalIntegrated  = <code>44</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25855; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7e8e8651. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitUtilityEmergencyTruck
+ * @see SubCategory
+
  */
-public class GenericWreckerNormalIntegrated extends EntityType
+public final class GenericWreckerNormalIntegrated extends EntityType
 {
     /** Default constructor */
     public GenericWreckerNormalIntegrated()
@@ -25,5 +39,11 @@ public class GenericWreckerNormalIntegrated extends EntityType
 
         setCategory((byte)84); // uid 25837, Single Unit Utility/Emergency Truck
         setSubCategory((byte)44); // uid 25855, Generic Wrecker, Normal Integrated
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericWreckerNormalIntegrated createInstance()
+    {
+            return new GenericWreckerNormalIntegrated();
     }
 }

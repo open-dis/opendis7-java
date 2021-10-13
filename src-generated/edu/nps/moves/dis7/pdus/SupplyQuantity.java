@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class SupplyQuantity extends Object implements Serializable
    protected float  quantity;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public SupplyQuantity()
  {
  }
@@ -39,7 +38,8 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += supplyType.getMarshalledSize();
+   if (supplyType != null)
+       marshalSize += supplyType.getMarshalledSize();
    marshalSize += 4;  // quantity
 
    return marshalSize;
@@ -146,8 +146,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    supplyType.unmarshal(byteBuffer);
-    quantity = byteBuffer.getFloat();
+    try
+    {
+        // attribute supplyType marked as not serialized
+        supplyType.unmarshal(byteBuffer);
+        // attribute quantity marked as not serialized
+        quantity = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

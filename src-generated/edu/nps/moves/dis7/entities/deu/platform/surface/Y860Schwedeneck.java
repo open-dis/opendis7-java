@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@146dfe6;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16705
+ * <p> Entity class <b><code>Y860Schwedeneck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y860Schwedeneck.createInstance()</code> or <code>new Y860Schwedeneck()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: Schwedeneckclasstype748multipurpose  = <code>6</code>; </li>
+ *     <li> Specific: Y860Schwedeneck  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16705; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7393222f. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Y860Schwedeneck extends EntityType
+public final class Y860Schwedeneck extends EntityType
 {
     /** Default constructor */
     public Y860Schwedeneck()
@@ -26,5 +40,11 @@ public class Y860Schwedeneck extends EntityType
         setCategory((byte)18); // uid 16684, Utility
         setSubCategory((byte)6); // uid 16704, Schwedeneck class (type 748, multipurpose)
         setSpecific((byte)1); // uid 16705, Y 860 Schwedeneck
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y860Schwedeneck createInstance()
+    {
+            return new Y860Schwedeneck();
     }
 }

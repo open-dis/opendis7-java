@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4bdc8b5d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31863
+ * <p> Entity class <b><code>R330ZhJammerTrailer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>R330ZhJammerTrailer.createInstance()</code> or <code>new R330ZhJammerTrailer()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: Ural43206x64500kgtrucks  = <code>11</code>; </li>
+ *     <li> Specific: Ural43203  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31863; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2d66530f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class R330ZhJammerTrailer extends EntityType
+public final class R330ZhJammerTrailer extends EntityType
 {
     /** Default constructor */
     public R330ZhJammerTrailer()
@@ -27,5 +41,11 @@ public class R330ZhJammerTrailer extends EntityType
         setSubCategory((byte)11); // uid 12902, Ural-4320 6x6 4500-kg trucks
         setSpecific((byte)1); // uid 31861, Ural-43203
         setExtra((byte)2); // uid 31863, R-330Zh Jammer Trailer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static R330ZhJammerTrailer createInstance()
+    {
+            return new R330ZhJammerTrailer();
     }
 }

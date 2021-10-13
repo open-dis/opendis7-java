@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11148dc2;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 19612
+ * <p> Entity class <b><code>M774APFSDST</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M774APFSDST.createInstance()</code> or <code>new M774APFSDST()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _105mm  = <code>10</code>; </li>
+ *     <li> Specific: M774APFSDST  = <code>9</code>; </li>
+ *     <li> Entity type uid: 19612; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f0677f3. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M774APFSDST extends EntityType
+public final class M774APFSDST extends EntityType
 {
     /** Default constructor */
     public M774APFSDST()
@@ -26,5 +40,11 @@ public class M774APFSDST extends EntityType
         setCategory((byte)2); // uid 19553, Ballistic
         setSubCategory((byte)10); // uid 19603, 105 mm
         setSpecific((byte)9); // uid 19612, M774 APFSDS-T
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M774APFSDST createInstance()
+    {
+            return new M774APFSDST();
     }
 }

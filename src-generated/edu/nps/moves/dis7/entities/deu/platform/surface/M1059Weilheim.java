@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b67bb7e;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29496
+ * <p> Entity class <b><code>M1059Weilheim</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1059Weilheim.createInstance()</code> or <code>new M1059Weilheim()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: FrankenthalClassType332MinehuntersCoastal  = <code>6</code>; </li>
+ *     <li> Specific: M1059Weilheim  = <code>12</code>; </li>
+ *     <li> Entity type uid: 29496; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6304101a. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M1059Weilheim extends EntityType
+public final class M1059Weilheim extends EntityType
 {
     /** Default constructor */
     public M1059Weilheim()
@@ -26,5 +40,11 @@ public class M1059Weilheim extends EntityType
         setCategory((byte)8); // uid 16484, Mine Countermeasure Ship / Craft
         setSubCategory((byte)6); // uid 16523, Frankenthal Class (Type 332 Minehunters, Coastal)
         setSpecific((byte)12); // uid 29496, M1059 Weilheim
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1059Weilheim createInstance()
+    {
+            return new M1059Weilheim();
     }
 }

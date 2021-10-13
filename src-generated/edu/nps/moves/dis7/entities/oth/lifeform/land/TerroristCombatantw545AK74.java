@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38d42ab7;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32723
+ * <p> Entity class <b><code>TerroristCombatantw545AK74</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TerroristCombatantw545AK74.createInstance()</code> or <code>new TerroristCombatantw545AK74()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Terrorist Combatant = <code>101</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: TerroristCombatantw545AK74  = <code>10</code>; </li>
+ *     <li> Entity type uid: 32723; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2bf3ec4. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TerroristCombatant
+ * @see SubCategory
+
  */
-public class TerroristCombatantw545AK74 extends EntityType
+public final class TerroristCombatantw545AK74 extends EntityType
 {
     /** Default constructor */
     public TerroristCombatantw545AK74()
@@ -26,5 +40,11 @@ public class TerroristCombatantw545AK74 extends EntityType
         setCategory((byte)101); // uid 32719, Terrorist Combatant
         setSubCategory((byte)5); // uid 32722, Assault Rifles
         setSpecific((byte)10); // uid 32723, Terrorist Combatant w/ 5.45 AK-74
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TerroristCombatantw545AK74 createInstance()
+    {
+            return new TerroristCombatantw545AK74();
     }
 }

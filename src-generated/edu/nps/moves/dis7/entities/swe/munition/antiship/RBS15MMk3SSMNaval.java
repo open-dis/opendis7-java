@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@639cb788;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_SHIP;
- *
- * Entity type uid: 27307
+ * <p> Entity class <b><code>RBS15MMk3SSMNaval</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBS15MMk3SSMNaval.createInstance()</code> or <code>new RBS15MMk3SSMNaval()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: RBS15SSMASM  = <code>1</code>; </li>
+ *     <li> Specific: RBS15MMk3SSMNaval  = <code>5</code>; </li>
+ *     <li> Entity type uid: 27307; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@632241f5. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class RBS15MMk3SSMNaval extends EntityType
+public final class RBS15MMk3SSMNaval extends EntityType
 {
     /** Default constructor */
     public RBS15MMk3SSMNaval()
@@ -26,5 +40,11 @@ public class RBS15MMk3SSMNaval extends EntityType
         setCategory((byte)1); // uid 27301, Guided
         setSubCategory((byte)1); // uid 27302, RBS-15 (SSM/ASM)
         setSpecific((byte)5); // uid 27307, RBS-15M Mk3 (SSM Naval)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBS15MMk3SSMNaval createInstance()
+    {
+            return new RBS15MMk3SSMNaval();
     }
 }

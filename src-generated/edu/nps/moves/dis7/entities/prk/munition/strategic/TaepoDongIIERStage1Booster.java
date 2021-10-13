@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77896335;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32847
+ * <p> Entity class <b><code>TaepoDongIIERStage1Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TaepoDongIIERStage1Booster.createInstance()</code> or <code>new TaepoDongIIERStage1Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: TaepoDongIIER3stageversion  = <code>96</code>; </li>
+ *     <li> Specific: TaepoDongIIERStage1Booster  = <code>4</code>; </li>
+ *     <li> Entity type uid: 32847; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c635edc. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TaepoDongIIERStage1Booster extends EntityType
+public final class TaepoDongIIERStage1Booster extends EntityType
 {
     /** Default constructor */
     public TaepoDongIIERStage1Booster()
@@ -26,5 +40,11 @@ public class TaepoDongIIERStage1Booster extends EntityType
         setCategory((byte)1); // uid 21602, Guided
         setSubCategory((byte)96); // uid 32843, Taepo Dong II ER (3-stage version)
         setSpecific((byte)4); // uid 32847, Taepo Dong II ER Stage 1 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TaepoDongIIERStage1Booster createInstance()
+    {
+            return new TaepoDongIIERStage1Booster();
     }
 }

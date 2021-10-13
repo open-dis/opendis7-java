@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70b48eb3;
- * Country: France (FRA);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 24026
+ * <p> Entity class <b><code>HEATGIATOECC120</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEATGIATOECC120.createInstance()</code> or <code>new HEATGIATOECC120()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _120mm  = <code>12</code>; </li>
+ *     <li> Specific: HEATGIATOECC120  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24026; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a3f96ab. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEATGIATOECC120 extends EntityType
+public final class HEATGIATOECC120 extends EntityType
 {
     /** Default constructor */
     public HEATGIATOECC120()
@@ -26,5 +40,11 @@ public class HEATGIATOECC120 extends EntityType
         setCategory((byte)2); // uid 21065, Ballistic
         setSubCategory((byte)12); // uid 21077, 120 mm
         setSpecific((byte)3); // uid 24026, HEAT, GIAT OECC 120
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEATGIATOECC120 createInstance()
+    {
+            return new HEATGIATOECC120();
     }
 }

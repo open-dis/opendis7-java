@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@379619aa;
- * Country: Algeria (DZA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27745
+ * <p> Entity class <b><code>_350ElKanass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_350ElKanass.createInstance()</code> or <code>new _350ElKanass()</code>. </p>
+ * <ul>
+ *     <li> Country: Algeria (DZA) = <code>3</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: KebirClass  = <code>2</code>; </li>
+ *     <li> Specific: _350ElKanass  = <code>10</code>; </li>
+ *     <li> Entity type uid: 27745; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45ff54e6. </p>
+ * @see Country#ALGERIA_DZA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _350ElKanass extends EntityType
+public final class _350ElKanass extends EntityType
 {
     /** Default constructor */
     public _350ElKanass()
@@ -26,5 +40,11 @@ public class _350ElKanass extends EntityType
         setCategory((byte)7); // uid 27023, Light/Patrol Craft
         setSubCategory((byte)2); // uid 27735, Kebir Class
         setSpecific((byte)10); // uid 27745, 350 El Kanass
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _350ElKanass createInstance()
+    {
+            return new _350ElKanass();
     }
 }

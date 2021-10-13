@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@34fcd292;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32367
+ * <p> Entity class <b><code>SSN23Skiff</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN23Skiff.createInstance()</code> or <code>new SSN23Skiff()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSN23Skiff  = <code>40</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32367; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@647fb583. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SSN23Skiff extends EntityType
+public final class SSN23Skiff extends EntityType
 {
     /** Default constructor */
     public SSN23Skiff()
@@ -25,5 +39,11 @@ public class SSN23Skiff extends EntityType
 
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)40); // uid 32367, SS-N-23 Skiff
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN23Skiff createInstance()
+    {
+            return new SSN23Skiff();
     }
 }

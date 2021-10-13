@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3a72e2e8;
- * Country: Australia (AUS);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 28598
+ * <p> Entity class <b><code>Activeemitter</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Activeemitter.createInstance()</code> or <code>new Activeemitter()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active emitter = <code>4</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28598; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@6a2badb1. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Activeemitter
+
  */
-public class Activeemitter extends EntityType
+public final class Activeemitter extends EntityType
 {
     /** Default constructor */
     public Activeemitter()
@@ -24,5 +37,11 @@ public class Activeemitter extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)4); // uid 28598, Active emitter
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Activeemitter createInstance()
+    {
+            return new Activeemitter();
     }
 }

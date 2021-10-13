@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f449e8f;
- * Country: Portugal (PRT);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23100
+ * <p> Entity class <b><code>Type209PNclass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type209PNclass.createInstance()</code> or <code>new Type209PNclass()</code>. </p>
+ * <ul>
+ *     <li> Country: Portugal (PRT) = <code>176</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Type209PNclass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23100; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@705202d1. </p>
+ * @see Country#PORTUGAL_PRT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class Type209PNclass extends EntityType
+public final class Type209PNclass extends EntityType
 {
     /** Default constructor */
     public Type209PNclass()
@@ -25,5 +39,11 @@ public class Type209PNclass extends EntityType
 
         setCategory((byte)5); // uid 23099, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 23100, Type 209PN class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type209PNclass createInstance()
+    {
+            return new Type209PNclass();
     }
 }

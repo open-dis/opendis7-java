@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74a58a06;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 23746
+ * <p> Entity class <b><code>VOG17MHEFRAGSD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VOG17MHEFRAGSD.createInstance()</code> or <code>new VOG17MHEFRAGSD()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _30mmgrenade  = <code>5</code>; </li>
+ *     <li> Specific: VOG17MHEFRAGSD  = <code>3</code>; </li>
+ *     <li> Entity type uid: 23746; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69a373fd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class VOG17MHEFRAGSD extends EntityType
+public final class VOG17MHEFRAGSD extends EntityType
 {
     /** Default constructor */
     public VOG17MHEFRAGSD()
@@ -26,5 +40,11 @@ public class VOG17MHEFRAGSD extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)5); // uid 20797, 30 mm grenade
         setSpecific((byte)3); // uid 23746, VOG-17M, HE FRAG SD
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VOG17MHEFRAGSD createInstance()
+    {
+            return new VOG17MHEFRAGSD();
     }
 }

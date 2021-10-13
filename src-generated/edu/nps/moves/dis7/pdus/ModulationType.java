@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class ModulationType extends Object implements Serializable
    protected TransmitterModulationTypeSystem radioSystem = TransmitterModulationTypeSystem.values()[0];
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ModulationType()
  {
  }
@@ -46,9 +45,11 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 2;  // spreadSpectrum
-   marshalSize += majorModulation.getMarshalledSize();
+   if (majorModulation != null)
+       marshalSize += majorModulation.getMarshalledSize();
    marshalSize += 2;  // detail
-   marshalSize += radioSystem.getMarshalledSize();
+   if (radioSystem != null)
+       marshalSize += radioSystem.getMarshalledSize();
 
    return marshalSize;
 }
@@ -209,10 +210,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    spreadSpectrum = (short)(byteBuffer.getShort() & 0xFFFF);
-    majorModulation = TransmitterMajorModulation.unmarshalEnum(byteBuffer);
-    detail = (short)(byteBuffer.getShort() & 0xFFFF);
-    radioSystem = TransmitterModulationTypeSystem.unmarshalEnum(byteBuffer);
+    try
+    {
+        // attribute spreadSpectrum marked as not serialized
+        spreadSpectrum = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute majorModulation marked as not serialized
+        majorModulation = TransmitterMajorModulation.unmarshalEnum(byteBuffer);
+        // attribute detail marked as not serialized
+        detail = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute radioSystem marked as not serialized
+        radioSystem = TransmitterModulationTypeSystem.unmarshalEnum(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

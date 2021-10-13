@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@617faa95;
- * Country: Brazil (BRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28685
+ * <p> Entity class <b><code>F48BosisioexBrazen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F48BosisioexBrazen.createInstance()</code> or <code>new F48BosisioexBrazen()</code>. </p>
+ * <ul>
+ *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: ExBroadswordclass  = <code>2</code>; </li>
+ *     <li> Specific: F48BosisioexBrazen  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28685; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59fa1d9b. </p>
+ * @see Country#BRAZIL_BRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F48BosisioexBrazen extends EntityType
+public final class F48BosisioexBrazen extends EntityType
 {
     /** Default constructor */
     public F48BosisioexBrazen()
@@ -26,5 +40,11 @@ public class F48BosisioexBrazen extends EntityType
         setCategory((byte)6); // uid 28675, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 28683, Ex-Broadsword class
         setSpecific((byte)2); // uid 28685, F 48 Bosisio (ex-Brazen)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F48BosisioexBrazen createInstance()
+    {
+            return new F48BosisioexBrazen();
     }
 }

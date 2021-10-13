@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@632c3f55;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22028
+ * <p> Entity class <b><code>GasCooledGraphiteReactor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GasCooledGraphiteReactor.createInstance()</code> or <code>new GasCooledGraphiteReactor()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Nuclear Power Plant = <code>12</code>; </li>
+ *     <li> SubCategory: GasCooledGraphiteReactor  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22028; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2807cf3. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see NuclearPowerPlant
+ * @see SubCategory
+
  */
-public class GasCooledGraphiteReactor extends EntityType
+public final class GasCooledGraphiteReactor extends EntityType
 {
     /** Default constructor */
     public GasCooledGraphiteReactor()
@@ -25,5 +39,11 @@ public class GasCooledGraphiteReactor extends EntityType
 
         setCategory((byte)12); // uid 22023, Nuclear Power Plant
         setSubCategory((byte)2); // uid 22028, Gas-Cooled Graphite Reactor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GasCooledGraphiteReactor createInstance()
+    {
+            return new GasCooledGraphiteReactor();
     }
 }

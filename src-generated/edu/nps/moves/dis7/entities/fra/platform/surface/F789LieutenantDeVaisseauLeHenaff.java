@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@821330f;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16155
+ * <p> Entity class <b><code>F789LieutenantDeVaisseauLeHenaff</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F789LieutenantDeVaisseauLeHenaff.createInstance()</code> or <code>new F789LieutenantDeVaisseauLeHenaff()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate = <code>50</code>; </li>
+ *     <li> SubCategory: DestienneDorvesTypeA69class  = <code>1</code>; </li>
+ *     <li> Specific: F789LieutenantDeVaisseauLeHenaff  = <code>9</code>; </li>
+ *     <li> Entity type uid: 16155; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61c4eee0. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Frigate
+ * @see SubCategory
+
  */
-public class F789LieutenantDeVaisseauLeHenaff extends EntityType
+public final class F789LieutenantDeVaisseauLeHenaff extends EntityType
 {
     /** Default constructor */
     public F789LieutenantDeVaisseauLeHenaff()
@@ -26,5 +40,11 @@ public class F789LieutenantDeVaisseauLeHenaff extends EntityType
         setCategory((byte)50); // uid 16145, Frigate
         setSubCategory((byte)1); // uid 16146, Destienne Dorves (Type A 69) class
         setSpecific((byte)9); // uid 16155, F 789 Lieutenant De Vaisseau Le Henaff
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F789LieutenantDeVaisseauLeHenaff createInstance()
+    {
+            return new F789LieutenantDeVaisseauLeHenaff();
     }
 }

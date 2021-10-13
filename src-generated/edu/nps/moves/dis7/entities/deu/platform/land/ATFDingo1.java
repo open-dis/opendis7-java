@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f9edf14;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22748
+ * <p> Entity class <b><code>ATFDingo1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ATFDingo1.createInstance()</code> or <code>new ATFDingo1()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: ATFDingoarmouredinfantrymobilityvehicle  = <code>11</code>; </li>
+ *     <li> Specific: ATFDingo1  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22748; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bbc8656. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class ATFDingo1 extends EntityType
+public final class ATFDingo1 extends EntityType
 {
     /** Default constructor */
     public ATFDingo1()
@@ -26,5 +40,11 @@ public class ATFDingo1 extends EntityType
         setCategory((byte)3); // uid 16263, Armored Utility Vehicle
         setSubCategory((byte)11); // uid 22747, ATF Dingo armoured infantry mobility vehicle
         setSpecific((byte)1); // uid 22748, ATF Dingo 1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ATFDingo1 createInstance()
+    {
+            return new ATFDingo1();
     }
 }

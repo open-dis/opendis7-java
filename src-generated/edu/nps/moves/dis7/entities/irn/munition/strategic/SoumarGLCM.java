@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4ee8051c;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32491
+ * <p> Entity class <b><code>SoumarGLCM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SoumarGLCM.createInstance()</code> or <code>new SoumarGLCM()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SoumarGLCM  = <code>21</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32491; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b063470. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SoumarGLCM extends EntityType
+public final class SoumarGLCM extends EntityType
 {
     /** Default constructor */
     public SoumarGLCM()
@@ -25,5 +39,11 @@ public class SoumarGLCM extends EntityType
 
         setCategory((byte)1); // uid 21715, Guided
         setSubCategory((byte)21); // uid 32491, Soumar GLCM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SoumarGLCM createInstance()
+    {
+            return new SoumarGLCM();
     }
 }

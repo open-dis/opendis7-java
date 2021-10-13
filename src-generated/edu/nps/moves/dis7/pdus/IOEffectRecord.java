@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class IOEffectRecord extends IORecord implements Serializable
    protected short  padding;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IOEffectRecord()
  {
  }
@@ -61,14 +60,19 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += recordType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
    marshalSize += 2;  // recordLength
-   marshalSize += ioStatus.getMarshalledSize();
-   marshalSize += ioLinkType.getMarshalledSize();
-   marshalSize += ioEffect.getMarshalledSize();
+   if (ioStatus != null)
+       marshalSize += ioStatus.getMarshalledSize();
+   if (ioLinkType != null)
+       marshalSize += ioLinkType.getMarshalledSize();
+   if (ioEffect != null)
+       marshalSize += ioEffect.getMarshalledSize();
    marshalSize += 1;  // ioEffectDutyCycle
    marshalSize += 2;  // ioEffectDuration
-   marshalSize += ioProcess.getMarshalledSize();
+   if (ioProcess != null)
+       marshalSize += ioProcess.getMarshalledSize();
    marshalSize += 2;  // padding
 
    return marshalSize;
@@ -350,15 +354,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    recordType = VariableRecordType.unmarshalEnum(byteBuffer);
-    recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
-    ioStatus = IOEffectsRecordIOStatus.unmarshalEnum(byteBuffer);
-    ioLinkType = IOEffectsRecordIOLinkType.unmarshalEnum(byteBuffer);
-    ioEffect = IOEffectsRecordIOEffect.unmarshalEnum(byteBuffer);
-    ioEffectDutyCycle = (byte)(byteBuffer.get() & 0xFF);
-    ioEffectDuration = (short)(byteBuffer.getShort() & 0xFFFF);
-    ioProcess = IOEffectsRecordIOProcess.unmarshalEnum(byteBuffer);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableRecordType.unmarshalEnum(byteBuffer);
+        // attribute recordLength marked as not serialized
+        recordLength = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute ioStatus marked as not serialized
+        ioStatus = IOEffectsRecordIOStatus.unmarshalEnum(byteBuffer);
+        // attribute ioLinkType marked as not serialized
+        ioLinkType = IOEffectsRecordIOLinkType.unmarshalEnum(byteBuffer);
+        // attribute ioEffect marked as not serialized
+        ioEffect = IOEffectsRecordIOEffect.unmarshalEnum(byteBuffer);
+        // attribute ioEffectDutyCycle marked as not serialized
+        ioEffectDutyCycle = (byte)(byteBuffer.get() & 0xFF);
+        // attribute ioEffectDuration marked as not serialized
+        ioEffectDuration = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute ioProcess marked as not serialized
+        ioProcess = IOEffectsRecordIOProcess.unmarshalEnum(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

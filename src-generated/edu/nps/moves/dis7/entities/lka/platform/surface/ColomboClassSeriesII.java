@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e9ef5b6;
- * Country: Sri Lanka (LKA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26425
+ * <p> Entity class <b><code>ColomboClassSeriesII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ColomboClassSeriesII.createInstance()</code> or <code>new ColomboClassSeriesII()</code>. </p>
+ * <ul>
+ *     <li> Country: Sri Lanka (LKA) = <code>200</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ColomboClassUltraFastAttackCraft  = <code>1</code>; </li>
+ *     <li> Specific: ColomboClassSeriesII  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26425; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d04529c. </p>
+ * @see Country#SRI_LANKA_LKA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ColomboClassSeriesII extends EntityType
+public final class ColomboClassSeriesII extends EntityType
 {
     /** Default constructor */
     public ColomboClassSeriesII()
@@ -26,5 +40,11 @@ public class ColomboClassSeriesII extends EntityType
         setCategory((byte)7); // uid 26422, Light/Patrol Craft
         setSubCategory((byte)1); // uid 26423, Colombo Class Ultra Fast Attack Craft
         setSpecific((byte)2); // uid 26425, Colombo Class Series II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ColomboClassSeriesII createInstance()
+    {
+            return new ColomboClassSeriesII();
     }
 }

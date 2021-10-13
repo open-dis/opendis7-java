@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8c43966;
- * Country: Uruguay (URY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27492
+ * <p> Entity class <b><code>_4GeneralArtigos</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_4GeneralArtigos.createInstance()</code> or <code>new _4GeneralArtigos()</code>. </p>
+ * <ul>
+ *     <li> Country: Uruguay (URY) = <code>226</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: LuneburgClassType701SupportShips  = <code>1</code>; </li>
+ *     <li> Specific: _4GeneralArtigos  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27492; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42fc4ac4. </p>
+ * @see Country#URUGUAY_URY
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _4GeneralArtigos extends EntityType
+public final class _4GeneralArtigos extends EntityType
 {
     /** Default constructor */
     public _4GeneralArtigos()
@@ -26,5 +40,11 @@ public class _4GeneralArtigos extends EntityType
         setCategory((byte)16); // uid 27490, Auxiliary
         setSubCategory((byte)1); // uid 27491, Luneburg Class (Type 701, Support Ships)
         setSpecific((byte)1); // uid 27492, 4 General Artigos
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _4GeneralArtigos createInstance()
+    {
+            return new _4GeneralArtigos();
     }
 }

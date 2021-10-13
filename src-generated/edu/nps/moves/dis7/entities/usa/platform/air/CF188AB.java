@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16da476c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10805
+ * <p> Entity class <b><code>CF188AB</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CF188AB.createInstance()</code> or <code>new CF188AB()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasFA18Hornet  = <code>9</code>; </li>
+ *     <li> Specific: CF188AB  = <code>7</code>; </li>
+ *     <li> Entity type uid: 10805; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dc7cd1c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class CF188AB extends EntityType
+public final class CF188AB extends EntityType
 {
     /** Default constructor */
     public CF188AB()
@@ -26,5 +40,11 @@ public class CF188AB extends EntityType
         setCategory((byte)1); // uid 10755, Fighter/Air Defense
         setSubCategory((byte)9); // uid 10798, McDonnell-Douglas F/A-18 Hornet
         setSpecific((byte)7); // uid 10805, CF-188A/B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CF188AB createInstance()
+    {
+            return new CF188AB();
     }
 }

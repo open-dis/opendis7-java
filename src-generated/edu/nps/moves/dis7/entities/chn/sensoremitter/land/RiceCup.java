@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ad0c70a;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 27627
+ * <p> Entity class <b><code>RiceCup</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RiceCup.createInstance()</code> or <code>new RiceCup()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: HeightFinder  = <code>3</code>; </li>
+ *     <li> Specific: RiceCup  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27627; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35b3c1f6. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class RiceCup extends EntityType
+public final class RiceCup extends EntityType
 {
     /** Default constructor */
     public RiceCup()
@@ -26,5 +40,11 @@ public class RiceCup extends EntityType
         setCategory((byte)2); // uid 22506, RF Active
         setSubCategory((byte)3); // uid 27625, Height Finder
         setSpecific((byte)2); // uid 27627, Rice Cup
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RiceCup createInstance()
+    {
+            return new RiceCup();
     }
 }

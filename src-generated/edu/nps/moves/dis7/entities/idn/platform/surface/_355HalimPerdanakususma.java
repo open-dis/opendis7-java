@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42463763;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29645
+ * <p> Entity class <b><code>_355HalimPerdanakususma</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_355HalimPerdanakususma.createInstance()</code> or <code>new _355HalimPerdanakususma()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: AhmadYaniClass  = <code>2</code>; </li>
+ *     <li> Specific: _355HalimPerdanakususma  = <code>5</code>; </li>
+ *     <li> Entity type uid: 29645; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e30646a. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _355HalimPerdanakususma extends EntityType
+public final class _355HalimPerdanakususma extends EntityType
 {
     /** Default constructor */
     public _355HalimPerdanakususma()
@@ -26,5 +40,11 @@ public class _355HalimPerdanakususma extends EntityType
         setCategory((byte)50); // uid 28859, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 29640, Ahmad Yani Class
         setSpecific((byte)5); // uid 29645, 355 Halim Perdanakususma
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _355HalimPerdanakususma createInstance()
+    {
+            return new _355HalimPerdanakususma();
     }
 }

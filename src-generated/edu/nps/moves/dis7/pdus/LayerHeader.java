@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -28,7 +27,7 @@ public class LayerHeader extends Object implements Serializable
    protected short  length;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LayerHeader()
  {
  }
@@ -192,9 +191,19 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    layerNumber = (byte)(byteBuffer.get() & 0xFF);
-    layerSpecificInformation = (byte)(byteBuffer.get() & 0xFF);
-    length = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute layerNumber marked as not serialized
+        layerNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute layerSpecificInformation marked as not serialized
+        layerSpecificInformation = (byte)(byteBuffer.get() & 0xFF);
+        // attribute length marked as not serialized
+        length = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

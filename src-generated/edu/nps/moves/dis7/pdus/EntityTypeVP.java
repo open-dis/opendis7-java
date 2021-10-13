@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class EntityTypeVP extends Object implements Serializable
    protected int  padding1 = (int)0;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityTypeVP()
  {
  }
@@ -48,9 +47,12 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
-   marshalSize += changeIndicator.getMarshalledSize();
-   marshalSize += entityType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
+   if (changeIndicator != null)
+       marshalSize += changeIndicator.getMarshalledSize();
+   if (entityType != null)
+       marshalSize += entityType.getMarshalledSize();
    marshalSize += 2;  // padding
    marshalSize += 4;  // padding1
 
@@ -225,11 +227,23 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    changeIndicator = EntityVPRecordChangeIndicator.unmarshalEnum(byteBuffer);
-    entityType.unmarshal(byteBuffer);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    padding1 = byteBuffer.getInt();
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute changeIndicator marked as not serialized
+        changeIndicator = EntityVPRecordChangeIndicator.unmarshalEnum(byteBuffer);
+        // attribute entityType marked as not serialized
+        entityType.unmarshal(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute padding1 marked as not serialized
+        padding1 = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

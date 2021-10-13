@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2679311f;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13468
+ * <p> Entity class <b><code>Ka27PSHelixDSAR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ka27PSHelixDSAR.createInstance()</code> or <code>new Ka27PSHelixDSAR()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: KA27282931Helix  = <code>9</code>; </li>
+ *     <li> Specific: Ka27PSHelixDSAR  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13468; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e7dfd44. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utilityhelicopter
+ * @see SubCategory
+
  */
-public class Ka27PSHelixDSAR extends EntityType
+public final class Ka27PSHelixDSAR extends EntityType
 {
     /** Default constructor */
     public Ka27PSHelixDSAR()
@@ -26,5 +40,11 @@ public class Ka27PSHelixDSAR extends EntityType
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)9); // uid 13466, KA-27/28/29/31 Helix
         setSpecific((byte)2); // uid 13468, Ka-27PS Helix D (SAR)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ka27PSHelixDSAR createInstance()
+    {
+            return new Ka27PSHelixDSAR();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@29aa4bc9;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL;
- *
- * Entity type uid: 30611
+ * <p> Entity class <b><code>ChestofAmmunition</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChestofAmmunition.createInstance()</code> or <code>new ChestofAmmunition()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_11_SUPPLIES_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Chests = <code>4</code>; </li>
+ *     <li> SubCategory: ChestofAmmunition  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30611; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3d132bb6. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see Chests
+ * @see SubCategory
+
  */
-public class ChestofAmmunition extends EntityType
+public final class ChestofAmmunition extends EntityType
 {
     /** Default constructor */
     public ChestofAmmunition()
@@ -25,5 +39,11 @@ public class ChestofAmmunition extends EntityType
 
         setCategory((byte)4); // uid 30609, Chests
         setSubCategory((byte)2); // uid 30611, Chest of Ammunition
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChestofAmmunition createInstance()
+    {
+            return new ChestofAmmunition();
     }
 }

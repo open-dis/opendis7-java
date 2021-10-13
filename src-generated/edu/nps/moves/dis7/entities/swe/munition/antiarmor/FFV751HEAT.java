@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11e834ad;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 25090
+ * <p> Entity class <b><code>FFV751HEAT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFV751HEAT.createInstance()</code> or <code>new FFV751HEAT()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _84mmCarlGustavrounds  = <code>2</code>; </li>
+ *     <li> Specific: FFV751HEAT  = <code>6</code>; </li>
+ *     <li> Entity type uid: 25090; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fe42a09. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FFV751HEAT extends EntityType
+public final class FFV751HEAT extends EntityType
 {
     /** Default constructor */
     public FFV751HEAT()
@@ -26,5 +40,11 @@ public class FFV751HEAT extends EntityType
         setCategory((byte)2); // uid 21647, Ballistic
         setSubCategory((byte)2); // uid 21650, 84mm Carl Gustav rounds
         setSpecific((byte)6); // uid 25090, FFV751 HEAT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFV751HEAT createInstance()
+    {
+            return new FFV751HEAT();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class CreateEntityRPdu extends SimulationManagementWithReliabilityFamilyP
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public CreateEntityRPdu()
  {
     setPduType( DisPduType.CREATE_ENTITY_RELIABLE );
@@ -47,7 +46,8 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += requiredReliabilityService.getMarshalledSize();
+   if (requiredReliabilityService != null)
+       marshalSize += requiredReliabilityService.getMarshalledSize();
    marshalSize += 1;  // pad1
    marshalSize += 2;  // pad2
    marshalSize += 4;  // requestID
@@ -217,10 +217,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
-    pad1 = (byte)(byteBuffer.get() & 0xFF);
-    pad2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute requiredReliabilityService marked as not serialized
+        requiredReliabilityService = RequiredReliabilityService.unmarshalEnum(byteBuffer);
+        // attribute pad1 marked as not serialized
+        pad1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pad2 marked as not serialized
+        pad2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

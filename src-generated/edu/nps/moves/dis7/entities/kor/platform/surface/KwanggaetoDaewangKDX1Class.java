@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7f811d00;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23146
+ * <p> Entity class <b><code>KwanggaetoDaewangKDX1Class</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KwanggaetoDaewangKDX1Class.createInstance()</code> or <code>new KwanggaetoDaewangKDX1Class()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: KwanggaetoDaewangKDX1Class  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23146; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f80fafe. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class KwanggaetoDaewangKDX1Class extends EntityType
+public final class KwanggaetoDaewangKDX1Class extends EntityType
 {
     /** Default constructor */
     public KwanggaetoDaewangKDX1Class()
@@ -25,5 +39,11 @@ public class KwanggaetoDaewangKDX1Class extends EntityType
 
         setCategory((byte)4); // uid 23145, Guided Missile Destroyer (DDG)
         setSubCategory((byte)1); // uid 23146, Kwanggaeto Daewang (KDX-1) Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KwanggaetoDaewangKDX1Class createInstance()
+    {
+            return new KwanggaetoDaewangKDX1Class();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c604965;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11780
+ * <p> Entity class <b><code>TAFS9Spica</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TAFS9Spica.createInstance()</code> or <code>new TAFS9Spica()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: CombatStoresShipsNavalFleet  = <code>4</code>; </li>
+ *     <li> Specific: TAFS9Spica  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11780; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@733e6df7. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class TAFS9Spica extends EntityType
+public final class TAFS9Spica extends EntityType
 {
     /** Default constructor */
     public TAFS9Spica()
@@ -26,5 +40,11 @@ public class TAFS9Spica extends EntityType
         setCategory((byte)17); // uid 11770, Auxiliary, Merchant Marine
         setSubCategory((byte)4); // uid 11778, Combat Stores Ships (Naval Fleet)
         setSpecific((byte)2); // uid 11780, TAFS 9 Spica
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TAFS9Spica createInstance()
+    {
+            return new TAFS9Spica();
     }
 }

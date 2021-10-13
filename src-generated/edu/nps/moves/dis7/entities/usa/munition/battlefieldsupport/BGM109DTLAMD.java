@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bfa1eb5;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 19941
+ * <p> Entity class <b><code>BGM109DTLAMD</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BGM109DTLAMD.createInstance()</code> or <code>new BGM109DTLAMD()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Tomahawk  = <code>19</code>; </li>
+ *     <li> Specific: BGM109DTLAMD  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19941; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b1e1f02. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class BGM109DTLAMD extends EntityType
+public final class BGM109DTLAMD extends EntityType
 {
     /** Default constructor */
     public BGM109DTLAMD()
@@ -26,5 +40,11 @@ public class BGM109DTLAMD extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)19); // uid 19939, Tomahawk
         setSpecific((byte)2); // uid 19941, BGM - 109D (TLAM-D)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BGM109DTLAMD createInstance()
+    {
+            return new BGM109DTLAMD();
     }
 }

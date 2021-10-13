@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9e89d68;
- * Country: Argentina (ARG);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31263
+ * <p> Entity class <b><code>P41Espora</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P41Espora.createInstance()</code> or <code>new P41Espora()</code>. </p>
+ * <ul>
+ *     <li> Country: Argentina (ARG) = <code>10</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: EsporaClassMeko140  = <code>2</code>; </li>
+ *     <li> Specific: P41Espora  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31263; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@deb6432. </p>
+ * @see Country#ARGENTINA_ARG
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class P41Espora extends EntityType
+public final class P41Espora extends EntityType
 {
     /** Default constructor */
     public P41Espora()
@@ -26,5 +40,11 @@ public class P41Espora extends EntityType
         setCategory((byte)50); // uid 31257, Frigate (including Corvette)
         setSubCategory((byte)2); // uid 31262, Espora Class (Meko 140)
         setSpecific((byte)1); // uid 31263, P 41 Espora
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P41Espora createInstance()
+    {
+            return new P41Espora();
     }
 }

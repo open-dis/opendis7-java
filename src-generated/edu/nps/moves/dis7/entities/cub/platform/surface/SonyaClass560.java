@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33d512c1;
- * Country: Cuba (CUB);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29971
+ * <p> Entity class <b><code>SonyaClass560</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SonyaClass560.createInstance()</code> or <code>new SonyaClass560()</code>. </p>
+ * <ul>
+ *     <li> Country: Cuba (CUB) = <code>54</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: SonyaClass  = <code>1</code>; </li>
+ *     <li> Specific: _560  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29971; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5158b42f. </p>
+ * @see Country#STOP_FREEZE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class SonyaClass560 extends EntityType
+public final class SonyaClass560 extends EntityType
 {
     /** Default constructor */
     public SonyaClass560()
@@ -26,5 +40,11 @@ public class SonyaClass560 extends EntityType
         setCategory((byte)8); // uid 29969, Mine Countermeasure Ship/Craft
         setSubCategory((byte)1); // uid 29970, Sonya Class
         setSpecific((byte)1); // uid 29971, 560
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SonyaClass560 createInstance()
+    {
+            return new SonyaClass560();
     }
 }

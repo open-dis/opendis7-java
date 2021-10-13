@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22ee2d0;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17951
+ * <p> Entity class <b><code>B20Seeb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>B20Seeb.createInstance()</code> or <code>new B20Seeb()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: SeebVosper25Classinshorepatrolcraft  = <code>3</code>; </li>
+ *     <li> Specific: B20Seeb  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17951; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@588ab592. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class B20Seeb extends EntityType
+public final class B20Seeb extends EntityType
 {
     /** Default constructor */
     public B20Seeb()
@@ -26,5 +40,11 @@ public class B20Seeb extends EntityType
         setCategory((byte)7); // uid 17942, Light/Patrol Craft
         setSubCategory((byte)3); // uid 17950, Seeb (Vosper 25) Class (inshore patrol craft)
         setSpecific((byte)1); // uid 17951, B20 Seeb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static B20Seeb createInstance()
+    {
+            return new B20Seeb();
     }
 }

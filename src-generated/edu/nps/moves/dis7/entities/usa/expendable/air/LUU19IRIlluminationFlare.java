@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f112f70;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24829
+ * <p> Entity class <b><code>LUU19IRIlluminationFlare</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LUU19IRIlluminationFlare.createInstance()</code> or <code>new LUU19IRIlluminationFlare()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Signal/Illumination Flare = <code>7</code>; </li>
+ *     <li> SubCategory: IlluminationFlare  = <code>2</code>; </li>
+ *     <li> Specific: LUU19IRIlluminationFlare  = <code>4</code>; </li>
+ *     <li> Entity type uid: 24829; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a117dc2. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SignalIlluminationFlare
+ * @see SubCategory
+
  */
-public class LUU19IRIlluminationFlare extends EntityType
+public final class LUU19IRIlluminationFlare extends EntityType
 {
     /** Default constructor */
     public LUU19IRIlluminationFlare()
@@ -26,5 +40,11 @@ public class LUU19IRIlluminationFlare extends EntityType
         setCategory((byte)7); // uid 24824, Signal/Illumination Flare
         setSubCategory((byte)2); // uid 24825, Illumination Flare
         setSpecific((byte)4); // uid 24829, LUU-19 IR Illumination Flare
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LUU19IRIlluminationFlare createInstance()
+    {
+            return new LUU19IRIlluminationFlare();
     }
 }

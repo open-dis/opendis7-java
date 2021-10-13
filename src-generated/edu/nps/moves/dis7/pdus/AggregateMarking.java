@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class AggregateMarking extends Object implements Serializable
    protected byte[]  characters = new byte[31]; 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AggregateMarking()
  {
  }
@@ -39,8 +38,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += characterSet.getMarshalledSize();
-   marshalSize += characters.length * 1;
+   if (characterSet != null)
+       marshalSize += characterSet.getMarshalledSize();
+   if (characters != null)
+       marshalSize += characters.length * 1;
 
    return marshalSize;
 }
@@ -90,7 +91,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        characterSet.marshal(dos);
 
-       for(int idx = 0; idx < characters.length; idx++)
+       for (int idx = 0; idx < characters.length; idx++)
            dos.writeByte(characters[idx]);
 
     }
@@ -115,7 +116,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         characterSet = EntityMarkingCharacterSet.unmarshalEnum(dis);
         uPosition += characterSet.getMarshalledSize();
-        for(int idx = 0; idx < characters.length; idx++)
+        for (int idx = 0; idx < characters.length; idx++)
             characters[idx] = dis.readByte();
         uPosition += (characters.length * 1);
     }
@@ -138,7 +139,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    characterSet.marshal(byteBuffer);
 
-   for(int idx = 0; idx < characters.length; idx++)
+   for (int idx = 0; idx < characters.length; idx++)
        byteBuffer.put((byte)characters[idx]);
 
 }
@@ -154,9 +155,18 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    characterSet = EntityMarkingCharacterSet.unmarshalEnum(byteBuffer);
-    for(int idx = 0; idx < characters.length; idx++)
-        characters[idx] = byteBuffer.get();
+    try
+    {
+        // attribute characterSet marked as not serialized
+        characterSet = EntityMarkingCharacterSet.unmarshalEnum(byteBuffer);
+        // attribute characters marked as not serialized
+        for (int idx = 0; idx < characters.length; idx++)
+            characters[idx] = byteBuffer.get();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -192,7 +202,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (characterSet == rhs.characterSet)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 31; idx++)
+     for (int idx = 0; idx < 31; idx++)
      {
           if(!(characters[idx] == rhs.characters[idx])) ivarsEqual = false;
      }

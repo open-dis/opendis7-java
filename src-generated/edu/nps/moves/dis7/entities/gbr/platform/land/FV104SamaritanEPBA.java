@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30f74e79;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32349
+ * <p> Entity class <b><code>FV104SamaritanEPBA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FV104SamaritanEPBA.createInstance()</code> or <code>new FV104SamaritanEPBA()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: FV104Samaritan  = <code>9</code>; </li>
+ *     <li> Specific: FV104SamaritanEPBA  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32349; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c8f6a90. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class FV104SamaritanEPBA extends EntityType
+public final class FV104SamaritanEPBA extends EntityType
 {
     /** Default constructor */
     public FV104SamaritanEPBA()
@@ -26,5 +40,11 @@ public class FV104SamaritanEPBA extends EntityType
         setCategory((byte)3); // uid 14904, Armored Utility Vehicle
         setSubCategory((byte)9); // uid 14915, FV 104 Samaritan
         setSpecific((byte)1); // uid 32349, FV 104 Samaritan EPBA
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FV104SamaritanEPBA createInstance()
+    {
+            return new FV104SamaritanEPBA();
     }
 }

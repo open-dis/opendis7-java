@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@96abc76;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 21605
+ * <p> Entity class <b><code>TaepoDongISeparatedwarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TaepoDongISeparatedwarhead.createInstance()</code> or <code>new TaepoDongISeparatedwarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: TaepoDongI  = <code>1</code>; </li>
+ *     <li> Specific: TaepoDongISeparatedwarhead  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21605; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@781654f8. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TaepoDongISeparatedwarhead extends EntityType
+public final class TaepoDongISeparatedwarhead extends EntityType
 {
     /** Default constructor */
     public TaepoDongISeparatedwarhead()
@@ -26,5 +40,11 @@ public class TaepoDongISeparatedwarhead extends EntityType
         setCategory((byte)1); // uid 21602, Guided
         setSubCategory((byte)1); // uid 21603, Taepo Dong I
         setSpecific((byte)3); // uid 21605, Taepo Dong I Separated warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TaepoDongISeparatedwarhead createInstance()
+    {
+            return new TaepoDongISeparatedwarhead();
     }
 }

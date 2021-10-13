@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5eefa415;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25971
+ * <p> Entity class <b><code>GenericQuadricycle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericQuadricycle.createInstance()</code> or <code>new GenericQuadricycle()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Non-motorized = <code>91</code>; </li>
+ *     <li> SubCategory: GenericQuadricycle  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 25971; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@515f4131. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Nonmotorized
+ * @see SubCategory
+
  */
-public class GenericQuadricycle extends EntityType
+public final class GenericQuadricycle extends EntityType
 {
     /** Default constructor */
     public GenericQuadricycle()
@@ -25,5 +39,11 @@ public class GenericQuadricycle extends EntityType
 
         setCategory((byte)91); // uid 25965, Non-motorized
         setSubCategory((byte)6); // uid 25971, Generic Quadricycle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericQuadricycle createInstance()
+    {
+            return new GenericQuadricycle();
     }
 }

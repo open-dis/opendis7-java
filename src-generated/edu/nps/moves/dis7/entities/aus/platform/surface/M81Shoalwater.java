@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21bcffb5;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17576
+ * <p> Entity class <b><code>M81Shoalwater</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M81Shoalwater.createInstance()</code> or <code>new M81Shoalwater()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: BayClassMinehuntersInshore  = <code>2</code>; </li>
+ *     <li> Specific: M81Shoalwater  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17576; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@721e0f4f. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M81Shoalwater extends EntityType
+public final class M81Shoalwater extends EntityType
 {
     /** Default constructor */
     public M81Shoalwater()
@@ -26,5 +40,11 @@ public class M81Shoalwater extends EntityType
         setCategory((byte)8); // uid 17565, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 17574, Bay Class (Minehunters - Inshore)
         setSpecific((byte)2); // uid 17576, M 81 Shoalwater
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M81Shoalwater createInstance()
+    {
+            return new M81Shoalwater();
     }
 }

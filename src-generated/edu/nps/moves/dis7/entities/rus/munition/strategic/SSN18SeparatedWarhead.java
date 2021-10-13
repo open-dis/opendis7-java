@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@496cedbb;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32364
+ * <p> Entity class <b><code>SSN18SeparatedWarhead</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSN18SeparatedWarhead.createInstance()</code> or <code>new SSN18SeparatedWarhead()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SSN18Stingray  = <code>44</code>; </li>
+ *     <li> Specific: SSN18SeparatedWarhead  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32364; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@919086. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SSN18SeparatedWarhead extends EntityType
+public final class SSN18SeparatedWarhead extends EntityType
 {
     /** Default constructor */
     public SSN18SeparatedWarhead()
@@ -26,5 +40,11 @@ public class SSN18SeparatedWarhead extends EntityType
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)44); // uid 32362, SS-N-18 Stingray
         setSpecific((byte)2); // uid 32364, SS-N-18 Separated Warhead
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSN18SeparatedWarhead createInstance()
+    {
+            return new SSN18SeparatedWarhead();
     }
 }

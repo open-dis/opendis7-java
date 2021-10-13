@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1981d861;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29226
+ * <p> Entity class <b><code>AT3B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AT3B.createInstance()</code> or <code>new AT3B()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: AIDCAT3TzuChung  = <code>1</code>; </li>
+ *     <li> Specific: AT3B  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29226; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e57e5d6. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trainer
+ * @see SubCategory
+
  */
-public class AT3B extends EntityType
+public final class AT3B extends EntityType
 {
     /** Default constructor */
     public AT3B()
@@ -26,5 +40,11 @@ public class AT3B extends EntityType
         setCategory((byte)40); // uid 29223, Trainer
         setSubCategory((byte)1); // uid 29224, AIDC AT-3 Tzu Chung
         setSpecific((byte)2); // uid 29226, AT-3B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AT3B createInstance()
+    {
+            return new AT3B();
     }
 }

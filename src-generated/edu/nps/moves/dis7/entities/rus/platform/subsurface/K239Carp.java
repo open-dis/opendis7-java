@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f679798;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27206
+ * <p> Entity class <b><code>K239Carp</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>K239Carp.createInstance()</code> or <code>new K239Carp()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack-Torpedo) = <code>3</code>; </li>
+ *     <li> SubCategory: SierraIClass  = <code>6</code>; </li>
+ *     <li> Specific: K239Carp  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27206; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54f4a7f0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSNNuclearAttackTorpedo
+ * @see SubCategory
+
  */
-public class K239Carp extends EntityType
+public final class K239Carp extends EntityType
 {
     /** Default constructor */
     public K239Carp()
@@ -26,5 +40,11 @@ public class K239Carp extends EntityType
         setCategory((byte)3); // uid 14779, SSN (Nuclear Attack-Torpedo)
         setSubCategory((byte)6); // uid 14787, Sierra I Class
         setSpecific((byte)2); // uid 27206, K-239 Carp
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static K239Carp createInstance()
+    {
+            return new K239Carp();
     }
 }

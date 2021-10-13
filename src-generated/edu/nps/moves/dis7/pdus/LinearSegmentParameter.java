@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -52,7 +51,7 @@ public class LinearSegmentParameter extends Object implements Serializable
    protected int  padding;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LinearSegmentParameter()
  {
  }
@@ -67,11 +66,15 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize += 1;  // segmentNumber
-   marshalSize += segmentModification.getMarshalledSize();
-   marshalSize += generalSegmentAppearance.getMarshalledSize();
+   if (segmentModification != null)
+       marshalSize += segmentModification.getMarshalledSize();
+   if (generalSegmentAppearance != null)
+       marshalSize += generalSegmentAppearance.getMarshalledSize();
    marshalSize += 4;  // specificSegmentAppearance
-   marshalSize += segmentLocation.getMarshalledSize();
-   marshalSize += segmentOrientation.getMarshalledSize();
+   if (segmentLocation != null)
+       marshalSize += segmentLocation.getMarshalledSize();
+   if (segmentOrientation != null)
+       marshalSize += segmentOrientation.getMarshalledSize();
    marshalSize += 4;  // segmentLength
    marshalSize += 4;  // segmentWidth
    marshalSize += 4;  // segmentHeight
@@ -366,17 +369,35 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    segmentNumber = (byte)(byteBuffer.get() & 0xFF);
-    segmentModification.unmarshal(byteBuffer);
-    generalSegmentAppearance.unmarshal(byteBuffer);
-    specificSegmentAppearance = byteBuffer.getInt();
-    segmentLocation.unmarshal(byteBuffer);
-    segmentOrientation.unmarshal(byteBuffer);
-    segmentLength = byteBuffer.getFloat();
-    segmentWidth = byteBuffer.getFloat();
-    segmentHeight = byteBuffer.getFloat();
-    segmentDepth = byteBuffer.getFloat();
-    padding = byteBuffer.getInt();
+    try
+    {
+        // attribute segmentNumber marked as not serialized
+        segmentNumber = (byte)(byteBuffer.get() & 0xFF);
+        // attribute segmentModification marked as not serialized
+        segmentModification.unmarshal(byteBuffer);
+        // attribute generalSegmentAppearance marked as not serialized
+        generalSegmentAppearance.unmarshal(byteBuffer);
+        // attribute specificSegmentAppearance marked as not serialized
+        specificSegmentAppearance = byteBuffer.getInt();
+        // attribute segmentLocation marked as not serialized
+        segmentLocation.unmarshal(byteBuffer);
+        // attribute segmentOrientation marked as not serialized
+        segmentOrientation.unmarshal(byteBuffer);
+        // attribute segmentLength marked as not serialized
+        segmentLength = byteBuffer.getFloat();
+        // attribute segmentWidth marked as not serialized
+        segmentWidth = byteBuffer.getFloat();
+        // attribute segmentHeight marked as not serialized
+        segmentHeight = byteBuffer.getFloat();
+        // attribute segmentDepth marked as not serialized
+        segmentDepth = byteBuffer.getFloat();
+        // attribute padding marked as not serialized
+        padding = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

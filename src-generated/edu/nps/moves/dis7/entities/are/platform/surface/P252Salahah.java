@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fcd7d3f;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30366
+ * <p> Entity class <b><code>P252Salahah</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P252Salahah.createInstance()</code> or <code>new P252Salahah()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: Fajal2Class  = <code>5</code>; </li>
+ *     <li> Specific: P252Salahah  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30366; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e3315d9. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P252Salahah extends EntityType
+public final class P252Salahah extends EntityType
 {
     /** Default constructor */
     public P252Salahah()
@@ -26,5 +40,11 @@ public class P252Salahah extends EntityType
         setCategory((byte)7); // uid 18692, Light/Patrol Craft
         setSubCategory((byte)5); // uid 30364, Fajal-2 Class
         setSpecific((byte)2); // uid 30366, P252 Salahah
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P252Salahah createInstance()
+    {
+            return new P252Salahah();
     }
 }

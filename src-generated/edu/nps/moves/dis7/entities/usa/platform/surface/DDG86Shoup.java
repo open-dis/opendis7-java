@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36bed37a;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11409
+ * <p> Entity class <b><code>DDG86Shoup</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDG86Shoup.createInstance()</code> or <code>new DDG86Shoup()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: ArleighBurkeClass  = <code>1</code>; </li>
+ *     <li> Specific: DDG86Shoup  = <code>36</code>; </li>
+ *     <li> Entity type uid: 11409; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e593b08. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class DDG86Shoup extends EntityType
+public final class DDG86Shoup extends EntityType
 {
     /** Default constructor */
     public DDG86Shoup()
@@ -26,5 +40,11 @@ public class DDG86Shoup extends EntityType
         setCategory((byte)4); // uid 11372, Guided Missile Destroyer
         setSubCategory((byte)1); // uid 11373, Arleigh Burke Class
         setSpecific((byte)36); // uid 11409, DDG 86 Shoup
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDG86Shoup createInstance()
+    {
+            return new DDG86Shoup();
     }
 }

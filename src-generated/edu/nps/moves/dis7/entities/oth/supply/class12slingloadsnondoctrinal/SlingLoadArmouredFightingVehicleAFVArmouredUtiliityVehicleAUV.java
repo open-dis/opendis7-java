@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4387d2f4;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30837
+ * <p> Entity class <b><code>SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV.createInstance()</code> or <code>new SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Vehicles = <code>5</code>; </li>
+ *     <li> SubCategory: SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30837; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@fee881. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadVehicles
+ * @see SubCategory
+
  */
-public class SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV extends EntityType
+public final class SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV extends EntityType
 {
     /** Default constructor */
     public SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV()
@@ -25,5 +39,11 @@ public class SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV exten
 
         setCategory((byte)5); // uid 30829, Sling Load, Vehicles
         setSubCategory((byte)2); // uid 30837, Sling Load, Armoured Fighting Vehicle (AFV) / Armoured Utiliity Vehicle (AUV)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV createInstance()
+    {
+            return new SlingLoadArmouredFightingVehicleAFVArmouredUtiliityVehicleAUV();
     }
 }

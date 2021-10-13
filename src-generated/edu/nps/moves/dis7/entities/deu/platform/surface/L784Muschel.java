@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4241e0f4;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16577
+ * <p> Entity class <b><code>L784Muschel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L784Muschel.createInstance()</code> or <code>new L784Muschel()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: Type521LCMs  = <code>1</code>; </li>
+ *     <li> Specific: L784Muschel  = <code>14</code>; </li>
+ *     <li> Entity type uid: 16577; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cbd9d24. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class L784Muschel extends EntityType
+public final class L784Muschel extends EntityType
 {
     /** Default constructor */
     public L784Muschel()
@@ -26,5 +40,11 @@ public class L784Muschel extends EntityType
         setCategory((byte)11); // uid 16562, Landing Craft
         setSubCategory((byte)1); // uid 16563, Type 521 (LCMs)
         setSpecific((byte)14); // uid 16577, L 784 Muschel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L784Muschel createInstance()
+    {
+            return new L784Muschel();
     }
 }

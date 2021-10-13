@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3610f277;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23506
+ * <p> Entity class <b><code>SATCOMTerminalANTSC85B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SATCOMTerminalANTSC85B.createInstance()</code> or <code>new SATCOMTerminalANTSC85B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Communications Facility = <code>33</code>; </li>
+ *     <li> SubCategory: SATCOMTerminalANTSC85B  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23506; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2703d91. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommunicationsFacility
+ * @see SubCategory
+
  */
-public class SATCOMTerminalANTSC85B extends EntityType
+public final class SATCOMTerminalANTSC85B extends EntityType
 {
     /** Default constructor */
     public SATCOMTerminalANTSC85B()
@@ -25,5 +39,11 @@ public class SATCOMTerminalANTSC85B extends EntityType
 
         setCategory((byte)33); // uid 10746, Communications Facility
         setSubCategory((byte)2); // uid 23506, SATCOM Terminal, AN/TSC-85B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SATCOMTerminalANTSC85B createInstance()
+    {
+            return new SATCOMTerminalANTSC85B();
     }
 }

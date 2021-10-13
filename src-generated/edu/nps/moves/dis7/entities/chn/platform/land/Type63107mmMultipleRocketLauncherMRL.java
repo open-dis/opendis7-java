@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@46238e3f;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16912
+ * <p> Entity class <b><code>Type63107mmMultipleRocketLauncherMRL</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Type63107mmMultipleRocketLauncherMRL.createInstance()</code> or <code>new Type63107mmMultipleRocketLauncherMRL()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed Artillery = <code>5</code>; </li>
+ *     <li> SubCategory: Type63107mmMultipleRocketLauncherMRL  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16912; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77846d2c. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TowedArtillery
+ * @see SubCategory
+
  */
-public class Type63107mmMultipleRocketLauncherMRL extends EntityType
+public final class Type63107mmMultipleRocketLauncherMRL extends EntityType
 {
     /** Default constructor */
     public Type63107mmMultipleRocketLauncherMRL()
@@ -25,5 +39,11 @@ public class Type63107mmMultipleRocketLauncherMRL extends EntityType
 
         setCategory((byte)5); // uid 16904, Towed Artillery
         setSubCategory((byte)6); // uid 16912, Type 63 107mm Multiple Rocket Launcher (MRL)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Type63107mmMultipleRocketLauncherMRL createInstance()
+    {
+            return new Type63107mmMultipleRocketLauncherMRL();
     }
 }

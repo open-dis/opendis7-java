@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@421def93;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10064
+ * <p> Entity class <b><code>Prototype</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Prototype.createInstance()</code> or <code>new Prototype()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: AAIRapidDeploymentForceLightTankRDFLTCombinedArmsTeamLightweightCombatVehicleCATLCV  = <code>9</code>; </li>
+ *     <li> Specific: Prototype  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10064; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59a79443. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class Prototype extends EntityType
+public final class Prototype extends EntityType
 {
     /** Default constructor */
     public Prototype()
@@ -26,5 +40,11 @@ public class Prototype extends EntityType
         setCategory((byte)1); // uid 10018, Tank
         setSubCategory((byte)9); // uid 10063, AAI Rapid Deployment Force Light Tank (RDF/LT) Combined Arms Team/Lightweight Combat Vehicle (CAT/LCV)
         setSpecific((byte)1); // uid 10064, Prototype
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Prototype createInstance()
+    {
+            return new Prototype();
     }
 }

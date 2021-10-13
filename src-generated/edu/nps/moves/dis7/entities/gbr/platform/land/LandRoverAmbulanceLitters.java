@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@44065156;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 32877
+ * <p> Entity class <b><code>LandRoverAmbulanceLitters</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LandRoverAmbulanceLitters.createInstance()</code> or <code>new LandRoverAmbulanceLitters()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: LWBLandRover  = <code>1</code>; </li>
+ *     <li> Specific: LandRoverAmbulance  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32877; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@57562473. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class LandRoverAmbulanceLitters extends EntityType
+public final class LandRoverAmbulanceLitters extends EntityType
 {
     /** Default constructor */
     public LandRoverAmbulanceLitters()
@@ -27,5 +41,11 @@ public class LandRoverAmbulanceLitters extends EntityType
         setSubCategory((byte)1); // uid 14932, LWB Land Rover
         setSpecific((byte)2); // uid 32875, Land Rover Ambulance
         setExtra((byte)2); // uid 32877, Land Rover Ambulance Litters
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LandRoverAmbulanceLitters createInstance()
+    {
+            return new LandRoverAmbulanceLitters();
     }
 }

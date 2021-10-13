@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fd4459b;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26492
+ * <p> Entity class <b><code>WashingMachine</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WashingMachine.createInstance()</code> or <code>new WashingMachine()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Appliances = <code>22</code>; </li>
+ *     <li> SubCategory: Indoor  = <code>2</code>; </li>
+ *     <li> Specific: WashingMachine  = <code>5</code>; </li>
+ *     <li> Entity type uid: 26492; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d53e876. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Appliances
+ * @see SubCategory
+
  */
-public class WashingMachine extends EntityType
+public final class WashingMachine extends EntityType
 {
     /** Default constructor */
     public WashingMachine()
@@ -26,5 +40,11 @@ public class WashingMachine extends EntityType
         setCategory((byte)22); // uid 26475, Appliances
         setSubCategory((byte)2); // uid 26487, Indoor
         setSpecific((byte)5); // uid 26492, Washing Machine
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WashingMachine createInstance()
+    {
+            return new WashingMachine();
     }
 }

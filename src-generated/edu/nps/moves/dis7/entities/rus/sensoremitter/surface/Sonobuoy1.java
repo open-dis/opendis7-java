@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@283e1759;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: SURFACE;
- *
- * Entity type uid: 28217
+ * <p> Entity class <b><code>Sonobuoy1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Sonobuoy1.createInstance()</code> or <code>new Sonobuoy1()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, Passive = <code>11</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28217; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6906be0f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AcousticPassive
+ * @see SubCategory
+
  */
-public class Sonobuoy1 extends EntityType
+public final class Sonobuoy1 extends EntityType
 {
     /** Default constructor */
     public Sonobuoy1()
@@ -25,5 +39,11 @@ public class Sonobuoy1 extends EntityType
 
         setCategory((byte)11); // uid 28216, Acoustic, Passive
         setSubCategory((byte)77); // uid 28217, Sonobuoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Sonobuoy1 createInstance()
+    {
+            return new Sonobuoy1();
     }
 }

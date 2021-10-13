@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e5c8ef3;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20820
+ * <p> Entity class <b><code>_122mmHighExplosive30F56</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_122mmHighExplosive30F56.createInstance()</code> or <code>new _122mmHighExplosive30F56()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _122mm  = <code>14</code>; </li>
+ *     <li> Specific: _122mmHighExplosive30F56  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20820; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@389a5022. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _122mmHighExplosive30F56 extends EntityType
+public final class _122mmHighExplosive30F56 extends EntityType
 {
     /** Default constructor */
     public _122mmHighExplosive30F56()
@@ -26,5 +40,11 @@ public class _122mmHighExplosive30F56 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)14); // uid 20819, 122 mm
         setSpecific((byte)1); // uid 20820, 122mm, High Explosive, 30F-56
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _122mmHighExplosive30F56 createInstance()
+    {
+            return new _122mmHighExplosive30F56();
     }
 }

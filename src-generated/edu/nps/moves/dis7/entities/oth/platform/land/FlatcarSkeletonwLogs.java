@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@20921b9b;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29669
+ * <p> Entity class <b><code>FlatcarSkeletonwLogs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FlatcarSkeletonwLogs.createInstance()</code> or <code>new FlatcarSkeletonwLogs()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trains = <code>92</code>; </li>
+ *     <li> SubCategory: GenericFlatcar  = <code>4</code>; </li>
+ *     <li> Specific: FlatcarSkeletonLogging  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29669; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@71ea1fda. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trains
+ * @see SubCategory
+
  */
-public class FlatcarSkeletonwLogs extends EntityType
+public final class FlatcarSkeletonwLogs extends EntityType
 {
     /** Default constructor */
     public FlatcarSkeletonwLogs()
@@ -27,5 +41,11 @@ public class FlatcarSkeletonwLogs extends EntityType
         setSubCategory((byte)4); // uid 25994, Generic Flatcar
         setSpecific((byte)2); // uid 29668, Flatcar, Skeleton (Logging)
         setExtra((byte)1); // uid 29669, Flatcar, Skeleton w/ Logs
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FlatcarSkeletonwLogs createInstance()
+    {
+            return new FlatcarSkeletonwLogs();
     }
 }

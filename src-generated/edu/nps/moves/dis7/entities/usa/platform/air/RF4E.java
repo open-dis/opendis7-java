@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25be445f;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11017
+ * <p> Entity class <b><code>RF4E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RF4E.createInstance()</code> or <code>new RF4E()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Reconnaissance = <code>7</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasF4PhantomII  = <code>4</code>; </li>
+ *     <li> Specific: RF4E  = <code>4</code>; </li>
+ *     <li> Entity type uid: 11017; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61874b9d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reconnaissance
+ * @see SubCategory
+
  */
-public class RF4E extends EntityType
+public final class RF4E extends EntityType
 {
     /** Default constructor */
     public RF4E()
@@ -26,5 +40,11 @@ public class RF4E extends EntityType
         setCategory((byte)7); // uid 11003, Reconnaissance
         setSubCategory((byte)4); // uid 11013, McDonnell-Douglas F-4 Phantom II
         setSpecific((byte)4); // uid 11017, RF-4E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RF4E createInstance()
+    {
+            return new RF4E();
     }
 }

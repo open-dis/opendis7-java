@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@a4df251;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26032
+ * <p> Entity class <b><code>TargetTankFlank</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TargetTankFlank.createInstance()</code> or <code>new TargetTankFlank()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Obstacle = <code>5</code>; </li>
+ *     <li> SubCategory: Target  = <code>25</code>; </li>
+ *     <li> Specific: TargetVehicle  = <code>3</code>; </li>
+ *     <li> Entity type uid: 26032; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1f7336b2. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Obstacle
+ * @see SubCategory
+
  */
-public class TargetTankFlank extends EntityType
+public final class TargetTankFlank extends EntityType
 {
     /** Default constructor */
     public TargetTankFlank()
@@ -27,5 +41,11 @@ public class TargetTankFlank extends EntityType
         setSubCategory((byte)25); // uid 23591, Target
         setSpecific((byte)3); // uid 26030, Target, Vehicle
         setExtra((byte)2); // uid 26032, Target, Tank, Flank
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TargetTankFlank createInstance()
+    {
+            return new TargetTankFlank();
     }
 }

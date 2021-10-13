@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@226a82c4;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 16990
+ * <p> Entity class <b><code>HarbinH5B5Beagle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HarbinH5B5Beagle.createInstance()</code> or <code>new HarbinH5B5Beagle()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Bomber = <code>3</code>; </li>
+ *     <li> SubCategory: HarbinH5B5Beagle  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16990; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1efee8e7. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bomber
+ * @see SubCategory
+
  */
-public class HarbinH5B5Beagle extends EntityType
+public final class HarbinH5B5Beagle extends EntityType
 {
     /** Default constructor */
     public HarbinH5B5Beagle()
@@ -25,5 +39,11 @@ public class HarbinH5B5Beagle extends EntityType
 
         setCategory((byte)3); // uid 16989, Bomber
         setSubCategory((byte)1); // uid 16990, Harbin H-5 (B-5) Beagle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HarbinH5B5Beagle createInstance()
+    {
+            return new HarbinH5B5Beagle();
     }
 }

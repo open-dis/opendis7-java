@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c40365c;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25479
+ * <p> Entity class <b><code>MHV906Faenoe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MHV906Faenoe.createInstance()</code> or <code>new MHV906Faenoe()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: MHV900Class  = <code>1</code>; </li>
+ *     <li> Specific: MHV906Faenoe  = <code>6</code>; </li>
+ *     <li> Entity type uid: 25479; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@292b08d6. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class MHV906Faenoe extends EntityType
+public final class MHV906Faenoe extends EntityType
 {
     /** Default constructor */
     public MHV906Faenoe()
@@ -26,5 +40,11 @@ public class MHV906Faenoe extends EntityType
         setCategory((byte)63); // uid 25472, Coast Guard Boats
         setSubCategory((byte)1); // uid 25473, MHV 900 Class
         setSpecific((byte)6); // uid 25479, MHV-906 Faenoe
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MHV906Faenoe createInstance()
+    {
+            return new MHV906Faenoe();
     }
 }

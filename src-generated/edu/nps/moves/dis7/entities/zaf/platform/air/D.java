@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7915bca3;
- * Country: South Africa (ZAF);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 19111
+ * <p> Entity class <b><code>D</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D.createInstance()</code> or <code>new D()</code>. </p>
+ * <ul>
+ *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fighter / Air Defense = <code>1</code>; </li>
+ *     <li> SubCategory: Cheetah  = <code>1</code>; </li>
+ *     <li> Specific: D  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19111; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41fe8e5f. </p>
+ * @see Country#SOUTH_AFRICA_ZAF
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FighterAirDefense
+ * @see SubCategory
+
  */
-public class D extends EntityType
+public final class D extends EntityType
 {
     /** Default constructor */
     public D()
@@ -26,5 +40,11 @@ public class D extends EntityType
         setCategory((byte)1); // uid 19108, Fighter / Air Defense
         setSubCategory((byte)1); // uid 19109, Cheetah
         setSpecific((byte)2); // uid 19111, D
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D createInstance()
+    {
+            return new D();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@498e41a4;
- * Country: Russia (RUS);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 25424
+ * <p> Entity class <b><code>SpoonRestBRadar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SpoonRestBRadar.createInstance()</code> or <code>new SpoonRestBRadar()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: RF Active = <code>2</code>; </li>
+ *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
+ *     <li> Specific: SpoonRestP12  = <code>5</code>; </li>
+ *     <li> Entity type uid: 25424; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@21ea1d9d. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see RFActive
+ * @see SubCategory
+
  */
-public class SpoonRestBRadar extends EntityType
+public final class SpoonRestBRadar extends EntityType
 {
     /** Default constructor */
     public SpoonRestBRadar()
@@ -27,5 +41,11 @@ public class SpoonRestBRadar extends EntityType
         setSubCategory((byte)2); // uid 22415, Early Warning/Surveillance Radar
         setSpecific((byte)5); // uid 22420, Spoon Rest (P-12)
         setExtra((byte)1); // uid 25424, Spoon Rest B Radar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SpoonRestBRadar createInstance()
+    {
+            return new SpoonRestBRadar();
     }
 }

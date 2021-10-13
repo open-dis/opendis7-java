@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70730db;
- * Country: United Arab Emirates (ARE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18724
+ * <p> Entity class <b><code>A271</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A271.createInstance()</code> or <code>new A271()</code>. </p>
+ * <ul>
+ *     <li> Country: United Arab Emirates (ARE) = <code>223</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ChevertonTypeTender  = <code>1</code>; </li>
+ *     <li> Specific: A271  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18724; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d6bbd35. </p>
+ * @see Country#UNITED_ARAB_EMIRATES_ARE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class A271 extends EntityType
+public final class A271 extends EntityType
 {
     /** Default constructor */
     public A271()
@@ -26,5 +40,11 @@ public class A271 extends EntityType
         setCategory((byte)16); // uid 18722, Auxiliary
         setSubCategory((byte)1); // uid 18723, Cheverton Type (Tender)
         setSpecific((byte)1); // uid 18724, A271
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A271 createInstance()
+    {
+            return new A271();
     }
 }

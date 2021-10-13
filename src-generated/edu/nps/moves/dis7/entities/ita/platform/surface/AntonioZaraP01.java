@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2692b61e;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18574
+ * <p> Entity class <b><code>AntonioZaraP01</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AntonioZaraP01.createInstance()</code> or <code>new AntonioZaraP01()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AntonioZaraClass  = <code>30</code>; </li>
+ *     <li> Specific: AntonioZaraP01  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18574; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@207ea13. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AntonioZaraP01 extends EntityType
+public final class AntonioZaraP01 extends EntityType
 {
     /** Default constructor */
     public AntonioZaraP01()
@@ -26,5 +40,11 @@ public class AntonioZaraP01 extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)30); // uid 18573, Antonio Zara Class
         setSpecific((byte)1); // uid 18574, Antonio Zara P 01
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AntonioZaraP01 createInstance()
+    {
+            return new AntonioZaraP01();
     }
 }

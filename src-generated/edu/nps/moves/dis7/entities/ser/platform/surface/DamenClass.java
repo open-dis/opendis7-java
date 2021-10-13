@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@70cccd8f;
- * Country: Serbia and Montenegro;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19080
+ * <p> Entity class <b><code>DamenClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DamenClass.createInstance()</code> or <code>new DamenClass()</code>. </p>
+ * <ul>
+ *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: DamenClass  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19080; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b289ac9. </p>
+ * @see Country#SERBIA_AND_MONTENEGRO
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class DamenClass extends EntityType
+public final class DamenClass extends EntityType
 {
     /** Default constructor */
     public DamenClass()
@@ -25,5 +39,11 @@ public class DamenClass extends EntityType
 
         setCategory((byte)7); // uid 19072, Light/Patrol Craft
         setSubCategory((byte)3); // uid 19080, Damen Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DamenClass createInstance()
+    {
+            return new DamenClass();
     }
 }

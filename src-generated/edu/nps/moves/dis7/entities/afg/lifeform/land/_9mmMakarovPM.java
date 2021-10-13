@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31d4b3e8;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32190
+ * <p> Entity class <b><code>_9mmMakarovPM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_9mmMakarovPM.createInstance()</code> or <code>new _9mmMakarovPM()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Afghan National Police (ANP) = <code>52</code>; </li>
+ *     <li> SubCategory: HandGuns  = <code>80</code>; </li>
+ *     <li> Specific: _9mmMakarovPM  = <code>34</code>; </li>
+ *     <li> Entity type uid: 32190; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fac18dc. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AfghanNationalPoliceANP
+ * @see SubCategory
+
  */
-public class _9mmMakarovPM extends EntityType
+public final class _9mmMakarovPM extends EntityType
 {
     /** Default constructor */
     public _9mmMakarovPM()
@@ -26,5 +40,11 @@ public class _9mmMakarovPM extends EntityType
         setCategory((byte)52); // uid 32188, Afghan National Police (ANP)
         setSubCategory((byte)80); // uid 32189, Hand Guns
         setSpecific((byte)34); // uid 32190, 9mm Makarov PM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _9mmMakarovPM createInstance()
+    {
+            return new _9mmMakarovPM();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bb58ca3;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29334
+ * <p> Entity class <b><code>ShenyangJZ8F</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ShenyangJZ8F.createInstance()</code> or <code>new ShenyangJZ8F()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Reconnaissance = <code>7</code>; </li>
+ *     <li> SubCategory: ShenyangJZ8  = <code>2</code>; </li>
+ *     <li> Specific: ShenyangJZ8F  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29334; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@365c30cc. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reconnaissance
+ * @see SubCategory
+
  */
-public class ShenyangJZ8F extends EntityType
+public final class ShenyangJZ8F extends EntityType
 {
     /** Default constructor */
     public ShenyangJZ8F()
@@ -26,5 +40,11 @@ public class ShenyangJZ8F extends EntityType
         setCategory((byte)7); // uid 24378, Reconnaissance
         setSubCategory((byte)2); // uid 24380, Shenyang JZ-8
         setSpecific((byte)1); // uid 29334, Shenyang JZ-8F
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ShenyangJZ8F createInstance()
+    {
+            return new ShenyangJZ8F();
     }
 }

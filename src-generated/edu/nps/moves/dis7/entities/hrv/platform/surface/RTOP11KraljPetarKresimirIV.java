@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41d477ed;
- * Country: Croatia (HRV);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19337
+ * <p> Entity class <b><code>RTOP11KraljPetarKresimirIV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RTOP11KraljPetarKresimirIV.createInstance()</code> or <code>new RTOP11KraljPetarKresimirIV()</code>. </p>
+ * <ul>
+ *     <li> Country: Croatia (HRV) = <code>249</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvettes) = <code>50</code>; </li>
+ *     <li> SubCategory: KraljTypeR03ClassFSG  = <code>1</code>; </li>
+ *     <li> Specific: RTOP11KraljPetarKresimirIV  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19337; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@222545dc. </p>
+ * @see Country#CROATIA_HRV
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvettes
+ * @see SubCategory
+
  */
-public class RTOP11KraljPetarKresimirIV extends EntityType
+public final class RTOP11KraljPetarKresimirIV extends EntityType
 {
     /** Default constructor */
     public RTOP11KraljPetarKresimirIV()
@@ -26,5 +40,11 @@ public class RTOP11KraljPetarKresimirIV extends EntityType
         setCategory((byte)50); // uid 19335, Frigate (including Corvettes)
         setSubCategory((byte)1); // uid 19336, Kralj (Type R-03) Class (FSG)
         setSpecific((byte)1); // uid 19337, RTOP 11 Kralj Petar Kresimir IV
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RTOP11KraljPetarKresimirIV createInstance()
+    {
+            return new RTOP11KraljPetarKresimirIV();
     }
 }

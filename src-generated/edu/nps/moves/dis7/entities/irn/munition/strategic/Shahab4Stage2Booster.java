@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35563e4c;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32497
+ * <p> Entity class <b><code>Shahab4Stage2Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Shahab4Stage2Booster.createInstance()</code> or <code>new Shahab4Stage2Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Shahab4  = <code>22</code>; </li>
+ *     <li> Specific: Shahab4Stage2Booster  = <code>5</code>; </li>
+ *     <li> Entity type uid: 32497; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24d8f87a. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Shahab4Stage2Booster extends EntityType
+public final class Shahab4Stage2Booster extends EntityType
 {
     /** Default constructor */
     public Shahab4Stage2Booster()
@@ -26,5 +40,11 @@ public class Shahab4Stage2Booster extends EntityType
         setCategory((byte)1); // uid 21715, Guided
         setSubCategory((byte)22); // uid 32492, Shahab 4
         setSpecific((byte)5); // uid 32497, Shahab 4 Stage 2 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Shahab4Stage2Booster createInstance()
+    {
+            return new Shahab4Stage2Booster();
     }
 }

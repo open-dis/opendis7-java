@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f07d414;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 27014
+ * <p> Entity class <b><code>LLS920</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LLS920.createInstance()</code> or <code>new LLS920()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: ElmaAntiSubmarineMortar  = <code>1</code>; </li>
+ *     <li> Specific: LLS920  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27014; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f8667bb. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class LLS920 extends EntityType
+public final class LLS920 extends EntityType
 {
     /** Default constructor */
     public LLS920()
@@ -26,5 +40,11 @@ public class LLS920 extends EntityType
         setCategory((byte)2); // uid 27012, Ballistic
         setSubCategory((byte)1); // uid 27013, Elma Anti-Submarine Mortar
         setSpecific((byte)1); // uid 27014, LLS-920
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LLS920 createInstance()
+    {
+            return new LLS920();
     }
 }

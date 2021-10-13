@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5597ca3;
- * Country: Russia (RUS);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32164
+ * <p> Entity class <b><code>_135mmAT5ASpandrel9M113Kronkurs</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_135mmAT5ASpandrel9M113Kronkurs.createInstance()</code> or <code>new _135mmAT5ASpandrel9M113Kronkurs()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Army = <code>11</code>; </li>
+ *     <li> SubCategory: AntiTankMissiles  = <code>50</code>; </li>
+ *     <li> Specific: _135mmAT5ASpandrel9M113Kronkurs  = <code>181</code>; </li>
+ *     <li> Entity type uid: 32164; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11574592. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Army
+ * @see SubCategory
+
  */
-public class _135mmAT5ASpandrel9M113Kronkurs extends EntityType
+public final class _135mmAT5ASpandrel9M113Kronkurs extends EntityType
 {
     /** Default constructor */
     public _135mmAT5ASpandrel9M113Kronkurs()
@@ -26,5 +40,11 @@ public class _135mmAT5ASpandrel9M113Kronkurs extends EntityType
         setCategory((byte)11); // uid 32132, Army
         setSubCategory((byte)50); // uid 32156, Anti-Tank Missiles
         setSpecific((byte)181); // uid 32164, 135mm AT-5A Spandrel/9M113 Kronkurs
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _135mmAT5ASpandrel9M113Kronkurs createInstance()
+    {
+            return new _135mmAT5ASpandrel9M113Kronkurs();
     }
 }

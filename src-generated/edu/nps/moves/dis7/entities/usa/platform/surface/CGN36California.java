@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@718fd7c1;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11358
+ * <p> Entity class <b><code>CGN36California</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CGN36California.createInstance()</code> or <code>new CGN36California()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Cruiser = <code>3</code>; </li>
+ *     <li> SubCategory: CaliforniaClass  = <code>3</code>; </li>
+ *     <li> Specific: CGN36California  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11358; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@390037e7. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileCruiser
+ * @see SubCategory
+
  */
-public class CGN36California extends EntityType
+public final class CGN36California extends EntityType
 {
     /** Default constructor */
     public CGN36California()
@@ -26,5 +40,11 @@ public class CGN36California extends EntityType
         setCategory((byte)3); // uid 11323, Guided Missile Cruiser
         setSubCategory((byte)3); // uid 11357, California Class
         setSpecific((byte)1); // uid 11358, CGN 36 California
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CGN36California createInstance()
+    {
+            return new CGN36California();
     }
 }

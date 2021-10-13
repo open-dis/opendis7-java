@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2228db21;
- * Country: Philippines (PHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 33025
+ * <p> Entity class <b><code>_601Tarlac</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_601Tarlac.createInstance()</code> or <code>new _601Tarlac()</code>. </p>
+ * <ul>
+ *     <li> Country: Philippines (PHL) = <code>173</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: TarlacClass  = <code>1</code>; </li>
+ *     <li> Specific: _601Tarlac  = <code>1</code>; </li>
+ *     <li> Entity type uid: 33025; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a78dacd. </p>
+ * @see Country#PHILIPPINES_PHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class _601Tarlac extends EntityType
+public final class _601Tarlac extends EntityType
 {
     /** Default constructor */
     public _601Tarlac()
@@ -26,5 +40,11 @@ public class _601Tarlac extends EntityType
         setCategory((byte)56); // uid 33023, Amphibious Transport Dock
         setSubCategory((byte)1); // uid 33024, Tarlac Class
         setSpecific((byte)1); // uid 33025, 601 Tarlac
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _601Tarlac createInstance()
+    {
+            return new _601Tarlac();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@35bbe5e8;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17531
+ * <p> Entity class <b><code>P207Launceston</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P207Launceston.createInstance()</code> or <code>new P207Launceston()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FremantleClassLargePatrolCraft  = <code>1</code>; </li>
+ *     <li> Specific: P207Launceston  = <code>5</code>; </li>
+ *     <li> Entity type uid: 17531; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@769c9116. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P207Launceston extends EntityType
+public final class P207Launceston extends EntityType
 {
     /** Default constructor */
     public P207Launceston()
@@ -26,5 +40,11 @@ public class P207Launceston extends EntityType
         setCategory((byte)7); // uid 17524, Light/Patrol Craft
         setSubCategory((byte)1); // uid 17526, Fremantle Class (Large Patrol Craft)
         setSpecific((byte)5); // uid 17531, P 207 Launceston
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P207Launceston createInstance()
+    {
+            return new P207Launceston();
     }
 }

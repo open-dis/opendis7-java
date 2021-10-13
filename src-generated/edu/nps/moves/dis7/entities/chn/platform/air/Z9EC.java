@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41ee392b;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 30496
+ * <p> Entity class <b><code>Z9EC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Z9EC.createInstance()</code> or <code>new Z9EC()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: HarbinZ9  = <code>1</code>; </li>
+ *     <li> Specific: Z9EC  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30496; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3444d69d. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class Z9EC extends EntityType
+public final class Z9EC extends EntityType
 {
     /** Default constructor */
     public Z9EC()
@@ -26,5 +40,11 @@ public class Z9EC extends EntityType
         setCategory((byte)22); // uid 30494, Anti-Submarine Warfare/Patrol Helicopter
         setSubCategory((byte)1); // uid 30495, Harbin Z-9
         setSpecific((byte)1); // uid 30496, Z-9EC
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Z9EC createInstance()
+    {
+            return new Z9EC();
     }
 }

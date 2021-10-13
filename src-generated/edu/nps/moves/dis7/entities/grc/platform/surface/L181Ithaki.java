@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16ce702d;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23334
+ * <p> Entity class <b><code>L181Ithaki</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L181Ithaki.createInstance()</code> or <code>new L181Ithaki()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Cushion/Surface Effect = <code>15</code>; </li>
+ *     <li> SubCategory: ZubrClass  = <code>1</code>; </li>
+ *     <li> Specific: L181Ithaki  = <code>2</code>; </li>
+ *     <li> Entity type uid: 23334; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e70f13a. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirCushionSurfaceEffect
+ * @see SubCategory
+
  */
-public class L181Ithaki extends EntityType
+public final class L181Ithaki extends EntityType
 {
     /** Default constructor */
     public L181Ithaki()
@@ -26,5 +40,11 @@ public class L181Ithaki extends EntityType
         setCategory((byte)15); // uid 23331, Air Cushion/Surface Effect
         setSubCategory((byte)1); // uid 23332, Zubr Class
         setSpecific((byte)2); // uid 23334, L181 Ithaki
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L181Ithaki createInstance()
+    {
+            return new L181Ithaki();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@56cfe111;
- * Country: Ukraine (UKR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27847
+ * <p> Entity class <b><code>U155Prydniprovya</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>U155Prydniprovya.createInstance()</code> or <code>new U155Prydniprovya()</code>. </p>
+ * <ul>
+ *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: TarantulIIMolnyaClass  = <code>1</code>; </li>
+ *     <li> Specific: U155Prydniprovya  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27847; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a1f5f71. </p>
+ * @see Country#UKRAINE_UKR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class U155Prydniprovya extends EntityType
+public final class U155Prydniprovya extends EntityType
 {
     /** Default constructor */
     public U155Prydniprovya()
@@ -26,5 +40,11 @@ public class U155Prydniprovya extends EntityType
         setCategory((byte)50); // uid 27845, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27846, Tarantul II (Molnya) Class
         setSpecific((byte)1); // uid 27847, U-155 Prydniprovya
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static U155Prydniprovya createInstance()
+    {
+            return new U155Prydniprovya();
     }
 }

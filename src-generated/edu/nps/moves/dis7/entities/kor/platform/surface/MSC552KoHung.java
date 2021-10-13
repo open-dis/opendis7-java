@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46c670a6;
- * Country: Korea (Republic of) (KOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17701
+ * <p> Entity class <b><code>MSC552KoHung</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MSC552KoHung.createInstance()</code> or <code>new MSC552KoHung()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Republic of) (KOR) = <code>120</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: USMSC268Classminesweepercoastal  = <code>2</code>; </li>
+ *     <li> Specific: MSC552KoHung  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17701; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37ebc9d8. </p>
+ * @see Country#KOREA_REPUBLIC_OF_KOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class MSC552KoHung extends EntityType
+public final class MSC552KoHung extends EntityType
 {
     /** Default constructor */
     public MSC552KoHung()
@@ -26,5 +40,11 @@ public class MSC552KoHung extends EntityType
         setCategory((byte)8); // uid 17691, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 17699, US MSC 268 Class (minesweeper-coastal)
         setSpecific((byte)2); // uid 17701, MSC 552 Ko Hung
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MSC552KoHung createInstance()
+    {
+            return new MSC552KoHung();
     }
 }

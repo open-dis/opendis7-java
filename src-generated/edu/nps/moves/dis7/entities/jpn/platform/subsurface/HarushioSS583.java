@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4215838f;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 26993
+ * <p> Entity class <b><code>HarushioSS583</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HarushioSS583.createInstance()</code> or <code>new HarushioSS583()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: HarushioClassSS  = <code>1</code>; </li>
+ *     <li> Specific: HarushioSS583  = <code>1</code>; </li>
+ *     <li> Entity type uid: 26993; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@346a361. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class HarushioSS583 extends EntityType
+public final class HarushioSS583 extends EntityType
 {
     /** Default constructor */
     public HarushioSS583()
@@ -26,5 +40,11 @@ public class HarushioSS583 extends EntityType
         setCategory((byte)5); // uid 18910, SS (Conventional Attack-Torpedo Patrol)
         setSubCategory((byte)1); // uid 18911, Harushio Class (SS)
         setSpecific((byte)1); // uid 26993, Harushio SS-583
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HarushioSS583 createInstance()
+    {
+            return new HarushioSS583();
     }
 }

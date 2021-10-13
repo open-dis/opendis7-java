@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ce561cc;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 19476
+ * <p> Entity class <b><code>StandardMRRIM66</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>StandardMRRIM66.createInstance()</code> or <code>new StandardMRRIM66()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: StandardMissile  = <code>27</code>; </li>
+ *     <li> Specific: StandardMRRIM66  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19476; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d7f1e59. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class StandardMRRIM66 extends EntityType
+public final class StandardMRRIM66 extends EntityType
 {
     /** Default constructor */
     public StandardMRRIM66()
@@ -26,5 +40,11 @@ public class StandardMRRIM66 extends EntityType
         setCategory((byte)1); // uid 19406, Guided
         setSubCategory((byte)27); // uid 19475, Standard Missile
         setSpecific((byte)1); // uid 19476, Standard MR (RIM-66)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static StandardMRRIM66 createInstance()
+    {
+            return new StandardMRRIM66();
     }
 }

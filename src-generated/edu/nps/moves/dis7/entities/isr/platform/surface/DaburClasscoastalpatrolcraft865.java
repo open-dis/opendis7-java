@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a3e4aff;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23771
+ * <p> Entity class <b><code>DaburClasscoastalpatrolcraft865</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DaburClasscoastalpatrolcraft865.createInstance()</code> or <code>new DaburClasscoastalpatrolcraft865()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: DaburClasscoastalpatrolcraft  = <code>6</code>; </li>
+ *     <li> Specific: _865  = <code>8</code>; </li>
+ *     <li> Entity type uid: 23771; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38f116f6. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class DaburClasscoastalpatrolcraft865 extends EntityType
+public final class DaburClasscoastalpatrolcraft865 extends EntityType
 {
     /** Default constructor */
     public DaburClasscoastalpatrolcraft865()
@@ -26,5 +40,11 @@ public class DaburClasscoastalpatrolcraft865 extends EntityType
         setCategory((byte)7); // uid 18214, Light/Patrol Craft
         setSubCategory((byte)6); // uid 18240, Dabur Class (coastal patrol craft)
         setSpecific((byte)8); // uid 23771, 865
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DaburClasscoastalpatrolcraft865 createInstance()
+    {
+            return new DaburClasscoastalpatrolcraft865();
     }
 }

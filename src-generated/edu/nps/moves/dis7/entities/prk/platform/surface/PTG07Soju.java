@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fb97279;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26756
+ * <p> Entity class <b><code>PTG07Soju</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PTG07Soju.createInstance()</code> or <code>new PTG07Soju()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: SojuClassfastattackcraftmissile  = <code>2</code>; </li>
+ *     <li> Specific: PTG07Soju  = <code>7</code>; </li>
+ *     <li> Entity type uid: 26756; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f2ef586. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightpatrolCraft
+ * @see SubCategory
+
  */
-public class PTG07Soju extends EntityType
+public final class PTG07Soju extends EntityType
 {
     /** Default constructor */
     public PTG07Soju()
@@ -26,5 +40,11 @@ public class PTG07Soju extends EntityType
         setCategory((byte)7); // uid 17768, Light/patrol Craft
         setSubCategory((byte)2); // uid 17770, Soju Class (fast attack craft-missile)
         setSpecific((byte)7); // uid 26756, PTG 07 Soju
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PTG07Soju createInstance()
+    {
+            return new PTG07Soju();
     }
 }

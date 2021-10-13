@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@9e33a6a;
- * Country: Taiwan, Province of China (TWN);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 29087
+ * <p> Entity class <b><code>SkyBowITienKungITK1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SkyBowITienKungITK1.createInstance()</code> or <code>new SkyBowITienKungITK1()</code>. </p>
+ * <ul>
+ *     <li> Country: Taiwan, Province of China (TWN) = <code>208</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SkyBowITienKungITK1  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29087; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5f61e002. </p>
+ * @see Country#TAIWAN_PROVINCE_OF_CHINA_TWN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SkyBowITienKungITK1 extends EntityType
+public final class SkyBowITienKungITK1 extends EntityType
 {
     /** Default constructor */
     public SkyBowITienKungITK1()
@@ -25,5 +39,11 @@ public class SkyBowITienKungITK1 extends EntityType
 
         setCategory((byte)1); // uid 21753, Guided
         setSubCategory((byte)4); // uid 29087, Sky Bow I / Tien Kung I / TK-1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SkyBowITienKungITK1 createInstance()
+    {
+            return new SkyBowITienKungITK1();
     }
 }

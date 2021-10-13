@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21bd128b;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23473
+ * <p> Entity class <b><code>LargeExtensionNodeANTTC46</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LargeExtensionNodeANTTC46.createInstance()</code> or <code>new LargeExtensionNodeANTTC46()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Communications Facility = <code>33</code>; </li>
+ *     <li> SubCategory: MobileSubscriberEquipmentMSEPlatform  = <code>1</code>; </li>
+ *     <li> Specific: LargeExtensionNodeANTTC46  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23473; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23da79eb. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommunicationsFacility
+ * @see SubCategory
+
  */
-public class LargeExtensionNodeANTTC46 extends EntityType
+public final class LargeExtensionNodeANTTC46 extends EntityType
 {
     /** Default constructor */
     public LargeExtensionNodeANTTC46()
@@ -26,5 +40,11 @@ public class LargeExtensionNodeANTTC46 extends EntityType
         setCategory((byte)33); // uid 10746, Communications Facility
         setSubCategory((byte)1); // uid 23472, Mobile Subscriber Equipment (MSE) Platform
         setSpecific((byte)1); // uid 23473, Large Extension Node, AN/TTC-46
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LargeExtensionNodeANTTC46 createInstance()
+    {
+            return new LargeExtensionNodeANTTC46();
     }
 }

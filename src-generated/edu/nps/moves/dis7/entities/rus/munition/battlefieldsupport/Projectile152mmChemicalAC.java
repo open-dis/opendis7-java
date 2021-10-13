@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@610fbe1c;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20855
+ * <p> Entity class <b><code>Projectile152mmChemicalAC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Projectile152mmChemicalAC.createInstance()</code> or <code>new Projectile152mmChemicalAC()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _152mm  = <code>19</code>; </li>
+ *     <li> Specific: Projectile152mmChemical_AC  = <code>9</code>; </li>
+ *     <li> Entity type uid: 20855; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e3283f6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class Projectile152mmChemicalAC extends EntityType
+public final class Projectile152mmChemicalAC extends EntityType
 {
     /** Default constructor */
     public Projectile152mmChemicalAC()
@@ -26,5 +40,11 @@ public class Projectile152mmChemicalAC extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)19); // uid 20846, 152 mm
         setSpecific((byte)9); // uid 20855, Projectile, 152-mm, Chemical: AC
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Projectile152mmChemicalAC createInstance()
+    {
+            return new Projectile152mmChemicalAC();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@293a5f75;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18059
+ * <p> Entity class <b><code>_211Parvin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_211Parvin.createInstance()</code> or <code>new _211Parvin()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ParvinPGM71Classlargepatrolcraft  = <code>2</code>; </li>
+ *     <li> Specific: _211Parvin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18059; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53d102a2. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _211Parvin extends EntityType
+public final class _211Parvin extends EntityType
 {
     /** Default constructor */
     public _211Parvin()
@@ -26,5 +40,11 @@ public class _211Parvin extends EntityType
         setCategory((byte)7); // uid 18046, Light/Patrol Craft
         setSubCategory((byte)2); // uid 18058, Parvin (PGM-71) Class (large patrol craft)
         setSpecific((byte)1); // uid 18059, 211 Parvin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _211Parvin createInstance()
+    {
+            return new _211Parvin();
     }
 }

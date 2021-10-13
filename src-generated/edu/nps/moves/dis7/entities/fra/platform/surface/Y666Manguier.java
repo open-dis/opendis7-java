@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@48e1f6c7;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16098
+ * <p> Entity class <b><code>Y666Manguier</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y666Manguier.createInstance()</code> or <code>new Y666Manguier()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: HarbourtugsRemorqueursDePort  = <code>2</code>; </li>
+ *     <li> Specific: _105tontype  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16098; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6fa51cd4. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y666Manguier extends EntityType
+public final class Y666Manguier extends EntityType
 {
     /** Default constructor */
     public Y666Manguier()
@@ -27,5 +41,11 @@ public class Y666Manguier extends EntityType
         setSubCategory((byte)2); // uid 16087, Harbour tugs (Remorqueurs De Port)
         setSpecific((byte)1); // uid 16088, 105-ton type
         setExtra((byte)10); // uid 16098, Y 666 Manguier
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y666Manguier createInstance()
+    {
+            return new Y666Manguier();
     }
 }

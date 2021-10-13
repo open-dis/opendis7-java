@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@22e813fc;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 26482
+ * <p> Entity class <b><code>PressureCookerWhite</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PressureCookerWhite.createInstance()</code> or <code>new PressureCookerWhite()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Appliances = <code>22</code>; </li>
+ *     <li> SubCategory: Countertop  = <code>1</code>; </li>
+ *     <li> Specific: PressureCooker  = <code>3</code>; </li>
+ *     <li> Entity type uid: 26482; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@485c84d7. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Appliances
+ * @see SubCategory
+
  */
-public class PressureCookerWhite extends EntityType
+public final class PressureCookerWhite extends EntityType
 {
     /** Default constructor */
     public PressureCookerWhite()
@@ -27,5 +41,11 @@ public class PressureCookerWhite extends EntityType
         setSubCategory((byte)1); // uid 26476, Countertop
         setSpecific((byte)3); // uid 26481, Pressure Cooker
         setExtra((byte)1); // uid 26482, Pressure Cooker, White
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PressureCookerWhite createInstance()
+    {
+            return new PressureCookerWhite();
     }
 }

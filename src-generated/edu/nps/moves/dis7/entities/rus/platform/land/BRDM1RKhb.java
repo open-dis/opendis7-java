@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3703bf3c;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12712
+ * <p> Entity class <b><code>BRDM1RKhb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BRDM1RKhb.createInstance()</code> or <code>new BRDM1RKhb()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BRDM1Reconnaissancevehicle  = <code>15</code>; </li>
+ *     <li> Specific: BRDM1RKhb  = <code>2</code>; </li>
+ *     <li> Entity type uid: 12712; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3605c4d3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class BRDM1RKhb extends EntityType
+public final class BRDM1RKhb extends EntityType
 {
     /** Default constructor */
     public BRDM1RKhb()
@@ -26,5 +40,11 @@ public class BRDM1RKhb extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)15); // uid 12710, BRDM-1 Reconnaissance vehicle
         setSpecific((byte)2); // uid 12712, BRDM-1-RKhb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BRDM1RKhb createInstance()
+    {
+            return new BRDM1RKhb();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@46185a1b;
- * Country: Spain (ESP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 19025
+ * <p> Entity class <b><code>M22Ebro</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M22Ebro.createInstance()</code> or <code>new M22Ebro()</code>. </p>
+ * <ul>
+ *     <li> Country: Spain (ESP) = <code>198</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship = <code>8</code>; </li>
+ *     <li> SubCategory: AdjutantRedwingandMSC268Class  = <code>2</code>; </li>
+ *     <li> Specific: M22Ebro  = <code>1</code>; </li>
+ *     <li> Entity type uid: 19025; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6a638c79. </p>
+ * @see Country#SPAIN_ESP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShip
+ * @see SubCategory
+
  */
-public class M22Ebro extends EntityType
+public final class M22Ebro extends EntityType
 {
     /** Default constructor */
     public M22Ebro()
@@ -26,5 +40,11 @@ public class M22Ebro extends EntityType
         setCategory((byte)8); // uid 19021, Mine Countermeasure Ship
         setSubCategory((byte)2); // uid 19024, Adjutant, Redwing and MSC 268 Class
         setSpecific((byte)1); // uid 19025, M22 Ebro
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M22Ebro createInstance()
+    {
+            return new M22Ebro();
     }
 }

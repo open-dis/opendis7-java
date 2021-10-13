@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a93b263;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13932
+ * <p> Entity class <b><code>SSV474exVegamod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SSV474exVegamod.createInstance()</code> or <code>new SSV474exVegamod()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: MomaclassAGIs  = <code>19</code>; </li>
+ *     <li> Specific: SSV474exVegamod  = <code>5</code>; </li>
+ *     <li> Entity type uid: 13932; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1fcf9739. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class SSV474exVegamod extends EntityType
+public final class SSV474exVegamod extends EntityType
 {
     /** Default constructor */
     public SSV474exVegamod()
@@ -26,5 +40,11 @@ public class SSV474exVegamod extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)19); // uid 13927, Moma class (AGIs)
         setSpecific((byte)5); // uid 13932, SSV 474 (ex-Vega) (mod)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SSV474exVegamod createInstance()
+    {
+            return new SSV474exVegamod();
     }
 }

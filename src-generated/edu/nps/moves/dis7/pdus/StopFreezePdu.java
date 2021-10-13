@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -34,7 +33,7 @@ public class StopFreezePdu extends SimulationManagementFamilyPdu implements Seri
    protected int  requestID;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public StopFreezePdu()
  {
     setPduType( DisPduType.STOP_FREEZE );
@@ -50,9 +49,12 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += realWorldTime.getMarshalledSize();
-   marshalSize += reason.getMarshalledSize();
-   marshalSize += frozenBehavior.getMarshalledSize();
+   if (realWorldTime != null)
+       marshalSize += realWorldTime.getMarshalledSize();
+   if (reason != null)
+       marshalSize += reason.getMarshalledSize();
+   if (frozenBehavior != null)
+       marshalSize += frozenBehavior.getMarshalledSize();
    marshalSize += 2;  // padding1
    marshalSize += 4;  // requestID
 
@@ -232,11 +234,23 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    realWorldTime.unmarshal(byteBuffer);
-    reason = StopFreezeReason.unmarshalEnum(byteBuffer);
-    frozenBehavior.unmarshal(byteBuffer);
-    padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
-    requestID = byteBuffer.getInt();
+    try
+    {
+        // attribute realWorldTime marked as not serialized
+        realWorldTime.unmarshal(byteBuffer);
+        // attribute reason marked as not serialized
+        reason = StopFreezeReason.unmarshalEnum(byteBuffer);
+        // attribute frozenBehavior marked as not serialized
+        frozenBehavior.unmarshal(byteBuffer);
+        // attribute padding1 marked as not serialized
+        padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute requestID marked as not serialized
+        requestID = byteBuffer.getInt();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

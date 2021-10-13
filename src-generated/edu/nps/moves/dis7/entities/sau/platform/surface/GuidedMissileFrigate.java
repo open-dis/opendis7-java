@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4cfa8227;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17849
+ * <p> Entity class <b><code>GuidedMissileFrigate</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GuidedMissileFrigate.createInstance()</code> or <code>new GuidedMissileFrigate()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17849; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@4cb40e3b. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigate
+
  */
-public class GuidedMissileFrigate extends EntityType
+public final class GuidedMissileFrigate extends EntityType
 {
     /** Default constructor */
     public GuidedMissileFrigate()
@@ -24,5 +37,11 @@ public class GuidedMissileFrigate extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)6); // uid 17849, Guided Missile Frigate
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GuidedMissileFrigate createInstance()
+    {
+            return new GuidedMissileFrigate();
     }
 }

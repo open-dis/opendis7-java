@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fa34d52;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31748
+ * <p> Entity class <b><code>EurocopterEC145BK117C2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EurocopterEC145BK117C2.createInstance()</code> or <code>new EurocopterEC145BK117C2()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Medium (up to 20,000 lbs / 9,072 kg) = <code>91</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific: EurocopterEC145BK117C2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31748; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@50313382. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterMediumupto20000lbs9072kg
+ * @see SubCategory
+
  */
-public class EurocopterEC145BK117C2 extends EntityType
+public final class EurocopterEC145BK117C2 extends EntityType
 {
     /** Default constructor */
     public EurocopterEC145BK117C2()
@@ -26,5 +40,11 @@ public class EurocopterEC145BK117C2 extends EntityType
         setCategory((byte)91); // uid 31746, Civilian Helicopter, Medium (up to 20,000 lbs / 9,072 kg)
         setSubCategory((byte)12); // uid 31747, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
         setSpecific((byte)1); // uid 31748, Eurocopter EC145 / BK 117 C2
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EurocopterEC145BK117C2 createInstance()
+    {
+            return new EurocopterEC145BK117C2();
     }
 }

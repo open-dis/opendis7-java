@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f3356c0;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32799
+ * <p> Entity class <b><code>CSSN14Stage3Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CSSN14Stage3Booster.createInstance()</code> or <code>new CSSN14Stage3Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: CSSN14  = <code>36</code>; </li>
+ *     <li> Specific: CSSN14Stage3Booster  = <code>7</code>; </li>
+ *     <li> Entity type uid: 32799; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12abcd1e. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class CSSN14Stage3Booster extends EntityType
+public final class CSSN14Stage3Booster extends EntityType
 {
     /** Default constructor */
     public CSSN14Stage3Booster()
@@ -26,5 +40,11 @@ public class CSSN14Stage3Booster extends EntityType
         setCategory((byte)1); // uid 21556, Guided
         setSubCategory((byte)36); // uid 32793, CSS-N-14
         setSpecific((byte)7); // uid 32799, CSS-N-14 Stage 3 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CSSN14Stage3Booster createInstance()
+    {
+            return new CSSN14Stage3Booster();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@57cf54e1;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 15825
+ * <p> Entity class <b><code>EurocopterBO105PAH1VBHBSH1</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EurocopterBO105PAH1VBHBSH1.createInstance()</code> or <code>new EurocopterBO105PAH1VBHBSH1()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack Helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: EurocopterBO105PAH1VBHBSH1  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 15825; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b48a640. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackHelicopter
+ * @see SubCategory
+
  */
-public class EurocopterBO105PAH1VBHBSH1 extends EntityType
+public final class EurocopterBO105PAH1VBHBSH1 extends EntityType
 {
     /** Default constructor */
     public EurocopterBO105PAH1VBHBSH1()
@@ -25,5 +39,11 @@ public class EurocopterBO105PAH1VBHBSH1 extends EntityType
 
         setCategory((byte)20); // uid 15818, Attack Helicopter
         setSubCategory((byte)3); // uid 15825, Eurocopter BO 105/PAH-1/VBH/BSH-1
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EurocopterBO105PAH1VBHBSH1 createInstance()
+    {
+            return new EurocopterBO105PAH1VBHBSH1();
     }
 }

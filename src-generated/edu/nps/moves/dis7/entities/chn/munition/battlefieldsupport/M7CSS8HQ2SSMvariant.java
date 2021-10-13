@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@476fde05;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 21549
+ * <p> Entity class <b><code>M7CSS8HQ2SSMvariant</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M7CSS8HQ2SSMvariant.createInstance()</code> or <code>new M7CSS8HQ2SSMvariant()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: M7CSS8HQ2SSMvariant  = <code>22</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 21549; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6a567f7b. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M7CSS8HQ2SSMvariant extends EntityType
+public final class M7CSS8HQ2SSMvariant extends EntityType
 {
     /** Default constructor */
     public M7CSS8HQ2SSMvariant()
@@ -25,5 +39,11 @@ public class M7CSS8HQ2SSMvariant extends EntityType
 
         setCategory((byte)2); // uid 21465, Ballistic
         setSubCategory((byte)22); // uid 21549, M-7/CSS-8 (HQ-2 SSM variant)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M7CSS8HQ2SSMvariant createInstance()
+    {
+            return new M7CSS8HQ2SSMvariant();
     }
 }

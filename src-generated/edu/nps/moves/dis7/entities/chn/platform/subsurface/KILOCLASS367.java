@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c6648b0;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22802
+ * <p> Entity class <b><code>KILOCLASS367</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KILOCLASS367.createInstance()</code> or <code>new KILOCLASS367()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: KILOCLASS  = <code>3</code>; </li>
+ *     <li> Specific: _367  = <code>4</code>; </li>
+ *     <li> Entity type uid: 22802; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@359f7cdf. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class KILOCLASS367 extends EntityType
+public final class KILOCLASS367 extends EntityType
 {
     /** Default constructor */
     public KILOCLASS367()
@@ -26,5 +40,11 @@ public class KILOCLASS367 extends EntityType
         setCategory((byte)5); // uid 17451, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)3); // uid 22798, KILO CLASS
         setSpecific((byte)4); // uid 22802, 367
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KILOCLASS367 createInstance()
+    {
+            return new KILOCLASS367();
     }
 }

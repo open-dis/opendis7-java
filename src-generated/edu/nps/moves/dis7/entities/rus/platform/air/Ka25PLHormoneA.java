@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16c8b7bd;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 13429
+ * <p> Entity class <b><code>Ka25PLHormoneA</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ka25PLHormoneA.createInstance()</code> or <code>new Ka25PLHormoneA()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: Ka25Hormone  = <code>4</code>; </li>
+ *     <li> Specific: Ka25PLHormoneA  = <code>4</code>; </li>
+ *     <li> Entity type uid: 13429; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@99a78d7. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Attackhelicopter
+ * @see SubCategory
+
  */
-public class Ka25PLHormoneA extends EntityType
+public final class Ka25PLHormoneA extends EntityType
 {
     /** Default constructor */
     public Ka25PLHormoneA()
@@ -26,5 +40,11 @@ public class Ka25PLHormoneA extends EntityType
         setCategory((byte)20); // uid 13407, Attack helicopter
         setSubCategory((byte)4); // uid 13425, Ka-25 Hormone
         setSpecific((byte)4); // uid 13429, Ka-25PL Hormone A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ka25PLHormoneA createInstance()
+    {
+            return new Ka25PLHormoneA();
     }
 }

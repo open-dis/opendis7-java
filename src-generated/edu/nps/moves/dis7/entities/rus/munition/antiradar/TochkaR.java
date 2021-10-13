@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24691c5;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_RADAR;
- *
- * Entity type uid: 20518
+ * <p> Entity class <b><code>TochkaR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TochkaR.createInstance()</code> or <code>new TochkaR()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_RADAR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SS21Scarab  = <code>6</code>; </li>
+ *     <li> Specific: TochkaR  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20518; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2dd0a0d0. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TochkaR extends EntityType
+public final class TochkaR extends EntityType
 {
     /** Default constructor */
     public TochkaR()
@@ -26,5 +40,11 @@ public class TochkaR extends EntityType
         setCategory((byte)1); // uid 20509, Guided
         setSubCategory((byte)6); // uid 20517, SS-21 Scarab
         setSpecific((byte)1); // uid 20518, Tochka-R
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TochkaR createInstance()
+    {
+            return new TochkaR();
     }
 }

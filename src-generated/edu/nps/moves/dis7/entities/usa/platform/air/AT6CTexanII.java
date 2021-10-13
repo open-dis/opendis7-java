@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79d3473e;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28707
+ * <p> Entity class <b><code>AT6CTexanII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AT6CTexanII.createInstance()</code> or <code>new AT6CTexanII()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: RaytheonPilatusPC9MkIIBeechMkII  = <code>13</code>; </li>
+ *     <li> Specific: AT6CTexanII  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28707; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55b5cd2b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class AT6CTexanII extends EntityType
+public final class AT6CTexanII extends EntityType
 {
     /** Default constructor */
     public AT6CTexanII()
@@ -26,5 +40,11 @@ public class AT6CTexanII extends EntityType
         setCategory((byte)2); // uid 10824, Attack/Strike
         setSubCategory((byte)13); // uid 28704, Raytheon / Pilatus PC-9 Mk II (Beech Mk II)
         setSpecific((byte)3); // uid 28707, AT-6C Texan II
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AT6CTexanII createInstance()
+    {
+            return new AT6CTexanII();
     }
 }

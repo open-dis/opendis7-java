@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61db86bf;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11075
+ * <p> Entity class <b><code>AH1WVenom</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AH1WVenom.createInstance()</code> or <code>new AH1WVenom()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack helicopter = <code>20</code>; </li>
+ *     <li> SubCategory: BellModel209HueycobraSeacobraSupercobra  = <code>2</code>; </li>
+ *     <li> Specific: AH1WVenom  = <code>11</code>; </li>
+ *     <li> Entity type uid: 11075; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2693c618. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Attackhelicopter
+ * @see SubCategory
+
  */
-public class AH1WVenom extends EntityType
+public final class AH1WVenom extends EntityType
 {
     /** Default constructor */
     public AH1WVenom()
@@ -26,5 +40,11 @@ public class AH1WVenom extends EntityType
         setCategory((byte)20); // uid 11056, Attack helicopter
         setSubCategory((byte)2); // uid 11064, Bell Model 209 Hueycobra, Seacobra, Supercobra
         setSpecific((byte)11); // uid 11075, AH-1W Venom
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AH1WVenom createInstance()
+    {
+            return new AH1WVenom();
     }
 }

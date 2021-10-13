@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e120628;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20807
+ * <p> Entity class <b><code>HEFRAGOF17</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HEFRAGOF17.createInstance()</code> or <code>new HEFRAGOF17()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _100mm  = <code>11</code>; </li>
+ *     <li> Specific: HEFRAGOF17  = <code>2</code>; </li>
+ *     <li> Entity type uid: 20807; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@216f01. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class HEFRAGOF17 extends EntityType
+public final class HEFRAGOF17 extends EntityType
 {
     /** Default constructor */
     public HEFRAGOF17()
@@ -26,5 +40,11 @@ public class HEFRAGOF17 extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)11); // uid 20805, 100 mm
         setSpecific((byte)2); // uid 20807, HE-FRAG OF-17
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HEFRAGOF17 createInstance()
+    {
+            return new HEFRAGOF17();
     }
 }

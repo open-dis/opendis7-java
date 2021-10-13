@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -67,7 +66,7 @@ public class GriddedDataPdu extends SyntheticEnvironmentFamilyPdu implements Ser
    protected List< GridData > gridDataRecords = new ArrayList< GridData >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public GriddedDataPdu()
  {
     setPduType( DisPduType.GRIDDED_DATA );
@@ -83,30 +82,38 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += environmentalSimulationApplicationID.getMarshalledSize();
+   if (environmentalSimulationApplicationID != null)
+       marshalSize += environmentalSimulationApplicationID.getMarshalledSize();
    marshalSize += 2;  // fieldNumber
    marshalSize += 2;  // pduNumber
    marshalSize += 2;  // pduTotal
-   marshalSize += coordinateSystem.getMarshalledSize();
+   if (coordinateSystem != null)
+       marshalSize += coordinateSystem.getMarshalledSize();
    marshalSize += 1;  // numberOfGridAxes
-   marshalSize += constantGrid.getMarshalledSize();
-   marshalSize += environmentType.getMarshalledSize();
-   marshalSize += orientation.getMarshalledSize();
-   marshalSize += sampleTime.getMarshalledSize();
+   if (constantGrid != null)
+       marshalSize += constantGrid.getMarshalledSize();
+   if (environmentType != null)
+       marshalSize += environmentType.getMarshalledSize();
+   if (orientation != null)
+       marshalSize += orientation.getMarshalledSize();
+   if (sampleTime != null)
+       marshalSize += sampleTime.getMarshalledSize();
    marshalSize += 4;  // totalValues
    marshalSize += 1;  // vectorDimension
    marshalSize += 1;  // padding1
    marshalSize += 2;  // padding2
-   for(int idx=0; idx < gridAxisDescriptors.size(); idx++)
-   {
-        GridAxisDescriptor listElement = gridAxisDescriptors.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
-   for(int idx=0; idx < gridDataRecords.size(); idx++)
-   {
-        GridData listElement = gridDataRecords.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (gridAxisDescriptors != null)
+       for (int idx=0; idx < gridAxisDescriptors.size(); idx++)
+       {
+            GridAxisDescriptor listElement = gridAxisDescriptors.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
+   if (gridDataRecords != null)
+       for (int idx=0; idx < gridDataRecords.size(); idx++)
+       {
+            GridData listElement = gridDataRecords.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -420,14 +427,14 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeByte(padding1);
        dos.writeShort(padding2);
 
-       for(int idx = 0; idx < gridAxisDescriptors.size(); idx++)
+       for (int idx = 0; idx < gridAxisDescriptors.size(); idx++)
        {
             GridAxisDescriptor aGridAxisDescriptor = gridAxisDescriptors.get(idx);
             aGridAxisDescriptor.marshal(dos);
        }
 
 
-       for(int idx = 0; idx < gridDataRecords.size(); idx++)
+       for (int idx = 0; idx < gridDataRecords.size(); idx++)
        {
             GridData aGridData = gridDataRecords.get(idx);
             aGridData.marshal(dos);
@@ -479,14 +486,14 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding2 = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for(int idx = 0; idx < numberOfGridAxes; idx++)
+        for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
             GridAxisDescriptor anX = new GridAxisDescriptor();
             uPosition += anX.unmarshal(dis);
             gridAxisDescriptors.add(anX);
         }
 
-        for(int idx = 0; idx < numberOfGridAxes; idx++)
+        for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
             GridData anX = new GridData();
             uPosition += anX.unmarshal(dis);
@@ -527,14 +534,14 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.put( (byte)padding1);
    byteBuffer.putShort( (short)padding2);
 
-   for(int idx = 0; idx < gridAxisDescriptors.size(); idx++)
+   for (int idx = 0; idx < gridAxisDescriptors.size(); idx++)
    {
         GridAxisDescriptor aGridAxisDescriptor = gridAxisDescriptors.get(idx);
         aGridAxisDescriptor.marshal(byteBuffer);
    }
 
 
-   for(int idx = 0; idx < gridDataRecords.size(); idx++)
+   for (int idx = 0; idx < gridDataRecords.size(); idx++)
    {
         GridData aGridData = gridDataRecords.get(idx);
         aGridData.marshal(byteBuffer);
@@ -555,34 +562,57 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    environmentalSimulationApplicationID.unmarshal(byteBuffer);
-    fieldNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    pduNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    pduTotal = (short)(byteBuffer.getShort() & 0xFFFF);
-    coordinateSystem = GriddedDataCoordinateSystem.unmarshalEnum(byteBuffer);
-    numberOfGridAxes = (byte)(byteBuffer.get() & 0xFF);
-    constantGrid = GriddedDataConstantGrid.unmarshalEnum(byteBuffer);
-    environmentType.unmarshal(byteBuffer);
-    orientation.unmarshal(byteBuffer);
-    sampleTime.unmarshal(byteBuffer);
-    totalValues = byteBuffer.getInt();
-    vectorDimension = (byte)(byteBuffer.get() & 0xFF);
-    padding1 = (byte)(byteBuffer.get() & 0xFF);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    for(int idx = 0; idx < numberOfGridAxes; idx++)
+    try
     {
-    GridAxisDescriptor anX = new GridAxisDescriptor();
-    anX.unmarshal(byteBuffer);
-    gridAxisDescriptors.add(anX);
-    }
+        // attribute environmentalSimulationApplicationID marked as not serialized
+        environmentalSimulationApplicationID.unmarshal(byteBuffer);
+        // attribute fieldNumber marked as not serialized
+        fieldNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute pduNumber marked as not serialized
+        pduNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute pduTotal marked as not serialized
+        pduTotal = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute coordinateSystem marked as not serialized
+        coordinateSystem = GriddedDataCoordinateSystem.unmarshalEnum(byteBuffer);
+        // attribute numberOfGridAxes marked as not serialized
+        numberOfGridAxes = (byte)(byteBuffer.get() & 0xFF);
+        // attribute constantGrid marked as not serialized
+        constantGrid = GriddedDataConstantGrid.unmarshalEnum(byteBuffer);
+        // attribute environmentType marked as not serialized
+        environmentType.unmarshal(byteBuffer);
+        // attribute orientation marked as not serialized
+        orientation.unmarshal(byteBuffer);
+        // attribute sampleTime marked as not serialized
+        sampleTime.unmarshal(byteBuffer);
+        // attribute totalValues marked as not serialized
+        totalValues = byteBuffer.getInt();
+        // attribute vectorDimension marked as not serialized
+        vectorDimension = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding1 marked as not serialized
+        padding1 = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute gridAxisDescriptors marked as not serialized
+        for (int idx = 0; idx < numberOfGridAxes; idx++)
+        {
+        GridAxisDescriptor anX = new GridAxisDescriptor();
+        anX.unmarshal(byteBuffer);
+        gridAxisDescriptors.add(anX);
+        }
 
-    for(int idx = 0; idx < numberOfGridAxes; idx++)
+        // attribute gridDataRecords marked as not serialized
+        for (int idx = 0; idx < numberOfGridAxes; idx++)
+        {
+        GridData anX = new GridData();
+        anX.unmarshal(byteBuffer);
+        gridDataRecords.add(anX);
+        }
+
+    }
+    catch (java.nio.BufferUnderflowException bue)
     {
-    GridData anX = new GridData();
-    anX.unmarshal(byteBuffer);
-    gridDataRecords.add(anX);
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
     }
-
     return getMarshalledSize();
 }
 
@@ -625,11 +655,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
      if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
 
-     for(int idx = 0; idx < gridAxisDescriptors.size(); idx++)
+     for (int idx = 0; idx < gridAxisDescriptors.size(); idx++)
         if( ! ( gridAxisDescriptors.get(idx).equals(rhs.gridAxisDescriptors.get(idx)))) ivarsEqual = false;
 
 
-     for(int idx = 0; idx < gridDataRecords.size(); idx++)
+     for (int idx = 0; idx < gridDataRecords.size(); idx++)
         if( ! ( gridDataRecords.get(idx).equals(rhs.gridDataRecords.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

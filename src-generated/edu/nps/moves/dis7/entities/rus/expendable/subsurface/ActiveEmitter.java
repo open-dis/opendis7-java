@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@40a28bda;
- * Country: Russia (RUS);
- * Entity kind: Expendable;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22307
+ * <p> Entity class <b><code>ActiveEmitter</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ActiveEmitter.createInstance()</code> or <code>new ActiveEmitter()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Active Emitter = <code>4</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22307; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@73da7f08. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ActiveEmitter
+
  */
-public class ActiveEmitter extends EntityType
+public final class ActiveEmitter extends EntityType
 {
     /** Default constructor */
     public ActiveEmitter()
@@ -24,5 +37,11 @@ public class ActiveEmitter extends EntityType
         setDomain(Domain.inst(PlatformDomain.SUBSURFACE));
 
         setCategory((byte)4); // uid 22307, Active Emitter
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ActiveEmitter createInstance()
+    {
+            return new ActiveEmitter();
     }
 }

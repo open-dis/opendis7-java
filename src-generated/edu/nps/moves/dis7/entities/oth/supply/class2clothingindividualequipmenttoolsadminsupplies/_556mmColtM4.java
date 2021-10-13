@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ca2cd5e;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES;
- *
- * Entity type uid: 31297
+ * <p> Entity class <b><code>_556mmColtM4</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_556mmColtM4.createInstance()</code> or <code>new _556mmColtM4()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_2_CLOTHING_INDIVIDUAL_EQUIPMENT_TOOLS_ADMIN_SUPPLIES</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: M - Weapons (Humans) = <code>7</code>; </li>
+ *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
+ *     <li> Specific: _556mmColtM4  = <code>42</code>; </li>
+ *     <li> Entity type uid: 31297; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20a47036. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see MWeaponsHumans
+ * @see SubCategory
+
  */
-public class _556mmColtM4 extends EntityType
+public final class _556mmColtM4 extends EntityType
 {
     /** Default constructor */
     public _556mmColtM4()
@@ -26,5 +40,11 @@ public class _556mmColtM4 extends EntityType
         setCategory((byte)7); // uid 31295, M - Weapons (Humans)
         setSubCategory((byte)5); // uid 31296, Assault Rifles
         setSpecific((byte)42); // uid 31297, 5.56mm Colt M4
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _556mmColtM4 createInstance()
+    {
+            return new _556mmColtM4();
     }
 }

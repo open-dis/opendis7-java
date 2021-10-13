@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2964511;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_GUIDED_WEAPON;
- *
- * Entity type uid: 19666
+ * <p> Entity class <b><code>Mk57MOSS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mk57MOSS.createInstance()</code> or <code>new Mk57MOSS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_GUIDED_WEAPON</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Decoys  = <code>1</code>; </li>
+ *     <li> Specific: Mk57MOSS  = <code>2</code>; </li>
+ *     <li> Entity type uid: 19666; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1426370c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class Mk57MOSS extends EntityType
+public final class Mk57MOSS extends EntityType
 {
     /** Default constructor */
     public Mk57MOSS()
@@ -26,5 +40,11 @@ public class Mk57MOSS extends EntityType
         setCategory((byte)1); // uid 19663, Guided
         setSubCategory((byte)1); // uid 19664, Decoys
         setSpecific((byte)2); // uid 19666, Mk-57 (MOSS)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mk57MOSS createInstance()
+    {
+            return new Mk57MOSS();
     }
 }

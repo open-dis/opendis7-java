@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2def7a7a;
- * Country: Spain (ESP);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22790
+ * <p> Entity class <b><code>Leopard2E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Leopard2E.createInstance()</code> or <code>new Leopard2E()</code>. </p>
+ * <ul>
+ *     <li> Country: Spain (ESP) = <code>198</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank = <code>1</code>; </li>
+ *     <li> SubCategory: Leopard2MBT  = <code>1</code>; </li>
+ *     <li> Specific: Leopard2E  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22790; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ecdbab8. </p>
+ * @see Country#SPAIN_ESP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Tank
+ * @see SubCategory
+
  */
-public class Leopard2E extends EntityType
+public final class Leopard2E extends EntityType
 {
     /** Default constructor */
     public Leopard2E()
@@ -26,5 +40,11 @@ public class Leopard2E extends EntityType
         setCategory((byte)1); // uid 22788, Tank
         setSubCategory((byte)1); // uid 22789, Leopard 2 MBT
         setSpecific((byte)1); // uid 22790, Leopard 2E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Leopard2E createInstance()
+    {
+            return new Leopard2E();
     }
 }

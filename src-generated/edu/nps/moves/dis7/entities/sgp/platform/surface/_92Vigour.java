@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@23a5818e;
- * Country: Singapore (SGP);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27903
+ * <p> Entity class <b><code>_92Vigour</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_92Vigour.createInstance()</code> or <code>new _92Vigour()</code>. </p>
+ * <ul>
+ *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: VictoryClass  = <code>1</code>; </li>
+ *     <li> Specific: _92Vigour  = <code>5</code>; </li>
+ *     <li> Entity type uid: 27903; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dd611c8. </p>
+ * @see Country#SINGAPORE_SGP
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class _92Vigour extends EntityType
+public final class _92Vigour extends EntityType
 {
     /** Default constructor */
     public _92Vigour()
@@ -26,5 +40,11 @@ public class _92Vigour extends EntityType
         setCategory((byte)50); // uid 27897, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27898, Victory Class
         setSpecific((byte)5); // uid 27903, 92 Vigour
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _92Vigour createInstance()
+    {
+            return new _92Vigour();
     }
 }

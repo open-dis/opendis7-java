@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@576b7c74;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11275
+ * <p> Entity class <b><code>FCSUAVClassIVa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FCSUAVClassIVa.createInstance()</code> or <code>new FCSUAVClassIVa()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: FCSUAVClassIV  = <code>31</code>; </li>
+ *     <li> Specific: FCSUAVClassIVa  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11275; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62b57479. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class FCSUAVClassIVa extends EntityType
+public final class FCSUAVClassIVa extends EntityType
 {
     /** Default constructor */
     public FCSUAVClassIVa()
@@ -26,5 +40,11 @@ public class FCSUAVClassIVa extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)31); // uid 11274, FCS UAV Class IV
         setSpecific((byte)1); // uid 11275, FCS UAV Class IV-a
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FCSUAVClassIVa createInstance()
+    {
+            return new FCSUAVClassIVa();
     }
 }

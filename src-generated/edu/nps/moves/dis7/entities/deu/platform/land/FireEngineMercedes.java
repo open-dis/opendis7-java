@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fa1c212;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 24850
+ * <p> Entity class <b><code>FireEngineMercedes</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FireEngineMercedes.createInstance()</code> or <code>new FireEngineMercedes()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Single Unit Utility/Emergency Truck = <code>84</code>; </li>
+ *     <li> SubCategory: FireEngine  = <code>10</code>; </li>
+ *     <li> Specific: FireEngineMercedes  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24850; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@33f676f6. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SingleUnitUtilityEmergencyTruck
+ * @see SubCategory
+
  */
-public class FireEngineMercedes extends EntityType
+public final class FireEngineMercedes extends EntityType
 {
     /** Default constructor */
     public FireEngineMercedes()
@@ -26,5 +40,11 @@ public class FireEngineMercedes extends EntityType
         setCategory((byte)84); // uid 24845, Single Unit Utility/Emergency Truck
         setSubCategory((byte)10); // uid 24849, Fire Engine
         setSpecific((byte)1); // uid 24850, Fire Engine, Mercedes
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FireEngineMercedes createInstance()
+    {
+            return new FireEngineMercedes();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a60c416;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12499
+ * <p> Entity class <b><code>NZhM56heavyfloatingrailwayandroad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NZhM56heavyfloatingrailwayandroad.createInstance()</code> or <code>new NZhM56heavyfloatingrailwayandroad()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other = <code>0</code>; </li>
+ *     <li> SubCategory: Bridges  = <code>1</code>; </li>
+ *     <li> Specific: NZhM56heavyfloatingrailwayandroad  = <code>21</code>; </li>
+ *     <li> Entity type uid: 12499; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d7e7435. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Other
+ * @see SubCategory
+
  */
-public class NZhM56heavyfloatingrailwayandroad extends EntityType
+public final class NZhM56heavyfloatingrailwayandroad extends EntityType
 {
     /** Default constructor */
     public NZhM56heavyfloatingrailwayandroad()
@@ -26,5 +40,11 @@ public class NZhM56heavyfloatingrailwayandroad extends EntityType
         setCategory((byte)0); // uid 12477, Other
         setSubCategory((byte)1); // uid 12478, Bridges
         setSpecific((byte)21); // uid 12499, NZhM-56 heavy floating railway and road
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NZhM56heavyfloatingrailwayandroad createInstance()
+    {
+            return new NZhM56heavyfloatingrailwayandroad();
     }
 }

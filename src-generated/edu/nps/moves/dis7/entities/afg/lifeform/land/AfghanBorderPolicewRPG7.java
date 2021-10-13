@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@483b7dc4;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32203
+ * <p> Entity class <b><code>AfghanBorderPolicewRPG7</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AfghanBorderPolicewRPG7.createInstance()</code> or <code>new AfghanBorderPolicewRPG7()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Afghan Border Police (ABP) = <code>53</code>; </li>
+ *     <li> SubCategory: AntiTankRockets  = <code>45</code>; </li>
+ *     <li> Specific: AfghanBorderPolicewRPG7  = <code>110</code>; </li>
+ *     <li> Entity type uid: 32203; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4f402027. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AfghanBorderPoliceABP
+ * @see SubCategory
+
  */
-public class AfghanBorderPolicewRPG7 extends EntityType
+public final class AfghanBorderPolicewRPG7 extends EntityType
 {
     /** Default constructor */
     public AfghanBorderPolicewRPG7()
@@ -26,5 +40,11 @@ public class AfghanBorderPolicewRPG7 extends EntityType
         setCategory((byte)53); // uid 32196, Afghan Border Police (ABP)
         setSubCategory((byte)45); // uid 32202, Anti-Tank Rockets
         setSpecific((byte)110); // uid 32203, Afghan Border Police w/ RPG-7
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AfghanBorderPolicewRPG7 createInstance()
+    {
+            return new AfghanBorderPolicewRPG7();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3dfd7eaa;
- * Country: Other;
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 26355
+ * <p> Entity class <b><code>PipeBombPVCMedium</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PipeBombPVCMedium.createInstance()</code> or <code>new PipeBombPVCMedium()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Fixed = <code>3</code>; </li>
+ *     <li> SubCategory: PipeBombPVC  = <code>3</code>; </li>
+ *     <li> Specific: PipeBombPVCMedium  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26355; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38811103. </p>
+ * @see Country#OTHER
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Fixed
+ * @see SubCategory
+
  */
-public class PipeBombPVCMedium extends EntityType
+public final class PipeBombPVCMedium extends EntityType
 {
     /** Default constructor */
     public PipeBombPVCMedium()
@@ -26,5 +40,11 @@ public class PipeBombPVCMedium extends EntityType
         setCategory((byte)3); // uid 21697, Fixed
         setSubCategory((byte)3); // uid 26353, Pipe Bomb, PVC
         setSpecific((byte)2); // uid 26355, Pipe Bomb, PVC, Medium
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PipeBombPVCMedium createInstance()
+    {
+            return new PipeBombPVCMedium();
     }
 }

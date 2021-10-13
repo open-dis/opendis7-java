@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ac3c60d;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17330
+ * <p> Entity class <b><code>L201HaiLeng</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L201HaiLeng.createInstance()</code> or <code>new L201HaiLeng()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Danlinclasscargo  = <code>32</code>; </li>
+ *     <li> Specific: L201HaiLeng  = <code>2</code>; </li>
+ *     <li> Entity type uid: 17330; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b5a5ed1. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class L201HaiLeng extends EntityType
+public final class L201HaiLeng extends EntityType
 {
     /** Default constructor */
     public L201HaiLeng()
@@ -26,5 +40,11 @@ public class L201HaiLeng extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)32); // uid 17328, Danlin class (cargo)
         setSpecific((byte)2); // uid 17330, L201 Hai Leng
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L201HaiLeng createInstance()
+    {
+            return new L201HaiLeng();
     }
 }

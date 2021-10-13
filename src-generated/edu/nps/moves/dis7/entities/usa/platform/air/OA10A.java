@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5820070c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 10835
+ * <p> Entity class <b><code>OA10A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OA10A.createInstance()</code> or <code>new OA10A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: FairchildRepublicA10ThunderboltII  = <code>4</code>; </li>
+ *     <li> Specific: OA10A  = <code>2</code>; </li>
+ *     <li> Entity type uid: 10835; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@626c19cf. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class OA10A extends EntityType
+public final class OA10A extends EntityType
 {
     /** Default constructor */
     public OA10A()
@@ -26,5 +40,11 @@ public class OA10A extends EntityType
         setCategory((byte)2); // uid 10824, Attack/Strike
         setSubCategory((byte)4); // uid 10833, Fairchild Republic A-10 Thunderbolt II
         setSpecific((byte)2); // uid 10835, OA-10A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OA10A createInstance()
+    {
+            return new OA10A();
     }
 }

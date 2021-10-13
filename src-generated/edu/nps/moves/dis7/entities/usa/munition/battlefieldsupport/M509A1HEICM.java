@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43a7203e;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20113
+ * <p> Entity class <b><code>M509A1HEICM</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M509A1HEICM.createInstance()</code> or <code>new M509A1HEICM()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _203mm  = <code>15</code>; </li>
+ *     <li> Specific: M509A1HEICM  = <code>6</code>; </li>
+ *     <li> Entity type uid: 20113; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e4d0a0b. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class M509A1HEICM extends EntityType
+public final class M509A1HEICM extends EntityType
 {
     /** Default constructor */
     public M509A1HEICM()
@@ -26,5 +40,11 @@ public class M509A1HEICM extends EntityType
         setCategory((byte)2); // uid 19971, Ballistic
         setSubCategory((byte)15); // uid 20107, 203 mm
         setSpecific((byte)6); // uid 20113, M509 A1, HE/ICM
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M509A1HEICM createInstance()
+    {
+            return new M509A1HEICM();
     }
 }

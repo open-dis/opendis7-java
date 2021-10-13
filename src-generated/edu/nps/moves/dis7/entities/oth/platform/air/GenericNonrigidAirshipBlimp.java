@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5f233b26;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24739
+ * <p> Entity class <b><code>GenericNonrigidAirshipBlimp</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericNonrigidAirshipBlimp.createInstance()</code> or <code>new GenericNonrigidAirshipBlimp()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Lighter than Air, Airship = <code>101</code>; </li>
+ *     <li> SubCategory: GenericNonrigidAirshipBlimp  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24739; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3ecedf21. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianLighterthanAirAirship
+ * @see SubCategory
+
  */
-public class GenericNonrigidAirshipBlimp extends EntityType
+public final class GenericNonrigidAirshipBlimp extends EntityType
 {
     /** Default constructor */
     public GenericNonrigidAirshipBlimp()
@@ -25,5 +39,11 @@ public class GenericNonrigidAirshipBlimp extends EntityType
 
         setCategory((byte)101); // uid 24738, Civilian Lighter than Air, Airship
         setSubCategory((byte)1); // uid 24739, Generic Non-rigid Airship (Blimp)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericNonrigidAirshipBlimp createInstance()
+    {
+            return new GenericNonrigidAirshipBlimp();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8462f31;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16000
+ * <p> Entity class <b><code>M715Circe</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M715Circe.createInstance()</code> or <code>new M715Circe()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Circeclassminehunters  = <code>3</code>; </li>
+ *     <li> Specific: M715Circe  = <code>4</code>; </li>
+ *     <li> Entity type uid: 16000; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8f2ef19. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M715Circe extends EntityType
+public final class M715Circe extends EntityType
 {
     /** Default constructor */
     public M715Circe()
@@ -26,5 +40,11 @@ public class M715Circe extends EntityType
         setCategory((byte)8); // uid 15978, Mine Countermeasure Ship / Craft
         setSubCategory((byte)3); // uid 15996, Circe class (minehunters)
         setSpecific((byte)4); // uid 16000, M 715 Circe
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M715Circe createInstance()
+    {
+            return new M715Circe();
     }
 }

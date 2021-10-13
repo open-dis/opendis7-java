@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1cc708a7;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32265
+ * <p> Entity class <b><code>MakoShark</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MakoShark.createInstance()</code> or <code>new MakoShark()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Fish = <code>200</code>; </li>
+ *     <li> SubCategory: MakoShark  = <code>121</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32265; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@60652518. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Fish
+ * @see SubCategory
+
  */
-public class MakoShark extends EntityType
+public final class MakoShark extends EntityType
 {
     /** Default constructor */
     public MakoShark()
@@ -25,5 +39,11 @@ public class MakoShark extends EntityType
 
         setCategory((byte)200); // uid 32263, Fish
         setSubCategory((byte)121); // uid 32265, Mako Shark
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MakoShark createInstance()
+    {
+            return new MakoShark();
     }
 }

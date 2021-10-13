@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77429040;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11022
+ * <p> Entity class <b><code>RC135SCobraBall</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RC135SCobraBall.createInstance()</code> or <code>new RC135SCobraBall()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Reconnaissance = <code>7</code>; </li>
+ *     <li> SubCategory: BoeingRC135  = <code>7</code>; </li>
+ *     <li> Specific: RC135SCobraBall  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11022; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fe09383. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Reconnaissance
+ * @see SubCategory
+
  */
-public class RC135SCobraBall extends EntityType
+public final class RC135SCobraBall extends EntityType
 {
     /** Default constructor */
     public RC135SCobraBall()
@@ -26,5 +40,11 @@ public class RC135SCobraBall extends EntityType
         setCategory((byte)7); // uid 11003, Reconnaissance
         setSubCategory((byte)7); // uid 11021, Boeing RC-135
         setSpecific((byte)1); // uid 11022, RC-135S Cobra Ball
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RC135SCobraBall createInstance()
+    {
+            return new RC135SCobraBall();
     }
 }

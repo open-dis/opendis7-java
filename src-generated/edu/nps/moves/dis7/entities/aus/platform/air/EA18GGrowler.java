@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@233c0b17;
- * Country: Australia (AUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29320
+ * <p> Entity class <b><code>EA18GGrowler</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EA18GGrowler.createInstance()</code> or <code>new EA18GGrowler()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Electronic Warfare (EW) = <code>6</code>; </li>
+ *     <li> SubCategory: EA18GGrowler  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29320; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3cd1f1c8. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectronicWarfareEW
+ * @see SubCategory
+
  */
-public class EA18GGrowler extends EntityType
+public final class EA18GGrowler extends EntityType
 {
     /** Default constructor */
     public EA18GGrowler()
@@ -25,5 +39,11 @@ public class EA18GGrowler extends EntityType
 
         setCategory((byte)6); // uid 29319, Electronic Warfare (EW)
         setSubCategory((byte)1); // uid 29320, EA-18G Growler
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EA18GGrowler createInstance()
+    {
+            return new EA18GGrowler();
     }
 }

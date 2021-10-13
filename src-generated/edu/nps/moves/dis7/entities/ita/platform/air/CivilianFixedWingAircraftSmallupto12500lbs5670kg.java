@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2a3c96e3;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29441
+ * <p> Entity class <b><code>CivilianFixedWingAircraftSmallupto12500lbs5670kg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianFixedWingAircraftSmallupto12500lbs5670kg.createInstance()</code> or <code>new CivilianFixedWingAircraftSmallupto12500lbs5670kg()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29441; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@17a87e37. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftSmallupto12500lbs5670kg
+
  */
-public class CivilianFixedWingAircraftSmallupto12500lbs5670kg extends EntityType
+public final class CivilianFixedWingAircraftSmallupto12500lbs5670kg extends EntityType
 {
     /** Default constructor */
     public CivilianFixedWingAircraftSmallupto12500lbs5670kg()
@@ -24,5 +37,11 @@ public class CivilianFixedWingAircraftSmallupto12500lbs5670kg extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)85); // uid 29441, Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianFixedWingAircraftSmallupto12500lbs5670kg createInstance()
+    {
+            return new CivilianFixedWingAircraftSmallupto12500lbs5670kg();
     }
 }

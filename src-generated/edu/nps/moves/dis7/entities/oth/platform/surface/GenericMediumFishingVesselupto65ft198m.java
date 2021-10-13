@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@cd7f1ae;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24652
+ * <p> Entity class <b><code>GenericMediumFishingVesselupto65ft198m</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericMediumFishingVesselupto65ft198m.createInstance()</code> or <code>new GenericMediumFishingVesselupto65ft198m()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fishing Vessel = <code>86</code>; </li>
+ *     <li> SubCategory: GenericMediumFishingVesselupto65ft198m  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24652; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3f3c7bdb. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FishingVessel
+ * @see SubCategory
+
  */
-public class GenericMediumFishingVesselupto65ft198m extends EntityType
+public final class GenericMediumFishingVesselupto65ft198m extends EntityType
 {
     /** Default constructor */
     public GenericMediumFishingVesselupto65ft198m()
@@ -25,5 +39,11 @@ public class GenericMediumFishingVesselupto65ft198m extends EntityType
 
         setCategory((byte)86); // uid 24650, Fishing Vessel
         setSubCategory((byte)2); // uid 24652, Generic Medium Fishing Vessel (up to 65ft/19.8m)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericMediumFishingVesselupto65ft198m createInstance()
+    {
+            return new GenericMediumFishingVesselupto65ft198m();
     }
 }

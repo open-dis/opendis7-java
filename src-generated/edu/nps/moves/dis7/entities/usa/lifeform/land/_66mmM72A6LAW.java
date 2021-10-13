@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12aa519b;
- * Country: United States of America (USA);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32695
+ * <p> Entity class <b><code>_66mmM72A6LAW</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_66mmM72A6LAW.createInstance()</code> or <code>new _66mmM72A6LAW()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: U.S. Army (USA) = <code>11</code>; </li>
+ *     <li> SubCategory: AntiTankRockets  = <code>45</code>; </li>
+ *     <li> Specific: _66mmM72A6LAW  = <code>26</code>; </li>
+ *     <li> Entity type uid: 32695; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47be41c6. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see USArmyUSA
+ * @see SubCategory
+
  */
-public class _66mmM72A6LAW extends EntityType
+public final class _66mmM72A6LAW extends EntityType
 {
     /** Default constructor */
     public _66mmM72A6LAW()
@@ -26,5 +40,11 @@ public class _66mmM72A6LAW extends EntityType
         setCategory((byte)11); // uid 32666, U.S. Army (USA)
         setSubCategory((byte)45); // uid 32694, Anti-Tank Rockets
         setSpecific((byte)26); // uid 32695, 66mm M72A6 LAW
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _66mmM72A6LAW createInstance()
+    {
+            return new _66mmM72A6LAW();
     }
 }

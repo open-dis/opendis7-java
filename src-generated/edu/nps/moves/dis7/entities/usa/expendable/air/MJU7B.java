@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30c8c6ab;
- * Country: United States of America (USA);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 24163
+ * <p> Entity class <b><code>MJU7B</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MJU7B.createInstance()</code> or <code>new MJU7B()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Flare = <code>2</code>; </li>
+ *     <li> SubCategory: MJU7Flare  = <code>2</code>; </li>
+ *     <li> Specific: MJU7B  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24163; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c0e4262. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Flare
+ * @see SubCategory
+
  */
-public class MJU7B extends EntityType
+public final class MJU7B extends EntityType
 {
     /** Default constructor */
     public MJU7B()
@@ -26,5 +40,11 @@ public class MJU7B extends EntityType
         setCategory((byte)2); // uid 22242, Flare
         setSubCategory((byte)2); // uid 22246, MJU-7 Flare
         setSpecific((byte)1); // uid 24163, MJU-7/B
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MJU7B createInstance()
+    {
+            return new MJU7B();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c39bec8;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32979
+ * <p> Entity class <b><code>SvitzerRota</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SvitzerRota.createInstance()</code> or <code>new SvitzerRota()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Support Vessel = <code>83</code>; </li>
+ *     <li> SubCategory: Tugboat  = <code>3</code>; </li>
+ *     <li> Specific: SvitzerRota  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32979; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3cd3e762. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SupportVessel
+ * @see SubCategory
+
  */
-public class SvitzerRota extends EntityType
+public final class SvitzerRota extends EntityType
 {
     /** Default constructor */
     public SvitzerRota()
@@ -26,5 +40,11 @@ public class SvitzerRota extends EntityType
         setCategory((byte)83); // uid 32582, Support Vessel
         setSubCategory((byte)3); // uid 32978, Tugboat
         setSpecific((byte)1); // uid 32979, Svitzer Rota
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SvitzerRota createInstance()
+    {
+            return new SvitzerRota();
     }
 }

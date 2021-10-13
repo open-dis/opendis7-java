@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@406ad6d5;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 19918
+ * <p> Entity class <b><code>PAVEWAYIIlaserguided</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PAVEWAYIIlaserguided.createInstance()</code> or <code>new PAVEWAYIIlaserguided()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Mk84bomb  = <code>15</code>; </li>
+ *     <li> Specific: PAVEWAYIIlaserguided  = <code>3</code>; </li>
+ *     <li> Entity type uid: 19918; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c16677c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class PAVEWAYIIlaserguided extends EntityType
+public final class PAVEWAYIIlaserguided extends EntityType
 {
     /** Default constructor */
     public PAVEWAYIIlaserguided()
@@ -26,5 +40,11 @@ public class PAVEWAYIIlaserguided extends EntityType
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)15); // uid 19915, Mk-84 bomb
         setSpecific((byte)3); // uid 19918, PAVEWAY II laser-guided
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PAVEWAYIIlaserguided createInstance()
+    {
+            return new PAVEWAYIIlaserguided();
     }
 }

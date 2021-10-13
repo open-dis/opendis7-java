@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@301ec38b;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31107
+ * <p> Entity class <b><code>_512TelukSemangka</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_512TelukSemangka.createInstance()</code> or <code>new _512TelukSemangka()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tank Landing Ship = <code>10</code>; </li>
+ *     <li> SubCategory: TelukSemangkaClass  = <code>3</code>; </li>
+ *     <li> Specific: _512TelukSemangka  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31107; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a1a3478. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankLandingShip
+ * @see SubCategory
+
  */
-public class _512TelukSemangka extends EntityType
+public final class _512TelukSemangka extends EntityType
 {
     /** Default constructor */
     public _512TelukSemangka()
@@ -26,5 +40,11 @@ public class _512TelukSemangka extends EntityType
         setCategory((byte)10); // uid 31090, Tank Landing Ship
         setSubCategory((byte)3); // uid 31106, Teluk Semangka Class
         setSpecific((byte)1); // uid 31107, 512 Teluk Semangka
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _512TelukSemangka createInstance()
+    {
+            return new _512TelukSemangka();
     }
 }

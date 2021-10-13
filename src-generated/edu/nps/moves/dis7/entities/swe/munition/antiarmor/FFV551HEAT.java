@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ea48c37;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 21655
+ * <p> Entity class <b><code>FFV551HEAT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFV551HEAT.createInstance()</code> or <code>new FFV551HEAT()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _84mmCarlGustavrounds  = <code>2</code>; </li>
+ *     <li> Specific: FFV551HEAT  = <code>5</code>; </li>
+ *     <li> Entity type uid: 21655; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f357c9d. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FFV551HEAT extends EntityType
+public final class FFV551HEAT extends EntityType
 {
     /** Default constructor */
     public FFV551HEAT()
@@ -26,5 +40,11 @@ public class FFV551HEAT extends EntityType
         setCategory((byte)2); // uid 21647, Ballistic
         setSubCategory((byte)2); // uid 21650, 84mm Carl Gustav rounds
         setSpecific((byte)5); // uid 21655, FFV 551 HEAT
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFV551HEAT createInstance()
+    {
+            return new FFV551HEAT();
     }
 }

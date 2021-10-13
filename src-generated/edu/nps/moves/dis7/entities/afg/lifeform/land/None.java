@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45c90a05;
- * Country: Afghanistan (AFG);
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32752
+ * <p> Entity class <b><code>None</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>None.createInstance()</code> or <code>new None()</code>. </p>
+ * <ul>
+ *     <li> Country: Afghanistan (AFG) = <code>1</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Terrorist Combatant = <code>101</code>; </li>
+ *     <li> SubCategory: None  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32752; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3eb9c575. </p>
+ * @see Country#AFGHANISTAN_AFG
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TerroristCombatant
+ * @see SubCategory
+
  */
-public class None extends EntityType
+public final class None extends EntityType
 {
     /** Default constructor */
     public None()
@@ -25,5 +39,11 @@ public class None extends EntityType
 
         setCategory((byte)101); // uid 32204, Terrorist Combatant
         setSubCategory((byte)0); // uid 32752, None
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static None createInstance()
+    {
+            return new None();
     }
 }

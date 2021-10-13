@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a50ae65;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23445
+ * <p> Entity class <b><code>ARS14Kdecontaminationtruck</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ARS14Kdecontaminationtruck.createInstance()</code> or <code>new ARS14Kdecontaminationtruck()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: ZIL1316x63500kgtruck  = <code>4</code>; </li>
+ *     <li> Specific: ARS14Kdecontaminationtruck  = <code>12</code>; </li>
+ *     <li> Entity type uid: 23445; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@264c5d07. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class ARS14Kdecontaminationtruck extends EntityType
+public final class ARS14Kdecontaminationtruck extends EntityType
 {
     /** Default constructor */
     public ARS14Kdecontaminationtruck()
@@ -26,5 +40,11 @@ public class ARS14Kdecontaminationtruck extends EntityType
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)4); // uid 12871, ZIL-131 6x6 3500-kg truck
         setSpecific((byte)12); // uid 23445, ARS-14K decontamination truck
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ARS14Kdecontaminationtruck createInstance()
+    {
+            return new ARS14Kdecontaminationtruck();
     }
 }

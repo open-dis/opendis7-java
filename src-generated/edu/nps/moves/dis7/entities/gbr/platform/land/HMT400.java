@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@235d29d6;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31166
+ * <p> Entity class <b><code>HMT400</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HMT400.createInstance()</code> or <code>new HMT400()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: HighMobilityTransporterHMT  = <code>7</code>; </li>
+ *     <li> Specific: HMT400  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31166; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3291b443. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class HMT400 extends EntityType
+public final class HMT400 extends EntityType
 {
     /** Default constructor */
     public HMT400()
@@ -26,5 +40,11 @@ public class HMT400 extends EntityType
         setCategory((byte)6); // uid 14931, Small Wheeled Utility Vehicle
         setSubCategory((byte)7); // uid 31165, High Mobility Transporter (HMT)
         setSpecific((byte)1); // uid 31166, HMT 400
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HMT400 createInstance()
+    {
+            return new HMT400();
     }
 }

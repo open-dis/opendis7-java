@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@393671df;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29621
+ * <p> Entity class <b><code>_886Qiandaohu</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_886Qiandaohu.createInstance()</code> or <code>new _886Qiandaohu()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: FuchiClassReplenishmentShip  = <code>42</code>; </li>
+ *     <li> Specific: _886Qiandaohu  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29621; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@659a969b. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class _886Qiandaohu extends EntityType
+public final class _886Qiandaohu extends EntityType
 {
     /** Default constructor */
     public _886Qiandaohu()
@@ -26,5 +40,11 @@ public class _886Qiandaohu extends EntityType
         setCategory((byte)16); // uid 17231, Auxiliary
         setSubCategory((byte)42); // uid 29620, Fuchi Class (Replenishment Ship)
         setSpecific((byte)1); // uid 29621, 886 Qiandaohu
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _886Qiandaohu createInstance()
+    {
+            return new _886Qiandaohu();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1946384;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11145
+ * <p> Entity class <b><code>SH60FOceanhawk</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SH60FOceanhawk.createInstance()</code> or <code>new SH60FOceanhawk()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/patrol helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: SikorskyS70B  = <code>3</code>; </li>
+ *     <li> Specific: SH60FOceanhawk  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11145; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@183ade54. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarepatrolhelicopter
+ * @see SubCategory
+
  */
-public class SH60FOceanhawk extends EntityType
+public final class SH60FOceanhawk extends EntityType
 {
     /** Default constructor */
     public SH60FOceanhawk()
@@ -26,5 +40,11 @@ public class SH60FOceanhawk extends EntityType
         setCategory((byte)22); // uid 11133, Anti-Submarine Warfare/patrol helicopter
         setSubCategory((byte)3); // uid 11143, Sikorsky S-70B
         setSpecific((byte)2); // uid 11145, SH-60F Oceanhawk
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SH60FOceanhawk createInstance()
+    {
+            return new SH60FOceanhawk();
     }
 }

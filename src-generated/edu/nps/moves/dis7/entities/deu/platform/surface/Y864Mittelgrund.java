@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6af9fcb2;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16710
+ * <p> Entity class <b><code>Y864Mittelgrund</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y864Mittelgrund.createInstance()</code> or <code>new Y864Mittelgrund()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility = <code>18</code>; </li>
+ *     <li> SubCategory: StollergrundClassType745  = <code>7</code>; </li>
+ *     <li> Specific: Y864Mittelgrund  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16710; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3688eb5b. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Utility
+ * @see SubCategory
+
  */
-public class Y864Mittelgrund extends EntityType
+public final class Y864Mittelgrund extends EntityType
 {
     /** Default constructor */
     public Y864Mittelgrund()
@@ -26,5 +40,11 @@ public class Y864Mittelgrund extends EntityType
         setCategory((byte)18); // uid 16684, Utility
         setSubCategory((byte)7); // uid 16708, Stollergrund Class (Type 745)
         setSpecific((byte)2); // uid 16710, Y 864 Mittelgrund
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y864Mittelgrund createInstance()
+    {
+            return new Y864Mittelgrund();
     }
 }

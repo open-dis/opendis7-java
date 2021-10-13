@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3234474;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 22870
+ * <p> Entity class <b><code>MotorcycleTrailKawasakiKLR250</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MotorcycleTrailKawasakiKLR250.createInstance()</code> or <code>new MotorcycleTrailKawasakiKLR250()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: Motorcycle  = <code>25</code>; </li>
+ *     <li> Specific: MotorcycleTrailKawasakiKLR250  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22870; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12b5736c. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class MotorcycleTrailKawasakiKLR250 extends EntityType
+public final class MotorcycleTrailKawasakiKLR250 extends EntityType
 {
     /** Default constructor */
     public MotorcycleTrailKawasakiKLR250()
@@ -26,5 +40,11 @@ public class MotorcycleTrailKawasakiKLR250 extends EntityType
         setCategory((byte)6); // uid 10348, Small Wheeled Utility Vehicle
         setSubCategory((byte)25); // uid 10406, Motorcycle
         setSpecific((byte)2); // uid 22870, Motorcycle Trail Kawasaki KLR 250
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MotorcycleTrailKawasakiKLR250 createInstance()
+    {
+            return new MotorcycleTrailKawasakiKLR250();
     }
 }

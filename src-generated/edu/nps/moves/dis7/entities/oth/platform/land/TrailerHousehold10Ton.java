@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64711bf2;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 31629
+ * <p> Entity class <b><code>TrailerHousehold10Ton</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TrailerHousehold10Ton.createInstance()</code> or <code>new TrailerHousehold10Ton()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Trailer = <code>89</code>; </li>
+ *     <li> SubCategory: TrailerHousehold  = <code>24</code>; </li>
+ *     <li> Specific: TrailerHousehold10Ton  = <code>4</code>; </li>
+ *     <li> Entity type uid: 31629; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76b0ae1b. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Trailer
+ * @see SubCategory
+
  */
-public class TrailerHousehold10Ton extends EntityType
+public final class TrailerHousehold10Ton extends EntityType
 {
     /** Default constructor */
     public TrailerHousehold10Ton()
@@ -26,5 +40,11 @@ public class TrailerHousehold10Ton extends EntityType
         setCategory((byte)89); // uid 25929, Trailer
         setSubCategory((byte)24); // uid 31625, Trailer, Household
         setSpecific((byte)4); // uid 31629, Trailer, Household, 1.0 Ton
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TrailerHousehold10Ton createInstance()
+    {
+            return new TrailerHousehold10Ton();
     }
 }

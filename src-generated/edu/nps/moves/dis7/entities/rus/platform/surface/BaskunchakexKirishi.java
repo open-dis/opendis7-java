@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65ec8b24;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13894
+ * <p> Entity class <b><code>BaskunchakexKirishi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BaskunchakexKirishi.createInstance()</code> or <code>new BaskunchakexKirishi()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Vytegralesclasssupportdepot  = <code>13</code>; </li>
+ *     <li> Specific: BaskunchakexKirishi  = <code>2</code>; </li>
+ *     <li> Entity type uid: 13894; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@359ff4d9. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class BaskunchakexKirishi extends EntityType
+public final class BaskunchakexKirishi extends EntityType
 {
     /** Default constructor */
     public BaskunchakexKirishi()
@@ -26,5 +40,11 @@ public class BaskunchakexKirishi extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)13); // uid 13892, Vytegrales class (support & depot)
         setSpecific((byte)2); // uid 13894, Baskunchak (ex-Kirishi)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BaskunchakexKirishi createInstance()
+    {
+            return new BaskunchakexKirishi();
     }
 }

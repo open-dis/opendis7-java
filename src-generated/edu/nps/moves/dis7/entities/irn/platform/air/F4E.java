@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f17e30d;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31135
+ * <p> Entity class <b><code>F4E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F4E.createInstance()</code> or <code>new F4E()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Attack/Strike = <code>2</code>; </li>
+ *     <li> SubCategory: McDonnellDouglasF4PhantomII  = <code>3</code>; </li>
+ *     <li> Specific: F4E  = <code>2</code>; </li>
+ *     <li> Entity type uid: 31135; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59d2400d. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AttackStrike
+ * @see SubCategory
+
  */
-public class F4E extends EntityType
+public final class F4E extends EntityType
 {
     /** Default constructor */
     public F4E()
@@ -26,5 +40,11 @@ public class F4E extends EntityType
         setCategory((byte)2); // uid 30039, Attack/Strike
         setSubCategory((byte)3); // uid 31133, McDonnell-Douglas F-4 Phantom II
         setSpecific((byte)2); // uid 31135, F-4E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F4E createInstance()
+    {
+            return new F4E();
     }
 }

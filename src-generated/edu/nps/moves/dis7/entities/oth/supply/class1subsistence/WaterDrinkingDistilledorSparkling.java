@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@39e3ea78;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_1_SUBSISTENCE;
- *
- * Entity type uid: 30657
+ * <p> Entity class <b><code>WaterDrinkingDistilledorSparkling</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>WaterDrinkingDistilledorSparkling.createInstance()</code> or <code>new WaterDrinkingDistilledorSparkling()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_1_SUBSISTENCE</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: W - Water = <code>6</code>; </li>
+ *     <li> SubCategory: WaterDrinkingDistilledorSparkling  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30657; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@11228bee. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see WWater
+ * @see SubCategory
+
  */
-public class WaterDrinkingDistilledorSparkling extends EntityType
+public final class WaterDrinkingDistilledorSparkling extends EntityType
 {
     /** Default constructor */
     public WaterDrinkingDistilledorSparkling()
@@ -25,5 +39,11 @@ public class WaterDrinkingDistilledorSparkling extends EntityType
 
         setCategory((byte)6); // uid 30655, W - Water
         setSubCategory((byte)2); // uid 30657, Water, Drinking, Distilled or Sparkling
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static WaterDrinkingDistilledorSparkling createInstance()
+    {
+            return new WaterDrinkingDistilledorSparkling();
     }
 }

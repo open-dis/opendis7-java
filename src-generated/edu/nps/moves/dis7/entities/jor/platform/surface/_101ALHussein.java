@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e2822;
- * Country: Jordan (JOR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18269
+ * <p> Entity class <b><code>_101ALHussein</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_101ALHussein.createInstance()</code> or <code>new _101ALHussein()</code>. </p>
+ * <ul>
+ *     <li> Country: Jordan (JOR) = <code>114</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALHusseinHawkClassfastattackcraftgun  = <code>2</code>; </li>
+ *     <li> Specific: _101ALHussein  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18269; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29ef6856. </p>
+ * @see Country#JORDAN_JOR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _101ALHussein extends EntityType
+public final class _101ALHussein extends EntityType
 {
     /** Default constructor */
     public _101ALHussein()
@@ -26,5 +40,11 @@ public class _101ALHussein extends EntityType
         setCategory((byte)7); // uid 18262, Light/Patrol Craft
         setSubCategory((byte)2); // uid 18268, AL Hussein (Hawk) Class (fast attack craft-gun)
         setSpecific((byte)1); // uid 18269, 101 AL Hussein
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _101ALHussein createInstance()
+    {
+            return new _101ALHussein();
     }
 }

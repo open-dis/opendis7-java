@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d8e2eea;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24713
+ * <p> Entity class <b><code>GenericHeavyTwinJet</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericHeavyTwinJet.createInstance()</code> or <code>new GenericHeavyTwinJet()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Fixed Wing Aircraft, Heavy (above 255,000 lbs / 115,666 kg) = <code>88</code>; </li>
+ *     <li> SubCategory: GenericHeavyTwinJet  = <code>32</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24713; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2d83c5a5. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianFixedWingAircraftHeavyabove255000lbs115666kg
+ * @see SubCategory
+
  */
-public class GenericHeavyTwinJet extends EntityType
+public final class GenericHeavyTwinJet extends EntityType
 {
     /** Default constructor */
     public GenericHeavyTwinJet()
@@ -25,5 +39,11 @@ public class GenericHeavyTwinJet extends EntityType
 
         setCategory((byte)88); // uid 24712, Civilian Fixed Wing Aircraft, Heavy (above 255,000 lbs / 115,666 kg)
         setSubCategory((byte)32); // uid 24713, Generic Heavy Twin Jet
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericHeavyTwinJet createInstance()
+    {
+            return new GenericHeavyTwinJet();
     }
 }

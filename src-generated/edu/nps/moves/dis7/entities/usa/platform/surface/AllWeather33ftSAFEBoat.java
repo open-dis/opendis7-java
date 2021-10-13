@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@45d56062;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28477
+ * <p> Entity class <b><code>AllWeather33ftSAFEBoat</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AllWeather33ftSAFEBoat.createInstance()</code> or <code>new AllWeather33ftSAFEBoat()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Private Motorboat = <code>84</code>; </li>
+ *     <li> SubCategory: MediumMotorboatupto39ft119m  = <code>2</code>; </li>
+ *     <li> Specific: USCustomsandBorderPatrolCBPInterceptorClass  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28477; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7db40fd5. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PrivateMotorboat
+ * @see SubCategory
+
  */
-public class AllWeather33ftSAFEBoat extends EntityType
+public final class AllWeather33ftSAFEBoat extends EntityType
 {
     /** Default constructor */
     public AllWeather33ftSAFEBoat()
@@ -27,5 +41,11 @@ public class AllWeather33ftSAFEBoat extends EntityType
         setSubCategory((byte)2); // uid 28475, Medium Motorboat (up to 39ft/11.9m)
         setSpecific((byte)1); // uid 28476, U.S. Customs and Border Patrol (CBP) Interceptor Class
         setExtra((byte)1); // uid 28477, All-Weather 33ft SAFE Boat
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AllWeather33ftSAFEBoat createInstance()
+    {
+            return new AllWeather33ftSAFEBoat();
     }
 }

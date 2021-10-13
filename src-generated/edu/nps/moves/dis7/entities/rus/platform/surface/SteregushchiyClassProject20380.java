@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@332820f4;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28123
+ * <p> Entity class <b><code>SteregushchiyClassProject20380</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SteregushchiyClassProject20380.createInstance()</code> or <code>new SteregushchiyClassProject20380()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate = <code>50</code>; </li>
+ *     <li> SubCategory: SteregushchiyClassProject20380  = <code>13</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28123; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4422dd48. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Frigate
+ * @see SubCategory
+
  */
-public class SteregushchiyClassProject20380 extends EntityType
+public final class SteregushchiyClassProject20380 extends EntityType
 {
     /** Default constructor */
     public SteregushchiyClassProject20380()
@@ -25,5 +39,11 @@ public class SteregushchiyClassProject20380 extends EntityType
 
         setCategory((byte)50); // uid 14715, Frigate
         setSubCategory((byte)13); // uid 28123, Steregushchiy Class (Project 20380)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SteregushchiyClassProject20380 createInstance()
+    {
+            return new SteregushchiyClassProject20380();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@125d47c4;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11319
+ * <p> Entity class <b><code>LCC20MountWhitney</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LCC20MountWhitney.createInstance()</code> or <code>new LCC20MountWhitney()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Command Ship/Cruiser = <code>2</code>; </li>
+ *     <li> SubCategory: BlueRidgeClass  = <code>1</code>; </li>
+ *     <li> Specific: LCC20MountWhitney  = <code>2</code>; </li>
+ *     <li> Entity type uid: 11319; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d318e91. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommandShipCruiser
+ * @see SubCategory
+
  */
-public class LCC20MountWhitney extends EntityType
+public final class LCC20MountWhitney extends EntityType
 {
     /** Default constructor */
     public LCC20MountWhitney()
@@ -26,5 +40,11 @@ public class LCC20MountWhitney extends EntityType
         setCategory((byte)2); // uid 11316, Command Ship/Cruiser
         setSubCategory((byte)1); // uid 11317, Blue Ridge Class
         setSpecific((byte)2); // uid 11319, LCC 20 Mount Whitney
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LCC20MountWhitney createInstance()
+    {
+            return new LCC20MountWhitney();
     }
 }

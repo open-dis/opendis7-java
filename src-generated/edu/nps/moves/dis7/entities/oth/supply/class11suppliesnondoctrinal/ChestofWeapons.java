@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5fc1e4fb;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL;
- *
- * Entity type uid: 30610
+ * <p> Entity class <b><code>ChestofWeapons</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ChestofWeapons.createInstance()</code> or <code>new ChestofWeapons()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_11_SUPPLIES_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Chests = <code>4</code>; </li>
+ *     <li> SubCategory: ChestofWeapons  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30610; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@631944d4. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see Chests
+ * @see SubCategory
+
  */
-public class ChestofWeapons extends EntityType
+public final class ChestofWeapons extends EntityType
 {
     /** Default constructor */
     public ChestofWeapons()
@@ -25,5 +39,11 @@ public class ChestofWeapons extends EntityType
 
         setCategory((byte)4); // uid 30609, Chests
         setSubCategory((byte)1); // uid 30610, Chest of Weapons
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ChestofWeapons createInstance()
+    {
+            return new ChestofWeapons();
     }
 }

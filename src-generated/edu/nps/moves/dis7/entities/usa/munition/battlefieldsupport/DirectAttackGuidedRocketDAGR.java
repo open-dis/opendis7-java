@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@45e11627;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 29103
+ * <p> Entity class <b><code>DirectAttackGuidedRocketDAGR</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DirectAttackGuidedRocketDAGR.createInstance()</code> or <code>new DirectAttackGuidedRocketDAGR()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: DirectAttackGuidedRocketDAGR  = <code>32</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29103; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26994c6a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class DirectAttackGuidedRocketDAGR extends EntityType
+public final class DirectAttackGuidedRocketDAGR extends EntityType
 {
     /** Default constructor */
     public DirectAttackGuidedRocketDAGR()
@@ -25,5 +39,11 @@ public class DirectAttackGuidedRocketDAGR extends EntityType
 
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)32); // uid 29103, Direct Attack Guided Rocket (DAGR)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DirectAttackGuidedRocketDAGR createInstance()
+    {
+            return new DirectAttackGuidedRocketDAGR();
     }
 }

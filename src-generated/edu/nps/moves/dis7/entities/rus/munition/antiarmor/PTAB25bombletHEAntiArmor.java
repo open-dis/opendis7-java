@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5fb8dc01;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_ARMOR;
- *
- * Entity type uid: 20479
+ * <p> Entity class <b><code>PTAB25bombletHEAntiArmor</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PTAB25bombletHEAntiArmor.createInstance()</code> or <code>new PTAB25bombletHEAntiArmor()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_ARMOR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: PTAB25bombletHEAntiArmor  = <code>16</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 20479; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6c5ca0b6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class PTAB25bombletHEAntiArmor extends EntityType
+public final class PTAB25bombletHEAntiArmor extends EntityType
 {
     /** Default constructor */
     public PTAB25bombletHEAntiArmor()
@@ -25,5 +39,11 @@ public class PTAB25bombletHEAntiArmor extends EntityType
 
         setCategory((byte)2); // uid 20445, Ballistic
         setSubCategory((byte)16); // uid 20479, PTAB-2.5 bomblet HE Anti-Armor
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PTAB25bombletHEAntiArmor createInstance()
+    {
+            return new PTAB25bombletHEAntiArmor();
     }
 }

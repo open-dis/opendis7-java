@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class Vector2Float extends Object implements Serializable
    protected float  y;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public Vector2Float()
  {
  }
@@ -147,8 +146,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    x = byteBuffer.getFloat();
-    y = byteBuffer.getFloat();
+    try
+    {
+        // attribute x marked as not serialized
+        x = byteBuffer.getFloat();
+        // attribute y marked as not serialized
+        y = byteBuffer.getFloat();
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2913ca3e;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32522
+ * <p> Entity class <b><code>TridentIIStage1Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TridentIIStage1Booster.createInstance()</code> or <code>new TridentIIStage1Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: UGM133TridentIID5  = <code>11</code>; </li>
+ *     <li> Specific: TridentIIStage1Booster  = <code>4</code>; </li>
+ *     <li> Entity type uid: 32522; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ae3c140. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TridentIIStage1Booster extends EntityType
+public final class TridentIIStage1Booster extends EntityType
 {
     /** Default constructor */
     public TridentIIStage1Booster()
@@ -26,5 +40,11 @@ public class TridentIIStage1Booster extends EntityType
         setCategory((byte)1); // uid 20282, Guided
         setSubCategory((byte)11); // uid 26360, UGM-133 Trident II D5
         setSpecific((byte)4); // uid 32522, Trident II Stage 1 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TridentIIStage1Booster createInstance()
+    {
+            return new TridentIIStage1Booster();
     }
 }

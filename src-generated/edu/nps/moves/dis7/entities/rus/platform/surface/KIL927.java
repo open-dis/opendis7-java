@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@213bd3d5;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14268
+ * <p> Entity class <b><code>KIL927</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KIL927.createInstance()</code> or <code>new KIL927()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Kashtanclassbuoytenders  = <code>72</code>; </li>
+ *     <li> Specific: KIL927  = <code>5</code>; </li>
+ *     <li> Entity type uid: 14268; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5176d279. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class KIL927 extends EntityType
+public final class KIL927 extends EntityType
 {
     /** Default constructor */
     public KIL927()
@@ -26,5 +40,11 @@ public class KIL927 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)72); // uid 14263, Kashtan class (buoy tenders)
         setSpecific((byte)5); // uid 14268, KIL 927
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KIL927 createInstance()
+    {
+            return new KIL927();
     }
 }

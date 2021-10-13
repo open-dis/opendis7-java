@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
    protected List< VariableDatum > groupedEntityDescriptions = new ArrayList< VariableDatum >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IsGroupOfPdu()
  {
     setPduType( DisPduType.ISGROUPOF );
@@ -56,17 +55,20 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += groupEntityID.getMarshalledSize();
-   marshalSize += groupedEntityCategory.getMarshalledSize();
+   if (groupEntityID != null)
+       marshalSize += groupEntityID.getMarshalledSize();
+   if (groupedEntityCategory != null)
+       marshalSize += groupedEntityCategory.getMarshalledSize();
    marshalSize += 1;  // numberOfGroupedEntities
    marshalSize += 4;  // pad
    marshalSize += 8;  // latitude
    marshalSize += 8;  // longitude
-   for(int idx=0; idx < groupedEntityDescriptions.size(); idx++)
-   {
-        VariableDatum listElement = groupedEntityDescriptions.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (groupedEntityDescriptions != null)
+       for (int idx=0; idx < groupedEntityDescriptions.size(); idx++)
+       {
+            VariableDatum listElement = groupedEntityDescriptions.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -186,7 +188,7 @@ public void marshal(DataOutputStream dos) throws Exception
        dos.writeDouble(latitude);
        dos.writeDouble(longitude);
 
-       for(int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
+       for (int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
        {
             VariableDatum aVariableDatum = groupedEntityDescriptions.get(idx);
             aVariableDatum.marshal(dos);
@@ -225,7 +227,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         longitude = dis.readDouble();
         uPosition += 4;
-        for(int idx = 0; idx < numberOfGroupedEntities; idx++)
+        for (int idx = 0; idx < numberOfGroupedEntities; idx++)
         {
             VariableDatum anX = new VariableDatum();
             uPosition += anX.unmarshal(dis);
@@ -258,7 +260,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    byteBuffer.putDouble( (double)latitude);
    byteBuffer.putDouble( (double)longitude);
 
-   for(int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
+   for (int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
    {
         VariableDatum aVariableDatum = groupedEntityDescriptions.get(idx);
         aVariableDatum.marshal(byteBuffer);
@@ -279,19 +281,33 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    groupEntityID.unmarshal(byteBuffer);
-    groupedEntityCategory = IsGroupOfGroupedEntityCategory.unmarshalEnum(byteBuffer);
-    numberOfGroupedEntities = (byte)(byteBuffer.get() & 0xFF);
-    pad = byteBuffer.getInt();
-    latitude = byteBuffer.getDouble();
-    longitude = byteBuffer.getDouble();
-    for(int idx = 0; idx < numberOfGroupedEntities; idx++)
+    try
     {
-    VariableDatum anX = new VariableDatum();
-    anX.unmarshal(byteBuffer);
-    groupedEntityDescriptions.add(anX);
-    }
+        // attribute groupEntityID marked as not serialized
+        groupEntityID.unmarshal(byteBuffer);
+        // attribute groupedEntityCategory marked as not serialized
+        groupedEntityCategory = IsGroupOfGroupedEntityCategory.unmarshalEnum(byteBuffer);
+        // attribute numberOfGroupedEntities marked as not serialized
+        numberOfGroupedEntities = (byte)(byteBuffer.get() & 0xFF);
+        // attribute pad marked as not serialized
+        pad = byteBuffer.getInt();
+        // attribute latitude marked as not serialized
+        latitude = byteBuffer.getDouble();
+        // attribute longitude marked as not serialized
+        longitude = byteBuffer.getDouble();
+        // attribute groupedEntityDescriptions marked as not serialized
+        for (int idx = 0; idx < numberOfGroupedEntities; idx++)
+        {
+        VariableDatum anX = new VariableDatum();
+        anX.unmarshal(byteBuffer);
+        groupedEntityDescriptions.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -326,7 +342,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (latitude == rhs.latitude)) ivarsEqual = false;
      if( ! (longitude == rhs.longitude)) ivarsEqual = false;
 
-     for(int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
+     for (int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
         if( ! ( groupedEntityDescriptions.get(idx).equals(rhs.groupedEntityDescriptions.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

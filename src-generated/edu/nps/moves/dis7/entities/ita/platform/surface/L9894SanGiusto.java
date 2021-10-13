@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@73c60324;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18639
+ * <p> Entity class <b><code>L9894SanGiusto</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L9894SanGiusto.createInstance()</code> or <code>new L9894SanGiusto()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: SanGiorgioClassLPDs  = <code>1</code>; </li>
+ *     <li> Specific: L9894SanGiusto  = <code>3</code>; </li>
+ *     <li> Entity type uid: 18639; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e34ace1. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class L9894SanGiusto extends EntityType
+public final class L9894SanGiusto extends EntityType
 {
     /** Default constructor */
     public L9894SanGiusto()
@@ -26,5 +40,11 @@ public class L9894SanGiusto extends EntityType
         setCategory((byte)56); // uid 18635, Amphibious Transport Dock
         setSubCategory((byte)1); // uid 18636, San Giorgio Class (LPDs)
         setSpecific((byte)3); // uid 18639, L9894 San Giusto
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L9894SanGiusto createInstance()
+    {
+            return new L9894SanGiusto();
     }
 }

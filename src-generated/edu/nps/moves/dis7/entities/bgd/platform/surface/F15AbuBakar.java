@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68be2bc2;
- * Country: Bangladesh (BGD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 32606
+ * <p> Entity class <b><code>F15AbuBakar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>F15AbuBakar.createInstance()</code> or <code>new F15AbuBakar()</code>. </p>
+ * <ul>
+ *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JianghuIIIClassType053H2  = <code>2</code>; </li>
+ *     <li> Specific: F15AbuBakar  = <code>1</code>; </li>
+ *     <li> Entity type uid: 32606; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fb554cc. </p>
+ * @see Country#BANGLADESH_BGD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class F15AbuBakar extends EntityType
+public final class F15AbuBakar extends EntityType
 {
     /** Default constructor */
     public F15AbuBakar()
@@ -26,5 +40,11 @@ public class F15AbuBakar extends EntityType
         setCategory((byte)6); // uid 26771, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 32605, Jianghu-III Class (Type 053H2)
         setSpecific((byte)1); // uid 32606, F15 Abu Bakar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static F15AbuBakar createInstance()
+    {
+            return new F15AbuBakar();
     }
 }

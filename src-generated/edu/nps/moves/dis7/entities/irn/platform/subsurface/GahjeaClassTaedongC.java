@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@736d6a5c;
- * Country: Iran (Islamic Republic of) (IRN);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 30895
+ * <p> Entity class <b><code>GahjeaClassTaedongC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GahjeaClassTaedongC.createInstance()</code> or <code>new GahjeaClassTaedongC()</code>. </p>
+ * <ul>
+ *     <li> Country: Iran (Islamic Republic of) (IRN) = <code>101</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Semi-Submersible Boats = <code>16</code>; </li>
+ *     <li> SubCategory: GahjeaClassTaedongC  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30895; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@53142455. </p>
+ * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SemiSubmersibleBoats
+ * @see SubCategory
+
  */
-public class GahjeaClassTaedongC extends EntityType
+public final class GahjeaClassTaedongC extends EntityType
 {
     /** Default constructor */
     public GahjeaClassTaedongC()
@@ -25,5 +39,11 @@ public class GahjeaClassTaedongC extends EntityType
 
         setCategory((byte)16); // uid 30893, Semi-Submersible Boats
         setSubCategory((byte)2); // uid 30895, Gahjea Class (Taedong-C)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GahjeaClassTaedongC createInstance()
+    {
+            return new GahjeaClassTaedongC();
     }
 }

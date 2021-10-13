@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30704f85;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 30852
+ * <p> Entity class <b><code>SlingLoadBladder10000Gal</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SlingLoadBladder10000Gal.createInstance()</code> or <code>new SlingLoadBladder10000Gal()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Bladder = <code>8</code>; </li>
+ *     <li> SubCategory: SlingLoadBladder10000Gal  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30852; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@315cf170. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadBladder
+ * @see SubCategory
+
  */
-public class SlingLoadBladder10000Gal extends EntityType
+public final class SlingLoadBladder10000Gal extends EntityType
 {
     /** Default constructor */
     public SlingLoadBladder10000Gal()
@@ -25,5 +39,11 @@ public class SlingLoadBladder10000Gal extends EntityType
 
         setCategory((byte)8); // uid 30849, Sling Load, Bladder
         setSubCategory((byte)3); // uid 30852, Sling Load, Bladder, 10000 Gal
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SlingLoadBladder10000Gal createInstance()
+    {
+            return new SlingLoadBladder10000Gal();
     }
 }

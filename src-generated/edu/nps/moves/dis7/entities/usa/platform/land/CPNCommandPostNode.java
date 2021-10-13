@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3d9f5016;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27264
+ * <p> Entity class <b><code>CPNCommandPostNode</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CPNCommandPostNode.createInstance()</code> or <code>new CPNCommandPostNode()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: C4I Facility = <code>35</code>; </li>
+ *     <li> SubCategory: CPNCommandPostNode  = <code>6</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27264; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@310ed6b4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see C4IFacility
+ * @see SubCategory
+
  */
-public class CPNCommandPostNode extends EntityType
+public final class CPNCommandPostNode extends EntityType
 {
     /** Default constructor */
     public CPNCommandPostNode()
@@ -25,5 +39,11 @@ public class CPNCommandPostNode extends EntityType
 
         setCategory((byte)35); // uid 10748, C4I Facility
         setSubCategory((byte)6); // uid 27264, CPN - Command Post Node
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CPNCommandPostNode createInstance()
+    {
+            return new CPNCommandPostNode();
     }
 }

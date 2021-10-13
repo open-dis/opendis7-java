@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@15b3e5b;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 16879
+ * <p> Entity class <b><code>NORINCOYW534ArmoredPersonnelCarrierAPC</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NORINCOYW534ArmoredPersonnelCarrierAPC.createInstance()</code> or <code>new NORINCOYW534ArmoredPersonnelCarrierAPC()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: NORINCOYW534ArmoredPersonnelCarrierAPC  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 16879; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@192d3247. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class NORINCOYW534ArmoredPersonnelCarrierAPC extends EntityType
+public final class NORINCOYW534ArmoredPersonnelCarrierAPC extends EntityType
 {
     /** Default constructor */
     public NORINCOYW534ArmoredPersonnelCarrierAPC()
@@ -25,5 +39,11 @@ public class NORINCOYW534ArmoredPersonnelCarrierAPC extends EntityType
 
         setCategory((byte)2); // uid 16876, Armored Fighting Vehicle
         setSubCategory((byte)3); // uid 16879, NORINCO YW 534 Armored Personnel Carrier (APC)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NORINCOYW534ArmoredPersonnelCarrierAPC createInstance()
+    {
+            return new NORINCOYW534ArmoredPersonnelCarrierAPC();
     }
 }

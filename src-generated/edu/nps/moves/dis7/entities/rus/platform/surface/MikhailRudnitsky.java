@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2416498e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14246
+ * <p> Entity class <b><code>MikhailRudnitsky</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MikhailRudnitsky.createInstance()</code> or <code>new MikhailRudnitsky()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: MikhailRudnitskyClassProject0536005361RescueShips  = <code>68</code>; </li>
+ *     <li> Specific: MikhailRudnitsky  = <code>1</code>; </li>
+ *     <li> Entity type uid: 14246; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39008c9f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class MikhailRudnitsky extends EntityType
+public final class MikhailRudnitsky extends EntityType
 {
     /** Default constructor */
     public MikhailRudnitsky()
@@ -26,5 +40,11 @@ public class MikhailRudnitsky extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)68); // uid 14245, Mikhail Rudnitsky Class (Project 05360/05361) Rescue Ships
         setSpecific((byte)1); // uid 14246, Mikhail Rudnitsky
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MikhailRudnitsky createInstance()
+    {
+            return new MikhailRudnitsky();
     }
 }

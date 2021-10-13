@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3681037;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30399
+ * <p> Entity class <b><code>AGEAkademikKovalevProject20181</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AGEAkademikKovalevProject20181.createInstance()</code> or <code>new AGEAkademikKovalevProject20181()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: ASRAGEZvezdochkaclassProject201802018120183  = <code>115</code>; </li>
+ *     <li> Specific: AGEAkademikKovalevProject20181  = <code>2</code>; </li>
+ *     <li> Entity type uid: 30399; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a34e9f. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AGEAkademikKovalevProject20181 extends EntityType
+public final class AGEAkademikKovalevProject20181 extends EntityType
 {
     /** Default constructor */
     public AGEAkademikKovalevProject20181()
@@ -26,5 +40,11 @@ public class AGEAkademikKovalevProject20181 extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)115); // uid 30397, ASR/AGE Zvezdochka class (Project 20180/20181/20183)
         setSpecific((byte)2); // uid 30399, AGE Akademik Kovalev (Project 20181)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AGEAkademikKovalevProject20181 createInstance()
+    {
+            return new AGEAkademikKovalevProject20181();
     }
 }

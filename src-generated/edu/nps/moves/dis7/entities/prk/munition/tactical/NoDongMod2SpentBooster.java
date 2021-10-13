@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5c59a0f7;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Munition;
- * Domain: TACTICAL;
- *
- * Entity type uid: 32510
+ * <p> Entity class <b><code>NoDongMod2SpentBooster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NoDongMod2SpentBooster.createInstance()</code> or <code>new NoDongMod2SpentBooster()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: NoDongMod2  = <code>53</code>; </li>
+ *     <li> Specific: NoDongMod2SpentBooster  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32510; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48f2054d. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class NoDongMod2SpentBooster extends EntityType
+public final class NoDongMod2SpentBooster extends EntityType
 {
     /** Default constructor */
     public NoDongMod2SpentBooster()
@@ -26,5 +40,11 @@ public class NoDongMod2SpentBooster extends EntityType
         setCategory((byte)1); // uid 32499, Guided
         setSubCategory((byte)53); // uid 32508, No Dong Mod-2
         setSpecific((byte)2); // uid 32510, No Dong Mod-2 Spent Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NoDongMod2SpentBooster createInstance()
+    {
+            return new NoDongMod2SpentBooster();
     }
 }

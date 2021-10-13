@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class EntityAssociationVP extends Object implements Serializable
    protected short  groupNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public EntityAssociationVP()
  {
  }
@@ -60,14 +59,22 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += recordType.getMarshalledSize();
-   marshalSize += changeIndicator.getMarshalledSize();
-   marshalSize += associationStatus.getMarshalledSize();
-   marshalSize += associationType.getMarshalledSize();
-   marshalSize += entityID.getMarshalledSize();
-   marshalSize += ownStationLocation.getMarshalledSize();
-   marshalSize += physicalConnectionType.getMarshalledSize();
-   marshalSize += groupMemberType.getMarshalledSize();
+   if (recordType != null)
+       marshalSize += recordType.getMarshalledSize();
+   if (changeIndicator != null)
+       marshalSize += changeIndicator.getMarshalledSize();
+   if (associationStatus != null)
+       marshalSize += associationStatus.getMarshalledSize();
+   if (associationType != null)
+       marshalSize += associationType.getMarshalledSize();
+   if (entityID != null)
+       marshalSize += entityID.getMarshalledSize();
+   if (ownStationLocation != null)
+       marshalSize += ownStationLocation.getMarshalledSize();
+   if (physicalConnectionType != null)
+       marshalSize += physicalConnectionType.getMarshalledSize();
+   if (groupMemberType != null)
+       marshalSize += groupMemberType.getMarshalledSize();
    marshalSize += 2;  // groupNumber
 
    return marshalSize;
@@ -321,15 +328,31 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
-    changeIndicator = EntityVPRecordChangeIndicator.unmarshalEnum(byteBuffer);
-    associationStatus = EntityAssociationAssociationType.unmarshalEnum(byteBuffer);
-    associationType = EntityAssociationPhysicalAssociationType.unmarshalEnum(byteBuffer);
-    entityID.unmarshal(byteBuffer);
-    ownStationLocation = IsPartOfStationName.unmarshalEnum(byteBuffer);
-    physicalConnectionType = EntityAssociationPhysicalConnectionType.unmarshalEnum(byteBuffer);
-    groupMemberType = EntityAssociationGroupMemberType.unmarshalEnum(byteBuffer);
-    groupNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute recordType marked as not serialized
+        recordType = VariableParameterRecordType.unmarshalEnum(byteBuffer);
+        // attribute changeIndicator marked as not serialized
+        changeIndicator = EntityVPRecordChangeIndicator.unmarshalEnum(byteBuffer);
+        // attribute associationStatus marked as not serialized
+        associationStatus = EntityAssociationAssociationType.unmarshalEnum(byteBuffer);
+        // attribute associationType marked as not serialized
+        associationType = EntityAssociationPhysicalAssociationType.unmarshalEnum(byteBuffer);
+        // attribute entityID marked as not serialized
+        entityID.unmarshal(byteBuffer);
+        // attribute ownStationLocation marked as not serialized
+        ownStationLocation = IsPartOfStationName.unmarshalEnum(byteBuffer);
+        // attribute physicalConnectionType marked as not serialized
+        physicalConnectionType = EntityAssociationPhysicalConnectionType.unmarshalEnum(byteBuffer);
+        // attribute groupMemberType marked as not serialized
+        groupMemberType = EntityAssociationGroupMemberType.unmarshalEnum(byteBuffer);
+        // attribute groupNumber marked as not serialized
+        groupNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

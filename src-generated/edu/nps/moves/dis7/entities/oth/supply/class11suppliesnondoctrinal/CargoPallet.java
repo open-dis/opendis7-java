@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6cee903a;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_11_SUPPLIES_NON_DOCTRINAL;
- *
- * Entity type uid: 30814
+ * <p> Entity class <b><code>CargoPallet</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CargoPallet.createInstance()</code> or <code>new CargoPallet()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_11_SUPPLIES_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Pallets = <code>2</code>; </li>
+ *     <li> SubCategory: CargoPallet  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 30814; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@986b619. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see Pallets
+ * @see SubCategory
+
  */
-public class CargoPallet extends EntityType
+public final class CargoPallet extends EntityType
 {
     /** Default constructor */
     public CargoPallet()
@@ -25,5 +39,11 @@ public class CargoPallet extends EntityType
 
         setCategory((byte)2); // uid 30810, Pallets
         setSubCategory((byte)4); // uid 30814, Cargo Pallet
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CargoPallet createInstance()
+    {
+            return new CargoPallet();
     }
 }

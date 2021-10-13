@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@176555c;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15517
+ * <p> Entity class <b><code>RPL12Medway</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RPL12Medway.createInstance()</code> or <code>new RPL12Medway()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: AvonclassRoyalCorpsofTransport  = <code>1</code>; </li>
+ *     <li> Specific: RPL12Medway  = <code>3</code>; </li>
+ *     <li> Entity type uid: 15517; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5762658b. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class RPL12Medway extends EntityType
+public final class RPL12Medway extends EntityType
 {
     /** Default constructor */
     public RPL12Medway()
@@ -26,5 +40,11 @@ public class RPL12Medway extends EntityType
         setCategory((byte)17); // uid 15513, Auxiliary, Merchant Marine
         setSubCategory((byte)1); // uid 15514, Avon class (Royal Corps of Transport)
         setSpecific((byte)3); // uid 15517, RPL 12 Medway
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RPL12Medway createInstance()
+    {
+            return new RPL12Medway();
     }
 }

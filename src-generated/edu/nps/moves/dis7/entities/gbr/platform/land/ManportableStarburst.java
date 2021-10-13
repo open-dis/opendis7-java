@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@655a01d8;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 29045
+ * <p> Entity class <b><code>ManportableStarburst</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ManportableStarburst.createInstance()</code> or <code>new ManportableStarburst()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: StarburstSAMSystem  = <code>3</code>; </li>
+ *     <li> Specific: ManportableStarburst  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29045; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ab4a5b. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class ManportableStarburst extends EntityType
+public final class ManportableStarburst extends EntityType
 {
     /** Default constructor */
     public ManportableStarburst()
@@ -26,5 +40,11 @@ public class ManportableStarburst extends EntityType
         setCategory((byte)28); // uid 14976, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)3); // uid 29044, Starburst SAM System
         setSpecific((byte)1); // uid 29045, Man-portable Starburst
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ManportableStarburst createInstance()
+    {
+            return new ManportableStarburst();
     }
 }

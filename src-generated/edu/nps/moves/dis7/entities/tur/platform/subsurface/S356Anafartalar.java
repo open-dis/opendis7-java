@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@59696551;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23205
+ * <p> Entity class <b><code>S356Anafartalar</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S356Anafartalar.createInstance()</code> or <code>new S356Anafartalar()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Prevezeclass  = <code>2</code>; </li>
+ *     <li> Specific: S356Anafartalar  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23205; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e4f263e. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S356Anafartalar extends EntityType
+public final class S356Anafartalar extends EntityType
 {
     /** Default constructor */
     public S356Anafartalar()
@@ -26,5 +40,11 @@ public class S356Anafartalar extends EntityType
         setCategory((byte)5); // uid 19067, SS (Conventional Attack-Torpedo, Patrol)
         setSubCategory((byte)2); // uid 23201, Preveze class
         setSpecific((byte)4); // uid 23205, S356 Anafartalar
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S356Anafartalar createInstance()
+    {
+            return new S356Anafartalar();
     }
 }

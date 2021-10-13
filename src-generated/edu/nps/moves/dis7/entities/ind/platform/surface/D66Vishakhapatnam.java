@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2445445a;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30249
+ * <p> Entity class <b><code>D66Vishakhapatnam</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D66Vishakhapatnam.createInstance()</code> or <code>new D66Vishakhapatnam()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
+ *     <li> SubCategory: KolkataClass  = <code>3</code>; </li>
+ *     <li> Specific: D66Vishakhapatnam  = <code>4</code>; </li>
+ *     <li> Entity type uid: 30249; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f3f02ee. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyerDDG
+ * @see SubCategory
+
  */
-public class D66Vishakhapatnam extends EntityType
+public final class D66Vishakhapatnam extends EntityType
 {
     /** Default constructor */
     public D66Vishakhapatnam()
@@ -26,5 +40,11 @@ public class D66Vishakhapatnam extends EntityType
         setCategory((byte)4); // uid 18824, Guided Missile Destroyer (DDG)
         setSubCategory((byte)3); // uid 28871, Kolkata Class
         setSpecific((byte)4); // uid 30249, D66 Vishakhapatnam
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D66Vishakhapatnam createInstance()
+    {
+            return new D66Vishakhapatnam();
     }
 }

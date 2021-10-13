@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@293cde83;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 13131
+ * <p> Entity class <b><code>S6057mmAAGun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S6057mmAAGun.createInstance()</code> or <code>new S6057mmAAGun()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: TowedVSHORADGunMissileSystem  = <code>13</code>; </li>
+ *     <li> Specific: S6057mmAAGun  = <code>4</code>; </li>
+ *     <li> Entity type uid: 13131; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d4a65c6. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class S6057mmAAGun extends EntityType
+public final class S6057mmAAGun extends EntityType
 {
     /** Default constructor */
     public S6057mmAAGun()
@@ -26,5 +40,11 @@ public class S6057mmAAGun extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)13); // uid 13127, Towed VSHORAD Gun/Missile System
         setSpecific((byte)4); // uid 13131, S-60 57mm AA Gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S6057mmAAGun createInstance()
+    {
+            return new S6057mmAAGun();
     }
 }

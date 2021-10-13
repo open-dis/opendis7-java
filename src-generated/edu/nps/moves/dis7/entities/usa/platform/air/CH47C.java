@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a2dc0a;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11157
+ * <p> Entity class <b><code>CH47C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CH47C.createInstance()</code> or <code>new CH47C()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo helicopter = <code>23</code>; </li>
+ *     <li> SubCategory: BoeingModels114414  = <code>1</code>; </li>
+ *     <li> Specific: CH47C  = <code>3</code>; </li>
+ *     <li> Entity type uid: 11157; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@423a0e1d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Cargohelicopter
+ * @see SubCategory
+
  */
-public class CH47C extends EntityType
+public final class CH47C extends EntityType
 {
     /** Default constructor */
     public CH47C()
@@ -26,5 +40,11 @@ public class CH47C extends EntityType
         setCategory((byte)23); // uid 11153, Cargo helicopter
         setSubCategory((byte)1); // uid 11154, Boeing Models 114/414
         setSpecific((byte)3); // uid 11157, CH-47C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CH47C createInstance()
+    {
+            return new CH47C();
     }
 }

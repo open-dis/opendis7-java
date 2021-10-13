@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4409e975;
- * Country: Israel (ISR);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 23488
+ * <p> Entity class <b><code>Hermes450</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hermes450.createInstance()</code> or <code>new Hermes450()</code>. </p>
+ * <ul>
+ *     <li> Country: Israel (ISR) = <code>105</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: Hermes450  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23488; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3fb6cf60. </p>
+ * @see Country#ISRAEL_ISR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class Hermes450 extends EntityType
+public final class Hermes450 extends EntityType
 {
     /** Default constructor */
     public Hermes450()
@@ -25,5 +39,11 @@ public class Hermes450 extends EntityType
 
         setCategory((byte)50); // uid 23487, Unmanned
         setSubCategory((byte)1); // uid 23488, Hermes 450
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hermes450 createInstance()
+    {
+            return new Hermes450();
     }
 }

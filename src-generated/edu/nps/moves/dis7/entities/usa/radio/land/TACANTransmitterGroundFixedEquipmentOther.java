@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5909ae90;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: LAND;
- *
- * Entity type uid: 22211
+ * <p> Entity class <b><code>TACANTransmitterGroundFixedEquipmentOther</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TACANTransmitterGroundFixedEquipmentOther.createInstance()</code> or <code>new TACANTransmitterGroundFixedEquipmentOther()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Tactical Air Navigation (TACAN) Transmitter (Ground Fixed Equipment) = <code>10</code>; </li>
+ *     <li> SubCategory: TACANTransmitterGroundFixedEquipmentOther  = <code>0</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 22211; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5feb82b3. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TacticalAirNavigationTACANTransmitterGroundFixedEquipment
+ * @see SubCategory
+
  */
-public class TACANTransmitterGroundFixedEquipmentOther extends EntityType
+public final class TACANTransmitterGroundFixedEquipmentOther extends EntityType
 {
     /** Default constructor */
     public TACANTransmitterGroundFixedEquipmentOther()
@@ -25,5 +39,11 @@ public class TACANTransmitterGroundFixedEquipmentOther extends EntityType
 
         setCategory((byte)10); // uid 22210, Tactical Air Navigation (TACAN) Transmitter (Ground Fixed Equipment)
         setSubCategory((byte)0); // uid 22211, TACAN Transmitter (Ground Fixed Equipment), Other
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TACANTransmitterGroundFixedEquipmentOther createInstance()
+    {
+            return new TACANTransmitterGroundFixedEquipmentOther();
     }
 }

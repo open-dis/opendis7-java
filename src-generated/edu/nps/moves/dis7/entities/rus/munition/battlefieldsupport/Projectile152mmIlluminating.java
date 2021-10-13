@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66a82a13;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 20852
+ * <p> Entity class <b><code>Projectile152mmIlluminating</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Projectile152mmIlluminating.createInstance()</code> or <code>new Projectile152mmIlluminating()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _152mm  = <code>19</code>; </li>
+ *     <li> Specific: Projectile152mmIlluminating  = <code>6</code>; </li>
+ *     <li> Entity type uid: 20852; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52f9e8bb. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class Projectile152mmIlluminating extends EntityType
+public final class Projectile152mmIlluminating extends EntityType
 {
     /** Default constructor */
     public Projectile152mmIlluminating()
@@ -26,5 +40,11 @@ public class Projectile152mmIlluminating extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)19); // uid 20846, 152 mm
         setSpecific((byte)6); // uid 20852, Projectile, 152-mm, Illuminating
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Projectile152mmIlluminating createInstance()
+    {
+            return new Projectile152mmIlluminating();
     }
 }

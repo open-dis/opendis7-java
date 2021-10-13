@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5bc28f40;
- * Country: Sweden (SWE);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26842
+ * <p> Entity class <b><code>SelfPropelledAcousticMagneticSAMMinesweeperUnmanned</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SelfPropelledAcousticMagneticSAMMinesweeperUnmanned.createInstance()</code> or <code>new SelfPropelledAcousticMagneticSAMMinesweeperUnmanned()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned Surface Vehicle (USV) = <code>19</code>; </li>
+ *     <li> SubCategory: SelfPropelledAcousticMagneticSAMMinesweeperUnmanned  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 26842; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2d9dff65. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UnmannedSurfaceVehicleUSV
+ * @see SubCategory
+
  */
-public class SelfPropelledAcousticMagneticSAMMinesweeperUnmanned extends EntityType
+public final class SelfPropelledAcousticMagneticSAMMinesweeperUnmanned extends EntityType
 {
     /** Default constructor */
     public SelfPropelledAcousticMagneticSAMMinesweeperUnmanned()
@@ -25,5 +39,11 @@ public class SelfPropelledAcousticMagneticSAMMinesweeperUnmanned extends EntityT
 
         setCategory((byte)19); // uid 26841, Unmanned Surface Vehicle (USV)
         setSubCategory((byte)1); // uid 26842, Self-Propelled Acoustic/Magnetic (SAM) Minesweeper (Unmanned)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SelfPropelledAcousticMagneticSAMMinesweeperUnmanned createInstance()
+    {
+            return new SelfPropelledAcousticMagneticSAMMinesweeperUnmanned();
     }
 }

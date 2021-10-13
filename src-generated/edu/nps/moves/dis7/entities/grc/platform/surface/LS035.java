@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2f1de2d6;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23368
+ * <p> Entity class <b><code>LS035</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LS035.createInstance()</code> or <code>new LS035()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Boats = <code>63</code>; </li>
+ *     <li> SubCategory: Dilosclass  = <code>1</code>; </li>
+ *     <li> Specific: LS035  = <code>6</code>; </li>
+ *     <li> Entity type uid: 23368; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@554e218. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardBoats
+ * @see SubCategory
+
  */
-public class LS035 extends EntityType
+public final class LS035 extends EntityType
 {
     /** Default constructor */
     public LS035()
@@ -26,5 +40,11 @@ public class LS035 extends EntityType
         setCategory((byte)63); // uid 23361, Coast Guard Boats
         setSubCategory((byte)1); // uid 23362, Dilos class
         setSpecific((byte)6); // uid 23368, LS 035
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LS035 createInstance()
+    {
+            return new LS035();
     }
 }

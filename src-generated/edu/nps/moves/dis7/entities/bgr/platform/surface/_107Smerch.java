@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5a8e6209;
- * Country: Bulgaria (BGR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27885
+ * <p> Entity class <b><code>_107Smerch</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_107Smerch.createInstance()</code> or <code>new _107Smerch()</code>. </p>
+ * <ul>
+ *     <li> Country: Bulgaria (BGR) = <code>33</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: OsaIIClass  = <code>1</code>; </li>
+ *     <li> Specific: _107Smerch  = <code>6</code>; </li>
+ *     <li> Entity type uid: 27885; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dfa3a9d. </p>
+ * @see Country#BULGARIA_BGR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _107Smerch extends EntityType
+public final class _107Smerch extends EntityType
 {
     /** Default constructor */
     public _107Smerch()
@@ -26,5 +40,11 @@ public class _107Smerch extends EntityType
         setCategory((byte)7); // uid 27878, Light/Patrol Craft
         setSubCategory((byte)1); // uid 27879, Osa II Class
         setSpecific((byte)6); // uid 27885, 107 Smerch
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _107Smerch createInstance()
+    {
+            return new _107Smerch();
     }
 }

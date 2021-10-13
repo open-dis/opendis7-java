@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@283a8ad6;
- * Country: Switzerland (CHE);
- * Entity kind: Munition;
- * Domain: ANTI_AIR;
- *
- * Entity type uid: 21729
+ * <p> Entity class <b><code>FAPDS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FAPDS.createInstance()</code> or <code>new FAPDS()</code>. </p>
+ * <ul>
+ *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _35mm  = <code>1</code>; </li>
+ *     <li> Specific: FAPDS  = <code>3</code>; </li>
+ *     <li> Entity type uid: 21729; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bfb93cf. </p>
+ * @see Country#SWITZERLAND_CHE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class FAPDS extends EntityType
+public final class FAPDS extends EntityType
 {
     /** Default constructor */
     public FAPDS()
@@ -26,5 +40,11 @@ public class FAPDS extends EntityType
         setCategory((byte)2); // uid 21725, Ballistic
         setSubCategory((byte)1); // uid 21726, 35 mm
         setSpecific((byte)3); // uid 21729, FAPDS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FAPDS createInstance()
+    {
+            return new FAPDS();
     }
 }

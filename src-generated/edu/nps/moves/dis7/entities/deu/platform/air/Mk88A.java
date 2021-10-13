@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f704591;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 27477
+ * <p> Entity class <b><code>Mk88A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Mk88A.createInstance()</code> or <code>new Mk88A()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare / Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: Mk88A  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 27477; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@42e25b0b. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class Mk88A extends EntityType
+public final class Mk88A extends EntityType
 {
     /** Default constructor */
     public Mk88A()
@@ -25,5 +39,11 @@ public class Mk88A extends EntityType
 
         setCategory((byte)22); // uid 16379, Anti-Submarine Warfare / Patrol Helicopter
         setSubCategory((byte)3); // uid 27477, Mk 88A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Mk88A createInstance()
+    {
+            return new Mk88A();
     }
 }

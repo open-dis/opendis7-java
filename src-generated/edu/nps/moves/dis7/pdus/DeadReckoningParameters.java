@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class DeadReckoningParameters extends Object implements Serializable
    protected Vector3Float  entityAngularVelocity = new Vector3Float(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public DeadReckoningParameters()
  {
  }
@@ -45,10 +44,14 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += deadReckoningAlgorithm.getMarshalledSize();
-   marshalSize += parameters.length * 1;
-   marshalSize += entityLinearAcceleration.getMarshalledSize();
-   marshalSize += entityAngularVelocity.getMarshalledSize();
+   if (deadReckoningAlgorithm != null)
+       marshalSize += deadReckoningAlgorithm.getMarshalledSize();
+   if (parameters != null)
+       marshalSize += parameters.length * 1;
+   if (entityLinearAcceleration != null)
+       marshalSize += entityLinearAcceleration.getMarshalledSize();
+   if (entityAngularVelocity != null)
+       marshalSize += entityAngularVelocity.getMarshalledSize();
 
    return marshalSize;
 }
@@ -130,7 +133,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        deadReckoningAlgorithm.marshal(dos);
 
-       for(int idx = 0; idx < parameters.length; idx++)
+       for (int idx = 0; idx < parameters.length; idx++)
            dos.writeByte(parameters[idx]);
 
        entityLinearAcceleration.marshal(dos);
@@ -157,7 +160,7 @@ public int unmarshal(DataInputStream dis) throws Exception
     {
         deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(dis);
         uPosition += deadReckoningAlgorithm.getMarshalledSize();
-        for(int idx = 0; idx < parameters.length; idx++)
+        for (int idx = 0; idx < parameters.length; idx++)
             parameters[idx] = dis.readByte();
         uPosition += (parameters.length * 1);
         uPosition += entityLinearAcceleration.unmarshal(dis);
@@ -182,7 +185,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    deadReckoningAlgorithm.marshal(byteBuffer);
 
-   for(int idx = 0; idx < parameters.length; idx++)
+   for (int idx = 0; idx < parameters.length; idx++)
        byteBuffer.put((byte)parameters[idx]);
 
    entityLinearAcceleration.marshal(byteBuffer);
@@ -200,11 +203,22 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
-    for(int idx = 0; idx < parameters.length; idx++)
-        parameters[idx] = byteBuffer.get();
-    entityLinearAcceleration.unmarshal(byteBuffer);
-    entityAngularVelocity.unmarshal(byteBuffer);
+    try
+    {
+        // attribute deadReckoningAlgorithm marked as not serialized
+        deadReckoningAlgorithm = DeadReckoningAlgorithm.unmarshalEnum(byteBuffer);
+        // attribute parameters marked as not serialized
+        for (int idx = 0; idx < parameters.length; idx++)
+            parameters[idx] = byteBuffer.get();
+        // attribute entityLinearAcceleration marked as not serialized
+        entityLinearAcceleration.unmarshal(byteBuffer);
+        // attribute entityAngularVelocity marked as not serialized
+        entityAngularVelocity.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -240,7 +254,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
      if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) ivarsEqual = false;
 
-     for(int idx = 0; idx < 15; idx++)
+     for (int idx = 0; idx < 15; idx++)
      {
           if(!(parameters[idx] == rhs.parameters[idx])) ivarsEqual = false;
      }

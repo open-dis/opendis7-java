@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3098cf3b;
- * Country: Estonia (EST);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27557
+ * <p> Entity class <b><code>M311Wambola</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M311Wambola.createInstance()</code> or <code>new M311Wambola()</code>. </p>
+ * <ul>
+ *     <li> Country: Estonia (EST) = <code>250</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: LindauClassType320  = <code>2</code>; </li>
+ *     <li> Specific: M311Wambola  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27557; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77f1baf5. </p>
+ * @see Country#ESTONIA_EST
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M311Wambola extends EntityType
+public final class M311Wambola extends EntityType
 {
     /** Default constructor */
     public M311Wambola()
@@ -26,5 +40,11 @@ public class M311Wambola extends EntityType
         setCategory((byte)8); // uid 27555, Mine Countermeasure Ship/Craft
         setSubCategory((byte)2); // uid 27556, Lindau Class (Type 320)
         setSpecific((byte)1); // uid 27557, M311 Wambola
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M311Wambola createInstance()
+    {
+            return new M311Wambola();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ee12d58;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 22084
+ * <p> Entity class <b><code>RopeSuspensionBridgeSpan</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RopeSuspensionBridgeSpan.createInstance()</code> or <code>new RopeSuspensionBridgeSpan()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Bridge Span = <code>19</code>; </li>
+ *     <li> SubCategory: SingleLaneEachWay  = <code>1</code>; </li>
+ *     <li> Specific: RopeSuspensionBridgeSpan  = <code>9</code>; </li>
+ *     <li> Entity type uid: 22084; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61e14b53. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see BridgeSpan
+ * @see SubCategory
+
  */
-public class RopeSuspensionBridgeSpan extends EntityType
+public final class RopeSuspensionBridgeSpan extends EntityType
 {
     /** Default constructor */
     public RopeSuspensionBridgeSpan()
@@ -26,5 +40,11 @@ public class RopeSuspensionBridgeSpan extends EntityType
         setCategory((byte)19); // uid 22073, Bridge Span
         setSubCategory((byte)1); // uid 22075, Single Lane Each Way
         setSpecific((byte)9); // uid 22084, Rope Suspension Bridge Span
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RopeSuspensionBridgeSpan createInstance()
+    {
+            return new RopeSuspensionBridgeSpan();
     }
 }

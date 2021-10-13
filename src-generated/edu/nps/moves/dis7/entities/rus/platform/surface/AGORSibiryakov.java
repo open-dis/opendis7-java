@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2cc03cd1;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30419
+ * <p> Entity class <b><code>AGORSibiryakov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AGORSibiryakov.createInstance()</code> or <code>new AGORSibiryakov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: AGORSibiriyakovClassProject865  = <code>119</code>; </li>
+ *     <li> Specific: AGORSibiryakov  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30419; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7df76d99. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class AGORSibiryakov extends EntityType
+public final class AGORSibiryakov extends EntityType
 {
     /** Default constructor */
     public AGORSibiryakov()
@@ -26,5 +40,11 @@ public class AGORSibiryakov extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)119); // uid 30418, AGOR Sibiriyakov Class (Project 865)
         setSpecific((byte)1); // uid 30419, AGOR Sibiryakov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AGORSibiryakov createInstance()
+    {
+            return new AGORSibiryakov();
     }
 }

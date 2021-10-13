@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6fb0261e;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 20639
+ * <p> Entity class <b><code>_545mmSovietpistolaka545x18mm</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_545mmSovietpistolaka545x18mm.createInstance()</code> or <code>new _545mmSovietpistolaka545x18mm()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _545mm  = <code>1</code>; </li>
+ *     <li> Specific: _545mmSovietpistolaka545x18mm  = <code>1</code>; </li>
+ *     <li> Entity type uid: 20639; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55bf35e5. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class _545mmSovietpistolaka545x18mm extends EntityType
+public final class _545mmSovietpistolaka545x18mm extends EntityType
 {
     /** Default constructor */
     public _545mmSovietpistolaka545x18mm()
@@ -26,5 +40,11 @@ public class _545mmSovietpistolaka545x18mm extends EntityType
         setCategory((byte)2); // uid 20637, Ballistic
         setSubCategory((byte)1); // uid 20638, 5.45 mm
         setSpecific((byte)1); // uid 20639, 5.45-mm Soviet pistol (aka 5.45 x 18 mm)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _545mmSovietpistolaka545x18mm createInstance()
+    {
+            return new _545mmSovietpistolaka545x18mm();
     }
 }

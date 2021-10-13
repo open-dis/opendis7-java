@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3321291a;
- * Country: United States of America (USA);
- * Entity kind: Munition;
- * Domain: ANTI_PERSONNEL;
- *
- * Entity type uid: 19838
+ * <p> Entity class <b><code>A53450APIM8M2041ratioforM2etc</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>A53450APIM8M2041ratioforM2etc.createInstance()</code> or <code>new A53450APIM8M2041ratioforM2etc()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_PERSONNEL</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: _127mm  = <code>5</code>; </li>
+ *     <li> Specific: A53450APIM8M204_1ratioforM2etc  = <code>3</code>; </li>
+ *     <li> Entity type uid: 19838; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77b71c9. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class A53450APIM8M2041ratioforM2etc extends EntityType
+public final class A53450APIM8M2041ratioforM2etc extends EntityType
 {
     /** Default constructor */
     public A53450APIM8M2041ratioforM2etc()
@@ -26,5 +40,11 @@ public class A53450APIM8M2041ratioforM2etc extends EntityType
         setCategory((byte)2); // uid 19810, Ballistic
         setSubCategory((byte)5); // uid 19835, 12.7 mm
         setSpecific((byte)3); // uid 19838, A534 .50 API M8/M20 4:1 ratio (for M2, , etc.)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static A53450APIM8M2041ratioforM2etc createInstance()
+    {
+            return new A53450APIM8M2041ratioforM2etc();
     }
 }

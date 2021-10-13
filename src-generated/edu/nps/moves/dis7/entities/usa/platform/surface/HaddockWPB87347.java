@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27a6fef2;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12219
+ * <p> Entity class <b><code>HaddockWPB87347</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HaddockWPB87347.createInstance()</code> or <code>new HaddockWPB87347()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: MarineProtectorClassWPB  = <code>6</code>; </li>
+ *     <li> Specific: HaddockWPB87347  = <code>20</code>; </li>
+ *     <li> Entity type uid: 12219; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b41587d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class HaddockWPB87347 extends EntityType
+public final class HaddockWPB87347 extends EntityType
 {
     /** Default constructor */
     public HaddockWPB87347()
@@ -26,5 +40,11 @@ public class HaddockWPB87347 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)6); // uid 12199, Marine Protector Class (WPB)
         setSpecific((byte)20); // uid 12219, Haddock (WPB 87347)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HaddockWPB87347 createInstance()
+    {
+            return new HaddockWPB87347();
     }
 }

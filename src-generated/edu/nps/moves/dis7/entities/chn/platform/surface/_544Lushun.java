@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4387b79e;
- * Country: China, Peoples Republic of (CHN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25171
+ * <p> Entity class <b><code>_544Lushun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_544Lushun.createInstance()</code> or <code>new _544Lushun()</code>. </p>
+ * <ul>
+ *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: JianghuIVClassType053H1Q  = <code>4</code>; </li>
+ *     <li> Specific: _544Lushun  = <code>2</code>; </li>
+ *     <li> Entity type uid: 25171; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4de5031f. </p>
+ * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class _544Lushun extends EntityType
+public final class _544Lushun extends EntityType
 {
     /** Default constructor */
     public _544Lushun()
@@ -26,5 +40,11 @@ public class _544Lushun extends EntityType
         setCategory((byte)6); // uid 17073, Guided Missile Frigate (FFG)
         setSubCategory((byte)4); // uid 17105, Jianghu-IV Class (Type 053H1Q)
         setSpecific((byte)2); // uid 25171, 544 Lushun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _544Lushun createInstance()
+    {
+            return new _544Lushun();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cd7f381;
- * Country: Canada (CAN);
- * Entity kind: Expendable;
- * Domain: AIR;
- *
- * Entity type uid: 31917
+ * <p> Entity class <b><code>Bundle150lb</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Bundle150lb.createInstance()</code> or <code>new Bundle150lb()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Expendable = <code>8</code>; </li>
+ *     <li> Category: Chaff = <code>1</code>; </li>
+ *     <li> SubCategory: Bundle  = <code>1</code>; </li>
+ *     <li> Specific: Bundle150lb  = <code>3</code>; </li>
+ *     <li> Entity type uid: 31917; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b2b7e3c. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#EXPENDABLE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Chaff
+ * @see SubCategory
+
  */
-public class Bundle150lb extends EntityType
+public final class Bundle150lb extends EntityType
 {
     /** Default constructor */
     public Bundle150lb()
@@ -26,5 +40,11 @@ public class Bundle150lb extends EntityType
         setCategory((byte)1); // uid 31913, Chaff
         setSubCategory((byte)1); // uid 31914, Bundle
         setSpecific((byte)3); // uid 31917, Bundle 150lb
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Bundle150lb createInstance()
+    {
+            return new Bundle150lb();
     }
 }

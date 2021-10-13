@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43da41e;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14369
+ * <p> Entity class <b><code>Tuloma</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Tuloma.createInstance()</code> or <code>new Tuloma()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Keylaclasstransports  = <code>90</code>; </li>
+ *     <li> Specific: Tuloma  = <code>6</code>; </li>
+ *     <li> Entity type uid: 14369; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@771cbb1a. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class Tuloma extends EntityType
+public final class Tuloma extends EntityType
 {
     /** Default constructor */
     public Tuloma()
@@ -26,5 +40,11 @@ public class Tuloma extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)90); // uid 14363, Keyla class (transports)
         setSpecific((byte)6); // uid 14369, Tuloma
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Tuloma createInstance()
+    {
+            return new Tuloma();
     }
 }

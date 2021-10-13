@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@601d295;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: LAND;
- *
- * Entity type uid: 32239
+ * <p> Entity class <b><code>DromedaryCamelOneHump</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DromedaryCamelOneHump.createInstance()</code> or <code>new DromedaryCamelOneHump()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Mammal = <code>200</code>; </li>
+ *     <li> SubCategory: DromedaryCamelOneHump  = <code>101</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32239; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@586728e8. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Mammal
+ * @see SubCategory
+
  */
-public class DromedaryCamelOneHump extends EntityType
+public final class DromedaryCamelOneHump extends EntityType
 {
     /** Default constructor */
     public DromedaryCamelOneHump()
@@ -25,5 +39,11 @@ public class DromedaryCamelOneHump extends EntityType
 
         setCategory((byte)200); // uid 32223, Mammal
         setSubCategory((byte)101); // uid 32239, Dromedary Camel (One Hump)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DromedaryCamelOneHump createInstance()
+    {
+            return new DromedaryCamelOneHump();
     }
 }

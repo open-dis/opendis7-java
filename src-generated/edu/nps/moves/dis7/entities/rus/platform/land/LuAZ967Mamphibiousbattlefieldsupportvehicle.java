@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@30135202;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12860
+ * <p> Entity class <b><code>LuAZ967Mamphibiousbattlefieldsupportvehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LuAZ967Mamphibiousbattlefieldsupportvehicle.createInstance()</code> or <code>new LuAZ967Mamphibiousbattlefieldsupportvehicle()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
+ *     <li> SubCategory: LuAZ967Mamphibiousbattlefieldsupportvehicle  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12860; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7c28c1. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SmallWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class LuAZ967Mamphibiousbattlefieldsupportvehicle extends EntityType
+public final class LuAZ967Mamphibiousbattlefieldsupportvehicle extends EntityType
 {
     /** Default constructor */
     public LuAZ967Mamphibiousbattlefieldsupportvehicle()
@@ -25,5 +39,11 @@ public class LuAZ967Mamphibiousbattlefieldsupportvehicle extends EntityType
 
         setCategory((byte)6); // uid 12854, Small Wheeled Utility Vehicle
         setSubCategory((byte)4); // uid 12860, LuAZ-967M amphibious battlefield support vehicle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LuAZ967Mamphibiousbattlefieldsupportvehicle createInstance()
+    {
+            return new LuAZ967Mamphibiousbattlefieldsupportvehicle();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62b0bf85;
- * Country: Sweden (SWE);
- * Entity kind: Munition;
- * Domain: ANTI_SUBMARINE;
- *
- * Entity type uid: 29566
+ * <p> Entity class <b><code>TP451</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TP451.createInstance()</code> or <code>new TP451()</code>. </p>
+ * <ul>
+ *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: Torpedo45Tp45  = <code>3</code>; </li>
+ *     <li> Specific: TP451  = <code>1</code>; </li>
+ *     <li> Entity type uid: 29566; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c56644f. </p>
+ * @see Country#SWEDEN_SWE
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class TP451 extends EntityType
+public final class TP451 extends EntityType
 {
     /** Default constructor */
     public TP451()
@@ -26,5 +40,11 @@ public class TP451 extends EntityType
         setCategory((byte)1); // uid 27010, Guided
         setSubCategory((byte)3); // uid 27021, Torpedo 45 (Tp 45)
         setSpecific((byte)1); // uid 29566, TP 451
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TP451 createInstance()
+    {
+            return new TP451();
     }
 }

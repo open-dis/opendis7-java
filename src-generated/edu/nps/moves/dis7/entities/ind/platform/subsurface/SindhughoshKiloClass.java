@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49c6c24f;
- * Country: India (IND);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23190
+ * <p> Entity class <b><code>SindhughoshKiloClass</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SindhughoshKiloClass.createInstance()</code> or <code>new SindhughoshKiloClass()</code>. </p>
+ * <ul>
+ *     <li> Country: India (IND) = <code>99</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: SindhughoshKiloClass  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 23190; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4f1bfe23. </p>
+ * @see Country#INDIA_IND
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class SindhughoshKiloClass extends EntityType
+public final class SindhughoshKiloClass extends EntityType
 {
     /** Default constructor */
     public SindhughoshKiloClass()
@@ -25,5 +39,11 @@ public class SindhughoshKiloClass extends EntityType
 
         setCategory((byte)5); // uid 23189, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 23190, Sindhughosh (Kilo) Class
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SindhughoshKiloClass createInstance()
+    {
+            return new SindhughoshKiloClass();
     }
 }

@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -40,7 +39,7 @@ public class LaunchedMunitionRecord extends Object implements Serializable
    protected Vector3Double  targetLocation = new Vector3Double(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LaunchedMunitionRecord()
  {
  }
@@ -54,13 +53,17 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += fireEventID.getMarshalledSize();
+   if (fireEventID != null)
+       marshalSize += fireEventID.getMarshalledSize();
    marshalSize += 2;  // padding
-   marshalSize += firingEntityID.getMarshalledSize();
+   if (firingEntityID != null)
+       marshalSize += firingEntityID.getMarshalledSize();
    marshalSize += 2;  // padding2
-   marshalSize += targetEntityID.getMarshalledSize();
+   if (targetEntityID != null)
+       marshalSize += targetEntityID.getMarshalledSize();
    marshalSize += 2;  // padding3
-   marshalSize += targetLocation.getMarshalledSize();
+   if (targetLocation != null)
+       marshalSize += targetLocation.getMarshalledSize();
 
    return marshalSize;
 }
@@ -284,13 +287,27 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    fireEventID.unmarshal(byteBuffer);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    firingEntityID.unmarshal(byteBuffer);
-    padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
-    targetEntityID.unmarshal(byteBuffer);
-    padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
-    targetLocation.unmarshal(byteBuffer);
+    try
+    {
+        // attribute fireEventID marked as not serialized
+        fireEventID.unmarshal(byteBuffer);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute firingEntityID marked as not serialized
+        firingEntityID.unmarshal(byteBuffer);
+        // attribute padding2 marked as not serialized
+        padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute targetEntityID marked as not serialized
+        targetEntityID.unmarshal(byteBuffer);
+        // attribute padding3 marked as not serialized
+        padding3 = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute targetLocation marked as not serialized
+        targetLocation.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

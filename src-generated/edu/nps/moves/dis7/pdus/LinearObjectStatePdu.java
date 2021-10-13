@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -46,7 +45,7 @@ public class LinearObjectStatePdu extends SyntheticEnvironmentFamilyPdu implemen
    protected List< LinearSegmentParameter > linearSegmentParameters = new ArrayList< LinearSegmentParameter >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public LinearObjectStatePdu()
  {
     setPduType( DisPduType.LINEAR_OBJECT_STATE );
@@ -62,19 +61,26 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += objectID.getMarshalledSize();
-   marshalSize += referencedObjectID.getMarshalledSize();
+   if (objectID != null)
+       marshalSize += objectID.getMarshalledSize();
+   if (referencedObjectID != null)
+       marshalSize += referencedObjectID.getMarshalledSize();
    marshalSize += 2;  // updateNumber
-   marshalSize += forceID.getMarshalledSize();
+   if (forceID != null)
+       marshalSize += forceID.getMarshalledSize();
    marshalSize += 1;  // numberOfLinearSegments
-   marshalSize += requesterID.getMarshalledSize();
-   marshalSize += receivingID.getMarshalledSize();
-   marshalSize += objectType.getMarshalledSize();
-   for(int idx=0; idx < linearSegmentParameters.size(); idx++)
-   {
-        LinearSegmentParameter listElement = linearSegmentParameters.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (requesterID != null)
+       marshalSize += requesterID.getMarshalledSize();
+   if (receivingID != null)
+       marshalSize += receivingID.getMarshalledSize();
+   if (objectType != null)
+       marshalSize += objectType.getMarshalledSize();
+   if (linearSegmentParameters != null)
+       for (int idx=0; idx < linearSegmentParameters.size(); idx++)
+       {
+            LinearSegmentParameter listElement = linearSegmentParameters.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -235,7 +241,7 @@ public void marshal(DataOutputStream dos) throws Exception
        receivingID.marshal(dos);
        objectType.marshal(dos);
 
-       for(int idx = 0; idx < linearSegmentParameters.size(); idx++)
+       for (int idx = 0; idx < linearSegmentParameters.size(); idx++)
        {
             LinearSegmentParameter aLinearSegmentParameter = linearSegmentParameters.get(idx);
             aLinearSegmentParameter.marshal(dos);
@@ -274,7 +280,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += requesterID.unmarshal(dis);
         uPosition += receivingID.unmarshal(dis);
         uPosition += objectType.unmarshal(dis);
-        for(int idx = 0; idx < numberOfLinearSegments; idx++)
+        for (int idx = 0; idx < numberOfLinearSegments; idx++)
         {
             LinearSegmentParameter anX = new LinearSegmentParameter();
             uPosition += anX.unmarshal(dis);
@@ -309,7 +315,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    receivingID.marshal(byteBuffer);
    objectType.marshal(byteBuffer);
 
-   for(int idx = 0; idx < linearSegmentParameters.size(); idx++)
+   for (int idx = 0; idx < linearSegmentParameters.size(); idx++)
    {
         LinearSegmentParameter aLinearSegmentParameter = linearSegmentParameters.get(idx);
         aLinearSegmentParameter.marshal(byteBuffer);
@@ -330,21 +336,37 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    objectID.unmarshal(byteBuffer);
-    referencedObjectID.unmarshal(byteBuffer);
-    updateNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    forceID = ForceID.unmarshalEnum(byteBuffer);
-    numberOfLinearSegments = (byte)(byteBuffer.get() & 0xFF);
-    requesterID.unmarshal(byteBuffer);
-    receivingID.unmarshal(byteBuffer);
-    objectType.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfLinearSegments; idx++)
+    try
     {
-    LinearSegmentParameter anX = new LinearSegmentParameter();
-    anX.unmarshal(byteBuffer);
-    linearSegmentParameters.add(anX);
-    }
+        // attribute objectID marked as not serialized
+        objectID.unmarshal(byteBuffer);
+        // attribute referencedObjectID marked as not serialized
+        referencedObjectID.unmarshal(byteBuffer);
+        // attribute updateNumber marked as not serialized
+        updateNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute forceID marked as not serialized
+        forceID = ForceID.unmarshalEnum(byteBuffer);
+        // attribute numberOfLinearSegments marked as not serialized
+        numberOfLinearSegments = (byte)(byteBuffer.get() & 0xFF);
+        // attribute requesterID marked as not serialized
+        requesterID.unmarshal(byteBuffer);
+        // attribute receivingID marked as not serialized
+        receivingID.unmarshal(byteBuffer);
+        // attribute objectType marked as not serialized
+        objectType.unmarshal(byteBuffer);
+        // attribute linearSegmentParameters marked as not serialized
+        for (int idx = 0; idx < numberOfLinearSegments; idx++)
+        {
+        LinearSegmentParameter anX = new LinearSegmentParameter();
+        anX.unmarshal(byteBuffer);
+        linearSegmentParameters.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -381,7 +403,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
      if( ! (objectType.equals( rhs.objectType) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < linearSegmentParameters.size(); idx++)
+     for (int idx = 0; idx < linearSegmentParameters.size(); idx++)
         if( ! ( linearSegmentParameters.get(idx).equals(rhs.linearSegmentParameters.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual && super.equalsImpl(rhs);

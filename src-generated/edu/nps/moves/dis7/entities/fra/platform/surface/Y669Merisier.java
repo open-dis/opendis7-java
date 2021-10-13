@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1807e3f6;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 16100
+ * <p> Entity class <b><code>Y669Merisier</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Y669Merisier.createInstance()</code> or <code>new Y669Merisier()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary, Merchant Marine = <code>17</code>; </li>
+ *     <li> SubCategory: HarbourtugsRemorqueursDePort  = <code>2</code>; </li>
+ *     <li> Specific: _105tontype  = <code>1</code>; </li>
+ *     <li> Entity type uid: 16100; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@710c2b53. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AuxiliaryMerchantMarine
+ * @see SubCategory
+
  */
-public class Y669Merisier extends EntityType
+public final class Y669Merisier extends EntityType
 {
     /** Default constructor */
     public Y669Merisier()
@@ -27,5 +41,11 @@ public class Y669Merisier extends EntityType
         setSubCategory((byte)2); // uid 16087, Harbour tugs (Remorqueurs De Port)
         setSpecific((byte)1); // uid 16088, 105-ton type
         setExtra((byte)12); // uid 16100, Y 669 Merisier
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Y669Merisier createInstance()
+    {
+            return new Y669Merisier();
     }
 }

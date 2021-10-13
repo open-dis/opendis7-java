@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25673087;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 28136
+ * <p> Entity class <b><code>No12Bridge</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>No12Bridge.createInstance()</code> or <code>new No12Bridge()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> SubCategory: MobileBridge  = <code>7</code>; </li>
+ *     <li> Specific: No12Bridge  = <code>5</code>; </li>
+ *     <li> Entity type uid: 28136; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37c36608. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredUtilityVehicle
+ * @see SubCategory
+
  */
-public class No12Bridge extends EntityType
+public final class No12Bridge extends EntityType
 {
     /** Default constructor */
     public No12Bridge()
@@ -26,5 +40,11 @@ public class No12Bridge extends EntityType
         setCategory((byte)3); // uid 14904, Armored Utility Vehicle
         setSubCategory((byte)7); // uid 14911, Mobile Bridge
         setSpecific((byte)5); // uid 28136, No 12 Bridge
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static No12Bridge createInstance()
+    {
+            return new No12Bridge();
     }
 }

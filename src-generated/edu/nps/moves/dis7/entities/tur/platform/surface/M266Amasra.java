@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f1ed068;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 33032
+ * <p> Entity class <b><code>M266Amasra</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M266Amasra.createInstance()</code> or <code>new M266Amasra()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: AydinClass  = <code>3</code>; </li>
+ *     <li> Specific: M266Amasra  = <code>2</code>; </li>
+ *     <li> Entity type uid: 33032; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@372ca2d6. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M266Amasra extends EntityType
+public final class M266Amasra extends EntityType
 {
     /** Default constructor */
     public M266Amasra()
@@ -26,5 +40,11 @@ public class M266Amasra extends EntityType
         setCategory((byte)8); // uid 23264, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 33030, Aydin Class
         setSpecific((byte)2); // uid 33032, M266 Amasra
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M266Amasra createInstance()
+    {
+            return new M266Amasra();
     }
 }

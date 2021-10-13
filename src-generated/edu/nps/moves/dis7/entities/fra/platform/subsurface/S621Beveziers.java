@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f68f0dc;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16198
+ * <p> Entity class <b><code>S621Beveziers</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S621Beveziers.createInstance()</code> or <code>new S621Beveziers()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack-Torpedo, Patrol) (Sous-Marins Dattaque) = <code>5</code>; </li>
+ *     <li> SubCategory: AgostaClass  = <code>1</code>; </li>
+ *     <li> Specific: S621Beveziers  = <code>2</code>; </li>
+ *     <li> Entity type uid: 16198; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a8448fa. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrolSousMarinsDattaque
+ * @see SubCategory
+
  */
-public class S621Beveziers extends EntityType
+public final class S621Beveziers extends EntityType
 {
     /** Default constructor */
     public S621Beveziers()
@@ -26,5 +40,11 @@ public class S621Beveziers extends EntityType
         setCategory((byte)5); // uid 16195, SS (Conventional Attack-Torpedo, Patrol) (Sous-Marins Dattaque)
         setSubCategory((byte)1); // uid 16196, Agosta Class
         setSpecific((byte)2); // uid 16198, S 621 Beveziers
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S621Beveziers createInstance()
+    {
+            return new S621Beveziers();
     }
 }

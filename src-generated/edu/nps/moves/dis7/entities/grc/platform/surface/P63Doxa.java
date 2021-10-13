@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74f5ce22;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27552
+ * <p> Entity class <b><code>P63Doxa</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P63Doxa.createInstance()</code> or <code>new P63Doxa()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: ThetisClassType420  = <code>1</code>; </li>
+ *     <li> Specific: P63Doxa  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27552; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6bffbc6d. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvette
+ * @see SubCategory
+
  */
-public class P63Doxa extends EntityType
+public final class P63Doxa extends EntityType
 {
     /** Default constructor */
     public P63Doxa()
@@ -26,5 +40,11 @@ public class P63Doxa extends EntityType
         setCategory((byte)50); // uid 27549, Frigate (including Corvette)
         setSubCategory((byte)1); // uid 27550, Thetis Class (Type 420)
         setSpecific((byte)2); // uid 27552, P-63 Doxa
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P63Doxa createInstance()
+    {
+            return new P63Doxa();
     }
 }

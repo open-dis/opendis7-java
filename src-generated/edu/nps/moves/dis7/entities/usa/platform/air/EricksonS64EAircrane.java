@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3cc79c02;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28314
+ * <p> Entity class <b><code>EricksonS64EAircrane</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>EricksonS64EAircrane.createInstance()</code> or <code>new EricksonS64EAircrane()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Large (above 20,000 lbs / 9,072 kg) = <code>92</code>; </li>
+ *     <li> SubCategory: SingleRotorTurboshaftEngineConventionalTailRotor  = <code>12</code>; </li>
+ *     <li> Specific: SikorskyS64Skycrane  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28314; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@b791a81. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterLargeabove20000lbs9072kg
+ * @see SubCategory
+
  */
-public class EricksonS64EAircrane extends EntityType
+public final class EricksonS64EAircrane extends EntityType
 {
     /** Default constructor */
     public EricksonS64EAircrane()
@@ -27,5 +41,11 @@ public class EricksonS64EAircrane extends EntityType
         setSubCategory((byte)12); // uid 26283, Single Rotor, Turboshaft Engine, Conventional Tail Rotor
         setSpecific((byte)3); // uid 28313, Sikorsky S-64 Skycrane
         setExtra((byte)1); // uid 28314, Erickson S-64E Aircrane
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static EricksonS64EAircrane createInstance()
+    {
+            return new EricksonS64EAircrane();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@235f4c10;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29504
+ * <p> Entity class <b><code>DD152Yamagiri</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD152Yamagiri.createInstance()</code> or <code>new DD152Yamagiri()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: AsagiriClassDD  = <code>3</code>; </li>
+ *     <li> Specific: DD152Yamagiri  = <code>2</code>; </li>
+ *     <li> Entity type uid: 29504; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e3f95fe. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class DD152Yamagiri extends EntityType
+public final class DD152Yamagiri extends EntityType
 {
     /** Default constructor */
     public DD152Yamagiri()
@@ -26,5 +40,11 @@ public class DD152Yamagiri extends EntityType
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)3); // uid 18893, Asagiri Class (DD)
         setSpecific((byte)2); // uid 29504, DD-152 Yamagiri
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD152Yamagiri createInstance()
+    {
+            return new DD152Yamagiri();
     }
 }

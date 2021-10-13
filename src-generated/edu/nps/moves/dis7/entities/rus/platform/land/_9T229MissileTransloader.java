@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55b8dbda;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 23462
+ * <p> Entity class <b><code>_9T229MissileTransloader</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_9T229MissileTransloader.createInstance()</code> or <code>new _9T229MissileTransloader()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA11GadflySAMSystem  = <code>8</code>; </li>
+ *     <li> Specific: _9T229MissileTransloader  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23462; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3013909b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class _9T229MissileTransloader extends EntityType
+public final class _9T229MissileTransloader extends EntityType
 {
     /** Default constructor */
     public _9T229MissileTransloader()
@@ -26,5 +40,11 @@ public class _9T229MissileTransloader extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)8); // uid 13081, SA-11 Gadfly SAM System
         setSpecific((byte)5); // uid 23462, 9T229 Missile Transloader
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _9T229MissileTransloader createInstance()
+    {
+            return new _9T229MissileTransloader();
     }
 }

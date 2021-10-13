@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39549f33;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12043
+ * <p> Entity class <b><code>AFS2Sylvania</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>AFS2Sylvania.createInstance()</code> or <code>new AFS2Sylvania()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Combat Stores Ship = <code>58</code>; </li>
+ *     <li> SubCategory: MarsClass  = <code>2</code>; </li>
+ *     <li> Specific: AFS2Sylvania  = <code>2</code>; </li>
+ *     <li> Entity type uid: 12043; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cbb175. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CombatStoresShip
+ * @see SubCategory
+
  */
-public class AFS2Sylvania extends EntityType
+public final class AFS2Sylvania extends EntityType
 {
     /** Default constructor */
     public AFS2Sylvania()
@@ -26,5 +40,11 @@ public class AFS2Sylvania extends EntityType
         setCategory((byte)58); // uid 12039, Combat Stores Ship
         setSubCategory((byte)2); // uid 12041, Mars Class
         setSpecific((byte)2); // uid 12043, AFS 2 Sylvania
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static AFS2Sylvania createInstance()
+    {
+            return new AFS2Sylvania();
     }
 }

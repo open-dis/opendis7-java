@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3bc69ce9;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24102
+ * <p> Entity class <b><code>X47APegasus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>X47APegasus.createInstance()</code> or <code>new X47APegasus()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: NorthropGrummanX47UCAS  = <code>21</code>; </li>
+ *     <li> Specific: X47APegasus  = <code>1</code>; </li>
+ *     <li> Entity type uid: 24102; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@60743cdb. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class X47APegasus extends EntityType
+public final class X47APegasus extends EntityType
 {
     /** Default constructor */
     public X47APegasus()
@@ -26,5 +40,11 @@ public class X47APegasus extends EntityType
         setCategory((byte)50); // uid 11232, Unmanned
         setSubCategory((byte)21); // uid 11260, Northrop Grumman X-47 UCAS
         setSpecific((byte)1); // uid 24102, X-47A Pegasus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static X47APegasus createInstance()
+    {
+            return new X47APegasus();
     }
 }

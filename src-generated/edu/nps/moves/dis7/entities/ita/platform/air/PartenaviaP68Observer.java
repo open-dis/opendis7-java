@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@73163d48;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 29168
+ * <p> Entity class <b><code>PartenaviaP68Observer</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PartenaviaP68Observer.createInstance()</code> or <code>new PartenaviaP68Observer()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: ASW/Patrol/Observation = <code>5</code>; </li>
+ *     <li> SubCategory: PartenaviaP68Observer  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29168; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5644dc81. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ASWPatrolObservation
+ * @see SubCategory
+
  */
-public class PartenaviaP68Observer extends EntityType
+public final class PartenaviaP68Observer extends EntityType
 {
     /** Default constructor */
     public PartenaviaP68Observer()
@@ -25,5 +39,11 @@ public class PartenaviaP68Observer extends EntityType
 
         setCategory((byte)5); // uid 29166, ASW/Patrol/Observation
         setSubCategory((byte)2); // uid 29168, Partenavia P.68 Observer
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PartenaviaP68Observer createInstance()
+    {
+            return new PartenaviaP68Observer();
     }
 }

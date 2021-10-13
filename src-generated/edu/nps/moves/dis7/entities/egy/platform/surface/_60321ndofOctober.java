@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@291b4bf5;
- * Country: Egypt (EGY);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27528
+ * <p> Entity class <b><code>_60321ndofOctober</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_60321ndofOctober.createInstance()</code> or <code>new _60321ndofOctober()</code>. </p>
+ * <ul>
+ *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: TigerClassType148  = <code>2</code>; </li>
+ *     <li> Specific: _60321ndofOctober  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27528; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24aed80c. </p>
+ * @see Country#COMMENT_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _60321ndofOctober extends EntityType
+public final class _60321ndofOctober extends EntityType
 {
     /** Default constructor */
     public _60321ndofOctober()
@@ -26,5 +40,11 @@ public class _60321ndofOctober extends EntityType
         setCategory((byte)7); // uid 18804, Light/Patrol Craft
         setSubCategory((byte)2); // uid 27525, Tiger Class (Type 148)
         setSpecific((byte)3); // uid 27528, 603 21nd of October
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _60321ndofOctober createInstance()
+    {
+            return new _60321ndofOctober();
     }
 }

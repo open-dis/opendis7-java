@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -36,7 +35,7 @@ public class UAEmitter extends Object implements Serializable
    protected List< UABeam > beams = new ArrayList< UABeam >();
  
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public UAEmitter()
  {
  }
@@ -53,13 +52,16 @@ public int getMarshalledSize()
    marshalSize += 1;  // systemDataLength
    marshalSize += 1;  // numberOfBeams
    marshalSize += 2;  // padding
-   marshalSize += acousticEmitter.getMarshalledSize();
-   marshalSize += location.getMarshalledSize();
-   for(int idx=0; idx < beams.size(); idx++)
-   {
-        UABeam listElement = beams.get(idx);
-        marshalSize += listElement.getMarshalledSize();
-   }
+   if (acousticEmitter != null)
+       marshalSize += acousticEmitter.getMarshalledSize();
+   if (location != null)
+       marshalSize += location.getMarshalledSize();
+   if (beams != null)
+       for (int idx=0; idx < beams.size(); idx++)
+       {
+            UABeam listElement = beams.get(idx);
+            marshalSize += listElement.getMarshalledSize();
+       }
 
    return marshalSize;
 }
@@ -175,7 +177,7 @@ public void marshal(DataOutputStream dos) throws Exception
        acousticEmitter.marshal(dos);
        location.marshal(dos);
 
-       for(int idx = 0; idx < beams.size(); idx++)
+       for (int idx = 0; idx < beams.size(); idx++)
        {
             UABeam aUABeam = beams.get(idx);
             aUABeam.marshal(dos);
@@ -209,7 +211,7 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         uPosition += acousticEmitter.unmarshal(dis);
         uPosition += location.unmarshal(dis);
-        for(int idx = 0; idx < numberOfBeams; idx++)
+        for (int idx = 0; idx < numberOfBeams; idx++)
         {
             UABeam anX = new UABeam();
             uPosition += anX.unmarshal(dis);
@@ -240,7 +242,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
    acousticEmitter.marshal(byteBuffer);
    location.marshal(byteBuffer);
 
-   for(int idx = 0; idx < beams.size(); idx++)
+   for (int idx = 0; idx < beams.size(); idx++)
    {
         UABeam aUABeam = beams.get(idx);
         aUABeam.marshal(byteBuffer);
@@ -259,18 +261,31 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    systemDataLength = (byte)(byteBuffer.get() & 0xFF);
-    numberOfBeams = (byte)(byteBuffer.get() & 0xFF);
-    padding = (short)(byteBuffer.getShort() & 0xFFFF);
-    acousticEmitter.unmarshal(byteBuffer);
-    location.unmarshal(byteBuffer);
-    for(int idx = 0; idx < numberOfBeams; idx++)
+    try
     {
-    UABeam anX = new UABeam();
-    anX.unmarshal(byteBuffer);
-    beams.add(anX);
-    }
+        // attribute systemDataLength marked as not serialized
+        systemDataLength = (byte)(byteBuffer.get() & 0xFF);
+        // attribute numberOfBeams marked as not serialized
+        numberOfBeams = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute acousticEmitter marked as not serialized
+        acousticEmitter.unmarshal(byteBuffer);
+        // attribute location marked as not serialized
+        location.unmarshal(byteBuffer);
+        // attribute beams marked as not serialized
+        for (int idx = 0; idx < numberOfBeams; idx++)
+        {
+        UABeam anX = new UABeam();
+        anX.unmarshal(byteBuffer);
+        beams.add(anX);
+        }
 
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 
@@ -309,7 +324,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      if( ! (acousticEmitter.equals( rhs.acousticEmitter) )) ivarsEqual = false;
      if( ! (location.equals( rhs.location) )) ivarsEqual = false;
 
-     for(int idx = 0; idx < beams.size(); idx++)
+     for (int idx = 0; idx < beams.size(); idx++)
         if( ! ( beams.get(idx).equals(rhs.beams.get(idx)))) ivarsEqual = false;
 
     return ivarsEqual;

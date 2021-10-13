@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22df874e;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31619
+ * <p> Entity class <b><code>RowboatwRower</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RowboatwRower.createInstance()</code> or <code>new RowboatwRower()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Other Vessels = <code>87</code>; </li>
+ *     <li> SubCategory: GenericPersonalWaterCraft  = <code>9</code>; </li>
+ *     <li> Specific: RowboatwRower  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31619; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11ce2e22. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see OtherVessels
+ * @see SubCategory
+
  */
-public class RowboatwRower extends EntityType
+public final class RowboatwRower extends EntityType
 {
     /** Default constructor */
     public RowboatwRower()
@@ -26,5 +40,11 @@ public class RowboatwRower extends EntityType
         setCategory((byte)87); // uid 24656, Other Vessels
         setSubCategory((byte)9); // uid 26666, Generic Personal Water Craft
         setSpecific((byte)1); // uid 31619, Rowboat w/ Rower
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RowboatwRower createInstance()
+    {
+            return new RowboatwRower();
     }
 }

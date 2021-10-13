@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a677343;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29456
+ * <p> Entity class <b><code>P554Makrelen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>P554Makrelen.createInstance()</code> or <code>new P554Makrelen()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/ Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FlyvefiskenClass  = <code>4</code>; </li>
+ *     <li> Specific: P554Makrelen  = <code>5</code>; </li>
+ *     <li> Entity type uid: 29456; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1aafa419. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class P554Makrelen extends EntityType
+public final class P554Makrelen extends EntityType
 {
     /** Default constructor */
     public P554Makrelen()
@@ -26,5 +40,11 @@ public class P554Makrelen extends EntityType
         setCategory((byte)7); // uid 18790, Light/ Patrol Craft
         setSubCategory((byte)4); // uid 29451, Flyvefisken Class
         setSpecific((byte)5); // uid 29456, P554 Makrelen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static P554Makrelen createInstance()
+    {
+            return new P554Makrelen();
     }
 }

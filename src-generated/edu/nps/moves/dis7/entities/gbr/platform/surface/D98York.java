@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@279dd959;
- * Country: United Kingdom of Great Britain and Northern Ireland (GBR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15214
+ * <p> Entity class <b><code>D98York</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>D98York.createInstance()</code> or <code>new D98York()</code>. </p>
+ * <ul>
+ *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided-missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: Type42  = <code>1</code>; </li>
+ *     <li> Specific: D98York  = <code>12</code>; </li>
+ *     <li> Entity type uid: 15214; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15eb0ae9. </p>
+ * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedmissileDestroyer
+ * @see SubCategory
+
  */
-public class D98York extends EntityType
+public final class D98York extends EntityType
 {
     /** Default constructor */
     public D98York()
@@ -26,5 +40,11 @@ public class D98York extends EntityType
         setCategory((byte)4); // uid 15201, Guided-missile Destroyer
         setSubCategory((byte)1); // uid 15202, Type 42
         setSpecific((byte)12); // uid 15214, D 98 York
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static D98York createInstance()
+    {
+            return new D98York();
     }
 }

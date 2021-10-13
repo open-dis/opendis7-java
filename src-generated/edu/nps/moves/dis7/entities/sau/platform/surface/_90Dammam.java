@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78226c36;
- * Country: Saudi Arabia (SAU);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17864
+ * <p> Entity class <b><code>_90Dammam</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_90Dammam.createInstance()</code> or <code>new _90Dammam()</code>. </p>
+ * <ul>
+ *     <li> Country: Saudi Arabia (SAU) = <code>189</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: JaguarClassfastattackcrafttorpedo  = <code>1</code>; </li>
+ *     <li> Specific: _90Dammam  = <code>1</code>; </li>
+ *     <li> Entity type uid: 17864; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41b1f51e. </p>
+ * @see Country#SAUDI_ARABIA_SAU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class _90Dammam extends EntityType
+public final class _90Dammam extends EntityType
 {
     /** Default constructor */
     public _90Dammam()
@@ -26,5 +40,11 @@ public class _90Dammam extends EntityType
         setCategory((byte)7); // uid 17862, Light/Patrol Craft
         setSubCategory((byte)1); // uid 17863, Jaguar Class (fast attack craft-torpedo)
         setSpecific((byte)1); // uid 17864, 90 Dammam
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _90Dammam createInstance()
+    {
+            return new _90Dammam();
     }
 }

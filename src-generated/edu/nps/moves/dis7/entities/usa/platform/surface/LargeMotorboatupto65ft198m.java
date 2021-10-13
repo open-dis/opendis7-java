@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@12fcb2c3;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28479
+ * <p> Entity class <b><code>LargeMotorboatupto65ft198m</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LargeMotorboatupto65ft198m.createInstance()</code> or <code>new LargeMotorboatupto65ft198m()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Private Motorboat = <code>84</code>; </li>
+ *     <li> SubCategory: LargeMotorboatupto65ft198m  = <code>3</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 28479; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6ffd4c0d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see PrivateMotorboat
+ * @see SubCategory
+
  */
-public class LargeMotorboatupto65ft198m extends EntityType
+public final class LargeMotorboatupto65ft198m extends EntityType
 {
     /** Default constructor */
     public LargeMotorboatupto65ft198m()
@@ -25,5 +39,11 @@ public class LargeMotorboatupto65ft198m extends EntityType
 
         setCategory((byte)84); // uid 26437, Private Motorboat
         setSubCategory((byte)3); // uid 28479, Large Motorboat (up to 65ft/19.8m)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static LargeMotorboatupto65ft198m createInstance()
+    {
+            return new LargeMotorboatupto65ft198m();
     }
 }

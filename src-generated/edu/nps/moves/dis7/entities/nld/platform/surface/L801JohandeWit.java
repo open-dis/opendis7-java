@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b46a8c1;
- * Country: Netherlands (NLD);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23304
+ * <p> Entity class <b><code>L801JohandeWit</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L801JohandeWit.createInstance()</code> or <code>new L801JohandeWit()</code>. </p>
+ * <ul>
+ *     <li> Country: Netherlands (NLD) = <code>153</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
+ *     <li> SubCategory: JohanDeWittClass  = <code>2</code>; </li>
+ *     <li> Specific: L801JohandeWit  = <code>1</code>; </li>
+ *     <li> Entity type uid: 23304; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14bb2297. </p>
+ * @see Country#NETHERLANDS_NLD
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AmphibiousTransportDock
+ * @see SubCategory
+
  */
-public class L801JohandeWit extends EntityType
+public final class L801JohandeWit extends EntityType
 {
     /** Default constructor */
     public L801JohandeWit()
@@ -26,5 +40,11 @@ public class L801JohandeWit extends EntityType
         setCategory((byte)56); // uid 23300, Amphibious Transport Dock
         setSubCategory((byte)2); // uid 23303, Johan De Witt Class
         setSpecific((byte)1); // uid 23304, L801 Johan de Wit
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L801JohandeWit createInstance()
+    {
+            return new L801JohandeWit();
     }
 }

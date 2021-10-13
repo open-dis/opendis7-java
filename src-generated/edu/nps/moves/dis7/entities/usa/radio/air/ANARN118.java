@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@445058e8;
- * Country: United States of America (USA);
- * Entity kind: Radio;
- * Domain: AIR;
- *
- * Entity type uid: 27007
+ * <p> Entity class <b><code>ANARN118</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANARN118.createInstance()</code> or <code>new ANARN118()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Radio = <code>7</code>; </li>
+ *     <li> Category: Tactical Air Navigation (TACAN) Transmitter/Receiver (Moving Platform Equipment) = <code>12</code>; </li>
+ *     <li> SubCategory: JointElectronicsTypeDesignationSystemJETDSNonspecificSeries  = <code>1</code>; </li>
+ *     <li> Specific: ANARN118  = <code>1</code>; </li>
+ *     <li> Entity type uid: 27007; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@627acb38. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#RADIO
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TacticalAirNavigationTACANTransmitterReceiverMovingPlatformEquipment
+ * @see SubCategory
+
  */
-public class ANARN118 extends EntityType
+public final class ANARN118 extends EntityType
 {
     /** Default constructor */
     public ANARN118()
@@ -26,5 +40,11 @@ public class ANARN118 extends EntityType
         setCategory((byte)12); // uid 27005, Tactical Air Navigation (TACAN) Transmitter/Receiver (Moving Platform Equipment)
         setSubCategory((byte)1); // uid 27006, Joint Electronics Type Designation System (JETDS) Non-specific Series
         setSpecific((byte)1); // uid 27007, AN/ARN-118
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANARN118 createInstance()
+    {
+            return new ANARN118();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2abc224d;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12839
+ * <p> Entity class <b><code>SM41130mmcoastalgun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SM41130mmcoastalgun.createInstance()</code> or <code>new SM41130mmcoastalgun()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Towed artillery = <code>5</code>; </li>
+ *     <li> SubCategory: SM41130mmcoastalgun  = <code>28</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 12839; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6b580b88. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Towedartillery
+ * @see SubCategory
+
  */
-public class SM41130mmcoastalgun extends EntityType
+public final class SM41130mmcoastalgun extends EntityType
 {
     /** Default constructor */
     public SM41130mmcoastalgun()
@@ -25,5 +39,11 @@ public class SM41130mmcoastalgun extends EntityType
 
         setCategory((byte)5); // uid 12810, Towed artillery
         setSubCategory((byte)28); // uid 12839, SM-4-1 130-mm coastal gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SM41130mmcoastalgun createInstance()
+    {
+            return new SM41130mmcoastalgun();
     }
 }

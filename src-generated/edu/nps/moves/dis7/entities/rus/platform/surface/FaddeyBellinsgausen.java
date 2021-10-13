@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54d901aa;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13994
+ * <p> Entity class <b><code>FaddeyBellinsgausen</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FaddeyBellinsgausen.createInstance()</code> or <code>new FaddeyBellinsgausen()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: NikolayZubovclassnavalresearch  = <code>28</code>; </li>
+ *     <li> Specific: FaddeyBellinsgausen  = <code>7</code>; </li>
+ *     <li> Entity type uid: 13994; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f93e4a8. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class FaddeyBellinsgausen extends EntityType
+public final class FaddeyBellinsgausen extends EntityType
 {
     /** Default constructor */
     public FaddeyBellinsgausen()
@@ -26,5 +40,11 @@ public class FaddeyBellinsgausen extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)28); // uid 13987, Nikolay Zubov class (naval research)
         setSpecific((byte)7); // uid 13994, Faddey Bellinsgausen
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FaddeyBellinsgausen createInstance()
+    {
+            return new FaddeyBellinsgausen();
     }
 }

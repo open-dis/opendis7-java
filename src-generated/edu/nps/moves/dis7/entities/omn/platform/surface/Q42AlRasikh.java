@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f3c966c;
- * Country: Oman (OMN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29535
+ * <p> Entity class <b><code>Q42AlRasikh</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Q42AlRasikh.createInstance()</code> or <code>new Q42AlRasikh()</code>. </p>
+ * <ul>
+ *     <li> Country: Oman (OMN) = <code>164</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvettes) = <code>50</code>; </li>
+ *     <li> SubCategory: KhareffClass  = <code>2</code>; </li>
+ *     <li> Specific: Q42AlRasikh  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29535; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@68ed96ca. </p>
+ * @see Country#OMAN_OMN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FrigateincludingCorvettes
+ * @see SubCategory
+
  */
-public class Q42AlRasikh extends EntityType
+public final class Q42AlRasikh extends EntityType
 {
     /** Default constructor */
     public Q42AlRasikh()
@@ -26,5 +40,11 @@ public class Q42AlRasikh extends EntityType
         setCategory((byte)50); // uid 17969, Frigate (including Corvettes)
         setSubCategory((byte)2); // uid 29532, Khareff Class
         setSpecific((byte)3); // uid 29535, Q42 Al Rasikh
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Q42AlRasikh createInstance()
+    {
+            return new Q42AlRasikh();
     }
 }

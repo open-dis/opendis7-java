@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66d57c1b;
- * Country: Pakistan (PAK);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27237
+ * <p> Entity class <b><code>S138Saad</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S138Saad.createInstance()</code> or <code>new S138Saad()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: KhalidAgosta90BClass  = <code>1</code>; </li>
+ *     <li> Specific: S138Saad  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27237; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5e8a459. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S138Saad extends EntityType
+public final class S138Saad extends EntityType
 {
     /** Default constructor */
     public S138Saad()
@@ -26,5 +40,11 @@ public class S138Saad extends EntityType
         setCategory((byte)5); // uid 27234, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 27235, Khalid / Agosta 90B Class
         setSpecific((byte)2); // uid 27237, S138 Saad
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S138Saad createInstance()
+    {
+            return new S138Saad();
     }
 }

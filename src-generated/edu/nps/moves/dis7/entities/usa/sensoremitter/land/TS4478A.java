@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@16f34376;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: LAND;
- *
- * Entity type uid: 29658
+ * <p> Entity class <b><code>TS4478A</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TS4478A.createInstance()</code> or <code>new TS4478A()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Electro-Optical = <code>5</code>; </li>
+ *     <li> SubCategory: TestEquipment  = <code>98</code>; </li>
+ *     <li> Specific: TS4478  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29658; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5477d90e. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ElectroOptical
+ * @see SubCategory
+
  */
-public class TS4478A extends EntityType
+public final class TS4478A extends EntityType
 {
     /** Default constructor */
     public TS4478A()
@@ -27,5 +41,11 @@ public class TS4478A extends EntityType
         setSubCategory((byte)98); // uid 29653, Test Equipment
         setSpecific((byte)3); // uid 29657, TS-4478
         setExtra((byte)1); // uid 29658, TS-4478A
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TS4478A createInstance()
+    {
+            return new TS4478A();
     }
 }

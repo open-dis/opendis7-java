@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@bfc14b9;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 24411
+ * <p> Entity class <b><code>KapitanChukhchin</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KapitanChukhchin.createInstance()</code> or <code>new KapitanChukhchin()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dry Cargo Ship (Group 2 Merchant) = <code>81</code>; </li>
+ *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
+ *     <li> Specific: KapitanChukhchin  = <code>3</code>; </li>
+ *     <li> Entity type uid: 24411; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@144ab54. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DryCargoShipGroup2Merchant
+ * @see SubCategory
+
  */
-public class KapitanChukhchin extends EntityType
+public final class KapitanChukhchin extends EntityType
 {
     /** Default constructor */
     public KapitanChukhchin()
@@ -26,5 +40,11 @@ public class KapitanChukhchin extends EntityType
         setCategory((byte)81); // uid 24407, Dry Cargo Ship (Group 2 Merchant)
         setSubCategory((byte)3); // uid 24408, Container Ship
         setSpecific((byte)3); // uid 24411, Kapitan Chukhchin
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KapitanChukhchin createInstance()
+    {
+            return new KapitanChukhchin();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ea7a4c3;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 11585
+ * <p> Entity class <b><code>PC11Whirlwind</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>PC11Whirlwind.createInstance()</code> or <code>new PC11Whirlwind()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: PCClass  = <code>1</code>; </li>
+ *     <li> Specific: PC11Whirlwind  = <code>11</code>; </li>
+ *     <li> Entity type uid: 11585; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6367a688. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Lightpatrolcraft
+ * @see SubCategory
+
  */
-public class PC11Whirlwind extends EntityType
+public final class PC11Whirlwind extends EntityType
 {
     /** Default constructor */
     public PC11Whirlwind()
@@ -26,5 +40,11 @@ public class PC11Whirlwind extends EntityType
         setCategory((byte)7); // uid 11573, Light/patrol craft
         setSubCategory((byte)1); // uid 11574, PC Class
         setSpecific((byte)11); // uid 11585, PC 11 Whirlwind
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static PC11Whirlwind createInstance()
+    {
+            return new PC11Whirlwind();
     }
 }

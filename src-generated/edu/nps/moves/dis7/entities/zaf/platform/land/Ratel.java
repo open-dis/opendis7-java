@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@743e66f7;
- * Country: South Africa (ZAF);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 19097
+ * <p> Entity class <b><code>Ratel</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Ratel.createInstance()</code> or <code>new Ratel()</code>. </p>
+ * <ul>
+ *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: Ratel  = <code>2</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 19097; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77ec6a3d. </p>
+ * @see Country#SOUTH_AFRICA_ZAF
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class Ratel extends EntityType
+public final class Ratel extends EntityType
 {
     /** Default constructor */
     public Ratel()
@@ -25,5 +39,11 @@ public class Ratel extends EntityType
 
         setCategory((byte)2); // uid 19094, Armored Fighting Vehicle
         setSubCategory((byte)2); // uid 19097, Ratel
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Ratel createInstance()
+    {
+            return new Ratel();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dcf94f8;
- * Country: Denmark (DNK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 25428
+ * <p> Entity class <b><code>L16Absalon</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>L16Absalon.createInstance()</code> or <code>new L16Absalon()</code>. </p>
+ * <ul>
+ *     <li> Country: Denmark (DNK) = <code>57</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Command Ship/Cruiser = <code>2</code>; </li>
+ *     <li> SubCategory: Absalonclass  = <code>1</code>; </li>
+ *     <li> Specific: L16Absalon  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25428; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@799f10e1. </p>
+ * @see Country#ACTION_RESPONSE_RELIABLE
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CommandShipCruiser
+ * @see SubCategory
+
  */
-public class L16Absalon extends EntityType
+public final class L16Absalon extends EntityType
 {
     /** Default constructor */
     public L16Absalon()
@@ -26,5 +40,11 @@ public class L16Absalon extends EntityType
         setCategory((byte)2); // uid 25426, Command Ship/Cruiser
         setSubCategory((byte)1); // uid 25427, Absalon class
         setSpecific((byte)1); // uid 25428, L16 Absalon
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static L16Absalon createInstance()
+    {
+            return new L16Absalon();
     }
 }

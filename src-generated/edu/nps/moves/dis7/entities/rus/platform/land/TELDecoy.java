@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4690f583;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12758
+ * <p> Entity class <b><code>TELDecoy</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TELDecoy.createInstance()</code> or <code>new TELDecoy()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
+ *     <li> SubCategory: SS1ScudMissileLauncher  = <code>10</code>; </li>
+ *     <li> Specific: ScudB  = <code>2</code>; </li>
+ *     <li> Entity type uid: 12758; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@349d0836. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SelfPropelledArtillery
+ * @see SubCategory
+
  */
-public class TELDecoy extends EntityType
+public final class TELDecoy extends EntityType
 {
     /** Default constructor */
     public TELDecoy()
@@ -27,5 +41,11 @@ public class TELDecoy extends EntityType
         setSubCategory((byte)10); // uid 12755, SS-1 Scud Missile Launcher
         setSpecific((byte)2); // uid 12757, Scud B
         setExtra((byte)1); // uid 12758, TEL Decoy
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TELDecoy createInstance()
+    {
+            return new TELDecoy();
     }
 }

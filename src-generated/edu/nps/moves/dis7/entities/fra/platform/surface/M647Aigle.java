@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31ea9581;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 15993
+ * <p> Entity class <b><code>M647Aigle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M647Aigle.createInstance()</code> or <code>new M647Aigle()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: EridanTripartiteclassminehunters  = <code>2</code>; </li>
+ *     <li> Specific: M647Aigle  = <code>7</code>; </li>
+ *     <li> Entity type uid: 15993; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53fe15ff. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M647Aigle extends EntityType
+public final class M647Aigle extends EntityType
 {
     /** Default constructor */
     public M647Aigle()
@@ -26,5 +40,11 @@ public class M647Aigle extends EntityType
         setCategory((byte)8); // uid 15978, Mine Countermeasure Ship / Craft
         setSubCategory((byte)2); // uid 15986, Eridan (Tripartite) class (minehunters)
         setSpecific((byte)7); // uid 15993, M 647 Aigle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M647Aigle createInstance()
+    {
+            return new M647Aigle();
     }
 }

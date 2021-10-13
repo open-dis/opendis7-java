@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4af0df05;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29633
+ * <p> Entity class <b><code>_645Surik</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_645Surik.createInstance()</code> or <code>new _645Surik()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Fast Attack Craft = <code>64</code>; </li>
+ *     <li> SubCategory: KCR40FastAttackMissileBoat  = <code>2</code>; </li>
+ *     <li> Specific: _645Surik  = <code>5</code>; </li>
+ *     <li> Entity type uid: 29633; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ef6ae06. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see FastAttackCraft
+ * @see SubCategory
+
  */
-public class _645Surik extends EntityType
+public final class _645Surik extends EntityType
 {
     /** Default constructor */
     public _645Surik()
@@ -26,5 +40,11 @@ public class _645Surik extends EntityType
         setCategory((byte)64); // uid 29615, Fast Attack Craft
         setSubCategory((byte)2); // uid 29628, KCR-40 (Fast Attack Missile Boat)
         setSpecific((byte)5); // uid 29633, 645 Surik
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _645Surik createInstance()
+    {
+            return new _645Surik();
     }
 }

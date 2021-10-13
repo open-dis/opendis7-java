@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@319aa9ee;
- * Country: Australia (AUS);
- * Entity kind: Sensor/Emitter;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22558
+ * <p> Entity class <b><code>ANSSQ801BBarra</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANSSQ801BBarra.createInstance()</code> or <code>new ANSSQ801BBarra()</code>. </p>
+ * <ul>
+ *     <li> Country: Australia (AUS) = <code>13</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, passive = <code>11</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific: ANSSQ801BBarra  = <code>1</code>; </li>
+ *     <li> Entity type uid: 22558; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15914bb5. </p>
+ * @see Country#AUSTRALIA_AUS
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Acousticpassive
+ * @see SubCategory
+
  */
-public class ANSSQ801BBarra extends EntityType
+public final class ANSSQ801BBarra extends EntityType
 {
     /** Default constructor */
     public ANSSQ801BBarra()
@@ -26,5 +40,11 @@ public class ANSSQ801BBarra extends EntityType
         setCategory((byte)11); // uid 22556, Acoustic, passive
         setSubCategory((byte)77); // uid 22557, Sonobuoy
         setSpecific((byte)1); // uid 22558, AN/SSQ-801B Barra
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANSSQ801BBarra createInstance()
+    {
+            return new ANSSQ801BBarra();
     }
 }

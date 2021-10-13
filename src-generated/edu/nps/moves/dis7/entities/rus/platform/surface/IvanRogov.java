@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b2d44bc;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 13755
+ * <p> Entity class <b><code>IvanRogov</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>IvanRogov.createInstance()</code> or <code>new IvanRogov()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Dock landing ship = <code>9</code>; </li>
+ *     <li> SubCategory: IvanRogovClass  = <code>1</code>; </li>
+ *     <li> Specific: IvanRogov  = <code>1</code>; </li>
+ *     <li> Entity type uid: 13755; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4393593c. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Docklandingship
+ * @see SubCategory
+
  */
-public class IvanRogov extends EntityType
+public final class IvanRogov extends EntityType
 {
     /** Default constructor */
     public IvanRogov()
@@ -26,5 +40,11 @@ public class IvanRogov extends EntityType
         setCategory((byte)9); // uid 13753, Dock landing ship
         setSubCategory((byte)1); // uid 13754, Ivan Rogov Class
         setSpecific((byte)1); // uid 13755, Ivan Rogov
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static IvanRogov createInstance()
+    {
+            return new IvanRogov();
     }
 }

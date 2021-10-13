@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f72203;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 31872
+ * <p> Entity class <b><code>M143TargetDrone</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M143TargetDrone.createInstance()</code> or <code>new M143TargetDrone()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>50</code>; </li>
+ *     <li> SubCategory: Tu143Reys  = <code>2</code>; </li>
+ *     <li> Specific: M143TargetDrone  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31872; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66ec9390. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class M143TargetDrone extends EntityType
+public final class M143TargetDrone extends EntityType
 {
     /** Default constructor */
     public M143TargetDrone()
@@ -26,5 +40,11 @@ public class M143TargetDrone extends EntityType
         setCategory((byte)50); // uid 23446, Unmanned
         setSubCategory((byte)2); // uid 23448, Tu-143 Reys
         setSpecific((byte)1); // uid 31872, M-143 Target Drone
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M143TargetDrone createInstance()
+    {
+            return new M143TargetDrone();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75504cef;
- * Country: Pakistan (PAK);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 27251
+ * <p> Entity class <b><code>X03</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>X03.createInstance()</code> or <code>new X03()</code>. </p>
+ * <ul>
+ *     <li> Country: Pakistan (PAK) = <code>165</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSA (Conventional Auxiliary) = <code>7</code>; </li>
+ *     <li> SubCategory: MG110CosmosClass  = <code>1</code>; </li>
+ *     <li> Specific: X03  = <code>3</code>; </li>
+ *     <li> Entity type uid: 27251; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fa3be26. </p>
+ * @see Country#PAKISTAN_PAK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSAConventionalAuxiliary
+ * @see SubCategory
+
  */
-public class X03 extends EntityType
+public final class X03 extends EntityType
 {
     /** Default constructor */
     public X03()
@@ -26,5 +40,11 @@ public class X03 extends EntityType
         setCategory((byte)7); // uid 27247, SSA (Conventional Auxiliary)
         setSubCategory((byte)1); // uid 27248, MG110 / Cosmos Class
         setSpecific((byte)3); // uid 27251, X-03
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static X03 createInstance()
+    {
+            return new X03();
     }
 }

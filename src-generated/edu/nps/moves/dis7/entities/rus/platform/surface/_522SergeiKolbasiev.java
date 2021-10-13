@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8bffb8b;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29987
+ * <p> Entity class <b><code>_522SergeiKolbasiev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_522SergeiKolbasiev.createInstance()</code> or <code>new _522SergeiKolbasiev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship / Craft = <code>8</code>; </li>
+ *     <li> SubCategory: Sonyaclass  = <code>6</code>; </li>
+ *     <li> Specific: _522SergeiKolbasiev  = <code>13</code>; </li>
+ *     <li> Entity type uid: 29987; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7144655b. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class _522SergeiKolbasiev extends EntityType
+public final class _522SergeiKolbasiev extends EntityType
 {
     /** Default constructor */
     public _522SergeiKolbasiev()
@@ -26,5 +40,11 @@ public class _522SergeiKolbasiev extends EntityType
         setCategory((byte)8); // uid 13709, Mine Countermeasure Ship / Craft
         setSubCategory((byte)6); // uid 13738, Sonya class
         setSpecific((byte)13); // uid 29987, 522 Sergei Kolbasiev
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _522SergeiKolbasiev createInstance()
+    {
+            return new _522SergeiKolbasiev();
     }
 }

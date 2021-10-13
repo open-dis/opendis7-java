@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6435fa1c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 11031
+ * <p> Entity class <b><code>E2C</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>E2C.createInstance()</code> or <code>new E2C()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Surveillance / C2 (Airborne Early Warning) = <code>8</code>; </li>
+ *     <li> SubCategory: GrummanE2Hawkeye  = <code>1</code>; </li>
+ *     <li> Specific: E2C  = <code>1</code>; </li>
+ *     <li> Entity type uid: 11031; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b4fc2d1. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SurveillanceC2AirborneEarlyWarning
+ * @see SubCategory
+
  */
-public class E2C extends EntityType
+public final class E2C extends EntityType
 {
     /** Default constructor */
     public E2C()
@@ -26,5 +40,11 @@ public class E2C extends EntityType
         setCategory((byte)8); // uid 11029, Surveillance / C2 (Airborne Early Warning)
         setSubCategory((byte)1); // uid 11030, Grumman E-2 Hawkeye
         setSpecific((byte)1); // uid 11031, E-2C
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static E2C createInstance()
+    {
+            return new E2C();
     }
 }

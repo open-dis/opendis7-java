@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@6bd61f98;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 28394
+ * <p> Entity class <b><code>MH65E</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MH65E.createInstance()</code> or <code>new MH65E()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Utility Helicopter = <code>21</code>; </li>
+ *     <li> SubCategory: EurocopterAS365N2Dauphin2  = <code>15</code>; </li>
+ *     <li> Specific: HH65Dolphin  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28394; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7205765b. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UtilityHelicopter
+ * @see SubCategory
+
  */
-public class MH65E extends EntityType
+public final class MH65E extends EntityType
 {
     /** Default constructor */
     public MH65E()
@@ -27,5 +41,11 @@ public class MH65E extends EntityType
         setSubCategory((byte)15); // uid 15886, Eurocopter AS 365N2 Dauphin 2
         setSpecific((byte)1); // uid 15887, HH-65 Dolphin
         setExtra((byte)6); // uid 28394, MH-65E
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MH65E createInstance()
+    {
+            return new MH65E();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@8ef1d58;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 32013
+ * <p> Entity class <b><code>HelrasDS100</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>HelrasDS100.createInstance()</code> or <code>new HelrasDS100()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, active = <code>10</code>; </li>
+ *     <li> SubCategory: DippingSonar  = <code>80</code>; </li>
+ *     <li> Specific: HelrasDS100  = <code>2</code>; </li>
+ *     <li> Entity type uid: 32013; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@533e2f4. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Acousticactive
+ * @see SubCategory
+
  */
-public class HelrasDS100 extends EntityType
+public final class HelrasDS100 extends EntityType
 {
     /** Default constructor */
     public HelrasDS100()
@@ -26,5 +40,11 @@ public class HelrasDS100 extends EntityType
         setCategory((byte)10); // uid 22382, Acoustic, active
         setSubCategory((byte)80); // uid 29659, Dipping Sonar
         setSpecific((byte)2); // uid 32013, Helras DS-100
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static HelrasDS100 createInstance()
+    {
+            return new HelrasDS100();
     }
 }

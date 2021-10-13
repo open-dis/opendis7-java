@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@669513d8;
- * Country: Korea (Democratic Peoples Republic of) (PRK);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 22783
+ * <p> Entity class <b><code>KongBangIII</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>KongBangIII.createInstance()</code> or <code>new KongBangIII()</code>. </p>
+ * <ul>
+ *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Cushion/Surface Effect = <code>15</code>; </li>
+ *     <li> SubCategory: KongbangClassLCPAhovercraft  = <code>2</code>; </li>
+ *     <li> Specific: KongBangIII  = <code>3</code>; </li>
+ *     <li> Entity type uid: 22783; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ac86ba5. </p>
+ * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirCushionSurfaceEffect
+ * @see SubCategory
+
  */
-public class KongBangIII extends EntityType
+public final class KongBangIII extends EntityType
 {
     /** Default constructor */
     public KongBangIII()
@@ -26,5 +40,11 @@ public class KongBangIII extends EntityType
         setCategory((byte)15); // uid 17799, Air Cushion/Surface Effect
         setSubCategory((byte)2); // uid 22780, Kongbang Class (LCPA-hovercraft)
         setSpecific((byte)3); // uid 22783, KongBang III
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static KongBangIII createInstance()
+    {
+            return new KongBangIII();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@574a89e2;
- * Country: Turkey (TUR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 33035
+ * <p> Entity class <b><code>M269Anamur</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M269Anamur.createInstance()</code> or <code>new M269Anamur()</code>. </p>
+ * <ul>
+ *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
+ *     <li> SubCategory: AydinClass  = <code>3</code>; </li>
+ *     <li> Specific: M269Anamur  = <code>5</code>; </li>
+ *     <li> Entity type uid: 33035; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a5272be. </p>
+ * @see Country#TURKEY_TUR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see MineCountermeasureShipCraft
+ * @see SubCategory
+
  */
-public class M269Anamur extends EntityType
+public final class M269Anamur extends EntityType
 {
     /** Default constructor */
     public M269Anamur()
@@ -26,5 +40,11 @@ public class M269Anamur extends EntityType
         setCategory((byte)8); // uid 23264, Mine Countermeasure Ship/Craft
         setSubCategory((byte)3); // uid 33030, Aydin Class
         setSpecific((byte)5); // uid 33035, M269 Anamur
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M269Anamur createInstance()
+    {
+            return new M269Anamur();
     }
 }

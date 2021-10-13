@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29f95272;
- * Country: Other;
- * Entity kind: Supply;
- * Domain: CLASS_12_SLING_LOADS_NON_DOCTRINAL;
- *
- * Entity type uid: 31993
+ * <p> Entity class <b><code>NettedLoadWith25mStrop</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>NettedLoadWith25mStrop.createInstance()</code> or <code>new NettedLoadWith25mStrop()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: SupplyDomain = <code>CLASS_12_SLING_LOADS_NON_DOCTRINAL</code>; </li>
+ *     <li> Domain: Supply = <code>6</code>; </li>
+ *     <li> Category: Sling Load, Crate = <code>3</code>; </li>
+ *     <li> SubCategory: SlingLoadCrateNettedLoad  = <code>4</code>; </li>
+ *     <li> Specific: NettedLoadWith25mStrop  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31993; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@279c4e3b. </p>
+ * @see Country#OTHER
+ * @see EntityKind#SUPPLY
+ * @see Domain
+ * @see SupplyDomain
+ * @see Category
+ * @see SlingLoadCrate
+ * @see SubCategory
+
  */
-public class NettedLoadWith25mStrop extends EntityType
+public final class NettedLoadWith25mStrop extends EntityType
 {
     /** Default constructor */
     public NettedLoadWith25mStrop()
@@ -26,5 +40,11 @@ public class NettedLoadWith25mStrop extends EntityType
         setCategory((byte)3); // uid 30821, Sling Load, Crate
         setSubCategory((byte)4); // uid 31992, Sling Load, Crate, Netted Load
         setSpecific((byte)1); // uid 31993, Netted Load With 2.5m Strop
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static NettedLoadWith25mStrop createInstance()
+    {
+            return new NettedLoadWith25mStrop();
     }
 }

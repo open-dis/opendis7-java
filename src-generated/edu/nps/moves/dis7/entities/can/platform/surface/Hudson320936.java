@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@262b2c86;
- * Country: Canada (CAN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 30933
+ * <p> Entity class <b><code>Hudson320936</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Hudson320936.createInstance()</code> or <code>new Hudson320936()</code>. </p>
+ * <ul>
+ *     <li> Country: Canada (CAN) = <code>39</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: OffshoreOceanographicScienceVessel  = <code>6</code>; </li>
+ *     <li> Specific: Hudson320936  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30933; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f282abb. </p>
+ * @see Country#CANADA_CAN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class Hudson320936 extends EntityType
+public final class Hudson320936 extends EntityType
 {
     /** Default constructor */
     public Hudson320936()
@@ -26,5 +40,11 @@ public class Hudson320936 extends EntityType
         setCategory((byte)62); // uid 26269, Coast Guard Cutters
         setSubCategory((byte)6); // uid 30932, Offshore Oceanographic Science Vessel
         setSpecific((byte)1); // uid 30933, Hudson (320936)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Hudson320936 createInstance()
+    {
+            return new Hudson320936();
     }
 }

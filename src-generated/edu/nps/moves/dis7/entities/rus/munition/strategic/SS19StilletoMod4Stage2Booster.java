@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25218a4d;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: STRATEGIC;
- *
- * Entity type uid: 32383
+ * <p> Entity class <b><code>SS19StilletoMod4Stage2Booster</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SS19StilletoMod4Stage2Booster.createInstance()</code> or <code>new SS19StilletoMod4Stage2Booster()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Guided = <code>1</code>; </li>
+ *     <li> SubCategory: SS19StilletoMod4  = <code>50</code>; </li>
+ *     <li> Specific: SS19StilletoMod4Stage2Booster  = <code>4</code>; </li>
+ *     <li> Entity type uid: 32383; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ad0bb4e. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Guided
+ * @see SubCategory
+
  */
-public class SS19StilletoMod4Stage2Booster extends EntityType
+public final class SS19StilletoMod4Stage2Booster extends EntityType
 {
     /** Default constructor */
     public SS19StilletoMod4Stage2Booster()
@@ -26,5 +40,11 @@ public class SS19StilletoMod4Stage2Booster extends EntityType
         setCategory((byte)1); // uid 20919, Guided
         setSubCategory((byte)50); // uid 32379, SS-19 Stilleto Mod-4
         setSpecific((byte)4); // uid 32383, SS-19 Stilleto Mod-4 Stage 2 Booster
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SS19StilletoMod4Stage2Booster createInstance()
+    {
+            return new SS19StilletoMod4Stage2Booster();
     }
 }

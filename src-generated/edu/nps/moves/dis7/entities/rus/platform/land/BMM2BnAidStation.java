@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c28c1;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 12706
+ * <p> Entity class <b><code>BMM2BnAidStation</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>BMM2BnAidStation.createInstance()</code> or <code>new BMM2BnAidStation()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BTR80  = <code>13</code>; </li>
+ *     <li> Specific: BMM2BnAidStation  = <code>6</code>; </li>
+ *     <li> Entity type uid: 12706; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c2327fa. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class BMM2BnAidStation extends EntityType
+public final class BMM2BnAidStation extends EntityType
 {
     /** Default constructor */
     public BMM2BnAidStation()
@@ -26,5 +40,11 @@ public class BMM2BnAidStation extends EntityType
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)13); // uid 12700, BTR-80
         setSpecific((byte)6); // uid 12706, BMM-2 Bn Aid Station
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static BMM2BnAidStation createInstance()
+    {
+            return new BMM2BnAidStation();
     }
 }

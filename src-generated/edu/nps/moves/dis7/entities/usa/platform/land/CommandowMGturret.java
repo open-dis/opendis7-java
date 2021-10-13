@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cf78c85;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 10184
+ * <p> Entity class <b><code>CommandowMGturret</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CommandowMGturret.createInstance()</code> or <code>new CommandowMGturret()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: CadillacGageCommandoV150  = <code>19</code>; </li>
+ *     <li> Specific: CommandowMGturret  = <code>1</code>; </li>
+ *     <li> Entity type uid: 10184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58c1da09. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class CommandowMGturret extends EntityType
+public final class CommandowMGturret extends EntityType
 {
     /** Default constructor */
     public CommandowMGturret()
@@ -26,5 +40,11 @@ public class CommandowMGturret extends EntityType
         setCategory((byte)2); // uid 10067, Armored Fighting Vehicle
         setSubCategory((byte)19); // uid 10183, Cadillac Gage Commando V-150
         setSpecific((byte)1); // uid 10184, Commando w/ MG turret
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CommandowMGturret createInstance()
+    {
+            return new CommandowMGturret();
     }
 }

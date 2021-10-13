@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@e044b4a;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 26950
+ * <p> Entity class <b><code>GenericUltraLargeCrudeCarrier320000549999DWT</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericUltraLargeCrudeCarrier320000549999DWT.createInstance()</code> or <code>new GenericUltraLargeCrudeCarrier320000549999DWT()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Tanker (Group 3 Merchant) = <code>82</code>; </li>
+ *     <li> SubCategory: GenericUltraLargeCrudeCarrier320000549999DWT  = <code>8</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 26950; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@27f3b6d6. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TankerGroup3Merchant
+ * @see SubCategory
+
  */
-public class GenericUltraLargeCrudeCarrier320000549999DWT extends EntityType
+public final class GenericUltraLargeCrudeCarrier320000549999DWT extends EntityType
 {
     /** Default constructor */
     public GenericUltraLargeCrudeCarrier320000549999DWT()
@@ -25,5 +39,11 @@ public class GenericUltraLargeCrudeCarrier320000549999DWT extends EntityType
 
         setCategory((byte)82); // uid 24627, Tanker (Group 3 Merchant)
         setSubCategory((byte)8); // uid 26950, Generic Ultra Large Crude Carrier (320,000-549,999 DWT)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericUltraLargeCrudeCarrier320000549999DWT createInstance()
+    {
+            return new GenericUltraLargeCrudeCarrier320000549999DWT();
     }
 }

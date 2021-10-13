@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a7163e3;
- * Country: Russia (RUS);
- * Entity kind: Munition;
- * Domain: BATTLEFIELD_SUPPORT;
- *
- * Entity type uid: 27417
+ * <p> Entity class <b><code>RBK500wOFAB50UDSubmunitions</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>RBK500wOFAB50UDSubmunitions.createInstance()</code> or <code>new RBK500wOFAB50UDSubmunitions()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
+ *     <li> Domain: Munition = <code>2</code>; </li>
+ *     <li> Category: Ballistic = <code>2</code>; </li>
+ *     <li> SubCategory: ClusterBombs  = <code>53</code>; </li>
+ *     <li> Specific: RBK500wOFAB50UDSubmunitions  = <code>2</code>; </li>
+ *     <li> Entity type uid: 27417; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@76e6c070. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#MUNITION
+ * @see Domain
+ * @see MunitionDomain
+ * @see Category
+ * @see Ballistic
+ * @see SubCategory
+
  */
-public class RBK500wOFAB50UDSubmunitions extends EntityType
+public final class RBK500wOFAB50UDSubmunitions extends EntityType
 {
     /** Default constructor */
     public RBK500wOFAB50UDSubmunitions()
@@ -26,5 +40,11 @@ public class RBK500wOFAB50UDSubmunitions extends EntityType
         setCategory((byte)2); // uid 20785, Ballistic
         setSubCategory((byte)53); // uid 27415, Cluster Bombs
         setSpecific((byte)2); // uid 27417, RBK-500 w/ OFAB 50UD Submunitions
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static RBK500wOFAB50UDSubmunitions createInstance()
+    {
+            return new RBK500wOFAB50UDSubmunitions();
     }
 }

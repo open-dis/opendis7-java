@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@180e6ac4;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 33007
+ * <p> Entity class <b><code>SH60J</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SH60J.createInstance()</code> or <code>new SH60J()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Anti-Submarine Warfare/Patrol Helicopter = <code>22</code>; </li>
+ *     <li> SubCategory: MitsubishiH60  = <code>1</code>; </li>
+ *     <li> Specific: SH60J  = <code>1</code>; </li>
+ *     <li> Entity type uid: 33007; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40258c2f. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AntiSubmarineWarfarePatrolHelicopter
+ * @see SubCategory
+
  */
-public class SH60J extends EntityType
+public final class SH60J extends EntityType
 {
     /** Default constructor */
     public SH60J()
@@ -26,5 +40,11 @@ public class SH60J extends EntityType
         setCategory((byte)22); // uid 33005, Anti-Submarine Warfare/Patrol Helicopter
         setSubCategory((byte)1); // uid 33006, Mitsubishi H-60
         setSpecific((byte)1); // uid 33007, SH-60J
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SH60J createInstance()
+    {
+            return new SH60J();
     }
 }

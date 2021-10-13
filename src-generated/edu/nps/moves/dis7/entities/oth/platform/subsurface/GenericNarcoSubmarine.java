@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4b61d0c6;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 29696
+ * <p> Entity class <b><code>GenericNarcoSubmarine</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GenericNarcoSubmarine.createInstance()</code> or <code>new GenericNarcoSubmarine()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Semi-Submersible Boats = <code>82</code>; </li>
+ *     <li> SubCategory: GenericNarcoSubmarine  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 29696; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71154f21. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SemiSubmersibleBoats
+ * @see SubCategory
+
  */
-public class GenericNarcoSubmarine extends EntityType
+public final class GenericNarcoSubmarine extends EntityType
 {
     /** Default constructor */
     public GenericNarcoSubmarine()
@@ -25,5 +39,11 @@ public class GenericNarcoSubmarine extends EntityType
 
         setCategory((byte)82); // uid 29695, Semi-Submersible Boats
         setSubCategory((byte)1); // uid 29696, Generic Narco-Submarine
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static GenericNarcoSubmarine createInstance()
+    {
+            return new GenericNarcoSubmarine();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@192d74fb;
- * Country: Italy (ITA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18398
+ * <p> Entity class <b><code>MEN215</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MEN215.createInstance()</code> or <code>new MEN215()</code>. </p>
+ * <ul>
+ *     <li> Country: Italy (ITA) = <code>106</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Men215ClassLCVP  = <code>7</code>; </li>
+ *     <li> Specific: MEN215  = <code>1</code>; </li>
+ *     <li> Entity type uid: 18398; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53d1b9b3. </p>
+ * @see Country#ITALY_ITA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class MEN215 extends EntityType
+public final class MEN215 extends EntityType
 {
     /** Default constructor */
     public MEN215()
@@ -26,5 +40,11 @@ public class MEN215 extends EntityType
         setCategory((byte)16); // uid 18374, Auxiliary
         setSubCategory((byte)7); // uid 18397, Men 215 Class (LCVP)
         setSpecific((byte)1); // uid 18398, MEN 215
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MEN215 createInstance()
+    {
+            return new MEN215();
     }
 }

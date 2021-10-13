@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2755d705;
- * Country: Kuwait (KWT);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 17921
+ * <p> Entity class <b><code>FPB57Typefastattackcraftmissile</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FPB57Typefastattackcraftmissile.createInstance()</code> or <code>new FPB57Typefastattackcraftmissile()</code>. </p>
+ * <ul>
+ *     <li> Country: Kuwait (KWT) = <code>121</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: FPB57Typefastattackcraftmissile  = <code>4</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 17921; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@49f5c307. </p>
+ * @see Country#KUWAIT_KWT
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class FPB57Typefastattackcraftmissile extends EntityType
+public final class FPB57Typefastattackcraftmissile extends EntityType
 {
     /** Default constructor */
     public FPB57Typefastattackcraftmissile()
@@ -25,5 +39,11 @@ public class FPB57Typefastattackcraftmissile extends EntityType
 
         setCategory((byte)7); // uid 17912, Light/Patrol Craft
         setSubCategory((byte)4); // uid 17921, FPB 57 Type (fast attack craft-missile)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FPB57Typefastattackcraftmissile createInstance()
+    {
+            return new FPB57Typefastattackcraftmissile();
     }
 }

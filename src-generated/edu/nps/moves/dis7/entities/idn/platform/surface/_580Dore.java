@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6d9f7a80;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31670
+ * <p> Entity class <b><code>_580Dore</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_580Dore.createInstance()</code> or <code>new _580Dore()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: DoreClass  = <code>1</code>; </li>
+ *     <li> Specific: _580Dore  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31670; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fc6f97f. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _580Dore extends EntityType
+public final class _580Dore extends EntityType
 {
     /** Default constructor */
     public _580Dore()
@@ -26,5 +40,11 @@ public class _580Dore extends EntityType
         setCategory((byte)11); // uid 31668, Landing Craft
         setSubCategory((byte)1); // uid 31669, Dore Class
         setSpecific((byte)1); // uid 31670, 580 Dore
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _580Dore createInstance()
+    {
+            return new _580Dore();
     }
 }

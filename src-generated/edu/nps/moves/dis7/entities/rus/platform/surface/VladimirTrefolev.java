@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d5508e0;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 14317
+ * <p> Entity class <b><code>VladimirTrefolev</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VladimirTrefolev.createInstance()</code> or <code>new VladimirTrefolev()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Auxiliary = <code>16</code>; </li>
+ *     <li> SubCategory: Prutclasssubmarinerescueships  = <code>80</code>; </li>
+ *     <li> Specific: VladimirTrefolev  = <code>3</code>; </li>
+ *     <li> Entity type uid: 14317; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ac45389. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Auxiliary
+ * @see SubCategory
+
  */
-public class VladimirTrefolev extends EntityType
+public final class VladimirTrefolev extends EntityType
 {
     /** Default constructor */
     public VladimirTrefolev()
@@ -26,5 +40,11 @@ public class VladimirTrefolev extends EntityType
         setCategory((byte)16); // uid 13805, Auxiliary
         setSubCategory((byte)80); // uid 14314, Prut class (submarine rescue ships)
         setSpecific((byte)3); // uid 14317, Vladimir Trefolev
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VladimirTrefolev createInstance()
+    {
+            return new VladimirTrefolev();
     }
 }

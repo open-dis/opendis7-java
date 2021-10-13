@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -22,7 +21,7 @@ public class MinefieldSensorType extends Object implements Serializable
    protected short  sensorType;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public MinefieldSensorType()
  {
  }
@@ -130,7 +129,15 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    sensorType = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute sensorType marked as not serialized
+        sensorType = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

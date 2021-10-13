@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@662be9f7;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 12175
+ * <p> Entity class <b><code>ManitouWPB1302</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ManitouWPB1302.createInstance()</code> or <code>new ManitouWPB1302()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
+ *     <li> SubCategory: IslandClassWPB  = <code>5</code>; </li>
+ *     <li> Specific: ManitouWPB1302  = <code>26</code>; </li>
+ *     <li> Entity type uid: 12175; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@643ba1ed. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CoastGuardCutters
+ * @see SubCategory
+
  */
-public class ManitouWPB1302 extends EntityType
+public final class ManitouWPB1302 extends EntityType
 {
     /** Default constructor */
     public ManitouWPB1302()
@@ -26,5 +40,11 @@ public class ManitouWPB1302 extends EntityType
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
         setSubCategory((byte)5); // uid 12149, Island Class (WPB)
         setSpecific((byte)26); // uid 12175, Manitou (WPB 1302)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ManitouWPB1302 createInstance()
+    {
+            return new ManitouWPB1302();
     }
 }

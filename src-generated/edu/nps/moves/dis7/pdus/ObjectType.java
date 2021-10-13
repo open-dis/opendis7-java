@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class ObjectType extends Object implements Serializable
    protected byte  subCategory;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public ObjectType()
  {
  }
@@ -45,8 +44,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += domain.getMarshalledSize();
-   marshalSize += objectKind.getMarshalledSize();
+   if (domain != null)
+       marshalSize += domain.getMarshalledSize();
+   if (objectKind != null)
+       marshalSize += objectKind.getMarshalledSize();
    marshalSize += 1;  // category
    marshalSize += 1;  // subCategory
 
@@ -209,10 +210,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    domain = PlatformDomain.unmarshalEnum(byteBuffer);
-    objectKind = ObjectKind.unmarshalEnum(byteBuffer);
-    category = (byte)(byteBuffer.get() & 0xFF);
-    subCategory = (byte)(byteBuffer.get() & 0xFF);
+    try
+    {
+        // attribute domain marked as not serialized
+        domain = PlatformDomain.unmarshalEnum(byteBuffer);
+        // attribute objectKind marked as not serialized
+        objectKind = ObjectKind.unmarshalEnum(byteBuffer);
+        // attribute category marked as not serialized
+        category = (byte)(byteBuffer.get() & 0xFF);
+        // attribute subCategory marked as not serialized
+        subCategory = (byte)(byteBuffer.get() & 0xFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

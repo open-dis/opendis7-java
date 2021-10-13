@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77102b91;
- * Country: Germany (DEU);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 16773
+ * <p> Entity class <b><code>S174U25</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S174U25.createInstance()</code> or <code>new S174U25()</code>. </p>
+ * <ul>
+ *     <li> Country: Germany (DEU) = <code>78</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional attack-torpedo patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Type206A  = <code>2</code>; </li>
+ *     <li> Specific: S174U25  = <code>8</code>; </li>
+ *     <li> Entity type uid: 16773; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c8c9a05. </p>
+ * @see Country#GERMANY_DEU
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalattacktorpedopatrol
+ * @see SubCategory
+
  */
-public class S174U25 extends EntityType
+public final class S174U25 extends EntityType
 {
     /** Default constructor */
     public S174U25()
@@ -26,5 +40,11 @@ public class S174U25 extends EntityType
         setCategory((byte)5); // uid 16757, SS (Conventional attack-torpedo patrol)
         setSubCategory((byte)2); // uid 16765, Type 206A
         setSpecific((byte)8); // uid 16773, S 174 U 25
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S174U25 createInstance()
+    {
+            return new S174U25();
     }
 }

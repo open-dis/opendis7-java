@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c28e5b6;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 28697
+ * <p> Entity class <b><code>ANSQQ32V4TowedArray</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ANSQQ32V4TowedArray.createInstance()</code> or <code>new ANSQQ32V4TowedArray()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned Underwater Vehicle (UUV) = <code>8</code>; </li>
+ *     <li> SubCategory: RemotelyOperatedVehicleROV  = <code>2</code>; </li>
+ *     <li> Specific: ANSQQ32V4TowedArray  = <code>2</code>; </li>
+ *     <li> Entity type uid: 28697; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@30a9e3db. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see UnmannedUnderwaterVehicleUUV
+ * @see SubCategory
+
  */
-public class ANSQQ32V4TowedArray extends EntityType
+public final class ANSQQ32V4TowedArray extends EntityType
 {
     /** Default constructor */
     public ANSQQ32V4TowedArray()
@@ -26,5 +40,11 @@ public class ANSQQ32V4TowedArray extends EntityType
         setCategory((byte)8); // uid 28694, Unmanned Underwater Vehicle (UUV)
         setSubCategory((byte)2); // uid 28695, Remotely Operated Vehicle (ROV)
         setSpecific((byte)2); // uid 28697, AN/SQQ-32(V)4 Towed Array
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ANSQQ32V4TowedArray createInstance()
+    {
+            return new ANSQQ32V4TowedArray();
     }
 }

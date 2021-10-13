@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -13,9 +12,10 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
+ * 7.6.5.1 Information about military and civilian interrogators, transponders, and specific other electronic systems. See 5.7.6
  * IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols
  */
-public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializable
+public class IFFPdu extends DistributedEmissionsRegenerationFamilyPdu implements Serializable
 {
    /** ID of the entity that is the source of the emissions */
    protected EntityID  emittingEntityId = new EntityID(); 
@@ -39,7 +39,7 @@ public class IFFPdu extends DistributedEmissionsFamilyPdu implements Serializabl
    protected FundamentalOperationalData  fundamentalParameters = new FundamentalOperationalData(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IFFPdu()
  {
     setPduType( DisPduType.IDENTIFICATION_FRIEND_OR_FOE );
@@ -55,13 +55,18 @@ public int getMarshalledSize()
    int marshalSize = 0; 
 
    marshalSize = super.getMarshalledSize();
-   marshalSize += emittingEntityId.getMarshalledSize();
-   marshalSize += eventID.getMarshalledSize();
-   marshalSize += location.getMarshalledSize();
-   marshalSize += systemID.getMarshalledSize();
+   if (emittingEntityId != null)
+       marshalSize += emittingEntityId.getMarshalledSize();
+   if (eventID != null)
+       marshalSize += eventID.getMarshalledSize();
+   if (location != null)
+       marshalSize += location.getMarshalledSize();
+   if (systemID != null)
+       marshalSize += systemID.getMarshalledSize();
    marshalSize += 1;  // systemDesignator
    marshalSize += 1;  // systemSpecificData
-   marshalSize += fundamentalParameters.getMarshalledSize();
+   if (fundamentalParameters != null)
+       marshalSize += fundamentalParameters.getMarshalledSize();
 
    return marshalSize;
 }
@@ -283,13 +288,27 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
-    emittingEntityId.unmarshal(byteBuffer);
-    eventID.unmarshal(byteBuffer);
-    location.unmarshal(byteBuffer);
-    systemID.unmarshal(byteBuffer);
-    systemDesignator = (byte)(byteBuffer.get() & 0xFF);
-    systemSpecificData = (byte)(byteBuffer.get() & 0xFF);
-    fundamentalParameters.unmarshal(byteBuffer);
+    try
+    {
+        // attribute emittingEntityId marked as not serialized
+        emittingEntityId.unmarshal(byteBuffer);
+        // attribute eventID marked as not serialized
+        eventID.unmarshal(byteBuffer);
+        // attribute location marked as not serialized
+        location.unmarshal(byteBuffer);
+        // attribute systemID marked as not serialized
+        systemID.unmarshal(byteBuffer);
+        // attribute systemDesignator marked as not serialized
+        systemDesignator = (byte)(byteBuffer.get() & 0xFF);
+        // attribute systemSpecificData marked as not serialized
+        systemSpecificData = (byte)(byteBuffer.get() & 0xFF);
+        // attribute fundamentalParameters marked as not serialized
+        fundamentalParameters.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

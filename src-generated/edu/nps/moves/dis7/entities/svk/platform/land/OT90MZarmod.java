@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44b194fe;
- * Country: Slovakia (SVK);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 30119
+ * <p> Entity class <b><code>OT90MZarmod</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OT90MZarmod.createInstance()</code> or <code>new OT90MZarmod()</code>. </p>
+ * <ul>
+ *     <li> Country: Slovakia (SVK) = <code>268</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
+ *     <li> SubCategory: BVP1  = <code>1</code>; </li>
+ *     <li> Specific: OT90MZarmod  = <code>1</code>; </li>
+ *     <li> Entity type uid: 30119; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78010562. </p>
+ * @see Country#SLOVAKIA_SVK
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see ArmoredFightingVehicle
+ * @see SubCategory
+
  */
-public class OT90MZarmod extends EntityType
+public final class OT90MZarmod extends EntityType
 {
     /** Default constructor */
     public OT90MZarmod()
@@ -26,5 +40,11 @@ public class OT90MZarmod extends EntityType
         setCategory((byte)2); // uid 30117, Armored Fighting Vehicle
         setSubCategory((byte)1); // uid 30118, BVP-1
         setSpecific((byte)1); // uid 30119, OT-90M Zarmod
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static OT90MZarmod createInstance()
+    {
+            return new OT90MZarmod();
     }
 }

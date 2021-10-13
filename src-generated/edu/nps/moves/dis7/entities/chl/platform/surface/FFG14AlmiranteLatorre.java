@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@78ac1102;
- * Country: Chile (CHL);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 28308
+ * <p> Entity class <b><code>FFG14AlmiranteLatorre</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>FFG14AlmiranteLatorre.createInstance()</code> or <code>new FFG14AlmiranteLatorre()</code>. </p>
+ * <ul>
+ *     <li> Country: Chile (CHL) = <code>44</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: TypeLClassJacobvanHeemskerckClass  = <code>2</code>; </li>
+ *     <li> Specific: FFG14AlmiranteLatorre  = <code>1</code>; </li>
+ *     <li> Entity type uid: 28308; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2353b3e6. </p>
+ * @see Country#CHILE_CHL
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class FFG14AlmiranteLatorre extends EntityType
+public final class FFG14AlmiranteLatorre extends EntityType
 {
     /** Default constructor */
     public FFG14AlmiranteLatorre()
@@ -26,5 +40,11 @@ public class FFG14AlmiranteLatorre extends EntityType
         setCategory((byte)6); // uid 27464, Guided Missile Frigate (FFG)
         setSubCategory((byte)2); // uid 28307, Type L Class (Jacob van Heemskerck Class)
         setSpecific((byte)1); // uid 28308, FFG-14 Almirante Latorre
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static FFG14AlmiranteLatorre createInstance()
+    {
+            return new FFG14AlmiranteLatorre();
     }
 }

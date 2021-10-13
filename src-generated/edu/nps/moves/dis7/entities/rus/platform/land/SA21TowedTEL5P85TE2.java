@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e628b52;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 25361
+ * <p> Entity class <b><code>SA21TowedTEL5P85TE2</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SA21TowedTEL5P85TE2.createInstance()</code> or <code>new SA21TowedTEL5P85TE2()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
+ *     <li> SubCategory: SA21GrowlerSAMSystemS400Triumf  = <code>24</code>; </li>
+ *     <li> Specific: SA21TowedTEL5P85TE2  = <code>1</code>; </li>
+ *     <li> Entity type uid: 25361; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ccd1bc3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see AirDefenseMissileDefenseUnitEquipment
+ * @see SubCategory
+
  */
-public class SA21TowedTEL5P85TE2 extends EntityType
+public final class SA21TowedTEL5P85TE2 extends EntityType
 {
     /** Default constructor */
     public SA21TowedTEL5P85TE2()
@@ -26,5 +40,11 @@ public class SA21TowedTEL5P85TE2 extends EntityType
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)24); // uid 25360, SA-21 Growler SAM System (S-400 Triumf)
         setSpecific((byte)1); // uid 25361, SA-21 Towed TEL (5P85TE2)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SA21TowedTEL5P85TE2 createInstance()
+    {
+            return new SA21TowedTEL5P85TE2();
     }
 }

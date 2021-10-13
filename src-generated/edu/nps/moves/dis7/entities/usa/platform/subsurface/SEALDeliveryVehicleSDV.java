@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69ed5ea2;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 22948
+ * <p> Entity class <b><code>SEALDeliveryVehicleSDV</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>SEALDeliveryVehicleSDV.createInstance()</code> or <code>new SEALDeliveryVehicleSDV()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SSA(Conventional Auxiliary) = <code>7</code>; </li>
+ *     <li> SubCategory: AdvancedSEALDeliverySystemClass  = <code>2</code>; </li>
+ *     <li> Specific: SEALDeliveryVehicleSDV  = <code>2</code>; </li>
+ *     <li> Entity type uid: 22948; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7436364d. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSAConventionalAuxiliary
+ * @see SubCategory
+
  */
-public class SEALDeliveryVehicleSDV extends EntityType
+public final class SEALDeliveryVehicleSDV extends EntityType
 {
     /** Default constructor */
     public SEALDeliveryVehicleSDV()
@@ -26,5 +40,11 @@ public class SEALDeliveryVehicleSDV extends EntityType
         setCategory((byte)7); // uid 12410, SSA(Conventional Auxiliary)
         setSubCategory((byte)2); // uid 12413, Advanced SEAL Delivery System Class
         setSpecific((byte)2); // uid 22948, SEAL Delivery Vehicle (SDV)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static SEALDeliveryVehicleSDV createInstance()
+    {
+            return new SEALDeliveryVehicleSDV();
     }
 }

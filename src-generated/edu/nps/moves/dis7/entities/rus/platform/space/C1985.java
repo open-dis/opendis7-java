@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@36c0d0bd;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SPACE;
- *
- * Entity type uid: 14873
+ * <p> Entity class <b><code>C1985</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>C1985.createInstance()</code> or <code>new C1985()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Unmanned = <code>2</code>; </li>
+ *     <li> SubCategory: Minormilitarysatellite  = <code>10</code>; </li>
+ *     <li> Specific: C1985  = <code>7</code>; </li>
+ *     <li> Entity type uid: 14873; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75fa1be3. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Unmanned
+ * @see SubCategory
+
  */
-public class C1985 extends EntityType
+public final class C1985 extends EntityType
 {
     /** Default constructor */
     public C1985()
@@ -26,5 +40,11 @@ public class C1985 extends EntityType
         setCategory((byte)2); // uid 14850, Unmanned
         setSubCategory((byte)10); // uid 14866, Minor military satellite
         setSpecific((byte)7); // uid 14873, C1985
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static C1985 createInstance()
+    {
+            return new C1985();
     }
 }

@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e7be63f;
- * Country: France (FRA);
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 26618
+ * <p> Entity class <b><code>VoyagerKC3</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>VoyagerKC3.createInstance()</code> or <code>new VoyagerKC3()</code>. </p>
+ * <ul>
+ *     <li> Country: France (FRA) = <code>71</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
+ *     <li> SubCategory: AirbusA330MRTT  = <code>8</code>; </li>
+ *     <li> Specific: VoyagerKC3  = <code>2</code>; </li>
+ *     <li> Entity type uid: 26618; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@306f16f3. </p>
+ * @see Country#FRANCE_FRA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CargoTanker
+ * @see SubCategory
+
  */
-public class VoyagerKC3 extends EntityType
+public final class VoyagerKC3 extends EntityType
 {
     /** Default constructor */
     public VoyagerKC3()
@@ -26,5 +40,11 @@ public class VoyagerKC3 extends EntityType
         setCategory((byte)4); // uid 15791, Cargo/Tanker
         setSubCategory((byte)8); // uid 24757, Airbus A330 MRTT
         setSpecific((byte)2); // uid 26618, Voyager KC3
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static VoyagerKC3 createInstance()
+    {
+            return new VoyagerKC3();
     }
 }

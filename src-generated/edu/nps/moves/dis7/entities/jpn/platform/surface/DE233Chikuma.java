@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64337702;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 23143
+ * <p> Entity class <b><code>DE233Chikuma</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DE233Chikuma.createInstance()</code> or <code>new DE233Chikuma()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
+ *     <li> SubCategory: AbukumaClassFF  = <code>1</code>; </li>
+ *     <li> Specific: DE233Chikuma  = <code>5</code>; </li>
+ *     <li> Entity type uid: 23143; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21d8bcbe. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileFrigateFFG
+ * @see SubCategory
+
  */
-public class DE233Chikuma extends EntityType
+public final class DE233Chikuma extends EntityType
 {
     /** Default constructor */
     public DE233Chikuma()
@@ -26,5 +40,11 @@ public class DE233Chikuma extends EntityType
         setCategory((byte)6); // uid 23137, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 23138, Abukuma Class (FF)
         setSpecific((byte)5); // uid 23143, DE 233 Chikuma
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DE233Chikuma createInstance()
+    {
+            return new DE233Chikuma();
     }
 }

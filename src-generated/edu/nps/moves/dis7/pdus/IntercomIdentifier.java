@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -31,7 +30,7 @@ public class IntercomIdentifier extends Object implements Serializable
    protected short  intercomNumber;
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public IntercomIdentifier()
  {
  }
@@ -223,10 +222,21 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    siteNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    applicationNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    referenceNumber = (short)(byteBuffer.getShort() & 0xFFFF);
-    intercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    try
+    {
+        // attribute siteNumber marked as not serialized
+        siteNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute applicationNumber marked as not serialized
+        applicationNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute referenceNumber marked as not serialized
+        referenceNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute intercomNumber marked as not serialized
+        intercomNumber = (short)(byteBuffer.getShort() & 0xFFFF);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

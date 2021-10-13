@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31d0e481;
- * Country: Indonesia (IDN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31672
+ * <p> Entity class <b><code>_583Dili</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_583Dili.createInstance()</code> or <code>new _583Dili()</code>. </p>
+ * <ul>
+ *     <li> Country: Indonesia (IDN) = <code>100</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Landing Craft = <code>11</code>; </li>
+ *     <li> SubCategory: KupangClass  = <code>2</code>; </li>
+ *     <li> Specific: _583Dili  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31672; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6179e425. </p>
+ * @see Country#INDONESIA_IDN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LandingCraft
+ * @see SubCategory
+
  */
-public class _583Dili extends EntityType
+public final class _583Dili extends EntityType
 {
     /** Default constructor */
     public _583Dili()
@@ -26,5 +40,11 @@ public class _583Dili extends EntityType
         setCategory((byte)11); // uid 31668, Landing Craft
         setSubCategory((byte)2); // uid 31671, Kupang Class
         setSpecific((byte)1); // uid 31672, 583 Dili
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _583Dili createInstance()
+    {
+            return new _583Dili();
     }
 }

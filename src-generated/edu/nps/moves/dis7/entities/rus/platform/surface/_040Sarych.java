@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3f29e26;
- * Country: Russia (RUS);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 27093
+ * <p> Entity class <b><code>_040Sarych</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>_040Sarych.createInstance()</code> or <code>new _040Sarych()</code>. </p>
+ * <ul>
+ *     <li> Country: Russia (RUS) = <code>222</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol craft = <code>7</code>; </li>
+ *     <li> SubCategory: PaukIClass  = <code>7</code>; </li>
+ *     <li> Specific: _040Sarych  = <code>6</code>; </li>
+ *     <li> Entity type uid: 27093; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63fdffcd. </p>
+ * @see Country#RUSSIA_RUS
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolcraft
+ * @see SubCategory
+
  */
-public class _040Sarych extends EntityType
+public final class _040Sarych extends EntityType
 {
     /** Default constructor */
     public _040Sarych()
@@ -26,5 +40,11 @@ public class _040Sarych extends EntityType
         setCategory((byte)7); // uid 13670, Light/Patrol craft
         setSubCategory((byte)7); // uid 13678, Pauk I Class
         setSpecific((byte)6); // uid 27093, 040 Sarych
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static _040Sarych createInstance()
+    {
+            return new _040Sarych();
     }
 }

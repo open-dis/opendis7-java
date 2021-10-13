@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d00a15d;
- * Country: Bahrain (BHR);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 18667
+ * <p> Entity class <b><code>ALManamaFPB62Classfastattackcraftmissile</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>ALManamaFPB62Classfastattackcraftmissile.createInstance()</code> or <code>new ALManamaFPB62Classfastattackcraftmissile()</code>. </p>
+ * <ul>
+ *     <li> Country: Bahrain (BHR) = <code>16</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Light/Patrol Craft = <code>7</code>; </li>
+ *     <li> SubCategory: ALManamaFPB62Classfastattackcraftmissile  = <code>1</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 18667; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@26ba2a48. </p>
+ * @see Country#BAHRAIN_BHR
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LightPatrolCraft
+ * @see SubCategory
+
  */
-public class ALManamaFPB62Classfastattackcraftmissile extends EntityType
+public final class ALManamaFPB62Classfastattackcraftmissile extends EntityType
 {
     /** Default constructor */
     public ALManamaFPB62Classfastattackcraftmissile()
@@ -25,5 +39,11 @@ public class ALManamaFPB62Classfastattackcraftmissile extends EntityType
 
         setCategory((byte)7); // uid 18666, Light/Patrol Craft
         setSubCategory((byte)1); // uid 18667, AL Manama (FPB 62) Class (fast attack craft-missile)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static ALManamaFPB62Classfastattackcraftmissile createInstance()
+    {
+            return new ALManamaFPB62Classfastattackcraftmissile();
     }
 }

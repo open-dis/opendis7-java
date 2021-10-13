@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b1d6571;
- * Country: Greece (GRC);
- * Entity kind: Platform;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 23395
+ * <p> Entity class <b><code>S113Proteus</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>S113Proteus.createInstance()</code> or <code>new S113Proteus()</code>. </p>
+ * <ul>
+ *     <li> Country: Greece (GRC) = <code>82</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: SS (Conventional Attack - Torpedo, Patrol) = <code>5</code>; </li>
+ *     <li> SubCategory: Glavkosclass  = <code>1</code>; </li>
+ *     <li> Specific: S113Proteus  = <code>4</code>; </li>
+ *     <li> Entity type uid: 23395; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21fd5faa. </p>
+ * @see Country#GREECE_GRC
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see SSConventionalAttackTorpedoPatrol
+ * @see SubCategory
+
  */
-public class S113Proteus extends EntityType
+public final class S113Proteus extends EntityType
 {
     /** Default constructor */
     public S113Proteus()
@@ -26,5 +40,11 @@ public class S113Proteus extends EntityType
         setCategory((byte)5); // uid 23390, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 23391, Glavkos class
         setSpecific((byte)4); // uid 23395, S113 Proteus
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static S113Proteus createInstance()
+    {
+            return new S113Proteus();
     }
 }

@@ -6,15 +6,28 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@30cdae70;
- * Country: Other;
- * Entity kind: Platform;
- * Domain: AIR;
- *
- * Entity type uid: 24729
+ * <p> Entity class <b><code>CivilianHelicopterLargeabove20000lbs9072kg</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>CivilianHelicopterLargeabove20000lbs9072kg.createInstance()</code> or <code>new CivilianHelicopterLargeabove20000lbs9072kg()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Civilian Helicopter, Large (above 20,000 lbs / 9,072 kg) = <code>92</code>; </li>
+ *     <li> SubCategory:  <code>(none)</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 24729; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@2ba45490. </p>
+ * @see Country#OTHER
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see CivilianHelicopterLargeabove20000lbs9072kg
+
  */
-public class CivilianHelicopterLargeabove20000lbs9072kg extends EntityType
+public final class CivilianHelicopterLargeabove20000lbs9072kg extends EntityType
 {
     /** Default constructor */
     public CivilianHelicopterLargeabove20000lbs9072kg()
@@ -24,5 +37,11 @@ public class CivilianHelicopterLargeabove20000lbs9072kg extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)92); // uid 24729, Civilian Helicopter, Large (above 20,000 lbs / 9,072 kg)
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static CivilianHelicopterLargeabove20000lbs9072kg createInstance()
+    {
+            return new CivilianHelicopterLargeabove20000lbs9072kg();
     }
 }

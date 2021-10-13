@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@35010a6b;
- * Country: Other;
- * Entity kind: Life form;
- * Domain: AIR;
- *
- * Entity type uid: 32261
+ * <p> Entity class <b><code>Eagle</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Eagle.createInstance()</code> or <code>new Eagle()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
+ *     <li> Domain: Life form = <code>3</code>; </li>
+ *     <li> Category: Bird = <code>200</code>; </li>
+ *     <li> SubCategory: Eagle  = <code>50</code>; </li>
+ *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Entity type uid: 32261; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4afdfc0f. </p>
+ * @see Country#OTHER
+ * @see EntityKind#LIFE_FORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Bird
+ * @see SubCategory
+
  */
-public class Eagle extends EntityType
+public final class Eagle extends EntityType
 {
     /** Default constructor */
     public Eagle()
@@ -25,5 +39,11 @@ public class Eagle extends EntityType
 
         setCategory((byte)200); // uid 32257, Bird
         setSubCategory((byte)50); // uid 32261, Eagle
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static Eagle createInstance()
+    {
+            return new Eagle();
     }
 }

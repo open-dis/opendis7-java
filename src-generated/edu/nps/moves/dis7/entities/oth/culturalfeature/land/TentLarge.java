@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7d626f2;
- * Country: Other;
- * Entity kind: Cultural feature;
- * Domain: LAND;
- *
- * Entity type uid: 28132
+ * <p> Entity class <b><code>TentLarge</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>TentLarge.createInstance()</code> or <code>new TentLarge()</code>. </p>
+ * <ul>
+ *     <li> Country: Other = <code>0</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Cultural feature = <code>5</code>; </li>
+ *     <li> Category: Temporary Building Structure = <code>30</code>; </li>
+ *     <li> SubCategory: Tent  = <code>1</code>; </li>
+ *     <li> Specific: TentLarge  = <code>3</code>; </li>
+ *     <li> Entity type uid: 28132; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@269c7104. </p>
+ * @see Country#OTHER
+ * @see EntityKind#CULTURAL_FEATURE
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see TemporaryBuildingStructure
+ * @see SubCategory
+
  */
-public class TentLarge extends EntityType
+public final class TentLarge extends EntityType
 {
     /** Default constructor */
     public TentLarge()
@@ -26,5 +40,11 @@ public class TentLarge extends EntityType
         setCategory((byte)30); // uid 28127, Temporary Building Structure
         setSubCategory((byte)1); // uid 28128, Tent
         setSpecific((byte)3); // uid 28132, Tent, Large
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static TentLarge createInstance()
+    {
+            return new TentLarge();
     }
 }

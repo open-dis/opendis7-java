@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@11295cb1;
- * Country: United States of America (USA);
- * Entity kind: Sensor/Emitter;
- * Domain: SUBSURFACE;
- *
- * Entity type uid: 25006
+ * <p> Entity class <b><code>MK84Mod1SUS</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>MK84Mod1SUS.createInstance()</code> or <code>new MK84Mod1SUS()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
+ *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
+ *     <li> Category: Acoustic, active = <code>10</code>; </li>
+ *     <li> SubCategory: Sonobuoy  = <code>77</code>; </li>
+ *     <li> Specific: MK84SUSSignalUnderwaterSound  = <code>3</code>; </li>
+ *     <li> Entity type uid: 25006; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@49d543a9. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#SENSOR_EMITTER
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see Acousticactive
+ * @see SubCategory
+
  */
-public class MK84Mod1SUS extends EntityType
+public final class MK84Mod1SUS extends EntityType
 {
     /** Default constructor */
     public MK84Mod1SUS()
@@ -27,5 +41,11 @@ public class MK84Mod1SUS extends EntityType
         setSubCategory((byte)77); // uid 22384, Sonobuoy
         setSpecific((byte)3); // uid 25005, MK 84 SUS (Signal Underwater Sound)
         setExtra((byte)1); // uid 25006, MK 84 Mod 1 SUS
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static MK84Mod1SUS createInstance()
+    {
+            return new MK84Mod1SUS();
     }
 }

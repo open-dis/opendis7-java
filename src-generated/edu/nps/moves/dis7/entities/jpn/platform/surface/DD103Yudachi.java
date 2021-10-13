@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@55795845;
- * Country: Japan (JPN);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 29513
+ * <p> Entity class <b><code>DD103Yudachi</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DD103Yudachi.createInstance()</code> or <code>new DD103Yudachi()</code>. </p>
+ * <ul>
+ *     <li> Country: Japan (JPN) = <code>110</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Destroyer (DD) = <code>5</code>; </li>
+ *     <li> SubCategory: MurasameClass  = <code>8</code>; </li>
+ *     <li> Specific: DD103Yudachi  = <code>3</code>; </li>
+ *     <li> Entity type uid: 29513; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@659eef7. </p>
+ * @see Country#JAPAN_JPN
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see DestroyerDD
+ * @see SubCategory
+
  */
-public class DD103Yudachi extends EntityType
+public final class DD103Yudachi extends EntityType
 {
     /** Default constructor */
     public DD103Yudachi()
@@ -26,5 +40,11 @@ public class DD103Yudachi extends EntityType
         setCategory((byte)5); // uid 18890, Destroyer (DD)
         setSubCategory((byte)8); // uid 18898, Murasame Class
         setSpecific((byte)3); // uid 29513, DD-103 Yudachi
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DD103Yudachi createInstance()
+    {
+            return new DD103Yudachi();
     }
 }

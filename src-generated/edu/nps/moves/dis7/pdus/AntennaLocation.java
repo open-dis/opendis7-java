@@ -5,7 +5,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
-
 package edu.nps.moves.dis7.pdus;
 
 import java.util.*;
@@ -25,7 +24,7 @@ public class AntennaLocation extends Object implements Serializable
    protected Vector3Float  relativeAntennaLocation = new Vector3Float(); 
 
 
-/** Constructor */
+/** Constructor creates and configures a new instance object */
  public AntennaLocation()
  {
  }
@@ -39,8 +38,10 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += antennaLocation.getMarshalledSize();
-   marshalSize += relativeAntennaLocation.getMarshalledSize();
+   if (antennaLocation != null)
+       marshalSize += antennaLocation.getMarshalledSize();
+   if (relativeAntennaLocation != null)
+       marshalSize += relativeAntennaLocation.getMarshalledSize();
 
    return marshalSize;
 }
@@ -145,8 +146,17 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  */
 public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
-    antennaLocation.unmarshal(byteBuffer);
-    relativeAntennaLocation.unmarshal(byteBuffer);
+    try
+    {
+        // attribute antennaLocation marked as not serialized
+        antennaLocation.unmarshal(byteBuffer);
+        // attribute relativeAntennaLocation marked as not serialized
+        relativeAntennaLocation.unmarshal(byteBuffer);
+    }
+    catch (java.nio.BufferUnderflowException bue)
+    {
+        System.err.println("*** buffer underflow error while unmarshalling " + this.getClass().getName());
+    }
     return getMarshalledSize();
 }
 

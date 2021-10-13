@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5707f613;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: SURFACE;
- *
- * Entity type uid: 31279
+ * <p> Entity class <b><code>DDG1000Zumwalt</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>DDG1000Zumwalt.createInstance()</code> or <code>new DDG1000Zumwalt()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Guided Missile Destroyer = <code>4</code>; </li>
+ *     <li> SubCategory: ZumwaltClass  = <code>8</code>; </li>
+ *     <li> Specific: DDG1000Zumwalt  = <code>1</code>; </li>
+ *     <li> Entity type uid: 31279; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53747c4a. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see GuidedMissileDestroyer
+ * @see SubCategory
+
  */
-public class DDG1000Zumwalt extends EntityType
+public final class DDG1000Zumwalt extends EntityType
 {
     /** Default constructor */
     public DDG1000Zumwalt()
@@ -26,5 +40,11 @@ public class DDG1000Zumwalt extends EntityType
         setCategory((byte)4); // uid 11372, Guided Missile Destroyer
         setSubCategory((byte)8); // uid 31278, Zumwalt Class
         setSpecific((byte)1); // uid 31279, DDG 1000 Zumwalt
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static DDG1000Zumwalt createInstance()
+    {
+            return new DDG1000Zumwalt();
     }
 }

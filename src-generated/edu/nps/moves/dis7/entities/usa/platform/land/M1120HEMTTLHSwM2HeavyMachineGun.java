@@ -6,15 +6,29 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v28 (2020-05-07)
- * name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@77f991c;
- * Country: United States of America (USA);
- * Entity kind: Platform;
- * Domain: LAND;
- *
- * Entity type uid: 27360
+ * <p> Entity class <b><code>M1120HEMTTLHSwM2HeavyMachineGun</code></b> collects multiple enumeration values together. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M1120HEMTTLHSwM2HeavyMachineGun.createInstance()</code> or <code>new M1120HEMTTLHSwM2HeavyMachineGun()</code>. </p>
+ * <ul>
+ *     <li> Country: United States of America (USA) = <code>225</code>; </li>
+ *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
+ *     <li> Domain: Platform = <code>1</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: OshkoshHeavyExpandedMobilityTacticalTruckHEMTT8x89979kg  = <code>19</code>; </li>
+ *     <li> Specific: M1120PalletizedLoadingSystemPLS  = <code>14</code>; </li>
+ *     <li> Entity type uid: 27360; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ * </ul>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@58af5076. </p>
+ * @see Country#UNITED_STATES_OF_AMERICA_USA
+ * @see EntityKind#PLATFORM
+ * @see Domain
+ * @see PlatformDomain
+ * @see Category
+ * @see LargeWheeledUtilityVehicle
+ * @see SubCategory
+
  */
-public class M1120HEMTTLHSwM2HeavyMachineGun extends EntityType
+public final class M1120HEMTTLHSwM2HeavyMachineGun extends EntityType
 {
     /** Default constructor */
     public M1120HEMTTLHSwM2HeavyMachineGun()
@@ -27,5 +41,11 @@ public class M1120HEMTTLHSwM2HeavyMachineGun extends EntityType
         setSubCategory((byte)19); // uid 10543, Oshkosh Heavy Expanded Mobility Tactical Truck (HEMTT) 8x8 9979-kg
         setSpecific((byte)14); // uid 23555, M1120 Palletized Loading System (PLS)
         setExtra((byte)2); // uid 27360, M1120 HEMTT; LHS w/ M2 Heavy Machine Gun
+    }
+    /** Create a new instance of this final (unmodifiable) class
+      * @return copy of class for use as data */
+    public static M1120HEMTTLHSwM2HeavyMachineGun createInstance()
+    {
+            return new M1120HEMTTLHSwM2HeavyMachineGun();
     }
 }
