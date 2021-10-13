@@ -42,60 +42,89 @@ package edu.nps.moves.legacy.math;
  * Description: Definition of the Matrix3f class
  * @author Kent A. Watsen, http://www.mbay.net/~watsen
  */
+@SuppressWarnings("javadoc")
 public class Matrix3f
   {
   private
     float m[][];
 
+  /** constructor */
   public Matrix3f()
     {
     m = new float[3][3];
     makeNull();
     }
 
+  /** constructor
+     * @param mat initialization matrix */
   public Matrix3f(float mat[][])
     {
     m = new float[3][3];
     setMat(mat);
     }
 
+  /** constructor
+     * @param mat initialization matrix */
   public Matrix3f(Matrix3f mat)
     {
     m = new float[3][3];
     setMat(mat);
     }
 
+  /** constructor
+     * @param quat initialization quaternion */
   public Matrix3f(Quaternion quat)
     {
     setQuat(quat);
     }
 
+  /** constructor
+     * @param hpr initialization heading, pitch, roll */
   public Matrix3f(float hpr[])
     {
     m = new float[3][3];
     setEulers(hpr);
     }
 
+  /** constructor
+     * @param heading initialization heading
+     * @param pitch initialization pitch
+     * @param roll initialization roll */
   public Matrix3f(float heading, float pitch, float roll)
     {
     m = new float[3][3];
     setEulers(heading, pitch, roll);
     }
 
-  public void print()
+    /**
+     * output matrix to console
+     */
+    public void print()
     {
     System.out.println("m = " + m[0][0] + ", " + m[0][1] + ", " + m[0][2]
                               + m[1][0] + ", " + m[1][1] + ", " + m[1][2]
                               + m[2][0] + ", " + m[2][1] + ", " + m[2][2]);
     }
 
-  public void setMatValue(int row, int col, float val)
+    /**
+     * Set a single value in matrix
+     * @param row row
+     * @param col column
+     * @param val value
+     */
+    public void setMatValue(int row, int col, float val)
     {
     if (row < 0 || row > 3 || col < 0 || col > 3)
       return;
     m[row][col] = val;
     }
 
+    /**
+     * Get a single value in matrix
+     * @param row row
+     * @param col column
+     * @return value
+     */
   public float getMatValue(int row, int col)
     {
     if (row < 0 || row > 3 || col < 0 || col > 3)
@@ -103,6 +132,8 @@ public class Matrix3f
     return m[row][col];
     }
 
+  /** Accessor method to set new matrix
+     * @param mat initialization matrix */
   public void setMat(float mat[][])
     {
     m[0][0] = mat[0][0];
@@ -116,6 +147,8 @@ public class Matrix3f
     m[2][2] = mat[2][2];
     }
 
+  /** Accessor method to get matrix
+     * @param mat array to receive matrix values */
   public void getMat(float mat[][])
     {
     mat[0][0] = m[0][0];
@@ -129,6 +162,8 @@ public class Matrix3f
     mat[2][2] = m[2][2];
     }
 
+  /** Accessor method to set new matrix
+     * @param mat initialization matrix */
   public void setMat(Matrix3f mat)
     {
     float mat2[][] = new float[3][3];
@@ -143,6 +178,8 @@ public class Matrix3f
     mat.setMat(mat2);
     }
 
+  /** Accessor method to set new matrix
+     * @param quat initialization quaternion */
   public void setQuat(Quaternion quat)
     {
     quat.getMat3(m);
