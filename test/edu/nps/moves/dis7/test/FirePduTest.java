@@ -4,12 +4,15 @@
  */
 package edu.nps.moves.dis7.test;
 
-import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.pdus.FirePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for satisfactory handling of Fire PDU fields and values.
+ */
 @DisplayName("Fire Pdu Test")
 public class FirePduTest extends PduTest
 {

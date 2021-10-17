@@ -3,19 +3,6 @@
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
-
-/**
- * This is a test class (which can also be run through its main() method) which tests round-tripping of pdus, i.e.,
- * creating a pdu instance in java, serializing it and sending over the network as a stream of bytes, at the same time
- * reading them back from the net.  It also uses the pdu logger in the Player class to save the received pdus to disk.
- * 
- * Two tests for pdu equivalency are performed:
- * 1.  Sent vs. received
- * 2.  Sent vs. persisted
- * 
- * @author Mike Bailey, jmbailey@edu.nps.edu
- * @version $Id$
- */
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
@@ -29,6 +16,19 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * This is a test class (which can also be run through its main() method) which tests round-tripping of pdus, i.e.,
+ * creating a pdu instance in java, serializing it and sending over the network as a stream of bytes, at the same time
+ * reading them back from the net.  It also uses the pdu logger in the Player class to save the received pdus to disk.
+ * 
+ * Two tests for pdu equivalency are performed:
+ * 1.  Sent vs. received
+ * 2.  Sent vs. persisted
+ * 
+ * @author Mike Bailey, jmbailey@edu.nps.edu
+ * @version $Id$
+ */
 
 @DisplayName("All Pdu Round Trip Test")
 public class AllPduRoundTripTest

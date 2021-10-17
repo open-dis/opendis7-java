@@ -41,7 +41,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
- *
+ * Unit tests for Detonation PDU fields and values.
  * @author &lt;a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.DetonationPduTest"&gt;Terry Norbraten, NPS MOVES&lt;/a&gt;
  */
 @DisplayName("Detonation Pdu Test")

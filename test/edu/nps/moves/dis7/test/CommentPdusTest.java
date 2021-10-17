@@ -11,6 +11,10 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/** 
+ * Unit testing for CommentPdus, which can serve as a free-form holder for any kind of narrative information or simulation data.
+ * @author brutzman
+ */
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {

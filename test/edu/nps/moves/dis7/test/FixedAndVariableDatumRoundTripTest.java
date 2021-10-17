@@ -14,6 +14,9 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Unit tests for satisfactory handling of FixedDatum and VariableRecordType fields and values.
+ */
 @DisplayName("Fixed and Variable Datum Round Trip Test")
 public class FixedAndVariableDatumRoundTripTest
 {

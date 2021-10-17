@@ -11,8 +11,8 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * NullFieldsMarshallTest created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
- *
+ * Unit tests for satisfactory handling of null fields and values when marshalling object instances.
+ * 
  * @author Mike Bailey, jmbailey@edu.nps.edu
  * @version $Id$
  */

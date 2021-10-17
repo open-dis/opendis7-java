@@ -12,6 +12,9 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+/**
+ * Unit tests for satisfactory handling of typed fields and values when marshalling object instances.
+ */
 @DisplayName("Object Type Marshal Test")
 public class ObjectTypeMarshallTest
 {

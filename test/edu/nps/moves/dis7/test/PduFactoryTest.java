@@ -10,7 +10,8 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
- *
+ * Unit tests for satisfactory factory creation of each PDU class.
+ * 
  * @author Mike Bailey, jmbailey@edu.nps.edu
  * @version $Id$
  */

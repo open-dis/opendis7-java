@@ -14,6 +14,10 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/** Unit tests for DataQuery PDU fields and values.
+ * 
+ * @author brutzman
+ */
 @DisplayName("Data Query Pdu Round Test")
 public class DataQueryPduRoundTripTest
 {

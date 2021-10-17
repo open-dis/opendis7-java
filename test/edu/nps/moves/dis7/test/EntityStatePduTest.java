@@ -6,7 +6,6 @@ package edu.nps.moves.dis7.test;
 
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.enumerations.EntityKind;
-import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.enumerations.PlatformDomain;
 import edu.nps.moves.dis7.pdus.Domain;
 import edu.nps.moves.dis7.pdus.EntityID;
@@ -14,9 +13,13 @@ import edu.nps.moves.dis7.pdus.EntityMarking;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit tests for satisfactory handling of Entity State PDU (ESPDU) fields and values.
+ */
 @DisplayName("Entity State Pdu Test")
 public class EntityStatePduTest extends PduTest
 {

@@ -17,6 +17,10 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * Unit tests for satisfactory handling of various necessary bit fields, supporting each data type.
+ * @author Don McGregor
+ */
 @DisplayName("Bit Field Round TripTest")
 public class BitFieldRoundTripTest
 {

@@ -9,6 +9,8 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
+ * Manually constructed tests for many object types.  
+ * TODO consider automated production.
  * CreateAllObjectTypes created on May 20, 2019 MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  *
  * @author Mike Bailey, jmbailey@edu.nps.edu

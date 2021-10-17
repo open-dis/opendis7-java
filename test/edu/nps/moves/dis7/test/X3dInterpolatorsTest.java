@@ -14,12 +14,12 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.concurrent.Semaphore;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
  
 /**
- *
+ * Unit tests for satisfactory filtering and creation of X3D interpolator values from a series of ESPDU track points.
  * @author &lt;a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.X3dInterpolatorsTest"&gt;Terry Norbraten, NPS MOVES&lt;/a&gt;
  */
 public class X3dInterpolatorsTest {
