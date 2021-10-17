@@ -3,6 +3,7 @@
 <project name="open-dis7-java" default="default" basedir="." xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3">
     <description>Builds, tests, and runs the open-dis7-java project.</description>
     <import file="nbproject/build-impl.xml"/>
+    <property file="nbproject/project.properties"/>
     
     <tstamp>
         <format property="timestamp" pattern="d MMMM yyyy HH:mm:ss"/>
@@ -26,7 +27,7 @@
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${dist.javadoc.dir}"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;1995-2021 held by the authors, &lt;a href='https://www.www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=open-dis7%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;1995-2021 held by the authors, &lt;a href='https://www.www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=open-dis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -39,12 +40,13 @@
     <property name="javadoc.windowtitle"     value="open-dis7 Javadoc"/>
     <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
     <!-- build.impl <javadoc additionalparam="-J-Dfile.encoding=${file.encoding} ${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"> -->
+    
     <target description="Build and test the whole project, create distribution jar files." name="all">
         <echo message="timestamp ${timestamp}"/>
-        <fail message="Please build using Ant 1.9.0 or higher.">
+        <fail message="Please build using Ant 1.10.11 or higher.">
             <condition>
                 <not>
-                    <antversion atleast="1.9.0"/><!-- recommend latest 1.10.+ -->
+                    <antversion atleast="1.10.11"/><!-- recommend latest 1.10.+ -->
                 </not>
             </condition>
         </fail>
@@ -52,7 +54,7 @@
         <echo message="================"/>
         <antcall target="compile"/>
         <echo message="================"/>
-        <antcall target="javadoc"/>
+        <antcall target="javadoc.custom"/>
         <echo message="================"/>
         <echo message="TODO: test suite cleanups, individual programs are runnable OK"/>
         <antcall target="test"/>
@@ -116,13 +118,14 @@
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
 
-    <target name="javadoc.custom" description="TODO testing, not ready for production">
+    <target name="javadoc.custom" description="Customized javadoc">
 
+        <echo message="$javac.classpath=${javac.classpath}"/>
         <javadoc     destdir="${javadoc.dir}"
                      author="${javadoc.author}"
                      bottom="${javadoc.copyright}"
                      breakiterator="${javadoc.breakiterator}"
-                     classpath="${x3djsail.stylesheets.dir}/${jsai.full.archive.jar.name}"
+                     classpath="${x3djsail.stylesheets.dir}/${jsai.full.archive.jar.name};${run.test.classpath}"
                      Encoding="${javadoc.encoding}"
                      Doctitle="${javadoc.doctitle}"
                      Header="${javadoc.doctitle}"
@@ -130,7 +133,7 @@
                      noindex="${javadoc.noindex}"
                      nonavbar="${javadoc.nonavbar}"
                      notree="${javadoc.notree}"
-                     Overview="${javadoc.dir}/overview.html"
+                     Overview="src/overview.html"
                      Private="${javadoc.private}"
                      source="${java.source}"
                      Splitindex="${javadoc.splitindex}"
@@ -138,14 +141,16 @@
                      useexternalfile="yes"
                      verbose="true"
                      version="${javadoc.version}"
-                     Windowtitle="${javadoc.windowtitle}">
+                     windowtitle="${javadoc.windowtitle}">
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
                 <include name="src-generated/**/*.java"/>
+                <include name="test/**/*.java"/>
                 <!-- latest enumerations are found in src-generated -->
                 <exclude name="**/*.html"/>
             </fileset>
         </javadoc>
+        <antcall target="view.javadoc.local"/>
     </target>
     
     <!--
@@ -439,7 +444,7 @@
     
     <!-- special test harness for JUnit5 by Terry Norbraten -->
     <!-- https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and -->
-    <target depends="compile-test,-pre-test-run"
+    <target depends="compile-test,-pre-test-run,clean.pduLog"
             description="Run unit tests."
             name="test" >
         <java classpath="${run.test.classpath}"
