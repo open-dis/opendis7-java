@@ -205,10 +205,13 @@ public class AllPduRoundTripTest
 
   private void testForEquals() throws Exception
   {
-    assertEquals(pdusSent.size(), pdusReceived.size(), "Different number of pdus received than sent");
-    assertIterableEquals(pdusSent, pdusReceived, "Sent and received pdus not identical");
+    // TODO set sender and receiver to single file
+    System.out.println("*** Warning: ensure no prior dislog files are present in pduLog directory or assertion count of replay will fail.");
     
-    // TODO is this sufficient?  has each PDU value been compared as well?
+    assertEquals(pdusSent.size(), pdusReceived.size(), "Different number of pdus received than sent");
+    
+    // TODO is this sufficient?  has each PDU value been fully compared as well?
+    assertIterableEquals(pdusSent, pdusReceived, "Sent and received pdus not identical");
   }
 
   private void getAllFromRecorder(Semaphore sem) throws Exception
@@ -228,13 +231,14 @@ public class AllPduRoundTripTest
     });
   }
 
-  private void testRecorderForEquals() throws Exception
-  {
-    assertEquals(pdusSent.size(), pdusRead.size(), "Different number of pdus sent than read");
-    assertIterableEquals(pdusSent, pdusRead, "Sent and read pdus not identical");
-    
-    // TODO is this sufficient?  has each PDU value been compared as well?
-  }
+    private void testRecorderForEquals() throws Exception 
+    {
+        // TODO this will fail if prior dislog files are present in pduLog directory, ignore them to make it less brittle
+        assertEquals(pdusSent.size(), pdusRead.size(), "Different number of pdus sent than read");
+        assertIterableEquals(pdusSent, pdusRead, "Sent and read pdus not identical");
+
+        // TODO is this sufficient?  has each PDU value been compared as well?
+    }
   
   private static void sleep(long ms) {
     try {
@@ -244,8 +248,8 @@ public class AllPduRoundTripTest
     }
   }
   
-  public static void main(String[] args)
-  {
-    new AllPduRoundTripTest().testRoundTripAllPdus();
-  }
+    public static void main(String[] args)
+    {
+        new AllPduRoundTripTest().testRoundTripAllPdus();
+    }
 }
