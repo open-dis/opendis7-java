@@ -2,7 +2,7 @@
  * Copyright (c) 2008-2021, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
-package edu.nps.moves.dis7;
+package edu.nps.moves.dis7.test;
 
 /**
  * This is a test class (which can also be run through its main() method) which tests round-tripping of pdus, i.e.,
