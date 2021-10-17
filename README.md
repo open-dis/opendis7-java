@@ -1,5 +1,5 @@
 # open-dis7-java
-Type-safe java implementation of the DIS Protocol v. 7, IEEE 1278.1-2012
+Complete type-safe java implementation of the DIS Protocol version 7 (IEEE 1278.1-2012) and SISO-REF-010 Enumerations specifications.
 
 This project provides a complete implementation of the IEEE DIS Protocol and
 associated enumerations from the
