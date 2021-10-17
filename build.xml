@@ -121,6 +121,7 @@
     <target name="javadoc.custom" description="Customized javadoc">
 
         <echo message="$javac.classpath=${javac.classpath}"/>
+        <copy file="images/OpenDisSurferDude.png" todir="${javadoc.dir}"/>
         <javadoc     destdir="${javadoc.dir}"
                      author="${javadoc.author}"
                      bottom="${javadoc.copyright}"
