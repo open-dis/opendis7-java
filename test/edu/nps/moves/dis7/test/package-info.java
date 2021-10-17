@@ -34,7 +34,9 @@ POSSIBILITY OF SUCH DAMAGE.
 
 /** 
  * This package includes a variety of PDU unit tests to confirm code correctness.
- * The test tree is maintained separately from other source in order to support special annotations and assertions.
+ * The <code>test</code> tree is maintained separately from other source
+ * in order to support the project build with special CLASSPATH, annotations and 
+ * assertions.
  */
 
 package edu.nps.moves.dis7.test;
