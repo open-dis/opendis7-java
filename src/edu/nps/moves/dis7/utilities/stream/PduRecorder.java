@@ -1,11 +1,9 @@
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
-
 import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -19,7 +17,6 @@ import java.util.Base64;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.apache.commons.io.FilenameUtils;
 
 /** Utility to save PDUs received over the network to disk
@@ -50,8 +47,9 @@ public class PduRecorder implements PduReceiver
     static final String OUTPUT_DIRECTORY_DEFAULT = "./pduLog";
                  String outputDirectory          = OUTPUT_DIRECTORY_DEFAULT;
                  Path   outputDirectoryPath;
-    static String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
-    static String DISLOG_FILE_EXTENSION    = ".dislog";
+    static final String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
+    static final String DISLOG_FILE_EXTENSION    = ".dislog";
+    static final String DEFAULT_FILE_NAME        = DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION;
 
     static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
     static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
@@ -72,6 +70,7 @@ public class PduRecorder implements PduReceiver
 
     private Writer logFileWriter;
     private File   logFile;
+    private String logFileName = DEFAULT_FILE_NAME;
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
 
@@ -118,19 +117,10 @@ public class PduRecorder implements PduReceiver
     @SuppressWarnings("Convert2Lambda")
     public PduRecorder(String initialOutputDirectory, String initialAddress, int initialPort)
     {
-      try {
-          outputDirectoryPath = new File(initialOutputDirectory).toPath();
-          this.descriptor = "PduRecorder"; // default
-          this.disAddress = initialAddress;
-          this.disPort    = initialPort;
-          logFile         = createUniquePduLogFile(outputDirectoryPath, DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION );
-          logFileWriter   = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
-      }
-      catch (IOException ex)
-      {
-        System.err.println("Exception when creating log file in directory=" + initialOutputDirectory + "\n" +
-                            "   " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
-      }
+        outputDirectoryPath = new File(initialOutputDirectory).toPath();
+        setDescriptor("PduRecorder"); // default
+        setAddress(initialAddress);
+        setPort   (initialPort);
     }
 
       /**
@@ -171,22 +161,31 @@ public class PduRecorder implements PduReceiver
      */
     public void start()
     {
-      if (disThreadedNetworkInterface == null)
-      {
-          disThreadedNetworkInterface = new DisThreadedNetworkInterface(getAddress(), getPort());
-          disThreadedNetworkInterface.setDescriptor (getDescriptor()); // pass it along
-          disThreadedNetworkInterface.setVerbose(verbose);
+        try {
+            logFile         = createUniquePduLogFile(outputDirectoryPath, getLogFileName());
+            logFileWriter   = new PrintWriter(new BufferedWriter(new FileWriter(logFile)));
+        }
+        catch (IOException ex)
+        {
+          System.err.println("Exception when creating log file in directory=" + outputDirectoryPath.toAbsolutePath() + "\n" +
+                              "   " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
+        }
+        if (disThreadedNetworkInterface == null)
+        {
+            disThreadedNetworkInterface = new DisThreadedNetworkInterface(getAddress(), getPort());
+            disThreadedNetworkInterface.setDescriptor (getDescriptor()); // pass it along
+            disThreadedNetworkInterface.setVerbose(verbose);
 
-          disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
-              @Override
-              public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
-                  receivePdu(bAndL.bufferByteArray, bAndL.length);
-              }
-          };
-          disThreadedNetworkInterface.addRawListener(disRawPduListener);
-          System.out.println("[" + (getClass().getSimpleName() + " " + getDescriptor()).trim() + "] listening to IP address " + getAddress() + " on port " + getPort());
-      }
-      running = true;
+            disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
+                @Override
+                public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
+                    receivePdu(bAndL.bufferByteArray, bAndL.length);
+                }
+            };
+            disThreadedNetworkInterface.addRawListener(disRawPduListener);
+            System.out.println("[" + (getClass().getSimpleName() + " " + getDescriptor()).trim() + "] listening to IP address " + getAddress() + " on port " + getPort());
+        }
+        running = true;
     }
     /** Pause operation of this instance
      * @see start()
@@ -317,7 +316,7 @@ public class PduRecorder implements PduReceiver
 
         try
         {
-            logFileWriter.write(START_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+            logFileWriter.write(START_COMMENT_MARKER + pduLogEncoding + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
         } 
         catch (IOException ex)
@@ -332,7 +331,7 @@ public class PduRecorder implements PduReceiver
 
         try
         {
-            logFileWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + timeStamp + ", DIS capture file, " + logFile.getPath());
+            logFileWriter.write(FINISH_COMMENT_MARKER + pduLogEncoding + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
         } 
         catch (IOException ex)
@@ -595,5 +594,19 @@ public class PduRecorder implements PduReceiver
         {
             disThreadedNetworkInterface.setVerboseIncludesTimestamp(verboseIncludesTimestamp);
         }
+    }
+
+    /**
+     * @return the logFileName
+     */
+    public String getLogFileName() {
+        return logFileName;
+    }
+
+    /**
+     * @param logFileName the logFileName to set
+     */
+    public void setLogFileName(String logFileName) {
+        this.logFileName = logFileName;
     }
 }
