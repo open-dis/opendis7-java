@@ -163,10 +163,9 @@
                      windowtitle="${javadoc.windowtitle}">
             <fileset dir="." defaultexcludes="yes">
                 <include name="src/**/*.java"/>
+                <!-- latest enumerations are found in src-generated -->
                 <include name="src-generated/**/*.java"/>
                 <include name="test/**/*.java"/>
-                <!-- latest enumerations are found in src-generated -->
-                <exclude name="**/*.html"/>
             </fileset>
         </javadoc>
         <antcall target="view.javadoc.local"/>
