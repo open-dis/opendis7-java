@@ -257,6 +257,7 @@ public class PduRecorder implements PduReceiver
       }
 
       writeFooter();
+      headerWritten = false; // reset for another run
       try {
           System.out.println();
           System.out.println("Closing recorder log file: " + logFile.getCanonicalPath());
@@ -302,7 +303,7 @@ public class PduRecorder implements PduReceiver
               break;
 
           case ENCODING_PLAINTEXT:
-              // by Tobias Brennenstuhl SPring 2020
+              // by Tobias Brennenstuhl Spring 2020
               sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
               sb.append(',');
               sb.append(Arrays.toString(buffsized).replace(" ", ""));
