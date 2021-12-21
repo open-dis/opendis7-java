@@ -108,6 +108,7 @@ public class DisThreadedNetworkInterface
     private String  disAddress; 
     private int     disPort;
     private boolean killed = false;
+    private int     killCounter = 0;
 
     private InetAddress       inetAddress;
     private InetSocketAddress inetSocket;
@@ -404,6 +405,7 @@ public class DisThreadedNetworkInterface
                             message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
                             System.out.println(message);
                             System.out.flush();
+                            System.err.flush();
                         }
                         toListeners(nextPdu);
                     }
@@ -426,6 +428,10 @@ public class DisThreadedNetworkInterface
                 close();
             }
         }
+        if (killed)
+            close(); // retry now that threads are killed
+        System.err.flush();
+        System.out.flush();
     };
 
     private final Runnable senderThreadRunnable = () -> {
@@ -464,6 +470,7 @@ public class DisThreadedNetworkInterface
                         message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
                         System.out.println(message);
                         System.out.flush();
+                        System.err.flush();
                     }
                     dos.flush();  // immediately force pdu write
                     baos.reset(); // prepare for next send
@@ -482,8 +489,13 @@ public class DisThreadedNetworkInterface
             pdus2send.clear();
             dos.close();
             this.close();
+            
         }
         catch (IOException e) {} // shutting down, no need to report exception
+        if (killed)
+            close(); // retry now that threads are killed
+        System.err.flush();
+        System.out.flush();
     };
 
     private void toListeners(Pdu pdu) 
@@ -533,7 +545,12 @@ public class DisThreadedNetworkInterface
    * Synchronized to prevent interleaved invocation. */
   public synchronized void close()
   {
-    setKillSentinel();
+      if (!killed || ((killCounter > 0) && (killCounter < 2)))
+      {
+          killCounter++; // repeat for all threads
+          setKillSentinel();
+          return; // allow network operations to finish, then killed threads are expected to reenter here
+      }
     
     try
     {
@@ -572,6 +589,7 @@ public class DisThreadedNetworkInterface
         }
     }
     datagramSocket = null; // make sure
+    killCounter = 0;       // prepare for next run
     System.err.flush(); // ensure all output sent
     System.out.flush(); // ensure all output sent
   }
