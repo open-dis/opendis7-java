@@ -11,6 +11,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -85,7 +88,8 @@ public class PduRecorder implements PduReceiver
     /** TODO list of planned encodings */
     public static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
 
-    private static String encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
+    private String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
+    private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
 
     private String TRACE_PREFIX = ("[pduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor      = new String();
@@ -109,9 +113,9 @@ public class PduRecorder implements PduReceiver
         {
             ENCODING_OPTIONS_LIST.add(ENCODING_PLAINTEXT            );
             ENCODING_OPTIONS_LIST.add(ENCODING_BASE64               );
-            // not yet implemented in PduRecorder
-            ENCODING_OPTIONS_TODO.add(ENCODING_BINARY               ); // IEEE DIS format
-            // not yet implemented in open-dis7
+            // TODO test preliminary implementation in PduRecorder
+            ENCODING_OPTIONS_LIST.add(ENCODING_BINARY               ); // IEEE DIS format
+            // TODO encoding options not yet implemented in open-dis7
             ENCODING_OPTIONS_TODO.add(ENCODING_XML                  );
             ENCODING_OPTIONS_TODO.add(ENCODING_EXI                  );
             ENCODING_OPTIONS_TODO.add(ENCODING_CDIS                 );
@@ -169,7 +173,7 @@ public class PduRecorder implements PduReceiver
        *
        * @return the pduLogEncoding
        */
-      public static String getEncodingPduLog()
+      public String getEncodingPduLog()
       {
           return encodingPduLog;
       }
@@ -184,6 +188,7 @@ public class PduRecorder implements PduReceiver
           if (ENCODING_OPTIONS_LIST.contains(newEncodingPduLog))
           {
               encodingPduLog = newEncodingPduLog;
+              includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
               return;
           }
           else if (ENCODING_OPTIONS_TODO.contains(newEncodingPduLog))
@@ -270,9 +275,11 @@ public class PduRecorder implements PduReceiver
           disThreadedNetworkInterface.setKillSentinel();
           disThreadedNetworkInterface = null; // ensure reset upon re-start
       }
-
-      writeFooter();
-      headerWritten = false; // reset for another run
+      if (includeHeaders)
+      {
+          writeFooter();
+          headerWritten = false; // reset for next run
+      }
       try {
           System.out.println();
           System.out.println("Closing recorder log file: " + logFile.getCanonicalPath());
@@ -301,49 +308,71 @@ public class PduRecorder implements PduReceiver
       if(!isRunning())
         return;
 
-      long packetRcvNanoTime = System.nanoTime();
+      long packetReceivedNanoTime = System.nanoTime();
       if (startNanoTime == null)
-          startNanoTime = packetRcvNanoTime;
+          startNanoTime = packetReceivedNanoTime;
 
-      byte[] timeByteArray = Longs.toByteArray(packetRcvNanoTime - startNanoTime);
+      byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
       //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
 
-      byte[] buffsized = Arrays.copyOf(newBuffer, newLength);
+      byte[] byteBufferSized = Arrays.copyOf(newBuffer, newLength);
       DisPduType pduType;
+      
+      if (includeHeaders && !headerWritten)
+      {
+        writeHeader();
+        headerWritten = true;
+      }
 
       switch (encodingPduLog)
       {
+          case ENCODING_BINARY:
+              // diagnostics can go here, TODO is any processing needed?
+              break;
+
           case ENCODING_BASE64:
               sb.append(base64Encoder.encodeToString(timeByteArray));
               sb.append(',');
-              sb.append(base64Encoder.encodeToString(buffsized)); 
+              sb.append(base64Encoder.encodeToString(byteBufferSized)); 
               break;
 
           case ENCODING_PLAINTEXT:
               // by Tobias Brennenstuhl Spring 2020
               sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
               sb.append(',');
-              sb.append(Arrays.toString(buffsized).replace(" ", ""));
+              sb.append(Arrays.toString(byteBufferSized).replace(" ", ""));
               sb.append(" # ");
-              pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(buffsized[2])); // 3rd byte
+              pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
               sb.append(pduType);
               break;
 
           default:
-              System.err.println ("Encoding " + encodingPduLog + " not recognized or supported");
+              if (ENCODING_OPTIONS_LIST.contains(encodingPduLog))
+                 System.err.println ("Encoding " + encodingPduLog + " not supported");
+              else
+                 System.err.println ("Encoding " + encodingPduLog + " not recognized");
+              break;
       }
-      if (!headerWritten) {
-        writeHeader();
-        headerWritten = true;
-      }
-      try {
-        logFileWriter.write(sb.toString());
-        ((PrintWriter)logFileWriter).println();
+      try
+      {
+        if (encodingPduLog.equals(ENCODING_BINARY))
+        {
+            // https://stackoverflow.com/questions/4931854/converting-char-array-into-byte-array-and-back-again
+            Charset    charset = Charset.forName("UTF-8");
+            CharBuffer charBufferSized = charset.decode(ByteBuffer.wrap(byteBufferSized));
+            logFileWriter.write(charBufferSized.array());
+        }
+        else
+        {
+            logFileWriter.write(sb.toString());
+            ((PrintWriter)logFileWriter).println();
+        }
       }
       catch (IOException ex) {
-        throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread: " + ex);
+        throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
       }
-      //System.out.println("Recorder: "+ ++pduCount);
+      if (false) // debug
+          System.out.println("PduRecorder: pduCount="+ pduCount);
 
       sb.setLength(0);
     }
@@ -474,7 +503,7 @@ public class PduRecorder implements PduReceiver
         }
     }
   
-  /** This selfTest() method saves a PDU output log to project pduLog/ directory. 
+  /** This selfTest() method saves PDU output logs to assigned directory using all supported encodings. 
    *  Separately Invoking the edu.nps.moves.dis7.examples.PduReaderPlayer will playback all logs 
    *  written to that log directory
    * 
@@ -532,13 +561,14 @@ public class PduRecorder implements PduReceiver
           {
               System.err.println("Found pduTypeValue=DisPduType.OTHER=" + pduTypeValue);
           }
-        };
+        }
         System.out.flush();
         System.err.flush(); // ensure all output sent
         pduRecorder.stop();
         System.out.println("dis7.utilities.stream.PduRecorder pduRecorder complete... isRunning()=" + pduRecorder.isRunning());
     }
     // end of loop ENCODING_OPTIONS_LIST
+    System.out.println("=================================================");
   }
     /**
      * Get current multicast (or unicast) network address for send and receive connections.
@@ -555,7 +585,7 @@ public class PduRecorder implements PduReceiver
      * @param newAddress the new network address to set
      */
     public void setAddress(String newAddress) {
-        if (isRunning() && (this.disAddress != newAddress))
+        if (isRunning() && !disAddress.equals(newAddress))
             System.out.println(TRACE_PREFIX + "*** warning, attempting to change network address while running...");
         // TODO warn if netIF already created
         this.disAddress = newAddress;
