@@ -537,8 +537,10 @@ public class DisThreadedNetworkInterface
     
     try
     {
-        senderThread.join(4000); // wait for thread to die, msec max duration
-      receiverThread.join(4000); // wait for thread to die, msec max duration
+        if (senderThread != null)
+            senderThread.join(4000); // wait for thread to die, msec max duration
+        if (receiverThread != null)
+            receiverThread.join(4000); // wait for thread to die, msec max duration
         senderThread = null; // make sure
       receiverThread = null; // make sure
     }
