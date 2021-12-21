@@ -4,18 +4,14 @@
  */
 package edu.nps.moves.dis7.utilities;
 
-import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.pdus.DisTime;
 import edu.nps.moves.dis7.enumerations.DisPduType;
-
+import edu.nps.moves.dis7.pdus.DisTime;
+import edu.nps.moves.dis7.pdus.Pdu;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
 import java.net.*;
-
 import java.nio.ByteBuffer;
-
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Level;
@@ -484,6 +480,7 @@ public class DisThreadedNetworkInterface
         try {
             // operations are finished
             dos.close();
+            this.close();
         }
         catch (IOException e) {} // shutting down, no need to report exception
     };
@@ -522,11 +519,11 @@ public class DisThreadedNetworkInterface
   @Deprecated
   public void kill()
   {
-    finishOperations(); 
+    setKillSentinel(); 
   }
 
   /** Finish pending send/receive activity and then close. */
-  public void finishOperations()
+  public void setKillSentinel()
   {
     killed = true; // set loop sentinel for threads to finish
   }
@@ -535,7 +532,19 @@ public class DisThreadedNetworkInterface
    * Synchronized to prevent interleaved invocation. */
   public synchronized void close()
   {
-    finishOperations();
+    setKillSentinel();
+    
+    try
+    {
+        senderThread.join(2000); // wait for thread to die, msec max duration
+      receiverThread.join(2000); // wait for thread to die, msec max duration
+    }
+    catch (InterruptedException ie)
+    {
+        System.err.println ("*** DisThreadedNetworkInterface thread join() failed to wait for threads to die");
+        System.err.flush();
+        ie.printStackTrace(System.err);
+    }
   
     if (datagramSocket != null && !datagramSocket.isClosed())
     {
@@ -569,8 +578,8 @@ public class DisThreadedNetworkInterface
     }
     catch (InterruptedException ie) 
     {
-        System.err.flush();
         System.err.println ("*** " + getClass().getName() + ".sleep(" + duration + ") failed to sleep");
+        System.err.flush();
         ie.printStackTrace(System.err);
     }
   }
