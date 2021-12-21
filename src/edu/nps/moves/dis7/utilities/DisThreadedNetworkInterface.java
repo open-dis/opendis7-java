@@ -479,6 +479,7 @@ public class DisThreadedNetworkInterface
         }
         try {
             // operations are finished
+            pdus2send.clear();
             dos.close();
             this.close();
         }
@@ -536,8 +537,10 @@ public class DisThreadedNetworkInterface
     
     try
     {
-        senderThread.join(2000); // wait for thread to die, msec max duration
-      receiverThread.join(2000); // wait for thread to die, msec max duration
+        senderThread.join(4000); // wait for thread to die, msec max duration
+      receiverThread.join(4000); // wait for thread to die, msec max duration
+        senderThread = null; // make sure
+      receiverThread = null; // make sure
     }
     catch (InterruptedException ie)
     {
@@ -567,6 +570,8 @@ public class DisThreadedNetworkInterface
         }
     }
     datagramSocket = null; // make sure
+    System.err.flush(); // ensure all output sent
+    System.out.flush(); // ensure all output sent
   }
 
   /** Thread sleep for indicated interval
