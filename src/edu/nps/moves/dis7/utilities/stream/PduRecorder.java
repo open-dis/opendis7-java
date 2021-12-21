@@ -57,21 +57,35 @@ public class PduRecorder implements PduReceiver
     static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
     static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
     
-    static final String ENCODING_BASE64                = "ENCODING_BASE64";
-    static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
-                     // not yet implemented
-    static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
-    static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
-    static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
-    static final String ENCODING_EXI                   = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
-    static final String ENCODING_JSON                  = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
-    static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";       // verbose pretty-print. perhaps output only (MAK format itself is binary)
-    static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
+    /** ENCODING_PLAINTEXT uses a modified comma-separated values (CSV) format to show DIS values readably */
+    public static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
+    /** ENCODING_BASE64 uses simple Base64 (MIME type) compression on ENCODING_PLAINTEXT 
+     * @see <a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Wikipedia: Base64</a> */
+    public static final String ENCODING_BASE64                = "ENCODING_BASE64";
+                            // not yet implemented
+    /** TODO ENCODING_BINARY is default DIS PDU format, not yet available within PduRecorder */
+    public static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
+    /** TODO ENCODING_XML is default DIS PDU format using NPS DIS XML schema format */
+    public static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
+    /** TODO ENCODING_EXI is Efficient XML Interchange (EXI) format for compressed XML */
+    public static final String ENCODING_EXI                   = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
+    /** TODO ENCODING_CDIS is Compressed DIS format */
+    public static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
+    /** TODO ENCODING_JSON is JavaScript Object Notation (JSON) format */
+    public static final String ENCODING_JSON                  = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
+    /** TODO ENCODING_WIRESHARK_DATA_LOGGER is likely going to be PCAPng format
+     * @see <a href="https://en.wikipedia.org/wiki/Pcap" target="_blank">Wikipedia: Base64</a> */
+    public static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
+    /** TODO ENCODING_MAK_DATA_LOGGER is Mak data logger format
+     * @see <a href="https://www.mak.com/products/link/mak-data-logger" target="_blank">Wikipedia: Base64</a>  */
+    public static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";       // verbose pretty-print. perhaps output only (MAK format itself is binary)
     
-    static final List<String> ENCODING_OPTIONS_LIST = new ArrayList<>();
-    static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
+    /** List of supported encodings */
+    public static final List<String> ENCODING_OPTIONS_LIST = new ArrayList<>();
+    /** TODO list of planned encodings */
+    public static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
 
-    private static String encodingPduLog = ENCODING_PLAINTEXT; // default
+    private static String encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
 
     private String TRACE_PREFIX = ("[pduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor      = new String();
@@ -95,14 +109,15 @@ public class PduRecorder implements PduReceiver
         {
             ENCODING_OPTIONS_LIST.add(ENCODING_PLAINTEXT            );
             ENCODING_OPTIONS_LIST.add(ENCODING_BASE64               );
-            // not yet implemented
+            // not yet implemented in PduRecorder
             ENCODING_OPTIONS_TODO.add(ENCODING_BINARY               ); // IEEE DIS format
+            // not yet implemented in open-dis7
             ENCODING_OPTIONS_TODO.add(ENCODING_XML                  );
-            ENCODING_OPTIONS_TODO.add(ENCODING_CDIS                 );
             ENCODING_OPTIONS_TODO.add(ENCODING_EXI                  );
+            ENCODING_OPTIONS_TODO.add(ENCODING_CDIS                 );
             ENCODING_OPTIONS_TODO.add(ENCODING_JSON                 );
-            ENCODING_OPTIONS_TODO.add(ENCODING_MAK_DATA_LOGGER      );
             ENCODING_OPTIONS_TODO.add(ENCODING_WIRESHARK_DATA_LOGGER);
+            ENCODING_OPTIONS_TODO.add(ENCODING_MAK_DATA_LOGGER      );
         }
     }
   
@@ -266,6 +281,8 @@ public class PduRecorder implements PduReceiver
       catch (IOException ex) {
           Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
       }
+      System.err.flush(); // ensure all output sent
+      System.out.flush(); // ensure all output sent
       return logFile;
     }
 
@@ -490,7 +507,7 @@ public class PduRecorder implements PduReceiver
         System.out.println("=================================================");
         System.out.println("Test PduRecorder encoding " + currentEncoding);
         pduRecorder.setEncodingPduLog(currentEncoding);
-        pduRecorder.setDescriptor("PduRecorder main() self test");
+        pduRecorder.setDescriptor("PduRecorder main() self test " + currentEncoding);
 //      pduRecorder.setPort(1); // option to avoid listening to other PDU streams during self test
         pduRecorder.setLogFileName("PduRecorderSelfTest" + currentEncoding + "_" + DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION);
         pduRecorder.start();
