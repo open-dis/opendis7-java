@@ -109,7 +109,7 @@ public class SignalPdusTest {
     @Test
     @Order(1)
     public void testRoundTripNet() {
-        System.out.println("testRoundTripNet");
+        System.out.println("testRoundTripNet()");
         
         // Let's see how these unmarshall
         receivedPdus.forEach(pdu -> {
@@ -133,7 +133,7 @@ public class SignalPdusTest {
     @Test
     @Order(2)
     public void testRoundTripLog() throws IOException, InterruptedException {   
-        System.out.println("testRoundTripLog");
+        System.out.println("testRoundTripLog()");
         
         mutex.acquire();
         Path path = Path.of("./pduLog");
@@ -149,7 +149,7 @@ public class SignalPdusTest {
             }   
         });
     
-        mutex.acquire();
+//        mutex.acquire(); // TODO needed? appears to be unnecessarily blocking...
     }
     
     private static void sleep(long ms) {

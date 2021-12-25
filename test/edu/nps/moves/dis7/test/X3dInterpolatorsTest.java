@@ -29,7 +29,7 @@ public class X3dInterpolatorsTest {
     
     @BeforeAll
     public static void setUpClass() throws IOException {
-        System.out.println("X3dInterpolatorsTest");
+        System.out.println("X3dInterpolatorsTest setUpClass()");
     }
     
     @BeforeEach
@@ -51,7 +51,7 @@ public class X3dInterpolatorsTest {
     
     @AfterEach
     public void tearDown() throws InterruptedException {
-        mutex.acquire();
+//        mutex.acquire(); // TODO needed? appears to be unnecessarily blocking...
     }
 
     @Test
