@@ -6,7 +6,6 @@ package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
 import edu.nps.moves.dis7.enumerations.DisPduType;
-
 import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -37,7 +36,7 @@ public class PduPlayer {
     private Path disLogDirectory;
     private String ip;
     private int port;
-    private Thread thrd;
+    private Thread playerThread;
 
     static final String ENCODING_BASE64          = "ENCODING_BASE64";
     static final String ENCODING_PLAINTEXT       = "ENCODING_PLAINTEXT";
@@ -49,7 +48,7 @@ public class PduPlayer {
     static final String ENCODING_MAK_DATA_LOGGER = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
     static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
 
-    private static String pduLogEncoding = ENCODING_PLAINTEXT; // TODO use Java enumerations, generalize/share across library
+    private static String pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT; // determined when reading file
 
     /** Constructor that spawns the player thread.
      * 
@@ -66,11 +65,11 @@ public class PduPlayer {
         this.port = port;
         this.netSend = sendToNet;
 
-        thrd = new Thread(() -> begin());
-        thrd.setPriority(Thread.NORM_PRIORITY);
-        thrd.setName("PlayerThread");
-        thrd.setDaemon(true);
-        thrd.start();
+        playerThread = new Thread(() -> { } ); // begin() - avoid starting thread begin() without programmer direction?
+        playerThread.setPriority(Thread.NORM_PRIORITY);
+        playerThread.setName("PlayerThread");
+        playerThread.setDaemon(true);
+        playerThread.start();
     }
 
     private Integer scenarioPduCount = null;
@@ -99,51 +98,63 @@ public class PduPlayer {
 
     /** Thread process for this class */
     @SuppressWarnings("StatementWithEmptyBody")
-    public void begin() {
+    public void begin() 
+    {
         try {
-            System.out.println("PduPlayer begin() playing DIS logs.");
+            System.out.println("PduPlayer begin() playing DIS logs found in ancestor pduLog directory.");
             
             InetAddress addr = null;
             DatagramPacket datagramPacket;
-            DisPduType type;
+            DisPduType pduType;
             String tempString;
             String[] sa = null, splitString;
             String REGEX;
             Pattern pattern;
-            byte[] pduTimeBytes = null, bufferShort = null;
-            int[] arr;
+            byte[] pduTimeBytes = new byte[8]; // timestamp is always 8 bytes
+            byte[] byteBufferShort = null;
+            int[] intArray;
             IntBuffer intBuffer;
             int tempInt;
             ByteBuffer byteBuffer1, byteBuffer2;
             long pduTimeInterval, targetSimTime, now, sleepTime;
 
-            FilenameFilter filter = (dir, name) -> {
+            FilenameFilter filenameFilter = (dir, name) -> {
                 return name.endsWith(PduRecorder.DISLOG_FILE_EXTENSION) && !name.startsWith(".");
             };
 
-            File[] fs = disLogDirectory.toFile().listFiles(filter);
-            if (fs == null) {
-                fs = new File[0];
+            File[] filesArray = disLogDirectory.toFile().listFiles(filenameFilter);
+            if (filesArray == null) {
+                filesArray = new File[0];
             }
 
-            Arrays.sort(fs, (f1, f2) -> {
+            Arrays.sort(filesArray, (f1, f2) -> {
                 return f1.getName().compareTo(f2.getName());
             });
 
-            if (netSend) {
+            if (netSend) 
+            {
                 addr = InetAddress.getByName(ip);
                 datagramSocket = new DatagramSocket();
             }
             
             Base64.Decoder base64Decoder = Base64.getDecoder();
 
-            for (File f : fs) {
-                System.out.println("Replaying " + f.getAbsolutePath());
+            for (File f : filesArray) 
+            {
                 List<String> lines = Files.readAllLines(Path.of(f.getAbsolutePath()));
 
-                for (String line : lines) {
+                if      (f.getName().contains("BASE64") || lines.get(0).startsWith("AAAAA")) // TODO include header??
+                     pduLogEncoding = PduRecorder.ENCODING_BASE64;
+                else if (f.getName().contains("PLAINTEXT") || lines.get(0).contains("PLAINTEXT"))
+                     pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT;
+                else pduLogEncoding = PduRecorder.ENCODING_BINARY;
+                
+                System.out.println("Replaying PDU log file with " + pduLogEncoding + ": " + f.getAbsolutePath());
+                    
+                for (String line : lines)
+                {
                     while (paused) {
-                        sleep(1000l); // TODO confirm: full second, was half second
+                        sleep(100l); // TODO confirm usability OK, currently 100 msec increments for pause
                     }
                     if (line.length() <= 0)
                         ; // blank lines ok
@@ -151,82 +162,100 @@ public class PduPlayer {
                         if (handleComment(line, f)) {
                             break;
                         }
-                    } else {
-                        
-                        switch (pduLogEncoding) {
-                            case "ENCODING_BASE64":
-                                sa = line.split(",");
+                    } 
+                    else
+                    {
+                        switch (pduLogEncoding) 
+                        {
+                            case PduRecorder.ENCODING_BASE64:
+                                sa = new String[1]; // one big string per line per PDU
+                                sa[0] = line;
                                 break;
 
-                            case "ENCODING_PLAINTEXT":
+                            case PduRecorder.ENCODING_PLAINTEXT:
 
                                 if (line.contains(PduRecorder.COMMENT_MARKER)) {
                                     line = line.substring(0, line.indexOf(PduRecorder.COMMENT_MARKER) - 1); //Delete appended Comments
                                 }
+                                if (line.contains("[") || line.contains("]"))
+                                {
+                                    System.out.println("*** [square brackets] no longer included in CSV PLAINTEXT data, ignored");
+                                    line = line.replace("[","").replace("]","");
+                                }
                                 //Pattern splitting needed for playback of unencoded streams
-                                REGEX = "\\],\\[";
-                                pattern = Pattern.compile(REGEX);
-
-                                sa = pattern.split(line);
-                                //Add the "]" to the end of sa[0]. It was taken off by the split
-                                sa[0] = sa[0].concat("]");
-                                //Add the "]" to the end of sa[0]. It was taken off by the split
-                                if (sa.length > 1)
-                                    sa[1] = "[".concat(sa[1]);
-
-                                break;
-
-                            default:
-                                System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
-                        }
-
-                        if (sa != null && sa.length != 2) {
-                            System.err.println("Error: parsing error.  Line follows.");
-                            System.err.println(line);
-                            byebye();
-                        }
-
-                        if (startNanoTime == null) {
-                            startNanoTime = System.nanoTime();
-                        }
-                        
-                        switch (pduLogEncoding) {
-                            case "ENCODING_BASE64":
-                                pduTimeBytes = base64Decoder.decode(sa[0]);
-                                break;
-
-                            case "ENCODING_PLAINTEXT":
-
-                                //Split first String into multiple Strings cotaining integers
+//                                REGEX = "\\],\\[";
                                 REGEX = ",";
                                 pattern = Pattern.compile(REGEX);
 
-                                sa[0] = sa[0].substring(1, sa[0].length() - 1);
+                                sa = pattern.split(line);
+//                                //Add the "]" to the end of sa[0]. It was taken off by the split
+//                                sa[0] = sa[0].concat("]");
+//                                //Add the "]" to the end of sa[0]. It was taken off by the split
+//                                if (sa.length > 1)
+//                                    sa[1] = "[".concat(sa[1]);
 
-                                splitString = pattern.split(sa[0]);
-
-                                //Define an array to store the in values from the string and initalize it to a value drifferent from NULL
-                                arr = new int[splitString.length];
-
-                                //Test
-                                for (int x = 0; x < splitString.length; x++) {
-
-                                    tempString = splitString[x].trim();
-
-                                    tempInt = Integer.parseInt(tempString);
-                                    arr[x] = tempInt;
-                                }
-                                // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
-                                byteBuffer1 = ByteBuffer.allocate(arr.length * 4);
-                                intBuffer = byteBuffer1.asIntBuffer();
-                                intBuffer.put(arr);
-
-                                pduTimeBytes = byteBuffer1.array();
                                 break;
 
                             default:
                                 System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
+                        }
 
+                        // timestamp is 8 bytes, size of smallest PDU?
+                        if (pduLogEncoding.equals(PduRecorder.ENCODING_PLAINTEXT) && 
+                            (sa != null) && (sa.length < 8) && (sa.length != 0))
+                        {
+                            System.err.println("Error: ENCODING_PLAINTEXT parsing error due to line too short, offending line follows:");
+                            System.err.println(line);
+                            exitWithFailure();
+                        }
+
+                        if (startNanoTime == null) {
+                            startNanoTime = System.nanoTime(); // initialize
+                        }
+                        // get timestamp pduTimeBytes, i.e. 8 bytes represented by a Java long
+                        switch (pduLogEncoding)
+                        {
+                            case PduRecorder.ENCODING_BASE64:
+                                // no longer computed separately in BASE64, one single block is decompressed instead of two
+//                              pduTimeBytes = base64Decoder.decode(sa[0]); 
+                                break;
+
+                            case PduRecorder.ENCODING_PLAINTEXT:
+
+//                                // Split first String into multiple Strings cotaining integers
+//                                REGEX = ",";
+//                                pattern = Pattern.compile(REGEX);
+//
+////                                sa[0] = sa[0].substring(1, sa[0].length() - 1); // no longer has prepended [
+//
+//                                splitString = pattern.split(sa[0]);
+//
+//                                //Define an array to store the in values from the string and initalize it to a value different from NULL
+//                                intArray = new int[8];
+//
+//                                //Test
+//                                for (int x = 0; x < splitString.length; x++) {
+//
+//                                    tempString = splitString[x].trim();
+//
+//                                    tempInt = Integer.parseInt(tempString);
+//                                    arr[x] = tempInt;
+//                                }
+//                                // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
+//                                byteBuffer1 = ByteBuffer.allocate(arr.length * 4);
+//                                intBuffer = byteBuffer1.asIntBuffer();
+//                                intBuffer.put(arr);
+//
+//                                pduTimeBytes = byteBuffer1.array();
+                                
+                                for (int i = 0; i < 8; i++)
+                                {
+                                    pduTimeBytes[i] = Byte.parseByte(sa[i]);
+                                }
+                                break;
+
+                            default:
+                                System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
                         }
 
                         pduTimeInterval = Longs.fromByteArray(pduTimeBytes);
@@ -234,83 +263,101 @@ public class PduPlayer {
 
                         targetSimTime = startNanoTime + pduTimeInterval;  // when we should send the packet
                         now = System.nanoTime();
-                        sleepTime = targetSimTime - now; //System.nanoTime(); // the difference between then and now
+                        sleepTime = targetSimTime - now; // the difference between then and now
 
-                        if (sleepTime > 20000000) { // 20 ms //
+                        if (sleepTime > 20000000) { // 20 msec
                             //System.out.println("sim interval = " + pduTimeInterval + ", sleeping for " + sleepTime/1000000l + " ms");
                             sleep(sleepTime / 1000000L, (int) (sleepTime % 1000000L));
                         }
 
-                        byte[] buffer;
-
-                        switch (pduLogEncoding) {
-                            case "ENCODING_BASE64":
-                                buffer = base64Decoder.decode(sa[1]);
-                                if (netSend) {
-                                    datagramPacket = new DatagramPacket(buffer, buffer.length, addr, port);
+                        // now get rest of buffer for PDU fields
+                        byte[] byteBuffer, pduBuffer;
+                        switch (pduLogEncoding)
+                        {
+                            case PduRecorder.ENCODING_BASE64:
+                                // TODO if string included prior comma, handle it
+                                byteBuffer = base64Decoder.decode(sa[0]); // no longer a pair of comma-separated blocks
+                                 pduBuffer = new byte[byteBuffer.length - 8];
+                                // get pduTimeBytes from first 8 characters, then remainder of buffer
+                                for (int i = 0; i < byteBuffer.length; i++)
+                                {
+                                    if (i < 8)
+                                        pduTimeBytes[i] = byteBuffer[i];
+                                    else pduBuffer[i-8] = byteBuffer[i];
+                                }
+                                
+                                if (netSend) 
+                                {
+                                    datagramPacket = new DatagramPacket(pduBuffer, pduBuffer.length, addr, port);
                                     datagramSocket.send(datagramPacket);
-                                    type = DisPduType.getEnumForValue(Byte.toUnsignedInt(buffer[2])); // 3rd byte
-                                    System.out.println("Sent PDU: " + type);
+                                    pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(pduBuffer[2])); // 3rd byte
+                                    System.out.println("Sent PDU: " + pduType);
                                 }
                                 break;
 
-                            case "ENCODING_PLAINTEXT":
+                            case PduRecorder.ENCODING_PLAINTEXT:
 
                                 //---Code Tobi for Plain Text---
                                 // Handle the second String
                                 // Split second String into multiple Strings containing integers
-                                REGEX = ",";
-                                pattern = Pattern.compile(REGEX);
-
-                                sa[1] = sa[1].substring(1, sa[1].length() - 1);
-
-                                splitString = pattern.split(sa[1]);
-
-                                //Define an array to store the in values from the string and initalize it to a value drifferent from NULL
-                                arr = new int[splitString.length];
-
-                                //Test
-                                for (int x = 0; x < splitString.length; x++) {
-
-                                    tempString = splitString[x].trim();
-
-                                    tempInt = Integer.parseInt(tempString);
-                                    arr[x] = tempInt;
-
-                                    //System.out.println(tempInt);
-                                }
-
-                                // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
-                                byteBuffer2 = ByteBuffer.allocate(arr.length * 4);
-                                intBuffer = byteBuffer2.asIntBuffer();
-                                intBuffer.put(arr);
-
-                                buffer = byteBuffer2.array();
-
-                                //When the byteBuffer stores the array of Integers into the byte array it stores a 7 as 0 0 0 7.
-                                //Therefore a shortBuffer is created where only every fourth value is stored.
-                                //it must be done with modulo instead of testing for "0" because a "0" could be there as value and not as padding
-                                bufferShort = new byte[byteBuffer2.array().length / 4];
-
-                                int bufferShortCounter = 0;
-
-                                for (int i = 1; i < byteBuffer2.array().length; i++) {
-
-                                    if (((i + 1) % 4) == 0) {
-
-                                        bufferShort[bufferShortCounter] = buffer[i];
-                                        bufferShortCounter++;
-                                    }
+//                                REGEX = ",";
+//                                pattern = Pattern.compile(REGEX);
+//
+////                                sa[1] = sa[1].substring(1, sa[1].length() - 1); // no longer has prepended [
+//
+//                                splitString = pattern.split(sa[1]);
+//
+//                                // Define an array to store the in values from the string and initalize it to a value different from NULL
+//                                intArray = new int[splitString.length];
+//
+//                                //Test
+//                                for (int x = 0; x < splitString.length; x++) {
+//
+//                                    tempString = splitString[x].trim();
+//
+//                                    tempInt = Integer.parseInt(tempString);
+//                                    intArray[x] = tempInt;
+//
+//                                    //System.out.println(tempInt);
+//                                }
+//                                // Credit:  https://stackoverflow.com/questions/1086054/how-to-convert-int-to-byte
+//                                byteBuffer2 = ByteBuffer.allocate(intArray.length * 4);
+//                                intBuffer = byteBuffer2.asIntBuffer();
+//                                intBuffer.put(intArray);
+//
+//                                buffer = byteBuffer2.array();
+//
+//                                //When the byteBuffer stores the array of Integers into the byte array it stores a 7 as 0 0 0 7.
+//                                //Therefore a shortBuffer is created where only every fourth value is stored.
+//                                //it must be done with modulo instead of testing for "0" because a "0" could be there as value and not as padding
+//                                bufferShort = new byte[byteBuffer2.array().length / 4];
+//
+//                                int bufferShortCounter = 0;
+//
+//                                for (int i = 1; i < byteBuffer2.array().length; i++) {
+//
+//                                    if (((i + 1) % 4) == 0) {
+//
+//                                        bufferShort[bufferShortCounter] = buffer[i];
+//                                        bufferShortCounter++;
+//                                    }
+//                                }
+                                
+                                byteBufferShort = new byte[sa.length - 8]; // skip first 8 bytes used for timestamp
+                                for (int i = 8; i < byteBufferShort.length; i++)
+                                {
+                                    byteBufferShort[i-8] = Byte.parseByte(sa[i]);
                                 }
                                 if (netSend) {
-                                    datagramPacket = new DatagramPacket(bufferShort, bufferShort.length, addr, port);
+                                    datagramPacket = new DatagramPacket(byteBufferShort, byteBufferShort.length, addr, port);
                                     datagramSocket.send(datagramPacket);
+                                    pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferShort[2])); // 3rd byte
+                                    System.out.println("Sent PDU: " + pduType);
+                                    
                                     // Add Points to X3D Components
-                                    globalByteBufferForX3dInterPolators = bufferShort.clone();
-                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
-                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
-                                    type = DisPduType.getEnumForValue(Byte.toUnsignedInt(bufferShort[2])); // 3rd byte
-                                    System.out.println("Sent PDU: " + type);
+//                                    globalByteBufferForX3dInterPolators = bufferShort.clone();
+//                                    x3dInterpolators.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
+//                                    x3dLineSet.addPointsToMap(globalByteBufferForX3dInterPolators); // gets cloned again
                                 }
                                 break;
 
@@ -318,17 +365,17 @@ public class PduPlayer {
                                 break;
                         }
 
-                        //ToDo: Is this also necessary for buffershort? If yes, put it inside the switch/Case statement
+                        // TODO Is this also necessary for buffershort? If yes, put it inside the switch/Case statement
                         if (rawListener != null) {
-                            rawListener.receiveBytes(bufferShort);
+                            rawListener.receiveBytes(byteBufferShort);
                         }
                         pduCount++;
                         if (scenarioPduCount != null) {
-                            scenarioPduCount++;
+                            scenarioPduCount++; // also increment overall PDU count
                         }
 
                         if (showPduCountsOneTime || pduCount % 5 == 0) {
-                            showCounts();
+//                            showCounts(); // TODO
                         }
                     }
                 }
@@ -344,7 +391,8 @@ public class PduPlayer {
             }
         } catch (IOException ex) {
             System.err.println("Exception reading/writing pdus: " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
-            thrd = null;
+            ex.printStackTrace();
+            playerThread = null;
             closer();
         }
     }
@@ -360,7 +408,7 @@ public class PduPlayer {
         showPduCountsOneTime = false;
     }
 
-    private void byebye() throws IOException {
+    private void exitWithFailure() throws IOException {
         System.out.println("Replay stopped.");
         closer();
         throw new IOException("PduPlayer parsing error");
@@ -390,6 +438,8 @@ public class PduPlayer {
             System.out.print("Total PDUs: ");
             showCounts();
             System.out.println();
+            System.out.flush();
+            System.err.flush();
             System.out.println("End of replay from " + f.getName());
 //            System.out.println(line.substring(PduRecorder.FINISH_COMMENT_MARKER.length()));
 
@@ -441,8 +491,10 @@ public class PduPlayer {
         String multicastAddress = DEFAULT_MULTICAST_ADDRESS;
         int       multicastPort = DEFAULT_MULTICAST_PORT;
         boolean sendToNet = true;
-    
+        
+        // create instance of class in this static block
         PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
-        pduPlayer.begin();
+        // thread automatically starts up when class is instantiated
+        pduPlayer.begin(); // default is self test through all logs in ancestor pduLog subdirectory
     }
 }
