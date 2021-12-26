@@ -64,6 +64,11 @@ public class FirePduTest extends PduTest
      testPduFinishingChecks(createdPdu); // shared tests in superclass
   }
   
+    /**
+     * Main method for testing.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
+     * @param args [address, port, descriptor] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
+     */
     public static void main(String[] args)
     {
         FirePduTest firePduTest = new FirePduTest();

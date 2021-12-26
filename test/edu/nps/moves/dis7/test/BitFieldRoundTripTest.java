@@ -21,24 +21,28 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Unit tests for satisfactory handling of various necessary bit fields, supporting each data type.
  * @author Don McGregor
  */
-@DisplayName("Bit Field Round TripTest")
+@DisplayName("Bit Field Round Trip Test")
 public class BitFieldRoundTripTest
 {
     Pdu receivedPdu;
     DisThreadedNetworkInterface disNetworkInterface;
     DisThreadedNetworkInterface.PduListener pduListener;
 
+  /** test method override */
   @BeforeAll
   public static void setUpClass()
   {
-    System.out.println("BitFieldRoundTripTest");
+    System.out.println("BitFieldRoundTripTest setUpClass()");
   }
 
+  /** test method override */
   @AfterAll
   public static void tearDownClass()
   {
+    System.out.println("BitFieldRoundTripTest tearDownClass()");
   }
 
+  /** setup disNetworkInterface and pduListener */
   @BeforeEach
   public void setUp()
   {   
@@ -52,6 +56,7 @@ public class BitFieldRoundTripTest
       disNetworkInterface.addListener(pduListener);
   }
 
+  /** Tear down disNetworkInterface */
   @AfterEach
   public void tearDown()
   {
@@ -59,6 +64,7 @@ public class BitFieldRoundTripTest
       disNetworkInterface.close();
   }
 
+  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   public void testRoundTrip()
   {
@@ -101,6 +107,8 @@ public class BitFieldRoundTripTest
     assertTrue(same, "Sent and received pdu not the same");
   }
 
+  /** Callback method for pduListener
+   * @param pdu received PDU*/
   private void setUpReceiver(Pdu pdu)
   {
     receivedPdu = pdu;
@@ -131,11 +139,16 @@ public class BitFieldRoundTripTest
     System.out.println();
  }
   
-  public static void main(String[] args)
-  {
-    BitFieldRoundTripTest brt = new BitFieldRoundTripTest();
-    brt.setUp();
-    brt.testRoundTrip();
-    brt.tearDown();
-  }
+    /**
+     * Main method for testing.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
+     * @param args [address, port, descriptor] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
+     */
+    public static void main(String[] args)
+    {
+        BitFieldRoundTripTest bitFieldRoundTripTest = new BitFieldRoundTripTest();
+        bitFieldRoundTripTest.setUp();
+        bitFieldRoundTripTest.testRoundTrip();
+        bitFieldRoundTripTest.tearDown();
+    }
 }

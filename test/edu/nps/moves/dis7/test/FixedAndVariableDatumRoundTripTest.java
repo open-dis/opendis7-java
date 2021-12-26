@@ -24,17 +24,21 @@ public class FixedAndVariableDatumRoundTripTest
   DisThreadedNetworkInterface disNetworkInterface;
   DisThreadedNetworkInterface.PduListener pduListener;
 
+  /** test method override */
   @BeforeAll
   public static void setUpClass()
   {
-    System.out.println("FixedAndVariableDatumRoundTripTest");
+    System.out.println("FixedAndVariableDatumRoundTripTest setUpClass()");
   }
 
+  /** test method override */
   @AfterAll
   public static void tearDownClass()
   {
+    System.out.println("FixedAndVariableDatumRoundTripTest tearDownClass()");
   }
 
+  /** setup disNetworkInterface and pduListener */
   @BeforeEach
   public void setUp()
   {   
@@ -48,6 +52,7 @@ public class FixedAndVariableDatumRoundTripTest
       disNetworkInterface.addListener(pduListener);
   }
 
+  /** Tear down disNetworkInterface */
   @AfterEach
   public void tearDown()
   {
@@ -91,6 +96,7 @@ public class FixedAndVariableDatumRoundTripTest
     variableDatum2.setVariableDatumValue(variableDatum2Value);
   }
 
+  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   public void testRoundTrip()
   {
@@ -119,16 +125,23 @@ public class FixedAndVariableDatumRoundTripTest
     assertTrue(receivedPdu.equals(sentPdu),"Sent and received pdus not identical");
   }
 
+  /** Callback method for pduListener
+   * @param pdu received PDU*/
   private void setUpReceiver(Pdu pdu)
   {
-    receivedPdu = pdu;
+        receivedPdu = pdu;
   }
 
-  public static void main(String[] args)
-  {
-    FixedAndVariableDatumRoundTripTest frt = new FixedAndVariableDatumRoundTripTest();
-    frt.setUp();
-    frt.testRoundTrip();
-    frt.tearDown();
-  }
+    /**
+     * Main method for testing.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
+     * @param args [address, port, descriptor] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
+     */
+    public static void main(String[] args)
+    {
+      FixedAndVariableDatumRoundTripTest frt = new FixedAndVariableDatumRoundTripTest();
+      frt.setUp();
+      frt.testRoundTrip();
+      frt.tearDown();
+    }
 }
