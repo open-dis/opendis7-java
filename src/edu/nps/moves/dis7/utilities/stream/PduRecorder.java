@@ -29,7 +29,7 @@ import org.apache.commons.io.FilenameUtils;
  * 
  * @author Mike Bailey, jmbailey@nps.edu
  */
-public class PduRecorder implements PduReceiver
+public class PduRecorder // implements PduReceiver
 {
     /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
@@ -272,8 +272,7 @@ public class PduRecorder implements PduReceiver
       if (disThreadedNetworkInterface != null)
       {
           disThreadedNetworkInterface.removeRawListener(disRawPduListener);
-          disThreadedNetworkInterface.setKillSentinel();
-          disThreadedNetworkInterface = null; // ensure reset upon re-start
+          disThreadedNetworkInterface.close();
       }
       if (includeHeaders)
       {
@@ -299,7 +298,7 @@ public class PduRecorder implements PduReceiver
      * @param newBuffer byte array for receiving data
      * @param newLength length of byte array
      */
-    @Override
+//    @Override
     public void receivePdu(byte[] newBuffer, int newLength)
     {
       if (java.util.Arrays.equals(newBuffer, oldBuffer))
@@ -312,8 +311,9 @@ public class PduRecorder implements PduReceiver
       if (startNanoTime == null)
           startNanoTime = packetReceivedNanoTime;
 
+      // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
       byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
-      //System.out.println("wrote time "+(packetRcvNanoTime - startNanoTime));
+      //System.out.println("wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
 
       byte[] byteBufferSized = Arrays.copyOf(newBuffer, newLength);
       DisPduType pduType;
@@ -331,20 +331,39 @@ public class PduRecorder implements PduReceiver
               break;
 
           case ENCODING_BASE64:
-              sb.append(base64Encoder.encodeToString(timeByteArray));
-              sb.append(',');
-              sb.append(base64Encoder.encodeToString(byteBufferSized)); 
+              byte[] mergedByteArray = Arrays.copyOf(timeByteArray, timeByteArray.length + byteBufferSized.length);
+              System.arraycopy(byteBufferSized, 0, mergedByteArray, timeByteArray.length, byteBufferSized.length);
+              sb.append(base64Encoder.encodeToString(mergedByteArray));
+/*                    
+// from Rick
+// https://stackoverflow.com/questions/5683486/how-to-combine-two-byte-arrays
+// public static byte[] concat(byte[] a, byte[] b) {​​​​​​​
+//    int lenA = a.length;
+//    int lenB = b.length;
+//    byte[] c = Arrays.copyOf(a, lenA + lenB);
+//    System.arraycopy(b, 0, c, lenA, lenB);
+//    return c;
+// }​​​​​​​
+
+// prior approach did not catenate before converting to base64. instead catenating results (which might not be correct)
+//              sb.append(base64Encoder.encodeToString(timeByteArray));
+//              sb.append(base64Encoder.encodeToString(byteBufferSized)); 
+*/
               break;
 
           case ENCODING_PLAINTEXT:
               // by Tobias Brennenstuhl Spring 2020
-              sb.append(Arrays.toString(timeByteArray).replace(" ", ""));
+              // Remove square brackets to end up with pure CSV
+              sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
               sb.append(',');
-              sb.append(Arrays.toString(byteBufferSized).replace(" ", ""));
+              sb.append(Arrays.toString(byteBufferSized).replace(" ", "").replace("[","").replace("]",""));
               sb.append(" # ");
               pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
               sb.append(pduType);
               break;
+              
+          // TODO test reader still works without extra [square brackets]
+          // TODO add option for TSV vice CSV
 
           default:
               if (ENCODING_OPTIONS_LIST.contains(encodingPduLog))
@@ -368,8 +387,10 @@ public class PduRecorder implements PduReceiver
             ((PrintWriter)logFileWriter).println();
         }
       }
-      catch (IOException ex) {
-        throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
+      catch (IOException ex)
+      {    
+          ex.printStackTrace();
+          throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
       }
       if (false) // debug
           System.out.println("PduRecorder: pduCount="+ pduCount);
@@ -387,7 +408,7 @@ public class PduRecorder implements PduReceiver
     }
 
       /**
-       * Deprecated, use getDisThreadedNetworkInterface() instead
+       * Deprecated due to class rename, use getDisThreadedNetworkInterface() instead
        * @see getDisThreadedNetworkInterface()
        * @return an instance of this DisThreadedNetworkInterface
        */
@@ -551,7 +572,7 @@ public class PduRecorder implements PduReceiver
             try {
                 Pdu nextPdu = factory.createPdu(allPDUTypesArray[i]);
                 disNetworkInterface.send(nextPdu);
-                Thread.sleep (50L); // let send/receive threads and streams catch up
+                Thread.sleep (100L); // let send/receive threads and streams catch up
             }
             catch (InterruptedException ex) {
               System.err.println("Exception sending Pdu " + pduTypeValue + ": " + ex.getLocalizedMessage());
