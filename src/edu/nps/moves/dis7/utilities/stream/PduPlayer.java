@@ -149,6 +149,8 @@ public class PduPlayer {
                      pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT;
                 else pduLogEncoding = PduRecorder.ENCODING_BINARY;
                 
+                System.out.flush();
+                System.err.flush();
                 System.out.println("Replaying PDU log file with " + pduLogEncoding + ": " + f.getAbsolutePath());
                     
                 for (String line : lines)
@@ -215,6 +217,10 @@ public class PduPlayer {
                         // get timestamp pduTimeBytes, i.e. 8 bytes represented by a Java long
                         switch (pduLogEncoding)
                         {
+                            case PduRecorder.ENCODING_BINARY:
+                                // TODO
+                                break;
+                                
                             case PduRecorder.ENCODING_BASE64:
                                 // no longer computed separately in BASE64, one single block is decompressed instead of two
 //                              pduTimeBytes = base64Decoder.decode(sa[0]); 
@@ -382,8 +388,8 @@ public class PduPlayer {
                 
                 //create X3D components - methods will create console output
                 if (netSend) {
-                    x3dInterpolators.makeX3dInterpolator();
-                    x3dLineSet.makeX3dLineSet();
+//                    x3dInterpolators.makeX3dInterpolator();
+//                    x3dLineSet.makeX3dLineSet();
                 }
             }
             if (rawListener != null) {
