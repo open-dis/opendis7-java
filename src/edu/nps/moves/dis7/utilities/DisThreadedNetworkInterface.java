@@ -699,9 +699,9 @@ public class DisThreadedNetworkInterface
      */
     public void setVerbose(boolean newValue)
     {
-        this.verbose   = newValue;
-        verboseReceipt = verbose;
-        verboseSending = verbose;
+        this.verbose        = newValue;
+        this.verboseReceipt = newValue;
+        this.verboseSending = newValue;
     }
     /**
      * Whether or not trace statements are provided when packets are sent or received.
