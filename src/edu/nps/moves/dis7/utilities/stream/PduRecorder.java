@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.io.FilenameUtils;
-
+ 
 /** Utility to save PDUs received over the network to disk, greatly simplifying the capture of DIS streams by applications.
  * 
  * Example <code>main()</code> self-test response shown in log file, example results also included.
