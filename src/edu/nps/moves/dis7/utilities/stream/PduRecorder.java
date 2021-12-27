@@ -538,22 +538,22 @@ public class PduRecorder // implements PduReceiver
                      PduFactory factory = new PduFactory(); // default appid, country, etc.
                     PduRecorder pduRecorder;
     DisThreadedNetworkInterface disNetworkInterface;
-    try 
-    {
-        pduRecorder = new PduRecorder(); // default address, port, output directory path
-    } 
-    catch(IOException ex) 
-    {
-      System.err.println("Exception creating PduRecorder: " + ex.getLocalizedMessage());
-      System.err.println(ex.getStackTrace());
-      return;
-    }
     DisPduType allPDUTypesArray[] = DisPduType.values();
     System.out.println("dis7.utilities.stream.PduRecorder allPDUTypesArray created, length=" + allPDUTypesArray.length + " ...");
     System.out.flush(); // ensure all output sent
     
     for (String currentEncoding : ENCODING_OPTIONS_LIST)
     {
+        try 
+        {
+            pduRecorder = new PduRecorder(); // default address, port, output directory path
+        } 
+        catch(IOException ex) 
+        {
+          System.err.println("Exception creating PduRecorder: " + ex.getLocalizedMessage());
+          System.err.println(ex.getStackTrace());
+          return;
+        }
         System.out.println("=================================================");
         System.out.println("Test PduRecorder encoding " + currentEncoding);
         pduRecorder.setEncodingPduLog(currentEncoding);
@@ -561,7 +561,7 @@ public class PduRecorder // implements PduReceiver
 //      pduRecorder.setPort(1); // option to avoid listening to other PDU streams during self test
         pduRecorder.setLogFileName("PduRecorderSelfTest" + currentEncoding + "_" + DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION);
         pduRecorder.start();
-        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface(); // must reinitialize after each start
+        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface(); // must reinitialize after each begin
         System.out.println("dis7.utilities.stream.PduRecorder pduRecorder started... isRunning()=" + pduRecorder.isRunning());
 
         for (int i=1; i < allPDUTypesArray.length; i = i + 1)
