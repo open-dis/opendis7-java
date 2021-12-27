@@ -6,8 +6,8 @@
             <name>open-dis7-java</name>
             <explicit-platform explicit-source-supported="true"/>
             <source-roots>
-                <root id="src.src-generated.dir"/>
                 <root id="src.dir"/>
+                <root id="src.src-generated.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
