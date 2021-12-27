@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 
 /**
  * This is a thread-safe, multicast DIS network interface class which greatly simplifies reading and writing of PDUs for applications.
+ * This simplifies and consolidates all reading, writing and threading of DIS over the network.
  * 
  * Example <code>main()</code> self-test response shown in log file.
  * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt</a>
@@ -853,7 +854,7 @@ public class DisThreadedNetworkInterface
                 @Override
                 public void incomingPdu(Pdu newPdu)
                 {
-                    System.out.println( "received newPdu " + newPdu.getPduType().toString());
+                    System.out.println( "*** DisThreadedNetworkInterface main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
                     System.out.flush();
                 }
             };
@@ -871,8 +872,7 @@ public class DisThreadedNetworkInterface
         {
             System.out.println("*** DisThreadedNetworkInterface main() self test InterruptedException " + ex.getMessage());
         }
-        finally // clean up following regular completion and any interruptions
-            
+        finally // carefully clean up following regular completion and any interruptions  
         {
             if (disThreadedNetworkInterface != null)
                 disThreadedNetworkInterface.close();
