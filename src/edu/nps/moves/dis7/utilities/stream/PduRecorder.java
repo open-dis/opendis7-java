@@ -25,8 +25,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.apache.commons.io.FilenameUtils;
 
-/** Utility to save PDUs received over the network to disk
+/** Utility to save PDUs received over the network to disk, greatly simplifying the capture of DIS streams by applications.
  * 
+ * Example <code>main()</code> self-test response shown in log file.
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTest.log.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTest.log.txt</a>
+ * 
+ * @author Don Brutzman, brutzman@nps.edu
  * @author Mike Bailey, jmbailey@nps.edu
  */
 public class PduRecorder // implements PduReceiver

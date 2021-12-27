@@ -19,8 +19,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This is a thread-safe, multicast DIS network interface class.
+ * This is a thread-safe, multicast DIS network interface class which greatly simplifies reading and writing of PDUs for applications.
  * 
+ * Example <code>main()</code> self-test response shown in log file.
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt</a>
+ * 
+ * @author Don Brutzman, brutzman@nps.edu
  * @author Mike Bailey, jmbailey@nps.edu
  * @since Jul 29, 2019
  */
@@ -538,7 +542,7 @@ public class DisThreadedNetworkInterface
     }
 
     /** Tell sendingThread and receiveThread to stop. */
-    public void setKillSentinelAndInterrupts() // TODO rename AndInterrupts
+    public void setKillSentinelAndInterrupts()
     {
       killed = true; // set loop sentinel for threads to finish
       

@@ -19,9 +19,13 @@ import java.util.Base64;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/** Utility to play back log files of recorded PDUs. These PDUs can then be resent
+/** Utility to play back log files of recorded PDUs, found in ancestor <code>pduLogs</code> subdirectory. These PDUs can then be resent
  * over a multicast group address, or processed locally.
  * 
+ * Example <code>main()</code> self-test response shown in log file.
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduPlayerSelfTestLog.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduPlayerSelfTestLog.txt</a>
+ * 
+ * @author Don Brutzman, brutzman@nps.edu
  * @author Mike Bailey, jmbailey@nps.edu
  */
 public class PduPlayer {
