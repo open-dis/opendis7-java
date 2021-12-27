@@ -1,0 +1,28 @@
+ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/utilities/DisThreadedNetworkInterface.java -Drun.class=edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface run-single
+init:
+Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
+warning: [options] bootstrap class path not set in conjunction with -source 8
+1 warning
+compile-single:
+run-single:
+*** DisThreadedNetworkInterface main() self test started...
+[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface main() self test] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
+DisThreadedNetworkInterface createThreads() receiveThread.isAlive()=true
+DisThreadedNetworkInterface createThreads() sendingThread.isAlive()=true
+*** DisThreadedNetworkInterface main() self test initialized...
+*** DisThreadedNetworkInterface main() self test sending espdu...
+[DisThreadedNetworkInterface main() self test] [sending  1] DisPduType 01 ENTITY_STATE   self test, size 144 bytes)
+[DisThreadedNetworkInterface main() self test] [receipt  1] DisPduType 01 ENTITY_STATE   self test, size 144 bytes)
+received newPdu DisPduType 01 ENTITY_STATE
+*** setKillSentinelAndInterrupts() killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** DisThreadedNetworkInterface close(): pdus2send.size()=0 baos.size()=0 dos.size()=144
+[DisThreadedNetworkInterface main() self test] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
+*** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
+*** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
+*** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
+*** DisThreadedNetworkInterface main() self test complete.
+BUILD SUCCESSFUL (total time: 3 seconds)
