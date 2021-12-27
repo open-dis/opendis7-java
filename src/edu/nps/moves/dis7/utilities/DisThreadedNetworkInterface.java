@@ -81,7 +81,7 @@ public class DisThreadedNetworkInterface
     DatagramPacket        packet;
 
     /**
-     * Pdu listener class and interface
+     * Pdu listener interface is an internal class.
      */
     public interface PduListener
     {
@@ -93,7 +93,7 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Raw pdu listener class and interface
+     * Raw pdu listener interface is an internal class.
      */
     public interface RawPduListener
     {
