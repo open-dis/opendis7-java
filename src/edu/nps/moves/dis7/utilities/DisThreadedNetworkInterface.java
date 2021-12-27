@@ -407,6 +407,7 @@ public class DisThreadedNetworkInterface
         ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
         DatagramPacket receivedPacket = new DatagramPacket(byteBuffer.array(), byteBuffer.capacity());
 
+        // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
         while (!killed && !Thread.currentThread().isInterrupted()) // loop until terminated
         {
             try
@@ -456,6 +457,7 @@ public class DisThreadedNetworkInterface
         dos    = new DataOutputStream(baos);
         packet = new DatagramPacket(baos.toByteArray(), baos.size(), inetSocket);
 
+        // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
         while (!killed && !Thread.currentThread().isInterrupted()) // loop until terminated
         {
             try
