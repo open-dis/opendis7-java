@@ -27,8 +27,11 @@ import org.apache.commons.io.FilenameUtils;
 
 /** Utility to save PDUs received over the network to disk, greatly simplifying the capture of DIS streams by applications.
  * 
- * Example <code>main()</code> self-test response shown in log file.
+ * Example <code>main()</code> self-test response shown in log file, example results also included.
  * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTest.log.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTest.log.txt</a>
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_BASE64_PduCaptureLog.dislog">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_BASE64_PduCaptureLog.dislog</a>
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_BINARY_PduCaptureLog.dislog">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_BINARY_PduCaptureLog.dislog</a>
+ * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/stream/PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog</a>
  * 
  * @author Don Brutzman, brutzman@nps.edu
  * @author Mike Bailey, jmbailey@nps.edu
