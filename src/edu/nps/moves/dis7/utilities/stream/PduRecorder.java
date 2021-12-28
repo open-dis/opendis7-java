@@ -514,7 +514,7 @@ public class PduRecorder // implements PduReceiver
     }
   
     /**
-     * Entry point invocation, runs selfTest().
+     * Entry point invocation to facilitate developmental testing, runs selfTest() method.
      *
      * @param args none supported, TODO offer path/filename
      */
@@ -522,8 +522,8 @@ public class PduRecorder // implements PduReceiver
     {
         try
         {
-            PduRecorder pduRecorder = new PduRecorder();
-            pduRecorder.selfTest(args);
+            PduRecorder pduRecorder = new PduRecorder(); // instantiates an instance object of this class,
+            pduRecorder.selfTest(args);                  // and tests it.  Results shown in .dislog files.
         }
         catch (IOException ioe)
         {
@@ -532,8 +532,8 @@ public class PduRecorder // implements PduReceiver
     }
   
   /** This selfTest() method saves PDU output logs to assigned directory using all supported encodings. 
-   *  Separately Invoking the edu.nps.moves.dis7.examples.PduReaderPlayer will playback all logs 
-   *  written to that log directory
+   *  Further checking can be accomplished by separately Invoking the edu.nps.moves.dis7.examples.PduReaderPlayer
+   *  which will playback all logs written to that log directory.
    * 
    * @param args none supported, TODO offer path/filename
    */
