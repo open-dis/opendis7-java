@@ -9,100 +9,6 @@ warning: [options] bootstrap class path not set in conjunction with -source 8
 compile-single:
 run-single:
 PduPlayer begin() playing DIS logs found in ancestor pduLog directory.
-Replaying PDU log file with ENCODING_BASE64: C:\x3d-github\open-dis7-java\pduLog\PduRecorderSelfTestENCODING_BASE64_PduCaptureLog.dislog
-Sent PDU: DisPduType 01 ENTITY_STATE
-Sent PDU: DisPduType 02 FIRE
-Sent PDU: DisPduType 03 DETONATION
-Sent PDU: DisPduType 04 COLLISION
-Sent PDU: DisPduType 05 SERVICE_REQUEST
-Sent PDU: DisPduType 06 RESUPPLY_OFFER
-Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
-Sent PDU: DisPduType 08 RESUPPLY_CANCEL
-Sent PDU: DisPduType 09 REPAIR_COMPLETE
-Sent PDU: DisPduType 10 REPAIR_RESPONSE
-Sent PDU: DisPduType 11 CREATE_ENTITY
-Sent PDU: DisPduType 12 REMOVE_ENTITY
-Sent PDU: DisPduType 13 START_RESUME
-Sent PDU: DisPduType 14 STOP_FREEZE
-Sent PDU: DisPduType 15 ACKNOWLEDGE
-Sent PDU: DisPduType 16 ACTION_REQUEST
-Sent PDU: DisPduType 17 ACTION_RESPONSE
-Sent PDU: DisPduType 18 DATA_QUERY
-Sent PDU: DisPduType 19 SET_DATA
-Sent PDU: DisPduType 20 DATA
-Sent PDU: DisPduType 21 EVENT_REPORT
-Sent PDU: DisPduType 22 COMMENT
-Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
-Sent PDU: DisPduType 24 DESIGNATOR
-Sent PDU: DisPduType 25 TRANSMITTER
-Sent PDU: DisPduType 26 SIGNAL
-Sent PDU: DisPduType 27 RECEIVER
-Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
-Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
-Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
-Sent PDU: DisPduType 31 INTERCOM_SIGNAL
-Sent PDU: DisPduType 32 INTERCOM_CONTROL
-Sent PDU: DisPduType 33 AGGREGATE_STATE
-Sent PDU: DisPduType 34 ISGROUPOF
-Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
-Sent PDU: DisPduType 36 ISPARTOF
-Sent PDU: DisPduType 37 MINEFIELD_STATE
-Sent PDU: DisPduType 38 MINEFIELD_QUERY
-Sent PDU: DisPduType 39 MINEFIELD_DATA
-Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
-Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
-Sent PDU: DisPduType 42 GRIDDED_DATA
-Sent PDU: DisPduType 43 POINT_OBJECT_STATE
-Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
-Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
-Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
-Sent PDU: DisPduType 47 APPEARANCE
-Sent PDU: DisPduType 48 ARTICULATED_PARTS
-Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
-Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
-Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
-Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
-Sent PDU: DisPduType 53 START_RESUME_RELIABLE
-Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
-Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
-Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
-Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
-Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
-Sent PDU: DisPduType 59 SET_DATA_RELIABLE
-Sent PDU: DisPduType 60 DATA_RELIABLE
-Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
-Sent PDU: DisPduType 62 COMMENT_RELIABLE
-Sent PDU: DisPduType 63 RECORD_RELIABLE
-Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
-Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
-Sent PDU: DisPduType 66 COLLISION_ELASTIC
-Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
-Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
-Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
-Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
-Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
-Sent PDU: DisPduType 72 ATTRIBUTE
-Encoding'ENCODING_BINARY not recognized or supported
-Replaying PDU log file with ENCODING_BINARY: C:\x3d-github\open-dis7-java\pduLog\PduRecorderSelfTestENCODING_BINARY_PduCaptureLog.dislog
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
-Encoding'ENCODING_BINARY not recognized or supported
 ENCODING_PLAINTEXT
 Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\open-dis7-java\pduLog\PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog
 Sent PDU: DisPduType 01 ENTITY_STATE
@@ -177,6 +83,6 @@ Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
 Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
 Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
 Sent PDU: DisPduType 72 ATTRIBUTE
-Total PDUs: 164
-End of replay from PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog
+Total PDUs: 72
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog
 BUILD SUCCESSFUL (total time: 8 seconds)
