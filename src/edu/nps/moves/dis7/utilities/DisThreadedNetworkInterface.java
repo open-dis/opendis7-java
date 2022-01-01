@@ -845,8 +845,8 @@ public class DisThreadedNetworkInterface
 
             System.out.println(TRACE_PREFIX + "self test sending espdu...");
             send(espdu);
-            // briefly wait get response from threaded receiver
-            Thread.sleep(100L);
+            // this test is short, must briefly wait to get synchornized with threaded sender and receiver
+            Thread.sleep(500L);
             System.out.flush();
             System.err.flush();
             // all done, close() in finally block
