@@ -309,25 +309,25 @@ public class DisThreadedNetworkInterface
     {
         if (receiveThread == null)
         {
-//          System.out.println("DisThreadedNetworkInterface createThreads() start receiveThread...");
+//          System.out.println(TRACE_PREFIX + "createThreads() start receiveThread...");
             receiveThread = new Thread(receiveThreadRunnable, "receiveThread");
             // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
             receiveThread.setDaemon(false); // user thread, not system thread
             receiveThread.setPriority(Thread.NORM_PRIORITY);
             receiveThread.start();
         }
-        System.out.println("DisThreadedNetworkInterface createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
+        System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
 
         if (sendingThread == null)
         {
-//          System.out.println("DisThreadedNetworkInterface createThreads() start sendingThread...");
+//          System.out.println(TRACE_PREFIX + "createThreads() start sendingThread...");
             sendingThread = new Thread(sendingThreadRunnable, "sendingThread");
             // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
             sendingThread.setDaemon(false); // user thread, not system thread
             sendingThread.setPriority(Thread.NORM_PRIORITY);
             sendingThread.start();
         }
-        System.out.println("DisThreadedNetworkInterface createThreads() sendingThread.isAlive()=" + receiveThread.isAlive());
+        System.out.println(TRACE_PREFIX + "createThreads() sendingThread.isAlive()=" + receiveThread.isAlive());
     }
     /**
      * Can be used to restart DisThreadedNetworkInterface if closed.
@@ -570,7 +570,7 @@ public class DisThreadedNetworkInterface
              dos.flush();      // immediately force pdu write, if any remain
             baos.close();
              dos.close();
-            System.out.println ("*** DisThreadedNetworkInterface close():" + 
+            System.out.println (TRACE_PREFIX + "close():" + 
                     " pdus2send.size()=" + pdus2send.size() +
                     " baos.size()=" + baos.size() + " dos.size()=" + dos.size());
              
@@ -603,7 +603,7 @@ public class DisThreadedNetworkInterface
         }
         catch (Exception e)
         {
-            System.err.println ("*** DisThreadedNetworkInterface close()() unexpected exception!");
+            System.err.println (TRACE_PREFIX + "close()() unexpected exception!");
         }
     }
     public void killThread(Thread threadToKill)
@@ -618,7 +618,7 @@ public class DisThreadedNetworkInterface
             }
             catch (InterruptedException ie)
             {
-                System.err.println ("*** DisThreadedNetworkInterface threadToKill join() failed to wait for threadToKill to die");
+                System.err.println (TRACE_PREFIX + "threadToKill join() failed to wait for threadToKill to die");
                 System.err.flush();
                 ie.printStackTrace(System.err);
             }
@@ -822,16 +822,59 @@ public class DisThreadedNetworkInterface
         TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
     }
     
+    private void selfTest()
+    {
+        System.out.println(TRACE_PREFIX + "main() self test initialized...");
+        try
+        {
+            EntityStatePdu espdu = new EntityStatePdu();
+            espdu.setMarking("self test");
+            setVerbose(true);
+            DisThreadedNetworkInterface.PduListener pduListener;
+            pduListener = new DisThreadedNetworkInterface.PduListener()
+            {
+                /** Callback handler for listener */
+                @Override
+                public void incomingPdu(Pdu newPdu)
+                {
+                    System.out.println(TRACE_PREFIX + "main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
+                    System.out.flush();
+                }
+            };
+            addListener(pduListener);
+
+            System.out.println(TRACE_PREFIX + "self test sending espdu...");
+            send(espdu);
+            // briefly wait get response from threaded receiver
+            Thread.sleep(100L);
+            System.out.flush();
+            System.err.flush();
+            // all done, close() in finally block
+        }
+        catch(InterruptedException ex)
+        {
+            System.out.println("[DisThreadedNetworkInterface] main() self test InterruptedException " + ex.getMessage());
+        }
+        finally // carefully clean up following regular completion and any interruptions  
+        {
+            close();
+
+            System.out.flush();
+            System.err.flush();
+            System.out.println("[DisThreadedNetworkInterface] main() self test complete.");
+        }
+    }
+    
     /**
-     * Main method for testing.
+     * Main method provides support for testing.
      * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
      * @param args [address, port, descriptor] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
      */
     public static void main(String[] args)
     {
+        System.out.println("[DisThreadedNetworkInterface] main() started...");
+
         DisThreadedNetworkInterface disThreadedNetworkInterface;
-          
-        System.out.println("*** DisThreadedNetworkInterface main() self test started...");
         
         String selfTestDescriptor = "main() self test";
         if ((args != null) && args.length == 3)
@@ -840,46 +883,6 @@ public class DisThreadedNetworkInterface
              disThreadedNetworkInterface = new DisThreadedNetworkInterface( /* default address, port */ selfTestDescriptor);
         else disThreadedNetworkInterface = new DisThreadedNetworkInterface(args[0], Integer.parseInt(args[1]), selfTestDescriptor);
         
-        System.out.println("*** DisThreadedNetworkInterface main() self test initialized...");
-        
-        try
-        {
-            EntityStatePdu espdu = new EntityStatePdu();
-            espdu.setMarking("self test");
-            disThreadedNetworkInterface.setVerbose(true);
-            DisThreadedNetworkInterface.PduListener pduListener;
-            pduListener = new DisThreadedNetworkInterface.PduListener()
-            {
-                /** Callback handler for listener */
-                @Override
-                public void incomingPdu(Pdu newPdu)
-                {
-                    System.out.println( "*** DisThreadedNetworkInterface main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
-                    System.out.flush();
-                }
-            };
-            disThreadedNetworkInterface.addListener(pduListener);
-
-            System.out.println("*** DisThreadedNetworkInterface main() self test sending espdu...");
-            disThreadedNetworkInterface.send(espdu);
-            // briefly wait get response from threaded receiver
-            Thread.sleep(500L);
-            System.out.flush();
-            System.err.flush();
-            // all done, close() in finally block
-        }
-        catch(InterruptedException ex)
-        {
-            System.out.println("*** DisThreadedNetworkInterface main() self test InterruptedException " + ex.getMessage());
-        }
-        finally // carefully clean up following regular completion and any interruptions  
-        {
-            if (disThreadedNetworkInterface != null)
-                disThreadedNetworkInterface.close();
-
-            System.out.flush();
-            System.err.flush();
-            System.out.println("*** DisThreadedNetworkInterface main() self test complete.");
-        }
+        disThreadedNetworkInterface.selfTest();
     }
 }
