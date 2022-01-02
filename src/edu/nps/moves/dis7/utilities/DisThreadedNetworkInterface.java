@@ -818,10 +818,11 @@ public class DisThreadedNetworkInterface
      */
     public void setDescriptor(String newDescriptor) 
     {
-        this.descriptor = newDescriptor;
-        TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
+        if (newDescriptor != null)
+            this.descriptor = newDescriptor.trim();
+        TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
     }
-    
+    /** Self test to check basic operation, invoked by main() */
     private void selfTest()
     {
         System.out.println(TRACE_PREFIX + "main() self test initialized...");
