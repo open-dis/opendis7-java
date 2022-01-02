@@ -133,31 +133,6 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Object constructor using default multicast address and port, no descriptor
-     */
-    public DisThreadedNetworkInterface()
-    {
-        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "");
-    }
-    /**
-     * Object constructor with descriptor, using default multicast address and port
-     * @param newDescriptor simple descriptor name for this interface
-     */
-    public DisThreadedNetworkInterface(String newDescriptor)
-    {
-        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor);
-    }
-    /**
-     * Object constructor using specified multicast address and port 
-     * @param address the multicast group or unicast address to utilize
-     * @param port the multicast port to utilize
-     */
-    public DisThreadedNetworkInterface(String address, int port)
-    {
-        
-        this(address, port, "");
-    }
-    /**
      * Object constructor using specified multicast address and port, plus descriptor.
      * @param address the multicast group or unicast address to utilize
      * @param port the multicast port to utilize
@@ -184,6 +159,31 @@ public class DisThreadedNetworkInterface
         networkInterface = findIpv4Interface();
         
         begin();
+    }
+    /**
+     * Object constructor using specified multicast address and port 
+     * @param address the multicast group or unicast address to utilize
+     * @param port the multicast port to utilize
+     */
+    public DisThreadedNetworkInterface(String address, int port)
+    {
+        
+        this(address, port, "");
+    }
+    /**
+     * Object constructor with descriptor, using default multicast address and port
+     * @param newDescriptor simple descriptor name for this interface
+     */
+    public DisThreadedNetworkInterface(String newDescriptor)
+    {
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor);
+    }
+    /**
+     * Object constructor using default multicast address and port, no descriptor
+     */
+    public DisThreadedNetworkInterface()
+    {
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "");
     }
 
     /**
