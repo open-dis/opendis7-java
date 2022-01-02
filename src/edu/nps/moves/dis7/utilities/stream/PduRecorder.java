@@ -187,8 +187,8 @@ public class PduRecorder // implements PduReceiver
 
       /**
        * @param newEncodingPduLog the pduLogEncoding to set
-       */
-      public void setEncodingPduLog(String newEncodingPduLog)
+       * @return same object to permit progressive setters */
+      public PduRecorder setEncodingPduLog(String newEncodingPduLog)
       {
           newEncodingPduLog = newEncodingPduLog.trim();
           String errorMessage = "*** setEncodingPduLog(" + newEncodingPduLog + ") ";
@@ -196,7 +196,7 @@ public class PduRecorder // implements PduReceiver
           {
               encodingPduLog = newEncodingPduLog;
               includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
-              return;
+              return this;
           }
           else if (ENCODING_OPTIONS_TODO.contains(newEncodingPduLog))
           {
@@ -209,7 +209,7 @@ public class PduRecorder // implements PduReceiver
           errorMessage += ", encodingPduLog=" + encodingPduLog + " is unchanged";
           System.err.println (errorMessage);
           System.err.flush(); // since network threads may be occurring
-          // return
+          return this;
       }
 
     /** Resume instance operation
@@ -611,12 +611,13 @@ public class PduRecorder // implements PduReceiver
      * Network address for send and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
      * @param newAddress the new network address to set
-     */
-    public void setAddress(String newAddress) {
+     * @return same object to permit progressive setters */
+    public PduRecorder setAddress(String newAddress) {
         if (isRunning() && !disAddress.equals(newAddress))
             System.out.println(TRACE_PREFIX + "*** warning, attempting to change network address while running...");
         // TODO warn if netIF already created
         this.disAddress = newAddress;
+        return this;
     }
     /** Get network port used, multicast or unicast.
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
@@ -630,13 +631,14 @@ public class PduRecorder // implements PduReceiver
     /** Set network port used, multicast or unicast.
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
      * @param newPortValue the disPort value to set
-     */
-    public void setPort(int newPortValue)
+     * @return same object to permit progressive setters */
+    public PduRecorder setPort(int newPortValue)
     {
         if (isRunning() && (this.disPort != newPortValue))
             System.out.println(TRACE_PREFIX + "*** warning, attempting to change network port while running...");
         // TODO warn if netIF already created
         this.disPort = newPortValue;
+        return this;
     }
     /**
      * Get simple descriptor (such as parent class name) for this network interface, used in trace statements
@@ -649,19 +651,21 @@ public class PduRecorder // implements PduReceiver
     /**
      * Set new simple descriptor (such as parent class name) for this network interface, used in trace statements
      * @param newDescriptor simple descriptor name
-     */
-    public void setDescriptor(String newDescriptor) 
+     * @return same object to permit progressive setters */
+    public PduRecorder setDescriptor(String newDescriptor) 
     {
-        this.descriptor = newDescriptor;
-        TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
+        if (newDescriptor != null)
+            this.descriptor = newDescriptor.trim();
+        TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
+        return this;
     }
     /**
      * Set whether or not trace statements are provided when packets are sent or received.
      * @param newValue the verbose status to set, also resets verboseReceipt and verboseSending to match.
      * @see verboseReceipt
      * @see verboseSending
-     */
-    public void setVerbose(boolean newValue)
+     * @return same object to permit progressive setters */
+    public PduRecorder setVerbose(boolean newValue)
     {
         this.verbose   = newValue;
         verboseReceipt = verbose;
@@ -670,6 +674,7 @@ public class PduRecorder // implements PduReceiver
         {
             disThreadedNetworkInterface.setVerbose(newValue);
         }
+        return this;
     }
     /**
      * Whether or not trace statements are provided when packets are sent or received.
@@ -686,8 +691,8 @@ public class PduRecorder // implements PduReceiver
      * @param newValue the verboseReceipt status to set
      * @see verbose
      * @see verboseSending
-     */
-    public void setVerboseReceipt(boolean newValue)
+     * @return same object to permit progressive setters */
+    public PduRecorder setVerboseReceipt(boolean newValue)
     {
         this.verboseReceipt = newValue;
         verbose = (verboseReceipt || verboseSending);
@@ -695,6 +700,7 @@ public class PduRecorder // implements PduReceiver
         {
             disThreadedNetworkInterface.setVerboseReceipt(newValue);
         }
+        return this;
     }
     /**
      * Whether or not trace statements are provided when packets are received.
@@ -710,8 +716,8 @@ public class PduRecorder // implements PduReceiver
      * @param newValue the verboseSending status to set
      * @see verbose
      * @see verboseReceipt
-     */
-    public void setVerboseSending(boolean newValue)
+     * @return same object to permit progressive setters */
+    public PduRecorder setVerboseSending(boolean newValue)
     {
         this.verboseSending = newValue;
         verbose = (verboseReceipt || verboseSending);
@@ -719,6 +725,7 @@ public class PduRecorder // implements PduReceiver
         {
             disThreadedNetworkInterface.setVerboseSending(newValue);
         }
+        return this;
     }
     /**
      * Whether or not trace statements are provided when packets are sent.
@@ -741,14 +748,15 @@ public class PduRecorder // implements PduReceiver
     /**
      * Set whether or not trace statements include timestamp values.
      * @param verboseIncludesTimestamp the value to set
-     */
-    public void setVerboseIncludesTimestamp(boolean verboseIncludesTimestamp)
+     * @return same object to permit progressive setters */
+    public PduRecorder setVerboseIncludesTimestamp(boolean verboseIncludesTimestamp)
     {
         this.verboseIncludesTimestamp = verboseIncludesTimestamp;
         if (disThreadedNetworkInterface != null)
         {
             disThreadedNetworkInterface.setVerboseIncludesTimestamp(verboseIncludesTimestamp);
         }
+        return this;
     }
 
     /**
@@ -760,9 +768,10 @@ public class PduRecorder // implements PduReceiver
 
     /**
      * @param logFileName the logFileName to set
-     */
-    public void setLogFileName(String logFileName) {
+     * @return same object to permit progressive setters */
+    public PduRecorder setLogFileName(String logFileName) {
         this.logFileName = logFileName;
+        return this;
     }
 
     /**
@@ -776,10 +785,11 @@ public class PduRecorder // implements PduReceiver
     /**
      * Set output directory for this PduRecorder
      * @param outputDirectory the outputDirectory to set
-     */
-    public void setOutputDirectory(String outputDirectory) {
+     * @return same object to permit progressive setters */
+    public PduRecorder setOutputDirectory(String outputDirectory) {
         this.outputDirectory = outputDirectory;
         outputDirectoryPath = new File(outputDirectory).toPath();
+        return this;
     }
 
     /**
