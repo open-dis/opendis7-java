@@ -288,7 +288,7 @@ public class PduRecorder // implements PduReceiver
       }
       try {
           System.out.println();
-          System.out.println("PduRecorder.selfTest() stop() closing recorder log file: " + logFile.getCanonicalPath());
+          System.out.println("PduRecorder.stop() closing recorder log file: " + logFile.getCanonicalPath());
           logFileWriter.close(); // a flush occurs first during a close
       } 
       catch (IOException ex) {
