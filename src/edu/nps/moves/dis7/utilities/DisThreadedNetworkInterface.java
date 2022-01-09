@@ -167,7 +167,6 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String address, int port)
     {
-        
         this(address, port, "");
     }
     /**
