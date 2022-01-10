@@ -66,7 +66,7 @@
         <echo message="================"/>
         <antcall target="deploy.guidance"/>
         <echo message="================"/>
-        <echo message="build all complete"/>
+        <echo message="open-dis7-java build all complete"/>
     </target>
     
     <target name="clean.pduLog" description="clean recorded pduLog files">
