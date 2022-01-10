@@ -164,11 +164,11 @@ public class PduSender
       for (int idx = 0; idx < NUMBER_TO_SEND; idx++) {
         // DIS time is a pain in the ass. DIS time units are 2^31-1 units per
         // hour, and time is set to DIS time units from the top of the hour. 
-        // This means that if you start sending just before the top of the hour
+        // This means that if you begin sending just before the top of the hour
         // the time units can roll over to zero as you are sending. The receivers
         // (escpecially homegrown ones) are often not able to detect rollover
-        // and may start discarding packets as dupes or out of order. We use
-        // an NPS timestamp here, hundredths of a second since the start of the
+        // and may begin discarding packets as dupes or out of order. We use
+        // an NPS timestamp here, hundredths of a second since the begin of the
         // year. The DIS standard for time is often ignored in the wild; I've seen
         // people use Unix time (seconds since 1970) and more. Or you can
         // just stuff idx into the timestamp field to get something that is monotonically

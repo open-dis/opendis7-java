@@ -10,9 +10,7 @@ import edu.nps.moves.dis7.enumerations.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 import java.nio.ByteBuffer;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,21 +33,43 @@ import java.util.stream.Stream;
  */
 public class PduFactory
 {
-  public enum TimestampStyle {IEEE_ABSOLUTE, IEEE_RELATIVE, NPS, UNIX};
+  /** Supported timestamp styles.  TODO consider moving to Pdu abstract class.
+   * @see edu.nps.moves.dis7.pdus.DisTime
+   */
+  public enum TimestampStyle {
+      /** Clock ticks since top of hour, host synchronized to UTC via Network Time Protocol (NTP) */
+      IEEE_ABSOLUTE, 
+      /** Clock ticks since top of hour, host not synchronized to UTC via Network Time Protocol (NTP) */
+      IEEE_RELATIVE, 
+      /** Unix time (seconds since 1 January 1970) */
+      UNIX,
+      /** hundreds of a second since the start of the year */
+      YEAR };
   
-  private Country country = Country.UNITED_STATES_OF_AMERICA_USA;
-  private byte defaultExerciseId = 1;
-  private short defaultSiteId = 2;
-  private short defaultAppId = 3;
-  private final DisTime disTime;
+  private edu.nps.moves.dis7.enumerations.Country country = Country.UNITED_STATES_OF_AMERICA_USA;
+  private byte  defaultExerciseId = 1;
+  private short defaultSiteId     = 2;
+  private short defaultAppId      = 3;
+  private final edu.nps.moves.dis7.pdus.DisTime disTime = new DisTime();
 
-  private Method getTime;
+  private Method getTimeMethod;
   
   /** We can marshal the PDU with a timestamp set to any of several styles. 
    * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
    * with the same timestamp as duplicates and may discard them.
+   * Default value is TimestampStyle.IEEE_ABSOLUTE.
    */
   private TimestampStyle timestampStyle = TimestampStyle.IEEE_ABSOLUTE;
+
+  /**
+   * Create a PduFactory using newTimestampStyle.
+   * @param newTimestampStyle timeStampStyle of interest
+   */
+  public PduFactory(TimestampStyle newTimestampStyle)
+  {
+      timestampStyle = newTimestampStyle;
+      setTimeStampMethod();
+  }
 
   /**
    * Create a PduFactory using defaults for country (USA), exerciseId (2), 
@@ -57,8 +77,7 @@ public class PduFactory
    */
   public PduFactory()
   {
-    this.disTime = new DisTime();
-    setTimeStampStyle(timestampStyle);
+      // initialization steps can go here
   }
   
   /**
@@ -71,7 +90,7 @@ public class PduFactory
    * @see   edu.nps.moves.dis7.pdus.EntityType
    * @see   edu.nps.moves.dis7.pdus.RadioType
    */
-  public PduFactory(Country country, byte exerciseId, short siteId, short applicationId, TimestampStyle timestampStyle)
+  public PduFactory(edu.nps.moves.dis7.enumerations.Country country, byte exerciseId, short siteId, short applicationId, TimestampStyle timestampStyle)
   {
     this();
     this.country = country;
@@ -79,39 +98,42 @@ public class PduFactory
     this.defaultSiteId = siteId;
     this.defaultAppId = applicationId;
     
-    setTimeStampStyle(timestampStyle);
+    setTimestampStyle(timestampStyle);
   }
   
-  /** Set one of four styles. IEEE_ABSOLUTE, IEEE_RELATIVE, NPS, or UNIX 
-   * 
-   * @param ts the timestamp style to set for this PDU
-   */
-  public final void setTimeStampStyle(TimestampStyle ts) {
-      timestampStyle = ts;
-      setTimeStampMethod();
-  }
+    /** Set one of four time references as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
+     * @see TimestampStyle.IEEE_ABSOLUTE
+     * @see TimestampStyle.IEEE_RELATIVE
+     * @see TimestampStyle.UNIX
+     * @see TimestampStyle.YEAR
+     * @param newtimestampStyle the timestamp style to set for this PDU
+     */
+    public final void setTimestampStyle(TimestampStyle newtimestampStyle) {
+        timestampStyle = newtimestampStyle;
+        setTimeStampMethod();
+    }
 
     private void setTimeStampMethod() {
         try {
             switch (timestampStyle) {
                 case IEEE_ABSOLUTE:
-                    getTime = DisTime.class.getDeclaredMethod("getDisAbsoluteTimestamp", new Class<?>[0]);
+                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
                     break;
 
                 case IEEE_RELATIVE:
-                    getTime = DisTime.class.getDeclaredMethod("getDisRelativeTimestamp", new Class<?>[0]);
-                    break;
-
-                case NPS:
-                    getTime = DisTime.class.getDeclaredMethod("getNpsTimestamp", new Class<?>[0]);
+                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisRelativeTimestamp", new Class<?>[0]);
                     break;
 
                 case UNIX:
-                    getTime = DisTime.class.getDeclaredMethod("getUnixTimestamp", new Class<?>[0]);
+                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentUnixTimestamp", new Class<?>[0]);
+                    break;
+
+                case YEAR: // formerly NPS:
+                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentYearTimestamp", new Class<?>[0]);
                     break;
 
                 default:
-                    getTime = DisTime.class.getDeclaredMethod("getDisAbsoluteTimestamp", new Class<?>[0]);
+                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
                     break;
             }
         } catch (NoSuchMethodException ex) {
@@ -127,7 +149,9 @@ public class PduFactory
   public int getTimestamp()
   {
     try {
-      return (int) getTime.invoke(disTime, (Object[]) null);
+        if (getTimeMethod == null)
+            setTimeStampMethod(); // avoid NPE
+        return (int) getTimeMethod.invoke(disTime, (Object[]) null);
     }
     catch (IllegalAccessException | InvocationTargetException ex) {
       throw new RuntimeException(ex);
