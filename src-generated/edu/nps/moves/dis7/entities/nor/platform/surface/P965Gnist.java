@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>P965Gnist</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>P965Gnist</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>P965Gnist.createInstance()</code> or <code>new P965Gnist()</code>. </p>
  * <ul>
  *     <li> Country: Norway (NOR) = <code>163</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SkjoldClass  = <code>3</code>; </li>
  *     <li> Specific: P965Gnist  = <code>6</code>; </li>
  *     <li> Entity type uid: 22947; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ec2bf82. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a356a0d. </p>
  * @see Country#NORWAY_NOR
  * @see EntityKind#PLATFORM
  * @see Domain

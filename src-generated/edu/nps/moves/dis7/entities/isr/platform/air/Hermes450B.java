@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Hermes450B</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>Hermes450B</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Hermes450B.createInstance()</code> or <code>new Hermes450B()</code>. </p>
  * <ul>
  *     <li> Country: Israel (ISR) = <code>105</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Hermes450  = <code>1</code>; </li>
  *     <li> Specific: Hermes450B  = <code>3</code>; </li>
  *     <li> Entity type uid: 23491; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13e547a9. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7be58f16. </p>
  * @see Country#ISRAEL_ISR
  * @see EntityKind#PLATFORM
  * @see Domain

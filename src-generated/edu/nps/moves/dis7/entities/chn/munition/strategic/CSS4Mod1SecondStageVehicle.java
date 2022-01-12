@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>CSS4Mod1SecondStageVehicle</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>CSS4Mod1SecondStageVehicle</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>CSS4Mod1SecondStageVehicle.createInstance()</code> or <code>new CSS4Mod1SecondStageVehicle()</code>. </p>
  * <ul>
  *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: MunitionDomain = <code>STRATEGIC</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: CSS4Mod1DF5  = <code>35</code>; </li>
+ *     <li> SubCategory: CSS4Mod1DF5  = <code>34</code>; </li>
  *     <li> Specific: CSS4Mod1SecondStageVehicle  = <code>1</code>; </li>
- *     <li> Entity type uid: 32768; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Entity type uid: 33793; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2dc39b53. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@401317a0. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -38,8 +38,8 @@ public final class CSS4Mod1SecondStageVehicle extends EntityType
         setDomain(Domain.inst(MunitionDomain.STRATEGIC));
 
         setCategory((byte)1); // uid 21556, Guided
-        setSubCategory((byte)35); // uid 32767, CSS-4 Mod-1 (DF-5)
-        setSpecific((byte)1); // uid 32768, CSS-4 Mod-1 Second Stage Vehicle
+        setSubCategory((byte)34); // uid 33792, CSS-4 Mod-1 (DF-5)
+        setSpecific((byte)1); // uid 33793, CSS-4 Mod-1 Second Stage Vehicle
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

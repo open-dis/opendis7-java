@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>GalaxyLeader</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>GalaxyLeader</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>GalaxyLeader.createInstance()</code> or <code>new GalaxyLeader()</code>. </p>
  * <ul>
  *     <li> Country: Bahamas (BHS) = <code>15</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: RoRoShipRollonRolloffShip  = <code>5</code>; </li>
  *     <li> Specific: GalaxyLeader  = <code>1</code>; </li>
  *     <li> Entity type uid: 31786; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d8c7aca. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51efea79. </p>
  * @see Country#BAHAMAS_BHS
  * @see EntityKind#PLATFORM
  * @see Domain

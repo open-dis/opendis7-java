@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M917Crocus</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>M917Crocus</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>M917Crocus.createInstance()</code> or <code>new M917Crocus()</code>. </p>
  * <ul>
  *     <li> Country: Belgium (BEL) = <code>21</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Flowerclass  = <code>1</code>; </li>
  *     <li> Specific: M917Crocus  = <code>3</code>; </li>
  *     <li> Entity type uid: 23316; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@737996a0. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@91161c7. </p>
  * @see Country#BELGIUM_BEL
  * @see EntityKind#PLATFORM
  * @see Domain

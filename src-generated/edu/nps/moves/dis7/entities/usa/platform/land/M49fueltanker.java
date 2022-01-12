@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M49fueltanker</code></b> collects multiple enumeration values together. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>M49fueltanker.createInstance()</code> or <code>new M49fueltanker()</code>. </p>
+ * <p> Entity class <b><code>M49FuelTanker</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M49FuelTanker.createInstance()</code> or <code>new M49FuelTanker()</code>. </p>
  * <ul>
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
- *     <li> SubCategory: M35M44A26x6212toncargotruckseries  = <code>1</code>; </li>
- *     <li> Specific: M49_fueltanker  = <code>11</code>; </li>
+ *     <li> SubCategory: M35M44A26x6212tonCargoTruck  = <code>1</code>; </li>
+ *     <li> Specific: M49FuelTanker  = <code>11</code>; </li>
  *     <li> Entity type uid: 10430; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72b43104. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7ea2412c. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -28,23 +28,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class M49fueltanker extends EntityType
+public final class M49FuelTanker extends EntityType
 {
     /** Default constructor */
-    public M49fueltanker()
+    public M49FuelTanker()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
-        setSubCategory((byte)1); // uid 10419, M35/M44A2 6x6 2-1/2 ton cargo truck series
-        setSpecific((byte)11); // uid 10430, M49: fuel tanker
+        setSubCategory((byte)1); // uid 10419, M35/M44A2 6x6 2-1/2-ton Cargo Truck
+        setSpecific((byte)11); // uid 10430, M49 Fuel Tanker
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static M49fueltanker createInstance()
+    public static M49FuelTanker createInstance()
     {
-            return new M49fueltanker();
+            return new M49FuelTanker();
     }
 }

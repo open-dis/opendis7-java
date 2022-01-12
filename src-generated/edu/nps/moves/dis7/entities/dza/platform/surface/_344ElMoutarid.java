@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_344ElMoutarid</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_344ElMoutarid</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_344ElMoutarid.createInstance()</code> or <code>new _344ElMoutarid()</code>. </p>
  * <ul>
  *     <li> Country: Algeria (DZA) = <code>3</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: KebirClass  = <code>2</code>; </li>
  *     <li> Specific: _344ElMoutarid  = <code>4</code>; </li>
  *     <li> Entity type uid: 27739; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5b37e0d2. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ee0005. </p>
  * @see Country#ALGERIA_DZA
  * @see EntityKind#PLATFORM
  * @see Domain

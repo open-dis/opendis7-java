@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>GCGuangzhou</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>GCGuangzhou</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>GCGuangzhou.createInstance()</code> or <code>new GCGuangzhou()</code>. </p>
  * <ul>
  *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: CrudeOilTankerupto159999DWT  = <code>5</code>; </li>
  *     <li> Specific: GCGuangzhou  = <code>1</code>; </li>
  *     <li> Entity type uid: 24554; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14b7786. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c83468e. </p>
  * @see Country#SINGAPORE_SGP
  * @see EntityKind#PLATFORM
  * @see Domain

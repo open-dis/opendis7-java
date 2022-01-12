@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Leopard2improvedMBT</code></b> collects multiple enumeration values together. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>Leopard2improvedMBT.createInstance()</code> or <code>new Leopard2improvedMBT()</code>. </p>
+ * <p> Entity class <b><code>Leopard2ImprovedMBT</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Leopard2ImprovedMBT.createInstance()</code> or <code>new Leopard2ImprovedMBT()</code>. </p>
  * <ul>
  *     <li> Country: Germany (DEU) = <code>78</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Tank = <code>1</code>; </li>
- *     <li> SubCategory: Leopard2improvedMBT  = <code>3</code>; </li>
+ *     <li> SubCategory: Leopard2ImprovedMBT  = <code>3</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 16248; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@aba625. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1787bc24. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -28,22 +28,22 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class Leopard2improvedMBT extends EntityType
+public final class Leopard2ImprovedMBT extends EntityType
 {
     /** Default constructor */
-    public Leopard2improvedMBT()
+    public Leopard2ImprovedMBT()
     {
         setCountry(Country.GERMANY_DEU);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)1); // uid 16240, Tank
-        setSubCategory((byte)3); // uid 16248, Leopard 2 (improved) MBT
+        setSubCategory((byte)3); // uid 16248, Leopard 2 (Improved) MBT
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static Leopard2improvedMBT createInstance()
+    public static Leopard2ImprovedMBT createInstance()
     {
-            return new Leopard2improvedMBT();
+            return new Leopard2ImprovedMBT();
     }
 }

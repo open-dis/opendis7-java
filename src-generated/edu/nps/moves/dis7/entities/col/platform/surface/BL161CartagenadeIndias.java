@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>BL161CartagenadeIndias</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>BL161CartagenadeIndias</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>BL161CartagenadeIndias.createInstance()</code> or <code>new BL161CartagenadeIndias()</code>. </p>
  * <ul>
  *     <li> Country: Colombia (COL) = <code>48</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: LuneburgClassType701SupportShips  = <code>1</code>; </li>
  *     <li> Specific: BL161CartagenadeIndias  = <code>1</code>; </li>
  *     <li> Entity type uid: 27487; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b81ce95. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fbe4146. </p>
  * @see Country#COLOMBIA_COL
  * @see EntityKind#PLATFORM
  * @see Domain

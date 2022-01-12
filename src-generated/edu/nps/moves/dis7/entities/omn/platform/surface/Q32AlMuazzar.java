@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Q32AlMuazzar</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>Q32AlMuazzar</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Q32AlMuazzar.createInstance()</code> or <code>new Q32AlMuazzar()</code>. </p>
  * <ul>
  *     <li> Country: Oman (OMN) = <code>164</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: QahirClassFSG  = <code>1</code>; </li>
  *     <li> Specific: Q32AlMuazzar  = <code>2</code>; </li>
  *     <li> Entity type uid: 29531; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1af7f54a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fcff1b9. </p>
  * @see Country#OMAN_OMN
  * @see EntityKind#PLATFORM
  * @see Domain

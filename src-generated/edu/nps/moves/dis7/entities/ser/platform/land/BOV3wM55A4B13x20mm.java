@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>BOV3wM55A4B13x20mm</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>BOV3wM55A4B13x20mm</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>BOV3wM55A4B13x20mm.createInstance()</code> or <code>new BOV3wM55A4B13x20mm()</code>. </p>
  * <ul>
  *     <li> Country: Serbia and Montenegro = <code>240</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>1</code>; </li>
  *     <li> Specific: BOV3wM55A4B13x20mm  = <code>1</code>; </li>
  *     <li> Entity type uid: 23672; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a2843ec. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2cae9b8. </p>
  * @see Country#SERBIA_AND_MONTENEGRO
  * @see EntityKind#PLATFORM
  * @see Domain

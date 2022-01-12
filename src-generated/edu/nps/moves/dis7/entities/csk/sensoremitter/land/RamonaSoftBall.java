@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>RamonaSoftBall</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>RamonaSoftBall</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>RamonaSoftBall.createInstance()</code> or <code>new RamonaSoftBall()</code>. </p>
  * <ul>
  *     <li> Country: Czechoslovakia (CSK) = <code>56</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: IdentificationClassificationRadar  = <code>16</code>; </li>
  *     <li> Specific: RamonaSoftBall  = <code>1</code>; </li>
  *     <li> Entity type uid: 22502; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b34c7c9. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c3cd13a. </p>
  * @see Country#ACTION_REQUEST_RELIABLE
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain

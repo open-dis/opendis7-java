@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>SingleLaneMasonryArchBridgeSpan</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>SingleLaneMasonryArchBridgeSpan</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>SingleLaneMasonryArchBridgeSpan.createInstance()</code> or <code>new SingleLaneMasonryArchBridgeSpan()</code>. </p>
  * <ul>
  *     <li> Country: Other = <code>0</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SingleLaneEachWay  = <code>1</code>; </li>
  *     <li> Specific: SingleLaneMasonryArchBridgeSpan  = <code>3</code>; </li>
  *     <li> Entity type uid: 22078; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ff8a3ad. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a44effb. </p>
  * @see Country#OTHER
  * @see EntityKind#CULTURAL_FEATURE
  * @see Domain

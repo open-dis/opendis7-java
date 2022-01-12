@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>CivilianFixedWingAircraftMediumupto41000lbs18597kg</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>CivilianFixedWingAircraftMediumupto41000lbs18597kg</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>CivilianFixedWingAircraftMediumupto41000lbs18597kg.createInstance()</code> or <code>new CivilianFixedWingAircraftMediumupto41000lbs18597kg()</code>. </p>
  * <ul>
  *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory:  <code>(none)</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 23887; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@5c7fa833. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@31dc339b. </p>
  * @see Country#BRAZIL_BRA
  * @see EntityKind#PLATFORM
  * @see Domain

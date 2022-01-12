@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>ANLWarringa</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>ANLWarringa</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>ANLWarringa.createInstance()</code> or <code>new ANLWarringa()</code>. </p>
  * <ul>
  *     <li> Country: Marshall Islands (MHL) = <code>137</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
  *     <li> Specific: ANLWarringa  = <code>1</code>; </li>
  *     <li> Entity type uid: 28170; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27e0f2f5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@38d5b107. </p>
  * @see Country#MARSHALL_ISLANDS_MHL
  * @see EntityKind#PLATFORM
  * @see Domain

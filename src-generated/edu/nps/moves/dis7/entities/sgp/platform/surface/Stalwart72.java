@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Stalwart72</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>Stalwart72</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Stalwart72.createInstance()</code> or <code>new Stalwart72()</code>. </p>
  * <ul>
  *     <li> Country: Singapore (SGP) = <code>193</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: FormidableClass  = <code>1</code>; </li>
  *     <li> Specific: Stalwart72  = <code>5</code>; </li>
  *     <li> Entity type uid: 25358; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@11f406f8. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@127a7272. </p>
  * @see Country#SINGAPORE_SGP
  * @see EntityKind#PLATFORM
  * @see Domain

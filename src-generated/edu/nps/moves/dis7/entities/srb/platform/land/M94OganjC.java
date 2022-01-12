@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M94OganjC</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>M94OganjC</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>M94OganjC.createInstance()</code> or <code>new M94OganjC()</code>. </p>
  * <ul>
  *     <li> Country: Serbia (SRB) = <code>276</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: M77Oganj  = <code>1</code>; </li>
  *     <li> Specific: M94OganjC  = <code>1</code>; </li>
  *     <li> Entity type uid: 30157; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c0bbc9f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7fb29ca9. </p>
  * @see Country#SERBIA_SRB
  * @see EntityKind#PLATFORM
  * @see Domain

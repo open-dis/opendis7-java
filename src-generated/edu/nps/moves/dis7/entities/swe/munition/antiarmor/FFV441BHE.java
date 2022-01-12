@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>FFV441BHE</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>FFV441BHE</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>FFV441BHE.createInstance()</code> or <code>new FFV441BHE()</code>. </p>
  * <ul>
  *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _84mmCarlGustavrounds  = <code>2</code>; </li>
  *     <li> Specific: FFV441BHE  = <code>1</code>; </li>
  *     <li> Entity type uid: 21651; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@743bb39a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b362f1. </p>
  * @see Country#SWEDEN_SWE
  * @see EntityKind#MUNITION
  * @see Domain

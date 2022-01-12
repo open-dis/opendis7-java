@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>AMX10PHOT</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>AMX10PHOT</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>AMX10PHOT.createInstance()</code> or <code>new AMX10PHOT()</code>. </p>
  * <ul>
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
- *     <li> SubCategory: AMX10IFV  = <code>8</code>; </li>
+ *     <li> SubCategory: AMX10PIFV  = <code>8</code>; </li>
  *     <li> Specific: AMX10PHOT  = <code>2</code>; </li>
  *     <li> Entity type uid: 15655; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f79e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e7be63f. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class AMX10PHOT extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)2); // uid 15645, Armored Fighting Vehicle
-        setSubCategory((byte)8); // uid 15653, AMX-10 IFV
+        setSubCategory((byte)8); // uid 15653, AMX-10P IFV
         setSpecific((byte)2); // uid 15655, AMX-10P/HOT
     }
     /** Create a new instance of this final (unmodifiable) class

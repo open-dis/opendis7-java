@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>HelrasDS100</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>HelrasDS100</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>HelrasDS100.createInstance()</code> or <code>new HelrasDS100()</code>. </p>
  * <ul>
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: DippingSonar  = <code>80</code>; </li>
  *     <li> Specific: HelrasDS100  = <code>2</code>; </li>
  *     <li> Entity type uid: 32013; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@533e2f4. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12723c5d. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain

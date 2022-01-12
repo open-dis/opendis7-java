@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>DD124Mineyuki</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>DD124Mineyuki</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>DD124Mineyuki.createInstance()</code> or <code>new DD124Mineyuki()</code>. </p>
  * <ul>
  *     <li> Country: Japan (JPN) = <code>110</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HatsuyukiClassDD  = <code>4</code>; </li>
  *     <li> Specific: DD124Mineyuki  = <code>3</code>; </li>
  *     <li> Entity type uid: 26256; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ce61929. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a138fc5. </p>
  * @see Country#JAPAN_JPN
  * @see EntityKind#PLATFORM
  * @see Domain

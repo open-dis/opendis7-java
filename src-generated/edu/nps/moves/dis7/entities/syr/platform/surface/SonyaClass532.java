@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>SonyaClass532</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>SonyaClass532</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>SonyaClass532.createInstance()</code> or <code>new SonyaClass532()</code>. </p>
  * <ul>
  *     <li> Country: Syrian Arab Republic (SYR) = <code>207</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SonyaClass  = <code>1</code>; </li>
  *     <li> Specific: _532  = <code>1</code>; </li>
  *     <li> Entity type uid: 29956; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@117525fe. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@26fb4d06. </p>
  * @see Country#SYRIAN_ARAB_REPUBLIC_SYR
  * @see EntityKind#PLATFORM
  * @see Domain

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M1223Kapa</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>M1223Kapa</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>M1223Kapa.createInstance()</code> or <code>new M1223Kapa()</code>. </p>
  * <ul>
  *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: LindauClassType320  = <code>1</code>; </li>
  *     <li> Specific: M1223Kapa  = <code>1</code>; </li>
  *     <li> Entity type uid: 27561; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25d2f66. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@648d0e6d. </p>
  * @see Country#SOUTH_AFRICA_ZAF
  * @see EntityKind#PLATFORM
  * @see Domain

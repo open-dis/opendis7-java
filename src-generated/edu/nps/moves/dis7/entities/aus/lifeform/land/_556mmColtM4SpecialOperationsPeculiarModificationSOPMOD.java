@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_556mmColtM4SpecialOperationsPeculiarModificationSOPMOD</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_556mmColtM4SpecialOperationsPeculiarModificationSOPMOD</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_556mmColtM4SpecialOperationsPeculiarModificationSOPMOD.createInstance()</code> or <code>new _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD()</code>. </p>
  * <ul>
  *     <li> Country: Australia (AUS) = <code>13</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: AssaultRifles  = <code>5</code>; </li>
  *     <li> Specific: _556mmColtM4SpecialOperationsPeculiarModificationSOPMOD  = <code>43</code>; </li>
  *     <li> Entity type uid: 31546; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@601d295. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@39acd1f1. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#LIFE_FORM
  * @see Domain

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>F946ElSuez</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>F946ElSuez</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>F946ElSuez.createInstance()</code> or <code>new F946ElSuez()</code>. </p>
  * <ul>
  *     <li> Country: Egypt (EGY) = <code>62</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: DescubiertaClassFFG  = <code>1</code>; </li>
  *     <li> Specific: F946ElSuez  = <code>2</code>; </li>
  *     <li> Entity type uid: 23130; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b2bac3f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53976f5c. </p>
  * @see Country#COMMENT_RELIABLE
  * @see EntityKind#PLATFORM
  * @see Domain

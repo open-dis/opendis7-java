@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>CSS5Mod4DF21CWheeledTransporterErectorLauncherTEL</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>CSS5Mod4DF21CWheeledTransporterErectorLauncherTEL</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>CSS5Mod4DF21CWheeledTransporterErectorLauncherTEL.createInstance()</code> or <code>new CSS5Mod4DF21CWheeledTransporterErectorLauncherTEL()</code>. </p>
  * <ul>
  *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: CSS5Mod1DF21WheeledTransporterErectorLauncherTEL  = <code>33</code>; </li>
  *     <li> Specific: CSS5Mod4DF21CWheeledTransporterErectorLauncherTEL  = <code>3</code>; </li>
  *     <li> Entity type uid: 31974; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7276c8cd. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@b7f23d9. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain

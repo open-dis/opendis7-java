@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Slsgr95120mmHE</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>Slsgr95120mmHE</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Slsgr95120mmHE.createInstance()</code> or <code>new Slsgr95120mmHE()</code>. </p>
  * <ul>
  *     <li> Country: Sweden (SWE) = <code>205</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _120mm  = <code>2</code>; </li>
  *     <li> Specific: Slsgr95120mmHE  = <code>1</code>; </li>
  *     <li> Entity type uid: 25725; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@328e4ec2. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@261275ae. </p>
  * @see Country#SWEDEN_SWE
  * @see EntityKind#MUNITION
  * @see Domain

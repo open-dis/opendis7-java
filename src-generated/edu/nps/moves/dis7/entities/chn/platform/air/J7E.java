@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>J7E</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>J7E</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>J7E.createInstance()</code> or <code>new J7E()</code>. </p>
  * <ul>
  *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: XienJ7Fishbed  = <code>2</code>; </li>
  *     <li> Specific: J7E  = <code>2</code>; </li>
  *     <li> Entity type uid: 16970; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e4a7dd4. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b938003. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class J7E extends EntityType
 
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
         setSubCategory((byte)2); // uid 16968, Xien J-7 (Fishbed)
-        setSpecific((byte)2); // uid 16970, J-7 E
+        setSpecific((byte)2); // uid 16970, J-7E
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>ToyotaSienna</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>ToyotaSienna</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>ToyotaSienna.createInstance()</code> or <code>new ToyotaSienna()</code>. </p>
  * <ul>
  *     <li> Country: Japan (JPN) = <code>110</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Minivan  = <code>70</code>; </li>
  *     <li> Specific: ToyotaSienna  = <code>1</code>; </li>
  *     <li> Entity type uid: 24869; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9ed238c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29cfd92b. </p>
  * @see Country#JAPAN_JPN
  * @see EntityKind#PLATFORM
  * @see Domain

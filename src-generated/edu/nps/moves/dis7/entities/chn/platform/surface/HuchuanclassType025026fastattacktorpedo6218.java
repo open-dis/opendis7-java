@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>HuchuanclassType025026fastattacktorpedo6218</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>HuchuanclassType025026fastattacktorpedo6218</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>HuchuanclassType025026fastattacktorpedo6218.createInstance()</code> or <code>new HuchuanclassType025026fastattacktorpedo6218()</code>. </p>
  * <ul>
  *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HuchuanclassType025026fastattacktorpedo  = <code>1</code>; </li>
  *     <li> Specific: _6218  = <code>9</code>; </li>
  *     <li> Entity type uid: 17226; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2fd6b6c7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ffead27. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain

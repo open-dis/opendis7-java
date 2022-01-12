@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>BushmasterProtectedMobilityVehicleCommand</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>BushmasterProtectedMobilityVehicleCommand</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>BushmasterProtectedMobilityVehicleCommand.createInstance()</code> or <code>new BushmasterProtectedMobilityVehicleCommand()</code>. </p>
  * <ul>
  *     <li> Country: Australia (AUS) = <code>13</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: BushmasterProtectedMobilityVehicle  = <code>2</code>; </li>
  *     <li> Specific: BushmasterProtectedMobilityVehicleCommand  = <code>1</code>; </li>
  *     <li> Entity type uid: 28606; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c98385c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d04a311. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#PLATFORM
  * @see Domain

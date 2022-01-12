@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>MIM23BIHawk</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>MIM23BIHawk</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>MIM23BIHawk.createInstance()</code> or <code>new MIM23BIHawk()</code>. </p>
  * <ul>
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: MIM23HawkCEFGH  = <code>6</code>; </li>
+ *     <li> SubCategory: MIM23Hawk  = <code>6</code>; </li>
  *     <li> Specific: MIM23BIHawk  = <code>1</code>; </li>
  *     <li> Entity type uid: 19432; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c8a445b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48ae9e8b. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -38,7 +38,7 @@ public final class MIM23BIHawk extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 19406, Guided
-        setSubCategory((byte)6); // uid 19431, MIM-23 Hawk C/E/F/G/H
+        setSubCategory((byte)6); // uid 19431, MIM-23 Hawk
         setSpecific((byte)1); // uid 19432, MIM-23B I-Hawk
     }
     /** Create a new instance of this final (unmodifiable) class

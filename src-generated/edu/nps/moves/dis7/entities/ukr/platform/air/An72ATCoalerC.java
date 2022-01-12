@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>An72ATCoalerC</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>An72ATCoalerC</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>An72ATCoalerC.createInstance()</code> or <code>new An72ATCoalerC()</code>. </p>
  * <ul>
  *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
  *     <li> Specific: AntonovAn72  = <code>2</code>; </li>
  *     <li> Entity type uid: 29258; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@74fab04a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@69afa141. </p>
  * @see Country#UKRAINE_UKR
  * @see EntityKind#PLATFORM
  * @see Domain

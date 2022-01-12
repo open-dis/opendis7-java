@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>DDA66DecontaminationTruck</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>DDA66DecontaminationTruck</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>DDA66DecontaminationTruck.createInstance()</code> or <code>new DDA66DecontaminationTruck()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
- *     <li> SubCategory: GAZ664x42000kgtruck  = <code>8</code>; </li>
+ *     <li> SubCategory: GAZ664x42000kgTruck  = <code>8</code>; </li>
  *     <li> Specific: DDA66DecontaminationTruck  = <code>6</code>; </li>
  *     <li> Entity type uid: 23497; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4a03bb68. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29a4f594. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class DDA66DecontaminationTruck extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
-        setSubCategory((byte)8); // uid 12884, GAZ-66 4x4 2000-kg truck
+        setSubCategory((byte)8); // uid 12884, GAZ-66 4x4 2000-kg Truck
         setSpecific((byte)6); // uid 23497, DDA-66 Decontamination Truck
     }
     /** Create a new instance of this final (unmodifiable) class

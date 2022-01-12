@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M2004RedPhosphorus1</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>M2004RedPhosphorus1</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>M2004RedPhosphorus1.createInstance()</code> or <code>new M2004RedPhosphorus1()</code>. </p>
  * <ul>
  *     <li> Country: South Africa (ZAF) = <code>197</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _155mm  = <code>1</code>; </li>
  *     <li> Specific: DenelAssistedwithBaseBleed155mm  = <code>2</code>; </li>
  *     <li> Entity type uid: 26986; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@439d545c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@71b0289b. </p>
  * @see Country#SOUTH_AFRICA_ZAF
  * @see EntityKind#MUNITION
  * @see Domain

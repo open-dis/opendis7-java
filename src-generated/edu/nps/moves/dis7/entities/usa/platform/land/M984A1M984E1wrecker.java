@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M984A1M984E1wrecker</code></b> collects multiple enumeration values together. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>M984A1M984E1wrecker.createInstance()</code> or <code>new M984A1M984E1wrecker()</code>. </p>
+ * <p> Entity class <b><code>M984A1M984E1Wrecker</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>M984A1M984E1Wrecker.createInstance()</code> or <code>new M984A1M984E1Wrecker()</code>. </p>
  * <ul>
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: OshkoshHeavyExpandedMobilityTacticalTruckHEMTT8x89979kg  = <code>19</code>; </li>
- *     <li> Specific: M984A1M984E1wrecker  = <code>4</code>; </li>
+ *     <li> Specific: M984A1M984E1Wrecker  = <code>4</code>; </li>
  *     <li> Entity type uid: 10547; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65bad087. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3e377967. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -28,10 +28,10 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class M984A1M984E1wrecker extends EntityType
+public final class M984A1M984E1Wrecker extends EntityType
 {
     /** Default constructor */
-    public M984A1M984E1wrecker()
+    public M984A1M984E1Wrecker()
     {
         setCountry(Country.UNITED_STATES_OF_AMERICA_USA);
         setEntityKind(EntityKind.PLATFORM);
@@ -39,12 +39,12 @@ public final class M984A1M984E1wrecker extends EntityType
 
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)19); // uid 10543, Oshkosh Heavy Expanded Mobility Tactical Truck (HEMTT) 8x8 9979-kg
-        setSpecific((byte)4); // uid 10547, M984A1/M984E1 wrecker
+        setSpecific((byte)4); // uid 10547, M984A1/M984E1 Wrecker
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static M984A1M984E1wrecker createInstance()
+    public static M984A1M984E1Wrecker createInstance()
     {
-            return new M984A1M984E1wrecker();
+            return new M984A1M984E1Wrecker();
     }
 }

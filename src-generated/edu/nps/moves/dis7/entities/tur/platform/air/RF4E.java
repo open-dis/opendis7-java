@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>RF4E</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>RF4E</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>RF4E.createInstance()</code> or <code>new RF4E()</code>. </p>
  * <ul>
  *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: McDonnellDouglasF4PhantomII  = <code>1</code>; </li>
  *     <li> Specific: RF4E  = <code>1</code>; </li>
  *     <li> Entity type uid: 30599; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20ab3e3a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6504a875. </p>
  * @see Country#TURKEY_TUR
  * @see EntityKind#PLATFORM
  * @see Domain

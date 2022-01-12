@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>GAZ66Signalsvan</code></b> collects multiple enumeration values together. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>GAZ66Signalsvan.createInstance()</code> or <code>new GAZ66Signalsvan()</code>. </p>
+ * <p> Entity class <b><code>GAZ66SignalsVan</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>GAZ66SignalsVan.createInstance()</code> or <code>new GAZ66SignalsVan()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
- *     <li> SubCategory: GAZ664x42000kgtruck  = <code>8</code>; </li>
- *     <li> Specific: GAZ66Signalsvan  = <code>1</code>; </li>
+ *     <li> SubCategory: GAZ664x42000kgTruck  = <code>8</code>; </li>
+ *     <li> Specific: GAZ66SignalsVan  = <code>1</code>; </li>
  *     <li> Entity type uid: 12885; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d39f2d8. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22bd2039. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -28,23 +28,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class GAZ66Signalsvan extends EntityType
+public final class GAZ66SignalsVan extends EntityType
 {
     /** Default constructor */
-    public GAZ66Signalsvan()
+    public GAZ66SignalsVan()
     {
         setCountry(Country.RUSSIA_RUS);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
-        setSubCategory((byte)8); // uid 12884, GAZ-66 4x4 2000-kg truck
-        setSpecific((byte)1); // uid 12885, GAZ-66 Signals van
+        setSubCategory((byte)8); // uid 12884, GAZ-66 4x4 2000-kg Truck
+        setSpecific((byte)1); // uid 12885, GAZ-66 Signals Van
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static GAZ66Signalsvan createInstance()
+    public static GAZ66SignalsVan createInstance()
     {
-            return new GAZ66Signalsvan();
+            return new GAZ66SignalsVan();
     }
 }

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>G28MattosoMaia</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>G28MattosoMaia</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>G28MattosoMaia.createInstance()</code> or <code>new G28MattosoMaia()</code>. </p>
  * <ul>
  *     <li> Country: Brazil (BRA) = <code>29</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: NewportClass  = <code>1</code>; </li>
  *     <li> Specific: G28MattosoMaia  = <code>1</code>; </li>
  *     <li> Entity type uid: 32637; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61832929. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f9d02cb. </p>
  * @see Country#BRAZIL_BRA
  * @see EntityKind#PLATFORM
  * @see Domain

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>BG50GrigoryKuropiatnikov</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>BG50GrigoryKuropiatnikov</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>BG50GrigoryKuropiatnikov.createInstance()</code> or <code>new BG50GrigoryKuropiatnikov()</code>. </p>
  * <ul>
  *     <li> Country: Ukraine (UKR) = <code>265</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: PaukIClass  = <code>1</code>; </li>
  *     <li> Specific: BG50GrigoryKuropiatnikov  = <code>1</code>; </li>
  *     <li> Entity type uid: 27864; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a583586. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22c75c01. </p>
  * @see Country#UKRAINE_UKR
  * @see EntityKind#PLATFORM
  * @see Domain

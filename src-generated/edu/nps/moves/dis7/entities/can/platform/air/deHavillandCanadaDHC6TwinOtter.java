@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>deHavillandCanadaDHC6TwinOtter</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>deHavillandCanadaDHC6TwinOtter</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>deHavillandCanadaDHC6TwinOtter.createInstance()</code> or <code>new deHavillandCanadaDHC6TwinOtter()</code>. </p>
  * <ul>
  *     <li> Country: Canada (CAN) = <code>39</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
  *     <li> Specific: deHavillandCanadaDHC6TwinOtter  = <code>1</code>; </li>
  *     <li> Entity type uid: 29155; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@eec5a4a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2a742aa2. </p>
  * @see Country#CANADA_CAN
  * @see EntityKind#PLATFORM
  * @see Domain

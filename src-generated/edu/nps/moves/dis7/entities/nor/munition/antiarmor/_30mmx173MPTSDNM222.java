@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_30mmx173MPTSDNM222</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_30mmx173MPTSDNM222</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_30mmx173MPTSDNM222.createInstance()</code> or <code>new _30mmx173MPTSDNM222()</code>. </p>
  * <ul>
  *     <li> Country: Norway (NOR) = <code>163</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _30mmx173  = <code>2</code>; </li>
  *     <li> Specific: _30mmx173MPTSDNM222  = <code>2</code>; </li>
  *     <li> Entity type uid: 28838; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7cf8f45a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c56644f. </p>
  * @see Country#NORWAY_NOR
  * @see EntityKind#MUNITION
  * @see Domain

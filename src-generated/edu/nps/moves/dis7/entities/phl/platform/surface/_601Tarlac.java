@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_601Tarlac</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_601Tarlac</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_601Tarlac.createInstance()</code> or <code>new _601Tarlac()</code>. </p>
  * <ul>
  *     <li> Country: Philippines (PHL) = <code>173</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TarlacClass  = <code>1</code>; </li>
  *     <li> Specific: _601Tarlac  = <code>1</code>; </li>
  *     <li> Entity type uid: 33025; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a78dacd. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4fcc0416. </p>
  * @see Country#PHILIPPINES_PHL
  * @see EntityKind#PLATFORM
  * @see Domain

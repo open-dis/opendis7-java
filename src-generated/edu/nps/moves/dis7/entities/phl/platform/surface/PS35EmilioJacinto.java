@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>PS35EmilioJacinto</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>PS35EmilioJacinto</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>PS35EmilioJacinto.createInstance()</code> or <code>new PS35EmilioJacinto()</code>. </p>
  * <ul>
  *     <li> Country: Philippines (PHL) = <code>173</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: JacintoClass  = <code>1</code>; </li>
  *     <li> Specific: PS35EmilioJacinto  = <code>1</code>; </li>
  *     <li> Entity type uid: 28422; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ce93c18. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@a50ae65. </p>
  * @see Country#PHILIPPINES_PHL
  * @see EntityKind#PLATFORM
  * @see Domain

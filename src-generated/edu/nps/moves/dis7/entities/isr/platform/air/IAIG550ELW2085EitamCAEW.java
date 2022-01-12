@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>IAIG550ELW2085EitamCAEW</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>IAIG550ELW2085EitamCAEW</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>IAIG550ELW2085EitamCAEW.createInstance()</code> or <code>new IAIG550ELW2085EitamCAEW()</code>. </p>
  * <ul>
  *     <li> Country: Israel (ISR) = <code>105</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: GulfstreamAerospaceGulfstreamG550  = <code>5</code>; </li>
  *     <li> Specific: IAIG550ELW2085EitamCAEW  = <code>1</code>; </li>
  *     <li> Entity type uid: 30286; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20b12f8a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b956878. </p>
  * @see Country#ISRAEL_ISR
  * @see EntityKind#PLATFORM
  * @see Domain

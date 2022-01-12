@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_107Smerch</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_107Smerch</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_107Smerch.createInstance()</code> or <code>new _107Smerch()</code>. </p>
  * <ul>
  *     <li> Country: Bulgaria (BGR) = <code>33</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: OsaIIClass  = <code>1</code>; </li>
  *     <li> Specific: _107Smerch  = <code>6</code>; </li>
  *     <li> Entity type uid: 27885; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dfa3a9d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2758fe70. </p>
  * @see Country#BULGARIA_BGR
  * @see EntityKind#PLATFORM
  * @see Domain

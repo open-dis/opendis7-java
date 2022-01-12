@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>S110Glavkos</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>S110Glavkos</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>S110Glavkos.createInstance()</code> or <code>new S110Glavkos()</code>. </p>
  * <ul>
  *     <li> Country: Greece (GRC) = <code>82</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Glavkosclass  = <code>1</code>; </li>
  *     <li> Specific: S110Glavkos  = <code>1</code>; </li>
  *     <li> Entity type uid: 23392; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b79ac84. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4dc8caa7. </p>
  * @see Country#GREECE_GRC
  * @see EntityKind#PLATFORM
  * @see Domain

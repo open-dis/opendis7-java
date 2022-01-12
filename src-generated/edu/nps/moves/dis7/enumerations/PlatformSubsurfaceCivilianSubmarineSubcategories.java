@@ -159,7 +159,7 @@ public enum PlatformSubsurfaceCivilianSubmarineSubcategories implements SubCateg
     
   /**
    * Provide simple identifier
-   * @return ID number and name
+   * @return class name, value and name
    */
     @Override
     public String toString()
@@ -167,9 +167,9 @@ public enum PlatformSubsurfaceCivilianSubmarineSubcategories implements SubCateg
         String padding = new String();
         if (this.getClass().getName().endsWith("DisPduType") && (getValue() < 10))
             padding = "0"; // leading zero for column spacing
-        String result = "DisPduType " + padding + getValue() + " " + name();
+        String result = this.getClass().getSimpleName() + " " + padding + getValue() + " " + name();
         if (getTRACE())
-            System.out.println ("*** enum " + this.getClass().getName() + " name=" + name() + ", value=" + getValue() + "; " +
+            System.out.println ("*** enum " + this.getClass().getSimpleName() + " name=" + name() + ", value=" + getValue() + "; " +
                result); // debug diagnostic
         return result;
     }

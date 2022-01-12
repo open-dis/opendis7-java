@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_135mmAT5BSpandrel9M113MKronkursM</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_135mmAT5BSpandrel9M113MKronkursM</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_135mmAT5BSpandrel9M113MKronkursM.createInstance()</code> or <code>new _135mmAT5BSpandrel9M113MKronkursM()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: AntiTankMissiles  = <code>50</code>; </li>
  *     <li> Specific: _135mmAT5BSpandrel9M113MKronkursM  = <code>182</code>; </li>
  *     <li> Entity type uid: 32165; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@352e5a82. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4eb1943b. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#LIFE_FORM
  * @see Domain

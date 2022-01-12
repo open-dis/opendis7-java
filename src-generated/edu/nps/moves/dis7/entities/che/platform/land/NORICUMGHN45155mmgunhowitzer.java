@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>NORICUMGHN45155mmgunhowitzer</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>NORICUMGHN45155mmgunhowitzer</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>NORICUMGHN45155mmgunhowitzer.createInstance()</code> or <code>new NORICUMGHN45155mmgunhowitzer()</code>. </p>
  * <ul>
  *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: NORICUMGHN45155mmgunhowitzer  = <code>1</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 19038; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@102ecc22. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@187e5235. </p>
  * @see Country#SWITZERLAND_CHE
  * @see EntityKind#PLATFORM
  * @see Domain

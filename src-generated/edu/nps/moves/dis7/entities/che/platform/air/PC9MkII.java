@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>PC9MkII</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>PC9MkII</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>PC9MkII.createInstance()</code> or <code>new PC9MkII()</code>. </p>
  * <ul>
  *     <li> Country: Switzerland (CHE) = <code>206</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: PilatusPC9  = <code>2</code>; </li>
  *     <li> Specific: PC9MkII  = <code>2</code>; </li>
  *     <li> Entity type uid: 19054; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54e3658c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@474821de. </p>
  * @see Country#SWITZERLAND_CHE
  * @see EntityKind#PLATFORM
  * @see Domain

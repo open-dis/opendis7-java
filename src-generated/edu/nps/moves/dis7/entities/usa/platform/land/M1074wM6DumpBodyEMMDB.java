@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>M1074wM6DumpBodyEMMDB</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>M1074wM6DumpBodyEMMDB</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>M1074wM6DumpBodyEMMDB.createInstance()</code> or <code>new M1074wM6DumpBodyEMMDB()</code>. </p>
  * <ul>
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
@@ -14,11 +14,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: OshkoshHeavyExpandedMobilityTacticalTruckHEMTT8x89979kg  = <code>19</code>; </li>
- *     <li> Specific: TruckHeavyM1074PLS  = <code>10</code>; </li>
+ *     <li> Specific: M1074PalletizedLoadSystemPLS  = <code>10</code>; </li>
  *     <li> Entity type uid: 30290; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1c3259fa. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7b25ab31. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class M1074wM6DumpBodyEMMDB extends EntityType
 
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)19); // uid 10543, Oshkosh Heavy Expanded Mobility Tactical Truck (HEMTT) 8x8 9979-kg
-        setSpecific((byte)10); // uid 10553, Truck, Heavy, M1074 PLS
+        setSpecific((byte)10); // uid 10553, M1074 Palletized Load System (PLS)
         setExtra((byte)3); // uid 30290, M1074 w/ M6 Dump Body (EMM-DB)
     }
     /** Create a new instance of this final (unmodifiable) class

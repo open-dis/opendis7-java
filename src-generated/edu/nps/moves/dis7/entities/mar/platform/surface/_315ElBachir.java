@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_315ElBachir</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_315ElBachir</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_315ElBachir.createInstance()</code> or <code>new _315ElBachir()</code>. </p>
  * <ul>
  *     <li> Country: Morocco (MAR) = <code>147</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: CormoranClass  = <code>1</code>; </li>
  *     <li> Specific: _315ElBachir  = <code>6</code>; </li>
  *     <li> Entity type uid: 27704; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@24a1c17f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15051a0. </p>
  * @see Country#MOROCCO_MAR
  * @see EntityKind#PLATFORM
  * @see Domain

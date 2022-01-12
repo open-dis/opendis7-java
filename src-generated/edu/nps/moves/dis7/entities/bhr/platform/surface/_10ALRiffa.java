@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>_10ALRiffa</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>_10ALRiffa</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_10ALRiffa.createInstance()</code> or <code>new _10ALRiffa()</code>. </p>
  * <ul>
  *     <li> Country: Bahrain (BHR) = <code>16</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: ALRiffaFPB38Classfastattackcraftgun  = <code>3</code>; </li>
  *     <li> Specific: _10ALRiffa  = <code>1</code>; </li>
  *     <li> Entity type uid: 18676; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@783e6358. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@675d3402. </p>
  * @see Country#BAHRAIN_BHR
  * @see EntityKind#PLATFORM
  * @see Domain

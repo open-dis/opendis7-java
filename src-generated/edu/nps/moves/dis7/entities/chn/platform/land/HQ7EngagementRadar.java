@@ -6,19 +6,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>HQ7EngagementRadar</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>HQ7EngagementRadar</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>HQ7EngagementRadar.createInstance()</code> or <code>new HQ7EngagementRadar()</code>. </p>
  * <ul>
  *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
- *     <li> SubCategory: HQ7SAMSystem  = <code>6</code>; </li>
+ *     <li> SubCategory: HQ7FM80SAMSystem  = <code>6</code>; </li>
  *     <li> Specific: HQ7EngagementRadar  = <code>2</code>; </li>
  *     <li> Entity type uid: 24037; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7dc222ae. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ed0fbae. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class HQ7EngagementRadar extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 16937, Air Defense/Missile Defense Unit Equipment
-        setSubCategory((byte)6); // uid 24035, HQ-7 SAM System
+        setSubCategory((byte)6); // uid 24035, HQ-7 (FM-80) SAM System
         setSpecific((byte)2); // uid 24037, HQ-7 Engagement Radar
     }
     /** Create a new instance of this final (unmodifiable) class

@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>PL71SyedNazrul</code></b> collects multiple enumeration values together. </p>
+ * <p> Entity class <b><code>PL71SyedNazrul</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>PL71SyedNazrul.createInstance()</code> or <code>new PL71SyedNazrul()</code>. </p>
  * <ul>
  *     <li> Country: Bangladesh (BGD) = <code>18</code>; </li>
@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: MinervaClass  = <code>1</code>; </li>
  *     <li> Specific: PL71SyedNazrul  = <code>1</code>; </li>
  *     <li> Entity type uid: 32626; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v28 (2020-05-07)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6615435c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d8355a8. </p>
  * @see Country#BANGLADESH_BGD
  * @see EntityKind#PLATFORM
  * @see Domain
