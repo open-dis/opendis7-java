@@ -19,22 +19,26 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 public class PduFactoryTest
 {
     @BeforeAll
+    /** actions to perform before all tests */
     public static void beforeAllTests()
     {
       System.out.println("PduFactoryTest");
     }
 
     @AfterAll
+    /** actions to perform after all tests */
     public static void afterAllTests()
     {
     }
 
     @BeforeEach
+    /** initialization */
     public void setUp()
     {
     }
 
     @AfterEach
+    /** close open objects */
     public void tearDown()
     {
     }
