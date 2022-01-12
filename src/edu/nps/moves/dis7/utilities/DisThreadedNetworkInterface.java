@@ -153,7 +153,7 @@ public class DisThreadedNetworkInterface
         }
         catch (UnknownHostException ex)
         {
-            Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DisThreadedNetworkInterface.class.getSimpleName()).log(Level.SEVERE, null, ex);
         }
         inetSocket = new InetSocketAddress(inetAddress, disPort); // tests that accessor methods are working as set
         networkInterface = findIpv4Interface();
@@ -431,7 +431,7 @@ public class DisThreadedNetworkInterface
                                pad = " ";
                         String message = TRACE_PREFIX + "[receipt " + pad + pduReceiptCounter + "] " + nextPdu.getPduType().toString();
                         if (hasVerboseOutputIncludesTimestamp())
-                            message += " (timestamp " + DisTime.timestampToString(nextPdu.getTimestamp());
+                            message += " (timestamp " + DisTime.convertToString(nextPdu.getTimestamp());
                         if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
                             message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
                         message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
@@ -480,7 +480,7 @@ public class DisThreadedNetworkInterface
                            pad = " ";
                     String message = TRACE_PREFIX + "[sending " + pad + pduSentCounter + "] " + nextPdu.getPduType().toString();
                     if (hasVerboseOutputIncludesTimestamp())
-                        message += " (timestamp " + DisTime.timestampToString(nextPdu.getTimestamp());
+                        message += " (timestamp " + DisTime.convertToString(nextPdu.getTimestamp());
                     if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
                         message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
                     message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
