@@ -107,12 +107,12 @@ public class PduRecorder // implements PduReceiver
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
 
-    private Long      startNanoTime = null;
-    private final  StringBuilder sb = new StringBuilder();
-    private final  Base64.Encoder base64Encoder = Base64.getEncoder();
-    private final  int     pduCount = 0;    // debug
-    private boolean headerWritten   = false;
-    private boolean running         = true; // starts recording by default
+    private Long           startNanoTime = null;
+    private StringBuilder  sb = new StringBuilder();
+    private Base64.Encoder base64Encoder = Base64.getEncoder();
+    private int            pduCount = 0;    // debug
+    private boolean        headerWritten   = false;
+    private boolean        running         = true; // starts recording by default
     
     private void initialize()
     {
@@ -170,9 +170,9 @@ public class PduRecorder // implements PduReceiver
     {
         initialize();
         outputDirectoryPath = new File(initialOutputDirectory).toPath();
-        setDescriptor("PduRecorder"); // default
-        setAddress(initialAddress);
-        setPort   (initialPort);
+        descriptor = "PduRecorder"; // default
+        disAddress = initialAddress;
+        disPort    = initialPort;
     }
 
       /**
@@ -292,7 +292,7 @@ public class PduRecorder // implements PduReceiver
           logFileWriter.close(); // a flush occurs first during a close
       } 
       catch (IOException ex) {
-          Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+          Logger.getLogger(PduRecorder.class.getSimpleName()).log(Level.SEVERE, null, ex);
       }
       System.err.flush(); // ensure all output sent
       System.out.flush(); // ensure all output sent
@@ -399,8 +399,9 @@ public class PduRecorder // implements PduReceiver
           ex.printStackTrace();
           throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
       }
-      if (false) // debug
-          System.out.println("PduRecorder: pduCount="+ pduCount);
+      pduCount = pduCount + 1;
+//      if (false) // debug
+//          System.out.println("PduRecorder: pduCount="+ pduCount);
 
       sb.setLength(0);
     }
