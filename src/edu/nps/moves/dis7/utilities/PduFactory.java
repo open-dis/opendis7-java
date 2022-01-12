@@ -102,10 +102,7 @@ public class PduFactory
   }
   
     /** Set one of four time references as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
-     * @see TimestampStyle.IEEE_ABSOLUTE
-     * @see TimestampStyle.IEEE_RELATIVE
-     * @see TimestampStyle.UNIX
-     * @see TimestampStyle.YEAR
+     * @see TimestampStyle
      * @param newtimestampStyle the timestamp style to set for this PDU
      */
     public final void setTimestampStyle(TimestampStyle newtimestampStyle) {
