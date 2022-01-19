@@ -19,7 +19,7 @@
     <property name="Implementation-Version" value="${timestamp}"/>
     <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
     
-    <!-- ensure backwards compatibility to specified version of Java -->
+    <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
     <property name="java.source"                 value="1.8"/>
     <property name="java.target"                 value="1.8"/>
     
@@ -42,6 +42,7 @@
     <!-- build.impl <javadoc additionalparam="-J-Dfile.encoding=${file.encoding} ${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"> -->
     
     <target name="all" description="Build and test the whole project, create distribution jar files.">
+        <!-- TODO current configuration is Java only; Python is next -->
         <echo message="timestamp ${timestamp}"/>
         <fail message="Please build using Ant 1.10.11 or higher.">
             <condition>
