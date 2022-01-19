@@ -44,10 +44,10 @@
     <target name="all" description="Build and test the whole project, create distribution jar files.">
         <!-- TODO current configuration is Java only; Python is next -->
         <echo message="timestamp ${timestamp}"/>
-        <fail message="Please build using Ant 1.10.11 or higher.">
+        <fail message="Please build using Ant 1.10.12 or higher.">
             <condition>
                 <not>
-                    <antversion atleast="1.10.11"/><!-- recommend latest 1.10.+ -->
+                    <antversion atleast="1.10.12"/><!-- recommend latest 1.10.+ -->
                 </not>
             </condition>
         </fail>
