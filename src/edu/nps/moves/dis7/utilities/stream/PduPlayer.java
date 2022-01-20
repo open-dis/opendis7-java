@@ -491,7 +491,7 @@ public class PduPlayer {
     /** Test execution for debugging
      * @param args command-line arguments (unused)
      */
-    public static void main(String[] args) throws IOException // TODO fix exception handling
+    public static void main(String[] args)
     {
         String DEFAULT_OUTPUT_DIRECTORY  = "pduLog";
         /** Default multicast group address we send on.
@@ -504,9 +504,16 @@ public class PduPlayer {
         int       multicastPort = DEFAULT_MULTICAST_PORT;
         boolean sendToNet = true;
         
-        // create instance of class in this static block
-        PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
-        // thread automatically starts up when class is instantiated
-        pduPlayer.begin(); // default is self test through all logs in ancestor pduLog subdirectory
+        try
+        {
+            // create instance of class in this static block
+            PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
+            // thread automatically starts up when class is instantiated
+            pduPlayer.begin(); // default is self test through all logs in ancestor pduLog subdirectory
+        }
+        catch (IOException ioe)
+        {
+            System.out.println("PduPlayer exception in main(): " + ioe.getMessage());
+        }
     }
 }
