@@ -6,6 +6,7 @@ package edu.nps.moves.dis7.test;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
@@ -74,7 +75,7 @@ public class AllPduRoundTripTest
       System.out.println ("*** AllPduRoundTripTest testRoundTripAllPdus() start...");
       setupSenderRecorder();
       
-      pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
+      pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, DisTime.TimestampStyle.IEEE_ABSOLUTE);
 
       pdusSent.add(pduFactory.makeAcknowledgePdu());
       pdusSent.add(pduFactory.makeAcknowledgeReliablePdu());

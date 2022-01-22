@@ -5,6 +5,7 @@
 package edu.nps.moves.dis7.test;
 
 import edu.nps.moves.dis7.enumerations.Country;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -49,7 +50,7 @@ public class PduFactoryTest
         Throwable ex = null;
         try {
             //Arrays.stream(PduFactory.class.getDeclaredMethods()).forEach(m->System.out.println(m.getName()));
-            PduFactory fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
+            PduFactory fact = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, DisTime.TimestampStyle.IEEE_ABSOLUTE);
 
             fact.makeAcknowledgePdu();
             fact.makeAcknowledgeReliablePdu();
