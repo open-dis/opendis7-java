@@ -566,7 +566,8 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" ioRecords: ");
     ioRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
     sb.append(sb2.toString().trim());
-    sb2.delete(0,sb2.length()-1); // reset
+    // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
+    sb2.setLength(0); // reset
 
    return sb.toString();
  }
