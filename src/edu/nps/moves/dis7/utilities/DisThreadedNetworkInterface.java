@@ -5,7 +5,7 @@
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.enumerations.DisPduType;
-import edu.nps.moves.dis7.pdus.DisTime;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import java.io.ByteArrayOutputStream;
