@@ -7,6 +7,7 @@ package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.utilities.CoordinateConversions;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
@@ -118,8 +119,8 @@ public class PduSender
     }
     
     // Factory with default absolute time
-    PduFactory pduFac = new PduFactory();
-    EntityStatePdu espdu = pduFac.makeEntityStatePdu();
+    PduFactory     pduFactory = new PduFactory();
+    EntityStatePdu espdu      = pduFactory.makeEntityStatePdu();
 
     // ICBM coordinates for my office
     double lat = 36.595517;
@@ -182,7 +183,7 @@ public class PduSender
         // update the timestamp on ALL packets sent.
         // An alterative approach: actually follow the standard. It's a crazy concept,
         // but it might just work.
-        timestamp = pduFac.getTimestamp();
+        timestamp = DisTime.getTimestamp();
         espdu.setTimestamp(timestamp);
 
         // Set the position of the entity in the world. DIS uses a cartesian 
@@ -233,7 +234,7 @@ public class PduSender
         // datagram and send it.
         data = baos.toByteArray();
         
-        fire = pduFac.makeFirePdu();
+        fire = pduFactory.makeFirePdu();
         fireArray = fire.marshal();
 
         for (InetAddress broadcast : broadcastAddresses) {

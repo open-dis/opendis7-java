@@ -7,6 +7,7 @@ package edu.nps.moves.dis7.examples;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.enumerations.Country;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
 /**
@@ -35,7 +36,7 @@ public class ThreadedNetExample
     
     // Use PduFactory to make pdus, default country = Deutschland, exercise, site, app, absolute timestamps
     
-    PduFactory factory = new PduFactory(Country.GERMANY_DEU, (byte) 1, (short) 2, (short) 3, PduFactory.TimestampStyle.IEEE_ABSOLUTE);
+    PduFactory factory = new PduFactory(Country.GERMANY_DEU, (byte) 1, (short) 2, (short) 3, DisTime.TimestampStyle.IEEE_ABSOLUTE);
     
     // Make and send 3 pdus with no delay between, testing threaded receiver performance
     netif.send(factory.makeEntityStatePdu());
