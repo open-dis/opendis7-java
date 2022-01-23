@@ -53,6 +53,10 @@ public class PduPlayer {
     static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
 
     private static String pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT; // determined when reading file
+    
+    private boolean hasBegun = false;
+    private boolean playing  = false;
+    private boolean paused   = false;
 
     /** Constructor that spawns the player thread.
      * 
@@ -81,7 +85,6 @@ public class PduPlayer {
     private int pduCount = 0;
     private DatagramSocket datagramSocket;
     private Long startNanoTime = null;
-    private boolean paused = false;
     private boolean netSend = true;
     private RawListener rawListener = null;
 
@@ -142,6 +145,11 @@ public class PduPlayer {
             }
             
             Base64.Decoder base64Decoder = Base64.getDecoder();
+            
+            // activate state, commence playing
+            hasBegun = true;
+            playing  = true; 
+            paused   = false;
 
             for (File f : filesArray) 
             {
@@ -403,7 +411,7 @@ public class PduPlayer {
             System.err.println("Exception reading/writing pdus: " + ex.getClass().getSimpleName() + ": " + ex.getLocalizedMessage());
             ex.printStackTrace();
             playerThread = null;
-            closer();
+            closeConnections();
         }
     }
 
@@ -418,14 +426,19 @@ public class PduPlayer {
         showPduCountsOneTime = false;
     }
 
-    private void exitWithFailure() throws IOException {
+    private void exitWithFailure() throws IOException 
+    {
         System.out.println("Replay stopped.");
-        closer();
+        closeConnections();
         throw new IOException("PduPlayer parsing error");
     }
 
-    private void closer() {
-        netSend = false;
+    private void closeConnections() 
+    {
+        hasBegun = false;
+        playing  = false;
+        paused   = false;
+        netSend  = false;
         if (datagramSocket != null) {
             datagramSocket.close();
             datagramSocket = null;
@@ -462,18 +475,31 @@ public class PduPlayer {
         return returnValue;
     }
     /** Start or resume this instance */
-    public void startResume() {
-        paused = false;
+    public void startResume()
+    {
+        if (!hasBegun)
+        {
+            System.out.println("PduPlayer startResume() received before start of operations, invoking begion()");
+            begin();
+            sleep(500l); // allow thread to start
+        }
+        playing = true;
+        paused  = false;
     }
 
     /** Stop or pause this instance */
-    public void stopPause() {
-        paused = true;
+    public void stopPause()
+    {
+        playing = true;
+        paused  = true;
     }
 
     /** End operation of this instance */
-    public void end() {
-        closer();
+    public void end() 
+    {
+        playing = false;
+        paused  = true;
+        closeConnections();
     }
 
     private void sleep(long ms) {
@@ -506,6 +532,7 @@ public class PduPlayer {
         
         try
         {
+            System.out.println("Prepare for PduPlayer self-test log by running PduRecorder() self-test first.");
             // create instance of class in this static block
             PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
             // thread automatically starts up when class is instantiated

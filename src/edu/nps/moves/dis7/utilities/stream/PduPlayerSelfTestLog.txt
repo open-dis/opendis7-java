@@ -4,10 +4,9 @@ Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
 Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
-warning: [options] bootstrap class path not set in conjunction with -source 8
-1 warning
 compile-single:
 run-single:
+Prepare for PduPlayer self-test log by running PduRecorder() self-test first.
 PduPlayer begin() playing DIS logs found in ancestor pduLog directory.
 ENCODING_PLAINTEXT
 Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\open-dis7-java\pduLog\PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog
