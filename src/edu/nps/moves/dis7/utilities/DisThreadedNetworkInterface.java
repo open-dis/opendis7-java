@@ -605,6 +605,8 @@ public class DisThreadedNetworkInterface
             System.err.println (TRACE_PREFIX + "close()() unexpected exception!");
         }
     }
+    /** Tell thread to stop.
+     * @param threadToKill of interest */
     public void killThread(Thread threadToKill)
     {
             try { // join and kill threadToKill
@@ -624,9 +626,11 @@ public class DisThreadedNetworkInterface
             
         String   threadAlive = "null";
         if (threadToKill != null)
+        {
             threadAlive =   String.valueOf(threadToKill.isAlive());
-        System.out.println ("*** killThread() status: " + threadToKill.getName() + ".isAlive()=" + threadAlive +
+            System.out.println ("*** killThread() status: " + threadToKill.getName() + ".isAlive()=" + threadAlive +
                                 " " + threadToKill.getName() + ".isInterrupted()=" + threadToKill.isInterrupted());
+        }
         System.err.flush(); // ensure all output sent
         System.out.flush(); // ensure all output sent
     }
