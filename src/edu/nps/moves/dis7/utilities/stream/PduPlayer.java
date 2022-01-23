@@ -479,7 +479,7 @@ public class PduPlayer {
     {
         if (!hasBegun)
         {
-            System.out.println("PduPlayer startResume() received before start of operations, invoking begion()");
+            System.out.println("*** PduPlayer startResume() received before start of operations, invoking begin()...");
             begin();
             sleep(500l); // allow thread to start
         }
