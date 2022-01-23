@@ -1,0 +1,21 @@
+ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/utilities/DisTime.java -Drun.class=edu.nps.moves.dis7.utilities.DisTime run-single
+init:
+Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
+compile-single:
+run-single:
+*** DisTime.main() self test started...
+DisTime.getTimestampStyle()                    = IEEE_ABSOLUTE
+DisTime.getTimestamp() initialTimestamp        = 08:52:40 = 1011160571 = 1011160571 (unsigned vs signed output)
+DisTime.getTimestamp()                         = 08:52:59 = 1011180853 = 1011180853 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()       = 08:53:00 = 1011180853
+DisTime.getCurrentDisRelativeTimestamp()       = 08:53:03 = 1011184430
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 12:26:32 = 505592215
+DisTime.getEpoch()                             = 16:00:00 = 0
+DisTime.setEpochCurrentTimestamp();
+DisTime.getEpoch()                             = 16:00:00 = 1011184431
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 19:38:19 = 2147483647
+*** DisTime.main() self test complete.
+BUILD SUCCESSFUL (total time: 0 seconds)

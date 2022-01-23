@@ -12,57 +12,81 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
+ * <p>This common shared class provides static code for timestamp configuration and conversion utilities,
+ * consistently supporting all active open-dis7-java simulations running together on a localhost. 
+ * Multiple timestamp configurations are available, but dissimilar forms within a single simulation
+ * are considered counterproductive and impractical to manage coherently.</p>
+ *
  * <p>DIS time units are a pain to work with. As specified by the IEEE DIS Protocol specification, 
  * DIS time units are defined in a custom manner and set
  * equal to 2^31 - 1 time units per hour. The DIS time is set to the number of time
  * units since the start of the hour. Rollover problems can easily occur.  The timestamp field in the PDU header is
  * four bytes long and is specified to be an unsigned integer value.</p>
  *
- * <p>Additionally, there are two types of official timestamps in the PDU header: 
- * <i>absolute time</i> and <i>relative time</i>. Absolute time is used when the host is synchronized to 
- * <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time" target="_blank">Coordinated Universal Time (UTC)</a>, i.e. the host
- * is accurately synchronized with UTC via <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Network Time Protocol (NTP)</a>.
+ * <p>Multiple timestamp styles and settings are available.</p>
+ *
+ * <p><i>Absolute time</i> and <i>Relative time</i> are two variations for the 
+ * official timestamp value  in the PDU header. 
+ * Absolute time indicates that the localhost is synchronized to 
+ * <a href="https://en.wikipedia.org/wiki/Coordinated_Universal_Time" target="_blank">Coordinated Universal Time (UTC)</a>, 
+ * typically meaning that the local computer system is accurately synchronized with UTC via
+ * <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Network Time Protocol (NTP)</a>.
+ * Synchronization might also be achieved when a computer has a highly accurate reference clock (such as GPS).
  * The packet timestamps originating from such hosts can be legitimately
  * compared to the timestamp of packets received from other hosts, since they all are
- * referenced to the same universal time.</p>
+ * referenced to the same universal time.  
+ * Relative timestamps may require further processing in order to achieve synchronization</p>
  *
  * <p><b>Absolute timestamps</b> have their least significant bit (LSB) set to 1, and relative timestamps have their
  * LSB set to 0. The idea in the DIS specification is to get the current time since the top of the hour,
  * divide by 2^31-1, shift left one bit, then set the LSB to either 0 for relative
  * timestamps or 1 for absolute timestamps.</p>
  *
- * <p><b>Relative timestamps</b> are used when the host does NOT have access to NTP, and hence
+ * <p><b>Relative timestamps</b> are indicated when the host does NOT have access to NTP, and hence
  * the system time might not be coordinated with that of other hosts. This means that
  * a host receiving DIS packets from several hosts might have to set up a per-host
  * table to correlate baseline time references before ordering packets, and that 
  * the PDU timestamp fields from one host is not
- * directly comparable to the PDU timestamp field from another host.</p>
+ * directly comparable to the PDU timestamp field from another host.
+ * (TODO: such support for correlating unsynchronized clocks is not yet implemented by this library.)</p>
  *
- * <p>The nature of shared DIS data is such that the timestamp values <i>roll over</i> once an
+ * <p>Another difficulty with the DIS standard has serious effects.
+ * The nature of shared DIS data is such that the timestamp values <i>roll over</i> once an
  * hour, and simulations must be prepared for that eventuality. In other words, at the top of the hour
  * outgoing PDUs will have a timestamp of 1, then just before the end of the hour the
  * PDUs will have a timestamp of 2^31 - 1, and then they will roll back over to a value of 1.
  * Receiving applications should expect this behavior, and not simply expect a
- * monotonically increasing timestamp field.</p>
+ * monotonically increasing timestamp field.
+ * Two nonstandard timestamp alternatives follow.</p>
  *
  * <p><b>Unix time</b>. Note that many applications in the wild have been known to completely ignore
- * the standard and to simply put commonly used <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a> (seconds since 1 January 1970) into the
- * field. </p>
+ * the DIS standard and to simply put commonly used 
+ * <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix time</a> (seconds since 1 January 1970)
+ * into the timestamp field. </p>
  *
  * <p><b>Year time</b>.  The rollover associated with official DIS timestamps don't work all that well in numerous applications,
  * which often expect a monotonically increasing timestamp field.   Such unpredictable rollover variations are also incompatible
- * with archival recording or streaming playback of Live-Virtual-Constructive (LVC) behavior streams.
+ * with archival recording or streaming playback of 
+ * <a href="https://en.wikipedia.org/wiki/Live,_virtual,_and_constructive" target="_blank">Live-Virtual-Constructive (LVC)</a> behavior streams.
  * To avoid such problems, NPS created a "yearly" timestamp which measures 
  * hundredths of a second since the start of the current year. The maximum value for
  * such measurements is 3,153,600,000, which can fit into an unsigned int. 
  * One hundredth of a second resolution is accurate enough for most applications, and you typically don't have to worry about
  * rollover, instead getting only a monotonically increasing timestamp value.</p>
  *
- * <p><b>TODO: time 0.0</b>.  Functionality is needed to define a shared common time origin, and also to
+ * <p><b>TODO: timestamp normalization to an initial reference time.</b>
+ * Functionality is needed to define a shared common time origin (epoch) and also to
  * precisely adjust stream timestamps when coordinating recorded PDU playback within LVC applications.
  * We think the ability to "start at time 0.0", or normalizing initial time to zero 
- * for a recorded PDU stream, is actually a pretty common use case.</p>
- * <p> Don McGregor, Mike Bailey,  and Don Brutzman</p>
+ * for a recorded PDU stream, is actually a pretty common use case.  
+ * Implementing such a capability is under active development.</p>
+ *
+ * <p><b>TODO: upgrade to <code>java.time</code> package.</b> See
+ * <a href="https://docs.oracle.com/javase/tutorial/datetime/index.html" target="_blank">Java Tutorials: Date Time</a>
+ * and
+ * <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/package-summary.html" target="_blank">Java Package java.time</a>. </p>
+ * 
+ * <p> Don McGregor, Mike Bailey, and Don Brutzman</p>
  * 
  * @author DMcG
  */
@@ -75,9 +99,8 @@ import java.util.*;
 
 public class DisTime
 {
-
-    private       static Method getTimeMethod;
-    private final static DisTime disTime = new DisTime();
+    private       static Method  getTimeMethod;           // needed for reflection
+    private final static DisTime disTime = new DisTime(); // needed for reflection
   
     /** Supported timestamp styles and utility methods.
      * @see edu.nps.moves.dis7.utilities.PduFactory
@@ -92,6 +115,16 @@ public class DisTime
         /** hundreds of a second since the start of the year */
         YEAR
     };
+    
+    /** Whether host computer clock is accurately synchronized with UTC to a time standard, for example by using 
+     * <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Network Time Protocol (NTP)</a>.
+     */
+    private static boolean hostClockSynchronized = true;
+    
+    /** Reference starting time for current timestamps
+     * <a href="https://en.wikipedia.org/wiki/Epoch_(computing)" target="_blank">https://en.wikipedia.org/wiki/Epoch_(computing)</a>.
+     */
+    private static int     epoch        = 0;
   
     /** We can marshal the PDU with a timestamp set to any of several styles. 
      * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
@@ -108,11 +141,13 @@ public class DisTime
     
     /** calendar instance */
     private static GregorianCalendar calendar;
+    
+    private static String dateFormatPattern = "HH:mm:ss";
 
    // public static DisTime disTime = null;
 
     /**
-     * Shared instance. This is not thread-safe. If you are working in multiple threads,
+     * Shared instance. This method is not thread-safe. If you are working in multiple threads,
      * create a new instance for each thread.
      * return singleton instance of DisTime
      */
@@ -121,7 +156,6 @@ public class DisTime
         if (disTime == null) {
             disTime = new DisTime();
         }
-
         return disTime;
     }
     */
@@ -132,8 +166,9 @@ public class DisTime
     }
 
     /**
-     * Returns the number of DIS time units since the top of the hour. there are 2^31-1 DIS time
-     * units per hour.
+     * For current system time, returns the number of DIS time units since the top of the hour, or else
+     * number of DIS time units since previously set epoch timestamp (for time-zero-based streams).
+     * Note that there are 2^31-1 DIS time units per hour.
      * @return integer DIS time units since the start of the hour.
      */
     private static synchronized int getCurrentDisTimeUnitsSinceTopOfHour()
@@ -147,19 +182,29 @@ public class DisTime
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        long topOfHour = calendar.getTimeInMillis();
+        long topOfHourMsec = calendar.getTimeInMillis();
 
         // Milliseconds since the top of the hour
-        long diff = currentTime - topOfHour;
+        long timeDifferenceMsec; // originally diff = currentTime - topOfHour;
 
         // It turns out that Integer.MAX_VALUE is 2^31-1, which is the time unit value, ie there are
         // 2^31-1 DIS time units in an hour. 3600 sec/hr X 1000 msec/sec divided into the number of
         // msec since the start of the hour gives the percentage of DIS time units in the hour, times
         // the number of DIS time units per hour, equals the time value
-        double val = (diff / (3600.0 * 1000.0)) * Integer.MAX_VALUE;
-        int ts = (int) val;
-
-        return ts;
+        double differenceValue;
+        int    differenceTimestamp;
+        
+        if  (epoch == 0)
+        {
+            timeDifferenceMsec = currentTime - topOfHourMsec;
+        }
+        else // normalized time reference having 00:00 at start
+        {
+            timeDifferenceMsec = currentTime - epoch;
+        }
+        differenceValue     = (timeDifferenceMsec / (3600.0 * 1000.0)) * Integer.MAX_VALUE;
+        differenceTimestamp = (int) differenceValue;
+        return differenceTimestamp;
     }
 
     /**
@@ -170,22 +215,23 @@ public class DisTime
      */
     public static synchronized int getCurrentDisAbsoluteTimestamp()
     {
-         int val = getCurrentDisTimeUnitsSinceTopOfHour();
-         val = (val << 1) | ABSOLUTE_TIMESTAMP_MASK; // always flip the lsb to 1
-         return val;
+        int value = getCurrentDisTimeUnitsSinceTopOfHour();
+        value = (value << 1) | ABSOLUTE_TIMESTAMP_MASK; // always flip the lsb to 1
+        return value;
     }
 
     /**
-     * Checks local system clock and returns the current DIS standard relative timestamp, which should be used if this host
-     * is not slaved to NTP. Fix to bitshift by mvormelch
+     * Checks local system clock and returns the current DIS standard relative timestamp, 
+     * which should be used if this host is not synchronized to UTC.
+     * // Fix to bitshift by mvormelch
      * @see <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Wikipedia: Network Time Protocol (NTP)</a>
      * @return DIS time units, relative
      */
     public static int getCurrentDisRelativeTimestamp()
     {
-        int val = getCurrentDisTimeUnitsSinceTopOfHour();
-        val = (val << 1) & RELATIVE_TIMESTAMP_MASK; // always flip the lsb to 0
-        return val;
+        int value = getCurrentDisTimeUnitsSinceTopOfHour();
+        value = (value << 1) & RELATIVE_TIMESTAMP_MASK; // always flip the lsb to 0
+        return value;
     }
 
     /**
@@ -234,40 +280,50 @@ public class DisTime
      *
      * Unix time (in seconds) rolls over in 2038. 
      *
-     * Consult the Wikipedia page on <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a> for the gory details
+     * Consult the Wikipedia page on <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix time</a> for the gory details
      * @return seconds since 1970
      */
     public static synchronized int getCurrentUnixTimestamp()
     {
         long t = System.currentTimeMillis();
-        t /= 1000l;   // NB: integer division, convert milliseconds to seconds
+        t /= 1000l;   // NB: integer division used to convert milliseconds to seconds
         return (int) t;
     }
     
     /**
-     * Convert timestamp value to string for logging and diagnostics.
+     * Convert timestamp value to string for logging and diagnostics,
+     * taking into account epoch and TimeStampStyle (DIS absolute/relative, Unix or Year).
      * TODO consider different formats for different timestampStyle values.
      * @param timestamp value in milliseconds
      * @see GregorianCalendar
+     * @see DisTime.TimeStampStyle
      * @return string value provided by GregorianCalendar
      */
     public static String convertToString(int timestamp)
     {
         GregorianCalendar newCalendar = new GregorianCalendar();
-        newCalendar.setTimeInMillis(timestamp);
-        DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
-        return formatter.format(newCalendar.getTime());
-    }
-  
-    /** Set one of four time references as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
-     * @param newtTimestampStyle the timestamp style to set for this PDU
-     */
-    public static void setTimestampStyle(TimestampStyle newtTimestampStyle) {
-        timestampStyle = newtTimestampStyle;
-        setTimestampMethod();
+        DateFormat formatter = new SimpleDateFormat(dateFormatPattern);
+        
+        if      ((timestampStyle == TimestampStyle.IEEE_ABSOLUTE) || 
+                 (timestampStyle == TimestampStyle.IEEE_RELATIVE))
+        {
+            // if epoch is not set, this is regular DIS value
+            newCalendar.setTimeInMillis(timestamp - epoch);
+            return formatter.format(newCalendar.getTime());
+        }
+        else if (timestampStyle == TimestampStyle.UNIX) // TODO
+        {
+            newCalendar.setTimeInMillis(timestamp);
+            return formatter.format(newCalendar.getTime());
+        }
+        else // (timestampStyle == TimestampStyle.YEAR) // TODO
+        {
+            newCalendar.setTimeInMillis(timestamp);
+            return formatter.format(newCalendar.getTime());
+        }
     }
 
-    public static void setTimestampMethod()
+    private static void initializeTimestampMethod()
     {
         try {
             switch (timestampStyle)
@@ -306,12 +362,98 @@ public class DisTime
   {
     try {
         if (getTimeMethod == null)
-            setTimestampMethod(); // avoid NPE
+            initializeTimestampMethod(); // avoid NPE
         return (int) getTimeMethod.invoke(disTime, (Object[]) null);
     }
     catch (IllegalAccessException | InvocationTargetException ex) {
       throw new RuntimeException(ex);
     }
   }
+  
+    /** Set one of four time references as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
+     * @param newtTimestampStyle the timestamp style to set for this PDU
+     */
+    public static void setTimestampStyle(TimestampStyle newtTimestampStyle)
+    {
+        timestampStyle = newtTimestampStyle;
+        initializeTimestampMethod();
+    }
+    /** Retrieve the current timestampStyle.
+     * @return the current timestampStyle
+     */
+    public static TimestampStyle getTimestampStyle()
+    {
+      return timestampStyle;
+    }
+    
+    /** Declare whether host computer clock is accurately synchronized with UTC to a time standard
+     * @param newhostClockSynchronized whether localhost is synchronized to time reference
+     */
+    public static void setHostClockSynchronized(boolean newhostClockSynchronized)
+    {
+        hostClockSynchronized = newhostClockSynchronized;
+    }
+    /**  Determine whether host computer clock is accurately synchronized with UTC to a time standard
+     * @return whether localhost is synchronized to time reference
+     */
+    public static boolean isHostClockSynchronized()
+    {
+      return hostClockSynchronized;
+    }
+    
+    /** Set epoch using current time for zero-based clock, meaning timestamps are normalized to "time zero" of simulation
+     * as initial starting time
+     */
+    public static void setEpochCurrentTimestamp()
+    {
+        setEpoch(getCurrentDisAbsoluteTimestamp());
+    }
+    
+    /** Set initial timestamp as epoch for zero-based clock, meaning timestamps normalized to 0 as initial starting time
+     * @param initialTimestamp first timestamp in series, considered time zero
+     */
+    public static void setEpoch(int initialTimestamp)
+    {
+        epoch = initialTimestamp;
+    }
+    /**  Get initial timestamp for zero-based clock, meaning all timestamps are measured with resepct to given starting time
+     * @return whether localhost is synchronized to time reference
+     */
+    public static int getEpoch()
+    {
+      return epoch;
+    }
+    /** Self-test for basic smoke testing */
+    private void selfTest()
+    {        
+        DisTime.initializeTimestampMethod();
+        System.out.println("DisTime.getTimestampStyle()                    = " + DisTime.getTimestampStyle());
+        System.out.println("                                               = " + dateFormatPattern);
+        int initialTimestamp = DisTime.getTimestamp();
+        System.out.println("DisTime.getTimestamp() initialTimestamp        = " + convertToString(initialTimestamp)                               + " = " + Integer.toUnsignedString(initialTimestamp)       + " = " + initialTimestamp      + " (unsigned vs signed output)");
+        System.out.println("DisTime.getTimestamp()                         = " + convertToString(DisTime.getTimestamp())                         + " = " + Integer.toUnsignedString(DisTime.getTimestamp()) + " = " + DisTime.getTimestamp()+ " (unsigned vs signed output)");
+        System.out.println("DisTime.getCurrentDisAbsoluteTimestamp()       = " + convertToString(DisTime.getCurrentDisAbsoluteTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisAbsoluteTimestamp()));
+        System.out.println("DisTime.getCurrentDisRelativeTimestamp()       = " + convertToString(DisTime.getCurrentDisRelativeTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisRelativeTimestamp()));
+        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
+        System.out.println("DisTime.getEpoch()                             = " + convertToString(DisTime.getEpoch())                             + " = " + DisTime.getEpoch());
+        setEpochCurrentTimestamp();
+        System.out.println("DisTime.setEpochCurrentTimestamp();");
+        System.out.println("DisTime.getEpoch()                             = " + convertToString(DisTime.getEpoch())                             + " = " + DisTime.getEpoch());
+        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
+   }
 
+    /**
+     * Main method for testing.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
+     * @param args [unused] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
+     */
+    public static void main(String[] args)
+    {
+        System.out.println("*** DisTime.main() self test started...");
+
+        DisTime disTimeInstance = new DisTime();
+        disTimeInstance.selfTest();
+        
+        System.out.println("*** DisTime.main() self test complete.");
+    }
 }
