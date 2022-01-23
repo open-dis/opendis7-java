@@ -5,6 +5,7 @@
 
 package edu.nps.moves.dis7.utilities;
 
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.DisTime.*;
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.*;
@@ -51,7 +52,7 @@ public class PduFactory
   public PduFactory(TimestampStyle newTimestampStyle)
   {
       timestampStyle = newTimestampStyle;
-      DisTime.setTimestampMethod();
+      DisTime.setTimestampStyle(timestampStyle);
   }
 
   /**
