@@ -7,15 +7,29 @@ Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
 compile-single:
 run-single:
 *** DisTime.main() self test started...
+=== legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                    = IEEE_ABSOLUTE
-DisTime.getTimestamp() initialTimestamp        = 08:52:40 = 1011160571 = 1011160571 (unsigned vs signed output)
-DisTime.getTimestamp()                         = 08:52:59 = 1011180853 = 1011180853 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()       = 08:53:00 = 1011180853
-DisTime.getCurrentDisRelativeTimestamp()       = 08:53:03 = 1011184430
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 12:26:32 = 505592215
-DisTime.getEpoch()                             = 16:00:00 = 0
-DisTime.setEpochCurrentTimestamp();
-DisTime.getEpoch()                             = 16:00:00 = 1011184431
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 19:38:19 = 2147483647
+patterns                                       = yyyy-mm-dd HH:mm:ss
+DisTime.getTimestamp() initialTimestamp        = 1970-10-02 08:10:52 = 144652113 = 144652113 (unsigned vs signed output)
+DisTime.getTimestamp()                         = 1970-11-02 08:11:01 = 144662849 = 144662849 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()       = 1970-11-02 08:11:02 = 144662849
+DisTime.getCurrentDisRelativeTimestamp()       = 1970-11-02 08:11:02 = 144662848
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 1970-05-01 12:05:31 = 72331424
+
+=== modern java.time methods ===
+note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.267763900, 2022-01-24T04:02:01.269764Z
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.270748500, 2022-01-24T04:02:01.270748500Z
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.271426100, 2022-01-24T04:02:01.271426100Z
+sleep for 1000 msec...
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277595700, 2022-01-24T04:02:02.277595700Z
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277735400, 2022-01-24T04:02:02.277735400Z
+java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277735400, 2022-01-24T04:02:02.277735400Z
+DisTime.hasEpochLvc()                          = false
+DisTime.setEpochLvcNow()...
+DisTime.hasEpochLvc(),                         = true
+DisTime.getEpochLvc(), Instant.now(), duration = 2022-01-24T04:02:02.279866100Z, 2022-01-24T04:02:02.279866100Z, 0 msec
+sleep for 1000 msec...
+DisTime.getEpochLvc(), Instant.now(), duration = 2022-01-24T04:02:02.279866100Z, 2022-01-24T04:02:03.289787Z, 1009 msec
 *** DisTime.main() self test complete.
-BUILD SUCCESSFUL (total time: 0 seconds)
+BUILD SUCCESSFUL (total time: 2 seconds)

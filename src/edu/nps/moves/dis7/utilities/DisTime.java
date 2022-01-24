@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.*;
 import java.util.*;
 
 /**
@@ -75,7 +76,7 @@ import java.util.*;
  * rollover, instead getting only a monotonically increasing timestamp value.</p>
  *
  * <p><b>TODO: timestamp normalization to an initial reference time.</b>
- * Functionality is needed to define a shared common time origin (epoch) and also to
+ * Functionality is needed to define a shared common time origin (epochLvc) and also to
  * precisely adjust stream timestamps when coordinating recorded PDU playback within LVC applications.
  * We think the ability to "start at time 0.0", or normalizing initial time to zero 
  * for a recorded PDU stream, is actually a pretty common use case.  
@@ -121,11 +122,18 @@ public class DisTime
      */
     private static boolean hostClockSynchronized = true;
     
-    /** Reference starting time for current timestamps
+    /** Whether to apply epochLvc as baseline starting time for DIS timestamps, enabling time normalization of LVC streams.
+     * Distinct from Unix timestamp EPOCH.
      * <a href="https://en.wikipedia.org/wiki/Epoch_(computing)" target="_blank">https://en.wikipedia.org/wiki/Epoch_(computing)</a>.
      */
-    private static int     epoch        = 0;
-  
+    private static boolean     applyEpochLvc     = false;
+    
+    /** Reference starting time for current DIS timestamps, enabling time normalization of LVC streams.
+     * Distinct from Unix timestamp EPOCH.
+     * <a href="https://en.wikipedia.org/wiki/Epoch_(computing)" target="_blank">https://en.wikipedia.org/wiki/Epoch_(computing)</a>.
+     */
+    private static Instant     epochLvc        = Instant.now(); // initialized at start
+    
     /** We can marshal the PDU with a timestamp set to any of several styles. 
      * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
      * with the same timestamp as duplicates and may discard them.
@@ -141,8 +149,11 @@ public class DisTime
     
     /** calendar instance */
     private static GregorianCalendar calendar;
+//    private LocalDateTime todayDateTime = new LocalDateTime();
+//    private Instant       todayInstant  = new Instant();
     
-    private static String dateFormatPattern = "HH:mm:ss";
+    private static String dateFormatPattern = "yyyy-mm-dd";
+    private static String timeFormatPattern = "HH:mm:ss";
 
    // public static DisTime disTime = null;
 
@@ -167,7 +178,7 @@ public class DisTime
 
     /**
      * For current system time, returns the number of DIS time units since the top of the hour, or else
-     * number of DIS time units since previously set epoch timestamp (for time-zero-based streams).
+     * number of DIS time units since previously set epochLvc timestamp (for time-zero-based streams).
      * Note that there are 2^31-1 DIS time units per hour.
      * @return integer DIS time units since the start of the hour.
      */
@@ -194,13 +205,14 @@ public class DisTime
         double differenceValue;
         int    differenceTimestamp;
         
-        if  (epoch == 0)
+        if  (!hasEpochLvc())
         {
             timeDifferenceMsec = currentTime - topOfHourMsec;
         }
         else // normalized time reference having 00:00 at start
         {
-            timeDifferenceMsec = currentTime - epoch;
+            Duration d = java.time.Duration.between(epochLvc, Instant.now());
+            timeDifferenceMsec = d.toMillis();
         }
         differenceValue     = (timeDifferenceMsec / (3600.0 * 1000.0)) * Integer.MAX_VALUE;
         differenceTimestamp = (int) differenceValue;
@@ -292,7 +304,7 @@ public class DisTime
     
     /**
      * Convert timestamp value to string for logging and diagnostics,
-     * taking into account epoch and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
      * TODO consider different formats for different timestampStyle values.
      * @param timestamp value in milliseconds
      * @see GregorianCalendar
@@ -302,13 +314,13 @@ public class DisTime
     public static String convertToString(int timestamp)
     {
         GregorianCalendar newCalendar = new GregorianCalendar();
-        DateFormat formatter = new SimpleDateFormat(dateFormatPattern);
+        DateFormat formatter = new SimpleDateFormat(dateFormatPattern + " " + timeFormatPattern);
         
         if      ((timestampStyle == TimestampStyle.IEEE_ABSOLUTE) || 
                  (timestampStyle == TimestampStyle.IEEE_RELATIVE))
         {
-            // if epoch is not set, this is regular DIS value
-            newCalendar.setTimeInMillis(timestamp - epoch);
+            // if epochLvc is not set, this is regular DIS value
+            newCalendar.setTimeInMillis(timestamp); //  - epochLvc
             return formatter.format(newCalendar.getTime());
         }
         else if (timestampStyle == TimestampStyle.UNIX) // TODO
@@ -401,46 +413,95 @@ public class DisTime
       return hostClockSynchronized;
     }
     
-    /** Set epoch using current time for zero-based clock, meaning timestamps are normalized to "time zero" of simulation
+    /** Reset epochLvc using current time for zero-based clock, meaning timestamps are normalized to "time zero" of simulation
      * as initial starting time
      */
-    public static void setEpochCurrentTimestamp()
+    public static void setEpochLvcNow()
     {
-        setEpoch(getCurrentDisAbsoluteTimestamp());
+        applyEpochLvc = true;
+        setEpochLvc(Instant.now()); // getCurrentDisAbsoluteTimestamp());
     }
     
-    /** Set initial timestamp as epoch for zero-based clock, meaning timestamps normalized to 0 as initial starting time
-     * @param initialTimestamp first timestamp in series, considered time zero
+    /** Set Instant value as epochLvc for zero-based clock, meaning timestamps normalized to 0 at that initial starting time
+     * @param newEpoch Instant corresponding to first PDU in series, considered time zero
      */
-    public static void setEpoch(int initialTimestamp)
+    public static void setEpochLvc(java.time.Instant newEpoch)
     {
-        epoch = initialTimestamp;
+        epochLvc = newEpoch;
     }
-    /**  Get initial timestamp for zero-based clock, meaning all timestamps are measured with resepct to given starting time
+    /**  Get initial timestamp for zero-based clock, meaning all timestamps are measured with respect to given starting time
      * @return whether localhost is synchronized to time reference
      */
-    public static int getEpoch()
+    public static java.time.Instant getEpochLvc()
     {
-      return epoch;
+      return epochLvc;
+    }
+    /** Whether epochLvc is currently applied
+     * @return whether epochLvc is active
+     */
+    public static boolean hasEpochLvc()
+    {
+      return applyEpochLvc;
+    }
+    
+    /** Reset epochLvc so it is no longer active
+     */
+    public static void clearEpochLvc()
+    {
+        applyEpochLvc     = false;
+    }
+
+    private void sleep(long ms) {
+        sleep(ms, 0);
+    }
+    
+    private void sleep(long ms, int ns) 
+    {
+        try {
+            Thread.sleep(ms, ns);
+        } 
+        catch (InterruptedException ex) {}
     }
     /** Self-test for basic smoke testing */
     private void selfTest()
     {        
         DisTime.initializeTimestampMethod();
+        System.out.println("=== legacy java.util.Date, calendar methods ===");
         System.out.println("DisTime.getTimestampStyle()                    = " + DisTime.getTimestampStyle());
-        System.out.println("                                               = " + dateFormatPattern);
+        System.out.println("patterns                                       = " + dateFormatPattern + " " + timeFormatPattern);
         int initialTimestamp = DisTime.getTimestamp();
         System.out.println("DisTime.getTimestamp() initialTimestamp        = " + convertToString(initialTimestamp)                               + " = " + Integer.toUnsignedString(initialTimestamp)       + " = " + initialTimestamp      + " (unsigned vs signed output)");
         System.out.println("DisTime.getTimestamp()                         = " + convertToString(DisTime.getTimestamp())                         + " = " + Integer.toUnsignedString(DisTime.getTimestamp()) + " = " + DisTime.getTimestamp()+ " (unsigned vs signed output)");
         System.out.println("DisTime.getCurrentDisAbsoluteTimestamp()       = " + convertToString(DisTime.getCurrentDisAbsoluteTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisAbsoluteTimestamp()));
         System.out.println("DisTime.getCurrentDisRelativeTimestamp()       = " + convertToString(DisTime.getCurrentDisRelativeTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisRelativeTimestamp()));
         System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
-        System.out.println("DisTime.getEpoch()                             = " + convertToString(DisTime.getEpoch())                             + " = " + DisTime.getEpoch());
-        setEpochCurrentTimestamp();
-        System.out.println("DisTime.setEpochCurrentTimestamp();");
-        System.out.println("DisTime.getEpoch()                             = " + convertToString(DisTime.getEpoch())                             + " = " + DisTime.getEpoch());
-        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
-   }
+    
+        System.out.println();
+        System.out.println("=== modern java.time methods ===");
+        System.out.println("note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended");
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("sleep for 1000 msec...");
+        sleep(1000l); // hold on a second
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+
+        System.out.println("DisTime.hasEpochLvc()                          = " + DisTime.hasEpochLvc());
+        System.out.println("DisTime.setEpochLvcNow()...");
+        setEpochLvcNow();
+        System.out.println("DisTime.hasEpochLvc(),                         = " + DisTime.hasEpochLvc());
+        Instant now = Instant.now();
+        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration = " + DisTime.getEpochLvc() + ", " + now + ", " + 
+            java.time.Duration.between(getEpochLvc(), now).toMillis() + " msec");
+        System.out.println("sleep for 1000 msec...");
+        sleep(1000l); // hold on a second
+        now = Instant.now();
+        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration = " + DisTime.getEpochLvc() + ", " + now + ", " + 
+            java.time.Duration.between(getEpochLvc(), now).toMillis() + " msec");
+//        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
+    }
 
     /**
      * Main method for testing.
