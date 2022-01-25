@@ -114,6 +114,7 @@ public class DisTime
         /** Unix time (seconds since 1 January 1970) */
         UNIX,
         /** hundreds of a second since the start of the year */
+        @Deprecated
         YEAR
     };
     
@@ -218,6 +219,31 @@ public class DisTime
         differenceTimestamp = (int) differenceValue;
         return differenceTimestamp;
     }
+    /**
+     * Recommended form, checks local system clock and returns the current DIS standard relative timestamp based on current timestampStyle.
+     * @see <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Wikipedia: Network Time Protocol (NTP)</a>
+     * @return DIS time units, relative
+     */
+    public static int getCurrentDisTimestamp()
+    {
+        switch (timestampStyle)
+        {
+            case IEEE_ABSOLUTE:
+                return getCurrentDisAbsoluteTimestamp();
+
+            case IEEE_RELATIVE:
+                return getCurrentDisRelativeTimestamp();
+            case UNIX:
+                return getCurrentUnixTimestamp();
+
+            case YEAR: // formerly NPS:
+                return getCurrentYearTimestamp();
+
+            default:
+                return getCurrentDisAbsoluteTimestamp(); // superfluous
+        }
+    }
+
 
     /**
      * Checks local system clock and returns the current DIS standard absolute timestamp, assuming that this host is synchronized to NTP.
@@ -335,6 +361,7 @@ public class DisTime
         }
     }
 
+    // TODO is reflection really necessary? simpler is better
     private static void initializeTimestampMethod()
     {
         try {
@@ -427,7 +454,8 @@ public class DisTime
      */
     public static void setEpochLvc(java.time.Instant newEpoch)
     {
-        epochLvc = newEpoch;
+        applyEpochLvc = true;
+        setEpochLvc(newEpoch);
     }
     /**  Get initial timestamp for zero-based clock, meaning all timestamps are measured with respect to given starting time
      * @return whether localhost is synchronized to time reference
