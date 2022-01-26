@@ -75,6 +75,13 @@ import java.util.*;
  * One hundredth of a second resolution is accurate enough for most applications, and you typically don't have to worry about
  * rollover, instead getting only a monotonically increasing timestamp value.</p>
  *
+ * <p>
+ * TODO we are currently investigating whether <code>IEEE_ABSOLUTE</code> together with 
+ * <code>epochLvc</code> normalization of time reference is sufficient for LVC simulation.
+ * Further work is upgrading DisTime support to use the <code>java.time</code> library.
+ * Of note is that DISv8 intends to use a 64-bit timestamp. 
+ * </p>
+ *
  * <p><b>TODO: timestamp normalization to an initial reference time.</b>
  * Functionality is needed to define a shared common time origin (epochLvc) and also to
  * precisely adjust stream timestamps when coordinating recorded PDU playback within LVC applications.
@@ -450,12 +457,12 @@ public class DisTime
     }
     
     /** Set Instant value as epochLvc for zero-based clock, meaning timestamps normalized to 0 at that initial starting time
-     * @param newEpoch Instant corresponding to first PDU in series, considered time zero
+     * @param newEpochLvc Instant corresponding to first PDU in series, considered time zero
      */
-    public static void setEpochLvc(java.time.Instant newEpoch)
+    public static void setEpochLvc(java.time.Instant newEpochLvc)
     {
         applyEpochLvc = true;
-        setEpochLvc(newEpoch);
+        epochLvc = newEpochLvc;
     }
     /**  Get initial timestamp for zero-based clock, meaning all timestamps are measured with respect to given starting time
      * @return whether localhost is synchronized to time reference
