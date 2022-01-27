@@ -5,9 +5,7 @@
 
 package edu.nps.moves.dis7.utilities;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.text.DateFormat;
+import edu.nps.moves.dis7.pdus.*;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.util.*;
@@ -107,10 +105,11 @@ import java.util.*;
 
 public class DisTime
 {
-    private       static Method  getTimeMethod;           // needed for reflection
-    private final static DisTime disTime = new DisTime(); // needed for reflection
+//    private       static Method  getTimeMethod;           // needed for reflection
+//    private final static DisTime disTime = new DisTime(); // needed for reflection
   
-    /** Supported timestamp styles and utility methods.
+    /** Supported timestamp styles and utility methods, default is <code>IEEE_ABSOLUTE</code>
+     * indicating local clock is synchronized to UTC time standard.
      * @see edu.nps.moves.dis7.utilities.PduFactory
      */
     public enum TimestampStyle {
@@ -125,7 +124,7 @@ public class DisTime
         YEAR
     };
     
-    /** Whether host computer clock is accurately synchronized with UTC to a time standard, for example by using 
+    /** Indicates whether host computer clock is accurately synchronized with UTC to a time standard, for example by using 
      * <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Network Time Protocol (NTP)</a>.
      */
     private static boolean hostClockSynchronized = true;
@@ -141,13 +140,18 @@ public class DisTime
      * <a href="https://en.wikipedia.org/wiki/Epoch_(computing)" target="_blank">https://en.wikipedia.org/wiki/Epoch_(computing)</a>.
      */
     private static Instant     epochLvc        = Instant.now(); // initialized at start
+  
+    /**
+     * Default value is TimestampStyle.IEEE_ABSOLUTE.
+     */
+    public static final TimestampStyle TIMESTAMP_STYLE_DEFAULT = TimestampStyle.IEEE_ABSOLUTE;
     
     /** We can marshal the PDU with a timestamp set to any of several styles. 
      * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
      * with the same timestamp as duplicates and may discard them.
      * Default value is TimestampStyle.IEEE_ABSOLUTE.
      */
-    private static TimestampStyle timestampStyle = TimestampStyle.IEEE_ABSOLUTE;
+    private static TimestampStyle timestampStyle = TIMESTAMP_STYLE_DEFAULT;
   
     /** mask for absolute timestamps */
     public static final int ABSOLUTE_TIMESTAMP_MASK = 0x00000001;
@@ -155,10 +159,15 @@ public class DisTime
     /** mask for relative timestamps */
     public static final int RELATIVE_TIMESTAMP_MASK = 0xfffffffe;
     
+    /** Ability to create new PDUs */
+    private static PduFactory pduFactory = new PduFactory(TIMESTAMP_STYLE_DEFAULT);
+    
     /** calendar instance */
-    private static GregorianCalendar calendar;
+    private static GregorianCalendar calendar = new GregorianCalendar();
 //    private LocalDateTime todayDateTime = new LocalDateTime();
 //    private Instant       todayInstant  = new Instant();
+    
+    public  static final String TIME_COMMENT_PDU_PREFIX = "DisTime metadata: ";
     
     private static String dateFormatPattern = "yyyy-mm-dd";
     private static String timeFormatPattern = "HH:mm:ss";
@@ -181,7 +190,32 @@ public class DisTime
     
     public DisTime()
     {
-        calendar = new GregorianCalendar();
+        // initialize
+    }
+    
+    /** Provide parsable time metadata encapsulated in CommentPdu for sharing
+     */
+    public static CommentPdu buildTimeMetadataCommentPdu()
+    {
+        return pduFactory.makeCommentPdu(TIME_COMMENT_PDU_PREFIX     + " " +
+                       "timestampStyle=" + getTimestampStyle()       + " " +
+                "hostClockSynchronized=" + isHostClockSynchronized() + " " +
+                          "hasEpochLvc=" + hasEpochLvc()             + " " +
+                             "epochLvc=" + getEpochLvc());
+    }
+    /** Provide corresponding utility method to parse time metadata from CommentPdu
+     * @param timeMetadataCommentPdu CommentPdu to parse
+     * @return whether parsing and configuration successful
+     */
+    public static boolean configureTimeMetadata(CommentPdu timeMetadataCommentPdu)
+    {
+        boolean conversionSuccessful = false;
+        // String[] commentMetadataArray = new String[]; or ArrayList<String>
+        // TODO need method to get strings from CommentPdu
+        // split string if needed
+        // for each pair get variable and save it, fail otherwise
+        // only set if successfully parsing all pairs
+        return conversionSuccessful;
     }
 
     /**
@@ -258,7 +292,7 @@ public class DisTime
      * @see <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Wikipedia: Network Time Protocol (NTP)</a>
      * @return DIS time units, get absolute timestamp
      */
-    public static synchronized int getCurrentDisAbsoluteTimestamp()
+    private static synchronized int getCurrentDisAbsoluteTimestamp()
     {
         int value = getCurrentDisTimeUnitsSinceTopOfHour();
         value = (value << 1) | ABSOLUTE_TIMESTAMP_MASK; // always flip the lsb to 1
@@ -272,7 +306,7 @@ public class DisTime
      * @see <a href="https://en.wikipedia.org/wiki/Network_Time_Protocol" target="_blank">Wikipedia: Network Time Protocol (NTP)</a>
      * @return DIS time units, relative
      */
-    public static int getCurrentDisRelativeTimestamp()
+    private static int getCurrentDisRelativeTimestamp()
     {
         int value = getCurrentDisTimeUnitsSinceTopOfHour();
         value = (value << 1) & RELATIVE_TIMESTAMP_MASK; // always flip the lsb to 0
@@ -288,7 +322,8 @@ public class DisTime
      * TODO consult with DIS working group about timestamp disambiguation.
      * @return a timestamp in hundredths of a second since the start of the year
      */
-    public static synchronized int getCurrentYearTimestamp()
+    @Deprecated
+    private static synchronized int getCurrentYearTimestamp()
     {
         // set calendar object to current time
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
@@ -328,11 +363,47 @@ public class DisTime
      * Consult the Wikipedia page on <a href="https://en.wikipedia.org/wiki/Unix_time" target="_blank">Unix time</a> for the gory details
      * @return seconds since 1970
      */
-    public static synchronized int getCurrentUnixTimestamp()
+    private static synchronized int getCurrentUnixTimestamp()
     {
         long t = System.currentTimeMillis();
         t /= 1000l;   // NB: integer division used to convert milliseconds to seconds
         return (int) t;
+    }
+    
+    /**
+     * Convert timestamp value to Instant for time operationss,
+     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * TODO consider different formats for different timestampStyle values.
+     * @param timestamp value in milliseconds
+     * @return corresponding Instant value (with 31-bit fidelity)
+     */
+    public static Instant convertToInstant(int timestamp)
+    {
+        return Instant.now(); // TODO
+    }
+    
+    /**
+     * Convert timestamp value to Instant for time operations,
+     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * TODO consider different formats for different timestampStyle values.
+     * @param timestamp value in milliseconds
+     * @return corresponding Instant value (with 31-bit fidelity)
+     */
+    public static LocalDateTime convertToLocalDateTime(int timestamp)
+    {
+        return LocalDateTime.now(); // TODO
+    }
+    
+    /**
+     * Convert timestamp value to Instant for time operations,
+     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * TODO consider different formats for different timestampStyle values.
+     * @param timestamp value in milliseconds
+     * @return corresponding Instant value (with 31-bit fidelity)
+     */
+    public static ZonedDateTime convertToZonedDateTime(int timestamp)
+    {
+        return ZonedDateTime.now(); // TODO
     }
     
     /**
@@ -341,13 +412,12 @@ public class DisTime
      * TODO consider different formats for different timestampStyle values.
      * @param timestamp value in milliseconds
      * @see GregorianCalendar
-     * @see DisTime.TimeStampStyle
      * @return string value provided by GregorianCalendar
      */
     public static String convertToString(int timestamp)
     {
         GregorianCalendar newCalendar = new GregorianCalendar();
-        DateFormat formatter = new SimpleDateFormat(dateFormatPattern + " " + timeFormatPattern);
+        SimpleDateFormat  formatter   = new SimpleDateFormat(dateFormatPattern + " " + timeFormatPattern);
         
         if      ((timestampStyle == TimestampStyle.IEEE_ABSOLUTE) || 
                  (timestampStyle == TimestampStyle.IEEE_RELATIVE))
@@ -368,61 +438,55 @@ public class DisTime
         }
     }
 
-    // TODO is reflection really necessary? simpler is better
-    private static void initializeTimestampMethod()
-    {
-        try {
-            switch (timestampStyle)
-            {
-                case IEEE_ABSOLUTE:
-                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
-                    break;
+//    // TODO is reflection really necessary? no, simpler is better
+//    private static void initializeTimestampMethod()
+//    {
+//        try {
+//            switch (timestampStyle)
+//            {
+//                case IEEE_ABSOLUTE:
+//                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
+//                    break;
+//
+//                case IEEE_RELATIVE:
+//                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisRelativeTimestamp", new Class<?>[0]);
+//                    break;
+//
+//                case UNIX:
+//                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentUnixTimestamp", new Class<?>[0]);
+//                    break;
+//
+//                case YEAR: // formerly NPS:
+//                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentYearTimestamp", new Class<?>[0]);
+//                    break;
+//
+//                default:
+//                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
+//                    break;
+//            }
+//        } catch (NoSuchMethodException ex) {
+//            throw new RuntimeException(ex);
+//        }
+//    }
 
-                case IEEE_RELATIVE:
-                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisRelativeTimestamp", new Class<?>[0]);
-                    break;
-
-                case UNIX:
-                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentUnixTimestamp", new Class<?>[0]);
-                    break;
-
-                case YEAR: // formerly NPS:
-                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentYearTimestamp", new Class<?>[0]);
-                    break;
-
-                default:
-                    getTimeMethod = DisTime.class.getDeclaredMethod("getCurrentDisAbsoluteTimestamp", new Class<?>[0]);
-                    break;
-            }
-        } catch (NoSuchMethodException ex) {
-            throw new RuntimeException(ex);
-        }
-    }
-
-  /** Retrieve the current timestamp in the time stamp style set at factory 
-   * instantiation.
-   * @return the current timestamp in the time stamp style set at factory 
-   * instantiation
-   */
-  public static int getTimestamp()
-  {
-    try {
-        if (getTimeMethod == null)
-            initializeTimestampMethod(); // avoid NPE
-        return (int) getTimeMethod.invoke(disTime, (Object[]) null);
-    }
-    catch (IllegalAccessException | InvocationTargetException ex) {
-      throw new RuntimeException(ex);
-    }
-  }
+//  /** Retrieve the current timestamp in the time stamp style set at factory 
+//   * instantiation.
+//   * @return the current timestamp in the time stamp style set at factory 
+//   * instantiation
+//   */
+//  @Deprecated
+//  public static int getTimestamp()
+//  {
+//      return getCurrentDisTimestamp();
+//  }
   
-    /** Set one of four time references as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
-     * @param newtTimestampStyle the timestamp style to set for this PDU
+    /** Set which time reference is employed throughout this simulation as timestampStyle: IEEE_ABSOLUTE, IEEE_RELATIVE, UNIX, or YEAR.
+     * @param newTimestampStyle the timestamp style to set for this PDU
      */
-    public static void setTimestampStyle(TimestampStyle newtTimestampStyle)
+    public static void setTimestampStyle(TimestampStyle newTimestampStyle)
     {
-        timestampStyle = newtTimestampStyle;
-        initializeTimestampMethod();
+        timestampStyle = newTimestampStyle;
+        pduFactory.setTimestampStyle(timestampStyle);
     }
     /** Retrieve the current timestampStyle.
      * @return the current timestampStyle
@@ -432,7 +496,7 @@ public class DisTime
       return timestampStyle;
     }
     
-    /** Declare whether host computer clock is accurately synchronized with UTC to a time standard
+    /** Declare whether host computer clock is accurately synchronized with UTC using a time standard, such as NTP.
      * @param newhostClockSynchronized whether localhost is synchronized to time reference
      */
     public static void setHostClockSynchronized(boolean newhostClockSynchronized)
@@ -500,40 +564,40 @@ public class DisTime
     /** Self-test for basic smoke testing */
     private void selfTest()
     {        
-        DisTime.initializeTimestampMethod();
+//        DisTime.initializeTimestampMethod();
         System.out.println("=== legacy java.util.Date, calendar methods ===");
-        System.out.println("DisTime.getTimestampStyle()                    = " + DisTime.getTimestampStyle());
-        System.out.println("patterns                                       = " + dateFormatPattern + " " + timeFormatPattern);
-        int initialTimestamp = DisTime.getTimestamp();
-        System.out.println("DisTime.getTimestamp() initialTimestamp        = " + convertToString(initialTimestamp)                               + " = " + Integer.toUnsignedString(initialTimestamp)       + " = " + initialTimestamp      + " (unsigned vs signed output)");
-        System.out.println("DisTime.getTimestamp()                         = " + convertToString(DisTime.getTimestamp())                         + " = " + Integer.toUnsignedString(DisTime.getTimestamp()) + " = " + DisTime.getTimestamp()+ " (unsigned vs signed output)");
-        System.out.println("DisTime.getCurrentDisAbsoluteTimestamp()       = " + convertToString(DisTime.getCurrentDisAbsoluteTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisAbsoluteTimestamp()));
-        System.out.println("DisTime.getCurrentDisRelativeTimestamp()       = " + convertToString(DisTime.getCurrentDisRelativeTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisRelativeTimestamp()));
-        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
+        System.out.println("DisTime.getTimestampStyle()                       = " + DisTime.getTimestampStyle());
+        System.out.println("patterns                                            " + dateFormatPattern + " " + timeFormatPattern);
+        int initialTimestamp = DisTime.getCurrentDisTimestamp();
+        System.out.println("DisTime.getCurrentDisTimestamp() initialTimestamp = " + convertToString(initialTimestamp)                               + " = " + Integer.toUnsignedString(initialTimestamp)                 + " = " + initialTimestamp                 + " (unsigned vs signed output)");
+        System.out.println("DisTime.getCurrentDisTimestamp()                  = " + convertToString(DisTime.getCurrentDisTimestamp())               + " = " + Integer.toUnsignedString(DisTime.getCurrentDisTimestamp()) + " = " + DisTime.getCurrentDisTimestamp() + " (unsigned vs signed output)");
+        System.out.println("DisTime.getCurrentDisAbsoluteTimestamp()          = " + convertToString(DisTime.getCurrentDisAbsoluteTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisAbsoluteTimestamp()));
+        System.out.println("DisTime.getCurrentDisRelativeTimestamp()          = " + convertToString(DisTime.getCurrentDisRelativeTimestamp())       + " = " + Integer.toUnsignedString(DisTime.getCurrentDisRelativeTimestamp()));
+        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
     
         System.out.println();
         System.out.println("=== modern java.time methods ===");
         System.out.println("note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended");
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
-        System.out.println("sleep for 1000 msec...");
-        sleep(1000l); // hold on a second
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
-        System.out.println("java.time.LocalDateTime.now(), Instant.now()   = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("sleep for 1000 msec...");   
+        sleep(1000l); // hold on a second   
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
+        System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
 
-        System.out.println("DisTime.hasEpochLvc()                          = " + DisTime.hasEpochLvc());
+        System.out.println("DisTime.hasEpochLvc()                             = " + DisTime.hasEpochLvc());
         System.out.println("DisTime.setEpochLvcNow()...");
         setEpochLvcNow();
-        System.out.println("DisTime.hasEpochLvc(),                         = " + DisTime.hasEpochLvc());
+        System.out.println("DisTime.hasEpochLvc(),                            = " + DisTime.hasEpochLvc());
         Instant now = Instant.now();
-        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration = " + DisTime.getEpochLvc() + ", " + now + ", " + 
+        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration    = " + DisTime.getEpochLvc() + ", " + now + ", " + 
             java.time.Duration.between(getEpochLvc(), now).toMillis() + " msec");
         System.out.println("sleep for 1000 msec...");
         sleep(1000l); // hold on a second
         now = Instant.now();
-        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration = " + DisTime.getEpochLvc() + ", " + now + ", " + 
+        System.out.println("DisTime.getEpochLvc(), Instant.now(), duration    = " + DisTime.getEpochLvc() + ", " + now + ", " + 
             java.time.Duration.between(getEpochLvc(), now).toMillis() + " msec");
 //        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
     }
