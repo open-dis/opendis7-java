@@ -5,11 +5,9 @@
 
 package edu.nps.moves.dis7.utilities;
 
-import edu.nps.moves.dis7.utilities.DisTime;
-import edu.nps.moves.dis7.utilities.DisTime.*;
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.*;
-
+import edu.nps.moves.dis7.utilities.DisTime.TimestampStyle;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,7 +41,7 @@ public class PduFactory
    * with the same timestamp as duplicates and may discard them.
    * Default value is TimestampStyle.IEEE_ABSOLUTE.
    */
-  private TimestampStyle timestampStyle = TimestampStyle.IEEE_ABSOLUTE;
+  private TimestampStyle timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
 
   /**
    * Create a PduFactory using newTimestampStyle.
@@ -52,16 +50,33 @@ public class PduFactory
   public PduFactory(TimestampStyle newTimestampStyle)
   {
       timestampStyle = newTimestampStyle;
-      DisTime.setTimestampStyle(timestampStyle);
   }
 
+  /** accessor to report value
+     * @return current timestampStyle */
+  public TimestampStyle getTimestampStyle()
+  {
+      return timestampStyle;
+  }
+
+  /** accessor to update value
+     * @param newTimestampStyle value of interest */
+  public void setTimestampStyle(TimestampStyle newTimestampStyle)
+  {
+      if (newTimestampStyle ==  null)
+      {
+          System.out.println("[PduFactory] *** received setNewTimestampStyle(null), reset using " + DisTime.TIMESTAMP_STYLE_DEFAULT);
+          timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
+      }
+      else timestampStyle = newTimestampStyle;
+  }
   /**
    * Create a PduFactory using defaults for country (USA), exerciseId (2), 
    * application (3) and absolute timestamps.
    */
   public PduFactory()
   {
-      // initialization steps can go here
+      // initialization steps can go here, when possible class-member objects are instantiated at declaration
   }
   
   /**
@@ -91,7 +106,7 @@ public class PduFactory
   {
     pdu.getPduStatus().setValue((byte) (PduStatus.AII_ACTIVE | PduStatus.CEI_COUPLED));
     pdu.setExerciseID(defaultExerciseId)
-      .setTimestamp(DisTime.getTimestamp())
+      .setTimestamp(DisTime.getCurrentDisTimestamp())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
 
     return pdu;
@@ -100,7 +115,7 @@ public class PduFactory
   private LiveEntityFamilyPdu addBoilerPlate(LiveEntityFamilyPdu pdu)
   {
     pdu.setExerciseID(defaultExerciseId)
-      .setTimestamp(DisTime.getTimestamp())
+      .setTimestamp(DisTime.getCurrentDisTimestamp())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
 
     return pdu;
@@ -1768,7 +1783,7 @@ public class PduFactory
         break;
 
       default:
-        System.out.println("PDU not implemented. Type = " + pduType + "\n");
+        System.out.println("[PduFactory] *** PDU not implemented. Type = " + pduType + "\n");
     }   // end switch
 
     if (aPdu != null) {
@@ -1790,7 +1805,7 @@ public class PduFactory
      * buffer size) but it may be more. The PDUs may be of multiple types and
      * different lengths, so we have to step through the buffer and depend on
      * the reported PDU length in the header. There's a lot that can go wrong.
-     * If something blows up, we return all the decoded PDUs we can.<p>
+     * If something blows up, we return all the decoded PDUs we can.
      *
      * @param data a large buffer filled with possible multiple PDUs
      * @param length the size of the multiple PDU buffer
