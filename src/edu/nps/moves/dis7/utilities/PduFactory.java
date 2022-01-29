@@ -1890,4 +1890,12 @@ public class PduFactory
 
         return pdus;
     }
+    /**
+     * If invoked, notify location of unit test (which is located outside of the jar distribution).
+     * @param args none supported
+     */
+    public static void main(String[] args)
+    {
+        System.out.println ("*** see edu.nps.moves.dis7.test.AllPduRoundTripTest for unit test");
+    }
 }
