@@ -19,31 +19,32 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Pdu Factory Test")
 public class PduFactoryTest
 {
-    @BeforeAll
     /** actions to perform before all tests */
+    @BeforeAll
     public static void beforeAllTests()
     {
       System.out.println("PduFactoryTest");
     }
 
-    @AfterAll
     /** actions to perform after all tests */
+    @AfterAll
     public static void afterAllTests()
     {
     }
 
-    @BeforeEach
     /** initialization */
+    @BeforeEach
     public void setUp()
     {
     }
 
-    @AfterEach
     /** close open objects */
+    @AfterEach
     public void tearDown()
     {
     }
 
+    /** Test creation of all PDU types */
     @Test
     public void testCreateAllPdus()
     {
@@ -134,6 +135,11 @@ public class PduFactoryTest
         assertNull(ex, "Exception should be null if successful creation of all objects");
     }
     
+    /**
+     * Main method provides support for testing.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
+     * @param args [address, port, descriptor] command-line arguments are an array of optional String parameters that are passed from execution environment during invocation
+     */
     public static void main(String[] args)
   {
     new PduFactoryTest().testCreateAllPdus();
