@@ -183,7 +183,7 @@ public class PduSender
         // update the timestamp on ALL packets sent.
         // An alterative approach: actually follow the standard. It's a crazy concept,
         // but it might just work.
-        timestamp = DisTime.getTimestamp();
+        timestamp = DisTime.getCurrentDisTimestamp();
         espdu.setTimestamp(timestamp);
 
         // Set the position of the entity in the world. DIS uses a cartesian 
