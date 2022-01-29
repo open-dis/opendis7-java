@@ -587,6 +587,13 @@ public class DisTime
         System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
         System.out.println("java.time.LocalDateTime.now(), Instant.now()      = " + java.time.LocalDateTime.now() + ", " + java.time.Instant.now());
 
+        
+        System.out.println("DisTime.hasEpochLvc()                     default = " + DisTime.hasEpochLvc());
+        System.out.println("DisTime.setEpochLvc(Instant.now())...");
+        setEpochLvc(Instant.now());
+        System.out.println("DisTime.hasEpochLvc(),                            = " + DisTime.hasEpochLvc());
+        System.out.println("clearEpochLvc()...");
+        clearEpochLvc();
         System.out.println("DisTime.hasEpochLvc()                             = " + DisTime.hasEpochLvc());
         System.out.println("DisTime.setEpochLvcNow()...");
         setEpochLvcNow();

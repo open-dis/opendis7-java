@@ -1,35 +1,39 @@
-ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/utilities/DisTime.java -Drun.class=edu.nps.moves.dis7.utilities.DisTime run-single
+ant -f C:\\x3d-github\\open-dis7-source-generator -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/utilities/DisTime.java -Drun.class=edu.nps.moves.dis7.utilities.DisTime run-single
 init:
-Deleting: C:\x3d-github\open-dis7-java\build\built-jar.properties
+Deleting: C:\x3d-github\open-dis7-source-generator\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-github\open-dis7-java\build\built-jar.properties
-Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
+Updating property file: C:\x3d-github\open-dis7-source-generator\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\open-dis7-source-generator\build\classes
 compile-single:
 run-single:
 *** DisTime.main() self test started...
 === legacy java.util.Date, calendar methods ===
-DisTime.getTimestampStyle()                    = IEEE_ABSOLUTE
-patterns                                       = yyyy-mm-dd HH:mm:ss
-DisTime.getTimestamp() initialTimestamp        = 1970-10-02 08:10:52 = 144652113 = 144652113 (unsigned vs signed output)
-DisTime.getTimestamp()                         = 1970-11-02 08:11:01 = 144662849 = 144662849 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()       = 1970-11-02 08:11:02 = 144662849
-DisTime.getCurrentDisRelativeTimestamp()       = 1970-11-02 08:11:02 = 144662848
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = 1970-05-01 12:05:31 = 72331424
+DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
+patterns                                            yyyy-mm-dd HH:mm:ss
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-51-17 23:51:46 = 3113673525 = -1181293771 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-51-17 23:51:54 = 3113685455 = -1181281841 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-51-17 23:51:58 = 3113685455
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-51-17 23:51:58 = 3113685454
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-27-18 16:27:22 = 1556842727
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.267763900, 2022-01-24T04:02:01.269764Z
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.270748500, 2022-01-24T04:02:01.270748500Z
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:01.271426100, 2022-01-24T04:02:01.271426100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:29.865465700, 2022-01-29T17:43:29.865465700Z
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:29.865465700, 2022-01-29T17:43:29.865465700Z
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:29.865465700, 2022-01-29T17:43:29.865465700Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277595700, 2022-01-24T04:02:02.277595700Z
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277735400, 2022-01-24T04:02:02.277735400Z
-java.time.LocalDateTime.now(), Instant.now()   = 2022-01-23T20:02:02.277735400, 2022-01-24T04:02:02.277735400Z
-DisTime.hasEpochLvc()                          = false
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:30.880485500, 2022-01-29T17:43:30.880485500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:30.880485500, 2022-01-29T17:43:30.880485500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2022-01-29T09:43:30.880485500, 2022-01-29T17:43:30.880485500Z
+DisTime.hasEpochLvc()                     default = false
+DisTime.setEpochLvc(Instant.now())...
+DisTime.hasEpochLvc(),                            = true
+clearEpochLvc()...
+DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
-DisTime.hasEpochLvc(),                         = true
-DisTime.getEpochLvc(), Instant.now(), duration = 2022-01-24T04:02:02.279866100Z, 2022-01-24T04:02:02.279866100Z, 0 msec
+DisTime.hasEpochLvc(),                            = true
+DisTime.getEpochLvc(), Instant.now(), duration    = 2022-01-29T17:43:30.881313100Z, 2022-01-29T17:43:30.881313100Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration = 2022-01-24T04:02:02.279866100Z, 2022-01-24T04:02:03.289787Z, 1009 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2022-01-29T17:43:30.881313100Z, 2022-01-29T17:43:31.888675200Z, 1007 msec
 *** DisTime.main() self test complete.
 BUILD SUCCESSFUL (total time: 2 seconds)
