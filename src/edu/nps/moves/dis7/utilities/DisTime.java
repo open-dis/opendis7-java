@@ -162,8 +162,6 @@ public class DisTime
     /** Ability to create new PDUs */
     private static PduFactory pduFactory = new PduFactory(TIMESTAMP_STYLE_DEFAULT);
     
-    /** calendar instance */
-    private static GregorianCalendar calendar = new GregorianCalendar();
 //    private LocalDateTime todayDateTime = new LocalDateTime();
 //    private Instant       todayInstant  = new Instant();
     
@@ -227,6 +225,7 @@ public class DisTime
     private static synchronized int getCurrentDisTimeUnitsSinceTopOfHour()
     {
         // set calendar object to current time
+        GregorianCalendar calendar = new GregorianCalendar();
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
         calendar.setTimeInMillis(currentTime);
 
@@ -326,6 +325,7 @@ public class DisTime
     private static synchronized int getCurrentYearTimestamp()
     {
         // set calendar object to current time
+        GregorianCalendar calendar = new GregorianCalendar();
         long currentTime = System.currentTimeMillis(); // UTC milliseconds since 1970
         calendar.setTimeInMillis(currentTime);
 
