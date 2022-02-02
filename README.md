@@ -1,3 +1,5 @@
+*TODO alert:* [project rename](https://github.com/open-dis/open-dis7-java/issues/14) will occur soon, with new name *opendis7-java*
+
 # open-dis7-java Library
 
 This project provides a complete type-safe Java implementation of the IEEE Distributed Interactive Simulation (DIS) Protocol.
