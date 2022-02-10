@@ -47,6 +47,7 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Detonation Pdu Test")
 public class DetonationPduTest extends PduTest {
 
+    /** constructor **/
     public DetonationPduTest() {
     }
 
@@ -94,6 +95,9 @@ public class DetonationPduTest extends PduTest {
      testPduFinishingChecks(createdPdu); // shared tests in superclass
   }
   
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
     public static void main(String[] args)
     {
         PduTest detonationPduTest = new DetonationPduTest();

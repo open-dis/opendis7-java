@@ -42,31 +42,36 @@ public class AllPduRoundTripTest
   PduFactory pduFactory;
   PduRecorder pduRecorder;
 
+  /** Prepare */
   @BeforeAll
   public static void beforeAllTests()
   {
     System.out.println("AllPduRoundTripTest");
+    File file = new File("./pduLog");
+
+    for (File subFile : file.listFiles()) {
+        subFile.delete();
+    }
   }
 
+  /** Finish */
   @AfterAll
   public static void afterAllTests()
   {
   }
 
-    @BeforeEach
+    /** Setup initialization before each test */
+  @BeforeEach
     public void setUp() {
-        File file = new File("./pduLog");
-
-        for (File subFile : file.listFiles()) {
-            subFile.delete();
-        }
     }
 
+    /** Housekeeping after each test */
     @AfterEach
     public void tearDown()
     {
     }
 
+  /** Check ability to send and receive each DIS PDU */
   @Test
   public void testRoundTripAllPdus()
   {
@@ -77,6 +82,7 @@ public class AllPduRoundTripTest
       
       pduFactory = new PduFactory(Country.PHILIPPINES_PHL, (byte) 11, (byte) 22, (short) 33, DisTime.TimestampStyle.IEEE_ABSOLUTE);
 
+      // 72 total
       pdusSent.add(pduFactory.makeAcknowledgePdu());
       pdusSent.add(pduFactory.makeAcknowledgeReliablePdu());
       pdusSent.add(pduFactory.makeActionRequestPdu());
@@ -176,7 +182,12 @@ public class AllPduRoundTripTest
     System.out.println ("*** AllPduRoundTripTest testRoundTripAllPdus() complete");
   }
   
-    private void setupSenderRecorder() throws Exception {
+    /** setup the common send/receive network interface 
+     * @see PduRecorder
+     * @see DisNetworkInterface
+     */
+    private void setupSenderRecorder() throws Exception
+    {
         pduRecorder = new PduRecorder(); // default network address, port, logfile dir
         pduRecorder.setDescriptor(this.getClass().getName() + " unit test");
         pduRecorder.start();
@@ -197,13 +208,13 @@ public class AllPduRoundTripTest
         System.out.println("Recorder log at " + pduRecorder.getLogFilePath());
     }
 
-  /** Will shutdown the common send/receive network interface */
+  /** shutdown the common send/receive network interface */
   private void shutDownSenderRecorder() throws Exception
   {
     disNetworkInterface.removeListener(pduListener);
     pduRecorder.stop();
   }
-
+  /** comparison test */
   private void testForEquals() throws Exception
   {
 //    System.out.println("*** Warning: ensure no prior dislog files are present in pduLog directory or assertion count of replay will fail.");
@@ -215,7 +226,8 @@ public class AllPduRoundTripTest
     assertIterableEquals(pdusSent, pdusReceived, "Sent and received pdus not identical");
     System.out.println("... testForEquals() assertIterableEquals() passed");
   }
-
+  /** not used, legacy code */
+  @Deprecated
   private void getAllFromRecorder(Semaphore sem) throws Exception
   {
     sem.acquire();
@@ -233,6 +245,8 @@ public class AllPduRoundTripTest
     });
   }
 
+    /** not used, legacy code */
+   @Deprecated
     private void testRecorderForEquals() throws Exception 
     {
         // TODO this may fail if prior dislog files are present in pduLog directory, ignore them to make it less brittle
@@ -249,7 +263,7 @@ public class AllPduRoundTripTest
 
         // TODO is this sufficient?  has each PDU value been compared as well?
     }
-  
+  /** being careful during threaded operations, also encourage in-order receipt before next send */
   private static void sleep(long ms) {
     try {
         Thread.sleep(ms);
@@ -258,8 +272,12 @@ public class AllPduRoundTripTest
     }
   }
   
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
     public static void main(String[] args)
     {
+        System.out.println ("*** AllPduRoundTripTest main() started...");
         AllPduRoundTripTest allPduRoundTripTest = new AllPduRoundTripTest(); // create instance
         allPduRoundTripTest.testRoundTripAllPdus();
         System.out.println ("*** AllPduRoundTripTest main() complete");

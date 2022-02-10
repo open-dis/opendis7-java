@@ -93,6 +93,9 @@ public class EntityStatePduTest extends PduTest
      testPduFinishingChecks(createdPdu); // shared tests in superclass
   }
   
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
     public static void main(String[] args)
     {
         EntityStatePduTest entityStatePduTest = new EntityStatePduTest();

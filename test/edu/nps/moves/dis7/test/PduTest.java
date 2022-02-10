@@ -50,6 +50,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 abstract public class PduTest
 {
+    /** default thread sleep interval msec */
     protected final long THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 1000l; // e.g. 100 msec, type long
     private         long threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
     private         int  maximumRetryAttempts = 10;
@@ -58,12 +59,14 @@ abstract public class PduTest
     DisThreadedNetworkInterface             disNetworkInterface;
     DisThreadedNetworkInterface.PduListener pduListener;
     
+    /** preparation **/
     @BeforeAll
     public static void setUpClass()
     {
         System.out.println("EntityStatePduTest");
     }
 
+    /** housekeeping **/
     @AfterAll
     public static void tearDownClass()
     {

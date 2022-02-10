@@ -18,27 +18,32 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Marshal Enums Test")
 public class MarshalEnumsTest
 {
+    /** preparation **/
   @BeforeAll
   public static void setUpClass()
   {
     System.out.println("MarshalEnumsTest");
   }
 
+    /** Housekeeping after all tests */
   @AfterAll
   public static void tearDownClass()
   {
   }
 
+    /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {
   }
 
+    /** Housekeeping after each test */
   @AfterEach
   public void tearDown()
   {
   }
 
+  /** Perform test of interest */
   @Test
   public void testGoodMarshall()
   {
@@ -591,6 +596,9 @@ public class MarshalEnumsTest
     System.out.println();
   }
   
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     new MarshalEnumsTest().testGoodMarshall();

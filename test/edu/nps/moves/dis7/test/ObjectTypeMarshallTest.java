@@ -18,18 +18,25 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Object Type Marshal Test")
 public class ObjectTypeMarshallTest
 {
+    /** preparation **/
     @BeforeAll
     public static void setUpClass()
     {
       System.out.println("ObjectTypeMarshallTest");
     }
+    /** Housekeeping after all tests */
     @AfterAll
     public static void tearDownClass(){}
+    
+    /** Setup initialization before each test */
     @BeforeEach
     public void setUp(){}
+    
+    /** Housekeeping after each test */
     @AfterEach
     public void tearDown(){}
 
+  /** Perform test of interest */
     @Test
     public void testGoodMarshall()
     {
@@ -44,6 +51,7 @@ public class ObjectTypeMarshallTest
         assertNull(thr, "Exception should be null if successful marshal");
     }
     
+  /** Perform test of interest */
     @Test
     public void testNoSubCategory()
     {
@@ -85,6 +93,9 @@ public class ObjectTypeMarshallTest
         System.out.println(String.format(formatStr, nm, dom, kind, ot.getCategory(), ot.getSubCategory()));
     }
     
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
     public static void main(String[] args)
     {
       ObjectTypeMarshallTest inst = new ObjectTypeMarshallTest();

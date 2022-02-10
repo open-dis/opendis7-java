@@ -21,28 +21,33 @@ public class NullFieldsEntityMarshallTest
 {
     LAV105 lav105;
 
+    /** preparation **/
     @BeforeAll
     public static void beforeAllTests()
     {
       System.out.println("NullFieldsEntityMarshallTest");
     }
     
+    /** housekeeping **/
     @AfterAll
     public static void afterAllTests()
     {}
     
+    /** Setup initialization before each test */
     @BeforeEach
     public void setUp()
     {
         lav105 = new LAV105();
     }
     
+    /** Housekeeping after each test */
     @AfterEach
     public void tearDown()
     {
         lav105 = null;
     }
 
+    /** Perform test of interest */
     @Test
     public void testNoSpecificNoExtraMarshal()
     {
@@ -61,6 +66,7 @@ public class NullFieldsEntityMarshallTest
         assertEquals(8, byteBuffer.position(), "Marshalled array should be 8 bytes long");
     }
     
+  /** Perform test of interest */
     @Test
     public void testGoodMarshall()
     {
@@ -100,6 +106,9 @@ public class NullFieldsEntityMarshallTest
         System.out.println("LAV_105 extra: "       + entityType.getExtra());
     }
     
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
     public static void main(String[] args)
     {
       NullFieldsEntityMarshallTest inst = new NullFieldsEntityMarshallTest();

@@ -26,17 +26,20 @@ public class DataQueryPduRoundTripTest
  DisThreadedNetworkInterface disNetworkInterface;
  DisThreadedNetworkInterface.PduListener pduListener;
 
+    /** preparation **/
   @BeforeAll
   public static void setUpClass()
   {
     System.out.println("DataQueryPduRoundTripTest");
   }
 
+    /** Housekeeping after all tests */
   @AfterAll
   public static void tearDownClass()
   {
   }
 
+    /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {   
@@ -50,6 +53,7 @@ public class DataQueryPduRoundTripTest
       disNetworkInterface.addListener(pduListener);
   }
 
+    /** Housekeeping after each test */
   @AfterEach
   public void tearDown()
   {
@@ -97,6 +101,7 @@ public class DataQueryPduRoundTripTest
     //  variableDatum2.setVariableDatumLength(variableDatum2Value.length);  // should be done automatically
   }
 
+  /** Perform test of interest */
   @Test
   public void testRoundTrip()
   {
@@ -132,6 +137,9 @@ public class DataQueryPduRoundTripTest
     receivedPdu = pdu;
   }
 
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     DataQueryPduRoundTripTest drt = new DataQueryPduRoundTripTest();

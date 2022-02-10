@@ -94,26 +94,31 @@ import org.junit.jupiter.api.Test;
  */
 public class CreateAllPduTypesTest
 {
+    /** constructor */
   public CreateAllPduTypesTest()
   {
   }
 
+    /** preparation **/
   @BeforeAll
   public static void setUpClass()
   {
     System.out.println("CreateAllPduTypesTest");
   }
 
+    /** Housekeeping after all tests */
   @AfterAll
   public static void tearDownClass()
   {
   }
 
+    /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {
   }
 
+    /** Housekeeping after each test */
   @AfterEach
   public void tearDown()
   {
@@ -124,6 +129,7 @@ public class CreateAllPduTypesTest
 
   private Throwable throwable;
 
+  /** Perform test of interest */
   @Test
   public void testCreateAll()
   {
@@ -228,6 +234,9 @@ public class CreateAllPduTypesTest
     assertNull(throwable, "Exception should be null if successful marshal");
   }
 
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     new CreateAllPduTypesTest().testCreateAll();

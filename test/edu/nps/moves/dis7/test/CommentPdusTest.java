@@ -22,17 +22,20 @@ public class CommentPdusTest
   Pdu                                     receivedPdu;
   DisThreadedNetworkInterface.PduListener pduListener;
     
+    /** Setup initialization before each test */
   @BeforeAll
   public static void setUpClass()
   {
     System.out.println("CommentPdusTest");
   }
 
+    /** Housekeeping after each test */
   @AfterAll
   public static void tearDownClass()
   {
   }
 
+    /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {   
@@ -46,6 +49,7 @@ public class CommentPdusTest
       disNetworkInterface.addListener(pduListener);
   }
 
+    /** Housekeeping after each test */
   @AfterEach
   public void tearDown()
   {
@@ -91,6 +95,7 @@ public class CommentPdusTest
      receivedPdu = null; // ensure cleared prior to next test
   }
   
+    /** send the PDU of interest */
   private void sendPdu(Pdu pdu)
   {
     try {
@@ -103,6 +108,7 @@ public class CommentPdusTest
     }
   }
  
+  /** comparison test */
   private boolean compare(Pdu pdu1, Pdu pdu2)
   {
     return pdu1.equals(pdu2);
@@ -113,6 +119,9 @@ public class CommentPdusTest
     receivedPdu = newPdu;
   }
 
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     CommentPdusTest commentPdusTest = new CommentPdusTest();

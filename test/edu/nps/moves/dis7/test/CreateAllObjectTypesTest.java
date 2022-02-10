@@ -19,27 +19,32 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("All Object Types Create")
 public class CreateAllObjectTypesTest
 {
+    /** preparation **/
   @BeforeAll
   public static void beforeAllTests()
   {
     System.out.println("CreateAllObjectTypesTest");
   }
 
+    /** housekeeping **/
   @AfterAll
   public static void afterAllTests()
   {
   }
 
+    /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {
   }
 
+    /** Housekeeping after all tests */
   @AfterEach
   public void tearDown()
   {
   }
 
+  /** Perform test of interest */
   @Test
   public void testCreateAllObjectTypes()
   {
@@ -276,6 +281,9 @@ public class CreateAllObjectTypesTest
     System.out.println(String.format(formatString, name, domain, kind, objectType.getCategory(), objectType.getSubCategory()));
   }
 
+  /** Command-line invocation (CLI) of program, execution starts here
+    * @param args command-line arguments
+    */
   public static void main(String[] args)
   {
     new CreateAllObjectTypesTest().testCreateAllObjectTypes();
