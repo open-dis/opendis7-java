@@ -165,10 +165,11 @@ public class DisTime
 //    private LocalDateTime todayDateTime = new LocalDateTime();
 //    private Instant       todayInstant  = new Instant();
     
+    /** prefix for trace statements */
     public  static final String TIME_COMMENT_PDU_PREFIX = "DisTime metadata: ";
     
-    private static String dateFormatPattern = "yyyy-mm-dd";
-    private static String timeFormatPattern = "HH:mm:ss";
+    private static final String dateFormatPattern = "yyyy-mm-dd";
+    private static final String timeFormatPattern = "HH:mm:ss";
 
    // public static DisTime disTime = null;
 
@@ -192,6 +193,7 @@ public class DisTime
     }
     
     /** Provide parsable time metadata encapsulated in CommentPdu for sharing
+     * @return PDU of interest
      */
     public static CommentPdu buildTimeMetadataCommentPdu()
     {
