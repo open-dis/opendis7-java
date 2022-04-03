@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: DannebrogRoyalDanishYachtClass  = <code>3</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 25470; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6f27a732. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@117159c0. </p>
  * @see Country#ACTION_RESPONSE_RELIABLE
  * @see EntityKind#PLATFORM
  * @see Domain

@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: PacificClassPatrolBoat  = <code>1</code>; </li>
  *     <li> Specific: Lata  = <code>1</code>; </li>
  *     <li> Entity type uid: 26748; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1a22e0ef. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6add8e3f. </p>
  * @see Country#SOLOMON_ISLANDS_SLB
  * @see EntityKind#PLATFORM
  * @see Domain

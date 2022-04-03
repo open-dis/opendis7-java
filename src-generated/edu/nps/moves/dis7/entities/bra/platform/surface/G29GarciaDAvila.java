@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: RoundTableClass  = <code>1</code>; </li>
  *     <li> Specific: G29GarciaDAvila  = <code>2</code>; </li>
  *     <li> Entity type uid: 32641; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6f1fba17. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43814d18. </p>
  * @see Country#BRAZIL_BRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class G29GarciaDAvila extends EntityType
 
         setCategory((byte)55); // uid 32638, Amphibious Cargo Ship
         setSubCategory((byte)1); // uid 32639, Round Table Class
-        setSpecific((byte)2); // uid 32641, G29 Garcia DAvila
+        setSpecific((byte)2); // uid 32641, G29 Garcia D'Avila
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: RocketASTROS  = <code>1</code>; </li>
  *     <li> Specific: _127mmSS30  = <code>1</code>; </li>
  *     <li> Entity type uid: 21781; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2aa5bd48. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4c5da4f9. </p>
  * @see Country#BRAZIL_BRA
  * @see EntityKind#MUNITION
  * @see Domain

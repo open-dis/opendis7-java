@@ -9,16 +9,16 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>HarbinY11</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>HarbinY11.createInstance()</code> or <code>new HarbinY11()</code>. </p>
  * <ul>
- *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Civilian Fixed Wing Aircraft, Small (up to 12,500 lbs / 5,670 kg) = <code>85</code>; </li>
  *     <li> SubCategory: TwinPistonEngine  = <code>12</code>; </li>
  *     <li> Specific: HarbinY11  = <code>1</code>; </li>
  *     <li> Entity type uid: 24747; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@318ba8c8. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32eff876. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain

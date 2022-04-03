@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: P400classfastattackcraftpatrol  = <code>1</code>; </li>
  *     <li> Specific: P682Laudacieuse  = <code>1</code>; </li>
  *     <li> Entity type uid: 15964; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@13d73f29. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b8b43c7. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class P682Laudacieuse extends EntityType
 
         setCategory((byte)7); // uid 15962, Light/patrol craft
         setSubCategory((byte)1); // uid 15963, P 400 class (fast attack craft--patrol)
-        setSpecific((byte)1); // uid 15964, P 682 Laudacieuse
+        setSpecific((byte)1); // uid 15964, P 682 L'audacieuse
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

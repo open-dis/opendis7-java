@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: DestienneDorvesTypeA69class  = <code>1</code>; </li>
  *     <li> Specific: F787CommandantdePimodan  = <code>7</code>; </li>
  *     <li> Entity type uid: 16153; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15a04efb. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a55af6b. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class F787CommandantdePimodan extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)50); // uid 16145, Frigate
-        setSubCategory((byte)1); // uid 16146, Destienne Dorves (Type A 69) class
+        setSubCategory((byte)1); // uid 16146, D'estienne D'orves (Type A 69) class
         setSpecific((byte)7); // uid 16153, F 787 Commandant de Pimodan
     }
     /** Create a new instance of this final (unmodifiable) class

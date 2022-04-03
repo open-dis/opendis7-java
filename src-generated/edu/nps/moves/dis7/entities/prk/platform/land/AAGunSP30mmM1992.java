@@ -9,16 +9,16 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>AAGunSP30mmM1992</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>AAGunSP30mmM1992.createInstance()</code> or <code>new AAGunSP30mmM1992()</code>. </p>
  * <ul>
- *     <li> Country: Korea (Democratic Peoples Republic of) (PRK) = <code>119</code>; </li>
+ *     <li> Country: Korea (Democratic People's Republic of) (PRK) = <code>119</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: SelfPropelledVSHORADGunMissileSystem  = <code>1</code>; </li>
  *     <li> Specific: AAGunSP30mmM1992  = <code>1</code>; </li>
  *     <li> Entity type uid: 23456; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@384fc774. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37ff4054. </p>
  * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
  * @see EntityKind#PLATFORM
  * @see Domain

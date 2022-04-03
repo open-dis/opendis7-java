@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: Vytegralesclasssupportdepot  = <code>13</code>; </li>
+ *     <li> SubCategory: Vytegralesclasssupportampdepot  = <code>13</code>; </li>
  *     <li> Specific: DauriyaexVyborgles  = <code>3</code>; </li>
  *     <li> Entity type uid: 13895; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fbdc49b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67b100fe. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class DauriyaexVyborgles extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 13805, Auxiliary
-        setSubCategory((byte)13); // uid 13892, Vytegrales class (support & depot)
+        setSubCategory((byte)13); // uid 13892, Vytegrales class (support &amp; depot)
         setSpecific((byte)3); // uid 13895, Dauriya (ex-Vyborgles)
     }
     /** Create a new instance of this final (unmodifiable) class

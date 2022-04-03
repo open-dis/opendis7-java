@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Arunclasslifeboat  = <code>2</code>; </li>
  *     <li> Specific: ClarksHarbour819269  = <code>3</code>; </li>
  *     <li> Entity type uid: 30974; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ec8211c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@281e3708. </p>
  * @see Country#CANADA_CAN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class ClarksHarbour819269 extends EntityType
 
         setCategory((byte)63); // uid 26272, Coast Guard Boats
         setSubCategory((byte)2); // uid 30971, Arun-class lifeboat
-        setSpecific((byte)3); // uid 30974, Clarks Harbour (819269)
+        setSpecific((byte)3); // uid 30974, Clark's Harbour (819269)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

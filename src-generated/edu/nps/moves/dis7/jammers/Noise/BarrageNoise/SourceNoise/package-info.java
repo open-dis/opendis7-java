@@ -1,5 +1,5 @@
 /**
- Jammers type infrastructure classes for SISO-REF-010-v29 (2021-05-19) enumerations.
+ Jammers type infrastructure classes for SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29) enumerations.
 
  * <p> Online references: </p>
  * <ul>
@@ -14,6 +14,6 @@
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
  * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java</a>
  */
-// created by edu/nps/moves/dis7/source/generator/entitytypes/GenerateJammers.java
+// created by edu/nps/moves/dis7/source/generator/entityTypes/GenerateJammers.java
 
 package edu.nps.moves.dis7.jammers.Noise.BarrageNoise.SourceNoise;

@@ -9,16 +9,16 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>_57mm</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_57mm.createInstance()</code> or <code>new _57mm()</code>. </p>
  * <ul>
- *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Ballistic = <code>2</code>; </li>
  *     <li> SubCategory: _57mm  = <code>4</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 21344; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1d99ee1b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@568f4faa. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#MUNITION
  * @see Domain

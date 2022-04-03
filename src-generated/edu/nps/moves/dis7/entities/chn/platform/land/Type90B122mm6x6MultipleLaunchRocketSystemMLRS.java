@@ -9,16 +9,16 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>Type90B122mm6x6MultipleLaunchRocketSystemMLRS</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Type90B122mm6x6MultipleLaunchRocketSystemMLRS.createInstance()</code> or <code>new Type90B122mm6x6MultipleLaunchRocketSystemMLRS()</code>. </p>
  * <ul>
- *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
  *     <li> SubCategory: Type90B122mm6x6MultipleLaunchRocketSystemMLRS  = <code>42</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 31985; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@58134517. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@ca263c2. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain

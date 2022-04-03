@@ -13,7 +13,7 @@ import edu.nps.moves.dis7.pdus.*;
  * This <code>enum</code> type is generated from XML,
  *  UID 477, marshal size 8;
  * LifeFormExtraPersonalData has 38 enumerations total.
- * The 1s digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10s digit is reserved for general age group. The 100s digit is reserved for gender, where 0 is Male and 1 is Female.
+ * The 1's digit is reserved for Race/Ethnicity and the enumerations are taken from the U.S. OMB. The 10's digit is reserved for general age group. The 100's digit is reserved for gender, where 0 is Male and 1 is Female.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
  */

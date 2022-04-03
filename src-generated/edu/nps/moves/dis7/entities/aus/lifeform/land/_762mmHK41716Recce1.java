@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HighPowerRifles  = <code>10</code>; </li>
  *     <li> Specific: _762mmHK41716Recce  = <code>16</code>; </li>
  *     <li> Entity type uid: 31564; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@e36bc01. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41f7c02d. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#LIFE_FORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class _762mmHK41716Recce1 extends EntityType
 
         setCategory((byte)30); // uid 31543, Australian Special Operations Command (SOCOMD)
         setSubCategory((byte)10); // uid 31563, High Power Rifles
-        setSpecific((byte)16); // uid 31564, 7.62mm HK417 16 Recce
+        setSpecific((byte)16); // uid 31564, 7.62mm HK417 16' Recce
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

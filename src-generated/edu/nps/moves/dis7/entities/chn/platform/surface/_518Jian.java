@@ -9,16 +9,16 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>_518Jian</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>_518Jian.createInstance()</code> or <code>new _518Jian()</code>. </p>
  * <ul>
- *     <li> Country: China, Peoples Republic of (CHN) = <code>45</code>; </li>
+ *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
  *     <li> SubCategory: JianghuIClassType053H  = <code>1</code>; </li>
  *     <li> Specific: _518Jian  = <code>10</code>; </li>
  *     <li> Entity type uid: 17084; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5be6e01c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2b662a77. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class _518Jian extends EntityType
 
         setCategory((byte)6); // uid 17073, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 17074, Jianghu-I Class (Type 053H)
-        setSpecific((byte)10); // uid 17084, 518 Jian
+        setSpecific((byte)10); // uid 17084, 518 Ji'an
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

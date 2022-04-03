@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: KatunIclasssalvagerescuetugs  = <code>75</code>; </li>
+ *     <li> SubCategory: KatunIclasssalvageamprescuetugs  = <code>75</code>; </li>
  *     <li> Specific: PZHS96  = <code>1</code>; </li>
  *     <li> Entity type uid: 14287; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@20de05e5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53e800f9. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class PZHS96 extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 13805, Auxiliary
-        setSubCategory((byte)75); // uid 14286, Katun I class (salvage & rescue tugs)
+        setSubCategory((byte)75); // uid 14286, Katun I class (salvage &amp; rescue tugs)
         setSpecific((byte)1); // uid 14287, PZHS 96
     }
     /** Create a new instance of this final (unmodifiable) class

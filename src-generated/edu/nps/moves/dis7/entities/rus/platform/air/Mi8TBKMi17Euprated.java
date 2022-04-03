@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Mi8917171Hip  = <code>1</code>; </li>
  *     <li> Specific: Mi8TBKMi17Euprated  = <code>4</code>; </li>
  *     <li> Entity type uid: 13436; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@552ed807. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2d9f64c9. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class Mi8TBKMi17Euprated extends EntityType
 
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)1); // uid 13432, Mi-8/9/17/171 Hip
-        setSpecific((byte)4); // uid 13436, Mi-8TBK (Mi-17) (E uprated)
+        setSpecific((byte)4); // uid 13436, Mi-8TBK (Mi-17) ('E' uprated)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

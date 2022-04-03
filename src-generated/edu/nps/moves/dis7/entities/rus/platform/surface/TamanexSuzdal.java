@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: Vytegralesclasssupportdepot  = <code>13</code>; </li>
+ *     <li> SubCategory: Vytegralesclasssupportampdepot  = <code>13</code>; </li>
  *     <li> Specific: TamanexSuzdal  = <code>7</code>; </li>
  *     <li> Entity type uid: 13899; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7be3a9ce. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22e5f96e. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class TamanexSuzdal extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 13805, Auxiliary
-        setSubCategory((byte)13); // uid 13892, Vytegrales class (support & depot)
+        setSubCategory((byte)13); // uid 13892, Vytegrales class (support &amp; depot)
         setSpecific((byte)7); // uid 13899, Taman (ex-Suzdal)
     }
     /** Create a new instance of this final (unmodifiable) class

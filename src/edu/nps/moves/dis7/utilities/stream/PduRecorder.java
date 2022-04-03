@@ -543,8 +543,8 @@ public class PduRecorder // implements PduReceiver
     initialize();
     System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs");
     
-                     PduFactory factory = new PduFactory(); // default appid, country, etc.
-                    PduRecorder pduRecorder;
+    PduFactory factory = new PduFactory(); // default appid, country, etc.
+    PduRecorder pduRecorder;
     DisThreadedNetworkInterface disNetworkInterface;
     DisPduType allPDUTypesArray[] = DisPduType.values();
     System.out.println("dis7.utilities.stream.PduRecorder allPDUTypesArray created, length=" + allPDUTypesArray.length + " ...");

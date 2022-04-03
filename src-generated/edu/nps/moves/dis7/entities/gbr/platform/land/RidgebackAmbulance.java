@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
- *     <li> SubCategory: Ridgback  = <code>7</code>; </li>
+ *     <li> SubCategory: Ridgeback  = <code>7</code>; </li>
  *     <li> Specific: RidgebackAmbulance  = <code>2</code>; </li>
  *     <li> Entity type uid: 26198; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51a18b21. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@383caf89. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class RidgebackAmbulance extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 14935, Large Wheeled Utility Vehicle
-        setSubCategory((byte)7); // uid 26196, Ridgback
+        setSubCategory((byte)7); // uid 26196, Ridgeback
         setSpecific((byte)2); // uid 26198, Ridgeback Ambulance
     }
     /** Create a new instance of this final (unmodifiable) class

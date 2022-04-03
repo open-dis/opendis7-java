@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TerminalHighAltitudeAreaDefenseTHAADSystem  = <code>4</code>; </li>
  *     <li> Specific: THAADOperatorsControlUnit  = <code>5</code>; </li>
  *     <li> Entity type uid: 25378; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58fd1214. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e8fdd19. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class THAADOperatorsControlUnit extends EntityType
 
         setCategory((byte)28); // uid 10679, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)4); // uid 10701, Terminal High Altitude Area Defense (THAAD) System
-        setSpecific((byte)5); // uid 25378, THAAD Operators Control Unit
+        setSpecific((byte)5); // uid 25378, THAAD Operator's Control Unit
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

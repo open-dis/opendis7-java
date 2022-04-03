@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: ScorpeneClass  = <code>1</code>; </li>
  *     <li> Specific: SS23OHiggins  = <code>1</code>; </li>
  *     <li> Entity type uid: 26247; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5204062d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d7acb34. </p>
  * @see Country#CHILE_CHL
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class SS23OHiggins extends EntityType
 
         setCategory((byte)5); // uid 26245, SS (Conventional Attack - Torpedo, Patrol)
         setSubCategory((byte)1); // uid 26246, Scorpene Class
-        setSpecific((byte)1); // uid 26247, SS-23 OHiggins
+        setSpecific((byte)1); // uid 26247, SS-23 O'Higgins
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

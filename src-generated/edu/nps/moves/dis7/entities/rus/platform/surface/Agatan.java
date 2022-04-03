@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: Pamirclasssalvagerescuemooring  = <code>69</code>; </li>
+ *     <li> SubCategory: Pamirclasssalvagerescueampmooring  = <code>69</code>; </li>
  *     <li> Specific: Agatan  = <code>1</code>; </li>
  *     <li> Entity type uid: 14251; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70c0a3d5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@277b8fa4. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class Agatan extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 13805, Auxiliary
-        setSubCategory((byte)69); // uid 14250, Pamir class (salvage, rescue & mooring)
+        setSubCategory((byte)69); // uid 14250, Pamir class (salvage, rescue &amp; mooring)
         setSpecific((byte)1); // uid 14251, Agatan
     }
     /** Create a new instance of this final (unmodifiable) class

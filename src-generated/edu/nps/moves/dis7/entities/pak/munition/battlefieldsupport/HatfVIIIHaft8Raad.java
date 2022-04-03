@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HatfVIIIHaft8Raad  = <code>2</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 29049; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@64910b2d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@485deee1. </p>
  * @see Country#PAKISTAN_PAK
  * @see EntityKind#MUNITION
  * @see Domain
@@ -38,7 +38,7 @@ public final class HatfVIIIHaft8Raad extends EntityType
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
         setCategory((byte)1); // uid 29047, Guided
-        setSubCategory((byte)2); // uid 29049, Hatf-VIII / Haft-8 (Raad)
+        setSubCategory((byte)2); // uid 29049, Hatf-VIII / Haft-8 (Ra'ad)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Tu95orTu142Bear  = <code>5</code>; </li>
  *     <li> Specific: Tu95BearEAconversion  = <code>2</code>; </li>
  *     <li> Entity type uid: 13339; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7f572c37. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a34f66a. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class Tu95BearEAconversion extends EntityType
 
         setCategory((byte)3); // uid 13309, Bomber
         setSubCategory((byte)5); // uid 13337, Tu-95 or Tu-142 Bear
-        setSpecific((byte)2); // uid 13339, Tu-95 Bear E (A conversion)
+        setSpecific((byte)2); // uid 13339, Tu-95 Bear E ('A' conversion)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

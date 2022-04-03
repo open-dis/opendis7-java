@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HalifaxClassFFG  = <code>1</code>; </li>
  *     <li> Specific: _340StJohns  = <code>11</code>; </li>
  *     <li> Entity type uid: 23120; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@670b40af. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74a10858. </p>
  * @see Country#CANADA_CAN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class _340StJohns extends EntityType
 
         setCategory((byte)6); // uid 18782, Guided Missile Frigate (FFG)
         setSubCategory((byte)1); // uid 18783, Halifax Class (FFG)
-        setSpecific((byte)11); // uid 23120, 340 St. Johns
+        setSpecific((byte)11); // uid 23120, 340 St. John's
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: LongRangeLandAttackProjectileLRLAP  = <code>31</code>; </li>
  *     <li> Specific: _554mk45  = <code>2</code>; </li>
  *     <li> Entity type uid: 29102; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@42b4df5a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@738a39cc. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -39,7 +39,7 @@ public final class _554mk45 extends EntityType
 
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)31); // uid 29100, Long Range Land Attack Projectile (LRLAP)
-        setSpecific((byte)2); // uid 29102, 5/54 mk. 45
+        setSpecific((byte)2); // uid 29102, 5'/54 mk. 45
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

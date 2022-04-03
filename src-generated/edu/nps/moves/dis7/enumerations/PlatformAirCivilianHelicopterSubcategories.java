@@ -13,7 +13,7 @@ import edu.nps.moves.dis7.pdus.*;
  * This <code>enum</code> type is generated from XML,
  *  UID 278, marshal size 8;
  * PlatformAirCivilianHelicopterSubcategories has 7 enumerations total.
- * Subcategories for Air Platform Categories 90-92. Subcategory values have the number of rotors in the 10s digit and the rotor configuration in the 1s digit.
+ * Subcategories for Air Platform Categories 90-92. Subcategory values have the number of rotors in the 10's digit and the rotor configuration in the 1's digit.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
  */

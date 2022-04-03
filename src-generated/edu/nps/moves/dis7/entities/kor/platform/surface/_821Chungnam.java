@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SurveyingShip  = <code>3</code>; </li>
  *     <li> Specific: _821Chungnam  = <code>2</code>; </li>
  *     <li> Entity type uid: 17719; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ced35ed. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62315f22. </p>
  * @see Country#KOREA_REPUBLIC_OF_KOR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class _821Chungnam extends EntityType
 
         setCategory((byte)16); // uid 17711, Auxiliary
         setSubCategory((byte)3); // uid 17717, Surveying Ship
-        setSpecific((byte)2); // uid 17719, 821 Chungnam
+        setSpecific((byte)2); // uid 17719, 821 Ch'ungnam
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

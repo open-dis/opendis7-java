@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Su25Frogfoot  = <code>8</code>; </li>
  *     <li> Specific: Su25KexportA  = <code>3</code>; </li>
  *     <li> Entity type uid: 13297; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69e49a81. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12ffd1de. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class Su25KexportA extends EntityType
 
         setCategory((byte)2); // uid 13259, Attack/Strike
         setSubCategory((byte)8); // uid 13294, Su-25 Frogfoot
-        setSpecific((byte)3); // uid 13297, Su-25K (export A)
+        setSpecific((byte)3); // uid 13297, Su-25K (export 'A')
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: SpruanceClass  = <code>1</code>; </li>
  *     <li> Specific: DD987OBannon  = <code>25</code>; </li>
  *     <li> Entity type uid: 11482; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@32507479. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2017f6e6. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class DD987OBannon extends EntityType
 
         setCategory((byte)5); // uid 11456, Destroyer
         setSubCategory((byte)1); // uid 11457, Spruance Class
-        setSpecific((byte)25); // uid 11482, DD 987 OBannon
+        setSpecific((byte)25); // uid 11482, DD 987 O'Bannon
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

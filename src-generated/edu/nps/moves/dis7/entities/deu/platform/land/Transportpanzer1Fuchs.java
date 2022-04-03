@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Transportpanzer1Fuchs  = <code>8</code>; </li>
  *     <li> Specific:  <code>(none)</code>; </li>
  *     <li> Entity type uid: 16271; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@421e361. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@29ca3d04. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class Transportpanzer1Fuchs extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)3); // uid 16263, Armored Utility Vehicle
-        setSubCategory((byte)8); // uid 16271, Transportpanzer 1 Fuchs
+        setSubCategory((byte)8); // uid 16271, Transportpanzer 1 'Fuchs'
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

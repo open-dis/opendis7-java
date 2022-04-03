@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: ArleighBurkeClass  = <code>1</code>; </li>
  *     <li> Specific: DDG77OKane  = <code>27</code>; </li>
  *     <li> Entity type uid: 11400; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61b65d54. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@14d8e132. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class DDG77OKane extends EntityType
 
         setCategory((byte)4); // uid 11372, Guided Missile Destroyer
         setSubCategory((byte)1); // uid 11373, Arleigh Burke Class
-        setSpecific((byte)27); // uid 11400, DDG 77 OKane
+        setSpecific((byte)27); // uid 11400, DDG 77 O'Kane
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

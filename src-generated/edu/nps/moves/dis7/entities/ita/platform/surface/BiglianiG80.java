@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: CorrubiaBiglianiClasses  = <code>31</code>; </li>
+ *     <li> SubCategory: CorrubiaampBiglianiClasses  = <code>31</code>; </li>
  *     <li> Specific: BiglianiG80  = <code>1</code>; </li>
  *     <li> Entity type uid: 18577; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3624da92. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5bd1ceca. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class BiglianiG80 extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 18374, Auxiliary
-        setSubCategory((byte)31); // uid 18576, Corrubia & Bigliani Classes
+        setSubCategory((byte)31); // uid 18576, Corrubia &amp; Bigliani Classes
         setSpecific((byte)1); // uid 18577, Bigliani G 80
     }
     /** Create a new instance of this final (unmodifiable) class

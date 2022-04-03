@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Surveillance/C2 (Airborne Early Warning) = <code>8</code>; </li>
- *     <li> SubCategory: Boeing7377ESAEWC  = <code>1</code>; </li>
+ *     <li> SubCategory: Boeing7377ESAEWampC  = <code>1</code>; </li>
  *     <li> Specific: E7AWedgetail  = <code>1</code>; </li>
  *     <li> Entity type uid: 26268; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7907ec20. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6833ce2c. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class E7AWedgetail extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)8); // uid 26266, Surveillance/C2 (Airborne Early Warning)
-        setSubCategory((byte)1); // uid 26267, Boeing 737-7ES AEW&C
+        setSubCategory((byte)1); // uid 26267, Boeing 737-7ES AEW&amp;C
         setSpecific((byte)1); // uid 26268, E-7A Wedgetail
     }
     /** Create a new instance of this final (unmodifiable) class

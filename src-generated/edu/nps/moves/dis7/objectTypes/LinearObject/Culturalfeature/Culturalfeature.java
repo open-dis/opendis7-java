@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v29 (2021-05-19)
+ * SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)
  *
  * ObjectType uid: 227
  */

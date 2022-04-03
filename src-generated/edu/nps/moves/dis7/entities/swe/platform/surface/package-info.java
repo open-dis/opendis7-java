@@ -1,5 +1,5 @@
 /**
- Sweden (SWE) PLATFORM SURFACE typed classes for world entities defined by SISO-REF-010-v29 (2021-05-19) enumerations.
+ Sweden (SWE) PLATFORM SURFACE typed classes for world entities defined by SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29) enumerations.
 
  * <p> Online references: </p>
  * <ul>
@@ -14,6 +14,6 @@
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">Stack Overflow: why-is-package-info-java-useful</a>
  * @see <a href="https://stackoverflow.com/questions/624422/how-do-i-document-packages-in-java">Stack Overflow: how-do-i-document-packages-in-java</a>
  */
-// created by edu/nps/moves/dis7/source/generator/entitytypes/GenerateEntityTypes.java
+// created by edu/nps/moves/dis7/source/generator/entityTypes/GenerateEntityTypes.java
 
 package edu.nps.moves.dis7.entities.swe.platform.surface;

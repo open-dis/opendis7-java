@@ -13,12 +13,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: WildDuckclasssalvagemooring  = <code>15</code>; </li>
+ *     <li> SubCategory: WildDuckclasssalvageampmooring  = <code>15</code>; </li>
  *     <li> Specific: A165Pochard  = <code>2</code>; </li>
  *     <li> Entity type uid: 15415; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5584d9c6. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d0cac30. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class A165Pochard extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 15370, Auxiliary
-        setSubCategory((byte)15); // uid 15413, Wild Duck class (salvage & mooring)
+        setSubCategory((byte)15); // uid 15413, Wild Duck class (salvage &amp; mooring)
         setSpecific((byte)2); // uid 15415, A 165 Pochard
     }
     /** Create a new instance of this final (unmodifiable) class

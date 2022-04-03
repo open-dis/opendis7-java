@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Mi6Hook  = <code>4</code>; </li>
  *     <li> Specific: Mi6HookCBdevelopmentcommandsupport  = <code>3</code>; </li>
  *     <li> Entity type uid: 13457; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63716833. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@37b57b54. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class Mi6HookCBdevelopmentcommandsupport extends EntityType
 
         setCategory((byte)21); // uid 13431, Utility helicopter
         setSubCategory((byte)4); // uid 13454, Mi-6 Hook
-        setSpecific((byte)3); // uid 13457, Mi-6 Hook C (B development, command support)
+        setSpecific((byte)3); // uid 13457, Mi-6 Hook C ('B' development, command support)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

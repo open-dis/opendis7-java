@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: LinflexibleclassSNLE  = <code>1</code>; </li>
  *     <li> Specific: S610Lefoudroyant  = <code>1</code>; </li>
  *     <li> Entity type uid: 16181; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4ea5b703. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1800a575. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -38,7 +38,7 @@ public final class S610Lefoudroyant extends EntityType
         setDomain(Domain.inst(PlatformDomain.SUBSURFACE));
 
         setCategory((byte)2); // uid 16179, SSGN (Nuclear Guided Missile)
-        setSubCategory((byte)1); // uid 16180, Linflexible class (SNLE)
+        setSubCategory((byte)1); // uid 16180, L'inflexible class (SNLE)
         setSpecific((byte)1); // uid 16181, S 610 Le foudroyant
     }
     /** Create a new instance of this final (unmodifiable) class

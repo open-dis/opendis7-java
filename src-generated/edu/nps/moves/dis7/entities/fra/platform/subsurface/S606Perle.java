@@ -12,13 +12,13 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SUBSURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: SSN (Nuclear Attack Ballistic Missile) (Sous-Marins Nucleaires Dattaque (SNA)) = <code>3</code>; </li>
+ *     <li> Category: SSN (Nuclear Attack Ballistic Missile) (Sous-Marins Nucleaires D'attaque (SNA)) = <code>3</code>; </li>
  *     <li> SubCategory: RubisClassSNA72  = <code>1</code>; </li>
  *     <li> Specific: S606Perle  = <code>6</code>; </li>
  *     <li> Entity type uid: 16193; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@f627d13. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3abada5a. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -37,7 +37,7 @@ public final class S606Perle extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SUBSURFACE));
 
-        setCategory((byte)3); // uid 16186, SSN (Nuclear Attack Ballistic Missile) (Sous-Marins Nucleaires Dattaque (SNA))
+        setCategory((byte)3); // uid 16186, SSN (Nuclear Attack Ballistic Missile) (Sous-Marins Nucleaires D'attaque (SNA))
         setSubCategory((byte)1); // uid 16187, Rubis Class (SNA 72)
         setSpecific((byte)6); // uid 16193, S 606 Perle
     }

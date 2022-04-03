@@ -16,9 +16,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HoudongClassType021Upgrade  = <code>12</code>; </li>
  *     <li> Specific: P3134Raad  = <code>4</code>; </li>
  *     <li> Entity type uid: 18078; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v29 (2021-05-19)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30-DRAFT-20220129-d11 (2022-01-29)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75f65e45. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77192705. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -39,7 +39,7 @@ public final class P3134Raad extends EntityType
 
         setCategory((byte)7); // uid 18046, Light/Patrol Craft
         setSubCategory((byte)12); // uid 18074, Houdong Class (Type 021 Upgrade)
-        setSpecific((byte)4); // uid 18078, P313-4 Raad
+        setSpecific((byte)4); // uid 18078, P313-4 Ra'ad
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
