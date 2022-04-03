@@ -71,7 +71,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.breakiterator"   value="true"/>
     <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
     <property name="javadoc.version"         value="true"/>
-    <property name="javadoc.windowtitle"     value="open-dis7 Javadoc"/>
+    <property name="javadoc.windowtitle"     value="opendis7 Javadoc"/>
     <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
     <!-- build.impl <javadoc additionalparam="-J-Dfile.encoding=${file.encoding} ${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"> -->
     
@@ -166,7 +166,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="deploy.guidance" description="instructions">
         <echo message="Deployment steps:"/>
         <echo message="* NetworkedGraphicsMV3500"/>
-        <echo message="  *   update.open-dis7.jar.local"/>
+        <echo message="  *   update.opendis7.jar.local"/>
         <echo message="  *   Test student assignments and course examples"/>
         <echo message="  *   commit opendis7-full.jar"/>
         <echo message="  *   scp savage.nps.edu/data/html/opendis7-java"/>
