@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 /**
- *
+ * Reduce X3D interpolator size by omitting unnecessary intermediate data points and smoothing data as appropriate.
  * @author Tobias Brennenstuhl @ NPS
  */
 public class X3dSlidingWindowCompression {

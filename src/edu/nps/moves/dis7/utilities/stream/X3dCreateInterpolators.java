@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Create X3D PositionInterpolator and OrientationInterpolator nodes corresponding to x-y-z points in stream.
  * @author Tobias Brennenstuhl @ NPS
  */
 public class X3dCreateInterpolators {
