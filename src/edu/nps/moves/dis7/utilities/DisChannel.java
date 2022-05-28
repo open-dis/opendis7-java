@@ -8,14 +8,9 @@ import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.pdus.CommentPdu;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
-import edu.nps.moves.dis7.utilities.DisTime;
-import edu.nps.moves.dis7.utilities.PduFactory;
-import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-// import jdk.internal.vm.annotation.IntrinsicCandidate;
 
 /**
  * DisChannel integrates multiple utility capabilities to handle most  networking and entity-management tasks.
@@ -211,7 +206,7 @@ public class DisChannel
      * Send a single Protocol Data Unit (PDU) of any type
      * @param pdu the pdu to send
      */
-    protected void sendSinglePdu(Pdu pdu)
+    public void sendSinglePdu(Pdu pdu)
     {
         if (getDisNetworkInterface() == null)
             setUpNetworkInterface(); // ensure connected
