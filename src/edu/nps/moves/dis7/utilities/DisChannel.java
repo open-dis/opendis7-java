@@ -8,6 +8,7 @@ import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.pdus.CommentPdu;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
