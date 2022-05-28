@@ -98,7 +98,7 @@ public class PduRecorder // implements PduReceiver
     private String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
     private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
 
-    private String TRACE_PREFIX = ("[pduRecorder " + getDescriptor()).trim() + "] ";
+    private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor      = new String();
 
     private Writer logFileWriter;
@@ -320,7 +320,7 @@ public class PduRecorder // implements PduReceiver
 
       // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
       byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
-      //System.out.println("wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
+      //System.out.println(TRACE_PREFIX + "wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
 
       byte[] byteBufferSized = Arrays.copyOf(newBuffer, newLength);
       DisPduType pduType;
@@ -401,7 +401,7 @@ public class PduRecorder // implements PduReceiver
       }
       pduCount = pduCount + 1;
 //      if (false) // debug
-//          System.out.println("PduRecorder: pduCount="+ pduCount);
+//          System.out.println(TRACE_PREFIX + "PduRecorder: pduCount="+ pduCount);
 
       sb.setLength(0);
     }
@@ -496,11 +496,11 @@ public class PduRecorder // implements PduReceiver
 
       if (newFile.createNewFile()) 
       {
-          System.out.println("Recorder log file open: " + newFile.getCanonicalPath());
+          System.out.println(TRACE_PREFIX + "Recorder log file open: " + newFile.getCanonicalPath());
       }
       else
       {
-        System.out.println("Cannot create dis log file at " + newFile.getAbsolutePath());
+        System.out.println(TRACE_PREFIX + "Cannot create dis log file at " + newFile.getAbsolutePath());
         throw new RuntimeException("File creation error");
       }
       return newFile;
@@ -646,6 +646,8 @@ public class PduRecorder // implements PduReceiver
      * @return simple descriptor name
      */
     public String getDescriptor() {
+        if (descriptor == null)
+            descriptor = "";
         return descriptor;
     }
 
@@ -655,9 +657,12 @@ public class PduRecorder // implements PduReceiver
      * @return same object to permit progressive setters */
     public PduRecorder setDescriptor(String newDescriptor) 
     {
-        if (newDescriptor != null)
-            this.descriptor = newDescriptor.trim();
-        TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
+        if  (newDescriptor != null)
+             this.descriptor = newDescriptor.trim();
+        else descriptor = "";
+        if  (descriptor.isBlank())
+             TRACE_PREFIX = "[" + PduRecorder.class.getSimpleName()                    + "] ";
+        else TRACE_PREFIX = "[" + PduRecorder.class.getSimpleName() + " " + descriptor + "] ";
         return this;
     }
     /**
