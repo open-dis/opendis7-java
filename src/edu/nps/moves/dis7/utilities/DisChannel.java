@@ -279,6 +279,7 @@ public class DisChannel
     }
 
     /**
+     * Get prefix string used in trace messages
      * @return the TRACE_PREFIX
      */
     public String getTRACE_PREFIX() {
@@ -286,6 +287,7 @@ public class DisChannel
     }
 
     /**
+     * Set prefix string used in trace messages
      * @param newTRACE_PREFIX the TRACE_PREFIX to set
      */
     public final void setTRACE_PREFIX(String newTRACE_PREFIX) {
@@ -314,6 +316,7 @@ public class DisChannel
     }
 
     /**
+     * Get link to an already-created PduFactory
      * @return the pduFactory, simplifying program imports and configuration
      */
     public PduFactory getPduFactory() {
@@ -323,6 +326,7 @@ public class DisChannel
     }
 
     /**
+     * Get reference to current singleton DisThreadedNetworkInterface
      * @return the disNetworkInterface
      */
     public DisThreadedNetworkInterface getDisNetworkInterface() {
@@ -330,6 +334,7 @@ public class DisChannel
     }
 
     /**
+     * Get current host name
      * @return the thisHostName
      */
     public static String getThisHostName() {
@@ -337,6 +342,7 @@ public class DisChannel
     }
 
     /**
+     * Override and set current host name
      * @param aThisHostName the thisHostName to set
      */
     public static void setThisHostName(String aThisHostName) {
@@ -344,6 +350,7 @@ public class DisChannel
     }
 
     /**
+     * Get link to an already-created PduRecorder connected to current disThreadedInterface
      * @return the pduRecorder
      */
     public PduRecorder getPduRecorder() {
