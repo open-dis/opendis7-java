@@ -165,7 +165,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="deploy.guidance" description="instructions">
         <echo message="Deployment steps:"/>
-        <echo message="* NetworkedGraphicsMV3500"/>
+        <echo message="* MV3500 Distributed Simulation Fundamentals"/>
         <echo message="  *   update.opendis7.jar.local"/>
         <echo message="  *   Test student assignments and course examples"/>
         <echo message="  *   commit opendis7-full.jar"/>
