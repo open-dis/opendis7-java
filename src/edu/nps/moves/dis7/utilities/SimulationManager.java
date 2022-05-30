@@ -1,56 +1,26 @@
-/*
-Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      https://www.nps.edu and https://www.nps.edu/web/moves
-      nor the names of its contributors may be used to endorse or
-      promote products derived from this software without specific
-      prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
-*/
-// TODO move into opendis7 distribution tree
+/**
+ * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * This work is provided under a BSD-style open-source license, see project
+ * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
+ */
 
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.CreateEntityPdu;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.RemoveEntityPdu;
-import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
-import edu.nps.moves.dis7.utilities.DisTime;
 import java.util.ArrayList;
 
 /**
- * Manage overall Simulation Management (SIMAN) choreography for a DIS channel participant.
- * TODO once operation is working satisfactorily, this class will be moved into the opendis7-java distribution utilities.
- * @see <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">Networked Graphics MV3500, Specification Documents, IEEE and SISO</a>
- * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">1278.1-2012. IEEE Standard for Distributed Interactive Simulation (DIS) - Application Protocols</a> 5.6.3 The simulation management computer
- * @see <a href="https://ieeexplore.ieee.org/document/587529" target="_blank">1278.3-1996. IEEE Recommended Practice for Distributed Interactive Simulation - Exercise Management and Feedback</a>
- * @see IEEE 1278.1 DIS Application Protocols, 4.6.3.a.5 Timestamp, General Requirements, page 43
- * @see IEEE 1278.1 DIS Application Protocols, 4.6.3.c.1 Timestamp, Relative Timestamps, page 44
- * @see IEEE 1278.1 DIS Application Protocols, 5.6 Simulation management, page 89
+ * Manage overall Simulation Management (SIMAN) choreography for a participating application in a DIS channel.
+ * <ul>
+ * <li> IEEE 1278.1 DIS Application Protocols, 4.6.3.a.5 Timestamp, General Requirements, page 43</li>
+ * <li> IEEE 1278.1 DIS Application Protocols, 4.6.3.c.1 Timestamp, Relative Timestamps, page 44</li>
+ * <li> IEEE 1278.1 DIS Application Protocols, 5.6 Simulation management, page 89</li>
+ * </ul>
+ * @see <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md">MV3500 Distributed Simulation Fundamentals, Specification Documents, IEEE and SISO</a>
+ * @see <a href="https://ieeexplore.ieee.org/document/6387564">1278.1-2012. IEEE Standard for Distributed Interactive Simulation (DIS) - Application Protocols</a> 5.6.3 The simulation management computer
+ * @see <a href="https://ieeexplore.ieee.org/document/587529">1278.3-1996. IEEE Recommended Practice for Distributed Interactive Simulation - Exercise Management and Feedback</a>
  * @author brutzman
  */
 public class SimulationManager 

@@ -1,6 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * This work is provided under a BSD-style open-source license, see project
+ * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
 package edu.nps.moves.dis7.utilities;
 
@@ -15,9 +16,12 @@ import java.util.ArrayList;
 
 /**
  * DisChannel integrates multiple utility capabilities to handle most  networking and entity-management tasks.
- * Provides a simplified interface wrapping DisThreadedNetworkInterface, PduRecorder and SimulationManager
+ * Provides a simplified interface wrapping DisThreadedNetworkInterface, PduRecorder, and SimulationManager
  * for programs connecting to OpenDis7 communications.
+ * <br>
  * TODO future work will confirm that multiple different DisChannel connections can be used simultaneously by a parent program.
+ * @see <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md">MV3500 Distributed Simulation Fundamentals, Specification Documents, IEEE and SISO</a>
+ * @see <a href="https://ieeexplore.ieee.org/document/6387564">1278.1-2012. IEEE Standard for Distributed Interactive Simulation (DIS) - Application Protocols</a>
  * @author brutzman
  */
 public class DisChannel 
