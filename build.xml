@@ -98,6 +98,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <antcall target="test"/>
         <echo message="================"/>
         <antcall target="jar"/>
+        <copy file="license.txt"  todir="${dist.dir}" force="true" verbose="true"/>
+        <copy file="license.html" todir="${dist.dir}" force="true" verbose="true"/>
         <echo message="================"/>
         <antcall target="deploy.guidance"/>
         <echo message="================"/>
