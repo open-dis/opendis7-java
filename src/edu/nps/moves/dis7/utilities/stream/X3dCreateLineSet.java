@@ -1,8 +1,13 @@
+/**
+ * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * This work is provided under a BSD-style open-source license, see project
+ * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
+ */
 package edu.nps.moves.dis7.utilities.stream;
 
+import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.nio.ByteBuffer;
 import java.text.NumberFormat;
