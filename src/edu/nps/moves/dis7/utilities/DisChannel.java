@@ -51,12 +51,28 @@ public class DisChannel
             Pdu                                     receivedPdu;
     private PduRecorder                             pduRecorder;
           
-    /* VariableRecordType enumerations have potential use with CommentPdu logs */
-    /* TODO contrast to EntityType */
-    public final VariableRecordType     descriptionCommentType = VariableRecordType.DESCRIPTION;
-    public final VariableRecordType       narrativeCommentType = VariableRecordType.COMPLETE_EVENT_REPORT;
-    public final VariableRecordType          statusCommentType = VariableRecordType.APPLICATION_STATUS;
-    public final VariableRecordType currentTimeStepCommentType = VariableRecordType.APPLICATION_TIMESTEP;
+    /** CommentPdu type providing a description, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_DESCRIPTION            = VariableRecordType.DESCRIPTION;
+    
+    /** CommentPdu type providing an event report, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_NARRATIVE              = VariableRecordType.COMPLETE_EVENT_REPORT;
+    
+    /** CommentPdu type providing simulation program status, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_APPLICATION_STATUS      = VariableRecordType.APPLICATION_STATUS;
+    
+    /** CommentPdu type documenting current elapsed time, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_ELAPSED_TIME            = VariableRecordType.ELAPSED_TIME;
+    
+    /** CommentPdu type documenting simulation program timestep, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_SIMULATION_TIMESTEP     = VariableRecordType.APPLICATION_TIMESTEP;
+    
+    /** CommentPdu type documenting simulation program time, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_TIME     = VariableRecordType.TIME;
+    
+    /** CommentPdu type documenting current waypoint number, used for consistent reporting and logging. */
+    public final VariableRecordType COMMENTPDU_CURRENT_WAYPOINT_NUMBER = VariableRecordType.CURRENT_WAYPOINT_NUMBER;
+    
+    // TODO additional pecial Simkit COMMENTPDU types
     
     /** SimulationManager class handles DIS joining, announcing and leaving tasks.
      * It is instantiated here as an object */
@@ -226,11 +242,40 @@ public class DisChannel
             System.exit(1);
         }
     }
+    /** 
+     * Send a single Protocol Data Unit (PDU) of any type following time delay
+     * @param delayTimeMilliseconds delay before sending
+     * @param pdu the pdu to send
+     */
+    public void sendSinglePduDelayed(long delayTimeMilliseconds, Pdu pdu)
+    {
+        try
+        {
+            Thread.sleep(delayTimeMilliseconds);
+        }
+        catch (InterruptedException ie)
+        {
+            System.err.println(ie);
+        }
+        sendSinglePdu(pdu);
+    }
+
+    /** 
+     * Send a single Protocol Data Unit (PDU) of any type following time delay
+     * @param delayTimeSeconds delay before sending
+     * @param pdu the pdu to send
+     */
+    public void sendSinglePduDelayed(double delayTimeSeconds, Pdu pdu)
+    {
+        long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
+        sendSinglePduDelayed(delayTimemilliseconds, pdu);
+    }
     /**
      * Send Comment PDU
-     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      * @param commentType    enumeration value describing purpose of the narrative comment
      * @param comments       String array of narrative comments
+     * @see VariableRecordType for other potential CommentPdu type enumerations.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
     public void sendCommentPdu(VariableRecordType commentType,
                                      // vararg... variable-length set of String comments can optionally follow
@@ -264,6 +309,45 @@ public class DisChannel
                 }
             }
         }
+    }
+    /** 
+     * Send Comment PDU following time delay
+     * @param delayTimeMilliseconds delay before sending
+     * @param commentType    enumeration value describing purpose of the narrative comment
+     * @param comments       String array of narrative comments
+     * @see VariableRecordType for other potential CommentPdu type enumerations.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
+     */
+    public void sendCommentPduDelayed(long delayTimeMilliseconds,
+                                      VariableRecordType commentType,
+                                      // vararg... variable-length set of String comments can optionally follow
+                                      String... comments)
+    {
+        try
+        {
+            Thread.sleep(delayTimeMilliseconds);
+        }
+        catch (InterruptedException ie)
+        {
+            System.err.println(ie);
+        }
+        sendCommentPdu(commentType, comments);
+    }
+    /** 
+     * Send Comment PDU following time delay
+     * @param delayTimeSeconds delay before sending
+     * @param commentType    enumeration value describing purpose of the narrative comment
+     * @param comments       String array of narrative comments
+     * @see VariableRecordType for other potential CommentPdu type enumerations.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
+     */
+    public void sendCommentPduDelayed(double delayTimeSeconds,
+                                      VariableRecordType commentType,
+                                      // vararg... variable-length set of String comments can optionally follow
+                                      String... comments)
+    {
+        long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
+        sendCommentPduDelayed(delayTimemilliseconds, commentType, comments);
     }
 
     /**
