@@ -13,6 +13,8 @@ import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * DisChannel integrates multiple utility capabilities to handle most  networking and entity-management tasks.
@@ -50,6 +52,8 @@ public class DisChannel
             DisThreadedNetworkInterface.PduListener pduListener;
             Pdu                                     receivedPdu;
     private PduRecorder                             pduRecorder;
+    private boolean                                 verboseDisNetworkInterface = true;
+    private boolean                                 verbosePduRecorder         = true;
           
     /** CommentPdu type providing a description, used for consistent reporting and logging. */
     public final VariableRecordType COMMENTPDU_DESCRIPTION            = VariableRecordType.DESCRIPTION;
@@ -87,10 +91,30 @@ public class DisChannel
         initialize();
     }
     /** Constructor with new descriptor
-     * @param newDescriptor descriptor for this instance */
-    public DisChannel(String newDescriptor)
+     * @param initialDescriptor descriptor for this instance */
+    public DisChannel(String initialDescriptor)
     {
-        descriptor = newDescriptor;
+        descriptor = initialDescriptor;
+        initialize();
+    }
+    /** Constructor with new verboseness
+     * @param verbosenessDisNetworkInterface  whether channel is initially verbose
+     * @param verbosenessPduRecorder      whether PduRecorder is initially verbose */
+    public DisChannel(boolean verbosenessDisNetworkInterface, boolean verbosenessPduRecorder)
+    {
+        verboseDisNetworkInterface = verbosenessDisNetworkInterface;
+        verbosePduRecorder         = verbosenessPduRecorder;
+        initialize();
+    }
+    /** Constructor with new descriptor, verboseness
+     * @param initialDescriptor descriptor for this instance
+     * @param verbosenessDisNetworkInterface  whether channel is initially verbose
+     * @param verbosenessPduRecorder whether PduRecorder is initially verbose  */
+    public DisChannel(String initialDescriptor, boolean verbosenessDisNetworkInterface, boolean verbosenessPduRecorder)
+    {
+        descriptor = initialDescriptor;
+        verboseDisNetworkInterface = verbosenessDisNetworkInterface;
+        verbosePduRecorder         = verbosenessPduRecorder;
         initialize();
     }
     /** Initialize this class */
@@ -200,8 +224,10 @@ public class DisChannel
         }            
         disNetworkInterface = new DisThreadedNetworkInterface(getNetworkAddress(), getNetworkPort());
         getDisNetworkInterface().setDescriptor(descriptor);
-        printlnTRACE("Network confirmation:" + " address=" + getDisNetworkInterface().getAddress() + //  disNetworkInterface.getMulticastGroup() +
-                                                  " port=" + getDisNetworkInterface().getPort()); // + disNetworkInterface.getDisPort());
+        getDisNetworkInterface().setVerbose(isVerboseDisNetworkInterface());
+        if (isVerbosePduRecorder())
+            printlnTRACE("Network confirmation:" + " address=" + getDisNetworkInterface().getAddress() + //  disNetworkInterface.getMulticastGroup() +
+                                                      " port=" + getDisNetworkInterface().getPort());    // + disNetworkInterface.getDisPort());
         pduListener = new DisThreadedNetworkInterface.PduListener() {
             /** Callback handler for listener */
             @Override
@@ -214,13 +240,15 @@ public class DisChannel
         printlnTRACE("Beginning pdu save to directory " + pduLogOutputDirectory);
         pduRecorder = new PduRecorder(pduLogOutputDirectory, getNetworkAddress(), getNetworkPort()); // assumes save
         pduRecorder.setEncodingPduLog(PduRecorder.ENCODING_PLAINTEXT);
-        pduRecorder.setVerbose(true); // either sending, receiving or both
+        pduRecorder.setVerbose(isVerboseDisNetworkInterface()); // either sending, receiving or both
         pduRecorder.start(); // begin running
     }
 
     /** All done, release network resources */
-    public void tearDownNetworkInterface() {
-        getPduRecorder().stop(); // handles disNetworkInterface.close(), tears down threads and sockets
+    public void tearDownNetworkInterface() 
+    {
+        getPduRecorder().stop();     // handles disNetworkInterface.close(), tears down threads and sockets
+        disNetworkInterface.close(); // make sure
     }
 
     /** 
@@ -242,42 +270,68 @@ public class DisChannel
             System.exit(1);
         }
     }
+
     /** 
-     * Send a single Protocol Data Unit (PDU) of any type following time delay
-     * @param delayTimeMilliseconds delay before sending
+     * Send a single Protocol Data Unit (PDU) of any type after setting given timestamp
+     * @param disTimeStamp timestamp for this PDU
      * @param pdu the pdu to send
      */
-    public void sendSinglePduDelayed(long delayTimeMilliseconds, Pdu pdu)
+    public void sendSinglePdu(int disTimeStamp, Pdu pdu)
     {
+        if (getDisNetworkInterface() == null)
+            setUpNetworkInterface(); // ensure connected
         try
         {
-            Thread.sleep(delayTimeMilliseconds);
-        }
-        catch (InterruptedException ie)
+            pdu.setTimestamp(disTimeStamp);
+            getDisNetworkInterface().send(pdu);
+            Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
+        } 
+        catch (InterruptedException ex)
         {
-            System.err.println(ie);
+            System.err.println(this.getClass().getSimpleName() + " Error sending PDU: " + ex.getLocalizedMessage());
+            System.exit(1);
         }
-        sendSinglePdu(pdu);
+    }
+    /** 
+     * Send a single Protocol Data Unit (PDU) of any type following a real-time delay
+     * @param pdu the pdu to send
+     * @param delayTimeMilliseconds delay before sending
+     */
+    public void sendSinglePduDelayed(Pdu pdu, long delayTimeMilliseconds)
+    {
+        // https://stackoverflow.com/questions/4044726/how-to-set-a-timer-in-java
+        Timer timer = new Timer();
+        
+        timer.schedule(new TimerTask() 
+        {
+            @Override
+            public void run()
+            {
+                sendSinglePdu(pdu);
+            }
+        }, delayTimeMilliseconds);
     }
 
     /** 
-     * Send a single Protocol Data Unit (PDU) of any type following time delay
-     * @param delayTimeSeconds delay before sending
+     * Send a single Protocol Data Unit (PDU) of any type following a real-time delay
      * @param pdu the pdu to send
+     * @param delayTimeSeconds delay before sending
      */
-    public void sendSinglePduDelayed(double delayTimeSeconds, Pdu pdu)
+    public void sendSinglePduDelayed(Pdu pdu, double delayTimeSeconds)
     {
         long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
-        sendSinglePduDelayed(delayTimemilliseconds, pdu);
+        sendSinglePduDelayed(pdu, delayTimemilliseconds);
     }
     /**
-     * Send Comment PDU
+     * Send Comment PDU using given DIS timestamp
+     * @param disTimeStamp     timestamp for this PDU
      * @param commentType    enumeration value describing purpose of the narrative comment
      * @param comments       String array of narrative comments
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPdu(VariableRecordType commentType,
+    public void sendCommentPdu(int disTimeStamp,
+                               VariableRecordType commentType,
                                      // vararg... variable-length set of String comments can optionally follow
                                         String... comments)
     {
@@ -301,53 +355,70 @@ public class DisChannel
                 // now build the commentPdu from these string inputs, thus constructing a narrative entry
                 @SuppressWarnings("CollectionsToArray")
                 CommentPdu commentPdu = getPduFactory().makeCommentPdu(commentType, newCommentsList.toArray(new String[0])); // comments);
+                commentPdu.setTimestamp(disTimeStamp);
                 sendSinglePdu(commentPdu);
-                if (isVerboseComments())
+                if (isVerboseComments()) // narrative report
                 {
-                    printlnTRACE("*** [CommentPdu narrative sent: " + commentType.name() + "] " + newCommentsList.toString());
+                    printlnTRACE("*** [CommentPdu " + commentType.name() + "] " + newCommentsList.toString());
                     System.out.flush();
                 }
             }
         }
     }
+    /**
+     * Send Comment PDU using current DIS timestamp
+     * @param commentType      enumeration value describing purpose of the narrative comment
+     * @param comments         String array of narrative comments
+     * @see VariableRecordType for other potential CommentPdu type enumerations.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
+     */
+    public void sendCommentPdu(VariableRecordType commentType,
+                                     // vararg... variable-length set of String comments can optionally follow
+                                        String... comments)
+    {
+        sendCommentPdu (DisTime.getCurrentDisTimestamp(), commentType, comments);
+    }
+
     /** 
      * Send Comment PDU following time delay
-     * @param delayTimeMilliseconds delay before sending
      * @param commentType    enumeration value describing purpose of the narrative comment
+     * @param delayTimeMilliseconds delay before sending
      * @param comments       String array of narrative comments
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPduDelayed(long delayTimeMilliseconds,
-                                      VariableRecordType commentType,
+    public void sendCommentPduDelayed(VariableRecordType commentType,
+                                      long delayTimeMilliseconds,
                                       // vararg... variable-length set of String comments can optionally follow
                                       String... comments)
     {
-        try
+        // https://stackoverflow.com/questions/4044726/how-to-set-a-timer-in-java
+        Timer timer = new Timer();
+        
+        timer.schedule(new TimerTask() 
         {
-            Thread.sleep(delayTimeMilliseconds);
-        }
-        catch (InterruptedException ie)
-        {
-            System.err.println(ie);
-        }
-        sendCommentPdu(commentType, comments);
+            @Override
+            public void run()
+            {
+                sendCommentPdu(commentType, comments);
+            }
+        }, delayTimeMilliseconds);
     }
     /** 
      * Send Comment PDU following time delay
-     * @param delayTimeSeconds delay before sending
      * @param commentType    enumeration value describing purpose of the narrative comment
+     * @param delayTimeSeconds delay before sending
      * @param comments       String array of narrative comments
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPduDelayed(double delayTimeSeconds,
-                                      VariableRecordType commentType,
+    public void sendCommentPduDelayed(VariableRecordType commentType,
+                                      double delayTimeSeconds,
                                       // vararg... variable-length set of String comments can optionally follow
                                       String... comments)
     {
         long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
-        sendCommentPduDelayed(delayTimemilliseconds, commentType, comments);
+        sendCommentPduDelayed(commentType, delayTimemilliseconds, comments);
     }
 
     /**
@@ -467,5 +538,37 @@ public class DisChannel
             disNetworkInterface.setDescriptor(descriptor);
         if (simulationManager != null)
             simulationManager.setDescriptor(descriptor);
+    }
+
+    /**
+     * @return the verboseDisNetworkInterface
+     */
+    public boolean isVerboseDisNetworkInterface() {
+        return verboseDisNetworkInterface;
+    }
+
+    /**
+     * @param verboseDisNetworkInterface the verboseDisNetworkInterface to set
+     */
+    public void setVerboseDisNetworkInterface(boolean verboseDisNetworkInterface) {
+        this.verboseDisNetworkInterface = verboseDisNetworkInterface;
+        if (disNetworkInterface != null)
+            disNetworkInterface.setVerbose(verboseDisNetworkInterface);
+    }
+
+    /**
+     * @return the verbosePduRecorder
+     */
+    public boolean isVerbosePduRecorder() {
+        return verbosePduRecorder;
+    }
+
+    /**
+     * @param verbosePduRecorder the verbosePduRecorder to set
+     */
+    public void setVerbosePduRecorder(boolean verbosePduRecorder) {
+        this.verbosePduRecorder = verbosePduRecorder;
+        if (pduRecorder != null)
+            pduRecorder.setVerbose(verbosePduRecorder);
     }
 }
