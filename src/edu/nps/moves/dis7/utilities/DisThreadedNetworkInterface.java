@@ -6,7 +6,6 @@
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.enumerations.DisPduType;
-import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import java.io.ByteArrayOutputStream;
@@ -64,12 +63,12 @@ public class DisThreadedNetworkInterface
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
     public static int DEFAULT_DIS_PORT = 3000;
 
-    private String  descriptor      = new String();
-    private String  TRACE_PREFIX = "[" + (this.getClass().getSimpleName() + " " + getDescriptor()).trim() + "] ";
-    private boolean verbose         = true;
-    private boolean verboseReceipt  = true;
-    private boolean verboseSending  = true;
-    private boolean verboseIncludesTimestamp = false;
+    private static String  descriptor      = new String();
+    private        String  TRACE_PREFIX = "[" + (this.getClass().getSimpleName() + " " + descriptor).trim() + "] ";
+    private static boolean verbose         = true;
+    private static boolean verboseReceipt  = true;
+    private static boolean verboseSending  = true;
+    private static boolean verboseIncludesTimestamp = false;
 
     /* *********** queues and lists  and public methods ************** */
     private final List<PduListener> everyTypeListeners = new ArrayList<>();
@@ -316,7 +315,8 @@ public class DisThreadedNetworkInterface
             receiveThread.setPriority(Thread.NORM_PRIORITY);
             receiveThread.start();
         }
-        System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
+        if (hasVerboseSending())
+            System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
 
         if (sendingThread == null)
         {
@@ -327,7 +327,8 @@ public class DisThreadedNetworkInterface
             sendingThread.setPriority(Thread.NORM_PRIORITY);
             sendingThread.start();
         }
-        System.out.println(TRACE_PREFIX + "createThreads() sendingThread.isAlive()=" + receiveThread.isAlive());
+        if (hasVerboseSending())
+            System.out.println(TRACE_PREFIX + "createThreads() sendingThread.isAlive()=" + receiveThread.isAlive());
     }
     /**
      * Can be used to restart DisThreadedNetworkInterface if closed.
@@ -335,7 +336,7 @@ public class DisThreadedNetworkInterface
      * either sender or receiver thread to ensure datagram socket is open.
      * Method was originally named start().
      */
-    public void begin()
+    public final void begin()
     {
         createDatagramSocket(); // common asset, synchronized to prevent interleaved reentry
         
@@ -378,7 +379,7 @@ public class DisThreadedNetworkInterface
                 datagramSocket = new MulticastSocket(getPort());
                 datagramSocket.setSoTimeout(1000); // msec timeout on reading and then continue looping in order to avoid blocking
                 
-                ((MulticastSocket) datagramSocket).joinGroup(inetSocket, networkInterface);
+                datagramSocket.joinGroup(inetSocket, networkInterface);
                 
                 Thread.sleep (100L); // allow threads, streams to catch up
             } 
@@ -391,14 +392,17 @@ public class DisThreadedNetworkInterface
                 System.err.println(" *** " + TRACE_PREFIX + "IOException in DisThreadedNetworkInterface createDatagramSocket(): " + ex.getLocalizedMessage());
             }
         }
-        if (hasVerboseOutput())
+        if (hasVerboseSending())
         {
 //                    if (hasVerboseOutputIncludesTimestamp())
 //                        message += " (timestamp " + getTimestamp()); // TODO
             message += "datagramSocket.joinGroup  address=" + inetSocket.getHostString() + " port=" + inetSocket.getPort() +
                        " isConnected()=" + datagramSocket.isConnected() + " createDatagramSocket() complete.";
-            System.out.println(message);
-            System.out.flush();
+            if (verbose)
+            {
+                System.out.println(message);
+                System.out.flush();
+            }
         }
     }
   
@@ -436,9 +440,12 @@ public class DisThreadedNetworkInterface
                         if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
                             message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
                         message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
-                        System.err.flush();
-                        System.out.println(message);
-                        System.out.flush();
+                        if (hasVerboseOutput())
+                        {
+                            System.err.flush();
+                            System.out.println(message);
+                            System.out.flush();
+                        }
                     }
                     toListeners(nextPdu);
                 }
@@ -485,9 +492,12 @@ public class DisThreadedNetworkInterface
                     if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
                         message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
                     message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
-                    System.err.flush();
-                    System.out.println(message);
-                    System.out.flush();
+                    if (hasVerboseOutput())
+                    {
+                        System.err.flush();
+                        System.out.println(message);
+                        System.out.flush();
+                    }
                 }
                 dos.flush();  // immediately force pdu write
                 baos.reset(); // prepare for next send
@@ -550,7 +560,8 @@ public class DisThreadedNetworkInterface
       // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
       sendingThread.interrupt();
       receiveThread.interrupt();
-      System.out.println ("*** setKillSentinelAndInterrupts() killed=" + killed + 
+      if (hasVerboseOutput())
+            System.out.println ("*** setKillSentinelAndInterrupts() killed=" + killed + 
                     " sendingThread.isInterrupted()=" + sendingThread.isInterrupted() + 
                     " receiveThread.isInterrupted()=" + receiveThread.isInterrupted());
     }
@@ -570,7 +581,8 @@ public class DisThreadedNetworkInterface
              dos.flush();      // immediately force pdu write, if any remain
             baos.close();
              dos.close();
-            System.out.println (TRACE_PREFIX + "close():" + 
+            if (hasVerboseOutput())
+                System.out.println (TRACE_PREFIX + "close():" + 
                     " pdus2send.size()=" + pdus2send.size() +
                     " baos.size()=" + baos.size() + " dos.size()=" + dos.size());
              
@@ -578,7 +590,7 @@ public class DisThreadedNetworkInterface
             if (datagramSocket != null && !datagramSocket.isClosed())
             {
                 try {
-                    ((MulticastSocket)datagramSocket).leaveGroup(inetSocket, networkInterface);
+                    datagramSocket.leaveGroup(inetSocket, networkInterface);
                 } catch (IOException ex) {
                     Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -601,9 +613,9 @@ public class DisThreadedNetworkInterface
             Thread.sleep(500l);
             reportThreadStatus();
         }
-        catch (Exception e)
+        catch (IOException | InterruptedException e)
         {
-            System.err.println (TRACE_PREFIX + "close()() unexpected exception!");
+            System.err.println (TRACE_PREFIX + "close()() unexpected exception! " + e.getMessage());
         }
     }
     /** Tell thread to stop.
@@ -625,12 +637,13 @@ public class DisThreadedNetworkInterface
                 ie.printStackTrace(System.err);
             }
             
-        String   threadAlive = "null";
+        String   threadAlive;
         if (threadToKill != null)
         {
             threadAlive =   String.valueOf(threadToKill.isAlive());
-            System.out.println ("*** killThread() status: " + threadToKill.getName() + ".isAlive()=" + threadAlive +
-                                " " + threadToKill.getName() + ".isInterrupted()=" + threadToKill.isInterrupted());
+            if (hasVerboseOutput())
+                System.out.println ("*** killThread() status: " + threadToKill.getName() + ".isAlive()=" + threadAlive +
+                                    " " + threadToKill.getName() + ".isInterrupted()=" + threadToKill.isInterrupted());
         }
         System.err.flush(); // ensure all output sent
         System.out.flush(); // ensure all output sent
@@ -646,8 +659,11 @@ public class DisThreadedNetworkInterface
             sendingThreadAlive =   String.valueOf(  sendingThread.isAlive());
         if (receiveThread != null)
             receiveThreadAlive = String.valueOf(receiveThread.isAlive());
-        System.out.println ("*** Thread close status: sendingThread.isAlive()=" + sendingThreadAlive +
-                                                    " receiveThread.isAlive()=" + receiveThreadAlive);
+       if (hasVerboseOutput())
+       {
+            System.out.println ("*** Thread close status: sendingThread.isAlive()=" + sendingThreadAlive +
+                                                        " receiveThread.isAlive()=" + receiveThreadAlive);
+       }
         System.err.flush(); // ensure all output sent
         System.out.flush(); // ensure all output sent
     }
@@ -690,7 +706,8 @@ public class DisThreadedNetworkInterface
                         if (nextAddress instanceof Inet4Address && !nextAddress.isLoopbackAddress() && !nextAddress.isLinkLocalAddress()) 
                         {
                             // can't use object descriptor in static context
-                            System.out.println("[" + DisThreadedNetworkInterface.class.getSimpleName() + "] " + "using network interface " + networkInterface.getDisplayName());
+                            if (verboseSending)
+                                System.out.println("[" + DisThreadedNetworkInterface.class.getSimpleName() + "] " + "using network interface " + networkInterface.getDisplayName());
                             return networkInterface;
                         }
                     }
