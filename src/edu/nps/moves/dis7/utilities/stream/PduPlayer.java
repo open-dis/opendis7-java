@@ -14,6 +14,8 @@ import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
@@ -42,14 +44,14 @@ public class PduPlayer {
     private int port;
     private Thread playerThread;
 
-    static final String ENCODING_BASE64          = "ENCODING_BASE64";
-    static final String ENCODING_PLAINTEXT       = "ENCODING_PLAINTEXT";
-    static final String ENCODING_BINARY          = "ENCODING_BINARY";  // TODO likely requires different code path
-    static final String ENCODING_XML             = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
-    static final String ENCODING_EXI             = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
-    static final String ENCODING_JSON            = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
-    static final String ENCODING_CDIS            = "ENCODING_CDIS";    // future work based on new SISO standard
-    static final String ENCODING_MAK_DATA_LOGGER = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
+    static final String ENCODING_BASE64                = "ENCODING_BASE64";
+    static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
+    static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
+    static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
+    static final String ENCODING_EXI                   = "ENCODING_EXI";     // TODO, use Exificient or Nagasena libraries
+    static final String ENCODING_JSON                  = "ENCODING_JSON";    // TODO, repeat Open-DIS version 4 effort
+    static final String ENCODING_CDIS                  = "ENCODING_CDIS";    // future work based on new SISO standard
+    static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
     static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
 
     private static String pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT; // determined when reading file
@@ -161,9 +163,11 @@ public class PduPlayer {
                      pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT;
                 else pduLogEncoding = PduRecorder.ENCODING_BINARY;
                 
+                sleep (100l); // let prior run finish
                 System.out.flush();
                 System.err.flush();
                 System.out.println("Replaying PDU log file with " + pduLogEncoding + ": " + f.getAbsolutePath());
+                System.out.flush();
                     
                 for (String line : lines)
                 {
@@ -171,8 +175,11 @@ public class PduPlayer {
                         sleep(100l); // TODO confirm usability OK, currently 100 msec increments for pause
                     }
                     if (line.length() <= 0)
-                        ; // blank lines ok
-                    else if (line.trim().startsWith(PduRecorder.COMMENT_MARKER)) {
+                    {
+                        // blank lines ok
+                    }
+                    else if (line.trim().startsWith(PduRecorder.COMMENT_MARKER))
+                    {
                         if (handleComment(line, f)) {
                             break;
                         }
@@ -193,8 +200,24 @@ public class PduPlayer {
                                 }
                                 if (line.contains("[") || line.contains("]"))
                                 {
-                                    System.out.println("*** [square brackets] no longer included in CSV PLAINTEXT data, ignored");
+                                    System.out.println("*** [square brackets] no longer included in CSV PLAINTEXT encoded data, [] characters ignored");
                                     line = line.replace("[","").replace("]","");
+                                }
+                                
+                                String dateString = new String();
+                                String timeString = new String();
+                                LocalDate localDate;
+                                LocalTime localTime;
+                                if (line.startsWith("DisPduType"))
+                                {
+                                    // strip prepended DisPduTye, receipt date, receipt time
+                                    line = line.substring(line.indexOf(",") + 1); // strip DisPduTye
+                                    dateString = line.substring(0,line.indexOf(","));
+                                    localDate = LocalDate.parse(dateString);
+                                    line = line.substring(line.indexOf(",") + 1); // strip receipt date
+                                    timeString = line.substring(0,line.indexOf(","));
+                                    localTime = LocalTime.parse(timeString);
+                                    line = line.substring(line.indexOf(",") + 1); // strip receipt time
                                 }
                                 //Pattern splitting needed for playback of unencoded streams
 //                                REGEX = "\\],\\[";
@@ -207,11 +230,10 @@ public class PduPlayer {
 //                                //Add the "]" to the end of sa[0]. It was taken off by the split
 //                                if (sa.length > 1)
 //                                    sa[1] = "[".concat(sa[1]);
-
                                 break;
 
                             default:
-                                System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
+                                System.err.println("Encoding'" + pduLogEncoding + "' not recognized or supported");
                         }
 
                         // timestamp is 8 bytes, size of smallest PDU?
@@ -223,7 +245,7 @@ public class PduPlayer {
                             exitWithFailure();
                         }
 
-                        if (startNanoTime == null) {
+                        if (startNanoTime == null) { // TODO check if reset during multiple encoding passes
                             startNanoTime = System.nanoTime(); // initialize
                         }
                         // get timestamp pduTimeBytes, i.e. 8 bytes represented by a Java long
@@ -283,7 +305,8 @@ public class PduPlayer {
                         now = System.nanoTime();
                         sleepTime = targetSimTime - now; // the difference between then and now
 
-                        if (sleepTime > 20000000) { // 20 msec
+                        if (sleepTime > 20000000)// 20 msec
+                        { 
                             //System.out.println("sim interval = " + pduTimeInterval + ", sleeping for " + sleepTime/1000000l + " ms");
                             sleep(sleepTime / 1000000L, (int) (sleepTime % 1000000L));
                         }
@@ -502,14 +525,23 @@ public class PduPlayer {
         closeConnections();
     }
 
-    private void sleep(long ms) {
-        sleep(ms, 0);
+    private void sleep(long ms)
+    {
+        if (ms > 10000)
+        {
+            System.err.println ("*** PduPlayer sleep > 10 seconds, ignored (ms=" + ms + ")");
+        }
+        else sleep(ms, 0);
     }
     
     private void sleep(long ms, int ns) {
         // @formatter:off
         try {
-            Thread.sleep(ms, ns);
+            if (ms > 10000)
+            {
+                System.err.println ("*** PduPlayer sleep > 10 seconds, ignored (ms=" + ms + ")");
+            }
+            else Thread.sleep(ms, ns);
         } catch (InterruptedException ex) {}
         // @formatter:on
     }

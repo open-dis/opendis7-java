@@ -110,14 +110,47 @@ public class PduRecorder // implements PduReceiver
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
 
-    private long           startNanoTime     = -1; // sentinel
-    private StringBuilder  sb                = new StringBuilder();
-    private Base64.Encoder base64Encoder     = Base64.getEncoder();
-    private int            pduCount          = 0;    // debug
-    private boolean        headerWritten     = false;
-    private boolean        running           = true; // starts recording by default
-    private boolean        readableTimeStamp = true; // use normal date, time strings vice bytes
-    private long           sessionDuration   = -1;
+    private long           startNanoTime      = -1; // sentinel
+    private StringBuilder  sb                 = new StringBuilder();
+    private Base64.Encoder base64Encoder      = Base64.getEncoder();
+    private int            pduCount           = 0;    // debug
+    private boolean        headerWritten      = false;
+    private boolean        running            = true; // starts recording by default
+    private boolean        readableTimeStamp  = true; // 
+    private boolean        zeroBasedTimeStamp = true; // use normal date, time strings vice bytes
+    private long           sessionDuration    = -1;
+    public static final String UNDATED        = "undated";
+    
+    public enum TimeFormatterType
+    {
+      SECONDS,
+      TENTHSECONDS,
+      HUNDREDTHSECONDS,
+      MILLISECONDS,
+      MICROSECONDS,
+      NANOSECONDS;
+    }
+    
+    /** Format time <code>HH:mm:ss</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterSeconds          = DateTimeFormatter.ofPattern("HH:mm:ss");
+    /** Format time <code>HH:mm:ss.S</code>, default
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterTenthSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.S");
+    /** Format time <code>HH:mm:ss.SS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterHundredthSeconds = DateTimeFormatter.ofPattern("HH:mm:ss.SS");
+    /** Format time <code>HH:mm:ss.SSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterMilliSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+    /** Format time <code>HH:mm:ss.SSSSSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterMicroSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
+    /** Format time <code>HH:mm:ss.SSSSSSSSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterNanoSeconds      = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSSSSS");
+    
+    private DateTimeFormatter timeFormatter = timeFormatterTenthSeconds;
     
     private void initialize()
     {
@@ -319,22 +352,25 @@ public class PduRecorder // implements PduReceiver
       if(!isRunning())
         return;
 
-      DateTimeFormatter timeFormatterSeconds      = DateTimeFormatter.ofPattern("HH:mm:ss");
-      DateTimeFormatter timeFormatterMilliseconds = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
-      LocalTime localTime         = LocalTime.now();
       String    localDateString   = LocalDate.now().toString();
-      String    localTimeString   = localTime.format(timeFormatterMilliseconds);
+      LocalTime localTime         = LocalTime.now();
       long packetReceivedNanoTime = localTime.toNanoOfDay(); // formerly System.nanoTime();
       if (startNanoTime == -1)
           startNanoTime = packetReceivedNanoTime;
       sessionDuration = packetReceivedNanoTime - startNanoTime;
+      if (isZeroBasedTimeStamp())
+      {
+          localDateString = UNDATED;
+          localTime = LocalTime.ofNanoOfDay(sessionDuration);
+      }
+      String    localTimeString   = localTime.format(timeFormatter);
 
       // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
       byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
       //System.out.println(TRACE_PREFIX + "wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
       
-      byte[] byteBufferSized = Arrays.copyOf(newBuffer, newLength);
-      DisPduType pduType;
+      byte[]     byteBufferSized = Arrays.copyOf(newBuffer, newLength);
+      DisPduType pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
       
       if (includeHeaders && !headerWritten)
       {
@@ -370,17 +406,17 @@ public class PduRecorder // implements PduReceiver
               break;
 
           case ENCODING_PLAINTEXT:
-              if (isReadableTimeStamp())
+              if (includesReadableTimeStamp())
               {
+                  sb.append(COMMENT_MARKER).append(" ").append(pduType).append(",");
                   sb.append(localDateString).append(",").append(localTimeString);
+                  sb.append("\n");
               }
-              // Remove square brackets to end up with pure CSV
-              else sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
+              // Timestamp bytes, remove square brackets to end up with pure CSV
+              sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
               sb.append(",");
+              // PDU contents, remove square brackets to end up with pure CSV
               sb.append(Arrays.toString(byteBufferSized).replace(" ", "").replace("[","").replace("]",""));
-              sb.append(" # "); // append comment showing pduType
-              pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
-              sb.append(pduType);
               break;
               
           // TODO test reader still works without extra [square brackets]
@@ -455,10 +491,26 @@ public class PduRecorder // implements PduReceiver
         {
             logFileWriter.write(START_COMMENT_MARKER + encodingPduLog + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
+            
+            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
+            {
+                logFileWriter.write(COMMENT_MARKER + " DisPduType,ReceiptDate,ReceiptTime");
+                ((PrintWriter) logFileWriter).println();
+            }
+            if (encodingPduLog.equals(ENCODING_PLAINTEXT))
+            {
+                logFileWriter.write(COMMENT_MARKER + " Timestamp(8 bytes),ProtocolVersion,CompatibilityVersion,ExcerciseID,PduType,PduStatus,HeaderLength,PduLength,then PDU-specific data");
+                ((PrintWriter) logFileWriter).println();
+            }
+            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
+            {
+                logFileWriter.write(COMMENT_MARKER + " " + "=============================================");
+                ((PrintWriter) logFileWriter).println();
+            }
         } 
-        catch (IOException ex)
+        catch (IOException ioe)
         {
-            Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PduRecorder.class.getName()).log(Level.SEVERE, null, ioe);
         }
     }
 
@@ -827,7 +879,7 @@ public class PduRecorder // implements PduReceiver
      * Whether to provide date/time in readable form, otherwise use byte array
      * @return whether readableTimeStamp is used
      */
-    public boolean isReadableTimeStamp() {
+    public boolean includesReadableTimeStamp() {
         return readableTimeStamp;
     }
 
@@ -845,5 +897,51 @@ public class PduRecorder // implements PduReceiver
      */
     public long getSessionDuration() {
         return sessionDuration;
+    }
+
+    /**
+     * Whether timestamp values start at zero or time of initial PDU receipt, default value is true
+     * @return the zeroBasedTimeStamp
+     */
+    public boolean isZeroBasedTimeStamp() {
+        return zeroBasedTimeStamp;
+    }
+
+    /**
+     * Set whether timestamp values start at zero or time of initial PDU receipt, default value is true
+     * @param zeroBasedTimeStamp the zeroBasedTimeStamp to set
+     */
+    public void setZeroBasedTimeStamp(boolean zeroBasedTimeStamp) {
+        this.zeroBasedTimeStamp = zeroBasedTimeStamp;
+    }
+
+    /**
+     * Set time format for text logging
+     * @param timeFormatterChoice enumeration for the new timeFormatter to set
+     */
+    public void setTimeFormatter(TimeFormatterType timeFormatterChoice) 
+    {
+        switch (timeFormatterChoice)
+        {
+            case SECONDS:
+                timeFormatter = timeFormatterSeconds;
+                break;
+            case TENTHSECONDS:
+                timeFormatter = timeFormatterTenthSeconds;
+                break;
+            case HUNDREDTHSECONDS:
+                timeFormatter = timeFormatterHundredthSeconds;
+                break;
+            case MILLISECONDS:
+                timeFormatter = timeFormatterMilliSeconds;
+                break;
+            case MICROSECONDS:
+                timeFormatter = timeFormatterMicroSeconds;
+                break;
+            case NANOSECONDS:
+                timeFormatter = timeFormatterNanoSeconds;
+                break;
+            // no others allowed
+        }
     }
 }
