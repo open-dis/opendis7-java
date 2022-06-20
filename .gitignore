@@ -1,5 +1,6 @@
 /nbproject/private/
 /build/
-/pduLog/
-/validatorOut/
 /dist/
+/validatorOut/
+/pduLog/PduCaptureLog*.dislog
+/pduLog/PduRecorderSelfTest*.dislog
