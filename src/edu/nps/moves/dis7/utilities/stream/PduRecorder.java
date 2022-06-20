@@ -16,6 +16,9 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -107,12 +110,14 @@ public class PduRecorder // implements PduReceiver
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
 
-    private Long           startNanoTime = null;
-    private StringBuilder  sb = new StringBuilder();
-    private Base64.Encoder base64Encoder = Base64.getEncoder();
-    private int            pduCount = 0;    // debug
-    private boolean        headerWritten   = false;
-    private boolean        running         = true; // starts recording by default
+    private long           startNanoTime     = -1; // sentinel
+    private StringBuilder  sb                = new StringBuilder();
+    private Base64.Encoder base64Encoder     = Base64.getEncoder();
+    private int            pduCount          = 0;    // debug
+    private boolean        headerWritten     = false;
+    private boolean        running           = true; // starts recording by default
+    private boolean        readableTimeStamp = true; // use normal date, time strings vice bytes
+    private long           sessionDuration   = -1;
     
     private void initialize()
     {
@@ -309,19 +314,25 @@ public class PduRecorder // implements PduReceiver
     public void receivePdu(byte[] newBuffer, int newLength)
     {
       if (java.util.Arrays.equals(newBuffer, oldBuffer))
-          System.err.println ("PduRecorder warning: PDU newBuffer equals PDU oldBuffer"); // debug
+          System.err.println ("PduRecorder.receivePdu() warning: PDU newBuffer equals PDU oldBuffer"); // debug
 
       if(!isRunning())
         return;
 
-      long packetReceivedNanoTime = System.nanoTime();
-      if (startNanoTime == null)
+      DateTimeFormatter timeFormatterSeconds      = DateTimeFormatter.ofPattern("HH:mm:ss");
+      DateTimeFormatter timeFormatterMilliseconds = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+      LocalTime localTime         = LocalTime.now();
+      String    localDateString   = LocalDate.now().toString();
+      String    localTimeString   = localTime.format(timeFormatterMilliseconds);
+      long packetReceivedNanoTime = localTime.toNanoOfDay(); // formerly System.nanoTime();
+      if (startNanoTime == -1)
           startNanoTime = packetReceivedNanoTime;
+      sessionDuration = packetReceivedNanoTime - startNanoTime;
 
       // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
       byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
       //System.out.println(TRACE_PREFIX + "wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
-
+      
       byte[] byteBufferSized = Arrays.copyOf(newBuffer, newLength);
       DisPduType pduType;
       
@@ -359,18 +370,22 @@ public class PduRecorder // implements PduReceiver
               break;
 
           case ENCODING_PLAINTEXT:
-              // by Tobias Brennenstuhl Spring 2020
+              if (isReadableTimeStamp())
+              {
+                  sb.append(localDateString).append(",").append(localTimeString);
+              }
               // Remove square brackets to end up with pure CSV
-              sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
-              sb.append(',');
+              else sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
+              sb.append(",");
               sb.append(Arrays.toString(byteBufferSized).replace(" ", "").replace("[","").replace("]",""));
-              sb.append(" # ");
+              sb.append(" # "); // append comment showing pduType
               pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
               sb.append(pduType);
               break;
               
           // TODO test reader still works without extra [square brackets]
           // TODO add option for TSV vice CSV
+          // TODO ENCODING_XML
 
           default:
               if (ENCODING_OPTIONS_LIST.contains(encodingPduLog))
@@ -806,5 +821,29 @@ public class PduRecorder // implements PduReceiver
      */
     public Path getOutputDirectoryPath() {
         return outputDirectoryPath;
+    }
+
+    /**
+     * Whether to provide date/time in readable form, otherwise use byte array
+     * @return whether readableTimeStamp is used
+     */
+    public boolean isReadableTimeStamp() {
+        return readableTimeStamp;
+    }
+
+    /**
+     * Set whether to provide date/time in readable form, otherwise use byte array
+     * @param readableTimeStamp whether readableTimeStamp to true
+     */
+    public void setReadableTimeStamp(boolean readableTimeStamp) {
+        this.readableTimeStamp = readableTimeStamp;
+    }
+
+    /**
+     * get duration of the current session, measured from time of first PDU receipt
+     * @return the sessionDuration
+     */
+    public long getSessionDuration() {
+        return sessionDuration;
     }
 }
