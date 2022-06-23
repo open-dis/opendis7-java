@@ -8,6 +8,8 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.pdus.*;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -171,6 +173,82 @@ public class DisTime
     private static final String dateFormatPattern = "yyyy-mm-dd";
     private static final String timeFormatPattern = "HH:mm:ss";
 
+    /** Enumerations for prepared time formatters */
+    public enum TimeFormatterType
+    {
+      /** time formatter output accuracy in seconds */
+      SECONDS,
+      /** time formatter output accuracy in tenths of seconds */
+      TENTHSECONDS,
+      /** time formatter output accuracy in hundredths of seconds */
+      HUNDREDTHSECONDS,
+      /** time formatter output accuracy in milliseconds */
+      MILLISECONDS,
+      /** time formatter output accuracy in microseconds */
+      MICROSECONDS,
+      /** time formatter output accuracy in nanoseconds */
+      NANOSECONDS;
+    }
+    
+    /** Format time <code>HH:mm:ss</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterSeconds          = DateTimeFormatter.ofPattern("HH:mm:ss");
+    /** Format time <code>HH:mm:ss.S</code>, default
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterTenthSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.S");
+    /** Format time <code>HH:mm:ss.SS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterHundredthSeconds = DateTimeFormatter.ofPattern("HH:mm:ss.SS");
+    /** Format time <code>HH:mm:ss.SSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterMilliSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
+    /** Format time <code>HH:mm:ss.SSSSSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterMicroSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
+    /** Format time <code>HH:mm:ss.SSSSSSSSS</code>
+     * @see java.time.format.DateTimeFormatter */
+    public static final DateTimeFormatter timeFormatterNanoSeconds      = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSSSSS");
+    
+    private static DateTimeFormatter timeFormatter = timeFormatterTenthSeconds;
+
+    /**
+     * Get time format used for text logging
+     * @return current timeFormatter
+     */
+    public static DateTimeFormatter getTimeFormatter() 
+    {
+        return timeFormatter;
+    }
+    /**
+     * Set time format for text logging
+     * @param timeFormatterChoice enumeration for the new timeFormatter to set
+     */
+    public static void setTimeFormatter(DisTime.TimeFormatterType timeFormatterChoice) 
+    {
+        switch (timeFormatterChoice)
+        {
+            case SECONDS:
+                timeFormatter = DisTime.timeFormatterSeconds;
+                break;
+            case TENTHSECONDS:
+                timeFormatter = DisTime.timeFormatterTenthSeconds;
+                break;
+            case HUNDREDTHSECONDS:
+                timeFormatter = DisTime.timeFormatterHundredthSeconds;
+                break;
+            case MILLISECONDS:
+                timeFormatter = DisTime.timeFormatterMilliSeconds;
+                break;
+            case MICROSECONDS:
+                timeFormatter = DisTime.timeFormatterMicroSeconds;
+                break;
+            case NANOSECONDS:
+                timeFormatter = DisTime.timeFormatterNanoSeconds;
+                break;
+            // no others allowed
+        }
+    }
+    
    // public static DisTime disTime = null;
 
     /**
@@ -373,40 +451,54 @@ public class DisTime
     }
     
     /**
-     * Convert timestamp value to Instant for time operationss,
-     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * Convert timestamp value to Instant for time operations.
+     * TODO take into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
      * TODO consider different formats for different timestampStyle values.
-     * @param timestamp value in milliseconds
+     * @param timestamp value in seconds
      * @return corresponding Instant value (with 31-bit fidelity)
      */
-    public static Instant convertToInstant(int timestamp)
+    public static Instant convertToInstant(long timestamp)
     {
-        return Instant.now(); // TODO
+        // https://stackoverflow.com/questions/57411881/create-java-datetime-instant-from-microseconds
+        return Instant.EPOCH.plus(timestamp,ChronoUnit.SECONDS);
     }
     
     /**
-     * Convert timestamp value to Instant for time operations,
-     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * Convert timestamp value to LocalTime for time operations.
+     * TODO take into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
      * TODO consider different formats for different timestampStyle values.
-     * @param timestamp value in milliseconds
+     * @param timestamp value in seconds
      * @return corresponding Instant value (with 31-bit fidelity)
      */
-    public static LocalDateTime convertToLocalDateTime(int timestamp)
+    public static LocalTime convertToLocalTime(long timestamp)
     {
-        return LocalDateTime.now(); // TODO
+        return LocalTime.ofSecondOfDay(timestamp);
     }
     
     /**
-     * Convert timestamp value to Instant for time operations,
-     * taking into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * Convert timestamp value to LocalDateTime for time operations.
+     * TODO take into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
      * TODO consider different formats for different timestampStyle values.
-     * @param timestamp value in milliseconds
-     * @return corresponding Instant value (with 31-bit fidelity)
+     * @param timestamp value in seconds
+     * @return corresponding LocalDateTime value (with 31-bit fidelity)
      */
+    public static LocalDateTime convertToLocalDateTime(long timestamp)
+    {
+        ZoneOffset zoneOffset = ZoneOffset.UTC;
+        return LocalDateTime.ofEpochSecond(timestamp,0,zoneOffset);
+    }
+    
+    /**
+     * TODO Convert timestamp value to ZonedDateTime for time operations.
+     * TODO take into account epochLvc and TimeStampStyle (DIS absolute/relative, Unix or Year).
+     * TODO consider different formats for different timestampStyle values.
+     * @param timestamp value in LocalDateTime
+     * @return corresponding Instant value (with 31-bit fidelity)
     public static ZonedDateTime convertToZonedDateTime(int timestamp)
     {
         return ZonedDateTime.now(); // TODO
     }
+     */
     
     /**
      * Convert timestamp value to string for logging and diagnostics,
@@ -563,6 +655,7 @@ public class DisTime
         } 
         catch (InterruptedException ex) {}
     }
+    
     /** Self-test for basic smoke testing */
     private void selfTest()
     {        
@@ -609,6 +702,13 @@ public class DisTime
         System.out.println("DisTime.getEpochLvc(), Instant.now(), duration    = " + DisTime.getEpochLvc() + ", " + now + ", " + 
             java.time.Duration.between(getEpochLvc(), now).toMillis() + " msec");
 //        System.out.println("DisTime.getCurrentDisTimeUnitsSinceTopOfHour() = " + convertToString(DisTime.getCurrentDisTimeUnitsSinceTopOfHour()) + " = " + DisTime.getCurrentDisTimeUnitsSinceTopOfHour());
+        
+        long timeSeconds = (83 * 60); // 83 minutes * 60 seconds/minute = 00:01:23
+        System.out.println("time checks:");
+        System.out.println("timeSeconds (83 minutes * 60 seconds/minute) = " + timeSeconds + " seconds");
+        System.out.println("DisTIme.convertToLocalTime(timeSeconds)      = " + DisTime.convertToLocalTime    (timeSeconds).format(DisTime.getTimeFormatter()));
+        System.out.println("DisTime.convertToLocalDateTime(timeSeconds)  = " + DisTime.convertToLocalDateTime(timeSeconds).format(DisTime.getTimeFormatter()));
+        System.out.println("DisTime.convertToInstant(timeSeconds)        = " + DisTime.convertToInstant      (timeSeconds));
     }
 
     /**
