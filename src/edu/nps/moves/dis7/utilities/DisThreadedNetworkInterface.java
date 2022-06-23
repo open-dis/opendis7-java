@@ -553,17 +553,24 @@ public class DisThreadedNetworkInterface
     }
 
     /** Tell sendingThread and receiveThread to stop. */
-    public void setKillSentinelAndInterrupts()
+    public synchronized void setKillSentinelAndInterrupts()
     {
-      killed = true; // set loop sentinel for threads to finish
-      
-      // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
-      sendingThread.interrupt();
-      receiveThread.interrupt();
-      if (hasVerboseOutput())
+        sleep(1000l); // finish sending, receiving
+        System.out.flush();
+        System.err.flush();
+        killed = true; // set loop sentinel for threads to finish
+
+        // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
+        sendingThread.interrupt();
+        receiveThread.interrupt();
+        if (hasVerboseOutput())
+        {
             System.out.println ("*** setKillSentinelAndInterrupts() killed=" + killed + 
-                    " sendingThread.isInterrupted()=" + sendingThread.isInterrupted() + 
-                    " receiveThread.isInterrupted()=" + receiveThread.isInterrupted());
+                      " sendingThread.isInterrupted()=" + sendingThread.isInterrupted() + 
+                      " receiveThread.isInterrupted()=" + receiveThread.isInterrupted());
+            System.out.flush();
+            System.err.flush();
+        }
     }
 
     /** Terminate the instance after completion of pending send/receive activity.
