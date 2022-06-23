@@ -272,25 +272,26 @@ public class DisChannel
     }
 
     /** 
-     * Send a single Protocol Data Unit (PDU) of any type after setting given timestamp
-     * @param disTimeStamp timestamp for this PDU
+     * Send a single Protocol Data Unit (PDU) of any type, after setting the PDU with given timestamp in milliseconds
+     * @param disTimeStamp timestamp for this PDU, milliseconds since epoch
      * @param pdu the pdu to send
      */
     public void sendSinglePdu(int disTimeStamp, Pdu pdu)
     {
-        if (getDisNetworkInterface() == null)
-            setUpNetworkInterface(); // ensure connected
-        try
-        {
-            pdu.setTimestamp(disTimeStamp);
-            getDisNetworkInterface().send(pdu);
-            Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
-        } 
-        catch (InterruptedException ex)
-        {
-            System.err.println(this.getClass().getSimpleName() + " Error sending PDU: " + ex.getLocalizedMessage());
-            System.exit(1);
-        }
+        pdu.setTimestamp(disTimeStamp);
+        sendSinglePdu(pdu);
+    }
+
+    /** 
+     * Send a single Protocol Data Unit (PDU) of any type, after setting the PDU with given timestamp in seconds
+     * @param timeSeconds timestamp for this PDU, seconds since epoch
+     * @param pdu the pdu to send
+     */
+    public void sendSinglePdu(double timeSeconds, Pdu pdu)
+    {
+        int timeMilliseconds = (int)(timeSeconds * 1000.0);
+        pdu.setTimestamp(timeMilliseconds);
+        sendSinglePdu(pdu);
     }
     /** 
      * Send a single Protocol Data Unit (PDU) of any type following a real-time delay
@@ -322,15 +323,17 @@ public class DisChannel
         long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
         sendSinglePduDelayed(pdu, delayTimemilliseconds);
     }
+    
     /**
      * Send Comment PDU using given DIS timestamp
-     * @param disTimeStamp     timestamp for this PDU
+     * @param disTimeStamp   timestamp for this PDU, milliseconds since epoch
      * @param commentType    enumeration value describing purpose of the narrative comment
      * @param comments       String array of narrative comments
+     * @return constructed CommentPdu if sent, null otherwise
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPdu(int disTimeStamp,
+    public CommentPdu sendCommentPdu(int disTimeStamp,
                                VariableRecordType commentType,
                                      // vararg... variable-length set of String comments can optionally follow
                                         String... comments)
@@ -340,10 +343,14 @@ public class DisChannel
             ArrayList<String> newCommentsList = new ArrayList<>();
             for (String comment : comments)
             {
-                if (!comment.isEmpty())
+                if ((comment != null) && !comment.isEmpty())
                 {
                     newCommentsList.add(comment); // OK found something to send
                 }
+            }
+            if (newCommentsList.isEmpty() &&  (commentType != null))
+            {
+                return null; // no CommentPdu sent
             }
             if (!newCommentsList.isEmpty())
             {
@@ -362,21 +369,45 @@ public class DisChannel
                     printlnTRACE("*** [CommentPdu " + commentType.name() + "] " + newCommentsList.toString());
                     System.out.flush();
                 }
+                return commentPdu;
             }
         }
+        return null;
     }
+    
+    /**
+     * Send Comment PDU using given DIS time in seconds
+     * @param timeSeconds    timestamp for this PDU, seconds since epoch
+     * @param commentType    enumeration value describing purpose of the narrative comment
+     * @param comments       String array of narrative comments
+     * @return constructed CommentPdu if sent, null otherwise
+     * @see VariableRecordType for other potential CommentPdu type enumerations.
+     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
+     */
+    public CommentPdu sendCommentPdu(double timeSeconds,
+                               VariableRecordType commentType,
+                                     // vararg... variable-length set of String comments can optionally follow
+                                        String... comments)
+    {
+        int timeMilliseconds = (int)(timeSeconds * 1000.0);
+        return sendCommentPdu(timeMilliseconds,
+                              commentType,
+                              comments);
+    }
+    
     /**
      * Send Comment PDU using current DIS timestamp
      * @param commentType      enumeration value describing purpose of the narrative comment
      * @param comments         String array of narrative comments
+     * @return constructed CommentPdu if sent, null otherwise
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPdu(VariableRecordType commentType,
+    public CommentPdu sendCommentPdu(VariableRecordType commentType,
                                      // vararg... variable-length set of String comments can optionally follow
                                         String... comments)
     {
-        sendCommentPdu (DisTime.getCurrentDisTimestamp(), commentType, comments);
+        return sendCommentPdu (DisTime.getCurrentDisTimestamp(), commentType, comments);
     }
 
     /** 
