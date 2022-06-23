@@ -4,6 +4,7 @@ import com.google.common.primitives.Longs;
 import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
+import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -16,9 +17,11 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
@@ -100,57 +103,30 @@ public class PduRecorder // implements PduReceiver
 
     private String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
     private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
+    
+    public static final String UNDATED        = "undated";
 
     private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor      = new String();
 
-    private Writer logFileWriter;
-    private File   logFile;
-    private String logFileName = DEFAULT_FILE_NAME;
+    private Writer         logFileWriter;
+    private File           logFile;
+    private String         logFileName = DEFAULT_FILE_NAME;
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
+    private PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
 
-    private long           startNanoTime      = -1; // sentinel
-    private StringBuilder  sb                 = new StringBuilder();
-    private Base64.Encoder base64Encoder      = Base64.getEncoder();
-    private int            pduCount           = 0;    // debug
-    private boolean        headerWritten      = false;
-    private boolean        running            = true; // starts recording by default
-    private boolean        readableTimeStamp  = true; // 
-    private boolean        zeroBasedTimeStamp = true; // use normal date, time strings vice bytes
-    private long           sessionDuration    = -1;
-    public static final String UNDATED        = "undated";
-    
-    public enum TimeFormatterType
-    {
-      SECONDS,
-      TENTHSECONDS,
-      HUNDREDTHSECONDS,
-      MILLISECONDS,
-      MICROSECONDS,
-      NANOSECONDS;
-    }
-    
-    /** Format time <code>HH:mm:ss</code>
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterSeconds          = DateTimeFormatter.ofPattern("HH:mm:ss");
-    /** Format time <code>HH:mm:ss.S</code>, default
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterTenthSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.S");
-    /** Format time <code>HH:mm:ss.SS</code>
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterHundredthSeconds = DateTimeFormatter.ofPattern("HH:mm:ss.SS");
-    /** Format time <code>HH:mm:ss.SSS</code>
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterMilliSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSS");
-    /** Format time <code>HH:mm:ss.SSSSSS</code>
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterMicroSeconds     = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
-    /** Format time <code>HH:mm:ss.SSSSSSSSS</code>
-     * @see java.time.format.DateTimeFormatter */
-    public static final DateTimeFormatter timeFormatterNanoSeconds      = DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSSSSS");
-    
-    private DateTimeFormatter timeFormatter = timeFormatterTenthSeconds;
+    private long           recordingStartNanoTime       = -1; // sentinel
+    private StringBuilder  sb                  = new StringBuilder();
+    private Base64.Encoder base64Encoder       = Base64.getEncoder();
+    private int            pduCount            = 0;    // debug
+    private boolean        headerWritten       = false;
+    private boolean        running             = true; // starts recording by default
+    private boolean        readableTimeStamp   = true; // 
+    private boolean        zeroBasedTimeStamp  = true; // use normal date, time strings vice bytes
+    private long           recordingDurationNano = -1;
+    private LocalTime      recordingDuration     = null;
+    private int            pduTimestampFirst     = 0;
     
     private void initialize()
     {
@@ -338,39 +314,61 @@ public class PduRecorder // implements PduReceiver
     }
 
     byte[] oldBuffer;
+    LocalDateTime sessionStartTime = null;
 
-    /** receivePdu from DIS data stream
+    /** receivePdu from DIS data stream, invoked via callback from DisThreadedNetworkInterface.RawPduListener
      * @param newBuffer byte array for receiving data
      * @param newLength length of byte array
      */
 //    @Override
     public void receivePdu(byte[] newBuffer, int newLength)
     {
+      if (sessionStartTime == null)
+          sessionStartTime = LocalDateTime.now();
+      
       if (java.util.Arrays.equals(newBuffer, oldBuffer))
           System.err.println ("PduRecorder.receivePdu() warning: PDU newBuffer equals PDU oldBuffer"); // debug
 
       if(!isRunning())
-        return;
+        return; // thread operations no longer in progress, ignore this received PDU
 
-      String    localDateString   = LocalDate.now().toString();
-      LocalTime localTime         = LocalTime.now();
-      long packetReceivedNanoTime = localTime.toNanoOfDay(); // formerly System.nanoTime();
-      if (startNanoTime == -1)
-          startNanoTime = packetReceivedNanoTime;
-      sessionDuration = packetReceivedNanoTime - startNanoTime;
-      if (isZeroBasedTimeStamp())
-      {
-          localDateString = UNDATED;
-          localTime = LocalTime.ofNanoOfDay(sessionDuration);
-      }
-      String    localTimeString   = localTime.format(timeFormatter);
+//    String    localDateString   = LocalDate.now().toString();
+      LocalTime sessionTime       = LocalTime.now();
+      long packetReceivedNanoTime = sessionTime.toNanoOfDay();
 
-      // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
-      byte[] timeByteArray = Longs.toByteArray(packetReceivedNanoTime - startNanoTime);
-      //System.out.println(TRACE_PREFIX + "wrote time "+(packetReceivedNanoTime - startNanoTime)); // debug
-      
-      byte[]     byteBufferSized = Arrays.copyOf(newBuffer, newLength);
+      byte[]    byteBufferSized = Arrays.copyOf(newBuffer, newLength);
+      // direct access: DisPduType is 3rd byte, see Table 98—PDU Header record (TODO course diagrams are erroneous)
       DisPduType pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteBufferSized[2])); // 3rd byte
+      
+      Pdu newPdu = pduFactory.createPdu(byteBufferSized);
+      int    pduTimestampInt    = newPdu.getTimestamp();
+      int    pduDurationInt     = pduTimestampInt - pduTimestampFirst;
+      
+      // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
+      // https://stackoverflow.com/questions/1026761/how-to-convert-a-byte-array-to-its-numeric-value-java
+      byte[] timestampByteArray = Arrays.copyOfRange(newBuffer, 4, 7); 
+      // timestamp bytes 4..7 (fifth through eighth bytes), see Table 98—PDU Header record (TODO course diagrams are erroneous)
+      
+      byte[] receiptTimeByteArray = Longs.toByteArray(packetReceivedNanoTime - recordingStartNanoTime);
+      ByteBuffer receiptTimeByteBuffer = ByteBuffer.wrap(receiptTimeByteArray);
+      int        receiptTimeBufferInt        = receiptTimeByteBuffer.getInt();
+      String     receiptTimeBufferString     = DisTime.convertToLocalDateTime(receiptTimeBufferInt).format(DisTime.getTimeFormatter());
+      
+      if (recordingStartNanoTime == -1) // initialization
+      {
+          recordingStartNanoTime = packetReceivedNanoTime;
+          pduTimestampFirst      = pduTimestampInt;
+          pduDurationInt         = 0;
+      }
+//    String pduTimestampString = DisTime.convertToString(pduTimestampInt);
+      String pduTimestampString = DisTime.convertToLocalDateTime(pduTimestampInt).format(DisTime.getTimeFormatter());
+      String pduDurationString  = DisTime.convertToLocalDateTime(pduDurationInt).format(DisTime.getTimeFormatter());
+      
+      recordingDurationNano = packetReceivedNanoTime - recordingStartNanoTime;
+//    sessionDuration = Duration.between(Instant.ofEpochMilli(startSessionNanoTime),Instant.ofEpochMilli(packetReceivedNanoTime)).abs();
+      recordingDuration = LocalTime.ofNanoOfDay(recordingDurationNano); // LocalTime of duration value yields HH:MM
+      String     sessionTimeString =     sessionTime.format(DisTime.getTimeFormatter());
+      String sessionDurationString = recordingDuration.format(DisTime.getTimeFormatter());
       
       if (includeHeaders && !headerWritten)
       {
@@ -385,8 +383,8 @@ public class PduRecorder // implements PduReceiver
               break;
 
           case ENCODING_BASE64:
-              byte[] mergedByteArray = Arrays.copyOf(timeByteArray, timeByteArray.length + byteBufferSized.length);
-              System.arraycopy(byteBufferSized, 0, mergedByteArray, timeByteArray.length, byteBufferSized.length);
+              byte[] mergedByteArray = Arrays.copyOf(receiptTimeByteArray, receiptTimeByteArray.length + byteBufferSized.length);
+              System.arraycopy(byteBufferSized, 0, mergedByteArray, receiptTimeByteArray.length, byteBufferSized.length);
               sb.append(base64Encoder.encodeToString(mergedByteArray));
 /*                    
 // from Rick
@@ -408,12 +406,15 @@ public class PduRecorder // implements PduReceiver
           case ENCODING_PLAINTEXT:
               if (includesReadableTimeStamp())
               {
-                  sb.append(COMMENT_MARKER).append(" ").append(pduType).append(",");
-                  sb.append(localDateString).append(",").append(localTimeString);
+                  sb.append(COMMENT_MARKER).append(" ").append(pduType).append(", ");
+                  sb.append("Session time "    ).append(sessionTimeString     ).append(", ");
+                  sb.append("session duration ").append(sessionDurationString).append(", ");
+                  sb.append("Pdu timestamp "   ).append(pduTimestampInt   ).append(" ").append(pduTimestampString).append(", ");
+                  sb.append("simulation stream interval "    ).append(pduDurationInt    ).append(" ").append(pduDurationString);
                   sb.append("\n");
               }
-              // Timestamp bytes, remove square brackets to end up with pure CSV
-              sb.append(Arrays.toString(timeByteArray).replace(" ", "").replace("[","").replace("]",""));
+              // Not Timestamp but receipt bytes (TODO needed?) remove square brackets to end up with pure CSV
+              sb.append(Arrays.toString(receiptTimeByteArray).replace(" ", "").replace("[","").replace("]",""));
               sb.append(",");
               // PDU contents, remove square brackets to end up with pure CSV
               sb.append(Arrays.toString(byteBufferSized).replace(" ", "").replace("[","").replace("]",""));
@@ -492,14 +493,14 @@ public class PduRecorder // implements PduReceiver
             logFileWriter.write(START_COMMENT_MARKER + encodingPduLog + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
             
-            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
-            {
-                logFileWriter.write(COMMENT_MARKER + " DisPduType,ReceiptDate,ReceiptTime");
-                ((PrintWriter) logFileWriter).println();
-            }
+//            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
+//            {
+//                logFileWriter.write(COMMENT_MARKER + " DisPduType,ReceiptDate,ReceiptTime");
+//                ((PrintWriter) logFileWriter).println();
+//            }
             if (encodingPduLog.equals(ENCODING_PLAINTEXT))
             {
-                logFileWriter.write(COMMENT_MARKER + " Timestamp(8 bytes),ProtocolVersion,CompatibilityVersion,ExcerciseID,PduType,PduStatus,HeaderLength,PduLength,then PDU-specific data");
+                logFileWriter.write(COMMENT_MARKER + " Timestamp(8 bytes),ProtocolVersion,CompatibilityVersion,ExerciseID,PduType,PduStatus,HeaderLength,PduLength,then PDU-specific data");
                 ((PrintWriter) logFileWriter).println();
             }
             if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
@@ -610,7 +611,6 @@ public class PduRecorder // implements PduReceiver
     initialize();
     System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs");
     
-    PduFactory factory = new PduFactory(); // default appid, country, etc.
     PduRecorder pduRecorder;
     DisThreadedNetworkInterface disNetworkInterface;
     DisPduType allPDUTypesArray[] = DisPduType.values();
@@ -639,13 +639,15 @@ public class PduRecorder // implements PduReceiver
         disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface(); // must reinitialize after each begin
         System.out.println("dis7.utilities.stream.PduRecorder pduRecorder started... isRunning()=" + pduRecorder.isRunning());
 
-        for (int i=1; i < allPDUTypesArray.length; i = i + 1)
+        for (int index=0; index < allPDUTypesArray.length; index++)
         {
-          DisPduType pduTypeValue = allPDUTypesArray[i];
+          DisPduType pduTypeValue = allPDUTypesArray[index];
           if (pduTypeValue != DisPduType.OTHER) 
           {
             try {
-                Pdu nextPdu = factory.createPdu(allPDUTypesArray[i]);
+                Pdu nextPdu = pduFactory.createPdu(allPDUTypesArray[index]);
+                nextPdu.setTimestamp(index * 10); // seconds
+//              nextPdu.getTimestamp(); // debug
                 disNetworkInterface.send(nextPdu);
                 Thread.sleep (100L); // let send/receive threads and streams catch up
             }
@@ -893,10 +895,10 @@ public class PduRecorder // implements PduReceiver
 
     /**
      * get duration of the current session, measured from time of first PDU receipt
-     * @return the sessionDuration
+     * @return the sessionDurationNano
      */
     public long getSessionDuration() {
-        return sessionDuration;
+        return recordingDurationNano;
     }
 
     /**
@@ -913,35 +915,5 @@ public class PduRecorder // implements PduReceiver
      */
     public void setZeroBasedTimeStamp(boolean zeroBasedTimeStamp) {
         this.zeroBasedTimeStamp = zeroBasedTimeStamp;
-    }
-
-    /**
-     * Set time format for text logging
-     * @param timeFormatterChoice enumeration for the new timeFormatter to set
-     */
-    public void setTimeFormatter(TimeFormatterType timeFormatterChoice) 
-    {
-        switch (timeFormatterChoice)
-        {
-            case SECONDS:
-                timeFormatter = timeFormatterSeconds;
-                break;
-            case TENTHSECONDS:
-                timeFormatter = timeFormatterTenthSeconds;
-                break;
-            case HUNDREDTHSECONDS:
-                timeFormatter = timeFormatterHundredthSeconds;
-                break;
-            case MILLISECONDS:
-                timeFormatter = timeFormatterMilliSeconds;
-                break;
-            case MICROSECONDS:
-                timeFormatter = timeFormatterMicroSeconds;
-                break;
-            case NANOSECONDS:
-                timeFormatter = timeFormatterNanoSeconds;
-                break;
-            // no others allowed
-        }
     }
 }
