@@ -103,8 +103,6 @@ public class PduRecorder // implements PduReceiver
 
     private String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
     private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
-    
-    public static final String UNDATED        = "undated";
 
     private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor      = new String();
@@ -200,6 +198,7 @@ public class PduRecorder // implements PduReceiver
       }
 
       /**
+       * Set encoding for PDU Log
        * @param newEncodingPduLog the pduLogEncoding to set
        * @return same object to permit progressive setters */
       public PduRecorder setEncodingPduLog(String newEncodingPduLog)
@@ -478,6 +477,7 @@ public class PduRecorder // implements PduReceiver
       }
 
       /**
+       * Provide link to singleton disThreadedNetworkInterface
        * @return an instance of this DisThreadedNetworkInterface
        */
       public DisThreadedNetworkInterface getDisThreadedNetworkInterface() {
@@ -575,6 +575,7 @@ public class PduRecorder // implements PduReceiver
     }
 
     /**
+     * Whether or not PduRecorder is currently running
      * @return the pduRecorderRunning
      */
     public boolean isRunning()
@@ -835,6 +836,7 @@ public class PduRecorder // implements PduReceiver
     }
 
     /**
+     * Provide file name of PDU log
      * @return the logFileName
      */
     public String getLogFileName() {
@@ -842,6 +844,7 @@ public class PduRecorder // implements PduReceiver
     }
 
     /**
+     * Set file name of PDU log
      * @param logFileName the logFileName to set
      * @return same object to permit progressive setters */
     public PduRecorder setLogFileName(String logFileName) {
