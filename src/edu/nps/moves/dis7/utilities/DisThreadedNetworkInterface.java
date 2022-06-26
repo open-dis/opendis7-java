@@ -74,7 +74,7 @@ public class DisThreadedNetworkInterface
     private final List<PduListener> everyTypeListeners = new ArrayList<>();
     private final Map<DisPduType, List<PduListener>> typeListeners = new HashMap<>();
     private final List<RawPduListener> rawListeners = new ArrayList<>();
-    // https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
+    // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
     private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>(); // FIFO
 
     ByteArrayOutputStream baos;
