@@ -21,8 +21,20 @@ import java.util.*;
  * <p>DIS time units are a pain to work with. As specified by the IEEE DIS Protocol specification, 
  * DIS time units are defined in a custom manner and set
  * equal to 2^31 - 1 time units per hour. The DIS time is set to the number of time
- * units since the start of the hour. Rollover problems can easily occur.  The timestamp field in the PDU header is
- * four bytes long and is specified to be an unsigned integer value.</p>
+ * units since the start of the hour. Rollover problems can easily occur.]
+ * The timestamp field in the PDU header is four bytes long and is specified to be an unsigned integer value.
+ * Within a PDU encoding, the timestamp value is  int representing number of 1.675 microseconds as interval past hour.
+ * IEEE DIS 1278.1, 6.2.88 Timestamp, 6.2.88.2.3 Scale states
+ * <i>"The scale of the time value contained in the most significant 31 bits of the timestamp shall be determined by
+ * letting zero represent the start of the hour and letting 231 – 1 represent one time unit before the start of the
+ * next hour. The next hour then starts back at zero. This results in each time unit representing exactly
+ * 3600/(231) s (approximately 1.67638063 μs)."</i>
+ * </p>
+ * <p>
+ * Thus simulation applications can use float or double representations for simulation time, but proper encoding of
+ * timestamp values must be performed by the opendis library when reading or writing values.
+ * TODO: confirm correct exposure of methods properly performs conversions.
+ * </p>
  *
  * <p>Multiple timestamp styles and settings are available.</p>
  *
@@ -89,10 +101,10 @@ import java.util.*;
  * for a recorded PDU stream, is actually a pretty common use case.  
  * Implementing such a capability is under active development.</p>
  *
- * <p><b>TODO: upgrade to <code>java.time</code> package.</b> See
+ * <p>Support for <code>java.time</code> package: see
  * <a href="https://docs.oracle.com/javase/tutorial/datetime/index.html" target="_blank">Java Tutorials: Date Time</a>
  * and
- * <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/package-summary.html" target="_blank">Java Package java.time</a>. </p>
+ * <a href="https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/time/package-summary.html" target="_blank">Java Package java.time</a>. </p>
  * 
  * <p> Don McGregor, Mike Bailey, and Don Brutzman</p>
  * 
