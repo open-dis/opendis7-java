@@ -28,6 +28,12 @@ import java.util.List;
  */
 public class PduReceiver
 {
+  /** default constructor */
+  public PduReceiver ()
+  {
+      // initialization code here
+  }
+  
   /** Command-line invocation (CLI)
     * @param args command-line arguments
     */

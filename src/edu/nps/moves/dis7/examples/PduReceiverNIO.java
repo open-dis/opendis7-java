@@ -15,12 +15,17 @@ import java.net.MulticastSocket;
 
 /**
  * Receives PDUs from the network in IEEE format. Very similar to EspduReciver, but this
- * uses Robert Harder's more memory-efficient NIO code.
+ * implementation uses Robert Harder's more memory-efficient NIO code.
  *
  * @author DMcG rharder
  */
 public class PduReceiverNIO
-{
+{  
+    /** default constructor */
+    public PduReceiverNIO ()
+    {
+        // initialization code here
+    }
   /** Command-line invocation (CLI)
     * @param args command-line arguments
     */

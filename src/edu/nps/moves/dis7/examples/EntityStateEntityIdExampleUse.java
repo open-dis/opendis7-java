@@ -70,6 +70,11 @@ import edu.nps.moves.dis7.entities.usa.platform.surface.*;
  */
 public class EntityStateEntityIdExampleUse
 {
+    /** default constructor */
+    public EntityStateEntityIdExampleUse()
+    {
+        // initialization code here
+    }
   /**
    * Using two methods, create and send an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
    * @throws IOException report if problem occurs

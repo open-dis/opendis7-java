@@ -19,7 +19,13 @@ import java.util.Comparator;
  * @author DMcG
  * @version $Id:$
  */
-public class ClassNameComparator implements Comparator<Pdu> {
+public class ClassNameComparator implements Comparator<Pdu>
+{
+    /** default constructor */
+    public ClassNameComparator()
+    {
+        // initialization code here
+    }
 
     /**
      * Returns a number less than, equal to, or greater than zero,

@@ -27,6 +27,12 @@ public class PduSender
 {
   /** default value avoids unterminated zombie senders */
   public static final int NUMBER_TO_SEND = 5000;
+  
+    /** default constructor */
+    public PduSender()
+    {
+        // initialization code here
+    }
 
   /** TCP/IP network modes */
   public enum NetworkMode

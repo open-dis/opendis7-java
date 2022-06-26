@@ -24,6 +24,12 @@ import java.net.MulticastSocket;
  */
 public class PduSenderNIO
 {
+    /** default constructor */
+    public PduSenderNIO()
+    {
+        // initialization code here
+    }
+    
   /** Command-line invocation (CLI)
     * @param args command-line arguments
     */

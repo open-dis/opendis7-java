@@ -24,15 +24,22 @@ public class PduReaderPlayer
 {
   private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLog";
 /** Default multicast group address we send on.
-    * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
+  * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
   public static final String  DEFAULT_MULTICAST_ADDRESS = DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS;
-  /** @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
+  /** Default multicast port we send on.
+  * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
   public static final int     DEFAULT_MULTICAST_PORT    = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
 
   private enum mystate
   {
     RUNNING,
     PAUSED;
+  }
+  
+  /** default constructor */
+  public PduReaderPlayer ()
+  {
+      // initialization code here
   }
 
   /** Command-line invocation (CLI) of program, execution starts here
