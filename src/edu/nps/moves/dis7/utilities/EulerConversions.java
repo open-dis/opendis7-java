@@ -20,6 +20,11 @@ package edu.nps.moves.dis7.utilities;
 
 public class EulerConversions
 {
+    /** default constructor */
+    public EulerConversions()
+    {
+        // initialization code here
+    }
 
     static double _toDegrees = 57.2957795131;
     static double _toRadians =  0.01745329252;
