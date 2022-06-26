@@ -4,8 +4,8 @@ package edu.nps.moves.dis7.entities;
 
 import edu.nps.moves.dis7.pdus.EntityType;
 
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -15,6 +15,11 @@ import java.util.Properties;
 /** Utility class */
 public class EntityTypeFactory
 {
+    /** default constructor */
+    public EntityTypeFactory()
+    {
+        // initialization code here
+    }
   private static Map<Integer,String> uid2ClassNameMap = new HashMap<>();
   static {
     try (InputStream ins = EntityTypeFactory.class.getResourceAsStream("uid2EntityClass.properties")) {
