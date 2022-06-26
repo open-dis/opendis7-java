@@ -19,6 +19,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Null Fields Entity Marshall Test")
 public class NullFieldsEntityMarshallTest
 {
+    /** default constructor */
+    public NullFieldsEntityMarshallTest()
+    {
+        // initialization code here
+    }
     LAV105 lav105;
 
     /** preparation **/

@@ -19,7 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("All Object Types Create")
 public class CreateAllObjectTypesTest
 {
-    /** preparation **/
+    /** default constructor */
+    public CreateAllObjectTypesTest()
+    {
+        // initialization code here
+    }
+  /** preparation **/
   @BeforeAll
   public static void beforeAllTests()
   {

@@ -19,6 +19,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Pdu Factory Test")
 public class PduFactoryTest
 {
+    /** default constructor */
+    public PduFactoryTest()
+    {
+        // initialization code here
+    }
     /** actions to perform before all tests */
     @BeforeAll
     public static void beforeAllTests()

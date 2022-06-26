@@ -18,6 +18,11 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Object Type Marshal Test")
 public class ObjectTypeMarshallTest
 {
+    /** default constructor */
+    public ObjectTypeMarshallTest()
+    {
+        // initialization code here
+    }
     /** preparation **/
     @BeforeAll
     public static void setUpClass()

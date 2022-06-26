@@ -20,6 +20,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Fixed and Variable Datum Round Trip Test")
 public class FixedAndVariableDatumRoundTripTest
 {
+    /** default constructor */
+    public FixedAndVariableDatumRoundTripTest()
+    {
+        // initialization code here
+    }
   Pdu receivedPdu;
   DisThreadedNetworkInterface disNetworkInterface;
   DisThreadedNetworkInterface.PduListener pduListener;

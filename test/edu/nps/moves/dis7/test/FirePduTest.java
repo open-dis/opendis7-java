@@ -16,6 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Fire Pdu Test")
 public class FirePduTest extends PduTest
 {
+    /** default constructor */
+    public FirePduTest()
+    {
+        // initialization code here
+    }
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   @Override

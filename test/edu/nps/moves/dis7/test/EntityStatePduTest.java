@@ -23,6 +23,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Entity State Pdu Test")
 public class EntityStatePduTest extends PduTest
 {
+    /** default constructor */
+    public EntityStatePduTest()
+    {
+        // initialization code here
+    }
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   @Override

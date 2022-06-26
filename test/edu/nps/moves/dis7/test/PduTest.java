@@ -59,6 +59,12 @@ abstract public class PduTest
     DisThreadedNetworkInterface             disNetworkInterface;
     DisThreadedNetworkInterface.PduListener pduListener;
     
+    /** default constructor */
+    public PduTest()
+    {
+        // initialization code here
+    }
+    
     /** preparation **/
     @BeforeAll
     public static void setUpClass()
@@ -260,6 +266,7 @@ abstract public class PduTest
     }
 
     /**
+     * Accessor to set maximum retry attempts
      * @return the maximumRetryAttempts value
      */
     public int getMaximumRetryAttempts()
@@ -268,6 +275,7 @@ abstract public class PduTest
     }
 
     /**
+     * Accessor to get maximum retry attempts
      * @param maximumRetryAttempts the maximumRetryAttempts value to set
      */
     public void setMaximumRetryAttempts(int maximumRetryAttempts)

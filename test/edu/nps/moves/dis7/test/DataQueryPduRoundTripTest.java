@@ -21,6 +21,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Data Query Pdu Round Test")
 public class DataQueryPduRoundTripTest
 {
+    /** default constructor */
+    public DataQueryPduRoundTripTest()
+    {
+        // initialization code here
+    }
 
  Pdu receivedPdu;
  DisThreadedNetworkInterface disNetworkInterface;

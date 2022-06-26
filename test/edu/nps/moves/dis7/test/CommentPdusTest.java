@@ -21,6 +21,12 @@ public class CommentPdusTest
   DisThreadedNetworkInterface             disNetworkInterface;
   Pdu                                     receivedPdu;
   DisThreadedNetworkInterface.PduListener pduListener;
+  
+    /** default constructor */
+    public CommentPdusTest()
+    {
+        // initialization code here
+    }
     
     /** Setup initialization before each test */
   @BeforeAll

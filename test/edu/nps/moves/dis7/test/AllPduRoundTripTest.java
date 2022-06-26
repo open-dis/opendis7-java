@@ -41,6 +41,12 @@ public class AllPduRoundTripTest
   List<Pdu> pdusRead = new ArrayList<>();
   PduFactory pduFactory;
   PduRecorder pduRecorder;
+  
+    /** default constructor */
+    public AllPduRoundTripTest()
+    {
+        // initialization code here
+    }
 
   /** Prepare */
   @BeforeAll

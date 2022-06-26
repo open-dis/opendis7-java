@@ -18,7 +18,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @DisplayName("Marshal Enums Test")
 public class MarshalEnumsTest
 {
-    /** preparation **/
+    /** default constructor */
+    public MarshalEnumsTest()
+    {
+        // initialization code here
+    }
+  /** preparation **/
   @BeforeAll
   public static void setUpClass()
   {

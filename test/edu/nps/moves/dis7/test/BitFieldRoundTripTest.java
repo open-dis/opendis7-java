@@ -24,6 +24,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Bit Field Round Trip Test")
 public class BitFieldRoundTripTest
 {
+    /** default constructor */
+    public BitFieldRoundTripTest()
+    {
+        // initialization code here
+    }
+
     Pdu receivedPdu;
     DisThreadedNetworkInterface disNetworkInterface;
     DisThreadedNetworkInterface.PduListener pduListener;
