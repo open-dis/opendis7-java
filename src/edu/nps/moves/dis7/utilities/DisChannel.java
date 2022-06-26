@@ -39,7 +39,8 @@ public class DisChannel
     private static final int       NETWORK_PORT_DEFAULT = 3000;
     private static final String  DEFAULT_PDULOG_OUTPUT_DIRECTORY = "./pduLog";
     
-    protected boolean verboseComments = true;
+    /** whether or not verbose comments are provided */
+    private boolean verboseComments = true;
     String networkAddress = NETWORK_ADDRESS_DEFAULT;
     int       networkPort = NETWORK_PORT_DEFAULT;
     static DisTime.TimestampStyle timestampStyle = DisTime.TimestampStyle.IEEE_ABSOLUTE;
@@ -56,25 +57,25 @@ public class DisChannel
     private boolean                                 verbosePduRecorder         = true;
           
     /** CommentPdu type providing a description, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_DESCRIPTION            = VariableRecordType.DESCRIPTION;
+    public final static VariableRecordType COMMENTPDU_DESCRIPTION            = VariableRecordType.DESCRIPTION;
     
     /** CommentPdu type providing an event report, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_NARRATIVE              = VariableRecordType.COMPLETE_EVENT_REPORT;
+    public final static VariableRecordType COMMENTPDU_NARRATIVE              = VariableRecordType.COMPLETE_EVENT_REPORT;
     
     /** CommentPdu type providing simulation program status, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_APPLICATION_STATUS      = VariableRecordType.APPLICATION_STATUS;
+    public final static VariableRecordType COMMENTPDU_APPLICATION_STATUS      = VariableRecordType.APPLICATION_STATUS;
     
     /** CommentPdu type documenting current elapsed time, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_ELAPSED_TIME            = VariableRecordType.ELAPSED_TIME;
+    public final static VariableRecordType COMMENTPDU_ELAPSED_TIME            = VariableRecordType.ELAPSED_TIME;
     
     /** CommentPdu type documenting simulation program timestep, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_SIMULATION_TIMESTEP     = VariableRecordType.APPLICATION_TIMESTEP;
+    public final static VariableRecordType COMMENTPDU_SIMULATION_TIMESTEP     = VariableRecordType.APPLICATION_TIMESTEP;
     
     /** CommentPdu type documenting simulation program time, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_TIME     = VariableRecordType.TIME;
+    public final static VariableRecordType COMMENTPDU_TIME     = VariableRecordType.TIME;
     
     /** CommentPdu type documenting current waypoint number, used for consistent reporting and logging. */
-    public final VariableRecordType COMMENTPDU_CURRENT_WAYPOINT_NUMBER = VariableRecordType.CURRENT_WAYPOINT_NUMBER;
+    public final static VariableRecordType COMMENTPDU_CURRENT_WAYPOINT_NUMBER = VariableRecordType.CURRENT_WAYPOINT_NUMBER;
     
     // TODO additional pecial Simkit COMMENTPDU types
     
@@ -252,7 +253,7 @@ public class DisChannel
     }
 
     /** 
-     * Send a single Protocol Data Unit (PDU) of any type
+     * Send a single Protocol Data Unit (PDU) of any type, using timestamp value already provided in PDU
      * @param pdu the pdu to send
      */
     public void sendSinglePdu(Pdu pdu)
@@ -272,25 +273,13 @@ public class DisChannel
     }
 
     /** 
-     * Send a single Protocol Data Unit (PDU) of any type, after setting the PDU with given timestamp in milliseconds
-     * @param disTimeStamp timestamp for this PDU, milliseconds since epoch
-     * @param pdu the pdu to send
-     */
-    public void sendSinglePdu(int disTimeStamp, Pdu pdu)
-    {
-        pdu.setTimestamp(disTimeStamp);
-        sendSinglePdu(pdu);
-    }
-
-    /** 
      * Send a single Protocol Data Unit (PDU) of any type, after setting the PDU with given timestamp in seconds
-     * @param timeSeconds timestamp for this PDU, seconds since epoch
+     * @param timestampSeconds timestamp to set for this PDU, seconds since epoch
      * @param pdu the pdu to send
      */
-    public void sendSinglePdu(double timeSeconds, Pdu pdu)
+    public void sendSinglePdu(double timestampSeconds, Pdu pdu)
     {
-        int timeMilliseconds = (int)(timeSeconds * 1000.0);
-        pdu.setTimestamp(timeMilliseconds);
+        pdu.setTimestampSeconds(timestampSeconds);
         sendSinglePdu(pdu);
     }
     /** 
@@ -312,31 +301,20 @@ public class DisChannel
             }
         }, delayTimeMilliseconds);
     }
-
-    /** 
-     * Send a single Protocol Data Unit (PDU) of any type following a real-time delay
-     * @param pdu the pdu to send
-     * @param delayTimeSeconds delay before sending
-     */
-    public void sendSinglePduDelayed(Pdu pdu, double delayTimeSeconds)
-    {
-        long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
-        sendSinglePduDelayed(pdu, delayTimemilliseconds);
-    }
     
     /**
-     * Send Comment PDU using given DIS timestamp
-     * @param disTimeStamp   timestamp for this PDU, milliseconds since epoch
-     * @param commentType    enumeration value describing purpose of the narrative comment
-     * @param comments       String array of narrative comments
+     * Send Comment PDU using given DIS time in seconds, after setting the PDU with given timestamp in seconds
+     * @param timestampSeconds timestamp to set for this PDU, seconds since epoch
+     * @param commentType      enumeration value describing purpose of the narrative comment
+     * @param comments         String array of narrative comments
      * @return constructed CommentPdu if sent, null otherwise
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public CommentPdu sendCommentPdu(int disTimeStamp,
-                               VariableRecordType commentType,
-                                     // vararg... variable-length set of String comments can optionally follow
-                                        String... comments)
+    public CommentPdu sendCommentPdu(double timestampSeconds,
+                         VariableRecordType commentType,
+                               // vararg... variable-length set of String comments can optionally follow
+                                  String... comments)
     {
         if ((comments != null) && (comments.length > 0))
         {
@@ -362,7 +340,7 @@ public class DisChannel
                 // now build the commentPdu from these string inputs, thus constructing a narrative entry
                 @SuppressWarnings("CollectionsToArray")
                 CommentPdu commentPdu = getPduFactory().makeCommentPdu(commentType, newCommentsList.toArray(new String[0])); // comments);
-                commentPdu.setTimestamp(disTimeStamp);
+                commentPdu.setTimestampSeconds(timestampSeconds);
                 sendSinglePdu(commentPdu);
                 if (isVerboseComments()) // narrative report
                 {
@@ -373,26 +351,6 @@ public class DisChannel
             }
         }
         return null;
-    }
-    
-    /**
-     * Send Comment PDU using given DIS time in seconds
-     * @param timeSeconds    timestamp for this PDU, seconds since epoch
-     * @param commentType    enumeration value describing purpose of the narrative comment
-     * @param comments       String array of narrative comments
-     * @return constructed CommentPdu if sent, null otherwise
-     * @see VariableRecordType for other potential CommentPdu type enumerations.
-     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
-     */
-    public CommentPdu sendCommentPdu(double timeSeconds,
-                               VariableRecordType commentType,
-                                     // vararg... variable-length set of String comments can optionally follow
-                                        String... comments)
-    {
-        int timeMilliseconds = (int)(timeSeconds * 1000.0);
-        return sendCommentPdu(timeMilliseconds,
-                              commentType,
-                              comments);
     }
     
     /**
@@ -435,25 +393,9 @@ public class DisChannel
             }
         }, delayTimeMilliseconds);
     }
-    /** 
-     * Send Comment PDU following time delay
-     * @param commentType    enumeration value describing purpose of the narrative comment
-     * @param delayTimeSeconds delay before sending
-     * @param comments       String array of narrative comments
-     * @see VariableRecordType for other potential CommentPdu type enumerations.
-     * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
-     */
-    public void sendCommentPduDelayed(VariableRecordType commentType,
-                                      double delayTimeSeconds,
-                                      // vararg... variable-length set of String comments can optionally follow
-                                      String... comments)
-    {
-        long delayTimemilliseconds = (long)(delayTimeSeconds * 1000);
-        sendCommentPduDelayed(commentType, delayTimemilliseconds, comments);
-    }
 
     /**
-     * test for verboseComments mode
+     * whether in verboseComments mode
      * @return whether verboseComments mode is enabled
      */
     public boolean isVerboseComments() {
@@ -572,6 +514,7 @@ public class DisChannel
     }
 
     /**
+     * Get whether DisNetworkInterface setting is verbose
      * @return the verboseDisNetworkInterface
      */
     public boolean isVerboseDisNetworkInterface() {
@@ -579,6 +522,7 @@ public class DisChannel
     }
 
     /**
+     * Set whether DisNetworkInterface setting is verbose
      * @param verboseDisNetworkInterface the verboseDisNetworkInterface to set
      */
     public void setVerboseDisNetworkInterface(boolean verboseDisNetworkInterface) {
@@ -588,6 +532,7 @@ public class DisChannel
     }
 
     /**
+     * Get whether PduRecorder setting is verbose
      * @return the verbosePduRecorder
      */
     public boolean isVerbosePduRecorder() {
@@ -595,6 +540,7 @@ public class DisChannel
     }
 
     /**
+     * Set whether PduRecorder setting is verbose
      * @param verbosePduRecorder the verbosePduRecorder to set
      */
     public void setVerbosePduRecorder(boolean verbosePduRecorder) {
