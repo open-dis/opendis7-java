@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD-style open-source license, see project
  * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
- *     <li> SubCategory: TarantulIClass  = <code>1</code>; </li>
- *     <li> Specific: HQ378  = <code>6</code>; </li>
- *     <li> Entity type uid: 27843; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v30 (2022-04-17)</a>. </li>
+ *     <li> SubCategory: TarantulIVClassProject12418  = <code>2</code>; </li>
+ *     <li> Specific: HQ378  = <code>4</code>; </li>
+ *     <li> Entity type uid: 34892; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@661e1399. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@27bcb4ad. </p>
  * @see Country#VIET_NAM_VNM
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class HQ378 extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)50); // uid 27836, Frigate (including Corvette)
-        setSubCategory((byte)1); // uid 27837, Tarantul I Class
-        setSpecific((byte)6); // uid 27843, HQ 378
+        setSubCategory((byte)2); // uid 34888, Tarantul IV Class (Project 1241.8)
+        setSpecific((byte)4); // uid 34892, HQ-378
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
