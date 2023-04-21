@@ -19,6 +19,10 @@ import java.util.Arrays;
  */
 public class Align
 {
+        /** default constructor */
+        public Align()
+        {
+        }
   /** Align bits to byteBuffer
    * @param byteBuffer output
    * @return padded integer

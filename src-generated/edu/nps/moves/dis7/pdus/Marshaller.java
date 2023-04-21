@@ -22,14 +22,14 @@ public interface Marshaller
     int getMarshalledSize();
     
     /**
-     * 
+     * Marshal to data output stream
      * @param dos the output stream to marshal to
      * @throws Exception error during marshaling
      */
     void marshal(DataOutputStream dos) throws Exception;
     
     /**
-     * 
+     * Unmarshal from data input stream
      * @param dis the input stream to unmarshal from
      * @return the size of the marshalled PDU in bytes
      * @throws Exception error during unmarshalling

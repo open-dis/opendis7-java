@@ -18,7 +18,6 @@ public class EntityTypeFactory
     /** default constructor */
     public EntityTypeFactory()
     {
-        // initialization code here
     }
   private static Map<Integer,String> uid2ClassNameMap = new HashMap<>();
   static {

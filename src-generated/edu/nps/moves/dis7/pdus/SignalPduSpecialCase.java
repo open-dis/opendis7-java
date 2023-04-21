@@ -15,7 +15,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
 {
 
   /**
-   *
+   * Radio communications header
    */
   protected RadioCommsHeader header = new RadioCommsHeader();
 

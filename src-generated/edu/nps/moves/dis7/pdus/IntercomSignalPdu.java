@@ -15,7 +15,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
 {
 
     /**
-     *
+     * Unique referenceID for this intercom
      */
     protected IntercomReferenceID intercomReferenceID = new IntercomReferenceID();
 

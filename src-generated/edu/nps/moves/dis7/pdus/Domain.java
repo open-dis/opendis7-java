@@ -41,7 +41,7 @@ public class Domain
   //@formatter:off
 
     /**
-     *
+     * Domain of interest
      * @param d a PlatformDomain
      * @return an Domain instance based on a PlatformDomain enum
      */
@@ -51,7 +51,7 @@ public class Domain
   }  //  uid 8
 
     /**
-     *
+     * MunitionDomain instance of interest
      * @param d a MunitionDomain
      * @return an Domain instance based on a MunitionDomain enum
      */
@@ -61,7 +61,7 @@ public class Domain
   }  //  uid 14
 
     /**
-     *
+     * SupplyDomain instance of interest
      * @param d a SupplyDomain
      * @return an Domain instance based on a SupplyDomain enum
      */
@@ -102,7 +102,7 @@ public class Domain
   }
 
     /**
-     *
+     * Get value for this Domain
      * @return value
      */
     public int getValue()
@@ -111,7 +111,7 @@ public class Domain
   }
 
     /**
-     *
+     * Get description for this Domain
      * @return description
      */
     public String getDescription()
@@ -130,7 +130,7 @@ public class Domain
     }
 
     /**
-     *
+     * Marshall this instance to DataOutputStreem
      * @param dos DataOutputStream
      */
     public void marshal(DataOutputStream dos)
@@ -139,7 +139,7 @@ public class Domain
   }
 
     /**
-     *
+     * Marshall this instance to byteBuffer
      * @param byteBuffer The ByteBuffer at the position to begin writing
      */
     public void marshal(ByteBuffer byteBuffer)

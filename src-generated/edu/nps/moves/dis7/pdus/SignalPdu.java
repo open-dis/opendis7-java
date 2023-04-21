@@ -15,7 +15,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
 {
 
   /**
-   *
+   * Radio communications header
    */
   protected RadioCommsHeader header = new RadioCommsHeader();
 
