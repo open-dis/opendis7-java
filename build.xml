@@ -61,7 +61,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${dist.javadoc.dir}"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;1995-2022 held by the authors, &lt;a href='https://www.www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;1995-2023 held by the authors, &lt;a href='https://www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
