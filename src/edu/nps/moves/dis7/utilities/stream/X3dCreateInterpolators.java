@@ -7,7 +7,6 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -30,14 +29,15 @@ public class X3dCreateInterpolators {
     private double firstLocalZ = 0;
 
     private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
-
     //Setting up a NumberFormatter for limitting the decimal count to 3
-    private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
+    private NumberFormat coordinateNumberFormat;
 
     // -------------------- End Variables for Position Interpolator
 
     /** Default Constructor */
-    public X3dCreateInterpolators() {
+    public X3dCreateInterpolators()
+    {
+        this.coordinateNumberFormat = NumberFormat.getInstance();
 
         //3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
         coordinateNumberFormat.setMaximumFractionDigits(3);
@@ -260,7 +260,7 @@ public class X3dCreateInterpolators {
         orientationInterpolatorToCopyY += "/>";
 
         //PositionInterpolator for Z
-        orientationInterpolatorToCopyZ += orientationKeyY + "\n";
+        orientationInterpolatorToCopyZ += orientationKeyZ + "\n";
         orientationInterpolatorToCopyZ += orientationKeyValueZ;
         orientationInterpolatorToCopyZ += "/>";
 
