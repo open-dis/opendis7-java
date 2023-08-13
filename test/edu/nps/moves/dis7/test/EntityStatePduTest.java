@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
@@ -13,7 +13,6 @@ import edu.nps.moves.dis7.pdus.EntityMarking;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,15 +25,25 @@ public class EntityStatePduTest extends PduTest
     /** default constructor */
     public EntityStatePduTest()
     {
-        // initialization code here
+        // initialization code here, but beware order dependencies with JUnit tests
+        // setVerbose(false); // debug
     }
+    
+    /** preparation **/
+    @BeforeAll
+    public static void setUpClass()
+    {
+        if (isVerbose())
+            System.out.println("*** EntityStatePduTest setUpClass()");
+        
+        // superclass automatically runsprepareClass(), which includes setupNetwork()
+    }
+    
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
   @Test
   @Override
   public void testRoundTrip()
   {
-    PduFactory pduFactory = new PduFactory();
-    
     EntityStatePdu    espdu = pduFactory.makeEntityStatePdu(); 
     
     EntityID       entityID = new EntityID().setSiteID((short)1).setApplicationID((short)2).setEntityID((short)3);
@@ -51,7 +60,7 @@ public class EntityStatePduTest extends PduTest
                     .setSpecific   (3);  // M1A2 Abrams
     espdu.setEntityType(entityType);
     // TODO this is screaming for utility methods...
-    EntityMarking entityMarking = new EntityMarking().setCharacters("Espdu Test1".getBytes());
+    EntityMarking entityMarking = new EntityMarking().setCharacters("EspduTest1".getBytes());
     espdu.setMarking   (entityMarking);
     
     // TODO causes failure, need to debug setter:
@@ -61,8 +70,22 @@ public class EntityStatePduTest extends PduTest
 //    espdu.setEntityType(new M1A2()); 
         
     testOnePdu(espdu);
+    
     testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType)
                     .setMarking(entityMarking.setCharacters("Espdu Test2".getBytes()))); // pipelining
+
+// alternate approach used by SignalPdusTest
+//    EntityStatePdu espdu = pduFactory.makeEntityStatePdu(); // default field contents
+//    sentPdus.add(espdu);
+//    
+//    espdu.setMarking("EspduTest1");
+//    sentPdus.add(espdu);
+//
+//    sentPdus.forEach(p -> {
+//        disNetworkInterface.send(p);
+//        sleep(100l); // give receiver time to process
+//    });
+
   }
   
   /** 
@@ -76,8 +99,8 @@ public class EntityStatePduTest extends PduTest
      testPduSendReceiveHeaderMatch (createdPdu); // shared tests in superclass
      
      // can cast PDUs at this point since PduType matched
-     EntityStatePdu  createdEspdu = (EntityStatePdu)  createdPdu;
-     EntityStatePdu receivedEspdu = (EntityStatePdu) receivedPdu;
+     EntityStatePdu  createdEspdu = (EntityStatePdu) createdPdu;
+     EntityStatePdu receivedEspdu = (EntityStatePdu) receivedPdus.get(0); // TODO might be more than one on receivedPdus list
      
      assertEquals (createdEspdu.getEntityID(),                receivedEspdu.getEntityID(),                "mismatched EntityID");
      // TODO Sequence number
@@ -95,7 +118,7 @@ public class EntityStatePduTest extends PduTest
      assertEquals (createdEspdu.getVariableParameters(),      receivedEspdu.getVariableParameters(),      "mismatched VariableParameters");
      assertEquals (createdEspdu.getEntityLinearVelocity(),    receivedEspdu.getEntityLinearVelocity(),    "mismatched EntityLinearVelocity");
 
-     testPduFinishingChecks(createdPdu); // shared tests in superclass
+     testPduCommonFields(createdPdu); // shared tests in superclass
   }
   
   /** Command-line invocation (CLI) of program, execution starts here
@@ -103,10 +126,13 @@ public class EntityStatePduTest extends PduTest
     */
     public static void main(String[] args)
     {
-        EntityStatePduTest entityStatePduTest = new EntityStatePduTest();
+        System.out.println("EntityStatePduTest start");
+        EntityStatePduTest.setVerbose(true); // false --> quiet test logging
+        EntityStatePduTest.setupNetwork();
+        EntityStatePduTest entityStatePduTest = new EntityStatePduTest(); 
         
-        entityStatePduTest.setUp();
         entityStatePduTest.testRoundTrip();
         entityStatePduTest.tearDown();
+        System.out.println("EntityStatePduTest complete");
     }
 }
