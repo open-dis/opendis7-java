@@ -40,6 +40,12 @@ public class SignalPdusTest
     static List<Pdu> receivedPdus = new ArrayList<>();
     byte[] bufferByteArray;
     int size;
+    
+    /** default constructor */
+    public SignalPdusTest()
+    {
+        // initialization code here, beware order dependencies with JUnit tests
+    }
 
     /** preparation **/
     @BeforeAll
@@ -48,6 +54,8 @@ public class SignalPdusTest
         System.out.println("*** SignalPdusTest");
         
         setupNetwork();
+        
+        // TODO actual tests follow, though they often go in another dedicated method
         pduFactory = new PduFactory();
         Pdu pdu = pduFactory.makeSignalPdu();  // default field contents
         sentPdus.add(pdu);
@@ -71,7 +79,7 @@ public class SignalPdusTest
 
         sentPdus.forEach(p -> {
             disNetworkInterface.send(p);
-            sleep(100l); // give receiver time to process
+            sleep(100l); // give receiver time to process the sent pdu
         });
     }
 
@@ -79,21 +87,26 @@ public class SignalPdusTest
      *  must be called at beginning of setupClass()
      */
     @SuppressWarnings("Convert2Lambda")
-    public static void setupNetwork()
+    public static synchronized void setupNetwork()
     {
+        System.out.println("*** SignalPdusTest.setupNetwork()");
         try
         {
             if (pduRecorder == null)
                 pduRecorder = new PduRecorder(); // default dir
             pduRecorder.start();
-            disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
-            pduListener = new DisThreadedNetworkInterface.PduListener() {
-                @Override
-                public void incomingPdu(Pdu pdu) {
-                    handleReceivedPdu(pdu);
-                }
-            };
-            disNetworkInterface.addListener(pduListener);
+            if (disNetworkInterface == null)
+                disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
+            if (pduListener == null)
+            {
+                pduListener = new DisThreadedNetworkInterface.PduListener() {
+                    @Override
+                    public synchronized void incomingPdu(Pdu pdu) {
+                        handleReceivedPdu(pdu);
+                    }
+                };
+                disNetworkInterface.addListener(pduListener);
+            }
         } 
         catch (IOException ex)
         {
@@ -103,7 +116,7 @@ public class SignalPdusTest
 
     @BeforeEach
     public void setUp() throws IOException, InterruptedException {
-        new File("./pduLog/Pdusave.dislog").delete();
+//        new File("./pduLog/Pdusave.dislog").delete();
     }
 
     @AfterEach
@@ -173,7 +186,7 @@ public class SignalPdusTest
         }
     }
 
-    private static void handleReceivedPdu(Pdu pdu) {
+    private static synchronized void  handleReceivedPdu(Pdu pdu) {
         if (!receivedPdus.contains(pdu))
              receivedPdus.add(pdu);
     }
