@@ -26,7 +26,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author tdnorbra@nps.edu
  */
-@DisplayName("Signal Pdus Test")
+@DisplayName("SignalPdusTest")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SignalPdusTest
 {    
