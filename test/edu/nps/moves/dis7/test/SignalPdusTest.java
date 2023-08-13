@@ -17,15 +17,13 @@ import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * This is an important unit test as it examines the validity of our two special
- * case signal PDUs
+ * This is an important unit test that examines the validity of two special-case signal PDUs.
  *
  * @author tdnorbra@nps.edu
  */
@@ -33,23 +31,22 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SignalPdusTest
 {    
-    static DisThreadedNetworkInterface disNetworkInterface;
+    static DisThreadedNetworkInterface             disNetworkInterface;
     static DisThreadedNetworkInterface.PduListener pduListener;
-    static PduRecorder pduRecorder;
-    
-//    static Semaphore mutex; // TODO needed?
+    static PduRecorder                             pduRecorder;
+
     static PduFactory pduFactory;
     static List<Pdu>     sentPdus = new ArrayList<>();
     static List<Pdu> receivedPdus = new ArrayList<>();
     byte[] bufferByteArray;
     int size;
 
+    /** preparation **/
     @BeforeAll
-    public static void setUpClass() throws IOException 
+    public static void setUpClass() 
     {
-        System.out.println("SignalPdusTest");
-        
-//        mutex = new Semaphore(1); // TODO needed?
+        // preparation code here
+        System.out.println("*** SignalPdusTest");
         
         setupNetwork();
         pduFactory = new PduFactory();
@@ -75,26 +72,34 @@ public class SignalPdusTest
 
         sentPdus.forEach(p -> {
             disNetworkInterface.send(p);
-            sleep(5l); // give receiver time to process // TODO needed?
+            sleep(100l); // give receiver time to process // TODO needed?
         });
     }
 
-    /** Prepare for network operations, must be called at beginning of setupClass()
-     *  @throws IOException 
+    /** Prepare for network operations and send initial PDUs,
+     *  must be called at beginning of setupClass()
      */
     @SuppressWarnings("Convert2Lambda")
-    public static void setupNetwork() throws IOException
+    public static void setupNetwork()
     {
-        pduRecorder = new PduRecorder(); // default dir
-        pduRecorder.start();
-        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
-        pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu pdu) {
-              handleReceivedPdu(pdu);
-          }
-        };
-        disNetworkInterface.addListener(pduListener);
+        try
+        {
+            if (pduRecorder == null)
+                pduRecorder = new PduRecorder(); // default dir
+            pduRecorder.start();
+            disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
+            pduListener = new DisThreadedNetworkInterface.PduListener() {
+                @Override
+                public void incomingPdu(Pdu pdu) {
+                    handleReceivedPdu(pdu);
+                }
+            };
+            disNetworkInterface.addListener(pduListener);
+        } 
+        catch (IOException ex)
+        {
+            Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @BeforeEach
@@ -103,19 +108,22 @@ public class SignalPdusTest
     }
 
     @AfterEach
-    public void tearDown() throws IOException {
-        disNetworkInterface.removeListener(pduListener);
-        pduRecorder.stop(); // kills the disNetworkInterface as well
+    public void tearDown() throws IOException
+    {
     }
 
     @AfterAll
-    public static void tearDownClass() throws IOException {
+    public static void tearDownClass() throws IOException
+    {
+        disNetworkInterface.removeListener(pduListener);
+        pduRecorder.stop(); // kills the disNetworkInterface as well
+        System.out.println("*** SignalPdusTest complete");
     }
 
     @Test
     @Order(1)
     public void testRoundTripNet() {
-        System.out.println("testRoundTripNet()");
+        System.out.println("*** testRoundTripNet()");
         
         // Let's see how these unmarshall
         receivedPdus.forEach(pdu -> {
@@ -131,7 +139,6 @@ public class SignalPdusTest
                 Logger.getLogger(SignalPdusTest.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
-        
         // Compare
         assertEquals(sentPdus, receivedPdus, "Sent and received pdus not identical");
     }
@@ -139,9 +146,8 @@ public class SignalPdusTest
     @Test
     @Order(2)
     public void testRoundTripLog() throws IOException, InterruptedException {   
-        System.out.println("testRoundTripLog()");
+        System.out.println("*** testRoundTripLog()");
         
-//        mutex.acquire();
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
@@ -151,18 +157,20 @@ public class SignalPdusTest
                 assertNotNull(pduFactory.createPdu(ba), "PDU creation failure");
             else {
                 pduPlayer.end();
-//                mutex.release();
             }   
         });
-    
-//        mutex.acquire(); // TODO needed? appears to be unnecessarily blocking...
     }
     
-    private static void sleep(long ms) {
+    /** convenience method to wrap Thread.sleep with exception handling
+     * @param msec milliseconds*/
+    private static void sleep(long msec)
+    {
         try {
-            Thread.sleep(ms);
-        } catch (InterruptedException ex) {
-            fail("NetIF Send: " + ex);
+            Thread.sleep(msec);
+        } 
+        catch (InterruptedException ex) 
+        {
+            fail("*** SignalPdusTest failure: " + ex);
         }
     }
 
@@ -173,15 +181,18 @@ public class SignalPdusTest
 
     public static void main(String[] args) throws IOException, InterruptedException 
     {
-        setUpClass();
-        
+        SignalPdusTest.setUpClass();
         SignalPdusTest signalPdusTest = new SignalPdusTest();
+        
         signalPdusTest.setUp();
         signalPdusTest.testRoundTripNet();
         signalPdusTest.tearDown();
+        // don't tearDownClass() if running multiple test squences
+        
         signalPdusTest.setUp();
         signalPdusTest.testRoundTripLog();
         signalPdusTest.tearDown();
+        
+        SignalPdusTest.tearDownClass();
     }
-
 }
