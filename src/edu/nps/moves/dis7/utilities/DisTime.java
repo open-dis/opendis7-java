@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -174,6 +174,7 @@ public class DisTime
     public static final int RELATIVE_TIMESTAMP_MASK = 0xfffffffe;
     
     /** Ability to create new PDUs */
+    @SuppressWarnings("FieldMayBeFinal")
     private static PduFactory pduFactory = new PduFactory(TIMESTAMP_STYLE_DEFAULT);
     
 //    private LocalDateTime todayDateTime = new LocalDateTime();
@@ -282,7 +283,7 @@ public class DisTime
         // initialize
     }
     
-    /** Provide parsable time metadata encapsulated in CommentPdu for sharing
+    /** Provide parse able time metadata encapsulated in CommentPdu for sharing
      * @return PDU of interest
      */
     public static CommentPdu buildTimeMetadataCommentPdu()
@@ -656,16 +657,21 @@ public class DisTime
         applyEpochLvc     = false;
     }
 
-    private void sleep(long ms) {
-        sleep(ms, 0);
+    /** local method to handle exception handling, simplifying constructor
+     * @param milliseconds duration */
+    private void sleep(long milliseconds) {
+        sleep(milliseconds, 0);
     }
     
-    private void sleep(long ms, int ns) 
+    /** local method to handle exception handling, simplifying constructor
+     * @param milliseconds duration
+     * @param nanoseconds duration */
+    private void sleep(long milliseconds, int nanoseconds) 
     {
         try {
-            Thread.sleep(ms, ns);
+            Thread.sleep(milliseconds, nanoseconds);
         } 
-        catch (InterruptedException ex) {}
+        catch (InterruptedException ex) {} //ignore
     }
     
     /** Self-test for basic smoke testing */
