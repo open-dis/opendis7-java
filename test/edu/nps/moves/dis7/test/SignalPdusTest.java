@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
@@ -31,40 +31,28 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @DisplayName("Signal Pdus Test")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class SignalPdusTest {
-    
+public class SignalPdusTest
+{    
     static DisThreadedNetworkInterface disNetworkInterface;
     static DisThreadedNetworkInterface.PduListener pduListener;
-    static List<Pdu> receivedPdus;
     static PduRecorder pduRecorder;
     
-    static Semaphore mutex;
+//    static Semaphore mutex; // TODO needed?
     static PduFactory pduFactory;
-    static List<Pdu> sentPdus;
+    static List<Pdu>     sentPdus = new ArrayList<>();
+    static List<Pdu> receivedPdus = new ArrayList<>();
     byte[] bufferByteArray;
     int size;
 
     @BeforeAll
-    public static void setUpClass() throws IOException {
+    public static void setUpClass() throws IOException 
+    {
         System.out.println("SignalPdusTest");
         
-        pduRecorder = new PduRecorder(); // default dir
-        pduRecorder.start();
-        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
-        pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu pdu) {
-              handleReceivedPdu(pdu);
-          }
-        };
-        disNetworkInterface.addListener(pduListener);
+//        mutex = new Semaphore(1); // TODO needed?
         
-        mutex = new Semaphore(1);
-        
-        sentPdus     = new ArrayList<>();
-        receivedPdus = new ArrayList<>();
+        setupNetwork();
         pduFactory = new PduFactory();
-
         Pdu pdu = pduFactory.makeSignalPdu();  // empty contents
         sentPdus.add(pdu);
 
@@ -87,12 +75,26 @@ public class SignalPdusTest {
 
         sentPdus.forEach(p -> {
             disNetworkInterface.send(p);
-            sleep(5l); // give receiver time to process
+            sleep(5l); // give receiver time to process // TODO needed?
         });
     }
 
-    @AfterAll
-    public static void tearDownClass() throws IOException {
+    /** Prepare for network operations, must be called at beginning of setupClass()
+     *  @throws IOException 
+     */
+    @SuppressWarnings("Convert2Lambda")
+    public static void setupNetwork() throws IOException
+    {
+        pduRecorder = new PduRecorder(); // default dir
+        pduRecorder.start();
+        disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
+        pduListener = new DisThreadedNetworkInterface.PduListener() {
+          @Override
+          public void incomingPdu(Pdu pdu) {
+              handleReceivedPdu(pdu);
+          }
+        };
+        disNetworkInterface.addListener(pduListener);
     }
 
     @BeforeEach
@@ -104,6 +106,10 @@ public class SignalPdusTest {
     public void tearDown() throws IOException {
         disNetworkInterface.removeListener(pduListener);
         pduRecorder.stop(); // kills the disNetworkInterface as well
+    }
+
+    @AfterAll
+    public static void tearDownClass() throws IOException {
     }
 
     @Test
@@ -135,7 +141,7 @@ public class SignalPdusTest {
     public void testRoundTripLog() throws IOException, InterruptedException {   
         System.out.println("testRoundTripLog()");
         
-        mutex.acquire();
+//        mutex.acquire();
         Path path = Path.of("./pduLog");
         
         // Note: the player will playback all log files in the given path
@@ -145,7 +151,7 @@ public class SignalPdusTest {
                 assertNotNull(pduFactory.createPdu(ba), "PDU creation failure");
             else {
                 pduPlayer.end();
-                mutex.release();
+//                mutex.release();
             }   
         });
     
@@ -162,20 +168,20 @@ public class SignalPdusTest {
 
     private static void handleReceivedPdu(Pdu pdu) {
         if (!receivedPdus.contains(pdu))
-            receivedPdus.add(pdu);
+             receivedPdus.add(pdu);
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        
+    public static void main(String[] args) throws IOException, InterruptedException 
+    {
         setUpClass();
         
-        SignalPdusTest spt = new SignalPdusTest();
-        spt.setUp();
-        spt.testRoundTripNet();
-        spt.tearDown();
-        spt.setUp();
-        spt.testRoundTripLog();
-        spt.tearDown();
+        SignalPdusTest signalPdusTest = new SignalPdusTest();
+        signalPdusTest.setUp();
+        signalPdusTest.testRoundTripNet();
+        signalPdusTest.tearDown();
+        signalPdusTest.setUp();
+        signalPdusTest.testRoundTripLog();
+        signalPdusTest.tearDown();
     }
 
 }
