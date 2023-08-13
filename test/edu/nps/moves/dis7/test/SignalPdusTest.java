@@ -35,7 +35,7 @@ public class SignalPdusTest
     static DisThreadedNetworkInterface.PduListener pduListener;
     static PduRecorder                             pduRecorder;
 
-    static PduFactory pduFactory;
+    static PduFactory  pduFactory;
     static List<Pdu>     sentPdus = new ArrayList<>();
     static List<Pdu> receivedPdus = new ArrayList<>();
     byte[] bufferByteArray;
@@ -45,25 +45,24 @@ public class SignalPdusTest
     @BeforeAll
     public static void setUpClass() 
     {
-        // preparation code here
         System.out.println("*** SignalPdusTest");
         
         setupNetwork();
         pduFactory = new PduFactory();
-        Pdu pdu = pduFactory.makeSignalPdu();  // empty contents
+        Pdu pdu = pduFactory.makeSignalPdu();  // default field contents
         sentPdus.add(pdu);
 
-        pdu = pduFactory.makeSignalPdu();
+        pdu = pduFactory.makeSignalPdu(); // recreate new pdu
         ((SignalPdu) pdu).setEncodingScheme((short) 0x1111);
         ((SignalPdu) pdu).setSampleRate(0x22222222);
         ((SignalPdu) pdu).setSamples((short) 0x3333);
         ((SignalPdu) pdu).setData("SignalPdu-testdata".getBytes());
         sentPdus.add(pdu);
 
-        pdu = pduFactory.makeIntercomSignalPdu();
+        pdu = pduFactory.makeIntercomSignalPdu(); // recreate new pdu
         sentPdus.add(pdu);
 
-        pdu = pduFactory.makeIntercomSignalPdu();
+        pdu = pduFactory.makeIntercomSignalPdu(); // recreate new pdu
         ((IntercomSignalPdu) pdu).setEncodingScheme((short) 0x1111);
         ((IntercomSignalPdu) pdu).setSampleRate(0x22222222);
         ((IntercomSignalPdu) pdu).setSamples((short) 0x3333);
@@ -72,7 +71,7 @@ public class SignalPdusTest
 
         sentPdus.forEach(p -> {
             disNetworkInterface.send(p);
-            sleep(100l); // give receiver time to process // TODO needed?
+            sleep(100l); // give receiver time to process
         });
     }
 
@@ -161,8 +160,8 @@ public class SignalPdusTest
         });
     }
     
-    /** convenience method to wrap Thread.sleep with exception handling
-     * @param msec milliseconds*/
+    /** Convenience method to wrap Thread.sleep with exception handling
+     * @param msec milliseconds */
     private static void sleep(long msec)
     {
         try {
@@ -170,7 +169,7 @@ public class SignalPdusTest
         } 
         catch (InterruptedException ex) 
         {
-            fail("*** SignalPdusTest failure: " + ex);
+            fail("*** SignalPdusTest sleep failure: " + ex);
         }
     }
 
