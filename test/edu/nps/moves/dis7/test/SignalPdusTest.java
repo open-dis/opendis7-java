@@ -11,7 +11,6 @@ import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
-import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.file.Path;
@@ -44,7 +43,7 @@ public class SignalPdusTest
     /** default constructor */
     public SignalPdusTest()
     {
-        // initialization code here, beware order dependencies with JUnit tests
+        // initialization code here, but beware order dependencies with JUnit tests
     }
 
     /** preparation **/
