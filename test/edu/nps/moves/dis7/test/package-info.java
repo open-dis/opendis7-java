@@ -1,5 +1,5 @@
 /*
-Copyright (c) 1995-2022 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2023 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,7 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 */
 
 /** 
- * This package includes a variety of PDU unit tests to confirm code correctness.
+ * This package includes a variety of PDU unit tests to confirm opendis7-java code correctness.
  * The <code>test</code> tree is maintained separately from other source
  * in order to support the project build with special CLASSPATH, annotations and 
  * assertions.
