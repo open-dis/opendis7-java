@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD-style open-source license, see project
  * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
@@ -140,6 +140,18 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String address, int port, String newDescriptor)
     {
+        this(address, port, newDescriptor, verbose); // no change in verbose
+    }
+    /**
+     * Object constructor using specified multicast address and port1, plus descriptor and verboseness.
+     * @param address the multicast group or unicast address to utilize
+     * @param port the multicast port to utilize
+     * @param newDescriptor simple descriptor name for this interface
+     * @param defaultVerbose whether or not DisThreadedNetworkInterface is verbose
+     */
+    public DisThreadedNetworkInterface(String address, int port, String newDescriptor, boolean defaultVerbose)
+    {
+        verbose = defaultVerbose;
         if (newDescriptor == null)
              descriptor = "";
         else descriptor = newDescriptor;
@@ -161,7 +173,7 @@ public class DisThreadedNetworkInterface
         begin();
     }
     /**
-     * Object constructor using specified multicast address and port 
+     * Object constructor using specified multicast address, port, descriptor, and verbosenness
      * @param address the multicast group or unicast address to utilize
      * @param port the multicast port to utilize
      */
@@ -184,13 +196,19 @@ public class DisThreadedNetworkInterface
     {
         this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "");
     }
+    /** default constructor
+     * @param defaultVerbose whether or not DisThreadedNetworkInterface is verbose */
+    public DisThreadedNetworkInterface(boolean defaultVerbose)
+    {
+        verbose = defaultVerbose;
+    }
 
     /**
      * Add a listener to accept only pdus of a given type
      * @param newListener listener instance implementing the RawPduListener interface
      * @param disPduType Pdu type
      */
-    public void addListener(PduListener newListener, DisPduType disPduType)
+    public synchronized void addListener(PduListener newListener, DisPduType disPduType)
     {
         if (disPduType == null)
         {
@@ -212,7 +230,7 @@ public class DisThreadedNetworkInterface
      * Add a listener to accept all pdu types
      * @param newListener listener instance implementing the RawPduListener interface
      */
-    public void addListener(PduListener newListener)
+    public synchronized void addListener(PduListener newListener)
     {
         everyTypeListeners.add(newListener);
     }
@@ -222,7 +240,7 @@ public class DisThreadedNetworkInterface
      *
      * @param priorListener listener instance implementing the RawPduListener interface
      */
-    public void removeListener(PduListener priorListener)
+    public synchronized void removeListener(PduListener priorListener)
     {
         everyTypeListeners.remove(priorListener);
 
@@ -234,8 +252,12 @@ public class DisThreadedNetworkInterface
                 arLis.remove(priorListener);
             }
         });
-        // additional sleep, hopefully allowing teardown to proceed to completion
-        sleep(100l); // TODO needed?
+        try {
+            // additional sleep, hopefully allowing teardown to proceed to completion
+            wait(100l); // TODO needed?
+        } catch (InterruptedException ex) {
+            Logger.getLogger(DisThreadedNetworkInterface.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -243,7 +265,7 @@ public class DisThreadedNetworkInterface
      *
      * @param rawPduListener listener instance implementing the RawPduListener interface
      */
-    public void addRawListener(RawPduListener rawPduListener)
+    public synchronized void addRawListener(RawPduListener rawPduListener)
     {
         rawListeners.add(rawPduListener);
     }
@@ -253,7 +275,7 @@ public class DisThreadedNetworkInterface
      *
      * @param rawPduListener listener instance implementing the RawPduListener interface
      */
-    public void removeRawListener(RawPduListener rawPduListener)
+    public synchronized void removeRawListener(RawPduListener rawPduListener)
     {
         rawListeners.remove(rawPduListener);
         // additional sleep, hopefully allowing teardown to proceed to completion
@@ -284,7 +306,7 @@ public class DisThreadedNetworkInterface
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
      * @param newAddress the new network address to set
      */
-    public void setAddress(String newAddress) {
+    public synchronized void setAddress(String newAddress) {
         this.disAddress = newAddress;
     }
 
@@ -292,7 +314,7 @@ public class DisThreadedNetworkInterface
      * Send the given pdu to the network using the IP address and port given to the constructor
      * @param pdu the pdu to send
      */
-    public void send(Pdu pdu)
+    public synchronized void send(Pdu pdu)
     {
         pdus2send.add(pdu);
     }
@@ -315,7 +337,7 @@ public class DisThreadedNetworkInterface
             receiveThread.setPriority(Thread.NORM_PRIORITY);
             receiveThread.start();
         }
-        if (hasVerboseSending())
+        if (hasVerboseReceipt())
             System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
 
         if (sendingThread == null)
@@ -336,7 +358,7 @@ public class DisThreadedNetworkInterface
      * either sender or receiver thread to ensure datagram socket is open.
      * Method was originally named start().
      */
-    public final void begin()
+    public synchronized final void begin()
     {
         createDatagramSocket(); // common asset, synchronized to prevent interleaved reentry
         
@@ -381,7 +403,9 @@ public class DisThreadedNetworkInterface
                 
                 datagramSocket.joinGroup(inetSocket, networkInterface);
                 
-                Thread.sleep (100L); // allow threads, streams to catch up
+                // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                wait (100L); // allow threads, streams to catch up // TODO consider wait() instead of sleep()
             } 
             catch (InterruptedException ex)
             {
@@ -515,7 +539,7 @@ public class DisThreadedNetworkInterface
         // returning kills thread, do not put any other steps here
     };
 
-    private void toListeners(Pdu pdu) 
+    private synchronized void toListeners(Pdu pdu) 
     {
         if (everyTypeListeners.isEmpty()) {
             return;
@@ -535,7 +559,7 @@ public class DisThreadedNetworkInterface
         }
     }
   
-    private void toRawListeners(byte[] data, int len)
+    private synchronized void toRawListeners(byte[] data, int len)
     {
       if(rawListeners.isEmpty())
         return;
@@ -547,7 +571,7 @@ public class DisThreadedNetworkInterface
     /** Method renamed as <code>close()</code> so use that method instead.
      */
     @Deprecated
-    public void kill()
+    public synchronized void kill()
     {
       setKillSentinelAndInterrupts(); 
     }
@@ -561,13 +585,25 @@ public class DisThreadedNetworkInterface
         killed = true; // set loop sentinel for threads to finish
 
         // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
-        sendingThread.interrupt();
-        receiveThread.interrupt();
+        String sendingThreadInterruptStatus, receiveThreadInterruptStatus;
+        if (sendingThread != null)
+        {
+            sendingThread.interrupt();
+            sendingThreadInterruptStatus = String.valueOf(sendingThread.isInterrupted());
+        }
+        else sendingThreadInterruptStatus ="null";
+        if (receiveThread != null)
+        {
+            receiveThread.interrupt();
+            receiveThreadInterruptStatus = String.valueOf(receiveThread.isInterrupted());
+        }
+        else receiveThreadInterruptStatus ="null";
+        
         if (hasVerboseOutput())
         {
-            System.out.println ("*** setKillSentinelAndInterrupts() killed=" + killed + 
-                      " sendingThread.isInterrupted()=" + sendingThread.isInterrupted() + 
-                      " receiveThread.isInterrupted()=" + receiveThread.isInterrupted());
+            System.out.println ("*** setKillSentinelAndInterrupts() sentinel killed=" + killed + 
+                      " sendingThread.isInterrupted()=" + sendingThreadInterruptStatus + 
+                      " receiveThread.isInterrupted()=" + receiveThreadInterruptStatus);
             System.out.flush();
             System.err.flush();
         }
@@ -579,10 +615,13 @@ public class DisThreadedNetworkInterface
     {
         try 
         {
-            if (!killed)
+            if (!killed) // avoid repeats
             {
                 setKillSentinelAndInterrupts(); // killed = true;
-                Thread.sleep(100l); // let sendingThread and receiveThread stop
+                // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                // let sendingThread and receiveThread stop
+                wait(100l); // // allow extra time for shutdowns to occur before continuing
             }
             pdus2send.clear(); // all stop
              dos.flush();      // immediately force pdu write, if any remain
@@ -617,7 +656,9 @@ public class DisThreadedNetworkInterface
             }
             killThread (sendingThread); // making sure
             killThread (receiveThread); // making sure
-            Thread.sleep(500l);
+            // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+            // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+            wait(500l); // allow extra time for shutdowns to occur before continuing
             reportThreadStatus();
         }
         catch (IOException | InterruptedException e)
@@ -627,14 +668,16 @@ public class DisThreadedNetworkInterface
     }
     /** Tell thread to stop.
      * @param threadToKill of interest */
-    public void killThread(Thread threadToKill)
+    public synchronized void killThread(Thread threadToKill)
     {
             try { // join and kill threadToKill
                 if (threadToKill != null)
                 {
                     threadToKill.interrupt();
                     threadToKill.join(4000); // wait for thread to die, msec max duration
-                    Thread.sleep(100l);
+                    // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                    // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                    wait(100l); // TODO consider wait() instead of sleep()
                 }
             }
             catch (InterruptedException ie)
@@ -657,7 +700,7 @@ public class DisThreadedNetworkInterface
     }
     
     /** Report whether sendingThread and receiveThread are alive */
-    public void reportThreadStatus()
+    public synchronized void reportThreadStatus()
     {
         // report if successful
         String sendingThreadAlive = "null";
@@ -677,10 +720,12 @@ public class DisThreadedNetworkInterface
 
   /** Thread sleep for indicated interval
    * @param duration milliseconds */
-  private void sleep(long duration)
+  private synchronized void sleep(long duration)
   {
     try {
-      Thread.sleep(duration);
+        // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+        // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+        wait(duration); // TODO consider wait() instead of sleep()
     }
     catch (InterruptedException ie) 
     {
@@ -727,16 +772,16 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Set whether or not trace statements are provided when packets are sent or received.
+     * Set whether or not trace statements are provided when packets are sent or received, including verboseReceipt and verboseSending.
      * @param newValue the verbose status to set.  Also resets verboseReceipt and verboseSending to match.
      * @see verboseReceipt
      * @see verboseSending
      */
-    public void setVerbose(boolean newValue)
+    public synchronized void setVerbose(boolean newValue)
     {
-        this.verbose        = newValue;
-        this.verboseReceipt = newValue;
-        this.verboseSending = newValue;
+        DisThreadedNetworkInterface.verbose        = newValue;
+        DisThreadedNetworkInterface.verboseReceipt = newValue;
+        DisThreadedNetworkInterface.verboseSending = newValue;
     }
     /**
      * Whether or not trace statements are provided when packets are sent or received.
@@ -754,9 +799,9 @@ public class DisThreadedNetworkInterface
      * @see verbose
      * @see verboseSending
      */
-    public void setVerboseReceipt(boolean newValue)
+    public synchronized void setVerboseReceipt(boolean newValue)
     {
-        this.verboseReceipt = newValue;
+        DisThreadedNetworkInterface.verboseReceipt = newValue;
         verbose = (verboseReceipt || verboseSending);
     }
     /**
@@ -774,9 +819,9 @@ public class DisThreadedNetworkInterface
      * @see verbose
      * @see verboseReceipt
      */
-    public void setVerboseSending(boolean newValue)
+    public synchronized void setVerboseSending(boolean newValue)
     {
-        this.verboseSending = newValue;
+        DisThreadedNetworkInterface.verboseSending = newValue;
         verbose = (verboseReceipt || verboseSending);
     }
     /**
@@ -799,11 +844,11 @@ public class DisThreadedNetworkInterface
 
     /**
      * Set whether or not trace statements include timestamp values.
-     * @param verboseIncludesTimestamp the value to set
+     * @param newVerboseIncludesTimestamp the value to set
      */
-    public void setVerboseIncludesTimestamp(boolean verboseIncludesTimestamp)
+    public synchronized void setVerboseIncludesTimestamp(boolean newVerboseIncludesTimestamp)
     {
-        this.verboseIncludesTimestamp = verboseIncludesTimestamp;
+        DisThreadedNetworkInterface.verboseIncludesTimestamp = newVerboseIncludesTimestamp;
     }
 
     /** Method renamed as <code>getPort()</code> so use that method instead.
@@ -827,7 +872,7 @@ public class DisThreadedNetworkInterface
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
      * @param newPortValue the disPort value to set
      */
-    public void setPort(int newPortValue)
+    public synchronized void setPort(int newPortValue)
     {
         this.disPort = newPortValue;
     }
@@ -844,14 +889,15 @@ public class DisThreadedNetworkInterface
      * Set new simple descriptor (such as parent class name) for this network interface, used in trace statements
      * @param newDescriptor simple descriptor name for this interface
      */
-    public void setDescriptor(String newDescriptor) 
+    public synchronized void setDescriptor(String newDescriptor) 
     {
         if (newDescriptor != null)
-            this.descriptor = newDescriptor.trim();
+            DisThreadedNetworkInterface.descriptor = newDescriptor.trim();
         TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
     }
     /** Self test to check basic operation, invoked by main() */
-    private void selfTest()
+    @SuppressWarnings("Convert2Lambda")
+    private synchronized void selfTest()
     {
         System.out.println(TRACE_PREFIX + "main() self test initialized...");
         try
@@ -860,11 +906,11 @@ public class DisThreadedNetworkInterface
             espdu.setMarking("self test");
             setVerbose(true);
             DisThreadedNetworkInterface.PduListener pduListener;
-            pduListener = new DisThreadedNetworkInterface.PduListener()
+            pduListener = new DisThreadedNetworkInterface.PduListener() // avoid Convert2Lambda editor warning
             {
                 /** Callback handler for listener */
                 @Override
-                public void incomingPdu(Pdu newPdu)
+                public synchronized void incomingPdu(Pdu newPdu)
                 {
                     System.out.println(TRACE_PREFIX + "main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
                     System.out.flush();
@@ -874,8 +920,11 @@ public class DisThreadedNetworkInterface
 
             System.out.println(TRACE_PREFIX + "self test sending espdu...");
             send(espdu);
-            // this test is short, must briefly wait to get synchornized with threaded sender and receiver
-            Thread.sleep(500L);
+            
+            // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+            // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+            // this test is short, must briefly wait to get synchronized with threaded sender and receiver
+            wait(500L); // TODO consider wait() instead of sleep()
             System.out.flush();
             System.err.flush();
             // all done, close() in finally block
