@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Unit tests for satisfactory handling of Entity State PDU (ESPDU) fields and values.
  */
-@DisplayName("Entity State Pdu Test")
+@DisplayName("EntityStatePduTest")
 public class EntityStatePduTest extends PduTest
 {
     /** default constructor */
@@ -39,53 +39,45 @@ public class EntityStatePduTest extends PduTest
         // superclass automatically runsprepareClass(), which includes setupNetwork()
     }
     
-  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
-  @Test
-  @Override
-  public void testRoundTrip()
-  {
-    EntityStatePdu    espdu = pduFactory.makeEntityStatePdu(); 
-    
-    EntityID       entityID = new EntityID().setSiteID((short)1).setApplicationID((short)2).setEntityID((short)3);
-    espdu.setEntityID(entityID);
-    
-    // TODO test various alternate constructors and utility methods
-    
-    EntityType   entityType = new EntityType()
-                    .setEntityKind (EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
-                    .setCountry    (Country.UNITED_STATES_OF_AMERICA_USA)  // 225 USA
-                    .setDomain     (Domain.inst(PlatformDomain.LAND))      // Land (vs air, surface, subsurface, space)
-                    .setCategory   (1)   // Tank
-                    .setSubCategory(1)   // M1 Abrams
-                    .setSpecific   (3);  // M1A2 Abrams
-    espdu.setEntityType(entityType);
-    // TODO this is screaming for utility methods...
-    EntityMarking entityMarking = new EntityMarking().setCharacters("EspduTest1".getBytes());
-    espdu.setMarking   (entityMarking);
-    
-    // TODO causes failure, need to debug setter:
-//    // Alternate way using entity jar(s)
-//    espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
-//    // or simply use an enumeration by name, with accompanying import statement above
-//    espdu.setEntityType(new M1A2()); 
+    /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
+    @Test
+    @Override
+    public void testMultiplePdus()
+    {
+        if (isVerbose())
+            System.out.println("*** EntityStatePduTest testMultiplePdus()");
         
-    testOnePdu(espdu);
+        EntityStatePdu    espdu = pduFactory.makeEntityStatePdu(); 
+
+        EntityID       entityID = new EntityID();
+        entityID.setSiteID(1).setApplicationID(2).setEntityID(3); // built-in pipelining, typecasting
+        espdu.setEntityID(entityID);
     
-    testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType)
-                    .setMarking(entityMarking.setCharacters("Espdu Test2".getBytes()))); // pipelining
-
-// alternate approach used by SignalPdusTest
-//    EntityStatePdu espdu = pduFactory.makeEntityStatePdu(); // default field contents
-//    sentPdus.add(espdu);
-//    
-//    espdu.setMarking("EspduTest1");
-//    sentPdus.add(espdu);
-//
-//    sentPdus.forEach(p -> {
-//        disNetworkInterface.send(p);
-//        sleep(100l); // give receiver time to process
-//    });
-
+        // TODO additional PDU-specific tests
+        // TODO test various alternate constructors and utility methods
+    
+        EntityType   entityType = new EntityType()
+                        .setEntityKind (EntityKind.PLATFORM)  //(short) 1); // Platform (vs lifeform, munition, sensor, etc.); //(short) 1); // Platform (vs lifeform, munition, sensor, etc.)
+                        .setCountry    (Country.UNITED_STATES_OF_AMERICA_USA)  // 225 USA
+                        .setDomain     (Domain.inst(PlatformDomain.LAND))      // Land (vs air, surface, subsurface, space)
+                        .setCategory   (1)   // Tank
+                        .setSubCategory(1)// M1 Abrams
+                        .setSpecific   (3);  // M1A2 Abrams
+        espdu.setEntityType(entityType);
+        // TODO this is screaming for utility methods...
+        EntityMarking entityMarking = new EntityMarking().setCharacters("EspduTest1".getBytes());
+        espdu.setMarking   (entityMarking);
+        
+        testOnePdu(espdu);
+    
+        testOnePdu(espdu.setEntityID(entityID).setEntityType(entityType)
+                    .setMarking(entityMarking.setCharacters("EspduTest2".getBytes()))); // pipelining
+    
+        // TODO causes failure, need to debug setter:
+        //    // Alternate way using entity jar(s)
+        //    espdu.setEntityType(new edu.nps.moves.dis7.entities.usa.platform.land.M1A2());
+        //    // or simply use an enumeration by name, with accompanying import statement above
+        //    espdu.setEntityType(new M1A2()); 
   }
   
   /** 
@@ -131,7 +123,7 @@ public class EntityStatePduTest extends PduTest
         EntityStatePduTest.setupNetwork();
         EntityStatePduTest entityStatePduTest = new EntityStatePduTest(); 
         
-        entityStatePduTest.testRoundTrip();
+        entityStatePduTest.testMultiplePdus();
         entityStatePduTest.tearDown();
         System.out.println("EntityStatePduTest complete");
     }

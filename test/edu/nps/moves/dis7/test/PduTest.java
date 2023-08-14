@@ -33,8 +33,10 @@ POSSIBILITY OF SUCH DAMAGE.
 
 package edu.nps.moves.dis7.test;
 
+import edu.nps.moves.dis7.pdus.EventIdentifier;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.PduBase;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
@@ -71,6 +73,10 @@ abstract public class PduTest
     static DisThreadedNetworkInterface             disNetworkInterface;
     static DisThreadedNetworkInterface.PduListener pduListener;
     static PduRecorder                             pduRecorder;
+    
+    SimulationAddress simulationAddress = new SimulationAddress().setSite(11).setApplication(22);
+    EventIdentifier eventIdentifier = new EventIdentifier().setEventNumber(0).setSimulationAddress(simulationAddress);
+    private int masterEventNumber = 0;
     
     static List<Pdu>     sentPdus = new ArrayList<>();
     static List<Pdu> receivedPdus = new ArrayList<>();
@@ -324,13 +330,12 @@ abstract public class PduTest
     /** 
      * Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization)
      */
-    public abstract void testRoundTrip();
+    public abstract void testMultiplePdus();
 
     /** Test single PDU for correctness according to all contained fields in this PDU type
      * @param createdPdu separate PDU for comparison
      */
     protected abstract void testOnePdu(Pdu createdPdu);
-
 
     /**
      * Get preferred sleep interval
@@ -429,5 +434,30 @@ abstract public class PduTest
         {
             fail("*** " + message + " sleep failure: " + ex);
         }
+    }
+
+    /**
+     * Accessor that first increments current value
+     * @return the masterEventNumber
+     */
+    public int incrementMasterEventNumber() {
+        masterEventNumber++;
+        return masterEventNumber;
+    }
+
+    /**
+     * Accessor to get value
+     * @return the masterEventNumber
+     */
+    public int getMasterEventNumber() {
+        return masterEventNumber;
+    }
+
+    /**
+     * Accessor to set value
+     * @param value the masterEventNumber to set
+     */
+    public void setMasterEventNumber(int value) {
+        this.masterEventNumber = value;
     }
 }

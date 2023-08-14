@@ -6,36 +6,50 @@ package edu.nps.moves.dis7.test;
 
 import edu.nps.moves.dis7.pdus.FirePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.utilities.PduFactory;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Unit tests for satisfactory handling of Fire PDU fields and values.
  */
-@DisplayName("Fire Pdu Test")
+@DisplayName("FirePduTest")
 public class FirePduTest extends PduTest
 {
     /** default constructor */
     public FirePduTest()
     {
-        // initialization code here
+        // initialization code here, but beware order dependencies with JUnit tests
     }
-  /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
-  @Test
-  @Override
-  public void testRoundTrip()
-  {
-    PduFactory pduFactory = new PduFactory();
     
-    FirePdu    firePdu = pduFactory.makeFirePdu();
-    // TODO alternate constructors and utility methods
+    /** preparation **/
+    @BeforeAll
+    public static void setUpClass()
+    {
+        if (isVerbose())
+            System.out.println("*** FirePduTest setUpClass()");
+        
+        // superclass automatically runsprepareClass(), which includes setupNetwork()
+    }
     
-    // TODO update PDU-specific tests
+    /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
+    @Test
+    @Override
+    public void testMultiplePdus()
+    {
+        if (isVerbose())
+            System.out.println("*** FirePduTest testMultiplePdus()");
+        
+        FirePdu    firePdu = pduFactory.makeFirePdu();
+        eventIdentifier.setEventNumber(incrementMasterEventNumber()); // simulationAddress already set in superclass PduTest
+        firePdu.setEventID(eventIdentifier);
+        testOnePdu(firePdu.setFireMissionIndex(1));
 
-    testOnePdu(firePdu);
-    testOnePdu(firePdu.setRange(1000.0f).setFireMissionIndex(2)); // pipelining);
-  }
+        firePdu.setEventID(eventIdentifier.setEventNumber(incrementMasterEventNumber())); // pipelining, TODO utility method seems needed in class Pdu 
+        testOnePdu(firePdu.setFireMissionIndex(2).setRange(1000.0f)); // pipelining
+        
+        // TODO additional PDU-specific tests
+        // TODO test various alternate constructors and utility methods
+    }
   
   /** Test single PDU for correctness according to all contained fields in this PDU type
    * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
@@ -47,8 +61,8 @@ public class FirePduTest extends PduTest
      testPduSendReceiveHeaderMatch (createdPdu); // shared tests in superclass
      
      // can cast PDUs at this point since PduType matched
-     FirePdu  createdFirePdu = (FirePdu)  createdPdu;
-     FirePdu receivedFirePdu = (FirePdu) receivedPdu;
+     FirePdu  createdFirePdu = (FirePdu) createdPdu;
+     FirePdu receivedFirePdu = (FirePdu) receivedPdus.get(0); // TODO might be more than one on receivedPdus list
 
      assertEquals (createdFirePdu.getFiringEntityID(),            receivedFirePdu.getFiringEntityID(),           "mismatched FiringEntityID");
      assertEquals (createdFirePdu.getTargetEntityID(),            receivedFirePdu.getTargetEntityID(),           "mismatched TargetEntityID");
@@ -66,7 +80,7 @@ public class FirePduTest extends PduTest
      // TODO Fire Type, Padding2, Num Variable Records
      // TODO Variable Records
      
-     testPduFinishingChecks(createdPdu); // shared tests in superclass
+     testPduCommonFields(createdPdu); // shared tests in superclass
   }
   
     /**
@@ -78,8 +92,8 @@ public class FirePduTest extends PduTest
     {
         FirePduTest firePduTest = new FirePduTest();
         
-        firePduTest.setUp();
-        firePduTest.testRoundTrip();
+        firePduTest.setupNetwork();
+        firePduTest.testMultiplePdus();
         firePduTest.tearDown();
     }
 }

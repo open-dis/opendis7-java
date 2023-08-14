@@ -35,37 +35,57 @@ package edu.nps.moves.dis7.test;
 
 import edu.nps.moves.dis7.pdus.DetonationPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
-import edu.nps.moves.dis7.utilities.PduFactory;
+import edu.nps.moves.dis7.pdus.Vector3Float;
+import static edu.nps.moves.dis7.test.PduTest.isVerbose;
+import javax.print.attribute.SetOfIntegerSyntax;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
- * Unit tests for Detonation PDU fields and values.
+ * Unit tests for satisfactory handling of Detonation PDU fields and values.
  * @author &lt;a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.DetonationPduTest"&gt;Terry Norbraten, NPS MOVES&lt;/a&gt;
  */
-@DisplayName("Detonation Pdu Test")
+@DisplayName("DetonationPduTest")
 public class DetonationPduTest extends PduTest {
 
     /** constructor **/
-    public DetonationPduTest() {
+    public DetonationPduTest()
+    {
+        // initialization code here, but beware order dependencies with JUnit tests
+    }
+    
+    /** preparation **/
+    @BeforeAll
+    public static void setUpClass()
+    {
+        if (isVerbose())
+            System.out.println("*** DetonationPduTest setUpClass()");
+        
+        // superclass automatically runsprepareClass(), which includes setupNetwork()
     }
 
    /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
-  @Test
-  @Override
-  public void testRoundTrip()
-  {
-    PduFactory pduFactory = new PduFactory();
-    
-    DetonationPdu pdu = pduFactory.makeDetonationPdu();
-    
-    // TODO alternate constructors and utility methods
-    
-    // TODO update PDU-specific tests
-    
-    testOnePdu(pdu);
-  }
+    @Test
+    @Override
+    public void testMultiplePdus()
+    {
+        if (isVerbose())
+            System.out.println("*** DetonationPduTest testMultiplePdus()");
+        
+        DetonationPdu detonationPdu = pduFactory.makeDetonationPdu();
+
+        eventIdentifier.setEventNumber(incrementMasterEventNumber()); // simulationAddress already set in superclass PduTest
+        detonationPdu.setEventID(eventIdentifier);
+        testOnePdu(detonationPdu);
+
+        detonationPdu.setEventID(eventIdentifier.setEventNumber(incrementMasterEventNumber())); // pipelining, TODO utility method seems needed in class Pdu 
+        testOnePdu(detonationPdu.setVelocity(new Vector3Float().setX(10.0f).setY(30.0f).setZ(30.0f))); // TODO utility method seems needed in class Vector3Float etc.
+              
+        // TODO additional PDU-specific tests
+        // TODO test various alternate constructors and utility methods
+    }
 
   /** Test single PDU for correctness according to all contained fields in this PDU type
    * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
@@ -77,8 +97,8 @@ public class DetonationPduTest extends PduTest {
      testPduSendReceiveHeaderMatch (createdPdu); // shared tests in superclass
      
      // can cast PDUs at this point since PduType matched
-     DetonationPdu  createdDetonationPdu = (DetonationPdu)  createdPdu;
-     DetonationPdu receivedDetonationPdu = (DetonationPdu) receivedPdu;
+     DetonationPdu  createdDetonationPdu = (DetonationPdu) createdPdu;
+     DetonationPdu receivedDetonationPdu = (DetonationPdu) receivedPdus.get(0); // TODO might be more than one on receivedPdus list
 
      assertEquals (createdDetonationPdu.getSourceEntityID(),            receivedDetonationPdu.getSourceEntityID(),           "mismatched SourceEntityID");
      assertEquals (createdDetonationPdu.getTargetEntityID(),            receivedDetonationPdu.getTargetEntityID(),           "mismatched TargetEntityID");
@@ -92,7 +112,7 @@ public class DetonationPduTest extends PduTest {
      assertEquals (createdDetonationPdu.getDetonationResult(),          receivedDetonationPdu.getDetonationResult(),          "mismatched  MunitionDetonationResult");
      assertEquals (createdDetonationPdu.getPad(),                       receivedDetonationPdu.getPad(),                       "mismatched  Pad");
      
-     testPduFinishingChecks(createdPdu); // shared tests in superclass
+     testPduCommonFields(createdPdu); // shared tests in superclass
   }
   
   /** Command-line invocation (CLI) of program, execution starts here
@@ -102,8 +122,8 @@ public class DetonationPduTest extends PduTest {
     {
         PduTest detonationPduTest = new DetonationPduTest();
         
-        detonationPduTest.setUp();
-        detonationPduTest.testRoundTrip();
+        detonationPduTest.setupNetwork();
+        detonationPduTest.testMultiplePdus();
         detonationPduTest.tearDown();
     }
 
