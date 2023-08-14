@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.examples;
@@ -11,10 +11,9 @@ import edu.nps.moves.dis7.utilities.DisTime;
 import edu.nps.moves.dis7.utilities.PduFactory;
 
 /**
+ * Shows how to use DisThreadedNetworkInterface from an application class.
  * ThreadedNetExample.java created on Sep 9, 2019
- MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
- 
- Shows how to use DisThreadedNetworkInterface from an application class
+ * MOVES Institute Naval Postgraduate School, Monterey, CA, USA www.nps.edu
  * 
  * @author Mike Bailey, jmbailey@nps.edu
  * @version $Id$
@@ -46,7 +45,9 @@ public class ThreadedNetExample
     netif.send(factory.makeCollisionPdu());
     System.out.println("Sent CollisionPdu");
     
-    // Wait a bit to see output
+    // Wait a bit to see output.
+    // Almost any sender will overwhelm a receiver if not constrained. This
+    // slows down the send rate so the receiver has enough time to process it.
     try { 
         Thread.sleep(250L);
     } catch(InterruptedException ex) {}
