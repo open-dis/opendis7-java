@@ -17,9 +17,6 @@ import java.nio.CharBuffer;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -112,19 +109,19 @@ public class PduRecorder // implements PduReceiver
     private String         logFileName = DEFAULT_FILE_NAME;
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
-    private PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
+    private final PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
 
-    private long           recordingStartNanoTime       = -1; // sentinel
-    private StringBuilder  sb                  = new StringBuilder();
-    private Base64.Encoder base64Encoder       = Base64.getEncoder();
-    private int            pduCount            = 0;    // debug
-    private boolean        headerWritten       = false;
-    private boolean        running             = true; // starts recording by default
-    private boolean        readableTimeStamp   = true; // 
-    private boolean        zeroBasedTimeStamp  = true; // use normal date, time strings vice bytes
-    private long           recordingDurationNano = -1;
-    private LocalTime      recordingDuration     = null;
-    private int            pduTimestampFirst     = 0;
+    private final StringBuilder  sb               = new StringBuilder();
+    private final Base64.Encoder base64Encoder    = Base64.getEncoder();
+    private long           recordingStartNanoTime = -1; // sentinel
+    private int            pduCount               = 0;    // debug
+    private boolean        headerWritten          = false;
+    private boolean        running                = true; // starts recording by default
+    private boolean        readableTimeStamp      = true; // 
+    private boolean        zeroBasedTimeStamp     = true; // use normal date, time strings vice bytes
+    private long           recordingDurationNano  = -1;
+    private LocalTime      recordingDuration      = null;
+    private int            pduTimestampFirst      = 0;
     
     private void initialize()
     {
@@ -244,6 +241,7 @@ public class PduRecorder // implements PduReceiver
      * @see pause()
      * @see resume()
      */
+    @SuppressWarnings("Convert2Lambda")
     public void start()
     {
         try {
@@ -607,7 +605,7 @@ public class PduRecorder // implements PduReceiver
    * 
    * @param args none supported, TODO offer path/filename
    */
-  public void selfTest(String[] args)
+  public synchronized void selfTest(String[] args)
   {
     initialize();
     System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs");
@@ -650,7 +648,10 @@ public class PduRecorder // implements PduReceiver
                 nextPdu.setTimestamp(index * 10); // seconds
 //              nextPdu.getTimestamp(); // debug
                 disNetworkInterface.send(nextPdu);
-                Thread.sleep (100L); // let send/receive threads and streams catch up
+                
+                // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                wait (100L); // let send/receive threads and streams catch up // TODO consider wait() instead of sleep()
             }
             catch (InterruptedException ex) {
               System.err.println("Exception sending Pdu " + pduTypeValue + ": " + ex.getLocalizedMessage());
