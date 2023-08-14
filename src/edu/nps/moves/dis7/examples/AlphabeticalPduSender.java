@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * This work is provided under a BSD open-source license, see project license.html and license.txt
+ */
+
 package edu.nps.moves.dis7.examples;
 
 import edu.nps.moves.dis7.pdus.*;
@@ -305,7 +310,7 @@ public class AlphabeticalPduSender
       
       for (Pdu pdu : generatedPdus) {
 
-//      Thread.sleep(300); // debug
+//      Thread.sleep(300); // debug option
         pduCounter++;
         pdu.marshal(dos);
 
