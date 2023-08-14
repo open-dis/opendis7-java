@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.utilities.stream;
@@ -21,7 +21,8 @@ import java.util.Base64;
 import java.util.List;
 import java.util.regex.Pattern;
 
-/** Utility to play back log files of recorded PDUs, found in ancestor <code>pduLogs</code> subdirectory. These PDUs can then be resent
+/** 
+ * Utility to play back log files of recorded PDUs, found in ancestor <code>pduLogs</code> subdirectory. These PDUs can then be resent
  * over a multicast group address, or processed locally.
  * 
  * Example <code>main()</code> self-test response shown in log file.
@@ -157,7 +158,10 @@ public class PduPlayer {
             {
                 List<String> lines = Files.readAllLines(Path.of(f.getAbsolutePath()));
 
-                if      (f.getName().contains("BASE64") || lines.get(0).startsWith("AAAAA")) // TODO include header??
+                if ((lines == null) || lines.isEmpty())
+                    // https://stackoverflow.com/questions/462373/difference-between-break-and-continue-statement
+                    continue; // current file is empty
+                else if (f.getName().contains("BASE64") || lines.get(0).startsWith("AAAAA")) // TODO include header??
                      pduLogEncoding = PduRecorder.ENCODING_BASE64;
                 else if (f.getName().contains("PLAINTEXT") || lines.get(0).contains("PLAINTEXT"))
                      pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT;
@@ -517,7 +521,7 @@ public class PduPlayer {
         paused  = true;
     }
 
-    /** End operation of this instance */
+    /** End operation of this instance and close connections */
     public void end() 
     {
         playing = false;
@@ -527,9 +531,10 @@ public class PduPlayer {
 
     private void sleep(long ms)
     {
-        if (ms > 10000)
+        if (ms > 10000l)
         {
-            System.err.println ("*** PduPlayer sleep > 10 seconds, ignored (ms=" + ms + ")");
+            System.err.flush();
+            System.err.println ("*** PduPlayer sleep duration > 10 seconds, ignored (ms=" + ms + ")");
         }
         else sleep(ms, 0);
     }
@@ -537,12 +542,17 @@ public class PduPlayer {
     private void sleep(long ms, int ns) {
         // @formatter:off
         try {
-            if (ms > 10000)
+            if (ms > 10000l)
             {
-                System.err.println ("*** PduPlayer sleep > 10 seconds, ignored (ms=" + ms + ")");
+                System.err.flush();
+                System.err.println ("*** PduPlayer sleep duration > 10 seconds, ignored (ms=" + ms + ")");
             }
-            else Thread.sleep(ms, ns);
-        } catch (InterruptedException ex) {}
+            else 
+            {
+                Thread.sleep(ms, ns); // TODO consider wait() instead of sleep()
+            }
+        } 
+        catch (InterruptedException ex) {}
         // @formatter:on
     }
     
