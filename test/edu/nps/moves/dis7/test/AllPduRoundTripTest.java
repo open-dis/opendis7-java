@@ -192,6 +192,7 @@ public class AllPduRoundTripTest
      * @see PduRecorder
      * @see DisNetworkInterface
      */
+    @SuppressWarnings("Convert2Lambda")
     private void setupSenderRecorder() throws Exception
     {
         pduRecorder = new PduRecorder(); // default network address, port, logfile dir
@@ -215,7 +216,7 @@ public class AllPduRoundTripTest
     }
 
   /** shutdown the common send/receive network interface */
-  private void shutDownSenderRecorder() throws Exception
+  private synchronized void shutDownSenderRecorder() throws Exception
   {
     disNetworkInterface.removeListener(pduListener);
     pduRecorder.stop();
