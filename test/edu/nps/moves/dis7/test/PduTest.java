@@ -64,7 +64,7 @@ import org.junit.jupiter.api.BeforeAll;
 abstract public class PduTest
 {
     /** default thread sleep interval milliseconds */
-    protected static final long    THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 100l;
+    protected static final long    THREAD_SLEEP_INTERVAL_MSEC_DEFAULT = 1000l;
     private   static       long    threadSleepInterval = THREAD_SLEEP_INTERVAL_MSEC_DEFAULT;
     private                int     maximumRetryAttempts = 10;
     private   static       boolean verbose = true;
@@ -105,6 +105,9 @@ abstract public class PduTest
     @AfterAll
     public static void tearDownClass()
     {
+        if (isVerbose())
+            System.out.println("*** abstract PduTest tearDownClass()");
+        sleep(2 * getThreadSleepInterval()); // ensure shutdown
     }
 
 
@@ -159,7 +162,7 @@ abstract public class PduTest
 
     /** Ensure network connections are removed */
     @AfterEach
-    public synchronized void tearDown()
+    public void tearDown()
     {
         disNetworkInterface.removeListener(pduListener);
         disNetworkInterface.close();
