@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -56,6 +56,7 @@ public class PduSender
    *
    * @param args command-line arguments
    */
+  @SuppressWarnings("SleepWhileInLoop")
   public static void main(String args[])
   {
     MulticastSocket socket = null; // must be initialized, even if null
@@ -253,7 +254,7 @@ public class PduSender
             socket.send(packet);
         }
 
-        // Send every 1 sec. Otherwise this will be all over in a fraction of a second.
+        // Send every 1 seccond, otherwise this will be all over in a fraction of a second.
         Thread.sleep(1000L);
 
         baos.reset();
