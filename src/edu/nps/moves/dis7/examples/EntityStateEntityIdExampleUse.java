@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 
@@ -101,7 +101,7 @@ public class EntityStateEntityIdExampleUse
     
     System.out.println("Sending " + espdu.getClass().getSimpleName());
     disNetworkInterface.send(espdu);  // possibly throws IOException
-    sleep(100L);
+    Thread.sleep(100L); // TODO unnecessary?
     
     /* Do the same for the second way of creating a Shenandoah entity type and show an alternate way of creating an ESPDU */
     
@@ -113,17 +113,6 @@ public class EntityStateEntityIdExampleUse
     espdu.setEntityType(entityType2);
     System.out.println("Sending " + espdu.getClass().getSimpleName());
     disNetworkInterface.send(espdu);  // possibly throws IOException
-  }
-  /**
-   * Thread sleep for interval in milliseconds.
-   * @param interval milliseconds
-   */
-  private static void sleep(long interval)
-  {
-    try {
-        Thread.sleep(interval);
-    }
-    catch (InterruptedException ex) {}
   }
   
   private static void handleReceivedPdu(Pdu pdu)
