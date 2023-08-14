@@ -4,7 +4,6 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
             <name>opendis7-java</name>
-            <explicit-platform explicit-source-supported="true"/>
             <source-roots>
                 <root id="src.dir"/>
                 <root id="src.src-generated.dir"/>
@@ -36,8 +35,10 @@
             <word>javadoc</word>
             <word>joinGroup</word>
             <word>marshalling</word>
+            <word>msec</word>
             <word>multicast</word>
             <word>Netbeans</word>
+            <word>NPS</word>
             <word>pdu</word>
             <word>PduCaptureLog</word>
             <word>pduLog</word>
