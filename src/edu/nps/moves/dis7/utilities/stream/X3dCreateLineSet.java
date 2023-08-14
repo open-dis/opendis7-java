@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD-style open-source license, see project
  * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
@@ -12,7 +12,6 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 import java.nio.ByteBuffer;
 import java.text.NumberFormat;
 import java.util.LinkedHashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -36,15 +35,15 @@ public class X3dCreateLineSet {
 
     private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
 
-    //Setting up a NumberFormatter for limitting the decimal count to 3
-    private NumberFormat coordinateNumberFormat = NumberFormat.getInstance(new Locale("en", "US"));
+    // Setting up a NumberFormatter for limiting significant digits past decimal point to 3
+    private final NumberFormat coordinateNumberFormat = NumberFormat.getInstance();
 
     // -------------------- End Variables for Position Interpolator
 
     /** Constructor */
     public X3dCreateLineSet()
     {
-        //3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
+        // 3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
         coordinateNumberFormat.setMaximumFractionDigits(3);
     }
 

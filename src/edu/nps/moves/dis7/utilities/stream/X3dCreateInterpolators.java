@@ -30,16 +30,14 @@ public class X3dCreateInterpolators {
 
     private Map<Double, X3dCoordinates> testMap = new LinkedHashMap<>();
     //Setting up a NumberFormatter for limitting the decimal count to 3
-    private NumberFormat coordinateNumberFormat;
+    private final NumberFormat coordinateNumberFormat = NumberFormat.getInstance();
 
     // -------------------- End Variables for Position Interpolator
 
     /** Default Constructor */
     public X3dCreateInterpolators()
     {
-        this.coordinateNumberFormat = NumberFormat.getInstance();
-
-        //3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
+        // 3 significant digits equals milimeter position accuracy and 0.001 radians = 0.0572963266634555‬ degrees
         coordinateNumberFormat.setMaximumFractionDigits(3);
 
     }
