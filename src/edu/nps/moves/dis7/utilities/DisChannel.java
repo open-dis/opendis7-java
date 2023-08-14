@@ -136,14 +136,14 @@ public class DisChannel
     }
     /** add entity using SimulationManager
      * @param newEntity new entity to add for announcement by SimulationManager */
-    public void addEntity(EntityID newEntity)
+    public synchronized void addEntity(EntityID newEntity)
     {
         // TODO send simulation management PDUs
         simulationManager.addEntity(newEntity);
     }
     
     /** Join DIS channel using SimulationManager */
-    public void join()
+    public synchronized void join()
     {
         // TODO simulation management PDUs for startup, planning to design special class support 
 //        simulationManager.addEntity();
@@ -156,7 +156,7 @@ public class DisChannel
         // TODO consider boolean response indicating if join was successful
     }
     /** Leave DIS channel using SimulationManager */
-    public void leave()
+    public synchronized void leave()
     {
         // TODO send simulation management PDUs
         simulationManager.simulationStop();
@@ -208,7 +208,7 @@ public class DisChannel
      * Set timestampStyle used by PduFactory
      * @param newTimestampStyle the timestampStyle to set
      */
-    public void setTimestampStyle(DisTime.TimestampStyle newTimestampStyle) {
+    public synchronized void setTimestampStyle(DisTime.TimestampStyle newTimestampStyle) {
         timestampStyle = newTimestampStyle;
         DisTime.setTimestampStyle(newTimestampStyle);
     }
@@ -216,7 +216,8 @@ public class DisChannel
     /**
      * Initialize network interface, choosing best available network interface
      */
-    public void setUpNetworkInterface() 
+    @SuppressWarnings("Convert2Lambda")
+    public synchronized void setUpNetworkInterface() 
     {
         if (disNetworkInterface != null)
         {
@@ -246,7 +247,7 @@ public class DisChannel
     }
 
     /** All done, release network resources */
-    public void tearDownNetworkInterface() 
+    public synchronized void tearDownNetworkInterface() 
     {
         getPduRecorder().stop();     // handles disNetworkInterface.close(), tears down threads and sockets
         disNetworkInterface.close(); // make sure
@@ -256,14 +257,17 @@ public class DisChannel
      * Send a single Protocol Data Unit (PDU) of any type, using timestamp value already provided in PDU
      * @param pdu the pdu to send
      */
-    public void sendSinglePdu(Pdu pdu)
+    public synchronized void sendSinglePdu(Pdu pdu)
     {
         if (getDisNetworkInterface() == null)
             setUpNetworkInterface(); // ensure connected
         try
         {
             getDisNetworkInterface().send(pdu);
-            Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
+            // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+            // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+            wait(100); // TODO consider wait() instead of sleep()
+            // TODO consider refactoring the wait logic and moving externally// TODO consider wait() instead of sleep()
         } 
         catch (InterruptedException ex)
         {
@@ -277,7 +281,7 @@ public class DisChannel
      * @param timestampSeconds timestamp to set for this PDU, seconds since epoch
      * @param pdu the pdu to send
      */
-    public void sendSinglePdu(double timestampSeconds, Pdu pdu)
+    public synchronized void sendSinglePdu(double timestampSeconds, Pdu pdu)
     {
         pdu.setTimestampSeconds(timestampSeconds);
         sendSinglePdu(pdu);
@@ -287,7 +291,7 @@ public class DisChannel
      * @param pdu the pdu to send
      * @param delayTimeMilliseconds delay before sending
      */
-    public void sendSinglePduDelayed(Pdu pdu, long delayTimeMilliseconds)
+    public synchronized void sendSinglePduDelayed(Pdu pdu, long delayTimeMilliseconds)
     {
         // https://stackoverflow.com/questions/4044726/how-to-set-a-timer-in-java
         Timer timer = new Timer();
@@ -311,7 +315,7 @@ public class DisChannel
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public CommentPdu sendCommentPdu(double timestampSeconds,
+    public synchronized CommentPdu sendCommentPdu(double timestampSeconds,
                          VariableRecordType commentType,
                                // vararg... variable-length set of String comments can optionally follow
                                   String... comments)
@@ -361,7 +365,7 @@ public class DisChannel
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public CommentPdu sendCommentPdu(VariableRecordType commentType,
+    public synchronized CommentPdu sendCommentPdu(VariableRecordType commentType,
                                      // vararg... variable-length set of String comments can optionally follow
                                         String... comments)
     {
@@ -376,7 +380,7 @@ public class DisChannel
      * @see VariableRecordType for other potential CommentPdu type enumerations.
      * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/arguments.html">Passing Information to a Method or a Constructor</a> Arbitrary Number of Arguments
      */
-    public void sendCommentPduDelayed(VariableRecordType commentType,
+    public synchronized void sendCommentPduDelayed(VariableRecordType commentType,
                                       long delayTimeMilliseconds,
                                       // vararg... variable-length set of String comments can optionally follow
                                       String... comments)
