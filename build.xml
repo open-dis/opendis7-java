@@ -56,6 +56,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
     <property name="java.source"                 value="1.8"/>
     <property name="java.target"                 value="1.8"/>
+    <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
+    <property name="zip64Mode"                   value="as-needed" description="needed for large zip files"/>
     
     <property name="javadoc.additionalparam" value=""/>
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
@@ -314,10 +316,11 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="zip-full" description="full set of everything, pdus and enumerations">
         <!-- TODO README -->
-        <delete  file="${dist.dir}/opendis7-full.zip"/>
+        <!-- https://ant.apache.org/manual/Tasks/delete.html -->
+        <delete  file="${dist.dir}/opendis7-full.zip" performGCOnFailedDelete="true" failonerror="true"/>
         <zip destfile="${dist.dir}/opendis7-full.zip"
                update="true"
-            zip64Mode="always">
+            zip64Mode="${zip64Mode}">
             <!-- zip64Mode https://stackoverflow.com/questions/39524481/error-creating-jar-archive-contains-more-than-65535-entries/ -->
             <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
             <zipfileset src="${dist.dir}/opendis7-enumerations-classes.jar"/>
@@ -368,7 +371,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete  file="${dist.dir}/opendis7-pdus-javadoc.jar"/>
         <jar destfile="${dist.dir}/opendis7-pdus-javadoc.jar"
                update="true"
-            zip64Mode="always">
+            zip64Mode="${zip64Mode}">
             <fileset dir="${dist.javadoc.dir}" defaultexcludes="yes">
                 <include name="**/*"/>
                 <exclude name="edu/nps/moves/dis7/entities/**"/>
@@ -398,7 +401,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete  file="${dist.dir}/opendis7-pdus-source.jar"/>
         <jar destfile="${dist.dir}/opendis7-pdus-source.jar"
                update="true"
-            zip64Mode="always">
+            zip64Mode="${zip64Mode}">
             <fileset dir="src" defaultexcludes="yes">
                 <include name="**/*.java"/>
                 <include name="**/*.md"/>
@@ -434,7 +437,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- https://stackoverflow.com/questions/515428/clean-way-to-combine-multiple-jars-preferably-using-ant -->
         <jar destfile="${dist.dir}/opendis7-full.jar"
                update="true"
-            zip64Mode="always">
+            zip64Mode="${zip64Mode}">
             <zipgroupfileset dir="${dist.dir}">
                 <include name="opendis7-*.jar"/>
                 <!-- TODO consider whether these dependencies are strictly needed -->
@@ -474,7 +477,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete  file="${dist.jar}"/>
         <jar destfile="${dist.jar}"
                update="true"
-            zip64Mode="always">
+            zip64Mode="${zip64Mode}">
             <fileset dir="build/classes" defaultexcludes="yes">
                 <include name="edu/nps/moves/dis7/examples/*"/>
                 <include name="edu/nps/moves/dis7/pdus/*"/>
