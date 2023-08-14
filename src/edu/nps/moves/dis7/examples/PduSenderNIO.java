@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.examples;
@@ -33,6 +33,7 @@ public class PduSenderNIO
   /** Command-line invocation (CLI)
     * @param args command-line arguments
     */
+  @SuppressWarnings("SleepWhileInLoop")
   public static void main(String args[])
   {
     MulticastSocket   socket;
@@ -62,7 +63,7 @@ public class PduSenderNIO
       byte[] data = new byte[144];
       DatagramPacket packet = new DatagramPacket(data, data.length, group);
 
-      while (true)
+      while (true) // candidate breakpoint when debugging
       {
         for (int idx = 0; idx < 100; idx++)
         {
@@ -96,7 +97,7 @@ public class PduSenderNIO
           socket.send(packet);
 
           // Almost any sender will overwhelm a receiver if not constrained. This
-          // slows down the send rate so the receiver has enough time to process it
+          // slows down the send rate so the receiver has enough time to process it.
           Thread.sleep(1000);
 
           System.out.println("Sending " + espdu.getClass().getName());
