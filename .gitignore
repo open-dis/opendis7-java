@@ -4,4 +4,5 @@
 /validatorOut/
 /pduLog/PduCaptureLog*.dislog
 /pduLog/PduRecorderSelfTest*.dislog
+/pduLog/Pdusave.dislog
 .DS_Store
