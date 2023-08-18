@@ -119,10 +119,10 @@ public class EntityStatePduTest extends PduTest
     public static void main(String[] args)
     {
         System.out.println("EntityStatePduTest start");
-        EntityStatePduTest.setVerbose(true); // false --> quiet test logging
-        PduTest entityStatePduTest = new EntityStatePduTest(); 
+        PduTest entityStatePduTest = new EntityStatePduTest();
+        entityStatePduTest.setVerbose(true); // false --> quiet test logging
         
-        entityStatePduTest.setupNetwork();
+        entityStatePduTest.setUp();
         entityStatePduTest.testMultiplePdus();
         entityStatePduTest.tearDown();
         System.out.println("EntityStatePduTest complete");

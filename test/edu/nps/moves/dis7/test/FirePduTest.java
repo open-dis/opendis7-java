@@ -92,7 +92,7 @@ public class FirePduTest extends PduTest
     {
         PduTest firePduTest = new FirePduTest();
         
-        firePduTest.setupNetwork();
+        firePduTest.setUp();
         firePduTest.testMultiplePdus();
         firePduTest.tearDown();
     }

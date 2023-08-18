@@ -121,7 +121,7 @@ public class DetonationPduTest extends PduTest {
     {
         PduTest detonationPduTest = new DetonationPduTest();
         
-        detonationPduTest.setupNetwork();
+        detonationPduTest.setUp();
         detonationPduTest.testMultiplePdus();
         detonationPduTest.tearDown();
     }

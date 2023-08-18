@@ -69,18 +69,16 @@ abstract public class PduTest
     private                int     maximumRetryAttempts = 10;
     private   static       boolean verbose = true;
 
-    PduFactory pduFactory = new PduFactory();
-    static DisThreadedNetworkInterface             disNetworkInterface;
-    static DisThreadedNetworkInterface.PduListener pduListener;
-    static PduRecorder                             pduRecorder;
+    PduFactory pduFactory;
+    DisThreadedNetworkInterface             disNetworkInterface;
+    DisThreadedNetworkInterface.PduListener pduListener;
+    PduRecorder                             pduRecorder;
     
     SimulationAddress simulationAddress = new SimulationAddress().setSite(11).setApplication(22);
     EventIdentifier eventIdentifier = new EventIdentifier().setEventNumber(0).setSimulationAddress(simulationAddress);
     private int masterEventNumber = 0;
     
-    static List<Pdu>     sentPdus = new ArrayList<>();
-    static List<Pdu> receivedPdus = new ArrayList<>();
-//    static Pdu        receivedPdu;
+    List<Pdu> receivedPdus;
     byte[] bufferByteArray;
     int size;
     
@@ -110,10 +108,8 @@ abstract public class PduTest
         sleep(getThreadSleepInterval()); // ensure shutdown
     }
 
-    /** Prepare for network operations, must be called at beginning of setupClass()
-     */
-    @SuppressWarnings("Convert2Lambda")
-    public void setupNetwork()
+    /** Prepare for network operations, must be called at beginning of setup() */
+    private void setupNetwork()
     {
         if (isVerbose())
             System.out.println("*** abstract PduTest setupNetwork()");
@@ -125,11 +121,8 @@ abstract public class PduTest
                 disNetworkInterface = pduRecorder.getDisThreadedNetworkInterface();
             if (pduListener == null)
             {
-                pduListener = new DisThreadedNetworkInterface.PduListener() {
-                    @Override
-                    public synchronized void incomingPdu(Pdu pdu) {
-                        handleReceivedPdu(pdu);
-                    }
+                pduListener = (Pdu pdu) -> {
+                    handleReceivedPdu(pdu);
                 };
                 disNetworkInterface.addListener(pduListener);
             }
@@ -145,6 +138,8 @@ abstract public class PduTest
     public void setUp()
     {   
         setupNetwork();
+        pduFactory = new PduFactory();
+        receivedPdus = new ArrayList<>();
     }
 
     /** Ensure network connections are removed */
@@ -155,10 +150,12 @@ abstract public class PduTest
         
         disNetworkInterface.removeListener(pduListener);
         pduRecorder.stop();
+        receivedPdus.clear();
         
         pduRecorder = null;
         disNetworkInterface = null;
         pduListener = null;
+        receivedPdus = null;
     }
 
     /** 
@@ -379,13 +376,13 @@ abstract public class PduTest
      * Utility accessor to set verbose mode
      * @param value the verbose value to set
      */
-    public static void setVerbose(boolean value) {
+    public void setVerbose(boolean value) {
         verbose = value;
         if (disNetworkInterface != null)
             disNetworkInterface.setVerbose(value);
     }
     
-    private static synchronized void handleReceivedPdu(Pdu pdu) {
+    private void handleReceivedPdu(Pdu pdu) {
         if (!receivedPdus.contains(pdu))
              receivedPdus.add(pdu);
     }
