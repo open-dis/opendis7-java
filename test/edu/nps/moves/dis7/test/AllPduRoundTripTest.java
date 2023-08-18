@@ -56,7 +56,9 @@ public class AllPduRoundTripTest
     File file = new File("./pduLog");
 
     for (File subFile : file.listFiles()) {
-        subFile.delete();
+        
+        if (!subFile.getName().contains(".xml") && !subFile.getName().contains(".md"))
+            subFile.delete();
     }
   }
 

@@ -59,13 +59,13 @@ public class PduReaderPlayer
         break;
       case 1:
         outputDirectory = args[0];
-        sendToNet = Boolean.valueOf(args[1]);
+        sendToNet = Boolean.parseBoolean(args[1]);
         break;
       case 3:
         outputDirectory = args[0];
         multicastAddress = args[1];
         multicastPort = Integer.parseInt(args[2]);
-        sendToNet = Boolean.valueOf(args[3]);
+        sendToNet = Boolean.parseBoolean(args[3]);
         break;
       default:
         System.err.println("Usage: PduReaderPlayer() or \n"

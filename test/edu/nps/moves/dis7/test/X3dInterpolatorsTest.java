@@ -38,7 +38,9 @@ public class X3dInterpolatorsTest {
         File file = new File("./pduLog");
         
         for (File subFile : file.listFiles()) {
-            subFile.delete();
+            
+            if (!subFile.getName().contains(".xml") && !subFile.getName().contains(".md"))
+                subFile.delete();
         }
         
         Path from = Path.of("src/edu/nps/moves/dis7/utilities/logs", "PdusaveGAZ69PatrolingPlainText.dislog");
