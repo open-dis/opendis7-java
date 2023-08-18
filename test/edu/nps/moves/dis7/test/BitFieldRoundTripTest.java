@@ -53,11 +53,8 @@ public class BitFieldRoundTripTest
   public void setUp()
   {   
       disNetworkInterface = new DisThreadedNetworkInterface();
-      pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu pdu) {
-              setUpReceiver(pdu);
-          }
+      pduListener = (Pdu pdu) -> {
+          setUpReceiver(pdu);
       };
       disNetworkInterface.addListener(pduListener);
   }

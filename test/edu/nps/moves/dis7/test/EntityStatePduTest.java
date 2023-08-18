@@ -32,11 +32,11 @@ public class EntityStatePduTest extends PduTest
     /** preparation **/
     @BeforeAll
     public static void setUpClass()
-    {
+    {   
         if (isVerbose())
             System.out.println("*** EntityStatePduTest setUpClass()");
         
-        // superclass automatically runsprepareClass(), which includes setupNetwork()
+        // superclass automatically setUp(), which includes setupNetwork()
     }
     
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
@@ -120,9 +120,9 @@ public class EntityStatePduTest extends PduTest
     {
         System.out.println("EntityStatePduTest start");
         EntityStatePduTest.setVerbose(true); // false --> quiet test logging
-        EntityStatePduTest.setupNetwork();
-        EntityStatePduTest entityStatePduTest = new EntityStatePduTest(); 
+        PduTest entityStatePduTest = new EntityStatePduTest(); 
         
+        entityStatePduTest.setupNetwork();
         entityStatePduTest.testMultiplePdus();
         entityStatePduTest.tearDown();
         System.out.println("EntityStatePduTest complete");

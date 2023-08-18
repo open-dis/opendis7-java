@@ -37,7 +37,6 @@ import edu.nps.moves.dis7.pdus.DetonationPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.Vector3Float;
 import static edu.nps.moves.dis7.test.PduTest.isVerbose;
-import javax.print.attribute.SetOfIntegerSyntax;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;

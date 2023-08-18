@@ -46,11 +46,8 @@ public class CommentPdusTest
   public void setUp()
   {   
       disNetworkInterface = new DisThreadedNetworkInterface();
-      pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu newPdu) {
-              setUpReceiver(newPdu);
-          }
+      pduListener = (Pdu newPdu) -> {
+          setUpReceiver(newPdu);
       };
       disNetworkInterface.addListener(pduListener);
   }

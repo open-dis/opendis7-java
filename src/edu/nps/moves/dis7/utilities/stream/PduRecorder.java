@@ -279,11 +279,13 @@ public class PduRecorder // implements PduReceiver
     {
       running = false;
     }
+    
     /** End operation of this instance, removing interfaces
-      * @return recorder logFile
+     * @return recorder logFile
      * @see start()
      * @see pause()
-     * @see resume() */
+     * @see resume() 
+     */
     public File stop()
     {
       running = false;

@@ -24,11 +24,11 @@ public class FirePduTest extends PduTest
     /** preparation **/
     @BeforeAll
     public static void setUpClass()
-    {
+    {   
         if (isVerbose())
             System.out.println("*** FirePduTest setUpClass()");
         
-        // superclass automatically runsprepareClass(), which includes setupNetwork()
+        // superclass automatically setUp(), which includes setupNetwork()
     }
     
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
@@ -90,7 +90,7 @@ public class FirePduTest extends PduTest
      */
     public static void main(String[] args)
     {
-        FirePduTest firePduTest = new FirePduTest();
+        PduTest firePduTest = new FirePduTest();
         
         firePduTest.setupNetwork();
         firePduTest.testMultiplePdus();

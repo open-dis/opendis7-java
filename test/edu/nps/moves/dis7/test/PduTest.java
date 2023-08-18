@@ -53,6 +53,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
 /**
  * Abstract superclass for PDU testing, containing shared methods.
@@ -60,7 +61,6 @@ import org.junit.jupiter.api.BeforeAll;
  * updated using SignalPdusTest exemplar patterns.
  * @author Don Brutzman
  */
-
 abstract public class PduTest
 {
     /** default thread sleep interval milliseconds */
@@ -98,7 +98,6 @@ abstract public class PduTest
     {
         if (isVerbose())
             System.out.println("*** abstract PduTest prepareClass()");
-        setupNetwork();
     }
 
     /** housekeeping **/
@@ -107,14 +106,14 @@ abstract public class PduTest
     {
         if (isVerbose())
             System.out.println("*** abstract PduTest tearDownClass()");
-        sleep(2 * getThreadSleepInterval()); // ensure shutdown
+        
+        sleep(getThreadSleepInterval()); // ensure shutdown
     }
-
 
     /** Prepare for network operations, must be called at beginning of setupClass()
      */
     @SuppressWarnings("Convert2Lambda")
-    public static synchronized void setupNetwork()
+    public void setupNetwork()
     {
         if (isVerbose())
             System.out.println("*** abstract PduTest setupNetwork()");
@@ -142,32 +141,24 @@ abstract public class PduTest
     }
     
     /** Ensure network connections, listener and handler are prepared */
-//    @BeforeEach
-//    @SuppressWarnings("Convert2Lambda")
-//    public synchronized void setUp()
-//    {
-//        // important to include verbose setting as part of constructor
-//        disNetworkInterface = new DisThreadedNetworkInterface(isVerbose());
-//        pduListener = new DisThreadedNetworkInterface.PduListener()
-//        {
-//            @Override
-//            public synchronized void incomingPdu(Pdu pdu)
-//            {
-//                setUpReceiver(pdu); // duplicative?
-//                handleReceivedPdu(pdu);
-//            }
-//        };
-//        disNetworkInterface.addListener(pduListener);
-//    }
+    @BeforeEach
+    public void setUp()
+    {   
+        setupNetwork();
+    }
 
     /** Ensure network connections are removed */
     @AfterEach
     public void tearDown()
-    {
-        disNetworkInterface.removeListener(pduListener);
-        disNetworkInterface.close();
-        
+    {   
         sleep(getThreadSleepInterval());
+        
+        disNetworkInterface.removeListener(pduListener);
+        pduRecorder.stop();
+        
+        pduRecorder = null;
+        disNetworkInterface = null;
+        pduListener = null;
     }
 
     /** 
