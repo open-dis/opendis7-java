@@ -27,7 +27,7 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
    protected int numberOfVariableDatumRecords;
 
    /** variable length list of variable length datums */
-   protected List< VariableDatum > variableDatums = new ArrayList<>();
+   protected List< VariableDatum > variableDatums = new ArrayList< VariableDatum >();
  
 
 /** Constructor creates and configures a new instance object */
@@ -103,10 +103,11 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
-   @Override
-   public int getMarshalledSize()
+public int getMarshalledSize()
 {
-   int marshalSize = super.getMarshalledSize();
+   int marshalSize = 0; 
+
+   marshalSize = super.getMarshalledSize();
    marshalSize += 4;  // numberOfFixedDatumRecords
    marshalSize += 4;  // numberOfVariableDatumRecords
    if (variableDatums != null)
@@ -141,8 +142,7 @@ public List<VariableDatum> getVariableDatums()
  * @see java.io.DataOutputStream
  * @param dos the OutputStream
  */
-   @Override
-   public void marshal(DataOutputStream dos) throws Exception
+public void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -171,10 +171,10 @@ public List<VariableDatum> getVariableDatums()
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-   @Override
-   public int unmarshal(DataInputStream dis) throws Exception
+public int unmarshal(DataInputStream dis) throws Exception
 {
-    int uPosition = super.unmarshal(dis);
+    int uPosition = 0;
+    uPosition += super.unmarshal(dis);
 
     try 
     {
@@ -205,8 +205,7 @@ public List<VariableDatum> getVariableDatums()
  * @param byteBuffer The ByteBuffer at the position to begin writing
  * @throws Exception ByteBuffer-generated exception
  */
-   @Override
-   public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
    byteBuffer.putInt( (int)numberOfFixedDatumRecords);
@@ -226,11 +225,10 @@ public List<VariableDatum> getVariableDatums()
  * @see java.nio.ByteBuffer
  * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
  * @param byteBuffer The ByteBuffer at the position to begin reading
- * @return marshaled serialized size in bytes
+ * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-   @Override
-   public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
