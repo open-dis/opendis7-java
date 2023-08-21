@@ -414,6 +414,9 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- omitting enumerations directories -->
                 <include name="edu/nps/moves/dis7/pdus/**"/>
             </fileset>
+            <fileset dir="test" defaultexcludes="yes">
+                <include name="edu/nps/moves/dis7/test/**"/>
+            </fileset>
             
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
@@ -440,6 +443,7 @@ POSSIBILITY OF SUCH DAMAGE.
                update="true"
             zip64Mode="${zip64Mode}">
             <zipgroupfileset dir="${dist.dir}">
+                <!-- enumerations and pdus, classes/javadoc/source -->
                 <include name="opendis7-*.jar"/>
                 <!-- TODO consider whether these dependencies are strictly needed -->
                 <include name="../lib/commons-io-2.6.jar"/>
