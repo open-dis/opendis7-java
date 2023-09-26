@@ -25,6 +25,9 @@ public class ElectronicEmitter extends Object implements Serializable
    /** the number of beams being described in the current PDU for the emitter system being described.  */
    protected byte numberOfBeams;
 
+   /** padding */
+   protected short padding;
+
    /**  information about a particular emitter system and shall be represented by an Emitter System record (see 6.2.23). */
    protected EmitterSystem  emitterSystem = new EmitterSystem(); 
 
@@ -51,6 +54,7 @@ public int getMarshalledSize()
 
    marshalSize += 1;  // systemDataLength
    marshalSize += 1;  // numberOfBeams
+   marshalSize += 2;  // padding
    if (emitterSystem != null)
        marshalSize += emitterSystem.getMarshalledSize();
    if (location != null)
@@ -86,6 +90,28 @@ public ElectronicEmitter setSystemDataLength(int pSystemDataLength){
 public byte getSystemDataLength()
 {
     return systemDataLength; 
+}
+
+/** Setter for {@link ElectronicEmitter#padding}
+  * @param pPadding new value of interest
+  * @return same object to permit progressive setters */
+public ElectronicEmitter setPadding(short pPadding)
+{
+    padding = pPadding;
+    return this;
+}
+/** Utility setter for {@link ElectronicEmitter#padding}
+  * @param pPadding new value of interest
+  * @return same object to permit progressive setters */
+public ElectronicEmitter setPadding(int pPadding){
+    padding = (short) pPadding;
+    return this;
+}
+/** Getter for {@link ElectronicEmitter#padding}
+  * @return value of interest */
+public short getPadding()
+{
+    return padding; 
 }
 
 /** Setter for {@link ElectronicEmitter#emitterSystem}
@@ -147,6 +173,7 @@ public void marshal(DataOutputStream dos) throws Exception
     {
        dos.writeByte(systemDataLength);
        dos.writeByte(beams.size());
+       dos.writeShort(padding);
        emitterSystem.marshal(dos);
        location.marshal(dos);
 
@@ -180,6 +207,8 @@ public int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         numberOfBeams = (byte)dis.readUnsignedByte();
         uPosition += 1;
+        padding = (short)dis.readUnsignedShort();
+        uPosition += 2;
         uPosition += emitterSystem.unmarshal(dis);
         uPosition += location.unmarshal(dis);
         for (int idx = 0; idx < numberOfBeams; idx++)
@@ -209,6 +238,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    byteBuffer.put( (byte)systemDataLength);
    byteBuffer.put( (byte)beams.size());
+   byteBuffer.putShort( (short)padding);
    emitterSystem.marshal(byteBuffer);
    location.marshal(byteBuffer);
 
@@ -237,6 +267,8 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
         systemDataLength = (byte)(byteBuffer.get() & 0xFF);
         // attribute numberOfBeams marked as not serialized
         numberOfBeams = (byte)(byteBuffer.get() & 0xFF);
+        // attribute padding marked as not serialized
+        padding = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute emitterSystem marked as not serialized
         emitterSystem.unmarshal(byteBuffer);
         // attribute location marked as not serialized
@@ -288,6 +320,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final ElectronicEmitter rhs = (ElectronicEmitter)obj;
 
      if( ! (systemDataLength == rhs.systemDataLength)) ivarsEqual = false;
+     if( ! (padding == rhs.padding)) ivarsEqual = false;
      if( ! (emitterSystem.equals( rhs.emitterSystem) )) ivarsEqual = false;
      if( ! (location.equals( rhs.location) )) ivarsEqual = false;
 
@@ -304,6 +337,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" systemDataLength:").append(systemDataLength); // writeOneToString
+    sb.append(" padding:").append(padding); // writeOneToString
     sb.append(" emitterSystem:").append(emitterSystem); // writeOneToString
     sb.append(" location:").append(location); // writeOneToString
     sb.append(" beams: ");
@@ -313,5 +347,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.systemDataLength,
+	                     this.numberOfBeams,
+	                     this.padding,
+	                     this.emitterSystem,
+	                     this.location,
+	                     this.beams);
  }
 } // end of class

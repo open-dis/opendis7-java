@@ -282,4 +282,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamDataLength,
+	                     this.beamNumber,
+	                     this.padding,
+	                     this.fundamentalParameterData);
+ }
 } // end of class

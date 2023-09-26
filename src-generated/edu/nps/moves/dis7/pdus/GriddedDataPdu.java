@@ -751,4 +751,25 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.environmentalSimulationApplicationID,
+	                     this.fieldNumber,
+	                     this.pduNumber,
+	                     this.pduTotal,
+	                     this.coordinateSystem,
+	                     this.numberOfGridAxes,
+	                     this.constantGrid,
+	                     this.environmentType,
+	                     this.orientation,
+	                     this.sampleTime,
+	                     this.totalValues,
+	                     this.vectorDimension,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.gridAxisDescriptors,
+	                     this.gridDataRecords);
+ }
 } // end of class

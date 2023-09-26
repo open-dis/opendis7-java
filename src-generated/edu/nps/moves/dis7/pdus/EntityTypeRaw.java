@@ -384,4 +384,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityKind,
+	                     this.domain,
+	                     this.country,
+	                     this.category,
+	                     this.subCategory,
+	                     this.specific,
+	                     this.extra);
+ }
 } // end of class

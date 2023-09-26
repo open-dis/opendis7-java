@@ -438,4 +438,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamDirection,
+	                     this.azimuthBeamwidth,
+	                     this.elevationBeamwidth,
+	                     this.referenceSystem,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.ez,
+	                     this.ex,
+	                     this.phase,
+	                     this.padding3);
+ }
 } // end of class

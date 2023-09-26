@@ -871,4 +871,30 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.aggregateID,
+	                     this.forceID,
+	                     this.aggregateState,
+	                     this.aggregateType,
+	                     this.formation,
+	                     this.aggregateMarking,
+	                     this.dimensions,
+	                     this.orientation,
+	                     this.centerOfMass,
+	                     this.velocity,
+	                     this.numberOfDisAggregates,
+	                     this.numberOfDisEntities,
+	                     this.numberOfSilentAggregateTypes,
+	                     this.numberOfSilentEntityTypes,
+	                     this.aggregateIDList,
+	                     this.entityIDList,
+	                     this.padTo32,
+	                     this.silentAggregateSystemList,
+	                     this.silentEntitySystemList,
+	                     this.numberOfVariableDatumRecords,
+	                     this.variableDatumList);
+ }
 } // end of class

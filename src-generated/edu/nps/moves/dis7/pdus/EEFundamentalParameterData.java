@@ -287,4 +287,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.frequency,
+	                     this.frequencyRange,
+	                     this.effectiveRadiatedPower,
+	                     this.pulseRepetitionFrequency,
+	                     this.pulseWidth);
+ }
 } // end of class

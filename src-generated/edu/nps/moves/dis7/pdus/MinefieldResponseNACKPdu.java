@@ -360,4 +360,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.requestingEntityID,
+	                     this.requestID,
+	                     this.numberOfMissingPdus,
+	                     this.missingPduSequenceNumbers);
+ }
 } // end of class

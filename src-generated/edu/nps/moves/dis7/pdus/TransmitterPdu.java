@@ -23,9 +23,6 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
    /** header is an undescribed parameter... */
    protected RadioCommsHeader  header = new RadioCommsHeader(); 
 
-   /** particular radio within an entity */
-   protected short radioNumber;
-
    /** Type of radio */
    protected RadioType  radioEntityType = new RadioType(); 
 
@@ -164,7 +161,6 @@ public int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    if (header != null)
        marshalSize += header.getMarshalledSize();
-   marshalSize += 2;  // radioNumber
    if (radioEntityType != null)
        marshalSize += radioEntityType.getMarshalledSize();
    if (transmitState != null)
@@ -222,28 +218,6 @@ public RadioCommsHeader getHeader()
     return header;
 }
 
-
-/** Setter for {@link TransmitterPdu#radioNumber}
-  * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
-public TransmitterPdu setRadioNumber(short pRadioNumber)
-{
-    radioNumber = pRadioNumber;
-    return this;
-}
-/** Utility setter for {@link TransmitterPdu#radioNumber}
-  * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
-public TransmitterPdu setRadioNumber(int pRadioNumber){
-    radioNumber = (short) pRadioNumber;
-    return this;
-}
-/** Getter for {@link TransmitterPdu#radioNumber}
-  * @return value of interest */
-public short getRadioNumber()
-{
-    return radioNumber; 
-}
 
 /** Setter for {@link TransmitterPdu#radioEntityType}
   * @param pRadioEntityType new value of interest
@@ -551,7 +525,6 @@ public void marshal(DataOutputStream dos) throws Exception
     try 
     {
        header.marshal(dos);
-       dos.writeShort(radioNumber);
        radioEntityType.marshal(dos);
        transmitState.marshal(dos);
        inputSource.marshal(dos);
@@ -606,8 +579,6 @@ public int unmarshal(DataInputStream dis) throws Exception
     try 
     {
         uPosition += header.unmarshal(dis);
-        radioNumber = (short)dis.readUnsignedShort();
-        uPosition += 2;
         uPosition += radioEntityType.unmarshal(dis);
         transmitState = TransmitterTransmitState.unmarshalEnum(dis);
         uPosition += transmitState.getMarshalledSize();
@@ -672,7 +643,6 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
    header.marshal(byteBuffer);
-   byteBuffer.putShort( (short)radioNumber);
    radioEntityType.marshal(byteBuffer);
    transmitState.marshal(byteBuffer);
    inputSource.marshal(byteBuffer);
@@ -723,8 +693,6 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     {
         // attribute header marked as not serialized
         header.unmarshal(byteBuffer);
-        // attribute radioNumber marked as not serialized
-        radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute radioEntityType marked as not serialized
         radioEntityType.unmarshal(byteBuffer);
         // attribute transmitState marked as not serialized
@@ -809,7 +777,6 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      final TransmitterPdu rhs = (TransmitterPdu)obj;
 
      if( ! (header.equals( rhs.header) )) ivarsEqual = false;
-     if( ! (radioNumber == rhs.radioNumber)) ivarsEqual = false;
      if( ! (radioEntityType.equals( rhs.radioEntityType) )) ivarsEqual = false;
      if( ! (transmitState == rhs.transmitState)) ivarsEqual = false;
      if( ! (inputSource == rhs.inputSource)) ivarsEqual = false;
@@ -843,7 +810,6 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" header:").append(header); // writeOneToString
-    sb.append(" radioNumber:").append(radioNumber); // writeOneToString
     sb.append(" radioEntityType:").append(radioEntityType); // writeOneToString
     sb.append(" transmitState:").append(transmitState); // writeOneToString
     sb.append(" inputSource:").append(inputSource); // writeOneToString
@@ -871,5 +837,30 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.header,
+	                     this.radioEntityType,
+	                     this.transmitState,
+	                     this.inputSource,
+	                     this.variableTransmitterParameterCount,
+	                     this.antennaLocation,
+	                     this.relativeAntennaLocation,
+	                     this.antennaPatternType,
+	                     this.antennaPatternCount,
+	                     this.frequency,
+	                     this.transmitFrequencyBandwidth,
+	                     this.power,
+	                     this.modulationType,
+	                     this.cryptoSystem,
+	                     this.cryptoKeyId,
+	                     this.modulationParameterCount,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.modulationParametersList,
+	                     this.antennaPatternList);
  }
 } // end of class

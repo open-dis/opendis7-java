@@ -435,4 +435,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.environementalProcessID,
+	                     this.environmentType,
+	                     this.modelType,
+	                     this.environmentStatus,
+	                     this.numberOfEnvironmentRecords,
+	                     this.sequenceNumber,
+	                     this.environmentRecords);
+ }
 } // end of class

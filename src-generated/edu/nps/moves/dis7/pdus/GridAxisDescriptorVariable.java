@@ -331,4 +331,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfPointsOnXiAxis,
+	                     this.initialIndex,
+	                     this.coordinateScaleXi,
+	                     this.coordinateOffsetXi,
+	                     this.xiValues,
+	                     this.padding);
+ }
 } // end of class

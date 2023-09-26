@@ -1309,4 +1309,38 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.requestingEntityID,
+	                     this.minefieldSequenceNumbeer,
+	                     this.requestID,
+	                     this.pduSequenceNumber,
+	                     this.numberOfPdus,
+	                     this.numberOfMinesInThisPdu,
+	                     this.numberOfSensorTypes,
+	                     this.padding,
+	                     this.dataFilter,
+	                     this.mineType,
+	                     this.sensorTypes,
+	                     this.padTo32,
+	                     this.mineLocation,
+	                     this.groundBurialDepthOffset,
+	                     this.waterBurialDepthOffset,
+	                     this.snowBurialDepthOffset,
+	                     this.mineOrientation,
+	                     this.thermalContrast,
+	                     this.reflectance,
+	                     this.mineEmplacementTime,
+	                     this.mineEntityNumber,
+	                     this.fusing,
+	                     this.scalarDetectionCoefficient,
+	                     this.paintScheme,
+	                     this.padTo32_2,
+	                     this.numberOfTripDetonationWires,
+	                     this.padTo32_3,
+	                     this.numberOfVertices);
+ }
 } // end of class

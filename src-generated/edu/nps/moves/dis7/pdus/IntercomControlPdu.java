@@ -634,4 +634,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.controlType,
+	                     this.communicationsChannelType,
+	                     this.sourceEntityID,
+	                     this.sourceIntercomNumber,
+	                     this.sourceLineID,
+	                     this.transmitPriority,
+	                     this.transmitLineState,
+	                     this.command,
+	                     this.masterIntercomReferenceID,
+	                     this.masterIntercomNumber,
+	                     this.masterChannelID,
+	                     this.intercomParametersLength,
+	                     this.intercomParameters);
+ }
 } // end of class

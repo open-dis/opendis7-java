@@ -316,4 +316,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.activeEmissionParameterIndex,
+	                     this.scanPattern,
+	                     this.beamCenterAzimuthHorizontal,
+	                     this.azimuthalBeamwidthHorizontal,
+	                     this.beamCenterDepressionElevation,
+	                     this.depressionElevationBeamWidth);
+ }
 } // end of class

@@ -596,6 +596,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityID,
+	                     this.forceId,
+	                     this.numberOfVariableParameters,
+	                     this.entityType,
+	                     this.alternativeEntityType,
+	                     this.entityLinearVelocity,
+	                     this.entityLocation,
+	                     this.entityOrientation,
+	                     this.entityAppearance,
+	                     this.deadReckoningParameters,
+	                     this.marking,
+	                     this.capabilities,
+	                     this.variableParameters);
+ }
     // writeEntityStateUtilityMethods
 
   /** Direction enumerations */

@@ -329,4 +329,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.expendable,
+	                     this.station,
+	                     this.standardQuantity,
+	                     this.maximumQuantity,
+	                     this.standardQuantityReloadTime,
+	                     this.maximumQuantityReloadTime);
+ }
 } // end of class

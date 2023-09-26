@@ -297,4 +297,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 
    return sb.toString();
  }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.fuelQuantity,
+	                     this.fuelMeasurementUnits,
+	                     this.fuelType,
+	                     this.fuelLocation,
+	                     this.padding);
+ }
 } // end of class
