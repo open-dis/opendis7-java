@@ -14,7 +14,7 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * Fundamental IFF atc data. Section 6.2.45
+ * Fundamental IFF atc data. Section 6.2.44
  * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols</a> 
  */
 public class IFFFundamentalParameterData extends Object implements Serializable
@@ -356,5 +356,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.erp,
+	                     this.frequency,
+	                     this.pgrf,
+	                     this.pulseWidth,
+	                     this.burstLength,
+	                     this.applicableModes,
+	                     this.systemSpecificData);
  }
 } // end of class
