@@ -9,7 +9,9 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.pdus.CreateEntityPdu;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.RemoveEntityPdu;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Manage overall Simulation Management (SIMAN) choreography for a participating application in a DIS channel.
@@ -26,11 +28,13 @@ import java.util.ArrayList;
 public class SimulationManager 
 {
     private        DisThreadedNetworkInterface disThreadedNetworkInterface;
-    private static ArrayList<RecordType>      entityRecordList = new ArrayList<>();
-    private static ArrayList<RecordType>        hostRecordList = new ArrayList<>();
-    private static ArrayList<RecordType> applicationRecordList = new ArrayList<>();
-    private        String                           descriptor = new String();
+    private static List<RecordType>      entityRecordList = new ArrayList<>();
+    private static List<RecordType>        hostRecordList = new ArrayList<>();
+    private static List<RecordType> applicationRecordList = new ArrayList<>();
+    private        String                           descriptor;
     private static int                                  hostID = 0;
+    /** Factory object used to create new PDU instances */
+    private PduFactory pduFactory;
     
     private String TRACE_PREFIX = "[" + (SimulationManager.class.getSimpleName()) + "] ";
     
@@ -85,8 +89,8 @@ public class SimulationManager
      */
     public void simulationJoin()
     {
-        CreateEntityPdu createEntityPdu = new CreateEntityPdu();
-        createEntityPdu.setExerciseID(123); // TODO
+        CreateEntityPdu createEntityPdu;
+//        createEntityPdu.setExerciseID(123); // TODO
 //      createEntityPdu.setPduStatus(); // TODO
         
         if (hasDisThreadedNetworkInterface())
@@ -94,6 +98,7 @@ public class SimulationManager
             for (RecordType entity : entityRecordList)
             {
                 // TODO set record parameters
+                createEntityPdu = pduFactory.makeCreateEntityPdu();
                 createEntityPdu.setExerciseID(entity.getId());
                 createEntityPdu.setTimestamp(DisTime.getCurrentDisTimestamp());
                 disThreadedNetworkInterface.send(createEntityPdu);
@@ -119,10 +124,10 @@ public class SimulationManager
     public class RecordType
     {
         private int    id          = -1;
-        private String name        = new String();
-        private String alias       = new String();
-        private String description = new String();
-        private String reference   = new String();
+        private String name;
+        private String alias;
+        private String description;
+        private String reference;
         private boolean isHostType  = false;
     
         /**
@@ -411,7 +416,7 @@ public class SimulationManager
      * Provide entire entityRecordList
      * @return the entityRecordList
      */
-    public ArrayList<RecordType> getEntityRecordList() {
+    public List<RecordType> getEntityRecordList() {
         return entityRecordList;
     }
 
@@ -419,7 +424,7 @@ public class SimulationManager
      * Provide entire hostRecordList
      * @return the hostRecordList
      */
-    public ArrayList<RecordType> getHostRecordList() {
+    public List<RecordType> getHostRecordList() {
         return hostRecordList;
     }
 
@@ -427,7 +432,7 @@ public class SimulationManager
      * Provide entire applicationRecordList
      * @return the applicationRecordList
      */
-    public ArrayList<RecordType> getApplicationRecordList() {
+    public List<RecordType> getApplicationRecordList() {
         return applicationRecordList;
     }
 
@@ -460,7 +465,7 @@ public class SimulationManager
      */
     protected void createDisThreadedNetworkInterface() 
     {
-        this.disThreadedNetworkInterface = new DisThreadedNetworkInterface(descriptor);
+        createDisThreadedNetworkInterface(descriptor);
     }
     /**
      * Constructor for disThreadedNetworkInterface with descriptor, 
@@ -478,7 +483,7 @@ public class SimulationManager
      */
     protected void createDisThreadedNetworkInterface(String address, int port) 
     {
-        this.disThreadedNetworkInterface = new DisThreadedNetworkInterface(address, port, descriptor);
+        createDisThreadedNetworkInterface(address, port, descriptor);
     }
     /**
      * Constructor for disThreadedNetworkInterface using specified multicast address and port, plus descriptor.
@@ -553,7 +558,7 @@ public class SimulationManager
             entityRecordList.add(newEntity);
             if (hasDisThreadedNetworkInterface())
             {
-                CreateEntityPdu createEntityPdu = new CreateEntityPdu();
+                CreateEntityPdu createEntityPdu = pduFactory.makeCreateEntityPdu();
                 // TODO set record parameters
                 getDisThreadedNetworkInterface().send(createEntityPdu);
             }
@@ -577,7 +582,7 @@ public class SimulationManager
             entityRecordList.remove(oldEntity);
             if (hasDisThreadedNetworkInterface())
             {
-                RemoveEntityPdu removeEntityPdu = new RemoveEntityPdu();
+                RemoveEntityPdu removeEntityPdu = pduFactory.makeRemoveEntityPdu();
                 // TODO set record parameters
                 getDisThreadedNetworkInterface().send(removeEntityPdu);
             }
@@ -669,5 +674,19 @@ public class SimulationManager
         simulationManager.selfTest();
         
         System.out.println("*** SimulationManager main() self test complete.");
+    }
+
+    /**
+     * @return the pduFactory
+     */
+    public PduFactory getPduFactory() {
+        return pduFactory;
+    }
+
+    /**
+     * @param pduFactory the pduFactory to set
+     */
+    public void setPduFactory(PduFactory pduFactory) {
+        this.pduFactory = pduFactory;
     }
 }

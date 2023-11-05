@@ -13,6 +13,7 @@ import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,7 +29,7 @@ import java.util.TimerTask;
  */
 public class DisChannel 
 {
-    private String        descriptor = this.getClass().getSimpleName();
+    protected String        descriptor = this.getClass().getSimpleName();
     /**
      * Output prefix to help with logging by identifying this class.
      */
@@ -37,7 +38,7 @@ public class DisChannel
     private static       String thisHostName            = "localhost";
     private static final String NETWORK_ADDRESS_DEFAULT = "239.1.2.3";
     private static final int       NETWORK_PORT_DEFAULT = 3000;
-    private static final String  DEFAULT_PDULOG_OUTPUT_DIRECTORY = "./pduLog";
+    protected static final String  DEFAULT_PDULOG_OUTPUT_DIRECTORY = "./pduLog";
     
     /** whether or not verbose comments are provided */
     private boolean verboseComments = true;
@@ -49,10 +50,10 @@ public class DisChannel
     private static PduFactory                       pduFactory;
     
     // class variables
-    private DisThreadedNetworkInterface             disNetworkInterface;
+    protected DisThreadedNetworkInterface             disNetworkInterface;
             DisThreadedNetworkInterface.PduListener pduListener;
             Pdu                                     receivedPdu;
-    private PduRecorder                             pduRecorder;
+    protected PduRecorder                             pduRecorder;
     private boolean                                 verboseDisNetworkInterface = true;
     private boolean                                 verbosePduRecorder         = true;
           
@@ -81,7 +82,7 @@ public class DisChannel
     
     /** SimulationManager class handles DIS joining, announcing and leaving tasks.
      * It is instantiated here as an object */
-    SimulationManager        simulationManager = new SimulationManager();
+    private SimulationManager simulationManager;
 
     /** Base constructor */
     public DisChannel()
@@ -123,6 +124,8 @@ public class DisChannel
     {
         DisTime.setTimestampStyle(timestampStyle); // DISTime is a singleton shared class
         pduFactory          = new PduFactory(timestampStyle);
+        simulationManager = new SimulationManager();
+        simulationManager.setPduFactory(pduFactory);
         
         try
         {
@@ -322,7 +325,7 @@ public class DisChannel
     {
         if ((comments != null) && (comments.length > 0))
         {
-            ArrayList<String> newCommentsList = new ArrayList<>();
+            List<String> newCommentsList = new ArrayList<>();
             for (String comment : comments)
             {
                 if ((comment != null) && !comment.isEmpty())
@@ -330,7 +333,7 @@ public class DisChannel
                     newCommentsList.add(comment); // OK found something to send
                 }
             }
-            if (newCommentsList.isEmpty() &&  (commentType != null))
+            if (newCommentsList.isEmpty() && (commentType != null))
             {
                 return null; // no CommentPdu sent
             }

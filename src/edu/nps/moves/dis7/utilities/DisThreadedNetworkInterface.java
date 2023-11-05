@@ -8,8 +8,6 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
-import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
@@ -77,9 +75,7 @@ public class DisThreadedNetworkInterface
     // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
     private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>(); // FIFO
 
-    ByteArrayOutputStream baos;
-    DataOutputStream      dos;
-    DatagramPacket        packet;
+    DatagramPacket packet;
 
     /**
      * Pdu listener interface is an internal class.
@@ -372,12 +368,7 @@ public class DisThreadedNetworkInterface
      */
 //    @SuppressWarnings("SleepWhileHoldingLock") // intentional
     private synchronized void createDatagramSocket()
-    {
-        // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
-        baos   = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
-        dos    = new DataOutputStream(baos);
-        packet = new DatagramPacket(baos.toByteArray(), baos.size(), inetSocket);
-        
+    {   
         String message = TRACE_PREFIX;
         
         if ((datagramSocket != null))
@@ -437,8 +428,10 @@ public class DisThreadedNetworkInterface
 
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
         // The raw listeners will strip off any extra padding and process what is required
-        ByteBuffer byteBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
-        DatagramPacket receivedPacket = new DatagramPacket(byteBuffer.array(), byteBuffer.capacity());
+        ByteBuffer bBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
+        DatagramPacket receivedPacket = new DatagramPacket(bBuffer.array(), bBuffer.capacity());
+        Pdu nextPdu;
+        String pad, message;
 
         // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
         while (!killed && !Thread.currentThread().isInterrupted()) // loop until terminated
@@ -446,34 +439,30 @@ public class DisThreadedNetworkInterface
             try
             {
                 datagramSocket.receive(receivedPacket); // blocks here waiting for next DIS pdu to be received on multicast IP and specified port
-                toRawListeners(receivedPacket.getData(), receivedPacket.getLength());
+                nextPdu = pduFactory.createPdu(bBuffer);
+                toRawListeners(receivedPacket.getData(), nextPdu.getLength()); // pass only the actual length of data in octets
 
-                Pdu nextPdu = pduFactory.createPdu(byteBuffer);
-
-                if (nextPdu != null)
+                pduReceiptCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
+                if (hasVerboseOutput() && hasVerboseReceipt())
                 {
-                    pduReceiptCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
-                    if (hasVerboseOutput() && hasVerboseReceipt())
+                    pad = "";
+                    if (pduReceiptCounter < 10)
+                        pad = " ";
+                    message = TRACE_PREFIX + "[receipt " + pad + pduReceiptCounter + "] " + nextPdu.getPduType().toString();
+                    if (hasVerboseOutputIncludesTimestamp())
+                        message += " (timestamp " + DisTime.convertToString(nextPdu.getTimestamp());
+                    if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
+                        message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
+                    message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
+                    if (hasVerboseOutput())
                     {
-                        String pad = "";
-                        if (pduReceiptCounter < 10)
-                               pad = " ";
-                        String message = TRACE_PREFIX + "[receipt " + pad + pduReceiptCounter + "] " + nextPdu.getPduType().toString();
-                        if (hasVerboseOutputIncludesTimestamp())
-                            message += " (timestamp " + DisTime.convertToString(nextPdu.getTimestamp());
-                        if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
-                            message += " " + String.format("%11s", ((EntityStatePdu)nextPdu).getMarkingString());
-                        message += ", size " + nextPdu.getMarshalledSize() + " bytes)";
-                        if (hasVerboseOutput())
-                        {
-                            System.err.flush();
-                            System.out.println(message);
-                            System.out.flush();
-                        }
+                        System.err.flush();
+                        System.out.println(message);
+                        System.out.flush();
                     }
-                    toListeners(nextPdu);
                 }
-                byteBuffer.clear();
+                toListeners(nextPdu);
+                bBuffer.clear();
             }
             catch (IOException ex)
             {
@@ -489,28 +478,32 @@ public class DisThreadedNetworkInterface
         int pduSentCounter = 0;
 
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
-        baos   = new ByteArrayOutputStream(MAX_TRANSMISSION_UNIT_SIZE);
-        dos    = new DataOutputStream(baos);
-        packet = new DatagramPacket(baos.toByteArray(), baos.size(), inetSocket);
+        Pdu nextPdu;
+        String pad, message;
+        ByteBuffer bBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
+        
+        // Just get a packet instantiated here. Set the acutal length and data when we know the PDU size
+        packet = new DatagramPacket(bBuffer.array(), bBuffer.capacity(), inetSocket);
 
         // https://stackoverflow.com/questions/26647840/how-do-i-interrupt-kill-a-hung-thread-in-java
         while (!killed && !Thread.currentThread().isInterrupted()) // loop until terminated
         {
             try
             {
-                Pdu nextPdu = pdus2send.take();
-
-                nextPdu.marshal(dos);
-                packet.setData(baos.toByteArray());
+                nextPdu = pdus2send.take();
+                bBuffer = ByteBuffer.allocate(nextPdu.getLength() * 8); // allocate the actual length of data from octets (length * 8)
+                nextPdu.marshal(bBuffer);
+                packet.setData(bBuffer.array());
+                packet.setLength(bBuffer.capacity());
                 datagramSocket.send(packet);
                 pduSentCounter++;
 
                 if (hasVerboseOutput() && hasVerboseSending())
                 {
-                    String pad = "";
+                    pad = "";
                     if (pduSentCounter < 10)
                            pad = " ";
-                    String message = TRACE_PREFIX + "[sending " + pad + pduSentCounter + "] " + nextPdu.getPduType().toString();
+                    message = TRACE_PREFIX + "[sending " + pad + pduSentCounter + "] " + nextPdu.getPduType().toString();
                     if (hasVerboseOutputIncludesTimestamp())
                         message += " (timestamp " + DisTime.convertToString(nextPdu.getTimestamp());
                     if (nextPdu.getPduType() == DisPduType.ENTITY_STATE)
@@ -523,8 +516,7 @@ public class DisThreadedNetworkInterface
                         System.out.flush();
                     }
                 }
-                dos.flush();  // immediately force pdu write
-                baos.reset(); // prepare for next send
+                bBuffer.clear();
             }
             catch (InterruptedException ex)
             {
@@ -533,7 +525,7 @@ public class DisThreadedNetworkInterface
             catch (Exception ex)
             {
                 System.err.println(TRACE_PREFIX + "Exception in DisThreadedNetworkInterface sendingThread: " + ex.getLocalizedMessage());
-                ex.printStackTrace();
+                ex.printStackTrace(System.err);
             }
         }
         // returning kills thread, do not put any other steps here
@@ -624,13 +616,9 @@ public class DisThreadedNetworkInterface
                 wait(100l); // // allow extra time for shutdowns to occur before continuing
             }
             pdus2send.clear(); // all stop
-             dos.flush();      // immediately force pdu write, if any remain
-            baos.close();
-             dos.close();
             if (hasVerboseOutput())
                 System.out.println (TRACE_PREFIX + "close():" + 
-                    " pdus2send.size()=" + pdus2send.size() +
-                    " baos.size()=" + baos.size() + " dos.size()=" + dos.size());
+                    " pdus2send.size()=" + pdus2send.size());
              
             // now close socket (after killing threads so that hopefully the socket doesn't lock them)
             if (datagramSocket != null && !datagramSocket.isClosed())
@@ -661,7 +649,7 @@ public class DisThreadedNetworkInterface
             wait(500l); // allow extra time for shutdowns to occur before continuing
             reportThreadStatus();
         }
-        catch (IOException | InterruptedException e)
+        catch (InterruptedException e)
         {
             System.err.println (TRACE_PREFIX + "close()() unexpected exception! " + e.getMessage());
         }
@@ -670,22 +658,22 @@ public class DisThreadedNetworkInterface
      * @param threadToKill of interest */
     public synchronized void killThread(Thread threadToKill)
     {
-            try { // join and kill threadToKill
-                if (threadToKill != null)
-                {
-                    threadToKill.interrupt();
-                    threadToKill.join(4000); // wait for thread to die, msec max duration
-                    // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
-                    // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
-                    wait(100l); // TODO consider wait() instead of sleep()
-                }
-            }
-            catch (InterruptedException ie)
+        try { // join and kill threadToKill
+            if (threadToKill != null)
             {
-                System.err.println (TRACE_PREFIX + "threadToKill join() failed to wait for threadToKill to die");
-                System.err.flush();
-                ie.printStackTrace(System.err);
+                threadToKill.interrupt();
+                threadToKill.join(4000); // wait for thread to die, msec max duration
+                // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                wait(100l); // TODO consider wait() instead of sleep()
             }
+        }
+        catch (InterruptedException ie)
+        {
+            System.err.println (TRACE_PREFIX + "threadToKill join() failed to wait for threadToKill to die");
+            System.err.flush();
+            ie.printStackTrace(System.err);
+        }
             
         String   threadAlive;
         if (threadToKill != null)
@@ -744,17 +732,20 @@ public class DisThreadedNetworkInterface
     {
         try {
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+            NetworkInterface networkInterface;
+            Enumeration<InetAddress> addresses;
+            InetAddress nextAddress;
 
             while (networkInterfaces != null && networkInterfaces.hasMoreElements())
             {
-                NetworkInterface networkInterface = networkInterfaces.nextElement();
+                networkInterface = networkInterfaces.nextElement();
                 if (networkInterface.isUp())
                 {
                     // now check available addresses available on this running interface
-                    Enumeration<InetAddress> addresses = networkInterface.getInetAddresses();
+                    addresses = networkInterface.getInetAddresses();
                     while (addresses.hasMoreElements())
                     {
-                        InetAddress nextAddress = addresses.nextElement();
+                        nextAddress = addresses.nextElement();
                         if (nextAddress instanceof Inet4Address && !nextAddress.isLoopbackAddress() && !nextAddress.isLinkLocalAddress()) 
                         {
                             // can't use object descriptor in static context
@@ -902,7 +893,7 @@ public class DisThreadedNetworkInterface
         System.out.println(TRACE_PREFIX + "main() self test initialized...");
         try
         {
-            EntityStatePdu espdu = new EntityStatePdu();
+            EntityStatePdu espdu = pduFactory.makeEntityStatePdu();
             espdu.setMarking("self test");
             setVerbose(true);
             DisThreadedNetworkInterface.PduListener pduListener;

@@ -64,6 +64,7 @@ public class SignalPdusTest
         ((SignalPdu) pdu).setSampleRate(0x22222222);
         ((SignalPdu) pdu).setSamples((short) 0x3333);
         ((SignalPdu) pdu).setData("SignalPdu-testdata".getBytes());
+        pdu.setLength(pdu.getMarshalledSize());
         sentPdus.add(pdu);
 
         pdu = pduFactory.makeIntercomSignalPdu(); // recreate new pdu
@@ -74,6 +75,7 @@ public class SignalPdusTest
         ((IntercomSignalPdu) pdu).setSampleRate(0x22222222);
         ((IntercomSignalPdu) pdu).setSamples((short) 0x3333);
         ((IntercomSignalPdu) pdu).setData("IntercomSignalPdu-testdata".getBytes());
+        pdu.setLength(pdu.getMarshalledSize());
         sentPdus.add(pdu);
 
         sentPdus.forEach(p -> {

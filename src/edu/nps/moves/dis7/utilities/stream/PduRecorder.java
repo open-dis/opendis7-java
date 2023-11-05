@@ -65,7 +65,7 @@ public class PduRecorder // implements PduReceiver
                  private Path   outputDirectoryPath;
     static final String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
     static final String DISLOG_FILE_EXTENSION    = ".dislog";
-    static final String DEFAULT_FILE_NAME        = DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION;
+    public static final String DEFAULT_FILE_NAME        = DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION;
 
     static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
     static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
@@ -98,30 +98,30 @@ public class PduRecorder // implements PduReceiver
     /** TODO list of planned encodings */
     public static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
 
-    private String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
+    protected String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
     private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
 
     private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
-    private String  descriptor      = new String();
+    private String  descriptor;
 
-    private Writer         logFileWriter;
+    protected Writer         logFileWriter;
     private File           logFile;
     private String         logFileName = DEFAULT_FILE_NAME;
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
-    private final PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
+    protected final PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
 
-    private final StringBuilder  sb               = new StringBuilder();
-    private final Base64.Encoder base64Encoder    = Base64.getEncoder();
-    private long           recordingStartNanoTime = -1; // sentinel
-    private int            pduCount               = 0;    // debug
-    private boolean        headerWritten          = false;
+    protected final StringBuilder  sb               = new StringBuilder();
+    protected final Base64.Encoder base64Encoder    = Base64.getEncoder();
+    protected long           recordingStartNanoTime = -1; // sentinel
+    protected int            pduCount               = 0;    // debug
+    protected boolean        headerWritten          = false;
     private boolean        running                = true; // starts recording by default
     private boolean        readableTimeStamp      = true; // 
     private boolean        zeroBasedTimeStamp     = true; // use normal date, time strings vice bytes
-    private long           recordingDurationNano  = -1;
-    private LocalTime      recordingDuration      = null;
-    private int            pduTimestampFirst      = 0;
+    protected long           recordingDurationNano  = -1;
+    protected LocalTime      recordingDuration      = null;
+    protected int            pduTimestampFirst      = 0;
     
     private void initialize()
     {
@@ -149,7 +149,7 @@ public class PduRecorder // implements PduReceiver
      */
     public PduRecorder() throws IOException
     {
-        this (OUTPUT_DIRECTORY_DEFAULT, DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT);
+        this(OUTPUT_DIRECTORY_DEFAULT);
     }
 
     /**
@@ -205,7 +205,7 @@ public class PduRecorder // implements PduReceiver
           if (ENCODING_OPTIONS_LIST.contains(newEncodingPduLog))
           {
               encodingPduLog = newEncodingPduLog;
-              includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
+              setIncludeHeaders(encodingPduLog.equals(ENCODING_PLAINTEXT));
               return this;
           }
           else if (ENCODING_OPTIONS_TODO.contains(newEncodingPduLog))
@@ -294,7 +294,7 @@ public class PduRecorder // implements PduReceiver
           disThreadedNetworkInterface.removeRawListener(disRawPduListener);
           disThreadedNetworkInterface.close();
       }
-      if (includeHeaders)
+      if (isIncludeHeaders())
       {
           writeFooter();
           headerWritten = false; // reset for next run
@@ -319,7 +319,6 @@ public class PduRecorder // implements PduReceiver
      * @param newBuffer byte array for receiving data
      * @param newLength length of byte array
      */
-//    @Override
     public void receivePdu(byte[] newBuffer, int newLength)
     {
       if (sessionStartTime == null)
@@ -345,13 +344,13 @@ public class PduRecorder // implements PduReceiver
       
       // DIS timestamp is 8 bytes in length, converted from Java long time into byte array
       // https://stackoverflow.com/questions/1026761/how-to-convert-a-byte-array-to-its-numeric-value-java
-      byte[] timestampByteArray = Arrays.copyOfRange(newBuffer, 4, 7); 
+//      byte[] timestampByteArray = Arrays.copyOfRange(newBuffer, 4, 7); 
       // timestamp bytes 4..7 (fifth through eighth bytes), see Table 98—PDU Header record (TODO course diagrams are erroneous)
       
       byte[] receiptTimeByteArray = Longs.toByteArray(packetReceivedNanoTime - recordingStartNanoTime);
-      ByteBuffer receiptTimeByteBuffer = ByteBuffer.wrap(receiptTimeByteArray);
-      int        receiptTimeBufferInt        = receiptTimeByteBuffer.getInt();
-      String     receiptTimeBufferString     = DisTime.convertToLocalDateTime(receiptTimeBufferInt).format(DisTime.getTimeFormatter());
+//      ByteBuffer receiptTimeByteBuffer = ByteBuffer.wrap(receiptTimeByteArray);
+//      int        receiptTimeBufferInt        = receiptTimeByteBuffer.getInt();
+//      String     receiptTimeBufferString     = DisTime.convertToLocalDateTime(receiptTimeBufferInt).format(DisTime.getTimeFormatter());
       
       if (recordingStartNanoTime == -1) // initialization
       {
@@ -369,7 +368,7 @@ public class PduRecorder // implements PduReceiver
       String     sessionTimeString =     sessionTime.format(DisTime.getTimeFormatter());
       String sessionDurationString = recordingDuration.format(DisTime.getTimeFormatter());
       
-      if (includeHeaders && !headerWritten)
+      if (isIncludeHeaders() && !headerWritten)
       {
         writeHeader();
         headerWritten = true;
@@ -447,7 +446,6 @@ public class PduRecorder // implements PduReceiver
       }
       catch (IOException ex)
       {    
-          ex.printStackTrace();
           throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
       }
       pduCount = pduCount + 1;
@@ -484,7 +482,7 @@ public class PduRecorder // implements PduReceiver
           return disThreadedNetworkInterface;
       }
 
-    private void writeHeader()
+    protected void writeHeader()
     {
         String timeStamp = getTimeStamp();
 
@@ -597,7 +595,7 @@ public class PduRecorder // implements PduReceiver
         }
         catch (IOException ioe)
         {
-            ioe.printStackTrace();
+            ioe.printStackTrace(System.err);
         }
     }
   
@@ -609,7 +607,6 @@ public class PduRecorder // implements PduReceiver
    */
   public synchronized void selfTest(String[] args)
   {
-    initialize();
     System.out.println("dis7.utilities.stream.PduRecorder main() performs self-test by sending full set of PDUs");
     
     PduRecorder pduRecorder;
@@ -627,7 +624,7 @@ public class PduRecorder // implements PduReceiver
         catch(IOException ex) 
         {
           System.err.println("Exception creating PduRecorder: " + ex.getLocalizedMessage());
-          System.err.println(ex.getStackTrace());
+          ex.printStackTrace(System.err);
           return;
         }
         System.out.println("=================================================");
@@ -648,6 +645,7 @@ public class PduRecorder // implements PduReceiver
             try {
                 Pdu nextPdu = pduFactory.createPdu(allPDUTypesArray[index]);
                 nextPdu.setTimestamp(index * 10); // seconds
+                nextPdu.setLength(nextPdu.getMarshalledSize());
 //              nextPdu.getTimestamp(); // debug
                 disNetworkInterface.send(nextPdu);
                 
@@ -921,5 +919,19 @@ public class PduRecorder // implements PduReceiver
      */
     public void setZeroBasedTimeStamp(boolean zeroBasedTimeStamp) {
         this.zeroBasedTimeStamp = zeroBasedTimeStamp;
+    }
+
+    /**
+     * @return the includeHeaders
+     */
+    public boolean isIncludeHeaders() {
+        return includeHeaders;
+    }
+
+    /**
+     * @param includeHeaders the includeHeaders to set
+     */
+    public void setIncludeHeaders(boolean includeHeaders) {
+        this.includeHeaders = includeHeaders;
     }
 }

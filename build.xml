@@ -308,9 +308,9 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="Implementation-Vendor  = ${Implementation-Vendor}"/>
         
         <antcall target="jar-pdus-classes"/>
-        <antcall target="jar-pdus-source"/>
+<!--        <antcall target="jar-pdus-source"/>
         <antcall target="jar-pdus-javadoc"/>
-        <antcall target="jar-full"/>
+        <antcall target="jar-full"/>-->
     <!--<antcall target="zip-full"/>-->
     </target>
 

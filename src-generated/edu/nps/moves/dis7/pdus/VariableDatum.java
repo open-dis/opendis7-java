@@ -162,7 +162,8 @@ public class VariableDatum extends Object implements Serializable
       else
         dos.writeInt(variableDatumLength = calculateDatumLength());
 
-      for (int idx = 0; idx < variableDatumValue.length; idx++) {
+      for (int idx = 0; idx < variableDatumValue.length; idx++) 
+      {
         dos.writeByte(variableDatumValue[idx]);
       }
 
@@ -227,7 +228,7 @@ public class VariableDatum extends Object implements Serializable
       byteBuffer.putInt(variableDatumLength);
     else
       byteBuffer.putInt(variableDatumLength = calculateDatumLength());
-    for (int idx = 0; idx < variableDatumLength; idx++) //for(int idx = 0; idx < variableDatumValue.length; idx++)
+    for(int idx = 0; idx < variableDatumValue.length; idx++)
     {
       byteBuffer.put(variableDatumValue[idx]);
     }

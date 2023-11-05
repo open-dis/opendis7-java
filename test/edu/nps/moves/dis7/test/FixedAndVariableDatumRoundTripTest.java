@@ -48,11 +48,8 @@ public class FixedAndVariableDatumRoundTripTest
   public void setUp()
   {   
       disNetworkInterface = new DisThreadedNetworkInterface();
-      pduListener = new DisThreadedNetworkInterface.PduListener() {
-          @Override
-          public void incomingPdu(Pdu pdu) {
-              setUpReceiver(pdu);
-          }
+      pduListener = (Pdu pdu) -> {
+          setUpReceiver(pdu);
       };
       disNetworkInterface.addListener(pduListener);
   }
@@ -82,7 +79,7 @@ public class FixedAndVariableDatumRoundTripTest
 
   private static final VariableDatum variableDatum2 = new VariableDatum();
   private static final VariableRecordType VARIABLE_DATUM_2_TYPE = VariableRecordType.Z_ACCELERATION;
-  private static final byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
+  private static final byte[] variableDatum2Value = "varDatum1Value222".getBytes();
 
   static {
     fixedDatum1.setFixedDatumValue(FIXED_DATUM_VALUE);
@@ -114,6 +111,8 @@ public class FixedAndVariableDatumRoundTripTest
 
     sentPdu.getVariableDatums().add(variableDatum1);
     sentPdu.getVariableDatums().add(variableDatum2);
+    
+    sentPdu.setLength(sentPdu.getMarshalledSize());
 
     try {
       disNetworkInterface.send(sentPdu);

@@ -8,6 +8,7 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.utilities.DisTime.TimestampStyle;
+
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -558,16 +559,17 @@ public class PduFactory
    */
   public CommentPdu makeCommentPdu(VariableRecordType typ, String... comments)
   {
-    CommentPdu pdu = makeCommentPdu();
+    CommentPdu pdu = new CommentPdu();
     List<VariableDatum> list = pdu.getVariableDatums();
     Stream.of(comments).forEach(s -> {
       VariableDatum vardat = new VariableDatum();
       vardat.setVariableDatumID(typ);
       vardat.setVariableDatumValue(s.getBytes());
+      vardat.setVariableDatumLengthInBytes(s.getBytes().length);
       list.add(vardat);
     });
-
-    return pdu;
+    
+    return (CommentPdu) addBoilerPlate(pdu);
   }
   
   /**
