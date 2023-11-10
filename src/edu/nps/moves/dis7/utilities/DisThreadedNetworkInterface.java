@@ -427,7 +427,6 @@ public class DisThreadedNetworkInterface
         int pduReceiptCounter = 0;
 
         // The capacity could go up to MAX_DIS_PDU_SIZE, but this should be good for now
-        // The raw listeners will strip off any extra padding and process what is required
         ByteBuffer bBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
         DatagramPacket receivedPacket = new DatagramPacket(bBuffer.array(), bBuffer.capacity());
         Pdu nextPdu;
@@ -440,7 +439,7 @@ public class DisThreadedNetworkInterface
             {
                 datagramSocket.receive(receivedPacket); // blocks here waiting for next DIS pdu to be received on multicast IP and specified port
                 nextPdu = pduFactory.createPdu(bBuffer);
-                toRawListeners(receivedPacket.getData(), nextPdu.getLength()); // pass only the actual length of data in octets
+                toRawListeners(bBuffer.array(), nextPdu.getMarshalledSize()); // pass only the actual length of pdu data
 
                 pduReceiptCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
                 if (hasVerboseOutput() && hasVerboseReceipt())
@@ -491,10 +490,9 @@ public class DisThreadedNetworkInterface
             try
             {
                 nextPdu = pdus2send.take();
-                bBuffer = ByteBuffer.allocate(nextPdu.getLength() * 8); // allocate the actual length of data from octets (length * 8)
                 nextPdu.marshal(bBuffer);
                 packet.setData(bBuffer.array());
-                packet.setLength(bBuffer.capacity());
+                packet.setLength(nextPdu.getMarshalledSize()); // send only the pdu's data length
                 datagramSocket.send(packet);
                 pduSentCounter++;
 
