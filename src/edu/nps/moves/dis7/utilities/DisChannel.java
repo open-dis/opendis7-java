@@ -354,6 +354,7 @@ public class DisChannel
                     printlnTRACE("*** [CommentPdu " + commentType.name() + "] " + newCommentsList.toString());
                     System.out.flush();
                 }
+                newCommentsList.clear();
                 return commentPdu;
             }
         }
