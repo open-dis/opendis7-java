@@ -19,10 +19,10 @@ import java.util.logging.Logger;
 /**
  * This is a thread-safe, multicast DIS network interface class which greatly simplifies reading and writing of PDUs for applications.
  * This simplifies and consolidates all reading, writing and threading of DIS over the network.
- * 
+ *
  * Example <code>main()</code> self-test response shown in log file.
  * @see <a href="https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt">https://github.com/open-dis/open-dis7-java/blob/master/src/edu/nps/moves/dis7/utilities/DisThreadedNetworkInterfaceSelfTestLog.txt</a>
- * 
+ *
  * @author Don Brutzman, brutzman@nps.edu
  * @author Mike Bailey, jmbailey@nps.edu
  * @since Jul 29, 2019
@@ -30,7 +30,6 @@ import java.util.logging.Logger;
 public class DisThreadedNetworkInterface
 {
 
-    /** ********** Begin class ************** */
     /**
      * MTU 8192: TODO this has actually been superseded by a larger buffer size,
      * but good enough for now
@@ -43,37 +42,40 @@ public class DisThreadedNetworkInterface
      */
     public static final int MAX_TRANSMISSION_UNIT_SIZE = 1500;
 
-    // independently available parameters for each DisThreadedNetworkInterface object
-    private String  disAddress; 
-    private int     disPort;
-    private boolean killed = false; // thread loop sentinel
-
-    private InetAddress       inetAddress;
-    private InetSocketAddress inetSocket;
-    private NetworkInterface  networkInterface;
-    private DatagramSocket    datagramSocket;
-    
-    /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
-     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
-    public static String DEFAULT_DIS_ADDRESS = "239.1.2.3";
-
     /** Default socket port  <code>3000</code>, matches Wireshark DIS capture default
-     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
-    public static int DEFAULT_DIS_PORT = 3000;
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     */
+    public static final int DEFAULT_DIS_PORT = 3000;
 
-    private static String  descriptor      = new String();
-    private        String  TRACE_PREFIX = "[" + (this.getClass().getSimpleName() + " " + descriptor).trim() + "] ";
+    /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  
+     */
+    public static final String DEFAULT_DIS_ADDRESS = "239.1.2.3";
+
+    private static String  descriptor;
     private static boolean verbose         = true;
     private static boolean verboseReceipt  = true;
     private static boolean verboseSending  = true;
     private static boolean verboseIncludesTimestamp = false;
 
-    /* *********** queues and lists  and public methods ************** */
-    private final List<PduListener> everyTypeListeners = new ArrayList<>();
-    private final Map<DisPduType, List<PduListener>> typeListeners = new HashMap<>();
-    private final List<RawPduListener> rawListeners = new ArrayList<>();
+    // independently available parameters for each DisThreadedNetworkInterface object
+    private String  disAddress;
+    private String  TRACE_PREFIX;
+    private int     disPort;
+    private boolean killed; // thread loop sentinel
+
+    private InetAddress       inetAddress;
+    private InetSocketAddress inetSocket;
+    private NetworkInterface  networkInterface;
+    private DatagramSocket    datagramSocket;
+
+    /* *********** queues and lists and public methods ************** */
+    private final List<PduListener>                  everyTypeListeners;
+    private final Map<DisPduType, List<PduListener>> typeListeners;
+    private final List<RawPduListener>               rawListeners;
+    
     // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
-    private final LinkedBlockingQueue<Pdu> pdus2send = new LinkedBlockingQueue<>(); // FIFO
+    private final LinkedBlockingQueue<Pdu>           pdus2send = new LinkedBlockingQueue<>(); // FIFO
 
     DatagramPacket packet;
 
@@ -128,6 +130,43 @@ public class DisThreadedNetworkInterface
         }
     }
 
+    /** Default constructor using default multicast address and port, no descriptor */
+    public DisThreadedNetworkInterface()
+    {
+        this("");
+    }
+
+    /**
+     * Object constructor with descriptor, using default multicast address and port
+     * @param newDescriptor simple descriptor name for this interface
+     */
+    public DisThreadedNetworkInterface(String newDescriptor)
+    {
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor);
+    }
+
+    /**
+     * @param defaultVerbose whether or not DisThreadedNetworkInterface is verbose
+     */
+    public DisThreadedNetworkInterface(boolean defaultVerbose)
+    {
+        verbose = defaultVerbose;
+        everyTypeListeners = new ArrayList<>();
+        typeListeners = new HashMap<>();
+        rawListeners = new ArrayList<>();
+        killed = false;
+    }
+
+    /**
+     * Object constructor using specified multicast address, port, descriptor, and verboseness
+     * @param address the multicast group or unicast address to utilize
+     * @param port the multicast port to utilize
+     */
+    public DisThreadedNetworkInterface(String address, int port)
+    {
+        this(address, port, "");
+    }
+
     /**
      * Object constructor using specified multicast address and port, plus descriptor.
      * @param address the multicast group or unicast address to utilize
@@ -138,6 +177,7 @@ public class DisThreadedNetworkInterface
     {
         this(address, port, newDescriptor, verbose); // no change in verbose
     }
+
     /**
      * Object constructor using specified multicast address and port1, plus descriptor and verboseness.
      * @param address the multicast group or unicast address to utilize
@@ -147,12 +187,12 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String address, int port, String newDescriptor, boolean defaultVerbose)
     {
-        verbose = defaultVerbose;
+        this(defaultVerbose);
         if (newDescriptor == null)
              descriptor = "";
         else descriptor = newDescriptor;
         TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
-        
+
         disAddress = address;
         disPort    = port;
         try
@@ -165,38 +205,8 @@ public class DisThreadedNetworkInterface
         }
         inetSocket = new InetSocketAddress(inetAddress, disPort); // tests that accessor methods are working as set
         networkInterface = findIpv4Interface();
-        
+
         begin();
-    }
-    /**
-     * Object constructor using specified multicast address, port, descriptor, and verbosenness
-     * @param address the multicast group or unicast address to utilize
-     * @param port the multicast port to utilize
-     */
-    public DisThreadedNetworkInterface(String address, int port)
-    {
-        this(address, port, "");
-    }
-    /**
-     * Object constructor with descriptor, using default multicast address and port
-     * @param newDescriptor simple descriptor name for this interface
-     */
-    public DisThreadedNetworkInterface(String newDescriptor)
-    {
-        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor);
-    }
-    /**
-     * Object constructor using default multicast address and port, no descriptor
-     */
-    public DisThreadedNetworkInterface()
-    {
-        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "");
-    }
-    /** default constructor
-     * @param defaultVerbose whether or not DisThreadedNetworkInterface is verbose */
-    public DisThreadedNetworkInterface(boolean defaultVerbose)
-    {
-        verbose = defaultVerbose;
     }
 
     /**
@@ -290,7 +300,7 @@ public class DisThreadedNetworkInterface
 
     /**
      * Get current multicast (or unicast) network address for send and receive connections.
-     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>
      * @return current multicast address value
      */
     public String getAddress()
@@ -299,7 +309,7 @@ public class DisThreadedNetworkInterface
     }
     /**
      * Network address for send and receive connections.
-     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>
      * @param newAddress the new network address to set
      */
     public synchronized void setAddress(String newAddress) {
@@ -357,7 +367,7 @@ public class DisThreadedNetworkInterface
     public synchronized final void begin()
     {
         createDatagramSocket(); // common asset, synchronized to prevent interleaved reentry
-        
+
         createThreads();
     }
     /**
@@ -368,9 +378,9 @@ public class DisThreadedNetworkInterface
      */
 //    @SuppressWarnings("SleepWhileHoldingLock") // intentional
     private synchronized void createDatagramSocket()
-    {   
+    {
         String message = TRACE_PREFIX;
-        
+
         if ((datagramSocket != null))
         {
             if (datagramSocket.isConnected())
@@ -391,17 +401,17 @@ public class DisThreadedNetworkInterface
                 // The initial value of the SO_BROADCAST socket option is FALSE
                 datagramSocket = new MulticastSocket(getPort());
                 datagramSocket.setSoTimeout(1000); // msec timeout on reading and then continue looping in order to avoid blocking
-                
+
                 datagramSocket.joinGroup(inetSocket, networkInterface);
-                
+
                 // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
                 // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
                 wait (100L); // allow threads, streams to catch up // TODO consider wait() instead of sleep()
-            } 
+            }
             catch (InterruptedException ex)
             {
                 System.err.println(" *** " + TRACE_PREFIX + "InterruptedException in DisThreadedNetworkInterface createDatagramSocket(): " + ex.getLocalizedMessage());
-            } 
+            }
             catch (IOException ex)
             {
                 System.err.println(" *** " + TRACE_PREFIX + "IOException in DisThreadedNetworkInterface createDatagramSocket(): " + ex.getLocalizedMessage());
@@ -420,7 +430,7 @@ public class DisThreadedNetworkInterface
             }
         }
     }
-  
+
     @SuppressWarnings("SleepWhileInLoop") // intentional
     private Runnable receiveThreadRunnable = () -> {
 
@@ -467,7 +477,7 @@ public class DisThreadedNetworkInterface
             {
                 // read commonly times out while waiting for PDUs to arrive, and so this trace statement is for debugging
 //              System.err.println(TRACE_PREFIX + "Exception in DisThreadedNetworkInterface receiveThread: " + ex.getLocalizedMessage());
-            } 
+            }
         }
         // returning kills thread, do not put any other steps here
     };
@@ -480,7 +490,7 @@ public class DisThreadedNetworkInterface
         Pdu nextPdu;
         String pad, message;
         ByteBuffer bBuffer = ByteBuffer.allocate(MAX_TRANSMISSION_UNIT_SIZE);
-        
+
         // Just get a packet instantiated here. Set the acutal length and data when we know the PDU size
         packet = new DatagramPacket(bBuffer.array(), bBuffer.capacity(), inetSocket);
 
@@ -529,33 +539,27 @@ public class DisThreadedNetworkInterface
         // returning kills thread, do not put any other steps here
     };
 
-    private synchronized void toListeners(Pdu pdu) 
-    {
-        if (everyTypeListeners.isEmpty()) {
-            return;
-        }
-
+    private synchronized void toListeners(Pdu pdu) {
         if (pdu != null) {
             everyTypeListeners.forEach(lis -> lis.incomingPdu(pdu));
 
-            if (typeListeners.isEmpty()) {
-                return;
-            }
+            if (!typeListeners.isEmpty()) {
 
-            List<PduListener> arLis = typeListeners.get(pdu.getPduType());
-            if (arLis != null) {
-                arLis.forEach(lis -> lis.incomingPdu(pdu));
+                List<PduListener> arLis = typeListeners.get(pdu.getPduType());
+                if (arLis != null)
+                    arLis.forEach(lis -> lis.incomingPdu(pdu));
+
             }
         }
     }
-  
-    private synchronized void toRawListeners(byte[] data, int len)
-    {
-      if(rawListeners.isEmpty())
-        return;
 
-      ByteArrayBufferAndLength bl = new ByteArrayBufferAndLength(data, len);
-      rawListeners.forEach(lis->lis.incomingPdu(bl));
+    private synchronized void toRawListeners(byte[] data, int len) {
+        
+        if (rawListeners.isEmpty())
+            return;
+
+        ByteArrayBufferAndLength bl = new ByteArrayBufferAndLength(data, len);
+        rawListeners.forEach(lis -> lis.incomingPdu(bl));
     }
 
     /** Method renamed as <code>close()</code> so use that method instead.
@@ -563,7 +567,7 @@ public class DisThreadedNetworkInterface
     @Deprecated
     public synchronized void kill()
     {
-      setKillSentinelAndInterrupts(); 
+      setKillSentinelAndInterrupts();
     }
 
     /** Tell sendingThread and receiveThread to stop. */
@@ -588,11 +592,11 @@ public class DisThreadedNetworkInterface
             receiveThreadInterruptStatus = String.valueOf(receiveThread.isInterrupted());
         }
         else receiveThreadInterruptStatus ="null";
-        
+
         if (hasVerboseOutput())
         {
-            System.out.println ("*** setKillSentinelAndInterrupts() sentinel killed=" + killed + 
-                      " sendingThread.isInterrupted()=" + sendingThreadInterruptStatus + 
+            System.out.println ("*** setKillSentinelAndInterrupts() sentinel killed=" + killed +
+                      " sendingThread.isInterrupted()=" + sendingThreadInterruptStatus +
                       " receiveThread.isInterrupted()=" + receiveThreadInterruptStatus);
             System.out.flush();
             System.err.flush();
@@ -603,7 +607,7 @@ public class DisThreadedNetworkInterface
      * Synchronized to prevent interleaved invocation. */
     public synchronized void close()
     {
-        try 
+        try
         {
             if (!killed) // avoid repeats
             {
@@ -615,9 +619,9 @@ public class DisThreadedNetworkInterface
             }
             pdus2send.clear(); // all stop
             if (hasVerboseOutput())
-                System.out.println (TRACE_PREFIX + "close():" + 
+                System.out.println (TRACE_PREFIX + "close():" +
                     " pdus2send.size()=" + pdus2send.size());
-             
+
             // now close socket (after killing threads so that hopefully the socket doesn't lock them)
             if (datagramSocket != null && !datagramSocket.isClosed())
             {
@@ -634,7 +638,7 @@ public class DisThreadedNetworkInterface
                     String message = TRACE_PREFIX;
         //                    if (hasVerboseOutputIncludesTimestamp())
         //                        message += " (timestamp " + getTimestamp()); // TODO
-                    message += "datagramSocket.leaveGroup address=" + getAddress() + " port=" + getPort() + 
+                    message += "datagramSocket.leaveGroup address=" + getAddress() + " port=" + getPort() +
                                " isClosed()=" + datagramSocket.isClosed() + " close() complete.";
                     System.out.println(message);
                     System.out.flush();
@@ -672,7 +676,7 @@ public class DisThreadedNetworkInterface
             System.err.flush();
             ie.printStackTrace(System.err);
         }
-            
+
         String   threadAlive;
         if (threadToKill != null)
         {
@@ -684,7 +688,7 @@ public class DisThreadedNetworkInterface
         System.err.flush(); // ensure all output sent
         System.out.flush(); // ensure all output sent
     }
-    
+
     /** Report whether sendingThread and receiveThread are alive */
     public synchronized void reportThreadStatus()
     {
@@ -713,7 +717,7 @@ public class DisThreadedNetworkInterface
         // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
         wait(duration); // TODO consider wait() instead of sleep()
     }
-    catch (InterruptedException ie) 
+    catch (InterruptedException ie)
     {
         System.err.println ("*** " + getClass().getName() + ".sleep(" + duration + ") failed to sleep");
         System.err.flush();
@@ -726,7 +730,7 @@ public class DisThreadedNetworkInterface
      *
      * @return a network interface to use to join a multicast group
      */
-    public static NetworkInterface findIpv4Interface() 
+    public static NetworkInterface findIpv4Interface()
     {
         try {
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
@@ -744,7 +748,7 @@ public class DisThreadedNetworkInterface
                     while (addresses.hasMoreElements())
                     {
                         nextAddress = addresses.nextElement();
-                        if (nextAddress instanceof Inet4Address && !nextAddress.isLoopbackAddress() && !nextAddress.isLinkLocalAddress()) 
+                        if (nextAddress instanceof Inet4Address && !nextAddress.isLoopbackAddress() && !nextAddress.isLinkLocalAddress())
                         {
                             // can't use object descriptor in static context
                             if (verboseSending)
@@ -849,7 +853,7 @@ public class DisThreadedNetworkInterface
         return getPort();
     }
     /** Get network port used, multicast or unicast.
-     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a>
      * @return current port value
      */
     public int getPort()
@@ -858,7 +862,7 @@ public class DisThreadedNetworkInterface
     }
     /**
     /** Set network port used, multicast or unicast.
-     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a>
      * @param newPortValue the disPort value to set
      */
     public synchronized void setPort(int newPortValue)
@@ -869,7 +873,7 @@ public class DisThreadedNetworkInterface
      * Get simple descriptor (such as parent class name) for this network interface, used in trace statements
      * @return simple descriptor name
      */
-    public String getDescriptor() 
+    public String getDescriptor()
     {
         return descriptor;
     }
@@ -878,7 +882,7 @@ public class DisThreadedNetworkInterface
      * Set new simple descriptor (such as parent class name) for this network interface, used in trace statements
      * @param newDescriptor simple descriptor name for this interface
      */
-    public synchronized void setDescriptor(String newDescriptor) 
+    public synchronized void setDescriptor(String newDescriptor)
     {
         if (newDescriptor != null)
             DisThreadedNetworkInterface.descriptor = newDescriptor.trim();
@@ -909,7 +913,7 @@ public class DisThreadedNetworkInterface
 
             System.out.println(TRACE_PREFIX + "self test sending espdu...");
             send(espdu);
-            
+
             // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
             // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
             // this test is short, must briefly wait to get synchronized with threaded sender and receiver
@@ -922,7 +926,7 @@ public class DisThreadedNetworkInterface
         {
             System.out.println("[DisThreadedNetworkInterface] main() self test InterruptedException " + ex.getMessage());
         }
-        finally // carefully clean up following regular completion and any interruptions  
+        finally // carefully clean up following regular completion and any interruptions
         {
             close();
 
@@ -931,7 +935,7 @@ public class DisThreadedNetworkInterface
             System.out.println("[DisThreadedNetworkInterface] main() self test complete.");
         }
     }
-    
+
     /**
      * Main method provides support for testing.
      * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
@@ -942,14 +946,14 @@ public class DisThreadedNetworkInterface
         System.out.println("[DisThreadedNetworkInterface] main() started...");
 
         DisThreadedNetworkInterface disThreadedNetworkInterface;
-        
+
         String selfTestDescriptor = "main() self test";
         if ((args != null) && args.length == 3)
              selfTestDescriptor = args[2];
         if ((args == null) || (args.length == 0))
              disThreadedNetworkInterface = new DisThreadedNetworkInterface( /* default address, port */ selfTestDescriptor);
         else disThreadedNetworkInterface = new DisThreadedNetworkInterface(args[0], Integer.parseInt(args[1]), selfTestDescriptor);
-        
+
         disThreadedNetworkInterface.selfTest();
     }
 }
