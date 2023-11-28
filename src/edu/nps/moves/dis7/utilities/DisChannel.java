@@ -252,8 +252,11 @@ public class DisChannel
     /** All done, release network resources */
     public synchronized void tearDownNetworkInterface() 
     {
+        if (pduListener != null)
+            getDisNetworkInterface().removeListener(pduListener);
+        
         getPduRecorder().stop();     // handles disNetworkInterface.close(), tears down threads and sockets
-        disNetworkInterface.close(); // make sure
+//        disNetworkInterface.close(); // make sure
     }
 
     /** 
