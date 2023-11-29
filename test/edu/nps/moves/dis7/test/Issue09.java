@@ -41,12 +41,13 @@ import edu.nps.moves.dis7.pdus.EntityType;
 import java.nio.ByteBuffer;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-/** TODO: Form into a legit unit test
+/** EntityType is instantiated with a default Domain of PlatformDomain.OTHER
+ * which causes issues down the road with similar enum values of other Domain
+ * types
  *
  * @author <a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.test.Issue09">Terry D. Norbraten</a>
  */
