@@ -8,6 +8,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
+import java.util.Objects;
 import java.lang.reflect.InvocationTargetException;
 
 import edu.nps.moves.dis7.enumerations.*;
@@ -221,5 +222,11 @@ public class Domain
   {
     final Domain rhs = (Domain) obj;
     return enumInst.equals(rhs.enumInst);
+  }
+  
+  @Override
+  public int hashCode()
+  {
+ 	 return Objects.hash(this.enumInst);
   }
 }

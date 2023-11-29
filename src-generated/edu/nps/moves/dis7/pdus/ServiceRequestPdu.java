@@ -375,19 +375,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ServiceRequestPdu rhs = (ServiceRequestPdu)obj;
 
-     if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
-     if( ! (servicingEntityID.equals( rhs.servicingEntityID) )) ivarsEqual = false;
-     if( ! (serviceTypeRequested == rhs.serviceTypeRequested)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-
-     for (int idx = 0; idx < supplies.size(); idx++)
-        if( ! ( supplies.get(idx).equals(rhs.supplies.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(requestingEntityID, rhs.requestingEntityID) ) return false;
+     if( ! Objects.equals(servicingEntityID, rhs.servicingEntityID) ) return false;
+     if( ! (serviceTypeRequested == rhs.serviceTypeRequested)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(supplies, rhs.supplies) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -407,5 +402,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.requestingEntityID,
+	                     this.servicingEntityID,
+	                     this.serviceTypeRequested,
+	                     this.numberOfSupplyTypes,
+	                     this.padding1,
+	                     this.supplies);
  }
 } // end of class

@@ -187,13 +187,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SupplyQuantity rhs = (SupplyQuantity)obj;
 
-     if( ! (supplyType.equals( rhs.supplyType) )) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(supplyType, rhs.supplyType) ) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+    return true;
  }
 
  @Override
@@ -206,5 +204,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" quantity:").append(quantity); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.supplyType,
+	                     this.quantity);
  }
 } // end of class

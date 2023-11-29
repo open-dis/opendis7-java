@@ -448,20 +448,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LEFirePdu rhs = (LEFirePdu)obj;
 
-     if( ! (firingLiveEntityId.equals( rhs.firingLiveEntityId) )) ivarsEqual = false;
-     if( ! (flags == rhs.flags)) ivarsEqual = false;
-     if( ! (targetLiveEntityId.equals( rhs.targetLiveEntityId) )) ivarsEqual = false;
-     if( ! (munitionLiveEntityId.equals( rhs.munitionLiveEntityId) )) ivarsEqual = false;
-     if( ! (eventId.equals( rhs.eventId) )) ivarsEqual = false;
-     if( ! (location.equals( rhs.location) )) ivarsEqual = false;
-     if( ! (munitionDescriptor.equals( rhs.munitionDescriptor) )) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (range == rhs.range)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(firingLiveEntityId, rhs.firingLiveEntityId) ) return false;
+     if( ! (flags == rhs.flags)) return false;
+     if( ! Objects.equals(targetLiveEntityId, rhs.targetLiveEntityId) ) return false;
+     if( ! Objects.equals(munitionLiveEntityId, rhs.munitionLiveEntityId) ) return false;
+     if( ! Objects.equals(eventId, rhs.eventId) ) return false;
+     if( ! Objects.equals(location, rhs.location) ) return false;
+     if( ! Objects.equals(munitionDescriptor, rhs.munitionDescriptor) ) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! (range == rhs.range)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -481,5 +479,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" range:").append(range); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.firingLiveEntityId,
+	                     this.flags,
+	                     this.targetLiveEntityId,
+	                     this.munitionLiveEntityId,
+	                     this.eventId,
+	                     this.location,
+	                     this.munitionDescriptor,
+	                     this.velocity,
+	                     this.range);
  }
 } // end of class

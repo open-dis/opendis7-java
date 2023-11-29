@@ -541,27 +541,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldStatePdu rhs = (MinefieldStatePdu)obj;
 
-     if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
-     if( ! (minefieldSequence == rhs.minefieldSequence)) ivarsEqual = false;
-     if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (minefieldType.equals( rhs.minefieldType) )) ivarsEqual = false;
-     if( ! (minefieldLocation.equals( rhs.minefieldLocation) )) ivarsEqual = false;
-     if( ! (minefieldOrientation.equals( rhs.minefieldOrientation) )) ivarsEqual = false;
-     if( ! (appearance.equals( rhs.appearance) )) ivarsEqual = false;
-     if( ! (protocolMode.equals( rhs.protocolMode) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < perimeterPoints.size(); idx++)
-        if( ! ( perimeterPoints.get(idx).equals(rhs.perimeterPoints.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < mineType.size(); idx++)
-        if( ! ( mineType.get(idx).equals(rhs.mineType.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(minefieldID, rhs.minefieldID) ) return false;
+     if( ! (minefieldSequence == rhs.minefieldSequence)) return false;
+     if( ! (forceID == rhs.forceID)) return false;
+     if( ! Objects.equals(minefieldType, rhs.minefieldType) ) return false;
+     if( ! Objects.equals(minefieldLocation, rhs.minefieldLocation) ) return false;
+     if( ! Objects.equals(minefieldOrientation, rhs.minefieldOrientation) ) return false;
+     if( ! Objects.equals(appearance, rhs.appearance) ) return false;
+     if( ! Objects.equals(protocolMode, rhs.protocolMode) ) return false;
+     if( ! Objects.equals(perimeterPoints, rhs.perimeterPoints) ) return false;
+     if( ! Objects.equals(mineType, rhs.mineType) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -590,5 +582,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.minefieldSequence,
+	                     this.forceID,
+	                     this.numberOfPerimeterPoints,
+	                     this.minefieldType,
+	                     this.numberOfMineTypes,
+	                     this.minefieldLocation,
+	                     this.minefieldOrientation,
+	                     this.appearance,
+	                     this.protocolMode,
+	                     this.perimeterPoints,
+	                     this.mineType);
  }
 } // end of class

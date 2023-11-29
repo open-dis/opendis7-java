@@ -496,25 +496,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldQueryPdu rhs = (MinefieldQueryPdu)obj;
 
-     if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
-     if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (dataFilter.equals( rhs.dataFilter) )) ivarsEqual = false;
-     if( ! (requestedMineType.equals( rhs.requestedMineType) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < requestedPerimeterPoints.size(); idx++)
-        if( ! ( requestedPerimeterPoints.get(idx).equals(rhs.requestedPerimeterPoints.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < sensorTypes.size(); idx++)
-        if( ! ( sensorTypes.get(idx).equals(rhs.sensorTypes.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(minefieldID, rhs.minefieldID) ) return false;
+     if( ! Objects.equals(requestingEntityID, rhs.requestingEntityID) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(dataFilter, rhs.dataFilter) ) return false;
+     if( ! Objects.equals(requestedMineType, rhs.requestedMineType) ) return false;
+     if( ! Objects.equals(requestedPerimeterPoints, rhs.requestedPerimeterPoints) ) return false;
+     if( ! Objects.equals(sensorTypes, rhs.sensorTypes) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -541,5 +533,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.requestingEntityID,
+	                     this.requestID,
+	                     this.numberOfPerimeterPoints,
+	                     this.padding,
+	                     this.numberOfSensorTypes,
+	                     this.dataFilter,
+	                     this.requestedMineType,
+	                     this.requestedPerimeterPoints,
+	                     this.sensorTypes);
  }
 } // end of class

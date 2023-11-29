@@ -462,23 +462,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DirectedEnergyDamage rhs = (DirectedEnergyDamage)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (damageLocation.equals( rhs.damageLocation) )) ivarsEqual = false;
-     if( ! (damageDiameter == rhs.damageDiameter)) ivarsEqual = false;
-     if( ! (temperature == rhs.temperature)) ivarsEqual = false;
-     if( ! (componentIdentification == rhs.componentIdentification)) ivarsEqual = false;
-     if( ! (componentDamageStatus == rhs.componentDamageStatus)) ivarsEqual = false;
-     if( ! (componentVisualDamageStatus.equals( rhs.componentVisualDamageStatus) )) ivarsEqual = false;
-     if( ! (componentVisualSmokeColor == rhs.componentVisualSmokeColor)) ivarsEqual = false;
-     if( ! (fireEventID.equals( rhs.fireEventID) )) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(damageLocation, rhs.damageLocation) ) return false;
+     if( ! (damageDiameter == rhs.damageDiameter)) return false;
+     if( ! (temperature == rhs.temperature)) return false;
+     if( ! (componentIdentification == rhs.componentIdentification)) return false;
+     if( ! (componentDamageStatus == rhs.componentDamageStatus)) return false;
+     if( ! Objects.equals(componentVisualDamageStatus, rhs.componentVisualDamageStatus) ) return false;
+     if( ! (componentVisualSmokeColor == rhs.componentVisualSmokeColor)) return false;
+     if( ! Objects.equals(fireEventID, rhs.fireEventID) ) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+    return true;
  }
 
  @Override
@@ -501,5 +499,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" padding2:").append(padding2); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.padding,
+	                     this.damageLocation,
+	                     this.damageDiameter,
+	                     this.temperature,
+	                     this.componentIdentification,
+	                     this.componentDamageStatus,
+	                     this.componentVisualDamageStatus,
+	                     this.componentVisualSmokeColor,
+	                     this.fireEventID,
+	                     this.padding2);
  }
 } // end of class

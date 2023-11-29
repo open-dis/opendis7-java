@@ -272,16 +272,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AttachedPartVP rhs = (AttachedPartVP)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (detachedIndicator == rhs.detachedIndicator)) ivarsEqual = false;
-     if( ! (partAttachedTo == rhs.partAttachedTo)) ivarsEqual = false;
-     if( ! (parameterType == rhs.parameterType)) ivarsEqual = false;
-     if( ! (attachedPartType.equals( rhs.attachedPartType) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (detachedIndicator == rhs.detachedIndicator)) return false;
+     if( ! (partAttachedTo == rhs.partAttachedTo)) return false;
+     if( ! (parameterType == rhs.parameterType)) return false;
+     if( ! Objects.equals(attachedPartType, rhs.attachedPartType) ) return false;
+    return true;
  }
 
  @Override
@@ -297,5 +295,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" attachedPartType:").append(attachedPartType); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.detachedIndicator,
+	                     this.partAttachedTo,
+	                     this.parameterType,
+	                     this.attachedPartType);
  }
 } // end of class

@@ -301,17 +301,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MunitionReload rhs = (MunitionReload)obj;
 
-     if( ! (munitionType.equals( rhs.munitionType) )) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (standardQuantity == rhs.standardQuantity)) ivarsEqual = false;
-     if( ! (maximumQuantity == rhs.maximumQuantity)) ivarsEqual = false;
-     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) ivarsEqual = false;
-     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(munitionType, rhs.munitionType) ) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (standardQuantity == rhs.standardQuantity)) return false;
+     if( ! (maximumQuantity == rhs.maximumQuantity)) return false;
+     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) return false;
+     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) return false;
+    return true;
  }
 
  @Override
@@ -328,5 +326,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" maximumQuantityReloadTime:").append(maximumQuantityReloadTime); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.munitionType,
+	                     this.station,
+	                     this.standardQuantity,
+	                     this.maximumQuantity,
+	                     this.standardQuantityReloadTime,
+	                     this.maximumQuantityReloadTime);
  }
 } // end of class

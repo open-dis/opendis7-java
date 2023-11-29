@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityIdentifier rhs = (LiveEntityIdentifier)obj;
 
-     if( ! (liveSimulationAddress.equals( rhs.liveSimulationAddress) )) ivarsEqual = false;
-     if( ! (entityNumber == rhs.entityNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(liveSimulationAddress, rhs.liveSimulationAddress) ) return false;
+     if( ! (entityNumber == rhs.entityNumber)) return false;
+    return true;
  }
 
  @Override
@@ -213,5 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" entityNumber:").append(entityNumber); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.liveSimulationAddress,
+	                     this.entityNumber);
  }
 } // end of class

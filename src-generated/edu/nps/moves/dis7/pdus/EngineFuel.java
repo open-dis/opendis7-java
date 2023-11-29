@@ -271,16 +271,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EngineFuel rhs = (EngineFuel)obj;
 
-     if( ! (fuelQuantity == rhs.fuelQuantity)) ivarsEqual = false;
-     if( ! (fuelMeasurementUnits == rhs.fuelMeasurementUnits)) ivarsEqual = false;
-     if( ! (fuelType == rhs.fuelType)) ivarsEqual = false;
-     if( ! (fuelLocation == rhs.fuelLocation)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (fuelQuantity == rhs.fuelQuantity)) return false;
+     if( ! (fuelMeasurementUnits == rhs.fuelMeasurementUnits)) return false;
+     if( ! (fuelType == rhs.fuelType)) return false;
+     if( ! (fuelLocation == rhs.fuelLocation)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -296,5 +294,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" padding:").append(padding); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.fuelQuantity,
+	                     this.fuelMeasurementUnits,
+	                     this.fuelType,
+	                     this.fuelLocation,
+	                     this.padding);
  }
 } // end of class

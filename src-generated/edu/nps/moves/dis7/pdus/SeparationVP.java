@@ -330,18 +330,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SeparationVP rhs = (SeparationVP)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (reasonForSeparation == rhs.reasonForSeparation)) ivarsEqual = false;
-     if( ! (preEntityIndicator == rhs.preEntityIndicator)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (parentEntityID.equals( rhs.parentEntityID) )) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (stationLocation.equals( rhs.stationLocation) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (reasonForSeparation == rhs.reasonForSeparation)) return false;
+     if( ! (preEntityIndicator == rhs.preEntityIndicator)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(parentEntityID, rhs.parentEntityID) ) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(stationLocation, rhs.stationLocation) ) return false;
+    return true;
  }
 
  @Override
@@ -359,5 +357,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" stationLocation:").append(stationLocation); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.reasonForSeparation,
+	                     this.preEntityIndicator,
+	                     this.padding1,
+	                     this.parentEntityID,
+	                     this.padding2,
+	                     this.stationLocation);
  }
 } // end of class

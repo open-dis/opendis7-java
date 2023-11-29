@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GroupID rhs = (GroupID)obj;
 
-     if( ! (simulationAddress.equals( rhs.simulationAddress) )) ivarsEqual = false;
-     if( ! (groupNumber == rhs.groupNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(simulationAddress, rhs.simulationAddress) ) return false;
+     if( ! (groupNumber == rhs.groupNumber)) return false;
+    return true;
  }
 
  @Override
@@ -213,5 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" groupNumber:").append(groupNumber); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.simulationAddress,
+	                     this.groupNumber);
  }
 } // end of class

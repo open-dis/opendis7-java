@@ -168,12 +168,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ProtocolMode rhs = (ProtocolMode)obj;
 
-     if( ! (protocolMode == rhs.protocolMode)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (protocolMode == rhs.protocolMode)) return false;
+    return true;
  }
 
  @Override
@@ -185,5 +183,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" protocolMode:").append(protocolMode); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.protocolMode);
  }
 } // end of class

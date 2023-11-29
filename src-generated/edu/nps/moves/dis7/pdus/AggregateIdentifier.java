@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AggregateIdentifier rhs = (AggregateIdentifier)obj;
 
-     if( ! (simulationAddress.equals( rhs.simulationAddress) )) ivarsEqual = false;
-     if( ! (aggregateID == rhs.aggregateID)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(simulationAddress, rhs.simulationAddress) ) return false;
+     if( ! (aggregateID == rhs.aggregateID)) return false;
+    return true;
  }
 
  @Override
@@ -213,5 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" aggregateID:").append(aggregateID); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.simulationAddress,
+	                     this.aggregateID);
  }
 } // end of class

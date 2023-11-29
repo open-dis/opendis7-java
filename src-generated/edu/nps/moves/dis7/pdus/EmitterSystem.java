@@ -220,14 +220,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EmitterSystem rhs = (EmitterSystem)obj;
 
-     if( ! (emitterName == rhs.emitterName)) ivarsEqual = false;
-     if( ! (emitterFunction == rhs.emitterFunction)) ivarsEqual = false;
-     if( ! (emitterIDNumber == rhs.emitterIDNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (emitterName == rhs.emitterName)) return false;
+     if( ! (emitterFunction == rhs.emitterFunction)) return false;
+     if( ! (emitterIDNumber == rhs.emitterIDNumber)) return false;
+    return true;
  }
 
  @Override
@@ -241,5 +239,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" emitterIDNumber:").append(emitterIDNumber); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.emitterName,
+	                     this.emitterFunction,
+	                     this.emitterIDNumber);
  }
 } // end of class

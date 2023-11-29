@@ -17,17 +17,17 @@ import edu.nps.moves.dis7.enumerations.*;
  * Requires hand coding to be useful. Section 6.2.43
  * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols</a> 
  */
-public class IffDataSpecification extends Object implements Serializable
+public class IFFDataSpecification extends Object implements Serializable
 {
-   /** Number of iff records */
-   protected short numberOfIffDataRecords;
+   /** Number of IFF records */
+   protected short numberOfIFFDataRecords;
 
    /** IFF data records */
    protected List< IFFData > iffDataRecords = new ArrayList< IFFData >();
  
 
 /** Constructor creates and configures a new instance object */
- public IffDataSpecification()
+ public IFFDataSpecification()
  {
  }
 
@@ -40,7 +40,7 @@ public int getMarshalledSize()
 {
    int marshalSize = 0; 
 
-   marshalSize += 2;  // numberOfIffDataRecords
+   marshalSize += 2;  // numberOfIFFDataRecords
    if (iffDataRecords != null)
        for (int idx=0; idx < iffDataRecords.size(); idx++)
        {
@@ -52,15 +52,15 @@ public int getMarshalledSize()
 }
 
 
-/** Setter for {@link IffDataSpecification#iffDataRecords}
+/** Setter for {@link IFFDataSpecification#iffDataRecords}
   * @param pIffDataRecords new value of interest
   * @return same object to permit progressive setters */
-public IffDataSpecification setIffDataRecords(List<IFFData> pIffDataRecords)
+public IFFDataSpecification setIffDataRecords(List<IFFData> pIffDataRecords)
 {
     iffDataRecords = pIffDataRecords;
     return this;
 }
-/** Getter for {@link IffDataSpecification#iffDataRecords}
+/** Getter for {@link IFFDataSpecification#iffDataRecords}
   * @return value of interest */
 public List<IFFData> getIffDataRecords()
 {
@@ -105,9 +105,9 @@ public int unmarshal(DataInputStream dis) throws Exception
     int uPosition = 0;
     try 
     {
-        numberOfIffDataRecords = (short)dis.readUnsignedShort();
+        numberOfIFFDataRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
-        for (int idx = 0; idx < numberOfIffDataRecords; idx++)
+        for (int idx = 0; idx < numberOfIFFDataRecords; idx++)
         {
             IFFData anX = new IFFData();
             uPosition += anX.unmarshal(dis);
@@ -155,10 +155,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
-        // attribute numberOfIffDataRecords marked as not serialized
-        numberOfIffDataRecords = (short)(byteBuffer.getShort() & 0xFFFF);
+        // attribute numberOfIFFDataRecords marked as not serialized
+        numberOfIFFDataRecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute iffDataRecords marked as not serialized
-        for (int idx = 0; idx < numberOfIffDataRecords; idx++)
+        for (int idx = 0; idx < numberOfIFFDataRecords; idx++)
         {
         IFFData anX = new IFFData();
         anX.unmarshal(byteBuffer);
@@ -199,15 +199,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
+     final IFFDataSpecification rhs = (IFFDataSpecification)obj;
 
-     final IffDataSpecification rhs = (IffDataSpecification)obj;
-
-
-     for (int idx = 0; idx < iffDataRecords.size(); idx++)
-        if( ! ( iffDataRecords.get(idx).equals(rhs.iffDataRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! Objects.equals(iffDataRecords, rhs.iffDataRecords) ) return false;
+    return true;
  }
 
  @Override
@@ -223,5 +218,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfIFFDataRecords,
+	                     this.iffDataRecords);
  }
 } // end of class

@@ -211,14 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Vector3Double rhs = (Vector3Double)obj;
 
-     if( ! (x == rhs.x)) ivarsEqual = false;
-     if( ! (y == rhs.y)) ivarsEqual = false;
-     if( ! (z == rhs.z)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (x == rhs.x)) return false;
+     if( ! (y == rhs.y)) return false;
+     if( ! (z == rhs.z)) return false;
+    return true;
  }
 
  @Override
@@ -232,5 +230,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" z:").append(z); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.x,
+	                     this.y,
+	                     this.z);
  }
 } // end of class

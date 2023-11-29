@@ -317,15 +317,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final CreateEntityRPdu rhs = (CreateEntityRPdu)obj;
 
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -340,5 +338,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" requestID:").append(requestID); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.requiredReliabilityService,
+	                     this.pad1,
+	                     this.pad2,
+	                     this.requestID);
  }
 } // end of class

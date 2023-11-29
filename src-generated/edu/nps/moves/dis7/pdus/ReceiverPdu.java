@@ -369,17 +369,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ReceiverPdu rhs = (ReceiverPdu)obj;
 
-     if( ! (header.equals( rhs.header) )) ivarsEqual = false;
-     if( ! (receiverState == rhs.receiverState)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (receivedPower == rhs.receivedPower)) ivarsEqual = false;
-     if( ! (transmitterEntityId.equals( rhs.transmitterEntityId) )) ivarsEqual = false;
-     if( ! (transmitterRadioId == rhs.transmitterRadioId)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(header, rhs.header) ) return false;
+     if( ! (receiverState == rhs.receiverState)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (receivedPower == rhs.receivedPower)) return false;
+     if( ! Objects.equals(transmitterEntityId, rhs.transmitterEntityId) ) return false;
+     if( ! (transmitterRadioId == rhs.transmitterRadioId)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -396,5 +394,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" transmitterRadioId:").append(transmitterRadioId); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.header,
+	                     this.receiverState,
+	                     this.padding1,
+	                     this.receivedPower,
+	                     this.transmitterEntityId,
+	                     this.transmitterRadioId);
  }
 } // end of class

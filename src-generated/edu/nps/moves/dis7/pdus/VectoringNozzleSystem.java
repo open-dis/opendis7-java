@@ -186,13 +186,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final VectoringNozzleSystem rhs = (VectoringNozzleSystem)obj;
 
-     if( ! (horizontalDeflectionAngle == rhs.horizontalDeflectionAngle)) ivarsEqual = false;
-     if( ! (verticalDeflectionAngle == rhs.verticalDeflectionAngle)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (horizontalDeflectionAngle == rhs.horizontalDeflectionAngle)) return false;
+     if( ! (verticalDeflectionAngle == rhs.verticalDeflectionAngle)) return false;
+    return true;
  }
 
  @Override
@@ -205,5 +203,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" verticalDeflectionAngle:").append(verticalDeflectionAngle); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.horizontalDeflectionAngle,
+	                     this.verticalDeflectionAngle);
  }
 } // end of class

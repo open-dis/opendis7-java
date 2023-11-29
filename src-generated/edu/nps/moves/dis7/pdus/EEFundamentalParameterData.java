@@ -261,16 +261,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EEFundamentalParameterData rhs = (EEFundamentalParameterData)obj;
 
-     if( ! (frequency == rhs.frequency)) ivarsEqual = false;
-     if( ! (frequencyRange == rhs.frequencyRange)) ivarsEqual = false;
-     if( ! (effectiveRadiatedPower == rhs.effectiveRadiatedPower)) ivarsEqual = false;
-     if( ! (pulseRepetitionFrequency == rhs.pulseRepetitionFrequency)) ivarsEqual = false;
-     if( ! (pulseWidth == rhs.pulseWidth)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (frequency == rhs.frequency)) return false;
+     if( ! (frequencyRange == rhs.frequencyRange)) return false;
+     if( ! (effectiveRadiatedPower == rhs.effectiveRadiatedPower)) return false;
+     if( ! (pulseRepetitionFrequency == rhs.pulseRepetitionFrequency)) return false;
+     if( ! (pulseWidth == rhs.pulseWidth)) return false;
+    return true;
  }
 
  @Override
@@ -286,5 +284,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" pulseWidth:").append(pulseWidth); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.frequency,
+	                     this.frequencyRange,
+	                     this.effectiveRadiatedPower,
+	                     this.pulseRepetitionFrequency,
+	                     this.pulseWidth);
  }
 } // end of class

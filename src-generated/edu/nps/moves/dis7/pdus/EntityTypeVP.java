@@ -271,16 +271,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityTypeVP rhs = (EntityTypeVP)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (changeIndicator == rhs.changeIndicator)) ivarsEqual = false;
-     if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (changeIndicator == rhs.changeIndicator)) return false;
+     if( ! Objects.equals(entityType, rhs.entityType) ) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+    return true;
  }
 
  @Override
@@ -296,5 +294,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" padding1:").append(padding1); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.changeIndicator,
+	                     this.entityType,
+	                     this.padding,
+	                     this.padding1);
  }
 } // end of class

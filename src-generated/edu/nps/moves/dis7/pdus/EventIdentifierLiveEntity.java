@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EventIdentifierLiveEntity rhs = (EventIdentifierLiveEntity)obj;
 
-     if( ! (siteNumber == rhs.siteNumber)) ivarsEqual = false;
-     if( ! (applicationNumber == rhs.applicationNumber)) ivarsEqual = false;
-     if( ! (eventNumber == rhs.eventNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (siteNumber == rhs.siteNumber)) return false;
+     if( ! (applicationNumber == rhs.applicationNumber)) return false;
+     if( ! (eventNumber == rhs.eventNumber)) return false;
+    return true;
  }
 
  @Override
@@ -253,5 +251,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" eventNumber:").append(eventNumber); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.siteNumber,
+	                     this.applicationNumber,
+	                     this.eventNumber);
  }
 } // end of class

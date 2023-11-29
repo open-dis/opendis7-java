@@ -789,41 +789,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AggregateStatePdu rhs = (AggregateStatePdu)obj;
 
-     if( ! (aggregateID.equals( rhs.aggregateID) )) ivarsEqual = false;
-     if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (aggregateState == rhs.aggregateState)) ivarsEqual = false;
-     if( ! (aggregateType.equals( rhs.aggregateType) )) ivarsEqual = false;
-     if( ! (formation == rhs.formation)) ivarsEqual = false;
-     if( ! (aggregateMarking.equals( rhs.aggregateMarking) )) ivarsEqual = false;
-     if( ! (dimensions.equals( rhs.dimensions) )) ivarsEqual = false;
-     if( ! (orientation.equals( rhs.orientation) )) ivarsEqual = false;
-     if( ! (centerOfMass.equals( rhs.centerOfMass) )) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < aggregateIDList.size(); idx++)
-        if( ! ( aggregateIDList.get(idx).equals(rhs.aggregateIDList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < entityIDList.size(); idx++)
-        if( ! ( entityIDList.get(idx).equals(rhs.entityIDList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < silentAggregateSystemList.size(); idx++)
-        if( ! ( silentAggregateSystemList.get(idx).equals(rhs.silentAggregateSystemList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < silentEntitySystemList.size(); idx++)
-        if( ! ( silentEntitySystemList.get(idx).equals(rhs.silentEntitySystemList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatumList.size(); idx++)
-        if( ! ( variableDatumList.get(idx).equals(rhs.variableDatumList.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(aggregateID, rhs.aggregateID) ) return false;
+     if( ! (forceID == rhs.forceID)) return false;
+     if( ! (aggregateState == rhs.aggregateState)) return false;
+     if( ! Objects.equals(aggregateType, rhs.aggregateType) ) return false;
+     if( ! (formation == rhs.formation)) return false;
+     if( ! Objects.equals(aggregateMarking, rhs.aggregateMarking) ) return false;
+     if( ! Objects.equals(dimensions, rhs.dimensions) ) return false;
+     if( ! Objects.equals(orientation, rhs.orientation) ) return false;
+     if( ! Objects.equals(centerOfMass, rhs.centerOfMass) ) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! Objects.equals(aggregateIDList, rhs.aggregateIDList) ) return false;
+     if( ! Objects.equals(entityIDList, rhs.entityIDList) ) return false;
+     if( ! Objects.equals(silentAggregateSystemList, rhs.silentAggregateSystemList) ) return false;
+     if( ! Objects.equals(silentEntitySystemList, rhs.silentEntitySystemList) ) return false;
+     if( ! Objects.equals(variableDatumList, rhs.variableDatumList) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -870,5 +853,31 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.aggregateID,
+	                     this.forceID,
+	                     this.aggregateState,
+	                     this.aggregateType,
+	                     this.formation,
+	                     this.aggregateMarking,
+	                     this.dimensions,
+	                     this.orientation,
+	                     this.centerOfMass,
+	                     this.velocity,
+	                     this.numberOfDisAggregates,
+	                     this.numberOfDisEntities,
+	                     this.numberOfSilentAggregateTypes,
+	                     this.numberOfSilentEntityTypes,
+	                     this.aggregateIDList,
+	                     this.entityIDList,
+	                     this.padTo32,
+	                     this.silentAggregateSystemList,
+	                     this.silentEntitySystemList,
+	                     this.numberOfVariableDatumRecords,
+	                     this.variableDatumList);
  }
 } // end of class

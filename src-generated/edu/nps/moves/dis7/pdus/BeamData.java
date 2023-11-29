@@ -261,16 +261,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BeamData rhs = (BeamData)obj;
 
-     if( ! (beamAzimuthCenter == rhs.beamAzimuthCenter)) ivarsEqual = false;
-     if( ! (beamAzimuthSweep == rhs.beamAzimuthSweep)) ivarsEqual = false;
-     if( ! (beamElevationCenter == rhs.beamElevationCenter)) ivarsEqual = false;
-     if( ! (beamElevationSweep == rhs.beamElevationSweep)) ivarsEqual = false;
-     if( ! (beamSweepSync == rhs.beamSweepSync)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (beamAzimuthCenter == rhs.beamAzimuthCenter)) return false;
+     if( ! (beamAzimuthSweep == rhs.beamAzimuthSweep)) return false;
+     if( ! (beamElevationCenter == rhs.beamElevationCenter)) return false;
+     if( ! (beamElevationSweep == rhs.beamElevationSweep)) return false;
+     if( ! (beamSweepSync == rhs.beamSweepSync)) return false;
+    return true;
  }
 
  @Override
@@ -286,5 +284,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" beamSweepSync:").append(beamSweepSync); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamAzimuthCenter,
+	                     this.beamAzimuthSweep,
+	                     this.beamElevationCenter,
+	                     this.beamElevationSweep,
+	                     this.beamSweepSync);
  }
 } // end of class

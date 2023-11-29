@@ -392,20 +392,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IsGroupOfPdu rhs = (IsGroupOfPdu)obj;
 
-     if( ! (groupEntityID.equals( rhs.groupEntityID) )) ivarsEqual = false;
-     if( ! (groupedEntityCategory == rhs.groupedEntityCategory)) ivarsEqual = false;
-     if( ! (pad == rhs.pad)) ivarsEqual = false;
-     if( ! (latitude == rhs.latitude)) ivarsEqual = false;
-     if( ! (longitude == rhs.longitude)) ivarsEqual = false;
-
-     for (int idx = 0; idx < groupedEntityDescriptions.size(); idx++)
-        if( ! ( groupedEntityDescriptions.get(idx).equals(rhs.groupedEntityDescriptions.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(groupEntityID, rhs.groupEntityID) ) return false;
+     if( ! (groupedEntityCategory == rhs.groupedEntityCategory)) return false;
+     if( ! (pad == rhs.pad)) return false;
+     if( ! (latitude == rhs.latitude)) return false;
+     if( ! (longitude == rhs.longitude)) return false;
+     if( ! Objects.equals(groupedEntityDescriptions, rhs.groupedEntityDescriptions) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -426,5 +421,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.groupEntityID,
+	                     this.groupedEntityCategory,
+	                     this.numberOfGroupedEntities,
+	                     this.pad,
+	                     this.latitude,
+	                     this.longitude,
+	                     this.groupedEntityDescriptions);
  }
 } // end of class

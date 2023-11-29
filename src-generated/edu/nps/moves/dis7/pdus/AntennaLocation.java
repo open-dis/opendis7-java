@@ -188,13 +188,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AntennaLocation rhs = (AntennaLocation)obj;
 
-     if( ! (antennaLocation.equals( rhs.antennaLocation) )) ivarsEqual = false;
-     if( ! (relativeAntennaLocation.equals( rhs.relativeAntennaLocation) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(antennaLocation, rhs.antennaLocation) ) return false;
+     if( ! Objects.equals(relativeAntennaLocation, rhs.relativeAntennaLocation) ) return false;
+    return true;
  }
 
  @Override
@@ -207,5 +205,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" relativeAntennaLocation:").append(relativeAntennaLocation); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.antennaLocation,
+	                     this.relativeAntennaLocation);
  }
 } // end of class

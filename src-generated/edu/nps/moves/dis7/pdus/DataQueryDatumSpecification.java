@@ -262,19 +262,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DataQueryDatumSpecification rhs = (DataQueryDatumSpecification)obj;
 
-
-     for (int idx = 0; idx < fixedDatumIDList.size(); idx++)
-        if( ! ( fixedDatumIDList.get(idx).equals(rhs.fixedDatumIDList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatumIDList.size(); idx++)
-        if( ! ( variableDatumIDList.get(idx).equals(rhs.variableDatumIDList.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! Objects.equals(fixedDatumIDList, rhs.fixedDatumIDList) ) return false;
+     if( ! Objects.equals(variableDatumIDList, rhs.variableDatumIDList) ) return false;
+    return true;
  }
 
  @Override
@@ -295,5 +287,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfFixedDatums,
+	                     this.numberOfVariableDatums,
+	                     this.fixedDatumIDList,
+	                     this.variableDatumIDList);
  }
 } // end of class

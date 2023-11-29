@@ -531,25 +531,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DetonationPdu rhs = (DetonationPdu)obj;
 
-     if( ! (sourceEntityID.equals( rhs.sourceEntityID) )) ivarsEqual = false;
-     if( ! (targetEntityID.equals( rhs.targetEntityID) )) ivarsEqual = false;
-     if( ! (explodingEntityID.equals( rhs.explodingEntityID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (locationInWorldCoordinates.equals( rhs.locationInWorldCoordinates) )) ivarsEqual = false;
-     if( ! (descriptor.equals( rhs.descriptor) )) ivarsEqual = false;
-     if( ! (locationOfEntityCoordinates.equals( rhs.locationOfEntityCoordinates) )) ivarsEqual = false;
-     if( ! (detonationResult == rhs.detonationResult)) ivarsEqual = false;
-     if( ! (pad == rhs.pad)) ivarsEqual = false;
-
-     for (int idx = 0; idx < variableParameters.size(); idx++)
-        if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(sourceEntityID, rhs.sourceEntityID) ) return false;
+     if( ! Objects.equals(targetEntityID, rhs.targetEntityID) ) return false;
+     if( ! Objects.equals(explodingEntityID, rhs.explodingEntityID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! Objects.equals(locationInWorldCoordinates, rhs.locationInWorldCoordinates) ) return false;
+     if( ! Objects.equals(descriptor, rhs.descriptor) ) return false;
+     if( ! Objects.equals(locationOfEntityCoordinates, rhs.locationOfEntityCoordinates) ) return false;
+     if( ! (detonationResult == rhs.detonationResult)) return false;
+     if( ! (pad == rhs.pad)) return false;
+     if( ! Objects.equals(variableParameters, rhs.variableParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -575,5 +570,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.sourceEntityID,
+	                     this.targetEntityID,
+	                     this.explodingEntityID,
+	                     this.eventID,
+	                     this.velocity,
+	                     this.locationInWorldCoordinates,
+	                     this.descriptor,
+	                     this.locationOfEntityCoordinates,
+	                     this.detonationResult,
+	                     this.numberOfVariableParameters,
+	                     this.pad,
+	                     this.variableParameters);
  }
 } // end of class

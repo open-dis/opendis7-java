@@ -252,15 +252,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ModulationType rhs = (ModulationType)obj;
 
-     if( ! (spreadSpectrum == rhs.spreadSpectrum)) ivarsEqual = false;
-     if( ! (majorModulation == rhs.majorModulation)) ivarsEqual = false;
-     if( ! (detail == rhs.detail)) ivarsEqual = false;
-     if( ! (radioSystem == rhs.radioSystem)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (spreadSpectrum == rhs.spreadSpectrum)) return false;
+     if( ! (majorModulation == rhs.majorModulation)) return false;
+     if( ! (detail == rhs.detail)) return false;
+     if( ! (radioSystem == rhs.radioSystem)) return false;
+    return true;
  }
 
  @Override
@@ -275,5 +273,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" radioSystem:").append(radioSystem); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.spreadSpectrum,
+	                     this.majorModulation,
+	                     this.detail,
+	                     this.radioSystem);
  }
 } // end of class

@@ -336,18 +336,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RadioType rhs = (RadioType)obj;
 
-     if( ! (entityKind == rhs.entityKind)) ivarsEqual = false;
-     if( ! (domain == rhs.domain)) ivarsEqual = false;
-     if( ! (country == rhs.country)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subcategory == rhs.subcategory)) ivarsEqual = false;
-     if( ! (specific == rhs.specific)) ivarsEqual = false;
-     if( ! (extra == rhs.extra)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (entityKind == rhs.entityKind)) return false;
+     if( ! (domain == rhs.domain)) return false;
+     if( ! (country == rhs.country)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subcategory == rhs.subcategory)) return false;
+     if( ! (specific == rhs.specific)) return false;
+     if( ! (extra == rhs.extra)) return false;
+    return true;
  }
 
  @Override
@@ -365,5 +363,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" extra:").append(extra); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityKind,
+	                     this.domain,
+	                     this.country,
+	                     this.category,
+	                     this.subcategory,
+	                     this.specific,
+	                     this.extra);
  }
 } // end of class

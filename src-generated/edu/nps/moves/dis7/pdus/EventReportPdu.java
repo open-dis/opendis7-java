@@ -379,21 +379,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EventReportPdu rhs = (EventReportPdu)obj;
 
-     if( ! (eventType == rhs.eventType)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-
-     for (int idx = 0; idx < fixedDatums.size(); idx++)
-        if( ! ( fixedDatums.get(idx).equals(rhs.fixedDatums.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatums.size(); idx++)
-        if( ! ( variableDatums.get(idx).equals(rhs.variableDatums.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (eventType == rhs.eventType)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(fixedDatums, rhs.fixedDatums) ) return false;
+     if( ! Objects.equals(variableDatums, rhs.variableDatums) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -416,5 +408,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.eventType,
+	                     this.padding1,
+	                     this.numberOfFixedDatumRecords,
+	                     this.numberOfVariableDatumRecords,
+	                     this.fixedDatums,
+	                     this.variableDatums);
  }
 } // end of class

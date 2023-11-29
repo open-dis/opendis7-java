@@ -276,16 +276,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridAxisDescriptor rhs = (GridAxisDescriptor)obj;
 
-     if( ! (domainInitialXi == rhs.domainInitialXi)) ivarsEqual = false;
-     if( ! (domainFinalXi == rhs.domainFinalXi)) ivarsEqual = false;
-     if( ! (domainPointsXi == rhs.domainPointsXi)) ivarsEqual = false;
-     if( ! (interleafFactor == rhs.interleafFactor)) ivarsEqual = false;
-     if( ! (axisType == rhs.axisType)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (domainInitialXi == rhs.domainInitialXi)) return false;
+     if( ! (domainFinalXi == rhs.domainFinalXi)) return false;
+     if( ! (domainPointsXi == rhs.domainPointsXi)) return false;
+     if( ! (interleafFactor == rhs.interleafFactor)) return false;
+     if( ! (axisType == rhs.axisType)) return false;
+    return true;
  }
 
  @Override
@@ -301,5 +299,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" axisType:").append(axisType); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.domainInitialXi,
+	                     this.domainFinalXi,
+	                     this.domainPointsXi,
+	                     this.interleafFactor,
+	                     this.axisType);
  }
 } // end of class

@@ -191,13 +191,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SimulationManagementFamilyPdu rhs = (SimulationManagementFamilyPdu)obj;
 
-     if( ! (originatingID.equals( rhs.originatingID) )) ivarsEqual = false;
-     if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(originatingID, rhs.originatingID) ) return false;
+     if( ! Objects.equals(receivingID, rhs.receivingID) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -210,5 +208,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" receivingID:").append(receivingID); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.originatingID,
+	                     this.receivingID);
  }
 } // end of class

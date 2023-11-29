@@ -279,14 +279,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AcknowledgeRPdu rhs = (AcknowledgeRPdu)obj;
 
-     if( ! (acknowledgeFlag == rhs.acknowledgeFlag)) ivarsEqual = false;
-     if( ! (responseFlag == rhs.responseFlag)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (acknowledgeFlag == rhs.acknowledgeFlag)) return false;
+     if( ! (responseFlag == rhs.responseFlag)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -300,5 +298,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" requestID:").append(requestID); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.acknowledgeFlag,
+	                     this.responseFlag,
+	                     this.requestID);
  }
 } // end of class

@@ -383,18 +383,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TransferOwnershipPdu rhs = (TransferOwnershipPdu)obj;
 
-     if( ! (originatingEntityID.equals( rhs.originatingEntityID) )) ivarsEqual = false;
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (transferType == rhs.transferType)) ivarsEqual = false;
-     if( ! (transferEntityID.equals( rhs.transferEntityID) )) ivarsEqual = false;
-     if( ! (recordSets.equals( rhs.recordSets) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(originatingEntityID, rhs.originatingEntityID) ) return false;
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (transferType == rhs.transferType)) return false;
+     if( ! Objects.equals(transferEntityID, rhs.transferEntityID) ) return false;
+     if( ! Objects.equals(recordSets, rhs.recordSets) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -412,5 +410,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" recordSets:").append(recordSets); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.originatingEntityID,
+	                     this.receivingEntityID,
+	                     this.requestID,
+	                     this.requiredReliabilityService,
+	                     this.transferType,
+	                     this.transferEntityID,
+	                     this.recordSets);
  }
 } // end of class

@@ -240,19 +240,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IntercomCommunicationsParameters rhs = (IntercomCommunicationsParameters)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(recordSpecificField[idx] == rhs.recordSpecificField[idx])) ivarsEqual = false;
+          if(!(recordSpecificField[idx] == rhs.recordSpecificField[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override
@@ -268,5 +266,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" padding:").append(padding); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.recordSpecificField,
+	                     this.padding);
  }
 } // end of class

@@ -278,16 +278,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MunitionDescriptor rhs = (MunitionDescriptor)obj;
 
-     if( ! (munitionType.equals( rhs.munitionType) )) ivarsEqual = false;
-     if( ! (warhead == rhs.warhead)) ivarsEqual = false;
-     if( ! (fuse == rhs.fuse)) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-     if( ! (rate == rhs.rate)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(munitionType, rhs.munitionType) ) return false;
+     if( ! (warhead == rhs.warhead)) return false;
+     if( ! (fuse == rhs.fuse)) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+     if( ! (rate == rhs.rate)) return false;
+    return true;
  }
 
  @Override
@@ -303,5 +301,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" rate:").append(rate); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.munitionType,
+	                     this.warhead,
+	                     this.fuse,
+	                     this.quantity,
+	                     this.rate);
  }
 } // end of class

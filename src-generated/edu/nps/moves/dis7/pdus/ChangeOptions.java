@@ -168,12 +168,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ChangeOptions rhs = (ChangeOptions)obj;
 
-     if( ! (value == rhs.value)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (value == rhs.value)) return false;
+    return true;
  }
 
  @Override
@@ -185,5 +183,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" value:").append(value); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.value);
  }
 } // end of class

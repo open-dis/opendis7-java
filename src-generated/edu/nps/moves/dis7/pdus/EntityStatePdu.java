@@ -549,26 +549,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityStatePdu rhs = (EntityStatePdu)obj;
 
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (forceId == rhs.forceId)) ivarsEqual = false;
-     if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
-     if( ! (alternativeEntityType.equals( rhs.alternativeEntityType) )) ivarsEqual = false;
-     if( ! (entityLinearVelocity.equals( rhs.entityLinearVelocity) )) ivarsEqual = false;
-     if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
-     if( ! (entityOrientation.equals( rhs.entityOrientation) )) ivarsEqual = false;
-     if( ! (entityAppearance == rhs.entityAppearance)) ivarsEqual = false;
-     if( ! (deadReckoningParameters.equals( rhs.deadReckoningParameters) )) ivarsEqual = false;
-     if( ! (marking.equals( rhs.marking) )) ivarsEqual = false;
-     if( ! (capabilities.equals( rhs.capabilities) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < variableParameters.size(); idx++)
-        if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (forceId == rhs.forceId)) return false;
+     if( ! Objects.equals(entityType, rhs.entityType) ) return false;
+     if( ! Objects.equals(alternativeEntityType, rhs.alternativeEntityType) ) return false;
+     if( ! Objects.equals(entityLinearVelocity, rhs.entityLinearVelocity) ) return false;
+     if( ! Objects.equals(entityLocation, rhs.entityLocation) ) return false;
+     if( ! Objects.equals(entityOrientation, rhs.entityOrientation) ) return false;
+     if( ! (entityAppearance == rhs.entityAppearance)) return false;
+     if( ! Objects.equals(deadReckoningParameters, rhs.deadReckoningParameters) ) return false;
+     if( ! Objects.equals(marking, rhs.marking) ) return false;
+     if( ! Objects.equals(capabilities, rhs.capabilities) ) return false;
+     if( ! Objects.equals(variableParameters, rhs.variableParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -595,6 +590,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityID,
+	                     this.forceId,
+	                     this.numberOfVariableParameters,
+	                     this.entityType,
+	                     this.alternativeEntityType,
+	                     this.entityLinearVelocity,
+	                     this.entityLocation,
+	                     this.entityOrientation,
+	                     this.entityAppearance,
+	                     this.deadReckoningParameters,
+	                     this.marking,
+	                     this.capabilities,
+	                     this.variableParameters);
  }
     // writeEntityStateUtilityMethods
 

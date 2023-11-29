@@ -358,17 +358,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IsPartOfPdu rhs = (IsPartOfPdu)obj;
 
-     if( ! (orginatingEntityID.equals( rhs.orginatingEntityID) )) ivarsEqual = false;
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (relationship.equals( rhs.relationship) )) ivarsEqual = false;
-     if( ! (partLocation.equals( rhs.partLocation) )) ivarsEqual = false;
-     if( ! (namedLocationID.equals( rhs.namedLocationID) )) ivarsEqual = false;
-     if( ! (partEntityType.equals( rhs.partEntityType) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(orginatingEntityID, rhs.orginatingEntityID) ) return false;
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! Objects.equals(relationship, rhs.relationship) ) return false;
+     if( ! Objects.equals(partLocation, rhs.partLocation) ) return false;
+     if( ! Objects.equals(namedLocationID, rhs.namedLocationID) ) return false;
+     if( ! Objects.equals(partEntityType, rhs.partEntityType) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -385,5 +383,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" partEntityType:").append(partEntityType); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.orginatingEntityID,
+	                     this.receivingEntityID,
+	                     this.relationship,
+	                     this.partLocation,
+	                     this.namedLocationID,
+	                     this.partEntityType);
  }
 } // end of class

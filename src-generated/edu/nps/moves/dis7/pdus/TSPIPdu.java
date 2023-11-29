@@ -492,26 +492,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TSPIPdu rhs = (TSPIPdu)obj;
 
-     if( ! (liveEntityId.equals( rhs.liveEntityId) )) ivarsEqual = false;
-     if( ! (TSPIFlag == rhs.TSPIFlag)) ivarsEqual = false;
-     if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
-     if( ! (entityLinearVelocity.equals( rhs.entityLinearVelocity) )) ivarsEqual = false;
-     if( ! (entityOrientation.equals( rhs.entityOrientation) )) ivarsEqual = false;
-     if( ! (positionError.equals( rhs.positionError) )) ivarsEqual = false;
-     if( ! (orientationError.equals( rhs.orientationError) )) ivarsEqual = false;
-     if( ! (deadReckoningParameters.equals( rhs.deadReckoningParameters) )) ivarsEqual = false;
-     if( ! (measuredSpeed == rhs.measuredSpeed)) ivarsEqual = false;
+     if( ! Objects.equals(liveEntityId, rhs.liveEntityId) ) return false;
+     if( ! (TSPIFlag == rhs.TSPIFlag)) return false;
+     if( ! Objects.equals(entityLocation, rhs.entityLocation) ) return false;
+     if( ! Objects.equals(entityLinearVelocity, rhs.entityLinearVelocity) ) return false;
+     if( ! Objects.equals(entityOrientation, rhs.entityOrientation) ) return false;
+     if( ! Objects.equals(positionError, rhs.positionError) ) return false;
+     if( ! Objects.equals(orientationError, rhs.orientationError) ) return false;
+     if( ! Objects.equals(deadReckoningParameters, rhs.deadReckoningParameters) ) return false;
+     if( ! (measuredSpeed == rhs.measuredSpeed)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) ivarsEqual = false;
+          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -533,5 +531,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.liveEntityId,
+	                     this.TSPIFlag,
+	                     this.entityLocation,
+	                     this.entityLinearVelocity,
+	                     this.entityOrientation,
+	                     this.positionError,
+	                     this.orientationError,
+	                     this.deadReckoningParameters,
+	                     this.measuredSpeed,
+	                     this.systemSpecificDataLength,
+	                     this.systemSpecificData);
  }
 } // end of class

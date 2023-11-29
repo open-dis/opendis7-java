@@ -685,31 +685,26 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DirectedEnergyFirePdu rhs = (DirectedEnergyFirePdu)obj;
 
-     if( ! (firingEntityID.equals( rhs.firingEntityID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (munitionType.equals( rhs.munitionType) )) ivarsEqual = false;
-     if( ! (shotStartTime.equals( rhs.shotStartTime) )) ivarsEqual = false;
-     if( ! (commulativeShotTime == rhs.commulativeShotTime)) ivarsEqual = false;
-     if( ! (apertureEmitterLocation.equals( rhs.apertureEmitterLocation) )) ivarsEqual = false;
-     if( ! (apertureDiameter == rhs.apertureDiameter)) ivarsEqual = false;
-     if( ! (wavelength == rhs.wavelength)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (pulseRepititionFrequency == rhs.pulseRepititionFrequency)) ivarsEqual = false;
-     if( ! (pulseWidth == rhs.pulseWidth)) ivarsEqual = false;
-     if( ! (flags.equals( rhs.flags) )) ivarsEqual = false;
-     if( ! (pulseShape == rhs.pulseShape)) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-     if( ! (pad3 == rhs.pad3)) ivarsEqual = false;
-     if( ! (pad4 == rhs.pad4)) ivarsEqual = false;
-
-     for (int idx = 0; idx < dERecords.size(); idx++)
-        if( ! ( dERecords.get(idx).equals(rhs.dERecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(firingEntityID, rhs.firingEntityID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! Objects.equals(munitionType, rhs.munitionType) ) return false;
+     if( ! Objects.equals(shotStartTime, rhs.shotStartTime) ) return false;
+     if( ! (commulativeShotTime == rhs.commulativeShotTime)) return false;
+     if( ! Objects.equals(apertureEmitterLocation, rhs.apertureEmitterLocation) ) return false;
+     if( ! (apertureDiameter == rhs.apertureDiameter)) return false;
+     if( ! (wavelength == rhs.wavelength)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (pulseRepititionFrequency == rhs.pulseRepititionFrequency)) return false;
+     if( ! (pulseWidth == rhs.pulseWidth)) return false;
+     if( ! Objects.equals(flags, rhs.flags) ) return false;
+     if( ! (pulseShape == rhs.pulseShape)) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+     if( ! (pad3 == rhs.pad3)) return false;
+     if( ! (pad4 == rhs.pad4)) return false;
+     if( ! Objects.equals(dERecords, rhs.dERecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -741,5 +736,28 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.firingEntityID,
+	                     this.eventID,
+	                     this.munitionType,
+	                     this.shotStartTime,
+	                     this.commulativeShotTime,
+	                     this.apertureEmitterLocation,
+	                     this.apertureDiameter,
+	                     this.wavelength,
+	                     this.pad1,
+	                     this.pulseRepititionFrequency,
+	                     this.pulseWidth,
+	                     this.flags,
+	                     this.pulseShape,
+	                     this.pad2,
+	                     this.pad3,
+	                     this.pad4,
+	                     this.numberOfDERecords,
+	                     this.dERecords);
  }
 } // end of class

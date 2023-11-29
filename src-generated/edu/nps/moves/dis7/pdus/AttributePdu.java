@@ -484,23 +484,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AttributePdu rhs = (AttributePdu)obj;
 
-     if( ! (originatingSimulationAddress.equals( rhs.originatingSimulationAddress) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (attributeRecordPduType == rhs.attributeRecordPduType)) ivarsEqual = false;
-     if( ! (attributeRecordProtocolVersion == rhs.attributeRecordProtocolVersion)) ivarsEqual = false;
-     if( ! (masterAttributeRecordType == rhs.masterAttributeRecordType)) ivarsEqual = false;
-     if( ! (actionCode == rhs.actionCode)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-
-     for (int idx = 0; idx < attributeRecordSets.size(); idx++)
-        if( ! ( attributeRecordSets.get(idx).equals(rhs.attributeRecordSets.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(originatingSimulationAddress, rhs.originatingSimulationAddress) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (attributeRecordPduType == rhs.attributeRecordPduType)) return false;
+     if( ! (attributeRecordProtocolVersion == rhs.attributeRecordProtocolVersion)) return false;
+     if( ! (masterAttributeRecordType == rhs.masterAttributeRecordType)) return false;
+     if( ! (actionCode == rhs.actionCode)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+     if( ! Objects.equals(attributeRecordSets, rhs.attributeRecordSets) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -524,5 +519,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb2.setLength(0); // reset
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.originatingSimulationAddress,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.attributeRecordPduType,
+	                     this.attributeRecordProtocolVersion,
+	                     this.masterAttributeRecordType,
+	                     this.actionCode,
+	                     this.padding3,
+	                     this.numberAttributeRecordSet,
+	                     this.attributeRecordSets);
  }
 } // end of class

@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityOrientationError rhs = (LiveEntityOrientationError)obj;
 
-     if( ! (azimuthError == rhs.azimuthError)) ivarsEqual = false;
-     if( ! (elevationError == rhs.elevationError)) ivarsEqual = false;
-     if( ! (rotationError == rhs.rotationError)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (azimuthError == rhs.azimuthError)) return false;
+     if( ! (elevationError == rhs.elevationError)) return false;
+     if( ! (rotationError == rhs.rotationError)) return false;
+    return true;
  }
 
  @Override
@@ -253,5 +251,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" rotationError:").append(rotationError); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.azimuthError,
+	                     this.elevationError,
+	                     this.rotationError);
  }
 } // end of class

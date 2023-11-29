@@ -186,13 +186,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MineEmplacementTime rhs = (MineEmplacementTime)obj;
 
-     if( ! (hour == rhs.hour)) ivarsEqual = false;
-     if( ! (timePastTheHour == rhs.timePastTheHour)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (hour == rhs.hour)) return false;
+     if( ! (timePastTheHour == rhs.timePastTheHour)) return false;
+    return true;
  }
 
  @Override
@@ -205,5 +203,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" timePastTheHour:").append(timePastTheHour); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.hour,
+	                     this.timePastTheHour);
  }
 } // end of class

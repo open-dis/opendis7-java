@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final NamedLocationIdentification rhs = (NamedLocationIdentification)obj;
 
-     if( ! (stationName == rhs.stationName)) ivarsEqual = false;
-     if( ! (stationNumber == rhs.stationNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (stationName == rhs.stationName)) return false;
+     if( ! (stationNumber == rhs.stationNumber)) return false;
+    return true;
  }
 
  @Override
@@ -213,5 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     sb.append(" stationNumber:").append(stationNumber); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.stationName,
+	                     this.stationNumber);
  }
 } // end of class
