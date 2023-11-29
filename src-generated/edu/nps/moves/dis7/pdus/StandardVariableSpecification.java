@@ -218,16 +218,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StandardVariableSpecification rhs = (StandardVariableSpecification)obj;
 
-     if( ! (numberOfStandardVariableRecords == rhs.numberOfStandardVariableRecords)) ivarsEqual = false;
-
-     for (int idx = 0; idx < standardVariables.size(); idx++)
-        if( ! ( standardVariables.get(idx).equals(rhs.standardVariables.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (numberOfStandardVariableRecords == rhs.numberOfStandardVariableRecords)) return false;
+     if( ! Objects.equals(standardVariables, rhs.standardVariables) ) return false;
+    return true;
  }
 
  @Override

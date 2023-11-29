@@ -691,32 +691,24 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GriddedDataPdu rhs = (GriddedDataPdu)obj;
 
-     if( ! (environmentalSimulationApplicationID.equals( rhs.environmentalSimulationApplicationID) )) ivarsEqual = false;
-     if( ! (fieldNumber == rhs.fieldNumber)) ivarsEqual = false;
-     if( ! (pduNumber == rhs.pduNumber)) ivarsEqual = false;
-     if( ! (pduTotal == rhs.pduTotal)) ivarsEqual = false;
-     if( ! (coordinateSystem == rhs.coordinateSystem)) ivarsEqual = false;
-     if( ! (constantGrid == rhs.constantGrid)) ivarsEqual = false;
-     if( ! (environmentType.equals( rhs.environmentType) )) ivarsEqual = false;
-     if( ! (orientation.equals( rhs.orientation) )) ivarsEqual = false;
-     if( ! (sampleTime.equals( rhs.sampleTime) )) ivarsEqual = false;
-     if( ! (totalValues == rhs.totalValues)) ivarsEqual = false;
-     if( ! (vectorDimension == rhs.vectorDimension)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < gridAxisDescriptors.size(); idx++)
-        if( ! ( gridAxisDescriptors.get(idx).equals(rhs.gridAxisDescriptors.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < gridDataRecords.size(); idx++)
-        if( ! ( gridDataRecords.get(idx).equals(rhs.gridDataRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(environmentalSimulationApplicationID, rhs.environmentalSimulationApplicationID) ) return false;
+     if( ! (fieldNumber == rhs.fieldNumber)) return false;
+     if( ! (pduNumber == rhs.pduNumber)) return false;
+     if( ! (pduTotal == rhs.pduTotal)) return false;
+     if( ! (coordinateSystem == rhs.coordinateSystem)) return false;
+     if( ! (constantGrid == rhs.constantGrid)) return false;
+     if( ! Objects.equals(environmentType, rhs.environmentType) ) return false;
+     if( ! Objects.equals(orientation, rhs.orientation) ) return false;
+     if( ! Objects.equals(sampleTime, rhs.sampleTime) ) return false;
+     if( ! (totalValues == rhs.totalValues)) return false;
+     if( ! (vectorDimension == rhs.vectorDimension)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(gridAxisDescriptors, rhs.gridAxisDescriptors) ) return false;
+     if( ! Objects.equals(gridDataRecords, rhs.gridDataRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

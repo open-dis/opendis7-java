@@ -165,12 +165,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final InformationOperationsFamilyPdu rhs = (InformationOperationsFamilyPdu)obj;
 
-     if( ! (originatingSimID.equals( rhs.originatingSimID) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(originatingSimID, rhs.originatingSimID) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

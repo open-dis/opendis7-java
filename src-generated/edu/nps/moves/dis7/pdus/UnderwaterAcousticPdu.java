@@ -559,29 +559,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final UnderwaterAcousticPdu rhs = (UnderwaterAcousticPdu)obj;
 
-     if( ! (emittingEntityID.equals( rhs.emittingEntityID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (stateChangeIndicator == rhs.stateChangeIndicator)) ivarsEqual = false;
-     if( ! (pad == rhs.pad)) ivarsEqual = false;
-     if( ! (passiveParameterIndex == rhs.passiveParameterIndex)) ivarsEqual = false;
-     if( ! (propulsionPlantConfiguration == rhs.propulsionPlantConfiguration)) ivarsEqual = false;
-
-     for (int idx = 0; idx < shaftRPMs.size(); idx++)
-        if( ! ( shaftRPMs.get(idx).equals(rhs.shaftRPMs.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < apaData.size(); idx++)
-        if( ! ( apaData.get(idx).equals(rhs.apaData.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < emitterSystems.size(); idx++)
-        if( ! ( emitterSystems.get(idx).equals(rhs.emitterSystems.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(emittingEntityID, rhs.emittingEntityID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! (stateChangeIndicator == rhs.stateChangeIndicator)) return false;
+     if( ! (pad == rhs.pad)) return false;
+     if( ! (passiveParameterIndex == rhs.passiveParameterIndex)) return false;
+     if( ! (propulsionPlantConfiguration == rhs.propulsionPlantConfiguration)) return false;
+     if( ! Objects.equals(shaftRPMs, rhs.shaftRPMs) ) return false;
+     if( ! Objects.equals(apaData, rhs.apaData) ) return false;
+     if( ! Objects.equals(emitterSystems, rhs.emitterSystems) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

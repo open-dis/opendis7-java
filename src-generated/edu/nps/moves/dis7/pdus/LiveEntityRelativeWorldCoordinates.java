@@ -264,15 +264,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityRelativeWorldCoordinates rhs = (LiveEntityRelativeWorldCoordinates)obj;
 
-     if( ! (referencePoint == rhs.referencePoint)) ivarsEqual = false;
-     if( ! (deltaX == rhs.deltaX)) ivarsEqual = false;
-     if( ! (deltaY == rhs.deltaY)) ivarsEqual = false;
-     if( ! (deltaZ == rhs.deltaZ)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (referencePoint == rhs.referencePoint)) return false;
+     if( ! (deltaX == rhs.deltaX)) return false;
+     if( ! (deltaY == rhs.deltaY)) return false;
+     if( ! (deltaZ == rhs.deltaZ)) return false;
+    return true;
  }
 
  @Override

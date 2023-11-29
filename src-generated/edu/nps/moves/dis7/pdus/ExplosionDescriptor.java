@@ -245,15 +245,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ExplosionDescriptor rhs = (ExplosionDescriptor)obj;
 
-     if( ! (explodingObject.equals( rhs.explodingObject) )) ivarsEqual = false;
-     if( ! (explosiveMaterial == rhs.explosiveMaterial)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (explosiveForce == rhs.explosiveForce)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(explodingObject, rhs.explodingObject) ) return false;
+     if( ! (explosiveMaterial == rhs.explosiveMaterial)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (explosiveForce == rhs.explosiveForce)) return false;
+    return true;
  }
 
  @Override

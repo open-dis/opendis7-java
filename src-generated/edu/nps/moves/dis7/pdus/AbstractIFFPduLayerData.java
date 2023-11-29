@@ -136,11 +136,9 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AbstractIFFPduLayerData rhs = (AbstractIFFPduLayerData)obj;
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override

@@ -330,20 +330,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldResponseNACKPdu rhs = (MinefieldResponseNACKPdu)obj;
 
-     if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
-     if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
+     if( ! Objects.equals(minefieldID, rhs.minefieldID) ) return false;
+     if( ! Objects.equals(requestingEntityID, rhs.requestingEntityID) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx])) ivarsEqual = false;
+          if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override

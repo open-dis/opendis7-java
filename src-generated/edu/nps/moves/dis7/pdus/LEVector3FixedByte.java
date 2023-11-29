@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LEVector3FixedByte rhs = (LEVector3FixedByte)obj;
 
-     if( ! (x == rhs.x)) ivarsEqual = false;
-     if( ! (y == rhs.y)) ivarsEqual = false;
-     if( ! (z == rhs.z)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (x == rhs.x)) return false;
+     if( ! (y == rhs.y)) return false;
+     if( ! (z == rhs.z)) return false;
+    return true;
  }
 
  @Override

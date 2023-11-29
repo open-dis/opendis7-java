@@ -139,11 +139,9 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityManagementFamilyPdu rhs = (EntityManagementFamilyPdu)obj;
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override

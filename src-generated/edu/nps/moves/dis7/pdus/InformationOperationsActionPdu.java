@@ -529,25 +529,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final InformationOperationsActionPdu rhs = (InformationOperationsActionPdu)obj;
 
-     if( ! (receivingSimID.equals( rhs.receivingSimID) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (IOWarfareType == rhs.IOWarfareType)) ivarsEqual = false;
-     if( ! (IOSimulationSource == rhs.IOSimulationSource)) ivarsEqual = false;
-     if( ! (IOActionType == rhs.IOActionType)) ivarsEqual = false;
-     if( ! (IOActionPhase == rhs.IOActionPhase)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (ioAttackerID.equals( rhs.ioAttackerID) )) ivarsEqual = false;
-     if( ! (ioPrimaryTargetID.equals( rhs.ioPrimaryTargetID) )) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < ioRecords.size(); idx++)
-        if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(receivingSimID, rhs.receivingSimID) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (IOWarfareType == rhs.IOWarfareType)) return false;
+     if( ! (IOSimulationSource == rhs.IOSimulationSource)) return false;
+     if( ! (IOActionType == rhs.IOActionType)) return false;
+     if( ! (IOActionPhase == rhs.IOActionPhase)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(ioAttackerID, rhs.ioAttackerID) ) return false;
+     if( ! Objects.equals(ioPrimaryTargetID, rhs.ioPrimaryTargetID) ) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(ioRecords, rhs.ioRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

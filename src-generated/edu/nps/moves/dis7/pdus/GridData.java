@@ -188,13 +188,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridData rhs = (GridData)obj;
 
-     if( ! (sampleType == rhs.sampleType)) ivarsEqual = false;
-     if( ! (dataRepresentation == rhs.dataRepresentation)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (sampleType == rhs.sampleType)) return false;
+     if( ! (dataRepresentation == rhs.dataRepresentation)) return false;
+    return true;
  }
 
  @Override

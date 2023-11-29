@@ -315,17 +315,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Mode5InterrogatorBasicData rhs = (Mode5InterrogatorBasicData)obj;
 
-     if( ! (mode5InterrogatorStatus == rhs.mode5InterrogatorStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (mode5MessageFormatsPresent == rhs.mode5MessageFormatsPresent)) ivarsEqual = false;
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (mode5InterrogatorStatus == rhs.mode5InterrogatorStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (mode5MessageFormatsPresent == rhs.mode5MessageFormatsPresent)) return false;
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+    return true;
  }
 
  @Override

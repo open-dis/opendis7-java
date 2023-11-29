@@ -198,15 +198,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RecordQuerySpecification rhs = (RecordQuerySpecification)obj;
 
-
-     for (int idx = 0; idx < recordIDs.size(); idx++)
-        if( ! ( recordIDs.get(idx).equals(rhs.recordIDs.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! Objects.equals(recordIDs, rhs.recordIDs) ) return false;
+    return true;
  }
 
  @Override

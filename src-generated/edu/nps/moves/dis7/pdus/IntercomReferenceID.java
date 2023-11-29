@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IntercomReferenceID rhs = (IntercomReferenceID)obj;
 
-     if( ! (siteNumber == rhs.siteNumber)) ivarsEqual = false;
-     if( ! (applicationNumber == rhs.applicationNumber)) ivarsEqual = false;
-     if( ! (referenceNumber == rhs.referenceNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (siteNumber == rhs.siteNumber)) return false;
+     if( ! (applicationNumber == rhs.applicationNumber)) return false;
+     if( ! (referenceNumber == rhs.referenceNumber)) return false;
+    return true;
  }
 
  @Override

@@ -214,14 +214,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveDeadReckoningParameters rhs = (LiveDeadReckoningParameters)obj;
 
-     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) ivarsEqual = false;
-     if( ! (entityLinearAcceleration.equals( rhs.entityLinearAcceleration) )) ivarsEqual = false;
-     if( ! (entityAngularVelocity.equals( rhs.entityAngularVelocity) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) return false;
+     if( ! Objects.equals(entityLinearAcceleration, rhs.entityLinearAcceleration) ) return false;
+     if( ! Objects.equals(entityAngularVelocity, rhs.entityAngularVelocity) ) return false;
+    return true;
  }
 
  @Override

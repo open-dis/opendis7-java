@@ -301,17 +301,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ExpendableReload rhs = (ExpendableReload)obj;
 
-     if( ! (expendable.equals( rhs.expendable) )) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (standardQuantity == rhs.standardQuantity)) ivarsEqual = false;
-     if( ! (maximumQuantity == rhs.maximumQuantity)) ivarsEqual = false;
-     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) ivarsEqual = false;
-     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(expendable, rhs.expendable) ) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (standardQuantity == rhs.standardQuantity)) return false;
+     if( ! (maximumQuantity == rhs.maximumQuantity)) return false;
+     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) return false;
+     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) return false;
+    return true;
  }
 
  @Override

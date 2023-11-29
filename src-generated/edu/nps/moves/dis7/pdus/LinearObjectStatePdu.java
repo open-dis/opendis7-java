@@ -453,22 +453,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LinearObjectStatePdu rhs = (LinearObjectStatePdu)obj;
 
-     if( ! (objectID.equals( rhs.objectID) )) ivarsEqual = false;
-     if( ! (referencedObjectID.equals( rhs.referencedObjectID) )) ivarsEqual = false;
-     if( ! (updateNumber == rhs.updateNumber)) ivarsEqual = false;
-     if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (requesterID.equals( rhs.requesterID) )) ivarsEqual = false;
-     if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
-     if( ! (objectType.equals( rhs.objectType) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < linearSegmentParameters.size(); idx++)
-        if( ! ( linearSegmentParameters.get(idx).equals(rhs.linearSegmentParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(objectID, rhs.objectID) ) return false;
+     if( ! Objects.equals(referencedObjectID, rhs.referencedObjectID) ) return false;
+     if( ! (updateNumber == rhs.updateNumber)) return false;
+     if( ! (forceID == rhs.forceID)) return false;
+     if( ! Objects.equals(requesterID, rhs.requesterID) ) return false;
+     if( ! Objects.equals(receivingID, rhs.receivingID) ) return false;
+     if( ! Objects.equals(objectType, rhs.objectType) ) return false;
+     if( ! Objects.equals(linearSegmentParameters, rhs.linearSegmentParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

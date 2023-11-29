@@ -161,12 +161,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RequestID rhs = (RequestID)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (requestID == rhs.requestID)) return false;
+    return true;
  }
 
  @Override

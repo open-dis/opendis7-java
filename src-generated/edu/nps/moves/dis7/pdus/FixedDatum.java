@@ -187,13 +187,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final FixedDatum rhs = (FixedDatum)obj;
 
-     if( ! (fixedDatumID == rhs.fixedDatumID)) ivarsEqual = false;
-     if( ! (fixedDatumValue == rhs.fixedDatumValue)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (fixedDatumID == rhs.fixedDatumID)) return false;
+     if( ! (fixedDatumValue == rhs.fixedDatumValue)) return false;
+    return true;
  }
 
  @Override

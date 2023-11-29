@@ -336,20 +336,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFPduLayer2Data rhs = (IFFPduLayer2Data)obj;
 
-     if( ! (layerHeader.equals( rhs.layerHeader) )) ivarsEqual = false;
-     if( ! (beamData.equals( rhs.beamData) )) ivarsEqual = false;
-     if( ! (secondaryOpParameter1 == rhs.secondaryOpParameter1)) ivarsEqual = false;
-     if( ! (secondaryOpParameter2 == rhs.secondaryOpParameter2)) ivarsEqual = false;
-     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) ivarsEqual = false;
-
-     for (int idx = 0; idx < IFFFundamentalParameterDataRecord.size(); idx++)
-        if( ! ( IFFFundamentalParameterDataRecord.get(idx).equals(rhs.IFFFundamentalParameterDataRecord.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(layerHeader, rhs.layerHeader) ) return false;
+     if( ! Objects.equals(beamData, rhs.beamData) ) return false;
+     if( ! (secondaryOpParameter1 == rhs.secondaryOpParameter1)) return false;
+     if( ! (secondaryOpParameter2 == rhs.secondaryOpParameter2)) return false;
+     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) return false;
+     if( ! Objects.equals(IFFFundamentalParameterDataRecord, rhs.IFFFundamentalParameterDataRecord) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

@@ -227,12 +227,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RemoveEntityPdu rhs = (RemoveEntityPdu)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

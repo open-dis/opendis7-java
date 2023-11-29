@@ -236,15 +236,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Appearance rhs = (Appearance)obj;
 
-     if( ! (visual == rhs.visual)) ivarsEqual = false;
-     if( ! (ir == rhs.ir)) ivarsEqual = false;
-     if( ! (em == rhs.em)) ivarsEqual = false;
-     if( ! (audio == rhs.audio)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (visual == rhs.visual)) return false;
+     if( ! (ir == rhs.ir)) return false;
+     if( ! (em == rhs.em)) return false;
+     if( ! (audio == rhs.audio)) return false;
+    return true;
  }
 
  @Override

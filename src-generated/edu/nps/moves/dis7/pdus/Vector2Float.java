@@ -186,13 +186,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Vector2Float rhs = (Vector2Float)obj;
 
-     if( ! (x == rhs.x)) ivarsEqual = false;
-     if( ! (y == rhs.y)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (x == rhs.x)) return false;
+     if( ! (y == rhs.y)) return false;
+    return true;
  }
 
  @Override

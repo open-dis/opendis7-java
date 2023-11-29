@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SecondaryOperationalData rhs = (SecondaryOperationalData)obj;
 
-     if( ! (operationalData1 == rhs.operationalData1)) ivarsEqual = false;
-     if( ! (operationalData2 == rhs.operationalData2)) ivarsEqual = false;
-     if( ! (numberOfIFFFundamentalParameterRecords == rhs.numberOfIFFFundamentalParameterRecords)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (operationalData1 == rhs.operationalData1)) return false;
+     if( ! (operationalData2 == rhs.operationalData2)) return false;
+     if( ! (numberOfIFFFundamentalParameterRecords == rhs.numberOfIFFFundamentalParameterRecords)) return false;
+    return true;
  }
 
  @Override

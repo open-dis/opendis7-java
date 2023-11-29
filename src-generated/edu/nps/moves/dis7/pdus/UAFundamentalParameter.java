@@ -288,17 +288,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final UAFundamentalParameter rhs = (UAFundamentalParameter)obj;
 
-     if( ! (activeEmissionParameterIndex == rhs.activeEmissionParameterIndex)) ivarsEqual = false;
-     if( ! (scanPattern == rhs.scanPattern)) ivarsEqual = false;
-     if( ! (beamCenterAzimuthHorizontal == rhs.beamCenterAzimuthHorizontal)) ivarsEqual = false;
-     if( ! (azimuthalBeamwidthHorizontal == rhs.azimuthalBeamwidthHorizontal)) ivarsEqual = false;
-     if( ! (beamCenterDepressionElevation == rhs.beamCenterDepressionElevation)) ivarsEqual = false;
-     if( ! (depressionElevationBeamWidth == rhs.depressionElevationBeamWidth)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (activeEmissionParameterIndex == rhs.activeEmissionParameterIndex)) return false;
+     if( ! (scanPattern == rhs.scanPattern)) return false;
+     if( ! (beamCenterAzimuthHorizontal == rhs.beamCenterAzimuthHorizontal)) return false;
+     if( ! (azimuthalBeamwidthHorizontal == rhs.azimuthalBeamwidthHorizontal)) return false;
+     if( ! (beamCenterDepressionElevation == rhs.beamCenterDepressionElevation)) return false;
+     if( ! (depressionElevationBeamWidth == rhs.depressionElevationBeamWidth)) return false;
+    return true;
  }
 
  @Override

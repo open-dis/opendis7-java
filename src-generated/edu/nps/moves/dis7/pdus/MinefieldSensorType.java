@@ -168,12 +168,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldSensorType rhs = (MinefieldSensorType)obj;
 
-     if( ! (sensorType == rhs.sensorType)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (sensorType == rhs.sensorType)) return false;
+    return true;
  }
 
  @Override

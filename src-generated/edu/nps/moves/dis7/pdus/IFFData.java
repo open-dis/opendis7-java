@@ -240,19 +240,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFData rhs = (IFFData)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) ivarsEqual = false;
+          if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override

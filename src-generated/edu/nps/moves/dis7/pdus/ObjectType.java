@@ -252,15 +252,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ObjectType rhs = (ObjectType)obj;
 
-     if( ! (domain == rhs.domain)) ivarsEqual = false;
-     if( ! (objectKind == rhs.objectKind)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (domain == rhs.domain)) return false;
+     if( ! (objectKind == rhs.objectKind)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subCategory == rhs.subCategory)) return false;
+    return true;
  }
 
  @Override

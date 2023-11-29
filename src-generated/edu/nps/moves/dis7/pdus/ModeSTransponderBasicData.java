@@ -463,22 +463,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ModeSTransponderBasicData rhs = (ModeSTransponderBasicData)obj;
 
-     if( ! (modeSTransponderStatus == rhs.modeSTransponderStatus)) ivarsEqual = false;
-     if( ! (modeSLevelsPresent == rhs.modeSLevelsPresent)) ivarsEqual = false;
-     if( ! (aircraftPresentDomain == rhs.aircraftPresentDomain)) ivarsEqual = false;
-     if( ! (aircraftIdentification == rhs.aircraftIdentification)) ivarsEqual = false;
-     if( ! (aircraftAddress == rhs.aircraftAddress)) ivarsEqual = false;
-     if( ! (aircraftIdentificationType == rhs.aircraftIdentificationType)) ivarsEqual = false;
-     if( ! (dapSource == rhs.dapSource)) ivarsEqual = false;
-     if( ! (modeSAltitude == rhs.modeSAltitude)) ivarsEqual = false;
-     if( ! (capabilityReport == rhs.capabilityReport)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (modeSTransponderStatus == rhs.modeSTransponderStatus)) return false;
+     if( ! (modeSLevelsPresent == rhs.modeSLevelsPresent)) return false;
+     if( ! (aircraftPresentDomain == rhs.aircraftPresentDomain)) return false;
+     if( ! (aircraftIdentification == rhs.aircraftIdentification)) return false;
+     if( ! (aircraftAddress == rhs.aircraftAddress)) return false;
+     if( ! (aircraftIdentificationType == rhs.aircraftIdentificationType)) return false;
+     if( ! (dapSource == rhs.dapSource)) return false;
+     if( ! (modeSAltitude == rhs.modeSAltitude)) return false;
+     if( ! (capabilityReport == rhs.capabilityReport)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+    return true;
  }
 
  @Override

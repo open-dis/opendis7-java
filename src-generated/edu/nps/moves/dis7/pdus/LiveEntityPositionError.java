@@ -200,13 +200,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityPositionError rhs = (LiveEntityPositionError)obj;
 
-     if( ! (horizontalError == rhs.horizontalError)) ivarsEqual = false;
-     if( ! (verticalError == rhs.verticalError)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (horizontalError == rhs.horizontalError)) return false;
+     if( ! (verticalError == rhs.verticalError)) return false;
+    return true;
  }
 
  @Override

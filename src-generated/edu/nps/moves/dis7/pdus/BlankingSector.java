@@ -504,24 +504,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BlankingSector rhs = (BlankingSector)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (emitterNumber == rhs.emitterNumber)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-     if( ! (stateIndicator == rhs.stateIndicator)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (leftAzimuth == rhs.leftAzimuth)) ivarsEqual = false;
-     if( ! (rightAzimuth == rhs.rightAzimuth)) ivarsEqual = false;
-     if( ! (lowerElevation == rhs.lowerElevation)) ivarsEqual = false;
-     if( ! (upperElevation == rhs.upperElevation)) ivarsEqual = false;
-     if( ! (residualPower == rhs.residualPower)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (emitterNumber == rhs.emitterNumber)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+     if( ! (stateIndicator == rhs.stateIndicator)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (leftAzimuth == rhs.leftAzimuth)) return false;
+     if( ! (rightAzimuth == rhs.rightAzimuth)) return false;
+     if( ! (lowerElevation == rhs.lowerElevation)) return false;
+     if( ! (upperElevation == rhs.upperElevation)) return false;
+     if( ! (residualPower == rhs.residualPower)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+    return true;
  }
 
  @Override

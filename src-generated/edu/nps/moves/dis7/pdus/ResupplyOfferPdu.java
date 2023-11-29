@@ -381,19 +381,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ResupplyOfferPdu rhs = (ResupplyOfferPdu)obj;
 
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (supplyingEntityID.equals( rhs.supplyingEntityID) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < supplies.size(); idx++)
-        if( ! ( supplies.get(idx).equals(rhs.supplies.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! Objects.equals(supplyingEntityID, rhs.supplyingEntityID) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(supplies, rhs.supplies) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

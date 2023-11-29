@@ -226,14 +226,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TrackJamData rhs = (TrackJamData)obj;
 
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (emitterNumber == rhs.emitterNumber)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (emitterNumber == rhs.emitterNumber)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+    return true;
  }
 
  @Override

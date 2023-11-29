@@ -280,16 +280,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IOCommsNodeRecord rhs = (IOCommsNodeRecord)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (commsNodeType == rhs.commsNodeType)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (commsNodeId.equals( rhs.commsNodeId) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (commsNodeType == rhs.commsNodeType)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(commsNodeId, rhs.commsNodeId) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

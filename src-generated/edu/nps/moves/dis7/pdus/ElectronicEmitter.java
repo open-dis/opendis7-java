@@ -315,19 +315,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ElectronicEmitter rhs = (ElectronicEmitter)obj;
 
-     if( ! (systemDataLength == rhs.systemDataLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (emitterSystem.equals( rhs.emitterSystem) )) ivarsEqual = false;
-     if( ! (location.equals( rhs.location) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < beams.size(); idx++)
-        if( ! ( beams.get(idx).equals(rhs.beams.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (systemDataLength == rhs.systemDataLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(emitterSystem, rhs.emitterSystem) ) return false;
+     if( ! Objects.equals(location, rhs.location) ) return false;
+     if( ! Objects.equals(beams, rhs.beams) ) return false;
+    return true;
  }
 
  @Override

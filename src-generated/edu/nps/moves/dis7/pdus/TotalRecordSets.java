@@ -200,13 +200,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TotalRecordSets rhs = (TotalRecordSets)obj;
 
-     if( ! (totalRecordSets == rhs.totalRecordSets)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (totalRecordSets == rhs.totalRecordSets)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override

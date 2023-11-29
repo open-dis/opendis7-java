@@ -304,21 +304,19 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Environment rhs = (Environment)obj;
 
-     if( ! (environmentType == rhs.environmentType)) ivarsEqual = false;
-     if( ! (length == rhs.length)) ivarsEqual = false;
-     if( ! (index == rhs.index)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
+     if( ! (environmentType == rhs.environmentType)) return false;
+     if( ! (length == rhs.length)) return false;
+     if( ! (index == rhs.index)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(geometry[idx] == rhs.geometry[idx])) ivarsEqual = false;
+          if(!(geometry[idx] == rhs.geometry[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override

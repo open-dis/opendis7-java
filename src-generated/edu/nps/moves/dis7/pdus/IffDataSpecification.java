@@ -199,15 +199,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFDataSpecification rhs = (IFFDataSpecification)obj;
 
-
-     for (int idx = 0; idx < iffDataRecords.size(); idx++)
-        if( ! ( iffDataRecords.get(idx).equals(rhs.iffDataRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! Objects.equals(iffDataRecords, rhs.iffDataRecords) ) return false;
+    return true;
  }
 
  @Override

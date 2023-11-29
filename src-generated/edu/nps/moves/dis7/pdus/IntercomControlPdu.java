@@ -587,26 +587,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IntercomControlPdu rhs = (IntercomControlPdu)obj;
 
-     if( ! (controlType == rhs.controlType)) ivarsEqual = false;
-     if( ! (communicationsChannelType == rhs.communicationsChannelType)) ivarsEqual = false;
-     if( ! (sourceEntityID.equals( rhs.sourceEntityID) )) ivarsEqual = false;
-     if( ! (sourceIntercomNumber == rhs.sourceIntercomNumber)) ivarsEqual = false;
-     if( ! (sourceLineID == rhs.sourceLineID)) ivarsEqual = false;
-     if( ! (transmitPriority == rhs.transmitPriority)) ivarsEqual = false;
-     if( ! (transmitLineState == rhs.transmitLineState)) ivarsEqual = false;
-     if( ! (command == rhs.command)) ivarsEqual = false;
-     if( ! (masterIntercomReferenceID.equals( rhs.masterIntercomReferenceID) )) ivarsEqual = false;
-     if( ! (masterIntercomNumber == rhs.masterIntercomNumber)) ivarsEqual = false;
-     if( ! (masterChannelID == rhs.masterChannelID)) ivarsEqual = false;
-
-     for (int idx = 0; idx < intercomParameters.size(); idx++)
-        if( ! ( intercomParameters.get(idx).equals(rhs.intercomParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (controlType == rhs.controlType)) return false;
+     if( ! (communicationsChannelType == rhs.communicationsChannelType)) return false;
+     if( ! Objects.equals(sourceEntityID, rhs.sourceEntityID) ) return false;
+     if( ! (sourceIntercomNumber == rhs.sourceIntercomNumber)) return false;
+     if( ! (sourceLineID == rhs.sourceLineID)) return false;
+     if( ! (transmitPriority == rhs.transmitPriority)) return false;
+     if( ! (transmitLineState == rhs.transmitLineState)) return false;
+     if( ! (command == rhs.command)) return false;
+     if( ! Objects.equals(masterIntercomReferenceID, rhs.masterIntercomReferenceID) ) return false;
+     if( ! (masterIntercomNumber == rhs.masterIntercomNumber)) return false;
+     if( ! (masterChannelID == rhs.masterChannelID)) return false;
+     if( ! Objects.equals(intercomParameters, rhs.intercomParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

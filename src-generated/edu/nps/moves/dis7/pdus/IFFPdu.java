@@ -589,24 +589,22 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFPdu rhs = (IFFPdu)obj;
 
-     if( ! (emittingEntityId.equals( rhs.emittingEntityId) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (location.equals( rhs.location) )) ivarsEqual = false;
-     if( ! (systemID.equals( rhs.systemID) )) ivarsEqual = false;
-     if( ! (systemDesignator == rhs.systemDesignator)) ivarsEqual = false;
-     if( ! (systemSpecificData == rhs.systemSpecificData)) ivarsEqual = false;
-     if( ! (fundamentalParameters.equals( rhs.fundamentalParameters) )) ivarsEqual = false;
-     if( ! (iFFPduLayer2Data.equals( rhs.iFFPduLayer2Data) )) ivarsEqual = false;
-     if( ! (iFFPduLayer3TransponderFormatData.equals( rhs.iFFPduLayer3TransponderFormatData) )) ivarsEqual = false;
-     if( ! (iFFPduLayer3InterrogatorFormatData.equals( rhs.iFFPduLayer3InterrogatorFormatData) )) ivarsEqual = false;
-     if( ! (iFFPduLayer4InterrogatorFormatData.equals( rhs.iFFPduLayer4InterrogatorFormatData) )) ivarsEqual = false;
-     if( ! (iFFPduLayer4TransponderFormatData.equals( rhs.iFFPduLayer4TransponderFormatData) )) ivarsEqual = false;
-     if( ! (iFFPduLayer5Data.equals( rhs.iFFPduLayer5Data) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(emittingEntityId, rhs.emittingEntityId) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! Objects.equals(location, rhs.location) ) return false;
+     if( ! Objects.equals(systemID, rhs.systemID) ) return false;
+     if( ! (systemDesignator == rhs.systemDesignator)) return false;
+     if( ! (systemSpecificData == rhs.systemSpecificData)) return false;
+     if( ! Objects.equals(fundamentalParameters, rhs.fundamentalParameters) ) return false;
+     if( ! Objects.equals(iFFPduLayer2Data, rhs.iFFPduLayer2Data) ) return false;
+     if( ! Objects.equals(iFFPduLayer3TransponderFormatData, rhs.iFFPduLayer3TransponderFormatData) ) return false;
+     if( ! Objects.equals(iFFPduLayer3InterrogatorFormatData, rhs.iFFPduLayer3InterrogatorFormatData) ) return false;
+     if( ! Objects.equals(iFFPduLayer4InterrogatorFormatData, rhs.iFFPduLayer4InterrogatorFormatData) ) return false;
+     if( ! Objects.equals(iFFPduLayer4TransponderFormatData, rhs.iFFPduLayer4TransponderFormatData) ) return false;
+     if( ! Objects.equals(iFFPduLayer5Data, rhs.iFFPduLayer5Data) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

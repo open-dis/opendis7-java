@@ -321,23 +321,21 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFFundamentalParameterData rhs = (IFFFundamentalParameterData)obj;
 
-     if( ! (erp == rhs.erp)) ivarsEqual = false;
-     if( ! (frequency == rhs.frequency)) ivarsEqual = false;
-     if( ! (pgrf == rhs.pgrf)) ivarsEqual = false;
-     if( ! (pulseWidth == rhs.pulseWidth)) ivarsEqual = false;
-     if( ! (burstLength == rhs.burstLength)) ivarsEqual = false;
-     if( ! (applicableModes == rhs.applicableModes)) ivarsEqual = false;
+     if( ! (erp == rhs.erp)) return false;
+     if( ! (frequency == rhs.frequency)) return false;
+     if( ! (pgrf == rhs.pgrf)) return false;
+     if( ! (pulseWidth == rhs.pulseWidth)) return false;
+     if( ! (burstLength == rhs.burstLength)) return false;
+     if( ! (applicableModes == rhs.applicableModes)) return false;
 
      for (int idx = 0; idx < 3; idx++)
      {
-          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) ivarsEqual = false;
+          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override

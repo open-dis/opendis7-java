@@ -162,12 +162,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BeamStatus rhs = (BeamStatus)obj;
 
-     if( ! (beamState == rhs.beamState)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (beamState == rhs.beamState)) return false;
+    return true;
  }
 
  @Override

@@ -200,13 +200,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveSimulationAddress rhs = (LiveSimulationAddress)obj;
 
-     if( ! (liveSiteNumber == rhs.liveSiteNumber)) ivarsEqual = false;
-     if( ! (liveApplicationNumber == rhs.liveApplicationNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (liveSiteNumber == rhs.liveSiteNumber)) return false;
+     if( ! (liveApplicationNumber == rhs.liveApplicationNumber)) return false;
+    return true;
  }
 
  @Override

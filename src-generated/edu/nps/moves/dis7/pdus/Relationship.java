@@ -188,13 +188,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Relationship rhs = (Relationship)obj;
 
-     if( ! (nature == rhs.nature)) ivarsEqual = false;
-     if( ! (position == rhs.position)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (nature == rhs.nature)) return false;
+     if( ! (position == rhs.position)) return false;
+    return true;
  }
 
  @Override

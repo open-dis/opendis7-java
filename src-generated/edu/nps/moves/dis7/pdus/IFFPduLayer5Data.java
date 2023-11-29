@@ -432,23 +432,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFPduLayer5Data rhs = (IFFPduLayer5Data)obj;
 
-     if( ! (layerHeader.equals( rhs.layerHeader) )) ivarsEqual = false;
-     if( ! (siteNumber == rhs.siteNumber)) ivarsEqual = false;
-     if( ! (applicationNumber == rhs.applicationNumber)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (applicableLayers == rhs.applicableLayers)) ivarsEqual = false;
-     if( ! (dataCategory == rhs.dataCategory)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) ivarsEqual = false;
-
-     for (int idx = 0; idx < IFFFundamentalParameterDataRecord.size(); idx++)
-        if( ! ( IFFFundamentalParameterDataRecord.get(idx).equals(rhs.IFFFundamentalParameterDataRecord.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(layerHeader, rhs.layerHeader) ) return false;
+     if( ! (siteNumber == rhs.siteNumber)) return false;
+     if( ! (applicationNumber == rhs.applicationNumber)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (applicableLayers == rhs.applicableLayers)) return false;
+     if( ! (dataCategory == rhs.dataCategory)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) return false;
+     if( ! Objects.equals(IFFFundamentalParameterDataRecord, rhs.IFFFundamentalParameterDataRecord) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

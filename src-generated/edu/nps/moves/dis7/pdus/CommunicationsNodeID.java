@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final CommunicationsNodeID rhs = (CommunicationsNodeID)obj;
 
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (elementID == rhs.elementID)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (elementID == rhs.elementID)) return false;
+    return true;
  }
 
  @Override

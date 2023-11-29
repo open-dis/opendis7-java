@@ -567,25 +567,23 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final PointObjectStatePdu rhs = (PointObjectStatePdu)obj;
 
-     if( ! (objectID.equals( rhs.objectID) )) ivarsEqual = false;
-     if( ! (referencedObjectID.equals( rhs.referencedObjectID) )) ivarsEqual = false;
-     if( ! (updateNumber == rhs.updateNumber)) ivarsEqual = false;
-     if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (modifications.equals( rhs.modifications) )) ivarsEqual = false;
-     if( ! (objectType.equals( rhs.objectType) )) ivarsEqual = false;
-     if( ! (objectLocation.equals( rhs.objectLocation) )) ivarsEqual = false;
-     if( ! (objectOrientation.equals( rhs.objectOrientation) )) ivarsEqual = false;
-     if( ! (specificObjectAppearance == rhs.specificObjectAppearance)) ivarsEqual = false;
-     if( ! (generObjectAppearance.equals( rhs.generObjectAppearance) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (requesterID.equals( rhs.requesterID) )) ivarsEqual = false;
-     if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(objectID, rhs.objectID) ) return false;
+     if( ! Objects.equals(referencedObjectID, rhs.referencedObjectID) ) return false;
+     if( ! (updateNumber == rhs.updateNumber)) return false;
+     if( ! (forceID == rhs.forceID)) return false;
+     if( ! Objects.equals(modifications, rhs.modifications) ) return false;
+     if( ! Objects.equals(objectType, rhs.objectType) ) return false;
+     if( ! Objects.equals(objectLocation, rhs.objectLocation) ) return false;
+     if( ! Objects.equals(objectOrientation, rhs.objectOrientation) ) return false;
+     if( ! (specificObjectAppearance == rhs.specificObjectAppearance)) return false;
+     if( ! Objects.equals(generObjectAppearance, rhs.generObjectAppearance) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(requesterID, rhs.requesterID) ) return false;
+     if( ! Objects.equals(receivingID, rhs.receivingID) ) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

@@ -772,35 +772,27 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TransmitterPdu rhs = (TransmitterPdu)obj;
 
-     if( ! (header.equals( rhs.header) )) ivarsEqual = false;
-     if( ! (radioEntityType.equals( rhs.radioEntityType) )) ivarsEqual = false;
-     if( ! (transmitState == rhs.transmitState)) ivarsEqual = false;
-     if( ! (inputSource == rhs.inputSource)) ivarsEqual = false;
-     if( ! (variableTransmitterParameterCount == rhs.variableTransmitterParameterCount)) ivarsEqual = false;
-     if( ! (antennaLocation.equals( rhs.antennaLocation) )) ivarsEqual = false;
-     if( ! (relativeAntennaLocation.equals( rhs.relativeAntennaLocation) )) ivarsEqual = false;
-     if( ! (antennaPatternType == rhs.antennaPatternType)) ivarsEqual = false;
-     if( ! (frequency == rhs.frequency)) ivarsEqual = false;
-     if( ! (transmitFrequencyBandwidth == rhs.transmitFrequencyBandwidth)) ivarsEqual = false;
-     if( ! (power == rhs.power)) ivarsEqual = false;
-     if( ! (modulationType.equals( rhs.modulationType) )) ivarsEqual = false;
-     if( ! (cryptoSystem == rhs.cryptoSystem)) ivarsEqual = false;
-     if( ! (cryptoKeyId == rhs.cryptoKeyId)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < modulationParametersList.size(); idx++)
-        if( ! ( modulationParametersList.get(idx).equals(rhs.modulationParametersList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < antennaPatternList.size(); idx++)
-        if( ! ( antennaPatternList.get(idx).equals(rhs.antennaPatternList.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(header, rhs.header) ) return false;
+     if( ! Objects.equals(radioEntityType, rhs.radioEntityType) ) return false;
+     if( ! (transmitState == rhs.transmitState)) return false;
+     if( ! (inputSource == rhs.inputSource)) return false;
+     if( ! (variableTransmitterParameterCount == rhs.variableTransmitterParameterCount)) return false;
+     if( ! Objects.equals(antennaLocation, rhs.antennaLocation) ) return false;
+     if( ! Objects.equals(relativeAntennaLocation, rhs.relativeAntennaLocation) ) return false;
+     if( ! (antennaPatternType == rhs.antennaPatternType)) return false;
+     if( ! (frequency == rhs.frequency)) return false;
+     if( ! (transmitFrequencyBandwidth == rhs.transmitFrequencyBandwidth)) return false;
+     if( ! (power == rhs.power)) return false;
+     if( ! Objects.equals(modulationType, rhs.modulationType) ) return false;
+     if( ! (cryptoSystem == rhs.cryptoSystem)) return false;
+     if( ! (cryptoKeyId == rhs.cryptoKeyId)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(modulationParametersList, rhs.modulationParametersList) ) return false;
+     if( ! Objects.equals(antennaPatternList, rhs.antennaPatternList) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

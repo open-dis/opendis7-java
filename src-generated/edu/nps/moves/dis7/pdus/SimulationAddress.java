@@ -200,13 +200,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SimulationAddress rhs = (SimulationAddress)obj;
 
-     if( ! (site == rhs.site)) ivarsEqual = false;
-     if( ! (application == rhs.application)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (site == rhs.site)) return false;
+     if( ! (application == rhs.application)) return false;
+    return true;
  }
 
  @Override

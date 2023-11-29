@@ -376,20 +376,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityAssociationVP rhs = (EntityAssociationVP)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (changeIndicator == rhs.changeIndicator)) ivarsEqual = false;
-     if( ! (associationStatus == rhs.associationStatus)) ivarsEqual = false;
-     if( ! (associationType == rhs.associationType)) ivarsEqual = false;
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (ownStationLocation == rhs.ownStationLocation)) ivarsEqual = false;
-     if( ! (physicalConnectionType == rhs.physicalConnectionType)) ivarsEqual = false;
-     if( ! (groupMemberType == rhs.groupMemberType)) ivarsEqual = false;
-     if( ! (groupNumber == rhs.groupNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (changeIndicator == rhs.changeIndicator)) return false;
+     if( ! (associationStatus == rhs.associationStatus)) return false;
+     if( ! (associationType == rhs.associationType)) return false;
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (ownStationLocation == rhs.ownStationLocation)) return false;
+     if( ! (physicalConnectionType == rhs.physicalConnectionType)) return false;
+     if( ! (groupMemberType == rhs.groupMemberType)) return false;
+     if( ! (groupNumber == rhs.groupNumber)) return false;
+    return true;
  }
 
  @Override

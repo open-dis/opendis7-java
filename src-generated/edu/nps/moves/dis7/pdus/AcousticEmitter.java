@@ -220,14 +220,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AcousticEmitter rhs = (AcousticEmitter)obj;
 
-     if( ! (acousticSystemName == rhs.acousticSystemName)) ivarsEqual = false;
-     if( ! (acousticFunction == rhs.acousticFunction)) ivarsEqual = false;
-     if( ! (acousticIDNumber == rhs.acousticIDNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (acousticSystemName == rhs.acousticSystemName)) return false;
+     if( ! (acousticFunction == rhs.acousticFunction)) return false;
+     if( ! (acousticIDNumber == rhs.acousticIDNumber)) return false;
+    return true;
  }
 
  @Override

@@ -194,13 +194,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityIdentifier rhs = (EntityIdentifier)obj;
 
-     if( ! (simulationAddress.equals( rhs.simulationAddress) )) ivarsEqual = false;
-     if( ! (entityNumber == rhs.entityNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(simulationAddress, rhs.simulationAddress) ) return false;
+     if( ! (entityNumber == rhs.entityNumber)) return false;
+    return true;
  }
 
  @Override

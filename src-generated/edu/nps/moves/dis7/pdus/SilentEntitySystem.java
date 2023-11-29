@@ -238,19 +238,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SilentEntitySystem rhs = (SilentEntitySystem)obj;
 
-     if( ! (numberOfEntities == rhs.numberOfEntities)) ivarsEqual = false;
-     if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
+     if( ! (numberOfEntities == rhs.numberOfEntities)) return false;
+     if( ! Objects.equals(entityType, rhs.entityType) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(appearanceRecordList[idx] == rhs.appearanceRecordList[idx])) ivarsEqual = false;
+          if(!(appearanceRecordList[idx] == rhs.appearanceRecordList[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override

@@ -211,14 +211,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EulerAngles rhs = (EulerAngles)obj;
 
-     if( ! (psi == rhs.psi)) ivarsEqual = false;
-     if( ! (theta == rhs.theta)) ivarsEqual = false;
-     if( ! (phi == rhs.phi)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (psi == rhs.psi)) return false;
+     if( ! (theta == rhs.theta)) return false;
+     if( ! (phi == rhs.phi)) return false;
+    return true;
  }
 
  @Override

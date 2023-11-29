@@ -465,22 +465,17 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final InformationOperationsReportPdu rhs = (InformationOperationsReportPdu)obj;
 
-     if( ! (ioSimSource == rhs.ioSimSource)) ivarsEqual = false;
-     if( ! (ioReportType == rhs.ioReportType)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (ioAttackerID.equals( rhs.ioAttackerID) )) ivarsEqual = false;
-     if( ! (ioPrimaryTargetID.equals( rhs.ioPrimaryTargetID) )) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-
-     for (int idx = 0; idx < ioRecords.size(); idx++)
-        if( ! ( ioRecords.get(idx).equals(rhs.ioRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (ioSimSource == rhs.ioSimSource)) return false;
+     if( ! (ioReportType == rhs.ioReportType)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(ioAttackerID, rhs.ioAttackerID) ) return false;
+     if( ! Objects.equals(ioPrimaryTargetID, rhs.ioPrimaryTargetID) ) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+     if( ! Objects.equals(ioRecords, rhs.ioRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

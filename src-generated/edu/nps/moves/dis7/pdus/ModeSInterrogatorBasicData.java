@@ -389,20 +389,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ModeSInterrogatorBasicData rhs = (ModeSInterrogatorBasicData)obj;
 
-     if( ! (modeSInterrogatorStatus == rhs.modeSInterrogatorStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (modeSLevelsPresent == rhs.modeSLevelsPresent)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-     if( ! (padding4 == rhs.padding4)) ivarsEqual = false;
-     if( ! (padding5 == rhs.padding5)) ivarsEqual = false;
-     if( ! (padding6 == rhs.padding6)) ivarsEqual = false;
-     if( ! (padding7 == rhs.padding7)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (modeSInterrogatorStatus == rhs.modeSInterrogatorStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (modeSLevelsPresent == rhs.modeSLevelsPresent)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+     if( ! (padding4 == rhs.padding4)) return false;
+     if( ! (padding5 == rhs.padding5)) return false;
+     if( ! (padding6 == rhs.padding6)) return false;
+     if( ! (padding7 == rhs.padding7)) return false;
+    return true;
  }
 
  @Override

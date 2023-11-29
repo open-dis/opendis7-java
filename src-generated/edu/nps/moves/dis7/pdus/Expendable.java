@@ -277,16 +277,14 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Expendable rhs = (Expendable)obj;
 
-     if( ! (expendable.equals( rhs.expendable) )) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-     if( ! (expendableStatus == rhs.expendableStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(expendable, rhs.expendable) ) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+     if( ! (expendableStatus == rhs.expendableStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override

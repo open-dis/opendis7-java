@@ -194,17 +194,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridDataType0 rhs = (GridDataType0)obj;
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(dataValues[idx] == rhs.dataValues[idx])) ivarsEqual = false;
+          if(!(dataValues[idx] == rhs.dataValues[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override

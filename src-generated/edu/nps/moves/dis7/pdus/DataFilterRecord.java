@@ -194,12 +194,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DataFilterRecord rhs = (DataFilterRecord)obj;
 
-     if( ! (bitFlags == rhs.bitFlags)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (bitFlags == rhs.bitFlags)) return false;
+    return true;
  }
 
  @Override

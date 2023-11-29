@@ -420,22 +420,20 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LinearSegmentParameter rhs = (LinearSegmentParameter)obj;
 
-     if( ! (segmentNumber == rhs.segmentNumber)) ivarsEqual = false;
-     if( ! (segmentModification.equals( rhs.segmentModification) )) ivarsEqual = false;
-     if( ! (generalSegmentAppearance.equals( rhs.generalSegmentAppearance) )) ivarsEqual = false;
-     if( ! (specificSegmentAppearance == rhs.specificSegmentAppearance)) ivarsEqual = false;
-     if( ! (segmentLocation.equals( rhs.segmentLocation) )) ivarsEqual = false;
-     if( ! (segmentOrientation.equals( rhs.segmentOrientation) )) ivarsEqual = false;
-     if( ! (segmentLength == rhs.segmentLength)) ivarsEqual = false;
-     if( ! (segmentWidth == rhs.segmentWidth)) ivarsEqual = false;
-     if( ! (segmentHeight == rhs.segmentHeight)) ivarsEqual = false;
-     if( ! (segmentDepth == rhs.segmentDepth)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (segmentNumber == rhs.segmentNumber)) return false;
+     if( ! Objects.equals(segmentModification, rhs.segmentModification) ) return false;
+     if( ! Objects.equals(generalSegmentAppearance, rhs.generalSegmentAppearance) ) return false;
+     if( ! (specificSegmentAppearance == rhs.specificSegmentAppearance)) return false;
+     if( ! Objects.equals(segmentLocation, rhs.segmentLocation) ) return false;
+     if( ! Objects.equals(segmentOrientation, rhs.segmentOrientation) ) return false;
+     if( ! (segmentLength == rhs.segmentLength)) return false;
+     if( ! (segmentWidth == rhs.segmentWidth)) return false;
+     if( ! (segmentHeight == rhs.segmentHeight)) return false;
+     if( ! (segmentDepth == rhs.segmentDepth)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override

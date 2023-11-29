@@ -202,13 +202,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridAxisDescriptorFixed rhs = (GridAxisDescriptorFixed)obj;
 
-     if( ! (numberOfPointsOnXiAxis == rhs.numberOfPointsOnXiAxis)) ivarsEqual = false;
-     if( ! (initialIndex == rhs.initialIndex)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (numberOfPointsOnXiAxis == rhs.numberOfPointsOnXiAxis)) return false;
+     if( ! (initialIndex == rhs.initialIndex)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

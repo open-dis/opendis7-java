@@ -368,21 +368,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IFFPduLayer4TransponderFormatData rhs = (IFFPduLayer4TransponderFormatData)obj;
 
-     if( ! (layerHeader.equals( rhs.layerHeader) )) ivarsEqual = false;
-     if( ! (siteNumber == rhs.siteNumber)) ivarsEqual = false;
-     if( ! (applicationNumber == rhs.applicationNumber)) ivarsEqual = false;
-     if( ! (modeSTransponderBasicData.equals( rhs.modeSTransponderBasicData) )) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) ivarsEqual = false;
-
-     for (int idx = 0; idx < IFFFundamentalParameterDataRecord.size(); idx++)
-        if( ! ( IFFFundamentalParameterDataRecord.get(idx).equals(rhs.IFFFundamentalParameterDataRecord.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(layerHeader, rhs.layerHeader) ) return false;
+     if( ! (siteNumber == rhs.siteNumber)) return false;
+     if( ! (applicationNumber == rhs.applicationNumber)) return false;
+     if( ! Objects.equals(modeSTransponderBasicData, rhs.modeSTransponderBasicData) ) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (numberOfIFFFundamentalParameterDataRecordsParameters == rhs.numberOfIFFFundamentalParameterDataRecordsParameters)) return false;
+     if( ! Objects.equals(IFFFundamentalParameterDataRecord, rhs.IFFFundamentalParameterDataRecord) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityLinearVelocity rhs = (LiveEntityLinearVelocity)obj;
 
-     if( ! (xComponent == rhs.xComponent)) ivarsEqual = false;
-     if( ! (yComponent == rhs.yComponent)) ivarsEqual = false;
-     if( ! (zComponent == rhs.zComponent)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (xComponent == rhs.xComponent)) return false;
+     if( ! (yComponent == rhs.yComponent)) return false;
+     if( ! (zComponent == rhs.zComponent)) return false;
+    return true;
  }
 
  @Override

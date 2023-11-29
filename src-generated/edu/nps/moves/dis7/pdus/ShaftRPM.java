@@ -225,14 +225,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ShaftRPM rhs = (ShaftRPM)obj;
 
-     if( ! (currentRPM == rhs.currentRPM)) ivarsEqual = false;
-     if( ! (orderedRPM == rhs.orderedRPM)) ivarsEqual = false;
-     if( ! (RPMrateOfChange == rhs.RPMrateOfChange)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (currentRPM == rhs.currentRPM)) return false;
+     if( ! (orderedRPM == rhs.orderedRPM)) return false;
+     if( ! (RPMrateOfChange == rhs.RPMrateOfChange)) return false;
+    return true;
  }
 
  @Override

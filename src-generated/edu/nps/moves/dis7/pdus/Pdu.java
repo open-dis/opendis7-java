@@ -341,17 +341,15 @@ public byte[] marshal() throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Pdu rhs = (Pdu)obj;
 
-     if( ! (protocolVersion == rhs.protocolVersion)) ivarsEqual = false;
-     if( ! (exerciseID == rhs.exerciseID)) ivarsEqual = false;
-     if( ! (pduType == rhs.pduType)) ivarsEqual = false;
-     if( ! (protocolFamily == rhs.protocolFamily)) ivarsEqual = false;
-     if( ! (timestamp == rhs.timestamp)) ivarsEqual = false;
-     if( ! (length == rhs.length)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (protocolVersion == rhs.protocolVersion)) return false;
+     if( ! (exerciseID == rhs.exerciseID)) return false;
+     if( ! (pduType == rhs.pduType)) return false;
+     if( ! (protocolFamily == rhs.protocolFamily)) return false;
+     if( ! (timestamp == rhs.timestamp)) return false;
+     if( ! (length == rhs.length)) return false;
+    return true;
  }
 
  @Override

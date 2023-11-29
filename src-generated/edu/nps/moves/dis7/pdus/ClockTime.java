@@ -186,13 +186,11 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ClockTime rhs = (ClockTime)obj;
 
-     if( ! (hour == rhs.hour)) ivarsEqual = false;
-     if( ! (timePastHour == rhs.timePastHour)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (hour == rhs.hour)) return false;
+     if( ! (timePastHour == rhs.timePastHour)) return false;
+    return true;
  }
 
  @Override

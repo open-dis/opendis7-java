@@ -411,20 +411,18 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Mode5TransponderBasicData rhs = (Mode5TransponderBasicData)obj;
 
-     if( ! (mode5Status == rhs.mode5Status)) ivarsEqual = false;
-     if( ! (personalIdentificationNumber == rhs.personalIdentificationNumber)) ivarsEqual = false;
-     if( ! (mode5MessageFormatsPresent == rhs.mode5MessageFormatsPresent)) ivarsEqual = false;
-     if( ! (enhancedMode1 == rhs.enhancedMode1)) ivarsEqual = false;
-     if( ! (nationalOrigin == rhs.nationalOrigin)) ivarsEqual = false;
-     if( ! (supplementalData == rhs.supplementalData)) ivarsEqual = false;
-     if( ! (navigationSource == rhs.navigationSource)) ivarsEqual = false;
-     if( ! (figureOfMerit == rhs.figureOfMerit)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (mode5Status == rhs.mode5Status)) return false;
+     if( ! (personalIdentificationNumber == rhs.personalIdentificationNumber)) return false;
+     if( ! (mode5MessageFormatsPresent == rhs.mode5MessageFormatsPresent)) return false;
+     if( ! (enhancedMode1 == rhs.enhancedMode1)) return false;
+     if( ! (nationalOrigin == rhs.nationalOrigin)) return false;
+     if( ! (supplementalData == rhs.supplementalData)) return false;
+     if( ! (navigationSource == rhs.navigationSource)) return false;
+     if( ! (figureOfMerit == rhs.figureOfMerit)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override

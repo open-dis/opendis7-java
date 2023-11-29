@@ -220,14 +220,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final OwnershipStatusRecord rhs = (OwnershipStatusRecord)obj;
 
-     if( ! (entityId.equals( rhs.entityId) )) ivarsEqual = false;
-     if( ! (ownershipStatus == rhs.ownershipStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(entityId, rhs.entityId) ) return false;
+     if( ! (ownershipStatus == rhs.ownershipStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override

@@ -378,21 +378,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DataPdu rhs = (DataPdu)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-
-     for (int idx = 0; idx < fixedDatums.size(); idx++)
-        if( ! ( fixedDatums.get(idx).equals(rhs.fixedDatums.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatums.size(); idx++)
-        if( ! ( variableDatums.get(idx).equals(rhs.variableDatums.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(fixedDatums, rhs.fixedDatums) ) return false;
+     if( ! Objects.equals(variableDatums, rhs.variableDatums) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

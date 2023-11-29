@@ -232,14 +232,12 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityID rhs = (EntityID)obj;
 
-     if( ! (siteID == rhs.siteID)) ivarsEqual = false;
-     if( ! (applicationID == rhs.applicationID)) ivarsEqual = false;
-     if( ! (entityID == rhs.entityID)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (siteID == rhs.siteID)) return false;
+     if( ! (applicationID == rhs.applicationID)) return false;
+     if( ! (entityID == rhs.entityID)) return false;
+    return true;
  }
 
  @Override

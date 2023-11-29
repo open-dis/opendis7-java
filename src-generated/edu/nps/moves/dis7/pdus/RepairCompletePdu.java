@@ -312,15 +312,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RepairCompletePdu rhs = (RepairCompletePdu)obj;
 
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (repairingEntityID.equals( rhs.repairingEntityID) )) ivarsEqual = false;
-     if( ! (repair == rhs.repair)) ivarsEqual = false;
-     if( ! (padding4 == rhs.padding4)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! Objects.equals(repairingEntityID, rhs.repairingEntityID) ) return false;
+     if( ! (repair == rhs.repair)) return false;
+     if( ! (padding4 == rhs.padding4)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

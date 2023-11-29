@@ -405,20 +405,15 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SetRecordRPdu rhs = (SetRecordRPdu)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-     if( ! (pad3 == rhs.pad3)) ivarsEqual = false;
-
-     for (int idx = 0; idx < recordSets.size(); idx++)
-        if( ! ( recordSets.get(idx).equals(rhs.recordSets.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+     if( ! (pad3 == rhs.pad3)) return false;
+     if( ! Objects.equals(recordSets, rhs.recordSets) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override

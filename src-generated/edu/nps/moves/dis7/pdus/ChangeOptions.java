@@ -168,12 +168,10 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ChangeOptions rhs = (ChangeOptions)obj;
 
-     if( ! (value == rhs.value)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (value == rhs.value)) return false;
+    return true;
  }
 
  @Override

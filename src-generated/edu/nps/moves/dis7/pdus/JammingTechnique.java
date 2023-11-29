@@ -264,15 +264,13 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   */
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final JammingTechnique rhs = (JammingTechnique)obj;
 
-     if( ! (kind == rhs.kind)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
-     if( ! (specific == rhs.specific)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (kind == rhs.kind)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subCategory == rhs.subCategory)) return false;
+     if( ! (specific == rhs.specific)) return false;
+    return true;
  }
 
  @Override

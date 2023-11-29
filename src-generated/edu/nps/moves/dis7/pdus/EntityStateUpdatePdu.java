@@ -426,21 +426,16 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 @Override
  public boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityStateUpdatePdu rhs = (EntityStateUpdatePdu)obj;
 
-     if( ! (entityID.equals( rhs.entityID) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (entityLinearVelocity.equals( rhs.entityLinearVelocity) )) ivarsEqual = false;
-     if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
-     if( ! (entityOrientation.equals( rhs.entityOrientation) )) ivarsEqual = false;
-     if( ! (entityAppearance == rhs.entityAppearance)) ivarsEqual = false;
-
-     for (int idx = 0; idx < variableParameters.size(); idx++)
-        if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(entityID, rhs.entityID) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! Objects.equals(entityLinearVelocity, rhs.entityLinearVelocity) ) return false;
+     if( ! Objects.equals(entityLocation, rhs.entityLocation) ) return false;
+     if( ! Objects.equals(entityOrientation, rhs.entityOrientation) ) return false;
+     if( ! (entityAppearance == rhs.entityAppearance)) return false;
+     if( ! Objects.equals(variableParameters, rhs.variableParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
