@@ -77,6 +77,34 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.doctitle"        value="${javadoc.windowtitle}"/>
     <!-- build.impl <javadoc additionalparam="-J-Dfile.encoding=${file.encoding} ${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}"> -->
     
+    <target name="versions" description="show tool versions and environment values">
+        <echo>ant -version</echo>
+        <exec executable="ant"     dir="." vmlauncher="false">
+            <arg value="-version"/>
+        </exec>
+        <echo>java -version</echo>
+        <exec executable="java"    dir="." vmlauncher="false">
+            <arg value="-version"/>
+        </exec>
+        <echo></echo>
+        <!-- Ant environment variables https://ant.apache.org/manual/Tasks/property.html -->
+        <echo>  ANT_HOME=${env.ANT_HOME}</echo>
+        <echo> JAVA_HOME=${env.JAVA_HOME}</echo>
+        <echo>CLASSPATH=${env.CLASSPATH}</echo>
+    <!--<echo>USER      =${env.USER}</echo> -->
+        <!-- https://stackoverflow.com/questions/949678/ant-is-using-wrong-java-version -->
+        <!--echo>javac source/target      $java.source=${java.source}</ -->
+        <echo>Java/JVM version    $ant.java.version=${ant.java.version}</echo>
+        <echo>Java/JVM detail version $java.version=${java.version}</echo>
+        <echo>Ant version              $ant.version=${ant.version}</echo>
+        <echo>Configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
+        <!-- TODO Netbeans version -->
+        <!-- TODO Netbeans project version -->
+        <!-- DEBUG: to show all environment and local properties, add
+        <echoproperties/> -->
+        <echo message="==========================================="/>
+    </target>
+    
     <target name="all" description="Build and test the whole project, create distribution jar files.">
         <!-- TODO current configuration is Java only; Python is next -->
         <echo message="timestamp ${timestamp}"/>
@@ -87,6 +115,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 </not>
             </condition>
         </fail>
+        <antcall target="versions"/>
         <antcall target="clean"/>
         <mkdir dir="build" description="ensure necessary directory present"/>
         <mkdir dir="build/classes" description="ensure necessary directory present"/>
