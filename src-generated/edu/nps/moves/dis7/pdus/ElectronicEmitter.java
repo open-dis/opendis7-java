@@ -31,7 +31,7 @@ public class ElectronicEmitter extends Object implements Serializable
    /** the location of the antenna beam source with respect to the emitting entity's coordinate system. This location shall be the origin of the emitter coordinate system that shall have the same orientation as the entity coordinate system. This field shall be represented by an Entity Coordinate Vector record see 6.2.95  */
    protected Vector3Float  location = new Vector3Float(); 
 
-   /** Electronic emmission beams */
+   /** Electronic emission beams */
    protected List< EmitterBeam > beams = new ArrayList< EmitterBeam >();
  
 

@@ -4,8 +4,8 @@
  * <p> Online: NPS <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/tree/master/examples/src/OpenDis7Examples" target="MV3500">MV3500 Distributed Simulation Fundamentals course examples</a> 
  * links to <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/tree/master/specifications/README.md" target="README.MV3500">IEEE and SISO specification references</a> of interest. </p>
  * <ul>
- *      <li> <a href="https://www.sisostds.org/DigitalLibrary.aspx?Command=Core_Download&amp;EntryId=46172" target="SISO-REF-010" >SISO-REF-010-2023 Reference for Enumerations for Simulation Interoperability</a> </li> 
- *      <li> <a href="https://www.sisostds.org/DigitalLibrary.aspx?Command=Core_Download&amp;EntryId=47284" target="SISO-REF-10.1">SISO-REF-10.1-2019 Reference for Enumerations for Simulation, Operations Manual</a></li> </ul>
+ *      <li> <a href="https://www.sisostandards.org/DigitalLibrary.aspx?Command=Core_Download&amp;EntryId=46172" target="SISO-REF-010" >SISO-REF-010-2023 Reference for Enumerations for Simulation Interoperability</a> </li> 
+ *      <li> <a href="https://www.sisostandards.org/DigitalLibrary.aspx?Command=Core_Download&amp;EntryId=47284" target="SISO-REF-10.1">SISO-REF-10.1-2019 Reference for Enumerations for Simulation, Operations Manual</a></li> </ul>
 
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>

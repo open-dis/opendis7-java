@@ -18,7 +18,7 @@ public class VariableDatum extends Object implements Serializable
   /**
    * Type of variable datum to be transmitted. 32 bit enumeration defined in EBV uid 66
    */
-  protected VariableRecordType variableDatumID = VariableRecordType.values()[0];
+  protected VariableRecordType variableDatumID; // see constructor
 
   /**
    * Length, IN BITS, of the variable datum.
@@ -30,11 +30,21 @@ public class VariableDatum extends Object implements Serializable
    * field format shall depend on the type of datum as specified by the Variable Datum ID. Variable
    * datums can be any number of bits long.
    */
-  protected byte[] variableDatumValue = new byte[0];
+  protected byte[] variableDatumValue; // see constructor
 
   /** bit padding to 64-bit boundary */
-  private byte[] padding = new byte[0]; // pad to 64-bit boundary
-
+  private byte[] padding; // see constructor
+  
+  /**
+   * Constructor
+   */
+  public VariableDatum()
+  {
+      // initializations
+      variableDatumID = VariableRecordType.values()[0];
+      variableDatumValue = new byte[0];
+      padding = new byte[0]; // pad to 64-bit boundary
+  }
   /**
    * Returns size of this serialized (marshalled) object in bytes
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>

@@ -14,7 +14,7 @@ import java.io.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * Contains electromagnetic emmission regeneration parameters that are variable throught a scenario. Section 6.2.22.
+ * Contains electromagnetic emission regeneration parameters that are variable throught a scenario. Section 6.2.22.
  * @see <a href="https://ieeexplore.ieee.org/document/6387564" target="_blank">IEEE Std 1278.1-2012, IEEE Standard for Distributed Interactive Simulation - Application Protocols</a> 
  */
 public class EEFundamentalParameterData extends Object implements Serializable
