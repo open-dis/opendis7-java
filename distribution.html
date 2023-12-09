@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <title>opendis7-java Distribution Products</title>
+        <link rel="shortcut icon" href="documentation/images/OpenDisSurferDude.64x64.png" title="opendis" >
+        <meta name="description" content="index page for opendis7-java distribution and javadoc"/>
+        <meta name="license" content="Open-Source Software License for NPS MOVES Savage Research Group.
+              This BSD-style license is non-viral and friendly to academia, government, industry, and individuals."/>
+        <meta name="author" content="Donald P. Brutzman"/>
+        <meta name="created" content="21 April 2023"/>
+        <meta name="reference"  content="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/distribution.html"/>
+        <meta name="identifier" content="https://savage.nps.edu/opendis7-java/distribution.html"/>
+    </head>
+    <body>
+        
+        <h1>
+            opendis7-java Distribution Products
+            
+            <!-- symbolic link on server -->
+            <a href="https://savage.nps.edu/opendis7-java" target="_blank" title="Open-Dis Surfer Dude, Thanks Don McGregor!"><img src="https://savage.nps.edu/opendis7-java/images/OpenDisSurferDude.png" alt="Open-Dis Surfer Dude, Thanks Don McGregor!" style="float:right"/></a>
+        </h1>
+        
+        <p>
+            <i>Get ready...</i>
+        </p>
+        
+        <p>
+            The IEEE 
+            <a href="https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation">Distributed Interactive Simulation (DIS)</a> protocol
+            is a formal standard for conducting real-time platform-level wargaming across multiple host computers and is used worldwide, especially by military organizations.
+            To learn more:
+        </p>
+        <ul>
+            <li>
+                <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/conferences/IITSEC2021/README.md" target="_blank">Distributed Interactive Simulation (DIS) 101 Tutorial: The Basics</a>,
+                Interservice Industry Training, Simulation Education Conference (IITSEC), 29 November - 3 December 2021, Orlando Florida USA.
+            </li>
+            <li>
+                <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/IeeeDisPduColorFigures.pdf" target="_blank">IEEE DIS7 PDU color figures</a>
+                illustrate PDU data structures that are used to carry networked messages about shared network state.
+            </li>
+        </ul>
+        <p>
+            This page offers distribution products for software developers, created from the latest build of source code in the 
+            <a href="https://github.com/open-dis/opendis7-java/blob/master/README.md" target="_blank">opendis7-java</a>
+            project on GitHub.
+        </p>
+        
+        <hr />
+        
+        <h2>
+            <!-- Unicode Character 'BOOKMARK' (U+1F516) https://www.fileformat.info/info/unicode/char/1f516/index.htm -->
+            <a href="#opendis7">&#128278;</a>
+            <a id="opendis7">opendis7-java jars and documentation</a>
+        </h2>
+        <p>
+            <i>Get set...</i>
+        </p>
+        
+        <p>
+            Here are distribution products for Java software development.
+        </p>
+        <ul>
+            <li>
+                <a href="https://savage.nps.edu/opendis7-java/javadoc/index.html" target="_blank">opendis7-java Javadoc</a>
+                provides full documentation of classes and methods for Java programmers
+            </li>
+            <li>
+                <a href="https://savage.nps.edu/opendis7-java/opendis7-full.jar">opendis7-full.jar</a>
+                is the latest recommended version for developer use.
+                It is a 
+                "<a href="https://stackoverflow.com/questions/19150811/what-is-a-fat-jar" target="_blank">fat&nbsp;jar</a>"
+                (~210MB) which integrates all of the following:
+                
+                <ul>
+                    <li>
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-pdus-source.jar">opendis7-pdus-source.jar</a>,
+                        &nbsp;
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-enumerations-source.jar">opendis7-enumerations-source.jar</a>
+                    </li>
+                    <li>
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-pdus-classes.jar">opendis7-pdus-classes.jar</a>,&nbsp;
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-enumerations-classes.jar">opendis7-enumerations-classes.jar</a>
+                    </li>
+                    <li>
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-pdus-javadoc.jar">opendis7-pdus-javadoc.jar</a>,
+                        <a href="https://savage.nps.edu/opendis7-java/opendis7-enumerations-javadoc.jar">opendis7-enumerations-javadoc.jar</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+            
+        <p>
+            The IEEE DIS Protocol is a a carefully defined set of binary messages.
+            We are also working on an experimental XML encoding for DIS Protocol version&nbsp;7, enabling opportunities for further 
+            "<a href="https://en.wikipedia.org/wiki/Big_data" target="_blank">big data</a>"
+            validation and conversion.
+            Current work is testing and building upon these potential capabilities.
+        </p>
+        <ul>
+            <li>    
+                DIS XML Schema
+                <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/DIS_7_2012.autogenerated.xsd" target="_blank">DIS_7_2012.autogenerated.xsd</a>
+                and
+                <a href="https://savage.nps.edu/opendis7-java/xml/SchemaDocumentation/DIS_7_2012.autogenerated.html" target="_blank">DIS7 PDU XML Schema Documentation</a>
+            </li>
+            <li>    
+                These XML data structures are generated from original 
+                <a href="https://github.com/open-dis/opendis7-source-generator/tree/master/xml/dis_7_2012" target="_blank">XML for PDUs design templates</a>
+                by Don McGregor
+            </li>
+            <li>    
+                Also minimalist DIS: Rich Semantic Track (RST) XML Schema
+                <a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/DIS_7_2012.RichSemanticTrackSubset.xsd" target="_blank">DIS_7_2012.RichSemanticTrackSubset.xsd</a>
+               (<a href="https://github.com/open-dis/opendis7-source-generator/blob/master/xml/DisSchemaSubsetRichSemanticTrack.png" target="_blank">image</a>)
+                and
+                <a href="https://savage.nps.edu/opendis7-java/xml/SchemaDocumentationRST/DIS_7_2012.RichSemanticTrackSubset.html" target="_blank">RST XML Schema Documentation</a>
+            </li>
+        </ul>
+        
+        <p>
+            Codebase design and production:
+        </p>
+        <ul>
+            <li>
+                <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/conferences/SIW2022/README.md" target="_blank">Generating Distributed Interactive Simulation (DIS) Codebases using opendis7-source-generator</a>,
+                Simulation Interoperability Workshop (SIW) February 2022
+            </li>
+        </ul>
+        <hr />
+        
+        <h2>
+            <!-- Unicode Character 'BOOKMARK' (U+1F516) https://www.fileformat.info/info/unicode/char/1f516/index.htm -->
+            <a href="#MV3500">&#128278;</a>
+            <a id="MV3500">MV3500 Networked Simulation course documentation</a>
+        
+        </h2>
+        
+        <p>
+            <i>Go!</i>
+        </p>
+        
+        <p>
+This NPS course is an introduction to distributed communications in simulation applications.
+Topics include introduction to the TCP/IP protocol stack,
+socket communications including TCP/UDP unicast/multicast and essential protocol design issues.
+Follow-on emphasis is Distributed Interactive Simulation (DIS) Protocol application programming,
+with side looks at High Level Architecture (HLA). Course activity focuses on creation and testing
+of network programming network code and web-browser applications.
+        </p>
+
+        <ul>
+            <li>
+                <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500" target="_blank">MV3500 Distributed Simulation</a> course
+
+                <ul>
+                    <li>
+                        <a href="https://savage.nps.edu/opendis7-java/javadoc-examples/index.html" target="_blank">course examples Javadoc</a>
+                        &nbsp; &nbsp; &nbsp; <!-- rough spacing alignment -->
+                        (<a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/tree/master/examples" target="_blank">source code</a>)
+                    </li>
+                    <li>
+                        <a href="https://savage.nps.edu/opendis7-java/javadoc-assignments/index.html" target="_blank">student assignments Javadoc</a>
+                       (<a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/tree/master/assignments" target="_blank">source code</a>)
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        
+        <hr />
+
+        <!-- =================================================== -->
+        
+        <h3>
+            <!-- Unicode Character 'BOOKMARK' (U+1F516) https://www.fileformat.info/info/unicode/char/1f516/index.htm -->
+            <a href="#Contact">&#128278;</a>
+            <a id="Contact">Contact</a>
+        </h3>
+        
+        <blockquote>
+            Questions, suggestions, additions and comments about this opendis distribution products page are welcome.
+            Please send them to
+            <a href="https://faculty.nps.edu/brutzman" target="_blank">Don&nbsp;Brutzman</a>
+            (<a href="mailto:brutzman%20at%20nps.edu%20(Don%20Brutzman)?subject=feedback:%20opendis7-java%20distribution%20"><i>brutzman&nbsp;at&nbsp;nps.edu</i></a>).
+        </blockquote>
+
+        <blockquote>
+            Master version of the opendis distribution page is available online at
+            <a href="https://savage.nps.edu/opendis7-java/distribution.html">https://savage.nps.edu/opendis7-java/distribution.html</a>
+            
+            and available in
+            <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/distribution.html">gitlab.nps.edu version control</a>.
+        </blockquote>
+        
+        <blockquote>
+            This page updated 21 August 2023
+        </blockquote>
+        
+    </body>
+</html>
