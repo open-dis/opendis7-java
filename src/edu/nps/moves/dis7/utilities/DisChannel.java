@@ -29,15 +29,16 @@ import java.util.TimerTask;
  */
 public class DisChannel 
 {
-    protected String        descriptor = this.getClass().getSimpleName();
     /**
      * Output prefix to help with logging by identifying this class.
      */
+    protected String        descriptor = this.getClass().getSimpleName();
     // might have different DisChannel objects created on different channels, so TRACE_PREFIX is non-static
     private              String TRACE_PREFIX            = "[" + descriptor + "] "; 
     private static       String thisHostName            = "localhost";
     private static final String NETWORK_ADDRESS_DEFAULT = "239.1.2.3";
     private static final int       NETWORK_PORT_DEFAULT = 3000;
+    /** default directory for PDULOG files */
     protected static final String  DEFAULT_PDULOG_OUTPUT_DIRECTORY = "./pduLog";
     
     /** whether or not verbose comments are provided */
@@ -50,9 +51,13 @@ public class DisChannel
     private static PduFactory                       pduFactory;
     
     // class variables
+    /** Common thread-safe interface for low-level networking */
     protected DisThreadedNetworkInterface             disNetworkInterface;
-            DisThreadedNetworkInterface.PduListener pduListener;
-            Pdu                                     receivedPdu;
+    /** Common thread-safe interface for listening */
+              DisThreadedNetworkInterface.PduListener pduListener;
+    /** our latest received PDU, of whatever pduType */
+    Pdu                                     receivedPdu;
+    /** utility class for recording PDUs */
     protected PduRecorder                             pduRecorder;
     private boolean                                 verboseDisNetworkInterface = true;
     private boolean                                 verbosePduRecorder         = true;
