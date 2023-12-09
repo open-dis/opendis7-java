@@ -205,8 +205,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="   * commit and push all changed source files in both projects"/>
         <echo message="3. MV3500 Distributed Simulation Fundamentals"/>
         <echo message="   * run update.opendis7.jar.from.local to for new copy in lib/opendis7-full.jar"/>
-        <echo message="   * test course examples via build all invocations"/>
-        <echo message="   * test student assignments via build all invocations"/>
+        <echo message="   * build all to test course examples and student assignments, generate javadoc"/>
         <echo message="   * commit and push opendis7-full.jar"/>
         <echo message="4. scp savage.nps.edu/data/html/opendis7-java"/>
         <echo message="   * TODO automate the following uploads by adding build tasks..."/>
