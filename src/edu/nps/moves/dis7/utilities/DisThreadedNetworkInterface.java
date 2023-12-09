@@ -70,9 +70,9 @@ public class DisThreadedNetworkInterface
     private DatagramSocket    datagramSocket;
 
     /* *********** queues and lists and public methods ************** */
-    private final List<PduListener>                  everyTypeListeners;
-    private final Map<DisPduType, List<PduListener>> typeListeners;
-    private final List<RawPduListener>               rawListeners;
+    private final List<PduListener>                  everyTypeListeners = new ArrayList<>();
+    private final Map<DisPduType, List<PduListener>> typeListeners      = new HashMap<>();
+    private final List<RawPduListener>               rawListeners       = new ArrayList<>();
     
     // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
     private final LinkedBlockingQueue<Pdu>           pdus2send = new LinkedBlockingQueue<>(); // FIFO
@@ -133,7 +133,7 @@ public class DisThreadedNetworkInterface
     /** Default constructor using default multicast address and port, no descriptor */
     public DisThreadedNetworkInterface()
     {
-        this("");
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "", verbose);
     }
 
     /**
@@ -142,19 +142,16 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String newDescriptor)
     {
-        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor);
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, newDescriptor, verbose);
     }
 
     /**
+     * Object constructor with verboseness initialization, using default multicast address and port
      * @param defaultVerbose whether or not DisThreadedNetworkInterface is verbose
      */
     public DisThreadedNetworkInterface(boolean defaultVerbose)
     {
-        verbose = defaultVerbose;
-        everyTypeListeners = new ArrayList<>();
-        typeListeners = new HashMap<>();
-        rawListeners = new ArrayList<>();
-        killed = false;
+        this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT, "", defaultVerbose);
     }
 
     /**
@@ -164,7 +161,7 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String address, int port)
     {
-        this(address, port, "");
+        this(address, port, "", verbose);
     }
 
     /**
@@ -179,7 +176,7 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Object constructor using specified multicast address and port1, plus descriptor and verboseness.
+     * Primary object constructor using specified multicast address and port, plus descriptor and verboseness.
      * @param address the multicast group or unicast address to utilize
      * @param port the multicast port to utilize
      * @param newDescriptor simple descriptor name for this interface
@@ -187,12 +184,6 @@ public class DisThreadedNetworkInterface
      */
     public DisThreadedNetworkInterface(String address, int port, String newDescriptor, boolean defaultVerbose)
     {
-        this(defaultVerbose);
-        if (newDescriptor == null)
-             descriptor = "";
-        else descriptor = newDescriptor;
-        TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
-
         disAddress = address;
         disPort    = port;
         try
@@ -206,7 +197,22 @@ public class DisThreadedNetworkInterface
         inetSocket = new InetSocketAddress(inetAddress, disPort); // tests that accessor methods are working as set
         networkInterface = findIpv4Interface();
 
+        if (newDescriptor == null)
+             descriptor = "";
+        else descriptor = newDescriptor;
+        verbose = defaultVerbose;
+        
+        initializeListeners();
+        killed = false;
+        TRACE_PREFIX = "[" + (DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor).trim() + "] ";
+
         begin();
+    }
+    private void initializeListeners()
+    {
+        everyTypeListeners.clear();
+             typeListeners.clear();
+             rawListeners.clear();
     }
 
     /**
