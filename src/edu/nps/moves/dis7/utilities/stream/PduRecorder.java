@@ -65,6 +65,7 @@ public class PduRecorder // implements PduReceiver
                  private Path   outputDirectoryPath;
     static final String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
     static final String DISLOG_FILE_EXTENSION    = ".dislog";
+    /** pattern template for default pdu log file name */
     public static final String DEFAULT_FILE_NAME        = DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION;
 
     static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
@@ -98,29 +99,41 @@ public class PduRecorder // implements PduReceiver
     /** TODO list of planned encodings */
     public static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
 
+    /** encoding used by log file */
     protected String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
     private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
 
     private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor;
 
-    protected Writer         logFileWriter;
+    /** Writer class for log file */
+    protected Writer       logFileWriter;
     private File           logFile;
     private String         logFileName = DEFAULT_FILE_NAME;
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
-    protected final PduFactory     pduFactory         = new PduFactory(); // default appid, country, etc.
+    
+    /** initialize the pduFactory for creating default application id, country, etc. */
+    protected final PduFactory     pduFactory         = new PduFactory();
 
+    /** initialize the StringBuilder */
     protected final StringBuilder  sb               = new StringBuilder();
+    /** initialize the encoder */
     protected final Base64.Encoder base64Encoder    = Base64.getEncoder();
+    /** initialize the clock */
     protected long           recordingStartNanoTime = -1; // sentinel
+    /** whether or not header has already been written */
     protected int            pduCount               = 0;    // debug
+    /** whether or not header has already been written */
     protected boolean        headerWritten          = false;
     private boolean        running                = true; // starts recording by default
     private boolean        readableTimeStamp      = true; // 
     private boolean        zeroBasedTimeStamp     = true; // use normal date, time strings vice bytes
+    /** initialize the clock */
     protected long           recordingDurationNano  = -1;
+    /** initialize the clock */
     protected LocalTime      recordingDuration      = null;
+    /** remember time of first pdu timestamp */
     protected int            pduTimestampFirst      = 0;
     
     private void initialize()
@@ -482,6 +495,7 @@ public class PduRecorder // implements PduReceiver
           return disThreadedNetworkInterface;
       }
 
+    /** utility method to write appropriately encoded log file header */
     protected void writeHeader()
     {
         String timeStamp = getTimeStamp();
@@ -513,6 +527,7 @@ public class PduRecorder // implements PduReceiver
         }
     }
 
+    /** utility method to write appropriately encoded file footer */
     private void writeFooter()
     {   
         String timeStamp = getTimeStamp();
@@ -922,6 +937,7 @@ public class PduRecorder // implements PduReceiver
     }
 
     /**
+     * Whether includeHeaders status is true
      * @return the includeHeaders
      */
     public boolean isIncludeHeaders() {
@@ -929,6 +945,7 @@ public class PduRecorder // implements PduReceiver
     }
 
     /**
+     * Set the includeHeaders status
      * @param includeHeaders the includeHeaders to set
      */
     public void setIncludeHeaders(boolean includeHeaders) {
