@@ -208,6 +208,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="   * build all to test course examples and student assignments, generate javadoc"/>
         <echo message="   * commit and push opendis7-full.jar"/>
         <echo message="4. scp savage.nps.edu/data/html/opendis7-java"/>
+        <echo message="   * review and update distribution.html"/>
         <echo message="   * TODO automate the following uploads by adding build tasks..."/>
         <echo message="   * opendis7-java/dist/javadoc"/>
         <echo message="   * opendis7-java/dist/opendis7-full.jar"/>
