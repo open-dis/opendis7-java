@@ -58,7 +58,14 @@ public class Issue09 {
     Domain d;
     EntityType et1, et2;
     
+    /** Constructor */
+    public Issue09 ()
+    {
+        // initializations can go here
+    }
+    
     @BeforeEach
+    /** Initialize the test */
     public void setUp() {
         buffer = ByteBuffer.allocate(1500);
         d = Domain.inst(MunitionDomain.ANTI_ARMOR);
@@ -67,6 +74,7 @@ public class Issue09 {
     }
     
     @AfterEach
+    /** Tear down the test */
     public void tearDown() {
         buffer.clear();
         buffer = null;
@@ -75,6 +83,7 @@ public class Issue09 {
     }
     
     @Test
+    /** The test itself */
     public void testIssue09() {
         try {
 
@@ -106,7 +115,9 @@ public class Issue09 {
             e.printStackTrace(System.err);
         }
     }
-    
+    /** Command line invocation (CLI)
+     * @param args arguments
+     */
     public static void main(String[] args) {
         Issue09 i09 = new Issue09();
         i09.setUp();
