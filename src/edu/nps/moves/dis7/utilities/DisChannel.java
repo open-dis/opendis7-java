@@ -20,7 +20,7 @@ import java.util.TimerTask;
 /**
  * DisChannel integrates multiple utility capabilities to handle most  networking and entity-management tasks.
  * Provides a simplified interface wrapping DisThreadedNetworkInterface, PduRecorder, and SimulationManager
- * for programs connecting to OpenDis7 communications.
+ * for programs connecting to OpenDis7 communications.  This lets library users avoid handling of network threads.
  * <br>
  * TODO future work will confirm that multiple different DisChannel connections can be used simultaneously by a parent program.
  * @see <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md">MV3500 Distributed Simulation Fundamentals, Specification Documents, IEEE and SISO</a>
