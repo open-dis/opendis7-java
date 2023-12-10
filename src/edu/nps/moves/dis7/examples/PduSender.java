@@ -78,25 +78,25 @@ public class PduSender
     // All system properties, passed in on the command line via -Dattribute=value
     Properties systemProperties = System.getProperties();
 
-    // IP address we send to
+    // IP address we sendPDU to
     String destinationIpString = systemProperties.getProperty("destinationIp");
 
-    // Port we send to, and local port we open the socket on
+    // Port we sendPDU to, and local port we open the socket on
     String portString = systemProperties.getProperty("port");
 
     // Network mode: unicast, multicast, broadcast
     String networkModeString = systemProperties.getProperty("networkMode"); // unicast or multicast or broadcast
     InetSocketAddress group = null;
 
-    // Set up a socket to send information
+    // Set up a socket to sendPDU information
     try {
-      // Port we send to
+      // Port we sendPDU to
       if (portString != null)
         port = Integer.parseInt(portString);
 
       socket = new MulticastSocket();
 
-      // Where we send packets to, the destination IP address
+      // Where we sendPDU packets to, the destination IP address
       if (destinationIpString != null) {
         destinationIp = InetAddress.getByName(destinationIpString);
       }
@@ -202,7 +202,7 @@ public class PduSender
         // the SEDRIS SRM package. There are also some one-off formulas for 
         // doing conversions from, for example, lat/lon/altitude to DIS coordinates.
         // Here we use those one-off formulas.
-        // Modify the position of the object. This will send the object a little
+        // Modify the position of the object. This will sendPDU the object a little
         // due east by adding some to the longitude every iteration. Since we
         // are on the Pacific coast, this sends the object east. Assume we are
         // at zero altitude. In other worlds you'd use DTED to determine the
@@ -233,12 +233,12 @@ public class PduSender
         
         // You can set other ESPDU values here, such as the velocity, acceleration,
         // and so on.
-        // Marshal out the espdu object to a byte array, then send a datagram
+        // Marshal out the espdu object to a byte array, then sendPDU a datagram
         // packet with that data in it.
         espdu.marshal(dos);
 
         // The byte array here is the packet in DIS format. We put that into a 
-        // datagram and send it.
+        // datagram and sendPDU it.
         data = baos.toByteArray();
         
         fire = pduFactory.makeFirePdu();

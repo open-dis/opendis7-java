@@ -37,17 +37,17 @@ public class ThreadedNetExample
     
     PduFactory factory = new PduFactory(Country.GERMANY_DEU, (byte) 1, (short) 2, (short) 3, DisTime.TimestampStyle.IEEE_ABSOLUTE);
     
-    // Make and send 3 pdus with no delay between, testing threaded receiver performance
-    netif.send(factory.makeEntityStatePdu());
+    // Make and sendPDU 3 pdus with no delay between, testing threaded receiver performance
+    netif.sendPDU(factory.makeEntityStatePdu());
     System.out.println("Sent EntityStatePdu");
-    netif.send(factory.makeFirePdu());
+    netif.sendPDU(factory.makeFirePdu());
     System.out.println("Sent FirePdu");
-    netif.send(factory.makeCollisionPdu());
+    netif.sendPDU(factory.makeCollisionPdu());
     System.out.println("Sent CollisionPdu");
     
     // Wait a bit to see output.
     // Almost any sender will overwhelm a receiver if not constrained. This
-    // slows down the send rate so the receiver has enough time to process it.
+    // slows down the sendPDU rate so the receiver has enough time to process it.
     try { 
         Thread.sleep(250L);
     } catch(InterruptedException ex) {}

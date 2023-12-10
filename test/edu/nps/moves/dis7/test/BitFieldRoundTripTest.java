@@ -94,7 +94,7 @@ public class BitFieldRoundTripTest
       .set(LandPlatformAppearance.ISFROZEN,1);
   
     try {
-      disNetworkInterface.send(espdu);
+      disNetworkInterface.sendPDU(espdu);
       Thread.sleep(100l); 
     }
     catch (InterruptedException ex) {

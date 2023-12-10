@@ -115,7 +115,7 @@ public class FixedAndVariableDatumRoundTripTest
     sentPdu.setLength(sentPdu.getMarshalledSize());
 
     try {
-      disNetworkInterface.send(sentPdu);
+      disNetworkInterface.sendPDU(sentPdu);
       Thread.sleep(100l);
     }
     catch (InterruptedException ex) {

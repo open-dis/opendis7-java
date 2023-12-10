@@ -79,13 +79,13 @@ public class SignalPdusTest
         sentPdus.add(pdu);
 
         sentPdus.forEach(p -> {
-            disNetworkInterface.send(p);
+            disNetworkInterface.sendPDU(p);
             sleep(100l); // give receiver time to process the sent pdu
         });
     }
 
-    /** Prepare for network operations and send initial PDUs,
-     *  must be called at beginning of setupClass()
+    /** Prepare for network operations and sendPDU initial PDUs,
+  must be called at beginning of setupClass()
      */
     @SuppressWarnings("Convert2Lambda")
     public static synchronized void setupNetwork()

@@ -121,7 +121,7 @@ public class DataQueryPduRoundTripTest
     sendingPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      disNetworkInterface.send(sendingPdu);
+      disNetworkInterface.sendPDU(sendingPdu);
       Thread.sleep(100l);
     }
     catch (InterruptedException ex) {

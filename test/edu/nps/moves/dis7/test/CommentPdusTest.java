@@ -83,7 +83,7 @@ public class CommentPdusTest
     * @param newPdu PDU of interest */
   private void testOne(Pdu newPdu)
   {
-     sendPdu(newPdu); // send to self, then wait a while, then return receivedPdu
+     sendPdu(newPdu); // sendPDU to self, then wait a while, then return receivedPdu
      assertTrue(receivedPdu != null, "No response from network receiver");
      
      String marshallSizeMismatchMessage = 
@@ -98,11 +98,11 @@ public class CommentPdusTest
      receivedPdu = null; // ensure cleared prior to next test
   }
   
-    /** send the PDU of interest */
+    /** sendPDU the PDU of interest */
   private void sendPdu(Pdu pdu)
   {
     try {
-      disNetworkInterface.send(pdu);
+      disNetworkInterface.sendPDU(pdu);
       Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
     }
     catch (InterruptedException ex) {

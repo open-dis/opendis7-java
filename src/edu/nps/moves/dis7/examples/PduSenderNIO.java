@@ -88,7 +88,7 @@ public class PduSenderNIO
           orientation.setPsi(psi);
           orientation.setTheta((float) (orientation.getTheta() + idx / 2.0));
 
-          // Marshal out the object to a byte array, then send a datagram
+          // Marshal out the object to a byte array, then sendPDU a datagram
           // packet with that data in it. This uses Robert Harder's NIO
           // code for marshalling.
           data = espdu.marshal();
@@ -97,7 +97,7 @@ public class PduSenderNIO
           socket.send(packet);
 
           // Almost any sender will overwhelm a receiver if not constrained. This
-          // slows down the send rate so the receiver has enough time to process it.
+          // slows down the sendPDU rate so the receiver has enough time to process it.
           Thread.sleep(1000);
 
           System.out.println("Sending " + espdu.getClass().getName());

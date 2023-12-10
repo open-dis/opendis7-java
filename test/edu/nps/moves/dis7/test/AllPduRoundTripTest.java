@@ -79,7 +79,7 @@ public class AllPduRoundTripTest
     {
     }
 
-  /** Check ability to send and receive each DIS PDU */
+  /** Check ability to sendPDU and receive each DIS PDU */
   @Test
   public void testRoundTripAllPdus()
   {
@@ -165,7 +165,7 @@ public class AllPduRoundTripTest
       pdusSent.add(pduFactory.makeUnderwaterAcousticPdu());
       
       pdusSent.forEach(p -> {
-          disNetworkInterface.send(p);
+          disNetworkInterface.sendPDU(p);
           sleep(200l); // give receiver time to process, longer time needed when in debug mode
       });
       System.out.println ("*** AllPduRoundTripTest testRoundTripAllPdus() all PDUs sent, shutDownSenderRecorder()");
@@ -190,7 +190,7 @@ public class AllPduRoundTripTest
     System.out.println ("*** AllPduRoundTripTest testRoundTripAllPdus() complete");
   }
   
-    /** setup the common send/receive network interface 
+    /** setup the common sendPDU/receive network interface 
      * @see PduRecorder
      * @see DisNetworkInterface
      */
@@ -217,7 +217,7 @@ public class AllPduRoundTripTest
         System.out.println("Recorder log at " + pduRecorder.getLogFilePath());
     }
 
-  /** shutdown the common send/receive network interface */
+  /** shutdown the common sendPDU/receive network interface */
   private synchronized void shutDownSenderRecorder() throws Exception
   {
     disNetworkInterface.removeListener(pduListener);
@@ -272,7 +272,7 @@ public class AllPduRoundTripTest
 
         // TODO is this sufficient?  has each PDU value been compared as well?
     }
-  /** being careful during threaded operations, also encourage in-order receipt before next send */
+  /** being careful during threaded operations, also encourage in-order receipt before next sendPDU */
   private static void sleep(long ms) {
     try {
         Thread.sleep(ms);

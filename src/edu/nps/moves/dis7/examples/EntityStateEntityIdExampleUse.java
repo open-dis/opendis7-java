@@ -76,7 +76,7 @@ public class EntityStateEntityIdExampleUse
         // initialization code here
     }
   /**
-   * Using two methods, create and send an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
+   * Using two methods, create and sendPDU an EntityStatePDU, describing an AD44 Shenandoah destroyer tender, uid 11963.
    * @throws IOException report if problem occurs
    */
   public static void exampleUse() throws Exception
@@ -100,7 +100,7 @@ public class EntityStateEntityIdExampleUse
 //    espdu.setEntityType(et);
     
     System.out.println("Sending " + espdu.getClass().getSimpleName());
-    disNetworkInterface.send(espdu);  // possibly throws IOException
+    disNetworkInterface.sendPDU(espdu);  // possibly throws IOException
     Thread.sleep(100L); // TODO unnecessary?
     
     /* Do the same for the second way of creating a Shenandoah entity type and show an alternate way of creating an ESPDU */
@@ -112,7 +112,7 @@ public class EntityStateEntityIdExampleUse
     
     espdu.setEntityType(entityType2);
     System.out.println("Sending " + espdu.getClass().getSimpleName());
-    disNetworkInterface.send(espdu);  // possibly throws IOException
+    disNetworkInterface.sendPDU(espdu);  // possibly throws IOException
   }
   
   private static void handleReceivedPdu(Pdu pdu)

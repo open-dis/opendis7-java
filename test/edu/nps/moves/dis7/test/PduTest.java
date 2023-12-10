@@ -175,7 +175,7 @@ abstract public class PduTest
             System.err.println ("*** " + invoker + "(null) cannot send a null createdPdu, ignored");
             return;
         }
-        disNetworkInterface.send(createdPdu);
+        disNetworkInterface.sendPDU(createdPdu);
         
         int numberOfReadTests = 0;
         do // check at least once, perhaps multiple times for receipt before returning
