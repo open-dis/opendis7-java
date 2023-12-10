@@ -314,7 +314,7 @@ public class PduRecorder // implements PduReceiver
       }
       try {
           System.out.println();
-          System.out.println("PduRecorder.stop() closing recorder log file: " + logFile.getCanonicalPath());
+          System.out.println("PduRecorder.stop() closing recorder log file:\n   " + logFile.getCanonicalPath());
           logFileWriter.close(); // a flush occurs first during a close
       } 
       catch (IOException ex) {
@@ -662,7 +662,7 @@ public class PduRecorder // implements PduReceiver
                 nextPdu.setTimestamp(index * 10); // seconds
                 nextPdu.setLength(nextPdu.getMarshalledSize());
 //              nextPdu.getTimestamp(); // debug
-                disNetworkInterface.send(nextPdu);
+                disNetworkInterface.sendPDU(nextPdu);
                 
                 // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
                 // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java

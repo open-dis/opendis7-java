@@ -274,7 +274,7 @@ public class DisChannel
             setUpNetworkInterface(); // ensure connected
         try
         {
-            getDisNetworkInterface().send(pdu);
+            getDisNetworkInterface().sendPDU(pdu);
             // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
             // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
             wait(100); // TODO consider wait() instead of sleep()

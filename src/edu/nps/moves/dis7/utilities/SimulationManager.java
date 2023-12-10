@@ -101,7 +101,7 @@ public class SimulationManager
                 createEntityPdu = pduFactory.makeCreateEntityPdu();
                 createEntityPdu.setExerciseID(entity.getId());
                 createEntityPdu.setTimestamp(DisTime.getCurrentDisTimestamp());
-                disThreadedNetworkInterface.send(createEntityPdu);
+                disThreadedNetworkInterface.sendPDU(createEntityPdu);
             }
         }
         else
@@ -560,7 +560,7 @@ public class SimulationManager
             {
                 CreateEntityPdu createEntityPdu = pduFactory.makeCreateEntityPdu();
                 // TODO set record parameters
-                getDisThreadedNetworkInterface().send(createEntityPdu);
+                getDisThreadedNetworkInterface().sendPDU(createEntityPdu);
             }
             else
             {
@@ -584,7 +584,7 @@ public class SimulationManager
             {
                 RemoveEntityPdu removeEntityPdu = pduFactory.makeRemoveEntityPdu();
                 // TODO set record parameters
-                getDisThreadedNetworkInterface().send(removeEntityPdu);
+                getDisThreadedNetworkInterface().sendPDU(removeEntityPdu);
             }
             else
             {

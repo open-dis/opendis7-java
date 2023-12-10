@@ -29,7 +29,6 @@ import java.util.logging.Logger;
  */
 public class DisThreadedNetworkInterface
 {
-
     /**
      * MTU 8192: TODO this has actually been superseded by a larger buffer size,
      * but good enough for now
@@ -47,7 +46,7 @@ public class DisThreadedNetworkInterface
      */
     public static final int DEFAULT_DIS_PORT = 3000;
 
-    /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
+    /** *  Default multicast group address <code>239.1.2.3</code> for sendPDU and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  
      */
     public static final String DEFAULT_DIS_ADDRESS = "239.1.2.3";
@@ -76,6 +75,8 @@ public class DisThreadedNetworkInterface
     
     // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
     private final LinkedBlockingQueue<Pdu>           pdus2send = new LinkedBlockingQueue<>(); // FIFO
+    
+    private DisThreadedNetworkInterface.PduListener pduListenerSelfTest;
 
     DatagramPacket packet;
 
@@ -200,7 +201,9 @@ public class DisThreadedNetworkInterface
         if (newDescriptor == null)
              descriptor = "";
         else descriptor = newDescriptor;
-        verbose = defaultVerbose;
+        verbose        = defaultVerbose;
+        verboseReceipt = defaultVerbose;
+        verboseSending = defaultVerbose;
         
         initializeListeners();
         killed = false;
@@ -305,7 +308,7 @@ public class DisThreadedNetworkInterface
     }
 
     /**
-     * Get current multicast (or unicast) network address for send and receive connections.
+     * Get current multicast (or unicast) network address for sendPDU and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>
      * @return current multicast address value
      */
@@ -314,7 +317,7 @@ public class DisThreadedNetworkInterface
         return this.disAddress;
     }
     /**
-     * Network address for send and receive connections.
+     * Network address for sendPDU and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>
      * @param newAddress the new network address to set
      */
@@ -324,9 +327,9 @@ public class DisThreadedNetworkInterface
 
     /**
      * Send the given pdu to the network using the IP address and port given to the constructor
-     * @param pdu the pdu to send
+     * @param pdu the pdu to sendPDU
      */
-    public synchronized void send(Pdu pdu)
+    public synchronized void sendPDU(Pdu pdu)
     {
         pdus2send.add(pdu);
     }
@@ -340,6 +343,18 @@ public class DisThreadedNetworkInterface
     /** Initialization of threads, otherwise no action that while they remain running */
     private synchronized void createThreads()
     {
+        if (sendingThread == null)
+        {
+//          System.out.println(TRACE_PREFIX + "createThreads() start sendingThread...");
+            sendingThread = new Thread(sendingThreadRunnable, "sendingThread");
+            // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
+            sendingThread.setDaemon(false); // user thread, not system thread
+            sendingThread.setPriority(Thread.NORM_PRIORITY);
+            sendingThread.start();
+        }
+        if (hasVerboseSending())
+            System.out.println(TRACE_PREFIX + "createThreads() sendingThread.isAlive()=" + sendingThread.isAlive());
+
         if (receiveThread == null)
         {
 //          System.out.println(TRACE_PREFIX + "createThreads() start receiveThread...");
@@ -351,18 +366,6 @@ public class DisThreadedNetworkInterface
         }
         if (hasVerboseReceipt())
             System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
-
-        if (sendingThread == null)
-        {
-//          System.out.println(TRACE_PREFIX + "createThreads() start sendingThread...");
-            sendingThread = new Thread(sendingThreadRunnable, "sendingThread");
-            // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
-            sendingThread.setDaemon(false); // user thread, not system thread
-            sendingThread.setPriority(Thread.NORM_PRIORITY);
-            sendingThread.start();
-        }
-        if (hasVerboseSending())
-            System.out.println(TRACE_PREFIX + "createThreads() sendingThread.isAlive()=" + receiveThread.isAlive());
     }
     /**
      * Can be used to restart DisThreadedNetworkInterface if closed.
@@ -508,7 +511,7 @@ public class DisThreadedNetworkInterface
                 nextPdu = pdus2send.take();
                 nextPdu.marshal(bBuffer);
                 packet.setData(bBuffer.array());
-                packet.setLength(nextPdu.getMarshalledSize()); // send only the pdu's data length
+                packet.setLength(nextPdu.getMarshalledSize()); // sendPDU only the pdu's data length
                 datagramSocket.send(packet);
                 pduSentCounter++;
 
@@ -592,6 +595,7 @@ public class DisThreadedNetworkInterface
             sendingThreadInterruptStatus = String.valueOf(sendingThread.isInterrupted());
         }
         else sendingThreadInterruptStatus ="null";
+        
         if (receiveThread != null)
         {
             receiveThread.interrupt();
@@ -623,10 +627,18 @@ public class DisThreadedNetworkInterface
                 // let sendingThread and receiveThread stop
                 wait(100l); // // allow extra time for shutdowns to occur before continuing
             }
-            pdus2send.clear(); // all stop
             if (hasVerboseOutput())
-                System.out.println (TRACE_PREFIX + "close():" +
-                    " pdus2send.size()=" + pdus2send.size());
+            {
+//                System.out.println (TRACE_PREFIX + "close():" +
+//                    " pdus2send.size()=" + pdus2send.size() + " PDUs not being sent");
+//                System.out.println (TRACE_PREFIX + "close():" +
+//                    " everyTypeListeners.size()=" + everyTypeListeners.size());
+//                System.out.println (TRACE_PREFIX + "close():" +
+//                    "      typeListeners.size()=" + typeListeners.size());
+//                System.out.println (TRACE_PREFIX + "close():" +
+//                    "       rawListeners.size()=" + rawListeners.size());
+            }
+            pdus2send.clear(); // all stop
 
             // now close socket (after killing threads so that hopefully the socket doesn't lock them)
             if (datagramSocket != null && !datagramSocket.isClosed())
@@ -894,18 +906,22 @@ public class DisThreadedNetworkInterface
             DisThreadedNetworkInterface.descriptor = newDescriptor.trim();
         TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
     }
-    /** Self test to check basic operation, invoked by main() */
+            
+    /** Self test to check basic operation, invoked by main().
+     *  Warning, VPN can block receipt of PDUs!
+     *  Also be careful when debugging since debug mode can interrupt otherwise-optimized threading operations.
+     */
     @SuppressWarnings("Convert2Lambda")
     private synchronized void selfTest()
     {
-        System.out.println(TRACE_PREFIX + "main() self test initialized...");
+        System.out.println(TRACE_PREFIX + "main() self test initialized... ");
         try
         {
             EntityStatePdu espdu = pduFactory.makeEntityStatePdu();
-            espdu.setMarking("self test");
             setVerbose(true);
-            DisThreadedNetworkInterface.PduListener pduListener;
-            pduListener = new DisThreadedNetworkInterface.PduListener() // avoid Convert2Lambda editor warning
+            System.out.println(TRACE_PREFIX + "hasVerboseSending()=" + hasVerboseSending() + ", " +
+                                              "hasVerboseReceipt()=" + hasVerboseReceipt());
+            pduListenerSelfTest = new DisThreadedNetworkInterface.PduListener() // avoid Convert2Lambda editor warning
             {
                 /** Callback handler for listener */
                 @Override
@@ -915,15 +931,23 @@ public class DisThreadedNetworkInterface
                     System.out.flush();
                 }
             };
-            addListener(pduListener);
+            addListener(pduListenerSelfTest);
 
-            System.out.println(TRACE_PREFIX + "self test sending espdu...");
-            send(espdu);
+            // TODO reported send/received marking results not synchronized in DisThreadedNetworkInterfaceSelfTestLog.txt ??
+            espdu.setMarking("self test 1");
+            System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString()+ "' ...");
+            sendPDU(espdu);
+            espdu.setMarking("self test 2");
+            System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString() + "' ...");
+            sendPDU(espdu);
+            espdu.setMarking("self test 3");
+            System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString() + "' ...");
+            sendPDU(espdu);
 
             // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
             // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
             // this test is short, must briefly wait to get synchronized with threaded sender and receiver
-            wait(500L); // TODO consider wait() instead of sleep()
+            wait(500L); // consider wait() instead of sleep()
             System.out.flush();
             System.err.flush();
             // all done, close() in finally block
