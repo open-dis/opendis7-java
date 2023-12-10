@@ -917,7 +917,7 @@ public class DisThreadedNetworkInterface
         System.out.println(TRACE_PREFIX + "main() self test initialized... ");
         try
         {
-            EntityStatePdu espdu = pduFactory.makeEntityStatePdu();
+            EntityStatePdu espdu;
             setVerbose(true);
             System.out.println(TRACE_PREFIX + "hasVerboseSending()=" + hasVerboseSending() + ", " +
                                               "hasVerboseReceipt()=" + hasVerboseReceipt());
@@ -933,13 +933,17 @@ public class DisThreadedNetworkInterface
             };
             addListener(pduListenerSelfTest);
 
-            // TODO reported send/received marking results not synchronized in DisThreadedNetworkInterfaceSelfTestLog.txt ??
+            espdu = pduFactory.makeEntityStatePdu(); // avoid potential threading issues due to espdu reuse
             espdu.setMarking("self test 1");
             System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString()+ "' ...");
             sendPDU(espdu);
+            
+            espdu = pduFactory.makeEntityStatePdu(); // avoid potential threading issues due to espdu reuse
             espdu.setMarking("self test 2");
             System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString() + "' ...");
             sendPDU(espdu);
+            
+            espdu = pduFactory.makeEntityStatePdu(); // avoid potential threading issues due to espdu reuse
             espdu.setMarking("self test 3");
             System.out.println(TRACE_PREFIX + "self test sending espdu with marking '" + espdu.getMarkingString() + "' ...");
             sendPDU(espdu);

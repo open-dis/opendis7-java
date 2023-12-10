@@ -18,12 +18,12 @@ run-single:
 [DisThreadedNetworkInterface main() self test] self test sending espdu with marking 'self test 1' ...
 [DisThreadedNetworkInterface main() self test] self test sending espdu with marking 'self test 2' ...
 [DisThreadedNetworkInterface main() self test] self test sending espdu with marking 'self test 3' ...
-[DisThreadedNetworkInterface main() self test] [receipt  1] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
-[DisThreadedNetworkInterface main() self test] [sending  1] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
-[DisThreadedNetworkInterface main() self test] [sending  2] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
+[DisThreadedNetworkInterface main() self test] [receipt  1] DisPduType 01 ENTITY_STATE self test 1, size 144 bytes)
+[DisThreadedNetworkInterface main() self test] [sending  1] DisPduType 01 ENTITY_STATE self test 1, size 144 bytes)
+[DisThreadedNetworkInterface main() self test] [sending  2] DisPduType 01 ENTITY_STATE self test 2, size 144 bytes)
 [DisThreadedNetworkInterface main() self test] [sending  3] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
 [DisThreadedNetworkInterface main() self test] main() pduListener.incomingPdu() received newPdu DisPduType 01 ENTITY_STATE
-[DisThreadedNetworkInterface main() self test] [receipt  2] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
+[DisThreadedNetworkInterface main() self test] [receipt  2] DisPduType 01 ENTITY_STATE self test 2, size 144 bytes)
 [DisThreadedNetworkInterface main() self test] main() pduListener.incomingPdu() received newPdu DisPduType 01 ENTITY_STATE
 [DisThreadedNetworkInterface main() self test] [receipt  3] DisPduType 01 ENTITY_STATE self test 3, size 144 bytes)
 [DisThreadedNetworkInterface main() self test] main() pduListener.incomingPdu() received newPdu DisPduType 01 ENTITY_STATE

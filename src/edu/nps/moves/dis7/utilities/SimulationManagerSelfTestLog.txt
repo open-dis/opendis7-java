@@ -1,21 +1,22 @@
-ant -f C:\\x-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/SimulationManager.java -Drun.class=OpenDis7Examples.SimulationManager run-single
+ant -f C:\\x3d-github\\opendis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/utilities/SimulationManager.java -Drun.class=edu.nps.moves.dis7.utilities.SimulationManager run-single
 init:
-Deleting: C:\x-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
-Compiling 1 source file to C:\x-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] system modules path not set in conjunction with -source 11
+1 warning
 compile-single:
 run-single:
 *** SimulationManager main() self test started...
-[DisThreadedNetworkInterface] using network interface PANGP Virtual Ethernet Adapter
+[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
 [DisThreadedNetworkInterface main() self test] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
-[DisThreadedNetworkInterface main() self test] createThreads() receiveThread.isAlive()=true
 [DisThreadedNetworkInterface main() self test] createThreads() sendingThread.isAlive()=true
-*** setKillSentinelAndInterrupts() killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
-[DisThreadedNetworkInterface main() self test] close(): pdus2send.size()=0 baos.size()=0 dos.size()=0
+[DisThreadedNetworkInterface main() self test] createThreads() receiveThread.isAlive()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface main() self test] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
 *** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
 *** SimulationManager main() self test complete.
-BUILD SUCCESSFUL (total time: 2 seconds)
+BUILD SUCCESSFUL (total time: 3 seconds)
