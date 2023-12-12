@@ -1450,7 +1450,7 @@ public class PduFactory
    * @param data an array of PDU data
    * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
    */
-  public Pdu createPdu(byte data[])
+  public synchronized Pdu createPdu(byte data[])
   {
     return createPdu(ByteBuffer.wrap(data));
   }
@@ -1462,7 +1462,7 @@ public class PduFactory
    * @param byteBuffer the buffer containing PDU data to input
    * @return A PDU of the appropriate concrete subclass of PDU or null if there was an error
    */
-  public Pdu createPdu(ByteBuffer byteBuffer)
+  public synchronized Pdu createPdu(ByteBuffer byteBuffer)
   {
     DisPduType pduType = getTypeFromByteArray(byteBuffer.array());
     return createPdu(pduType, byteBuffer);
@@ -1485,12 +1485,12 @@ public class PduFactory
    * @param pduType PDU type to create
    * @return the empty pdu
    */
-  public Pdu createPdu(DisPduType pduType)
+  public synchronized Pdu createPdu(DisPduType pduType)
   {
     return createPdu(pduType, null);
   }
   
-  private Pdu createPdu(DisPduType pduType, ByteBuffer byteBuffer)
+  private synchronized Pdu createPdu(DisPduType pduType, ByteBuffer byteBuffer)
   {
     Pdu aPdu = null;
     switch (pduType) {

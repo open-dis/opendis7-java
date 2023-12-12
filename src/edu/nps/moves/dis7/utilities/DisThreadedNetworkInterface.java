@@ -86,7 +86,7 @@ public class DisThreadedNetworkInterface
     public interface PduListener
     {
         /**
-         * Callback method
+         * Callback method to handle incomingPdu
          * @param pdu received pdu
          */
         void incomingPdu(Pdu pdu);
@@ -98,7 +98,7 @@ public class DisThreadedNetworkInterface
     public interface RawPduListener
     {
         /**
-         * Callback method
+         * Callback method to handle incomingPdu
          * @param bAndL exposed buffer to receive incoming pdu
          */
         void incomingPdu(ByteArrayBufferAndLength bAndL);
@@ -329,9 +329,15 @@ public class DisThreadedNetworkInterface
      * Send the given pdu to the network using the IP address and port given to the constructor
      * @param pdu the pdu to sendPDU
      */
+// TODO
+//     * using a deep copy to avoid later modifications to the original pdu having any effect on 
+//     * already-buffered output pdu instances.
     public synchronized void sendPDU(Pdu pdu)
     {
         pdus2send.add(pdu);
+        
+// TODO get effective deep copy, following fails on FixedAndVariableDatumRoundTripTest
+// TODO pdus2send.add(pdu.copyByPduFactory()); // avoid possible changes to original pdu prior to network delivery
     }
 
     /* *************** networking i/o ************* */
@@ -910,9 +916,11 @@ public class DisThreadedNetworkInterface
     /** Self test to check basic operation, invoked by main().
      *  Warning, VPN can block receipt of PDUs!
      *  Also be careful when debugging since debug mode can interrupt otherwise-optimized threading operations.
+     *  TODO: make this part of run-time network interface setup, reporting if sent PDUs are not received.
+     * See github issue 25.
      */
     @SuppressWarnings("Convert2Lambda")
-    private synchronized void selfTest()
+    public synchronized void selfTest()
     {
         System.out.println(TRACE_PREFIX + "main() self test initialized... ");
         try
