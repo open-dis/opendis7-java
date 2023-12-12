@@ -75,7 +75,7 @@ public int getMarshalledSize()
 /** Setter for {@link SeparationVP#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setRecordType(VariableParameterRecordType pRecordType)
+public synchronized SeparationVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -90,7 +90,7 @@ public VariableParameterRecordType getRecordType()
 /** Setter for {@link SeparationVP#reasonForSeparation}
   * @param pReasonForSeparation new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setReasonForSeparation(SeparationVPReasonforSeparation pReasonForSeparation)
+public synchronized SeparationVP setReasonForSeparation(SeparationVPReasonforSeparation pReasonForSeparation)
 {
     reasonForSeparation = pReasonForSeparation;
     return this;
@@ -105,7 +105,7 @@ public SeparationVPReasonforSeparation getReasonForSeparation()
 /** Setter for {@link SeparationVP#preEntityIndicator}
   * @param pPreEntityIndicator new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setPreEntityIndicator(SeparationVPPreEntityIndicator pPreEntityIndicator)
+public synchronized SeparationVP setPreEntityIndicator(SeparationVPPreEntityIndicator pPreEntityIndicator)
 {
     preEntityIndicator = pPreEntityIndicator;
     return this;
@@ -120,7 +120,7 @@ public SeparationVPPreEntityIndicator getPreEntityIndicator()
 /** Setter for {@link SeparationVP#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setPadding1(byte pPadding1)
+public synchronized SeparationVP setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -128,7 +128,7 @@ public SeparationVP setPadding1(byte pPadding1)
 /** Utility setter for {@link SeparationVP#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setPadding1(int pPadding1){
+public synchronized SeparationVP setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -142,7 +142,7 @@ public byte getPadding1()
 /** Setter for {@link SeparationVP#parentEntityID}
   * @param pParentEntityID new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setParentEntityID(EntityID pParentEntityID)
+public synchronized SeparationVP setParentEntityID(EntityID pParentEntityID)
 {
     parentEntityID = pParentEntityID;
     return this;
@@ -158,7 +158,7 @@ public EntityID getParentEntityID()
 /** Setter for {@link SeparationVP#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setPadding2(short pPadding2)
+public synchronized SeparationVP setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -166,7 +166,7 @@ public SeparationVP setPadding2(short pPadding2)
 /** Utility setter for {@link SeparationVP#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setPadding2(int pPadding2){
+public synchronized SeparationVP setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -180,7 +180,7 @@ public short getPadding2()
 /** Setter for {@link SeparationVP#stationLocation}
   * @param pStationLocation new value of interest
   * @return same object to permit progressive setters */
-public SeparationVP setStationLocation(NamedLocationIdentification pStationLocation)
+public synchronized SeparationVP setStationLocation(NamedLocationIdentification pStationLocation)
 {
     stationLocation = pStationLocation;
     return this;
@@ -225,7 +225,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -278,7 +278,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -308,7 +308,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -328,7 +328,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -345,7 +345,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -55,13 +55,13 @@ public class LEFirePdu extends LiveEntityFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public LEFirePdu copy()
+ public synchronized LEFirePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public LEFirePdu copyByteBuffer()
+ public synchronized LEFirePdu copyByteBuffer()
  {
      LEFirePdu newCopy = new LEFirePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public LEFirePdu copyDataOutputStream()
+ public synchronized LEFirePdu copyDataOutputStream()
  {
      LEFirePdu newCopy = new LEFirePdu();
      try
@@ -150,7 +150,7 @@ public int getMarshalledSize()
 /** Setter for {@link LEFirePdu#firingLiveEntityId}
   * @param pFiringLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
+public synchronized LEFirePdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
 {
     firingLiveEntityId = pFiringLiveEntityId;
     return this;
@@ -166,7 +166,7 @@ public EntityID getFiringLiveEntityId()
 /** Setter for {@link LEFirePdu#flags}
   * @param pFlags new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setFlags(byte pFlags)
+public synchronized LEFirePdu setFlags(byte pFlags)
 {
     flags = pFlags;
     return this;
@@ -174,7 +174,7 @@ public LEFirePdu setFlags(byte pFlags)
 /** Utility setter for {@link LEFirePdu#flags}
   * @param pFlags new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setFlags(int pFlags){
+public synchronized LEFirePdu setFlags(int pFlags){
     flags = (byte) pFlags;
     return this;
 }
@@ -188,7 +188,7 @@ public byte getFlags()
 /** Setter for {@link LEFirePdu#targetLiveEntityId}
   * @param pTargetLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
+public synchronized LEFirePdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
 {
     targetLiveEntityId = pTargetLiveEntityId;
     return this;
@@ -204,7 +204,7 @@ public EntityID getTargetLiveEntityId()
 /** Setter for {@link LEFirePdu#munitionLiveEntityId}
   * @param pMunitionLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
+public synchronized LEFirePdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
 {
     munitionLiveEntityId = pMunitionLiveEntityId;
     return this;
@@ -220,7 +220,7 @@ public EntityID getMunitionLiveEntityId()
 /** Setter for {@link LEFirePdu#eventId}
   * @param pEventId new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setEventId(EventIdentifier pEventId)
+public synchronized LEFirePdu setEventId(EventIdentifier pEventId)
 {
     eventId = pEventId;
     return this;
@@ -236,7 +236,7 @@ public EventIdentifier getEventId()
 /** Setter for {@link LEFirePdu#location}
   * @param pLocation new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setLocation(LiveEntityRelativeWorldCoordinates pLocation)
+public synchronized LEFirePdu setLocation(LiveEntityRelativeWorldCoordinates pLocation)
 {
     location = pLocation;
     return this;
@@ -252,7 +252,7 @@ public LiveEntityRelativeWorldCoordinates getLocation()
 /** Setter for {@link LEFirePdu#munitionDescriptor}
   * @param pMunitionDescriptor new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
+public synchronized LEFirePdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
 {
     munitionDescriptor = pMunitionDescriptor;
     return this;
@@ -268,7 +268,7 @@ public MunitionDescriptor getMunitionDescriptor()
 /** Setter for {@link LEFirePdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setVelocity(LiveEntityLinearVelocity pVelocity)
+public synchronized LEFirePdu setVelocity(LiveEntityLinearVelocity pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -284,7 +284,7 @@ public LiveEntityLinearVelocity getVelocity()
 /** Setter for {@link LEFirePdu#range}
   * @param pRange new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setRange(short pRange)
+public synchronized LEFirePdu setRange(short pRange)
 {
     range = pRange;
     return this;
@@ -292,7 +292,7 @@ public LEFirePdu setRange(short pRange)
 /** Utility setter for {@link LEFirePdu#range}
   * @param pRange new value of interest
   * @return same object to permit progressive setters */
-public LEFirePdu setRange(int pRange){
+public synchronized LEFirePdu setRange(int pRange){
     range = (short) pRange;
     return this;
 }
@@ -338,7 +338,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -395,7 +395,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -431,7 +431,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -446,7 +446,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -465,7 +465,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

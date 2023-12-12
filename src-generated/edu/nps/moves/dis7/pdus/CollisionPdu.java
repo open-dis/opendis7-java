@@ -52,13 +52,13 @@ public class CollisionPdu extends EntityInformationInteractionFamilyPdu implemen
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public CollisionPdu copy()
+ public synchronized CollisionPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public CollisionPdu copyByteBuffer()
+ public synchronized CollisionPdu copyByteBuffer()
  {
      CollisionPdu newCopy = new CollisionPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -85,7 +85,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public CollisionPdu copyDataOutputStream()
+ public synchronized CollisionPdu copyDataOutputStream()
  {
      CollisionPdu newCopy = new CollisionPdu();
      try
@@ -145,7 +145,7 @@ public int getMarshalledSize()
 /** Setter for {@link CollisionPdu#issuingEntityID}
   * @param pIssuingEntityID new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setIssuingEntityID(EntityID pIssuingEntityID)
+public synchronized CollisionPdu setIssuingEntityID(EntityID pIssuingEntityID)
 {
     issuingEntityID = pIssuingEntityID;
     return this;
@@ -161,7 +161,7 @@ public EntityID getIssuingEntityID()
 /** Setter for {@link CollisionPdu#collidingEntityID}
   * @param pCollidingEntityID new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setCollidingEntityID(EntityID pCollidingEntityID)
+public synchronized CollisionPdu setCollidingEntityID(EntityID pCollidingEntityID)
 {
     collidingEntityID = pCollidingEntityID;
     return this;
@@ -177,7 +177,7 @@ public EntityID getCollidingEntityID()
 /** Setter for {@link CollisionPdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setEventID(EventIdentifier pEventID)
+public synchronized CollisionPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -193,7 +193,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link CollisionPdu#collisionType}
   * @param pCollisionType new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setCollisionType(CollisionType pCollisionType)
+public synchronized CollisionPdu setCollisionType(CollisionType pCollisionType)
 {
     collisionType = pCollisionType;
     return this;
@@ -208,7 +208,7 @@ public CollisionType getCollisionType()
 /** Setter for {@link CollisionPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setPad(byte pPad)
+public synchronized CollisionPdu setPad(byte pPad)
 {
     pad = pPad;
     return this;
@@ -216,7 +216,7 @@ public CollisionPdu setPad(byte pPad)
 /** Utility setter for {@link CollisionPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setPad(int pPad){
+public synchronized CollisionPdu setPad(int pPad){
     pad = (byte) pPad;
     return this;
 }
@@ -230,7 +230,7 @@ public byte getPad()
 /** Setter for {@link CollisionPdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setVelocity(Vector3Float pVelocity)
+public synchronized CollisionPdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -246,7 +246,7 @@ public Vector3Float getVelocity()
 /** Setter for {@link CollisionPdu#mass}
   * @param pMass new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setMass(float pMass)
+public synchronized CollisionPdu setMass(float pMass)
 {
     mass = pMass;
     return this;
@@ -261,7 +261,7 @@ public float getMass()
 /** Setter for {@link CollisionPdu#location}
   * @param pLocation new value of interest
   * @return same object to permit progressive setters */
-public CollisionPdu setLocation(Vector3Float pLocation)
+public synchronized CollisionPdu setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
@@ -308,7 +308,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -364,7 +364,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -398,7 +398,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -413,7 +413,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -431,7 +431,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

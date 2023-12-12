@@ -47,13 +47,13 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsRegeneration
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ElectromagneticEmissionPdu copy()
+ public synchronized ElectromagneticEmissionPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ElectromagneticEmissionPdu copyByteBuffer()
+ public synchronized ElectromagneticEmissionPdu copyByteBuffer()
  {
      ElectromagneticEmissionPdu newCopy = new ElectromagneticEmissionPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -80,7 +80,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ElectromagneticEmissionPdu copyDataOutputStream()
+ public synchronized ElectromagneticEmissionPdu copyDataOutputStream()
  {
      ElectromagneticEmissionPdu newCopy = new ElectromagneticEmissionPdu();
      try
@@ -140,7 +140,7 @@ public int getMarshalledSize()
 /** Setter for {@link ElectromagneticEmissionPdu#emittingEntityID}
   * @param pEmittingEntityID new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setEmittingEntityID(EntityID pEmittingEntityID)
+public synchronized ElectromagneticEmissionPdu setEmittingEntityID(EntityID pEmittingEntityID)
 {
     emittingEntityID = pEmittingEntityID;
     return this;
@@ -156,7 +156,7 @@ public EntityID getEmittingEntityID()
 /** Setter for {@link ElectromagneticEmissionPdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setEventID(EventIdentifier pEventID)
+public synchronized ElectromagneticEmissionPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -172,7 +172,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link ElectromagneticEmissionPdu#stateUpdateIndicator}
   * @param pStateUpdateIndicator new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setStateUpdateIndicator(ElectromagneticEmissionStateUpdateIndicator pStateUpdateIndicator)
+public synchronized ElectromagneticEmissionPdu setStateUpdateIndicator(ElectromagneticEmissionStateUpdateIndicator pStateUpdateIndicator)
 {
     stateUpdateIndicator = pStateUpdateIndicator;
     return this;
@@ -187,7 +187,7 @@ public ElectromagneticEmissionStateUpdateIndicator getStateUpdateIndicator()
 /** Setter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}
   * @param pPaddingForEmissionsPdu new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setPaddingForEmissionsPdu(short pPaddingForEmissionsPdu)
+public synchronized ElectromagneticEmissionPdu setPaddingForEmissionsPdu(short pPaddingForEmissionsPdu)
 {
     paddingForEmissionsPdu = pPaddingForEmissionsPdu;
     return this;
@@ -195,7 +195,7 @@ public ElectromagneticEmissionPdu setPaddingForEmissionsPdu(short pPaddingForEmi
 /** Utility setter for {@link ElectromagneticEmissionPdu#paddingForEmissionsPdu}
   * @param pPaddingForEmissionsPdu new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setPaddingForEmissionsPdu(int pPaddingForEmissionsPdu){
+public synchronized ElectromagneticEmissionPdu setPaddingForEmissionsPdu(int pPaddingForEmissionsPdu){
     paddingForEmissionsPdu = (short) pPaddingForEmissionsPdu;
     return this;
 }
@@ -209,7 +209,7 @@ public short getPaddingForEmissionsPdu()
 /** Setter for {@link ElectromagneticEmissionPdu#systems}
   * @param pSystems new value of interest
   * @return same object to permit progressive setters */
-public ElectromagneticEmissionPdu setSystems(List<ElectronicEmitter> pSystems)
+public synchronized ElectromagneticEmissionPdu setSystems(List<ElectronicEmitter> pSystems)
 {
     systems = pSystems;
     return this;
@@ -259,7 +259,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -323,7 +323,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -359,7 +359,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -374,7 +374,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -392,7 +392,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

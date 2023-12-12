@@ -46,13 +46,13 @@ public class EventReportRPdu extends SimulationManagementWithReliabilityFamilyPd
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public EventReportRPdu copy()
+ public synchronized EventReportRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public EventReportRPdu copyByteBuffer()
+ public synchronized EventReportRPdu copyByteBuffer()
  {
      EventReportRPdu newCopy = new EventReportRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public EventReportRPdu copyDataOutputStream()
+ public synchronized EventReportRPdu copyDataOutputStream()
  {
      EventReportRPdu newCopy = new EventReportRPdu();
      try
@@ -142,7 +142,7 @@ public int getMarshalledSize()
 /** Setter for {@link EventReportRPdu#eventType}
   * @param pEventType new value of interest
   * @return same object to permit progressive setters */
-public EventReportRPdu setEventType(EventReportEventType pEventType)
+public synchronized EventReportRPdu setEventType(EventReportEventType pEventType)
 {
     eventType = pEventType;
     return this;
@@ -157,7 +157,7 @@ public EventReportEventType getEventType()
 /** Setter for {@link EventReportRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public EventReportRPdu setPad1(int pPad1)
+public synchronized EventReportRPdu setPad1(int pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -172,7 +172,7 @@ public int getPad1()
 /** Setter for {@link EventReportRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public EventReportRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
+public synchronized EventReportRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
@@ -187,7 +187,7 @@ public List<FixedDatum> getFixedDatumRecords()
 /** Setter for {@link EventReportRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public EventReportRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
+public synchronized EventReportRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
@@ -243,7 +243,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -320,7 +320,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -362,7 +362,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -377,7 +377,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -397,7 +397,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

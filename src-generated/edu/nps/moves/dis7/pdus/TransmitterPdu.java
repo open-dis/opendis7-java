@@ -91,13 +91,13 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public TransmitterPdu copy()
+ public synchronized TransmitterPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public TransmitterPdu copyByteBuffer()
+ public synchronized TransmitterPdu copyByteBuffer()
  {
      TransmitterPdu newCopy = new TransmitterPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -124,7 +124,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public TransmitterPdu copyDataOutputStream()
+ public synchronized TransmitterPdu copyDataOutputStream()
  {
      TransmitterPdu newCopy = new TransmitterPdu();
      try
@@ -210,7 +210,7 @@ public int getMarshalledSize()
 /** Setter for {@link TransmitterPdu#header}
   * @param pHeader new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setHeader(RadioCommsHeader pHeader)
+public synchronized TransmitterPdu setHeader(RadioCommsHeader pHeader)
 {
     header = pHeader;
     return this;
@@ -226,7 +226,7 @@ public RadioCommsHeader getHeader()
 /** Setter for {@link TransmitterPdu#radioNumber}
   * @param pRadioNumber new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setRadioNumber(short pRadioNumber)
+public synchronized TransmitterPdu setRadioNumber(short pRadioNumber)
 {
     radioNumber = pRadioNumber;
     return this;
@@ -234,7 +234,7 @@ public TransmitterPdu setRadioNumber(short pRadioNumber)
 /** Utility setter for {@link TransmitterPdu#radioNumber}
   * @param pRadioNumber new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setRadioNumber(int pRadioNumber){
+public synchronized TransmitterPdu setRadioNumber(int pRadioNumber){
     radioNumber = (short) pRadioNumber;
     return this;
 }
@@ -248,7 +248,7 @@ public short getRadioNumber()
 /** Setter for {@link TransmitterPdu#radioEntityType}
   * @param pRadioEntityType new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setRadioEntityType(RadioType pRadioEntityType)
+public synchronized TransmitterPdu setRadioEntityType(RadioType pRadioEntityType)
 {
     radioEntityType = pRadioEntityType;
     return this;
@@ -264,7 +264,7 @@ public RadioType getRadioEntityType()
 /** Setter for {@link TransmitterPdu#transmitState}
   * @param pTransmitState new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setTransmitState(TransmitterTransmitState pTransmitState)
+public synchronized TransmitterPdu setTransmitState(TransmitterTransmitState pTransmitState)
 {
     transmitState = pTransmitState;
     return this;
@@ -279,7 +279,7 @@ public TransmitterTransmitState getTransmitState()
 /** Setter for {@link TransmitterPdu#inputSource}
   * @param pInputSource new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setInputSource(TransmitterInputSource pInputSource)
+public synchronized TransmitterPdu setInputSource(TransmitterInputSource pInputSource)
 {
     inputSource = pInputSource;
     return this;
@@ -294,7 +294,7 @@ public TransmitterInputSource getInputSource()
 /** Setter for {@link TransmitterPdu#variableTransmitterParameterCount}
   * @param pVariableTransmitterParameterCount new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setVariableTransmitterParameterCount(short pVariableTransmitterParameterCount)
+public synchronized TransmitterPdu setVariableTransmitterParameterCount(short pVariableTransmitterParameterCount)
 {
     variableTransmitterParameterCount = pVariableTransmitterParameterCount;
     return this;
@@ -302,7 +302,7 @@ public TransmitterPdu setVariableTransmitterParameterCount(short pVariableTransm
 /** Utility setter for {@link TransmitterPdu#variableTransmitterParameterCount}
   * @param pVariableTransmitterParameterCount new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setVariableTransmitterParameterCount(int pVariableTransmitterParameterCount){
+public synchronized TransmitterPdu setVariableTransmitterParameterCount(int pVariableTransmitterParameterCount){
     variableTransmitterParameterCount = (short) pVariableTransmitterParameterCount;
     return this;
 }
@@ -316,7 +316,7 @@ public short getVariableTransmitterParameterCount()
 /** Setter for {@link TransmitterPdu#antennaLocation}
   * @param pAntennaLocation new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setAntennaLocation(Vector3Double pAntennaLocation)
+public synchronized TransmitterPdu setAntennaLocation(Vector3Double pAntennaLocation)
 {
     antennaLocation = pAntennaLocation;
     return this;
@@ -332,7 +332,7 @@ public Vector3Double getAntennaLocation()
 /** Setter for {@link TransmitterPdu#relativeAntennaLocation}
   * @param pRelativeAntennaLocation new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setRelativeAntennaLocation(Vector3Float pRelativeAntennaLocation)
+public synchronized TransmitterPdu setRelativeAntennaLocation(Vector3Float pRelativeAntennaLocation)
 {
     relativeAntennaLocation = pRelativeAntennaLocation;
     return this;
@@ -348,7 +348,7 @@ public Vector3Float getRelativeAntennaLocation()
 /** Setter for {@link TransmitterPdu#antennaPatternType}
   * @param pAntennaPatternType new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setAntennaPatternType(TransmitterAntennaPatternType pAntennaPatternType)
+public synchronized TransmitterPdu setAntennaPatternType(TransmitterAntennaPatternType pAntennaPatternType)
 {
     antennaPatternType = pAntennaPatternType;
     return this;
@@ -363,7 +363,7 @@ public TransmitterAntennaPatternType getAntennaPatternType()
 /** Setter for {@link TransmitterPdu#frequency}
   * @param pFrequency new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setFrequency(long pFrequency)
+public synchronized TransmitterPdu setFrequency(long pFrequency)
 {
     frequency = pFrequency;
     return this;
@@ -371,7 +371,7 @@ public TransmitterPdu setFrequency(long pFrequency)
 /** Utility setter for {@link TransmitterPdu#frequency}
   * @param pFrequency new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setFrequency(int pFrequency){
+public synchronized TransmitterPdu setFrequency(int pFrequency){
     frequency = (long) pFrequency;
     return this;
 }
@@ -385,7 +385,7 @@ public long getFrequency()
 /** Setter for {@link TransmitterPdu#transmitFrequencyBandwidth}
   * @param pTransmitFrequencyBandwidth new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setTransmitFrequencyBandwidth(float pTransmitFrequencyBandwidth)
+public synchronized TransmitterPdu setTransmitFrequencyBandwidth(float pTransmitFrequencyBandwidth)
 {
     transmitFrequencyBandwidth = pTransmitFrequencyBandwidth;
     return this;
@@ -400,7 +400,7 @@ public float getTransmitFrequencyBandwidth()
 /** Setter for {@link TransmitterPdu#power}
   * @param pPower new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setPower(float pPower)
+public synchronized TransmitterPdu setPower(float pPower)
 {
     power = pPower;
     return this;
@@ -415,7 +415,7 @@ public float getPower()
 /** Setter for {@link TransmitterPdu#modulationType}
   * @param pModulationType new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setModulationType(ModulationType pModulationType)
+public synchronized TransmitterPdu setModulationType(ModulationType pModulationType)
 {
     modulationType = pModulationType;
     return this;
@@ -431,7 +431,7 @@ public ModulationType getModulationType()
 /** Setter for {@link TransmitterPdu#cryptoSystem}
   * @param pCryptoSystem new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryptoSystem)
+public synchronized TransmitterPdu setCryptoSystem(TransmitterCryptoSystem pCryptoSystem)
 {
     cryptoSystem = pCryptoSystem;
     return this;
@@ -446,7 +446,7 @@ public TransmitterCryptoSystem getCryptoSystem()
 /** Setter for {@link TransmitterPdu#cryptoKeyId}
   * @param pCryptoKeyId new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setCryptoKeyId(short pCryptoKeyId)
+public synchronized TransmitterPdu setCryptoKeyId(short pCryptoKeyId)
 {
     cryptoKeyId = pCryptoKeyId;
     return this;
@@ -454,7 +454,7 @@ public TransmitterPdu setCryptoKeyId(short pCryptoKeyId)
 /** Utility setter for {@link TransmitterPdu#cryptoKeyId}
   * @param pCryptoKeyId new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setCryptoKeyId(int pCryptoKeyId){
+public synchronized TransmitterPdu setCryptoKeyId(int pCryptoKeyId){
     cryptoKeyId = (short) pCryptoKeyId;
     return this;
 }
@@ -468,7 +468,7 @@ public short getCryptoKeyId()
 /** Setter for {@link TransmitterPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setPadding1(byte pPadding1)
+public synchronized TransmitterPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -476,7 +476,7 @@ public TransmitterPdu setPadding1(byte pPadding1)
 /** Utility setter for {@link TransmitterPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setPadding1(int pPadding1){
+public synchronized TransmitterPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -490,7 +490,7 @@ public byte getPadding1()
 /** Setter for {@link TransmitterPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setPadding2(short pPadding2)
+public synchronized TransmitterPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -498,7 +498,7 @@ public TransmitterPdu setPadding2(short pPadding2)
 /** Utility setter for {@link TransmitterPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setPadding2(int pPadding2){
+public synchronized TransmitterPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -512,7 +512,7 @@ public short getPadding2()
 /** Setter for {@link TransmitterPdu#modulationParametersList}
   * @param pModulationParametersList new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setModulationParametersList(List<ModulationParameters> pModulationParametersList)
+public synchronized TransmitterPdu setModulationParametersList(List<ModulationParameters> pModulationParametersList)
 {
     modulationParametersList = pModulationParametersList;
     return this;
@@ -527,7 +527,7 @@ public List<ModulationParameters> getModulationParametersList()
 /** Setter for {@link TransmitterPdu#antennaPatternList}
   * @param pAntennaPatternList new value of interest
   * @return same object to permit progressive setters */
-public TransmitterPdu setAntennaPatternList(List<VariableTransmitterParameters> pAntennaPatternList)
+public synchronized TransmitterPdu setAntennaPatternList(List<VariableTransmitterParameters> pAntennaPatternList)
 {
     antennaPatternList = pAntennaPatternList;
     return this;
@@ -598,7 +598,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -715,7 +715,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -787,7 +787,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -802,7 +802,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -837,7 +837,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

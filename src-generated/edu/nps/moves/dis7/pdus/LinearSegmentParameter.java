@@ -90,7 +90,7 @@ public int getMarshalledSize()
 /** Setter for {@link LinearSegmentParameter#segmentNumber}
   * @param pSegmentNumber new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentNumber(byte pSegmentNumber)
+public synchronized LinearSegmentParameter setSegmentNumber(byte pSegmentNumber)
 {
     segmentNumber = pSegmentNumber;
     return this;
@@ -98,7 +98,7 @@ public LinearSegmentParameter setSegmentNumber(byte pSegmentNumber)
 /** Utility setter for {@link LinearSegmentParameter#segmentNumber}
   * @param pSegmentNumber new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentNumber(int pSegmentNumber){
+public synchronized LinearSegmentParameter setSegmentNumber(int pSegmentNumber){
     segmentNumber = (byte) pSegmentNumber;
     return this;
 }
@@ -112,7 +112,7 @@ public byte getSegmentNumber()
 /** Setter for {@link LinearSegmentParameter#segmentModification}
   * @param pSegmentModification new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentModification(ObjectStateModificationLinearObject pSegmentModification)
+public synchronized LinearSegmentParameter setSegmentModification(ObjectStateModificationLinearObject pSegmentModification)
 {
     segmentModification = pSegmentModification;
     return this;
@@ -127,7 +127,7 @@ public ObjectStateModificationLinearObject getSegmentModification()
 /** Setter for {@link LinearSegmentParameter#generalSegmentAppearance}
   * @param pGeneralSegmentAppearance new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setGeneralSegmentAppearance(ObjectStateAppearanceGeneral pGeneralSegmentAppearance)
+public synchronized LinearSegmentParameter setGeneralSegmentAppearance(ObjectStateAppearanceGeneral pGeneralSegmentAppearance)
 {
     generalSegmentAppearance = pGeneralSegmentAppearance;
     return this;
@@ -142,7 +142,7 @@ public ObjectStateAppearanceGeneral getGeneralSegmentAppearance()
 /** Setter for {@link LinearSegmentParameter#specificSegmentAppearance}
   * @param pSpecificSegmentAppearance new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSpecificSegmentAppearance(int pSpecificSegmentAppearance)
+public synchronized LinearSegmentParameter setSpecificSegmentAppearance(int pSpecificSegmentAppearance)
 {
     specificSegmentAppearance = pSpecificSegmentAppearance;
     return this;
@@ -157,7 +157,7 @@ public int getSpecificSegmentAppearance()
 /** Setter for {@link LinearSegmentParameter#segmentLocation}
   * @param pSegmentLocation new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentLocation(Vector3Double pSegmentLocation)
+public synchronized LinearSegmentParameter setSegmentLocation(Vector3Double pSegmentLocation)
 {
     segmentLocation = pSegmentLocation;
     return this;
@@ -173,7 +173,7 @@ public Vector3Double getSegmentLocation()
 /** Setter for {@link LinearSegmentParameter#segmentOrientation}
   * @param pSegmentOrientation new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentOrientation(EulerAngles pSegmentOrientation)
+public synchronized LinearSegmentParameter setSegmentOrientation(EulerAngles pSegmentOrientation)
 {
     segmentOrientation = pSegmentOrientation;
     return this;
@@ -189,7 +189,7 @@ public EulerAngles getSegmentOrientation()
 /** Setter for {@link LinearSegmentParameter#segmentLength}
   * @param pSegmentLength new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentLength(float pSegmentLength)
+public synchronized LinearSegmentParameter setSegmentLength(float pSegmentLength)
 {
     segmentLength = pSegmentLength;
     return this;
@@ -204,7 +204,7 @@ public float getSegmentLength()
 /** Setter for {@link LinearSegmentParameter#segmentWidth}
   * @param pSegmentWidth new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentWidth(float pSegmentWidth)
+public synchronized LinearSegmentParameter setSegmentWidth(float pSegmentWidth)
 {
     segmentWidth = pSegmentWidth;
     return this;
@@ -219,7 +219,7 @@ public float getSegmentWidth()
 /** Setter for {@link LinearSegmentParameter#segmentHeight}
   * @param pSegmentHeight new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentHeight(float pSegmentHeight)
+public synchronized LinearSegmentParameter setSegmentHeight(float pSegmentHeight)
 {
     segmentHeight = pSegmentHeight;
     return this;
@@ -234,7 +234,7 @@ public float getSegmentHeight()
 /** Setter for {@link LinearSegmentParameter#segmentDepth}
   * @param pSegmentDepth new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setSegmentDepth(float pSegmentDepth)
+public synchronized LinearSegmentParameter setSegmentDepth(float pSegmentDepth)
 {
     segmentDepth = pSegmentDepth;
     return this;
@@ -249,7 +249,7 @@ public float getSegmentDepth()
 /** Setter for {@link LinearSegmentParameter#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public LinearSegmentParameter setPadding(int pPadding)
+public synchronized LinearSegmentParameter setPadding(int pPadding)
 {
     padding = pPadding;
     return this;
@@ -297,7 +297,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -360,7 +360,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -398,7 +398,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -418,7 +418,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -439,7 +439,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

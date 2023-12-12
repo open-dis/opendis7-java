@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link EulerAngles#psi}
   * @param pPsi new value of interest
   * @return same object to permit progressive setters */
-public EulerAngles setPsi(float pPsi)
+public synchronized EulerAngles setPsi(float pPsi)
 {
     psi = pPsi;
     return this;
@@ -69,7 +69,7 @@ public float getPsi()
 /** Setter for {@link EulerAngles#theta}
   * @param pTheta new value of interest
   * @return same object to permit progressive setters */
-public EulerAngles setTheta(float pTheta)
+public synchronized EulerAngles setTheta(float pTheta)
 {
     theta = pTheta;
     return this;
@@ -84,7 +84,7 @@ public float getTheta()
 /** Setter for {@link EulerAngles#phi}
   * @param pPhi new value of interest
   * @return same object to permit progressive setters */
-public EulerAngles setPhi(float pPhi)
+public synchronized EulerAngles setPhi(float pPhi)
 {
     phi = pPhi;
     return this;
@@ -124,7 +124,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -167,7 +167,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -189,7 +189,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -209,7 +209,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -222,7 +222,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

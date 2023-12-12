@@ -61,13 +61,13 @@ public class TSPIPdu extends LiveEntityFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public TSPIPdu copy()
+ public synchronized TSPIPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public TSPIPdu copyByteBuffer()
+ public synchronized TSPIPdu copyByteBuffer()
  {
      TSPIPdu newCopy = new TSPIPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -94,7 +94,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public TSPIPdu copyDataOutputStream()
+ public synchronized TSPIPdu copyDataOutputStream()
  {
      TSPIPdu newCopy = new TSPIPdu();
      try
@@ -159,7 +159,7 @@ public int getMarshalledSize()
 /** Setter for {@link TSPIPdu#liveEntityId}
   * @param pLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setLiveEntityId(EntityID pLiveEntityId)
+public synchronized TSPIPdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
@@ -175,7 +175,7 @@ public EntityID getLiveEntityId()
 /** Setter for {@link TSPIPdu#TSPIFlag}
   * @param pTSPIFlag new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setTSPIFlag(byte pTSPIFlag)
+public synchronized TSPIPdu setTSPIFlag(byte pTSPIFlag)
 {
     TSPIFlag = pTSPIFlag;
     return this;
@@ -183,7 +183,7 @@ public TSPIPdu setTSPIFlag(byte pTSPIFlag)
 /** Utility setter for {@link TSPIPdu#TSPIFlag}
   * @param pTSPIFlag new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setTSPIFlag(int pTSPIFlag){
+public synchronized TSPIPdu setTSPIFlag(int pTSPIFlag){
     TSPIFlag = (byte) pTSPIFlag;
     return this;
 }
@@ -197,7 +197,7 @@ public byte getTSPIFlag()
 /** Setter for {@link TSPIPdu#entityLocation}
   * @param pEntityLocation new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setEntityLocation(LiveEntityRelativeWorldCoordinates pEntityLocation)
+public synchronized TSPIPdu setEntityLocation(LiveEntityRelativeWorldCoordinates pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
@@ -213,7 +213,7 @@ public LiveEntityRelativeWorldCoordinates getEntityLocation()
 /** Setter for {@link TSPIPdu#entityLinearVelocity}
   * @param pEntityLinearVelocity new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setEntityLinearVelocity(LiveEntityLinearVelocity pEntityLinearVelocity)
+public synchronized TSPIPdu setEntityLinearVelocity(LiveEntityLinearVelocity pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
@@ -229,7 +229,7 @@ public LiveEntityLinearVelocity getEntityLinearVelocity()
 /** Setter for {@link TSPIPdu#entityOrientation}
   * @param pEntityOrientation new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setEntityOrientation(LiveEntityOrientation pEntityOrientation)
+public synchronized TSPIPdu setEntityOrientation(LiveEntityOrientation pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
@@ -245,7 +245,7 @@ public LiveEntityOrientation getEntityOrientation()
 /** Setter for {@link TSPIPdu#positionError}
   * @param pPositionError new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setPositionError(LiveEntityPositionError pPositionError)
+public synchronized TSPIPdu setPositionError(LiveEntityPositionError pPositionError)
 {
     positionError = pPositionError;
     return this;
@@ -261,7 +261,7 @@ public LiveEntityPositionError getPositionError()
 /** Setter for {@link TSPIPdu#orientationError}
   * @param pOrientationError new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setOrientationError(LiveEntityOrientationError pOrientationError)
+public synchronized TSPIPdu setOrientationError(LiveEntityOrientationError pOrientationError)
 {
     orientationError = pOrientationError;
     return this;
@@ -277,7 +277,7 @@ public LiveEntityOrientationError getOrientationError()
 /** Setter for {@link TSPIPdu#deadReckoningParameters}
   * @param pDeadReckoningParameters new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setDeadReckoningParameters(LiveDeadReckoningParameters pDeadReckoningParameters)
+public synchronized TSPIPdu setDeadReckoningParameters(LiveDeadReckoningParameters pDeadReckoningParameters)
 {
     deadReckoningParameters = pDeadReckoningParameters;
     return this;
@@ -293,7 +293,7 @@ public LiveDeadReckoningParameters getDeadReckoningParameters()
 /** Setter for {@link TSPIPdu#measuredSpeed}
   * @param pMeasuredSpeed new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setMeasuredSpeed(short pMeasuredSpeed)
+public synchronized TSPIPdu setMeasuredSpeed(short pMeasuredSpeed)
 {
     measuredSpeed = pMeasuredSpeed;
     return this;
@@ -301,7 +301,7 @@ public TSPIPdu setMeasuredSpeed(short pMeasuredSpeed)
 /** Utility setter for {@link TSPIPdu#measuredSpeed}
   * @param pMeasuredSpeed new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setMeasuredSpeed(int pMeasuredSpeed){
+public synchronized TSPIPdu setMeasuredSpeed(int pMeasuredSpeed){
     measuredSpeed = (short) pMeasuredSpeed;
     return this;
 }
@@ -315,7 +315,7 @@ public short getMeasuredSpeed()
 /** Setter for {@link TSPIPdu#systemSpecificData}
   * @param pSystemSpecificData new value of interest
   * @return same object to permit progressive setters */
-public TSPIPdu setSystemSpecificData(byte[] pSystemSpecificData)
+public synchronized TSPIPdu setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
@@ -367,7 +367,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -434,7 +434,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -475,7 +475,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -490,7 +490,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -515,7 +515,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

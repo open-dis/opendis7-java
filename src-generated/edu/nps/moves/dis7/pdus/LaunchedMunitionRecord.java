@@ -74,7 +74,7 @@ public int getMarshalledSize()
 /** Setter for {@link LaunchedMunitionRecord#fireEventID}
   * @param pFireEventID new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setFireEventID(EventIdentifier pFireEventID)
+public synchronized LaunchedMunitionRecord setFireEventID(EventIdentifier pFireEventID)
 {
     fireEventID = pFireEventID;
     return this;
@@ -90,7 +90,7 @@ public EventIdentifier getFireEventID()
 /** Setter for {@link LaunchedMunitionRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding(short pPadding)
+public synchronized LaunchedMunitionRecord setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -98,7 +98,7 @@ public LaunchedMunitionRecord setPadding(short pPadding)
 /** Utility setter for {@link LaunchedMunitionRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding(int pPadding){
+public synchronized LaunchedMunitionRecord setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -112,7 +112,7 @@ public short getPadding()
 /** Setter for {@link LaunchedMunitionRecord#firingEntityID}
   * @param pFiringEntityID new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setFiringEntityID(EntityID pFiringEntityID)
+public synchronized LaunchedMunitionRecord setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
@@ -128,7 +128,7 @@ public EntityID getFiringEntityID()
 /** Setter for {@link LaunchedMunitionRecord#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding2(short pPadding2)
+public synchronized LaunchedMunitionRecord setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -136,7 +136,7 @@ public LaunchedMunitionRecord setPadding2(short pPadding2)
 /** Utility setter for {@link LaunchedMunitionRecord#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding2(int pPadding2){
+public synchronized LaunchedMunitionRecord setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -150,7 +150,7 @@ public short getPadding2()
 /** Setter for {@link LaunchedMunitionRecord#targetEntityID}
   * @param pTargetEntityID new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setTargetEntityID(EntityID pTargetEntityID)
+public synchronized LaunchedMunitionRecord setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
@@ -166,7 +166,7 @@ public EntityID getTargetEntityID()
 /** Setter for {@link LaunchedMunitionRecord#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding3(short pPadding3)
+public synchronized LaunchedMunitionRecord setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -174,7 +174,7 @@ public LaunchedMunitionRecord setPadding3(short pPadding3)
 /** Utility setter for {@link LaunchedMunitionRecord#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setPadding3(int pPadding3){
+public synchronized LaunchedMunitionRecord setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
@@ -188,7 +188,7 @@ public short getPadding3()
 /** Setter for {@link LaunchedMunitionRecord#targetLocation}
   * @param pTargetLocation new value of interest
   * @return same object to permit progressive setters */
-public LaunchedMunitionRecord setTargetLocation(Vector3Double pTargetLocation)
+public synchronized LaunchedMunitionRecord setTargetLocation(Vector3Double pTargetLocation)
 {
     targetLocation = pTargetLocation;
     return this;
@@ -233,7 +233,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -284,7 +284,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -314,7 +314,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -334,7 +334,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -351,7 +351,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

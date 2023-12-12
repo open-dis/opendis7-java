@@ -62,7 +62,7 @@ public int getMarshalledSize()
 /** Setter for {@link BeamData#beamAzimuthCenter}
   * @param pBeamAzimuthCenter new value of interest
   * @return same object to permit progressive setters */
-public BeamData setBeamAzimuthCenter(float pBeamAzimuthCenter)
+public synchronized BeamData setBeamAzimuthCenter(float pBeamAzimuthCenter)
 {
     beamAzimuthCenter = pBeamAzimuthCenter;
     return this;
@@ -77,7 +77,7 @@ public float getBeamAzimuthCenter()
 /** Setter for {@link BeamData#beamAzimuthSweep}
   * @param pBeamAzimuthSweep new value of interest
   * @return same object to permit progressive setters */
-public BeamData setBeamAzimuthSweep(float pBeamAzimuthSweep)
+public synchronized BeamData setBeamAzimuthSweep(float pBeamAzimuthSweep)
 {
     beamAzimuthSweep = pBeamAzimuthSweep;
     return this;
@@ -92,7 +92,7 @@ public float getBeamAzimuthSweep()
 /** Setter for {@link BeamData#beamElevationCenter}
   * @param pBeamElevationCenter new value of interest
   * @return same object to permit progressive setters */
-public BeamData setBeamElevationCenter(float pBeamElevationCenter)
+public synchronized BeamData setBeamElevationCenter(float pBeamElevationCenter)
 {
     beamElevationCenter = pBeamElevationCenter;
     return this;
@@ -107,7 +107,7 @@ public float getBeamElevationCenter()
 /** Setter for {@link BeamData#beamElevationSweep}
   * @param pBeamElevationSweep new value of interest
   * @return same object to permit progressive setters */
-public BeamData setBeamElevationSweep(float pBeamElevationSweep)
+public synchronized BeamData setBeamElevationSweep(float pBeamElevationSweep)
 {
     beamElevationSweep = pBeamElevationSweep;
     return this;
@@ -122,7 +122,7 @@ public float getBeamElevationSweep()
 /** Setter for {@link BeamData#beamSweepSync}
   * @param pBeamSweepSync new value of interest
   * @return same object to permit progressive setters */
-public BeamData setBeamSweepSync(float pBeamSweepSync)
+public synchronized BeamData setBeamSweepSync(float pBeamSweepSync)
 {
     beamSweepSync = pBeamSweepSync;
     return this;
@@ -164,7 +164,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -213,7 +213,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -239,7 +239,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -259,7 +259,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -274,7 +274,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

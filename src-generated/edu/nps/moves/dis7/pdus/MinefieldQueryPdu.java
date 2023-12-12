@@ -58,13 +58,13 @@ public class MinefieldQueryPdu extends MinefieldFamilyPdu implements Serializabl
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public MinefieldQueryPdu copy()
+ public synchronized MinefieldQueryPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public MinefieldQueryPdu copyByteBuffer()
+ public synchronized MinefieldQueryPdu copyByteBuffer()
  {
      MinefieldQueryPdu newCopy = new MinefieldQueryPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -91,7 +91,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public MinefieldQueryPdu copyDataOutputStream()
+ public synchronized MinefieldQueryPdu copyDataOutputStream()
  {
      MinefieldQueryPdu newCopy = new MinefieldQueryPdu();
      try
@@ -161,7 +161,7 @@ public int getMarshalledSize()
 /** Setter for {@link MinefieldQueryPdu#minefieldID}
   * @param pMinefieldID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
+public synchronized MinefieldQueryPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
@@ -177,7 +177,7 @@ public MinefieldIdentifier getMinefieldID()
 /** Setter for {@link MinefieldQueryPdu#requestingEntityID}
   * @param pRequestingEntityID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setRequestingEntityID(EntityID pRequestingEntityID)
+public synchronized MinefieldQueryPdu setRequestingEntityID(EntityID pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
@@ -193,7 +193,7 @@ public EntityID getRequestingEntityID()
 /** Setter for {@link MinefieldQueryPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setRequestID(byte pRequestID)
+public synchronized MinefieldQueryPdu setRequestID(byte pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -201,7 +201,7 @@ public MinefieldQueryPdu setRequestID(byte pRequestID)
 /** Utility setter for {@link MinefieldQueryPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setRequestID(int pRequestID){
+public synchronized MinefieldQueryPdu setRequestID(int pRequestID){
     requestID = (byte) pRequestID;
     return this;
 }
@@ -215,7 +215,7 @@ public byte getRequestID()
 /** Setter for {@link MinefieldQueryPdu#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setPadding(byte pPadding)
+public synchronized MinefieldQueryPdu setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
@@ -223,7 +223,7 @@ public MinefieldQueryPdu setPadding(byte pPadding)
 /** Utility setter for {@link MinefieldQueryPdu#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setPadding(int pPadding){
+public synchronized MinefieldQueryPdu setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
@@ -237,7 +237,7 @@ public byte getPadding()
 /** Setter for {@link MinefieldQueryPdu#dataFilter}
   * @param pDataFilter new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setDataFilter(DataFilterRecord pDataFilter)
+public synchronized MinefieldQueryPdu setDataFilter(DataFilterRecord pDataFilter)
 {
     dataFilter = pDataFilter;
     return this;
@@ -253,7 +253,7 @@ public DataFilterRecord getDataFilter()
 /** Setter for {@link MinefieldQueryPdu#requestedMineType}
   * @param pRequestedMineType new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setRequestedMineType(EntityType pRequestedMineType)
+public synchronized MinefieldQueryPdu setRequestedMineType(EntityType pRequestedMineType)
 {
     requestedMineType = pRequestedMineType;
     return this;
@@ -269,7 +269,7 @@ public EntityType getRequestedMineType()
 /** Setter for {@link MinefieldQueryPdu#requestedPerimeterPoints}
   * @param pRequestedPerimeterPoints new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setRequestedPerimeterPoints(List<Vector2Float> pRequestedPerimeterPoints)
+public synchronized MinefieldQueryPdu setRequestedPerimeterPoints(List<Vector2Float> pRequestedPerimeterPoints)
 {
     requestedPerimeterPoints = pRequestedPerimeterPoints;
     return this;
@@ -284,7 +284,7 @@ public List<Vector2Float> getRequestedPerimeterPoints()
 /** Setter for {@link MinefieldQueryPdu#sensorTypes}
   * @param pSensorTypes new value of interest
   * @return same object to permit progressive setters */
-public MinefieldQueryPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
+public synchronized MinefieldQueryPdu setSensorTypes(List<MinefieldSensorType> pSensorTypes)
 {
     sensorTypes = pSensorTypes;
     return this;
@@ -344,7 +344,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -429,7 +429,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -479,7 +479,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -494,7 +494,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -518,7 +518,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

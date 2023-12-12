@@ -46,13 +46,13 @@ public class ServiceRequestPdu extends LogisticsFamilyPdu implements Serializabl
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ServiceRequestPdu copy()
+ public synchronized ServiceRequestPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ServiceRequestPdu copyByteBuffer()
+ public synchronized ServiceRequestPdu copyByteBuffer()
  {
      ServiceRequestPdu newCopy = new ServiceRequestPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ServiceRequestPdu copyDataOutputStream()
+ public synchronized ServiceRequestPdu copyDataOutputStream()
  {
      ServiceRequestPdu newCopy = new ServiceRequestPdu();
      try
@@ -139,7 +139,7 @@ public int getMarshalledSize()
 /** Setter for {@link ServiceRequestPdu#requestingEntityID}
   * @param pRequestingEntityID new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setRequestingEntityID(EntityID pRequestingEntityID)
+public synchronized ServiceRequestPdu setRequestingEntityID(EntityID pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
@@ -155,7 +155,7 @@ public EntityID getRequestingEntityID()
 /** Setter for {@link ServiceRequestPdu#servicingEntityID}
   * @param pServicingEntityID new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setServicingEntityID(EntityID pServicingEntityID)
+public synchronized ServiceRequestPdu setServicingEntityID(EntityID pServicingEntityID)
 {
     servicingEntityID = pServicingEntityID;
     return this;
@@ -171,7 +171,7 @@ public EntityID getServicingEntityID()
 /** Setter for {@link ServiceRequestPdu#serviceTypeRequested}
   * @param pServiceTypeRequested new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setServiceTypeRequested(ServiceRequestServiceTypeRequested pServiceTypeRequested)
+public synchronized ServiceRequestPdu setServiceTypeRequested(ServiceRequestServiceTypeRequested pServiceTypeRequested)
 {
     serviceTypeRequested = pServiceTypeRequested;
     return this;
@@ -186,7 +186,7 @@ public ServiceRequestServiceTypeRequested getServiceTypeRequested()
 /** Setter for {@link ServiceRequestPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setPadding1(short pPadding1)
+public synchronized ServiceRequestPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -194,7 +194,7 @@ public ServiceRequestPdu setPadding1(short pPadding1)
 /** Utility setter for {@link ServiceRequestPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setPadding1(int pPadding1){
+public synchronized ServiceRequestPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
@@ -208,7 +208,7 @@ public short getPadding1()
 /** Setter for {@link ServiceRequestPdu#supplies}
   * @param pSupplies new value of interest
   * @return same object to permit progressive setters */
-public ServiceRequestPdu setSupplies(List<SupplyQuantity> pSupplies)
+public synchronized ServiceRequestPdu setSupplies(List<SupplyQuantity> pSupplies)
 {
     supplies = pSupplies;
     return this;
@@ -258,7 +258,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -322,7 +322,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -358,7 +358,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -373,7 +373,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -391,7 +391,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

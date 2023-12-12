@@ -64,13 +64,13 @@ public class DesignatorPdu extends DistributedEmissionsRegenerationFamilyPdu imp
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DesignatorPdu copy()
+ public synchronized DesignatorPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DesignatorPdu copyByteBuffer()
+ public synchronized DesignatorPdu copyByteBuffer()
  {
      DesignatorPdu newCopy = new DesignatorPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DesignatorPdu copyDataOutputStream()
+ public synchronized DesignatorPdu copyDataOutputStream()
  {
      DesignatorPdu newCopy = new DesignatorPdu();
      try
@@ -163,7 +163,7 @@ public int getMarshalledSize()
 /** Setter for {@link DesignatorPdu#designatingEntityID}
   * @param pDesignatingEntityID new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatingEntityID(EntityID pDesignatingEntityID)
+public synchronized DesignatorPdu setDesignatingEntityID(EntityID pDesignatingEntityID)
 {
     designatingEntityID = pDesignatingEntityID;
     return this;
@@ -179,7 +179,7 @@ public EntityID getDesignatingEntityID()
 /** Setter for {@link DesignatorPdu#codeName}
   * @param pCodeName new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
+public synchronized DesignatorPdu setCodeName(DesignatorSystemName pCodeName)
 {
     codeName = pCodeName;
     return this;
@@ -194,7 +194,7 @@ public DesignatorSystemName getCodeName()
 /** Setter for {@link DesignatorPdu#designatedEntityID}
   * @param pDesignatedEntityID new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatedEntityID(EntityID pDesignatedEntityID)
+public synchronized DesignatorPdu setDesignatedEntityID(EntityID pDesignatedEntityID)
 {
     designatedEntityID = pDesignatedEntityID;
     return this;
@@ -210,7 +210,7 @@ public EntityID getDesignatedEntityID()
 /** Setter for {@link DesignatorPdu#designatorCode}
   * @param pDesignatorCode new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDesignatorCode)
+public synchronized DesignatorPdu setDesignatorCode(DesignatorDesignatorCode pDesignatorCode)
 {
     designatorCode = pDesignatorCode;
     return this;
@@ -225,7 +225,7 @@ public DesignatorDesignatorCode getDesignatorCode()
 /** Setter for {@link DesignatorPdu#designatorPower}
   * @param pDesignatorPower new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatorPower(float pDesignatorPower)
+public synchronized DesignatorPdu setDesignatorPower(float pDesignatorPower)
 {
     designatorPower = pDesignatorPower;
     return this;
@@ -240,7 +240,7 @@ public float getDesignatorPower()
 /** Setter for {@link DesignatorPdu#designatorWavelength}
   * @param pDesignatorWavelength new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatorWavelength(float pDesignatorWavelength)
+public synchronized DesignatorPdu setDesignatorWavelength(float pDesignatorWavelength)
 {
     designatorWavelength = pDesignatorWavelength;
     return this;
@@ -255,7 +255,7 @@ public float getDesignatorWavelength()
 /** Setter for {@link DesignatorPdu#designatorSpotWrtDesignated}
   * @param pDesignatorSpotWrtDesignated new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatorSpotWrtDesignated(Vector3Float pDesignatorSpotWrtDesignated)
+public synchronized DesignatorPdu setDesignatorSpotWrtDesignated(Vector3Float pDesignatorSpotWrtDesignated)
 {
     designatorSpotWrtDesignated = pDesignatorSpotWrtDesignated;
     return this;
@@ -271,7 +271,7 @@ public Vector3Float getDesignatorSpotWrtDesignated()
 /** Setter for {@link DesignatorPdu#designatorSpotLocation}
   * @param pDesignatorSpotLocation new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDesignatorSpotLocation(Vector3Double pDesignatorSpotLocation)
+public synchronized DesignatorPdu setDesignatorSpotLocation(Vector3Double pDesignatorSpotLocation)
 {
     designatorSpotLocation = pDesignatorSpotLocation;
     return this;
@@ -287,7 +287,7 @@ public Vector3Double getDesignatorSpotLocation()
 /** Setter for {@link DesignatorPdu#deadReckoningAlgorithm}
   * @param pDeadReckoningAlgorithm new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
+public synchronized DesignatorPdu setDeadReckoningAlgorithm(DeadReckoningAlgorithm pDeadReckoningAlgorithm)
 {
     deadReckoningAlgorithm = pDeadReckoningAlgorithm;
     return this;
@@ -302,7 +302,7 @@ public DeadReckoningAlgorithm getDeadReckoningAlgorithm()
 /** Setter for {@link DesignatorPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setPadding1(byte pPadding1)
+public synchronized DesignatorPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -310,7 +310,7 @@ public DesignatorPdu setPadding1(byte pPadding1)
 /** Utility setter for {@link DesignatorPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setPadding1(int pPadding1){
+public synchronized DesignatorPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -324,7 +324,7 @@ public byte getPadding1()
 /** Setter for {@link DesignatorPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setPadding2(short pPadding2)
+public synchronized DesignatorPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -332,7 +332,7 @@ public DesignatorPdu setPadding2(short pPadding2)
 /** Utility setter for {@link DesignatorPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setPadding2(int pPadding2){
+public synchronized DesignatorPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -346,7 +346,7 @@ public short getPadding2()
 /** Setter for {@link DesignatorPdu#entityLinearAcceleration}
   * @param pEntityLinearAcceleration new value of interest
   * @return same object to permit progressive setters */
-public DesignatorPdu setEntityLinearAcceleration(Vector3Float pEntityLinearAcceleration)
+public synchronized DesignatorPdu setEntityLinearAcceleration(Vector3Float pEntityLinearAcceleration)
 {
     entityLinearAcceleration = pEntityLinearAcceleration;
     return this;
@@ -397,7 +397,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -465,7 +465,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -507,7 +507,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -522,7 +522,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -544,7 +544,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

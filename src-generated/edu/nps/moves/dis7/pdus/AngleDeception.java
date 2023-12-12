@@ -107,7 +107,7 @@ public int getMarshalledSize()
 /** Setter for {@link AngleDeception#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setRecordType(int pRecordType)
+public synchronized AngleDeception setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -122,7 +122,7 @@ public int getRecordType()
 /** Setter for {@link AngleDeception#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setRecordLength(short pRecordLength)
+public synchronized AngleDeception setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -130,7 +130,7 @@ public AngleDeception setRecordLength(short pRecordLength)
 /** Utility setter for {@link AngleDeception#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setRecordLength(int pRecordLength){
+public synchronized AngleDeception setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -144,7 +144,7 @@ public short getRecordLength()
 /** Setter for {@link AngleDeception#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setPadding(short pPadding)
+public synchronized AngleDeception setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -152,7 +152,7 @@ public AngleDeception setPadding(short pPadding)
 /** Utility setter for {@link AngleDeception#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setPadding(int pPadding){
+public synchronized AngleDeception setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -166,7 +166,7 @@ public short getPadding()
 /** Setter for {@link AngleDeception#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setEmitterNumber(byte pEmitterNumber)
+public synchronized AngleDeception setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
@@ -174,7 +174,7 @@ public AngleDeception setEmitterNumber(byte pEmitterNumber)
 /** Utility setter for {@link AngleDeception#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setEmitterNumber(int pEmitterNumber){
+public synchronized AngleDeception setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
@@ -188,7 +188,7 @@ public byte getEmitterNumber()
 /** Setter for {@link AngleDeception#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setBeamNumber(byte pBeamNumber)
+public synchronized AngleDeception setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
@@ -196,7 +196,7 @@ public AngleDeception setBeamNumber(byte pBeamNumber)
 /** Utility setter for {@link AngleDeception#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setBeamNumber(int pBeamNumber){
+public synchronized AngleDeception setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
@@ -210,7 +210,7 @@ public byte getBeamNumber()
 /** Setter for {@link AngleDeception#stateIndicator}
   * @param pStateIndicator new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setStateIndicator(EEAttributeStateIndicator pStateIndicator)
+public synchronized AngleDeception setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
@@ -225,7 +225,7 @@ public EEAttributeStateIndicator getStateIndicator()
 /** Setter for {@link AngleDeception#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setPadding2(byte pPadding2)
+public synchronized AngleDeception setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -233,7 +233,7 @@ public AngleDeception setPadding2(byte pPadding2)
 /** Utility setter for {@link AngleDeception#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setPadding2(int pPadding2){
+public synchronized AngleDeception setPadding2(int pPadding2){
     padding2 = (byte) pPadding2;
     return this;
 }
@@ -247,7 +247,7 @@ public byte getPadding2()
 /** Setter for {@link AngleDeception#azimuthOffset}
   * @param pAzimuthOffset new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setAzimuthOffset(float pAzimuthOffset)
+public synchronized AngleDeception setAzimuthOffset(float pAzimuthOffset)
 {
     azimuthOffset = pAzimuthOffset;
     return this;
@@ -262,7 +262,7 @@ public float getAzimuthOffset()
 /** Setter for {@link AngleDeception#azimuthWidth}
   * @param pAzimuthWidth new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setAzimuthWidth(float pAzimuthWidth)
+public synchronized AngleDeception setAzimuthWidth(float pAzimuthWidth)
 {
     azimuthWidth = pAzimuthWidth;
     return this;
@@ -277,7 +277,7 @@ public float getAzimuthWidth()
 /** Setter for {@link AngleDeception#azimuthPullRate}
   * @param pAzimuthPullRate new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setAzimuthPullRate(float pAzimuthPullRate)
+public synchronized AngleDeception setAzimuthPullRate(float pAzimuthPullRate)
 {
     azimuthPullRate = pAzimuthPullRate;
     return this;
@@ -292,7 +292,7 @@ public float getAzimuthPullRate()
 /** Setter for {@link AngleDeception#azimuthPullAcceleration}
   * @param pAzimuthPullAcceleration new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setAzimuthPullAcceleration(float pAzimuthPullAcceleration)
+public synchronized AngleDeception setAzimuthPullAcceleration(float pAzimuthPullAcceleration)
 {
     azimuthPullAcceleration = pAzimuthPullAcceleration;
     return this;
@@ -307,7 +307,7 @@ public float getAzimuthPullAcceleration()
 /** Setter for {@link AngleDeception#elevationOffset}
   * @param pElevationOffset new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setElevationOffset(float pElevationOffset)
+public synchronized AngleDeception setElevationOffset(float pElevationOffset)
 {
     elevationOffset = pElevationOffset;
     return this;
@@ -322,7 +322,7 @@ public float getElevationOffset()
 /** Setter for {@link AngleDeception#elevationWidth}
   * @param pElevationWidth new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setElevationWidth(float pElevationWidth)
+public synchronized AngleDeception setElevationWidth(float pElevationWidth)
 {
     elevationWidth = pElevationWidth;
     return this;
@@ -337,7 +337,7 @@ public float getElevationWidth()
 /** Setter for {@link AngleDeception#elevationPullRate}
   * @param pElevationPullRate new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setElevationPullRate(float pElevationPullRate)
+public synchronized AngleDeception setElevationPullRate(float pElevationPullRate)
 {
     elevationPullRate = pElevationPullRate;
     return this;
@@ -352,7 +352,7 @@ public float getElevationPullRate()
 /** Setter for {@link AngleDeception#elevationPullAcceleration}
   * @param pElevationPullAcceleration new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setElevationPullAcceleration(float pElevationPullAcceleration)
+public synchronized AngleDeception setElevationPullAcceleration(float pElevationPullAcceleration)
 {
     elevationPullAcceleration = pElevationPullAcceleration;
     return this;
@@ -367,7 +367,7 @@ public float getElevationPullAcceleration()
 /** Setter for {@link AngleDeception#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public AngleDeception setPadding3(int pPadding3)
+public synchronized AngleDeception setPadding3(int pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -420,7 +420,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -502,7 +502,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -550,7 +550,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -570,7 +570,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -596,7 +596,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

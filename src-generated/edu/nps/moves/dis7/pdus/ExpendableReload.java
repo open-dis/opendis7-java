@@ -67,7 +67,7 @@ public int getMarshalledSize()
 /** Setter for {@link ExpendableReload#expendable}
   * @param pExpendable new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setExpendable(EntityType pExpendable)
+public synchronized ExpendableReload setExpendable(EntityType pExpendable)
 {
     expendable = pExpendable;
     return this;
@@ -83,7 +83,7 @@ public EntityType getExpendable()
 /** Setter for {@link ExpendableReload#station}
   * @param pStation new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setStation(int pStation)
+public synchronized ExpendableReload setStation(int pStation)
 {
     station = pStation;
     return this;
@@ -98,7 +98,7 @@ public int getStation()
 /** Setter for {@link ExpendableReload#standardQuantity}
   * @param pStandardQuantity new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setStandardQuantity(short pStandardQuantity)
+public synchronized ExpendableReload setStandardQuantity(short pStandardQuantity)
 {
     standardQuantity = pStandardQuantity;
     return this;
@@ -106,7 +106,7 @@ public ExpendableReload setStandardQuantity(short pStandardQuantity)
 /** Utility setter for {@link ExpendableReload#standardQuantity}
   * @param pStandardQuantity new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setStandardQuantity(int pStandardQuantity){
+public synchronized ExpendableReload setStandardQuantity(int pStandardQuantity){
     standardQuantity = (short) pStandardQuantity;
     return this;
 }
@@ -120,7 +120,7 @@ public short getStandardQuantity()
 /** Setter for {@link ExpendableReload#maximumQuantity}
   * @param pMaximumQuantity new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setMaximumQuantity(short pMaximumQuantity)
+public synchronized ExpendableReload setMaximumQuantity(short pMaximumQuantity)
 {
     maximumQuantity = pMaximumQuantity;
     return this;
@@ -128,7 +128,7 @@ public ExpendableReload setMaximumQuantity(short pMaximumQuantity)
 /** Utility setter for {@link ExpendableReload#maximumQuantity}
   * @param pMaximumQuantity new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setMaximumQuantity(int pMaximumQuantity){
+public synchronized ExpendableReload setMaximumQuantity(int pMaximumQuantity){
     maximumQuantity = (short) pMaximumQuantity;
     return this;
 }
@@ -142,7 +142,7 @@ public short getMaximumQuantity()
 /** Setter for {@link ExpendableReload#standardQuantityReloadTime}
   * @param pStandardQuantityReloadTime new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
+public synchronized ExpendableReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
 {
     standardQuantityReloadTime = pStandardQuantityReloadTime;
     return this;
@@ -157,7 +157,7 @@ public int getStandardQuantityReloadTime()
 /** Setter for {@link ExpendableReload#maximumQuantityReloadTime}
   * @param pMaximumQuantityReloadTime new value of interest
   * @return same object to permit progressive setters */
-public ExpendableReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
+public synchronized ExpendableReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
 {
     maximumQuantityReloadTime = pMaximumQuantityReloadTime;
     return this;
@@ -200,7 +200,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -251,7 +251,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -279,7 +279,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -299,7 +299,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -315,7 +315,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

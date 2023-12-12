@@ -49,13 +49,13 @@ public class EnvironmentalProcessPdu extends SyntheticEnvironmentFamilyPdu imple
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public EnvironmentalProcessPdu copy()
+ public synchronized EnvironmentalProcessPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public EnvironmentalProcessPdu copyByteBuffer()
+ public synchronized EnvironmentalProcessPdu copyByteBuffer()
  {
      EnvironmentalProcessPdu newCopy = new EnvironmentalProcessPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -82,7 +82,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public EnvironmentalProcessPdu copyDataOutputStream()
+ public synchronized EnvironmentalProcessPdu copyDataOutputStream()
  {
      EnvironmentalProcessPdu newCopy = new EnvironmentalProcessPdu();
      try
@@ -144,7 +144,7 @@ public int getMarshalledSize()
 /** Setter for {@link EnvironmentalProcessPdu#environementalProcessID}
   * @param pEnvironementalProcessID new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setEnvironementalProcessID(ObjectIdentifier pEnvironementalProcessID)
+public synchronized EnvironmentalProcessPdu setEnvironementalProcessID(ObjectIdentifier pEnvironementalProcessID)
 {
     environementalProcessID = pEnvironementalProcessID;
     return this;
@@ -160,7 +160,7 @@ public ObjectIdentifier getEnvironementalProcessID()
 /** Setter for {@link EnvironmentalProcessPdu#environmentType}
   * @param pEnvironmentType new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setEnvironmentType(EntityType pEnvironmentType)
+public synchronized EnvironmentalProcessPdu setEnvironmentType(EntityType pEnvironmentType)
 {
     environmentType = pEnvironmentType;
     return this;
@@ -176,7 +176,7 @@ public EntityType getEnvironmentType()
 /** Setter for {@link EnvironmentalProcessPdu#modelType}
   * @param pModelType new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setModelType(EnvironmentalProcessModelType pModelType)
+public synchronized EnvironmentalProcessPdu setModelType(EnvironmentalProcessModelType pModelType)
 {
     modelType = pModelType;
     return this;
@@ -191,7 +191,7 @@ public EnvironmentalProcessModelType getModelType()
 /** Setter for {@link EnvironmentalProcessPdu#environmentStatus}
   * @param pEnvironmentStatus new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setEnvironmentStatus(EnvironmentalProcessEnvironmentStatus pEnvironmentStatus)
+public synchronized EnvironmentalProcessPdu setEnvironmentStatus(EnvironmentalProcessEnvironmentStatus pEnvironmentStatus)
 {
     environmentStatus = pEnvironmentStatus;
     return this;
@@ -206,7 +206,7 @@ public EnvironmentalProcessEnvironmentStatus getEnvironmentStatus()
 /** Setter for {@link EnvironmentalProcessPdu#sequenceNumber}
   * @param pSequenceNumber new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setSequenceNumber(short pSequenceNumber)
+public synchronized EnvironmentalProcessPdu setSequenceNumber(short pSequenceNumber)
 {
     sequenceNumber = pSequenceNumber;
     return this;
@@ -214,7 +214,7 @@ public EnvironmentalProcessPdu setSequenceNumber(short pSequenceNumber)
 /** Utility setter for {@link EnvironmentalProcessPdu#sequenceNumber}
   * @param pSequenceNumber new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setSequenceNumber(int pSequenceNumber){
+public synchronized EnvironmentalProcessPdu setSequenceNumber(int pSequenceNumber){
     sequenceNumber = (short) pSequenceNumber;
     return this;
 }
@@ -228,7 +228,7 @@ public short getSequenceNumber()
 /** Setter for {@link EnvironmentalProcessPdu#environmentRecords}
   * @param pEnvironmentRecords new value of interest
   * @return same object to permit progressive setters */
-public EnvironmentalProcessPdu setEnvironmentRecords(List<Environment> pEnvironmentRecords)
+public synchronized EnvironmentalProcessPdu setEnvironmentRecords(List<Environment> pEnvironmentRecords)
 {
     environmentRecords = pEnvironmentRecords;
     return this;
@@ -279,7 +279,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -345,7 +345,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -383,7 +383,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -398,7 +398,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -417,7 +417,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

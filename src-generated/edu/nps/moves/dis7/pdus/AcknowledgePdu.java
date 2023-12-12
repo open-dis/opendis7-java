@@ -37,13 +37,13 @@ public class AcknowledgePdu extends SimulationManagementFamilyPdu implements Ser
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public AcknowledgePdu copy()
+ public synchronized AcknowledgePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public AcknowledgePdu copyByteBuffer()
+ public synchronized AcknowledgePdu copyByteBuffer()
  {
      AcknowledgePdu newCopy = new AcknowledgePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -70,7 +70,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public AcknowledgePdu copyDataOutputStream()
+ public synchronized AcknowledgePdu copyDataOutputStream()
  {
      AcknowledgePdu newCopy = new AcknowledgePdu();
      try
@@ -121,7 +121,7 @@ public int getMarshalledSize()
 /** Setter for {@link AcknowledgePdu#acknowledgeFlag}
   * @param pAcknowledgeFlag new value of interest
   * @return same object to permit progressive setters */
-public AcknowledgePdu setAcknowledgeFlag(AcknowledgeAcknowledgeFlag pAcknowledgeFlag)
+public synchronized AcknowledgePdu setAcknowledgeFlag(AcknowledgeAcknowledgeFlag pAcknowledgeFlag)
 {
     acknowledgeFlag = pAcknowledgeFlag;
     return this;
@@ -136,7 +136,7 @@ public AcknowledgeAcknowledgeFlag getAcknowledgeFlag()
 /** Setter for {@link AcknowledgePdu#responseFlag}
   * @param pResponseFlag new value of interest
   * @return same object to permit progressive setters */
-public AcknowledgePdu setResponseFlag(AcknowledgeResponseFlag pResponseFlag)
+public synchronized AcknowledgePdu setResponseFlag(AcknowledgeResponseFlag pResponseFlag)
 {
     responseFlag = pResponseFlag;
     return this;
@@ -151,7 +151,7 @@ public AcknowledgeResponseFlag getResponseFlag()
 /** Setter for {@link AcknowledgePdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public AcknowledgePdu setRequestID(int pRequestID)
+public synchronized AcknowledgePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -192,7 +192,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -238,7 +238,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -262,7 +262,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -277,7 +277,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -290,7 +290,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

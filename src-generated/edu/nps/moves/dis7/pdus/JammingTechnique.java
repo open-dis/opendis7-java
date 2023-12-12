@@ -58,7 +58,7 @@ public int getMarshalledSize()
 /** Setter for {@link JammingTechnique#kind}
   * @param pKind new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setKind(byte pKind)
+public synchronized JammingTechnique setKind(byte pKind)
 {
     kind = pKind;
     return this;
@@ -66,7 +66,7 @@ public JammingTechnique setKind(byte pKind)
 /** Utility setter for {@link JammingTechnique#kind}
   * @param pKind new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setKind(int pKind){
+public synchronized JammingTechnique setKind(int pKind){
     kind = (byte) pKind;
     return this;
 }
@@ -80,7 +80,7 @@ public byte getKind()
 /** Setter for {@link JammingTechnique#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setCategory(byte pCategory)
+public synchronized JammingTechnique setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
@@ -88,7 +88,7 @@ public JammingTechnique setCategory(byte pCategory)
 /** Utility setter for {@link JammingTechnique#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setCategory(int pCategory){
+public synchronized JammingTechnique setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
@@ -102,7 +102,7 @@ public byte getCategory()
 /** Setter for {@link JammingTechnique#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setSubCategory(byte pSubCategory)
+public synchronized JammingTechnique setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
@@ -110,7 +110,7 @@ public JammingTechnique setSubCategory(byte pSubCategory)
 /** Utility setter for {@link JammingTechnique#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setSubCategory(int pSubCategory){
+public synchronized JammingTechnique setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
@@ -124,7 +124,7 @@ public byte getSubCategory()
 /** Setter for {@link JammingTechnique#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setSpecific(byte pSpecific)
+public synchronized JammingTechnique setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
@@ -132,7 +132,7 @@ public JammingTechnique setSpecific(byte pSpecific)
 /** Utility setter for {@link JammingTechnique#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public JammingTechnique setSpecific(int pSpecific){
+public synchronized JammingTechnique setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
@@ -172,7 +172,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -218,7 +218,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -242,7 +242,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -262,7 +262,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -276,7 +276,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

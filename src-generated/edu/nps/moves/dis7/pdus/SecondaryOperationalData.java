@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link SecondaryOperationalData#operationalData1}
   * @param pOperationalData1 new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setOperationalData1(byte pOperationalData1)
+public synchronized SecondaryOperationalData setOperationalData1(byte pOperationalData1)
 {
     operationalData1 = pOperationalData1;
     return this;
@@ -62,7 +62,7 @@ public SecondaryOperationalData setOperationalData1(byte pOperationalData1)
 /** Utility setter for {@link SecondaryOperationalData#operationalData1}
   * @param pOperationalData1 new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setOperationalData1(int pOperationalData1){
+public synchronized SecondaryOperationalData setOperationalData1(int pOperationalData1){
     operationalData1 = (byte) pOperationalData1;
     return this;
 }
@@ -76,7 +76,7 @@ public byte getOperationalData1()
 /** Setter for {@link SecondaryOperationalData#operationalData2}
   * @param pOperationalData2 new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setOperationalData2(byte pOperationalData2)
+public synchronized SecondaryOperationalData setOperationalData2(byte pOperationalData2)
 {
     operationalData2 = pOperationalData2;
     return this;
@@ -84,7 +84,7 @@ public SecondaryOperationalData setOperationalData2(byte pOperationalData2)
 /** Utility setter for {@link SecondaryOperationalData#operationalData2}
   * @param pOperationalData2 new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setOperationalData2(int pOperationalData2){
+public synchronized SecondaryOperationalData setOperationalData2(int pOperationalData2){
     operationalData2 = (byte) pOperationalData2;
     return this;
 }
@@ -98,7 +98,7 @@ public byte getOperationalData2()
 /** Setter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
   * @param pNumberOfIFFFundamentalParameterRecords new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(short pNumberOfIFFFundamentalParameterRecords)
+public synchronized SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(short pNumberOfIFFFundamentalParameterRecords)
 {
     numberOfIFFFundamentalParameterRecords = pNumberOfIFFFundamentalParameterRecords;
     return this;
@@ -106,7 +106,7 @@ public SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(short 
 /** Utility setter for {@link SecondaryOperationalData#numberOfIFFFundamentalParameterRecords}
   * @param pNumberOfIFFFundamentalParameterRecords new value of interest
   * @return same object to permit progressive setters */
-public SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(int pNumberOfIFFFundamentalParameterRecords){
+public synchronized SecondaryOperationalData setNumberOfIFFFundamentalParameterRecords(int pNumberOfIFFFundamentalParameterRecords){
     numberOfIFFFundamentalParameterRecords = (short) pNumberOfIFFFundamentalParameterRecords;
     return this;
 }
@@ -145,7 +145,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -188,7 +188,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -210,7 +210,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -243,7 +243,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

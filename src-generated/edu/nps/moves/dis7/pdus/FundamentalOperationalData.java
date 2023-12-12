@@ -82,7 +82,7 @@ public int getMarshalledSize()
 /** Setter for {@link FundamentalOperationalData#systemStatus}
   * @param pSystemStatus new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setSystemStatus(byte pSystemStatus)
+public synchronized FundamentalOperationalData setSystemStatus(byte pSystemStatus)
 {
     systemStatus = pSystemStatus;
     return this;
@@ -90,7 +90,7 @@ public FundamentalOperationalData setSystemStatus(byte pSystemStatus)
 /** Utility setter for {@link FundamentalOperationalData#systemStatus}
   * @param pSystemStatus new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setSystemStatus(int pSystemStatus){
+public synchronized FundamentalOperationalData setSystemStatus(int pSystemStatus){
     systemStatus = (byte) pSystemStatus;
     return this;
 }
@@ -104,7 +104,7 @@ public byte getSystemStatus()
 /** Setter for {@link FundamentalOperationalData#dataField1}
   * @param pDataField1 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setDataField1(byte pDataField1)
+public synchronized FundamentalOperationalData setDataField1(byte pDataField1)
 {
     dataField1 = pDataField1;
     return this;
@@ -112,7 +112,7 @@ public FundamentalOperationalData setDataField1(byte pDataField1)
 /** Utility setter for {@link FundamentalOperationalData#dataField1}
   * @param pDataField1 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setDataField1(int pDataField1){
+public synchronized FundamentalOperationalData setDataField1(int pDataField1){
     dataField1 = (byte) pDataField1;
     return this;
 }
@@ -126,7 +126,7 @@ public byte getDataField1()
 /** Setter for {@link FundamentalOperationalData#informationLayers}
   * @param pInformationLayers new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setInformationLayers(byte pInformationLayers)
+public synchronized FundamentalOperationalData setInformationLayers(byte pInformationLayers)
 {
     informationLayers = pInformationLayers;
     return this;
@@ -134,7 +134,7 @@ public FundamentalOperationalData setInformationLayers(byte pInformationLayers)
 /** Utility setter for {@link FundamentalOperationalData#informationLayers}
   * @param pInformationLayers new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setInformationLayers(int pInformationLayers){
+public synchronized FundamentalOperationalData setInformationLayers(int pInformationLayers){
     informationLayers = (byte) pInformationLayers;
     return this;
 }
@@ -148,7 +148,7 @@ public byte getInformationLayers()
 /** Setter for {@link FundamentalOperationalData#dataField2}
   * @param pDataField2 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setDataField2(byte pDataField2)
+public synchronized FundamentalOperationalData setDataField2(byte pDataField2)
 {
     dataField2 = pDataField2;
     return this;
@@ -156,7 +156,7 @@ public FundamentalOperationalData setDataField2(byte pDataField2)
 /** Utility setter for {@link FundamentalOperationalData#dataField2}
   * @param pDataField2 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setDataField2(int pDataField2){
+public synchronized FundamentalOperationalData setDataField2(int pDataField2){
     dataField2 = (byte) pDataField2;
     return this;
 }
@@ -170,7 +170,7 @@ public byte getDataField2()
 /** Setter for {@link FundamentalOperationalData#parameter1}
   * @param pParameter1 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter1(short pParameter1)
+public synchronized FundamentalOperationalData setParameter1(short pParameter1)
 {
     parameter1 = pParameter1;
     return this;
@@ -178,7 +178,7 @@ public FundamentalOperationalData setParameter1(short pParameter1)
 /** Utility setter for {@link FundamentalOperationalData#parameter1}
   * @param pParameter1 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter1(int pParameter1){
+public synchronized FundamentalOperationalData setParameter1(int pParameter1){
     parameter1 = (short) pParameter1;
     return this;
 }
@@ -192,7 +192,7 @@ public short getParameter1()
 /** Setter for {@link FundamentalOperationalData#parameter2}
   * @param pParameter2 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter2(short pParameter2)
+public synchronized FundamentalOperationalData setParameter2(short pParameter2)
 {
     parameter2 = pParameter2;
     return this;
@@ -200,7 +200,7 @@ public FundamentalOperationalData setParameter2(short pParameter2)
 /** Utility setter for {@link FundamentalOperationalData#parameter2}
   * @param pParameter2 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter2(int pParameter2){
+public synchronized FundamentalOperationalData setParameter2(int pParameter2){
     parameter2 = (short) pParameter2;
     return this;
 }
@@ -214,7 +214,7 @@ public short getParameter2()
 /** Setter for {@link FundamentalOperationalData#parameter3}
   * @param pParameter3 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter3(short pParameter3)
+public synchronized FundamentalOperationalData setParameter3(short pParameter3)
 {
     parameter3 = pParameter3;
     return this;
@@ -222,7 +222,7 @@ public FundamentalOperationalData setParameter3(short pParameter3)
 /** Utility setter for {@link FundamentalOperationalData#parameter3}
   * @param pParameter3 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter3(int pParameter3){
+public synchronized FundamentalOperationalData setParameter3(int pParameter3){
     parameter3 = (short) pParameter3;
     return this;
 }
@@ -236,7 +236,7 @@ public short getParameter3()
 /** Setter for {@link FundamentalOperationalData#parameter4}
   * @param pParameter4 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter4(short pParameter4)
+public synchronized FundamentalOperationalData setParameter4(short pParameter4)
 {
     parameter4 = pParameter4;
     return this;
@@ -244,7 +244,7 @@ public FundamentalOperationalData setParameter4(short pParameter4)
 /** Utility setter for {@link FundamentalOperationalData#parameter4}
   * @param pParameter4 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter4(int pParameter4){
+public synchronized FundamentalOperationalData setParameter4(int pParameter4){
     parameter4 = (short) pParameter4;
     return this;
 }
@@ -258,7 +258,7 @@ public short getParameter4()
 /** Setter for {@link FundamentalOperationalData#parameter5}
   * @param pParameter5 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter5(short pParameter5)
+public synchronized FundamentalOperationalData setParameter5(short pParameter5)
 {
     parameter5 = pParameter5;
     return this;
@@ -266,7 +266,7 @@ public FundamentalOperationalData setParameter5(short pParameter5)
 /** Utility setter for {@link FundamentalOperationalData#parameter5}
   * @param pParameter5 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter5(int pParameter5){
+public synchronized FundamentalOperationalData setParameter5(int pParameter5){
     parameter5 = (short) pParameter5;
     return this;
 }
@@ -280,7 +280,7 @@ public short getParameter5()
 /** Setter for {@link FundamentalOperationalData#parameter6}
   * @param pParameter6 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter6(short pParameter6)
+public synchronized FundamentalOperationalData setParameter6(short pParameter6)
 {
     parameter6 = pParameter6;
     return this;
@@ -288,7 +288,7 @@ public FundamentalOperationalData setParameter6(short pParameter6)
 /** Utility setter for {@link FundamentalOperationalData#parameter6}
   * @param pParameter6 new value of interest
   * @return same object to permit progressive setters */
-public FundamentalOperationalData setParameter6(int pParameter6){
+public synchronized FundamentalOperationalData setParameter6(int pParameter6){
     parameter6 = (short) pParameter6;
     return this;
 }
@@ -334,7 +334,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -398,7 +398,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -434,7 +434,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -454,7 +454,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -474,7 +474,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

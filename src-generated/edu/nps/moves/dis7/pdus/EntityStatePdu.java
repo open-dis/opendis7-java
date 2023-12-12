@@ -67,13 +67,13 @@ public class EntityStatePdu extends EntityInformationInteractionFamilyPdu implem
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public EntityStatePdu copy()
+ public synchronized EntityStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public EntityStatePdu copyByteBuffer()
+ public synchronized EntityStatePdu copyByteBuffer()
  {
      EntityStatePdu newCopy = new EntityStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -100,7 +100,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public EntityStatePdu copyDataOutputStream()
+ public synchronized EntityStatePdu copyDataOutputStream()
  {
      EntityStatePdu newCopy = new EntityStatePdu();
      try
@@ -174,7 +174,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityStatePdu#entityID}
   * @param pEntityID new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityID(EntityID pEntityID)
+public synchronized EntityStatePdu setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
@@ -190,7 +190,7 @@ public EntityID getEntityID()
 /** Setter for {@link EntityStatePdu#forceId}
   * @param pForceId new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setForceId(ForceID pForceId)
+public synchronized EntityStatePdu setForceId(ForceID pForceId)
 {
     forceId = pForceId;
     return this;
@@ -205,7 +205,7 @@ public ForceID getForceId()
 /** Setter for {@link EntityStatePdu#entityType}
   * @param pEntityType new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityType(EntityType pEntityType)
+public synchronized EntityStatePdu setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
@@ -221,7 +221,7 @@ public EntityType getEntityType()
 /** Setter for {@link EntityStatePdu#alternativeEntityType}
   * @param pAlternativeEntityType new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setAlternativeEntityType(EntityType pAlternativeEntityType)
+public synchronized EntityStatePdu setAlternativeEntityType(EntityType pAlternativeEntityType)
 {
     alternativeEntityType = pAlternativeEntityType;
     return this;
@@ -237,7 +237,7 @@ public EntityType getAlternativeEntityType()
 /** Setter for {@link EntityStatePdu#entityLinearVelocity}
   * @param pEntityLinearVelocity new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
+public synchronized EntityStatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
@@ -253,7 +253,7 @@ public Vector3Float getEntityLinearVelocity()
 /** Setter for {@link EntityStatePdu#entityLocation}
   * @param pEntityLocation new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityLocation(Vector3Double pEntityLocation)
+public synchronized EntityStatePdu setEntityLocation(Vector3Double pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
@@ -269,7 +269,7 @@ public Vector3Double getEntityLocation()
 /** Setter for {@link EntityStatePdu#entityOrientation}
   * @param pEntityOrientation new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityOrientation(EulerAngles pEntityOrientation)
+public synchronized EntityStatePdu setEntityOrientation(EulerAngles pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
@@ -285,7 +285,7 @@ public EulerAngles getEntityOrientation()
 /** Setter for {@link EntityStatePdu#entityAppearance}
   * @param pEntityAppearance new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setEntityAppearance(int pEntityAppearance)
+public synchronized EntityStatePdu setEntityAppearance(int pEntityAppearance)
 {
     entityAppearance = pEntityAppearance;
     return this;
@@ -300,7 +300,7 @@ public int getEntityAppearance()
 /** Setter for {@link EntityStatePdu#deadReckoningParameters}
   * @param pDeadReckoningParameters new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setDeadReckoningParameters(DeadReckoningParameters pDeadReckoningParameters)
+public synchronized EntityStatePdu setDeadReckoningParameters(DeadReckoningParameters pDeadReckoningParameters)
 {
     deadReckoningParameters = pDeadReckoningParameters;
     return this;
@@ -316,7 +316,7 @@ public DeadReckoningParameters getDeadReckoningParameters()
 /** Setter for {@link EntityStatePdu#marking}
   * @param pMarking new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setMarking(EntityMarking pMarking)
+public synchronized EntityStatePdu setMarking(EntityMarking pMarking)
 {
     marking = pMarking;
     return this;
@@ -332,7 +332,7 @@ public EntityMarking getMarking()
 /** Setter for {@link EntityStatePdu#capabilities}
   * @param pCapabilities new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setCapabilities(EntityCapabilities pCapabilities)
+public synchronized EntityStatePdu setCapabilities(EntityCapabilities pCapabilities)
 {
     capabilities = pCapabilities;
     return this;
@@ -347,7 +347,7 @@ public EntityCapabilities getCapabilities()
 /** Setter for {@link EntityStatePdu#variableParameters}
   * @param pVariableParameters new value of interest
   * @return same object to permit progressive setters */
-public EntityStatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
+public synchronized EntityStatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
@@ -404,7 +404,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -482,7 +482,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -532,7 +532,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -547,7 +547,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -572,7 +572,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
@@ -624,7 +624,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     * @param direction using Directions enumerations
     * @see Direction
     * @return same object to permit progressive setters */
-  public final EntityStatePdu setEntityLinearVelocity (float speed, Direction direction)
+  public final synchronized EntityStatePdu setEntityLinearVelocity (float speed, Direction direction)
   {
       float xFactor = 0.0f;
       float yFactor = 0.0f;
@@ -673,7 +673,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
      * @param y location
      * @param z location
      * @return same object to permit progressive setters */
-   public EntityStatePdu setEntityLocation(double x, double y, double z)
+   public synchronized EntityStatePdu setEntityLocation(double x, double y, double z)
    {
        // TODO autogenerate such utility constructors
        entityLocation = new Vector3Double().setX(x).setY(y).setZ(z);
@@ -696,7 +696,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
       * @param theta new value of interest
       * @param psi new value of interest
       * @return same object to permit progressive setters */
-    public EntityStatePdu setEntityOrientation(float phi, float theta, float psi)
+    public synchronized EntityStatePdu setEntityOrientation(float phi, float theta, float psi)
     {
         // TODO autogenerate such utility constructors
         EulerAngles pEntityOrientation = new EulerAngles();
@@ -706,7 +706,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     }
    /** Marking utility to clear character values
     * @return same object to permit progressive setters */
-    public EntityStatePdu clearMarking()
+    public synchronized EntityStatePdu clearMarking()
    {
        byte[] emptyByteArray = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
        marking.setCharacters(emptyByteArray);
@@ -715,7 +715,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
     /** Marking utility to set character values, 11 characters maximum
     *@param newMarking new 11-character string to assign as marking value
     * @return same object to permit progressive setters */
-   public EntityStatePdu setMarking(String newMarking)
+   public synchronized EntityStatePdu setMarking(String newMarking)
    {
        if ((newMarking == null) || newMarking.isEmpty())
            clearMarking();

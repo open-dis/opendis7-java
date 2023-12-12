@@ -46,13 +46,13 @@ public class RecordRPdu extends SimulationManagementWithReliabilityFamilyPdu imp
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public RecordRPdu copy()
+ public synchronized RecordRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public RecordRPdu copyByteBuffer()
+ public synchronized RecordRPdu copyByteBuffer()
  {
      RecordRPdu newCopy = new RecordRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public RecordRPdu copyDataOutputStream()
+ public synchronized RecordRPdu copyDataOutputStream()
  {
      RecordRPdu newCopy = new RecordRPdu();
      try
@@ -138,7 +138,7 @@ public int getMarshalledSize()
 /** Setter for {@link RecordRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setRequestID(int pRequestID)
+public synchronized RecordRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -153,7 +153,7 @@ public int getRequestID()
 /** Setter for {@link RecordRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized RecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -168,7 +168,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link RecordRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setPad1(byte pPad1)
+public synchronized RecordRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -176,7 +176,7 @@ public RecordRPdu setPad1(byte pPad1)
 /** Utility setter for {@link RecordRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setPad1(int pPad1){
+public synchronized RecordRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -190,7 +190,7 @@ public byte getPad1()
 /** Setter for {@link RecordRPdu#eventType}
   * @param pEventType new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setEventType(RecordREventType pEventType)
+public synchronized RecordRPdu setEventType(RecordREventType pEventType)
 {
     eventType = pEventType;
     return this;
@@ -205,7 +205,7 @@ public RecordREventType getEventType()
 /** Setter for {@link RecordRPdu#recordSets}
   * @param pRecordSets new value of interest
   * @return same object to permit progressive setters */
-public RecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
+public synchronized RecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
@@ -255,7 +255,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -321,7 +321,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -357,7 +357,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -372,7 +372,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -390,7 +390,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

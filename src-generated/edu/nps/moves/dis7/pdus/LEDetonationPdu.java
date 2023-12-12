@@ -64,13 +64,13 @@ public class LEDetonationPdu extends LiveEntityFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public LEDetonationPdu copy()
+ public synchronized LEDetonationPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public LEDetonationPdu copyByteBuffer()
+ public synchronized LEDetonationPdu copyByteBuffer()
  {
      LEDetonationPdu newCopy = new LEDetonationPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public LEDetonationPdu copyDataOutputStream()
+ public synchronized LEDetonationPdu copyDataOutputStream()
  {
      LEDetonationPdu newCopy = new LEDetonationPdu();
      try
@@ -164,7 +164,7 @@ public int getMarshalledSize()
 /** Setter for {@link LEDetonationPdu#firingLiveEntityId}
   * @param pFiringLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
+public synchronized LEDetonationPdu setFiringLiveEntityId(EntityID pFiringLiveEntityId)
 {
     firingLiveEntityId = pFiringLiveEntityId;
     return this;
@@ -180,7 +180,7 @@ public EntityID getFiringLiveEntityId()
 /** Setter for {@link LEDetonationPdu#detonationFlag1}
   * @param pDetonationFlag1 new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationFlag1(byte pDetonationFlag1)
+public synchronized LEDetonationPdu setDetonationFlag1(byte pDetonationFlag1)
 {
     detonationFlag1 = pDetonationFlag1;
     return this;
@@ -188,7 +188,7 @@ public LEDetonationPdu setDetonationFlag1(byte pDetonationFlag1)
 /** Utility setter for {@link LEDetonationPdu#detonationFlag1}
   * @param pDetonationFlag1 new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationFlag1(int pDetonationFlag1){
+public synchronized LEDetonationPdu setDetonationFlag1(int pDetonationFlag1){
     detonationFlag1 = (byte) pDetonationFlag1;
     return this;
 }
@@ -202,7 +202,7 @@ public byte getDetonationFlag1()
 /** Setter for {@link LEDetonationPdu#detonationFlag2}
   * @param pDetonationFlag2 new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationFlag2(byte pDetonationFlag2)
+public synchronized LEDetonationPdu setDetonationFlag2(byte pDetonationFlag2)
 {
     detonationFlag2 = pDetonationFlag2;
     return this;
@@ -210,7 +210,7 @@ public LEDetonationPdu setDetonationFlag2(byte pDetonationFlag2)
 /** Utility setter for {@link LEDetonationPdu#detonationFlag2}
   * @param pDetonationFlag2 new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationFlag2(int pDetonationFlag2){
+public synchronized LEDetonationPdu setDetonationFlag2(int pDetonationFlag2){
     detonationFlag2 = (byte) pDetonationFlag2;
     return this;
 }
@@ -224,7 +224,7 @@ public byte getDetonationFlag2()
 /** Setter for {@link LEDetonationPdu#targetLiveEntityId}
   * @param pTargetLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
+public synchronized LEDetonationPdu setTargetLiveEntityId(EntityID pTargetLiveEntityId)
 {
     targetLiveEntityId = pTargetLiveEntityId;
     return this;
@@ -240,7 +240,7 @@ public EntityID getTargetLiveEntityId()
 /** Setter for {@link LEDetonationPdu#munitionLiveEntityId}
   * @param pMunitionLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
+public synchronized LEDetonationPdu setMunitionLiveEntityId(EntityID pMunitionLiveEntityId)
 {
     munitionLiveEntityId = pMunitionLiveEntityId;
     return this;
@@ -256,7 +256,7 @@ public EntityID getMunitionLiveEntityId()
 /** Setter for {@link LEDetonationPdu#eventId}
   * @param pEventId new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setEventId(EventIdentifier pEventId)
+public synchronized LEDetonationPdu setEventId(EventIdentifier pEventId)
 {
     eventId = pEventId;
     return this;
@@ -272,7 +272,7 @@ public EventIdentifier getEventId()
 /** Setter for {@link LEDetonationPdu#worldLocation}
   * @param pWorldLocation new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setWorldLocation(LiveEntityRelativeWorldCoordinates pWorldLocation)
+public synchronized LEDetonationPdu setWorldLocation(LiveEntityRelativeWorldCoordinates pWorldLocation)
 {
     worldLocation = pWorldLocation;
     return this;
@@ -288,7 +288,7 @@ public LiveEntityRelativeWorldCoordinates getWorldLocation()
 /** Setter for {@link LEDetonationPdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setVelocity(LiveEntityLinearVelocity pVelocity)
+public synchronized LEDetonationPdu setVelocity(LiveEntityLinearVelocity pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -304,7 +304,7 @@ public LiveEntityLinearVelocity getVelocity()
 /** Setter for {@link LEDetonationPdu#munitionOrientation}
   * @param pMunitionOrientation new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setMunitionOrientation(LiveEntityOrientation16 pMunitionOrientation)
+public synchronized LEDetonationPdu setMunitionOrientation(LiveEntityOrientation16 pMunitionOrientation)
 {
     munitionOrientation = pMunitionOrientation;
     return this;
@@ -320,7 +320,7 @@ public LiveEntityOrientation16 getMunitionOrientation()
 /** Setter for {@link LEDetonationPdu#munitionDescriptor}
   * @param pMunitionDescriptor new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
+public synchronized LEDetonationPdu setMunitionDescriptor(MunitionDescriptor pMunitionDescriptor)
 {
     munitionDescriptor = pMunitionDescriptor;
     return this;
@@ -336,7 +336,7 @@ public MunitionDescriptor getMunitionDescriptor()
 /** Setter for {@link LEDetonationPdu#entityLocation}
   * @param pEntityLocation new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setEntityLocation(LiveEntityLinearVelocity pEntityLocation)
+public synchronized LEDetonationPdu setEntityLocation(LiveEntityLinearVelocity pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
@@ -352,7 +352,7 @@ public LiveEntityLinearVelocity getEntityLocation()
 /** Setter for {@link LEDetonationPdu#detonationResult}
   * @param pDetonationResult new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationResult(byte pDetonationResult)
+public synchronized LEDetonationPdu setDetonationResult(byte pDetonationResult)
 {
     detonationResult = pDetonationResult;
     return this;
@@ -360,7 +360,7 @@ public LEDetonationPdu setDetonationResult(byte pDetonationResult)
 /** Utility setter for {@link LEDetonationPdu#detonationResult}
   * @param pDetonationResult new value of interest
   * @return same object to permit progressive setters */
-public LEDetonationPdu setDetonationResult(int pDetonationResult){
+public synchronized LEDetonationPdu setDetonationResult(int pDetonationResult){
     detonationResult = (byte) pDetonationResult;
     return this;
 }
@@ -409,7 +409,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -473,7 +473,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -515,7 +515,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -530,7 +530,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -552,7 +552,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

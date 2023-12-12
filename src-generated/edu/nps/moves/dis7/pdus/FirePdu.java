@@ -55,13 +55,13 @@ public class FirePdu extends WarfareFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public FirePdu copy()
+ public synchronized FirePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public FirePdu copyByteBuffer()
+ public synchronized FirePdu copyByteBuffer()
  {
      FirePdu newCopy = new FirePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public FirePdu copyDataOutputStream()
+ public synchronized FirePdu copyDataOutputStream()
  {
      FirePdu newCopy = new FirePdu();
      try
@@ -150,7 +150,7 @@ public int getMarshalledSize()
 /** Setter for {@link FirePdu#firingEntityID}
   * @param pFiringEntityID new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setFiringEntityID(EntityID pFiringEntityID)
+public synchronized FirePdu setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
@@ -166,7 +166,7 @@ public EntityID getFiringEntityID()
 /** Setter for {@link FirePdu#targetEntityID}
   * @param pTargetEntityID new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setTargetEntityID(EntityID pTargetEntityID)
+public synchronized FirePdu setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
@@ -182,7 +182,7 @@ public EntityID getTargetEntityID()
 /** Setter for {@link FirePdu#munitionExpendibleID}
   * @param pMunitionExpendibleID new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setMunitionExpendibleID(EntityID pMunitionExpendibleID)
+public synchronized FirePdu setMunitionExpendibleID(EntityID pMunitionExpendibleID)
 {
     munitionExpendibleID = pMunitionExpendibleID;
     return this;
@@ -198,7 +198,7 @@ public EntityID getMunitionExpendibleID()
 /** Setter for {@link FirePdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setEventID(EventIdentifier pEventID)
+public synchronized FirePdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -214,7 +214,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link FirePdu#fireMissionIndex}
   * @param pFireMissionIndex new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setFireMissionIndex(int pFireMissionIndex)
+public synchronized FirePdu setFireMissionIndex(int pFireMissionIndex)
 {
     fireMissionIndex = pFireMissionIndex;
     return this;
@@ -229,7 +229,7 @@ public int getFireMissionIndex()
 /** Setter for {@link FirePdu#locationInWorldCoordinates}
   * @param pLocationInWorldCoordinates new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
+public synchronized FirePdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
 {
     locationInWorldCoordinates = pLocationInWorldCoordinates;
     return this;
@@ -245,7 +245,7 @@ public Vector3Double getLocationInWorldCoordinates()
 /** Setter for {@link FirePdu#descriptor}
   * @param pDescriptor new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setDescriptor(MunitionDescriptor pDescriptor)
+public synchronized FirePdu setDescriptor(MunitionDescriptor pDescriptor)
 {
     descriptor = pDescriptor;
     return this;
@@ -261,7 +261,7 @@ public MunitionDescriptor getDescriptor()
 /** Setter for {@link FirePdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setVelocity(Vector3Float pVelocity)
+public synchronized FirePdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -277,7 +277,7 @@ public Vector3Float getVelocity()
 /** Setter for {@link FirePdu#range}
   * @param pRange new value of interest
   * @return same object to permit progressive setters */
-public FirePdu setRange(float pRange)
+public synchronized FirePdu setRange(float pRange)
 {
     range = pRange;
     return this;
@@ -324,7 +324,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -381,7 +381,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -417,7 +417,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -432,7 +432,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -451,7 +451,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

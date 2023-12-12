@@ -46,13 +46,13 @@ public class DataQueryPdu extends SimulationManagementFamilyPdu implements Seria
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DataQueryPdu copy()
+ public synchronized DataQueryPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DataQueryPdu copyByteBuffer()
+ public synchronized DataQueryPdu copyByteBuffer()
  {
      DataQueryPdu newCopy = new DataQueryPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DataQueryPdu copyDataOutputStream()
+ public synchronized DataQueryPdu copyDataOutputStream()
  {
      DataQueryPdu newCopy = new DataQueryPdu();
      try
@@ -141,7 +141,7 @@ public int getMarshalledSize()
 /** Setter for {@link DataQueryPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public DataQueryPdu setRequestID(int pRequestID)
+public synchronized DataQueryPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -156,7 +156,7 @@ public int getRequestID()
 /** Setter for {@link DataQueryPdu#timeInterval}
   * @param pTimeInterval new value of interest
   * @return same object to permit progressive setters */
-public DataQueryPdu setTimeInterval(int pTimeInterval)
+public synchronized DataQueryPdu setTimeInterval(int pTimeInterval)
 {
     timeInterval = pTimeInterval;
     return this;
@@ -171,7 +171,7 @@ public int getTimeInterval()
 /** Setter for {@link DataQueryPdu#fixedDatums}
   * @param pFixedDatums new value of interest
   * @return same object to permit progressive setters */
-public DataQueryPdu setFixedDatums(List<FixedDatum> pFixedDatums)
+public synchronized DataQueryPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
@@ -186,7 +186,7 @@ public List<FixedDatum> getFixedDatums()
 /** Setter for {@link DataQueryPdu#variableDatums}
   * @param pVariableDatums new value of interest
   * @return same object to permit progressive setters */
-public DataQueryPdu setVariableDatums(List<VariableDatum> pVariableDatums)
+public synchronized DataQueryPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
@@ -242,7 +242,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -319,7 +319,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -361,7 +361,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -376,7 +376,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -396,7 +396,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

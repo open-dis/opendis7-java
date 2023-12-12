@@ -72,7 +72,7 @@ public int getMarshalledSize()
 /** Setter for {@link IFFFundamentalParameterData#erp}
   * @param pErp new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setErp(float pErp)
+public synchronized IFFFundamentalParameterData setErp(float pErp)
 {
     erp = pErp;
     return this;
@@ -87,7 +87,7 @@ public float getErp()
 /** Setter for {@link IFFFundamentalParameterData#frequency}
   * @param pFrequency new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setFrequency(float pFrequency)
+public synchronized IFFFundamentalParameterData setFrequency(float pFrequency)
 {
     frequency = pFrequency;
     return this;
@@ -102,7 +102,7 @@ public float getFrequency()
 /** Setter for {@link IFFFundamentalParameterData#pgrf}
   * @param pPgrf new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setPgrf(float pPgrf)
+public synchronized IFFFundamentalParameterData setPgrf(float pPgrf)
 {
     pgrf = pPgrf;
     return this;
@@ -117,7 +117,7 @@ public float getPgrf()
 /** Setter for {@link IFFFundamentalParameterData#pulseWidth}
   * @param pPulseWidth new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setPulseWidth(float pPulseWidth)
+public synchronized IFFFundamentalParameterData setPulseWidth(float pPulseWidth)
 {
     pulseWidth = pPulseWidth;
     return this;
@@ -132,7 +132,7 @@ public float getPulseWidth()
 /** Setter for {@link IFFFundamentalParameterData#burstLength}
   * @param pBurstLength new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setBurstLength(int pBurstLength)
+public synchronized IFFFundamentalParameterData setBurstLength(int pBurstLength)
 {
     burstLength = pBurstLength;
     return this;
@@ -147,7 +147,7 @@ public int getBurstLength()
 /** Setter for {@link IFFFundamentalParameterData#applicableModes}
   * @param pApplicableModes new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setApplicableModes(IFFApplicableModes pApplicableModes)
+public synchronized IFFFundamentalParameterData setApplicableModes(IFFApplicableModes pApplicableModes)
 {
     applicableModes = pApplicableModes;
     return this;
@@ -162,7 +162,7 @@ public IFFApplicableModes getApplicableModes()
 /** Setter for {@link IFFFundamentalParameterData#systemSpecificData}
   * @param pSystemSpecificData new value of interest
   * @return same object to permit progressive setters */
-public IFFFundamentalParameterData setSystemSpecificData(byte[] pSystemSpecificData)
+public synchronized IFFFundamentalParameterData setSystemSpecificData(byte[] pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
@@ -209,7 +209,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -268,7 +268,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -299,7 +299,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -319,7 +319,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -341,7 +341,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -37,13 +37,13 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ArticulatedPartsPdu copy()
+ public synchronized ArticulatedPartsPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ArticulatedPartsPdu copyByteBuffer()
+ public synchronized ArticulatedPartsPdu copyByteBuffer()
  {
      ArticulatedPartsPdu newCopy = new ArticulatedPartsPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -70,7 +70,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ArticulatedPartsPdu copyDataOutputStream()
+ public synchronized ArticulatedPartsPdu copyDataOutputStream()
  {
      ArticulatedPartsPdu newCopy = new ArticulatedPartsPdu();
      try
@@ -125,7 +125,7 @@ public int getMarshalledSize()
 /** Setter for {@link ArticulatedPartsPdu#liveEntityId}
   * @param pLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public ArticulatedPartsPdu setLiveEntityId(EntityID pLiveEntityId)
+public synchronized ArticulatedPartsPdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
@@ -141,7 +141,7 @@ public EntityID getLiveEntityId()
 /** Setter for {@link ArticulatedPartsPdu#variableParameters}
   * @param pVariableParameters new value of interest
   * @return same object to permit progressive setters */
-public ArticulatedPartsPdu setVariableParameters(List<VariableParameter> pVariableParameters)
+public synchronized ArticulatedPartsPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
@@ -188,7 +188,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -244,7 +244,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -274,7 +274,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -289,7 +289,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -304,7 +304,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

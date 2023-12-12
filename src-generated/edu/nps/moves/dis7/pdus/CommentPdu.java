@@ -37,13 +37,13 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public CommentPdu copy()
+ public synchronized CommentPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public CommentPdu copyByteBuffer()
+ public synchronized CommentPdu copyByteBuffer()
  {
      CommentPdu newCopy = new CommentPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -70,7 +70,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public CommentPdu copyDataOutputStream()
+ public synchronized CommentPdu copyDataOutputStream()
  {
      CommentPdu newCopy = new CommentPdu();
      try
@@ -124,7 +124,7 @@ public int getMarshalledSize()
 /** Setter for {@link CommentPdu#variableDatums}
   * @param pVariableDatums new value of interest
   * @return same object to permit progressive setters */
-public CommentPdu setVariableDatums(List<VariableDatum> pVariableDatums)
+public synchronized CommentPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
@@ -171,7 +171,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -228,7 +228,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -258,7 +258,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -273,7 +273,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -287,7 +287,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -51,7 +51,7 @@ public int getMarshalledSize()
 /** Setter for {@link CommunicationsNodeID#entityID}
   * @param pEntityID new value of interest
   * @return same object to permit progressive setters */
-public CommunicationsNodeID setEntityID(EntityID pEntityID)
+public synchronized CommunicationsNodeID setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
@@ -67,7 +67,7 @@ public EntityID getEntityID()
 /** Setter for {@link CommunicationsNodeID#elementID}
   * @param pElementID new value of interest
   * @return same object to permit progressive setters */
-public CommunicationsNodeID setElementID(short pElementID)
+public synchronized CommunicationsNodeID setElementID(short pElementID)
 {
     elementID = pElementID;
     return this;
@@ -75,7 +75,7 @@ public CommunicationsNodeID setElementID(short pElementID)
 /** Utility setter for {@link CommunicationsNodeID#elementID}
   * @param pElementID new value of interest
   * @return same object to permit progressive setters */
-public CommunicationsNodeID setElementID(int pElementID){
+public synchronized CommunicationsNodeID setElementID(int pElementID){
     elementID = (short) pElementID;
     return this;
 }
@@ -113,7 +113,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -152,7 +152,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -172,7 +172,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -192,7 +192,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -204,7 +204,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

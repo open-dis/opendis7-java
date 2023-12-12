@@ -46,13 +46,13 @@ public class SetDataPdu extends SimulationManagementFamilyPdu implements Seriali
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public SetDataPdu copy()
+ public synchronized SetDataPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public SetDataPdu copyByteBuffer()
+ public synchronized SetDataPdu copyByteBuffer()
  {
      SetDataPdu newCopy = new SetDataPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public SetDataPdu copyDataOutputStream()
+ public synchronized SetDataPdu copyDataOutputStream()
  {
      SetDataPdu newCopy = new SetDataPdu();
      try
@@ -141,7 +141,7 @@ public int getMarshalledSize()
 /** Setter for {@link SetDataPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public SetDataPdu setRequestID(int pRequestID)
+public synchronized SetDataPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -156,7 +156,7 @@ public int getRequestID()
 /** Setter for {@link SetDataPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public SetDataPdu setPadding1(int pPadding1)
+public synchronized SetDataPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -171,7 +171,7 @@ public int getPadding1()
 /** Setter for {@link SetDataPdu#fixedDatums}
   * @param pFixedDatums new value of interest
   * @return same object to permit progressive setters */
-public SetDataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
+public synchronized SetDataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
@@ -186,7 +186,7 @@ public List<FixedDatum> getFixedDatums()
 /** Setter for {@link SetDataPdu#variableDatums}
   * @param pVariableDatums new value of interest
   * @return same object to permit progressive setters */
-public SetDataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
+public synchronized SetDataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
@@ -242,7 +242,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -319,7 +319,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -361,7 +361,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -376,7 +376,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -396,7 +396,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

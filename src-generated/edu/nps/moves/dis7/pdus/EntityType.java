@@ -73,7 +73,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityType#entityKind}
   * @param pEntityKind new value of interest
   * @return same object to permit progressive setters */
-public EntityType setEntityKind(EntityKind pEntityKind)
+public synchronized EntityType setEntityKind(EntityKind pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
@@ -88,7 +88,7 @@ public EntityKind getEntityKind()
 /** Setter for {@link EntityType#domain}
   * @param pDomain new value of interest
   * @return same object to permit progressive setters */
-public EntityType setDomain(Domain pDomain)
+public synchronized EntityType setDomain(Domain pDomain)
 {
     domain = pDomain;
     return this;
@@ -104,7 +104,7 @@ public Domain getDomain()
 /** Setter for {@link EntityType#country}
   * @param pCountry new value of interest
   * @return same object to permit progressive setters */
-public EntityType setCountry(Country pCountry)
+public synchronized EntityType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
@@ -119,7 +119,7 @@ public Country getCountry()
 /** Setter for {@link EntityType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public EntityType setCategory(byte pCategory)
+public synchronized EntityType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
@@ -127,7 +127,7 @@ public EntityType setCategory(byte pCategory)
 /** Utility setter for {@link EntityType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public EntityType setCategory(int pCategory){
+public synchronized EntityType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
@@ -141,7 +141,7 @@ public byte getCategory()
 /** Setter for {@link EntityType#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public EntityType setSubCategory(byte pSubCategory)
+public synchronized EntityType setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
@@ -149,7 +149,7 @@ public EntityType setSubCategory(byte pSubCategory)
 /** Utility setter for {@link EntityType#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public EntityType setSubCategory(int pSubCategory){
+public synchronized EntityType setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
@@ -163,7 +163,7 @@ public byte getSubCategory()
 /** Setter for {@link EntityType#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public EntityType setSpecific(byte pSpecific)
+public synchronized EntityType setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
@@ -171,7 +171,7 @@ public EntityType setSpecific(byte pSpecific)
 /** Utility setter for {@link EntityType#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public EntityType setSpecific(int pSpecific){
+public synchronized EntityType setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
@@ -185,7 +185,7 @@ public byte getSpecific()
 /** Setter for {@link EntityType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public EntityType setExtra(byte pExtra)
+public synchronized EntityType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
@@ -193,7 +193,7 @@ public EntityType setExtra(byte pExtra)
 /** Utility setter for {@link EntityType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public EntityType setExtra(int pExtra){
+public synchronized EntityType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
@@ -236,7 +236,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -290,7 +290,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -320,7 +320,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -340,7 +340,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -357,7 +357,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

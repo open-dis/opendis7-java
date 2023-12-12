@@ -55,13 +55,13 @@ public class LinearObjectStatePdu extends SyntheticEnvironmentFamilyPdu implemen
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public LinearObjectStatePdu copy()
+ public synchronized LinearObjectStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public LinearObjectStatePdu copyByteBuffer()
+ public synchronized LinearObjectStatePdu copyByteBuffer()
  {
      LinearObjectStatePdu newCopy = new LinearObjectStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public LinearObjectStatePdu copyDataOutputStream()
+ public synchronized LinearObjectStatePdu copyDataOutputStream()
  {
      LinearObjectStatePdu newCopy = new LinearObjectStatePdu();
      try
@@ -154,7 +154,7 @@ public int getMarshalledSize()
 /** Setter for {@link LinearObjectStatePdu#objectID}
   * @param pObjectID new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
+public synchronized LinearObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
 {
     objectID = pObjectID;
     return this;
@@ -170,7 +170,7 @@ public ObjectIdentifier getObjectID()
 /** Setter for {@link LinearObjectStatePdu#referencedObjectID}
   * @param pReferencedObjectID new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
+public synchronized LinearObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
@@ -186,7 +186,7 @@ public ObjectIdentifier getReferencedObjectID()
 /** Setter for {@link LinearObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setUpdateNumber(short pUpdateNumber)
+public synchronized LinearObjectStatePdu setUpdateNumber(short pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
@@ -194,7 +194,7 @@ public LinearObjectStatePdu setUpdateNumber(short pUpdateNumber)
 /** Utility setter for {@link LinearObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setUpdateNumber(int pUpdateNumber){
+public synchronized LinearObjectStatePdu setUpdateNumber(int pUpdateNumber){
     updateNumber = (short) pUpdateNumber;
     return this;
 }
@@ -208,7 +208,7 @@ public short getUpdateNumber()
 /** Setter for {@link LinearObjectStatePdu#forceID}
   * @param pForceID new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setForceID(ForceID pForceID)
+public synchronized LinearObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
@@ -223,7 +223,7 @@ public ForceID getForceID()
 /** Setter for {@link LinearObjectStatePdu#requesterID}
   * @param pRequesterID new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
+public synchronized LinearObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
@@ -239,7 +239,7 @@ public SimulationAddress getRequesterID()
 /** Setter for {@link LinearObjectStatePdu#receivingID}
   * @param pReceivingID new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
+public synchronized LinearObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
@@ -255,7 +255,7 @@ public SimulationAddress getReceivingID()
 /** Setter for {@link LinearObjectStatePdu#objectType}
   * @param pObjectType new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setObjectType(ObjectType pObjectType)
+public synchronized LinearObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
@@ -271,7 +271,7 @@ public ObjectType getObjectType()
 /** Setter for {@link LinearObjectStatePdu#linearSegmentParameters}
   * @param pLinearSegmentParameters new value of interest
   * @return same object to permit progressive setters */
-public LinearObjectStatePdu setLinearSegmentParameters(List<LinearSegmentParameter> pLinearSegmentParameters)
+public synchronized LinearObjectStatePdu setLinearSegmentParameters(List<LinearSegmentParameter> pLinearSegmentParameters)
 {
     linearSegmentParameters = pLinearSegmentParameters;
     return this;
@@ -324,7 +324,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -394,7 +394,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -436,7 +436,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -451,7 +451,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -472,7 +472,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

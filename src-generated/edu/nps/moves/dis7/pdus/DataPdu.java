@@ -46,13 +46,13 @@ public class DataPdu extends SimulationManagementFamilyPdu implements Serializab
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DataPdu copy()
+ public synchronized DataPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DataPdu copyByteBuffer()
+ public synchronized DataPdu copyByteBuffer()
  {
      DataPdu newCopy = new DataPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DataPdu copyDataOutputStream()
+ public synchronized DataPdu copyDataOutputStream()
  {
      DataPdu newCopy = new DataPdu();
      try
@@ -141,7 +141,7 @@ public int getMarshalledSize()
 /** Setter for {@link DataPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public DataPdu setRequestID(int pRequestID)
+public synchronized DataPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -156,7 +156,7 @@ public int getRequestID()
 /** Setter for {@link DataPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public DataPdu setPadding1(int pPadding1)
+public synchronized DataPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -171,7 +171,7 @@ public int getPadding1()
 /** Setter for {@link DataPdu#fixedDatums}
   * @param pFixedDatums new value of interest
   * @return same object to permit progressive setters */
-public DataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
+public synchronized DataPdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
@@ -186,7 +186,7 @@ public List<FixedDatum> getFixedDatums()
 /** Setter for {@link DataPdu#variableDatums}
   * @param pVariableDatums new value of interest
   * @return same object to permit progressive setters */
-public DataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
+public synchronized DataPdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
@@ -242,7 +242,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -319,7 +319,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -361,7 +361,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -376,7 +376,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -396,7 +396,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -49,13 +49,13 @@ public class TransferOwnershipPdu extends EntityManagementFamilyPdu implements S
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public TransferOwnershipPdu copy()
+ public synchronized TransferOwnershipPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public TransferOwnershipPdu copyByteBuffer()
+ public synchronized TransferOwnershipPdu copyByteBuffer()
  {
      TransferOwnershipPdu newCopy = new TransferOwnershipPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -82,7 +82,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public TransferOwnershipPdu copyDataOutputStream()
+ public synchronized TransferOwnershipPdu copyDataOutputStream()
  {
      TransferOwnershipPdu newCopy = new TransferOwnershipPdu();
      try
@@ -141,7 +141,7 @@ public int getMarshalledSize()
 /** Setter for {@link TransferOwnershipPdu#originatingEntityID}
   * @param pOriginatingEntityID new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setOriginatingEntityID(EntityID pOriginatingEntityID)
+public synchronized TransferOwnershipPdu setOriginatingEntityID(EntityID pOriginatingEntityID)
 {
     originatingEntityID = pOriginatingEntityID;
     return this;
@@ -157,7 +157,7 @@ public EntityID getOriginatingEntityID()
 /** Setter for {@link TransferOwnershipPdu#receivingEntityID}
   * @param pReceivingEntityID new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setReceivingEntityID(EntityID pReceivingEntityID)
+public synchronized TransferOwnershipPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
@@ -173,7 +173,7 @@ public EntityID getReceivingEntityID()
 /** Setter for {@link TransferOwnershipPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setRequestID(int pRequestID)
+public synchronized TransferOwnershipPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -188,7 +188,7 @@ public int getRequestID()
 /** Setter for {@link TransferOwnershipPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized TransferOwnershipPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -203,7 +203,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link TransferOwnershipPdu#transferType}
   * @param pTransferType new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setTransferType(TransferControlTransferType pTransferType)
+public synchronized TransferOwnershipPdu setTransferType(TransferControlTransferType pTransferType)
 {
     transferType = pTransferType;
     return this;
@@ -218,7 +218,7 @@ public TransferControlTransferType getTransferType()
 /** Setter for {@link TransferOwnershipPdu#transferEntityID}
   * @param pTransferEntityID new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setTransferEntityID(EntityID pTransferEntityID)
+public synchronized TransferOwnershipPdu setTransferEntityID(EntityID pTransferEntityID)
 {
     transferEntityID = pTransferEntityID;
     return this;
@@ -234,7 +234,7 @@ public EntityID getTransferEntityID()
 /** Setter for {@link TransferOwnershipPdu#recordSets}
   * @param pRecordSets new value of interest
   * @return same object to permit progressive setters */
-public TransferOwnershipPdu setRecordSets(RecordSpecification pRecordSets)
+public synchronized TransferOwnershipPdu setRecordSets(RecordSpecification pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
@@ -280,7 +280,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -334,7 +334,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -366,7 +366,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -381,7 +381,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -398,7 +398,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

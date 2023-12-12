@@ -52,13 +52,13 @@ public class SEESPdu extends DistributedEmissionsRegenerationFamilyPdu implement
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public SEESPdu copy()
+ public synchronized SEESPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public SEESPdu copyByteBuffer()
+ public synchronized SEESPdu copyByteBuffer()
  {
      SEESPdu newCopy = new SEESPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -85,7 +85,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public SEESPdu copyDataOutputStream()
+ public synchronized SEESPdu copyDataOutputStream()
  {
      SEESPdu newCopy = new SEESPdu();
      try
@@ -150,7 +150,7 @@ public int getMarshalledSize()
 /** Setter for {@link SEESPdu#orginatingEntityID}
   * @param pOrginatingEntityID new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
+public synchronized SEESPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
 {
     orginatingEntityID = pOrginatingEntityID;
     return this;
@@ -166,7 +166,7 @@ public EntityID getOrginatingEntityID()
 /** Setter for {@link SEESPdu#infraredSignatureRepresentationIndex}
   * @param pInfraredSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setInfraredSignatureRepresentationIndex(short pInfraredSignatureRepresentationIndex)
+public synchronized SEESPdu setInfraredSignatureRepresentationIndex(short pInfraredSignatureRepresentationIndex)
 {
     infraredSignatureRepresentationIndex = pInfraredSignatureRepresentationIndex;
     return this;
@@ -174,7 +174,7 @@ public SEESPdu setInfraredSignatureRepresentationIndex(short pInfraredSignatureR
 /** Utility setter for {@link SEESPdu#infraredSignatureRepresentationIndex}
   * @param pInfraredSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setInfraredSignatureRepresentationIndex(int pInfraredSignatureRepresentationIndex){
+public synchronized SEESPdu setInfraredSignatureRepresentationIndex(int pInfraredSignatureRepresentationIndex){
     infraredSignatureRepresentationIndex = (short) pInfraredSignatureRepresentationIndex;
     return this;
 }
@@ -188,7 +188,7 @@ public short getInfraredSignatureRepresentationIndex()
 /** Setter for {@link SEESPdu#acousticSignatureRepresentationIndex}
   * @param pAcousticSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setAcousticSignatureRepresentationIndex(short pAcousticSignatureRepresentationIndex)
+public synchronized SEESPdu setAcousticSignatureRepresentationIndex(short pAcousticSignatureRepresentationIndex)
 {
     acousticSignatureRepresentationIndex = pAcousticSignatureRepresentationIndex;
     return this;
@@ -196,7 +196,7 @@ public SEESPdu setAcousticSignatureRepresentationIndex(short pAcousticSignatureR
 /** Utility setter for {@link SEESPdu#acousticSignatureRepresentationIndex}
   * @param pAcousticSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setAcousticSignatureRepresentationIndex(int pAcousticSignatureRepresentationIndex){
+public synchronized SEESPdu setAcousticSignatureRepresentationIndex(int pAcousticSignatureRepresentationIndex){
     acousticSignatureRepresentationIndex = (short) pAcousticSignatureRepresentationIndex;
     return this;
 }
@@ -210,7 +210,7 @@ public short getAcousticSignatureRepresentationIndex()
 /** Setter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
   * @param pRadarCrossSectionSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setRadarCrossSectionSignatureRepresentationIndex(short pRadarCrossSectionSignatureRepresentationIndex)
+public synchronized SEESPdu setRadarCrossSectionSignatureRepresentationIndex(short pRadarCrossSectionSignatureRepresentationIndex)
 {
     radarCrossSectionSignatureRepresentationIndex = pRadarCrossSectionSignatureRepresentationIndex;
     return this;
@@ -218,7 +218,7 @@ public SEESPdu setRadarCrossSectionSignatureRepresentationIndex(short pRadarCros
 /** Utility setter for {@link SEESPdu#radarCrossSectionSignatureRepresentationIndex}
   * @param pRadarCrossSectionSignatureRepresentationIndex new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setRadarCrossSectionSignatureRepresentationIndex(int pRadarCrossSectionSignatureRepresentationIndex){
+public synchronized SEESPdu setRadarCrossSectionSignatureRepresentationIndex(int pRadarCrossSectionSignatureRepresentationIndex){
     radarCrossSectionSignatureRepresentationIndex = (short) pRadarCrossSectionSignatureRepresentationIndex;
     return this;
 }
@@ -232,7 +232,7 @@ public short getRadarCrossSectionSignatureRepresentationIndex()
 /** Setter for {@link SEESPdu#propulsionSystemData}
   * @param pPropulsionSystemData new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setPropulsionSystemData(List<PropulsionSystemData> pPropulsionSystemData)
+public synchronized SEESPdu setPropulsionSystemData(List<PropulsionSystemData> pPropulsionSystemData)
 {
     propulsionSystemData = pPropulsionSystemData;
     return this;
@@ -247,7 +247,7 @@ public List<PropulsionSystemData> getPropulsionSystemData()
 /** Setter for {@link SEESPdu#vectoringSystemData}
   * @param pVectoringSystemData new value of interest
   * @return same object to permit progressive setters */
-public SEESPdu setVectoringSystemData(List<VectoringNozzleSystem> pVectoringSystemData)
+public synchronized SEESPdu setVectoringSystemData(List<VectoringNozzleSystem> pVectoringSystemData)
 {
     vectoringSystemData = pVectoringSystemData;
     return this;
@@ -305,7 +305,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -387,7 +387,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -433,7 +433,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -448,7 +448,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -470,7 +470,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

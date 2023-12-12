@@ -45,7 +45,7 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
  }
     /** Create deep copy of current object using PduFactory.
      * @return deep copy of PDU */
-     public Pdu copyByPduFactory()
+     public synchronized Pdu copyByPduFactory()
      {
          PduFactory pduFactory = new PduFactory();
          Pdu newPdu = pduFactory.createPdu(pduType); // initialize empty as placeholder
@@ -87,7 +87,7 @@ public int getMarshalledSize()
 /** Setter for {@link Pdu#protocolVersion}
   * @param pProtocolVersion new value of interest
   * @return same object to permit progressive setters */
-public Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
+public synchronized Pdu setProtocolVersion(DISProtocolVersion pProtocolVersion)
 {
     protocolVersion = pProtocolVersion;
     return this;
@@ -102,7 +102,7 @@ public DISProtocolVersion getProtocolVersion()
 /** Setter for {@link Pdu#exerciseID}
   * @param pExerciseID new value of interest
   * @return same object to permit progressive setters */
-public Pdu setExerciseID(byte pExerciseID)
+public synchronized Pdu setExerciseID(byte pExerciseID)
 {
     exerciseID = pExerciseID;
     return this;
@@ -110,7 +110,7 @@ public Pdu setExerciseID(byte pExerciseID)
 /** Utility setter for {@link Pdu#exerciseID}
   * @param pExerciseID new value of interest
   * @return same object to permit progressive setters */
-public Pdu setExerciseID(int pExerciseID){
+public synchronized Pdu setExerciseID(int pExerciseID){
     exerciseID = (byte) pExerciseID;
     return this;
 }
@@ -124,7 +124,7 @@ public byte getExerciseID()
 /** Setter for {@link Pdu#pduType}
   * @param pPduType new value of interest
   * @return same object to permit progressive setters */
-public Pdu setPduType(DisPduType pPduType)
+public synchronized Pdu setPduType(DisPduType pPduType)
 {
     pduType = pPduType;
     return this;
@@ -139,7 +139,7 @@ public DisPduType getPduType()
 /** Setter for {@link Pdu#protocolFamily}
   * @param pProtocolFamily new value of interest
   * @return same object to permit progressive setters */
-public Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
+public synchronized Pdu setProtocolFamily(DISProtocolFamily pProtocolFamily)
 {
     protocolFamily = pProtocolFamily;
     return this;
@@ -157,7 +157,7 @@ public DISProtocolFamily getProtocolFamily()
   * @see edu.nps.moves.dis7.utilities.DisTime
   * @param pTimestamp new value of interest
   * @return same object to permit progressive setters */
-public Pdu setTimestamp(int pTimestamp)
+public synchronized Pdu setTimestamp(int pTimestamp)
 {
     timestamp = pTimestamp;
     return this;
@@ -175,7 +175,7 @@ public int getTimestamp()
 /** Setter for {@link Pdu#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public Pdu setLength(short pLength)
+public synchronized Pdu setLength(short pLength)
 {
     length = pLength;
     return this;
@@ -183,7 +183,7 @@ public Pdu setLength(short pLength)
 /** Utility setter for {@link Pdu#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public Pdu setLength(int pLength){
+public synchronized Pdu setLength(int pLength){
     length = (short) pLength;
     return this;
 }
@@ -225,7 +225,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -277,7 +277,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -308,7 +308,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return a byte array with the marshalled {@link Pdu}
  * @throws Exception ByteBuffer-generated exception
  */
-public byte[] marshal() throws Exception
+public synchronized byte[] marshal() throws Exception
 {
     byte[] data = new byte[getMarshalledSize()];
     java.nio.ByteBuffer byteBuffer = java.nio.ByteBuffer.wrap(data);
@@ -319,7 +319,7 @@ public byte[] marshal() throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -339,7 +339,7 @@ public byte[] marshal() throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -355,7 +355,7 @@ public byte[] marshal() throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
@@ -378,7 +378,7 @@ public byte[] marshal() throws Exception
   * @see edu.nps.moves.dis7.utilities.DisTime
   * @param newTimestamp new timestamp in seconds
   * @return same object to permit progressive setters */
-public Pdu setTimestampSeconds(double newTimestamp)
+public synchronized Pdu setTimestampSeconds(double newTimestamp)
 {
     timestamp = (int) ((newTimestamp * 3600.0) / Integer.MAX_VALUE);
     return this;

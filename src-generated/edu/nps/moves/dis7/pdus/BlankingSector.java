@@ -95,7 +95,7 @@ public int getMarshalledSize()
 /** Setter for {@link BlankingSector#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setRecordType(int pRecordType)
+public synchronized BlankingSector setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -110,7 +110,7 @@ public int getRecordType()
 /** Setter for {@link BlankingSector#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setRecordLength(short pRecordLength)
+public synchronized BlankingSector setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -118,7 +118,7 @@ public BlankingSector setRecordLength(short pRecordLength)
 /** Utility setter for {@link BlankingSector#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setRecordLength(int pRecordLength){
+public synchronized BlankingSector setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -132,7 +132,7 @@ public short getRecordLength()
 /** Setter for {@link BlankingSector#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding(short pPadding)
+public synchronized BlankingSector setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -140,7 +140,7 @@ public BlankingSector setPadding(short pPadding)
 /** Utility setter for {@link BlankingSector#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding(int pPadding){
+public synchronized BlankingSector setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -154,7 +154,7 @@ public short getPadding()
 /** Setter for {@link BlankingSector#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setEmitterNumber(byte pEmitterNumber)
+public synchronized BlankingSector setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
@@ -162,7 +162,7 @@ public BlankingSector setEmitterNumber(byte pEmitterNumber)
 /** Utility setter for {@link BlankingSector#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setEmitterNumber(int pEmitterNumber){
+public synchronized BlankingSector setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
@@ -176,7 +176,7 @@ public byte getEmitterNumber()
 /** Setter for {@link BlankingSector#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setBeamNumber(byte pBeamNumber)
+public synchronized BlankingSector setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
@@ -184,7 +184,7 @@ public BlankingSector setBeamNumber(byte pBeamNumber)
 /** Utility setter for {@link BlankingSector#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setBeamNumber(int pBeamNumber){
+public synchronized BlankingSector setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
@@ -198,7 +198,7 @@ public byte getBeamNumber()
 /** Setter for {@link BlankingSector#stateIndicator}
   * @param pStateIndicator new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setStateIndicator(EEAttributeStateIndicator pStateIndicator)
+public synchronized BlankingSector setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
@@ -213,7 +213,7 @@ public EEAttributeStateIndicator getStateIndicator()
 /** Setter for {@link BlankingSector#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding2(byte pPadding2)
+public synchronized BlankingSector setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -221,7 +221,7 @@ public BlankingSector setPadding2(byte pPadding2)
 /** Utility setter for {@link BlankingSector#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding2(int pPadding2){
+public synchronized BlankingSector setPadding2(int pPadding2){
     padding2 = (byte) pPadding2;
     return this;
 }
@@ -235,7 +235,7 @@ public byte getPadding2()
 /** Setter for {@link BlankingSector#leftAzimuth}
   * @param pLeftAzimuth new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setLeftAzimuth(float pLeftAzimuth)
+public synchronized BlankingSector setLeftAzimuth(float pLeftAzimuth)
 {
     leftAzimuth = pLeftAzimuth;
     return this;
@@ -250,7 +250,7 @@ public float getLeftAzimuth()
 /** Setter for {@link BlankingSector#rightAzimuth}
   * @param pRightAzimuth new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setRightAzimuth(float pRightAzimuth)
+public synchronized BlankingSector setRightAzimuth(float pRightAzimuth)
 {
     rightAzimuth = pRightAzimuth;
     return this;
@@ -265,7 +265,7 @@ public float getRightAzimuth()
 /** Setter for {@link BlankingSector#lowerElevation}
   * @param pLowerElevation new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setLowerElevation(float pLowerElevation)
+public synchronized BlankingSector setLowerElevation(float pLowerElevation)
 {
     lowerElevation = pLowerElevation;
     return this;
@@ -280,7 +280,7 @@ public float getLowerElevation()
 /** Setter for {@link BlankingSector#upperElevation}
   * @param pUpperElevation new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setUpperElevation(float pUpperElevation)
+public synchronized BlankingSector setUpperElevation(float pUpperElevation)
 {
     upperElevation = pUpperElevation;
     return this;
@@ -295,7 +295,7 @@ public float getUpperElevation()
 /** Setter for {@link BlankingSector#residualPower}
   * @param pResidualPower new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setResidualPower(float pResidualPower)
+public synchronized BlankingSector setResidualPower(float pResidualPower)
 {
     residualPower = pResidualPower;
     return this;
@@ -310,7 +310,7 @@ public float getResidualPower()
 /** Setter for {@link BlankingSector#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding3(long pPadding3)
+public synchronized BlankingSector setPadding3(long pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -318,7 +318,7 @@ public BlankingSector setPadding3(long pPadding3)
 /** Utility setter for {@link BlankingSector#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public BlankingSector setPadding3(int pPadding3){
+public synchronized BlankingSector setPadding3(int pPadding3){
     padding3 = (long) pPadding3;
     return this;
 }
@@ -367,7 +367,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -440,7 +440,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -482,7 +482,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -502,7 +502,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -525,7 +525,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

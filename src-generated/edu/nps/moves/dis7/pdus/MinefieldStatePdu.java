@@ -64,13 +64,13 @@ public class MinefieldStatePdu extends MinefieldFamilyPdu implements Serializabl
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public MinefieldStatePdu copy()
+ public synchronized MinefieldStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public MinefieldStatePdu copyByteBuffer()
+ public synchronized MinefieldStatePdu copyByteBuffer()
  {
      MinefieldStatePdu newCopy = new MinefieldStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public MinefieldStatePdu copyDataOutputStream()
+ public synchronized MinefieldStatePdu copyDataOutputStream()
  {
      MinefieldStatePdu newCopy = new MinefieldStatePdu();
      try
@@ -172,7 +172,7 @@ public int getMarshalledSize()
 /** Setter for {@link MinefieldStatePdu#minefieldID}
   * @param pMinefieldID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldID(MinefieldIdentifier pMinefieldID)
+public synchronized MinefieldStatePdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
@@ -188,7 +188,7 @@ public MinefieldIdentifier getMinefieldID()
 /** Setter for {@link MinefieldStatePdu#minefieldSequence}
   * @param pMinefieldSequence new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldSequence(short pMinefieldSequence)
+public synchronized MinefieldStatePdu setMinefieldSequence(short pMinefieldSequence)
 {
     minefieldSequence = pMinefieldSequence;
     return this;
@@ -196,7 +196,7 @@ public MinefieldStatePdu setMinefieldSequence(short pMinefieldSequence)
 /** Utility setter for {@link MinefieldStatePdu#minefieldSequence}
   * @param pMinefieldSequence new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldSequence(int pMinefieldSequence){
+public synchronized MinefieldStatePdu setMinefieldSequence(int pMinefieldSequence){
     minefieldSequence = (short) pMinefieldSequence;
     return this;
 }
@@ -210,7 +210,7 @@ public short getMinefieldSequence()
 /** Setter for {@link MinefieldStatePdu#forceID}
   * @param pForceID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setForceID(ForceID pForceID)
+public synchronized MinefieldStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
@@ -225,7 +225,7 @@ public ForceID getForceID()
 /** Setter for {@link MinefieldStatePdu#minefieldType}
   * @param pMinefieldType new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldType(EntityType pMinefieldType)
+public synchronized MinefieldStatePdu setMinefieldType(EntityType pMinefieldType)
 {
     minefieldType = pMinefieldType;
     return this;
@@ -241,7 +241,7 @@ public EntityType getMinefieldType()
 /** Setter for {@link MinefieldStatePdu#minefieldLocation}
   * @param pMinefieldLocation new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldLocation(Vector3Double pMinefieldLocation)
+public synchronized MinefieldStatePdu setMinefieldLocation(Vector3Double pMinefieldLocation)
 {
     minefieldLocation = pMinefieldLocation;
     return this;
@@ -257,7 +257,7 @@ public Vector3Double getMinefieldLocation()
 /** Setter for {@link MinefieldStatePdu#minefieldOrientation}
   * @param pMinefieldOrientation new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMinefieldOrientation(EulerAngles pMinefieldOrientation)
+public synchronized MinefieldStatePdu setMinefieldOrientation(EulerAngles pMinefieldOrientation)
 {
     minefieldOrientation = pMinefieldOrientation;
     return this;
@@ -273,7 +273,7 @@ public EulerAngles getMinefieldOrientation()
 /** Setter for {@link MinefieldStatePdu#appearance}
   * @param pAppearance new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setAppearance(MinefieldStateAppearanceBitMap pAppearance)
+public synchronized MinefieldStatePdu setAppearance(MinefieldStateAppearanceBitMap pAppearance)
 {
     appearance = pAppearance;
     return this;
@@ -288,7 +288,7 @@ public MinefieldStateAppearanceBitMap getAppearance()
 /** Setter for {@link MinefieldStatePdu#protocolMode}
   * @param pProtocolMode new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setProtocolMode(ProtocolMode pProtocolMode)
+public synchronized MinefieldStatePdu setProtocolMode(ProtocolMode pProtocolMode)
 {
     protocolMode = pProtocolMode;
     return this;
@@ -304,7 +304,7 @@ public ProtocolMode getProtocolMode()
 /** Setter for {@link MinefieldStatePdu#perimeterPoints}
   * @param pPerimeterPoints new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setPerimeterPoints(List<Vector2Float> pPerimeterPoints)
+public synchronized MinefieldStatePdu setPerimeterPoints(List<Vector2Float> pPerimeterPoints)
 {
     perimeterPoints = pPerimeterPoints;
     return this;
@@ -319,7 +319,7 @@ public List<Vector2Float> getPerimeterPoints()
 /** Setter for {@link MinefieldStatePdu#mineType}
   * @param pMineType new value of interest
   * @return same object to permit progressive setters */
-public MinefieldStatePdu setMineType(List<EntityType> pMineType)
+public synchronized MinefieldStatePdu setMineType(List<EntityType> pMineType)
 {
     mineType = pMineType;
     return this;
@@ -381,7 +381,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -470,7 +470,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -524,7 +524,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -539,7 +539,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -565,7 +565,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

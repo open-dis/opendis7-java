@@ -58,13 +58,13 @@ public class AttributePdu extends EntityInformationInteractionFamilyPdu implemen
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public AttributePdu copy()
+ public synchronized AttributePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public AttributePdu copyByteBuffer()
+ public synchronized AttributePdu copyByteBuffer()
  {
      AttributePdu newCopy = new AttributePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -91,7 +91,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public AttributePdu copyDataOutputStream()
+ public synchronized AttributePdu copyDataOutputStream()
  {
      AttributePdu newCopy = new AttributePdu();
      try
@@ -157,7 +157,7 @@ public int getMarshalledSize()
 /** Setter for {@link AttributePdu#originatingSimulationAddress}
   * @param pOriginatingSimulationAddress new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setOriginatingSimulationAddress(SimulationAddress pOriginatingSimulationAddress)
+public synchronized AttributePdu setOriginatingSimulationAddress(SimulationAddress pOriginatingSimulationAddress)
 {
     originatingSimulationAddress = pOriginatingSimulationAddress;
     return this;
@@ -173,7 +173,7 @@ public SimulationAddress getOriginatingSimulationAddress()
 /** Setter for {@link AttributePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setPadding1(int pPadding1)
+public synchronized AttributePdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -188,7 +188,7 @@ public int getPadding1()
 /** Setter for {@link AttributePdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setPadding2(short pPadding2)
+public synchronized AttributePdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -196,7 +196,7 @@ public AttributePdu setPadding2(short pPadding2)
 /** Utility setter for {@link AttributePdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setPadding2(int pPadding2){
+public synchronized AttributePdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -210,7 +210,7 @@ public short getPadding2()
 /** Setter for {@link AttributePdu#attributeRecordPduType}
   * @param pAttributeRecordPduType new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setAttributeRecordPduType(DisPduType pAttributeRecordPduType)
+public synchronized AttributePdu setAttributeRecordPduType(DisPduType pAttributeRecordPduType)
 {
     attributeRecordPduType = pAttributeRecordPduType;
     return this;
@@ -225,7 +225,7 @@ public DisPduType getAttributeRecordPduType()
 /** Setter for {@link AttributePdu#attributeRecordProtocolVersion}
   * @param pAttributeRecordProtocolVersion new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setAttributeRecordProtocolVersion(DISProtocolFamily pAttributeRecordProtocolVersion)
+public synchronized AttributePdu setAttributeRecordProtocolVersion(DISProtocolFamily pAttributeRecordProtocolVersion)
 {
     attributeRecordProtocolVersion = pAttributeRecordProtocolVersion;
     return this;
@@ -240,7 +240,7 @@ public DISProtocolFamily getAttributeRecordProtocolVersion()
 /** Setter for {@link AttributePdu#masterAttributeRecordType}
   * @param pMasterAttributeRecordType new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setMasterAttributeRecordType(VariableRecordType pMasterAttributeRecordType)
+public synchronized AttributePdu setMasterAttributeRecordType(VariableRecordType pMasterAttributeRecordType)
 {
     masterAttributeRecordType = pMasterAttributeRecordType;
     return this;
@@ -255,7 +255,7 @@ public VariableRecordType getMasterAttributeRecordType()
 /** Setter for {@link AttributePdu#actionCode}
   * @param pActionCode new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setActionCode(DISAttributeActionCode pActionCode)
+public synchronized AttributePdu setActionCode(DISAttributeActionCode pActionCode)
 {
     actionCode = pActionCode;
     return this;
@@ -270,7 +270,7 @@ public DISAttributeActionCode getActionCode()
 /** Setter for {@link AttributePdu#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setPadding3(byte pPadding3)
+public synchronized AttributePdu setPadding3(byte pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -278,7 +278,7 @@ public AttributePdu setPadding3(byte pPadding3)
 /** Utility setter for {@link AttributePdu#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setPadding3(int pPadding3){
+public synchronized AttributePdu setPadding3(int pPadding3){
     padding3 = (byte) pPadding3;
     return this;
 }
@@ -292,7 +292,7 @@ public byte getPadding3()
 /** Setter for {@link AttributePdu#attributeRecordSets}
   * @param pAttributeRecordSets new value of interest
   * @return same object to permit progressive setters */
-public AttributePdu setAttributeRecordSets(List<AttributeRecordSet> pAttributeRecordSets)
+public synchronized AttributePdu setAttributeRecordSets(List<AttributeRecordSet> pAttributeRecordSets)
 {
     attributeRecordSets = pAttributeRecordSets;
     return this;
@@ -346,7 +346,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -423,7 +423,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -467,7 +467,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -482,7 +482,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -504,7 +504,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

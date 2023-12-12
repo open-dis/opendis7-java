@@ -64,13 +64,13 @@ public class DetonationPdu extends WarfareFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DetonationPdu copy()
+ public synchronized DetonationPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DetonationPdu copyByteBuffer()
+ public synchronized DetonationPdu copyByteBuffer()
  {
      DetonationPdu newCopy = new DetonationPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DetonationPdu copyDataOutputStream()
+ public synchronized DetonationPdu copyDataOutputStream()
  {
      DetonationPdu newCopy = new DetonationPdu();
      try
@@ -169,7 +169,7 @@ public int getMarshalledSize()
 /** Setter for {@link DetonationPdu#sourceEntityID}
   * @param pSourceEntityID new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setSourceEntityID(EntityID pSourceEntityID)
+public synchronized DetonationPdu setSourceEntityID(EntityID pSourceEntityID)
 {
     sourceEntityID = pSourceEntityID;
     return this;
@@ -185,7 +185,7 @@ public EntityID getSourceEntityID()
 /** Setter for {@link DetonationPdu#targetEntityID}
   * @param pTargetEntityID new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setTargetEntityID(EntityID pTargetEntityID)
+public synchronized DetonationPdu setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
@@ -201,7 +201,7 @@ public EntityID getTargetEntityID()
 /** Setter for {@link DetonationPdu#explodingEntityID}
   * @param pExplodingEntityID new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setExplodingEntityID(EntityID pExplodingEntityID)
+public synchronized DetonationPdu setExplodingEntityID(EntityID pExplodingEntityID)
 {
     explodingEntityID = pExplodingEntityID;
     return this;
@@ -217,7 +217,7 @@ public EntityID getExplodingEntityID()
 /** Setter for {@link DetonationPdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setEventID(EventIdentifier pEventID)
+public synchronized DetonationPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -233,7 +233,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link DetonationPdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setVelocity(Vector3Float pVelocity)
+public synchronized DetonationPdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -249,7 +249,7 @@ public Vector3Float getVelocity()
 /** Setter for {@link DetonationPdu#locationInWorldCoordinates}
   * @param pLocationInWorldCoordinates new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
+public synchronized DetonationPdu setLocationInWorldCoordinates(Vector3Double pLocationInWorldCoordinates)
 {
     locationInWorldCoordinates = pLocationInWorldCoordinates;
     return this;
@@ -265,7 +265,7 @@ public Vector3Double getLocationInWorldCoordinates()
 /** Setter for {@link DetonationPdu#descriptor}
   * @param pDescriptor new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setDescriptor(MunitionDescriptor pDescriptor)
+public synchronized DetonationPdu setDescriptor(MunitionDescriptor pDescriptor)
 {
     descriptor = pDescriptor;
     return this;
@@ -281,7 +281,7 @@ public MunitionDescriptor getDescriptor()
 /** Setter for {@link DetonationPdu#locationOfEntityCoordinates}
   * @param pLocationOfEntityCoordinates new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setLocationOfEntityCoordinates(Vector3Float pLocationOfEntityCoordinates)
+public synchronized DetonationPdu setLocationOfEntityCoordinates(Vector3Float pLocationOfEntityCoordinates)
 {
     locationOfEntityCoordinates = pLocationOfEntityCoordinates;
     return this;
@@ -297,7 +297,7 @@ public Vector3Float getLocationOfEntityCoordinates()
 /** Setter for {@link DetonationPdu#detonationResult}
   * @param pDetonationResult new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setDetonationResult(DetonationResult pDetonationResult)
+public synchronized DetonationPdu setDetonationResult(DetonationResult pDetonationResult)
 {
     detonationResult = pDetonationResult;
     return this;
@@ -312,7 +312,7 @@ public DetonationResult getDetonationResult()
 /** Setter for {@link DetonationPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setPad(short pPad)
+public synchronized DetonationPdu setPad(short pPad)
 {
     pad = pPad;
     return this;
@@ -320,7 +320,7 @@ public DetonationPdu setPad(short pPad)
 /** Utility setter for {@link DetonationPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setPad(int pPad){
+public synchronized DetonationPdu setPad(int pPad){
     pad = (short) pPad;
     return this;
 }
@@ -334,7 +334,7 @@ public short getPad()
 /** Setter for {@link DetonationPdu#variableParameters}
   * @param pVariableParameters new value of interest
   * @return same object to permit progressive setters */
-public DetonationPdu setVariableParameters(List<VariableParameter> pVariableParameters)
+public synchronized DetonationPdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
@@ -390,7 +390,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -466,7 +466,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -514,7 +514,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -529,7 +529,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -553,7 +553,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

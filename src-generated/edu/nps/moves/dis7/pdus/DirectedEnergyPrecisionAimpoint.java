@@ -108,7 +108,7 @@ public int getMarshalledSize()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setRecordType(int pRecordType)
+public synchronized DirectedEnergyPrecisionAimpoint setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -123,7 +123,7 @@ public int getRecordType()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setRecordLength(short pRecordLength)
+public synchronized DirectedEnergyPrecisionAimpoint setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -131,7 +131,7 @@ public DirectedEnergyPrecisionAimpoint setRecordLength(short pRecordLength)
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setRecordLength(int pRecordLength){
+public synchronized DirectedEnergyPrecisionAimpoint setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -145,7 +145,7 @@ public short getRecordLength()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setPadding(short pPadding)
+public synchronized DirectedEnergyPrecisionAimpoint setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -153,7 +153,7 @@ public DirectedEnergyPrecisionAimpoint setPadding(short pPadding)
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setPadding(int pPadding){
+public synchronized DirectedEnergyPrecisionAimpoint setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -167,7 +167,7 @@ public short getPadding()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotLocation}
   * @param pTargetSpotLocation new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetSpotLocation(Vector3Double pTargetSpotLocation)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetSpotLocation(Vector3Double pTargetSpotLocation)
 {
     targetSpotLocation = pTargetSpotLocation;
     return this;
@@ -183,7 +183,7 @@ public Vector3Double getTargetSpotLocation()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotEntityLocation}
   * @param pTargetSpotEntityLocation new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetSpotEntityLocation(Vector3Float pTargetSpotEntityLocation)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetSpotEntityLocation(Vector3Float pTargetSpotEntityLocation)
 {
     targetSpotEntityLocation = pTargetSpotEntityLocation;
     return this;
@@ -199,7 +199,7 @@ public Vector3Float getTargetSpotEntityLocation()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotVelocity}
   * @param pTargetSpotVelocity new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetSpotVelocity(Vector3Float pTargetSpotVelocity)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetSpotVelocity(Vector3Float pTargetSpotVelocity)
 {
     targetSpotVelocity = pTargetSpotVelocity;
     return this;
@@ -215,7 +215,7 @@ public Vector3Float getTargetSpotVelocity()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetSpotAcceleration}
   * @param pTargetSpotAcceleration new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetSpotAcceleration(Vector3Float pTargetSpotAcceleration)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetSpotAcceleration(Vector3Float pTargetSpotAcceleration)
 {
     targetSpotAcceleration = pTargetSpotAcceleration;
     return this;
@@ -231,7 +231,7 @@ public Vector3Float getTargetSpotAcceleration()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetEntityID}
   * @param pTargetEntityID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetEntityID(EntityID pTargetEntityID)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetEntityID(EntityID pTargetEntityID)
 {
     targetEntityID = pTargetEntityID;
     return this;
@@ -247,7 +247,7 @@ public EntityID getTargetEntityID()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}
   * @param pTargetComponentID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetComponentID(byte pTargetComponentID)
+public synchronized DirectedEnergyPrecisionAimpoint setTargetComponentID(byte pTargetComponentID)
 {
     targetComponentID = pTargetComponentID;
     return this;
@@ -255,7 +255,7 @@ public DirectedEnergyPrecisionAimpoint setTargetComponentID(byte pTargetComponen
 /** Utility setter for {@link DirectedEnergyPrecisionAimpoint#targetComponentID}
   * @param pTargetComponentID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setTargetComponentID(int pTargetComponentID){
+public synchronized DirectedEnergyPrecisionAimpoint setTargetComponentID(int pTargetComponentID){
     targetComponentID = (byte) pTargetComponentID;
     return this;
 }
@@ -269,7 +269,7 @@ public byte getTargetComponentID()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotType}
   * @param pBeamSpotType new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionAimpointBeamSpotType pBeamSpotType)
+public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotType(DEPrecisionAimpointBeamSpotType pBeamSpotType)
 {
     beamSpotType = pBeamSpotType;
     return this;
@@ -284,7 +284,7 @@ public DEPrecisionAimpointBeamSpotType getBeamSpotType()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMajorAxis}
   * @param pBeamSpotCrossSectionSemiMajorAxis new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMajorAxis(float pBeamSpotCrossSectionSemiMajorAxis)
+public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMajorAxis(float pBeamSpotCrossSectionSemiMajorAxis)
 {
     beamSpotCrossSectionSemiMajorAxis = pBeamSpotCrossSectionSemiMajorAxis;
     return this;
@@ -299,7 +299,7 @@ public float getBeamSpotCrossSectionSemiMajorAxis()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionSemiMinorAxis}
   * @param pBeamSpotCrossSectionSemiMinorAxis new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMinorAxis(float pBeamSpotCrossSectionSemiMinorAxis)
+public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionSemiMinorAxis(float pBeamSpotCrossSectionSemiMinorAxis)
 {
     beamSpotCrossSectionSemiMinorAxis = pBeamSpotCrossSectionSemiMinorAxis;
     return this;
@@ -314,7 +314,7 @@ public float getBeamSpotCrossSectionSemiMinorAxis()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#beamSpotCrossSectionOrientationAngle}
   * @param pBeamSpotCrossSectionOrientationAngle new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionOrientationAngle(float pBeamSpotCrossSectionOrientationAngle)
+public synchronized DirectedEnergyPrecisionAimpoint setBeamSpotCrossSectionOrientationAngle(float pBeamSpotCrossSectionOrientationAngle)
 {
     beamSpotCrossSectionOrientationAngle = pBeamSpotCrossSectionOrientationAngle;
     return this;
@@ -329,7 +329,7 @@ public float getBeamSpotCrossSectionOrientationAngle()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#peakIrradiance}
   * @param pPeakIrradiance new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setPeakIrradiance(float pPeakIrradiance)
+public synchronized DirectedEnergyPrecisionAimpoint setPeakIrradiance(float pPeakIrradiance)
 {
     peakIrradiance = pPeakIrradiance;
     return this;
@@ -344,7 +344,7 @@ public float getPeakIrradiance()
 /** Setter for {@link DirectedEnergyPrecisionAimpoint#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyPrecisionAimpoint setPadding2(int pPadding2)
+public synchronized DirectedEnergyPrecisionAimpoint setPadding2(int pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -396,7 +396,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -470,7 +470,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -516,7 +516,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -536,7 +536,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -561,7 +561,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -49,13 +49,13 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public IsGroupOfPdu copy()
+ public synchronized IsGroupOfPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public IsGroupOfPdu copyByteBuffer()
+ public synchronized IsGroupOfPdu copyByteBuffer()
  {
      IsGroupOfPdu newCopy = new IsGroupOfPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -82,7 +82,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public IsGroupOfPdu copyDataOutputStream()
+ public synchronized IsGroupOfPdu copyDataOutputStream()
  {
      IsGroupOfPdu newCopy = new IsGroupOfPdu();
      try
@@ -142,7 +142,7 @@ public int getMarshalledSize()
 /** Setter for {@link IsGroupOfPdu#groupEntityID}
   * @param pGroupEntityID new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setGroupEntityID(EntityID pGroupEntityID)
+public synchronized IsGroupOfPdu setGroupEntityID(EntityID pGroupEntityID)
 {
     groupEntityID = pGroupEntityID;
     return this;
@@ -158,7 +158,7 @@ public EntityID getGroupEntityID()
 /** Setter for {@link IsGroupOfPdu#groupedEntityCategory}
   * @param pGroupedEntityCategory new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntityCategory pGroupedEntityCategory)
+public synchronized IsGroupOfPdu setGroupedEntityCategory(IsGroupOfGroupedEntityCategory pGroupedEntityCategory)
 {
     groupedEntityCategory = pGroupedEntityCategory;
     return this;
@@ -173,7 +173,7 @@ public IsGroupOfGroupedEntityCategory getGroupedEntityCategory()
 /** Setter for {@link IsGroupOfPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setPad(int pPad)
+public synchronized IsGroupOfPdu setPad(int pPad)
 {
     pad = pPad;
     return this;
@@ -188,7 +188,7 @@ public int getPad()
 /** Setter for {@link IsGroupOfPdu#latitude}
   * @param pLatitude new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setLatitude(double pLatitude)
+public synchronized IsGroupOfPdu setLatitude(double pLatitude)
 {
     latitude = pLatitude;
     return this;
@@ -203,7 +203,7 @@ public double getLatitude()
 /** Setter for {@link IsGroupOfPdu#longitude}
   * @param pLongitude new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setLongitude(double pLongitude)
+public synchronized IsGroupOfPdu setLongitude(double pLongitude)
 {
     longitude = pLongitude;
     return this;
@@ -218,7 +218,7 @@ public double getLongitude()
 /** Setter for {@link IsGroupOfPdu#groupedEntityDescriptions}
   * @param pGroupedEntityDescriptions new value of interest
   * @return same object to permit progressive setters */
-public IsGroupOfPdu setGroupedEntityDescriptions(List<VariableDatum> pGroupedEntityDescriptions)
+public synchronized IsGroupOfPdu setGroupedEntityDescriptions(List<VariableDatum> pGroupedEntityDescriptions)
 {
     groupedEntityDescriptions = pGroupedEntityDescriptions;
     return this;
@@ -269,7 +269,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -337,7 +337,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -375,7 +375,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -390,7 +390,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -409,7 +409,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

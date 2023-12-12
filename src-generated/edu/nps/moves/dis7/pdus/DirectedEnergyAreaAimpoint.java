@@ -86,7 +86,7 @@ public int getMarshalledSize()
 /** Setter for {@link DirectedEnergyAreaAimpoint#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setRecordType(int pRecordType)
+public synchronized DirectedEnergyAreaAimpoint setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -101,7 +101,7 @@ public int getRecordType()
 /** Setter for {@link DirectedEnergyAreaAimpoint#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setRecordLength(short pRecordLength)
+public synchronized DirectedEnergyAreaAimpoint setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -109,7 +109,7 @@ public DirectedEnergyAreaAimpoint setRecordLength(short pRecordLength)
 /** Utility setter for {@link DirectedEnergyAreaAimpoint#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setRecordLength(int pRecordLength){
+public synchronized DirectedEnergyAreaAimpoint setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -123,7 +123,7 @@ public short getRecordLength()
 /** Setter for {@link DirectedEnergyAreaAimpoint#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setPadding(short pPadding)
+public synchronized DirectedEnergyAreaAimpoint setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -131,7 +131,7 @@ public DirectedEnergyAreaAimpoint setPadding(short pPadding)
 /** Utility setter for {@link DirectedEnergyAreaAimpoint#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setPadding(int pPadding){
+public synchronized DirectedEnergyAreaAimpoint setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -145,7 +145,7 @@ public short getPadding()
 /** Setter for {@link DirectedEnergyAreaAimpoint#beamAntennaParameterList}
   * @param pBeamAntennaParameterList new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setBeamAntennaParameterList(List<BeamAntennaPattern> pBeamAntennaParameterList)
+public synchronized DirectedEnergyAreaAimpoint setBeamAntennaParameterList(List<BeamAntennaPattern> pBeamAntennaParameterList)
 {
     beamAntennaParameterList = pBeamAntennaParameterList;
     return this;
@@ -160,7 +160,7 @@ public List<BeamAntennaPattern> getBeamAntennaParameterList()
 /** Setter for {@link DirectedEnergyAreaAimpoint#directedEnergyTargetEnergyDepositionRecordList}
   * @param pDirectedEnergyTargetEnergyDepositionRecordList new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyAreaAimpoint setDirectedEnergyTargetEnergyDepositionRecordList(List<DirectedEnergyTargetEnergyDeposition> pDirectedEnergyTargetEnergyDepositionRecordList)
+public synchronized DirectedEnergyAreaAimpoint setDirectedEnergyTargetEnergyDepositionRecordList(List<DirectedEnergyTargetEnergyDeposition> pDirectedEnergyTargetEnergyDepositionRecordList)
 {
     directedEnergyTargetEnergyDepositionRecordList = pDirectedEnergyTargetEnergyDepositionRecordList;
     return this;
@@ -217,7 +217,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -297,7 +297,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -341,7 +341,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -361,7 +361,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -382,7 +382,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

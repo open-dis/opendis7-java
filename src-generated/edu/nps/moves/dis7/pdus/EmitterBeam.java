@@ -97,7 +97,7 @@ public int getMarshalledSize()
 /** Setter for {@link EmitterBeam#beamDataLength}
   * @param pBeamDataLength new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamDataLength(byte pBeamDataLength)
+public synchronized EmitterBeam setBeamDataLength(byte pBeamDataLength)
 {
     beamDataLength = pBeamDataLength;
     return this;
@@ -105,7 +105,7 @@ public EmitterBeam setBeamDataLength(byte pBeamDataLength)
 /** Utility setter for {@link EmitterBeam#beamDataLength}
   * @param pBeamDataLength new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamDataLength(int pBeamDataLength){
+public synchronized EmitterBeam setBeamDataLength(int pBeamDataLength){
     beamDataLength = (byte) pBeamDataLength;
     return this;
 }
@@ -119,7 +119,7 @@ public byte getBeamDataLength()
 /** Setter for {@link EmitterBeam#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamNumber(byte pBeamNumber)
+public synchronized EmitterBeam setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
@@ -127,7 +127,7 @@ public EmitterBeam setBeamNumber(byte pBeamNumber)
 /** Utility setter for {@link EmitterBeam#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamNumber(int pBeamNumber){
+public synchronized EmitterBeam setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
@@ -141,7 +141,7 @@ public byte getBeamNumber()
 /** Setter for {@link EmitterBeam#beamParameterIndex}
   * @param pBeamParameterIndex new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamParameterIndex(short pBeamParameterIndex)
+public synchronized EmitterBeam setBeamParameterIndex(short pBeamParameterIndex)
 {
     beamParameterIndex = pBeamParameterIndex;
     return this;
@@ -149,7 +149,7 @@ public EmitterBeam setBeamParameterIndex(short pBeamParameterIndex)
 /** Utility setter for {@link EmitterBeam#beamParameterIndex}
   * @param pBeamParameterIndex new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamParameterIndex(int pBeamParameterIndex){
+public synchronized EmitterBeam setBeamParameterIndex(int pBeamParameterIndex){
     beamParameterIndex = (short) pBeamParameterIndex;
     return this;
 }
@@ -163,7 +163,7 @@ public short getBeamParameterIndex()
 /** Setter for {@link EmitterBeam#fundamentalParameterData}
   * @param pFundamentalParameterData new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setFundamentalParameterData(EEFundamentalParameterData pFundamentalParameterData)
+public synchronized EmitterBeam setFundamentalParameterData(EEFundamentalParameterData pFundamentalParameterData)
 {
     fundamentalParameterData = pFundamentalParameterData;
     return this;
@@ -179,7 +179,7 @@ public EEFundamentalParameterData getFundamentalParameterData()
 /** Setter for {@link EmitterBeam#beamData}
   * @param pBeamData new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamData(BeamData pBeamData)
+public synchronized EmitterBeam setBeamData(BeamData pBeamData)
 {
     beamData = pBeamData;
     return this;
@@ -195,7 +195,7 @@ public BeamData getBeamData()
 /** Setter for {@link EmitterBeam#beamFunction}
   * @param pBeamFunction new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunction pBeamFunction)
+public synchronized EmitterBeam setBeamFunction(ElectromagneticEmissionBeamFunction pBeamFunction)
 {
     beamFunction = pBeamFunction;
     return this;
@@ -210,7 +210,7 @@ public ElectromagneticEmissionBeamFunction getBeamFunction()
 /** Setter for {@link EmitterBeam#highDensityTrackJam}
   * @param pHighDensityTrackJam new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHighDensityTrackJam)
+public synchronized EmitterBeam setHighDensityTrackJam(HighDensityTrackJam pHighDensityTrackJam)
 {
     highDensityTrackJam = pHighDensityTrackJam;
     return this;
@@ -225,7 +225,7 @@ public HighDensityTrackJam getHighDensityTrackJam()
 /** Setter for {@link EmitterBeam#beamStatus}
   * @param pBeamStatus new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setBeamStatus(BeamStatus pBeamStatus)
+public synchronized EmitterBeam setBeamStatus(BeamStatus pBeamStatus)
 {
     beamStatus = pBeamStatus;
     return this;
@@ -241,7 +241,7 @@ public BeamStatus getBeamStatus()
 /** Setter for {@link EmitterBeam#jammingTechnique}
   * @param pJammingTechnique new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setJammingTechnique(JammingTechnique pJammingTechnique)
+public synchronized EmitterBeam setJammingTechnique(JammingTechnique pJammingTechnique)
 {
     jammingTechnique = pJammingTechnique;
     return this;
@@ -257,7 +257,7 @@ public JammingTechnique getJammingTechnique()
 /** Setter for {@link EmitterBeam#trackJamData}
   * @param pTrackJamData new value of interest
   * @return same object to permit progressive setters */
-public EmitterBeam setTrackJamData(List<TrackJamData> pTrackJamData)
+public synchronized EmitterBeam setTrackJamData(List<TrackJamData> pTrackJamData)
 {
     trackJamData = pTrackJamData;
     return this;
@@ -311,7 +311,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -385,7 +385,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -429,7 +429,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -449,7 +449,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -472,7 +472,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

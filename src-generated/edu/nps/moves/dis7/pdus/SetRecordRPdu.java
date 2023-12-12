@@ -49,13 +49,13 @@ public class SetRecordRPdu extends SimulationManagementWithReliabilityFamilyPdu 
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public SetRecordRPdu copy()
+ public synchronized SetRecordRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public SetRecordRPdu copyByteBuffer()
+ public synchronized SetRecordRPdu copyByteBuffer()
  {
      SetRecordRPdu newCopy = new SetRecordRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -82,7 +82,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public SetRecordRPdu copyDataOutputStream()
+ public synchronized SetRecordRPdu copyDataOutputStream()
  {
      SetRecordRPdu newCopy = new SetRecordRPdu();
      try
@@ -141,7 +141,7 @@ public int getMarshalledSize()
 /** Setter for {@link SetRecordRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setRequestID(int pRequestID)
+public synchronized SetRecordRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -156,7 +156,7 @@ public int getRequestID()
 /** Setter for {@link SetRecordRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized SetRecordRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -171,7 +171,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link SetRecordRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setPad1(byte pPad1)
+public synchronized SetRecordRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -179,7 +179,7 @@ public SetRecordRPdu setPad1(byte pPad1)
 /** Utility setter for {@link SetRecordRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setPad1(int pPad1){
+public synchronized SetRecordRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -193,7 +193,7 @@ public byte getPad1()
 /** Setter for {@link SetRecordRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setPad2(short pPad2)
+public synchronized SetRecordRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -201,7 +201,7 @@ public SetRecordRPdu setPad2(short pPad2)
 /** Utility setter for {@link SetRecordRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setPad2(int pPad2){
+public synchronized SetRecordRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
@@ -215,7 +215,7 @@ public short getPad2()
 /** Setter for {@link SetRecordRPdu#pad3}
   * @param pPad3 new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setPad3(int pPad3)
+public synchronized SetRecordRPdu setPad3(int pPad3)
 {
     pad3 = pPad3;
     return this;
@@ -230,7 +230,7 @@ public int getPad3()
 /** Setter for {@link SetRecordRPdu#recordSets}
   * @param pRecordSets new value of interest
   * @return same object to permit progressive setters */
-public SetRecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
+public synchronized SetRecordRPdu setRecordSets(List<RecordSpecification> pRecordSets)
 {
     recordSets = pRecordSets;
     return this;
@@ -281,7 +281,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -350,7 +350,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -388,7 +388,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -403,7 +403,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -422,7 +422,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

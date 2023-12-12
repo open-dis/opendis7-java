@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link LayerHeader#layerNumber}
   * @param pLayerNumber new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLayerNumber(byte pLayerNumber)
+public synchronized LayerHeader setLayerNumber(byte pLayerNumber)
 {
     layerNumber = pLayerNumber;
     return this;
@@ -62,7 +62,7 @@ public LayerHeader setLayerNumber(byte pLayerNumber)
 /** Utility setter for {@link LayerHeader#layerNumber}
   * @param pLayerNumber new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLayerNumber(int pLayerNumber){
+public synchronized LayerHeader setLayerNumber(int pLayerNumber){
     layerNumber = (byte) pLayerNumber;
     return this;
 }
@@ -76,7 +76,7 @@ public byte getLayerNumber()
 /** Setter for {@link LayerHeader#layerSpecificInformation}
   * @param pLayerSpecificInformation new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLayerSpecificInformation(byte pLayerSpecificInformation)
+public synchronized LayerHeader setLayerSpecificInformation(byte pLayerSpecificInformation)
 {
     layerSpecificInformation = pLayerSpecificInformation;
     return this;
@@ -84,7 +84,7 @@ public LayerHeader setLayerSpecificInformation(byte pLayerSpecificInformation)
 /** Utility setter for {@link LayerHeader#layerSpecificInformation}
   * @param pLayerSpecificInformation new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLayerSpecificInformation(int pLayerSpecificInformation){
+public synchronized LayerHeader setLayerSpecificInformation(int pLayerSpecificInformation){
     layerSpecificInformation = (byte) pLayerSpecificInformation;
     return this;
 }
@@ -98,7 +98,7 @@ public byte getLayerSpecificInformation()
 /** Setter for {@link LayerHeader#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLength(short pLength)
+public synchronized LayerHeader setLength(short pLength)
 {
     length = pLength;
     return this;
@@ -106,7 +106,7 @@ public LayerHeader setLength(short pLength)
 /** Utility setter for {@link LayerHeader#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public LayerHeader setLength(int pLength){
+public synchronized LayerHeader setLength(int pLength){
     length = (short) pLength;
     return this;
 }
@@ -145,7 +145,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -188,7 +188,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -210,7 +210,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -243,7 +243,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

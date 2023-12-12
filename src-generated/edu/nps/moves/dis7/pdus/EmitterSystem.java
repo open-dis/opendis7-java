@@ -56,7 +56,7 @@ public int getMarshalledSize()
 /** Setter for {@link EmitterSystem#emitterName}
   * @param pEmitterName new value of interest
   * @return same object to permit progressive setters */
-public EmitterSystem setEmitterName(EmitterName pEmitterName)
+public synchronized EmitterSystem setEmitterName(EmitterName pEmitterName)
 {
     emitterName = pEmitterName;
     return this;
@@ -71,7 +71,7 @@ public EmitterName getEmitterName()
 /** Setter for {@link EmitterSystem#emitterFunction}
   * @param pEmitterFunction new value of interest
   * @return same object to permit progressive setters */
-public EmitterSystem setEmitterFunction(EmitterSystemFunction pEmitterFunction)
+public synchronized EmitterSystem setEmitterFunction(EmitterSystemFunction pEmitterFunction)
 {
     emitterFunction = pEmitterFunction;
     return this;
@@ -86,7 +86,7 @@ public EmitterSystemFunction getEmitterFunction()
 /** Setter for {@link EmitterSystem#emitterIDNumber}
   * @param pEmitterIDNumber new value of interest
   * @return same object to permit progressive setters */
-public EmitterSystem setEmitterIDNumber(byte pEmitterIDNumber)
+public synchronized EmitterSystem setEmitterIDNumber(byte pEmitterIDNumber)
 {
     emitterIDNumber = pEmitterIDNumber;
     return this;
@@ -94,7 +94,7 @@ public EmitterSystem setEmitterIDNumber(byte pEmitterIDNumber)
 /** Utility setter for {@link EmitterSystem#emitterIDNumber}
   * @param pEmitterIDNumber new value of interest
   * @return same object to permit progressive setters */
-public EmitterSystem setEmitterIDNumber(int pEmitterIDNumber){
+public synchronized EmitterSystem setEmitterIDNumber(int pEmitterIDNumber){
     emitterIDNumber = (byte) pEmitterIDNumber;
     return this;
 }
@@ -133,7 +133,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -176,7 +176,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -198,7 +198,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -218,7 +218,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -231,7 +231,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

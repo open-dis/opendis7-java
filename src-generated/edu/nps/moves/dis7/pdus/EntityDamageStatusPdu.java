@@ -43,13 +43,13 @@ public class EntityDamageStatusPdu extends WarfareFamilyPdu implements Serializa
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public EntityDamageStatusPdu copy()
+ public synchronized EntityDamageStatusPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public EntityDamageStatusPdu copyByteBuffer()
+ public synchronized EntityDamageStatusPdu copyByteBuffer()
  {
      EntityDamageStatusPdu newCopy = new EntityDamageStatusPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -76,7 +76,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public EntityDamageStatusPdu copyDataOutputStream()
+ public synchronized EntityDamageStatusPdu copyDataOutputStream()
  {
      EntityDamageStatusPdu newCopy = new EntityDamageStatusPdu();
      try
@@ -133,7 +133,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityDamageStatusPdu#damagedEntityID}
   * @param pDamagedEntityID new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setDamagedEntityID(EntityID pDamagedEntityID)
+public synchronized EntityDamageStatusPdu setDamagedEntityID(EntityID pDamagedEntityID)
 {
     damagedEntityID = pDamagedEntityID;
     return this;
@@ -149,7 +149,7 @@ public EntityID getDamagedEntityID()
 /** Setter for {@link EntityDamageStatusPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setPadding1(short pPadding1)
+public synchronized EntityDamageStatusPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -157,7 +157,7 @@ public EntityDamageStatusPdu setPadding1(short pPadding1)
 /** Utility setter for {@link EntityDamageStatusPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setPadding1(int pPadding1){
+public synchronized EntityDamageStatusPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
@@ -171,7 +171,7 @@ public short getPadding1()
 /** Setter for {@link EntityDamageStatusPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setPadding2(short pPadding2)
+public synchronized EntityDamageStatusPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -179,7 +179,7 @@ public EntityDamageStatusPdu setPadding2(short pPadding2)
 /** Utility setter for {@link EntityDamageStatusPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setPadding2(int pPadding2){
+public synchronized EntityDamageStatusPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -193,7 +193,7 @@ public short getPadding2()
 /** Setter for {@link EntityDamageStatusPdu#damageDescriptionRecords}
   * @param pDamageDescriptionRecords new value of interest
   * @return same object to permit progressive setters */
-public EntityDamageStatusPdu setDamageDescriptionRecords(List<DirectedEnergyDamage> pDamageDescriptionRecords)
+public synchronized EntityDamageStatusPdu setDamageDescriptionRecords(List<DirectedEnergyDamage> pDamageDescriptionRecords)
 {
     damageDescriptionRecords = pDamageDescriptionRecords;
     return this;
@@ -242,7 +242,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -304,7 +304,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -338,7 +338,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -353,7 +353,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -370,7 +370,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

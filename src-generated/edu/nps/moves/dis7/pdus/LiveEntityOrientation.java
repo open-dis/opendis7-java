@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link LiveEntityOrientation#psi}
   * @param pPsi new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setPsi(byte pPsi)
+public synchronized LiveEntityOrientation setPsi(byte pPsi)
 {
     psi = pPsi;
     return this;
@@ -62,7 +62,7 @@ public LiveEntityOrientation setPsi(byte pPsi)
 /** Utility setter for {@link LiveEntityOrientation#psi}
   * @param pPsi new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setPsi(int pPsi){
+public synchronized LiveEntityOrientation setPsi(int pPsi){
     psi = (byte) pPsi;
     return this;
 }
@@ -76,7 +76,7 @@ public byte getPsi()
 /** Setter for {@link LiveEntityOrientation#theta}
   * @param pTheta new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setTheta(byte pTheta)
+public synchronized LiveEntityOrientation setTheta(byte pTheta)
 {
     theta = pTheta;
     return this;
@@ -84,7 +84,7 @@ public LiveEntityOrientation setTheta(byte pTheta)
 /** Utility setter for {@link LiveEntityOrientation#theta}
   * @param pTheta new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setTheta(int pTheta){
+public synchronized LiveEntityOrientation setTheta(int pTheta){
     theta = (byte) pTheta;
     return this;
 }
@@ -98,7 +98,7 @@ public byte getTheta()
 /** Setter for {@link LiveEntityOrientation#phi}
   * @param pPhi new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setPhi(byte pPhi)
+public synchronized LiveEntityOrientation setPhi(byte pPhi)
 {
     phi = pPhi;
     return this;
@@ -106,7 +106,7 @@ public LiveEntityOrientation setPhi(byte pPhi)
 /** Utility setter for {@link LiveEntityOrientation#phi}
   * @param pPhi new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityOrientation setPhi(int pPhi){
+public synchronized LiveEntityOrientation setPhi(int pPhi){
     phi = (byte) pPhi;
     return this;
 }
@@ -145,7 +145,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -188,7 +188,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -210,7 +210,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -243,7 +243,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

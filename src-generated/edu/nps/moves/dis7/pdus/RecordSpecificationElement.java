@@ -73,7 +73,7 @@ public int getMarshalledSize()
 /** Setter for {@link RecordSpecificationElement#recordID}
   * @param pRecordID new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordID(VariableRecordType pRecordID)
+public synchronized RecordSpecificationElement setRecordID(VariableRecordType pRecordID)
 {
     recordID = pRecordID;
     return this;
@@ -88,7 +88,7 @@ public VariableRecordType getRecordID()
 /** Setter for {@link RecordSpecificationElement#recordSetSerialNumber}
   * @param pRecordSetSerialNumber new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordSetSerialNumber(int pRecordSetSerialNumber)
+public synchronized RecordSpecificationElement setRecordSetSerialNumber(int pRecordSetSerialNumber)
 {
     recordSetSerialNumber = pRecordSetSerialNumber;
     return this;
@@ -103,7 +103,7 @@ public int getRecordSetSerialNumber()
 /** Setter for {@link RecordSpecificationElement#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setPadding(int pPadding)
+public synchronized RecordSpecificationElement setPadding(int pPadding)
 {
     padding = pPadding;
     return this;
@@ -118,7 +118,7 @@ public int getPadding()
 /** Setter for {@link RecordSpecificationElement#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordLength(short pRecordLength)
+public synchronized RecordSpecificationElement setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -126,7 +126,7 @@ public RecordSpecificationElement setRecordLength(short pRecordLength)
 /** Utility setter for {@link RecordSpecificationElement#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordLength(int pRecordLength){
+public synchronized RecordSpecificationElement setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -140,7 +140,7 @@ public short getRecordLength()
 /** Setter for {@link RecordSpecificationElement#recordCount}
   * @param pRecordCount new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordCount(short pRecordCount)
+public synchronized RecordSpecificationElement setRecordCount(short pRecordCount)
 {
     recordCount = pRecordCount;
     return this;
@@ -148,7 +148,7 @@ public RecordSpecificationElement setRecordCount(short pRecordCount)
 /** Utility setter for {@link RecordSpecificationElement#recordCount}
   * @param pRecordCount new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordCount(int pRecordCount){
+public synchronized RecordSpecificationElement setRecordCount(int pRecordCount){
     recordCount = (short) pRecordCount;
     return this;
 }
@@ -162,7 +162,7 @@ public short getRecordCount()
 /** Setter for {@link RecordSpecificationElement#recordValues}
   * @param pRecordValues new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setRecordValues(byte[] pRecordValues)
+public synchronized RecordSpecificationElement setRecordValues(byte[] pRecordValues)
 {
     recordValues = pRecordValues;
     return this;
@@ -177,7 +177,7 @@ public byte[] getRecordValues()
 /** Setter for {@link RecordSpecificationElement#padTo64}
   * @param pPadTo64 new value of interest
   * @return same object to permit progressive setters */
-public RecordSpecificationElement setPadTo64(byte[] pPadTo64)
+public synchronized RecordSpecificationElement setPadTo64(byte[] pPadTo64)
 {
     padTo64 = pPadTo64;
     return this;
@@ -227,7 +227,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -290,7 +290,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -322,7 +322,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -342,7 +342,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -369,7 +369,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

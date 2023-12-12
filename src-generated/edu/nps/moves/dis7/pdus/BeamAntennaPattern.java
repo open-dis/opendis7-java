@@ -84,7 +84,7 @@ public int getMarshalledSize()
 /** Setter for {@link BeamAntennaPattern#beamDirection}
   * @param pBeamDirection new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setBeamDirection(EulerAngles pBeamDirection)
+public synchronized BeamAntennaPattern setBeamDirection(EulerAngles pBeamDirection)
 {
     beamDirection = pBeamDirection;
     return this;
@@ -100,7 +100,7 @@ public EulerAngles getBeamDirection()
 /** Setter for {@link BeamAntennaPattern#azimuthBeamwidth}
   * @param pAzimuthBeamwidth new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setAzimuthBeamwidth(float pAzimuthBeamwidth)
+public synchronized BeamAntennaPattern setAzimuthBeamwidth(float pAzimuthBeamwidth)
 {
     azimuthBeamwidth = pAzimuthBeamwidth;
     return this;
@@ -115,7 +115,7 @@ public float getAzimuthBeamwidth()
 /** Setter for {@link BeamAntennaPattern#elevationBeamwidth}
   * @param pElevationBeamwidth new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setElevationBeamwidth(float pElevationBeamwidth)
+public synchronized BeamAntennaPattern setElevationBeamwidth(float pElevationBeamwidth)
 {
     elevationBeamwidth = pElevationBeamwidth;
     return this;
@@ -130,7 +130,7 @@ public float getElevationBeamwidth()
 /** Setter for {@link BeamAntennaPattern#referenceSystem}
   * @param pReferenceSystem new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setReferenceSystem(TransmitterAntennaPatternReferenceSystem pReferenceSystem)
+public synchronized BeamAntennaPattern setReferenceSystem(TransmitterAntennaPatternReferenceSystem pReferenceSystem)
 {
     referenceSystem = pReferenceSystem;
     return this;
@@ -145,7 +145,7 @@ public TransmitterAntennaPatternReferenceSystem getReferenceSystem()
 /** Setter for {@link BeamAntennaPattern#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPadding1(byte pPadding1)
+public synchronized BeamAntennaPattern setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -153,7 +153,7 @@ public BeamAntennaPattern setPadding1(byte pPadding1)
 /** Utility setter for {@link BeamAntennaPattern#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPadding1(int pPadding1){
+public synchronized BeamAntennaPattern setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -167,7 +167,7 @@ public byte getPadding1()
 /** Setter for {@link BeamAntennaPattern#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPadding2(short pPadding2)
+public synchronized BeamAntennaPattern setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -175,7 +175,7 @@ public BeamAntennaPattern setPadding2(short pPadding2)
 /** Utility setter for {@link BeamAntennaPattern#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPadding2(int pPadding2){
+public synchronized BeamAntennaPattern setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -189,7 +189,7 @@ public short getPadding2()
 /** Setter for {@link BeamAntennaPattern#ez}
   * @param pEz new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setEz(float pEz)
+public synchronized BeamAntennaPattern setEz(float pEz)
 {
     ez = pEz;
     return this;
@@ -204,7 +204,7 @@ public float getEz()
 /** Setter for {@link BeamAntennaPattern#ex}
   * @param pEx new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setEx(float pEx)
+public synchronized BeamAntennaPattern setEx(float pEx)
 {
     ex = pEx;
     return this;
@@ -219,7 +219,7 @@ public float getEx()
 /** Setter for {@link BeamAntennaPattern#phase}
   * @param pPhase new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPhase(float pPhase)
+public synchronized BeamAntennaPattern setPhase(float pPhase)
 {
     phase = pPhase;
     return this;
@@ -234,7 +234,7 @@ public float getPhase()
 /** Setter for {@link BeamAntennaPattern#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public BeamAntennaPattern setPadding3(int pPadding3)
+public synchronized BeamAntennaPattern setPadding3(int pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -281,7 +281,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -344,7 +344,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -380,7 +380,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -400,7 +400,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -420,7 +420,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

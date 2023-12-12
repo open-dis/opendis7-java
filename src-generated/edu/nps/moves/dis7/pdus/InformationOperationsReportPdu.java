@@ -55,13 +55,13 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public InformationOperationsReportPdu copy()
+ public synchronized InformationOperationsReportPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public InformationOperationsReportPdu copyByteBuffer()
+ public synchronized InformationOperationsReportPdu copyByteBuffer()
  {
      InformationOperationsReportPdu newCopy = new InformationOperationsReportPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public InformationOperationsReportPdu copyDataOutputStream()
+ public synchronized InformationOperationsReportPdu copyDataOutputStream()
  {
      InformationOperationsReportPdu newCopy = new InformationOperationsReportPdu();
      try
@@ -152,7 +152,7 @@ public int getMarshalledSize()
 /** Setter for {@link InformationOperationsReportPdu#ioSimSource}
   * @param pIoSimSource new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setIoSimSource(IOActionIOSimulationSource pIoSimSource)
+public synchronized InformationOperationsReportPdu setIoSimSource(IOActionIOSimulationSource pIoSimSource)
 {
     ioSimSource = pIoSimSource;
     return this;
@@ -167,7 +167,7 @@ public IOActionIOSimulationSource getIoSimSource()
 /** Setter for {@link InformationOperationsReportPdu#ioReportType}
   * @param pIoReportType new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setIoReportType(IOReportIOReportType pIoReportType)
+public synchronized InformationOperationsReportPdu setIoReportType(IOReportIOReportType pIoReportType)
 {
     ioReportType = pIoReportType;
     return this;
@@ -182,7 +182,7 @@ public IOReportIOReportType getIoReportType()
 /** Setter for {@link InformationOperationsReportPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding1(byte pPadding1)
+public synchronized InformationOperationsReportPdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -190,7 +190,7 @@ public InformationOperationsReportPdu setPadding1(byte pPadding1)
 /** Utility setter for {@link InformationOperationsReportPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding1(int pPadding1){
+public synchronized InformationOperationsReportPdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -204,7 +204,7 @@ public byte getPadding1()
 /** Setter for {@link InformationOperationsReportPdu#ioAttackerID}
   * @param pIoAttackerID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setIoAttackerID(EntityID pIoAttackerID)
+public synchronized InformationOperationsReportPdu setIoAttackerID(EntityID pIoAttackerID)
 {
     ioAttackerID = pIoAttackerID;
     return this;
@@ -220,7 +220,7 @@ public EntityID getIoAttackerID()
 /** Setter for {@link InformationOperationsReportPdu#ioPrimaryTargetID}
   * @param pIoPrimaryTargetID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
+public synchronized InformationOperationsReportPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
 {
     ioPrimaryTargetID = pIoPrimaryTargetID;
     return this;
@@ -236,7 +236,7 @@ public EntityID getIoPrimaryTargetID()
 /** Setter for {@link InformationOperationsReportPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding2(short pPadding2)
+public synchronized InformationOperationsReportPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -244,7 +244,7 @@ public InformationOperationsReportPdu setPadding2(short pPadding2)
 /** Utility setter for {@link InformationOperationsReportPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding2(int pPadding2){
+public synchronized InformationOperationsReportPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -258,7 +258,7 @@ public short getPadding2()
 /** Setter for {@link InformationOperationsReportPdu#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding3(short pPadding3)
+public synchronized InformationOperationsReportPdu setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -266,7 +266,7 @@ public InformationOperationsReportPdu setPadding3(short pPadding3)
 /** Utility setter for {@link InformationOperationsReportPdu#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setPadding3(int pPadding3){
+public synchronized InformationOperationsReportPdu setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
@@ -280,7 +280,7 @@ public short getPadding3()
 /** Setter for {@link InformationOperationsReportPdu#ioRecords}
   * @param pIoRecords new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsReportPdu setIoRecords(List<IORecord> pIoRecords)
+public synchronized InformationOperationsReportPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
@@ -333,7 +333,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -406,7 +406,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -448,7 +448,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -463,7 +463,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -484,7 +484,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

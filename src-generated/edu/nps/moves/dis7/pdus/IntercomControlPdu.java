@@ -67,13 +67,13 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public IntercomControlPdu copy()
+ public synchronized IntercomControlPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public IntercomControlPdu copyByteBuffer()
+ public synchronized IntercomControlPdu copyByteBuffer()
  {
      IntercomControlPdu newCopy = new IntercomControlPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -100,7 +100,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public IntercomControlPdu copyDataOutputStream()
+ public synchronized IntercomControlPdu copyDataOutputStream()
  {
      IntercomControlPdu newCopy = new IntercomControlPdu();
      try
@@ -169,7 +169,7 @@ public int getMarshalledSize()
 /** Setter for {@link IntercomControlPdu#controlType}
   * @param pControlType new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setControlType(IntercomControlControlType pControlType)
+public synchronized IntercomControlPdu setControlType(IntercomControlControlType pControlType)
 {
     controlType = pControlType;
     return this;
@@ -184,7 +184,7 @@ public IntercomControlControlType getControlType()
 /** Setter for {@link IntercomControlPdu#communicationsChannelType}
   * @param pCommunicationsChannelType new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setCommunicationsChannelType(byte pCommunicationsChannelType)
+public synchronized IntercomControlPdu setCommunicationsChannelType(byte pCommunicationsChannelType)
 {
     communicationsChannelType = pCommunicationsChannelType;
     return this;
@@ -192,7 +192,7 @@ public IntercomControlPdu setCommunicationsChannelType(byte pCommunicationsChann
 /** Utility setter for {@link IntercomControlPdu#communicationsChannelType}
   * @param pCommunicationsChannelType new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setCommunicationsChannelType(int pCommunicationsChannelType){
+public synchronized IntercomControlPdu setCommunicationsChannelType(int pCommunicationsChannelType){
     communicationsChannelType = (byte) pCommunicationsChannelType;
     return this;
 }
@@ -206,7 +206,7 @@ public byte getCommunicationsChannelType()
 /** Setter for {@link IntercomControlPdu#sourceEntityID}
   * @param pSourceEntityID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setSourceEntityID(EntityID pSourceEntityID)
+public synchronized IntercomControlPdu setSourceEntityID(EntityID pSourceEntityID)
 {
     sourceEntityID = pSourceEntityID;
     return this;
@@ -222,7 +222,7 @@ public EntityID getSourceEntityID()
 /** Setter for {@link IntercomControlPdu#sourceIntercomNumber}
   * @param pSourceIntercomNumber new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setSourceIntercomNumber(short pSourceIntercomNumber)
+public synchronized IntercomControlPdu setSourceIntercomNumber(short pSourceIntercomNumber)
 {
     sourceIntercomNumber = pSourceIntercomNumber;
     return this;
@@ -230,7 +230,7 @@ public IntercomControlPdu setSourceIntercomNumber(short pSourceIntercomNumber)
 /** Utility setter for {@link IntercomControlPdu#sourceIntercomNumber}
   * @param pSourceIntercomNumber new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setSourceIntercomNumber(int pSourceIntercomNumber){
+public synchronized IntercomControlPdu setSourceIntercomNumber(int pSourceIntercomNumber){
     sourceIntercomNumber = (short) pSourceIntercomNumber;
     return this;
 }
@@ -244,7 +244,7 @@ public short getSourceIntercomNumber()
 /** Setter for {@link IntercomControlPdu#sourceLineID}
   * @param pSourceLineID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setSourceLineID(byte pSourceLineID)
+public synchronized IntercomControlPdu setSourceLineID(byte pSourceLineID)
 {
     sourceLineID = pSourceLineID;
     return this;
@@ -252,7 +252,7 @@ public IntercomControlPdu setSourceLineID(byte pSourceLineID)
 /** Utility setter for {@link IntercomControlPdu#sourceLineID}
   * @param pSourceLineID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setSourceLineID(int pSourceLineID){
+public synchronized IntercomControlPdu setSourceLineID(int pSourceLineID){
     sourceLineID = (byte) pSourceLineID;
     return this;
 }
@@ -266,7 +266,7 @@ public byte getSourceLineID()
 /** Setter for {@link IntercomControlPdu#transmitPriority}
   * @param pTransmitPriority new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setTransmitPriority(byte pTransmitPriority)
+public synchronized IntercomControlPdu setTransmitPriority(byte pTransmitPriority)
 {
     transmitPriority = pTransmitPriority;
     return this;
@@ -274,7 +274,7 @@ public IntercomControlPdu setTransmitPriority(byte pTransmitPriority)
 /** Utility setter for {@link IntercomControlPdu#transmitPriority}
   * @param pTransmitPriority new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setTransmitPriority(int pTransmitPriority){
+public synchronized IntercomControlPdu setTransmitPriority(int pTransmitPriority){
     transmitPriority = (byte) pTransmitPriority;
     return this;
 }
@@ -288,7 +288,7 @@ public byte getTransmitPriority()
 /** Setter for {@link IntercomControlPdu#transmitLineState}
   * @param pTransmitLineState new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setTransmitLineState(IntercomControlTransmitLineState pTransmitLineState)
+public synchronized IntercomControlPdu setTransmitLineState(IntercomControlTransmitLineState pTransmitLineState)
 {
     transmitLineState = pTransmitLineState;
     return this;
@@ -303,7 +303,7 @@ public IntercomControlTransmitLineState getTransmitLineState()
 /** Setter for {@link IntercomControlPdu#command}
   * @param pCommand new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setCommand(IntercomControlCommand pCommand)
+public synchronized IntercomControlPdu setCommand(IntercomControlCommand pCommand)
 {
     command = pCommand;
     return this;
@@ -318,7 +318,7 @@ public IntercomControlCommand getCommand()
 /** Setter for {@link IntercomControlPdu#masterIntercomReferenceID}
   * @param pMasterIntercomReferenceID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setMasterIntercomReferenceID(EntityID pMasterIntercomReferenceID)
+public synchronized IntercomControlPdu setMasterIntercomReferenceID(EntityID pMasterIntercomReferenceID)
 {
     masterIntercomReferenceID = pMasterIntercomReferenceID;
     return this;
@@ -334,7 +334,7 @@ public EntityID getMasterIntercomReferenceID()
 /** Setter for {@link IntercomControlPdu#masterIntercomNumber}
   * @param pMasterIntercomNumber new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setMasterIntercomNumber(short pMasterIntercomNumber)
+public synchronized IntercomControlPdu setMasterIntercomNumber(short pMasterIntercomNumber)
 {
     masterIntercomNumber = pMasterIntercomNumber;
     return this;
@@ -342,7 +342,7 @@ public IntercomControlPdu setMasterIntercomNumber(short pMasterIntercomNumber)
 /** Utility setter for {@link IntercomControlPdu#masterIntercomNumber}
   * @param pMasterIntercomNumber new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setMasterIntercomNumber(int pMasterIntercomNumber){
+public synchronized IntercomControlPdu setMasterIntercomNumber(int pMasterIntercomNumber){
     masterIntercomNumber = (short) pMasterIntercomNumber;
     return this;
 }
@@ -356,7 +356,7 @@ public short getMasterIntercomNumber()
 /** Setter for {@link IntercomControlPdu#masterChannelID}
   * @param pMasterChannelID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setMasterChannelID(short pMasterChannelID)
+public synchronized IntercomControlPdu setMasterChannelID(short pMasterChannelID)
 {
     masterChannelID = pMasterChannelID;
     return this;
@@ -364,7 +364,7 @@ public IntercomControlPdu setMasterChannelID(short pMasterChannelID)
 /** Utility setter for {@link IntercomControlPdu#masterChannelID}
   * @param pMasterChannelID new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setMasterChannelID(int pMasterChannelID){
+public synchronized IntercomControlPdu setMasterChannelID(int pMasterChannelID){
     masterChannelID = (short) pMasterChannelID;
     return this;
 }
@@ -378,7 +378,7 @@ public short getMasterChannelID()
 /** Setter for {@link IntercomControlPdu#intercomParameters}
   * @param pIntercomParameters new value of interest
   * @return same object to permit progressive setters */
-public IntercomControlPdu setIntercomParameters(List<IntercomCommunicationsParameters> pIntercomParameters)
+public synchronized IntercomControlPdu setIntercomParameters(List<IntercomCommunicationsParameters> pIntercomParameters)
 {
     intercomParameters = pIntercomParameters;
     return this;
@@ -435,7 +435,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -520,7 +520,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -570,7 +570,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -585,7 +585,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -610,7 +610,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -60,7 +60,7 @@ public int getMarshalledSize()
 /** Setter for {@link ObjectType#domain}
   * @param pDomain new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setDomain(PlatformDomain pDomain)
+public synchronized ObjectType setDomain(PlatformDomain pDomain)
 {
     domain = pDomain;
     return this;
@@ -75,7 +75,7 @@ public PlatformDomain getDomain()
 /** Setter for {@link ObjectType#objectKind}
   * @param pObjectKind new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setObjectKind(ObjectKind pObjectKind)
+public synchronized ObjectType setObjectKind(ObjectKind pObjectKind)
 {
     objectKind = pObjectKind;
     return this;
@@ -90,7 +90,7 @@ public ObjectKind getObjectKind()
 /** Setter for {@link ObjectType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setCategory(byte pCategory)
+public synchronized ObjectType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
@@ -98,7 +98,7 @@ public ObjectType setCategory(byte pCategory)
 /** Utility setter for {@link ObjectType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setCategory(int pCategory){
+public synchronized ObjectType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
@@ -112,7 +112,7 @@ public byte getCategory()
 /** Setter for {@link ObjectType#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setSubCategory(byte pSubCategory)
+public synchronized ObjectType setSubCategory(byte pSubCategory)
 {
     subCategory = pSubCategory;
     return this;
@@ -120,7 +120,7 @@ public ObjectType setSubCategory(byte pSubCategory)
 /** Utility setter for {@link ObjectType#subCategory}
   * @param pSubCategory new value of interest
   * @return same object to permit progressive setters */
-public ObjectType setSubCategory(int pSubCategory){
+public synchronized ObjectType setSubCategory(int pSubCategory){
     subCategory = (byte) pSubCategory;
     return this;
 }
@@ -160,7 +160,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -206,7 +206,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -250,7 +250,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -264,7 +264,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

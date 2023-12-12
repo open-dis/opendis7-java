@@ -46,13 +46,13 @@ public class IsPartOfPdu extends EntityManagementFamilyPdu implements Serializab
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public IsPartOfPdu copy()
+ public synchronized IsPartOfPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public IsPartOfPdu copyByteBuffer()
+ public synchronized IsPartOfPdu copyByteBuffer()
  {
      IsPartOfPdu newCopy = new IsPartOfPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public IsPartOfPdu copyDataOutputStream()
+ public synchronized IsPartOfPdu copyDataOutputStream()
  {
      IsPartOfPdu newCopy = new IsPartOfPdu();
      try
@@ -137,7 +137,7 @@ public int getMarshalledSize()
 /** Setter for {@link IsPartOfPdu#orginatingEntityID}
   * @param pOrginatingEntityID new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
+public synchronized IsPartOfPdu setOrginatingEntityID(EntityID pOrginatingEntityID)
 {
     orginatingEntityID = pOrginatingEntityID;
     return this;
@@ -153,7 +153,7 @@ public EntityID getOrginatingEntityID()
 /** Setter for {@link IsPartOfPdu#receivingEntityID}
   * @param pReceivingEntityID new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setReceivingEntityID(EntityID pReceivingEntityID)
+public synchronized IsPartOfPdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
@@ -169,7 +169,7 @@ public EntityID getReceivingEntityID()
 /** Setter for {@link IsPartOfPdu#relationship}
   * @param pRelationship new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setRelationship(Relationship pRelationship)
+public synchronized IsPartOfPdu setRelationship(Relationship pRelationship)
 {
     relationship = pRelationship;
     return this;
@@ -185,7 +185,7 @@ public Relationship getRelationship()
 /** Setter for {@link IsPartOfPdu#partLocation}
   * @param pPartLocation new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setPartLocation(Vector3Float pPartLocation)
+public synchronized IsPartOfPdu setPartLocation(Vector3Float pPartLocation)
 {
     partLocation = pPartLocation;
     return this;
@@ -201,7 +201,7 @@ public Vector3Float getPartLocation()
 /** Setter for {@link IsPartOfPdu#namedLocationID}
   * @param pNamedLocationID new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setNamedLocationID(NamedLocationIdentification pNamedLocationID)
+public synchronized IsPartOfPdu setNamedLocationID(NamedLocationIdentification pNamedLocationID)
 {
     namedLocationID = pNamedLocationID;
     return this;
@@ -217,7 +217,7 @@ public NamedLocationIdentification getNamedLocationID()
 /** Setter for {@link IsPartOfPdu#partEntityType}
   * @param pPartEntityType new value of interest
   * @return same object to permit progressive setters */
-public IsPartOfPdu setPartEntityType(EntityType pPartEntityType)
+public synchronized IsPartOfPdu setPartEntityType(EntityType pPartEntityType)
 {
     partEntityType = pPartEntityType;
     return this;
@@ -262,7 +262,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -311,7 +311,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -341,7 +341,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -356,7 +356,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -372,7 +372,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

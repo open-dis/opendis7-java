@@ -96,7 +96,7 @@ public int getMarshalledSize()
 /** Setter for {@link DirectedEnergyDamage#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setRecordType(int pRecordType)
+public synchronized DirectedEnergyDamage setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -111,7 +111,7 @@ public int getRecordType()
 /** Setter for {@link DirectedEnergyDamage#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setRecordLength(short pRecordLength)
+public synchronized DirectedEnergyDamage setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -119,7 +119,7 @@ public DirectedEnergyDamage setRecordLength(short pRecordLength)
 /** Utility setter for {@link DirectedEnergyDamage#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setRecordLength(int pRecordLength){
+public synchronized DirectedEnergyDamage setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -133,7 +133,7 @@ public short getRecordLength()
 /** Setter for {@link DirectedEnergyDamage#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setPadding(short pPadding)
+public synchronized DirectedEnergyDamage setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -141,7 +141,7 @@ public DirectedEnergyDamage setPadding(short pPadding)
 /** Utility setter for {@link DirectedEnergyDamage#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setPadding(int pPadding){
+public synchronized DirectedEnergyDamage setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -155,7 +155,7 @@ public short getPadding()
 /** Setter for {@link DirectedEnergyDamage#damageLocation}
   * @param pDamageLocation new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setDamageLocation(Vector3Float pDamageLocation)
+public synchronized DirectedEnergyDamage setDamageLocation(Vector3Float pDamageLocation)
 {
     damageLocation = pDamageLocation;
     return this;
@@ -171,7 +171,7 @@ public Vector3Float getDamageLocation()
 /** Setter for {@link DirectedEnergyDamage#damageDiameter}
   * @param pDamageDiameter new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setDamageDiameter(float pDamageDiameter)
+public synchronized DirectedEnergyDamage setDamageDiameter(float pDamageDiameter)
 {
     damageDiameter = pDamageDiameter;
     return this;
@@ -186,7 +186,7 @@ public float getDamageDiameter()
 /** Setter for {@link DirectedEnergyDamage#temperature}
   * @param pTemperature new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setTemperature(float pTemperature)
+public synchronized DirectedEnergyDamage setTemperature(float pTemperature)
 {
     temperature = pTemperature;
     return this;
@@ -201,7 +201,7 @@ public float getTemperature()
 /** Setter for {@link DirectedEnergyDamage#componentIdentification}
   * @param pComponentIdentification new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setComponentIdentification(EntityDamageStatusComponentIdentification pComponentIdentification)
+public synchronized DirectedEnergyDamage setComponentIdentification(EntityDamageStatusComponentIdentification pComponentIdentification)
 {
     componentIdentification = pComponentIdentification;
     return this;
@@ -216,7 +216,7 @@ public EntityDamageStatusComponentIdentification getComponentIdentification()
 /** Setter for {@link DirectedEnergyDamage#componentDamageStatus}
   * @param pComponentDamageStatus new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setComponentDamageStatus(DEDamageDescriptionComponentDamageStatus pComponentDamageStatus)
+public synchronized DirectedEnergyDamage setComponentDamageStatus(DEDamageDescriptionComponentDamageStatus pComponentDamageStatus)
 {
     componentDamageStatus = pComponentDamageStatus;
     return this;
@@ -231,7 +231,7 @@ public DEDamageDescriptionComponentDamageStatus getComponentDamageStatus()
 /** Setter for {@link DirectedEnergyDamage#componentVisualDamageStatus}
   * @param pComponentVisualDamageStatus new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setComponentVisualDamageStatus(DEDamageDescriptionComponentVisualDamageStatus pComponentVisualDamageStatus)
+public synchronized DirectedEnergyDamage setComponentVisualDamageStatus(DEDamageDescriptionComponentVisualDamageStatus pComponentVisualDamageStatus)
 {
     componentVisualDamageStatus = pComponentVisualDamageStatus;
     return this;
@@ -246,7 +246,7 @@ public DEDamageDescriptionComponentVisualDamageStatus getComponentVisualDamageSt
 /** Setter for {@link DirectedEnergyDamage#componentVisualSmokeColor}
   * @param pComponentVisualSmokeColor new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor)
+public synchronized DirectedEnergyDamage setComponentVisualSmokeColor(DEDamageDescriptionComponentVisualSmokeColor pComponentVisualSmokeColor)
 {
     componentVisualSmokeColor = pComponentVisualSmokeColor;
     return this;
@@ -261,7 +261,7 @@ public DEDamageDescriptionComponentVisualSmokeColor getComponentVisualSmokeColor
 /** Setter for {@link DirectedEnergyDamage#fireEventID}
   * @param pFireEventID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setFireEventID(EventIdentifier pFireEventID)
+public synchronized DirectedEnergyDamage setFireEventID(EventIdentifier pFireEventID)
 {
     fireEventID = pFireEventID;
     return this;
@@ -277,7 +277,7 @@ public EventIdentifier getFireEventID()
 /** Setter for {@link DirectedEnergyDamage#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setPadding2(short pPadding2)
+public synchronized DirectedEnergyDamage setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -285,7 +285,7 @@ public DirectedEnergyDamage setPadding2(short pPadding2)
 /** Utility setter for {@link DirectedEnergyDamage#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyDamage setPadding2(int pPadding2){
+public synchronized DirectedEnergyDamage setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -333,7 +333,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -400,7 +400,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -440,7 +440,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -460,7 +460,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -482,7 +482,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -49,13 +49,13 @@ public class IFFPdu extends DistributedEmissionsRegenerationFamilyPdu implements
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public IFFPdu copy()
+ public synchronized IFFPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public IFFPdu copyByteBuffer()
+ public synchronized IFFPdu copyByteBuffer()
  {
      IFFPdu newCopy = new IFFPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -82,7 +82,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public IFFPdu copyDataOutputStream()
+ public synchronized IFFPdu copyDataOutputStream()
  {
      IFFPdu newCopy = new IFFPdu();
      try
@@ -140,7 +140,7 @@ public int getMarshalledSize()
 /** Setter for {@link IFFPdu#emittingEntityId}
   * @param pEmittingEntityId new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setEmittingEntityId(EntityID pEmittingEntityId)
+public synchronized IFFPdu setEmittingEntityId(EntityID pEmittingEntityId)
 {
     emittingEntityId = pEmittingEntityId;
     return this;
@@ -156,7 +156,7 @@ public EntityID getEmittingEntityId()
 /** Setter for {@link IFFPdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setEventID(EventIdentifier pEventID)
+public synchronized IFFPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -172,7 +172,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link IFFPdu#location}
   * @param pLocation new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setLocation(Vector3Float pLocation)
+public synchronized IFFPdu setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
@@ -188,7 +188,7 @@ public Vector3Float getLocation()
 /** Setter for {@link IFFPdu#systemID}
   * @param pSystemID new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setSystemID(SystemIdentifier pSystemID)
+public synchronized IFFPdu setSystemID(SystemIdentifier pSystemID)
 {
     systemID = pSystemID;
     return this;
@@ -204,7 +204,7 @@ public SystemIdentifier getSystemID()
 /** Setter for {@link IFFPdu#systemDesignator}
   * @param pSystemDesignator new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setSystemDesignator(byte pSystemDesignator)
+public synchronized IFFPdu setSystemDesignator(byte pSystemDesignator)
 {
     systemDesignator = pSystemDesignator;
     return this;
@@ -212,7 +212,7 @@ public IFFPdu setSystemDesignator(byte pSystemDesignator)
 /** Utility setter for {@link IFFPdu#systemDesignator}
   * @param pSystemDesignator new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setSystemDesignator(int pSystemDesignator){
+public synchronized IFFPdu setSystemDesignator(int pSystemDesignator){
     systemDesignator = (byte) pSystemDesignator;
     return this;
 }
@@ -226,7 +226,7 @@ public byte getSystemDesignator()
 /** Setter for {@link IFFPdu#systemSpecificData}
   * @param pSystemSpecificData new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setSystemSpecificData(byte pSystemSpecificData)
+public synchronized IFFPdu setSystemSpecificData(byte pSystemSpecificData)
 {
     systemSpecificData = pSystemSpecificData;
     return this;
@@ -234,7 +234,7 @@ public IFFPdu setSystemSpecificData(byte pSystemSpecificData)
 /** Utility setter for {@link IFFPdu#systemSpecificData}
   * @param pSystemSpecificData new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setSystemSpecificData(int pSystemSpecificData){
+public synchronized IFFPdu setSystemSpecificData(int pSystemSpecificData){
     systemSpecificData = (byte) pSystemSpecificData;
     return this;
 }
@@ -248,7 +248,7 @@ public byte getSystemSpecificData()
 /** Setter for {@link IFFPdu#fundamentalParameters}
   * @param pFundamentalParameters new value of interest
   * @return same object to permit progressive setters */
-public IFFPdu setFundamentalParameters(FundamentalOperationalData pFundamentalParameters)
+public synchronized IFFPdu setFundamentalParameters(FundamentalOperationalData pFundamentalParameters)
 {
     fundamentalParameters = pFundamentalParameters;
     return this;
@@ -294,7 +294,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -347,7 +347,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -379,7 +379,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -394,7 +394,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -411,7 +411,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

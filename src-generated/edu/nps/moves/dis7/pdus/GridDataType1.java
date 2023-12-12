@@ -66,7 +66,7 @@ public int getMarshalledSize()
 /** Setter for {@link GridDataType1#fieldScale}
   * @param pFieldScale new value of interest
   * @return same object to permit progressive setters */
-public GridDataType1 setFieldScale(float pFieldScale)
+public synchronized GridDataType1 setFieldScale(float pFieldScale)
 {
     fieldScale = pFieldScale;
     return this;
@@ -81,7 +81,7 @@ public float getFieldScale()
 /** Setter for {@link GridDataType1#fieldOffset}
   * @param pFieldOffset new value of interest
   * @return same object to permit progressive setters */
-public GridDataType1 setFieldOffset(float pFieldOffset)
+public synchronized GridDataType1 setFieldOffset(float pFieldOffset)
 {
     fieldOffset = pFieldOffset;
     return this;
@@ -96,7 +96,7 @@ public float getFieldOffset()
 /** Setter for {@link GridDataType1#dataValues}
   * @param pDataValues new value of interest
   * @return same object to permit progressive setters */
-public GridDataType1 setDataValues(short[] pDataValues)
+public synchronized GridDataType1 setDataValues(short[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
@@ -142,7 +142,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -198,7 +198,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -227,7 +227,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -242,7 +242,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -260,7 +260,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

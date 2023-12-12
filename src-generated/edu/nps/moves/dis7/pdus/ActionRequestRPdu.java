@@ -55,13 +55,13 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ActionRequestRPdu copy()
+ public synchronized ActionRequestRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ActionRequestRPdu copyByteBuffer()
+ public synchronized ActionRequestRPdu copyByteBuffer()
  {
      ActionRequestRPdu newCopy = new ActionRequestRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ActionRequestRPdu copyDataOutputStream()
+ public synchronized ActionRequestRPdu copyDataOutputStream()
  {
      ActionRequestRPdu newCopy = new ActionRequestRPdu();
      try
@@ -155,7 +155,7 @@ public int getMarshalledSize()
 /** Setter for {@link ActionRequestRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized ActionRequestRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -170,7 +170,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link ActionRequestRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setPad1(byte pPad1)
+public synchronized ActionRequestRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -178,7 +178,7 @@ public ActionRequestRPdu setPad1(byte pPad1)
 /** Utility setter for {@link ActionRequestRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setPad1(int pPad1){
+public synchronized ActionRequestRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -192,7 +192,7 @@ public byte getPad1()
 /** Setter for {@link ActionRequestRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setPad2(short pPad2)
+public synchronized ActionRequestRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -200,7 +200,7 @@ public ActionRequestRPdu setPad2(short pPad2)
 /** Utility setter for {@link ActionRequestRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setPad2(int pPad2){
+public synchronized ActionRequestRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
@@ -214,7 +214,7 @@ public short getPad2()
 /** Setter for {@link ActionRequestRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setRequestID(int pRequestID)
+public synchronized ActionRequestRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -229,7 +229,7 @@ public int getRequestID()
 /** Setter for {@link ActionRequestRPdu#actionID}
   * @param pActionID new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setActionID(ActionRequestActionID pActionID)
+public synchronized ActionRequestRPdu setActionID(ActionRequestActionID pActionID)
 {
     actionID = pActionID;
     return this;
@@ -244,7 +244,7 @@ public ActionRequestActionID getActionID()
 /** Setter for {@link ActionRequestRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
+public synchronized ActionRequestRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
@@ -259,7 +259,7 @@ public List<FixedDatum> getFixedDatumRecords()
 /** Setter for {@link ActionRequestRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public ActionRequestRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
+public synchronized ActionRequestRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
@@ -318,7 +318,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -404,7 +404,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -452,7 +452,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -467,7 +467,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -490,7 +490,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

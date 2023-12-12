@@ -64,13 +64,13 @@ public class InformationOperationsActionPdu extends InformationOperationsFamilyP
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public InformationOperationsActionPdu copy()
+ public synchronized InformationOperationsActionPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public InformationOperationsActionPdu copyByteBuffer()
+ public synchronized InformationOperationsActionPdu copyByteBuffer()
  {
      InformationOperationsActionPdu newCopy = new InformationOperationsActionPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public InformationOperationsActionPdu copyDataOutputStream()
+ public synchronized InformationOperationsActionPdu copyDataOutputStream()
  {
      InformationOperationsActionPdu newCopy = new InformationOperationsActionPdu();
      try
@@ -167,7 +167,7 @@ public int getMarshalledSize()
 /** Setter for {@link InformationOperationsActionPdu#receivingSimID}
   * @param pReceivingSimID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setReceivingSimID(EntityID pReceivingSimID)
+public synchronized InformationOperationsActionPdu setReceivingSimID(EntityID pReceivingSimID)
 {
     receivingSimID = pReceivingSimID;
     return this;
@@ -183,7 +183,7 @@ public EntityID getReceivingSimID()
 /** Setter for {@link InformationOperationsActionPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setRequestID(int pRequestID)
+public synchronized InformationOperationsActionPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -198,7 +198,7 @@ public int getRequestID()
 /** Setter for {@link InformationOperationsActionPdu#IOWarfareType}
   * @param pIOWarfareType new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIOWarfareType(IOActionIOWarfareType pIOWarfareType)
+public synchronized InformationOperationsActionPdu setIOWarfareType(IOActionIOWarfareType pIOWarfareType)
 {
     IOWarfareType = pIOWarfareType;
     return this;
@@ -213,7 +213,7 @@ public IOActionIOWarfareType getIOWarfareType()
 /** Setter for {@link InformationOperationsActionPdu#IOSimulationSource}
   * @param pIOSimulationSource new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIOSimulationSource(IOActionIOSimulationSource pIOSimulationSource)
+public synchronized InformationOperationsActionPdu setIOSimulationSource(IOActionIOSimulationSource pIOSimulationSource)
 {
     IOSimulationSource = pIOSimulationSource;
     return this;
@@ -228,7 +228,7 @@ public IOActionIOSimulationSource getIOSimulationSource()
 /** Setter for {@link InformationOperationsActionPdu#IOActionType}
   * @param pIOActionType new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIOActionType(IOActionIOActionType pIOActionType)
+public synchronized InformationOperationsActionPdu setIOActionType(IOActionIOActionType pIOActionType)
 {
     IOActionType = pIOActionType;
     return this;
@@ -243,7 +243,7 @@ public IOActionIOActionType getIOActionType()
 /** Setter for {@link InformationOperationsActionPdu#IOActionPhase}
   * @param pIOActionPhase new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIOActionPhase(IOActionIOActionPhase pIOActionPhase)
+public synchronized InformationOperationsActionPdu setIOActionPhase(IOActionIOActionPhase pIOActionPhase)
 {
     IOActionPhase = pIOActionPhase;
     return this;
@@ -258,7 +258,7 @@ public IOActionIOActionPhase getIOActionPhase()
 /** Setter for {@link InformationOperationsActionPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setPadding1(int pPadding1)
+public synchronized InformationOperationsActionPdu setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -273,7 +273,7 @@ public int getPadding1()
 /** Setter for {@link InformationOperationsActionPdu#ioAttackerID}
   * @param pIoAttackerID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIoAttackerID(EntityID pIoAttackerID)
+public synchronized InformationOperationsActionPdu setIoAttackerID(EntityID pIoAttackerID)
 {
     ioAttackerID = pIoAttackerID;
     return this;
@@ -289,7 +289,7 @@ public EntityID getIoAttackerID()
 /** Setter for {@link InformationOperationsActionPdu#ioPrimaryTargetID}
   * @param pIoPrimaryTargetID new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
+public synchronized InformationOperationsActionPdu setIoPrimaryTargetID(EntityID pIoPrimaryTargetID)
 {
     ioPrimaryTargetID = pIoPrimaryTargetID;
     return this;
@@ -305,7 +305,7 @@ public EntityID getIoPrimaryTargetID()
 /** Setter for {@link InformationOperationsActionPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setPadding2(short pPadding2)
+public synchronized InformationOperationsActionPdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -313,7 +313,7 @@ public InformationOperationsActionPdu setPadding2(short pPadding2)
 /** Utility setter for {@link InformationOperationsActionPdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setPadding2(int pPadding2){
+public synchronized InformationOperationsActionPdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -327,7 +327,7 @@ public short getPadding2()
 /** Setter for {@link InformationOperationsActionPdu#ioRecords}
   * @param pIoRecords new value of interest
   * @return same object to permit progressive setters */
-public InformationOperationsActionPdu setIoRecords(List<IORecord> pIoRecords)
+public synchronized InformationOperationsActionPdu setIoRecords(List<IORecord> pIoRecords)
 {
     ioRecords = pIoRecords;
     return this;
@@ -383,7 +383,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -464,7 +464,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -512,7 +512,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -527,7 +527,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -551,7 +551,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link LEVector3FixedByte#x}
   * @param pX new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setX(byte pX)
+public synchronized LEVector3FixedByte setX(byte pX)
 {
     x = pX;
     return this;
@@ -62,7 +62,7 @@ public LEVector3FixedByte setX(byte pX)
 /** Utility setter for {@link LEVector3FixedByte#x}
   * @param pX new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setX(int pX){
+public synchronized LEVector3FixedByte setX(int pX){
     x = (byte) pX;
     return this;
 }
@@ -76,7 +76,7 @@ public byte getX()
 /** Setter for {@link LEVector3FixedByte#y}
   * @param pY new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setY(byte pY)
+public synchronized LEVector3FixedByte setY(byte pY)
 {
     y = pY;
     return this;
@@ -84,7 +84,7 @@ public LEVector3FixedByte setY(byte pY)
 /** Utility setter for {@link LEVector3FixedByte#y}
   * @param pY new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setY(int pY){
+public synchronized LEVector3FixedByte setY(int pY){
     y = (byte) pY;
     return this;
 }
@@ -98,7 +98,7 @@ public byte getY()
 /** Setter for {@link LEVector3FixedByte#z}
   * @param pZ new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setZ(byte pZ)
+public synchronized LEVector3FixedByte setZ(byte pZ)
 {
     z = pZ;
     return this;
@@ -106,7 +106,7 @@ public LEVector3FixedByte setZ(byte pZ)
 /** Utility setter for {@link LEVector3FixedByte#z}
   * @param pZ new value of interest
   * @return same object to permit progressive setters */
-public LEVector3FixedByte setZ(int pZ){
+public synchronized LEVector3FixedByte setZ(int pZ){
     z = (byte) pZ;
     return this;
 }
@@ -145,7 +145,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -188,7 +188,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -210,7 +210,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -243,7 +243,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

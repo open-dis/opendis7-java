@@ -103,7 +103,7 @@ public int getMarshalledSize()
 /** Setter for {@link FalseTargetsAttribute#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setRecordType(int pRecordType)
+public synchronized FalseTargetsAttribute setRecordType(int pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -118,7 +118,7 @@ public int getRecordType()
 /** Setter for {@link FalseTargetsAttribute#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setRecordLength(short pRecordLength)
+public synchronized FalseTargetsAttribute setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -126,7 +126,7 @@ public FalseTargetsAttribute setRecordLength(short pRecordLength)
 /** Utility setter for {@link FalseTargetsAttribute#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setRecordLength(int pRecordLength){
+public synchronized FalseTargetsAttribute setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -140,7 +140,7 @@ public short getRecordLength()
 /** Setter for {@link FalseTargetsAttribute#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding(short pPadding)
+public synchronized FalseTargetsAttribute setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -148,7 +148,7 @@ public FalseTargetsAttribute setPadding(short pPadding)
 /** Utility setter for {@link FalseTargetsAttribute#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding(int pPadding){
+public synchronized FalseTargetsAttribute setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -162,7 +162,7 @@ public short getPadding()
 /** Setter for {@link FalseTargetsAttribute#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setEmitterNumber(byte pEmitterNumber)
+public synchronized FalseTargetsAttribute setEmitterNumber(byte pEmitterNumber)
 {
     emitterNumber = pEmitterNumber;
     return this;
@@ -170,7 +170,7 @@ public FalseTargetsAttribute setEmitterNumber(byte pEmitterNumber)
 /** Utility setter for {@link FalseTargetsAttribute#emitterNumber}
   * @param pEmitterNumber new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setEmitterNumber(int pEmitterNumber){
+public synchronized FalseTargetsAttribute setEmitterNumber(int pEmitterNumber){
     emitterNumber = (byte) pEmitterNumber;
     return this;
 }
@@ -184,7 +184,7 @@ public byte getEmitterNumber()
 /** Setter for {@link FalseTargetsAttribute#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setBeamNumber(byte pBeamNumber)
+public synchronized FalseTargetsAttribute setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
@@ -192,7 +192,7 @@ public FalseTargetsAttribute setBeamNumber(byte pBeamNumber)
 /** Utility setter for {@link FalseTargetsAttribute#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setBeamNumber(int pBeamNumber){
+public synchronized FalseTargetsAttribute setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
@@ -206,7 +206,7 @@ public byte getBeamNumber()
 /** Setter for {@link FalseTargetsAttribute#stateIndicator}
   * @param pStateIndicator new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setStateIndicator(EEAttributeStateIndicator pStateIndicator)
+public synchronized FalseTargetsAttribute setStateIndicator(EEAttributeStateIndicator pStateIndicator)
 {
     stateIndicator = pStateIndicator;
     return this;
@@ -221,7 +221,7 @@ public EEAttributeStateIndicator getStateIndicator()
 /** Setter for {@link FalseTargetsAttribute#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding2(byte pPadding2)
+public synchronized FalseTargetsAttribute setPadding2(byte pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -229,7 +229,7 @@ public FalseTargetsAttribute setPadding2(byte pPadding2)
 /** Utility setter for {@link FalseTargetsAttribute#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding2(int pPadding2){
+public synchronized FalseTargetsAttribute setPadding2(int pPadding2){
     padding2 = (byte) pPadding2;
     return this;
 }
@@ -243,7 +243,7 @@ public byte getPadding2()
 /** Setter for {@link FalseTargetsAttribute#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding3(short pPadding3)
+public synchronized FalseTargetsAttribute setPadding3(short pPadding3)
 {
     padding3 = pPadding3;
     return this;
@@ -251,7 +251,7 @@ public FalseTargetsAttribute setPadding3(short pPadding3)
 /** Utility setter for {@link FalseTargetsAttribute#padding3}
   * @param pPadding3 new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setPadding3(int pPadding3){
+public synchronized FalseTargetsAttribute setPadding3(int pPadding3){
     padding3 = (short) pPadding3;
     return this;
 }
@@ -265,7 +265,7 @@ public short getPadding3()
 /** Setter for {@link FalseTargetsAttribute#falseTargetCount}
   * @param pFalseTargetCount new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setFalseTargetCount(short pFalseTargetCount)
+public synchronized FalseTargetsAttribute setFalseTargetCount(short pFalseTargetCount)
 {
     falseTargetCount = pFalseTargetCount;
     return this;
@@ -273,7 +273,7 @@ public FalseTargetsAttribute setFalseTargetCount(short pFalseTargetCount)
 /** Utility setter for {@link FalseTargetsAttribute#falseTargetCount}
   * @param pFalseTargetCount new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setFalseTargetCount(int pFalseTargetCount){
+public synchronized FalseTargetsAttribute setFalseTargetCount(int pFalseTargetCount){
     falseTargetCount = (short) pFalseTargetCount;
     return this;
 }
@@ -287,7 +287,7 @@ public short getFalseTargetCount()
 /** Setter for {@link FalseTargetsAttribute#walkSpeed}
   * @param pWalkSpeed new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setWalkSpeed(float pWalkSpeed)
+public synchronized FalseTargetsAttribute setWalkSpeed(float pWalkSpeed)
 {
     walkSpeed = pWalkSpeed;
     return this;
@@ -302,7 +302,7 @@ public float getWalkSpeed()
 /** Setter for {@link FalseTargetsAttribute#walkAcceleration}
   * @param pWalkAcceleration new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setWalkAcceleration(float pWalkAcceleration)
+public synchronized FalseTargetsAttribute setWalkAcceleration(float pWalkAcceleration)
 {
     walkAcceleration = pWalkAcceleration;
     return this;
@@ -317,7 +317,7 @@ public float getWalkAcceleration()
 /** Setter for {@link FalseTargetsAttribute#maximumWalkDistance}
   * @param pMaximumWalkDistance new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setMaximumWalkDistance(float pMaximumWalkDistance)
+public synchronized FalseTargetsAttribute setMaximumWalkDistance(float pMaximumWalkDistance)
 {
     maximumWalkDistance = pMaximumWalkDistance;
     return this;
@@ -332,7 +332,7 @@ public float getMaximumWalkDistance()
 /** Setter for {@link FalseTargetsAttribute#keepTime}
   * @param pKeepTime new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setKeepTime(float pKeepTime)
+public synchronized FalseTargetsAttribute setKeepTime(float pKeepTime)
 {
     keepTime = pKeepTime;
     return this;
@@ -347,7 +347,7 @@ public float getKeepTime()
 /** Setter for {@link FalseTargetsAttribute#echoSpacing}
   * @param pEchoSpacing new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setEchoSpacing(float pEchoSpacing)
+public synchronized FalseTargetsAttribute setEchoSpacing(float pEchoSpacing)
 {
     echoSpacing = pEchoSpacing;
     return this;
@@ -362,7 +362,7 @@ public float getEchoSpacing()
 /** Setter for {@link FalseTargetsAttribute#firstTargetOffset}
   * @param pFirstTargetOffset new value of interest
   * @return same object to permit progressive setters */
-public FalseTargetsAttribute setFirstTargetOffset(float pFirstTargetOffset)
+public synchronized FalseTargetsAttribute setFirstTargetOffset(float pFirstTargetOffset)
 {
     firstTargetOffset = pFirstTargetOffset;
     return this;
@@ -414,7 +414,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -493,7 +493,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -539,7 +539,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -559,7 +559,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -584,7 +584,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

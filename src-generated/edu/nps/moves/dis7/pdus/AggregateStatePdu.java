@@ -92,13 +92,13 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public AggregateStatePdu copy()
+ public synchronized AggregateStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public AggregateStatePdu copyByteBuffer()
+ public synchronized AggregateStatePdu copyByteBuffer()
  {
      AggregateStatePdu newCopy = new AggregateStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -125,7 +125,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public AggregateStatePdu copyDataOutputStream()
+ public synchronized AggregateStatePdu copyDataOutputStream()
  {
      AggregateStatePdu newCopy = new AggregateStatePdu();
      try
@@ -228,7 +228,7 @@ public int getMarshalledSize()
 /** Setter for {@link AggregateStatePdu#aggregateID}
   * @param pAggregateID new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setAggregateID(AggregateIdentifier pAggregateID)
+public synchronized AggregateStatePdu setAggregateID(AggregateIdentifier pAggregateID)
 {
     aggregateID = pAggregateID;
     return this;
@@ -244,7 +244,7 @@ public AggregateIdentifier getAggregateID()
 /** Setter for {@link AggregateStatePdu#forceID}
   * @param pForceID new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setForceID(ForceID pForceID)
+public synchronized AggregateStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
@@ -259,7 +259,7 @@ public ForceID getForceID()
 /** Setter for {@link AggregateStatePdu#aggregateState}
   * @param pAggregateState new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setAggregateState(AggregateStateAggregateState pAggregateState)
+public synchronized AggregateStatePdu setAggregateState(AggregateStateAggregateState pAggregateState)
 {
     aggregateState = pAggregateState;
     return this;
@@ -274,7 +274,7 @@ public AggregateStateAggregateState getAggregateState()
 /** Setter for {@link AggregateStatePdu#aggregateType}
   * @param pAggregateType new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setAggregateType(AggregateType pAggregateType)
+public synchronized AggregateStatePdu setAggregateType(AggregateType pAggregateType)
 {
     aggregateType = pAggregateType;
     return this;
@@ -290,7 +290,7 @@ public AggregateType getAggregateType()
 /** Setter for {@link AggregateStatePdu#formation}
   * @param pFormation new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setFormation(AggregateStateFormation pFormation)
+public synchronized AggregateStatePdu setFormation(AggregateStateFormation pFormation)
 {
     formation = pFormation;
     return this;
@@ -305,7 +305,7 @@ public AggregateStateFormation getFormation()
 /** Setter for {@link AggregateStatePdu#aggregateMarking}
   * @param pAggregateMarking new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setAggregateMarking(AggregateMarking pAggregateMarking)
+public synchronized AggregateStatePdu setAggregateMarking(AggregateMarking pAggregateMarking)
 {
     aggregateMarking = pAggregateMarking;
     return this;
@@ -321,7 +321,7 @@ public AggregateMarking getAggregateMarking()
 /** Setter for {@link AggregateStatePdu#dimensions}
   * @param pDimensions new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setDimensions(Vector3Float pDimensions)
+public synchronized AggregateStatePdu setDimensions(Vector3Float pDimensions)
 {
     dimensions = pDimensions;
     return this;
@@ -337,7 +337,7 @@ public Vector3Float getDimensions()
 /** Setter for {@link AggregateStatePdu#orientation}
   * @param pOrientation new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setOrientation(Vector3Float pOrientation)
+public synchronized AggregateStatePdu setOrientation(Vector3Float pOrientation)
 {
     orientation = pOrientation;
     return this;
@@ -353,7 +353,7 @@ public Vector3Float getOrientation()
 /** Setter for {@link AggregateStatePdu#centerOfMass}
   * @param pCenterOfMass new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setCenterOfMass(Vector3Double pCenterOfMass)
+public synchronized AggregateStatePdu setCenterOfMass(Vector3Double pCenterOfMass)
 {
     centerOfMass = pCenterOfMass;
     return this;
@@ -369,7 +369,7 @@ public Vector3Double getCenterOfMass()
 /** Setter for {@link AggregateStatePdu#velocity}
   * @param pVelocity new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setVelocity(Vector3Float pVelocity)
+public synchronized AggregateStatePdu setVelocity(Vector3Float pVelocity)
 {
     velocity = pVelocity;
     return this;
@@ -385,7 +385,7 @@ public Vector3Float getVelocity()
 /** Setter for {@link AggregateStatePdu#aggregateIDList}
   * @param pAggregateIDList new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setAggregateIDList(List<AggregateIdentifier> pAggregateIDList)
+public synchronized AggregateStatePdu setAggregateIDList(List<AggregateIdentifier> pAggregateIDList)
 {
     aggregateIDList = pAggregateIDList;
     return this;
@@ -400,7 +400,7 @@ public List<AggregateIdentifier> getAggregateIDList()
 /** Setter for {@link AggregateStatePdu#entityIDList}
   * @param pEntityIDList new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setEntityIDList(List<EntityID> pEntityIDList)
+public synchronized AggregateStatePdu setEntityIDList(List<EntityID> pEntityIDList)
 {
     entityIDList = pEntityIDList;
     return this;
@@ -415,7 +415,7 @@ public List<EntityID> getEntityIDList()
 /** Setter for {@link AggregateStatePdu#silentAggregateSystemList}
   * @param pSilentAggregateSystemList new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setSilentAggregateSystemList(List<EntityType> pSilentAggregateSystemList)
+public synchronized AggregateStatePdu setSilentAggregateSystemList(List<EntityType> pSilentAggregateSystemList)
 {
     silentAggregateSystemList = pSilentAggregateSystemList;
     return this;
@@ -430,7 +430,7 @@ public List<EntityType> getSilentAggregateSystemList()
 /** Setter for {@link AggregateStatePdu#silentEntitySystemList}
   * @param pSilentEntitySystemList new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setSilentEntitySystemList(List<EntityType> pSilentEntitySystemList)
+public synchronized AggregateStatePdu setSilentEntitySystemList(List<EntityType> pSilentEntitySystemList)
 {
     silentEntitySystemList = pSilentEntitySystemList;
     return this;
@@ -445,7 +445,7 @@ public List<EntityType> getSilentEntitySystemList()
 /** Setter for {@link AggregateStatePdu#variableDatumList}
   * @param pVariableDatumList new value of interest
   * @return same object to permit progressive setters */
-public AggregateStatePdu setVariableDatumList(List<VariableDatum> pVariableDatumList)
+public synchronized AggregateStatePdu setVariableDatumList(List<VariableDatum> pVariableDatumList)
 {
     variableDatumList = pVariableDatumList;
     return this;
@@ -534,7 +534,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -682,7 +682,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -772,7 +772,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -787,7 +787,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -827,7 +827,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

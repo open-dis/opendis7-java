@@ -66,7 +66,7 @@ public int getMarshalledSize()
 /** Setter for {@link IOCommsNodeRecord#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setRecordType(VariableRecordType pRecordType)
+public synchronized IOCommsNodeRecord setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -81,7 +81,7 @@ public VariableRecordType getRecordType()
 /** Setter for {@link IOCommsNodeRecord#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setRecordLength(short pRecordLength)
+public synchronized IOCommsNodeRecord setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -89,7 +89,7 @@ public IOCommsNodeRecord setRecordLength(short pRecordLength)
 /** Utility setter for {@link IOCommsNodeRecord#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setRecordLength(int pRecordLength){
+public synchronized IOCommsNodeRecord setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -103,7 +103,7 @@ public short getRecordLength()
 /** Setter for {@link IOCommsNodeRecord#commsNodeType}
   * @param pCommsNodeType new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNodeType pCommsNodeType)
+public synchronized IOCommsNodeRecord setCommsNodeType(IOCommsNodeRecordCommsNodeType pCommsNodeType)
 {
     commsNodeType = pCommsNodeType;
     return this;
@@ -118,7 +118,7 @@ public IOCommsNodeRecordCommsNodeType getCommsNodeType()
 /** Setter for {@link IOCommsNodeRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setPadding(byte pPadding)
+public synchronized IOCommsNodeRecord setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
@@ -126,7 +126,7 @@ public IOCommsNodeRecord setPadding(byte pPadding)
 /** Utility setter for {@link IOCommsNodeRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setPadding(int pPadding){
+public synchronized IOCommsNodeRecord setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
@@ -140,7 +140,7 @@ public byte getPadding()
 /** Setter for {@link IOCommsNodeRecord#commsNodeId}
   * @param pCommsNodeId new value of interest
   * @return same object to permit progressive setters */
-public IOCommsNodeRecord setCommsNodeId(CommunicationsNodeID pCommsNodeId)
+public synchronized IOCommsNodeRecord setCommsNodeId(CommunicationsNodeID pCommsNodeId)
 {
     commsNodeId = pCommsNodeId;
     return this;
@@ -184,7 +184,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -235,7 +235,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -263,7 +263,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -278,7 +278,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -293,7 +293,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

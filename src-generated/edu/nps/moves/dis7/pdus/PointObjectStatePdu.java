@@ -70,13 +70,13 @@ public class PointObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public PointObjectStatePdu copy()
+ public synchronized PointObjectStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public PointObjectStatePdu copyByteBuffer()
+ public synchronized PointObjectStatePdu copyByteBuffer()
  {
      PointObjectStatePdu newCopy = new PointObjectStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -103,7 +103,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public PointObjectStatePdu copyDataOutputStream()
+ public synchronized PointObjectStatePdu copyDataOutputStream()
  {
      PointObjectStatePdu newCopy = new PointObjectStatePdu();
      try
@@ -173,7 +173,7 @@ public int getMarshalledSize()
 /** Setter for {@link PointObjectStatePdu#objectID}
   * @param pObjectID new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setObjectID(EntityID pObjectID)
+public synchronized PointObjectStatePdu setObjectID(EntityID pObjectID)
 {
     objectID = pObjectID;
     return this;
@@ -189,7 +189,7 @@ public EntityID getObjectID()
 /** Setter for {@link PointObjectStatePdu#referencedObjectID}
   * @param pReferencedObjectID new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
+public synchronized PointObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
@@ -205,7 +205,7 @@ public ObjectIdentifier getReferencedObjectID()
 /** Setter for {@link PointObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setUpdateNumber(int pUpdateNumber)
+public synchronized PointObjectStatePdu setUpdateNumber(int pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
@@ -220,7 +220,7 @@ public int getUpdateNumber()
 /** Setter for {@link PointObjectStatePdu#forceID}
   * @param pForceID new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setForceID(ForceID pForceID)
+public synchronized PointObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
@@ -235,7 +235,7 @@ public ForceID getForceID()
 /** Setter for {@link PointObjectStatePdu#modifications}
   * @param pModifications new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setModifications(ObjectStateModificationPointObject pModifications)
+public synchronized PointObjectStatePdu setModifications(ObjectStateModificationPointObject pModifications)
 {
     modifications = pModifications;
     return this;
@@ -250,7 +250,7 @@ public ObjectStateModificationPointObject getModifications()
 /** Setter for {@link PointObjectStatePdu#objectType}
   * @param pObjectType new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setObjectType(ObjectType pObjectType)
+public synchronized PointObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
@@ -266,7 +266,7 @@ public ObjectType getObjectType()
 /** Setter for {@link PointObjectStatePdu#objectLocation}
   * @param pObjectLocation new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setObjectLocation(Vector3Double pObjectLocation)
+public synchronized PointObjectStatePdu setObjectLocation(Vector3Double pObjectLocation)
 {
     objectLocation = pObjectLocation;
     return this;
@@ -282,7 +282,7 @@ public Vector3Double getObjectLocation()
 /** Setter for {@link PointObjectStatePdu#objectOrientation}
   * @param pObjectOrientation new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setObjectOrientation(EulerAngles pObjectOrientation)
+public synchronized PointObjectStatePdu setObjectOrientation(EulerAngles pObjectOrientation)
 {
     objectOrientation = pObjectOrientation;
     return this;
@@ -298,7 +298,7 @@ public EulerAngles getObjectOrientation()
 /** Setter for {@link PointObjectStatePdu#specificObjectAppearance}
   * @param pSpecificObjectAppearance new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
+public synchronized PointObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
 {
     specificObjectAppearance = pSpecificObjectAppearance;
     return this;
@@ -313,7 +313,7 @@ public int getSpecificObjectAppearance()
 /** Setter for {@link PointObjectStatePdu#generObjectAppearance}
   * @param pGenerObjectAppearance new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setGenerObjectAppearance(ObjectStateAppearanceGeneral pGenerObjectAppearance)
+public synchronized PointObjectStatePdu setGenerObjectAppearance(ObjectStateAppearanceGeneral pGenerObjectAppearance)
 {
     generObjectAppearance = pGenerObjectAppearance;
     return this;
@@ -328,7 +328,7 @@ public ObjectStateAppearanceGeneral getGenerObjectAppearance()
 /** Setter for {@link PointObjectStatePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setPadding1(short pPadding1)
+public synchronized PointObjectStatePdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -336,7 +336,7 @@ public PointObjectStatePdu setPadding1(short pPadding1)
 /** Utility setter for {@link PointObjectStatePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setPadding1(int pPadding1){
+public synchronized PointObjectStatePdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
@@ -350,7 +350,7 @@ public short getPadding1()
 /** Setter for {@link PointObjectStatePdu#requesterID}
   * @param pRequesterID new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
+public synchronized PointObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
@@ -366,7 +366,7 @@ public SimulationAddress getRequesterID()
 /** Setter for {@link PointObjectStatePdu#receivingID}
   * @param pReceivingID new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
+public synchronized PointObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
@@ -382,7 +382,7 @@ public SimulationAddress getReceivingID()
 /** Setter for {@link PointObjectStatePdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public PointObjectStatePdu setPad2(int pPad2)
+public synchronized PointObjectStatePdu setPad2(int pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -434,7 +434,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -504,7 +504,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -550,7 +550,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -565,7 +565,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -589,7 +589,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -65,7 +65,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityTypeVP#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setRecordType(VariableParameterRecordType pRecordType)
+public synchronized EntityTypeVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -80,7 +80,7 @@ public VariableParameterRecordType getRecordType()
 /** Setter for {@link EntityTypeVP#changeIndicator}
   * @param pChangeIndicator new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
+public synchronized EntityTypeVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
     changeIndicator = pChangeIndicator;
     return this;
@@ -95,7 +95,7 @@ public EntityVPRecordChangeIndicator getChangeIndicator()
 /** Setter for {@link EntityTypeVP#entityType}
   * @param pEntityType new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setEntityType(EntityType pEntityType)
+public synchronized EntityTypeVP setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
@@ -111,7 +111,7 @@ public EntityType getEntityType()
 /** Setter for {@link EntityTypeVP#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setPadding(short pPadding)
+public synchronized EntityTypeVP setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -119,7 +119,7 @@ public EntityTypeVP setPadding(short pPadding)
 /** Utility setter for {@link EntityTypeVP#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setPadding(int pPadding){
+public synchronized EntityTypeVP setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -133,7 +133,7 @@ public short getPadding()
 /** Setter for {@link EntityTypeVP#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public EntityTypeVP setPadding1(int pPadding1)
+public synchronized EntityTypeVP setPadding1(int pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -175,7 +175,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -223,7 +223,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -249,7 +249,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -269,7 +269,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -284,7 +284,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -86,7 +86,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityAssociationVP#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setRecordType(VariableParameterRecordType pRecordType)
+public synchronized EntityAssociationVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -101,7 +101,7 @@ public VariableParameterRecordType getRecordType()
 /** Setter for {@link EntityAssociationVP#changeIndicator}
   * @param pChangeIndicator new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
+public synchronized EntityAssociationVP setChangeIndicator(EntityVPRecordChangeIndicator pChangeIndicator)
 {
     changeIndicator = pChangeIndicator;
     return this;
@@ -116,7 +116,7 @@ public EntityVPRecordChangeIndicator getChangeIndicator()
 /** Setter for {@link EntityAssociationVP#associationStatus}
   * @param pAssociationStatus new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setAssociationStatus(EntityAssociationAssociationType pAssociationStatus)
+public synchronized EntityAssociationVP setAssociationStatus(EntityAssociationAssociationType pAssociationStatus)
 {
     associationStatus = pAssociationStatus;
     return this;
@@ -131,7 +131,7 @@ public EntityAssociationAssociationType getAssociationStatus()
 /** Setter for {@link EntityAssociationVP#associationType}
   * @param pAssociationType new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setAssociationType(EntityAssociationPhysicalAssociationType pAssociationType)
+public synchronized EntityAssociationVP setAssociationType(EntityAssociationPhysicalAssociationType pAssociationType)
 {
     associationType = pAssociationType;
     return this;
@@ -146,7 +146,7 @@ public EntityAssociationPhysicalAssociationType getAssociationType()
 /** Setter for {@link EntityAssociationVP#entityID}
   * @param pEntityID new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setEntityID(EntityID pEntityID)
+public synchronized EntityAssociationVP setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
@@ -162,7 +162,7 @@ public EntityID getEntityID()
 /** Setter for {@link EntityAssociationVP#ownStationLocation}
   * @param pOwnStationLocation new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setOwnStationLocation(IsPartOfStationName pOwnStationLocation)
+public synchronized EntityAssociationVP setOwnStationLocation(IsPartOfStationName pOwnStationLocation)
 {
     ownStationLocation = pOwnStationLocation;
     return this;
@@ -177,7 +177,7 @@ public IsPartOfStationName getOwnStationLocation()
 /** Setter for {@link EntityAssociationVP#physicalConnectionType}
   * @param pPhysicalConnectionType new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setPhysicalConnectionType(EntityAssociationPhysicalConnectionType pPhysicalConnectionType)
+public synchronized EntityAssociationVP setPhysicalConnectionType(EntityAssociationPhysicalConnectionType pPhysicalConnectionType)
 {
     physicalConnectionType = pPhysicalConnectionType;
     return this;
@@ -192,7 +192,7 @@ public EntityAssociationPhysicalConnectionType getPhysicalConnectionType()
 /** Setter for {@link EntityAssociationVP#groupMemberType}
   * @param pGroupMemberType new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setGroupMemberType(EntityAssociationGroupMemberType pGroupMemberType)
+public synchronized EntityAssociationVP setGroupMemberType(EntityAssociationGroupMemberType pGroupMemberType)
 {
     groupMemberType = pGroupMemberType;
     return this;
@@ -207,7 +207,7 @@ public EntityAssociationGroupMemberType getGroupMemberType()
 /** Setter for {@link EntityAssociationVP#groupNumber}
   * @param pGroupNumber new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setGroupNumber(short pGroupNumber)
+public synchronized EntityAssociationVP setGroupNumber(short pGroupNumber)
 {
     groupNumber = pGroupNumber;
     return this;
@@ -215,7 +215,7 @@ public EntityAssociationVP setGroupNumber(short pGroupNumber)
 /** Utility setter for {@link EntityAssociationVP#groupNumber}
   * @param pGroupNumber new value of interest
   * @return same object to permit progressive setters */
-public EntityAssociationVP setGroupNumber(int pGroupNumber){
+public synchronized EntityAssociationVP setGroupNumber(int pGroupNumber){
     groupNumber = (short) pGroupNumber;
     return this;
 }
@@ -260,7 +260,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -320,7 +320,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -354,7 +354,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -374,7 +374,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -393,7 +393,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

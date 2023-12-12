@@ -52,13 +52,13 @@ public class EntityStateUpdatePdu extends EntityInformationInteractionFamilyPdu 
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public EntityStateUpdatePdu copy()
+ public synchronized EntityStateUpdatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public EntityStateUpdatePdu copyByteBuffer()
+ public synchronized EntityStateUpdatePdu copyByteBuffer()
  {
      EntityStateUpdatePdu newCopy = new EntityStateUpdatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -85,7 +85,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public EntityStateUpdatePdu copyDataOutputStream()
+ public synchronized EntityStateUpdatePdu copyDataOutputStream()
  {
      EntityStateUpdatePdu newCopy = new EntityStateUpdatePdu();
      try
@@ -148,7 +148,7 @@ public int getMarshalledSize()
 /** Setter for {@link EntityStateUpdatePdu#entityID}
   * @param pEntityID new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setEntityID(EntityID pEntityID)
+public synchronized EntityStateUpdatePdu setEntityID(EntityID pEntityID)
 {
     entityID = pEntityID;
     return this;
@@ -164,7 +164,7 @@ public EntityID getEntityID()
 /** Setter for {@link EntityStateUpdatePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setPadding1(byte pPadding1)
+public synchronized EntityStateUpdatePdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -172,7 +172,7 @@ public EntityStateUpdatePdu setPadding1(byte pPadding1)
 /** Utility setter for {@link EntityStateUpdatePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setPadding1(int pPadding1){
+public synchronized EntityStateUpdatePdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -186,7 +186,7 @@ public byte getPadding1()
 /** Setter for {@link EntityStateUpdatePdu#entityLinearVelocity}
   * @param pEntityLinearVelocity new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
+public synchronized EntityStateUpdatePdu setEntityLinearVelocity(Vector3Float pEntityLinearVelocity)
 {
     entityLinearVelocity = pEntityLinearVelocity;
     return this;
@@ -202,7 +202,7 @@ public Vector3Float getEntityLinearVelocity()
 /** Setter for {@link EntityStateUpdatePdu#entityLocation}
   * @param pEntityLocation new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setEntityLocation(Vector3Double pEntityLocation)
+public synchronized EntityStateUpdatePdu setEntityLocation(Vector3Double pEntityLocation)
 {
     entityLocation = pEntityLocation;
     return this;
@@ -218,7 +218,7 @@ public Vector3Double getEntityLocation()
 /** Setter for {@link EntityStateUpdatePdu#entityOrientation}
   * @param pEntityOrientation new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setEntityOrientation(EulerAngles pEntityOrientation)
+public synchronized EntityStateUpdatePdu setEntityOrientation(EulerAngles pEntityOrientation)
 {
     entityOrientation = pEntityOrientation;
     return this;
@@ -234,7 +234,7 @@ public EulerAngles getEntityOrientation()
 /** Setter for {@link EntityStateUpdatePdu#entityAppearance}
   * @param pEntityAppearance new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setEntityAppearance(int pEntityAppearance)
+public synchronized EntityStateUpdatePdu setEntityAppearance(int pEntityAppearance)
 {
     entityAppearance = pEntityAppearance;
     return this;
@@ -249,7 +249,7 @@ public int getEntityAppearance()
 /** Setter for {@link EntityStateUpdatePdu#variableParameters}
   * @param pVariableParameters new value of interest
   * @return same object to permit progressive setters */
-public EntityStateUpdatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
+public synchronized EntityStateUpdatePdu setVariableParameters(List<VariableParameter> pVariableParameters)
 {
     variableParameters = pVariableParameters;
     return this;
@@ -301,7 +301,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -369,7 +369,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -409,7 +409,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -424,7 +424,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -444,7 +444,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

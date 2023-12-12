@@ -56,7 +56,7 @@ public int getMarshalledSize()
 /** Setter for {@link GridDataType2#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public GridDataType2 setPadding(short pPadding)
+public synchronized GridDataType2 setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -64,7 +64,7 @@ public GridDataType2 setPadding(short pPadding)
 /** Utility setter for {@link GridDataType2#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public GridDataType2 setPadding(int pPadding){
+public synchronized GridDataType2 setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -78,7 +78,7 @@ public short getPadding()
 /** Setter for {@link GridDataType2#dataValues}
   * @param pDataValues new value of interest
   * @return same object to permit progressive setters */
-public GridDataType2 setDataValues(float[] pDataValues)
+public synchronized GridDataType2 setDataValues(float[] pDataValues)
 {
     dataValues = pDataValues;
     return this;
@@ -122,7 +122,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -172,7 +172,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -197,7 +197,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -212,7 +212,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -229,7 +229,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

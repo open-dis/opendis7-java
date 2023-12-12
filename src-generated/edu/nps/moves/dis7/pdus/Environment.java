@@ -70,7 +70,7 @@ public int getMarshalledSize()
 /** Setter for {@link Environment#environmentType}
   * @param pEnvironmentType new value of interest
   * @return same object to permit progressive setters */
-public Environment setEnvironmentType(EnvironmentalProcessRecordType pEnvironmentType)
+public synchronized Environment setEnvironmentType(EnvironmentalProcessRecordType pEnvironmentType)
 {
     environmentType = pEnvironmentType;
     return this;
@@ -85,7 +85,7 @@ public EnvironmentalProcessRecordType getEnvironmentType()
 /** Setter for {@link Environment#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public Environment setLength(short pLength)
+public synchronized Environment setLength(short pLength)
 {
     length = pLength;
     return this;
@@ -93,7 +93,7 @@ public Environment setLength(short pLength)
 /** Utility setter for {@link Environment#length}
   * @param pLength new value of interest
   * @return same object to permit progressive setters */
-public Environment setLength(int pLength){
+public synchronized Environment setLength(int pLength){
     length = (short) pLength;
     return this;
 }
@@ -107,7 +107,7 @@ public short getLength()
 /** Setter for {@link Environment#index}
   * @param pIndex new value of interest
   * @return same object to permit progressive setters */
-public Environment setIndex(byte pIndex)
+public synchronized Environment setIndex(byte pIndex)
 {
     index = pIndex;
     return this;
@@ -115,7 +115,7 @@ public Environment setIndex(byte pIndex)
 /** Utility setter for {@link Environment#index}
   * @param pIndex new value of interest
   * @return same object to permit progressive setters */
-public Environment setIndex(int pIndex){
+public synchronized Environment setIndex(int pIndex){
     index = (byte) pIndex;
     return this;
 }
@@ -129,7 +129,7 @@ public byte getIndex()
 /** Setter for {@link Environment#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public Environment setPadding1(byte pPadding1)
+public synchronized Environment setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -137,7 +137,7 @@ public Environment setPadding1(byte pPadding1)
 /** Utility setter for {@link Environment#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public Environment setPadding1(int pPadding1){
+public synchronized Environment setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -151,7 +151,7 @@ public byte getPadding1()
 /** Setter for {@link Environment#geometry}
   * @param pGeometry new value of interest
   * @return same object to permit progressive setters */
-public Environment setGeometry(byte[] pGeometry)
+public synchronized Environment setGeometry(byte[] pGeometry)
 {
     geometry = pGeometry;
     return this;
@@ -197,7 +197,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -253,7 +253,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -282,7 +282,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -302,7 +302,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -322,7 +322,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

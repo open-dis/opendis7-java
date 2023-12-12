@@ -43,13 +43,13 @@ public class RepairResponsePdu extends LogisticsFamilyPdu implements Serializabl
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public RepairResponsePdu copy()
+ public synchronized RepairResponsePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public RepairResponsePdu copyByteBuffer()
+ public synchronized RepairResponsePdu copyByteBuffer()
  {
      RepairResponsePdu newCopy = new RepairResponsePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -76,7 +76,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public RepairResponsePdu copyDataOutputStream()
+ public synchronized RepairResponsePdu copyDataOutputStream()
  {
      RepairResponsePdu newCopy = new RepairResponsePdu();
      try
@@ -130,7 +130,7 @@ public int getMarshalledSize()
 /** Setter for {@link RepairResponsePdu#receivingEntityID}
   * @param pReceivingEntityID new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setReceivingEntityID(EntityID pReceivingEntityID)
+public synchronized RepairResponsePdu setReceivingEntityID(EntityID pReceivingEntityID)
 {
     receivingEntityID = pReceivingEntityID;
     return this;
@@ -146,7 +146,7 @@ public EntityID getReceivingEntityID()
 /** Setter for {@link RepairResponsePdu#repairingEntityID}
   * @param pRepairingEntityID new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setRepairingEntityID(EntityID pRepairingEntityID)
+public synchronized RepairResponsePdu setRepairingEntityID(EntityID pRepairingEntityID)
 {
     repairingEntityID = pRepairingEntityID;
     return this;
@@ -162,7 +162,7 @@ public EntityID getRepairingEntityID()
 /** Setter for {@link RepairResponsePdu#repairResult}
   * @param pRepairResult new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setRepairResult(RepairResponseRepairResult pRepairResult)
+public synchronized RepairResponsePdu setRepairResult(RepairResponseRepairResult pRepairResult)
 {
     repairResult = pRepairResult;
     return this;
@@ -177,7 +177,7 @@ public RepairResponseRepairResult getRepairResult()
 /** Setter for {@link RepairResponsePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setPadding1(byte pPadding1)
+public synchronized RepairResponsePdu setPadding1(byte pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -185,7 +185,7 @@ public RepairResponsePdu setPadding1(byte pPadding1)
 /** Utility setter for {@link RepairResponsePdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setPadding1(int pPadding1){
+public synchronized RepairResponsePdu setPadding1(int pPadding1){
     padding1 = (byte) pPadding1;
     return this;
 }
@@ -199,7 +199,7 @@ public byte getPadding1()
 /** Setter for {@link RepairResponsePdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setPadding2(short pPadding2)
+public synchronized RepairResponsePdu setPadding2(short pPadding2)
 {
     padding2 = pPadding2;
     return this;
@@ -207,7 +207,7 @@ public RepairResponsePdu setPadding2(short pPadding2)
 /** Utility setter for {@link RepairResponsePdu#padding2}
   * @param pPadding2 new value of interest
   * @return same object to permit progressive setters */
-public RepairResponsePdu setPadding2(int pPadding2){
+public synchronized RepairResponsePdu setPadding2(int pPadding2){
     padding2 = (short) pPadding2;
     return this;
 }
@@ -249,7 +249,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -299,7 +299,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -327,7 +327,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -342,7 +342,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -357,7 +357,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

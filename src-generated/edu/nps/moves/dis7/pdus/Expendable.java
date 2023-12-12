@@ -64,7 +64,7 @@ public int getMarshalledSize()
 /** Setter for {@link Expendable#expendable}
   * @param pExpendable new value of interest
   * @return same object to permit progressive setters */
-public Expendable setExpendable(EntityType pExpendable)
+public synchronized Expendable setExpendable(EntityType pExpendable)
 {
     expendable = pExpendable;
     return this;
@@ -80,7 +80,7 @@ public EntityType getExpendable()
 /** Setter for {@link Expendable#station}
   * @param pStation new value of interest
   * @return same object to permit progressive setters */
-public Expendable setStation(int pStation)
+public synchronized Expendable setStation(int pStation)
 {
     station = pStation;
     return this;
@@ -95,7 +95,7 @@ public int getStation()
 /** Setter for {@link Expendable#quantity}
   * @param pQuantity new value of interest
   * @return same object to permit progressive setters */
-public Expendable setQuantity(short pQuantity)
+public synchronized Expendable setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
@@ -103,7 +103,7 @@ public Expendable setQuantity(short pQuantity)
 /** Utility setter for {@link Expendable#quantity}
   * @param pQuantity new value of interest
   * @return same object to permit progressive setters */
-public Expendable setQuantity(int pQuantity){
+public synchronized Expendable setQuantity(int pQuantity){
     quantity = (short) pQuantity;
     return this;
 }
@@ -117,7 +117,7 @@ public short getQuantity()
 /** Setter for {@link Expendable#expendableStatus}
   * @param pExpendableStatus new value of interest
   * @return same object to permit progressive setters */
-public Expendable setExpendableStatus(MunitionExpendableStatus pExpendableStatus)
+public synchronized Expendable setExpendableStatus(MunitionExpendableStatus pExpendableStatus)
 {
     expendableStatus = pExpendableStatus;
     return this;
@@ -132,7 +132,7 @@ public MunitionExpendableStatus getExpendableStatus()
 /** Setter for {@link Expendable#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public Expendable setPadding(byte pPadding)
+public synchronized Expendable setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
@@ -140,7 +140,7 @@ public Expendable setPadding(byte pPadding)
 /** Utility setter for {@link Expendable#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public Expendable setPadding(int pPadding){
+public synchronized Expendable setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
@@ -181,7 +181,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -229,7 +229,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -255,7 +255,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -275,7 +275,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -290,7 +290,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -69,7 +69,7 @@ public int getMarshalledSize()
 /** Setter for {@link ElectronicEmitter#systemDataLength}
   * @param pSystemDataLength new value of interest
   * @return same object to permit progressive setters */
-public ElectronicEmitter setSystemDataLength(byte pSystemDataLength)
+public synchronized ElectronicEmitter setSystemDataLength(byte pSystemDataLength)
 {
     systemDataLength = pSystemDataLength;
     return this;
@@ -77,7 +77,7 @@ public ElectronicEmitter setSystemDataLength(byte pSystemDataLength)
 /** Utility setter for {@link ElectronicEmitter#systemDataLength}
   * @param pSystemDataLength new value of interest
   * @return same object to permit progressive setters */
-public ElectronicEmitter setSystemDataLength(int pSystemDataLength){
+public synchronized ElectronicEmitter setSystemDataLength(int pSystemDataLength){
     systemDataLength = (byte) pSystemDataLength;
     return this;
 }
@@ -91,7 +91,7 @@ public byte getSystemDataLength()
 /** Setter for {@link ElectronicEmitter#emitterSystem}
   * @param pEmitterSystem new value of interest
   * @return same object to permit progressive setters */
-public ElectronicEmitter setEmitterSystem(EmitterSystem pEmitterSystem)
+public synchronized ElectronicEmitter setEmitterSystem(EmitterSystem pEmitterSystem)
 {
     emitterSystem = pEmitterSystem;
     return this;
@@ -107,7 +107,7 @@ public EmitterSystem getEmitterSystem()
 /** Setter for {@link ElectronicEmitter#location}
   * @param pLocation new value of interest
   * @return same object to permit progressive setters */
-public ElectronicEmitter setLocation(Vector3Float pLocation)
+public synchronized ElectronicEmitter setLocation(Vector3Float pLocation)
 {
     location = pLocation;
     return this;
@@ -123,7 +123,7 @@ public Vector3Float getLocation()
 /** Setter for {@link ElectronicEmitter#beams}
   * @param pBeams new value of interest
   * @return same object to permit progressive setters */
-public ElectronicEmitter setBeams(List<EmitterBeam> pBeams)
+public synchronized ElectronicEmitter setBeams(List<EmitterBeam> pBeams)
 {
     beams = pBeams;
     return this;
@@ -171,7 +171,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -229,7 +229,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -261,7 +261,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -281,7 +281,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -298,7 +298,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

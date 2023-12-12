@@ -64,13 +64,13 @@ public class UnderwaterAcousticPdu extends DistributedEmissionsRegenerationFamil
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public UnderwaterAcousticPdu copy()
+ public synchronized UnderwaterAcousticPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public UnderwaterAcousticPdu copyByteBuffer()
+ public synchronized UnderwaterAcousticPdu copyByteBuffer()
  {
      UnderwaterAcousticPdu newCopy = new UnderwaterAcousticPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public UnderwaterAcousticPdu copyDataOutputStream()
+ public synchronized UnderwaterAcousticPdu copyDataOutputStream()
  {
      UnderwaterAcousticPdu newCopy = new UnderwaterAcousticPdu();
      try
@@ -174,7 +174,7 @@ public int getMarshalledSize()
 /** Setter for {@link UnderwaterAcousticPdu#emittingEntityID}
   * @param pEmittingEntityID new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setEmittingEntityID(EntityID pEmittingEntityID)
+public synchronized UnderwaterAcousticPdu setEmittingEntityID(EntityID pEmittingEntityID)
 {
     emittingEntityID = pEmittingEntityID;
     return this;
@@ -190,7 +190,7 @@ public EntityID getEmittingEntityID()
 /** Setter for {@link UnderwaterAcousticPdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setEventID(EventIdentifier pEventID)
+public synchronized UnderwaterAcousticPdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -206,7 +206,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link UnderwaterAcousticPdu#stateChangeIndicator}
   * @param pStateChangeIndicator new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeUpdateIndicator pStateChangeIndicator)
+public synchronized UnderwaterAcousticPdu setStateChangeIndicator(UAStateChangeUpdateIndicator pStateChangeIndicator)
 {
     stateChangeIndicator = pStateChangeIndicator;
     return this;
@@ -221,7 +221,7 @@ public UAStateChangeUpdateIndicator getStateChangeIndicator()
 /** Setter for {@link UnderwaterAcousticPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setPad(byte pPad)
+public synchronized UnderwaterAcousticPdu setPad(byte pPad)
 {
     pad = pPad;
     return this;
@@ -229,7 +229,7 @@ public UnderwaterAcousticPdu setPad(byte pPad)
 /** Utility setter for {@link UnderwaterAcousticPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setPad(int pPad){
+public synchronized UnderwaterAcousticPdu setPad(int pPad){
     pad = (byte) pPad;
     return this;
 }
@@ -243,7 +243,7 @@ public byte getPad()
 /** Setter for {@link UnderwaterAcousticPdu#passiveParameterIndex}
   * @param pPassiveParameterIndex new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setPassiveParameterIndex(UAPassiveParameterIndex pPassiveParameterIndex)
+public synchronized UnderwaterAcousticPdu setPassiveParameterIndex(UAPassiveParameterIndex pPassiveParameterIndex)
 {
     passiveParameterIndex = pPassiveParameterIndex;
     return this;
@@ -258,7 +258,7 @@ public UAPassiveParameterIndex getPassiveParameterIndex()
 /** Setter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}
   * @param pPropulsionPlantConfiguration new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setPropulsionPlantConfiguration(byte pPropulsionPlantConfiguration)
+public synchronized UnderwaterAcousticPdu setPropulsionPlantConfiguration(byte pPropulsionPlantConfiguration)
 {
     propulsionPlantConfiguration = pPropulsionPlantConfiguration;
     return this;
@@ -266,7 +266,7 @@ public UnderwaterAcousticPdu setPropulsionPlantConfiguration(byte pPropulsionPla
 /** Utility setter for {@link UnderwaterAcousticPdu#propulsionPlantConfiguration}
   * @param pPropulsionPlantConfiguration new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setPropulsionPlantConfiguration(int pPropulsionPlantConfiguration){
+public synchronized UnderwaterAcousticPdu setPropulsionPlantConfiguration(int pPropulsionPlantConfiguration){
     propulsionPlantConfiguration = (byte) pPropulsionPlantConfiguration;
     return this;
 }
@@ -280,7 +280,7 @@ public byte getPropulsionPlantConfiguration()
 /** Setter for {@link UnderwaterAcousticPdu#shaftRPMs}
   * @param pShaftRPMs new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setShaftRPMs(List<ShaftRPM> pShaftRPMs)
+public synchronized UnderwaterAcousticPdu setShaftRPMs(List<ShaftRPM> pShaftRPMs)
 {
     shaftRPMs = pShaftRPMs;
     return this;
@@ -295,7 +295,7 @@ public List<ShaftRPM> getShaftRPMs()
 /** Setter for {@link UnderwaterAcousticPdu#apaData}
   * @param pApaData new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setApaData(List<APA> pApaData)
+public synchronized UnderwaterAcousticPdu setApaData(List<APA> pApaData)
 {
     apaData = pApaData;
     return this;
@@ -310,7 +310,7 @@ public List<APA> getApaData()
 /** Setter for {@link UnderwaterAcousticPdu#emitterSystems}
   * @param pEmitterSystems new value of interest
   * @return same object to permit progressive setters */
-public UnderwaterAcousticPdu setEmitterSystems(List<UAEmitter> pEmitterSystems)
+public synchronized UnderwaterAcousticPdu setEmitterSystems(List<UAEmitter> pEmitterSystems)
 {
     emitterSystems = pEmitterSystems;
     return this;
@@ -378,7 +378,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -482,7 +482,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -542,7 +542,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -557,7 +557,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -585,7 +585,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

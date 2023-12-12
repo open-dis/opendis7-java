@@ -40,13 +40,13 @@ public class CreateEntityRPdu extends SimulationManagementWithReliabilityFamilyP
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public CreateEntityRPdu copy()
+ public synchronized CreateEntityRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public CreateEntityRPdu copyByteBuffer()
+ public synchronized CreateEntityRPdu copyByteBuffer()
  {
      CreateEntityRPdu newCopy = new CreateEntityRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -73,7 +73,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public CreateEntityRPdu copyDataOutputStream()
+ public synchronized CreateEntityRPdu copyDataOutputStream()
  {
      CreateEntityRPdu newCopy = new CreateEntityRPdu();
      try
@@ -124,7 +124,7 @@ public int getMarshalledSize()
 /** Setter for {@link CreateEntityRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized CreateEntityRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -139,7 +139,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link CreateEntityRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setPad1(byte pPad1)
+public synchronized CreateEntityRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -147,7 +147,7 @@ public CreateEntityRPdu setPad1(byte pPad1)
 /** Utility setter for {@link CreateEntityRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setPad1(int pPad1){
+public synchronized CreateEntityRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -161,7 +161,7 @@ public byte getPad1()
 /** Setter for {@link CreateEntityRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setPad2(short pPad2)
+public synchronized CreateEntityRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -169,7 +169,7 @@ public CreateEntityRPdu setPad2(short pPad2)
 /** Utility setter for {@link CreateEntityRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setPad2(int pPad2){
+public synchronized CreateEntityRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
@@ -183,7 +183,7 @@ public short getPad2()
 /** Setter for {@link CreateEntityRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public CreateEntityRPdu setRequestID(int pRequestID)
+public synchronized CreateEntityRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -225,7 +225,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -274,7 +274,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -300,7 +300,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -315,7 +315,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -329,7 +329,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

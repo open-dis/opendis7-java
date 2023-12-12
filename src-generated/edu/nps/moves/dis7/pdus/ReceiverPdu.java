@@ -46,13 +46,13 @@ public class ReceiverPdu extends RadioCommunicationsFamilyPdu implements Seriali
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ReceiverPdu copy()
+ public synchronized ReceiverPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ReceiverPdu copyByteBuffer()
+ public synchronized ReceiverPdu copyByteBuffer()
  {
      ReceiverPdu newCopy = new ReceiverPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ReceiverPdu copyDataOutputStream()
+ public synchronized ReceiverPdu copyDataOutputStream()
  {
      ReceiverPdu newCopy = new ReceiverPdu();
      try
@@ -134,7 +134,7 @@ public int getMarshalledSize()
 /** Setter for {@link ReceiverPdu#header}
   * @param pHeader new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setHeader(RadioCommsHeader pHeader)
+public synchronized ReceiverPdu setHeader(RadioCommsHeader pHeader)
 {
     header = pHeader;
     return this;
@@ -150,7 +150,7 @@ public RadioCommsHeader getHeader()
 /** Setter for {@link ReceiverPdu#receiverState}
   * @param pReceiverState new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setReceiverState(ReceiverReceiverState pReceiverState)
+public synchronized ReceiverPdu setReceiverState(ReceiverReceiverState pReceiverState)
 {
     receiverState = pReceiverState;
     return this;
@@ -165,7 +165,7 @@ public ReceiverReceiverState getReceiverState()
 /** Setter for {@link ReceiverPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setPadding1(short pPadding1)
+public synchronized ReceiverPdu setPadding1(short pPadding1)
 {
     padding1 = pPadding1;
     return this;
@@ -173,7 +173,7 @@ public ReceiverPdu setPadding1(short pPadding1)
 /** Utility setter for {@link ReceiverPdu#padding1}
   * @param pPadding1 new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setPadding1(int pPadding1){
+public synchronized ReceiverPdu setPadding1(int pPadding1){
     padding1 = (short) pPadding1;
     return this;
 }
@@ -187,7 +187,7 @@ public short getPadding1()
 /** Setter for {@link ReceiverPdu#receivedPower}
   * @param pReceivedPower new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setReceivedPower(float pReceivedPower)
+public synchronized ReceiverPdu setReceivedPower(float pReceivedPower)
 {
     receivedPower = pReceivedPower;
     return this;
@@ -202,7 +202,7 @@ public float getReceivedPower()
 /** Setter for {@link ReceiverPdu#transmitterEntityId}
   * @param pTransmitterEntityId new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setTransmitterEntityId(EntityID pTransmitterEntityId)
+public synchronized ReceiverPdu setTransmitterEntityId(EntityID pTransmitterEntityId)
 {
     transmitterEntityId = pTransmitterEntityId;
     return this;
@@ -218,7 +218,7 @@ public EntityID getTransmitterEntityId()
 /** Setter for {@link ReceiverPdu#transmitterRadioId}
   * @param pTransmitterRadioId new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setTransmitterRadioId(short pTransmitterRadioId)
+public synchronized ReceiverPdu setTransmitterRadioId(short pTransmitterRadioId)
 {
     transmitterRadioId = pTransmitterRadioId;
     return this;
@@ -226,7 +226,7 @@ public ReceiverPdu setTransmitterRadioId(short pTransmitterRadioId)
 /** Utility setter for {@link ReceiverPdu#transmitterRadioId}
   * @param pTransmitterRadioId new value of interest
   * @return same object to permit progressive setters */
-public ReceiverPdu setTransmitterRadioId(int pTransmitterRadioId){
+public synchronized ReceiverPdu setTransmitterRadioId(int pTransmitterRadioId){
     transmitterRadioId = (short) pTransmitterRadioId;
     return this;
 }
@@ -269,7 +269,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -322,7 +322,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -352,7 +352,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -367,7 +367,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -383,7 +383,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -59,7 +59,7 @@ public int getMarshalledSize()
 /** Setter for {@link UABeam#beamDataLength}
   * @param pBeamDataLength new value of interest
   * @return same object to permit progressive setters */
-public UABeam setBeamDataLength(byte pBeamDataLength)
+public synchronized UABeam setBeamDataLength(byte pBeamDataLength)
 {
     beamDataLength = pBeamDataLength;
     return this;
@@ -67,7 +67,7 @@ public UABeam setBeamDataLength(byte pBeamDataLength)
 /** Utility setter for {@link UABeam#beamDataLength}
   * @param pBeamDataLength new value of interest
   * @return same object to permit progressive setters */
-public UABeam setBeamDataLength(int pBeamDataLength){
+public synchronized UABeam setBeamDataLength(int pBeamDataLength){
     beamDataLength = (byte) pBeamDataLength;
     return this;
 }
@@ -81,7 +81,7 @@ public byte getBeamDataLength()
 /** Setter for {@link UABeam#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public UABeam setBeamNumber(byte pBeamNumber)
+public synchronized UABeam setBeamNumber(byte pBeamNumber)
 {
     beamNumber = pBeamNumber;
     return this;
@@ -89,7 +89,7 @@ public UABeam setBeamNumber(byte pBeamNumber)
 /** Utility setter for {@link UABeam#beamNumber}
   * @param pBeamNumber new value of interest
   * @return same object to permit progressive setters */
-public UABeam setBeamNumber(int pBeamNumber){
+public synchronized UABeam setBeamNumber(int pBeamNumber){
     beamNumber = (byte) pBeamNumber;
     return this;
 }
@@ -103,7 +103,7 @@ public byte getBeamNumber()
 /** Setter for {@link UABeam#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public UABeam setPadding(short pPadding)
+public synchronized UABeam setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -111,7 +111,7 @@ public UABeam setPadding(short pPadding)
 /** Utility setter for {@link UABeam#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public UABeam setPadding(int pPadding){
+public synchronized UABeam setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -125,7 +125,7 @@ public short getPadding()
 /** Setter for {@link UABeam#fundamentalParameterData}
   * @param pFundamentalParameterData new value of interest
   * @return same object to permit progressive setters */
-public UABeam setFundamentalParameterData(UAFundamentalParameter pFundamentalParameterData)
+public synchronized UABeam setFundamentalParameterData(UAFundamentalParameter pFundamentalParameterData)
 {
     fundamentalParameterData = pFundamentalParameterData;
     return this;
@@ -167,7 +167,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -212,7 +212,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -236,7 +236,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -256,7 +256,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -270,7 +270,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

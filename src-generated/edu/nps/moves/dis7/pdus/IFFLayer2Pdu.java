@@ -45,13 +45,13 @@ public class IFFLayer2Pdu extends IFFPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public IFFLayer2Pdu copy()
+ public synchronized IFFLayer2Pdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public IFFLayer2Pdu copyByteBuffer()
+ public synchronized IFFLayer2Pdu copyByteBuffer()
  {
      IFFLayer2Pdu newCopy = new IFFLayer2Pdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -78,7 +78,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public IFFLayer2Pdu copyDataOutputStream()
+ public synchronized IFFLayer2Pdu copyDataOutputStream()
  {
      IFFLayer2Pdu newCopy = new IFFLayer2Pdu();
      try
@@ -137,7 +137,7 @@ public int getMarshalledSize()
 /** Setter for {@link IFFLayer2Pdu#layerHeader}
   * @param pLayerHeader new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setLayerHeader(LayerHeader pLayerHeader)
+public synchronized IFFLayer2Pdu setLayerHeader(LayerHeader pLayerHeader)
 {
     layerHeader = pLayerHeader;
     return this;
@@ -153,7 +153,7 @@ public LayerHeader getLayerHeader()
 /** Setter for {@link IFFLayer2Pdu#beamData}
   * @param pBeamData new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setBeamData(BeamData pBeamData)
+public synchronized IFFLayer2Pdu setBeamData(BeamData pBeamData)
 {
     beamData = pBeamData;
     return this;
@@ -169,7 +169,7 @@ public BeamData getBeamData()
 /** Setter for {@link IFFLayer2Pdu#secondaryOpParameter1}
   * @param pSecondaryOpParameter1 new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setSecondaryOpParameter1(byte pSecondaryOpParameter1)
+public synchronized IFFLayer2Pdu setSecondaryOpParameter1(byte pSecondaryOpParameter1)
 {
     secondaryOpParameter1 = pSecondaryOpParameter1;
     return this;
@@ -177,7 +177,7 @@ public IFFLayer2Pdu setSecondaryOpParameter1(byte pSecondaryOpParameter1)
 /** Utility setter for {@link IFFLayer2Pdu#secondaryOpParameter1}
   * @param pSecondaryOpParameter1 new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setSecondaryOpParameter1(int pSecondaryOpParameter1){
+public synchronized IFFLayer2Pdu setSecondaryOpParameter1(int pSecondaryOpParameter1){
     secondaryOpParameter1 = (byte) pSecondaryOpParameter1;
     return this;
 }
@@ -191,7 +191,7 @@ public byte getSecondaryOpParameter1()
 /** Setter for {@link IFFLayer2Pdu#secondaryOpParameter2}
   * @param pSecondaryOpParameter2 new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setSecondaryOpParameter2(byte pSecondaryOpParameter2)
+public synchronized IFFLayer2Pdu setSecondaryOpParameter2(byte pSecondaryOpParameter2)
 {
     secondaryOpParameter2 = pSecondaryOpParameter2;
     return this;
@@ -199,7 +199,7 @@ public IFFLayer2Pdu setSecondaryOpParameter2(byte pSecondaryOpParameter2)
 /** Utility setter for {@link IFFLayer2Pdu#secondaryOpParameter2}
   * @param pSecondaryOpParameter2 new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setSecondaryOpParameter2(int pSecondaryOpParameter2){
+public synchronized IFFLayer2Pdu setSecondaryOpParameter2(int pSecondaryOpParameter2){
     secondaryOpParameter2 = (byte) pSecondaryOpParameter2;
     return this;
 }
@@ -213,7 +213,7 @@ public byte getSecondaryOpParameter2()
 /** Setter for {@link IFFLayer2Pdu#fundamentalIFFParameters}
   * @param pFundamentalIFFParameters new value of interest
   * @return same object to permit progressive setters */
-public IFFLayer2Pdu setFundamentalIFFParameters(List<IFFFundamentalParameterData> pFundamentalIFFParameters)
+public synchronized IFFLayer2Pdu setFundamentalIFFParameters(List<IFFFundamentalParameterData> pFundamentalIFFParameters)
 {
     fundamentalIFFParameters = pFundamentalIFFParameters;
     return this;
@@ -263,7 +263,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -327,7 +327,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -363,7 +363,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -378,7 +378,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -396,7 +396,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -46,13 +46,13 @@ public class StopFreezeRPdu extends SimulationManagementWithReliabilityFamilyPdu
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public StopFreezeRPdu copy()
+ public synchronized StopFreezeRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public StopFreezeRPdu copyByteBuffer()
+ public synchronized StopFreezeRPdu copyByteBuffer()
  {
      StopFreezeRPdu newCopy = new StopFreezeRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public StopFreezeRPdu copyDataOutputStream()
+ public synchronized StopFreezeRPdu copyDataOutputStream()
  {
      StopFreezeRPdu newCopy = new StopFreezeRPdu();
      try
@@ -135,7 +135,7 @@ public int getMarshalledSize()
 /** Setter for {@link StopFreezeRPdu#realWorldTime}
   * @param pRealWorldTime new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setRealWorldTime(ClockTime pRealWorldTime)
+public synchronized StopFreezeRPdu setRealWorldTime(ClockTime pRealWorldTime)
 {
     realWorldTime = pRealWorldTime;
     return this;
@@ -151,7 +151,7 @@ public ClockTime getRealWorldTime()
 /** Setter for {@link StopFreezeRPdu#reason}
   * @param pReason new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setReason(StopFreezeReason pReason)
+public synchronized StopFreezeRPdu setReason(StopFreezeReason pReason)
 {
     reason = pReason;
     return this;
@@ -166,7 +166,7 @@ public StopFreezeReason getReason()
 /** Setter for {@link StopFreezeRPdu#frozenBehavior}
   * @param pFrozenBehavior new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setFrozenBehavior(StopFreezeFrozenBehavior pFrozenBehavior)
+public synchronized StopFreezeRPdu setFrozenBehavior(StopFreezeFrozenBehavior pFrozenBehavior)
 {
     frozenBehavior = pFrozenBehavior;
     return this;
@@ -181,7 +181,7 @@ public StopFreezeFrozenBehavior getFrozenBehavior()
 /** Setter for {@link StopFreezeRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized StopFreezeRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -196,7 +196,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link StopFreezeRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setPad1(byte pPad1)
+public synchronized StopFreezeRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -204,7 +204,7 @@ public StopFreezeRPdu setPad1(byte pPad1)
 /** Utility setter for {@link StopFreezeRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setPad1(int pPad1){
+public synchronized StopFreezeRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -218,7 +218,7 @@ public byte getPad1()
 /** Setter for {@link StopFreezeRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public StopFreezeRPdu setRequestID(int pRequestID)
+public synchronized StopFreezeRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -262,7 +262,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -315,7 +315,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -345,7 +345,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -360,7 +360,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -376,7 +376,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

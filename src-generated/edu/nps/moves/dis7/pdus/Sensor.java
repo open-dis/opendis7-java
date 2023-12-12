@@ -68,7 +68,7 @@ public int getMarshalledSize()
 /** Setter for {@link Sensor#sensorTypeSource}
   * @param pSensorTypeSource new value of interest
   * @return same object to permit progressive setters */
-public Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSource)
+public synchronized Sensor setSensorTypeSource(SensorTypeSource pSensorTypeSource)
 {
     sensorTypeSource = pSensorTypeSource;
     return this;
@@ -83,7 +83,7 @@ public SensorTypeSource getSensorTypeSource()
 /** Setter for {@link Sensor#sensorOnOffStatus}
   * @param pSensorOnOffStatus new value of interest
   * @return same object to permit progressive setters */
-public Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffStatus)
+public synchronized Sensor setSensorOnOffStatus(SensorOnOffStatus pSensorOnOffStatus)
 {
     sensorOnOffStatus = pSensorOnOffStatus;
     return this;
@@ -98,7 +98,7 @@ public SensorOnOffStatus getSensorOnOffStatus()
 /** Setter for {@link Sensor#sensorType}
   * @param pSensorType new value of interest
   * @return same object to permit progressive setters */
-public Sensor setSensorType(short pSensorType)
+public synchronized Sensor setSensorType(short pSensorType)
 {
     sensorType = pSensorType;
     return this;
@@ -106,7 +106,7 @@ public Sensor setSensorType(short pSensorType)
 /** Utility setter for {@link Sensor#sensorType}
   * @param pSensorType new value of interest
   * @return same object to permit progressive setters */
-public Sensor setSensorType(int pSensorType){
+public synchronized Sensor setSensorType(int pSensorType){
     sensorType = (short) pSensorType;
     return this;
 }
@@ -120,7 +120,7 @@ public short getSensorType()
 /** Setter for {@link Sensor#station}
   * @param pStation new value of interest
   * @return same object to permit progressive setters */
-public Sensor setStation(int pStation)
+public synchronized Sensor setStation(int pStation)
 {
     station = pStation;
     return this;
@@ -135,7 +135,7 @@ public int getStation()
 /** Setter for {@link Sensor#quantity}
   * @param pQuantity new value of interest
   * @return same object to permit progressive setters */
-public Sensor setQuantity(short pQuantity)
+public synchronized Sensor setQuantity(short pQuantity)
 {
     quantity = pQuantity;
     return this;
@@ -143,7 +143,7 @@ public Sensor setQuantity(short pQuantity)
 /** Utility setter for {@link Sensor#quantity}
   * @param pQuantity new value of interest
   * @return same object to permit progressive setters */
-public Sensor setQuantity(int pQuantity){
+public synchronized Sensor setQuantity(int pQuantity){
     quantity = (short) pQuantity;
     return this;
 }
@@ -157,7 +157,7 @@ public short getQuantity()
 /** Setter for {@link Sensor#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public Sensor setPadding(short pPadding)
+public synchronized Sensor setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -165,7 +165,7 @@ public Sensor setPadding(short pPadding)
 /** Utility setter for {@link Sensor#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public Sensor setPadding(int pPadding){
+public synchronized Sensor setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -207,7 +207,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -259,7 +259,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -287,7 +287,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -307,7 +307,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -323,7 +323,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

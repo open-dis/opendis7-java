@@ -75,7 +75,7 @@ public int getMarshalledSize()
 /** Setter for {@link AggregateType#aggregateKind}
   * @param pAggregateKind new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setAggregateKind(AggregateStateAggregateKind pAggregateKind)
+public synchronized AggregateType setAggregateKind(AggregateStateAggregateKind pAggregateKind)
 {
     aggregateKind = pAggregateKind;
     return this;
@@ -90,7 +90,7 @@ public AggregateStateAggregateKind getAggregateKind()
 /** Setter for {@link AggregateType#domain}
   * @param pDomain new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setDomain(PlatformDomain pDomain)
+public synchronized AggregateType setDomain(PlatformDomain pDomain)
 {
     domain = pDomain;
     return this;
@@ -105,7 +105,7 @@ public PlatformDomain getDomain()
 /** Setter for {@link AggregateType#country}
   * @param pCountry new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setCountry(Country pCountry)
+public synchronized AggregateType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
@@ -120,7 +120,7 @@ public Country getCountry()
 /** Setter for {@link AggregateType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setCategory(byte pCategory)
+public synchronized AggregateType setCategory(byte pCategory)
 {
     category = pCategory;
     return this;
@@ -128,7 +128,7 @@ public AggregateType setCategory(byte pCategory)
 /** Utility setter for {@link AggregateType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setCategory(int pCategory){
+public synchronized AggregateType setCategory(int pCategory){
     category = (byte) pCategory;
     return this;
 }
@@ -142,7 +142,7 @@ public byte getCategory()
 /** Setter for {@link AggregateType#subcategory}
   * @param pSubcategory new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setSubcategory(AggregateStateSubcategory pSubcategory)
+public synchronized AggregateType setSubcategory(AggregateStateSubcategory pSubcategory)
 {
     subcategory = pSubcategory;
     return this;
@@ -157,7 +157,7 @@ public AggregateStateSubcategory getSubcategory()
 /** Setter for {@link AggregateType#specificInfo}
   * @param pSpecificInfo new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setSpecificInfo(AggregateStateSpecific pSpecificInfo)
+public synchronized AggregateType setSpecificInfo(AggregateStateSpecific pSpecificInfo)
 {
     specificInfo = pSpecificInfo;
     return this;
@@ -172,7 +172,7 @@ public AggregateStateSpecific getSpecificInfo()
 /** Setter for {@link AggregateType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setExtra(byte pExtra)
+public synchronized AggregateType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
@@ -180,7 +180,7 @@ public AggregateType setExtra(byte pExtra)
 /** Utility setter for {@link AggregateType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public AggregateType setExtra(int pExtra){
+public synchronized AggregateType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
@@ -223,7 +223,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -278,7 +278,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -308,7 +308,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -328,7 +328,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -345,7 +345,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

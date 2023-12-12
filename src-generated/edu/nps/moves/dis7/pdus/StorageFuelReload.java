@@ -77,7 +77,7 @@ public int getMarshalledSize()
 /** Setter for {@link StorageFuelReload#standardQuantity}
   * @param pStandardQuantity new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setStandardQuantity(int pStandardQuantity)
+public synchronized StorageFuelReload setStandardQuantity(int pStandardQuantity)
 {
     standardQuantity = pStandardQuantity;
     return this;
@@ -92,7 +92,7 @@ public int getStandardQuantity()
 /** Setter for {@link StorageFuelReload#maximumQuantity}
   * @param pMaximumQuantity new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setMaximumQuantity(int pMaximumQuantity)
+public synchronized StorageFuelReload setMaximumQuantity(int pMaximumQuantity)
 {
     maximumQuantity = pMaximumQuantity;
     return this;
@@ -107,7 +107,7 @@ public int getMaximumQuantity()
 /** Setter for {@link StorageFuelReload#standardQuantityReloadTime}
   * @param pStandardQuantityReloadTime new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
+public synchronized StorageFuelReload setStandardQuantityReloadTime(int pStandardQuantityReloadTime)
 {
     standardQuantityReloadTime = pStandardQuantityReloadTime;
     return this;
@@ -122,7 +122,7 @@ public int getStandardQuantityReloadTime()
 /** Setter for {@link StorageFuelReload#maximumQuantityReloadTime}
   * @param pMaximumQuantityReloadTime new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
+public synchronized StorageFuelReload setMaximumQuantityReloadTime(int pMaximumQuantityReloadTime)
 {
     maximumQuantityReloadTime = pMaximumQuantityReloadTime;
     return this;
@@ -137,7 +137,7 @@ public int getMaximumQuantityReloadTime()
 /** Setter for {@link StorageFuelReload#fuelMeasurementUnits}
   * @param pFuelMeasurementUnits new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setFuelMeasurementUnits(FuelMeasurementUnits pFuelMeasurementUnits)
+public synchronized StorageFuelReload setFuelMeasurementUnits(FuelMeasurementUnits pFuelMeasurementUnits)
 {
     fuelMeasurementUnits = pFuelMeasurementUnits;
     return this;
@@ -152,7 +152,7 @@ public FuelMeasurementUnits getFuelMeasurementUnits()
 /** Setter for {@link StorageFuelReload#fuelType}
   * @param pFuelType new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setFuelType(SupplyFuelType pFuelType)
+public synchronized StorageFuelReload setFuelType(SupplyFuelType pFuelType)
 {
     fuelType = pFuelType;
     return this;
@@ -167,7 +167,7 @@ public SupplyFuelType getFuelType()
 /** Setter for {@link StorageFuelReload#fuelLocation}
   * @param pFuelLocation new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setFuelLocation(FuelLocation pFuelLocation)
+public synchronized StorageFuelReload setFuelLocation(FuelLocation pFuelLocation)
 {
     fuelLocation = pFuelLocation;
     return this;
@@ -182,7 +182,7 @@ public FuelLocation getFuelLocation()
 /** Setter for {@link StorageFuelReload#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setPadding(byte pPadding)
+public synchronized StorageFuelReload setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
@@ -190,7 +190,7 @@ public StorageFuelReload setPadding(byte pPadding)
 /** Utility setter for {@link StorageFuelReload#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public StorageFuelReload setPadding(int pPadding){
+public synchronized StorageFuelReload setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
@@ -234,7 +234,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -292,7 +292,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -324,7 +324,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -344,7 +344,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -362,7 +362,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

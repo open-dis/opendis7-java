@@ -74,7 +74,7 @@ public int getMarshalledSize()
 /** Setter for {@link RadioType#entityKind}
   * @param pEntityKind new value of interest
   * @return same object to permit progressive setters */
-public RadioType setEntityKind(EntityKind pEntityKind)
+public synchronized RadioType setEntityKind(EntityKind pEntityKind)
 {
     entityKind = pEntityKind;
     return this;
@@ -89,7 +89,7 @@ public EntityKind getEntityKind()
 /** Setter for {@link RadioType#domain}
   * @param pDomain new value of interest
   * @return same object to permit progressive setters */
-public RadioType setDomain(byte pDomain)
+public synchronized RadioType setDomain(byte pDomain)
 {
     domain = pDomain;
     return this;
@@ -97,7 +97,7 @@ public RadioType setDomain(byte pDomain)
 /** Utility setter for {@link RadioType#domain}
   * @param pDomain new value of interest
   * @return same object to permit progressive setters */
-public RadioType setDomain(int pDomain){
+public synchronized RadioType setDomain(int pDomain){
     domain = (byte) pDomain;
     return this;
 }
@@ -111,7 +111,7 @@ public byte getDomain()
 /** Setter for {@link RadioType#country}
   * @param pCountry new value of interest
   * @return same object to permit progressive setters */
-public RadioType setCountry(Country pCountry)
+public synchronized RadioType setCountry(Country pCountry)
 {
     country = pCountry;
     return this;
@@ -126,7 +126,7 @@ public Country getCountry()
 /** Setter for {@link RadioType#category}
   * @param pCategory new value of interest
   * @return same object to permit progressive setters */
-public RadioType setCategory(RadioCategory pCategory)
+public synchronized RadioType setCategory(RadioCategory pCategory)
 {
     category = pCategory;
     return this;
@@ -141,7 +141,7 @@ public RadioCategory getCategory()
 /** Setter for {@link RadioType#subcategory}
   * @param pSubcategory new value of interest
   * @return same object to permit progressive setters */
-public RadioType setSubcategory(RadioSubcategory pSubcategory)
+public synchronized RadioType setSubcategory(RadioSubcategory pSubcategory)
 {
     subcategory = pSubcategory;
     return this;
@@ -156,7 +156,7 @@ public RadioSubcategory getSubcategory()
 /** Setter for {@link RadioType#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public RadioType setSpecific(byte pSpecific)
+public synchronized RadioType setSpecific(byte pSpecific)
 {
     specific = pSpecific;
     return this;
@@ -164,7 +164,7 @@ public RadioType setSpecific(byte pSpecific)
 /** Utility setter for {@link RadioType#specific}
   * @param pSpecific new value of interest
   * @return same object to permit progressive setters */
-public RadioType setSpecific(int pSpecific){
+public synchronized RadioType setSpecific(int pSpecific){
     specific = (byte) pSpecific;
     return this;
 }
@@ -178,7 +178,7 @@ public byte getSpecific()
 /** Setter for {@link RadioType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public RadioType setExtra(byte pExtra)
+public synchronized RadioType setExtra(byte pExtra)
 {
     extra = pExtra;
     return this;
@@ -186,7 +186,7 @@ public RadioType setExtra(byte pExtra)
 /** Utility setter for {@link RadioType#extra}
   * @param pExtra new value of interest
   * @return same object to permit progressive setters */
-public RadioType setExtra(int pExtra){
+public synchronized RadioType setExtra(int pExtra){
     extra = (byte) pExtra;
     return this;
 }
@@ -229,7 +229,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -284,7 +284,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -314,7 +314,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -334,7 +334,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -351,7 +351,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

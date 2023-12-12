@@ -52,7 +52,7 @@ public int getMarshalledSize()
 /** Setter for {@link PduBase#pduStatus}
   * @param pPduStatus new value of interest
   * @return same object to permit progressive setters */
-public PduBase setPduStatus(PduStatus pPduStatus)
+public synchronized PduBase setPduStatus(PduStatus pPduStatus)
 {
     pduStatus = pPduStatus;
     return this;
@@ -68,7 +68,7 @@ public PduStatus getPduStatus()
 /** Setter for {@link PduBase#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public PduBase setPadding(byte pPadding)
+public synchronized PduBase setPadding(byte pPadding)
 {
     padding = pPadding;
     return this;
@@ -76,7 +76,7 @@ public PduBase setPadding(byte pPadding)
 /** Utility setter for {@link PduBase#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public PduBase setPadding(int pPadding){
+public synchronized PduBase setPadding(int pPadding){
     padding = (byte) pPadding;
     return this;
 }
@@ -115,7 +115,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -157,7 +157,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -179,7 +179,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -194,7 +194,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -206,7 +206,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

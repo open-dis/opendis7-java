@@ -73,13 +73,13 @@ public class CollisionElasticPdu extends EntityInformationInteractionFamilyPdu i
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public CollisionElasticPdu copy()
+ public synchronized CollisionElasticPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public CollisionElasticPdu copyByteBuffer()
+ public synchronized CollisionElasticPdu copyByteBuffer()
  {
      CollisionElasticPdu newCopy = new CollisionElasticPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -106,7 +106,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public CollisionElasticPdu copyDataOutputStream()
+ public synchronized CollisionElasticPdu copyDataOutputStream()
  {
      CollisionElasticPdu newCopy = new CollisionElasticPdu();
      try
@@ -173,7 +173,7 @@ public int getMarshalledSize()
 /** Setter for {@link CollisionElasticPdu#issuingEntityID}
   * @param pIssuingEntityID new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setIssuingEntityID(EntityID pIssuingEntityID)
+public synchronized CollisionElasticPdu setIssuingEntityID(EntityID pIssuingEntityID)
 {
     issuingEntityID = pIssuingEntityID;
     return this;
@@ -189,7 +189,7 @@ public EntityID getIssuingEntityID()
 /** Setter for {@link CollisionElasticPdu#collidingEntityID}
   * @param pCollidingEntityID new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollidingEntityID(EntityID pCollidingEntityID)
+public synchronized CollisionElasticPdu setCollidingEntityID(EntityID pCollidingEntityID)
 {
     collidingEntityID = pCollidingEntityID;
     return this;
@@ -205,7 +205,7 @@ public EntityID getCollidingEntityID()
 /** Setter for {@link CollisionElasticPdu#collisionEventID}
   * @param pCollisionEventID new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionEventID(EventIdentifier pCollisionEventID)
+public synchronized CollisionElasticPdu setCollisionEventID(EventIdentifier pCollisionEventID)
 {
     collisionEventID = pCollisionEventID;
     return this;
@@ -221,7 +221,7 @@ public EventIdentifier getCollisionEventID()
 /** Setter for {@link CollisionElasticPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setPad(short pPad)
+public synchronized CollisionElasticPdu setPad(short pPad)
 {
     pad = pPad;
     return this;
@@ -229,7 +229,7 @@ public CollisionElasticPdu setPad(short pPad)
 /** Utility setter for {@link CollisionElasticPdu#pad}
   * @param pPad new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setPad(int pPad){
+public synchronized CollisionElasticPdu setPad(int pPad){
     pad = (short) pPad;
     return this;
 }
@@ -243,7 +243,7 @@ public short getPad()
 /** Setter for {@link CollisionElasticPdu#contactVelocity}
   * @param pContactVelocity new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setContactVelocity(Vector3Float pContactVelocity)
+public synchronized CollisionElasticPdu setContactVelocity(Vector3Float pContactVelocity)
 {
     contactVelocity = pContactVelocity;
     return this;
@@ -259,7 +259,7 @@ public Vector3Float getContactVelocity()
 /** Setter for {@link CollisionElasticPdu#mass}
   * @param pMass new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setMass(float pMass)
+public synchronized CollisionElasticPdu setMass(float pMass)
 {
     mass = pMass;
     return this;
@@ -274,7 +274,7 @@ public float getMass()
 /** Setter for {@link CollisionElasticPdu#locationOfImpact}
   * @param pLocationOfImpact new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setLocationOfImpact(Vector3Float pLocationOfImpact)
+public synchronized CollisionElasticPdu setLocationOfImpact(Vector3Float pLocationOfImpact)
 {
     locationOfImpact = pLocationOfImpact;
     return this;
@@ -290,7 +290,7 @@ public Vector3Float getLocationOfImpact()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXX}
   * @param pCollisionIntermediateResultXX new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultXX(float pCollisionIntermediateResultXX)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultXX(float pCollisionIntermediateResultXX)
 {
     collisionIntermediateResultXX = pCollisionIntermediateResultXX;
     return this;
@@ -305,7 +305,7 @@ public float getCollisionIntermediateResultXX()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXY}
   * @param pCollisionIntermediateResultXY new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultXY(float pCollisionIntermediateResultXY)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultXY(float pCollisionIntermediateResultXY)
 {
     collisionIntermediateResultXY = pCollisionIntermediateResultXY;
     return this;
@@ -320,7 +320,7 @@ public float getCollisionIntermediateResultXY()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultXZ}
   * @param pCollisionIntermediateResultXZ new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultXZ(float pCollisionIntermediateResultXZ)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultXZ(float pCollisionIntermediateResultXZ)
 {
     collisionIntermediateResultXZ = pCollisionIntermediateResultXZ;
     return this;
@@ -335,7 +335,7 @@ public float getCollisionIntermediateResultXZ()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYY}
   * @param pCollisionIntermediateResultYY new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultYY(float pCollisionIntermediateResultYY)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultYY(float pCollisionIntermediateResultYY)
 {
     collisionIntermediateResultYY = pCollisionIntermediateResultYY;
     return this;
@@ -350,7 +350,7 @@ public float getCollisionIntermediateResultYY()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultYZ}
   * @param pCollisionIntermediateResultYZ new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultYZ(float pCollisionIntermediateResultYZ)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultYZ(float pCollisionIntermediateResultYZ)
 {
     collisionIntermediateResultYZ = pCollisionIntermediateResultYZ;
     return this;
@@ -365,7 +365,7 @@ public float getCollisionIntermediateResultYZ()
 /** Setter for {@link CollisionElasticPdu#collisionIntermediateResultZZ}
   * @param pCollisionIntermediateResultZZ new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCollisionIntermediateResultZZ(float pCollisionIntermediateResultZZ)
+public synchronized CollisionElasticPdu setCollisionIntermediateResultZZ(float pCollisionIntermediateResultZZ)
 {
     collisionIntermediateResultZZ = pCollisionIntermediateResultZZ;
     return this;
@@ -380,7 +380,7 @@ public float getCollisionIntermediateResultZZ()
 /** Setter for {@link CollisionElasticPdu#unitSurfaceNormal}
   * @param pUnitSurfaceNormal new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setUnitSurfaceNormal(Vector3Float pUnitSurfaceNormal)
+public synchronized CollisionElasticPdu setUnitSurfaceNormal(Vector3Float pUnitSurfaceNormal)
 {
     unitSurfaceNormal = pUnitSurfaceNormal;
     return this;
@@ -396,7 +396,7 @@ public Vector3Float getUnitSurfaceNormal()
 /** Setter for {@link CollisionElasticPdu#coefficientOfRestitution}
   * @param pCoefficientOfRestitution new value of interest
   * @return same object to permit progressive setters */
-public CollisionElasticPdu setCoefficientOfRestitution(float pCoefficientOfRestitution)
+public synchronized CollisionElasticPdu setCoefficientOfRestitution(float pCoefficientOfRestitution)
 {
     coefficientOfRestitution = pCoefficientOfRestitution;
     return this;
@@ -449,7 +449,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -525,7 +525,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -573,7 +573,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -588,7 +588,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -613,7 +613,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

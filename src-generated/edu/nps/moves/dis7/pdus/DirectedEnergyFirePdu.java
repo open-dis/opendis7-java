@@ -82,13 +82,13 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DirectedEnergyFirePdu copy()
+ public synchronized DirectedEnergyFirePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DirectedEnergyFirePdu copyByteBuffer()
+ public synchronized DirectedEnergyFirePdu copyByteBuffer()
  {
      DirectedEnergyFirePdu newCopy = new DirectedEnergyFirePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -115,7 +115,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DirectedEnergyFirePdu copyDataOutputStream()
+ public synchronized DirectedEnergyFirePdu copyDataOutputStream()
  {
      DirectedEnergyFirePdu newCopy = new DirectedEnergyFirePdu();
      try
@@ -191,7 +191,7 @@ public int getMarshalledSize()
 /** Setter for {@link DirectedEnergyFirePdu#firingEntityID}
   * @param pFiringEntityID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setFiringEntityID(EntityID pFiringEntityID)
+public synchronized DirectedEnergyFirePdu setFiringEntityID(EntityID pFiringEntityID)
 {
     firingEntityID = pFiringEntityID;
     return this;
@@ -207,7 +207,7 @@ public EntityID getFiringEntityID()
 /** Setter for {@link DirectedEnergyFirePdu#eventID}
   * @param pEventID new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setEventID(EventIdentifier pEventID)
+public synchronized DirectedEnergyFirePdu setEventID(EventIdentifier pEventID)
 {
     eventID = pEventID;
     return this;
@@ -223,7 +223,7 @@ public EventIdentifier getEventID()
 /** Setter for {@link DirectedEnergyFirePdu#munitionType}
   * @param pMunitionType new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setMunitionType(EntityType pMunitionType)
+public synchronized DirectedEnergyFirePdu setMunitionType(EntityType pMunitionType)
 {
     munitionType = pMunitionType;
     return this;
@@ -239,7 +239,7 @@ public EntityType getMunitionType()
 /** Setter for {@link DirectedEnergyFirePdu#shotStartTime}
   * @param pShotStartTime new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setShotStartTime(ClockTime pShotStartTime)
+public synchronized DirectedEnergyFirePdu setShotStartTime(ClockTime pShotStartTime)
 {
     shotStartTime = pShotStartTime;
     return this;
@@ -255,7 +255,7 @@ public ClockTime getShotStartTime()
 /** Setter for {@link DirectedEnergyFirePdu#commulativeShotTime}
   * @param pCommulativeShotTime new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setCommulativeShotTime(float pCommulativeShotTime)
+public synchronized DirectedEnergyFirePdu setCommulativeShotTime(float pCommulativeShotTime)
 {
     commulativeShotTime = pCommulativeShotTime;
     return this;
@@ -270,7 +270,7 @@ public float getCommulativeShotTime()
 /** Setter for {@link DirectedEnergyFirePdu#apertureEmitterLocation}
   * @param pApertureEmitterLocation new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setApertureEmitterLocation(Vector3Float pApertureEmitterLocation)
+public synchronized DirectedEnergyFirePdu setApertureEmitterLocation(Vector3Float pApertureEmitterLocation)
 {
     apertureEmitterLocation = pApertureEmitterLocation;
     return this;
@@ -286,7 +286,7 @@ public Vector3Float getApertureEmitterLocation()
 /** Setter for {@link DirectedEnergyFirePdu#apertureDiameter}
   * @param pApertureDiameter new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setApertureDiameter(float pApertureDiameter)
+public synchronized DirectedEnergyFirePdu setApertureDiameter(float pApertureDiameter)
 {
     apertureDiameter = pApertureDiameter;
     return this;
@@ -301,7 +301,7 @@ public float getApertureDiameter()
 /** Setter for {@link DirectedEnergyFirePdu#wavelength}
   * @param pWavelength new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setWavelength(float pWavelength)
+public synchronized DirectedEnergyFirePdu setWavelength(float pWavelength)
 {
     wavelength = pWavelength;
     return this;
@@ -316,7 +316,7 @@ public float getWavelength()
 /** Setter for {@link DirectedEnergyFirePdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad1(int pPad1)
+public synchronized DirectedEnergyFirePdu setPad1(int pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -331,7 +331,7 @@ public int getPad1()
 /** Setter for {@link DirectedEnergyFirePdu#pulseRepititionFrequency}
   * @param pPulseRepititionFrequency new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPulseRepititionFrequency(float pPulseRepititionFrequency)
+public synchronized DirectedEnergyFirePdu setPulseRepititionFrequency(float pPulseRepititionFrequency)
 {
     pulseRepititionFrequency = pPulseRepititionFrequency;
     return this;
@@ -346,7 +346,7 @@ public float getPulseRepititionFrequency()
 /** Setter for {@link DirectedEnergyFirePdu#pulseWidth}
   * @param pPulseWidth new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPulseWidth(float pPulseWidth)
+public synchronized DirectedEnergyFirePdu setPulseWidth(float pPulseWidth)
 {
     pulseWidth = pPulseWidth;
     return this;
@@ -361,7 +361,7 @@ public float getPulseWidth()
 /** Setter for {@link DirectedEnergyFirePdu#flags}
   * @param pFlags new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setFlags(DEFireFlags pFlags)
+public synchronized DirectedEnergyFirePdu setFlags(DEFireFlags pFlags)
 {
     flags = pFlags;
     return this;
@@ -376,7 +376,7 @@ public DEFireFlags getFlags()
 /** Setter for {@link DirectedEnergyFirePdu#pulseShape}
   * @param pPulseShape new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPulseShape(DEFirePulseShape pPulseShape)
+public synchronized DirectedEnergyFirePdu setPulseShape(DEFirePulseShape pPulseShape)
 {
     pulseShape = pPulseShape;
     return this;
@@ -391,7 +391,7 @@ public DEFirePulseShape getPulseShape()
 /** Setter for {@link DirectedEnergyFirePdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad2(byte pPad2)
+public synchronized DirectedEnergyFirePdu setPad2(byte pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -399,7 +399,7 @@ public DirectedEnergyFirePdu setPad2(byte pPad2)
 /** Utility setter for {@link DirectedEnergyFirePdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad2(int pPad2){
+public synchronized DirectedEnergyFirePdu setPad2(int pPad2){
     pad2 = (byte) pPad2;
     return this;
 }
@@ -413,7 +413,7 @@ public byte getPad2()
 /** Setter for {@link DirectedEnergyFirePdu#pad3}
   * @param pPad3 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad3(int pPad3)
+public synchronized DirectedEnergyFirePdu setPad3(int pPad3)
 {
     pad3 = pPad3;
     return this;
@@ -428,7 +428,7 @@ public int getPad3()
 /** Setter for {@link DirectedEnergyFirePdu#pad4}
   * @param pPad4 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad4(short pPad4)
+public synchronized DirectedEnergyFirePdu setPad4(short pPad4)
 {
     pad4 = pPad4;
     return this;
@@ -436,7 +436,7 @@ public DirectedEnergyFirePdu setPad4(short pPad4)
 /** Utility setter for {@link DirectedEnergyFirePdu#pad4}
   * @param pPad4 new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setPad4(int pPad4){
+public synchronized DirectedEnergyFirePdu setPad4(int pPad4){
     pad4 = (short) pPad4;
     return this;
 }
@@ -450,7 +450,7 @@ public short getPad4()
 /** Setter for {@link DirectedEnergyFirePdu#dERecords}
   * @param pDERecords new value of interest
   * @return same object to permit progressive setters */
-public DirectedEnergyFirePdu setDERecords(List<StandardVariableSpecification> pDERecords)
+public synchronized DirectedEnergyFirePdu setDERecords(List<StandardVariableSpecification> pDERecords)
 {
     dERecords = pDERecords;
     return this;
@@ -512,7 +512,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -608,7 +608,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -668,7 +668,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -683,7 +683,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -713,7 +713,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

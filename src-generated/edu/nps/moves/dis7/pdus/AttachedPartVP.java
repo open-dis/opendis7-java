@@ -66,7 +66,7 @@ public int getMarshalledSize()
 /** Setter for {@link AttachedPartVP#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setRecordType(VariableParameterRecordType pRecordType)
+public synchronized AttachedPartVP setRecordType(VariableParameterRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -81,7 +81,7 @@ public VariableParameterRecordType getRecordType()
 /** Setter for {@link AttachedPartVP#detachedIndicator}
   * @param pDetachedIndicator new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setDetachedIndicator(AttachedPartDetachedIndicator pDetachedIndicator)
+public synchronized AttachedPartVP setDetachedIndicator(AttachedPartDetachedIndicator pDetachedIndicator)
 {
     detachedIndicator = pDetachedIndicator;
     return this;
@@ -96,7 +96,7 @@ public AttachedPartDetachedIndicator getDetachedIndicator()
 /** Setter for {@link AttachedPartVP#partAttachedTo}
   * @param pPartAttachedTo new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setPartAttachedTo(short pPartAttachedTo)
+public synchronized AttachedPartVP setPartAttachedTo(short pPartAttachedTo)
 {
     partAttachedTo = pPartAttachedTo;
     return this;
@@ -104,7 +104,7 @@ public AttachedPartVP setPartAttachedTo(short pPartAttachedTo)
 /** Utility setter for {@link AttachedPartVP#partAttachedTo}
   * @param pPartAttachedTo new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setPartAttachedTo(int pPartAttachedTo){
+public synchronized AttachedPartVP setPartAttachedTo(int pPartAttachedTo){
     partAttachedTo = (short) pPartAttachedTo;
     return this;
 }
@@ -118,7 +118,7 @@ public short getPartAttachedTo()
 /** Setter for {@link AttachedPartVP#parameterType}
   * @param pParameterType new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setParameterType(AttachedParts pParameterType)
+public synchronized AttachedPartVP setParameterType(AttachedParts pParameterType)
 {
     parameterType = pParameterType;
     return this;
@@ -133,7 +133,7 @@ public AttachedParts getParameterType()
 /** Setter for {@link AttachedPartVP#attachedPartType}
   * @param pAttachedPartType new value of interest
   * @return same object to permit progressive setters */
-public AttachedPartVP setAttachedPartType(EntityType pAttachedPartType)
+public synchronized AttachedPartVP setAttachedPartType(EntityType pAttachedPartType)
 {
     attachedPartType = pAttachedPartType;
     return this;
@@ -176,7 +176,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -224,7 +224,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -250,7 +250,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -270,7 +270,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -285,7 +285,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

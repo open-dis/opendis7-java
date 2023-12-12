@@ -46,13 +46,13 @@ public class ActionResponsePdu extends SimulationManagementFamilyPdu implements 
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ActionResponsePdu copy()
+ public synchronized ActionResponsePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ActionResponsePdu copyByteBuffer()
+ public synchronized ActionResponsePdu copyByteBuffer()
  {
      ActionResponsePdu newCopy = new ActionResponsePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -79,7 +79,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ActionResponsePdu copyDataOutputStream()
+ public synchronized ActionResponsePdu copyDataOutputStream()
  {
      ActionResponsePdu newCopy = new ActionResponsePdu();
      try
@@ -142,7 +142,7 @@ public int getMarshalledSize()
 /** Setter for {@link ActionResponsePdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public ActionResponsePdu setRequestID(int pRequestID)
+public synchronized ActionResponsePdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -157,7 +157,7 @@ public int getRequestID()
 /** Setter for {@link ActionResponsePdu#requestStatus}
   * @param pRequestStatus new value of interest
   * @return same object to permit progressive setters */
-public ActionResponsePdu setRequestStatus(ActionResponseRequestStatus pRequestStatus)
+public synchronized ActionResponsePdu setRequestStatus(ActionResponseRequestStatus pRequestStatus)
 {
     requestStatus = pRequestStatus;
     return this;
@@ -172,7 +172,7 @@ public ActionResponseRequestStatus getRequestStatus()
 /** Setter for {@link ActionResponsePdu#fixedDatums}
   * @param pFixedDatums new value of interest
   * @return same object to permit progressive setters */
-public ActionResponsePdu setFixedDatums(List<FixedDatum> pFixedDatums)
+public synchronized ActionResponsePdu setFixedDatums(List<FixedDatum> pFixedDatums)
 {
     fixedDatums = pFixedDatums;
     return this;
@@ -187,7 +187,7 @@ public List<FixedDatum> getFixedDatums()
 /** Setter for {@link ActionResponsePdu#variableDatums}
   * @param pVariableDatums new value of interest
   * @return same object to permit progressive setters */
-public ActionResponsePdu setVariableDatums(List<VariableDatum> pVariableDatums)
+public synchronized ActionResponsePdu setVariableDatums(List<VariableDatum> pVariableDatums)
 {
     variableDatums = pVariableDatums;
     return this;
@@ -243,7 +243,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -320,7 +320,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -362,7 +362,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -377,7 +377,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -397,7 +397,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -43,13 +43,13 @@ public class MinefieldResponseNACKPdu extends MinefieldFamilyPdu implements Seri
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public MinefieldResponseNACKPdu copy()
+ public synchronized MinefieldResponseNACKPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public MinefieldResponseNACKPdu copyByteBuffer()
+ public synchronized MinefieldResponseNACKPdu copyByteBuffer()
  {
      MinefieldResponseNACKPdu newCopy = new MinefieldResponseNACKPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -76,7 +76,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public MinefieldResponseNACKPdu copyDataOutputStream()
+ public synchronized MinefieldResponseNACKPdu copyDataOutputStream()
  {
      MinefieldResponseNACKPdu newCopy = new MinefieldResponseNACKPdu();
      try
@@ -130,7 +130,7 @@ public int getMarshalledSize()
 /** Setter for {@link MinefieldResponseNACKPdu#minefieldID}
   * @param pMinefieldID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldResponseNACKPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
+public synchronized MinefieldResponseNACKPdu setMinefieldID(MinefieldIdentifier pMinefieldID)
 {
     minefieldID = pMinefieldID;
     return this;
@@ -146,7 +146,7 @@ public MinefieldIdentifier getMinefieldID()
 /** Setter for {@link MinefieldResponseNACKPdu#requestingEntityID}
   * @param pRequestingEntityID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldResponseNACKPdu setRequestingEntityID(SimulationIdentifier pRequestingEntityID)
+public synchronized MinefieldResponseNACKPdu setRequestingEntityID(SimulationIdentifier pRequestingEntityID)
 {
     requestingEntityID = pRequestingEntityID;
     return this;
@@ -162,7 +162,7 @@ public SimulationIdentifier getRequestingEntityID()
 /** Setter for {@link MinefieldResponseNACKPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldResponseNACKPdu setRequestID(byte pRequestID)
+public synchronized MinefieldResponseNACKPdu setRequestID(byte pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -170,7 +170,7 @@ public MinefieldResponseNACKPdu setRequestID(byte pRequestID)
 /** Utility setter for {@link MinefieldResponseNACKPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public MinefieldResponseNACKPdu setRequestID(int pRequestID){
+public synchronized MinefieldResponseNACKPdu setRequestID(int pRequestID){
     requestID = (byte) pRequestID;
     return this;
 }
@@ -184,7 +184,7 @@ public byte getRequestID()
 /** Setter for {@link MinefieldResponseNACKPdu#missingPduSequenceNumbers}
   * @param pMissingPduSequenceNumbers new value of interest
   * @return same object to permit progressive setters */
-public MinefieldResponseNACKPdu setMissingPduSequenceNumbers(byte[] pMissingPduSequenceNumbers)
+public synchronized MinefieldResponseNACKPdu setMissingPduSequenceNumbers(byte[] pMissingPduSequenceNumbers)
 {
     missingPduSequenceNumbers = pMissingPduSequenceNumbers;
     return this;
@@ -230,7 +230,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -284,7 +284,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -313,7 +313,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -328,7 +328,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -347,7 +347,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

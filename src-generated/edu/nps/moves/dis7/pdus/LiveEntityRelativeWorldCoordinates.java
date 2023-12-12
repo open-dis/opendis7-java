@@ -58,7 +58,7 @@ public int getMarshalledSize()
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}
   * @param pReferencePoint new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setReferencePoint(short pReferencePoint)
+public synchronized LiveEntityRelativeWorldCoordinates setReferencePoint(short pReferencePoint)
 {
     referencePoint = pReferencePoint;
     return this;
@@ -66,7 +66,7 @@ public LiveEntityRelativeWorldCoordinates setReferencePoint(short pReferencePoin
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#referencePoint}
   * @param pReferencePoint new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setReferencePoint(int pReferencePoint){
+public synchronized LiveEntityRelativeWorldCoordinates setReferencePoint(int pReferencePoint){
     referencePoint = (short) pReferencePoint;
     return this;
 }
@@ -80,7 +80,7 @@ public short getReferencePoint()
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
   * @param pDeltaX new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaX(short pDeltaX)
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaX(short pDeltaX)
 {
     deltaX = pDeltaX;
     return this;
@@ -88,7 +88,7 @@ public LiveEntityRelativeWorldCoordinates setDeltaX(short pDeltaX)
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaX}
   * @param pDeltaX new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaX(int pDeltaX){
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaX(int pDeltaX){
     deltaX = (short) pDeltaX;
     return this;
 }
@@ -102,7 +102,7 @@ public short getDeltaX()
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
   * @param pDeltaY new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaY(short pDeltaY)
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaY(short pDeltaY)
 {
     deltaY = pDeltaY;
     return this;
@@ -110,7 +110,7 @@ public LiveEntityRelativeWorldCoordinates setDeltaY(short pDeltaY)
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaY}
   * @param pDeltaY new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaY(int pDeltaY){
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaY(int pDeltaY){
     deltaY = (short) pDeltaY;
     return this;
 }
@@ -124,7 +124,7 @@ public short getDeltaY()
 /** Setter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
   * @param pDeltaZ new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaZ(short pDeltaZ)
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaZ(short pDeltaZ)
 {
     deltaZ = pDeltaZ;
     return this;
@@ -132,7 +132,7 @@ public LiveEntityRelativeWorldCoordinates setDeltaZ(short pDeltaZ)
 /** Utility setter for {@link LiveEntityRelativeWorldCoordinates#deltaZ}
   * @param pDeltaZ new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityRelativeWorldCoordinates setDeltaZ(int pDeltaZ){
+public synchronized LiveEntityRelativeWorldCoordinates setDeltaZ(int pDeltaZ){
     deltaZ = (short) pDeltaZ;
     return this;
 }
@@ -172,7 +172,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -218,7 +218,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -242,7 +242,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -262,7 +262,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -276,7 +276,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

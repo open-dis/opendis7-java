@@ -54,7 +54,7 @@ public int getMarshalledSize()
 /** Setter for {@link LiveEntityLinearVelocity#xComponent}
   * @param pXComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setXComponent(short pXComponent)
+public synchronized LiveEntityLinearVelocity setXComponent(short pXComponent)
 {
     xComponent = pXComponent;
     return this;
@@ -62,7 +62,7 @@ public LiveEntityLinearVelocity setXComponent(short pXComponent)
 /** Utility setter for {@link LiveEntityLinearVelocity#xComponent}
   * @param pXComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setXComponent(int pXComponent){
+public synchronized LiveEntityLinearVelocity setXComponent(int pXComponent){
     xComponent = (short) pXComponent;
     return this;
 }
@@ -76,7 +76,7 @@ public short getXComponent()
 /** Setter for {@link LiveEntityLinearVelocity#yComponent}
   * @param pYComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setYComponent(short pYComponent)
+public synchronized LiveEntityLinearVelocity setYComponent(short pYComponent)
 {
     yComponent = pYComponent;
     return this;
@@ -84,7 +84,7 @@ public LiveEntityLinearVelocity setYComponent(short pYComponent)
 /** Utility setter for {@link LiveEntityLinearVelocity#yComponent}
   * @param pYComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setYComponent(int pYComponent){
+public synchronized LiveEntityLinearVelocity setYComponent(int pYComponent){
     yComponent = (short) pYComponent;
     return this;
 }
@@ -98,7 +98,7 @@ public short getYComponent()
 /** Setter for {@link LiveEntityLinearVelocity#zComponent}
   * @param pZComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setZComponent(short pZComponent)
+public synchronized LiveEntityLinearVelocity setZComponent(short pZComponent)
 {
     zComponent = pZComponent;
     return this;
@@ -106,7 +106,7 @@ public LiveEntityLinearVelocity setZComponent(short pZComponent)
 /** Utility setter for {@link LiveEntityLinearVelocity#zComponent}
   * @param pZComponent new value of interest
   * @return same object to permit progressive setters */
-public LiveEntityLinearVelocity setZComponent(int pZComponent){
+public synchronized LiveEntityLinearVelocity setZComponent(int pZComponent){
     zComponent = (short) pZComponent;
     return this;
 }
@@ -145,7 +145,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -188,7 +188,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -210,7 +210,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -230,7 +230,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -243,7 +243,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

@@ -84,7 +84,7 @@ public int getMarshalledSize()
 /** Setter for {@link IOEffectRecord#recordType}
   * @param pRecordType new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setRecordType(VariableRecordType pRecordType)
+public synchronized IOEffectRecord setRecordType(VariableRecordType pRecordType)
 {
     recordType = pRecordType;
     return this;
@@ -99,7 +99,7 @@ public VariableRecordType getRecordType()
 /** Setter for {@link IOEffectRecord#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setRecordLength(short pRecordLength)
+public synchronized IOEffectRecord setRecordLength(short pRecordLength)
 {
     recordLength = pRecordLength;
     return this;
@@ -107,7 +107,7 @@ public IOEffectRecord setRecordLength(short pRecordLength)
 /** Utility setter for {@link IOEffectRecord#recordLength}
   * @param pRecordLength new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setRecordLength(int pRecordLength){
+public synchronized IOEffectRecord setRecordLength(int pRecordLength){
     recordLength = (short) pRecordLength;
     return this;
 }
@@ -121,7 +121,7 @@ public short getRecordLength()
 /** Setter for {@link IOEffectRecord#ioStatus}
   * @param pIoStatus new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoStatus(IOEffectsRecordIOStatus pIoStatus)
+public synchronized IOEffectRecord setIoStatus(IOEffectsRecordIOStatus pIoStatus)
 {
     ioStatus = pIoStatus;
     return this;
@@ -136,7 +136,7 @@ public IOEffectsRecordIOStatus getIoStatus()
 /** Setter for {@link IOEffectRecord#ioLinkType}
   * @param pIoLinkType new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoLinkType(IOEffectsRecordIOLinkType pIoLinkType)
+public synchronized IOEffectRecord setIoLinkType(IOEffectsRecordIOLinkType pIoLinkType)
 {
     ioLinkType = pIoLinkType;
     return this;
@@ -151,7 +151,7 @@ public IOEffectsRecordIOLinkType getIoLinkType()
 /** Setter for {@link IOEffectRecord#ioEffect}
   * @param pIoEffect new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoEffect(IOEffectsRecordIOEffect pIoEffect)
+public synchronized IOEffectRecord setIoEffect(IOEffectsRecordIOEffect pIoEffect)
 {
     ioEffect = pIoEffect;
     return this;
@@ -166,7 +166,7 @@ public IOEffectsRecordIOEffect getIoEffect()
 /** Setter for {@link IOEffectRecord#ioEffectDutyCycle}
   * @param pIoEffectDutyCycle new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoEffectDutyCycle(byte pIoEffectDutyCycle)
+public synchronized IOEffectRecord setIoEffectDutyCycle(byte pIoEffectDutyCycle)
 {
     ioEffectDutyCycle = pIoEffectDutyCycle;
     return this;
@@ -174,7 +174,7 @@ public IOEffectRecord setIoEffectDutyCycle(byte pIoEffectDutyCycle)
 /** Utility setter for {@link IOEffectRecord#ioEffectDutyCycle}
   * @param pIoEffectDutyCycle new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoEffectDutyCycle(int pIoEffectDutyCycle){
+public synchronized IOEffectRecord setIoEffectDutyCycle(int pIoEffectDutyCycle){
     ioEffectDutyCycle = (byte) pIoEffectDutyCycle;
     return this;
 }
@@ -188,7 +188,7 @@ public byte getIoEffectDutyCycle()
 /** Setter for {@link IOEffectRecord#ioEffectDuration}
   * @param pIoEffectDuration new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoEffectDuration(short pIoEffectDuration)
+public synchronized IOEffectRecord setIoEffectDuration(short pIoEffectDuration)
 {
     ioEffectDuration = pIoEffectDuration;
     return this;
@@ -196,7 +196,7 @@ public IOEffectRecord setIoEffectDuration(short pIoEffectDuration)
 /** Utility setter for {@link IOEffectRecord#ioEffectDuration}
   * @param pIoEffectDuration new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoEffectDuration(int pIoEffectDuration){
+public synchronized IOEffectRecord setIoEffectDuration(int pIoEffectDuration){
     ioEffectDuration = (short) pIoEffectDuration;
     return this;
 }
@@ -210,7 +210,7 @@ public short getIoEffectDuration()
 /** Setter for {@link IOEffectRecord#ioProcess}
   * @param pIoProcess new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setIoProcess(IOEffectsRecordIOProcess pIoProcess)
+public synchronized IOEffectRecord setIoProcess(IOEffectsRecordIOProcess pIoProcess)
 {
     ioProcess = pIoProcess;
     return this;
@@ -225,7 +225,7 @@ public IOEffectsRecordIOProcess getIoProcess()
 /** Setter for {@link IOEffectRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setPadding(short pPadding)
+public synchronized IOEffectRecord setPadding(short pPadding)
 {
     padding = pPadding;
     return this;
@@ -233,7 +233,7 @@ public IOEffectRecord setPadding(short pPadding)
 /** Utility setter for {@link IOEffectRecord#padding}
   * @param pPadding new value of interest
   * @return same object to permit progressive setters */
-public IOEffectRecord setPadding(int pPadding){
+public synchronized IOEffectRecord setPadding(int pPadding){
     padding = (short) pPadding;
     return this;
 }
@@ -279,7 +279,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -343,7 +343,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -379,7 +379,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -394,7 +394,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -413,7 +413,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

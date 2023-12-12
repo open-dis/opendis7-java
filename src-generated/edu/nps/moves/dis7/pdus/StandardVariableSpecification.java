@@ -65,7 +65,7 @@ public short getNumberOfStandardVariableRecords()
  * @param pNumberOfStandardVariableRecords passed parameter
  * @return this object
  */
-public StandardVariableSpecification setNumberOfStandardVariableRecords(short pNumberOfStandardVariableRecords)
+public synchronized StandardVariableSpecification setNumberOfStandardVariableRecords(short pNumberOfStandardVariableRecords)
 {
     numberOfStandardVariableRecords = pNumberOfStandardVariableRecords;
     return this;
@@ -74,7 +74,7 @@ public StandardVariableSpecification setNumberOfStandardVariableRecords(short pN
 /** Setter for {@link StandardVariableSpecification#standardVariables}
   * @param pStandardVariables new value of interest
   * @return same object to permit progressive setters */
-public StandardVariableSpecification setStandardVariables(List<StandardVariableRecord> pStandardVariables)
+public synchronized StandardVariableSpecification setStandardVariables(List<StandardVariableRecord> pStandardVariables)
 {
     standardVariables = pStandardVariables;
     return this;
@@ -119,7 +119,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     try 
@@ -170,7 +170,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
     {
@@ -196,7 +196,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -216,7 +216,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * @param obj the object to compare to
   * @return true if the objects are equal, false otherwise.
   */
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -231,7 +231,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

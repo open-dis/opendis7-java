@@ -55,13 +55,13 @@ public class DataQueryRPdu extends SimulationManagementWithReliabilityFamilyPdu 
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public DataQueryRPdu copy()
+ public synchronized DataQueryRPdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public DataQueryRPdu copyByteBuffer()
+ public synchronized DataQueryRPdu copyByteBuffer()
  {
      DataQueryRPdu newCopy = new DataQueryRPdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -88,7 +88,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public DataQueryRPdu copyDataOutputStream()
+ public synchronized DataQueryRPdu copyDataOutputStream()
  {
      DataQueryRPdu newCopy = new DataQueryRPdu();
      try
@@ -154,7 +154,7 @@ public int getMarshalledSize()
 /** Setter for {@link DataQueryRPdu#requiredReliabilityService}
   * @param pRequiredReliabilityService new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
+public synchronized DataQueryRPdu setRequiredReliabilityService(RequiredReliabilityService pRequiredReliabilityService)
 {
     requiredReliabilityService = pRequiredReliabilityService;
     return this;
@@ -169,7 +169,7 @@ public RequiredReliabilityService getRequiredReliabilityService()
 /** Setter for {@link DataQueryRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setPad1(byte pPad1)
+public synchronized DataQueryRPdu setPad1(byte pPad1)
 {
     pad1 = pPad1;
     return this;
@@ -177,7 +177,7 @@ public DataQueryRPdu setPad1(byte pPad1)
 /** Utility setter for {@link DataQueryRPdu#pad1}
   * @param pPad1 new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setPad1(int pPad1){
+public synchronized DataQueryRPdu setPad1(int pPad1){
     pad1 = (byte) pPad1;
     return this;
 }
@@ -191,7 +191,7 @@ public byte getPad1()
 /** Setter for {@link DataQueryRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setPad2(short pPad2)
+public synchronized DataQueryRPdu setPad2(short pPad2)
 {
     pad2 = pPad2;
     return this;
@@ -199,7 +199,7 @@ public DataQueryRPdu setPad2(short pPad2)
 /** Utility setter for {@link DataQueryRPdu#pad2}
   * @param pPad2 new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setPad2(int pPad2){
+public synchronized DataQueryRPdu setPad2(int pPad2){
     pad2 = (short) pPad2;
     return this;
 }
@@ -213,7 +213,7 @@ public short getPad2()
 /** Setter for {@link DataQueryRPdu#requestID}
   * @param pRequestID new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setRequestID(int pRequestID)
+public synchronized DataQueryRPdu setRequestID(int pRequestID)
 {
     requestID = pRequestID;
     return this;
@@ -228,7 +228,7 @@ public int getRequestID()
 /** Setter for {@link DataQueryRPdu#timeInterval}
   * @param pTimeInterval new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setTimeInterval(int pTimeInterval)
+public synchronized DataQueryRPdu setTimeInterval(int pTimeInterval)
 {
     timeInterval = pTimeInterval;
     return this;
@@ -243,7 +243,7 @@ public int getTimeInterval()
 /** Setter for {@link DataQueryRPdu#fixedDatumRecords}
   * @param pFixedDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
+public synchronized DataQueryRPdu setFixedDatumRecords(List<FixedDatum> pFixedDatumRecords)
 {
     fixedDatumRecords = pFixedDatumRecords;
     return this;
@@ -258,7 +258,7 @@ public List<FixedDatum> getFixedDatumRecords()
 /** Setter for {@link DataQueryRPdu#variableDatumRecords}
   * @param pVariableDatumRecords new value of interest
   * @return same object to permit progressive setters */
-public DataQueryRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
+public synchronized DataQueryRPdu setVariableDatumRecords(List<VariableDatum> pVariableDatumRecords)
 {
     variableDatumRecords = pVariableDatumRecords;
     return this;
@@ -317,7 +317,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -403,7 +403,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -451,7 +451,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -466,7 +466,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -489,7 +489,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

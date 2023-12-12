@@ -64,13 +64,13 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public ArealObjectStatePdu copy()
+ public synchronized ArealObjectStatePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public ArealObjectStatePdu copyByteBuffer()
+ public synchronized ArealObjectStatePdu copyByteBuffer()
  {
      ArealObjectStatePdu newCopy = new ArealObjectStatePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -97,7 +97,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public ArealObjectStatePdu copyDataOutputStream()
+ public synchronized ArealObjectStatePdu copyDataOutputStream()
  {
      ArealObjectStatePdu newCopy = new ArealObjectStatePdu();
      try
@@ -167,7 +167,7 @@ public int getMarshalledSize()
 /** Setter for {@link ArealObjectStatePdu#objectID}
   * @param pObjectID new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
+public synchronized ArealObjectStatePdu setObjectID(ObjectIdentifier pObjectID)
 {
     objectID = pObjectID;
     return this;
@@ -183,7 +183,7 @@ public ObjectIdentifier getObjectID()
 /** Setter for {@link ArealObjectStatePdu#referencedObjectID}
   * @param pReferencedObjectID new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
+public synchronized ArealObjectStatePdu setReferencedObjectID(ObjectIdentifier pReferencedObjectID)
 {
     referencedObjectID = pReferencedObjectID;
     return this;
@@ -199,7 +199,7 @@ public ObjectIdentifier getReferencedObjectID()
 /** Setter for {@link ArealObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setUpdateNumber(short pUpdateNumber)
+public synchronized ArealObjectStatePdu setUpdateNumber(short pUpdateNumber)
 {
     updateNumber = pUpdateNumber;
     return this;
@@ -207,7 +207,7 @@ public ArealObjectStatePdu setUpdateNumber(short pUpdateNumber)
 /** Utility setter for {@link ArealObjectStatePdu#updateNumber}
   * @param pUpdateNumber new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setUpdateNumber(int pUpdateNumber){
+public synchronized ArealObjectStatePdu setUpdateNumber(int pUpdateNumber){
     updateNumber = (short) pUpdateNumber;
     return this;
 }
@@ -221,7 +221,7 @@ public short getUpdateNumber()
 /** Setter for {@link ArealObjectStatePdu#forceID}
   * @param pForceID new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setForceID(ForceID pForceID)
+public synchronized ArealObjectStatePdu setForceID(ForceID pForceID)
 {
     forceID = pForceID;
     return this;
@@ -236,7 +236,7 @@ public ForceID getForceID()
 /** Setter for {@link ArealObjectStatePdu#modifications}
   * @param pModifications new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setModifications(ObjectStateModificationArealObject pModifications)
+public synchronized ArealObjectStatePdu setModifications(ObjectStateModificationArealObject pModifications)
 {
     modifications = pModifications;
     return this;
@@ -251,7 +251,7 @@ public ObjectStateModificationArealObject getModifications()
 /** Setter for {@link ArealObjectStatePdu#objectType}
   * @param pObjectType new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setObjectType(ObjectType pObjectType)
+public synchronized ArealObjectStatePdu setObjectType(ObjectType pObjectType)
 {
     objectType = pObjectType;
     return this;
@@ -267,7 +267,7 @@ public ObjectType getObjectType()
 /** Setter for {@link ArealObjectStatePdu#specificObjectAppearance}
   * @param pSpecificObjectAppearance new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
+public synchronized ArealObjectStatePdu setSpecificObjectAppearance(int pSpecificObjectAppearance)
 {
     specificObjectAppearance = pSpecificObjectAppearance;
     return this;
@@ -282,7 +282,7 @@ public int getSpecificObjectAppearance()
 /** Setter for {@link ArealObjectStatePdu#generalObjectAppearance}
   * @param pGeneralObjectAppearance new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setGeneralObjectAppearance(short pGeneralObjectAppearance)
+public synchronized ArealObjectStatePdu setGeneralObjectAppearance(short pGeneralObjectAppearance)
 {
     generalObjectAppearance = pGeneralObjectAppearance;
     return this;
@@ -290,7 +290,7 @@ public ArealObjectStatePdu setGeneralObjectAppearance(short pGeneralObjectAppear
 /** Utility setter for {@link ArealObjectStatePdu#generalObjectAppearance}
   * @param pGeneralObjectAppearance new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setGeneralObjectAppearance(int pGeneralObjectAppearance){
+public synchronized ArealObjectStatePdu setGeneralObjectAppearance(int pGeneralObjectAppearance){
     generalObjectAppearance = (short) pGeneralObjectAppearance;
     return this;
 }
@@ -304,7 +304,7 @@ public short getGeneralObjectAppearance()
 /** Setter for {@link ArealObjectStatePdu#requesterID}
   * @param pRequesterID new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
+public synchronized ArealObjectStatePdu setRequesterID(SimulationAddress pRequesterID)
 {
     requesterID = pRequesterID;
     return this;
@@ -320,7 +320,7 @@ public SimulationAddress getRequesterID()
 /** Setter for {@link ArealObjectStatePdu#receivingID}
   * @param pReceivingID new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
+public synchronized ArealObjectStatePdu setReceivingID(SimulationAddress pReceivingID)
 {
     receivingID = pReceivingID;
     return this;
@@ -336,7 +336,7 @@ public SimulationAddress getReceivingID()
 /** Setter for {@link ArealObjectStatePdu#objectLocation}
   * @param pObjectLocation new value of interest
   * @return same object to permit progressive setters */
-public ArealObjectStatePdu setObjectLocation(List<Vector3Double> pObjectLocation)
+public synchronized ArealObjectStatePdu setObjectLocation(List<Vector3Double> pObjectLocation)
 {
     objectLocation = pObjectLocation;
     return this;
@@ -392,7 +392,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -470,7 +470,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -518,7 +518,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -533,7 +533,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -557,7 +557,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

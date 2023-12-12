@@ -70,7 +70,7 @@ public int getMarshalledSize()
 /** Setter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}
   * @param pNumberOfPointsOnXiAxis new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(short pNumberOfPointsOnXiAxis)
+public synchronized GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(short pNumberOfPointsOnXiAxis)
 {
     numberOfPointsOnXiAxis = pNumberOfPointsOnXiAxis;
     return this;
@@ -78,7 +78,7 @@ public GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(short pNumberOfPoint
 /** Utility setter for {@link GridAxisDescriptorVariable#numberOfPointsOnXiAxis}
   * @param pNumberOfPointsOnXiAxis new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(int pNumberOfPointsOnXiAxis){
+public synchronized GridAxisDescriptorVariable setNumberOfPointsOnXiAxis(int pNumberOfPointsOnXiAxis){
     numberOfPointsOnXiAxis = (short) pNumberOfPointsOnXiAxis;
     return this;
 }
@@ -92,7 +92,7 @@ public short getNumberOfPointsOnXiAxis()
 /** Setter for {@link GridAxisDescriptorVariable#initialIndex}
   * @param pInitialIndex new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setInitialIndex(short pInitialIndex)
+public synchronized GridAxisDescriptorVariable setInitialIndex(short pInitialIndex)
 {
     initialIndex = pInitialIndex;
     return this;
@@ -100,7 +100,7 @@ public GridAxisDescriptorVariable setInitialIndex(short pInitialIndex)
 /** Utility setter for {@link GridAxisDescriptorVariable#initialIndex}
   * @param pInitialIndex new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setInitialIndex(int pInitialIndex){
+public synchronized GridAxisDescriptorVariable setInitialIndex(int pInitialIndex){
     initialIndex = (short) pInitialIndex;
     return this;
 }
@@ -114,7 +114,7 @@ public short getInitialIndex()
 /** Setter for {@link GridAxisDescriptorVariable#coordinateScaleXi}
   * @param pCoordinateScaleXi new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setCoordinateScaleXi(double pCoordinateScaleXi)
+public synchronized GridAxisDescriptorVariable setCoordinateScaleXi(double pCoordinateScaleXi)
 {
     coordinateScaleXi = pCoordinateScaleXi;
     return this;
@@ -129,7 +129,7 @@ public double getCoordinateScaleXi()
 /** Setter for {@link GridAxisDescriptorVariable#coordinateOffsetXi}
   * @param pCoordinateOffsetXi new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setCoordinateOffsetXi(double pCoordinateOffsetXi)
+public synchronized GridAxisDescriptorVariable setCoordinateOffsetXi(double pCoordinateOffsetXi)
 {
     coordinateOffsetXi = pCoordinateOffsetXi;
     return this;
@@ -144,7 +144,7 @@ public double getCoordinateOffsetXi()
 /** Setter for {@link GridAxisDescriptorVariable#xiValues}
   * @param pXiValues new value of interest
   * @return same object to permit progressive setters */
-public GridAxisDescriptorVariable setXiValues(short[] pXiValues)
+public synchronized GridAxisDescriptorVariable setXiValues(short[] pXiValues)
 {
     xiValues = pXiValues;
     return this;
@@ -191,7 +191,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -250,7 +250,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -281,7 +281,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -296,7 +296,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -316,7 +316,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();

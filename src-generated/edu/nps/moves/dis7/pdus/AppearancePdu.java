@@ -52,13 +52,13 @@ public class AppearancePdu extends LiveEntityFamilyPdu implements Serializable
  }
 /** copy method creates a deep copy of current object using preferred marshalling method
  * @return deep copy of PDU */
- public AppearancePdu copy()
+ public synchronized AppearancePdu copy()
  {
      return copyDataOutputStream();
  }
 /** Creates a "deep copy" of current object using ByteBuffer methods.
  * @return deep copy of PDU */
- public AppearancePdu copyByteBuffer()
+ public synchronized AppearancePdu copyByteBuffer()
  {
      AppearancePdu newCopy = new AppearancePdu();
      ByteBuffer byteBuffer = ByteBuffer.allocate(400);
@@ -85,7 +85,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
 
 /** copy method creates a deep copy of current object using DataOutputStream methods.
  * @return deep copy of PDU */
- public AppearancePdu copyDataOutputStream()
+ public synchronized AppearancePdu copyDataOutputStream()
  {
      AppearancePdu newCopy = new AppearancePdu();
      try
@@ -146,7 +146,7 @@ public int getMarshalledSize()
 /** Setter for {@link AppearancePdu#liveEntityId}
   * @param pLiveEntityId new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setLiveEntityId(EntityID pLiveEntityId)
+public synchronized AppearancePdu setLiveEntityId(EntityID pLiveEntityId)
 {
     liveEntityId = pLiveEntityId;
     return this;
@@ -162,7 +162,7 @@ public EntityID getLiveEntityId()
 /** Setter for {@link AppearancePdu#appearanceFlags}
   * @param pAppearanceFlags new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setAppearanceFlags(short pAppearanceFlags)
+public synchronized AppearancePdu setAppearanceFlags(short pAppearanceFlags)
 {
     appearanceFlags = pAppearanceFlags;
     return this;
@@ -170,7 +170,7 @@ public AppearancePdu setAppearanceFlags(short pAppearanceFlags)
 /** Utility setter for {@link AppearancePdu#appearanceFlags}
   * @param pAppearanceFlags new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setAppearanceFlags(int pAppearanceFlags){
+public synchronized AppearancePdu setAppearanceFlags(int pAppearanceFlags){
     appearanceFlags = (short) pAppearanceFlags;
     return this;
 }
@@ -184,7 +184,7 @@ public short getAppearanceFlags()
 /** Setter for {@link AppearancePdu#forceId}
   * @param pForceId new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setForceId(ForceID pForceId)
+public synchronized AppearancePdu setForceId(ForceID pForceId)
 {
     forceId = pForceId;
     return this;
@@ -199,7 +199,7 @@ public ForceID getForceId()
 /** Setter for {@link AppearancePdu#entityType}
   * @param pEntityType new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setEntityType(EntityType pEntityType)
+public synchronized AppearancePdu setEntityType(EntityType pEntityType)
 {
     entityType = pEntityType;
     return this;
@@ -215,7 +215,7 @@ public EntityType getEntityType()
 /** Setter for {@link AppearancePdu#alternateEntityType}
   * @param pAlternateEntityType new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setAlternateEntityType(EntityType pAlternateEntityType)
+public synchronized AppearancePdu setAlternateEntityType(EntityType pAlternateEntityType)
 {
     alternateEntityType = pAlternateEntityType;
     return this;
@@ -231,7 +231,7 @@ public EntityType getAlternateEntityType()
 /** Setter for {@link AppearancePdu#entityMarking}
   * @param pEntityMarking new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setEntityMarking(EntityMarking pEntityMarking)
+public synchronized AppearancePdu setEntityMarking(EntityMarking pEntityMarking)
 {
     entityMarking = pEntityMarking;
     return this;
@@ -247,7 +247,7 @@ public EntityMarking getEntityMarking()
 /** Setter for {@link AppearancePdu#capabilities}
   * @param pCapabilities new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setCapabilities(EntityCapabilities pCapabilities)
+public synchronized AppearancePdu setCapabilities(EntityCapabilities pCapabilities)
 {
     capabilities = pCapabilities;
     return this;
@@ -262,7 +262,7 @@ public EntityCapabilities getCapabilities()
 /** Setter for {@link AppearancePdu#appearanceFields}
   * @param pAppearanceFields new value of interest
   * @return same object to permit progressive setters */
-public AppearancePdu setAppearanceFields(Appearance pAppearanceFields)
+public synchronized AppearancePdu setAppearanceFields(Appearance pAppearanceFields)
 {
     appearanceFields = pAppearanceFields;
     return this;
@@ -309,7 +309,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
-public int unmarshal(DataInputStream dis) throws Exception
+public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -364,7 +364,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
-public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);
 
@@ -398,7 +398,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */
 @Override
- public boolean equals(Object obj)
+ public synchronized boolean equals(Object obj)
  {
     if(this == obj)
       return true;
@@ -413,7 +413,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
 @Override
- public boolean equalsImpl(Object obj)
+ public synchronized boolean equalsImpl(Object obj)
  {
      boolean ivarsEqual = true;
 
@@ -431,7 +431,7 @@ public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
  }
 
  @Override
- public String toString()
+ public synchronized String toString()
  {
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
