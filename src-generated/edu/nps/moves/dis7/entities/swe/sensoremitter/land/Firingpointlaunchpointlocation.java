@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
  *     <li> Category: Acoustic, Passive = <code>11</code>; </li>
  *     <li> SubCategory: Firingpointlaunchpointlocation  = <code>8</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 23707; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2a510e0e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63880be9. </p>
  * @see Country#SWEDEN_SWE
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain

@@ -20,19 +20,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
- *     <li> SubCategory:  <code>(none)</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> SubCategory: null <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 18824; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@6821ea29. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@c1bd0be. </p>
  * @see Country#INDIA_IND
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
  * @see GuidedMissileDestroyerDDG
-
+null
  */
 public final class GuidedMissileDestroyerDDG extends EntityType
 {

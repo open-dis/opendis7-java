@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
  *     <li> Category: RF Active = <code>2</code>; </li>
  *     <li> SubCategory: FireControlRadar  = <code>4</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 22534; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@b8142f4. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5e80d5. </p>
  * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain

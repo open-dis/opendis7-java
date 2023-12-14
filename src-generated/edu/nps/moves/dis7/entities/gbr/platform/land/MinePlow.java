@@ -20,19 +20,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Mine Plow = <code>11</code>; </li>
- *     <li> SubCategory:  <code>(none)</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> SubCategory: null <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 14944; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@3a6045c6. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$CategoryElem@42505474. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
  * @see MinePlow
-
+null
  */
 public final class MinePlow extends EntityType
 {

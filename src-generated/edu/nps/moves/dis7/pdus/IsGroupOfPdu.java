@@ -39,7 +39,7 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
    protected double longitude;
 
    /** GED records about each individual entity in the group. Bad specing--the Group Entity Descriptions are not described. */
-   protected List< VariableDatum > groupedEntityDescriptions = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > groupedEntityDescriptions = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -66,9 +66,9 @@ public class IsGroupOfPdu extends EntityManagementFamilyPdu implements Serializa
      }
      catch (Exception e)
      {
-         System.out.println("IsGroupOfPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("IsGroupOfPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -93,9 +93,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("IsGroupOfPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("IsGroupOfPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -105,7 +105,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("IsGroupOfPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("IsGroupOfPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

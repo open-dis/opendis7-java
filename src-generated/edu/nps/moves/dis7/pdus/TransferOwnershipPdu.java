@@ -66,9 +66,9 @@ public class TransferOwnershipPdu extends EntityManagementFamilyPdu implements S
      }
      catch (Exception e)
      {
-         System.out.println("TransferOwnershipPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("TransferOwnershipPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -93,9 +93,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("TransferOwnershipPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("TransferOwnershipPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -105,7 +105,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("TransferOwnershipPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("TransferOwnershipPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

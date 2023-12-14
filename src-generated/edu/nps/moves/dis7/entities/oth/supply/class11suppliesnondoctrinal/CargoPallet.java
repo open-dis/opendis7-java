@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Supply = <code>6</code>; </li>
  *     <li> Category: Pallets = <code>2</code>; </li>
  *     <li> SubCategory: CargoPallet  = <code>4</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 30814; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1a3c4b3e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@21d8da75. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain

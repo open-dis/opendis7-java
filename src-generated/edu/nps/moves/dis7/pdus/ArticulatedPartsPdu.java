@@ -27,7 +27,7 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
    protected byte numberOfParameterRecords;
 
    /** variableParameters is an undescribed parameter... */
-   protected List< VariableParameter > variableParameters = new ArrayList< VariableParameter >();
+   protected List< VariableParameter > variableParameters = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -54,9 +54,9 @@ public class ArticulatedPartsPdu extends LiveEntityFamilyPdu implements Serializ
      }
      catch (Exception e)
      {
-         System.out.println("ArticulatedPartsPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ArticulatedPartsPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -81,9 +81,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ArticulatedPartsPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ArticulatedPartsPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -93,7 +93,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ArticulatedPartsPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ArticulatedPartsPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

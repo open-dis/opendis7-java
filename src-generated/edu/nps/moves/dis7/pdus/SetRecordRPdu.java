@@ -39,7 +39,7 @@ public class SetRecordRPdu extends SimulationManagementWithReliabilityFamilyPdu 
    protected int numberOfRecordSets;
 
    /** record sets */
-   protected List< RecordSpecification > recordSets = new ArrayList< RecordSpecification >();
+   protected List< RecordSpecification > recordSets = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -66,9 +66,9 @@ public class SetRecordRPdu extends SimulationManagementWithReliabilityFamilyPdu 
      }
      catch (Exception e)
      {
-         System.out.println("SetRecordRPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("SetRecordRPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -93,9 +93,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("SetRecordRPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("SetRecordRPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -105,7 +105,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("SetRecordRPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("SetRecordRPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

@@ -78,10 +78,10 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
    protected short padding2 = (short)0;
 
    /** variable length list of modulation parameters */
-   protected List< ModulationParameters > modulationParametersList = new ArrayList< ModulationParameters >();
+   protected List< ModulationParameters > modulationParametersList = new ArrayList<>();
  
    /** variable length list of antenna pattern records */
-   protected List< VariableTransmitterParameters > antennaPatternList = new ArrayList< VariableTransmitterParameters >();
+   protected List< VariableTransmitterParameters > antennaPatternList = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -108,9 +108,9 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
      }
      catch (Exception e)
      {
-         System.out.println("TransmitterPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("TransmitterPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -135,9 +135,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("TransmitterPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("TransmitterPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -147,7 +147,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("TransmitterPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("TransmitterPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

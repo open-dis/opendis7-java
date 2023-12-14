@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Radio = <code>7</code>; </li>
  *     <li> Category: Counter Unmanned Aircraft System (C-UAS) Radio = <code>41</code>; </li>
  *     <li> SubCategory: ManufacturerDesignation  = <code>2</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 31310; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@71eff6a3. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65da4a5d. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#RADIO
  * @see Domain

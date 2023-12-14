@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Sensor/Emitter = <code>9</code>; </li>
  *     <li> Category: RF Passive (intercept and DF) = <code>3</code>; </li>
  *     <li> SubCategory: IdentificationClassificationRadar  = <code>16</code>; </li>
- *     <li> Specific:  <code>(none)</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 22501; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@e171f93. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@268f0ff3. </p>
  * @see Country#ACTION_REQUEST_RELIABLE
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain

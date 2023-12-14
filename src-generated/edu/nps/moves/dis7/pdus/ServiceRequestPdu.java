@@ -36,7 +36,7 @@ public class ServiceRequestPdu extends LogisticsFamilyPdu implements Serializabl
    protected short padding1 = (short)0;
 
    /** supplies is an undescribed parameter... */
-   protected List< SupplyQuantity > supplies = new ArrayList< SupplyQuantity >();
+   protected List< SupplyQuantity > supplies = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -63,9 +63,9 @@ public class ServiceRequestPdu extends LogisticsFamilyPdu implements Serializabl
      }
      catch (Exception e)
      {
-         System.out.println("ServiceRequestPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ServiceRequestPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -90,9 +90,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ServiceRequestPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ServiceRequestPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -102,7 +102,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ServiceRequestPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ServiceRequestPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

@@ -50,7 +50,7 @@ public class EmitterBeam extends Object implements Serializable
    protected JammingTechnique  jammingTechnique = new JammingTechnique(); 
 
    /** trackJamData is an undescribed parameter... */
-   protected List< TrackJamData > trackJamData = new ArrayList< TrackJamData >();
+   protected List< TrackJamData > trackJamData = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

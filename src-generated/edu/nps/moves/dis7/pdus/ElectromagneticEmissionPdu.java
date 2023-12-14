@@ -36,7 +36,7 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsRegeneration
    protected short paddingForEmissionsPdu;
 
    /** Electronic emmissions systems */
-   protected List< ElectronicEmitter > systems = new ArrayList< ElectronicEmitter >();
+   protected List< ElectronicEmitter > systems = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -64,9 +64,9 @@ public class ElectromagneticEmissionPdu extends DistributedEmissionsRegeneration
      }
      catch (Exception e)
      {
-         System.out.println("ElectromagneticEmissionPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ElectromagneticEmissionPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -91,9 +91,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ElectromagneticEmissionPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ElectromagneticEmissionPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -103,7 +103,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ElectromagneticEmissionPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ElectromagneticEmissionPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

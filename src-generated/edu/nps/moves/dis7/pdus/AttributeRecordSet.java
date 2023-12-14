@@ -26,7 +26,7 @@ public class AttributeRecordSet extends Object implements Serializable
    protected short numberOfAttributeRecords;
 
    /** attributeRecords is an undescribed parameter... */
-   protected List< Attribute > attributeRecords = new ArrayList< Attribute >();
+   protected List< Attribute > attributeRecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

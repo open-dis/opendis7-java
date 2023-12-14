@@ -36,9 +36,9 @@ public class PduFactory
   private byte  defaultExerciseId = 1;
   private short defaultSiteId     = 2;
   private short defaultAppId      = 3;
-  
-  /** We can marshal the PDU with a timestamp set to any of several styles. 
-   * Remember, you MUST set a timestamp. DIS will regard multiple packets sent 
+
+  /** We can marshal the PDU with a timestamp set to any of several styles.
+   * Remember, you MUST set a timestamp. DIS will regard multiple packets sent
    * with the same timestamp as duplicates and may discard them.
    * Default value is TimestampStyle.IEEE_ABSOLUTE.
    */
@@ -72,14 +72,14 @@ public class PduFactory
       else timestampStyle = newTimestampStyle;
   }
   /**
-   * Create a PduFactory using defaults for country (USA), exerciseId (2), 
+   * Create a PduFactory using defaults for country (USA), exerciseId (2),
    * application (3) and absolute timestamps.
    */
   public PduFactory()
   {
       // initialization steps can go here, when possible class-member objects are instantiated at declaration
   }
-  
+
   /**
    * Create a PduFactory which creates pdus using the specified default values.
    * @param country used in EntityType and RadioType objects
@@ -97,10 +97,10 @@ public class PduFactory
     this.defaultExerciseId = exerciseId;
     this.defaultSiteId = siteId;
     this.defaultAppId = applicationId;
-    
+
     DisTime.setTimestampStyle(timestampStyle);
   }
-  
+
   /* ***************************************************/
  /* utility methods*/
   private PduBase addBoilerPlate(PduBase pdu)
@@ -209,7 +209,7 @@ public class PduFactory
 
   /* ********************************** */
   /* Pdu construction methods */
-  
+
   /**
    * Create an Entity State PDU<br>
    * IEEE Std 1278.1-2012, 5.3.2
@@ -237,7 +237,7 @@ public class PduFactory
    * Create a Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.3
    * @return the new pdu
-   */  
+   */
   public FirePdu makeFirePdu()
   {
     FirePdu pdu = new FirePdu()
@@ -256,7 +256,7 @@ public class PduFactory
    * Create a Detonation PDU<br>
    * IEEE Std 1278.1-2012, 5.4.4
    * @return the new pdu
-   */  
+   */
   public DetonationPdu makeDetonationPdu()
   {
     DetonationPdu pdu = new DetonationPdu()
@@ -272,7 +272,7 @@ public class PduFactory
    * Create a Collision PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
    * @return the new pdu
-   */  
+   */
   public CollisionPdu makeCollisionPdu()
   {
     CollisionPdu pdu = new CollisionPdu()
@@ -291,7 +291,7 @@ public class PduFactory
    * Create a Service Request PDU<br>
    * IEEE Std 1278.1-2012, 5.5.5
    * @return the new pdu
-   */  
+   */
   public ServiceRequestPdu makeServiceRequestPdu()
   {
     ServiceRequestPdu pdu = new ServiceRequestPdu()
@@ -308,7 +308,7 @@ public class PduFactory
    * Create a Resupply Offer PDU<br>
    * IEEE Std 1278.1-2012, 5.5.6
    * @return the new pdu
-   */  
+   */
   public ResupplyOfferPdu makeResupplyOfferPdu()
   {
     ResupplyOfferPdu pdu = new ResupplyOfferPdu()
@@ -322,7 +322,7 @@ public class PduFactory
    * Create a Resupply Received PDU<br>
    * IEEE Std 1278.1-2012, 5.5.7
    * @return the new pdu
-   */  
+   */
   public ResupplyReceivedPdu makeResupplyReceivedPdu()
   {
     ResupplyReceivedPdu pdu = new ResupplyReceivedPdu()
@@ -336,7 +336,7 @@ public class PduFactory
    * Create a Resupply Cancel PDU<br>
    * IEEE Std 1278.1-2012, 5.5.8
    * @return the new pdu
-   */  
+   */
   public ResupplyCancelPdu makeResupplyCancelPdu()
   {
     ResupplyCancelPdu pdu = new ResupplyCancelPdu()
@@ -350,13 +350,13 @@ public class PduFactory
    * Create a Repair Complete PDU<br>
    * IEEE Std 1278.1-2012, 5.5.10
    * @return the new pdu
-   */  
+   */
   public RepairCompletePdu makeRepairCompletePdu()
   {
     RepairCompletePdu pdu = new RepairCompletePdu()
       .setReceivingEntityID(newEntityID())
       .setRepairingEntityID(newEntityID());
-    /* 
+    /*
             .setRepair(RepairCompleteRepair.AIRFRAME)
      */
 
@@ -367,7 +367,7 @@ public class PduFactory
    * Create a Repair Response PDU<br>
    * IEEE Std 1278.1-2012, 5.5.11
    * @return the new pdu
-   */  
+   */
  public RepairResponsePdu makeRepairResponsePdu()
   {
     RepairResponsePdu pdu = new RepairResponsePdu()
@@ -384,7 +384,7 @@ public class PduFactory
    * Create a Create Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.2
    * @return the new pdu
-   */  
+   */
   public CreateEntityPdu makeCreateEntityPdu()
   {
     CreateEntityPdu pdu = new CreateEntityPdu();
@@ -396,7 +396,7 @@ public class PduFactory
    * Create a Remove Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.3
    * @return the new pdu
-   */  
+   */
  public RemoveEntityPdu makeRemoveEntityPdu()
   {
     RemoveEntityPdu pdu = new RemoveEntityPdu();
@@ -410,7 +410,7 @@ public class PduFactory
    * Create a Start Resume PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.4
    * @return the new pdu
-   */  
+   */
   public StartResumePdu makeStartResumePdu()
   {
     StartResumePdu pdu = new StartResumePdu();
@@ -422,7 +422,7 @@ public class PduFactory
    * Create a Stop Freeze PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.5
    * @return the new pdu
-   */  
+   */
   public StopFreezePdu makeStopFreezePdu()
   {
     StopFreezePdu pdu = new StopFreezePdu();
@@ -438,7 +438,7 @@ public class PduFactory
    * Create an Acknowledge PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.6
    * @return the new pdu
-   */  
+   */
   public AcknowledgePdu makeAcknowledgePdu()
   {
     AcknowledgePdu pdu = new AcknowledgePdu();
@@ -455,7 +455,7 @@ public class PduFactory
    * Create an Action Request PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.7
    * @return the new pdu
-   */  
+   */
   public ActionRequestPdu makeActionRequestPdu()
   {
     ActionRequestPdu pdu = new ActionRequestPdu();
@@ -469,7 +469,7 @@ public class PduFactory
    * Create an Action Response PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.8
    * @return the new pdu
-   */  
+   */
   public ActionResponsePdu makeActionResponsePdu()
   {
     ActionResponsePdu pdu = new ActionResponsePdu();
@@ -483,7 +483,7 @@ public class PduFactory
    * Create a Data Query PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.9
    * @return the new pdu
-   */  
+   */
   public DataQueryPdu makeDataQueryPdu()
   {
     DataQueryPdu pdu = new DataQueryPdu();
@@ -495,7 +495,7 @@ public class PduFactory
    * Create a Set DataPDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.10
    * @return the new pdu
-   */  
+   */
   public SetDataPdu makeSetDataPdu()
   {
     SetDataPdu pdu = new SetDataPdu();
@@ -507,7 +507,7 @@ public class PduFactory
    * Create a Data PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.11
    * @return the new pdu
-   */  
+   */
   public DataPdu makeDataPdu()
   {
     DataPdu pdu = new DataPdu();
@@ -519,7 +519,7 @@ public class PduFactory
    * Create an Event Report PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.12
    * @return the new pdu
-   */  
+   */
   public EventReportPdu makeEventReportPdu()
   {
     EventReportPdu pdu = new EventReportPdu();
@@ -533,14 +533,14 @@ public class PduFactory
    * Create a Comment PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.13
    * @return the new pdu
-   */  
+   */
   public CommentPdu makeCommentPdu()
   {
     CommentPdu pdu = new CommentPdu();
 
     return (CommentPdu) addBoilerPlate(pdu);
   }
-  
+
   /**
    * Create a Comment PDU containing the given String(s), variable record type = "OTHER"
    * @param comments of interest
@@ -550,7 +550,7 @@ public class PduFactory
   {
     return makeCommentPdu(VariableRecordType.OTHER, comments);
   }
-  
+
   /**
    * Create a Comment PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
@@ -568,15 +568,15 @@ public class PduFactory
       vardat.setVariableDatumLengthInBytes(s.getBytes().length);
       list.add(vardat);
     });
-    
+
     return (CommentPdu) addBoilerPlate(pdu);
   }
-  
+
   /**
    * Create a Electromagnetic Emission (EE) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.3
    * @return the new pdu
-   */  
+   */
   public ElectromagneticEmissionPdu makeElectronicEmissionsPdu()
   {
     ElectromagneticEmissionPdu pdu = new ElectromagneticEmissionPdu()
@@ -824,7 +824,7 @@ public class PduFactory
             .setAppearance(new MinefieldStateAppearanceBitMap())
             .setForceID(ForceID.OTHER)
             .setMinefieldLocation(new Vector3Double())
-            .setMinefieldOrientation(new EulerAngles())         
+            .setMinefieldOrientation(new EulerAngles())
             .setProtocolMode(new ProtocolMode())
      */
     return (MinefieldStatePdu) addBoilerPlate(pdu);
@@ -1262,7 +1262,7 @@ public class PduFactory
   {
     return makeCommentReliablePdu(VariableRecordType.OTHER, comments);
   }
-  
+
   /**
    * Create a CommentR PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
@@ -1277,12 +1277,13 @@ public class PduFactory
       VariableDatum vardat = new VariableDatum();
       vardat.setVariableDatumID(typ);
       vardat.setVariableDatumValue(s.getBytes());
+      vardat.setVariableDatumLengthInBytes(s.getBytes().length);
       list.add(vardat);
     });
 
     return pdu;
   }
-  
+
   /**
    * Create a Record-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.16
@@ -1454,7 +1455,7 @@ public class PduFactory
   {
     return createPdu(ByteBuffer.wrap(data));
   }
-  
+
   /**
    * PDU builder. Pass in a data buffer, get the correct type of pdu back
    * based on the PDU type field contained in the underlying array.
@@ -1469,7 +1470,7 @@ public class PduFactory
   }
 
   /**
-   * Return the enumerated pdu type from a byte array, typically received from the 
+   * Return the enumerated pdu type from a byte array, typically received from the
    * network.
    *
    * @param ba byte array
@@ -1479,7 +1480,7 @@ public class PduFactory
   {
     return DisPduType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
   }
-  
+
   /**
    * Create an empty PDU of the given type
    * @param pduType PDU type to create
@@ -1489,7 +1490,7 @@ public class PduFactory
   {
     return createPdu(pduType, null);
   }
-  
+
   private synchronized Pdu createPdu(DisPduType pduType, ByteBuffer byteBuffer)
   {
     Pdu aPdu = null;
@@ -1791,7 +1792,8 @@ public class PduFactory
     if (aPdu != null) {
       if (byteBuffer != null) {
           try {
-              aPdu.unmarshal(byteBuffer);
+            // Not used, but an int marshalledSize is returned
+            aPdu.unmarshal(byteBuffer);
           } catch (Exception ex) {
               Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
           }
@@ -1811,13 +1813,13 @@ public class PduFactory
      *
      * @param data a large buffer filled with possible multiple PDUs
      * @param length the size of the multiple PDU buffer
-     * @return List of decoded PDUs 
+     * @return List of decoded PDUs
      */
     public List<Pdu> getPdusFromBundle(byte data[], int length) {
-        
+
         // All the PDUs in this bundle we were able to decode
         List<Pdu> pdus = new ArrayList<>();
-        
+
         // The start point of a PDU in the data. We advance this by the size
         // of each PDU as we read it.
         int pduStartPointInData = 0;

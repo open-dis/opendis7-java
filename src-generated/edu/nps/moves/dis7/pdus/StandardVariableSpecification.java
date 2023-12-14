@@ -23,7 +23,7 @@ public class StandardVariableSpecification extends Object implements Serializabl
    protected short numberOfStandardVariableRecords;
 
    /** variable length list of standard variables, The class type and length here are WRONG and will cause the incorrect serialization of any class in whihc it is embedded. */
-   protected List< StandardVariableRecord > standardVariables = new ArrayList< StandardVariableRecord >();
+   protected List< StandardVariableRecord > standardVariables = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

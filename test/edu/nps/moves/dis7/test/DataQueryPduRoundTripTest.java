@@ -96,11 +96,11 @@ public class DataQueryPduRoundTripTest
 
     variableDatum1.setVariableDatumID(variableDatum1Type);
     variableDatum1.setVariableDatumValue(variableDatum1Value);
-    // variableDatum1.setVariableDatumLength(variableDatum1Value.length);  // should be done automatically
+    variableDatum1.setVariableDatumLengthInBytes(variableDatum1Value.length);  // should be done automatically
 
     variableDatum2.setVariableDatumID(variableDatum2Type);
     variableDatum2.setVariableDatumValue(variableDatum2Value);
-    //  variableDatum2.setVariableDatumLength(variableDatum2Value.length);  // should be done automatically
+    variableDatum2.setVariableDatumLengthInBytes(variableDatum2Value.length);  // should be done automatically
   }
 
   /** Perform test of interest */

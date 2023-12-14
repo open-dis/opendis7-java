@@ -54,14 +54,14 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
    protected EntityType  mineType = new EntityType(); 
 
    /** Sensor types, each 16-bits long */
-   protected List< MinefieldSensorType > sensorTypes = new ArrayList< MinefieldSensorType >();
+   protected List< MinefieldSensorType > sensorTypes = new ArrayList<>();
  
    /** pad to 32-bit boundary */
 
    private byte[] padTo32 = new byte[0];
 
    /** Mine locations */
-   protected List< Vector3Float > mineLocation = new ArrayList< Vector3Float >();
+   protected List< Vector3Float > mineLocation = new ArrayList<>();
  
    /** groundBurialDepthOffset is an undescribed parameter... */
    protected float[]  groundBurialDepthOffset = new float[0]; 
@@ -73,7 +73,7 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
    protected float[]  snowBurialDepthOffset = new float[0]; 
 
    /** mineOrientation is an undescribed parameter... */
-   protected List< EulerAngles > mineOrientation = new ArrayList< EulerAngles >();
+   protected List< EulerAngles > mineOrientation = new ArrayList<>();
  
    /** thermalContrast is an undescribed parameter... */
    protected float[]  thermalContrast = new float[0]; 
@@ -82,19 +82,19 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
    protected float[]  reflectance = new float[0]; 
 
    /** mineEmplacementTime is an undescribed parameter... */
-   protected List< MineEmplacementTime > mineEmplacementTime = new ArrayList< MineEmplacementTime >();
+   protected List< MineEmplacementTime > mineEmplacementTime = new ArrayList<>();
  
    /** mineEntityNumber is an undescribed parameter... */
    protected short[]  mineEntityNumber = new short[0]; 
 
    /**  uid 192 */
-   protected List< MinefieldDataFusing > fusing = new ArrayList< MinefieldDataFusing >();
+   protected List< MinefieldDataFusing > fusing = new ArrayList<>();
  
    /** scalarDetectionCoefficient is an undescribed parameter... */
    protected byte[]  scalarDetectionCoefficient = new byte[0]; 
 
    /**  uid 202 */
-   protected List< MinefieldDataPaintScheme > paintScheme = new ArrayList< MinefieldDataPaintScheme >();
+   protected List< MinefieldDataPaintScheme > paintScheme = new ArrayList<>();
  
    /** pad to 32-bit boundary */
 
@@ -135,9 +135,9 @@ public class MinefieldDataPdu extends MinefieldFamilyPdu implements Serializable
      }
      catch (Exception e)
      {
-         System.out.println("MinefieldDataPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("MinefieldDataPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -162,9 +162,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("MinefieldDataPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("MinefieldDataPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -174,7 +174,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("MinefieldDataPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("MinefieldDataPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

@@ -54,7 +54,7 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
    protected SimulationAddress  receivingID = new SimulationAddress(); 
 
    /** location of object */
-   protected List< Vector3Double > objectLocation = new ArrayList< Vector3Double >();
+   protected List< Vector3Double > objectLocation = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -81,9 +81,9 @@ public class ArealObjectStatePdu extends SyntheticEnvironmentFamilyPdu implement
      }
      catch (Exception e)
      {
-         System.out.println("ArealObjectStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ArealObjectStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -108,9 +108,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ArealObjectStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ArealObjectStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -120,7 +120,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ArealObjectStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ArealObjectStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

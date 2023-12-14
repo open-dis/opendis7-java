@@ -63,26 +63,26 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
    protected short numberOfSilentEntityTypes;
 
    /** aggregates  list */
-   protected List< AggregateIdentifier > aggregateIDList = new ArrayList< AggregateIdentifier >();
+   protected List< AggregateIdentifier > aggregateIDList = new ArrayList<>();
  
    /** entity ID list */
-   protected List< EntityID > entityIDList = new ArrayList< EntityID >();
+   protected List< EntityID > entityIDList = new ArrayList<>();
  
    /** pad to 32-bit boundary */
 
    private byte[] padTo32 = new byte[0];
 
    /** silent entity types */
-   protected List< EntityType > silentAggregateSystemList = new ArrayList< EntityType >();
+   protected List< EntityType > silentAggregateSystemList = new ArrayList<>();
  
    /** silent entity types */
-   protected List< EntityType > silentEntitySystemList = new ArrayList< EntityType >();
+   protected List< EntityType > silentEntitySystemList = new ArrayList<>();
  
    /** Number of variable datum records, handled automatically by marshaller at run time (and not modifiable by end-user programmers) */
    protected int numberOfVariableDatumRecords;
 
    /** variableDatums */
-   protected List< VariableDatum > variableDatumList = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > variableDatumList = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -109,9 +109,9 @@ public class AggregateStatePdu extends EntityManagementFamilyPdu implements Seri
      }
      catch (Exception e)
      {
-         System.out.println("AggregateStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("AggregateStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -136,9 +136,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("AggregateStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("AggregateStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -148,7 +148,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("AggregateStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("AggregateStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

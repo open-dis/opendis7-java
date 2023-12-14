@@ -36,7 +36,7 @@ public class ResupplyReceivedPdu extends LogisticsFamilyPdu implements Serializa
    protected short padding2 = (short)0;
 
    /** A Reord that Specifies the type of supply and the amount of that supply for each of the supply types in numberOfSupplyTypes (see 6.2.85), Section 7.4.3 */
-   protected List< SupplyQuantity > supplies = new ArrayList< SupplyQuantity >();
+   protected List< SupplyQuantity > supplies = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -63,9 +63,9 @@ public class ResupplyReceivedPdu extends LogisticsFamilyPdu implements Serializa
      }
      catch (Exception e)
      {
-         System.out.println("ResupplyReceivedPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ResupplyReceivedPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -90,9 +90,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ResupplyReceivedPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ResupplyReceivedPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -102,7 +102,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ResupplyReceivedPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ResupplyReceivedPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

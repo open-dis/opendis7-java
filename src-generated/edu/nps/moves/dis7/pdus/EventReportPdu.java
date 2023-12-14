@@ -33,10 +33,10 @@ public class EventReportPdu extends SimulationManagementFamilyPdu implements Ser
    protected int numberOfVariableDatumRecords;
 
    /** variable length list of fixed datums */
-   protected List< FixedDatum > fixedDatums = new ArrayList< FixedDatum >();
+   protected List< FixedDatum > fixedDatums = new ArrayList<>();
  
    /** variable length list of variable length datums */
-   protected List< VariableDatum > variableDatums = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > variableDatums = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -63,9 +63,9 @@ public class EventReportPdu extends SimulationManagementFamilyPdu implements Ser
      }
      catch (Exception e)
      {
-         System.out.println("EventReportPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EventReportPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -90,9 +90,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("EventReportPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EventReportPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -102,7 +102,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("EventReportPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("EventReportPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

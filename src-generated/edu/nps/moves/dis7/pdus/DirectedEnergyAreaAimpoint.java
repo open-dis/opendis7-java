@@ -35,10 +35,10 @@ public class DirectedEnergyAreaAimpoint extends Object implements Serializable
    protected short directedEnergyTargetEnergyDepositionRecordCount = (short)0;
 
    /** list of beam antenna records. See 6.2.9.2 */
-   protected List< BeamAntennaPattern > beamAntennaParameterList = new ArrayList< BeamAntennaPattern >();
+   protected List< BeamAntennaPattern > beamAntennaParameterList = new ArrayList<>();
  
    /** list of DE target deposition records. See 6.2.21.4 */
-   protected List< DirectedEnergyTargetEnergyDeposition > directedEnergyTargetEnergyDepositionRecordList = new ArrayList< DirectedEnergyTargetEnergyDeposition >();
+   protected List< DirectedEnergyTargetEnergyDeposition > directedEnergyTargetEnergyDepositionRecordList = new ArrayList<>();
  
    /** pad to 64-bit boundary */
 

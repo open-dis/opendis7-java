@@ -32,7 +32,7 @@ public class ElectronicEmitter extends Object implements Serializable
    protected Vector3Float  location = new Vector3Float(); 
 
    /** Electronic emission beams */
-   protected List< EmitterBeam > beams = new ArrayList< EmitterBeam >();
+   protected List< EmitterBeam > beams = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

@@ -35,7 +35,7 @@ public class UAEmitter extends Object implements Serializable
    protected Vector3Float  location = new Vector3Float(); 
 
    /** Electronic emission beams */
-   protected List< UABeam > beams = new ArrayList< UABeam >();
+   protected List< UABeam > beams = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

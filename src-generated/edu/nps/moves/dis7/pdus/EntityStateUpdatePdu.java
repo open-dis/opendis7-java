@@ -42,7 +42,7 @@ public class EntityStateUpdatePdu extends EntityInformationInteractionFamilyPdu 
    protected int entityAppearance;
 
    /** This field shall specify the parameter values for each Variable Parameter record that is included (see 6.2.93 and Annex I). */
-   protected List< VariableParameter > variableParameters = new ArrayList< VariableParameter >();
+   protected List< VariableParameter > variableParameters = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -69,9 +69,9 @@ public class EntityStateUpdatePdu extends EntityInformationInteractionFamilyPdu 
      }
      catch (Exception e)
      {
-         System.out.println("EntityStateUpdatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EntityStateUpdatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -96,9 +96,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("EntityStateUpdatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EntityStateUpdatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -108,7 +108,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("EntityStateUpdatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("EntityStateUpdatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

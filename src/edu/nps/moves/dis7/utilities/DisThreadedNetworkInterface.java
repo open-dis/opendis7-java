@@ -354,7 +354,7 @@ public class DisThreadedNetworkInterface
 //          System.out.println(TRACE_PREFIX + "createThreads() start sendingThread...");
             sendingThread = new Thread(sendingThreadRunnable, "sendingThread");
             // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
-            sendingThread.setDaemon(false); // user thread, not system thread
+            sendingThread.setDaemon(true); // user thread, not system thread
             sendingThread.setPriority(Thread.NORM_PRIORITY);
             sendingThread.start();
         }
@@ -366,7 +366,7 @@ public class DisThreadedNetworkInterface
 //          System.out.println(TRACE_PREFIX + "createThreads() start receiveThread...");
             receiveThread = new Thread(receiveThreadRunnable, "receiveThread");
             // https://stackoverflow.com/questions/2213340/what-is-a-daemon-thread-in-java
-            receiveThread.setDaemon(false); // user thread, not system thread
+            receiveThread.setDaemon(true); // user thread, not system thread
             receiveThread.setPriority(Thread.NORM_PRIORITY);
             receiveThread.start();
         }

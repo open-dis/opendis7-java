@@ -57,7 +57,7 @@ public class EntityStatePdu extends EntityInformationInteractionFamilyPdu implem
    protected EntityCapabilities capabilities = new LandPlatformCapabilities();
 
    /** variable length list of variable parameters. In earlier DIS versions this was articulation parameters. */
-   protected List< VariableParameter > variableParameters = new ArrayList< VariableParameter >();
+   protected List< VariableParameter > variableParameters = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -84,9 +84,9 @@ public class EntityStatePdu extends EntityInformationInteractionFamilyPdu implem
      }
      catch (Exception e)
      {
-         System.out.println("EntityStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EntityStatePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -111,9 +111,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("EntityStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("EntityStatePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -123,7 +123,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("EntityStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("EntityStatePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

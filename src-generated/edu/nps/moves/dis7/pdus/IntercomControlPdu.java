@@ -57,7 +57,7 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
    protected int intercomParametersLength;
 
    /** intercomParameters is an undescribed parameter... */
-   protected List< IntercomCommunicationsParameters > intercomParameters = new ArrayList< IntercomCommunicationsParameters >();
+   protected List< IntercomCommunicationsParameters > intercomParameters = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -84,9 +84,9 @@ public class IntercomControlPdu extends RadioCommunicationsFamilyPdu implements 
      }
      catch (Exception e)
      {
-         System.out.println("IntercomControlPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("IntercomControlPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -111,9 +111,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("IntercomControlPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("IntercomControlPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -123,7 +123,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("IntercomControlPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("IntercomControlPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

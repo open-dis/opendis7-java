@@ -27,7 +27,7 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
    protected int numberOfVariableDatumRecords;
 
    /** variable length list of variable length datums */
-   protected List< VariableDatum > variableDatums = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > variableDatums = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -54,9 +54,9 @@ public class CommentPdu extends SimulationManagementFamilyPdu implements Seriali
      }
      catch (Exception e)
      {
-         System.out.println("CommentPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("CommentPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -81,9 +81,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("CommentPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("CommentPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -93,7 +93,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("CommentPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("CommentPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

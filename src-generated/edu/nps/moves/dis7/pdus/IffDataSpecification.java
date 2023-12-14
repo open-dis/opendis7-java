@@ -23,7 +23,7 @@ public class IffDataSpecification extends Object implements Serializable
    protected short numberOfIffDataRecords;
 
    /** IFF data records */
-   protected List< IFFData > iffDataRecords = new ArrayList< IFFData >();
+   protected List< IFFData > iffDataRecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

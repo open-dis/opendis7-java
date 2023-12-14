@@ -39,10 +39,10 @@ public class SEESPdu extends DistributedEmissionsRegenerationFamilyPdu implement
    protected short numberOfVectoringNozzleSystems;
 
    /** variable length list of propulsion system data */
-   protected List< PropulsionSystemData > propulsionSystemData = new ArrayList< PropulsionSystemData >();
+   protected List< PropulsionSystemData > propulsionSystemData = new ArrayList<>();
  
    /** variable length list of vectoring system data */
-   protected List< VectoringNozzleSystem > vectoringSystemData = new ArrayList< VectoringNozzleSystem >();
+   protected List< VectoringNozzleSystem > vectoringSystemData = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -69,9 +69,9 @@ public class SEESPdu extends DistributedEmissionsRegenerationFamilyPdu implement
      }
      catch (Exception e)
      {
-         System.out.println("SEESPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("SEESPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -96,9 +96,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("SEESPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("SEESPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -108,7 +108,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("SEESPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("SEESPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

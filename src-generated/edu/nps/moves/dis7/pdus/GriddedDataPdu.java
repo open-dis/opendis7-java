@@ -63,10 +63,10 @@ public class GriddedDataPdu extends SyntheticEnvironmentFamilyPdu implements Ser
    protected short padding2;
 
    /** gridAxisDescriptors is an undescribed parameter... */
-   protected List< GridAxisDescriptor > gridAxisDescriptors = new ArrayList< GridAxisDescriptor >();
+   protected List< GridAxisDescriptor > gridAxisDescriptors = new ArrayList<>();
  
    /** gridDataRecords is an undescribed parameter... */
-   protected List< GridData > gridDataRecords = new ArrayList< GridData >();
+   protected List< GridData > gridDataRecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -93,9 +93,9 @@ public class GriddedDataPdu extends SyntheticEnvironmentFamilyPdu implements Ser
      }
      catch (Exception e)
      {
-         System.out.println("GriddedDataPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("GriddedDataPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -120,9 +120,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("GriddedDataPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("GriddedDataPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -132,7 +132,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("GriddedDataPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("GriddedDataPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

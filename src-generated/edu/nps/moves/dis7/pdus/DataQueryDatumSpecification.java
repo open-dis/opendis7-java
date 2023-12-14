@@ -26,10 +26,10 @@ public class DataQueryDatumSpecification extends Object implements Serializable
    protected int numberOfVariableDatums;
 
    /** variable length list fixed datum IDs */
-   protected List< UnsignedDISInteger > fixedDatumIDList = new ArrayList< UnsignedDISInteger >();
+   protected List< UnsignedDISInteger > fixedDatumIDList = new ArrayList<>();
  
    /** variable length list variable datum IDs */
-   protected List< UnsignedDISInteger > variableDatumIDList = new ArrayList< UnsignedDISInteger >();
+   protected List< UnsignedDISInteger > variableDatumIDList = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

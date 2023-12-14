@@ -45,7 +45,7 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
    protected short numberOfIORecords;
 
    /** ioRecords is an undescribed parameter... */
-   protected List< IORecord > ioRecords = new ArrayList< IORecord >();
+   protected List< IORecord > ioRecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -72,9 +72,9 @@ public class InformationOperationsReportPdu extends InformationOperationsFamilyP
      }
      catch (Exception e)
      {
-         System.out.println("InformationOperationsReportPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("InformationOperationsReportPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -99,9 +99,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("InformationOperationsReportPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("InformationOperationsReportPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -111,7 +111,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("InformationOperationsReportPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("InformationOperationsReportPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

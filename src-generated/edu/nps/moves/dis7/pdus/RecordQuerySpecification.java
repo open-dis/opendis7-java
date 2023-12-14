@@ -23,7 +23,7 @@ public class RecordQuerySpecification extends Object implements Serializable
    protected int numberOfRecords;
 
    /** variable length list of 32-bit record types uid = 66 */
-   protected List< VariableRecordType > recordIDs = new ArrayList< VariableRecordType >();
+   protected List< VariableRecordType > recordIDs = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

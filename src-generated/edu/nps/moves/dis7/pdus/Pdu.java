@@ -44,19 +44,20 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
  {
  }
     /** Create deep copy of current object using PduFactory.
-     * @return deep copy of PDU */
+     * @return deep copy of PDU
+     */
      public synchronized Pdu copyByPduFactory()
      {
          PduFactory pduFactory = new PduFactory();
-         Pdu newPdu = pduFactory.createPdu(pduType); // initialize empty as placeholder
+         Pdu newPdu = null; // initialize empty as placeholder
          try
          {
              newPdu = pduFactory.createPdu(marshal());
          }
          catch (Exception e)
          {
-             System.out.println("Pdu copyByPduFactory() Exception: " + e.getMessage());
-             System.exit(-1);
+             System.err.println("Pdu copyByPduFactory() Exception: " + e.getMessage());
+             System.exit(-1); // TODO: Abruptly ending VM not a best practice
          }
          return newPdu;
      }

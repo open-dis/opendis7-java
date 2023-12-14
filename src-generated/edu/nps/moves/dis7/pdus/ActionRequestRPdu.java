@@ -42,10 +42,10 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
    protected int numberOfVariableDatumRecords;
 
    /** Fixed datum records */
-   protected List< FixedDatum > fixedDatumRecords = new ArrayList< FixedDatum >();
+   protected List< FixedDatum > fixedDatumRecords = new ArrayList<>();
  
    /** Variable datum records */
-   protected List< VariableDatum > variableDatumRecords = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > variableDatumRecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -72,9 +72,9 @@ public class ActionRequestRPdu extends SimulationManagementWithReliabilityFamily
      }
      catch (Exception e)
      {
-         System.out.println("ActionRequestRPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ActionRequestRPdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -99,9 +99,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("ActionRequestRPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("ActionRequestRPdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -111,7 +111,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("ActionRequestRPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("ActionRequestRPdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

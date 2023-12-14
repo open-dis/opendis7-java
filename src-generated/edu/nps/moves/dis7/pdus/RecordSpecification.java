@@ -23,7 +23,7 @@ public class RecordSpecification extends Object implements Serializable
    protected int numberOfRecordSets;
 
    /** variable length list record specifications. */
-   protected List< RecordSpecificationElement > recordSets = new ArrayList< RecordSpecificationElement >();
+   protected List< RecordSpecificationElement > recordSets = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */

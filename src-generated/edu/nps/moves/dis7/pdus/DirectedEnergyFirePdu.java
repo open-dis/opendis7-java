@@ -72,7 +72,7 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
    protected short numberOfDERecords;
 
    /** Fields shall contain one or more DE records, records shall conform to the variable record format (Section6.2.82), Section 7.3.4 */
-   protected List< StandardVariableSpecification > dERecords = new ArrayList< StandardVariableSpecification >();
+   protected List< StandardVariableSpecification > dERecords = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -99,9 +99,9 @@ public class DirectedEnergyFirePdu extends WarfareFamilyPdu implements Serializa
      }
      catch (Exception e)
      {
-         System.out.println("DirectedEnergyFirePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("DirectedEnergyFirePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -126,9 +126,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("DirectedEnergyFirePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("DirectedEnergyFirePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -138,7 +138,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("DirectedEnergyFirePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("DirectedEnergyFirePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

@@ -48,7 +48,7 @@ public class AttributePdu extends EntityInformationInteractionFamilyPdu implemen
    protected short numberAttributeRecordSet;
 
    /** attributeRecordSets is an undescribed parameter... */
-   protected List< AttributeRecordSet > attributeRecordSets = new ArrayList< AttributeRecordSet >();
+   protected List< AttributeRecordSet > attributeRecordSets = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
@@ -75,9 +75,9 @@ public class AttributePdu extends EntityInformationInteractionFamilyPdu implemen
      }
      catch (Exception e)
      {
-         System.out.println("AttributePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("AttributePdu deep copy() marshall/unmarshall ByteBuffer exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
      return newCopy;
  }
@@ -102,9 +102,9 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
      }
      catch (Exception e)
      {
-         System.out.println("AttributePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
-         e.printStackTrace();
-         System.exit(-1);
+         System.err.println("AttributePdu deep copy() marshall/unmarshall DataOutputStream exception " + e.getMessage());
+         e.printStackTrace(System.err);
+         System.exit(-1); // TODO: Abruptly ending VM not a good practice
      }
         try
         {
@@ -114,7 +114,7 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
         }
         catch (IOException ioe)
         {
-            System.out.println("AttributePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
+            System.err.println("AttributePdu copyDataOutputStream() flush IOException: " + ioe.getMessage());
         }
      return newCopy;
  }

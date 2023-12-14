@@ -26,10 +26,10 @@ public class DatumSpecification extends Object implements Serializable
    protected int numberOfVariableDatums;
 
    /** variable length list fixed datums */
-   protected List< FixedDatum > fixedDatumIDList = new ArrayList< FixedDatum >();
+   protected List< FixedDatum > fixedDatumIDList = new ArrayList<>();
  
    /** variable length list of variable datums */
-   protected List< VariableDatum > variableDatumIDList = new ArrayList< VariableDatum >();
+   protected List< VariableDatum > variableDatumIDList = new ArrayList<>();
  
 
 /** Constructor creates and configures a new instance object */
