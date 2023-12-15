@@ -49,35 +49,26 @@ public class PduRecorder // implements PduReceiver
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
     public static int DEFAULT_DIS_PORT = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
     
-    private String disAddress = DEFAULT_DIS_ADDRESS;
-    private int    disPort    = DEFAULT_DIS_PORT;
-  
-    private boolean verbose         = true;
-    private boolean verboseReceipt  = true;
-    private boolean verboseSending  = true;
-    private boolean verboseIncludesTimestamp = false;
-    
     /** Character sentinel indicating remainder of line is a comment */
     public static final String COMMENT_MARKER = "#";
 
     static final String OUTPUT_DIRECTORY_DEFAULT = "./pduLog";
-                 private String outputDirectory          = OUTPUT_DIRECTORY_DEFAULT;
-                 private Path   outputDirectoryPath;
     static final String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
     static final String DISLOG_FILE_EXTENSION    = ".dislog";
+    
     /** pattern template for default pdu log file name */
     public static final String DEFAULT_FILE_NAME        = DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION;
 
     static final String START_COMMENT_MARKER           = COMMENT_MARKER + " Start, ";
     static final String FINISH_COMMENT_MARKER          = COMMENT_MARKER + " Finish, ";
     
-    /** ENCODING_PLAINTEXT uses a modified comma-separated values (CSV) format to show DIS values readably */
+    /** ENCODING_PLAINTEXT uses a modified comma-separated values (CSV) format to show DIS values readably and is default DIS PDU format*/
     public static final String ENCODING_PLAINTEXT             = "ENCODING_PLAINTEXT";
     /** ENCODING_BASE64 uses simple Base64 (MIME type) compression on ENCODING_PLAINTEXT 
      * @see <a href="https://en.wikipedia.org/wiki/Base64" target="_blank">Wikipedia: Base64</a> */
     public static final String ENCODING_BASE64                = "ENCODING_BASE64";
-                            // not yet implemented
-    /** TODO ENCODING_BINARY is default DIS PDU format, not yet available within PduRecorder */
+    
+    /** ENCODING_BINARY is required for DFDL parsing/unparsing */
     public static final String ENCODING_BINARY                = "ENCODING_BINARY";  // TODO likely requires different code path
     /** TODO ENCODING_XML is default DIS PDU format using NPS DIS XML schema format */
     public static final String ENCODING_XML                   = "ENCODING_XML";     // TODO, repeat Open-DIS version 4 effort
@@ -114,7 +105,7 @@ public class PduRecorder // implements PduReceiver
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
     
     /** initialize the pduFactory for creating default application id, country, etc. */
-    protected final PduFactory     pduFactory         = new PduFactory();
+    protected final PduFactory     pduFactory       = new PduFactory();
 
     /** initialize the StringBuilder */
     protected final StringBuilder  sb               = new StringBuilder();
@@ -125,7 +116,7 @@ public class PduRecorder // implements PduReceiver
     /** whether or not header has already been written */
     protected int            pduCount               = 0;    // debug
     /** whether or not header has already been written */
-    protected boolean        headerWritten          = false;
+    protected boolean      headerWritten          = false;
     private boolean        running                = true; // starts recording by default
     private boolean        readableTimeStamp      = true; // 
     private boolean        zeroBasedTimeStamp     = true; // use normal date, time strings vice bytes
@@ -136,13 +127,22 @@ public class PduRecorder // implements PduReceiver
     /** remember time of first pdu timestamp */
     protected int            pduTimestampFirst      = 0;
     
+    private String disAddress = DEFAULT_DIS_ADDRESS;
+    private int    disPort    = DEFAULT_DIS_PORT;
+  
+    private boolean verbose         = true;
+    private boolean verboseReceipt  = true;
+    private boolean verboseSending  = true;
+    private boolean verboseIncludesTimestamp = false;
+    private String outputDirectory = OUTPUT_DIRECTORY_DEFAULT;
+    private Path   outputDirectoryPath;
+    
     private void initialize()
     {
         if (ENCODING_OPTIONS_LIST.isEmpty())
         {
             ENCODING_OPTIONS_LIST.add(ENCODING_PLAINTEXT            );
             ENCODING_OPTIONS_LIST.add(ENCODING_BASE64               );
-            // TODO test preliminary implementation in PduRecorder
             ENCODING_OPTIONS_LIST.add(ENCODING_BINARY               ); // IEEE DIS format
             // TODO encoding options not yet implemented in open-dis7
             ENCODING_OPTIONS_TODO.add(ENCODING_XML                  );
@@ -187,7 +187,6 @@ public class PduRecorder // implements PduReceiver
      * @param initialAddress multicast group address to receive data from (TODO allow unicast UDP)
      * @param initialPort UDP port to listen for data
      */
-    @SuppressWarnings("Convert2Lambda")
     public PduRecorder(String initialOutputDirectory, String initialAddress, int initialPort)
     {
         initialize();
@@ -254,7 +253,6 @@ public class PduRecorder // implements PduReceiver
      * @see pause()
      * @see resume()
      */
-    @SuppressWarnings("Convert2Lambda")
     public void start()
     {
         try {
@@ -272,17 +270,15 @@ public class PduRecorder // implements PduReceiver
             disThreadedNetworkInterface.setDescriptor (getDescriptor()); // pass it along
             disThreadedNetworkInterface.setVerbose(verbose);
 
-            disRawPduListener = new DisThreadedNetworkInterface.RawPduListener() {
-                @Override
-                public void incomingPdu(DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) {
-                    receivePdu(bAndL.bufferByteArray, bAndL.length);
-                }
+            disRawPduListener = (DisThreadedNetworkInterface.ByteArrayBufferAndLength bAndL) -> {
+                receivePdu(bAndL.bufferByteArray, bAndL.length);
             };
             disThreadedNetworkInterface.addRawListener(disRawPduListener);
             System.out.println("[" + (getClass().getSimpleName() + " " + getDescriptor()).trim() + "] listening to IP address " + getAddress() + " on port " + getPort());
         }
         running = true;
     }
+    
     /** Pause operation of this instance
      * @see start()
      * @see stop()
@@ -685,6 +681,7 @@ public class PduRecorder // implements PduReceiver
     // end of loop ENCODING_OPTIONS_LIST
     System.out.println("=================================================");
   }
+  
     /**
      * Get current multicast (or unicast) network address for send and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
@@ -694,6 +691,7 @@ public class PduRecorder // implements PduReceiver
     {
         return this.disAddress;
     }
+    
     /**
      * Network address for send and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> 
@@ -706,6 +704,7 @@ public class PduRecorder // implements PduReceiver
         this.disAddress = newAddress;
         return this;
     }
+    
     /** Get network port used, multicast or unicast.
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
      * @return current port value
@@ -714,7 +713,7 @@ public class PduRecorder // implements PduReceiver
     {
         return this.disPort;
     }
-    /**
+    
     /** Set network port used, multicast or unicast.
      * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> 
      * @param newPortValue the disPort value to set
@@ -727,6 +726,7 @@ public class PduRecorder // implements PduReceiver
         this.disPort = newPortValue;
         return this;
     }
+    
     /**
      * Get simple descriptor (such as parent class name) for this network interface, used in trace statements
      * @return simple descriptor name
@@ -751,6 +751,7 @@ public class PduRecorder // implements PduReceiver
         else TRACE_PREFIX = "[" + PduRecorder.class.getSimpleName() + " " + descriptor + "] ";
         return this;
     }
+    
     /**
      * Set whether or not trace statements are provided when packets are sent or received.
      * @param newValue the verbose status to set, also resets verboseReceipt and verboseSending to match.
@@ -768,6 +769,7 @@ public class PduRecorder // implements PduReceiver
         }
         return this;
     }
+    
     /**
      * Whether or not trace statements are provided when packets are sent or received.
      * @return the verbose status
@@ -778,6 +780,7 @@ public class PduRecorder // implements PduReceiver
     {
         return verbose;
     }
+    
     /**
      * Set whether or not trace statements are provided when packets are received.
      * @param newValue the verboseReceipt status to set
@@ -794,6 +797,7 @@ public class PduRecorder // implements PduReceiver
         }
         return this;
     }
+    
     /**
      * Whether or not trace statements are provided when packets are received.
      * @return the verboseReceipt status
@@ -819,6 +823,7 @@ public class PduRecorder // implements PduReceiver
         }
         return this;
     }
+    
     /**
      * Whether or not trace statements are provided when packets are sent.
      * @return the verboseSending status
@@ -951,4 +956,5 @@ public class PduRecorder // implements PduReceiver
     public void setIncludeHeaders(boolean includeHeaders) {
         this.includeHeaders = includeHeaders;
     }
-}
+    
+} // end class PduRecorder
