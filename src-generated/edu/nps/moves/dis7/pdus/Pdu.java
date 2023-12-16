@@ -56,7 +56,7 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
          }
          catch (Exception e)
          {
-             System.err.println("Pdu copyByPduFactory() Exception: " + e.getMessage());
+             System.err.println("Pdu copyByPduFactory() Exception: " + e.toString());
              System.exit(-1); // TODO: Abruptly ending VM not a best practice
          }
          return newPdu;
