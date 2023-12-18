@@ -334,7 +334,8 @@ public class DisThreadedNetworkInterface
 //     * already-buffered output pdu instances.
     public synchronized void sendPDU(Pdu pdu)
     {
-        pdus2send.add(pdu);
+//        pdus2send.add(pdu);
+        pdus2send.add(pdu.copyByPduFactory());
         
 // TODO get effective deep copy, following fails on FixedAndVariableDatumRoundTripTest
 // TODO pdus2send.add(pdu.copyByPduFactory()); // avoid possible changes to original pdu prior to network delivery
@@ -464,7 +465,7 @@ public class DisThreadedNetworkInterface
             {
                 datagramSocket.receive(receivedPacket); // blocks here waiting for next DIS pdu to be received on multicast IP and specified port
                 nextPdu = pduFactory.createPdu(bBuffer);
-                toRawListeners(bBuffer.array(), nextPdu.getMarshalledSize()); // pass only the actual length of pdu data
+                toRawListeners(bBuffer.array(), nextPdu.getLength()); // pass only the actual length of pdu data
 
                 pduReceiptCounter++; // TODO experimental, add to generator as a commented-out diagnostic; consider adding diagnostic mode
                 if (hasVerboseOutput() && hasVerboseReceipt())
@@ -517,7 +518,7 @@ public class DisThreadedNetworkInterface
                 nextPdu = pdus2send.take();
                 nextPdu.marshal(bBuffer);
                 packet.setData(bBuffer.array());
-                packet.setLength(nextPdu.getMarshalledSize()); // sendPDU only the pdu's data length
+                packet.setLength(nextPdu.getMarshalledSize()); // set only the pdu's data length, no extra 0's
                 datagramSocket.send(packet);
                 pduSentCounter++;
 

@@ -8,6 +8,9 @@ import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import java.nio.ByteBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -18,6 +21,17 @@ import static org.junit.jupiter.api.Assertions.*;
 @DisplayName("Comment Pdus Test")
 public class CommentPdusTest
 {
+    
+  @BeforeAll
+    public static void setUpClass() {
+        System.out.println(CommentPdusTest.class.getName() + " setUpClass()");
+    }
+
+    @AfterAll
+    public static void tearDownClass() {
+        System.out.println(CommentPdusTest.class.getName() + " tearDownClass()");
+    }
+
   DisThreadedNetworkInterface             disNetworkInterface;
   Pdu                                     receivedPdu;
   DisThreadedNetworkInterface.PduListener pduListener;
@@ -28,19 +42,6 @@ public class CommentPdusTest
         // initialization code here
     }
     
-    /** Setup initialization before each test */
-  @BeforeAll
-  public static void setUpClass()
-  {
-    System.out.println("CommentPdusTest");
-  }
-
-    /** Housekeeping after each test */
-  @AfterAll
-  public static void tearDownClass()
-  {
-  }
-
     /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
@@ -58,6 +59,8 @@ public class CommentPdusTest
   {
       disNetworkInterface.removeListener(pduListener);
       disNetworkInterface.close();
+      disNetworkInterface = null;
+      receivedPdu = null;
   }
 
   /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
@@ -102,12 +105,20 @@ public class CommentPdusTest
   private void sendPdu(Pdu pdu)
   {
     try {
-      disNetworkInterface.sendPDU(pdu);
-      Thread.sleep(100); // TODO consider refactoring the wait logic and moving externally
+        // Padding for the VariableDatum records can not be determined until the PDU has been marshalled.
+        // Therefore, marshalled size is not correct until after marshalling
+        pdu.marshal(ByteBuffer.allocate(1500));
+        pdu.setLength(pdu.getMarshalledSize());
+    } catch (Exception ex) {
+        Logger.getLogger(FixedAndVariableDatumRoundTripTest.class.getName()).log(Level.SEVERE, null, ex);
     }
-    catch (InterruptedException ex) {
-      System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
-      System.exit(1);
+
+    disNetworkInterface.sendPDU(pdu);
+    try {
+        Thread.sleep(100l);
+    } catch (InterruptedException ex) {
+        System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
+        System.exit(1);
     }
   }
  

@@ -32,45 +32,18 @@ import java.util.stream.Stream;
  */
 public class PduFactory
 {
-  private edu.nps.moves.dis7.enumerations.Country country = Country.UNITED_STATES_OF_AMERICA_USA;
-  private byte  defaultExerciseId = 1;
-  private short defaultSiteId     = 2;
-  private short defaultAppId      = 3;
+  private edu.nps.moves.dis7.enumerations.Country country;
+  private byte  defaultExerciseId;
+  private short defaultSiteId;
+  private short defaultAppId;
 
   /** We can marshal the PDU with a timestamp set to any of several styles.
    * Remember, you MUST set a timestamp. DIS will regard multiple packets sent
    * with the same timestamp as duplicates and may discard them.
    * Default value is TimestampStyle.IEEE_ABSOLUTE.
    */
-  private TimestampStyle timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
+  private TimestampStyle timestampStyle;
 
-  /**
-   * Create a PduFactory using newTimestampStyle.
-   * @param newTimestampStyle timeStampStyle of interest
-   */
-  public PduFactory(TimestampStyle newTimestampStyle)
-  {
-      timestampStyle = newTimestampStyle;
-  }
-
-  /** accessor to report value
-     * @return current timestampStyle */
-  public TimestampStyle getTimestampStyle()
-  {
-      return timestampStyle;
-  }
-
-  /** accessor to update value
-     * @param newTimestampStyle value of interest */
-  public void setTimestampStyle(TimestampStyle newTimestampStyle)
-  {
-      if (newTimestampStyle ==  null)
-      {
-          System.out.println("[PduFactory] *** received setNewTimestampStyle(null), reset using " + DisTime.TIMESTAMP_STYLE_DEFAULT);
-          timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
-      }
-      else timestampStyle = newTimestampStyle;
-  }
   /**
    * Create a PduFactory using defaults for country (USA), exerciseId (2),
    * application (3) and absolute timestamps.
@@ -78,6 +51,20 @@ public class PduFactory
   public PduFactory()
   {
       // initialization steps can go here, when possible class-member objects are instantiated at declaration
+      country = Country.UNITED_STATES_OF_AMERICA_USA;
+      defaultExerciseId = 1;
+      defaultSiteId     = 2;
+      defaultAppId      = 3;
+      timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
+  }
+  
+  /**
+   * Create a PduFactory using newTimestampStyle.
+   * @param newTimestampStyle timeStampStyle of interest
+   */
+  public PduFactory(TimestampStyle newTimestampStyle)
+  {
+      PduFactory.this.setTimestampStyle(newTimestampStyle);
   }
 
   /**
@@ -98,7 +85,26 @@ public class PduFactory
     this.defaultSiteId = siteId;
     this.defaultAppId = applicationId;
 
-    DisTime.setTimestampStyle(timestampStyle);
+    PduFactory.this.setTimestampStyle(timestampStyle);
+  } 
+
+  /** accessor to report value
+     * @return current timestampStyle */
+  public TimestampStyle getTimestampStyle()
+  {
+      return timestampStyle;
+  }
+
+  /** accessor to update value
+     * @param newTimestampStyle value of interest */
+  public void setTimestampStyle(TimestampStyle newTimestampStyle)
+  {
+      if (newTimestampStyle ==  null)
+      {
+          System.err.println("[PduFactory] *** received setNewTimestampStyle(null), reset using " + DisTime.TIMESTAMP_STYLE_DEFAULT);
+          timestampStyle = DisTime.TIMESTAMP_STYLE_DEFAULT;
+      }
+      else timestampStyle = newTimestampStyle;
   }
 
   /* ***************************************************/
@@ -109,7 +115,7 @@ public class PduFactory
     pdu.setExerciseID(defaultExerciseId)
       .setTimestamp(DisTime.getCurrentDisTimestamp())
       .setLength((short) pdu.getMarshalledSize());  //todo check if should be done in Pdu class
-
+                                                    // NOTE: This is not the correct size as there may be additional data not yet set in this PDU
     return pdu;
   }
 
@@ -1786,14 +1792,13 @@ public class PduFactory
         break;
 
       default:
-        System.out.println("[PduFactory] *** PDU not implemented. Type = " + pduType + "\n");
+        System.err.println("[PduFactory] *** PDU not implemented. Type = " + pduType + "\n");
     }   // end switch
 
     if (aPdu != null) {
       if (byteBuffer != null) {
           try {
-            // Not used, but an int marshalledSize is returned
-            aPdu.unmarshal(byteBuffer);
+            aPdu.setLength(aPdu.unmarshal(byteBuffer));
           } catch (Exception ex) {
               Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
           }

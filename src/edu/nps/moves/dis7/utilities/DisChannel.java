@@ -12,10 +12,13 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * DisChannel integrates multiple utility capabilities to handle most  networking and entity-management tasks.
@@ -356,6 +359,16 @@ public class DisChannel
                 @SuppressWarnings("CollectionsToArray")
                 CommentPdu commentPdu = getPduFactory().makeCommentPdu(commentType, newCommentsList.toArray(new String[0])); // comments);
                 commentPdu.setTimestampSeconds(timestampSeconds);
+                
+                try {
+                    // Padding for the VariableDatum records can not be determined until the PDU has been marshalled.
+                    // Therefore, marshalled size is not correct until after marshalling
+                    commentPdu.marshal(ByteBuffer.allocate(1500));
+                    commentPdu.setLength(commentPdu.getMarshalledSize());
+                } catch (Exception ex) {
+                    Logger.getLogger(DisChannel.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
                 sendSinglePdu(commentPdu);
                 if (isVerboseComments()) // narrative report
                 {
@@ -381,7 +394,7 @@ public class DisChannel
                                      // vararg... variable-length set of String comments can optionally follow
                                         String... comments)
     {
-        return sendCommentPdu (DisTime.getCurrentDisTimestamp(), commentType, comments);
+        return sendCommentPdu(DisTime.getCurrentDisTimestamp(), commentType, comments);
     }
 
     /** 

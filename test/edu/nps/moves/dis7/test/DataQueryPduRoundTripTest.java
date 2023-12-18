@@ -11,6 +11,9 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.VariableDatum;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import java.nio.ByteBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -21,30 +24,70 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayName("Data Query Pdu Round Test")
 public class DataQueryPduRoundTripTest
 {
-    /** default constructor */
-    public DataQueryPduRoundTripTest()
-    {
-        // initialization code here
+
+  private static final int REQUEST_ID = 0x00112233;
+  private static final int TIME_INTERVAL = 0x15151515;
+
+    private static final FixedDatum fixedDatum1 = new FixedDatum();
+    private static final int FIXED_DATUM_VALUE = 0x111111FF;
+    private static final VariableRecordType FIXED_DATUM_1_VAR_RECORD_TYPE = VariableRecordType.ACTIVATE_OWNSHIP;
+
+    private static final FixedDatum fixedDatum2 = new FixedDatum();
+    private static final int FIXED_DATUM2_VALUE = 0x222222FF;
+    private static final VariableRecordType FIXED_DATUM_2_VAR_RECORD_TYPE = VariableRecordType.HUMIDITY;
+
+    private static final FixedDatum fixedDatum3 = new FixedDatum();
+    private static final int FIXED_DATUM_3_VALUE = 0x333333FF;
+    private static final VariableRecordType FIXED_DATUM_3_VAR_RECORD_TYPE = VariableRecordType.SKE_FREQUENCY;
+
+    private static final VariableDatum variableDatum1 = new VariableDatum();
+    private static final VariableRecordType VARIABLE_DATUM_1_TYPE = VariableRecordType.ACLS_AIRCRAFT_REPORT;
+    private static final byte[] variableDatum1Value = "varDatum1Value111".getBytes();
+
+    private static final VariableDatum variableDatum2 = new VariableDatum();
+    private static final VariableRecordType VARIABLE_DATUM_2_TYPE = VariableRecordType.Z_ACCELERATION;
+    private static final byte[] variableDatum2Value = "varDatum2Value222".getBytes();
+
+    static {
+        fixedDatum1.setFixedDatumValue(FIXED_DATUM_VALUE);
+        fixedDatum1.setFixedDatumID(FIXED_DATUM_1_VAR_RECORD_TYPE);
+
+        fixedDatum2.setFixedDatumValue(FIXED_DATUM2_VALUE);
+        fixedDatum2.setFixedDatumID(FIXED_DATUM_2_VAR_RECORD_TYPE);
+
+        fixedDatum3.setFixedDatumValue(FIXED_DATUM_3_VALUE);
+        fixedDatum3.setFixedDatumID(FIXED_DATUM_3_VAR_RECORD_TYPE);
+
+        variableDatum1.setVariableDatumValue(variableDatum1Value);
+        variableDatum1.setVariableDatumLengthInBytes(variableDatum1Value.length);
+        variableDatum1.setVariableDatumID(VARIABLE_DATUM_1_TYPE);
+
+        variableDatum2.setVariableDatumValue(variableDatum2Value);
+        variableDatum2.setVariableDatumLengthInBytes(variableDatum2Value.length);
+        variableDatum2.setVariableDatumID(VARIABLE_DATUM_2_TYPE);
+    }
+
+    @BeforeAll
+    public static void setUpClass() {
+        System.out.println(DataQueryPduRoundTripTest.class.getName() + " setUpClass()");
+    }
+
+    @AfterAll
+    public static void tearDownClass() {
+        System.out.println(DataQueryPduRoundTripTest.class.getName() + " tearDownClass()");
     }
 
  Pdu receivedPdu;
  DisThreadedNetworkInterface disNetworkInterface;
  DisThreadedNetworkInterface.PduListener pduListener;
 
-    /** preparation **/
-  @BeforeAll
-  public static void setUpClass()
-  {
-    System.out.println("DataQueryPduRoundTripTest");
-  }
-
-    /** Housekeeping after all tests */
-  @AfterAll
-  public static void tearDownClass()
-  {
-  }
-
-    /** Setup initialization before each test */
+    /** default constructor */
+    public DataQueryPduRoundTripTest()
+    {
+        // initialization code here
+    }
+    
+  /** Setup initialization before each test */
   @BeforeEach
   public void setUp()
   {   
@@ -55,52 +98,14 @@ public class DataQueryPduRoundTripTest
       disNetworkInterface.addListener(pduListener);
   }
 
-    /** Housekeeping after each test */
+  /** Housekeeping after each test */
   @AfterEach
   public void tearDown()
   {
       disNetworkInterface.removeListener(pduListener);
       disNetworkInterface.close();
-  }
-
-  private static int REQUEST_ID = 0x00112233;
-  private static int TIME_INTERVAL = 0x15151515;
-
-  private static FixedDatum fixedDatum1 = new FixedDatum();
-  private static int fixedDatum1Value = 0x111111FF;
-  private static VariableRecordType fixedDatum1VarRecordType = VariableRecordType._120_MM_HEAT_QUANTITY;
-  private static FixedDatum fixedDatum2 = new FixedDatum();
-  private static int fixedDatum2Value = 0x222222FF;
-  private static VariableRecordType fixedDatum2VarRecordType = VariableRecordType.ACCELERATION;
-  private static FixedDatum fixedDatum3 = new FixedDatum();
-  private static int fixedDatum3Value = 0x333333FF;
-  private static VariableRecordType fixedDatum3VarRecordType = VariableRecordType.NUMBER_OF_INTERCEPTORS_FIRED;
-
-  private static VariableDatum variableDatum1 = new VariableDatum();
-  private static VariableRecordType variableDatum1Type = VariableRecordType.ADA_SHOOTING_STATUS;
-  private static byte[] variableDatum1Value = "varDatum1Value111".getBytes();
-
-  private static VariableDatum variableDatum2 = new VariableDatum();
-  private static VariableRecordType variableDatum2Type = VariableRecordType.ORDER_STATUS;
-  private static byte[] variableDatum2Value = "222varDatum1Value222".getBytes();
-
-  static {
-    fixedDatum1.setFixedDatumValue(fixedDatum1Value);
-    fixedDatum1.setFixedDatumID(fixedDatum1VarRecordType);
-
-    fixedDatum2.setFixedDatumValue(fixedDatum2Value);
-    fixedDatum2.setFixedDatumID(fixedDatum2VarRecordType);
-
-    fixedDatum3.setFixedDatumValue(fixedDatum3Value);
-    fixedDatum3.setFixedDatumID(fixedDatum3VarRecordType);
-
-    variableDatum1.setVariableDatumID(variableDatum1Type);
-    variableDatum1.setVariableDatumValue(variableDatum1Value);
-    variableDatum1.setVariableDatumLengthInBytes(variableDatum1Value.length);  // should be done automatically
-
-    variableDatum2.setVariableDatumID(variableDatum2Type);
-    variableDatum2.setVariableDatumValue(variableDatum2Value);
-    variableDatum2.setVariableDatumLengthInBytes(variableDatum2Value.length);  // should be done automatically
+      disNetworkInterface = null;
+      receivedPdu = null;
   }
 
   /** Perform test of interest */
@@ -121,16 +126,25 @@ public class DataQueryPduRoundTripTest
     sendingPdu.getVariableDatums().add(variableDatum2);
 
     try {
-      disNetworkInterface.sendPDU(sendingPdu);
-      Thread.sleep(100l);
-    }
-    catch (InterruptedException ex) {
-      System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
-      System.exit(1);
-    }
+            // Padding for the VariableDatum records can not be determined until the PDU has been marshalled.
+            // Therefore, marshalled size is not correct until after marshalling
+            sendingPdu.marshal(ByteBuffer.allocate(1500));
+            sendingPdu.setLength(sendingPdu.getMarshalledSize());
+        } catch (Exception ex) {
+            Logger.getLogger(FixedAndVariableDatumRoundTripTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        disNetworkInterface.sendPDU(sendingPdu);
+        try {
+            Thread.sleep(100l);
+        } catch (InterruptedException ex) {
+            System.err.println("Error sending Multicast: " + ex.getLocalizedMessage());
+            System.exit(1);
+        }
 
     // Compare
     // If we made it this far, we've sent and received.  Now compare.
+    assertTrue(receivedPdu != null, "No response from network");
     assertTrue(receivedPdu.equals(sendingPdu), "Sent and received pdu not the same");
   }
 

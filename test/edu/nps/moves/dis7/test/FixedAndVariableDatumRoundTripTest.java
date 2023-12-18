@@ -11,6 +11,9 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.VariableDatum;
 import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.PduFactory;
+import java.nio.ByteBuffer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -20,53 +23,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @DisplayName("Fixed and Variable Datum Round Trip Test")
 public class FixedAndVariableDatumRoundTripTest {
-
-    /**
-     * default constructor
-     */
-    public FixedAndVariableDatumRoundTripTest() {
-        // initialization code here
-    }
-    Pdu receivedPdu;
-    DisThreadedNetworkInterface disNetworkInterface;
-    DisThreadedNetworkInterface.PduListener pduListener;
-
-    /**
-     * test method override
-     */
-    @BeforeAll
-    public static void setUpClass() {
-        System.out.println("FixedAndVariableDatumRoundTripTest setUpClass()");
-    }
-
-    /**
-     * test method override
-     */
-    @AfterAll
-    public static void tearDownClass() {
-        System.out.println("FixedAndVariableDatumRoundTripTest tearDownClass()");
-    }
-
-    /**
-     * setup disNetworkInterface and pduListener
-     */
-    @BeforeEach
-    public void setUp() {
-        disNetworkInterface = new DisThreadedNetworkInterface();
-        pduListener = (Pdu pdu) -> {
-            setUpReceiver(pdu);
-        };
-        disNetworkInterface.addListener(pduListener);
-    }
-
-    /**
-     * Tear down disNetworkInterface
-     */
-    @AfterEach
-    public void tearDown() {
-        disNetworkInterface.removeListener(pduListener);
-        disNetworkInterface.close();
-    }
 
     private static final FixedDatum fixedDatum1 = new FixedDatum();
     private static final int FIXED_DATUM_VALUE = 0x111111FF;
@@ -106,6 +62,50 @@ public class FixedAndVariableDatumRoundTripTest {
         variableDatum2.setVariableDatumLengthInBytes(variableDatum2Value.length);
         variableDatum2.setVariableDatumID(VARIABLE_DATUM_2_TYPE);
     }
+    
+    @BeforeAll
+    public static void setUpClass() {
+        System.out.println(FixedAndVariableDatumRoundTripTest.class.getName() + " setUpClass()");
+    }
+
+    @AfterAll
+    public static void tearDownClass() {
+        System.out.println(FixedAndVariableDatumRoundTripTest.class.getName() + " tearDownClass()");
+    }
+
+    Pdu receivedPdu;
+    DisThreadedNetworkInterface disNetworkInterface;
+    DisThreadedNetworkInterface.PduListener pduListener;
+
+    /**
+     * default constructor
+     */
+    public FixedAndVariableDatumRoundTripTest() {
+        // initialization code here
+    }
+    
+    /**
+     * setup disNetworkInterface and pduListener
+     */
+    @BeforeEach
+    public void setUp() {
+        disNetworkInterface = new DisThreadedNetworkInterface();
+        pduListener = (Pdu pdu) -> {
+            setUpReceiver(pdu);
+        };
+        disNetworkInterface.addListener(pduListener);
+    }
+
+    /**
+     * Tear down disNetworkInterface
+     */
+    @AfterEach
+    public void tearDown() {
+        disNetworkInterface.removeListener(pduListener);
+        disNetworkInterface.close();
+        disNetworkInterface = null;
+        receivedPdu = null;
+    }
 
     /**
      * Test PDU sending, receiving, marshalling (serialization) and
@@ -123,7 +123,14 @@ public class FixedAndVariableDatumRoundTripTest {
         sentPdu.getVariableDatums().add(variableDatum1);
         sentPdu.getVariableDatums().add(variableDatum2);
 
-        sentPdu.setLength(sentPdu.getMarshalledSize());
+        try {
+            // Padding for the VariableDatum records can not be determined until the PDU has been marshalled.
+            // Therefore, marshalled size is not correct until after marshalling
+            sentPdu.marshal(ByteBuffer.allocate(1500));
+            sentPdu.setLength(sentPdu.getMarshalledSize());
+        } catch (Exception ex) {
+            Logger.getLogger(FixedAndVariableDatumRoundTripTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         disNetworkInterface.sendPDU(sentPdu);
         try {
@@ -172,6 +179,7 @@ public class FixedAndVariableDatumRoundTripTest {
         FixedAndVariableDatumRoundTripTest frt = new FixedAndVariableDatumRoundTripTest();
         frt.setUp();
         frt.testRoundTrip();
+        frt.testCopyPdu();
         frt.tearDown();
     }
 }
