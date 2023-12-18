@@ -64,6 +64,7 @@ public class PduFactory
    */
   public PduFactory(TimestampStyle newTimestampStyle)
   {
+      this();
       PduFactory.this.setTimestampStyle(newTimestampStyle);
   }
 
