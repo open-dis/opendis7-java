@@ -13,6 +13,7 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
+import java.nio.ByteBuffer;
 
 /**
  * Creates and sends ESPDUs in IEEE binary format. very similar to EspduSender.java, but
@@ -60,8 +61,8 @@ public class PduSenderNIO
       Vector3Double location;
       EulerAngles orientation;
       float psi;
-      byte[] data = new byte[144];
-      DatagramPacket packet = new DatagramPacket(data, data.length, group);
+      ByteBuffer data = ByteBuffer.allocate(144);
+      DatagramPacket packet = new DatagramPacket(data.array(), data.capacity(), group);
 
       while (true) // candidate breakpoint when debugging
       {
@@ -92,7 +93,7 @@ public class PduSenderNIO
           // packet with that data in it. This uses Robert Harder's NIO
           // code for marshalling.
           data = espdu.marshal();
-          packet.setData(data);
+          packet.setData(data.array());
 
           socket.send(packet);
 

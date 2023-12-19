@@ -13,6 +13,7 @@ import edu.nps.moves.dis7.utilities.PduFactory;
 
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.util.*;
 
 /**
@@ -162,7 +163,7 @@ public class PduSender
       double disCoordinates[];
       Vector3Double location;
       FirePdu fire;
-      byte[] fireArray;
+      ByteBuffer fireArray;
       byte[] data;
       DatagramPacket packet;
       
@@ -250,7 +251,7 @@ public class PduSender
             socket.send(packet);
             
             // TODO experiment with these!  8)
-            packet = new DatagramPacket(fireArray, fireArray.length, broadcast, port); // alternate
+            packet = new DatagramPacket(fireArray.array(), fire.getMarshalledSize(), broadcast, port); // alternate
             socket.send(packet);
         }
 
