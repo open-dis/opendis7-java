@@ -304,17 +304,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
 
 /**
- * A convenience method for marshalling to a byte array.
- * This is not as efficient as reusing a ByteBuffer, but it <em>is</em> easy.
+ * A convenience method for marshalling to a byte array
  * @return a byte array with the marshalled {@link Pdu}
  * @throws Exception ByteBuffer-generated exception
  */
-public synchronized byte[] marshal() throws Exception
+public synchronized java.nio.ByteBuffer marshal() throws Exception
 {
-    byte[] data = new byte[getMarshalledSize()];
-    java.nio.ByteBuffer byteBuffer = java.nio.ByteBuffer.wrap(data);
+    java.nio.ByteBuffer byteBuffer = java.nio.ByteBuffer.allocate(1500);
     marshal(byteBuffer);
-    return data;
+    return byteBuffer.rewind();
 }
  /*
   * Override of default equals method.  Calls equalsImpl() for content comparison.
