@@ -8,6 +8,7 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.utilities.DisTime.TimestampStyle;
+import java.io.IOException;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -1459,8 +1460,9 @@ public class PduFactory
    */
   public synchronized Pdu createPdu(byte data[])
   {
-    if (data[] = null)
-        throw new IOException ("PduFactory createPdu(byte data[]) received null array");
+    if ((data == null) || (data.length == 0))
+        System.err.println ("[PduFactory] createPdu(byte data[]) received null array, unable to determine pduType");
+    
     return createPdu(ByteBuffer.wrap(data));
   }
 
@@ -1473,20 +1475,37 @@ public class PduFactory
    */
   public synchronized Pdu createPdu(ByteBuffer byteBuffer)
   {
-    DisPduType pduType = getTypeFromByteArray(byteBuffer.array());
+    DisPduType pduType;
+    
+    if ((byteBuffer == null) || (byteBuffer.array().length == 0))
+    {
+        System.err.println ("[PduFactory] createPdu(ByteBuffer byteBuffer) received empty buffer, unable to determine pduType, using DisPduType.OTHER");
+        pduType = DisPduType.OTHER;
+    }
+    else pduType = getTypeFromByteArray(byteBuffer.array());
+    
     return createPdu(pduType, byteBuffer);
   }
 
   /**
    * Return the enumerated pdu type from a byte array, typically received from the
-   * network.
+   * network.  Returns DisPduType.OTHER if no byteArray provided.
    *
-   * @param ba byte array
-   * @return the type
+   * @param byteArray byte array
+   * @return the DisPduType
    */
-  private DisPduType getTypeFromByteArray(byte[] ba)
+  private DisPduType getTypeFromByteArray(byte[] byteArray)
   {
-    return DisPduType.getEnumForValue(Byte.toUnsignedInt(ba[2])); // 3rd byte
+    DisPduType pduType;
+    
+    if ((byteArray == null) || (byteArray.length == 0))
+    {
+        System.err.println ("[PduFactory] getTypeFromByteArray(byte[] byteArray) received empty byteArray, unable to determine pduType, using DisPduType.OTHER");
+        pduType = DisPduType.OTHER;
+    }
+    else pduType = DisPduType.getEnumForValue(Byte.toUnsignedInt(byteArray[2])); // 3rd byte
+    
+    return pduType;
   }
 
   /**
@@ -1502,8 +1521,13 @@ public class PduFactory
   private synchronized Pdu createPdu(DisPduType pduType, ByteBuffer byteBuffer)
   {
     Pdu aPdu = null;
-    switch (pduType) {
-      // NOTE: 'OTHER' is a valid pduTypeEnum, but has no corresponding object
+    switch (pduType)
+    {
+      case OTHER:
+        // NOTE: 'OTHER' is a valid pduTypeEnum, but has no corresponding object
+        System.err.println ("[PduFactory] (DisPduType pduType, ByteBuffer byteBuffer) received DisPduType.OTHER, which has no corresponding object, returning null");
+        break;
+          
       case ENTITY_STATE:
         // if the user has created the factory requesting that he get fast espdus back, give him those.
         aPdu = new EntityStatePdu();
@@ -1794,14 +1818,16 @@ public class PduFactory
         break;
 
       default:
-        System.err.println("[PduFactory] *** PDU not implemented. Type = " + pduType + "\n");
+        System.err.println("[PduFactory] createPdu(DisPduType pduType, ByteBuffer byteBuffer) pduType " + pduType +
+                           " not implemented, returning null");
     }   // end switch
 
     if (aPdu != null) {
       if (byteBuffer != null) {
           try {
-            aPdu.setLength(aPdu.unmarshal(byteBuffer));
-          } catch (Exception ex) {
+              aPdu.setLength(aPdu.unmarshal(byteBuffer));
+          } 
+          catch (Exception ex) {
               Logger.getLogger(PduFactory.class.getName()).log(Level.SEVERE, null, ex);
           }
       }
