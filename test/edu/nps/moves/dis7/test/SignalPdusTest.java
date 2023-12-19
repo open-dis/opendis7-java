@@ -37,7 +37,7 @@ public class SignalPdusTest
     static PduFactory  pduFactory;
     static List<Pdu>     sentPdus = new ArrayList<>();
     static List<Pdu> receivedPdus = new ArrayList<>();
-    byte[] bufferByteArray;
+    ByteBuffer bufferByteArray;
     int size;
     
     /** default constructor */
@@ -142,7 +142,7 @@ public class SignalPdusTest
         receivedPdus.forEach(pdu -> {
             try {
                 bufferByteArray = pdu.marshal();
-                size = pdu.unmarshal(ByteBuffer.wrap(bufferByteArray));
+                size = pdu.unmarshal(bufferByteArray);
                 assertTrue(size > 0, "Unmarshalling error: Unmarshalled size: " + size);
 
                 // This also unmarshalls the pdu

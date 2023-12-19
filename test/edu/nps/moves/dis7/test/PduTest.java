@@ -79,7 +79,7 @@ abstract public class PduTest
     private int masterEventNumber = 0;
     
     List<Pdu> receivedPdus;
-    byte[] bufferByteArray;
+    ByteBuffer bufferByteArray;
     int size;
     
     /** default constructor */
@@ -181,14 +181,11 @@ abstract public class PduTest
         do // check at least once, perhaps multiple times for receipt before returning
         {
             sleep(invoker); // give receiver time to process the sent pdu
-
-//            if (receivedPdu != null)
-//                return;
             
             receivedPdus.forEach(pdu -> {
                 try {
                     bufferByteArray = pdu.marshal();
-                    size = pdu.unmarshal(ByteBuffer.wrap(bufferByteArray));
+                    size = pdu.unmarshal(bufferByteArray);
                     assertTrue(size > 0, "Unmarshalling error: Unmarshalled size: " + size);
 
                     // This also unmarshalls the pdu
