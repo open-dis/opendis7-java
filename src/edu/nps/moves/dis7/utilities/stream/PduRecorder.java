@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * This work is provided under a BSD-style open-source license, see project
+ * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
+ */
 package edu.nps.moves.dis7.utilities.stream;
 
 import com.google.common.primitives.Longs;
@@ -104,8 +109,9 @@ public class PduRecorder // implements PduReceiver
     private DisThreadedNetworkInterface                disThreadedNetworkInterface;
     private DisThreadedNetworkInterface.RawPduListener disRawPduListener;
     
+    // TODO: move this to PduFactory
     /** initialize the pduFactory for creating default application id, country, etc. */
-    protected final PduFactory     pduFactory       = new PduFactory();
+    protected final PduFactory     pduFactory       = DisTime.getPduFactory();
 
     /** initialize the StringBuilder */
     protected final StringBuilder  sb               = new StringBuilder();
@@ -473,23 +479,23 @@ public class PduRecorder // implements PduReceiver
       return logFile.getAbsolutePath();
     }
 
-      /**
-       * Deprecated due to class rename, use getDisThreadedNetworkInterface() instead
-       * @see getDisThreadedNetworkInterface()
-       * @return an instance of this DisThreadedNetworkInterface
-       */
-      @Deprecated
-      public DisThreadedNetworkInterface getDisThreadedNetIF() {
-          return getDisThreadedNetworkInterface();
-      }
+    /**
+     * Deprecated due to class rename, use getDisThreadedNetworkInterface() instead
+     * @see getDisThreadedNetworkInterface()
+     * @return an instance of this DisThreadedNetworkInterface
+     */
+    @Deprecated
+    public DisThreadedNetworkInterface getDisThreadedNetIF() {
+        return getDisThreadedNetworkInterface();
+    }
 
-      /**
-       * Provide link to singleton disThreadedNetworkInterface
-       * @return an instance of this DisThreadedNetworkInterface
-       */
-      public DisThreadedNetworkInterface getDisThreadedNetworkInterface() {
-          return disThreadedNetworkInterface;
-      }
+    /**
+     * Provide link to singleton disThreadedNetworkInterface
+     * @return an instance of this DisThreadedNetworkInterface
+     */
+    public DisThreadedNetworkInterface getDisThreadedNetworkInterface() {
+        return disThreadedNetworkInterface;
+    }
 
     /** utility method to write appropriately encoded log file header */
     protected void writeHeader()

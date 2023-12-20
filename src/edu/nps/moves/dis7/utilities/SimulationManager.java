@@ -1,9 +1,8 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD-style open-source license, see project
  * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
-
 package edu.nps.moves.dis7.utilities;
 
 import edu.nps.moves.dis7.pdus.CreateEntityPdu;
@@ -25,37 +24,39 @@ import java.util.List;
  * @see <a href="https://ieeexplore.ieee.org/document/587529">1278.3-1996. IEEE Recommended Practice for Distributed Interactive Simulation - Exercise Management and Feedback</a>
  * @author brutzman
  */
-public class SimulationManager 
+public class SimulationManager
 {
     private        DisThreadedNetworkInterface disThreadedNetworkInterface;
     private static List<RecordType>      entityRecordList = new ArrayList<>();
     private static List<RecordType>        hostRecordList = new ArrayList<>();
     private static List<RecordType> applicationRecordList = new ArrayList<>();
-    private        String                           descriptor;
-    private static int                                  hostID = 0;
+    private        String                     descriptor;
+    private static int                             hostID = 0;
+
     /** Factory object used to create new PDU instances */
     private PduFactory pduFactory;
-    
+
     private String TRACE_PREFIX = "[" + (SimulationManager.class.getSimpleName()) + "] ";
-    
+
     /**
      * Object constructor with descriptor
      * @param newDescriptor simple descriptor name for this class
      */
-    public SimulationManager (String newDescriptor)
+    public SimulationManager(String newDescriptor)
     {
         if  (newDescriptor != null)
              descriptor = newDescriptor.trim();
         else descriptor = "";
     }
+
     /**
      * Object constructor
      */
-    public SimulationManager ()
+    public SimulationManager()
     {
         this("");
     }
-    
+
     /**
      * Start the simulation according to specifications
      */
@@ -63,6 +64,7 @@ public class SimulationManager
     {
         // TODO
     }
+
     /**
      * Pause the simulation according to specifications
      */
@@ -70,6 +72,7 @@ public class SimulationManager
     {
         // TODO
     }
+
     /**
      * Resume the simulation according to specifications
      */
@@ -77,6 +80,7 @@ public class SimulationManager
     {
         // TODO
     }
+
     /**
      * Stop the simulation according to specifications
      */
@@ -84,6 +88,7 @@ public class SimulationManager
     {
         // TODO
     }
+
     /**
      * An entity can Join the simulation according to specifications
      */
@@ -92,12 +97,12 @@ public class SimulationManager
         CreateEntityPdu createEntityPdu;
 //        createEntityPdu.setExerciseID(123); // TODO
 //      createEntityPdu.setPduStatus(); // TODO
-        
+
         if (hasDisThreadedNetworkInterface())
         {
             for (RecordType entity : entityRecordList)
             {
-                // TODO set record parameters
+                // TODO: set record parameters
                 createEntityPdu = pduFactory.makeCreateEntityPdu();
                 createEntityPdu.setExerciseID(entity.getId());
                 createEntityPdu.setTimestamp(DisTime.getCurrentDisTimestamp());
@@ -110,6 +115,7 @@ public class SimulationManager
             //  TODO consider queue for unsent entities
         }
     }
+
     /**
      * An entity can Leave the simulation according to specifications
      */
@@ -117,7 +123,7 @@ public class SimulationManager
     {
         // TODO
     }
-    
+
     /**
      * Simple simulation record type
      */
@@ -128,8 +134,8 @@ public class SimulationManager
         private String alias;
         private String description;
         private String reference;
-        private boolean isHostType  = false;
-    
+        private boolean isHostType = false;
+
         /**
          * Constructor for new record
          * @param id   identifying number
@@ -145,6 +151,7 @@ public class SimulationManager
             this.reference   = reference;
             // TODO create alias: if IP address then check for hostname, and vice versa
         }
+        
         /**
          * Utility constructor for new record, description and reference remain blank
          * @param id   identifying number
@@ -158,6 +165,7 @@ public class SimulationManager
             this.reference   = "";
             // TODO create alias: if IP address then check for hostname, and vice versa
         }
+        
         /**
          * Utility constructor for new record, description and reference remain blank
          * @param id   identifying number
@@ -173,7 +181,7 @@ public class SimulationManager
             this.isHostType  = isHostType;
             // TODO create alias: if IP address then check for hostname, and vice versa
         }
-        
+
         /**
          * Simple representation of record
          * @return id,name,"description"
@@ -296,7 +304,7 @@ public class SimulationManager
      * @param index which record to retrieve
      * @return the record matching this index
      */
-    public RecordType getEntityRecordByIndex(int index) 
+    public RecordType getEntityRecordByIndex(int index)
     {
         if (entityRecordList.isEmpty())
         {
@@ -321,7 +329,7 @@ public class SimulationManager
      * @param index which record to retrieve
      * @return the record matching this index
      */
-    public RecordType getHostRecordByIndex(int index) 
+    public RecordType getHostRecordByIndex(int index)
     {
         if (hostRecordList.isEmpty())
         {
@@ -346,7 +354,7 @@ public class SimulationManager
      * @param index which record to retrieve
      * @return the record matching this index
      */
-    public RecordType getApplicationRecordByIndex(int index) 
+    public RecordType getApplicationRecordByIndex(int index)
     {
         if (applicationRecordList.isEmpty())
         {
@@ -371,7 +379,7 @@ public class SimulationManager
      * @param valueOfInterest id for record to retrieve
      * @return the record matching this ID
      */
-    public RecordType getEntityRecordByID(int valueOfInterest) 
+    public RecordType getEntityRecordByID(int valueOfInterest)
     {
         for (RecordType entity : entityRecordList)
         {
@@ -386,7 +394,7 @@ public class SimulationManager
      * @param valueOfInterest id for record to retrieve
      * @return the record matching this ID
      */
-    public RecordType getHostRecordByID(int valueOfInterest) 
+    public RecordType getHostRecordByID(int valueOfInterest)
     {
         for (RecordType host : hostRecordList)
         {
@@ -401,7 +409,7 @@ public class SimulationManager
      * @param valueOfInterest id for record to retrieve
      * @return the record matching this ID
      */
-    public RecordType getApplicationRecordByID(int valueOfInterest) 
+    public RecordType getApplicationRecordByID(int valueOfInterest)
     {
         for (RecordType application : applicationRecordList)
         {
@@ -443,6 +451,7 @@ public class SimulationManager
     protected DisThreadedNetworkInterface getDisThreadedNetworkInterface() {
         return disThreadedNetworkInterface;
     }
+
     /**
      * Set the disThreadedNetworkInterface singleton to match other classes
      * @param disThreadedNetworkInterface the disThreadedNetworkInterface to set
@@ -452,80 +461,89 @@ public class SimulationManager
         this.disThreadedNetworkInterface = disThreadedNetworkInterface;
         return this;
     }
+
     /**
      * Check for disThreadedNetworkInterface
      * @return whether singleton disThreadedNetworkInterface has been instantiated
      */
-    protected boolean hasDisThreadedNetworkInterface() 
+    protected boolean hasDisThreadedNetworkInterface()
     {
         return (this.disThreadedNetworkInterface != null);
     }
+
     /**
      * Create disThreadedNetworkInterface
      */
-    protected void createDisThreadedNetworkInterface() 
+    protected void createDisThreadedNetworkInterface()
     {
         createDisThreadedNetworkInterface(descriptor);
     }
+
     /**
-     * Constructor for disThreadedNetworkInterface with descriptor, 
+     * Constructor for disThreadedNetworkInterface with descriptor,
      * using default multicast address and port
      * @param newDescriptor simple descriptor name for this interface
      */
-    protected void createDisThreadedNetworkInterface(String newDescriptor) 
+    protected void createDisThreadedNetworkInterface(String newDescriptor)
     {
         this.disThreadedNetworkInterface = new DisThreadedNetworkInterface(newDescriptor);
     }
+
     /**
-     * Constructor for disThreadedNetworkInterface using specified multicast address and port 
+     * Constructor for disThreadedNetworkInterface using specified multicast address and port
      * @param address the multicast group or unicast address to utilize
      * @param port the multicast port to utilize
      */
-    protected void createDisThreadedNetworkInterface(String address, int port) 
+    protected void createDisThreadedNetworkInterface(String address, int port)
     {
         createDisThreadedNetworkInterface(address, port, descriptor);
     }
+
     /**
      * Constructor for disThreadedNetworkInterface using specified multicast address and port, plus descriptor.
      * @param address the multicast group or unicast address to utilize
      * @param port the multicast port to utilize
      * @param newDescriptor simple descriptor name for this interface
      */
-    protected void createDisThreadedNetworkInterface(String address, int port, String newDescriptor) 
+    protected void createDisThreadedNetworkInterface(String address, int port, String newDescriptor)
     {
         this.disThreadedNetworkInterface = new DisThreadedNetworkInterface(address, port, newDescriptor);
     }
+
     /**
      * Get simple descriptor (such as parent class name) for this SimulationManager, used in trace statements
      * @return simple descriptor name
      */
-    public String getDescriptor() 
+    public String getDescriptor()
     {
         return descriptor;
     }
+
     /**
      * Set new simple descriptor (such as parent class name) for this SimulationManager, used in trace statements
      * @param newDescriptor simple descriptor name for this interface
      * @return same object to permit progressive setters */
-    public SimulationManager setDescriptor(String newDescriptor) 
+    public SimulationManager setDescriptor(String newDescriptor)
     {
         if (newDescriptor != null)
             this.descriptor = newDescriptor.trim();
         TRACE_PREFIX = "[" + DisThreadedNetworkInterface.class.getSimpleName() + " " + descriptor + "] ";
         return this;
     }
+
     /**
-     * Reset descriptor 
+     * Reset descriptor
      * @return same object to permit progressive setters */
     public SimulationManager clearDescriptor()
     {
         setDescriptor("");
         return this;
     }
+
     /**
      * clear all lists
      * @return same object to permit progressive setters */
-    public SimulationManager clearAll() 
+    public SimulationManager clearAll()
     {
         entityRecordList.clear();
         hostRecordList.clear();
@@ -533,6 +551,7 @@ public class SimulationManager
         clearDescriptor();
         return this;
     }
+
     /**
      * Add entity to simulation list, if this is first occurrence
      * @param newEntityID new entity to add
@@ -546,6 +565,7 @@ public class SimulationManager
         entityRecordList.add(newEntity);
         return this;
     }
+
     /**
      * Add entity to simulation list and announce using CreateEntityPdu
      * @param newEntity new entity to add
@@ -570,6 +590,7 @@ public class SimulationManager
         }
         return this;
     }
+
     /**
      * Remove entity from simulation list, if found
      * @param oldEntity old entity to remove
@@ -594,6 +615,7 @@ public class SimulationManager
         }
         return this;
     }
+
     /**
      * Add host to simulation list, if this is first occurrence
      * @param newHost new host to add
@@ -621,6 +643,7 @@ public class SimulationManager
         }
         return this;
     }
+
     /**
      * Remove host from simulation list, if found
      * @param oldHost old host to remove
@@ -637,7 +660,7 @@ public class SimulationManager
                 aliasFound = true;
             if ((nameFound || aliasFound) && !nextRecord.isHostType)
                  nextRecord.isHostType = true; // make sure
-            
+
             if (nameFound || aliasFound)
             {
                 hostRecordList.remove(nextRecord);
@@ -647,17 +670,17 @@ public class SimulationManager
         }
         return this;
     }
-    
+
     /** Self test to check basic operation, invoked by main() */
     public void selfTest()
     {
         createDisThreadedNetworkInterface();
-        
+
         // TODO
-        
+
         disThreadedNetworkInterface.close(); // tears down threads and sockets
     }
-    
+
     /**
      * Main method for testing.
      * @see <a href="https://docs.oracle.com/javase/tutorial/getStarted/application/index.html">Java Tutorials: A Closer Look at the "Hello World!" Application</a>
@@ -666,13 +689,13 @@ public class SimulationManager
     public static void main(String[] args)
     {
         System.out.println("*** SimulationManager main() self test started...");
-          
+
         SimulationManager simulationManager = new SimulationManager("main() self test");
-        
+
         simulationManager.setDescriptor("main() self test");
-        
+
         simulationManager.selfTest();
-        
+
         System.out.println("*** SimulationManager main() self test complete.");
     }
 

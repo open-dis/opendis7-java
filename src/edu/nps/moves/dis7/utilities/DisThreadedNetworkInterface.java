@@ -76,7 +76,7 @@ public class DisThreadedNetworkInterface
     // https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html
     private final LinkedBlockingQueue<Pdu>           pdus2send = new LinkedBlockingQueue<>(); // FIFO
     
-    private DisThreadedNetworkInterface.PduListener pduListenerSelfTest;
+    private DisThreadedNetworkInterface.PduListener  pduListenerSelfTest;
 
     DatagramPacket packet;
 
@@ -211,6 +211,7 @@ public class DisThreadedNetworkInterface
 
         begin();
     }
+    
     private void initializeListeners()
     {
         everyTypeListeners.clear();
@@ -316,6 +317,7 @@ public class DisThreadedNetworkInterface
     {
         return this.disAddress;
     }
+    
     /**
      * Network address for sendPDU and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>
@@ -327,22 +329,19 @@ public class DisThreadedNetworkInterface
 
     /**
      * Send the given pdu to the network using the IP address and port given to the constructor
+     * using a deep copy to avoid later modifications to the original pdu having any effect on 
+     * already-buffered output pdu instances.
      * @param pdu the pdu to sendPDU
      */
-// TODO
-//     * using a deep copy to avoid later modifications to the original pdu having any effect on 
-//     * already-buffered output pdu instances.
     public synchronized void sendPDU(Pdu pdu)
     {
 //        pdus2send.add(pdu);
         pdus2send.add(pdu.copyByPduFactory());
-        
-// TODO get effective deep copy, following fails on FixedAndVariableDatumRoundTripTest
-// TODO pdus2send.add(pdu.copyByPduFactory()); // avoid possible changes to original pdu prior to network delivery
     }
 
+    // TODO: move this to PduFactory
     /* *************** networking i/o ************* */
-    private PduFactory pduFactory = new PduFactory();
+    private PduFactory pduFactory = DisTime.getPduFactory();
 
     private Thread sendingThread;
     private Thread receiveThread;
@@ -374,6 +373,7 @@ public class DisThreadedNetworkInterface
         if (hasVerboseReceipt())
             System.out.println(TRACE_PREFIX + "createThreads() receiveThread.isAlive()=" + receiveThread.isAlive());
     }
+    
     /**
      * Can be used to restart DisThreadedNetworkInterface if closed.
      * Create datagram socket if not already available; can also be invoked by
@@ -386,6 +386,7 @@ public class DisThreadedNetworkInterface
 
         createThreads();
     }
+    
     /**
      * Create datagram socket if not already available; can also be invoked by
      * either sender or receiver thread to ensure datagram socket is open.
@@ -920,7 +921,6 @@ public class DisThreadedNetworkInterface
      *  TODO: make this part of run-time network interface setup, reporting if sent PDUs are not received.
      * See github issue 25.
      */
-    @SuppressWarnings("Convert2Lambda")
     public synchronized void selfTest()
     {
         System.out.println(TRACE_PREFIX + "main() self test initialized... ");
@@ -930,15 +930,11 @@ public class DisThreadedNetworkInterface
             setVerbose(true);
             System.out.println(TRACE_PREFIX + "hasVerboseSending()=" + hasVerboseSending() + ", " +
                                               "hasVerboseReceipt()=" + hasVerboseReceipt());
-            pduListenerSelfTest = new DisThreadedNetworkInterface.PduListener() // avoid Convert2Lambda editor warning
-            {
-                /** Callback handler for listener */
-                @Override
-                public synchronized void incomingPdu(Pdu newPdu)
-                {
-                    System.out.println(TRACE_PREFIX + "main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
-                    System.out.flush();
-                }
+            
+            /* Callback handler for listener */
+            pduListenerSelfTest = (Pdu newPdu) -> {
+                System.out.println(TRACE_PREFIX + "main() pduListener.incomingPdu() received newPdu " + newPdu.getPduType().toString());
+                System.out.flush();
             };
             addListener(pduListenerSelfTest);
 
@@ -994,7 +990,7 @@ public class DisThreadedNetworkInterface
         if ((args != null) && args.length == 3)
              selfTestDescriptor = args[2];
         if ((args == null) || (args.length == 0))
-             disThreadedNetworkInterface = new DisThreadedNetworkInterface( /* default address, port */ selfTestDescriptor);
+             disThreadedNetworkInterface = new DisThreadedNetworkInterface(selfTestDescriptor);
         else disThreadedNetworkInterface = new DisThreadedNetworkInterface(args[0], Integer.parseInt(args[1]), selfTestDescriptor);
 
         disThreadedNetworkInterface.selfTest();
