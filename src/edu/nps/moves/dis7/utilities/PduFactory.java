@@ -8,7 +8,6 @@ package edu.nps.moves.dis7.utilities;
 import edu.nps.moves.dis7.enumerations.*;
 import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.utilities.DisTime.TimestampStyle;
-import java.io.IOException;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -17,6 +16,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
+
+// *** original source in opendis7-java/src/edu/nps/moves/dis7/utilities/PduFactory.java
 
 /**
  * PduFactory.java created on Jun 14, 2019
@@ -65,7 +66,7 @@ public class PduFactory
    */
   public PduFactory(TimestampStyle newTimestampStyle)
   {
-      this();
+      this(); // initialization of common values
       PduFactory.this.setTimestampStyle(newTimestampStyle);
   }
 
@@ -81,13 +82,13 @@ public class PduFactory
    */
   public PduFactory(edu.nps.moves.dis7.enumerations.Country country, byte exerciseId, short siteId, short applicationId, TimestampStyle timestampStyle)
   {
-    this();
-    this.country = country;
-    this.defaultExerciseId = exerciseId;
-    this.defaultSiteId = siteId;
-    this.defaultAppId = applicationId;
+        this(); // initialization of common values
+        this.country = country;
+        this.defaultExerciseId = exerciseId;
+        this.defaultSiteId = siteId;
+        this.defaultAppId = applicationId;
 
-    PduFactory.this.setTimestampStyle(timestampStyle);
+        PduFactory.this.setTimestampStyle(timestampStyle);
   } 
 
   /** accessor to report value
