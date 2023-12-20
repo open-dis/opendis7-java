@@ -59,7 +59,7 @@ public class DisChannel
     /** Common thread-safe interface for listening */
               DisThreadedNetworkInterface.PduListener pduListener;
     /** our latest received PDU, of whatever pduType */
-    Pdu                                     receivedPdu;
+    Pdu                                               receivedPdu;
     /** utility class for recording PDUs */
     protected PduRecorder                             pduRecorder;
     private boolean                                 verboseDisNetworkInterface = true;
@@ -225,7 +225,7 @@ public class DisChannel
     }
 
     /**
-     * Initialize network interface, choosing best available network interface
+     * Initialize network interface, choosing best available network interface.  Singleton pattern.
      */
     @SuppressWarnings("Convert2Lambda")
     public synchronized void setUpNetworkInterface() 
@@ -235,7 +235,8 @@ public class DisChannel
             printlnTRACE("*** Warning: setUpNetworkInterface() has already created disNetworkInterface, second invocation ignored");
             return;
         }            
-        disNetworkInterface = new DisThreadedNetworkInterface(getNetworkAddress(), getNetworkPort());
+        else disNetworkInterface = new DisThreadedNetworkInterface(getNetworkAddress(), getNetworkPort());
+        
         getDisNetworkInterface().setDescriptor(descriptor);
         getDisNetworkInterface().setVerbose(isVerboseDisNetworkInterface());
         if (isVerbosePduRecorder())
@@ -264,7 +265,7 @@ public class DisChannel
             getDisNetworkInterface().removeListener(pduListener);
         
         getPduRecorder().stop();     // handles disNetworkInterface.close(), tears down threads and sockets
-//        disNetworkInterface.close(); // make sure
+//      disNetworkInterface.close(); // make sure
     }
 
     /** 
@@ -480,7 +481,9 @@ public class DisChannel
      * Get link to an already-created PduFactory
      * @return the pduFactory, simplifying program imports and configuration
      */
-    public PduFactory getPduFactory() {
+    public PduFactory getPduFactory()
+    {
+        // static singleton creation is performed in constructor, being careful here
         if (pduFactory == null)
             pduFactory = new PduFactory(timestampStyle);
         return pduFactory;
