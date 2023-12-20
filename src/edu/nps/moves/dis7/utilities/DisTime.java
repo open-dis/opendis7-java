@@ -12,6 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
+// *** original source in opendis7-java/src/edu/nps/moves/dis7/utilities/DisTime.java
+
 /**
  * <p>This common shared class provides static code for timestamp configuration and conversion utilities,
  * consistently supporting all active open-dis7-java simulations running together on a localhost. 
