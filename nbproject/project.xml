@@ -23,6 +23,7 @@
             <word>datagram</word>
             <word>datagramSocket</word>
             <word>deserialization</word>
+            <word>Deserializes</word>
             <word>dislog</word>
             <word>DisPduType</word>
             <word>DisThreadedNetworkInterface</word>
@@ -34,6 +35,7 @@
             <word>isRunning</word>
             <word>javadoc</word>
             <word>joinGroup</word>
+            <word>marshalled</word>
             <word>marshalling</word>
             <word>msec</word>
             <word>multicast</word>
