@@ -20,6 +20,10 @@ import java.nio.ByteBuffer;
  */
 public class StartResumePdu extends SimulationManagementFamilyPdu implements Serializable
 {
+
+   /** The name of this PDU type */
+   public static final String NAME = "StartResumePdu";
+   
    /** This field shall specify the real-world time (UTC) at which the entity is to start/resume in the exercise. This information shall be used by the participating simulation applications to start/resume an exercise synchronously. This field shall be represented by a Clock Time record (see 6.2.16). */
    protected ClockTime  realWorldTime = new ClockTime(); 
 
@@ -103,7 +107,8 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
-public int getMarshalledSize()
+@Override
+public synchronized int getMarshalledSize()
 {
    int marshalSize = 0; 
 
@@ -171,7 +176,8 @@ public int getRequestID()
  * @see java.io.DataOutputStream
  * @param dos the OutputStream
  */
-public void marshal(DataOutputStream dos) throws Exception
+@Override
+public synchronized void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -194,6 +200,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
+@Override
 public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
@@ -221,7 +228,8 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
  * @param byteBuffer The ByteBuffer at the position to begin writing
  * @throws Exception ByteBuffer-generated exception
  */
-public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+@Override
+public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
    realWorldTime.marshal(byteBuffer);
@@ -238,6 +246,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
+@Override
 public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);

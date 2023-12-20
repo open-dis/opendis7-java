@@ -71,7 +71,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @return serialized size in bytes
    */
   @Override
-  public int getMarshalledSize()
+  public synchronized int getMarshalledSize()
   {
     int marshalSize = super.getMarshalledSize();
     marshalSize += intercomReferenceID.getMarshalledSize();
@@ -132,7 +132,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pEncodingScheme value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPdu setEncodingScheme(short pEncodingScheme)
+  public synchronized IntercomSignalPdu setEncodingScheme(short pEncodingScheme)
   {
     encodingScheme = pEncodingScheme;
     return this;
@@ -152,7 +152,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pTdlType value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPdu setTdlType(SignalTDLType pTdlType)
+  public synchronized IntercomSignalPdu setTdlType(SignalTDLType pTdlType)
   {
     tdlType = pTdlType;
     return this;
@@ -172,7 +172,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pSampleRate value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPdu setSampleRate(int pSampleRate)
+  public synchronized IntercomSignalPdu setSampleRate(int pSampleRate)
   {
     sampleRate = pSampleRate;
     return this;
@@ -198,7 +198,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pDataLength value for field
    * @return this object
    */
-  public IntercomSignalPdu setDataLength(short pDataLength)
+  public synchronized IntercomSignalPdu setDataLength(short pDataLength)
   {
     dataLength = pDataLength;
     return this;
@@ -219,7 +219,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pSamples value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPdu setSamples(short pSamples)
+  public synchronized IntercomSignalPdu setSamples(short pSamples)
   {
     samples = pSamples;
     return this;
@@ -239,7 +239,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param pData value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPdu setData(byte[] pData)
+  public synchronized IntercomSignalPdu setData(byte[] pData)
   {
     data = pData;
     return this;
@@ -266,7 +266,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @param dos The DataOutputStream
    */
   @Override
-  public void marshal(DataOutputStream dos) throws Exception
+  public synchronized void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
     try {
@@ -348,7 +348,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.marshal(byteBuffer);
     intercomReferenceID.marshal(byteBuffer);
@@ -412,7 +412,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
   * Override of default equals method.  Calls equalsImpl() for content comparison.
    */
   @Override
-  public boolean equals(Object obj)
+  public synchronized boolean equals(Object obj)
   {
     if (this == obj)
       return true;
@@ -427,7 +427,7 @@ public class IntercomSignalPdu extends RadioCommunicationsFamilyPdu implements S
   }
 
   @Override
-  public boolean equalsImpl(Object obj)
+  public synchronized boolean equalsImpl(Object obj)
   {
     boolean ivarsEqual = true;
 

@@ -40,7 +40,7 @@ public class GridDataType0 extends GridData implements Serializable
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
-public int getMarshalledSize()
+public synchronized int getMarshalledSize()
 {
    int marshalSize = 0; 
 
@@ -76,7 +76,7 @@ public byte[] getDataValues()
  * @see java.io.DataOutputStream
  * @param dos the OutputStream
  */
-public void marshal(DataOutputStream dos) throws Exception
+public synchronized void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -132,7 +132,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
  * @param byteBuffer The ByteBuffer at the position to begin writing
  * @throws Exception ByteBuffer-generated exception
  */
-public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
    byteBuffer.putShort( (short)dataValues.length);

@@ -71,7 +71,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @return serialized size in bytes
    */
   @Override
-  public int getMarshalledSize()
+  public synchronized int getMarshalledSize()
   {
     int marshalSize = super.getMarshalledSize();
     marshalSize += intercomReferenceID.getMarshalledSize();
@@ -92,7 +92,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pIntercomReferenceID ID of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setIntercomReferenceID(IntercomReferenceID pIntercomReferenceID)
+  public synchronized IntercomSignalPduSpecialCase setIntercomReferenceID(IntercomReferenceID pIntercomReferenceID)
   {
     intercomReferenceID = pIntercomReferenceID;
     return this;
@@ -112,7 +112,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pIntercomNumber value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setIntercomNumber(short pIntercomNumber)
+  public synchronized IntercomSignalPduSpecialCase setIntercomNumber(short pIntercomNumber)
   {
     intercomNumber = pIntercomNumber;
     return this;
@@ -132,7 +132,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pEncodingScheme value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setEncodingScheme(short pEncodingScheme)
+  public synchronized IntercomSignalPduSpecialCase setEncodingScheme(short pEncodingScheme)
   {
     encodingScheme = pEncodingScheme;
     return this;
@@ -152,7 +152,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pTdlType value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setTdlType(SignalTDLType pTdlType)
+  public synchronized IntercomSignalPduSpecialCase setTdlType(SignalTDLType pTdlType)
   {
     tdlType = pTdlType;
     return this;
@@ -172,7 +172,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pSampleRate value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setSampleRate(int pSampleRate)
+  public synchronized IntercomSignalPduSpecialCase setSampleRate(int pSampleRate)
   {
     sampleRate = pSampleRate;
     return this;
@@ -198,7 +198,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pDataLength value for field
    * @return this object
    */
-  public IntercomSignalPduSpecialCase setDataLength(short pDataLength)
+  public synchronized IntercomSignalPduSpecialCase setDataLength(short pDataLength)
   {
     dataLength = pDataLength;
     return this;
@@ -219,7 +219,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pSamples value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setSamples(short pSamples)
+  public synchronized IntercomSignalPduSpecialCase setSamples(short pSamples)
   {
     samples = pSamples;
     return this;
@@ -239,7 +239,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param pData value of interest
    * @return same object to permit progressive setters
    */
-  public IntercomSignalPduSpecialCase setData(byte[] pData)
+  public synchronized IntercomSignalPduSpecialCase setData(byte[] pData)
   {
     data = pData;
     return this;
@@ -266,7 +266,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @param dos The DataOutputStream
    */
   @Override
-  public void marshal(DataOutputStream dos) throws Exception
+  public synchronized void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
     try {
@@ -306,7 +306,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @throws java.lang.Exception if something goes wrong
    */
   @Override
-  public int unmarshal(DataInputStream dis) throws Exception
+  public synchronized int unmarshal(DataInputStream dis) throws Exception
   {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -348,7 +348,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.marshal(byteBuffer);
     intercomReferenceID.marshal(byteBuffer);
@@ -382,7 +382,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.unmarshal(byteBuffer);
 
@@ -412,7 +412,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
   * Override of default equals method.  Calls equalsImpl() for content comparison.
    */
   @Override
-  public boolean equals(Object obj)
+  public synchronized boolean equals(Object obj)
   {
     if (this == obj)
       return true;
@@ -427,7 +427,7 @@ public class IntercomSignalPduSpecialCase extends RadioCommunicationsFamilyPdu i
   }
 
   @Override
-  public boolean equalsImpl(Object obj)
+  public synchronized boolean equalsImpl(Object obj)
   {
     boolean ivarsEqual = true;
 

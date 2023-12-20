@@ -20,6 +20,10 @@ import java.nio.ByteBuffer;
  */
 public class CommentRPdu extends SimulationManagementWithReliabilityFamilyPdu implements Serializable
 {
+
+   /** The name of this PDU type */
+   public static final String NAME = "CommentRPdu";
+   
    /** Fixed datum record count, not used in this Pdu */
    protected int numberOfFixedDatumRecords;
 
@@ -103,7 +107,8 @@ protected DataOutputStream      dataOutputStream      = new DataOutputStream(byt
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
-public int getMarshalledSize()
+@Override
+public synchronized int getMarshalledSize()
 {
    int marshalSize = 0; 
 
@@ -142,7 +147,8 @@ public List<VariableDatum> getVariableDatumRecords()
  * @see java.io.DataOutputStream
  * @param dos the OutputStream
  */
-public void marshal(DataOutputStream dos) throws Exception
+@Override
+public synchronized void marshal(DataOutputStream dos) throws Exception
 {
     super.marshal(dos);
     try 
@@ -171,6 +177,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
+@Override
 public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
@@ -205,7 +212,8 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
  * @param byteBuffer The ByteBuffer at the position to begin writing
  * @throws Exception ByteBuffer-generated exception
  */
-public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+@Override
+public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    super.marshal(byteBuffer);
    byteBuffer.putInt( (int)numberOfFixedDatumRecords);
@@ -228,6 +236,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
+@Override
 public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     super.unmarshal(byteBuffer);

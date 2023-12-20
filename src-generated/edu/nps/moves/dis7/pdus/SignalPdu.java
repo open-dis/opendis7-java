@@ -66,7 +66,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @return serialized size in bytes
    */
   @Override
-  public int getMarshalledSize()
+  public synchronized int getMarshalledSize()
   {
     int marshalSize = super.getMarshalledSize();
     marshalSize += header.getMarshalledSize();
@@ -174,7 +174,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param pDataLength value for field
    * @return same object to permit progressive setters
    */
-  public SignalPdu setDataLength(short pDataLength)
+  public synchronized SignalPdu setDataLength(short pDataLength)
   {
     dataLength = pDataLength;
     return this;
@@ -196,7 +196,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param pSamples value for field
    * @return same object to permit progressive setters
    */
-  public SignalPdu setSamples(short pSamples)
+  public synchronized SignalPdu setSamples(short pSamples)
   {
     samples = pSamples;
     return this;
@@ -207,7 +207,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    *
    * @return value of field
    */
-  public short getSamples()
+  public synchronized short getSamples()
   {
     return samples;
   }
@@ -223,7 +223,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param pData data of interest
    * @return same object to permit progressive setters
    */
-  public SignalPdu setData(byte[] pData)
+  public synchronized SignalPdu setData(byte[] pData)
   {
     data = pData;
     return this;
@@ -250,7 +250,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @param dos The DataOutputStream
    */
   @Override
-  public void marshal(DataOutputStream dos) throws Exception
+  public synchronized void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
 
@@ -280,7 +280,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @return marshalled serialized size in bytes
    */
   @Override
-  public int unmarshal(DataInputStream dis) throws Exception
+  public synchronized int unmarshal(DataInputStream dis) throws Exception
   {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -319,7 +319,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.marshal(byteBuffer);
     header.marshal(byteBuffer);
@@ -381,7 +381,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
    */
   @Override
-  public boolean equals(Object obj)
+  public synchronized boolean equals(Object obj)
   {
     if (this == obj)
       return true;
@@ -396,7 +396,7 @@ public class SignalPdu extends RadioCommunicationsFamilyPdu implements Serializa
   }
 
   @Override
-  public boolean equalsImpl(Object obj)
+  public synchronized boolean equalsImpl(Object obj)
   {
     boolean ivarsEqual = true;
 

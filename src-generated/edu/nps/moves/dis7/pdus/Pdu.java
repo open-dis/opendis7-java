@@ -20,6 +20,10 @@ import edu.nps.moves.dis7.utilities.PduFactory;
  */
 public abstract class Pdu extends Object implements Serializable,Marshaller
 {
+
+   /** The name of this PDU type */
+   public static final String NAME = "Pdu";
+   
    /** The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2012 uid 3 */
    protected DISProtocolVersion protocolVersion = DISProtocolVersion.IEEE_12781_2012;
 
@@ -67,7 +71,8 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
    * @see <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
    * @return serialized size in bytes
    */
-public int getMarshalledSize()
+@Override
+public synchronized int getMarshalledSize()
 {
    int marshalSize = 0; 
 
@@ -201,7 +206,8 @@ public short getLength()
  * @see java.io.DataOutputStream
  * @param dos the OutputStream
  */
-public void marshal(DataOutputStream dos) throws Exception
+@Override
+public synchronized void marshal(DataOutputStream dos) throws Exception
 {
     try 
     {
@@ -226,6 +232,7 @@ public void marshal(DataOutputStream dos) throws Exception
  * @param dis the InputStream
  * @return marshalled serialized size in bytes
  */
+@Override
 public synchronized int unmarshal(DataInputStream dis) throws Exception
 {
     int uPosition = 0;
@@ -259,7 +266,8 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
  * @param byteBuffer The ByteBuffer at the position to begin writing
  * @throws Exception ByteBuffer-generated exception
  */
-public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+@Override
+public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
    protocolVersion.marshal(byteBuffer);
    byteBuffer.put( (byte)exerciseID);
@@ -278,6 +286,7 @@ public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
  * @return marshalled serialized size in bytes
  * @throws Exception ByteBuffer-generated exception
  */
+@Override
 public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
 {
     try
@@ -304,8 +313,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
 
 /**
- * A convenience method for marshalling to a byte array
- * @return a byte array with the marshalled {@link Pdu}
+ * A convenience method for marshalling to a ByteBuffer
+ * @return a ByteBuffer with the marshalled {@link Pdu}
  * @throws Exception ByteBuffer-generated exception
  */
 public synchronized java.nio.ByteBuffer marshal() throws Exception
@@ -314,6 +323,7 @@ public synchronized java.nio.ByteBuffer marshal() throws Exception
     marshal(byteBuffer);
     return byteBuffer.rewind();
 }
+
  /*
   * Override of default equals method.  Calls equalsImpl() for content comparison.
   */

@@ -66,7 +66,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @return serialized size in bytes
    */
   @Override
-  public int getMarshalledSize()
+  public synchronized int getMarshalledSize()
   {
     int marshalSize = super.getMarshalledSize();
     marshalSize += header.getMarshalledSize();
@@ -86,7 +86,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pHeader value of interest
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setHeader(RadioCommsHeader pHeader)
+  public synchronized SignalPduSpecialCase setHeader(RadioCommsHeader pHeader)
   {
     header = pHeader;
     return this;
@@ -106,7 +106,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pEncodingScheme value of interest
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setEncodingScheme(short pEncodingScheme)
+  public synchronized SignalPduSpecialCase setEncodingScheme(short pEncodingScheme)
   {
     encodingScheme = pEncodingScheme;
     return this;
@@ -127,7 +127,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pTdlType of interest
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setTdlType(SignalTDLType pTdlType)
+  public synchronized SignalPduSpecialCase setTdlType(SignalTDLType pTdlType)
   {
     tdlType = pTdlType;
     return this;
@@ -148,7 +148,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pSampleRate of interest
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setSampleRate(int pSampleRate)
+  public synchronized SignalPduSpecialCase setSampleRate(int pSampleRate)
   {
     sampleRate = pSampleRate;
     return this;
@@ -174,7 +174,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pDataLength value for field
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setDataLength(short pDataLength)
+  public synchronized SignalPduSpecialCase setDataLength(short pDataLength)
   {
     dataLength = pDataLength;
     return this;
@@ -196,7 +196,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pSamples value for field
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setSamples(short pSamples)
+  public synchronized SignalPduSpecialCase setSamples(short pSamples)
   {
     samples = pSamples;
     return this;
@@ -223,7 +223,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param pData data of interest
    * @return same object to permit progressive setters
    */
-  public SignalPduSpecialCase setData(byte[] pData)
+  public synchronized SignalPduSpecialCase setData(byte[] pData)
   {
     data = pData;
     return this;
@@ -250,7 +250,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @param dos The DataOutputStream
    */
   @Override
-  public void marshal(DataOutputStream dos) throws Exception
+  public synchronized void marshal(DataOutputStream dos) throws Exception
   {
     super.marshal(dos);
 
@@ -280,7 +280,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @return marshalled serialized size in bytes
    */
   @Override
-  public int unmarshal(DataInputStream dis) throws Exception
+  public synchronized int unmarshal(DataInputStream dis) throws Exception
   {
     int uPosition = 0;
     uPosition += super.unmarshal(dis);
@@ -319,7 +319,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.marshal(byteBuffer);
     header.marshal(byteBuffer);
@@ -352,7 +352,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
    * @throws Exception ByteBuffer-generated exception
    */
   @Override
-  public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
+  public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception
   {
     super.unmarshal(byteBuffer);
 
@@ -381,7 +381,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
   * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
    */
   @Override
-  public boolean equals(Object obj)
+  public synchronized boolean equals(Object obj)
   {
     if (this == obj)
       return true;
@@ -396,7 +396,7 @@ public class SignalPduSpecialCase extends RadioCommunicationsFamilyPdu implement
   }
 
   @Override
-  public boolean equalsImpl(Object obj)
+  public synchronized boolean equalsImpl(Object obj)
   {
     boolean ivarsEqual = true;
 

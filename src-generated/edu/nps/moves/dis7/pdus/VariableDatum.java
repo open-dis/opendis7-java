@@ -57,7 +57,7 @@ public class VariableDatum extends Object implements Serializable {
      * <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
      * @return serialized size in bytes
      */
-    public int getMarshalledSize() {
+    public synchronized int getMarshalledSize() {
         int marshalSize = 0;
 
         marshalSize += variableDatumID.getMarshalledSize();
@@ -74,7 +74,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param pVariableDatumID of interest
      * @return same object to permit progressive setters
      */
-    public VariableDatum setVariableDatumID(VariableRecordType pVariableDatumID) {
+    public synchronized VariableDatum setVariableDatumID(VariableRecordType pVariableDatumID) {
         variableDatumID = pVariableDatumID;
         return this;
     }
@@ -101,7 +101,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param bitLength number of bits for this field
      * @return same object to permit progressive setters
      */
-    public VariableDatum setVariableDatumLengthInBits(int bitLength) {
+    public synchronized VariableDatum setVariableDatumLengthInBits(int bitLength) {
         variableDatumLength = bitLength;
         return this;
     }
@@ -119,7 +119,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param byteLength number of bytes for this field
      * @return same object to permit progressive setters
      */
-    public VariableDatum setVariableDatumLengthInBytes(int byteLength) {
+    public synchronized VariableDatum setVariableDatumLengthInBytes(int byteLength) {
         variableDatumLength = byteLength * Byte.SIZE;
         return this;
     }
@@ -146,7 +146,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param pVariableDatumValue of interest
      * @return same object to permit progressive setters
      */
-    public VariableDatum setVariableDatumValue(byte[] pVariableDatumValue) {
+    public synchronized VariableDatum setVariableDatumValue(byte[] pVariableDatumValue) {
         variableDatumValue = pVariableDatumValue;
         return this;
     }
@@ -171,7 +171,7 @@ public class VariableDatum extends Object implements Serializable {
      * @see java.io.DataOutputStream
      * @param dos The DataOutputStream
      */
-    public void marshal(DataOutputStream dos) throws Exception {
+    public synchronized void marshal(DataOutputStream dos) throws Exception {
         try {
             variableDatumID.marshal(dos);
             if (variableDatumLength != null) {
@@ -202,7 +202,7 @@ public class VariableDatum extends Object implements Serializable {
      * @return marshalled serialized size in bytes
      * @throws java.lang.Exception if something goes wrong
      */
-    public int unmarshal(DataInputStream dis) throws Exception {
+    public synchronized int unmarshal(DataInputStream dis) throws Exception {
         int uPosition = 0;
         try {
             variableDatumID = VariableRecordType.unmarshalEnum(dis);
@@ -234,7 +234,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param byteBuffer The ByteBuffer at the position to begin writing
      * @throws Exception ByteBuffer-generated exception
      */
-    public void marshal(java.nio.ByteBuffer byteBuffer) throws Exception {
+    public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exception {
         variableDatumID.marshal(byteBuffer);
 
         if (variableDatumLength != null) {
@@ -259,7 +259,7 @@ public class VariableDatum extends Object implements Serializable {
      * @return marshalled serialized size in bytes
      * @throws Exception ByteBuffer-generated exception
      */
-    public int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception {
+    public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Exception {
         variableDatumID = VariableRecordType.unmarshalEnum(byteBuffer);
         variableDatumLength = byteBuffer.getInt();
         int byteLength = (variableDatumLength + 7) / 8;
@@ -279,7 +279,7 @@ public class VariableDatum extends Object implements Serializable {
      * The equals method doesn't always work--mostly it works only on classes that consist only of primitives. Be careful.
      */
     @Override
-    public boolean equals(Object obj) {
+    public synchronized boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
@@ -312,7 +312,7 @@ public class VariableDatum extends Object implements Serializable {
      * @param obj the object to compare to
      * @return true if the objects are equal, false otherwise.
      */
-    public boolean equalsImpl(Object obj) {
+    public synchronized boolean equalsImpl(Object obj) {
         boolean ivarsEqual = true;
 
         if (!(obj instanceof VariableDatum)) {
