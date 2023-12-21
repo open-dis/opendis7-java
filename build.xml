@@ -108,10 +108,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="all" description="Build and test the whole project, create distribution jar files.">
         <!-- TODO current configuration is Java only; Python is next -->
         <echo message="timestamp ${timestamp}"/>
-        <fail message="Please build using Ant 1.10.12 or higher.">
+        <fail message="Please build using Ant 1.10.8 or higher.">
             <condition>
                 <not>
-                    <antversion atleast="1.10.12"/><!-- recommend latest 1.10.+ -->
+                    <antversion atleast="1.10.8"/><!-- recommend latest 1.10.+ -->
                 </not>
             </condition>
         </fail>
@@ -472,19 +472,18 @@ POSSIBILITY OF SUCH DAMAGE.
                update="true"
             zip64Mode="${zip64Mode}">
             <zipgroupfileset dir="${dist.dir}">
-                <!-- enumerations and pdus, classes/javadoc/source -->
+                <!-- enumerations, pdus and classes -->
                 <include name="opendis7-*.jar"/>
-                <!-- TODO consider whether these dependencies are strictly needed -->
-                <include name="../lib/commons-io-2.6.jar"/>
-                <include name="../lib/guava-28.0-jre.jar"/>
-                <include name="../lib/srm-4.4.0.jar"/>
+                <include name="../${file.reference.commons-io-2.15.1.jar}"/>
+                <include name="../${file.reference.guava-33.0.0-jre.jar}"/>
+                <include name="../${file.reference.srm-4.4.0.jar}"/>
             <!--<exclude name="opendis7-source.jar"/> only about 30MB, keep it for debugging -->
                 <exclude name="opendis7-full.jar"/><!-- not self -->
             </zipgroupfileset>
-            <zipgroupfileset dir="lib">
-                <include name="commons-io-2.6.jar"/>
-                <include name="guava-28.0-jre.jar"/>
-                <include name="srm-4.4.0.jar"/>
+            <zipgroupfileset dir=".">
+                <include name="${file.reference.commons-io-2.15.1.jar}"/>
+                <include name="${file.reference.guava-33.0.0-jre.jar}"/>
+                <include name="${file.reference.srm-4.4.0.jar}"/>
             </zipgroupfileset>
             <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html -->
             <manifest>
