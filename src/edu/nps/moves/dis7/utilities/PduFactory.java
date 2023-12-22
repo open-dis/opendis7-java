@@ -46,7 +46,7 @@ public class PduFactory
   private TimestampStyle timestampStyle;
 
   /**
-   * Create a PduFactory using defaults for country (USA), exerciseId (2),
+   * Create and add initial properties to a new PduFactory using defaults for country (USA), exerciseId (2),
    * application (3) and absolute timestamps.
    */
   public PduFactory()
@@ -60,7 +60,7 @@ public class PduFactory
   }
   
   /**
-   * Create a PduFactory using newTimestampStyle.
+   * Create and add initial properties to a new PduFactory using newTimestampStyle.
    * @param newTimestampStyle timeStampStyle of interest
    */
   public PduFactory(TimestampStyle newTimestampStyle)
@@ -70,7 +70,7 @@ public class PduFactory
   }
 
   /**
-   * Create a PduFactory which creates pdus using the specified default values.
+   * Create and add initial properties to a new PduFactory which creates pdus using the specified default values.
    * @param country used in EntityType and RadioType objects
    * @param exerciseId used in standard PDU header
    * @param siteId used in standard PDU header
@@ -219,7 +219,7 @@ public class PduFactory
   /* Pdu construction methods */
 
   /**
-   * Create an Entity State PDU<br>
+   * Create and add initial properties to an Entity State PDU<br>
    * IEEE Std 1278.1-2012, 5.3.2
    * @return the new pdu
    */
@@ -242,7 +242,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Fire PDU<br>
+   * Create and add initial properties to a new Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.3
    * @return the new pdu
    */
@@ -261,7 +261,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Detonation PDU<br>
+   * Create and add initial properties to a new Detonation PDU<br>
    * IEEE Std 1278.1-2012, 5.4.4
    * @return the new pdu
    */
@@ -277,7 +277,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Collision PDU<br>
+   * Create and add initial properties to a new Collision PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
    * @return the new pdu
    */
@@ -296,7 +296,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Service Request PDU<br>
+   * Create and add initial properties to a new Service Request PDU<br>
    * IEEE Std 1278.1-2012, 5.5.5
    * @return the new pdu
    */
@@ -313,7 +313,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Offer PDU<br>
+   * Create and add initial properties to a new Resupply Offer PDU<br>
    * IEEE Std 1278.1-2012, 5.5.6
    * @return the new pdu
    */
@@ -327,7 +327,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Received PDU<br>
+   * Create and add initial properties to a new Resupply Received PDU<br>
    * IEEE Std 1278.1-2012, 5.5.7
    * @return the new pdu
    */
@@ -341,7 +341,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Resupply Cancel PDU<br>
+   * Create and add initial properties to a new Resupply Cancel PDU<br>
    * IEEE Std 1278.1-2012, 5.5.8
    * @return the new pdu
    */
@@ -355,7 +355,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Repair Complete PDU<br>
+   * Create and add initial properties to a new Repair Complete PDU<br>
    * IEEE Std 1278.1-2012, 5.5.10
    * @return the new pdu
    */
@@ -372,7 +372,7 @@ public class PduFactory
   }
 
    /**
-   * Create a Repair Response PDU<br>
+   * Create and add initial properties to a new Repair Response PDU<br>
    * IEEE Std 1278.1-2012, 5.5.11
    * @return the new pdu
    */
@@ -389,7 +389,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Create Entity PDU<br>
+   * Create and add initial properties to a new Create Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.2
    * @return the new pdu
    */
@@ -401,7 +401,7 @@ public class PduFactory
   }
 
    /**
-   * Create a Remove Entity PDU<br>
+   * Create and add initial properties to a new Remove Entity PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.3
    * @return the new pdu
    */
@@ -415,7 +415,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Start Resume PDU<br>
+   * Create and add initial properties to a new Start Resume PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.4
    * @return the new pdu
    */
@@ -427,7 +427,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Stop Freeze PDU<br>
+   * Create and add initial properties to a new Stop Freeze PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.5
    * @return the new pdu
    */
@@ -443,7 +443,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Acknowledge PDU<br>
+   * Create and add initial properties to an Acknowledge PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.6
    * @return the new pdu
    */
@@ -460,7 +460,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Request PDU<br>
+   * Create and add initial properties to an Action Request PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.7
    * @return the new pdu
    */
@@ -474,7 +474,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Response PDU<br>
+   * Create and add initial properties to an Action Response PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.8
    * @return the new pdu
    */
@@ -488,7 +488,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data Query PDU<br>
+   * Create and add initial properties to a new Data Query PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.9
    * @return the new pdu
    */
@@ -500,7 +500,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Set DataPDU<br>
+   * Create and add initial properties to a new Set DataPDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.10
    * @return the new pdu
    */
@@ -512,7 +512,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data PDU<br>
+   * Create and add initial properties to a new Data PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.11
    * @return the new pdu
    */
@@ -524,7 +524,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Event Report PDU<br>
+   * Create and add initial properties to an Event Report PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.12
    * @return the new pdu
    */
@@ -538,7 +538,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment PDU<br>
+   * Create and add initial properties to a new Comment PDU<br>
    * IEEE Std 1278.1-2012, 5.6.5.13
    * @return the new pdu
    */
@@ -550,7 +550,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment PDU containing the given String(s), variable record type = "OTHER"
+   * Create and add initial properties to a new Comment PDU containing the given String(s), variable record type = "OTHER"
    * @param comments of interest
    * @return the new pdu
    */
@@ -560,7 +560,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment PDU containing the given String(s) and variable record type
+   * Create and add initial properties to a new Comment PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
    * @param comments of interest
    * @return the new pdu
@@ -581,7 +581,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Electromagnetic Emission (EE) PDU<br>
+   * Create and add initial properties to a new Electromagnetic Emission (EE) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.3
    * @return the new pdu
    */
@@ -597,7 +597,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Designator PDU<br>
+   * Create and add initial properties to a new Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
    * @return the new pdu
    */
@@ -618,7 +618,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Transmitter PDU<br>
+   * Create and add initial properties to a new Transmitter PDU<br>
    * IEEE Std 1278.1-2012, 5.8.3
    * @return the new pdu
    */
@@ -640,7 +640,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Signal PDU<br>
+   * Create and add initial properties to a new Signal PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
    * @return the new pdu
    */
@@ -655,7 +655,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Receiver PDU<br>
+   * Create and add initial properties to a new Receiver PDU<br>
    * IEEE Std 1278.1-2012, 5.8.5
    * @return the new pdu
    */
@@ -671,7 +671,7 @@ public class PduFactory
   }
 
   /**
-   * Create a an Identification Friend or Foe (IFF) PDU<br>
+   * Create and add initial properties to a new an Identification Friend or Foe (IFF) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.6
    * @return the new pdu
    */
@@ -690,7 +690,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Designator PDU<br>
+   * Create and add initial properties to a new Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
    * @return the new pdu
    */
@@ -707,7 +707,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Supplemental Emission/Entity State (SEES) PDU<br>
+   * Create and add initial properties to a new Supplemental Emission/Entity State (SEES) PDU<br>
    * IEEE Std 1278.1-2012, 5.7.7
    * @return the new pdu
    */
@@ -719,7 +719,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Intercom Signal PDU<br>
+   * Create and add initial properties to an Intercom Signal PDU<br>
    * IEEE Std 1278.1-2012, 5.8.6
    * @return the new pdu
    */
@@ -731,7 +731,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Intercom Control PDU<br>
+   * Create and add initial properties to an Intercom Control PDU<br>
    * IEEE Std 1278.1-2012, 5.8.7
    * @return the new pdu
    */
@@ -748,7 +748,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Designator PDU<br>
+   * Create and add initial properties to a new Designator PDU<br>
    * IEEE Std 1278.1-2012, 5.7.4
    * @return the new pdu
    */
@@ -766,7 +766,7 @@ public class PduFactory
   }
 
   /**
-   * Create an IsGroupOf PDU<br>
+   * Create and add initial properties to an IsGroupOf PDU<br>
    * IEEE Std 1278.1-2012, 5.9.3
    * @return the new pdu
    */
@@ -781,7 +781,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Transfer Ownership PDU<br>
+   * Create and add initial properties to a new Transfer Ownership PDU<br>
    * IEEE Std 1278.1-2012, 5.9.4
    * @return the new pdu
    */
@@ -800,7 +800,7 @@ public class PduFactory
   }
 
   /**
-   * Create an IsPartOf PDU<br>
+   * Create and add initial properties to an IsPartOf PDU<br>
    * IEEE Std 1278.1-2012, 5.9.5
    * @return the new pdu
    */
@@ -819,7 +819,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Minefield State PDU<br>
+   * Create and add initial properties to a new Minefield State PDU<br>
    * IEEE Std 1278.1-2012, 5.10.2
    * @return the new pdu
    */
@@ -839,7 +839,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Minefield Query PDU<br>
+   * Create and add initial properties to a new Minefield Query PDU<br>
    * IEEE Std 1278.1-2012, 5.10.3
    * @return the new pdu
    */
@@ -856,7 +856,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Minefield Data PDU<br>
+   * Create and add initial properties to a new Minefield Data PDU<br>
    * IEEE Std 1278.1-2012, 5.10.4
    * @return the new pdu
    */
@@ -876,7 +876,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Minefield Response Negative Acknowledgment (NACK) PDU<br>
+   * Create and add initial properties to a new Minefield Response Negative Acknowledgment (NACK) PDU<br>
    * IEEE Std 1278.1-2012, 5.10.5
    * @return the new pdu
    */
@@ -888,7 +888,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Environmental Process PDU<br>
+   * Create and add initial properties to an Environmental Process PDU<br>
    * IEEE Std 1278.1-2012, 5.11.2.2
    * @return the new pdu
    */
@@ -905,7 +905,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Gridded Data PDU<br>
+   * Create and add initial properties to a new Gridded Data PDU<br>
    * IEEE Std 1278.1-2012, 5.11.2.3
    * @return the new pdu
    */
@@ -924,7 +924,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Point Object State PDU<br>
+   * Create and add initial properties to a new Point Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.2
    * @return the new pdu
    */
@@ -945,7 +945,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Linear Object State PDU<br>
+   * Create and add initial properties to a new Linear Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.3
    * @return the new pdu
    */
@@ -964,7 +964,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Areal Object State PDU<br>
+   * Create and add initial properties to an Areal Object State PDU<br>
    * IEEE Std 1278.1-2012, 5.11.3.4
    * @return the new pdu
    */
@@ -981,7 +981,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Time Space Position Information (TSPI) PDU<br>
+   * Create and add initial properties to a new Time Space Position Information (TSPI) PDU<br>
    * IEEE Std 1278.1-2012, 9.4.2
    * @return the new pdu
    */
@@ -1002,7 +1002,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Appearance PDU<br>
+   * Create and add initial properties to an Appearance PDU<br>
    * IEEE Std 1278.1-2012, 9.4.3
    * @return the new pdu
    */
@@ -1022,7 +1022,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Articulated Parts PDU<br>
+   * Create and add initial properties to an Articulated Parts PDU<br>
    * IEEE Std 1278.1-2012, 9.4.4
    * @return the new pdu
    */
@@ -1035,7 +1035,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Live Entity (LE) Fire PDU<br>
+   * Create and add initial properties to a new Live Entity (LE) Fire PDU<br>
    * IEEE Std 1278.1-2012, 9.4.5
    * @return the new pdu
    */
@@ -1056,7 +1056,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Live Entity (LE) Detonation PDU<br>
+   * Create and add initial properties to a new Live Entity (LE) Detonation PDU<br>
    * IEEE Std 1278.1-2012, 9.4.6
    * @return the new pdu
    */
@@ -1079,7 +1079,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Create Entity-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Create Entity-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.2
    * @return the new pdu
    */
@@ -1095,7 +1095,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Remove Entity-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Remove Entity-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.3
    * @return the new pdu
    */
@@ -1109,7 +1109,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Start/Resume-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Start/Resume-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.4
    * @return the new pdu
    */
@@ -1125,7 +1125,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Stop/Freeze-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Stop/Freeze-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.5
    * @return the new pdu
    */
@@ -1142,7 +1142,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Acknowledge-R (Reliable) PDU<br>
+   * Create and add initial properties to an Acknowledge-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.6
    * @return the new pdu
    */
@@ -1159,7 +1159,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Request-R (Reliable) PDU<br>
+   * Create and add initial properties to an Action Request-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.7
    * @return the new pdu
    */
@@ -1174,7 +1174,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Action Response-R (Reliable) PDU<br>
+   * Create and add initial properties to an Action Response-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.8
    * @return the new pdu
    */
@@ -1188,7 +1188,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data Query-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Data Query-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.9
    * @return the new pdu
    */
@@ -1204,7 +1204,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Set Data-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Set Data-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.10
    * @return the new pdu
    */
@@ -1220,7 +1220,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Data-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Data-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.11
    * @return the new pdu
    */
@@ -1236,7 +1236,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Event Report-R (Reliable) PDU<br>
+   * Create and add initial properties to an Event Report-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.12
    * @return the new pdu
    */
@@ -1250,7 +1250,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Comment-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.13
    * @return the new pdu
    */
@@ -1262,7 +1262,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Comment-R PDU containing the given String(s), variable record type = "OTHER"
+   * Create and add initial properties to a new Comment-R PDU containing the given String(s), variable record type = "OTHER"
    * @param comments of interest
    * @return the new pdu
    */
@@ -1272,7 +1272,7 @@ public class PduFactory
   }
 
   /**
-   * Create a CommentR PDU containing the given String(s) and variable record type
+   * Create and add initial properties to a new CommentR PDU containing the given String(s) and variable record type
    * @param typ VariableRecordType
    * @param comments of interest
    * @return the new pdu
@@ -1293,7 +1293,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Record-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Record-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.16
    * @return the new pdu
    */
@@ -1308,7 +1308,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Set Record-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Set Record-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.15
    * @return the new pdu
    */
@@ -1322,7 +1322,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Record Query-R (Reliable) PDU<br>
+   * Create and add initial properties to a new Record Query-R (Reliable) PDU<br>
    * IEEE Std 1278.1-2012, 5.12.4.14
    * @return the new pdu
    */
@@ -1337,7 +1337,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Collision-Elastic PDU<br>
+   * Create and add initial properties to a new Collision-Elastic PDU<br>
    * IEEE Std 1278.1-2012, 5.3.4
    * @return the new pdu
    */
@@ -1348,7 +1348,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Entity State Update PDU<br>
+   * Create and add initial properties to a new Entity State Update PDU<br>
    * IEEE Std 1278.1-2012, 5.3.5
    * @return the new pdu
    */
@@ -1365,7 +1365,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Directed Energy (DE) Fire PDU<br>
+   * Create and add initial properties to a new Directed Energy (DE) Fire PDU<br>
    * IEEE Std 1278.1-2012, 5.4.5
    * @return the new pdu
    */
@@ -1384,7 +1384,7 @@ public class PduFactory
   }
 
   /**
-   * Create a Collision-Elastic PDU<br>
+   * Create and add initial properties to a new Collision-Elastic PDU<br>
    * IEEE Std 1278.1-2012, 5.3.3
    * @return the new pdu
    */
@@ -1395,7 +1395,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Information Operations (IO) Action PDU<br>
+   * Create and add initial properties to an Information Operations (IO) Action PDU<br>
    * IEEE Std 1278.1-2012, 5.13.3
    * @return the new pdu
    */
@@ -1415,7 +1415,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Information Operations (IO) Report PDU<br>
+   * Create and add initial properties to an Information Operations (IO) Report PDU<br>
    * IEEE Std 1278.1-2012, 5.13.4
    * @return the new pdu
    */
@@ -1434,7 +1434,7 @@ public class PduFactory
   }
 
   /**
-   * Create an Attribute PDU<br>
+   * Create and add initial properties to an Attribute PDU<br>
    * IEEE Std 1278.1-2012, 5.3.6
    * @return the new pdu
    */
@@ -1510,7 +1510,7 @@ public class PduFactory
   }
 
   /**
-   * Create an empty PDU of the given type
+   * Create and add initial properties to an empty PDU of the given type
    * @param pduType PDU type to create
    * @return the empty pdu
    */
