@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>TACTICAL</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: NoDongMod2  = <code>53</code>; </li>
+ *     <li> SubCategory: NoDongMod2  = <code>72</code>; </li>
  *     <li> Specific: NoDongMod2SeparatedWarhead  = <code>1</code>; </li>
- *     <li> Entity type uid: 32509; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Entity type uid: 35838; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d033453. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c2a903f. </p>
  * @see Country#KOREA_DEMOCRATIC_PEOPLES_REPUBLIC_OF_PRK
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,8 +45,8 @@ public final class NoDongMod2SeparatedWarhead extends EntityType
         setDomain(Domain.inst(MunitionDomain.TACTICAL));
 
         setCategory((byte)1); // uid 32499, Guided
-        setSubCategory((byte)53); // uid 32508, No Dong Mod-2
-        setSpecific((byte)1); // uid 32509, No Dong Mod-2 Separated Warhead
+        setSubCategory((byte)72); // uid 35837, No Dong Mod-2
+        setSpecific((byte)1); // uid 35838, No Dong Mod-2 Separated Warhead
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

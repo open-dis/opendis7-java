@@ -533,23 +533,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DesignatorPdu rhs = (DesignatorPdu)obj;
 
-     if( ! (designatingEntityID.equals( rhs.designatingEntityID) )) ivarsEqual = false;
-     if( ! (codeName == rhs.codeName)) ivarsEqual = false;
-     if( ! (designatedEntityID.equals( rhs.designatedEntityID) )) ivarsEqual = false;
-     if( ! (designatorCode == rhs.designatorCode)) ivarsEqual = false;
-     if( ! (designatorPower == rhs.designatorPower)) ivarsEqual = false;
-     if( ! (designatorWavelength == rhs.designatorWavelength)) ivarsEqual = false;
-     if( ! (designatorSpotWrtDesignated.equals( rhs.designatorSpotWrtDesignated) )) ivarsEqual = false;
-     if( ! (designatorSpotLocation.equals( rhs.designatorSpotLocation) )) ivarsEqual = false;
-     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (entityLinearAcceleration.equals( rhs.entityLinearAcceleration) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(designatingEntityID, rhs.designatingEntityID) ) return false;
+     if( ! (codeName == rhs.codeName)) return false;
+     if( ! Objects.equals(designatedEntityID, rhs.designatedEntityID) ) return false;
+     if( ! (designatorCode == rhs.designatorCode)) return false;
+     if( ! (designatorPower == rhs.designatorPower)) return false;
+     if( ! (designatorWavelength == rhs.designatorWavelength)) return false;
+     if( ! Objects.equals(designatorSpotWrtDesignated, rhs.designatorSpotWrtDesignated) ) return false;
+     if( ! Objects.equals(designatorSpotLocation, rhs.designatorSpotLocation) ) return false;
+     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(entityLinearAcceleration, rhs.entityLinearAcceleration) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -573,4 +571,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.designatingEntityID,
+	                     this.codeName,
+	                     this.designatedEntityID,
+	                     this.designatorCode,
+	                     this.designatorPower,
+	                     this.designatorWavelength,
+	                     this.designatorSpotWrtDesignated,
+	                     this.designatorSpotLocation,
+	                     this.deadReckoningAlgorithm,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.entityLinearAcceleration);
+ }
+} // end of DesignatorPdu

@@ -214,18 +214,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridDataType2 rhs = (GridDataType2)obj;
 
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
+     if( ! (padding == rhs.padding)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(dataValues[idx] == rhs.dataValues[idx])) ivarsEqual = false;
+          if(!(dataValues[idx] == rhs.dataValues[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -240,4 +238,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfValues,
+	                     this.padding,
+	                     this.dataValues);
+ }
+} // end of GridDataType2

@@ -385,19 +385,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ElectromagneticEmissionPdu rhs = (ElectromagneticEmissionPdu)obj;
 
-     if( ! (emittingEntityID.equals( rhs.emittingEntityID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (stateUpdateIndicator == rhs.stateUpdateIndicator)) ivarsEqual = false;
-     if( ! (paddingForEmissionsPdu == rhs.paddingForEmissionsPdu)) ivarsEqual = false;
-
-     for (int idx = 0; idx < systems.size(); idx++)
-        if( ! ( systems.get(idx).equals(rhs.systems.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(emittingEntityID, rhs.emittingEntityID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! (stateUpdateIndicator == rhs.stateUpdateIndicator)) return false;
+     if( ! (paddingForEmissionsPdu == rhs.paddingForEmissionsPdu)) return false;
+     if( ! Objects.equals(systems, rhs.systems) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -418,4 +413,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.emittingEntityID,
+	                     this.eventID,
+	                     this.stateUpdateIndicator,
+	                     this.numberOfSystems,
+	                     this.paddingForEmissionsPdu,
+	                     this.systems);
+ }
+} // end of ElectromagneticEmissionPdu

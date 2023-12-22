@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Unmanned = <code>50</code>; </li>
- *     <li> SubCategory: Shahed129  = <code>6</code>; </li>
- *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 29899; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> SubCategory: Shahed  = <code>8</code>; </li>
+ *     <li> Specific: Shahed129  = <code>4</code>; </li>
+ *     <li> Entity type uid: 36422; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2cb3d0f7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@532a02d9. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,8 @@ public final class Shahed129 extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 29882, Unmanned
-        setSubCategory((byte)6); // uid 29899, Shahed 129
+        setSubCategory((byte)8); // uid 36418, Shahed
+        setSpecific((byte)4); // uid 36422, Shahed 129
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

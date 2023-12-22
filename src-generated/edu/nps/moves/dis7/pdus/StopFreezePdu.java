@@ -345,16 +345,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StopFreezePdu rhs = (StopFreezePdu)obj;
 
-     if( ! (realWorldTime.equals( rhs.realWorldTime) )) ivarsEqual = false;
-     if( ! (reason == rhs.reason)) ivarsEqual = false;
-     if( ! (frozenBehavior.equals( rhs.frozenBehavior) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(realWorldTime, rhs.realWorldTime) ) return false;
+     if( ! (reason == rhs.reason)) return false;
+     if( ! Objects.equals(frozenBehavior, rhs.frozenBehavior) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -371,4 +369,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.realWorldTime,
+	                     this.reason,
+	                     this.frozenBehavior,
+	                     this.padding1,
+	                     this.requestID);
+ }
+} // end of StopFreezePdu

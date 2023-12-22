@@ -225,16 +225,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AttributeRecordSet rhs = (AttributeRecordSet)obj;
 
-     if( ! (entityId.equals( rhs.entityId) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < attributeRecords.size(); idx++)
-        if( ! ( attributeRecords.get(idx).equals(rhs.attributeRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! Objects.equals(entityId, rhs.entityId) ) return false;
+     if( ! Objects.equals(attributeRecords, rhs.attributeRecords) ) return false;
+    return true;
  }
 
  @Override
@@ -252,4 +247,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityId,
+	                     this.numberOfAttributeRecords,
+	                     this.attributeRecords);
+ }
+} // end of AttributeRecordSet

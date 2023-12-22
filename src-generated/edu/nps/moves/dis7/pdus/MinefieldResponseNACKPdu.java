@@ -339,20 +339,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldResponseNACKPdu rhs = (MinefieldResponseNACKPdu)obj;
 
-     if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
-     if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
+     if( ! Objects.equals(minefieldID, rhs.minefieldID) ) return false;
+     if( ! Objects.equals(requestingEntityID, rhs.requestingEntityID) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx])) ivarsEqual = false;
+          if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -369,4 +367,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.requestingEntityID,
+	                     this.requestID,
+	                     this.numberOfMissingPdus,
+	                     this.missingPduSequenceNumbers);
+ }
+} // end of MinefieldResponseNACKPdu

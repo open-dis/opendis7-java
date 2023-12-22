@@ -168,12 +168,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldSensorType rhs = (MinefieldSensorType)obj;
 
-     if( ! (sensorType == rhs.sensorType)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (sensorType == rhs.sensorType)) return false;
+    return true;
  }
 
  @Override
@@ -186,4 +184,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.sensorType);
+ }
+} // end of MinefieldSensorType

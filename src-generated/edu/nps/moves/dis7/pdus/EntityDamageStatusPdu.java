@@ -364,18 +364,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityDamageStatusPdu rhs = (EntityDamageStatusPdu)obj;
 
-     if( ! (damagedEntityID.equals( rhs.damagedEntityID) )) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < damageDescriptionRecords.size(); idx++)
-        if( ! ( damageDescriptionRecords.get(idx).equals(rhs.damageDescriptionRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(damagedEntityID, rhs.damagedEntityID) ) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(damageDescriptionRecords, rhs.damageDescriptionRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -395,4 +390,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.damagedEntityID,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.numberOfDamageDescription,
+	                     this.damageDescriptionRecords);
+ }
+} // end of EntityDamageStatusPdu

@@ -309,17 +309,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Sensor rhs = (Sensor)obj;
 
-     if( ! (sensorTypeSource == rhs.sensorTypeSource)) ivarsEqual = false;
-     if( ! (sensorOnOffStatus == rhs.sensorOnOffStatus)) ivarsEqual = false;
-     if( ! (sensorType == rhs.sensorType)) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (sensorTypeSource == rhs.sensorTypeSource)) return false;
+     if( ! (sensorOnOffStatus == rhs.sensorOnOffStatus)) return false;
+     if( ! (sensorType == rhs.sensorType)) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -337,4 +335,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.sensorTypeSource,
+	                     this.sensorOnOffStatus,
+	                     this.sensorType,
+	                     this.station,
+	                     this.quantity,
+	                     this.padding);
+ }
+} // end of Sensor

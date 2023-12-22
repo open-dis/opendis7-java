@@ -264,15 +264,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final JammingTechnique rhs = (JammingTechnique)obj;
 
-     if( ! (kind == rhs.kind)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
-     if( ! (specific == rhs.specific)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (kind == rhs.kind)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subCategory == rhs.subCategory)) return false;
+     if( ! (specific == rhs.specific)) return false;
+    return true;
  }
 
  @Override
@@ -288,4 +286,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.kind,
+	                     this.category,
+	                     this.subCategory,
+	                     this.specific);
+ }
+} // end of JammingTechnique

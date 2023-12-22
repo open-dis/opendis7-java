@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg) = <code>87</code>; </li>
  *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
- *     <li> Specific: AirbusA320  = <code>1</code>; </li>
- *     <li> Entity type uid: 24247; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Specific: AirbusA318  = <code>3</code>; </li>
+ *     <li> Entity type uid: 35637; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@37fb0bed. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@36a5cabc. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,8 +46,8 @@ public final class AirbusA318121 extends EntityType
 
         setCategory((byte)87); // uid 23838, Civilian Fixed Wing Aircraft, Large (up to 255,000 lbs / 115,666 kg)
         setSubCategory((byte)32); // uid 23839, Twin Jet
-        setSpecific((byte)1); // uid 23840, Airbus A320
-        setExtra((byte)26); // uid 24247, Airbus A318-121
+        setSpecific((byte)3); // uid 35634, Airbus A318
+        setExtra((byte)3); // uid 35637, Airbus A318-121
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

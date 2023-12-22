@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Guided Missile Destroyer (DDG) = <code>4</code>; </li>
- *     <li> SubCategory: KolkataClass  = <code>3</code>; </li>
- *     <li> Specific: D67Mormugao  = <code>5</code>; </li>
- *     <li> Entity type uid: 30250; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> SubCategory: VishakhapatnamClass  = <code>4</code>; </li>
+ *     <li> Specific: D67Mormugao  = <code>2</code>; </li>
+ *     <li> Entity type uid: 35584; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1f2f9244. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e4de19b. </p>
  * @see Country#INDIA_IND
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class D67Mormugao extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)4); // uid 18824, Guided Missile Destroyer (DDG)
-        setSubCategory((byte)3); // uid 28871, Kolkata Class
-        setSpecific((byte)5); // uid 30250, D67 Mormugao
+        setSubCategory((byte)4); // uid 35582, Vishakhapatnam Class
+        setSpecific((byte)2); // uid 35584, D67 Mormugao
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

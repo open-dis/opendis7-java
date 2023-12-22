@@ -315,19 +315,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final UAEmitter rhs = (UAEmitter)obj;
 
-     if( ! (systemDataLength == rhs.systemDataLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (acousticEmitter.equals( rhs.acousticEmitter) )) ivarsEqual = false;
-     if( ! (location.equals( rhs.location) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < beams.size(); idx++)
-        if( ! ( beams.get(idx).equals(rhs.beams.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (systemDataLength == rhs.systemDataLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(acousticEmitter, rhs.acousticEmitter) ) return false;
+     if( ! Objects.equals(location, rhs.location) ) return false;
+     if( ! Objects.equals(beams, rhs.beams) ) return false;
+    return true;
  }
 
  @Override
@@ -348,4 +343,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.systemDataLength,
+	                     this.numberOfBeams,
+	                     this.padding,
+	                     this.acousticEmitter,
+	                     this.location,
+	                     this.beams);
+ }
+} // end of UAEmitter

@@ -284,15 +284,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final CommentRPdu rhs = (CommentRPdu)obj;
 
-
-     for (int idx = 0; idx < variableDatumRecords.size(); idx++)
-        if( ! ( variableDatumRecords.get(idx).equals(rhs.variableDatumRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(variableDatumRecords, rhs.variableDatumRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -309,4 +304,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfFixedDatumRecords,
+	                     this.numberOfVariableDatumRecords,
+	                     this.variableDatumRecords);
+ }
+} // end of CommentRPdu

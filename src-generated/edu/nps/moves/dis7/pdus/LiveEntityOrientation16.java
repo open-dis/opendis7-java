@@ -232,14 +232,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityOrientation16 rhs = (LiveEntityOrientation16)obj;
 
-     if( ! (psi == rhs.psi)) ivarsEqual = false;
-     if( ! (theta == rhs.theta)) ivarsEqual = false;
-     if( ! (phi == rhs.phi)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (psi == rhs.psi)) return false;
+     if( ! (theta == rhs.theta)) return false;
+     if( ! (phi == rhs.phi)) return false;
+    return true;
  }
 
  @Override
@@ -254,4 +252,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.psi,
+	                     this.theta,
+	                     this.phi);
+ }
+} // end of LiveEntityOrientation16

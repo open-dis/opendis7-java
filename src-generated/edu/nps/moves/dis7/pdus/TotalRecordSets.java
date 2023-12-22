@@ -200,13 +200,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TotalRecordSets rhs = (TotalRecordSets)obj;
 
-     if( ! (totalRecordSets == rhs.totalRecordSets)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (totalRecordSets == rhs.totalRecordSets)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -220,4 +218,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.totalRecordSets,
+	                     this.padding);
+ }
+} // end of TotalRecordSets

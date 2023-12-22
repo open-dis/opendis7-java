@@ -402,21 +402,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BeamAntennaPattern rhs = (BeamAntennaPattern)obj;
 
-     if( ! (beamDirection.equals( rhs.beamDirection) )) ivarsEqual = false;
-     if( ! (azimuthBeamwidth == rhs.azimuthBeamwidth)) ivarsEqual = false;
-     if( ! (elevationBeamwidth == rhs.elevationBeamwidth)) ivarsEqual = false;
-     if( ! (referenceSystem == rhs.referenceSystem)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (ez == rhs.ez)) ivarsEqual = false;
-     if( ! (ex == rhs.ex)) ivarsEqual = false;
-     if( ! (phase == rhs.phase)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(beamDirection, rhs.beamDirection) ) return false;
+     if( ! (azimuthBeamwidth == rhs.azimuthBeamwidth)) return false;
+     if( ! (elevationBeamwidth == rhs.elevationBeamwidth)) return false;
+     if( ! (referenceSystem == rhs.referenceSystem)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (ez == rhs.ez)) return false;
+     if( ! (ex == rhs.ex)) return false;
+     if( ! (phase == rhs.phase)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+    return true;
  }
 
  @Override
@@ -438,4 +436,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamDirection,
+	                     this.azimuthBeamwidth,
+	                     this.elevationBeamwidth,
+	                     this.referenceSystem,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.ez,
+	                     this.ex,
+	                     this.phase,
+	                     this.padding3);
+ }
+} // end of BeamAntennaPattern

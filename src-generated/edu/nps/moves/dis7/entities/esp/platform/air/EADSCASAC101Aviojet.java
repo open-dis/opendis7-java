@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Spain (ESP) = <code>198</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
- *     <li> SubCategory: EADSCASAC101Aviojet  = <code>4</code>; </li>
+ *     <li> Category: Trainer = <code>40</code>; </li>
+ *     <li> SubCategory: EADSCASAC101Aviojet  = <code>1</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 29163; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Entity type uid: 35352; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@dd71b20. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@77dba4cd. </p>
  * @see Country#SPAIN_ESP
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see CargoTanker
+ * @see Trainer
  * @see SubCategory
 
  */
@@ -44,8 +44,8 @@ public final class EADSCASAC101Aviojet extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
-        setCategory((byte)4); // uid 18999, Cargo/Tanker
-        setSubCategory((byte)4); // uid 29163, EADS CASA C-101 Aviojet
+        setCategory((byte)40); // uid 35351, Trainer
+        setSubCategory((byte)1); // uid 35352, EADS CASA C-101 Aviojet
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

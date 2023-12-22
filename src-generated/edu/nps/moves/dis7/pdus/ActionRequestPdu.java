@@ -388,21 +388,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ActionRequestPdu rhs = (ActionRequestPdu)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (actionID == rhs.actionID)) ivarsEqual = false;
-
-     for (int idx = 0; idx < fixedDatums.size(); idx++)
-        if( ! ( fixedDatums.get(idx).equals(rhs.fixedDatums.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatums.size(); idx++)
-        if( ! ( variableDatums.get(idx).equals(rhs.variableDatums.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (actionID == rhs.actionID)) return false;
+     if( ! Objects.equals(fixedDatums, rhs.fixedDatums) ) return false;
+     if( ! Objects.equals(variableDatums, rhs.variableDatums) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -426,4 +418,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.requestID,
+	                     this.actionID,
+	                     this.numberOfFixedDatumRecords,
+	                     this.numberOfVariableDatumRecords,
+	                     this.fixedDatums,
+	                     this.variableDatums);
+ }
+} // end of ActionRequestPdu

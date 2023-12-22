@@ -599,26 +599,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final CollisionElasticPdu rhs = (CollisionElasticPdu)obj;
 
-     if( ! (issuingEntityID.equals( rhs.issuingEntityID) )) ivarsEqual = false;
-     if( ! (collidingEntityID.equals( rhs.collidingEntityID) )) ivarsEqual = false;
-     if( ! (collisionEventID.equals( rhs.collisionEventID) )) ivarsEqual = false;
-     if( ! (pad == rhs.pad)) ivarsEqual = false;
-     if( ! (contactVelocity.equals( rhs.contactVelocity) )) ivarsEqual = false;
-     if( ! (mass == rhs.mass)) ivarsEqual = false;
-     if( ! (locationOfImpact.equals( rhs.locationOfImpact) )) ivarsEqual = false;
-     if( ! (collisionIntermediateResultXX == rhs.collisionIntermediateResultXX)) ivarsEqual = false;
-     if( ! (collisionIntermediateResultXY == rhs.collisionIntermediateResultXY)) ivarsEqual = false;
-     if( ! (collisionIntermediateResultXZ == rhs.collisionIntermediateResultXZ)) ivarsEqual = false;
-     if( ! (collisionIntermediateResultYY == rhs.collisionIntermediateResultYY)) ivarsEqual = false;
-     if( ! (collisionIntermediateResultYZ == rhs.collisionIntermediateResultYZ)) ivarsEqual = false;
-     if( ! (collisionIntermediateResultZZ == rhs.collisionIntermediateResultZZ)) ivarsEqual = false;
-     if( ! (unitSurfaceNormal.equals( rhs.unitSurfaceNormal) )) ivarsEqual = false;
-     if( ! (coefficientOfRestitution == rhs.coefficientOfRestitution)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(issuingEntityID, rhs.issuingEntityID) ) return false;
+     if( ! Objects.equals(collidingEntityID, rhs.collidingEntityID) ) return false;
+     if( ! Objects.equals(collisionEventID, rhs.collisionEventID) ) return false;
+     if( ! (pad == rhs.pad)) return false;
+     if( ! Objects.equals(contactVelocity, rhs.contactVelocity) ) return false;
+     if( ! (mass == rhs.mass)) return false;
+     if( ! Objects.equals(locationOfImpact, rhs.locationOfImpact) ) return false;
+     if( ! (collisionIntermediateResultXX == rhs.collisionIntermediateResultXX)) return false;
+     if( ! (collisionIntermediateResultXY == rhs.collisionIntermediateResultXY)) return false;
+     if( ! (collisionIntermediateResultXZ == rhs.collisionIntermediateResultXZ)) return false;
+     if( ! (collisionIntermediateResultYY == rhs.collisionIntermediateResultYY)) return false;
+     if( ! (collisionIntermediateResultYZ == rhs.collisionIntermediateResultYZ)) return false;
+     if( ! (collisionIntermediateResultZZ == rhs.collisionIntermediateResultZZ)) return false;
+     if( ! Objects.equals(unitSurfaceNormal, rhs.unitSurfaceNormal) ) return false;
+     if( ! (coefficientOfRestitution == rhs.coefficientOfRestitution)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -645,4 +643,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.issuingEntityID,
+	                     this.collidingEntityID,
+	                     this.collisionEventID,
+	                     this.pad,
+	                     this.contactVelocity,
+	                     this.mass,
+	                     this.locationOfImpact,
+	                     this.collisionIntermediateResultXX,
+	                     this.collisionIntermediateResultXY,
+	                     this.collisionIntermediateResultXZ,
+	                     this.collisionIntermediateResultYY,
+	                     this.collisionIntermediateResultYZ,
+	                     this.collisionIntermediateResultZZ,
+	                     this.unitSurfaceNormal,
+	                     this.coefficientOfRestitution);
+ }
+} // end of CollisionElasticPdu

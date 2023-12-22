@@ -232,14 +232,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityLinearVelocity rhs = (LiveEntityLinearVelocity)obj;
 
-     if( ! (xComponent == rhs.xComponent)) ivarsEqual = false;
-     if( ! (yComponent == rhs.yComponent)) ivarsEqual = false;
-     if( ! (zComponent == rhs.zComponent)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (xComponent == rhs.xComponent)) return false;
+     if( ! (yComponent == rhs.yComponent)) return false;
+     if( ! (zComponent == rhs.zComponent)) return false;
+    return true;
  }
 
  @Override
@@ -254,4 +252,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.xComponent,
+	                     this.yComponent,
+	                     this.zComponent);
+ }
+} // end of LiveEntityLinearVelocity

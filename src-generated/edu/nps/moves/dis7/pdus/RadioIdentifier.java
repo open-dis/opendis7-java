@@ -264,15 +264,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RadioIdentifier rhs = (RadioIdentifier)obj;
 
-     if( ! (siteNumber == rhs.siteNumber)) ivarsEqual = false;
-     if( ! (applicationNumber == rhs.applicationNumber)) ivarsEqual = false;
-     if( ! (referenceNumber == rhs.referenceNumber)) ivarsEqual = false;
-     if( ! (radioNumber == rhs.radioNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (siteNumber == rhs.siteNumber)) return false;
+     if( ! (applicationNumber == rhs.applicationNumber)) return false;
+     if( ! (referenceNumber == rhs.referenceNumber)) return false;
+     if( ! (radioNumber == rhs.radioNumber)) return false;
+    return true;
  }
 
  @Override
@@ -288,4 +286,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.siteNumber,
+	                     this.applicationNumber,
+	                     this.referenceNumber,
+	                     this.radioNumber);
+ }
+} // end of RadioIdentifier

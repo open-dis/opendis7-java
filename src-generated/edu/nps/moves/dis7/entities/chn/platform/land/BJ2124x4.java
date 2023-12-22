@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Small Wheeled Utility Vehicle (0 - 1.25 tons) = <code>6</code>; </li>
+ *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: BJ2124x4  = <code>1</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 16927; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7920ba90. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5bfa9431. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see SmallWheeledUtilityVehicle0125tons
+ * @see SmallWheeledUtilityVehicle
  * @see SubCategory
 
  */
@@ -44,7 +44,7 @@ public final class BJ2124x4 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
-        setCategory((byte)6); // uid 16926, Small Wheeled Utility Vehicle (0 - 1.25 tons)
+        setCategory((byte)6); // uid 16926, Small Wheeled Utility Vehicle
         setSubCategory((byte)1); // uid 16927, BJ212 4x4
     }
     /** Create a new instance of this final (unmodifiable) class

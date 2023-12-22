@@ -20,8 +20,8 @@ import edu.nps.moves.dis7.enumerations.*;
 public abstract class SimulationManagementFamilyPdu extends PduBase implements Serializable
 {
 
-   /** The name of this PDU type */
-   public static final String NAME = "SimulationManagementFamilyPdu";
+   /** The name of this PDU family type */
+   public static final String FAMILY_NAME = "SimulationManagementFamilyPdu";
    
    /** IDs the simulation or entity, either a simulation or an entity. Either 6.2.80 or 6.2.28 */
    protected SimulationIdentifier  originatingID = new SimulationIdentifier(); 
@@ -200,13 +200,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SimulationManagementFamilyPdu rhs = (SimulationManagementFamilyPdu)obj;
 
-     if( ! (originatingID.equals( rhs.originatingID) )) ivarsEqual = false;
-     if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(originatingID, rhs.originatingID) ) return false;
+     if( ! Objects.equals(receivingID, rhs.receivingID) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -220,4 +218,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.originatingID,
+	                     this.receivingID);
+ }
+} // end of SimulationManagementFamilyPdu

@@ -336,18 +336,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LaunchedMunitionRecord rhs = (LaunchedMunitionRecord)obj;
 
-     if( ! (fireEventID.equals( rhs.fireEventID) )) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (firingEntityID.equals( rhs.firingEntityID) )) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (targetEntityID.equals( rhs.targetEntityID) )) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-     if( ! (targetLocation.equals( rhs.targetLocation) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(fireEventID, rhs.fireEventID) ) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(firingEntityID, rhs.firingEntityID) ) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(targetEntityID, rhs.targetEntityID) ) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+     if( ! Objects.equals(targetLocation, rhs.targetLocation) ) return false;
+    return true;
  }
 
  @Override
@@ -366,4 +364,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.fireEventID,
+	                     this.padding,
+	                     this.firingEntityID,
+	                     this.padding2,
+	                     this.targetEntityID,
+	                     this.padding3,
+	                     this.targetLocation);
+ }
+} // end of LaunchedMunitionRecord

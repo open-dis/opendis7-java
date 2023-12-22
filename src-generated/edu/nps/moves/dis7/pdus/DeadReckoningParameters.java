@@ -248,20 +248,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DeadReckoningParameters rhs = (DeadReckoningParameters)obj;
 
-     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) ivarsEqual = false;
+     if( ! (deadReckoningAlgorithm == rhs.deadReckoningAlgorithm)) return false;
 
      for (int idx = 0; idx < 15; idx++)
      {
-          if(!(parameters[idx] == rhs.parameters[idx])) ivarsEqual = false;
+          if(!(parameters[idx] == rhs.parameters[idx])) return false;
      }
 
-     if( ! (entityLinearAcceleration.equals( rhs.entityLinearAcceleration) )) ivarsEqual = false;
-     if( ! (entityAngularVelocity.equals( rhs.entityAngularVelocity) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(entityLinearAcceleration, rhs.entityLinearAcceleration) ) return false;
+     if( ! Objects.equals(entityAngularVelocity, rhs.entityAngularVelocity) ) return false;
+    return true;
  }
 
  @Override
@@ -278,4 +276,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.deadReckoningAlgorithm,
+	                     this.parameters,
+	                     this.entityLinearAcceleration,
+	                     this.entityAngularVelocity);
+ }
+} // end of DeadReckoningParameters

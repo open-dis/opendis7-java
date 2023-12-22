@@ -363,22 +363,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DirectedEnergyAreaAimpoint rhs = (DirectedEnergyAreaAimpoint)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-
-     for (int idx = 0; idx < beamAntennaParameterList.size(); idx++)
-        if( ! ( beamAntennaParameterList.get(idx).equals(rhs.beamAntennaParameterList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordList.size(); idx++)
-        if( ! ( directedEnergyTargetEnergyDepositionRecordList.get(idx).equals(rhs.directedEnergyTargetEnergyDepositionRecordList.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(beamAntennaParameterList, rhs.beamAntennaParameterList) ) return false;
+     if( ! Objects.equals(directedEnergyTargetEnergyDepositionRecordList, rhs.directedEnergyTargetEnergyDepositionRecordList) ) return false;
+    return true;
  }
 
  @Override
@@ -404,4 +396,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.padding,
+	                     this.beamAntennaPatternRecordCount,
+	                     this.directedEnergyTargetEnergyDepositionRecordCount,
+	                     this.beamAntennaParameterList,
+	                     this.directedEnergyTargetEnergyDepositionRecordList,
+	                     this.padding2);
+ }
+} // end of DirectedEnergyAreaAimpoint

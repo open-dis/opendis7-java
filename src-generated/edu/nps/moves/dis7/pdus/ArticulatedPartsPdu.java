@@ -300,16 +300,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ArticulatedPartsPdu rhs = (ArticulatedPartsPdu)obj;
 
-     if( ! (liveEntityId.equals( rhs.liveEntityId) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < variableParameters.size(); idx++)
-        if( ! ( variableParameters.get(idx).equals(rhs.variableParameters.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(liveEntityId, rhs.liveEntityId) ) return false;
+     if( ! Objects.equals(variableParameters, rhs.variableParameters) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -327,4 +322,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.liveEntityId,
+	                     this.numberOfParameterRecords,
+	                     this.variableParameters);
+ }
+} // end of ArticulatedPartsPdu

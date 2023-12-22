@@ -188,13 +188,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridData rhs = (GridData)obj;
 
-     if( ! (sampleType == rhs.sampleType)) ivarsEqual = false;
-     if( ! (dataRepresentation == rhs.dataRepresentation)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (sampleType == rhs.sampleType)) return false;
+     if( ! (dataRepresentation == rhs.dataRepresentation)) return false;
+    return true;
  }
 
  @Override
@@ -208,4 +206,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.sampleType,
+	                     this.dataRepresentation);
+ }
+} // end of GridData

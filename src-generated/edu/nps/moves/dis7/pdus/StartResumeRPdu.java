@@ -378,17 +378,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StartResumeRPdu rhs = (StartResumeRPdu)obj;
 
-     if( ! (realWorldTime.equals( rhs.realWorldTime) )) ivarsEqual = false;
-     if( ! (simulationTime.equals( rhs.simulationTime) )) ivarsEqual = false;
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(realWorldTime, rhs.realWorldTime) ) return false;
+     if( ! Objects.equals(simulationTime, rhs.simulationTime) ) return false;
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -406,4 +404,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.realWorldTime,
+	                     this.simulationTime,
+	                     this.requiredReliabilityService,
+	                     this.pad1,
+	                     this.pad2,
+	                     this.requestID);
+ }
+} // end of StartResumeRPdu

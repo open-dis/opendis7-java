@@ -194,13 +194,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EventIdentifier rhs = (EventIdentifier)obj;
 
-     if( ! (simulationAddress.equals( rhs.simulationAddress) )) ivarsEqual = false;
-     if( ! (eventNumber == rhs.eventNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(simulationAddress, rhs.simulationAddress) ) return false;
+     if( ! (eventNumber == rhs.eventNumber)) return false;
+    return true;
  }
 
  @Override
@@ -214,4 +212,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.simulationAddress,
+	                     this.eventNumber);
+ }
+} // end of EventIdentifier

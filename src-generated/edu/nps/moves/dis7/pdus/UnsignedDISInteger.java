@@ -161,12 +161,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final UnsignedDISInteger rhs = (UnsignedDISInteger)obj;
 
-     if( ! (val == rhs.val)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (val == rhs.val)) return false;
+    return true;
  }
 
  @Override
@@ -179,4 +177,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.val);
+ }
+} // end of UnsignedDISInteger

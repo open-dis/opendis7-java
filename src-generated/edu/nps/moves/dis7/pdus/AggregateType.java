@@ -330,18 +330,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AggregateType rhs = (AggregateType)obj;
 
-     if( ! (aggregateKind == rhs.aggregateKind)) ivarsEqual = false;
-     if( ! (domain == rhs.domain)) ivarsEqual = false;
-     if( ! (country == rhs.country)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subcategory == rhs.subcategory)) ivarsEqual = false;
-     if( ! (specificInfo == rhs.specificInfo)) ivarsEqual = false;
-     if( ! (extra == rhs.extra)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (aggregateKind == rhs.aggregateKind)) return false;
+     if( ! (domain == rhs.domain)) return false;
+     if( ! (country == rhs.country)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subcategory == rhs.subcategory)) return false;
+     if( ! (specificInfo == rhs.specificInfo)) return false;
+     if( ! (extra == rhs.extra)) return false;
+    return true;
  }
 
  @Override
@@ -360,4 +358,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.aggregateKind,
+	                     this.domain,
+	                     this.country,
+	                     this.category,
+	                     this.subcategory,
+	                     this.specificInfo,
+	                     this.extra);
+ }
+} // end of AggregateType

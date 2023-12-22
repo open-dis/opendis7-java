@@ -280,16 +280,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IOCommsNodeRecord rhs = (IOCommsNodeRecord)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (commsNodeType == rhs.commsNodeType)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (commsNodeId.equals( rhs.commsNodeId) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (commsNodeType == rhs.commsNodeType)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(commsNodeId, rhs.commsNodeId) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -306,4 +304,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.commsNodeType,
+	                     this.padding,
+	                     this.commsNodeId);
+ }
+} // end of IOCommsNodeRecord

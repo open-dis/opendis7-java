@@ -443,20 +443,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final FirePdu rhs = (FirePdu)obj;
 
-     if( ! (firingEntityID.equals( rhs.firingEntityID) )) ivarsEqual = false;
-     if( ! (targetEntityID.equals( rhs.targetEntityID) )) ivarsEqual = false;
-     if( ! (munitionExpendibleID.equals( rhs.munitionExpendibleID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (fireMissionIndex == rhs.fireMissionIndex)) ivarsEqual = false;
-     if( ! (locationInWorldCoordinates.equals( rhs.locationInWorldCoordinates) )) ivarsEqual = false;
-     if( ! (descriptor.equals( rhs.descriptor) )) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (range == rhs.range)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(firingEntityID, rhs.firingEntityID) ) return false;
+     if( ! Objects.equals(targetEntityID, rhs.targetEntityID) ) return false;
+     if( ! Objects.equals(munitionExpendibleID, rhs.munitionExpendibleID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! (fireMissionIndex == rhs.fireMissionIndex)) return false;
+     if( ! Objects.equals(locationInWorldCoordinates, rhs.locationInWorldCoordinates) ) return false;
+     if( ! Objects.equals(descriptor, rhs.descriptor) ) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! (range == rhs.range)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -477,4 +475,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.firingEntityID,
+	                     this.targetEntityID,
+	                     this.munitionExpendibleID,
+	                     this.eventID,
+	                     this.fireMissionIndex,
+	                     this.locationInWorldCoordinates,
+	                     this.descriptor,
+	                     this.velocity,
+	                     this.range);
+ }
+} // end of FirePdu

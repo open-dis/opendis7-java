@@ -383,19 +383,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RecordRPdu rhs = (RecordRPdu)obj;
 
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (eventType == rhs.eventType)) ivarsEqual = false;
-
-     for (int idx = 0; idx < recordSets.size(); idx++)
-        if( ! ( recordSets.get(idx).equals(rhs.recordSets.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (eventType == rhs.eventType)) return false;
+     if( ! Objects.equals(recordSets, rhs.recordSets) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -416,4 +411,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.requestID,
+	                     this.requiredReliabilityService,
+	                     this.pad1,
+	                     this.eventType,
+	                     this.numberOfRecordSets,
+	                     this.recordSets);
+ }
+} // end of RecordRPdu

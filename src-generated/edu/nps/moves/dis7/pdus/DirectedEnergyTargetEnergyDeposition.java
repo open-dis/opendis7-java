@@ -219,14 +219,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DirectedEnergyTargetEnergyDeposition rhs = (DirectedEnergyTargetEnergyDeposition)obj;
 
-     if( ! (targetEntityID.equals( rhs.targetEntityID) )) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (peakIrradiance == rhs.peakIrradiance)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(targetEntityID, rhs.targetEntityID) ) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (peakIrradiance == rhs.peakIrradiance)) return false;
+    return true;
  }
 
  @Override
@@ -241,4 +239,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.targetEntityID,
+	                     this.padding,
+	                     this.peakIrradiance);
+ }
+} // end of DirectedEnergyTargetEnergyDeposition

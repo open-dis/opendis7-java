@@ -261,16 +261,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BeamData rhs = (BeamData)obj;
 
-     if( ! (beamAzimuthCenter == rhs.beamAzimuthCenter)) ivarsEqual = false;
-     if( ! (beamAzimuthSweep == rhs.beamAzimuthSweep)) ivarsEqual = false;
-     if( ! (beamElevationCenter == rhs.beamElevationCenter)) ivarsEqual = false;
-     if( ! (beamElevationSweep == rhs.beamElevationSweep)) ivarsEqual = false;
-     if( ! (beamSweepSync == rhs.beamSweepSync)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (beamAzimuthCenter == rhs.beamAzimuthCenter)) return false;
+     if( ! (beamAzimuthSweep == rhs.beamAzimuthSweep)) return false;
+     if( ! (beamElevationCenter == rhs.beamElevationCenter)) return false;
+     if( ! (beamElevationSweep == rhs.beamElevationSweep)) return false;
+     if( ! (beamSweepSync == rhs.beamSweepSync)) return false;
+    return true;
  }
 
  @Override
@@ -287,4 +285,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamAzimuthCenter,
+	                     this.beamAzimuthSweep,
+	                     this.beamElevationCenter,
+	                     this.beamElevationSweep,
+	                     this.beamSweepSync);
+ }
+} // end of BeamData

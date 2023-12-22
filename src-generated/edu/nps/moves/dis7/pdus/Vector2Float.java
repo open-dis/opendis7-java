@@ -186,13 +186,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Vector2Float rhs = (Vector2Float)obj;
 
-     if( ! (x == rhs.x)) ivarsEqual = false;
-     if( ! (y == rhs.y)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (x == rhs.x)) return false;
+     if( ! (y == rhs.y)) return false;
+    return true;
  }
 
  @Override
@@ -206,4 +204,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.x,
+	                     this.y);
+ }
+} // end of Vector2Float

@@ -196,18 +196,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AggregateMarking rhs = (AggregateMarking)obj;
 
-     if( ! (characterSet == rhs.characterSet)) ivarsEqual = false;
+     if( ! (characterSet == rhs.characterSet)) return false;
 
      for (int idx = 0; idx < 31; idx++)
      {
-          if(!(characters[idx] == rhs.characters[idx])) ivarsEqual = false;
+          if(!(characters[idx] == rhs.characters[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override
@@ -222,4 +220,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.characterSet,
+	                     this.characters);
+ }
+} // end of AggregateMarking

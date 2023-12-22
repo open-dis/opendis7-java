@@ -232,14 +232,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityID rhs = (EntityID)obj;
 
-     if( ! (siteID == rhs.siteID)) ivarsEqual = false;
-     if( ! (applicationID == rhs.applicationID)) ivarsEqual = false;
-     if( ! (entityID == rhs.entityID)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (siteID == rhs.siteID)) return false;
+     if( ! (applicationID == rhs.applicationID)) return false;
+     if( ! (entityID == rhs.entityID)) return false;
+    return true;
  }
 
  @Override
@@ -254,4 +252,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.siteID,
+	                     this.applicationID,
+	                     this.entityID);
+ }
+} // end of EntityID

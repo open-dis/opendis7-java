@@ -541,23 +541,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LEDetonationPdu rhs = (LEDetonationPdu)obj;
 
-     if( ! (firingLiveEntityId.equals( rhs.firingLiveEntityId) )) ivarsEqual = false;
-     if( ! (detonationFlag1 == rhs.detonationFlag1)) ivarsEqual = false;
-     if( ! (detonationFlag2 == rhs.detonationFlag2)) ivarsEqual = false;
-     if( ! (targetLiveEntityId.equals( rhs.targetLiveEntityId) )) ivarsEqual = false;
-     if( ! (munitionLiveEntityId.equals( rhs.munitionLiveEntityId) )) ivarsEqual = false;
-     if( ! (eventId.equals( rhs.eventId) )) ivarsEqual = false;
-     if( ! (worldLocation.equals( rhs.worldLocation) )) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (munitionOrientation.equals( rhs.munitionOrientation) )) ivarsEqual = false;
-     if( ! (munitionDescriptor.equals( rhs.munitionDescriptor) )) ivarsEqual = false;
-     if( ! (entityLocation.equals( rhs.entityLocation) )) ivarsEqual = false;
-     if( ! (detonationResult == rhs.detonationResult)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(firingLiveEntityId, rhs.firingLiveEntityId) ) return false;
+     if( ! (detonationFlag1 == rhs.detonationFlag1)) return false;
+     if( ! (detonationFlag2 == rhs.detonationFlag2)) return false;
+     if( ! Objects.equals(targetLiveEntityId, rhs.targetLiveEntityId) ) return false;
+     if( ! Objects.equals(munitionLiveEntityId, rhs.munitionLiveEntityId) ) return false;
+     if( ! Objects.equals(eventId, rhs.eventId) ) return false;
+     if( ! Objects.equals(worldLocation, rhs.worldLocation) ) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! Objects.equals(munitionOrientation, rhs.munitionOrientation) ) return false;
+     if( ! Objects.equals(munitionDescriptor, rhs.munitionDescriptor) ) return false;
+     if( ! Objects.equals(entityLocation, rhs.entityLocation) ) return false;
+     if( ! (detonationResult == rhs.detonationResult)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -581,4 +579,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.firingLiveEntityId,
+	                     this.detonationFlag1,
+	                     this.detonationFlag2,
+	                     this.targetLiveEntityId,
+	                     this.munitionLiveEntityId,
+	                     this.eventId,
+	                     this.worldLocation,
+	                     this.velocity,
+	                     this.munitionOrientation,
+	                     this.munitionDescriptor,
+	                     this.entityLocation,
+	                     this.detonationResult);
+ }
+} // end of LEDetonationPdu

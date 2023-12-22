@@ -277,16 +277,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Munition rhs = (Munition)obj;
 
-     if( ! (munitionType.equals( rhs.munitionType) )) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-     if( ! (munitionStatus == rhs.munitionStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(munitionType, rhs.munitionType) ) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+     if( ! (munitionStatus == rhs.munitionStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -303,4 +301,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.munitionType,
+	                     this.station,
+	                     this.quantity,
+	                     this.munitionStatus,
+	                     this.padding);
+ }
+} // end of Munition

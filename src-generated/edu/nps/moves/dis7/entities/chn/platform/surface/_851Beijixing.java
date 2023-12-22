@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: China, People's Republic of (CHN) = <code>45</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: DongdiaoAGIType815Type815GIntelligenceGathering  = <code>43</code>; </li>
+ *     <li> Category: Surveillance Ship = <code>21</code>; </li>
+ *     <li> SubCategory: DongdiaoClassType815ElectronicSurveillance  = <code>2</code>; </li>
  *     <li> Specific: _851Beijixing  = <code>1</code>; </li>
- *     <li> Entity type uid: 29819; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Entity type uid: 35224; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2177849e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51c668e3. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Auxiliary
+ * @see SurveillanceShip
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class _851Beijixing extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
-        setCategory((byte)16); // uid 17231, Auxiliary
-        setSubCategory((byte)43); // uid 29818, Dongdiao AGI (Type 815/Type 815G) (Intelligence Gathering)
-        setSpecific((byte)1); // uid 29819, 851 Beijixing
+        setCategory((byte)21); // uid 30910, Surveillance Ship
+        setSubCategory((byte)2); // uid 35223, Dongdiao Class (Type 815) Electronic Surveillance
+        setSpecific((byte)1); // uid 35224, 851 Beijixing
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

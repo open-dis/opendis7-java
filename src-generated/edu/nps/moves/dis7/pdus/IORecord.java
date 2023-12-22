@@ -136,11 +136,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IORecord rhs = (IORecord)obj;
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override
@@ -152,4 +150,4 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+} // end of IORecord

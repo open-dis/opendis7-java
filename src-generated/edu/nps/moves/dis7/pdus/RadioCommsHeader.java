@@ -194,13 +194,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RadioCommsHeader rhs = (RadioCommsHeader)obj;
 
-     if( ! (radioReferenceID.equals( rhs.radioReferenceID) )) ivarsEqual = false;
-     if( ! (radioNumber == rhs.radioNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(radioReferenceID, rhs.radioReferenceID) ) return false;
+     if( ! (radioNumber == rhs.radioNumber)) return false;
+    return true;
  }
 
  @Override
@@ -214,4 +212,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.radioReferenceID,
+	                     this.radioNumber);
+ }
+} // end of RadioCommsHeader

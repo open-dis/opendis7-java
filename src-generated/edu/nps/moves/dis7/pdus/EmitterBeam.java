@@ -451,24 +451,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EmitterBeam rhs = (EmitterBeam)obj;
 
-     if( ! (beamDataLength == rhs.beamDataLength)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-     if( ! (beamParameterIndex == rhs.beamParameterIndex)) ivarsEqual = false;
-     if( ! (fundamentalParameterData.equals( rhs.fundamentalParameterData) )) ivarsEqual = false;
-     if( ! (beamData.equals( rhs.beamData) )) ivarsEqual = false;
-     if( ! (beamFunction == rhs.beamFunction)) ivarsEqual = false;
-     if( ! (highDensityTrackJam == rhs.highDensityTrackJam)) ivarsEqual = false;
-     if( ! (beamStatus.equals( rhs.beamStatus) )) ivarsEqual = false;
-     if( ! (jammingTechnique.equals( rhs.jammingTechnique) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < trackJamData.size(); idx++)
-        if( ! ( trackJamData.get(idx).equals(rhs.trackJamData.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (beamDataLength == rhs.beamDataLength)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+     if( ! (beamParameterIndex == rhs.beamParameterIndex)) return false;
+     if( ! Objects.equals(fundamentalParameterData, rhs.fundamentalParameterData) ) return false;
+     if( ! Objects.equals(beamData, rhs.beamData) ) return false;
+     if( ! (beamFunction == rhs.beamFunction)) return false;
+     if( ! (highDensityTrackJam == rhs.highDensityTrackJam)) return false;
+     if( ! Objects.equals(beamStatus, rhs.beamStatus) ) return false;
+     if( ! Objects.equals(jammingTechnique, rhs.jammingTechnique) ) return false;
+     if( ! Objects.equals(trackJamData, rhs.trackJamData) ) return false;
+    return true;
  }
 
  @Override
@@ -494,4 +489,20 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamDataLength,
+	                     this.beamNumber,
+	                     this.beamParameterIndex,
+	                     this.fundamentalParameterData,
+	                     this.beamData,
+	                     this.beamFunction,
+	                     this.numberOfTargets,
+	                     this.highDensityTrackJam,
+	                     this.beamStatus,
+	                     this.jammingTechnique,
+	                     this.trackJamData);
+ }
+} // end of EmitterBeam

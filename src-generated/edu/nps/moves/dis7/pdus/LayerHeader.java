@@ -232,14 +232,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LayerHeader rhs = (LayerHeader)obj;
 
-     if( ! (layerNumber == rhs.layerNumber)) ivarsEqual = false;
-     if( ! (layerSpecificInformation == rhs.layerSpecificInformation)) ivarsEqual = false;
-     if( ! (length == rhs.length)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (layerNumber == rhs.layerNumber)) return false;
+     if( ! (layerSpecificInformation == rhs.layerSpecificInformation)) return false;
+     if( ! (length == rhs.length)) return false;
+    return true;
  }
 
  @Override
@@ -254,4 +252,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.layerNumber,
+	                     this.layerSpecificInformation,
+	                     this.length);
+ }
+} // end of LayerHeader

@@ -321,15 +321,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RepairCompletePdu rhs = (RepairCompletePdu)obj;
 
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (repairingEntityID.equals( rhs.repairingEntityID) )) ivarsEqual = false;
-     if( ! (repair == rhs.repair)) ivarsEqual = false;
-     if( ! (padding4 == rhs.padding4)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! Objects.equals(repairingEntityID, rhs.repairingEntityID) ) return false;
+     if( ! (repair == rhs.repair)) return false;
+     if( ! (padding4 == rhs.padding4)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -345,4 +343,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.receivingEntityID,
+	                     this.repairingEntityID,
+	                     this.repair,
+	                     this.padding4);
+ }
+} // end of RepairCompletePdu

@@ -220,14 +220,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AcousticEmitter rhs = (AcousticEmitter)obj;
 
-     if( ! (acousticSystemName == rhs.acousticSystemName)) ivarsEqual = false;
-     if( ! (acousticFunction == rhs.acousticFunction)) ivarsEqual = false;
-     if( ! (acousticIDNumber == rhs.acousticIDNumber)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (acousticSystemName == rhs.acousticSystemName)) return false;
+     if( ! (acousticFunction == rhs.acousticFunction)) return false;
+     if( ! (acousticIDNumber == rhs.acousticIDNumber)) return false;
+    return true;
  }
 
  @Override
@@ -242,4 +240,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.acousticSystemName,
+	                     this.acousticFunction,
+	                     this.acousticIDNumber);
+ }
+} // end of AcousticEmitter

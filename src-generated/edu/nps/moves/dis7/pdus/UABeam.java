@@ -258,15 +258,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final UABeam rhs = (UABeam)obj;
 
-     if( ! (beamDataLength == rhs.beamDataLength)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (fundamentalParameterData.equals( rhs.fundamentalParameterData) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (beamDataLength == rhs.beamDataLength)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(fundamentalParameterData, rhs.fundamentalParameterData) ) return false;
+    return true;
  }
 
  @Override
@@ -282,4 +280,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamDataLength,
+	                     this.beamNumber,
+	                     this.padding,
+	                     this.fundamentalParameterData);
+ }
+} // end of UABeam

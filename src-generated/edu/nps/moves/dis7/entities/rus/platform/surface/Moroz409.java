@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Guided-missile Frigate (includes Corvette) = <code>6</code>; </li>
+ *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
  *     <li> SubCategory: NanuchkaIIIClass  = <code>8</code>; </li>
  *     <li> Specific: Moroz409  = <code>8</code>; </li>
  *     <li> Entity type uid: 13659; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d1f1ff5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@658255aa. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see GuidedmissileFrigateincludesCorvette
+ * @see GuidedMissileFrigateFFG
  * @see SubCategory
 
  */
@@ -44,7 +44,7 @@ public final class Moroz409 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
-        setCategory((byte)6); // uid 13593, Guided-missile Frigate (includes Corvette)
+        setCategory((byte)6); // uid 13593, Guided Missile Frigate (FFG)
         setSubCategory((byte)8); // uid 13651, Nanuchka III Class
         setSpecific((byte)8); // uid 13659, Moroz-409
     }

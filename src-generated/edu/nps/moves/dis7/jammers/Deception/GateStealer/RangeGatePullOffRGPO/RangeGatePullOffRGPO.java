@@ -13,7 +13,7 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * SISO-REF-010-v31 (2022-10-08)
+ * SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)
  *
  * Jamming technique uid: 284
  */

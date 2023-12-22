@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Australia (AUS) = <code>13</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
+ *     <li> Category: Armoured Utility Vehicle = <code>3</code>; </li>
  *     <li> SubCategory: M113ASArmoredLogisticsVehicleStoresALVS  = <code>5</code>; </li>
  *     <li> Specific: M113ASArmoredLogisticsVehicleAmmoALVA  = <code>1</code>; </li>
  *     <li> Entity type uid: 28623; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2280cdac. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@61baa894. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see ArmoredUtilityVehicle
+ * @see ArmouredUtilityVehicle
  * @see SubCategory
 
  */
@@ -44,7 +44,7 @@ public final class M113ASArmoredLogisticsVehicleAmmoALVA extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
-        setCategory((byte)3); // uid 26906, Armored Utility Vehicle
+        setCategory((byte)3); // uid 26906, Armoured Utility Vehicle
         setSubCategory((byte)5); // uid 28622, M113-AS Armored Logistics Vehicle (Stores) (ALV-S)
         setSpecific((byte)1); // uid 28623, M113-AS Armored Logistics Vehicle (Ammo) (ALV-A)
     }

@@ -276,16 +276,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridAxisDescriptor rhs = (GridAxisDescriptor)obj;
 
-     if( ! (domainInitialXi == rhs.domainInitialXi)) ivarsEqual = false;
-     if( ! (domainFinalXi == rhs.domainFinalXi)) ivarsEqual = false;
-     if( ! (domainPointsXi == rhs.domainPointsXi)) ivarsEqual = false;
-     if( ! (interleafFactor == rhs.interleafFactor)) ivarsEqual = false;
-     if( ! (axisType == rhs.axisType)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (domainInitialXi == rhs.domainInitialXi)) return false;
+     if( ! (domainFinalXi == rhs.domainFinalXi)) return false;
+     if( ! (domainPointsXi == rhs.domainPointsXi)) return false;
+     if( ! (interleafFactor == rhs.interleafFactor)) return false;
+     if( ! (axisType == rhs.axisType)) return false;
+    return true;
  }
 
  @Override
@@ -302,4 +300,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.domainInitialXi,
+	                     this.domainFinalXi,
+	                     this.domainPointsXi,
+	                     this.interleafFactor,
+	                     this.axisType);
+ }
+} // end of GridAxisDescriptor

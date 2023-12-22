@@ -354,18 +354,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityTypeRaw rhs = (EntityTypeRaw)obj;
 
-     if( ! (entityKind == rhs.entityKind)) ivarsEqual = false;
-     if( ! (domain == rhs.domain)) ivarsEqual = false;
-     if( ! (country == rhs.country)) ivarsEqual = false;
-     if( ! (category == rhs.category)) ivarsEqual = false;
-     if( ! (subCategory == rhs.subCategory)) ivarsEqual = false;
-     if( ! (specific == rhs.specific)) ivarsEqual = false;
-     if( ! (extra == rhs.extra)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (entityKind == rhs.entityKind)) return false;
+     if( ! (domain == rhs.domain)) return false;
+     if( ! (country == rhs.country)) return false;
+     if( ! (category == rhs.category)) return false;
+     if( ! (subCategory == rhs.subCategory)) return false;
+     if( ! (specific == rhs.specific)) return false;
+     if( ! (extra == rhs.extra)) return false;
+    return true;
  }
 
  @Override
@@ -384,4 +382,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.entityKind,
+	                     this.domain,
+	                     this.country,
+	                     this.category,
+	                     this.subCategory,
+	                     this.specific,
+	                     this.extra);
+ }
+} // end of EntityTypeRaw

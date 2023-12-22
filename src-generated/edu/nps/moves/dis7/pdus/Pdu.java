@@ -24,6 +24,374 @@ public abstract class Pdu extends Object implements Serializable,Marshaller
    /** The name of this PDU type */
    public static final String NAME = "Pdu";
    
+
+    //  =================
+
+    /** Whether this instance is a Reliable Pdu with guaranteed delivery
+    * @return whether reliable */
+    public boolean isReliablePdu ()
+    {
+      return getClass().getName().endsWith("RPdu") ||      // primary class
+             getClass().getName().endsWith("ReliablePdu"); //   alias class
+    }
+    //  =================
+
+    /** Whether this instance has a DistributedEmissionsRegenerationFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isDistributedEmissionsRegenerationFamilyPdu() { return getClass().getName().equals(DistributedEmissionsRegenerationFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has an EntityInformationInteractionFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isEntityInformationInteractionFamilyPdu() { return getClass().getName().equals(EntityInformationInteractionFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has an EntityManagementFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isEntityManagementFamilyPdu() { return getClass().getName().equals(EntityManagementFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has an InformationOperationsFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isInformationOperationsFamilyPdu() { return getClass().getName().equals(InformationOperationsFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a LogisticsFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isLogisticsFamilyPdu() { return getClass().getName().equals(LogisticsFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a MinefieldFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isMinefieldFamilyPdu() { return getClass().getName().equals(MinefieldFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a RadioCommunicationsFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isRadioCommunicationsFamilyPdu() { return getClass().getName().equals(RadioCommunicationsFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a SimulationManagementFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isSimulationManagementFamilyPdu() { return getClass().getName().equals(SimulationManagementFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a SimulationManagementWithReliabilityFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isSimulationManagementWithReliabilityFamilyPdu() { return getClass().getName().equals(SimulationManagementWithReliabilityFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a SyntheticEnvironmentFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isSyntheticEnvironmentFamilyPdu() { return getClass().getName().equals(SyntheticEnvironmentFamilyPdu.FAMILY_NAME); }
+
+    /** Whether this instance has a WarfareFamilyPdu superclass
+      * @return whether this supertype is inherited */
+    public boolean isWarfareFamilyPdu() { return getClass().getName().equals(WarfareFamilyPdu.FAMILY_NAME); }
+
+    //  =================
+
+    /** Whether this instance is an AcknowledgeRPdu
+    * @return whether this type of Pdu */
+  public boolean isAcknowledgeRPdu() { return getClass().getName().equals(AcknowledgeRPdu.NAME) ||
+                                              getClass().getName().equals(AcknowledgeReliablePdu.NAME); }
+
+    /** Whether this instance is an ActionRequestPdu
+    * @return whether this type of Pdu */
+  public boolean isActionRequestPdu() { return getClass().getName().equals(ActionRequestPdu.NAME); }
+
+    /** Whether this instance is an ActionRequestRPdu
+    * @return whether this type of Pdu */
+  public boolean isActionRequestRPdu() { return getClass().getName().equals(ActionRequestRPdu.NAME) ||
+                                                getClass().getName().equals(ActionRequestReliablePdu.NAME); }
+
+    /** Whether this instance is an ActionResponsePdu
+    * @return whether this type of Pdu */
+  public boolean isActionResponsePdu() { return getClass().getName().equals(ActionResponsePdu.NAME); }
+
+    /** Whether this instance is an ActionResponseRPdu
+    * @return whether this type of Pdu */
+  public boolean isActionResponseRPdu() { return getClass().getName().equals(ActionResponseRPdu.NAME) ||
+                                                 getClass().getName().equals(ActionResponseReliablePdu.NAME); }
+
+    /** Whether this instance is an AggregateStatePdu
+    * @return whether this type of Pdu */
+  public boolean isAggregateStatePdu() { return getClass().getName().equals(AggregateStatePdu.NAME); }
+
+    /** Whether this instance is an AppearancePdu
+    * @return whether this type of Pdu */
+  public boolean isAppearancePdu() { return getClass().getName().equals(AppearancePdu.NAME); }
+
+    /** Whether this instance is an ArealObjectStatePdu
+    * @return whether this type of Pdu */
+  public boolean isArealObjectStatePdu() { return getClass().getName().equals(ArealObjectStatePdu.NAME); }
+
+    /** Whether this instance is an ArticulatedPartsPdu
+    * @return whether this type of Pdu */
+  public boolean isArticulatedPartsPdu() { return getClass().getName().equals(ArticulatedPartsPdu.NAME); }
+
+    /** Whether this instance is an AttributePdu
+    * @return whether this type of Pdu */
+  public boolean isAttributePdu() { return getClass().getName().equals(AttributePdu.NAME); }
+
+    /** Whether this instance is an CollisionElasticPdu
+    * @return whether this type of Pdu */
+  public boolean isCollisionElasticPdu() { return getClass().getName().equals(CollisionElasticPdu.NAME); }
+
+    /** Whether this instance is an CollisionPdu
+    * @return whether this type of Pdu */
+  public boolean isCollisionPdu() { return getClass().getName().equals(CollisionPdu.NAME); }
+
+    /** Whether this instance is an CommentPdu
+    * @return whether this type of Pdu */
+  public boolean isCommentPdu() { return getClass().getName().equals(CommentPdu.NAME); }
+
+    /** Whether this instance is an CommentRPdu
+    * @return whether this type of Pdu */
+  public boolean isCommentRPdu() { return getClass().getName().equals(CommentRPdu.NAME) ||
+                                          getClass().getName().equals(CommentReliablePdu.NAME); }
+
+    /** Whether this instance is an CreateEntityPdu
+    * @return whether this type of Pdu */
+  public boolean isCreateEntityPdu() { return getClass().getName().equals(CreateEntityPdu.NAME); }
+
+    /** Whether this instance is an CreateEntityRPdu
+    * @return whether this type of Pdu */
+  public boolean isCreateEntityRPdu() { return getClass().getName().equals(CreateEntityRPdu.NAME) ||
+                                               getClass().getName().equals(CreateEntityReliablePdu.NAME); }
+
+    /** Whether this instance is an DataPdu
+    * @return whether this type of Pdu */
+  public boolean isDataPdu() { return getClass().getName().equals(DataPdu.NAME); }
+
+    /** Whether this instance is an DataQueryPdu
+    * @return whether this type of Pdu */
+  public boolean isDataQueryPdu() { return getClass().getName().equals(DataQueryPdu.NAME); }
+
+    /** Whether this instance is an DataQueryRPdu
+    * @return whether this type of Pdu */
+  public boolean isDataQueryRPdu() { return getClass().getName().equals(DataQueryRPdu.NAME) ||
+                                            getClass().getName().equals(DataQueryReliablePdu.NAME); }
+
+    /** Whether this instance is an DataRPdu
+    * @return whether this type of Pdu */
+  public boolean isDataRPdu() { return getClass().getName().equals(DataRPdu.NAME) ||
+                                       getClass().getName().equals(DataReliablePdu.NAME); }
+
+    /** Whether this instance is an DesignatorPdu
+    * @return whether this type of Pdu */
+  public boolean isDesignatorPdu() { return getClass().getName().equals(DesignatorPdu.NAME); }
+
+    /** Whether this instance is an DetonationPdu
+    * @return whether this type of Pdu */
+  public boolean isDetonationPdu() { return getClass().getName().equals(DetonationPdu.NAME); }
+
+    /** Whether this instance is an DirectedEnergyFirePdu
+    * @return whether this type of Pdu */
+  public boolean isDirectedEnergyFirePdu() { return getClass().getName().equals(DirectedEnergyFirePdu.NAME); }
+
+    /** Whether this instance is an ElectromagneticEmissionPdu
+    * @return whether this type of Pdu */
+  public boolean isElectromagneticEmissionPdu() { return getClass().getName().equals(ElectromagneticEmissionPdu.NAME); }
+
+    /** Whether this instance is an EntityDamageStatusPdu
+    * @return whether this type of Pdu */
+  public boolean isEntityDamageStatusPdu() { return getClass().getName().equals(EntityDamageStatusPdu.NAME); }
+
+    /** Whether this instance is an EntityStatePdu
+    * @return whether this type of Pdu */
+  public boolean isEntityStatePdu() { return getClass().getName().equals(EntityStatePdu.NAME); }
+
+    /** Whether this instance is an EntityStateUpdatePdu
+    * @return whether this type of Pdu */
+  public boolean isEntityStateUpdatePdu() { return getClass().getName().equals(EntityStateUpdatePdu.NAME); }
+
+    /** Whether this instance is an EnvironmentalProcessPdu
+    * @return whether this type of Pdu */
+  public boolean isEnvironmentalProcessPdu() { return getClass().getName().equals(EnvironmentalProcessPdu.NAME); }
+
+    /** Whether this instance is an EventReportPdu
+    * @return whether this type of Pdu */
+  public boolean isEventReportPdu() { return getClass().getName().equals(EventReportPdu.NAME); }
+
+    /** Whether this instance is an EventReportRPdu
+    * @return whether this type of Pdu */
+  public boolean isEventReportRPdu() { return getClass().getName().equals(EventReportRPdu.NAME) ||
+                                              getClass().getName().equals(EventReportReliablePdu.NAME); }
+
+    /** Whether this instance is an FirePdu
+    * @return whether this type of Pdu */
+  public boolean isFirePdu() { return getClass().getName().equals(FirePdu.NAME); }
+
+    /** Whether this instance is an GriddedDataPdu
+    * @return whether this type of Pdu */
+  public boolean isGriddedDataPdu() { return getClass().getName().equals(GriddedDataPdu.NAME); }
+
+    /** Whether this instance is an IFFPdu
+    * @return whether this type of Pdu */
+  public boolean isIFFPdu() { return getClass().getName().equals(IFFPdu.NAME) ||
+                                     getClass().getName().equals(IdentificationFriendOrFoePdu.NAME); }
+
+    /** Whether this instance is an InformationOperationsActionPdu
+    * @return whether this type of Pdu */
+  public boolean isInformationOperationsActionPdu() { return getClass().getName().equals(InformationOperationsActionPdu.NAME); }
+
+    /** Whether this instance is an InformationOperationsReportPdu
+    * @return whether this type of Pdu */
+  public boolean isInformationOperationsReportPdu() { return getClass().getName().equals(InformationOperationsReportPdu.NAME); }
+
+    /** Whether this instance is an IntercomControlPdu
+    * @return whether this type of Pdu */
+  public boolean isIntercomControlPdu() { return getClass().getName().equals(IntercomControlPdu.NAME); }
+
+    /** Whether this instance is an IntercomSignalPdu
+    * @return whether this type of Pdu */
+  public boolean isIntercomSignalPdu() { return getClass().getName().equals(IntercomSignalPdu.NAME); }
+
+    /** Whether this instance is an IsGroupOfPdu
+    * @return whether this type of Pdu */
+  public boolean isIsGroupOfPdu() { return getClass().getName().equals(IsGroupOfPdu.NAME); }
+
+    /** Whether this instance is an IsPartOfPdu
+    * @return whether this type of Pdu */
+  public boolean isIsPartOfPdu() { return getClass().getName().equals(IsPartOfPdu.NAME); }
+
+    /** Whether this instance is an LEDetonationPdu
+    * @return whether this type of Pdu */
+  public boolean isLEDetonationPdu() { return getClass().getName().equals(LEDetonationPdu.NAME); }
+
+    /** Whether this instance is an LEFirePdu
+    * @return whether this type of Pdu */
+  public boolean isLEFirePdu() { return getClass().getName().equals(LEFirePdu.NAME); }
+
+    /** Whether this instance is an LinearObjectStatePdu
+    * @return whether this type of Pdu */
+  public boolean isLinearObjectStatePdu() { return getClass().getName().equals(LinearObjectStatePdu.NAME); }
+
+    /** Whether this instance is an LiveEntityDetonationPdu
+    * @return whether this type of Pdu */
+  public boolean isLiveEntityDetonationPdu() { return getClass().getName().equals(LiveEntityDetonationPdu.NAME); }
+
+    /** Whether this instance is an LiveEntityFirePdu
+    * @return whether this type of Pdu */
+  public boolean isLiveEntityFirePdu() { return getClass().getName().equals(LiveEntityFirePdu.NAME); }
+
+    /** Whether this instance is an MinefieldDataPdu
+    * @return whether this type of Pdu */
+  public boolean isMinefieldDataPdu() { return getClass().getName().equals(MinefieldDataPdu.NAME); }
+
+    /** Whether this instance is an MinefieldQueryPdu
+    * @return whether this type of Pdu */
+  public boolean isMinefieldQueryPdu() { return getClass().getName().equals(MinefieldQueryPdu.NAME); }
+
+    /** Whether this instance is an MinefieldResponseNACKPdu
+    * @return whether this type of Pdu */
+  public boolean isMinefieldResponseNACKPdu() { return getClass().getName().equals(MinefieldResponseNACKPdu.NAME); }
+
+    /** Whether this instance is an MinefieldStatePdu
+    * @return whether this type of Pdu */
+  public boolean isMinefieldStatePdu() { return getClass().getName().equals(MinefieldStatePdu.NAME); }
+
+    /** Whether this instance is an PointObjectStatePdu
+    * @return whether this type of Pdu */
+  public boolean isPointObjectStatePdu() { return getClass().getName().equals(PointObjectStatePdu.NAME); }
+
+    /** Whether this instance is an ReceiverPdu
+    * @return whether this type of Pdu */
+  public boolean isReceiverPdu() { return getClass().getName().equals(ReceiverPdu.NAME); }
+
+    /** Whether this instance is an RecordQueryRPdu
+    * @return whether this type of Pdu */
+  public boolean isRecordQueryRPdu() { return getClass().getName().equals(RecordQueryRPdu.NAME) ||
+                                              getClass().getName().equals(RecordQueryReliablePdu.NAME); }
+
+    /** Whether this instance is an RecordRPdu
+    * @return whether this type of Pdu */
+  public boolean isRecordRPdu() { return getClass().getName().equals(RecordRPdu.NAME) ||
+                                         getClass().getName().equals(RecordReliablePdu.NAME); }
+
+    /** Whether this instance is an RemoveEntityPdu
+    * @return whether this type of Pdu */
+  public boolean isRemoveEntityPdu() { return getClass().getName().equals(RemoveEntityPdu.NAME); }
+
+    /** Whether this instance is an RemoveEntityRPdu
+    * @return whether this type of Pdu */
+  public boolean isRemoveEntityRPdu() { return getClass().getName().equals(RemoveEntityRPdu.NAME) ||
+                                               getClass().getName().equals(RemoveEntityReliablePdu.NAME); }
+
+    /** Whether this instance is an RepairCompletePdu
+    * @return whether this type of Pdu */
+  public boolean isRepairCompletePdu() { return getClass().getName().equals(RepairCompletePdu.NAME); }
+
+    /** Whether this instance is an RepairResponsePdu
+    * @return whether this type of Pdu */
+  public boolean isRepairResponsePdu() { return getClass().getName().equals(RepairResponsePdu.NAME); }
+
+    /** Whether this instance is an ResupplyCancelPdu
+    * @return whether this type of Pdu */
+  public boolean isResupplyCancelPdu() { return getClass().getName().equals(ResupplyCancelPdu.NAME); }
+
+    /** Whether this instance is an ResupplyOfferPdu
+    * @return whether this type of Pdu */
+  public boolean isResupplyOfferPdu() { return getClass().getName().equals(ResupplyOfferPdu.NAME); }
+
+    /** Whether this instance is an ResupplyReceivedPdu
+    * @return whether this type of Pdu */
+  public boolean isResupplyReceivedPdu() { return getClass().getName().equals(ResupplyReceivedPdu.NAME); }
+
+    /** Whether this instance is an SEESPdu
+    * @return whether this type of Pdu */
+  public boolean isSEESPdu() { return getClass().getName().equals(SEESPdu.NAME) ||
+                                      getClass().getName().equals(ServiceRequestPdu.NAME); }
+
+    /** Whether this instance is an SetDataPdu
+    * @return whether this type of Pdu */
+  public boolean isSetDataPdu() { return getClass().getName().equals(SetDataPdu.NAME); }
+
+    /** Whether this instance is an SetDataRPdu
+    * @return whether this type of Pdu */
+  public boolean isSetDataRPdu() { return getClass().getName().equals(SetDataRPdu.NAME) ||
+                                          getClass().getName().equals(SetDataReliablePdu.NAME); }
+
+    /** Whether this instance is an SetRecordRPdu
+    * @return whether this type of Pdu */
+  public boolean isSetRecordRPdu() { return getClass().getName().equals(SetRecordRPdu.NAME) ||
+                                            getClass().getName().equals(SetRecordReliablePdu.NAME); }
+
+    /** Whether this instance is an SignalPdu
+    * @return whether this type of Pdu */
+  public boolean isSignalPdu() { return getClass().getName().equals(SignalPdu.NAME); }
+
+    /** Whether this instance is an StartResumePdu
+    * @return whether this type of Pdu */
+  public boolean isStartResumePdu() { return getClass().getName().equals(StartResumePdu.NAME); }
+
+    /** Whether this instance is an StartResumeRPdu
+    * @return whether this type of Pdu */
+  public boolean isStartResumeRPdu() { return getClass().getName().equals(StartResumeRPdu.NAME) ||
+                                              getClass().getName().equals(StartResumeReliablePdu.NAME); }
+
+    /** Whether this instance is an StopFreezePdu
+    * @return whether this type of Pdu */
+  public boolean isStopFreezePdu() { return getClass().getName().equals(StopFreezePdu.NAME); }
+
+    /** Whether this instance is an StopFreezeRPdu
+    * @return whether this type of Pdu */
+  public boolean isStopFreezeRPdu() { return getClass().getName().equals(StopFreezeRPdu.NAME) ||
+                                             getClass().getName().equals(StopFreezeReliablePdu.NAME); }
+
+    /** Whether this instance is an SupplementalEmissionEntityStatePdu
+    * @return whether this type of Pdu */
+  public boolean isSupplementalEmissionEntityStatePdu() { return getClass().getName().equals(SupplementalEmissionEntityStatePdu.NAME); }
+
+    /** Whether this instance is an TSPIPdu
+    * @return whether this type of Pdu */
+  public boolean isTSPIPdu() { return getClass().getName().equals(TSPIPdu.NAME) ||
+                                      getClass().getName().equals(TimeSpacePositionInformationPdu.NAME); }
+
+    /** Whether this instance is an TransferOwnershipPdu
+    * @return whether this type of Pdu */
+  public boolean isTransferOwnershipPdu() { return getClass().getName().equals(TransferOwnershipPdu.NAME); }
+
+  /** Whether this instance is an TransmitterPdu
+    * @return whether this type of Pdu */
+  public boolean isTransmitterPdu() { return getClass().getName().equals(TransmitterPdu.NAME); }
+
+  /** Whether this instance is an UnderwaterAcousticPdu
+    * @return whether this type of Pdu */
+  public boolean isUnderwaterAcousticPdu() { return getClass().getName().equals(UnderwaterAcousticPdu.NAME); }
+
    /** The version of the protocol. 5=DIS-1995, 6=DIS-1998, 7=DIS-2012 uid 3 */
    protected DISProtocolVersion protocolVersion = DISProtocolVersion.IEEE_12781_2012;
 
@@ -350,17 +718,15 @@ public synchronized java.nio.ByteBuffer marshal() throws Exception
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Pdu rhs = (Pdu)obj;
 
-     if( ! (protocolVersion == rhs.protocolVersion)) ivarsEqual = false;
-     if( ! (exerciseID == rhs.exerciseID)) ivarsEqual = false;
-     if( ! (pduType == rhs.pduType)) ivarsEqual = false;
-     if( ! (protocolFamily == rhs.protocolFamily)) ivarsEqual = false;
-     if( ! (timestamp == rhs.timestamp)) ivarsEqual = false;
-     if( ! (length == rhs.length)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (protocolVersion == rhs.protocolVersion)) return false;
+     if( ! (exerciseID == rhs.exerciseID)) return false;
+     if( ! (pduType == rhs.pduType)) return false;
+     if( ! (protocolFamily == rhs.protocolFamily)) return false;
+     if( ! (timestamp == rhs.timestamp)) return false;
+     if( ! (length == rhs.length)) return false;
+    return true;
  }
 
  @Override
@@ -377,6 +743,17 @@ public synchronized java.nio.ByteBuffer marshal() throws Exception
     sb.append(" length:").append(length); // writeOneToString
 
    return sb.toString();
+ }
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.protocolVersion,
+	                     this.exerciseID,
+	                     this.pduType,
+	                     this.protocolFamily,
+	                     this.timestamp,
+	                     this.length);
  }
 
 // autogenerated by JavaGenerator.writePduUtilityMethods()
@@ -430,4 +807,4 @@ public double getTimestampSeconds()
   }
 
 
-} // end of class
+} // end of Pdu

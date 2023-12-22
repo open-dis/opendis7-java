@@ -188,13 +188,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Relationship rhs = (Relationship)obj;
 
-     if( ! (nature == rhs.nature)) ivarsEqual = false;
-     if( ! (position == rhs.position)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (nature == rhs.nature)) return false;
+     if( ! (position == rhs.position)) return false;
+    return true;
  }
 
  @Override
@@ -208,4 +206,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.nature,
+	                     this.position);
+ }
+} // end of Relationship

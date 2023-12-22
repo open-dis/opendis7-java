@@ -202,13 +202,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final GridAxisDescriptorFixed rhs = (GridAxisDescriptorFixed)obj;
 
-     if( ! (numberOfPointsOnXiAxis == rhs.numberOfPointsOnXiAxis)) ivarsEqual = false;
-     if( ! (initialIndex == rhs.initialIndex)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (numberOfPointsOnXiAxis == rhs.numberOfPointsOnXiAxis)) return false;
+     if( ! (initialIndex == rhs.initialIndex)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -222,4 +220,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfPointsOnXiAxis,
+	                     this.initialIndex);
+ }
+} // end of GridAxisDescriptorFixed

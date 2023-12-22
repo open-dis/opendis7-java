@@ -544,25 +544,20 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ArealObjectStatePdu rhs = (ArealObjectStatePdu)obj;
 
-     if( ! (objectID.equals( rhs.objectID) )) ivarsEqual = false;
-     if( ! (referencedObjectID.equals( rhs.referencedObjectID) )) ivarsEqual = false;
-     if( ! (updateNumber == rhs.updateNumber)) ivarsEqual = false;
-     if( ! (forceID == rhs.forceID)) ivarsEqual = false;
-     if( ! (modifications.equals( rhs.modifications) )) ivarsEqual = false;
-     if( ! (objectType.equals( rhs.objectType) )) ivarsEqual = false;
-     if( ! (specificObjectAppearance == rhs.specificObjectAppearance)) ivarsEqual = false;
-     if( ! (generalObjectAppearance == rhs.generalObjectAppearance)) ivarsEqual = false;
-     if( ! (requesterID.equals( rhs.requesterID) )) ivarsEqual = false;
-     if( ! (receivingID.equals( rhs.receivingID) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < objectLocation.size(); idx++)
-        if( ! ( objectLocation.get(idx).equals(rhs.objectLocation.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(objectID, rhs.objectID) ) return false;
+     if( ! Objects.equals(referencedObjectID, rhs.referencedObjectID) ) return false;
+     if( ! (updateNumber == rhs.updateNumber)) return false;
+     if( ! (forceID == rhs.forceID)) return false;
+     if( ! Objects.equals(modifications, rhs.modifications) ) return false;
+     if( ! Objects.equals(objectType, rhs.objectType) ) return false;
+     if( ! (specificObjectAppearance == rhs.specificObjectAppearance)) return false;
+     if( ! (generalObjectAppearance == rhs.generalObjectAppearance)) return false;
+     if( ! Objects.equals(requesterID, rhs.requesterID) ) return false;
+     if( ! Objects.equals(receivingID, rhs.receivingID) ) return false;
+     if( ! Objects.equals(objectLocation, rhs.objectLocation) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -589,4 +584,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.objectID,
+	                     this.referencedObjectID,
+	                     this.updateNumber,
+	                     this.forceID,
+	                     this.modifications,
+	                     this.objectType,
+	                     this.specificObjectAppearance,
+	                     this.generalObjectAppearance,
+	                     this.numberOfPoints,
+	                     this.requesterID,
+	                     this.receivingID,
+	                     this.objectLocation);
+ }
+} // end of ArealObjectStatePdu

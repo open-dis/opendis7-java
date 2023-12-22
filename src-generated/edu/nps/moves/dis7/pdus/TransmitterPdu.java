@@ -27,9 +27,6 @@ public class TransmitterPdu extends RadioCommunicationsFamilyPdu implements Seri
    /** header is an undescribed parameter... */
    protected RadioCommsHeader  header = new RadioCommsHeader(); 
 
-   /** particular radio within an entity */
-   protected short radioNumber;
-
    /** Type of radio */
    protected RadioType  radioEntityType = new RadioType(); 
 
@@ -169,7 +166,6 @@ public synchronized int getMarshalledSize()
    marshalSize = super.getMarshalledSize();
    if (header != null)
        marshalSize += header.getMarshalledSize();
-   marshalSize += 2;  // radioNumber
    if (radioEntityType != null)
        marshalSize += radioEntityType.getMarshalledSize();
    if (transmitState != null)
@@ -227,28 +223,6 @@ public RadioCommsHeader getHeader()
     return header;
 }
 
-
-/** Setter for {@link TransmitterPdu#radioNumber}
-  * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
-public synchronized TransmitterPdu setRadioNumber(short pRadioNumber)
-{
-    radioNumber = pRadioNumber;
-    return this;
-}
-/** Utility setter for {@link TransmitterPdu#radioNumber}
-  * @param pRadioNumber new value of interest
-  * @return same object to permit progressive setters */
-public synchronized TransmitterPdu setRadioNumber(int pRadioNumber){
-    radioNumber = (short) pRadioNumber;
-    return this;
-}
-/** Getter for {@link TransmitterPdu#radioNumber}
-  * @return value of interest */
-public short getRadioNumber()
-{
-    return radioNumber; 
-}
 
 /** Setter for {@link TransmitterPdu#radioEntityType}
   * @param pRadioEntityType new value of interest
@@ -557,7 +531,6 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
     try 
     {
        header.marshal(dos);
-       dos.writeShort(radioNumber);
        radioEntityType.marshal(dos);
        transmitState.marshal(dos);
        inputSource.marshal(dos);
@@ -613,8 +586,6 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
     try 
     {
         uPosition += header.unmarshal(dis);
-        radioNumber = (short)dis.readUnsignedShort();
-        uPosition += 2;
         uPosition += radioEntityType.unmarshal(dis);
         transmitState = TransmitterTransmitState.unmarshalEnum(dis);
         uPosition += transmitState.getMarshalledSize();
@@ -680,7 +651,6 @@ public synchronized void marshal(java.nio.ByteBuffer byteBuffer) throws Exceptio
 {
    super.marshal(byteBuffer);
    header.marshal(byteBuffer);
-   byteBuffer.putShort( (short)radioNumber);
    radioEntityType.marshal(byteBuffer);
    transmitState.marshal(byteBuffer);
    inputSource.marshal(byteBuffer);
@@ -732,8 +702,6 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     {
         // attribute header marked as not serialized
         header.unmarshal(byteBuffer);
-        // attribute radioNumber marked as not serialized
-        radioNumber = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute radioEntityType marked as not serialized
         radioEntityType.unmarshal(byteBuffer);
         // attribute transmitState marked as not serialized
@@ -813,36 +781,27 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final TransmitterPdu rhs = (TransmitterPdu)obj;
 
-     if( ! (header.equals( rhs.header) )) ivarsEqual = false;
-     if( ! (radioNumber == rhs.radioNumber)) ivarsEqual = false;
-     if( ! (radioEntityType.equals( rhs.radioEntityType) )) ivarsEqual = false;
-     if( ! (transmitState == rhs.transmitState)) ivarsEqual = false;
-     if( ! (inputSource == rhs.inputSource)) ivarsEqual = false;
-     if( ! (variableTransmitterParameterCount == rhs.variableTransmitterParameterCount)) ivarsEqual = false;
-     if( ! (antennaLocation.equals( rhs.antennaLocation) )) ivarsEqual = false;
-     if( ! (relativeAntennaLocation.equals( rhs.relativeAntennaLocation) )) ivarsEqual = false;
-     if( ! (antennaPatternType == rhs.antennaPatternType)) ivarsEqual = false;
-     if( ! (frequency == rhs.frequency)) ivarsEqual = false;
-     if( ! (transmitFrequencyBandwidth == rhs.transmitFrequencyBandwidth)) ivarsEqual = false;
-     if( ! (power == rhs.power)) ivarsEqual = false;
-     if( ! (modulationType.equals( rhs.modulationType) )) ivarsEqual = false;
-     if( ! (cryptoSystem == rhs.cryptoSystem)) ivarsEqual = false;
-     if( ! (cryptoKeyId == rhs.cryptoKeyId)) ivarsEqual = false;
-     if( ! (padding1 == rhs.padding1)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-
-     for (int idx = 0; idx < modulationParametersList.size(); idx++)
-        if( ! ( modulationParametersList.get(idx).equals(rhs.modulationParametersList.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < antennaPatternList.size(); idx++)
-        if( ! ( antennaPatternList.get(idx).equals(rhs.antennaPatternList.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(header, rhs.header) ) return false;
+     if( ! Objects.equals(radioEntityType, rhs.radioEntityType) ) return false;
+     if( ! (transmitState == rhs.transmitState)) return false;
+     if( ! (inputSource == rhs.inputSource)) return false;
+     if( ! (variableTransmitterParameterCount == rhs.variableTransmitterParameterCount)) return false;
+     if( ! Objects.equals(antennaLocation, rhs.antennaLocation) ) return false;
+     if( ! Objects.equals(relativeAntennaLocation, rhs.relativeAntennaLocation) ) return false;
+     if( ! (antennaPatternType == rhs.antennaPatternType)) return false;
+     if( ! (frequency == rhs.frequency)) return false;
+     if( ! (transmitFrequencyBandwidth == rhs.transmitFrequencyBandwidth)) return false;
+     if( ! (power == rhs.power)) return false;
+     if( ! Objects.equals(modulationType, rhs.modulationType) ) return false;
+     if( ! (cryptoSystem == rhs.cryptoSystem)) return false;
+     if( ! (cryptoKeyId == rhs.cryptoKeyId)) return false;
+     if( ! (padding1 == rhs.padding1)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! Objects.equals(modulationParametersList, rhs.modulationParametersList) ) return false;
+     if( ! Objects.equals(antennaPatternList, rhs.antennaPatternList) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -852,7 +811,6 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" header:").append(header); // writeOneToString
-    sb.append(" radioNumber:").append(radioNumber); // writeOneToString
     sb.append(" radioEntityType:").append(radioEntityType); // writeOneToString
     sb.append(" transmitState:").append(transmitState); // writeOneToString
     sb.append(" inputSource:").append(inputSource); // writeOneToString
@@ -881,4 +839,29 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.header,
+	                     this.radioEntityType,
+	                     this.transmitState,
+	                     this.inputSource,
+	                     this.variableTransmitterParameterCount,
+	                     this.antennaLocation,
+	                     this.relativeAntennaLocation,
+	                     this.antennaPatternType,
+	                     this.antennaPatternCount,
+	                     this.frequency,
+	                     this.transmitFrequencyBandwidth,
+	                     this.power,
+	                     this.modulationType,
+	                     this.cryptoSystem,
+	                     this.cryptoKeyId,
+	                     this.modulationParameterCount,
+	                     this.padding1,
+	                     this.padding2,
+	                     this.modulationParametersList,
+	                     this.antennaPatternList);
+ }
+} // end of TransmitterPdu

@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Light/patrol craft = <code>7</code>; </li>
- *     <li> SubCategory: RubberBoats  = <code>2</code>; </li>
- *     <li> Specific: _9mNavalSpecialWarfareNSWRIB  = <code>4</code>; </li>
- *     <li> Entity type uid: 34118; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Category: Inflatable Boat = <code>65</code>; </li>
+ *     <li> SubCategory: _9mNavalSpecialWarfareNSWRIB  = <code>4</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 35916; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@681e913c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@113eed88. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Lightpatrolcraft
+ * @see InflatableBoat
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class _9mNavalSpecialWarfareNSWRIB extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
-        setCategory((byte)7); // uid 11573, Light/patrol craft
-        setSubCategory((byte)2); // uid 23434, Rubber Boats
-        setSpecific((byte)4); // uid 34118, 9m Naval Special Warfare (NSW) RIB
+        setCategory((byte)65); // uid 35912, Inflatable Boat
+        setSubCategory((byte)4); // uid 35916, 9m Naval Special Warfare (NSW) RIB
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

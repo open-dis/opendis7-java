@@ -194,12 +194,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DataFilterRecord rhs = (DataFilterRecord)obj;
 
-     if( ! (bitFlags == rhs.bitFlags)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (bitFlags == rhs.bitFlags)) return false;
+    return true;
  }
 
  @Override
@@ -223,4 +221,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.bitFlags,
+	                     this.GROUND_BURIAL_DEPTH_OFFSET_BIT,
+	                     this.WATER_BURIAL_DEPTH_OFFSET_BIT,
+	                     this.SNOW_BURIAL_DEPTH_OFFSET_BIT,
+	                     this.MINE_ORIENTATION_BIT,
+	                     this.THERMAL_CONSTRAST_BIT,
+	                     this.REFLECTANCE_BIT,
+	                     this.MINE_EMPLACEMENT_TIME_BIT,
+	                     this.TRIP_DETONATION_WIRE_BIT,
+	                     this.FUSING_BIT,
+	                     this.SCALAR_DETECTION_COEFFICIENT_BIT,
+	                     this.PAINT_SCHEME_BIT);
+ }
+} // end of DataFilterRecord

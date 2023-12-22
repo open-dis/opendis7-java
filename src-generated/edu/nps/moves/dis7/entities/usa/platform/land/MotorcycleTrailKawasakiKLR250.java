@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Motorcycle  = <code>25</code>; </li>
  *     <li> Specific: MotorcycleTrailKawasakiKLR250  = <code>2</code>; </li>
  *     <li> Entity type uid: 22870; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@298b64f7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@373afd6c. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class MotorcycleTrailKawasakiKLR250 extends EntityType
 
         setCategory((byte)6); // uid 10348, Small Wheeled Utility Vehicle
         setSubCategory((byte)25); // uid 10406, Motorcycle
-        setSpecific((byte)2); // uid 22870, Motorcycle Trail Kawasaki KLR 250
+        setSpecific((byte)2); // uid 22870, Motorcycle, Trail Kawasaki KLR 250
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

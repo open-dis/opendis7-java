@@ -538,26 +538,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final DirectedEnergyPrecisionAimpoint rhs = (DirectedEnergyPrecisionAimpoint)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (targetSpotLocation.equals( rhs.targetSpotLocation) )) ivarsEqual = false;
-     if( ! (targetSpotEntityLocation.equals( rhs.targetSpotEntityLocation) )) ivarsEqual = false;
-     if( ! (targetSpotVelocity.equals( rhs.targetSpotVelocity) )) ivarsEqual = false;
-     if( ! (targetSpotAcceleration.equals( rhs.targetSpotAcceleration) )) ivarsEqual = false;
-     if( ! (targetEntityID.equals( rhs.targetEntityID) )) ivarsEqual = false;
-     if( ! (targetComponentID == rhs.targetComponentID)) ivarsEqual = false;
-     if( ! (beamSpotType == rhs.beamSpotType)) ivarsEqual = false;
-     if( ! (beamSpotCrossSectionSemiMajorAxis == rhs.beamSpotCrossSectionSemiMajorAxis)) ivarsEqual = false;
-     if( ! (beamSpotCrossSectionSemiMinorAxis == rhs.beamSpotCrossSectionSemiMinorAxis)) ivarsEqual = false;
-     if( ! (beamSpotCrossSectionOrientationAngle == rhs.beamSpotCrossSectionOrientationAngle)) ivarsEqual = false;
-     if( ! (peakIrradiance == rhs.peakIrradiance)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(targetSpotLocation, rhs.targetSpotLocation) ) return false;
+     if( ! Objects.equals(targetSpotEntityLocation, rhs.targetSpotEntityLocation) ) return false;
+     if( ! Objects.equals(targetSpotVelocity, rhs.targetSpotVelocity) ) return false;
+     if( ! Objects.equals(targetSpotAcceleration, rhs.targetSpotAcceleration) ) return false;
+     if( ! Objects.equals(targetEntityID, rhs.targetEntityID) ) return false;
+     if( ! (targetComponentID == rhs.targetComponentID)) return false;
+     if( ! (beamSpotType == rhs.beamSpotType)) return false;
+     if( ! (beamSpotCrossSectionSemiMajorAxis == rhs.beamSpotCrossSectionSemiMajorAxis)) return false;
+     if( ! (beamSpotCrossSectionSemiMinorAxis == rhs.beamSpotCrossSectionSemiMinorAxis)) return false;
+     if( ! (beamSpotCrossSectionOrientationAngle == rhs.beamSpotCrossSectionOrientationAngle)) return false;
+     if( ! (peakIrradiance == rhs.peakIrradiance)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+    return true;
  }
 
  @Override
@@ -584,4 +582,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.padding,
+	                     this.targetSpotLocation,
+	                     this.targetSpotEntityLocation,
+	                     this.targetSpotVelocity,
+	                     this.targetSpotAcceleration,
+	                     this.targetEntityID,
+	                     this.targetComponentID,
+	                     this.beamSpotType,
+	                     this.beamSpotCrossSectionSemiMajorAxis,
+	                     this.beamSpotCrossSectionSemiMinorAxis,
+	                     this.beamSpotCrossSectionOrientationAngle,
+	                     this.peakIrradiance,
+	                     this.padding2);
+ }
+} // end of DirectedEnergyPrecisionAimpoint

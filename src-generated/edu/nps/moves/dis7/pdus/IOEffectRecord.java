@@ -396,20 +396,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final IOEffectRecord rhs = (IOEffectRecord)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (ioStatus == rhs.ioStatus)) ivarsEqual = false;
-     if( ! (ioLinkType == rhs.ioLinkType)) ivarsEqual = false;
-     if( ! (ioEffect == rhs.ioEffect)) ivarsEqual = false;
-     if( ! (ioEffectDutyCycle == rhs.ioEffectDutyCycle)) ivarsEqual = false;
-     if( ! (ioEffectDuration == rhs.ioEffectDuration)) ivarsEqual = false;
-     if( ! (ioProcess == rhs.ioProcess)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (ioStatus == rhs.ioStatus)) return false;
+     if( ! (ioLinkType == rhs.ioLinkType)) return false;
+     if( ! (ioEffect == rhs.ioEffect)) return false;
+     if( ! (ioEffectDutyCycle == rhs.ioEffectDutyCycle)) return false;
+     if( ! (ioEffectDuration == rhs.ioEffectDuration)) return false;
+     if( ! (ioProcess == rhs.ioProcess)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -430,4 +428,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.ioStatus,
+	                     this.ioLinkType,
+	                     this.ioEffect,
+	                     this.ioEffectDutyCycle,
+	                     this.ioEffectDuration,
+	                     this.ioProcess,
+	                     this.padding);
+ }
+} // end of IOEffectRecord

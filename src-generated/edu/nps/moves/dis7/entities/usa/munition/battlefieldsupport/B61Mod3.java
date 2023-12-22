@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Ballistic = <code>2</code>; </li>
- *     <li> SubCategory: B61nuclearbomb  = <code>54</code>; </li>
+ *     <li> SubCategory: B61nuclearbombgravity  = <code>54</code>; </li>
  *     <li> Specific: B61Mod3  = <code>4</code>; </li>
  *     <li> Entity type uid: 20203; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4045fd1f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4990b335. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class B61Mod3 extends EntityType
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
         setCategory((byte)2); // uid 19971, Ballistic
-        setSubCategory((byte)54); // uid 20199, B61 nuclear bomb
+        setSubCategory((byte)54); // uid 20199, B61 nuclear bomb gravity
         setSpecific((byte)4); // uid 20203, B61 Mod 3
     }
     /** Create a new instance of this final (unmodifiable) class

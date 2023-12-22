@@ -277,16 +277,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Expendable rhs = (Expendable)obj;
 
-     if( ! (expendable.equals( rhs.expendable) )) ivarsEqual = false;
-     if( ! (station == rhs.station)) ivarsEqual = false;
-     if( ! (quantity == rhs.quantity)) ivarsEqual = false;
-     if( ! (expendableStatus == rhs.expendableStatus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(expendable, rhs.expendable) ) return false;
+     if( ! (station == rhs.station)) return false;
+     if( ! (quantity == rhs.quantity)) return false;
+     if( ! (expendableStatus == rhs.expendableStatus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -303,4 +301,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.expendable,
+	                     this.station,
+	                     this.quantity,
+	                     this.expendableStatus,
+	                     this.padding);
+ }
+} // end of Expendable

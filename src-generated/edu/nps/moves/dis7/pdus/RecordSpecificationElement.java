@@ -344,28 +344,26 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final RecordSpecificationElement rhs = (RecordSpecificationElement)obj;
 
-     if( ! (recordID == rhs.recordID)) ivarsEqual = false;
-     if( ! (recordSetSerialNumber == rhs.recordSetSerialNumber)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (recordCount == rhs.recordCount)) ivarsEqual = false;
+     if( ! (recordID == rhs.recordID)) return false;
+     if( ! (recordSetSerialNumber == rhs.recordSetSerialNumber)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (recordCount == rhs.recordCount)) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(recordValues[idx] == rhs.recordValues[idx])) ivarsEqual = false;
+          if(!(recordValues[idx] == rhs.recordValues[idx])) return false;
      }
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(padTo64[idx] == rhs.padTo64[idx])) ivarsEqual = false;
+          if(!(padTo64[idx] == rhs.padTo64[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override
@@ -386,4 +384,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordID,
+	                     this.recordSetSerialNumber,
+	                     this.padding,
+	                     this.recordLength,
+	                     this.recordCount,
+	                     this.recordValues,
+	                     this.padTo64);
+ }
+} // end of RecordSpecificationElement

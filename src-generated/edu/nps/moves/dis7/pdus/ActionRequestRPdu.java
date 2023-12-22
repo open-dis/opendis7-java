@@ -478,24 +478,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ActionRequestRPdu rhs = (ActionRequestRPdu)obj;
 
-     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) ivarsEqual = false;
-     if( ! (pad1 == rhs.pad1)) ivarsEqual = false;
-     if( ! (pad2 == rhs.pad2)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (actionID == rhs.actionID)) ivarsEqual = false;
-
-     for (int idx = 0; idx < fixedDatumRecords.size(); idx++)
-        if( ! ( fixedDatumRecords.get(idx).equals(rhs.fixedDatumRecords.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < variableDatumRecords.size(); idx++)
-        if( ! ( variableDatumRecords.get(idx).equals(rhs.variableDatumRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! (requiredReliabilityService == rhs.requiredReliabilityService)) return false;
+     if( ! (pad1 == rhs.pad1)) return false;
+     if( ! (pad2 == rhs.pad2)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (actionID == rhs.actionID)) return false;
+     if( ! Objects.equals(fixedDatumRecords, rhs.fixedDatumRecords) ) return false;
+     if( ! Objects.equals(variableDatumRecords, rhs.variableDatumRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -522,4 +514,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.requiredReliabilityService,
+	                     this.pad1,
+	                     this.pad2,
+	                     this.requestID,
+	                     this.actionID,
+	                     this.numberOfFixedDatumRecords,
+	                     this.numberOfVariableDatumRecords,
+	                     this.fixedDatumRecords,
+	                     this.variableDatumRecords);
+ }
+} // end of ActionRequestRPdu

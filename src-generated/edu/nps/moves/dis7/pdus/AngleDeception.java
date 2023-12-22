@@ -572,27 +572,25 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AngleDeception rhs = (AngleDeception)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (emitterNumber == rhs.emitterNumber)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-     if( ! (stateIndicator == rhs.stateIndicator)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (azimuthOffset == rhs.azimuthOffset)) ivarsEqual = false;
-     if( ! (azimuthWidth == rhs.azimuthWidth)) ivarsEqual = false;
-     if( ! (azimuthPullRate == rhs.azimuthPullRate)) ivarsEqual = false;
-     if( ! (azimuthPullAcceleration == rhs.azimuthPullAcceleration)) ivarsEqual = false;
-     if( ! (elevationOffset == rhs.elevationOffset)) ivarsEqual = false;
-     if( ! (elevationWidth == rhs.elevationWidth)) ivarsEqual = false;
-     if( ! (elevationPullRate == rhs.elevationPullRate)) ivarsEqual = false;
-     if( ! (elevationPullAcceleration == rhs.elevationPullAcceleration)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (emitterNumber == rhs.emitterNumber)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+     if( ! (stateIndicator == rhs.stateIndicator)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (azimuthOffset == rhs.azimuthOffset)) return false;
+     if( ! (azimuthWidth == rhs.azimuthWidth)) return false;
+     if( ! (azimuthPullRate == rhs.azimuthPullRate)) return false;
+     if( ! (azimuthPullAcceleration == rhs.azimuthPullAcceleration)) return false;
+     if( ! (elevationOffset == rhs.elevationOffset)) return false;
+     if( ! (elevationWidth == rhs.elevationWidth)) return false;
+     if( ! (elevationPullRate == rhs.elevationPullRate)) return false;
+     if( ! (elevationPullAcceleration == rhs.elevationPullAcceleration)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+    return true;
  }
 
  @Override
@@ -620,4 +618,25 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.padding,
+	                     this.emitterNumber,
+	                     this.beamNumber,
+	                     this.stateIndicator,
+	                     this.padding2,
+	                     this.azimuthOffset,
+	                     this.azimuthWidth,
+	                     this.azimuthPullRate,
+	                     this.azimuthPullAcceleration,
+	                     this.elevationOffset,
+	                     this.elevationWidth,
+	                     this.elevationPullRate,
+	                     this.elevationPullAcceleration,
+	                     this.padding3);
+ }
+} // end of AngleDeception

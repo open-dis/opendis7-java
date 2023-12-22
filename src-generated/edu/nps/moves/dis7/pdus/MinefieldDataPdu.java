@@ -1155,98 +1155,78 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final MinefieldDataPdu rhs = (MinefieldDataPdu)obj;
 
-     if( ! (minefieldID.equals( rhs.minefieldID) )) ivarsEqual = false;
-     if( ! (requestingEntityID.equals( rhs.requestingEntityID) )) ivarsEqual = false;
-     if( ! (minefieldSequenceNumbeer == rhs.minefieldSequenceNumbeer)) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-     if( ! (pduSequenceNumber == rhs.pduSequenceNumber)) ivarsEqual = false;
-     if( ! (numberOfPdus == rhs.numberOfPdus)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (dataFilter.equals( rhs.dataFilter) )) ivarsEqual = false;
-     if( ! (mineType.equals( rhs.mineType) )) ivarsEqual = false;
-
-     for (int idx = 0; idx < sensorTypes.size(); idx++)
-        if( ! ( sensorTypes.get(idx).equals(rhs.sensorTypes.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < mineLocation.size(); idx++)
-        if( ! ( mineLocation.get(idx).equals(rhs.mineLocation.get(idx)))) ivarsEqual = false;
-
+     if( ! Objects.equals(minefieldID, rhs.minefieldID) ) return false;
+     if( ! Objects.equals(requestingEntityID, rhs.requestingEntityID) ) return false;
+     if( ! (minefieldSequenceNumbeer == rhs.minefieldSequenceNumbeer)) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+     if( ! (pduSequenceNumber == rhs.pduSequenceNumber)) return false;
+     if( ! (numberOfPdus == rhs.numberOfPdus)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(dataFilter, rhs.dataFilter) ) return false;
+     if( ! Objects.equals(mineType, rhs.mineType) ) return false;
+     if( ! Objects.equals(sensorTypes, rhs.sensorTypes) ) return false;
+     if( ! Objects.equals(mineLocation, rhs.mineLocation) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(groundBurialDepthOffset[idx] == rhs.groundBurialDepthOffset[idx])) ivarsEqual = false;
+          if(!(groundBurialDepthOffset[idx] == rhs.groundBurialDepthOffset[idx])) return false;
      }
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(waterBurialDepthOffset[idx] == rhs.waterBurialDepthOffset[idx])) ivarsEqual = false;
+          if(!(waterBurialDepthOffset[idx] == rhs.waterBurialDepthOffset[idx])) return false;
      }
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(snowBurialDepthOffset[idx] == rhs.snowBurialDepthOffset[idx])) ivarsEqual = false;
+          if(!(snowBurialDepthOffset[idx] == rhs.snowBurialDepthOffset[idx])) return false;
      }
 
-
-     for (int idx = 0; idx < mineOrientation.size(); idx++)
-        if( ! ( mineOrientation.get(idx).equals(rhs.mineOrientation.get(idx)))) ivarsEqual = false;
-
+     if( ! Objects.equals(mineOrientation, rhs.mineOrientation) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(thermalContrast[idx] == rhs.thermalContrast[idx])) ivarsEqual = false;
+          if(!(thermalContrast[idx] == rhs.thermalContrast[idx])) return false;
      }
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(reflectance[idx] == rhs.reflectance[idx])) ivarsEqual = false;
+          if(!(reflectance[idx] == rhs.reflectance[idx])) return false;
      }
 
-
-     for (int idx = 0; idx < mineEmplacementTime.size(); idx++)
-        if( ! ( mineEmplacementTime.get(idx).equals(rhs.mineEmplacementTime.get(idx)))) ivarsEqual = false;
-
+     if( ! Objects.equals(mineEmplacementTime, rhs.mineEmplacementTime) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(mineEntityNumber[idx] == rhs.mineEntityNumber[idx])) ivarsEqual = false;
+          if(!(mineEntityNumber[idx] == rhs.mineEntityNumber[idx])) return false;
      }
 
-
-     for (int idx = 0; idx < fusing.size(); idx++)
-        if( ! ( fusing.get(idx).equals(rhs.fusing.get(idx)))) ivarsEqual = false;
-
+     if( ! Objects.equals(fusing, rhs.fusing) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(scalarDetectionCoefficient[idx] == rhs.scalarDetectionCoefficient[idx])) ivarsEqual = false;
+          if(!(scalarDetectionCoefficient[idx] == rhs.scalarDetectionCoefficient[idx])) return false;
      }
 
-
-     for (int idx = 0; idx < paintScheme.size(); idx++)
-        if( ! ( paintScheme.get(idx).equals(rhs.paintScheme.get(idx)))) ivarsEqual = false;
-
+     if( ! Objects.equals(paintScheme, rhs.paintScheme) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(numberOfTripDetonationWires[idx] == rhs.numberOfTripDetonationWires[idx])) ivarsEqual = false;
+          if(!(numberOfTripDetonationWires[idx] == rhs.numberOfTripDetonationWires[idx])) return false;
      }
 
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(numberOfVertices[idx] == rhs.numberOfVertices[idx])) ivarsEqual = false;
+          if(!(numberOfVertices[idx] == rhs.numberOfVertices[idx])) return false;
      }
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -1318,4 +1298,38 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.minefieldID,
+	                     this.requestingEntityID,
+	                     this.minefieldSequenceNumbeer,
+	                     this.requestID,
+	                     this.pduSequenceNumber,
+	                     this.numberOfPdus,
+	                     this.numberOfMinesInThisPdu,
+	                     this.numberOfSensorTypes,
+	                     this.padding,
+	                     this.dataFilter,
+	                     this.mineType,
+	                     this.sensorTypes,
+	                     this.padTo32,
+	                     this.mineLocation,
+	                     this.groundBurialDepthOffset,
+	                     this.waterBurialDepthOffset,
+	                     this.snowBurialDepthOffset,
+	                     this.mineOrientation,
+	                     this.thermalContrast,
+	                     this.reflectance,
+	                     this.mineEmplacementTime,
+	                     this.mineEntityNumber,
+	                     this.fusing,
+	                     this.scalarDetectionCoefficient,
+	                     this.paintScheme,
+	                     this.padTo32_2,
+	                     this.numberOfTripDetonationWires,
+	                     this.padTo32_3,
+	                     this.numberOfVertices);
+ }
+} // end of MinefieldDataPdu

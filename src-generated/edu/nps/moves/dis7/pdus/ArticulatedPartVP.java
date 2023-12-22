@@ -301,17 +301,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ArticulatedPartVP rhs = (ArticulatedPartVP)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (changeIndicator == rhs.changeIndicator)) ivarsEqual = false;
-     if( ! (partAttachedTo == rhs.partAttachedTo)) ivarsEqual = false;
-     if( ! (parameterType == rhs.parameterType)) ivarsEqual = false;
-     if( ! (parameterValue == rhs.parameterValue)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (changeIndicator == rhs.changeIndicator)) return false;
+     if( ! (partAttachedTo == rhs.partAttachedTo)) return false;
+     if( ! (parameterType == rhs.parameterType)) return false;
+     if( ! (parameterValue == rhs.parameterValue)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -329,4 +327,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.changeIndicator,
+	                     this.partAttachedTo,
+	                     this.parameterType,
+	                     this.parameterValue,
+	                     this.padding);
+ }
+} // end of ArticulatedPartVP

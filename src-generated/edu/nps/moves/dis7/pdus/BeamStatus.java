@@ -162,12 +162,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final BeamStatus rhs = (BeamStatus)obj;
 
-     if( ! (beamState == rhs.beamState)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (beamState == rhs.beamState)) return false;
+    return true;
  }
 
  @Override
@@ -180,4 +178,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.beamState);
+ }
+} // end of BeamStatus

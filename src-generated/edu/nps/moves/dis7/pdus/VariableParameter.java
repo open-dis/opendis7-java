@@ -196,18 +196,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final VariableParameter rhs = (VariableParameter)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
+     if( ! (recordType == rhs.recordType)) return false;
 
      for (int idx = 0; idx < 15; idx++)
      {
-          if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) ivarsEqual = false;
+          if(!(recordSpecificFields[idx] == rhs.recordSpecificFields[idx])) return false;
      }
 
-    return ivarsEqual;
+    return true;
  }
 
  @Override
@@ -222,4 +220,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordSpecificFields);
+ }
+} // end of VariableParameter

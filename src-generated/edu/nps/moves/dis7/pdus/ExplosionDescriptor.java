@@ -245,15 +245,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ExplosionDescriptor rhs = (ExplosionDescriptor)obj;
 
-     if( ! (explodingObject.equals( rhs.explodingObject) )) ivarsEqual = false;
-     if( ! (explosiveMaterial == rhs.explosiveMaterial)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (explosiveForce == rhs.explosiveForce)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! Objects.equals(explodingObject, rhs.explodingObject) ) return false;
+     if( ! (explosiveMaterial == rhs.explosiveMaterial)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (explosiveForce == rhs.explosiveForce)) return false;
+    return true;
  }
 
  @Override
@@ -269,4 +267,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.explodingObject,
+	                     this.explosiveMaterial,
+	                     this.padding,
+	                     this.explosiveForce);
+ }
+} // end of ExplosionDescriptor

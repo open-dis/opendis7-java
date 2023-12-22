@@ -424,19 +424,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final AppearancePdu rhs = (AppearancePdu)obj;
 
-     if( ! (liveEntityId.equals( rhs.liveEntityId) )) ivarsEqual = false;
-     if( ! (appearanceFlags == rhs.appearanceFlags)) ivarsEqual = false;
-     if( ! (forceId == rhs.forceId)) ivarsEqual = false;
-     if( ! (entityType.equals( rhs.entityType) )) ivarsEqual = false;
-     if( ! (alternateEntityType.equals( rhs.alternateEntityType) )) ivarsEqual = false;
-     if( ! (entityMarking.equals( rhs.entityMarking) )) ivarsEqual = false;
-     if( ! (capabilities.equals( rhs.capabilities) )) ivarsEqual = false;
-     if( ! (appearanceFields.equals( rhs.appearanceFields) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(liveEntityId, rhs.liveEntityId) ) return false;
+     if( ! (appearanceFlags == rhs.appearanceFlags)) return false;
+     if( ! (forceId == rhs.forceId)) return false;
+     if( ! Objects.equals(entityType, rhs.entityType) ) return false;
+     if( ! Objects.equals(alternateEntityType, rhs.alternateEntityType) ) return false;
+     if( ! Objects.equals(entityMarking, rhs.entityMarking) ) return false;
+     if( ! Objects.equals(capabilities, rhs.capabilities) ) return false;
+     if( ! Objects.equals(appearanceFields, rhs.appearanceFields) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -456,4 +454,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.liveEntityId,
+	                     this.appearanceFlags,
+	                     this.forceId,
+	                     this.entityType,
+	                     this.alternateEntityType,
+	                     this.entityMarking,
+	                     this.capabilities,
+	                     this.appearanceFields);
+ }
+} // end of AppearancePdu

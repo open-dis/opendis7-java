@@ -424,19 +424,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final CollisionPdu rhs = (CollisionPdu)obj;
 
-     if( ! (issuingEntityID.equals( rhs.issuingEntityID) )) ivarsEqual = false;
-     if( ! (collidingEntityID.equals( rhs.collidingEntityID) )) ivarsEqual = false;
-     if( ! (eventID.equals( rhs.eventID) )) ivarsEqual = false;
-     if( ! (collisionType == rhs.collisionType)) ivarsEqual = false;
-     if( ! (pad == rhs.pad)) ivarsEqual = false;
-     if( ! (velocity.equals( rhs.velocity) )) ivarsEqual = false;
-     if( ! (mass == rhs.mass)) ivarsEqual = false;
-     if( ! (location.equals( rhs.location) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(issuingEntityID, rhs.issuingEntityID) ) return false;
+     if( ! Objects.equals(collidingEntityID, rhs.collidingEntityID) ) return false;
+     if( ! Objects.equals(eventID, rhs.eventID) ) return false;
+     if( ! (collisionType == rhs.collisionType)) return false;
+     if( ! (pad == rhs.pad)) return false;
+     if( ! Objects.equals(velocity, rhs.velocity) ) return false;
+     if( ! (mass == rhs.mass)) return false;
+     if( ! Objects.equals(location, rhs.location) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -456,4 +454,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.issuingEntityID,
+	                     this.collidingEntityID,
+	                     this.eventID,
+	                     this.collisionType,
+	                     this.pad,
+	                     this.velocity,
+	                     this.mass,
+	                     this.location);
+ }
+} // end of CollisionPdu

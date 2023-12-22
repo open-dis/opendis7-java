@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Frigate = <code>50</code>; </li>
- *     <li> SubCategory: KnoxClass  = <code>1</code>; </li>
- *     <li> Specific: FF1083Cook  = <code>32</code>; </li>
- *     <li> Entity type uid: 11939; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
+ *     <li> Category: Guided Missile Frigate = <code>6</code>; </li>
+ *     <li> SubCategory: KnoxClass  = <code>2</code>; </li>
+ *     <li> Specific: FF1083Cook  = <code>5</code>; </li>
+ *     <li> Entity type uid: 11568; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@626c569b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@773eca84. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Frigate
+ * @see GuidedMissileFrigate
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class FF1083Cook extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
-        setCategory((byte)50); // uid 11906, Frigate
-        setSubCategory((byte)1); // uid 11907, Knox Class
-        setSpecific((byte)32); // uid 11939, FF 1083 Cook
+        setCategory((byte)6); // uid 11498, Guided Missile Frigate
+        setSubCategory((byte)2); // uid 11563, Knox Class
+        setSpecific((byte)5); // uid 11568, FF 1083 Cook
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

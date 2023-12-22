@@ -218,16 +218,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StandardVariableSpecification rhs = (StandardVariableSpecification)obj;
 
-     if( ! (numberOfStandardVariableRecords == rhs.numberOfStandardVariableRecords)) ivarsEqual = false;
-
-     for (int idx = 0; idx < standardVariables.size(); idx++)
-        if( ! ( standardVariables.get(idx).equals(rhs.standardVariables.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual;
+     if( ! (numberOfStandardVariableRecords == rhs.numberOfStandardVariableRecords)) return false;
+     if( ! Objects.equals(standardVariables, rhs.standardVariables) ) return false;
+    return true;
  }
 
  @Override
@@ -245,4 +240,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.numberOfStandardVariableRecords,
+	                     this.standardVariables);
+ }
+} // end of StandardVariableSpecification

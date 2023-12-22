@@ -240,15 +240,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SystemIdentifier rhs = (SystemIdentifier)obj;
 
-     if( ! (systemType == rhs.systemType)) ivarsEqual = false;
-     if( ! (systemName == rhs.systemName)) ivarsEqual = false;
-     if( ! (systemMode == rhs.systemMode)) ivarsEqual = false;
-     if( ! (changeOptions.equals( rhs.changeOptions) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (systemType == rhs.systemType)) return false;
+     if( ! (systemName == rhs.systemName)) return false;
+     if( ! (systemMode == rhs.systemMode)) return false;
+     if( ! Objects.equals(changeOptions, rhs.changeOptions) ) return false;
+    return true;
  }
 
  @Override
@@ -264,4 +262,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.systemType,
+	                     this.systemName,
+	                     this.systemMode,
+	                     this.changeOptions);
+ }
+} // end of SystemIdentifier

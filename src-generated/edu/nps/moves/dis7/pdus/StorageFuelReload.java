@@ -346,19 +346,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StorageFuelReload rhs = (StorageFuelReload)obj;
 
-     if( ! (standardQuantity == rhs.standardQuantity)) ivarsEqual = false;
-     if( ! (maximumQuantity == rhs.maximumQuantity)) ivarsEqual = false;
-     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) ivarsEqual = false;
-     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) ivarsEqual = false;
-     if( ! (fuelMeasurementUnits == rhs.fuelMeasurementUnits)) ivarsEqual = false;
-     if( ! (fuelType == rhs.fuelType)) ivarsEqual = false;
-     if( ! (fuelLocation == rhs.fuelLocation)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (standardQuantity == rhs.standardQuantity)) return false;
+     if( ! (maximumQuantity == rhs.maximumQuantity)) return false;
+     if( ! (standardQuantityReloadTime == rhs.standardQuantityReloadTime)) return false;
+     if( ! (maximumQuantityReloadTime == rhs.maximumQuantityReloadTime)) return false;
+     if( ! (fuelMeasurementUnits == rhs.fuelMeasurementUnits)) return false;
+     if( ! (fuelType == rhs.fuelType)) return false;
+     if( ! (fuelLocation == rhs.fuelLocation)) return false;
+     if( ! (padding == rhs.padding)) return false;
+    return true;
  }
 
  @Override
@@ -378,4 +376,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.standardQuantity,
+	                     this.maximumQuantity,
+	                     this.standardQuantityReloadTime,
+	                     this.maximumQuantityReloadTime,
+	                     this.fuelMeasurementUnits,
+	                     this.fuelType,
+	                     this.fuelLocation,
+	                     this.padding);
+ }
+} // end of StorageFuelReload

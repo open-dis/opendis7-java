@@ -263,13 +263,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ResupplyCancelPdu rhs = (ResupplyCancelPdu)obj;
 
-     if( ! (receivingEntityID.equals( rhs.receivingEntityID) )) ivarsEqual = false;
-     if( ! (supplyingEntityID.equals( rhs.supplyingEntityID) )) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(receivingEntityID, rhs.receivingEntityID) ) return false;
+     if( ! Objects.equals(supplyingEntityID, rhs.supplyingEntityID) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -283,4 +281,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.receivingEntityID,
+	                     this.supplyingEntityID);
+ }
+} // end of ResupplyCancelPdu

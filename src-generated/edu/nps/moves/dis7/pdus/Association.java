@@ -246,15 +246,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final Association rhs = (Association)obj;
 
-     if( ! (associationType == rhs.associationType)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (associatedEntityID.equals( rhs.associatedEntityID) )) ivarsEqual = false;
-     if( ! (associatedLocation.equals( rhs.associatedLocation) )) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (associationType == rhs.associationType)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! Objects.equals(associatedEntityID, rhs.associatedEntityID) ) return false;
+     if( ! Objects.equals(associatedLocation, rhs.associatedLocation) ) return false;
+    return true;
  }
 
  @Override
@@ -270,4 +268,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.associationType,
+	                     this.padding,
+	                     this.associatedEntityID,
+	                     this.associatedLocation);
+ }
+} // end of Association

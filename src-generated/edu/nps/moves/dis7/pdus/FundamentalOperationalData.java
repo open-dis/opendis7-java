@@ -456,21 +456,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final FundamentalOperationalData rhs = (FundamentalOperationalData)obj;
 
-     if( ! (systemStatus == rhs.systemStatus)) ivarsEqual = false;
-     if( ! (dataField1 == rhs.dataField1)) ivarsEqual = false;
-     if( ! (informationLayers == rhs.informationLayers)) ivarsEqual = false;
-     if( ! (dataField2 == rhs.dataField2)) ivarsEqual = false;
-     if( ! (parameter1 == rhs.parameter1)) ivarsEqual = false;
-     if( ! (parameter2 == rhs.parameter2)) ivarsEqual = false;
-     if( ! (parameter3 == rhs.parameter3)) ivarsEqual = false;
-     if( ! (parameter4 == rhs.parameter4)) ivarsEqual = false;
-     if( ! (parameter5 == rhs.parameter5)) ivarsEqual = false;
-     if( ! (parameter6 == rhs.parameter6)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (systemStatus == rhs.systemStatus)) return false;
+     if( ! (dataField1 == rhs.dataField1)) return false;
+     if( ! (informationLayers == rhs.informationLayers)) return false;
+     if( ! (dataField2 == rhs.dataField2)) return false;
+     if( ! (parameter1 == rhs.parameter1)) return false;
+     if( ! (parameter2 == rhs.parameter2)) return false;
+     if( ! (parameter3 == rhs.parameter3)) return false;
+     if( ! (parameter4 == rhs.parameter4)) return false;
+     if( ! (parameter5 == rhs.parameter5)) return false;
+     if( ! (parameter6 == rhs.parameter6)) return false;
+    return true;
  }
 
  @Override
@@ -492,4 +490,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.systemStatus,
+	                     this.dataField1,
+	                     this.informationLayers,
+	                     this.dataField2,
+	                     this.parameter1,
+	                     this.parameter2,
+	                     this.parameter3,
+	                     this.parameter4,
+	                     this.parameter5,
+	                     this.parameter6);
+ }
+} // end of FundamentalOperationalData

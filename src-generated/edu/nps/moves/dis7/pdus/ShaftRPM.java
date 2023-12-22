@@ -225,14 +225,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final ShaftRPM rhs = (ShaftRPM)obj;
 
-     if( ! (currentRPM == rhs.currentRPM)) ivarsEqual = false;
-     if( ! (orderedRPM == rhs.orderedRPM)) ivarsEqual = false;
-     if( ! (RPMrateOfChange == rhs.RPMrateOfChange)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (currentRPM == rhs.currentRPM)) return false;
+     if( ! (orderedRPM == rhs.orderedRPM)) return false;
+     if( ! (RPMrateOfChange == rhs.RPMrateOfChange)) return false;
+    return true;
  }
 
  @Override
@@ -247,4 +245,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.currentRPM,
+	                     this.orderedRPM,
+	                     this.RPMrateOfChange);
+ }
+} // end of ShaftRPM

@@ -288,14 +288,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final StartResumePdu rhs = (StartResumePdu)obj;
 
-     if( ! (realWorldTime.equals( rhs.realWorldTime) )) ivarsEqual = false;
-     if( ! (simulationTime.equals( rhs.simulationTime) )) ivarsEqual = false;
-     if( ! (requestID == rhs.requestID)) ivarsEqual = false;
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(realWorldTime, rhs.realWorldTime) ) return false;
+     if( ! Objects.equals(simulationTime, rhs.simulationTime) ) return false;
+     if( ! (requestID == rhs.requestID)) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -310,4 +308,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.realWorldTime,
+	                     this.simulationTime,
+	                     this.requestID);
+ }
+} // end of StartResumePdu

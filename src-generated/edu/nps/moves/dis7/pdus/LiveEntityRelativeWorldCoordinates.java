@@ -264,15 +264,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final LiveEntityRelativeWorldCoordinates rhs = (LiveEntityRelativeWorldCoordinates)obj;
 
-     if( ! (referencePoint == rhs.referencePoint)) ivarsEqual = false;
-     if( ! (deltaX == rhs.deltaX)) ivarsEqual = false;
-     if( ! (deltaY == rhs.deltaY)) ivarsEqual = false;
-     if( ! (deltaZ == rhs.deltaZ)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (referencePoint == rhs.referencePoint)) return false;
+     if( ! (deltaX == rhs.deltaX)) return false;
+     if( ! (deltaY == rhs.deltaY)) return false;
+     if( ! (deltaZ == rhs.deltaZ)) return false;
+    return true;
  }
 
  @Override
@@ -288,4 +286,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.referencePoint,
+	                     this.deltaX,
+	                     this.deltaY,
+	                     this.deltaZ);
+ }
+} // end of LiveEntityRelativeWorldCoordinates

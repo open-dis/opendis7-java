@@ -20,8 +20,8 @@ import edu.nps.moves.dis7.enumerations.*;
 public abstract class EntityManagementFamilyPdu extends PduBase implements Serializable
 {
 
-   /** The name of this PDU type */
-   public static final String NAME = "EntityManagementFamilyPdu";
+   /** The name of this PDU family type */
+   public static final String FAMILY_NAME = "EntityManagementFamilyPdu";
    
 
 /** Constructor creates and configures a new instance object */
@@ -148,11 +148,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EntityManagementFamilyPdu rhs = (EntityManagementFamilyPdu)obj;
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -164,4 +162,4 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+} // end of EntityManagementFamilyPdu

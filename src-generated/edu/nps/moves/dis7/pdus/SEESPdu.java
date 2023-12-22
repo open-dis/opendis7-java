@@ -459,23 +459,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final SEESPdu rhs = (SEESPdu)obj;
 
-     if( ! (orginatingEntityID.equals( rhs.orginatingEntityID) )) ivarsEqual = false;
-     if( ! (infraredSignatureRepresentationIndex == rhs.infraredSignatureRepresentationIndex)) ivarsEqual = false;
-     if( ! (acousticSignatureRepresentationIndex == rhs.acousticSignatureRepresentationIndex)) ivarsEqual = false;
-     if( ! (radarCrossSectionSignatureRepresentationIndex == rhs.radarCrossSectionSignatureRepresentationIndex)) ivarsEqual = false;
-
-     for (int idx = 0; idx < propulsionSystemData.size(); idx++)
-        if( ! ( propulsionSystemData.get(idx).equals(rhs.propulsionSystemData.get(idx)))) ivarsEqual = false;
-
-
-     for (int idx = 0; idx < vectoringSystemData.size(); idx++)
-        if( ! ( vectoringSystemData.get(idx).equals(rhs.vectoringSystemData.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(orginatingEntityID, rhs.orginatingEntityID) ) return false;
+     if( ! (infraredSignatureRepresentationIndex == rhs.infraredSignatureRepresentationIndex)) return false;
+     if( ! (acousticSignatureRepresentationIndex == rhs.acousticSignatureRepresentationIndex)) return false;
+     if( ! (radarCrossSectionSignatureRepresentationIndex == rhs.radarCrossSectionSignatureRepresentationIndex)) return false;
+     if( ! Objects.equals(propulsionSystemData, rhs.propulsionSystemData) ) return false;
+     if( ! Objects.equals(vectoringSystemData, rhs.vectoringSystemData) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -501,4 +493,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.orginatingEntityID,
+	                     this.infraredSignatureRepresentationIndex,
+	                     this.acousticSignatureRepresentationIndex,
+	                     this.radarCrossSectionSignatureRepresentationIndex,
+	                     this.numberOfPropulsionSystems,
+	                     this.numberOfVectoringNozzleSystems,
+	                     this.propulsionSystemData,
+	                     this.vectoringSystemData);
+ }
+} // end of SEESPdu

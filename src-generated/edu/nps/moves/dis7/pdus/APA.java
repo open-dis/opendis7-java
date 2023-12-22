@@ -200,13 +200,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final APA rhs = (APA)obj;
 
-     if( ! (parameterIndex == rhs.parameterIndex)) ivarsEqual = false;
-     if( ! (value == rhs.value)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (parameterIndex == rhs.parameterIndex)) return false;
+     if( ! (value == rhs.value)) return false;
+    return true;
  }
 
  @Override
@@ -220,4 +218,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.parameterIndex,
+	                     this.value);
+ }
+} // end of APA

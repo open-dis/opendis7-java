@@ -1,5 +1,5 @@
 /**
- China, People's Republic of (CHN) MUNITION ANTI_SUBMARINE typed classes for world entities defined by SISO-REF-010-v31 (2022-10-08) enumerations.
+ China, People's Republic of (CHN) MUNITION ANTI_SUBMARINE typed classes for world entities defined by SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17) enumerations.
 
  * <p> Online references: </p>
  * <ul>

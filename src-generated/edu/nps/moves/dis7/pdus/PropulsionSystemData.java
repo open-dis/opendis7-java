@@ -186,13 +186,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final PropulsionSystemData rhs = (PropulsionSystemData)obj;
 
-     if( ! (powerSetting == rhs.powerSetting)) ivarsEqual = false;
-     if( ! (engineRpm == rhs.engineRpm)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (powerSetting == rhs.powerSetting)) return false;
+     if( ! (engineRpm == rhs.engineRpm)) return false;
+    return true;
  }
 
  @Override
@@ -206,4 +204,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.powerSetting,
+	                     this.engineRpm);
+ }
+} // end of PropulsionSystemData

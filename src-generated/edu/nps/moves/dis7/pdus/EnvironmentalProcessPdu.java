@@ -409,20 +409,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final EnvironmentalProcessPdu rhs = (EnvironmentalProcessPdu)obj;
 
-     if( ! (environementalProcessID.equals( rhs.environementalProcessID) )) ivarsEqual = false;
-     if( ! (environmentType.equals( rhs.environmentType) )) ivarsEqual = false;
-     if( ! (modelType == rhs.modelType)) ivarsEqual = false;
-     if( ! (environmentStatus.equals( rhs.environmentStatus) )) ivarsEqual = false;
-     if( ! (sequenceNumber == rhs.sequenceNumber)) ivarsEqual = false;
-
-     for (int idx = 0; idx < environmentRecords.size(); idx++)
-        if( ! ( environmentRecords.get(idx).equals(rhs.environmentRecords.get(idx)))) ivarsEqual = false;
-
-    return ivarsEqual && super.equalsImpl(rhs);
+     if( ! Objects.equals(environementalProcessID, rhs.environementalProcessID) ) return false;
+     if( ! Objects.equals(environmentType, rhs.environmentType) ) return false;
+     if( ! (modelType == rhs.modelType)) return false;
+     if( ! Objects.equals(environmentStatus, rhs.environmentStatus) ) return false;
+     if( ! (sequenceNumber == rhs.sequenceNumber)) return false;
+     if( ! Objects.equals(environmentRecords, rhs.environmentRecords) ) return false;
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -444,4 +439,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.environementalProcessID,
+	                     this.environmentType,
+	                     this.modelType,
+	                     this.environmentStatus,
+	                     this.numberOfEnvironmentRecords,
+	                     this.sequenceNumber,
+	                     this.environmentRecords);
+ }
+} // end of EnvironmentalProcessPdu

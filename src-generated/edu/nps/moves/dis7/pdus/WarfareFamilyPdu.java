@@ -20,8 +20,8 @@ import edu.nps.moves.dis7.enumerations.*;
 public abstract class WarfareFamilyPdu extends PduBase implements Serializable
 {
 
-   /** The name of this PDU type */
-   public static final String NAME = "WarfareFamilyPdu";
+   /** The name of this PDU family type */
+   public static final String FAMILY_NAME = "WarfareFamilyPdu";
    
 
 /** Constructor creates and configures a new instance object */
@@ -148,11 +148,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 @Override
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final WarfareFamilyPdu rhs = (WarfareFamilyPdu)obj;
 
-    return ivarsEqual && super.equalsImpl(rhs);
+    return super.equalsImpl(rhs);
  }
 
  @Override
@@ -164,4 +162,4 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+} // end of WarfareFamilyPdu

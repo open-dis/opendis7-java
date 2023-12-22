@@ -561,26 +561,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
   */
  public synchronized boolean equalsImpl(Object obj)
  {
-     boolean ivarsEqual = true;
-
      final FalseTargetsAttribute rhs = (FalseTargetsAttribute)obj;
 
-     if( ! (recordType == rhs.recordType)) ivarsEqual = false;
-     if( ! (recordLength == rhs.recordLength)) ivarsEqual = false;
-     if( ! (padding == rhs.padding)) ivarsEqual = false;
-     if( ! (emitterNumber == rhs.emitterNumber)) ivarsEqual = false;
-     if( ! (beamNumber == rhs.beamNumber)) ivarsEqual = false;
-     if( ! (stateIndicator == rhs.stateIndicator)) ivarsEqual = false;
-     if( ! (padding2 == rhs.padding2)) ivarsEqual = false;
-     if( ! (padding3 == rhs.padding3)) ivarsEqual = false;
-     if( ! (falseTargetCount == rhs.falseTargetCount)) ivarsEqual = false;
-     if( ! (walkSpeed == rhs.walkSpeed)) ivarsEqual = false;
-     if( ! (walkAcceleration == rhs.walkAcceleration)) ivarsEqual = false;
-     if( ! (maximumWalkDistance == rhs.maximumWalkDistance)) ivarsEqual = false;
-     if( ! (keepTime == rhs.keepTime)) ivarsEqual = false;
-     if( ! (echoSpacing == rhs.echoSpacing)) ivarsEqual = false;
-     if( ! (firstTargetOffset == rhs.firstTargetOffset)) ivarsEqual = false;
-    return ivarsEqual;
+     if( ! (recordType == rhs.recordType)) return false;
+     if( ! (recordLength == rhs.recordLength)) return false;
+     if( ! (padding == rhs.padding)) return false;
+     if( ! (emitterNumber == rhs.emitterNumber)) return false;
+     if( ! (beamNumber == rhs.beamNumber)) return false;
+     if( ! (stateIndicator == rhs.stateIndicator)) return false;
+     if( ! (padding2 == rhs.padding2)) return false;
+     if( ! (padding3 == rhs.padding3)) return false;
+     if( ! (falseTargetCount == rhs.falseTargetCount)) return false;
+     if( ! (walkSpeed == rhs.walkSpeed)) return false;
+     if( ! (walkAcceleration == rhs.walkAcceleration)) return false;
+     if( ! (maximumWalkDistance == rhs.maximumWalkDistance)) return false;
+     if( ! (keepTime == rhs.keepTime)) return false;
+     if( ! (echoSpacing == rhs.echoSpacing)) return false;
+     if( ! (firstTargetOffset == rhs.firstTargetOffset)) return false;
+    return true;
  }
 
  @Override
@@ -607,4 +605,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
    return sb.toString();
  }
-} // end of class
+
+ @Override
+ public int hashCode()
+ {
+	 return Objects.hash(this.recordType,
+	                     this.recordLength,
+	                     this.padding,
+	                     this.emitterNumber,
+	                     this.beamNumber,
+	                     this.stateIndicator,
+	                     this.padding2,
+	                     this.padding3,
+	                     this.falseTargetCount,
+	                     this.walkSpeed,
+	                     this.walkAcceleration,
+	                     this.maximumWalkDistance,
+	                     this.keepTime,
+	                     this.echoSpacing,
+	                     this.firstTargetOffset);
+ }
+} // end of FalseTargetsAttribute
