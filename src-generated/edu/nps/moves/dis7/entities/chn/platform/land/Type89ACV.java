@@ -25,7 +25,7 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity type uid: 33953; </li>
  *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v31 (2022-10-08)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d826d77. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@770c2e6b. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
