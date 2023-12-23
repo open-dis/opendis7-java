@@ -49,17 +49,17 @@ import org.junit.jupiter.api.Test;
  * which causes issues down the road with similar enum values of other Domain
  * types
  * @see <a href="https://github.com/open-dis/opendis7-source-generator/issues/9">https://github.com/open-dis/opendis7-source-generator/issues/9</a>
- * @author <a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.test.Issue09Test">Terry D. Norbraten</a>
+ * @author <a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.test.Issue09Unresolved">Terry D. Norbraten</a>
  */
 @DisplayName("Issue 09 opendis-source-generator")
-public class Issue09Test {
+public class Issue09Unresolved {
     
     ByteBuffer buffer;
     Domain d;
     EntityType et1, et2;
     
     /** Constructor */
-    public Issue09Test ()
+    public Issue09Unresolved ()
     {
         // initializations can go here
     }
@@ -119,7 +119,7 @@ public class Issue09Test {
      * @param args arguments
      */
     public static void main(String[] args) {
-        Issue09Test i09 = new Issue09Test();
+        Issue09Unresolved i09 = new Issue09Unresolved();
         i09.setUp();
         i09.testIssue09();
         i09.tearDown();
@@ -129,4 +129,4 @@ public class Issue09Test {
 //EntityType entityKind:EntityKind 2 MUNITION domain:Air country:Country 78 GERMANY_DEU category:1 subCategory:1 specific:3 extra:0
 //EntityKind 2 MUNITION Domain: Air
 
-} // end class file Issue09Test
+} // end class file Issue09Unresolved
