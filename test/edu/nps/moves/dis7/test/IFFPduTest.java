@@ -6,11 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import edu.nps.moves.dis7.enumerations.DisPduType;
 import edu.nps.moves.dis7.enumerations.IFFSystemType;
 import edu.nps.moves.dis7.enumerations.Mode5Reply;
-import edu.nps.moves.dis7.pdus.EntityID;
-import edu.nps.moves.dis7.pdus.EntityStatePdu;
 import edu.nps.moves.dis7.pdus.FundamentalOperationalData;
 import edu.nps.moves.dis7.pdus.IFFPdu;
 import edu.nps.moves.dis7.pdus.IFFPduLayer3TransponderFormatData;
