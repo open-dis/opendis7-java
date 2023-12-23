@@ -16,7 +16,6 @@ import edu.nps.moves.dis7.pdus.LayerHeader;
 import edu.nps.moves.dis7.pdus.Mode5TransponderBasicData;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SystemIdentifier;
-import edu.nps.moves.dis7.utilities.Mode5StatusRecord;
 
 @DisplayName("IFFPduTest")
 public class IFFPduTest extends PduTest{
@@ -55,10 +54,10 @@ public class IFFPduTest extends PduTest{
 		
 		Mode5TransponderBasicData mode5TransponderBasicData = new Mode5TransponderBasicData();
 		
-		Mode5StatusRecord.Builder builder = new Mode5StatusRecord.Builder();
+		IFFMode5StatusRecord.Builder builder = new IFFMode5StatusRecord.Builder();
 		builder.setOnOffStatusBit(true);
 		builder.setMode5Reply(Mode5Reply.INVALID);
-		Mode5StatusRecord mode5StatusRecord = builder.build();
+		IFFMode5StatusRecord mode5StatusRecord = builder.build();
 		
 		mode5TransponderBasicData.setMode5Status(mode5StatusRecord.getAsShort());
 		
@@ -95,7 +94,7 @@ public class IFFPduTest extends PduTest{
 		assertEquals (createdIffPdu.getIFFPduLayer3TransponderFormatData(), receivedIffPdu.getIFFPduLayer3TransponderFormatData(),"mismatched IFFPduLayer3TransponderFormatData()");
 		assertEquals (createdIffPdu.getIFFPduLayer4TransponderFormatData(), receivedIffPdu.getIFFPduLayer4TransponderFormatData(),"mismatched IFFPduLayer4TransponderFormatData()");
 		
-		Mode5StatusRecord mode5StatusRecordReceivedIffPdu = new Mode5StatusRecord.Builder(receivedIffPdu.getIFFPduLayer3TransponderFormatData().getMode5TransponderBasicData().getMode5Status()).build();
+		IFFMode5StatusRecord mode5StatusRecordReceivedIffPdu = new IFFMode5StatusRecord.Builder(receivedIffPdu.getIFFPduLayer3TransponderFormatData().getMode5TransponderBasicData().getMode5Status()).build();
 		
 		assertEquals (mode5StatusRecordReceivedIffPdu.getOnOffStatusBit(), true, "mismatched mode5StatusRecord OnOffStatus bit");
 		assertEquals (mode5StatusRecordReceivedIffPdu.getDamageStatusBit(), false, "mismatched mode5StatusRecord DamageStatus bit");
