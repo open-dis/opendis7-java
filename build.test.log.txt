@@ -18,21 +18,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-48-17 05:48:26 = 1432106737 = 1432106737 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1970-49-17 05:49:01 = 1432142527 = 1432142527 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-49-17 05:49:02 = 1432142527
-DisTime.getCurrentDisRelativeTimestamp()          = 1970-49-17 05:49:08 = 1432148492
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-54-08 22:54:34 = 716074246
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-44-13 20:44:12 = 2756820201 = -1538147095 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-44-13 20:44:51 = 2756858379 = -1538108917 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-44-13 20:44:52 = 2756859571
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-44-13 20:44:57 = 2756864344
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-53-16 14:53:52 = 1378432172
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:00.446691, 2023-12-22T23:20:00.449691700Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:00.450691100, 2023-12-22T23:20:00.450691100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:00.450691100, 2023-12-22T23:20:00.451691900Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.812258300, 2023-12-23T18:38:30.815255800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.815255800, 2023-12-23T18:38:30.816256Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.816256, 2023-12-23T18:38:30.816256Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:01.453130100, 2023-12-22T23:20:01.453130100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:01.453130100, 2023-12-22T23:20:01.453130100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-22T15:20:01.453130100, 2023-12-22T23:20:01.453130100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -40,9 +40,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-22T23:20:01.457651100Z, 2023-12-22T23:20:01.458657300Z, 1 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-23T18:38:31.831671300Z, 2023-12-23T18:38:31.831671300Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-22T23:20:01.457651100Z, 2023-12-22T23:20:02.481036900Z, 1023 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-23T18:38:31.831671300Z, 2023-12-23T18:38:32.845744900Z, 1014 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -100,14 +100,14 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 20] DisPduType 58 DATA_QUERY_RELIABLE, size 44 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 21] DisPduType 60 DATA_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 21] DisPduType 60 DATA_RELIABLE, size 40 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 22] DisPduType 24 DESIGNATOR, size 88 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 22] DisPduType 24 DESIGNATOR, size 88 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 22] DisPduType 24 DESIGNATOR, size 88 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 23] DisPduType 03 DETONATION, size 104 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 23] DisPduType 03 DETONATION, size 104 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 24] DisPduType 68 DIRECTED_ENERGY_FIRE, size 88 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 24] DisPduType 68 DIRECTED_ENERGY_FIRE, size 88 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 25] DisPduType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 25] DisPduType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 25] DisPduType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
@@ -579,7 +579,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1489192817
+Timestamp: -1480815247
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -600,7 +600,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1489192817
+Timestamp: -1480815247
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -673,7 +673,7 @@ PduRecorder.stop() closing recorder log file:
 ?
 ?? JUnit Jupiter ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 17477 ms ?
+?  ?  ?? testRoundTripAllPdus() 17439 ms ?
 ?  ?? CreateAllPduTypesTest ?
 ?  ?  ?? testCreateAll() ?
 ?  ?? Null Fields Entity Marshall Test ?
@@ -712,7 +712,7 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Test run finished after 57385 ms
+Test run finished after 57320 ms
 [        19 containers found      ]
 [         0 containers skipped    ]
 [        19 containers started    ]
@@ -727,8 +727,8 @@ Test run finished after 57385 ms
 [         0 tests failed          ]
 
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null1004298485
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null238146761
 Loading stylesheet ile:/C:/apache-ant-1.10.14/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 188ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null1004298485
-BUILD SUCCESSFUL (total time: 1 minute 14 seconds)
+Transform time: 47ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null238146761
+BUILD SUCCESSFUL (total time: 1 minute 15 seconds)
