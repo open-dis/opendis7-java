@@ -45,10 +45,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-/** EntityType is instantiated with a default Domain of PlatformDomain.OTHER
+/** EntityType is instantiated with a default Domain of PlatformDomain-OTHER
  * which causes issues down the road with similar enum values of other Domain
  * types
- *
+ * @see <a href="https://github.com/open-dis/opendis7-source-generator/issues/9">https://github.com/open-dis/opendis7-source-generator/issues/9</a>
  * @author <a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.test.Issue09">Terry D. Norbraten</a>
  */
 @DisplayName("Issue 09 src gen")
