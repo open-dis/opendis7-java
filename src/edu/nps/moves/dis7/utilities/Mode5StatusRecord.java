@@ -1,8 +1,6 @@
 package edu.nps.moves.dis7.utilities;
 
 import java.io.Serializable;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
 import java.util.BitSet;
 
 import edu.nps.moves.dis7.enumerations.AntennaSelection;
@@ -149,8 +147,8 @@ public class Mode5StatusRecord  implements Serializable{
 	}
 	
 	/**
-	 * 
-	 * @param AntennaSelection UID 351
+	 * Determine AntennaSelection from bitmasks
+	 * @return AntennaSelection UID 351
 	 */
 	public AntennaSelection getAntennaSelection() {
 		boolean bit1 = bitSet.get(ANTENNA_SELECTION_BIT_1_INDEX);
@@ -206,7 +204,7 @@ public class Mode5StatusRecord  implements Serializable{
 		return mode5Reply;
 	
 	}
-	
+	/** nested subclass */
 	public static class Builder {
 		
 		private static final int MODE_5_STATUS_NOT_PRESENT = -1;
@@ -238,13 +236,14 @@ public class Mode5StatusRecord  implements Serializable{
 		}
 		
 		public Builder(short mode5Status) {
-			this.mode5Status = mode5Status;
+                    this();
+                    this.mode5Status = mode5Status;
 		}
 		
 		/**
 		 * Default value is Mode5Reply.NO_RESPONSE.
-		 * @param Mode5Reply UID 350
-		 * @return 
+		 * @param reply Mode5Reply UID 350
+                 * @return this object for chainable invocations
 		 */
 		public Builder setMode5Reply(Mode5Reply reply) {
 			switch (reply) {
@@ -274,7 +273,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate Not Enabled, true to indicate Enabled. Default value is false.
 		 * @param lineTestBit
-		 * @return 
+                 * @return this object for chainable invocations
 		 */
 		public Builder setLineTestBit(boolean lineTestBit) {
 			this.lineTestBit = lineTestBit;
@@ -284,6 +283,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Default value is AntennaSelection.NO_STATEMENT.
 		 * @param antennaSelection UID 351
+                 * @return this object for chainable invocations
 		 */
 		public Builder setAntennaSelection(AntennaSelection antennaSelection) {
 			switch (antennaSelection) {
@@ -311,6 +311,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate Crypto Control IFF data record Not Present, true to indicate Crypto Control IFF Data Record Present. Default value is false.
 		 * @param cryptoControlBit
+                 * @return this object for chainable invocations
 		 */
 		public Builder setCryptoControlBit(boolean cryptoControlBit) {
 			this.cryptoControlBit = cryptoControlBit;
@@ -320,6 +321,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate Compute Locally, true to indicate Mode 5 Transponder Location IFF Data Record Present. Default value is false.
 		 * @param latLongAltitudeSourceBit
+                 * @return this object for chainable invocations
 		 */
 		public Builder setLatLongAltitudeSourceBit(boolean latLongAltitudeSourceBit) {
 			this.latLongAltitudeSourceBit = latLongAltitudeSourceBit;
@@ -329,6 +331,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Default value is Mode5LocationErrors.NO_LOCATION_ERRORS.
 		 * @param locationErrors UID 423
+                 * @return this object for chainable invocations
 		 */
 		public Builder setLocationErrors(Mode5LocationErrors locationErrors) {
 			switch (locationErrors) {
@@ -345,6 +348,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Default value is Mode5PlatformType.GROUND_VEHICLE.
 		 * @param platformType UID 396
+                 * @return this object for chainable invocations
 		 */
 		public Builder setPlatformType(Mode5PlatformType platformType) {
 			switch (platformType) {
@@ -361,6 +365,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Default value is Mode5LevelSelection.MODE_5_LEVEL_1.
 		 * @param levelSelection UID 412
+                 * @return this object for chainable invocations
 		 */
 		public Builder setMode5LevelSelection(Mode5LevelSelection levelSelection) {
 			switch (levelSelection) {
@@ -377,6 +382,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate Mode 5 transponder is Off, true to indicate Mode 5 transponder is On. Default value is false.
 		 * @param onOffStatusBit
+                 * @return this object for chainable invocations
 		 */
 		public Builder setOnOffStatusBit(boolean onOffStatusBit) {
 			this.onOffStatusBit = onOffStatusBit;
@@ -386,6 +392,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate No Damage, true to indicate Damaged. Default value is false.
 		 * @param damageStatusBit
+                 * @return this object for chainable invocations
 		 */
 		public Builder setDamageStatusBit(boolean damageStatusBit) {
 			this.damageStatusBit = damageStatusBit;
@@ -395,6 +402,7 @@ public class Mode5StatusRecord  implements Serializable{
 		/**
 		 * Set false to indicate No Malfunction, true to indicate Malfunction. Default value is false.
 		 * @param malfunctionBit
+                 * @return this object for chainable invocations
 		 */
 		public Builder setMalfunctionBit(boolean malfunctionBit) {
 			this.malfunctionBit = malfunctionBit;
