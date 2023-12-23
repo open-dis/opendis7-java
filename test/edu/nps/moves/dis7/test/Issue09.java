@@ -51,7 +51,7 @@ import org.junit.jupiter.api.Test;
  * @see <a href="https://github.com/open-dis/opendis7-source-generator/issues/9">https://github.com/open-dis/opendis7-source-generator/issues/9</a>
  * @author <a href="mailto:tdnorbra@nps.edu?subject=edu.nps.moves.dis7.test.Issue09">Terry D. Norbraten</a>
  */
-@DisplayName("Issue 09 src gen")
+@DisplayName("Issue 09 opendis-source-generator")
 public class Issue09 {
     
     ByteBuffer buffer;
