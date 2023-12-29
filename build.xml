@@ -57,7 +57,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="java.source"                 value="11"/>
     <property name="java.target"                 value="11"/>
     <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
-    <property name="zip64Mode"                   value="as-needed" description="needed for large zip files"/>
+    <property name="zip64Mode"                   value="as-needed" description="needed for large zip files - ant jar default mode"/>
     
     <property name="javadoc.additionalparam" value=""/>
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
@@ -420,7 +420,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <section name="edu/nps/moves/**">
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <section name="edu/nps/moves/**/">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
@@ -458,7 +459,8 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <section name="edu/nps/moves/dis7">
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <section name="edu/nps/moves/dis7/">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
@@ -538,10 +540,11 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <section name="edu/nps/moves/dis7">
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <section name="edu/nps/moves/dis7/">
                     <attribute name="Sealed" value="true"/>
                 </section>
-                <section name="edu/nps/moves/spatial">
+                <section name="edu/nps/moves/spatial/">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
