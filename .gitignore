@@ -6,3 +6,4 @@
 /pduLog/PduRecorderSelfTest*.dislog
 /pduLog/Pdusave.dislog
 .DS_Store
+/nbproject/genfiles.properties
