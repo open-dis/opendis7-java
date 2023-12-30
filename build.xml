@@ -79,11 +79,11 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <target name="versions" description="show tool versions and environment values">
         <echo>ant -version</echo>
-        <exec executable="ant"  dir="." vmlauncher="false" os="win">
+        <exec executable="ant"  dir="." vmlauncher="false" osfamily="windows">
             <arg value="-version"/>
         </exec>
         <echo>java -version</echo>
-        <exec executable="java" dir="." vmlauncher="false" os="win">
+        <exec executable="java" dir="." vmlauncher="false" osfamily="windows">
             <arg value="-version"/>
         </exec>
         <echo></echo>
