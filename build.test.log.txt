@@ -18,21 +18,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-44-13 20:44:12 = 2756820201 = -1538147095 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1969-44-13 20:44:51 = 2756858379 = -1538108917 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-44-13 20:44:52 = 2756859571
-DisTime.getCurrentDisRelativeTimestamp()          = 1969-44-13 20:44:57 = 2756864344
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-53-16 14:53:52 = 1378432172
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-38-26 22:38:09 = 3886857115 = -408110181 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-39-26 22:39:03 = 3886911995 = -408055301 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-39-26 22:39:04 = 3886911995
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-39-26 22:39:11 = 3886920346
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-51-23 03:51:00 = 1943460173
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.812258300, 2023-12-23T18:38:30.815255800Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.815255800, 2023-12-23T18:38:30.816256Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:30.816256, 2023-12-23T18:38:30.816256Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:18.033372100, 2023-12-31T05:54:18.036371600Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:18.037618200, 2023-12-31T05:54:18.037618200Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:18.038129400, 2023-12-31T05:54:18.038129400Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
-java.time.LocalDateTime.now(), Instant.now()      = 2023-12-23T10:38:31.827666800, 2023-12-23T18:38:31.827666800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:19.058581100, 2023-12-31T05:54:19.058581100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:19.059020800, 2023-12-31T05:54:19.059020800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2023-12-30T21:54:19.059574700, 2023-12-31T05:54:19.059574700Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -40,9 +40,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-23T18:38:31.831671300Z, 2023-12-23T18:38:31.831671300Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-31T05:54:19.060212700Z, 2023-12-31T05:54:19.060212700Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-23T18:38:31.831671300Z, 2023-12-23T18:38:32.845744900Z, 1014 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2023-12-31T05:54:19.060212700Z, 2023-12-31T05:54:20.075413600Z, 1015 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -88,8 +88,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 14] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 15] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 15] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 16] DisPduType 11 CREATE_ENTITY, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 16] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 16] DisPduType 11 CREATE_ENTITY, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 17] DisPduType 51 CREATE_ENTITY_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 17] DisPduType 51 CREATE_ENTITY_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 18] DisPduType 20 DATA, size 40 bytes)
@@ -100,8 +100,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 20] DisPduType 58 DATA_QUERY_RELIABLE, size 44 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 21] DisPduType 60 DATA_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 21] DisPduType 60 DATA_RELIABLE, size 40 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 22] DisPduType 24 DESIGNATOR, size 88 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 22] DisPduType 24 DESIGNATOR, size 88 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 22] DisPduType 24 DESIGNATOR, size 88 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 23] DisPduType 03 DETONATION, size 104 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 23] DisPduType 03 DETONATION, size 104 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 24] DisPduType 68 DIRECTED_ENERGY_FIRE, size 88 bytes)
@@ -559,8 +559,8 @@ BitFieldRoundTripTest setUpClass()
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
-[DisThreadedNetworkInterface] [receipt  1] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 [DisThreadedNetworkInterface] [sending  1] DisPduType 01 ENTITY_STATE            , size 144 bytes)
+[DisThreadedNetworkInterface] [receipt  1] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 Sent pdu: 
 Alternative EntityType: EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0
 Entity Capabilities: LandPlatformCapabilities: {}
@@ -579,7 +579,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1480815247
+Timestamp: -349195159
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -600,7 +600,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1480815247
+Timestamp: -349195159
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -673,7 +673,7 @@ PduRecorder.stop() closing recorder log file:
 ?
 ?? JUnit Jupiter ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 17439 ms ?
+?  ?  ?? testRoundTripAllPdus() 17629 ms ?
 ?  ?? CreateAllPduTypesTest ?
 ?  ?  ?? testCreateAll() ?
 ?  ?? Null Fields Entity Marshall Test ?
@@ -712,7 +712,7 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Test run finished after 57320 ms
+Test run finished after 57817 ms
 [        19 containers found      ]
 [         0 containers skipped    ]
 [        19 containers started    ]
@@ -727,8 +727,8 @@ Test run finished after 57320 ms
 [         0 tests failed          ]
 
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null238146761
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null9767725
 Loading stylesheet ile:/C:/apache-ant-1.10.14/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 47ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null238146761
-BUILD SUCCESSFUL (total time: 1 minute 15 seconds)
+Transform time: 192ms
+Deleting: C:\Users\brutzman\AppData\Local\Temp\null9767725
+BUILD SUCCESSFUL (total time: 1 minute 26 seconds)
