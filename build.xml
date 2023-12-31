@@ -420,7 +420,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html 
+                     "Packages within JAR files can be optionally sealed, which means that 
+                      all classes defined in that package must be archived in the same JAR file.
+                      You might want to seal a package, for example, to ensure 
+                      version consistency among the classes in your software." 
+                      This is a good security practice too, preventing someone from creating
+                      a modified version of the jar that contains malicious code.
+                -->
                 <section name="edu/nps/moves/**/">
                     <attribute name="Sealed" value="true"/>
                 </section>
@@ -459,7 +466,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html 
+                     "Packages within JAR files can be optionally sealed, which means that 
+                      all classes defined in that package must be archived in the same JAR file.
+                      You might want to seal a package, for example, to ensure 
+                      version consistency among the classes in your software." 
+                      This is a good security practice too, preventing someone from creating
+                      a modified version of the jar that contains malicious code.
+                -->
                 <section name="edu/nps/moves/dis7/">
                     <attribute name="Sealed" value="true"/>
                 </section>
@@ -499,10 +513,18 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <section name="edu/nps/moves/dis7">
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html 
+                     "Packages within JAR files can be optionally sealed, which means that 
+                      all classes defined in that package must be archived in the same JAR file.
+                      You might want to seal a package, for example, to ensure 
+                      version consistency among the classes in your software." 
+                      This is a good security practice too, preventing someone from creating
+                      a modified version of the jar that contains malicious code.
+                -->
+                <section name="edu/nps/moves/dis7/">
                     <attribute name="Sealed" value="true"/>
                 </section>
-                <section name="edu/nps/moves/spatial">
+                <section name="edu/nps/moves/spatial/">
                     <attribute name="Sealed" value="true"/>
                 </section>
             </manifest>
@@ -540,7 +562,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <attribute name="Implementation-Version" value="${Implementation-Version}"/>
                 <attribute name="Implementation-Vendor"  value="${Implementation-Vendor}"/>
                 
-                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html -->
+                <!-- https://docs.oracle.com/javase/tutorial/deployment/jar/sealman.html 
+                     "Packages within JAR files can be optionally sealed, which means that 
+                      all classes defined in that package must be archived in the same JAR file.
+                      You might want to seal a package, for example, to ensure 
+                      version consistency among the classes in your software." 
+                      This is a good security practice too, preventing someone from creating
+                      a modified version of the jar that contains malicious code.
+                -->
                 <section name="edu/nps/moves/dis7/">
                     <attribute name="Sealed" value="true"/>
                 </section>
