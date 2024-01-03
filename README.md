@@ -1,6 +1,6 @@
 # opendis7-java Library
 
-This project provides a complete type-safe Java implementation of the IEEE Distributed Interactive Simulation (DIS) Protocol.
+This project provides a complete type-safe open-source Java implementation of the IEEE Distributed Interactive Simulation (DIS) Protocol.
 
 Current support includes IEEE DIS Protocol version 7 (IEEE 1278.1-2012) 
 and Simulation Interoperability Standards Organization SISO-REF-010 Enumerations specifications.
