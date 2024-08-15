@@ -9,6 +9,7 @@ import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import edu.nps.moves.dis7.pdus.CommentPdu;
 import edu.nps.moves.dis7.pdus.EntityID;
 import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.utilities.SimulationManager.RecordType;
 import edu.nps.moves.dis7.utilities.stream.PduRecorder;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -148,12 +149,22 @@ public class DisChannel
         }
     }
 
-    /** add entity using SimulationManager
-     * @param newEntity new entity to add for announcement by SimulationManager */
+    /** Add entity using SimulationManager
+     * @param newEntity new entity to add with announcement by SimulationManager */
     public synchronized void addEntity(EntityID newEntity)
     {
         // TODO send simulation management PDUs
         simulationManager.addEntity(newEntity);
+    }
+    
+    /** Remove entity using SimulationManager
+     * @param entity entity to remove with announcement by SimulationManager */
+    public synchronized void removeEntity(EntityID entity)
+    {   
+        RecordType rt = simulationManager.getEntityRecordByID(entity.getEntityID());
+        
+        // TODO send simulation management PDUs
+        simulationManager.removeEntity(rt);
     }
 
     /** Join DIS channel using SimulationManager */
