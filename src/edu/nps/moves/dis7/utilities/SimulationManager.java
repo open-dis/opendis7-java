@@ -597,7 +597,7 @@ public class SimulationManager
      * @return same object to permit progressive setters */
     public SimulationManager removeEntity(RecordType oldEntity)
     {
-        if (!entityRecordList.contains(oldEntity))
+        if (entityRecordList.contains(oldEntity))
         {
             // TODO check record type
             entityRecordList.remove(oldEntity);
