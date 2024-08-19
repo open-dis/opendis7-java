@@ -54,8 +54,8 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
     
     <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
-    <property name="java.source"                 value="11"/>
-    <property name="java.target"                 value="11"/>
+    <property name="java.source"                 value="17"/>
+    <property name="java.target"                 value="17"/>
     <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
     <property name="zip64Mode"                   value="as-needed" description="needed for large zip files - ant jar default mode"/>
     
@@ -90,7 +90,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <!-- Ant environment variables https://ant.apache.org/manual/Tasks/property.html -->
         <echo>  ANT_HOME=${env.ANT_HOME}</echo>
         <echo> JAVA_HOME=${env.JAVA_HOME}</echo>
-        <echo>CLASSPATH=${env.CLASSPATH}</echo>
+        <echo> CLASSPATH=${env.CLASSPATH}</echo>
     <!--<echo>USER      =${env.USER}</echo> -->
         <!-- https://stackoverflow.com/questions/949678/ant-is-using-wrong-java-version -->
         <!--echo>javac source/target      $java.source=${java.source}</ -->
