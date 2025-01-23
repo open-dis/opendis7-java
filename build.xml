@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-Copyright (c) 1995-2024 held by the author(s).  All rights reserved.
+Copyright (c) 1995-2025 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -63,7 +63,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${dist.javadoc.dir}"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;1995-2024 held by the authors, &lt;a href='https://www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;1995-2025 held by the authors, &lt;a href='https://www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
@@ -98,8 +98,8 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo>Java/JVM detail version $java.version=${java.version}</echo>
         <echo>Ant version              $ant.version=${ant.version}</echo>
         <echo>Configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
-        <!-- TODO Netbeans version -->
-        <!-- TODO Netbeans project version -->
+        <!-- TODO NetBeans version -->
+        <!-- TODO NetBeans project version -->
         <!-- DEBUG: to show all environment and local properties, add
         <echoproperties/> -->
         <echo message="==========================================="/>
@@ -178,19 +178,19 @@ POSSIBILITY OF SUCH DAMAGE.
         </delete>
     </target>
     
-    <target name="view.issues.online" description="view online issues in web browser (Netbeans only)">
+    <target name="view.issues.online" description="view online issues in web browser (NetBeans only)">
         <echo message="https://github.com/open-dis/opendis7-java/issues" />
         <nbbrowse url="https://github.com/open-dis/opendis7-java/issues" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
     
-    <target name="view.javadoc.local" description="view local package javadoc in web browser (Netbeans only)">
+    <target name="view.javadoc.local" description="view local package javadoc in web browser (NetBeans only)">
         <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
         <nbbrowse file="${dist.javadoc.dir}/index.html" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
     
-    <target name="view.javadoc.online" description="view online package javadoc in web browser (Netbeans only)">
+    <target name="view.javadoc.online" description="view online package javadoc in web browser (NetBeans only)">
         <echo message="view online javadoc in dist/javadoc subdirectory"/>
         <nbbrowse url="https://savage.nps.edu/opendis7-java/javadoc" />
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
@@ -240,7 +240,7 @@ POSSIBILITY OF SUCH DAMAGE.
                      Splitindex="${javadoc.splitindex}"
                      Use="${javadoc.use}" 
                      useexternalfile="yes"
-                     verbose="true"
+                     verbose="false"
                      version="${javadoc.version}"
                      windowtitle="${javadoc.windowtitle}">
             <fileset dir="." defaultexcludes="yes">
@@ -316,7 +316,7 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <!--
     TODO Terry please confirm or improve this comment block
-    JUnit 5 is not perfectly supported in Netbeans 11 at this time.  This 
+    JUnit 5 is not perfectly supported in NetBeans 11 at this time.  This 
     technique will enable the "Test Project" choice in the "Run" menu to properly 
     run junit 5 test.  Running in other ways, such as individually, doesn't seem 
     to work. https://blogs.apache.org/netbeans/entry/junit-5-apache-ant-and
