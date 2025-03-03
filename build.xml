@@ -38,6 +38,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <description>Builds, tests, and runs the opendis7-java project.</description>
     <import file="nbproject/build-impl.xml"/>
     <property file="nbproject/project.properties"/>
+    <property environment="env"/>
     
     <tstamp>
         <format property="timestamp" pattern="d MMMM yyyy HH:mm:ss"/>
