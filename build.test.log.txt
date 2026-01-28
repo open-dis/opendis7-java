@@ -1,4 +1,4 @@
-ant -f C:\\x3d-github\\opendis7-java test
+ant -f C:\\x3d-github\\opendis7-java -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 test
 init:
 Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
@@ -18,21 +18,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-27-15 07:27:58 = 1265278277 = 1265278277 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1970-28-15 07:28:26 = 1265308103 = 1265308103 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-28-15 07:28:28 = 1265309295
-DisTime.getCurrentDisRelativeTimestamp()          = 1970-28-15 07:28:34 = 1265314066
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-44-07 23:44:17 = 632657033
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-01-16 09:01:09 = 2973836547 = -1321130749 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1969-01-16 09:01:15 = 2973842513 = -1321124783 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-01-16 09:01:15 = 2973843705
+DisTime.getCurrentDisRelativeTimestamp()          = 1969-01-16 09:01:17 = 2973844898
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-02-17 21:02:02 = 1486922449
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:40.602299, 2025-03-03T07:17:40.602299Z
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:40.602299, 2025-03-03T07:17:40.602299Z
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:40.602299, 2025-03-03T07:17:40.602299Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:32.659282500, 2026-01-28T21:41:32.660282200Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:32.660282200, 2026-01-28T21:41:32.660282200Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:32.660282200, 2026-01-28T21:41:32.660282200Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:41.625984900, 2025-03-03T07:17:41.625984900Z
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:41.626423500, 2025-03-03T07:17:41.626423500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2025-03-02T23:17:41.626879600, 2025-03-03T07:17:41.626879600Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:33.661317700, 2026-01-28T21:41:33.661317700Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:33.661317700, 2026-01-28T21:41:33.661317700Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-01-28T13:41:33.661317700, 2026-01-28T21:41:33.661317700Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -40,9 +40,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2025-03-03T07:17:41.630658Z, 2025-03-03T07:17:41.630658Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-01-28T21:41:33.662325300Z, 2026-01-28T21:41:33.662325300Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2025-03-03T07:17:41.630658Z, 2025-03-03T07:17:42.646494500Z, 1015 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-01-28T21:41:33.662325300Z, 2026-01-28T21:41:34.665191600Z, 1002 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -52,7 +52,7 @@ DisTime.convertToInstant(timeSeconds)        = 1970-01-01T01:23:00Z
 AllPduRoundTripTest
 *** AllPduRoundTripTest testRoundTripAllPdus() start...
 [PduRecorder edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -110,8 +110,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 25] DisPduType 23 ELECTROMAGNETIC_EMISSION, size 28 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
@@ -225,7 +225,7 @@ MarshalEnumsTest
 *** DetonationPduTest setUpClass()
 *** abstract PduTest setupNetwork()
 [PduRecorder] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -247,7 +247,7 @@ PduRecorder.stop() closing recorder log file:
 *** SignalPdusTest
 *** SignalPdusTest.setupNetwork()
 [PduRecorder] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog1.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -280,7 +280,7 @@ Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.Tra
 *** FirePduTest setUpClass()
 *** abstract PduTest setupNetwork()
 [PduRecorder] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog2.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -303,7 +303,7 @@ PduRecorder.stop() closing recorder log file:
 *** EntityStatePduTest setUpClass()
 *** abstract PduTest setupNetwork()
 [PduRecorder] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog3.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -323,7 +323,7 @@ PduRecorder.stop() closing recorder log file:
    C:\x3d-github\opendis7-java\pduLog\PduCaptureLog3.dislog
 *** abstract PduTest tearDownClass()
 edu.nps.moves.dis7.test.FixedAndVariableDatumRoundTripTest setUpClass()
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -334,7 +334,7 @@ edu.nps.moves.dis7.test.FixedAndVariableDatumRoundTripTest setUpClass()
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
 *** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -555,7 +555,7 @@ Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCani
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.M83White	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 1
 Name: edu.nps.moves.dis7.objectTypes.PointObject.Tacticalsmoke.TacticalSmokeCanister.TacticalSmokeCanister	Domain: PlatformDomain 0 OTHER	Kind: ObjectKind 5 TACTICAL_SMOKE	Category: 3	Subcategory: 0
 BitFieldRoundTripTest setUpClass()
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -579,7 +579,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1322933439
+Timestamp: -1267305265
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -600,7 +600,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: 1322933439
+Timestamp: -1267305265
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -610,7 +610,7 @@ Variable Parameters: []
 *** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
 BitFieldRoundTripTest tearDownClass()
 edu.nps.moves.dis7.test.DataQueryPduRoundTripTest setUpClass()
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -623,7 +623,7 @@ edu.nps.moves.dis7.test.DataQueryPduRoundTripTest setUpClass()
 *** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
 edu.nps.moves.dis7.test.DataQueryPduRoundTripTest tearDownClass()
 edu.nps.moves.dis7.test.CommentPdusTest setUpClass()
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -635,8 +635,8 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass()
 [DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  4] DisPduType 22 COMMENT, size 128 bytes)
-[DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
@@ -653,7 +653,7 @@ edu.nps.moves.dis7.test.CommentPdusTest tearDownClass()
 *** IFFPduTest setUpClass()
 *** abstract PduTest setupNetwork()
 [PduRecorder] Recorder log file open: C:\x3d-github\opendis7-java\pduLog\PduCaptureLog4.dislog
-[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX210 160MHz
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -673,7 +673,7 @@ PduRecorder.stop() closing recorder log file:
 ?
 ?? JUnit Jupiter ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 17576 ms ?
+?  ?  ?? testRoundTripAllPdus() 16757 ms ?
 ?  ?? CreateAllPduTypesTest ?
 ?  ?  ?? testCreateAll() ?
 ?  ?? Null Fields Entity Marshall Test ?
@@ -712,7 +712,7 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Test run finished after 57363 ms
+Test run finished after 55143 ms
 [        19 containers found      ]
 [         0 containers skipped    ]
 [        19 containers started    ]
@@ -727,8 +727,8 @@ Test run finished after 57363 ms
 [         0 tests failed          ]
 
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\brutzman\AppData\Local\Temp\null1952990242
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null730020880
 Loading stylesheet ile:/C:/apache-ant-1.10.15/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 250ms
-Deleting: C:\Users\brutzman\AppData\Local\Temp\null1952990242
-BUILD SUCCESSFUL (total time: 1 minute 16 seconds)
+Transform time: 28ms
+Deleting: C:\Users\donbr\AppData\Local\Temp\null730020880
+BUILD SUCCESSFUL (total time: 1 minute 0 seconds)
