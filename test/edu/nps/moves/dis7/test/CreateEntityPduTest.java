@@ -1,0 +1,117 @@
+/*
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the names of the Naval Postgraduate School (NPS)
+      Modeling Virtual Environments and Simulation (MOVES) Institute
+      https://www.nps.edu and https://www.nps.edu/web/moves
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+*/
+package edu.nps.moves.dis7.test;
+
+import edu.nps.moves.dis7.pdus.CreateEntityPdu;
+import edu.nps.moves.dis7.pdus.Pdu;
+import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Unit tests for satisfactory handling of Create Entity PDU fields and values.
+ */
+@DisplayName("CreateEntityPduTest")
+public class CreateEntityPduTest extends PduTest
+{
+    /** default constructor */
+    public CreateEntityPduTest()
+    {
+        // initialization code here, but beware order dependencies with JUnit tests
+    }
+
+    /** preparation **/
+    @BeforeAll
+    public static void setUpClass()
+    {
+        if (isVerbose())
+            System.out.println("*** CreateEntityPduTest setUpClass()");
+
+        // superclass automatically setUp(), which includes setupNetwork()
+    }
+
+    /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
+    @Test
+    @Override
+    public void testMultiplePdus()
+    {
+        if (isVerbose())
+            System.out.println("*** CreateEntityPduTest testMultiplePdus()");
+
+        CreateEntityPdu createEntityPdu = pduFactory.makeCreateEntityPdu();
+
+        createEntityPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
+        createEntityPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        createEntityPdu.setRequestID(1001);
+        testOnePdu(createEntityPdu);
+
+        createEntityPdu.setRequestID(1002);
+        testOnePdu(createEntityPdu);
+
+        // TODO additional PDU-specific tests
+        // TODO test various alternate constructors and utility methods
+    }
+
+    /** Test single PDU for correctness according to all contained fields in this PDU type
+     * See <a href="https://en.wikipedia.org/wiki/Marshalling_(computer_science)" target="_blank">https://en.wikipedia.org/wiki/Marshalling_(computer_science)</a>
+     * @param createdPdu separate PDU for comparison
+     */
+    @Override
+    protected void testOnePdu(Pdu createdPdu)
+    {
+        testPduSendReceiveHeaderMatch(createdPdu); // shared tests in superclass
+
+        // can cast PDUs at this point since PduType matched
+        CreateEntityPdu  createdCreateEntityPdu = (CreateEntityPdu) createdPdu;
+        CreateEntityPdu receivedCreateEntityPdu = (CreateEntityPdu) receivedPdus.get(0); // TODO might be more than one on receivedPdus list
+
+        assertEquals(createdCreateEntityPdu.getOriginatingID(), receivedCreateEntityPdu.getOriginatingID(), "mismatched OriginatingID");
+        assertEquals(createdCreateEntityPdu.getReceivingID(),   receivedCreateEntityPdu.getReceivingID(),   "mismatched ReceivingID");
+        assertEquals(createdCreateEntityPdu.getRequestID(),     receivedCreateEntityPdu.getRequestID(),     "mismatched RequestID");
+
+        testPduCommonFields(createdPdu); // shared tests in superclass
+    }
+
+    /** Command-line invocation (CLI) of program, execution starts here
+     * @param args command-line arguments
+     */
+    public static void main(String[] args)
+    {
+        PduTest createEntityPduTest = new CreateEntityPduTest();
+
+        createEntityPduTest.setUp();
+        createEntityPduTest.testMultiplePdus();
+        createEntityPduTest.tearDown();
+    }
+}
