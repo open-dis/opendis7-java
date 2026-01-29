@@ -1,0 +1,53 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: eclipse-temurin:17-jdk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Ant
+        run: |
+          apt-get update
+          apt-get install -y ant
+
+      - name: Show versions
+        run: |
+          java -version
+          ant -version
+
+      - name: Build and test
+        run: ant all
+
+      - name: Upload jars
+        uses: actions/upload-artifact@v4
+        with:
+          name: opendis7-jars
+          path: dist/*.jar
+          retention-days: 30
+
+      - name: Upload javadoc
+        uses: actions/upload-artifact@v4
+        with:
+          name: opendis7-javadoc
+          path: dist/javadoc/
+          retention-days: 30
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: build/test/results/
+          retention-days: 14
