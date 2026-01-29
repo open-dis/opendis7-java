@@ -41,6 +41,10 @@ import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.Pdu;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Appearance PDU fields and values.
@@ -74,8 +78,8 @@ public class AppearancePduTest extends PduTest
 
         appearancePdu.setLiveEntityId(new EntityID().setSiteID(1).setApplicationID(2).setEntityID(3));
         appearancePdu.setForceId(ForceID.FRIENDLY);
-        appearancePdu.setEntityType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225).setCategory((byte) 1));
-        appearancePdu.setAlternateEntityType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 2).setCountry(225).setCategory((byte) 2));
+        appearancePdu.setEntityType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA).setCategory((byte) 1));
+        appearancePdu.setAlternateEntityType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.AIR)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA).setCategory((byte) 2));
         appearancePdu.setEntityMarking(new EntityMarking().setCharacters("TestApp1".getBytes()));
         testOnePdu(appearancePdu);
 

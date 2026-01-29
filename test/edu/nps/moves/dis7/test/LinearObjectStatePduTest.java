@@ -41,6 +41,8 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.ObjectKind;
 
 /**
  * Unit tests for satisfactory handling of Linear Object State PDU fields and values.
@@ -74,7 +76,7 @@ public class LinearObjectStatePduTest extends PduTest
 
         losPdu.setObjectID(new ObjectIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
         losPdu.setForceID(ForceID.FRIENDLY);
-        losPdu.setObjectType(new ObjectType().setDomain((byte) 1).setObjectKind((byte) 1).setCategory((byte) 2));
+        losPdu.setObjectType(new ObjectType().setDomain(PlatformDomain.LAND).setObjectKind(ObjectKind.OBSTACLE).setCategory((byte) 2));
         losPdu.setRequesterID(new SimulationAddress().setSite(1).setApplication(2));
         losPdu.setReceivingID(new SimulationAddress().setSite(3).setApplication(4));
         losPdu.setUpdateNumber((short) 1);

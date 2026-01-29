@@ -36,6 +36,7 @@ package edu.nps.moves.dis7.test;
 import edu.nps.moves.dis7.pdus.CommentReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,11 +70,11 @@ public class CommentReliablePduTest extends PduTest
 
         CommentReliablePdu crPdu = pduFactory.makeCommentReliablePdu();
 
-        crPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        crPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        crPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        crPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         testOnePdu(crPdu);
 
-        crPdu.setOriginatingID(new SimulationIdentifier().setSiteID(5).setApplicationID(6));
+        crPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(5).setApplication(6)));
         testOnePdu(crPdu);
     }
 

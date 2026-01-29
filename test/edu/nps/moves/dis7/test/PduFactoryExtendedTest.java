@@ -127,7 +127,7 @@ public class PduFactoryExtendedTest
         CommentPdu commentPdu = factory.makeCommentPdu("test message one", "test message two");
         assertNotNull(commentPdu, "CommentPdu should not be null");
         assertEquals(DisPduType.COMMENT, commentPdu.getPduType(), "mismatched PDU type");
-        assertEquals(2, commentPdu.getVariableDatumRecords().size(), "mismatched variable datum count");
+        assertEquals(2, commentPdu.getVariableDatums().size(), "mismatched variable datum count");
     }
 
     @Test

@@ -72,7 +72,7 @@ public class MinefieldResponseNACKPduTest extends PduTest
         MinefieldResponseNACKPdu mrnPdu = pduFactory.makeMinefieldResponseNackPdu();
 
         mrnPdu.setMinefieldID(new MinefieldIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)).setMinefieldNumber(100));
-        mrnPdu.setRequestingEntityID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        mrnPdu.setRequestingEntityID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         mrnPdu.setRequestID((byte) 1);
         testOnePdu(mrnPdu);
 

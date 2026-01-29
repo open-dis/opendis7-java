@@ -36,6 +36,7 @@ package edu.nps.moves.dis7.test;
 import edu.nps.moves.dis7.pdus.CreateEntityPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class CreateEntityPduTest extends PduTest
 
         CreateEntityPdu createEntityPdu = pduFactory.makeCreateEntityPdu();
 
-        createEntityPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        createEntityPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        createEntityPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        createEntityPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         createEntityPdu.setRequestID(1001);
         testOnePdu(createEntityPdu);
 

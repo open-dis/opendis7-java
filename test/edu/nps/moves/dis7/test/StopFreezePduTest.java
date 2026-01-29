@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.StopFreezeReason;
 import edu.nps.moves.dis7.pdus.ClockTime;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.StopFreezePdu;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,15 +72,15 @@ public class StopFreezePduTest extends PduTest
 
         StopFreezePdu stopFreezePdu = pduFactory.makeStopFreezePdu();
 
-        stopFreezePdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        stopFreezePdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        stopFreezePdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        stopFreezePdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         stopFreezePdu.setRealWorldTime(new ClockTime().setHour(12).setTimePastHour(100000));
         stopFreezePdu.setReason(StopFreezeReason.TERMINATION);
         stopFreezePdu.setRequestID(4001);
         testOnePdu(stopFreezePdu);
 
         stopFreezePdu.setRequestID(4002);
-        stopFreezePdu.setReason(StopFreezeReason.FREEZE);
+        stopFreezePdu.setReason(StopFreezeReason.RECESS);
         testOnePdu(stopFreezePdu);
     }
 

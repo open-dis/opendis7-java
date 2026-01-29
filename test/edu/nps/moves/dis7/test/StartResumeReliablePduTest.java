@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.ClockTime;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.StartResumeReliablePdu;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -71,15 +72,15 @@ public class StartResumeReliablePduTest extends PduTest
 
         StartResumeReliablePdu srrPdu = pduFactory.makeStartResumeReliablePdu();
 
-        srrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        srrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
-        srrPdu.setRealWorldTime(new ClockTime().setHour(10).setTimePastTheHour(1000000));
-        srrPdu.setSimulationTime(new ClockTime().setHour(5).setTimePastTheHour(500000));
+        srrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        srrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
+        srrPdu.setRealWorldTime(new ClockTime().setHour(10).setTimePastHour(1000000));
+        srrPdu.setSimulationTime(new ClockTime().setHour(5).setTimePastHour(500000));
         srrPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         srrPdu.setRequestID(301);
         testOnePdu(srrPdu);
 
-        srrPdu.setRealWorldTime(new ClockTime().setHour(12).setTimePastTheHour(2000000));
+        srrPdu.setRealWorldTime(new ClockTime().setHour(12).setTimePastHour(2000000));
         srrPdu.setRequestID(302);
         testOnePdu(srrPdu);
     }

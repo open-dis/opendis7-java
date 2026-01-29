@@ -40,6 +40,10 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.Vector3Float;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of IsPartOf PDU fields and values.
@@ -74,7 +78,7 @@ public class IsPartOfPduTest extends PduTest
         ipoPdu.setOrginatingEntityID(new EntityID().setSiteID(1).setApplicationID(2).setEntityID(3));
         ipoPdu.setReceivingEntityID(new EntityID().setSiteID(4).setApplicationID(5).setEntityID(6));
         ipoPdu.setPartLocation(new Vector3Float().setX(10.0f).setY(20.0f).setZ(5.0f));
-        ipoPdu.setPartEntityType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225).setCategory((byte) 1));
+        ipoPdu.setPartEntityType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA).setCategory((byte) 1));
         testOnePdu(ipoPdu);
 
         ipoPdu.setPartLocation(new Vector3Float().setX(30.0f).setY(40.0f).setZ(15.0f));

@@ -41,6 +41,8 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.ObjectKind;
 
 /**
  * Unit tests for satisfactory handling of Areal Object State PDU fields and values.
@@ -74,7 +76,7 @@ public class ArealObjectStatePduTest extends PduTest
 
         aosPdu.setObjectID(new ObjectIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
         aosPdu.setForceID(ForceID.FRIENDLY);
-        aosPdu.setObjectType(new ObjectType().setDomain((byte) 1).setObjectKind((byte) 1).setCategory((byte) 3));
+        aosPdu.setObjectType(new ObjectType().setDomain(PlatformDomain.LAND).setObjectKind(ObjectKind.OBSTACLE).setCategory((byte) 3));
         aosPdu.setRequesterID(new SimulationAddress().setSite(1).setApplication(2));
         aosPdu.setReceivingID(new SimulationAddress().setSite(3).setApplication(4));
         aosPdu.setUpdateNumber((short) 1);

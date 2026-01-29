@@ -38,6 +38,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.RecordQueryReliablePdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class RecordQueryReliablePduTest extends PduTest
 
         RecordQueryReliablePdu rqrPdu = pduFactory.makeRecordQueryReliablePdu();
 
-        rqrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        rqrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        rqrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        rqrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         rqrPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         rqrPdu.setRequestID(1301);
         rqrPdu.setEventType(RecordQueryREventType.PERIODIC);

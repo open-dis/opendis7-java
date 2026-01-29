@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.ActionResponseRequestStatus;
 import edu.nps.moves.dis7.pdus.ActionResponseReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,8 +71,8 @@ public class ActionResponseReliablePduTest extends PduTest
 
         ActionResponseReliablePdu arrPdu = pduFactory.makeActionResponseReliablePdu();
 
-        arrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        arrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        arrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        arrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         arrPdu.setRequestID(701);
         arrPdu.setResponseStatus(ActionResponseRequestStatus.OTHER);
         testOnePdu(arrPdu);

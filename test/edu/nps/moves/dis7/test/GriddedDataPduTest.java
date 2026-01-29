@@ -39,8 +39,13 @@ import edu.nps.moves.dis7.pdus.EntityType;
 import edu.nps.moves.dis7.pdus.GriddedDataPdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Gridded Data PDU fields and values.
@@ -72,13 +77,13 @@ public class GriddedDataPduTest extends PduTest
 
         GriddedDataPdu gdPdu = pduFactory.makeGriddedDataPdu();
 
-        gdPdu.setEnvironmentalSimulationApplicationID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
+        gdPdu.setEnvironmentalSimulationApplicationID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
         gdPdu.setFieldNumber((short) 1);
         gdPdu.setPduNumber((short) 1);
         gdPdu.setPduTotal((short) 1);
         gdPdu.setCoordinateSystem(GriddedDataCoordinateSystem.RIGHT_HANDED_CARTESIAN_LOCAL_TOPOGRAPHIC_PROJECTION_EAST_NORTH_UP);
         gdPdu.setConstantGrid(GriddedDataConstantGrid.CONSTANT_GRID);
-        gdPdu.setEnvironmentType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        gdPdu.setEnvironmentType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         testOnePdu(gdPdu);
 
         gdPdu.setFieldNumber((short) 2);

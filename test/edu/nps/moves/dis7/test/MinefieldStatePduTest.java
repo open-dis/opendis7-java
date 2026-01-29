@@ -43,6 +43,10 @@ import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.Vector3Double;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Minefield State PDU fields and values.
@@ -77,7 +81,7 @@ public class MinefieldStatePduTest extends PduTest
         msPdu.setMinefieldID(new MinefieldIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)).setMinefieldNumber(100));
         msPdu.setMinefieldSequence((short) 1);
         msPdu.setForceID(ForceID.FRIENDLY);
-        msPdu.setMinefieldType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        msPdu.setMinefieldType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         msPdu.setMinefieldLocation(new Vector3Double().setX(1000.0).setY(2000.0).setZ(0.0));
         msPdu.setMinefieldOrientation(new EulerAngles().setPhi(0.0f).setTheta(0.0f).setPsi(1.57f));
         testOnePdu(msPdu);

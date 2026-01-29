@@ -41,6 +41,10 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Environmental Process PDU fields and values.
@@ -73,7 +77,7 @@ public class EnvironmentalProcessPduTest extends PduTest
         EnvironmentalProcessPdu epPdu = pduFactory.makeEnvironmentalProcessPdu();
 
         epPdu.setEnvironementalProcessID(new ObjectIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
-        epPdu.setEnvironmentType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        epPdu.setEnvironmentType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         epPdu.setModelType(EnvironmentalProcessModelType.NO_STATEMENT);
         epPdu.setSequenceNumber((short) 1);
         testOnePdu(epPdu);

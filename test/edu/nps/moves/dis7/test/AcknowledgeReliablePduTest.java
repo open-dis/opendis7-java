@@ -38,6 +38,7 @@ import edu.nps.moves.dis7.enumerations.AcknowledgeResponseFlag;
 import edu.nps.moves.dis7.pdus.AcknowledgeReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class AcknowledgeReliablePduTest extends PduTest
 
         AcknowledgeReliablePdu arPdu = pduFactory.makeAcknowledgeReliablePdu();
 
-        arPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        arPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        arPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        arPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         arPdu.setAcknowledgeFlag(AcknowledgeAcknowledgeFlag.CREATE_ENTITY);
         arPdu.setResponseFlag(AcknowledgeResponseFlag.ABLE_TO_COMPLY);
         arPdu.setRequestID(501);

@@ -37,7 +37,9 @@ import edu.nps.moves.dis7.pdus.ActionResponsePdu;
 import edu.nps.moves.dis7.pdus.FixedDatum;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.VariableDatum;
+import edu.nps.moves.dis7.enumerations.VariableRecordType;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,11 +73,11 @@ public class ActionResponsePduTest extends PduTest
 
         ActionResponsePdu actionResponsePdu = pduFactory.makeActionResponsePdu();
 
-        actionResponsePdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        actionResponsePdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        actionResponsePdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        actionResponsePdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         actionResponsePdu.setRequestID(7001);
-        actionResponsePdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(100).setFixedDatumValue(99));
-        actionResponsePdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(200).setVariableDatumValue(new byte[]{10, 20, 30, 40, 50, 60, 70, 80}));
+        actionResponsePdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST).setFixedDatumValue(99));
+        actionResponsePdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(VariableRecordType.ENTITY_ID_LIST).setVariableDatumValue(new byte[]{10, 20, 30, 40, 50, 60, 70, 80}));
         testOnePdu(actionResponsePdu);
 
         actionResponsePdu.setRequestID(7002);

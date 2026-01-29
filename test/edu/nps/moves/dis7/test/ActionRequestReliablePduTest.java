@@ -38,6 +38,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.ActionRequestReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class ActionRequestReliablePduTest extends PduTest
 
         ActionRequestReliablePdu arrPdu = pduFactory.makeActionRequestReliablePdu();
 
-        arrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        arrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        arrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        arrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         arrPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         arrPdu.setRequestID(601);
         arrPdu.setActionID(ActionRequestActionID.OTHER);

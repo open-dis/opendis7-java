@@ -41,6 +41,10 @@ import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Minefield Data PDU fields and values.
@@ -73,12 +77,12 @@ public class MinefieldDataPduTest extends PduTest
         MinefieldDataPdu mdPdu = pduFactory.makeMinefieldDataPdu();
 
         mdPdu.setMinefieldID(new MinefieldIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)).setMinefieldNumber(100));
-        mdPdu.setRequestingEntityID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        mdPdu.setRequestingEntityID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         mdPdu.setMinefieldSequenceNumbeer((short) 1);
         mdPdu.setRequestID((byte) 1);
         mdPdu.setPduSequenceNumber((byte) 1);
         mdPdu.setNumberOfPdus((byte) 1);
-        mdPdu.setMineType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        mdPdu.setMineType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         testOnePdu(mdPdu);
 
         mdPdu.setMinefieldSequenceNumbeer((short) 2);

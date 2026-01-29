@@ -38,6 +38,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.RecordReliablePdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class RecordReliablePduTest extends PduTest
 
         RecordReliablePdu rrPdu = pduFactory.makeRecordReliablePdu();
 
-        rrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        rrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        rrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        rrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         rrPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         rrPdu.setRequestID(1101);
         rrPdu.setEventType(RecordREventType.OTHER);

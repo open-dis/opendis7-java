@@ -20,6 +20,9 @@ public class SimulationManagerTest
 {
     private static boolean verbose = true;
 
+    /** helper instance for creating inner RecordType objects */
+    private SimulationManager smHelper = new SimulationManager();
+
     /** default constructor */
     public SimulationManagerTest() {}
 
@@ -85,7 +88,7 @@ public class SimulationManagerTest
         if (verbose)
             System.out.println("*** SimulationManagerTest testRecordType()");
 
-        RecordType record = new RecordType(1, "Entity1", "A test entity", "ref-001");
+        RecordType record = smHelper.new RecordType(1, "Entity1", "A test entity", "ref-001");
         assertEquals(1, record.getId(), "mismatched record ID");
         assertEquals("Entity1", record.getName(), "mismatched record name");
         assertEquals("A test entity", record.getDescription(), "mismatched record description");
@@ -98,7 +101,7 @@ public class SimulationManagerTest
         if (verbose)
             System.out.println("*** SimulationManagerTest testRecordTypeSetters()");
 
-        RecordType record = new RecordType(1, "Entity1");
+        RecordType record = smHelper.new RecordType(1, "Entity1");
         record.setId(2);
         record.setName("Entity2");
         record.setDescription("updated description");
@@ -122,7 +125,7 @@ public class SimulationManagerTest
         assertNotNull(sm.getEntityRecordList(), "entity list should not be null");
         assertTrue(sm.getEntityRecordList().isEmpty(), "entity list should be empty initially");
 
-        RecordType entity = new RecordType(1, "Tank1");
+        RecordType entity = smHelper.new RecordType(1, "Tank1");
         sm.addEntity(entity);
         assertEquals(1, sm.getEntityRecordList().size(), "entity list should have 1 entry");
 
@@ -152,7 +155,7 @@ public class SimulationManagerTest
             System.out.println("*** SimulationManagerTest testClearAll()");
 
         SimulationManager sm = new SimulationManager("test");
-        sm.addEntity(new RecordType(1, "Entity1"));
+        sm.addEntity(smHelper.new RecordType(1, "Entity1"));
         sm.addHost("host1");
         sm.clearAll();
 

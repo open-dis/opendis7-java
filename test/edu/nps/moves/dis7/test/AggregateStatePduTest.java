@@ -46,6 +46,9 @@ import edu.nps.moves.dis7.pdus.Vector3Double;
 import edu.nps.moves.dis7.pdus.Vector3Float;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
+import edu.nps.moves.dis7.enumerations.AggregateStateAggregateKind;
 
 /**
  * Unit tests for satisfactory handling of Aggregate State PDU fields and values.
@@ -80,7 +83,7 @@ public class AggregateStatePduTest extends PduTest
         asPdu.setAggregateID(new AggregateIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)).setAggregateID(100));
         asPdu.setForceID(ForceID.FRIENDLY);
         asPdu.setAggregateState(AggregateStateAggregateState.AGGREGATED);
-        asPdu.setAggregateType(new AggregateType().setAggregateKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        asPdu.setAggregateType(new AggregateType().setAggregateKind(AggregateStateAggregateKind.MILITARY_HIERARCHY).setDomain(PlatformDomain.LAND).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         asPdu.setFormation(AggregateStateFormation.VEE);
         asPdu.setAggregateMarking(new AggregateMarking().setCharacters("TestAgg1".getBytes()));
         asPdu.setDimensions(new Vector3Float().setX(100.0f).setY(200.0f).setZ(50.0f));

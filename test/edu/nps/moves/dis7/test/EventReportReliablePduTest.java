@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.EventReportEventType;
 import edu.nps.moves.dis7.pdus.EventReportReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,8 +71,8 @@ public class EventReportReliablePduTest extends PduTest
 
         EventReportReliablePdu errPdu = pduFactory.makeEventReportReliablePdu();
 
-        errPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        errPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        errPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        errPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         errPdu.setEventType(EventReportEventType.OTHER);
         testOnePdu(errPdu);
 

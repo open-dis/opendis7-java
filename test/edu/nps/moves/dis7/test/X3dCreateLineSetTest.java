@@ -49,7 +49,7 @@ public class X3dCreateLineSetTest
     }
 
     @Test
-    public void testAddPointsWithEspduBytes()
+    public void testAddPointsWithEspduBytes() throws Exception
     {
         if (verbose)
             System.out.println("*** X3dCreateLineSetTest testAddPointsWithEspduBytes()");
@@ -72,7 +72,7 @@ public class X3dCreateLineSetTest
     }
 
     @Test
-    public void testAddMultipleEspduPoints()
+    public void testAddMultipleEspduPoints() throws Exception
     {
         if (verbose)
             System.out.println("*** X3dCreateLineSetTest testAddMultipleEspduPoints()");
@@ -132,7 +132,7 @@ public class X3dCreateLineSetTest
     }
 
     @Test
-    public void testMakeX3dLineSetWithData()
+    public void testMakeX3dLineSetWithData() throws Exception
     {
         if (verbose)
             System.out.println("*** X3dCreateLineSetTest testMakeX3dLineSetWithData()");
@@ -162,7 +162,7 @@ public class X3dCreateLineSetTest
     }
 
     @Test
-    public void testInputBufferCloned()
+    public void testInputBufferCloned() throws Exception
     {
         if (verbose)
             System.out.println("*** X3dCreateLineSetTest testInputBufferCloned()");
@@ -189,7 +189,7 @@ public class X3dCreateLineSetTest
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
      */
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         System.out.println("X3dCreateLineSetTest start");
         X3dCreateLineSetTest test = new X3dCreateLineSetTest();

@@ -41,6 +41,10 @@ import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.pdus.Domain;
+import edu.nps.moves.dis7.enumerations.EntityKind;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.Country;
 
 /**
  * Unit tests for satisfactory handling of Minefield Query PDU fields and values.
@@ -75,7 +79,7 @@ public class MinefieldQueryPduTest extends PduTest
         mqPdu.setMinefieldID(new MinefieldIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)).setMinefieldNumber(100));
         mqPdu.setRequestingEntityID(new EntityID().setSiteID(3).setApplicationID(4).setEntityID(5));
         mqPdu.setRequestID((byte) 1);
-        mqPdu.setRequestedMineType(new EntityType().setEntityKind((byte) 1).setDomain((byte) 1).setCountry(225));
+        mqPdu.setRequestedMineType(new EntityType().setEntityKind(EntityKind.PLATFORM).setDomain(Domain.inst(PlatformDomain.LAND)).setCountry(Country.UNITED_STATES_OF_AMERICA_USA));
         testOnePdu(mqPdu);
 
         mqPdu.setRequestID((byte) 2);

@@ -39,6 +39,7 @@ import edu.nps.moves.dis7.enumerations.StopFreezeReason;
 import edu.nps.moves.dis7.pdus.ClockTime;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.StopFreezeReliablePdu;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -73,11 +74,11 @@ public class StopFreezeReliablePduTest extends PduTest
 
         StopFreezeReliablePdu sfrPdu = pduFactory.makeStopFreezeReliablePdu();
 
-        sfrPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        sfrPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
-        sfrPdu.setRealWorldTime(new ClockTime().setHour(10).setTimePastTheHour(1000000));
-        sfrPdu.setReason(StopFreezeReason.END_OF_MISSION);
-        sfrPdu.setFrozenBehavior(StopFreezeFrozenBehavior.SIMULATE_OPERATIONS);
+        sfrPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        sfrPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
+        sfrPdu.setRealWorldTime(new ClockTime().setHour(10).setTimePastHour(1000000));
+        sfrPdu.setReason(StopFreezeReason.TERMINATION);
+        sfrPdu.setFrozenBehavior(new StopFreezeFrozenBehavior());
         sfrPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         sfrPdu.setRequestID(401);
         testOnePdu(sfrPdu);

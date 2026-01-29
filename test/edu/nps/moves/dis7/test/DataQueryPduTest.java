@@ -37,9 +37,11 @@ import edu.nps.moves.dis7.pdus.DataQueryPdu;
 import edu.nps.moves.dis7.pdus.FixedDatum;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.VariableDatum;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.VariableRecordType;
 
 /**
  * Unit tests for satisfactory handling of Data Query PDU fields and values.
@@ -71,12 +73,12 @@ public class DataQueryPduTest extends PduTest
 
         DataQueryPdu dataQueryPdu = pduFactory.makeDataQueryPdu();
 
-        dataQueryPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        dataQueryPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        dataQueryPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        dataQueryPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         dataQueryPdu.setRequestID(9001);
         dataQueryPdu.setTimeInterval(5000);
-        dataQueryPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(300));
-        dataQueryPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(400));
+        dataQueryPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST));
+        dataQueryPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(VariableRecordType.ENTITY_ID_LIST));
         testOnePdu(dataQueryPdu);
 
         dataQueryPdu.setRequestID(9002);

@@ -36,6 +36,7 @@ package edu.nps.moves.dis7.test;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.RemoveEntityPdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,8 +72,8 @@ public class RemoveEntityPduTest extends PduTest
 
         RemoveEntityPdu removeEntityPdu = pduFactory.makeRemoveEntityPdu();
 
-        removeEntityPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        removeEntityPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        removeEntityPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        removeEntityPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         removeEntityPdu.setRequestID(2001);
         testOnePdu(removeEntityPdu);
 

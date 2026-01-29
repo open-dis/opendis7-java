@@ -37,9 +37,11 @@ import edu.nps.moves.dis7.pdus.FixedDatum;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SetDataPdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.VariableDatum;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.VariableRecordType;
 
 /**
  * Unit tests for satisfactory handling of Set Data PDU fields and values.
@@ -71,11 +73,11 @@ public class SetDataPduTest extends PduTest
 
         SetDataPdu setDataPdu = pduFactory.makeSetDataPdu();
 
-        setDataPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        setDataPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        setDataPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        setDataPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         setDataPdu.setRequestID(10001);
-        setDataPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(500).setFixedDatumValue(77));
-        setDataPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(600).setVariableDatumValue(new byte[]{11, 22, 33, 44, 55, 66, 77, 88}));
+        setDataPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST).setFixedDatumValue(77));
+        setDataPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(VariableRecordType.ENTITY_ID_LIST).setVariableDatumValue(new byte[]{11, 22, 33, 44, 55, 66, 77, 88}));
         testOnePdu(setDataPdu);
 
         setDataPdu.setRequestID(10002);

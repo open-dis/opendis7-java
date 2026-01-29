@@ -44,6 +44,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
 
 /** EntityType is instantiated with a default Domain of PlatformDomain-OTHER
  * which causes issues down the road with similar enum values of other Domain

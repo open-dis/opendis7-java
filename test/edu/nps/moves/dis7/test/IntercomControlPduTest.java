@@ -70,7 +70,7 @@ public class IntercomControlPduTest extends PduTest
 
         IntercomControlPdu intercomControlPdu = pduFactory.makeIntercomControlPdu();
 
-        intercomControlPdu.setControlType(IntercomControlControlType.CONTROL_TYPE_STATUS);
+        intercomControlPdu.setControlType(IntercomControlControlType.STATUS);
         intercomControlPdu.setSourceEntityID(new EntityID().setSiteID(1).setApplicationID(2).setEntityID(3));
         intercomControlPdu.setSourceIntercomNumber((short) 1);
         intercomControlPdu.setMasterIntercomReferenceID(new EntityID().setSiteID(4).setApplicationID(5).setEntityID(6));
@@ -78,7 +78,7 @@ public class IntercomControlPduTest extends PduTest
         intercomControlPdu.setMasterChannelID((short) 1);
         testOnePdu(intercomControlPdu);
 
-        intercomControlPdu.setControlType(IntercomControlControlType.CONTROL_TYPE_REQUEST_ACKNOWLEDGE_REQUIRED);
+        intercomControlPdu.setControlType(IntercomControlControlType.REQUEST_ACKNOWLEDGE_REQUIRED);
         testOnePdu(intercomControlPdu);
     }
 

@@ -36,6 +36,7 @@ package edu.nps.moves.dis7.test;
 import edu.nps.moves.dis7.pdus.ClockTime;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.StartResumePdu;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -70,8 +71,8 @@ public class StartResumePduTest extends PduTest
 
         StartResumePdu startResumePdu = pduFactory.makeStartResumePdu();
 
-        startResumePdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        startResumePdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        startResumePdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        startResumePdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         startResumePdu.setRealWorldTime(new ClockTime().setHour(10).setTimePastHour(500000));
         startResumePdu.setSimulationTime(new ClockTime().setHour(0).setTimePastHour(0));
         startResumePdu.setRequestID(3001);

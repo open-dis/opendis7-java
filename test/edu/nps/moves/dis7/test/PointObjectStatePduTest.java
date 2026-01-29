@@ -43,6 +43,8 @@ import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.Vector3Double;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.PlatformDomain;
+import edu.nps.moves.dis7.enumerations.ObjectKind;
 
 /**
  * Unit tests for satisfactory handling of Point Object State PDU fields and values.
@@ -76,7 +78,7 @@ public class PointObjectStatePduTest extends PduTest
 
         posPdu.setObjectID(new EntityID().setSiteID(1).setApplicationID(2).setEntityID(3));
         posPdu.setForceID(ForceID.FRIENDLY);
-        posPdu.setObjectType(new ObjectType().setDomain((byte) 1).setObjectKind((byte) 1).setCategory((byte) 1));
+        posPdu.setObjectType(new ObjectType().setDomain(PlatformDomain.LAND).setObjectKind(ObjectKind.OBSTACLE).setCategory((byte) 1));
         posPdu.setObjectLocation(new Vector3Double().setX(1000.0).setY(2000.0).setZ(3000.0));
         posPdu.setObjectOrientation(new EulerAngles().setPhi(0.1f).setTheta(0.2f).setPsi(0.3f));
         posPdu.setRequesterID(new SimulationAddress().setSite(1).setApplication(2));

@@ -37,9 +37,11 @@ import edu.nps.moves.dis7.pdus.EventReportPdu;
 import edu.nps.moves.dis7.pdus.FixedDatum;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import edu.nps.moves.dis7.pdus.VariableDatum;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+import edu.nps.moves.dis7.enumerations.VariableRecordType;
 
 /**
  * Unit tests for satisfactory handling of Event Report PDU fields and values.
@@ -71,13 +73,13 @@ public class EventReportPduTest extends PduTest
 
         EventReportPdu eventReportPdu = pduFactory.makeEventReportPdu();
 
-        eventReportPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        eventReportPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
-        eventReportPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(700).setFixedDatumValue(88));
-        eventReportPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(800).setVariableDatumValue(new byte[]{1, 2, 3, 4, 5, 6, 7, 8}));
+        eventReportPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        eventReportPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
+        eventReportPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST).setFixedDatumValue(88));
+        eventReportPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(VariableRecordType.ENTITY_ID_LIST).setVariableDatumValue(new byte[]{1, 2, 3, 4, 5, 6, 7, 8}));
         testOnePdu(eventReportPdu);
 
-        eventReportPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(701).setFixedDatumValue(99));
+        eventReportPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST).setFixedDatumValue(99));
         testOnePdu(eventReportPdu);
     }
 

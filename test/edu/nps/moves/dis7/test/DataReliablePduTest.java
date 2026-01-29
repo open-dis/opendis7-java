@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.DataReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,8 +71,8 @@ public class DataReliablePduTest extends PduTest
 
         DataReliablePdu drPdu = pduFactory.makeDataReliablePdu();
 
-        drPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        drPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        drPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        drPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         drPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         drPdu.setRequestID(801);
         testOnePdu(drPdu);

@@ -37,6 +37,7 @@ import edu.nps.moves.dis7.enumerations.RequiredReliabilityService;
 import edu.nps.moves.dis7.pdus.CreateEntityReliablePdu;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SimulationIdentifier;
+import edu.nps.moves.dis7.pdus.SimulationAddress;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,8 +71,8 @@ public class CreateEntityReliablePduTest extends PduTest
 
         CreateEntityReliablePdu cerPdu = pduFactory.makeCreateEntityReliablePdu();
 
-        cerPdu.setOriginatingID(new SimulationIdentifier().setSiteID(1).setApplicationID(2));
-        cerPdu.setReceivingID(new SimulationIdentifier().setSiteID(3).setApplicationID(4));
+        cerPdu.setOriginatingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(1).setApplication(2)));
+        cerPdu.setReceivingID(new SimulationIdentifier().setSimulationAddress(new SimulationAddress().setSite(3).setApplication(4)));
         cerPdu.setRequiredReliabilityService(RequiredReliabilityService.ACKNOWLEDGED);
         cerPdu.setRequestID(101);
         testOnePdu(cerPdu);
