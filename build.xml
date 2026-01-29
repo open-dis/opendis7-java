@@ -179,22 +179,16 @@ POSSIBILITY OF SUCH DAMAGE.
         </delete>
     </target>
     
-    <target name="view.issues.online" description="view online issues in web browser (NetBeans only)">
+    <target name="view.issues.online" description="view online issues in web browser">
         <echo message="https://github.com/open-dis/opendis7-java/issues" />
-        <nbbrowse url="https://github.com/open-dis/opendis7-java/issues" />
-        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
-    
-    <target name="view.javadoc.local" description="view local package javadoc in web browser (NetBeans only)">
+
+    <target name="view.javadoc.local" description="view local javadoc">
         <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
-        <nbbrowse file="${dist.javadoc.dir}/index.html" />
-        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
-    
-    <target name="view.javadoc.online" description="view online package javadoc in web browser (NetBeans only)">
-        <echo message="view online javadoc in dist/javadoc subdirectory"/>
-        <nbbrowse url="https://savage.nps.edu/opendis7-java/javadoc" />
-        <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
+
+    <target name="view.javadoc.online" description="view online javadoc">
+        <echo message="view online javadoc: https://savage.nps.edu/opendis7-java/javadoc"/>
     </target>
 
     <target name="deploy.guidance" description="instructions">

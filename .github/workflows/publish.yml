@@ -1,0 +1,55 @@
+name: Publish Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    container:
+      image: eclipse-temurin:17-jdk
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Ant and tools
+        run: |
+          apt-get update
+          apt-get install -y ant zip
+
+      - name: Build
+        run: ant all
+
+      - name: Create release bundle
+        run: |
+          mkdir -p release
+          cp dist/opendis7-*.jar release/
+          cp dist/license.txt release/
+          cp dist/license.html release/
+          cd release && zip -r ../opendis7-release.zip .
+
+      - name: Upload release assets
+        if: github.event_name == 'release'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          apt-get install -y gh
+          for jar in dist/opendis7-*.jar; do
+            gh release upload "${{ github.event.release.tag_name }}" "$jar" --clobber
+          done
+          gh release upload "${{ github.event.release.tag_name }}" opendis7-release.zip --clobber
+
+      - name: Upload artifacts
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: opendis7-release
+          path: |
+            dist/opendis7-*.jar
+            opendis7-release.zip
