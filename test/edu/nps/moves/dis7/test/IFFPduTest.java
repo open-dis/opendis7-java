@@ -16,6 +16,7 @@ import edu.nps.moves.dis7.pdus.LayerHeader;
 import edu.nps.moves.dis7.pdus.Mode5TransponderBasicData;
 import edu.nps.moves.dis7.pdus.Pdu;
 import edu.nps.moves.dis7.pdus.SystemIdentifier;
+import edu.nps.moves.dis7.utilities.data.IFFMode5StatusRecord;
 
 @DisplayName("IFFPduTest")
 public class IFFPduTest extends PduTest{
