@@ -179,16 +179,22 @@ POSSIBILITY OF SUCH DAMAGE.
         </delete>
     </target>
     
-    <target name="view.issues.online" description="view online issues in web browser">
+    <target name="view.issues.online" description="view online issues in web browser (NetBeans only)">
         <echo message="https://github.com/open-dis/opendis7-java/issues" />
+        <!-- nbbrowse requires NetBeans IDE; commented out for headless/CI compatibility -->
+        <!--<nbbrowse url="https://github.com/open-dis/opendis7-java/issues" />-->
     </target>
 
-    <target name="view.javadoc.local" description="view local javadoc">
+    <target name="view.javadoc.local" description="view local package javadoc in web browser (NetBeans only)">
         <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
+        <!-- nbbrowse requires NetBeans IDE; commented out for headless/CI compatibility -->
+        <!--<nbbrowse file="${dist.javadoc.dir}/index.html" />-->
     </target>
 
-    <target name="view.javadoc.online" description="view online javadoc">
-        <echo message="view online javadoc: https://savage.nps.edu/opendis7-java/javadoc"/>
+    <target name="view.javadoc.online" description="view online package javadoc in web browser (NetBeans only)">
+        <echo message="view online javadoc in dist/javadoc subdirectory"/>
+        <!-- nbbrowse requires NetBeans IDE; commented out for headless/CI compatibility -->
+        <!--<nbbrowse url="https://savage.nps.edu/opendis7-java/javadoc" />-->
     </target>
 
     <target name="deploy.guidance" description="instructions">
