@@ -26,6 +26,10 @@ jobs:
       - name: Build
         run: ant all
 
+      - name: Package javadoc for browsing
+        run: |
+          cd dist/javadoc && zip -r ../opendis7-javadoc.zip .
+
       - name: Create release bundle
         run: |
           mkdir -p release
@@ -34,16 +38,78 @@ jobs:
           cp dist/license.html release/
           cd release && zip -r ../opendis7-release.zip .
 
+      - name: Generate release description
+        run: |
+          cat > /tmp/release-body.md <<'RELEASE_EOF'
+          ![Open-DIS Surfer Dude](https://raw.githubusercontent.com/open-dis/opendis7-java/master/images/OpenDisSurferDude.png)
+
+          # opendis7-java Distribution Products
+
+          Complete type-safe open-source Java implementation of the IEEE Distributed Interactive Simulation (DIS) Protocol, including all Protocol Data Units (PDUs), entity enumerations, and supporting utilities.
+
+          ## Downloads
+
+          | Asset | Description |
+          |-------|-------------|
+          | `opendis7-full.jar` | Complete library — PDUs, enumerations, utilities, and javadoc in one jar |
+          | `opendis7-pdus-classes.jar` | PDU compiled classes only |
+          | `opendis7-pdus-source.jar` | PDU Java source files |
+          | `opendis7-enumerations-classes.jar` | Enumeration compiled classes (from opendis7-source-generator) |
+          | `opendis7-enumerations-source.jar` | Enumeration Java source files |
+          | `opendis7-enumerations-javadoc.jar` | Enumeration javadoc archive |
+          | `opendis7-javadoc.zip` | Browseable javadoc (unzip and open `index.html`) |
+          | `opendis7-release.zip` | Complete bundle with all JARs and license files |
+
+          ## Documentation
+
+          - [Javadoc (online)](https://savage.nps.edu/opendis7-java/javadoc)
+          - [IEEE DIS7 PDU Color Figure](https://www.nps.edu/web/moves/dis)
+          - [DIS 101 Tutorial (IITSEC 2021)](https://www.nps.edu/web/moves/networked-virtual-environments)
+          - [Wikipedia: Distributed Interactive Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation)
+
+          ## Source Code
+
+          - [opendis7-java](https://github.com/open-dis/opendis7-java) — Java library, PDUs, utilities, and tests
+          - [opendis7-source-generator](https://github.com/open-dis/opendis7-source-generator) — Code generator for enumerations and entity types from SISO-REF-010
+
+          ## Specifications
+
+          - IEEE Standard 1278.1-2012, IEEE Standard for Distributed Interactive Simulation (DIS) — Application Protocols
+          - SISO-REF-010 — Reference for Enumerations for Simulation Interoperability
+
+          ## Course Materials
+
+          - [MV3500 Distributed Simulation Fundamentals](https://www.nps.edu/web/moves/mv3500) — NPS course using this library
+
+          ## Contact
+
+          - [Don Brutzman](https://faculty.nps.edu/brutzman) — Naval Postgraduate School (NPS)
+          - [open-dis GitHub Organization](https://github.com/open-dis)
+          RELEASE_EOF
+          # Strip leading whitespace from heredoc (caused by YAML indentation)
+          sed -i 's/^          //' /tmp/release-body.md
+
       - name: Upload release assets
         if: github.event_name == 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           apt-get install -y gh
+          TAG="${{ github.event.release.tag_name }}"
+
+          # Upload individual JARs
           for jar in dist/opendis7-*.jar; do
-            gh release upload "${{ github.event.release.tag_name }}" "$jar" --clobber
+            gh release upload "$TAG" "$jar" --clobber
           done
-          gh release upload "${{ github.event.release.tag_name }}" opendis7-release.zip --clobber
+
+          # Upload javadoc zip
+          gh release upload "$TAG" dist/opendis7-javadoc.zip --clobber
+
+          # Upload complete bundle
+          gh release upload "$TAG" opendis7-release.zip --clobber
+
+          # Update release body with the generated description
+          gh release edit "$TAG" --notes-file /tmp/release-body.md
 
       - name: Upload artifacts
         if: github.event_name == 'workflow_dispatch'
@@ -52,4 +118,5 @@ jobs:
           name: opendis7-release
           path: |
             dist/opendis7-*.jar
+            dist/opendis7-javadoc.zip
             opendis7-release.zip
