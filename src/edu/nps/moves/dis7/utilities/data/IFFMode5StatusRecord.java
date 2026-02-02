@@ -1,4 +1,4 @@
-package edu.nps.moves.dis7.test;
+package edu.nps.moves.dis7.utilities.data;
 
 import java.io.Serializable;
 import java.util.BitSet;
