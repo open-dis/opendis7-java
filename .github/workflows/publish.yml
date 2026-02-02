@@ -21,7 +21,7 @@ jobs:
       - name: Install Ant and tools
         run: |
           apt-get update
-          apt-get install -y ant zip
+          apt-get install -y ant zip git gh
 
       - name: Build
         run: ant all
@@ -94,7 +94,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          apt-get install -y gh
           TAG="${{ github.event.release.tag_name }}"
 
           # Upload individual JARs
