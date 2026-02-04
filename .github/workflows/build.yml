@@ -24,7 +24,7 @@ jobs:
       - name: Install Ant
         run: |
           apt-get update
-          apt-get install -y ant
+          apt-get install -y ant git
 
       - name: Show versions
         run: |
