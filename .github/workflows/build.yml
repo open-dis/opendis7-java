@@ -13,6 +13,10 @@ jobs:
     container:
       image: eclipse-temurin:17-jdk
 
+    permissions:
+      contents: read
+      checks: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,9 +49,17 @@ jobs:
           retention-days: 30
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
         if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: build/test/results/
           retention-days: 14
+
+      - name: Publish test report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: JUnit Test Results
+          path: build/test/results/TEST-*.xml
+          reporter: java-junit
