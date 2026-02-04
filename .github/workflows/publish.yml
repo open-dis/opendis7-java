@@ -21,7 +21,7 @@ jobs:
       - name: Install Ant and tools
         run: |
           apt-get update
-          apt-get install -y ant zip
+          apt-get install -y ant zip git gh
 
       - name: Build
         run: ant all
@@ -94,22 +94,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          apt-get install -y gh
           TAG="${{ github.event.release.tag_name }}"
+          REPO="${{ github.repository }}"
 
           # Upload individual JARs
           for jar in dist/opendis7-*.jar; do
-            gh release upload "$TAG" "$jar" --clobber
+            gh release upload "$TAG" "$jar" --clobber --repo "$REPO"
           done
 
           # Upload javadoc zip
-          gh release upload "$TAG" dist/opendis7-javadoc.zip --clobber
+          gh release upload "$TAG" dist/opendis7-javadoc.zip --clobber --repo "$REPO"
 
           # Upload complete bundle
-          gh release upload "$TAG" opendis7-release.zip --clobber
+          gh release upload "$TAG" opendis7-release.zip --clobber --repo "$REPO"
 
           # Update release body with the generated description
-          gh release edit "$TAG" --notes-file /tmp/release-body.md
+          gh release edit "$TAG" --notes-file /tmp/release-body.md --repo "$REPO"
 
       - name: Upload artifacts
         if: github.event_name == 'workflow_dispatch'
