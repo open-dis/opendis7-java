@@ -41,7 +41,7 @@ jobs:
           cd release && zip -r ../opendis7-release.zip .
 
       - name: Prepare release description
-        run: cp RELEASE.md /tmp/release-body.md
+        run: cp README.releases.md /tmp/release-body.md
 
       - name: Upload release assets
         if: github.event_name == 'release'

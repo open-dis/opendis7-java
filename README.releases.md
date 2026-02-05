@@ -1,5 +1,3 @@
-*This page is the template for the [opendis7-java/releases](https://github.com/open-dis/opendis7-java/releases) page.*
-
 ![Open-DIS Surfer Dude](https://raw.githubusercontent.com/open-dis/opendis7-java/master/images/OpenDisSurferDude.png)
 
 # Distribution Products for opendis7-java Library
@@ -25,10 +23,10 @@ This software library provides a complete, type-safe open-source Java implementa
 
 ## Documentation and References
 
-- [Javadoc (online)](https://open-dis.github.io/opendis7-java) offers complete documentation for all library classes, methods, and values
+- [Javadoc (online)](https://savage.nps.edu/opendis7-java/javadoc) offers complete documentation for all library classes, methods, and values
 - [IEEE DIS7 PDU Color Figures](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/IeeeDisPduColorFigures.pdf) illustrates primary DIS Protocol Data Unit (PDU) data structures
 - [DIS 101 Tutorial (IITSEC 2021)](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/conferences/IITSEC2021/README.md) was given at Interservice Industry Training, Simulation Education Conference (IITSEC) in December 2021
-- Prior release is found at [opendis7-java Library Distribution Products](https://savage.nps.edu/opendis7-java) at NPS (built with prior enumerations version 34)
+- Prior release is found at [opendis7-java Library Distribution Products](https://savage.nps.edu/opendis7-java) at NPS (built with enumerations version 34)
 - [Wikipedia: Distributed Interactive Simulation](https://en.wikipedia.org/wiki/Distributed_Interactive_Simulation) provides a good overview of DIS capabilities
 
 ## Source Code
@@ -40,7 +38,7 @@ This software library provides a complete, type-safe open-source Java implementa
 Codebase design and production:
 
 - [Generating Distributed Interactive Simulation (DIS) Codebases using opendis7-source-generator](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/conferences/SIW2022/README.md), Simulation Interoperability Workshop (SIW) February 2022
-- Log files [build.all.out.txt](https://github.com/open-dis/opendis7-java/blob/master/build.all.out.txt) and [build.test.log.txt](https://github.com/open-dis/opendis7-java/blob/master/build.test.log.txt) show comprehensive unit tests and (usually) successful build results that include multicast streaming and file recording of each DIS PDU.  These logs are included in codebase version control, in order to facilitate efforts by other contributors and also detect changes as these software archives evolve
+- Log files [build.all.out.txt](https://github.com/open-dis/opendis7-java/blob/master/build.all.out.txt) and [build.test.log.txt](https://github.com/open-dis/opendis7-java/blob/master/build.test.log.txt) show successful build results and comprehensive unit tests that include multicast streaming and file recording of DIS PDUs.  These logs are included in codebase version control, in order to facilitate efforts by other contributors and also detect changes as these software archives evolve
 
 ## Specifications
 
@@ -52,7 +50,7 @@ Codebase design and production:
 - [MV3500 Distributed Simulation Fundamentals](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500) — NPS course using this library
   - This NPS course is an introduction to distributed communications in simulation applications. Topics include introduction to the TCP/IP protocol stack, socket communications including TCP/UDP unicast/multicast and essential protocol design issues. Follow-on emphasis is Distributed Interactive Simulation (DIS) Protocol application programming, with side looks at High Level Architecture (HLA). Course activity focuses on creation and testing of network programming network code and web-browser applications.
 - [X3D-Edit 4.0 Authoring Tool for Extensible 3D (X3D) Graphics](https://www.web3d.org/x3d/tools/X3D-Edit)
-  -  X3D-Edit is a free, open-source Extensible 3D (X3D) Graphics authoring tool for simple high-quality authoring, editing, import/export, validation and viewing of X3D scenes.  A [flyer](https://www.web3d.org/x3d/tools/X3D-Edit/Open-DIS-flyer.pdf) describes support for the [Distributed Interactive Simulation (DIS) component](https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/dis.html) by the X3D Graphics International Standard.
+  -  X3D-Edit is a free, open-source Extensible 3D (X3D) Graphics authoring tool for simple high-quality authoring, editing, import/export, validation and viewing of X3D scenes.  A [flyer](https://www.web3d.org/x3d/tools/X3D-Edit/Open-DIS-flyer.pdf) describes support for the [Distributed Interactive Simulation (DIS) component](https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/dis.html) of the X3D Graphics International Standard.
 
 ## Current and Future Work
 
@@ -71,4 +69,4 @@ We have partially implemented an experimental XML encoding for DIS Protocol vers
 ## Contact and Participation
 
 - [Don Brutzman](https://relativemotion.info/) — Relative Motion Consulting (RMC)
-- [GitHub open-dis projects](https://github.com/open-dis) offers numerous additional opportunities to contribute.  Most of the legacy implementations are maintained manually, while the opendis7 (and soon opendis8) implementations are primarily autogenerated with programmer additions of utility functions.
+- [open-dis GitHub Organization](https://github.com/open-dis) offers numerous additional implementations
