@@ -110,8 +110,11 @@ jobs:
           # Upload complete bundle
           gh release upload "$TAG" opendis7-release.zip --clobber --repo "$REPO"
 
-          # Update release body with the generated description
-          gh release edit "$TAG" --notes-file /tmp/release-body.md --repo "$REPO"
+          # Only set release body if the author left it empty
+          EXISTING_BODY=$(gh release view "$TAG" --repo "$REPO" --json body --jq '.body')
+          if [ -z "$EXISTING_BODY" ]; then
+            gh release edit "$TAG" --notes-file /tmp/release-body.md --repo "$REPO"
+          fi
 
       - name: Upload Javadoc for GitHub Pages
         uses: actions/upload-pages-artifact@v3
