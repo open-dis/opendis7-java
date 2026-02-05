@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: SPADASAMSystem  = <code>1</code>; </li>
  *     <li> Specific: SPADAFiringSection  = <code>2</code>; </li>
- *     <li> Entity type uid: 36271; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36201; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@71e9a896. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1deb2c43. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -47,7 +47,7 @@ public final class SkyguardSparrowMissileLauncherTowed extends EntityType
         setCategory((byte)28); // uid 18296, Air Defense/Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 18297, SPADA SAM System
         setSpecific((byte)2); // uid 18301, SPADA Firing Section
-        setExtra((byte)3); // uid 36271, Skyguard Sparrow Missile Launcher, Towed
+        setExtra((byte)3); // uid 36201, Skyguard Sparrow Missile Launcher, Towed
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

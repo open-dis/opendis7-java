@@ -20,7 +20,7 @@ import edu.nps.moves.dis7.pdus.*;
  * This <code>enum</code> type is generated from XML,
  *  UID 390,
  * marshal size 2;
- * AppearanceLifeformHealth has 4 enumerations total.
+ * AppearanceLifeFormHealth has 4 enumerations total.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
  */

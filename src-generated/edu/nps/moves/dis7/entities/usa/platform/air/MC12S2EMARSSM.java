@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Reconnaissance = <code>7</code>; </li>
  *     <li> SubCategory: BeechcraftSuperKingAIR200B200  = <code>8</code>; </li>
  *     <li> Specific: MC12WLiberty  = <code>7</code>; </li>
- *     <li> Entity type uid: 36293; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36231; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@71531dd7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@44faa4f2. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -47,7 +47,7 @@ public final class MC12S2EMARSSM extends EntityType
         setCategory((byte)7); // uid 11003, Reconnaissance
         setSubCategory((byte)8); // uid 11026, Beechcraft Super King AIR 200/B200
         setSpecific((byte)7); // uid 27986, MC-12W Liberty
-        setExtra((byte)3); // uid 36293, MC-12S-2 EMARSS-M
+        setExtra((byte)3); // uid 36231, MC-12S-2 EMARSS-M
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

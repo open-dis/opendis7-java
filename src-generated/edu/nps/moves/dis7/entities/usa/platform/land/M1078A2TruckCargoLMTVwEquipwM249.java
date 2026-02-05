@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: StewartampStevensonFamilyofMediumTacticalVehiclesFMTV  = <code>12</code>; </li>
  *     <li> Specific: M1078TruckCargo_LMTVwEquip  = <code>1</code>; </li>
- *     <li> Entity type uid: 36186; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36112; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@76a7fcbd. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2a8dd942. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -47,7 +47,7 @@ public final class M1078A2TruckCargoLMTVwEquipwM249 extends EntityType
         setCategory((byte)7); // uid 10418, Large Wheeled Utility Vehicle
         setSubCategory((byte)12); // uid 10481, Stewart &amp; Stevenson Family of Medium Tactical Vehicles (FMTV)
         setSpecific((byte)1); // uid 10482, M1078 Truck, Cargo; LMTV w/ Equip
-        setExtra((byte)19); // uid 36186, M1078A2 Truck, Cargo; LMTV w/ Equip, w/ M249
+        setExtra((byte)19); // uid 36112, M1078A2 Truck, Cargo; LMTV w/ Equip, w/ M249
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

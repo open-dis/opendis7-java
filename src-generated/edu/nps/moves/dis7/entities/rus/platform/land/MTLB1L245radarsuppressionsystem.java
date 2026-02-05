@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
  *     <li> SubCategory: MTLBtrackedvehicle  = <code>7</code>; </li>
  *     <li> Specific: MTLB1L245radarsuppressionsystem  = <code>25</code>; </li>
- *     <li> Entity type uid: 35943; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36005; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@fca387. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2ab5afc7. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class MTLB1L245radarsuppressionsystem extends EntityType
 
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)7); // uid 12623, MT-LB tracked vehicle
-        setSpecific((byte)25); // uid 35943, MT-LB 1L245 (radar suppression system)
+        setSpecific((byte)25); // uid 36005, MT-LB 1L245 (radar suppression system)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

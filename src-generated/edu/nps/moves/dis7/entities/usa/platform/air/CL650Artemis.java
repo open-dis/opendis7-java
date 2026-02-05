@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Reconnaissance = <code>7</code>; </li>
  *     <li> SubCategory: CL650Artemis  = <code>10</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36299; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36237; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55a0f011. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@633ddc0c. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class CL650Artemis extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)7); // uid 11003, Reconnaissance
-        setSubCategory((byte)10); // uid 36299, CL-650 Artemis
+        setSubCategory((byte)10); // uid 36237, CL-650 Artemis
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

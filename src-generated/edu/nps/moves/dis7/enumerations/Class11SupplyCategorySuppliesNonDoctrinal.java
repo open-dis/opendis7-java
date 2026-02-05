@@ -20,7 +20,7 @@ import edu.nps.moves.dis7.pdus.*;
  * This <code>enum</code> type is generated from XML,
  *  UID 611,
  * marshal size 8;
- * Class11SupplyCategorySupplies(NonDoctrinal) has 5 enumerations total.
+ * Class11SupplyCategorySuppliesNonDoctrinal has 5 enumerations total.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
  */

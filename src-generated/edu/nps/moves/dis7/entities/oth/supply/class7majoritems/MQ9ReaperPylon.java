@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
  *     <li> SubCategory: Pylon  = <code>3</code>; </li>
  *     <li> Specific: MQ9ReaperPylon  = <code>5</code>; </li>
- *     <li> Entity type uid: 35982; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36044; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@52efb338. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@66456506. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
@@ -46,7 +46,7 @@ public final class MQ9ReaperPylon extends EntityType
 
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)3); // uid 30739, Pylon
-        setSpecific((byte)5); // uid 35982, MQ-9 Reaper Pylon
+        setSpecific((byte)5); // uid 36044, MQ-9 Reaper Pylon
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

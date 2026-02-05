@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Coast Guard Cutters = <code>62</code>; </li>
- *     <li> SubCategory: _378footHighEnduranceWHEC  = <code>1</code>; </li>
+ *     <li> SubCategory: HamiltonClassWHEC  = <code>1</code>; </li>
  *     <li> Specific: ShermanWHEC720  = <code>12</code>; </li>
  *     <li> Entity type uid: 12117; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@ba4f370. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c5f7b4f. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class ShermanWHEC720 extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)62); // uid 12104, Coast Guard Cutters
-        setSubCategory((byte)1); // uid 12105, 378-foot High Endurance (WHEC)
+        setSubCategory((byte)1); // uid 12105, Hamilton Class (WHEC)
         setSpecific((byte)12); // uid 12117, Sherman (WHEC 720)
     }
     /** Create a new instance of this final (unmodifiable) class

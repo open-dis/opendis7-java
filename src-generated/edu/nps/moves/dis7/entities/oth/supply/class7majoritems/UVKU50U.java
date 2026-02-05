@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
  *     <li> SubCategory: AirtoAirAAWeaponRack  = <code>2</code>; </li>
  *     <li> Specific: UVKU50  = <code>28</code>; </li>
- *     <li> Entity type uid: 36038; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36100; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1a77eb6. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5305f936. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
@@ -46,8 +46,8 @@ public final class UVKU50U extends EntityType
 
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)2); // uid 30721, Air to Air (A/A) Weapon Rack
-        setSpecific((byte)28); // uid 36036, UVKU-50
-        setExtra((byte)2); // uid 36038, UVKU-50U
+        setSpecific((byte)28); // uid 36098, UVKU-50
+        setExtra((byte)2); // uid 36100, UVKU-50U
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

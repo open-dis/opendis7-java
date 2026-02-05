@@ -16,17 +16,17 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>F247Kemalreis</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>F247Kemalreis.createInstance()</code> or <code>new F247Kemalreis()</code>. </p>
  * <ul>
- *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Country: Turkiye (Republic of) (TUR) = <code>218</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
  *     <li> SubCategory: Barbarosclass  = <code>1</code>; </li>
  *     <li> Specific: F247Kemalreis  = <code>4</code>; </li>
  *     <li> Entity type uid: 23258; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2539cd1c. </p>
- * @see Country#TURKEY_TUR
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7e7e962d. </p>
+ * @see Country#TURKIYE_REPUBLIC_OF_TUR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class F247Kemalreis extends EntityType
     /** Default constructor */
     public F247Kemalreis()
     {
-        setCountry(Country.TURKEY_TUR);
+        setCountry(Country.TURKIYE_REPUBLIC_OF_TUR);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

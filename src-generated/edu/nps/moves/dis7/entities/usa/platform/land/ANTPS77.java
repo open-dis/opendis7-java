@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: ANTPS77  = <code>14</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 35966; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36028; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@463afa6e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@656c5c3. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class ANTPS77 extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 10679, Air Defense / Missile Defense Unit Equipment
-        setSubCategory((byte)14); // uid 35966, AN/TPS-77
+        setSubCategory((byte)14); // uid 36028, AN/TPS-77
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

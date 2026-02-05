@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: AllTerrainVehicleATV  = <code>26</code>; </li>
  *     <li> Specific: ATV4X4  = <code>1</code>; </li>
- *     <li> Entity type uid: 36214; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36144; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7302ff13. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@284bdeed. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -47,7 +47,7 @@ public final class ATVPolarisMRZRD44seater extends EntityType
         setCategory((byte)6); // uid 10348, Small Wheeled Utility Vehicle
         setSubCategory((byte)26); // uid 10408, All Terrain Vehicle (ATV)
         setSpecific((byte)1); // uid 10409, ATV 4X4
-        setExtra((byte)2); // uid 36214, ATV Polaris MRZR-D4, 4-seater
+        setExtra((byte)2); // uid 36144, ATV Polaris MRZR-D4, 4-seater
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

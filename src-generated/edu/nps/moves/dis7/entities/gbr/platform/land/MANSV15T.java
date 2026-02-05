@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: MANSVTrucks  = <code>19</code>; </li>
  *     <li> Specific: MANSV15T  = <code>3</code>; </li>
- *     <li> Entity type uid: 36465; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35964; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45b32dfe. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@691124ee. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class MANSV15T extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 14935, Large Wheeled Utility Vehicle
-        setSubCategory((byte)19); // uid 36462, MAN SV Trucks
-        setSpecific((byte)3); // uid 36465, MAN SV 15T
+        setSubCategory((byte)19); // uid 35961, MAN SV Trucks
+        setSpecific((byte)3); // uid 35964, MAN SV 15T
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

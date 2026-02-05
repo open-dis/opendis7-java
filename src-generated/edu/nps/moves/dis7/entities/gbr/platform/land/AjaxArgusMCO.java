@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
  *     <li> SubCategory: AjaxArgus  = <code>21</code>; </li>
  *     <li> Specific: AjaxArgusMCO  = <code>1</code>; </li>
- *     <li> Entity type uid: 36107; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35934; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@49fb0bbd. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@789c3057. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class AjaxArgusMCO extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)2); // uid 14887, Armored Fighting Vehicle
-        setSubCategory((byte)21); // uid 36106, Ajax Argus
-        setSpecific((byte)1); // uid 36107, Ajax Argus MCO
+        setSubCategory((byte)21); // uid 35933, Ajax Argus
+        setSpecific((byte)1); // uid 35934, Ajax Argus MCO
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

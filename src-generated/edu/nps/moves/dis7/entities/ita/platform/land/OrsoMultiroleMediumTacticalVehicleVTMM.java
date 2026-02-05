@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: OrsoMultiroleMediumTacticalVehicleVTMM  = <code>5</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36265; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36195; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@702ed190. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4ced35ed. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class OrsoMultiroleMediumTacticalVehicleVTMM extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)6); // uid 35885, Small Wheeled Utility Vehicle
-        setSubCategory((byte)5); // uid 36265, Orso Multi-role Medium Tactical Vehicle (VTMM)
+        setSubCategory((byte)5); // uid 36195, Orso Multi-role Medium Tactical Vehicle (VTMM)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

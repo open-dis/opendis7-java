@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: Nasr1ASCM  = <code>6</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36358; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36398; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@24a8e40d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5b3755f4. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -44,8 +44,8 @@ public final class Nasr1ASCM extends EntityType
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.ANTI_SHIP));
 
-        setCategory((byte)1); // uid 36352, Guided
-        setSubCategory((byte)6); // uid 36358, Nasr-1 ASCM
+        setCategory((byte)1); // uid 36392, Guided
+        setSubCategory((byte)6); // uid 36398, Nasr-1 ASCM
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

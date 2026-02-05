@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Armored Utility Vehicle = <code>3</code>; </li>
  *     <li> SubCategory: AjaxApollo  = <code>18</code>; </li>
  *     <li> Specific: AjaxApolloPSO  = <code>2</code>; </li>
- *     <li> Entity type uid: 36111; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35938; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c369270. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@629a9f26. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class AjaxApolloPSO extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)3); // uid 14904, Armored Utility Vehicle
-        setSubCategory((byte)18); // uid 36109, Ajax Apollo
-        setSpecific((byte)2); // uid 36111, Ajax Apollo PSO
+        setSubCategory((byte)18); // uid 35936, Ajax Apollo
+        setSpecific((byte)2); // uid 35938, Ajax Apollo PSO
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

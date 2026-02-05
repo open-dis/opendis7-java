@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: KamAZ53949TyphoonK  = <code>44</code>; </li>
  *     <li> Specific: _9S9311KamazTyphoonwithWheeledBrigadePlanningModule  = <code>4</code>; </li>
- *     <li> Entity type uid: 35946; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36008; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7be3a9ce. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@47b67fcb. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class _9S9311KamazTyphoonwithWheeledBrigadePlanningModule extends E
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
         setSubCategory((byte)44); // uid 34309, KamAZ-53949 Typhoon-K
-        setSpecific((byte)4); // uid 35946, 9S931-1 Kamaz Typhoon with Wheeled Brigade Planning Module
+        setSpecific((byte)4); // uid 36008, 9S931-1 Kamaz Typhoon with Wheeled Brigade Planning Module
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

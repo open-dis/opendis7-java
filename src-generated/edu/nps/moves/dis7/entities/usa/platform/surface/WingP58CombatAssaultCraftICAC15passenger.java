@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Inflatable Boat = <code>65</code>; </li>
  *     <li> SubCategory: WingP58CombatAssaultCraftICAC15passenger  = <code>6</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36051; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36174; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@9d99851. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@485deee1. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class WingP58CombatAssaultCraftICAC15passenger extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)65); // uid 35912, Inflatable Boat
-        setSubCategory((byte)6); // uid 36051, Wing P5.8 Combat Assault Craft (I-CAC), 15 passenger
+        setSubCategory((byte)6); // uid 36174, Wing P5.8 Combat Assault Craft (I-CAC), 15 passenger
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

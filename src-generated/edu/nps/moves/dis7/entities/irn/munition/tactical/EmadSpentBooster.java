@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: Emad  = <code>137</code>; </li>
  *     <li> Specific: EmadSpentBooster  = <code>2</code>; </li>
- *     <li> Entity type uid: 36399; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36439; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d8056bf. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a8fb023. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,8 +45,8 @@ public final class EmadSpentBooster extends EntityType
         setDomain(Domain.inst(MunitionDomain.TACTICAL));
 
         setCategory((byte)1); // uid 32473, Guided
-        setSubCategory((byte)137); // uid 36397, Emad
-        setSpecific((byte)2); // uid 36399, Emad Spent Booster
+        setSubCategory((byte)137); // uid 36437, Emad
+        setSpecific((byte)2); // uid 36439, Emad Spent Booster
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

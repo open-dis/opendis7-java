@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: ShahinSAM  = <code>15</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36337; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36377; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@16cf7fd0. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@448086ab. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class ShahinSAM extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 27268, Guided
-        setSubCategory((byte)15); // uid 36337, Shahin SAM
+        setSubCategory((byte)15); // uid 36377, Shahin SAM
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

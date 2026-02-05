@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
  *     <li> SubCategory: RT2PM2TopolMSS27SickleBLauncher  = <code>66</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36283; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36222; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b5183ec. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79d06bbd. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class RT2PM2TopolMSS27SickleBLauncher extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)4); // uid 12745, Self-Propelled Artillery
-        setSubCategory((byte)66); // uid 36283, RT-2PM2 Topol-M / SS-27 Sickle B Launcher
+        setSubCategory((byte)66); // uid 36222, RT-2PM2 Topol-M / SS-27 Sickle B Launcher
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

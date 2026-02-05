@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: Ridgeback  = <code>7</code>; </li>
  *     <li> Specific: RidgebackHMG  = <code>3</code>; </li>
- *     <li> Entity type uid: 36447; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35946; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75cf0de5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3663d0ba. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class RidgebackHMG extends EntityType
 
         setCategory((byte)7); // uid 14935, Large Wheeled Utility Vehicle
         setSubCategory((byte)7); // uid 26196, Ridgeback
-        setSpecific((byte)3); // uid 36447, Ridgeback HMG
+        setSpecific((byte)3); // uid 35946, Ridgeback HMG
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

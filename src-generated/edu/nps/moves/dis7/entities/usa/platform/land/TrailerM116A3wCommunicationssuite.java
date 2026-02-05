@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Cargo Trailer = <code>14</code>; </li>
  *     <li> SubCategory: _0512ton  = <code>2</code>; </li>
  *     <li> Specific: TrailerM116A3  = <code>11</code>; </li>
- *     <li> Entity type uid: 36235; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36165; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@4a642e4b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@34a6d9db. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -47,7 +47,7 @@ public final class TrailerM116A3wCommunicationssuite extends EntityType
         setCategory((byte)14); // uid 10616, Cargo Trailer
         setSubCategory((byte)2); // uid 10618, 0.51 - 2 ton
         setSpecific((byte)11); // uid 33062, Trailer, M116A3
-        setExtra((byte)1); // uid 36235, Trailer, M116A3 w/ Communications suite
+        setExtra((byte)1); // uid 36165, Trailer, M116A3 w/ Communications suite
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

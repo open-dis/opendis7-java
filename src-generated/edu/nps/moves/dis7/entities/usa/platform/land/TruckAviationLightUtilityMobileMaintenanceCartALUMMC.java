@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: TruckAviationLightUtilityMobileMaintenanceCartALUMMC  = <code>38</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36231; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36161; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@100aa331. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6424e613. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class TruckAviationLightUtilityMobileMaintenanceCartALUMMC extends 
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)6); // uid 10348, Small Wheeled Utility Vehicle
-        setSubCategory((byte)38); // uid 36231, Truck, Aviation Light Utility Mobile Maintenance Cart (ALUMMC)
+        setSubCategory((byte)38); // uid 36161, Truck, Aviation Light Utility Mobile Maintenance Cart (ALUMMC)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

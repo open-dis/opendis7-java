@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: M1279ArmyGroundMobilityVehicleAGMV  = <code>36</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36229; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36159; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@42679fc2. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a48da4f. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class M1279ArmyGroundMobilityVehicleAGMV extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)6); // uid 10348, Small Wheeled Utility Vehicle
-        setSubCategory((byte)36); // uid 36229, M1279 Army Ground Mobility Vehicle (AGMV)
+        setSubCategory((byte)36); // uid 36159, M1279 Army Ground Mobility Vehicle (AGMV)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

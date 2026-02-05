@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Cargo Trailer = <code>14</code>; </li>
  *     <li> SubCategory: TrailerContainerizedKitchen  = <code>25</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36237; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36167; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5a14e60d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@47fcefb3. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class TrailerContainerizedKitchen extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)14); // uid 10616, Cargo Trailer
-        setSubCategory((byte)25); // uid 36237, Trailer, Containerized Kitchen
+        setSubCategory((byte)25); // uid 36167, Trailer, Containerized Kitchen
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

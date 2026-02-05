@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Unmanned = <code>50</code>; </li>
  *     <li> SubCategory: AirLaunchedEffectsALEUAV  = <code>52</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36309; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36247; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5c1b89ac. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@63dda940. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class AirLaunchedEffectsALEUAV extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 11232, Unmanned
-        setSubCategory((byte)52); // uid 36309, Air Launched Effects (ALE) UAV
+        setSubCategory((byte)52); // uid 36247, Air Launched Effects (ALE) UAV
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
  *     <li> SubCategory: Freccia8x8  = <code>5</code>; </li>
  *     <li> Specific: Freccia8x8MortarCarrierwTDA2R2M120mmMortar  = <code>3</code>; </li>
- *     <li> Entity type uid: 36254; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36184; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@62f87c44. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29d2d081. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class Freccia8x8MortarCarrierwTDA2R2M120mmMortar extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)2); // uid 18281, Armored Fighting Vehicle
-        setSubCategory((byte)5); // uid 36251, Freccia (8x8)
-        setSpecific((byte)3); // uid 36254, Freccia (8x8), Mortar Carrier w/ TDA-2R2M 120mm Mortar
+        setSubCategory((byte)5); // uid 36181, Freccia (8x8)
+        setSpecific((byte)3); // uid 36184, Freccia (8x8), Mortar Carrier w/ TDA-2R2M 120mm Mortar
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

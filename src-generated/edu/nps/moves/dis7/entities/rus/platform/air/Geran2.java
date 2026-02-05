@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Unmanned = <code>50</code>; </li>
  *     <li> SubCategory: Geran  = <code>12</code>; </li>
  *     <li> Specific: Geran2  = <code>2</code>; </li>
- *     <li> Entity type uid: 36430; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36295; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4e08acf9. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5fcfde70. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class Geran2 extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 23446, Unmanned
-        setSubCategory((byte)12); // uid 36428, Geran
-        setSpecific((byte)2); // uid 36430, Geran-2
+        setSubCategory((byte)12); // uid 36293, Geran
+        setSpecific((byte)2); // uid 36295, Geran-2
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

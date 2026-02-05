@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Unmanned = <code>50</code>; </li>
  *     <li> SubCategory: KRONSHTADORIONSeries  = <code>11</code>; </li>
  *     <li> Specific: ORIONSirius  = <code>4</code>; </li>
- *     <li> Entity type uid: 35998; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36060; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7c36db44. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54d8c20d. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class ORIONSirius extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 23446, Unmanned
-        setSubCategory((byte)11); // uid 35994, KRONSHTAD ORION Series
-        setSpecific((byte)4); // uid 35998, ORION Sirius
+        setSubCategory((byte)11); // uid 36056, KRONSHTAD ORION Series
+        setSpecific((byte)4); // uid 36060, ORION Sirius
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

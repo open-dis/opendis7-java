@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Small Wheeled Utility Vehicle = <code>6</code>; </li>
  *     <li> SubCategory: VPKTigrM4x4ArmoredVehicle  = <code>15</code>; </li>
  *     <li> Specific: LEER2VPKTigrMEWSystem  = <code>1</code>; </li>
- *     <li> Entity type uid: 36409; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36274; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7bca6fac. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ba30587. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class LEER2VPKTigrMEWSystem extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)6); // uid 12854, Small Wheeled Utility Vehicle
-        setSubCategory((byte)15); // uid 36408, VPK Tigr-M 4x4 Armored Vehicle
-        setSpecific((byte)1); // uid 36409, LEER-2 VPK Tigr-M EW System
+        setSubCategory((byte)15); // uid 36273, VPK Tigr-M 4x4 Armored Vehicle
+        setSpecific((byte)1); // uid 36274, LEER-2 VPK Tigr-M EW System
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -20,7 +20,7 @@ import edu.nps.moves.dis7.pdus.*;
  * This <code>enum</code> type is generated from XML,
  *  UID 300,
  * marshal size 8;
- * EEAttributeStateIndicator has 3 enumerations total.
+ * StateIndicator has 3 enumerations total.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
  */

@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Ballistic = <code>2</code>; </li>
  *     <li> SubCategory: ArashRocket122mm  = <code>10</code>; </li>
  *     <li> Specific: Arash1  = <code>1</code>; </li>
- *     <li> Entity type uid: 36382; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36422; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5ba184fc. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6e794f53. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -44,9 +44,9 @@ public final class Arash1 extends EntityType
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
-        setCategory((byte)2); // uid 36370, Ballistic
-        setSubCategory((byte)10); // uid 36381, Arash Rocket, 122 mm
-        setSpecific((byte)1); // uid 36382, Arash-1
+        setCategory((byte)2); // uid 36410, Ballistic
+        setSubCategory((byte)10); // uid 36421, Arash Rocket, 122 mm
+        setSpecific((byte)1); // uid 36422, Arash-1
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

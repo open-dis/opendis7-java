@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
- *     <li> SubCategory: IRSA5  = <code>10</code>; </li>
+ *     <li> SubCategory: IRSA5Tabas  = <code>10</code>; </li>
  *     <li> Specific: IRSA5TELAR  = <code>1</code>; </li>
- *     <li> Entity type uid: 35941; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36003; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@549621f3. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ec11999. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class IRSA5TELAR extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 33153, Air Defense / Missile Defense Unit Equipment
-        setSubCategory((byte)10); // uid 35940, IR-SA-5
-        setSpecific((byte)1); // uid 35941, IR-SA-5 TELAR
+        setSubCategory((byte)10); // uid 36002, IR-SA-5 Tabas
+        setSpecific((byte)1); // uid 36003, IR-SA-5 TELAR
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

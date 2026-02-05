@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Unmanned = <code>50</code>; </li>
  *     <li> SubCategory: ZALAAero  = <code>6</code>; </li>
  *     <li> Specific: LANCET  = <code>3</code>; </li>
- *     <li> Entity type uid: 35993; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36055; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2def7a7a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7baf1f5a. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class LANCET extends EntityType
 
         setCategory((byte)50); // uid 23446, Unmanned
         setSubCategory((byte)6); // uid 31768, ZALA Aero
-        setSpecific((byte)3); // uid 35993, LANCET
+        setSpecific((byte)3); // uid 36055, LANCET
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
  *     <li> SubCategory: Pylon  = <code>3</code>; </li>
  *     <li> Specific: NH90HeavyStoreCarrier  = <code>6</code>; </li>
- *     <li> Entity type uid: 35983; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36045; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64508788. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@69944a90. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
@@ -46,7 +46,7 @@ public final class NH90HeavyStoreCarrier extends EntityType
 
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)3); // uid 30739, Pylon
-        setSpecific((byte)6); // uid 35983, NH-90 Heavy Store Carrier
+        setSpecific((byte)6); // uid 36045, NH-90 Heavy Store Carrier
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

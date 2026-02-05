@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_SHIP</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: _533mmtorpedo  = <code>18</code>; </li>
+ *     <li> SubCategory: _533mmTorpedo  = <code>18</code>; </li>
  *     <li> Specific: TE2  = <code>1</code>; </li>
  *     <li> Entity type uid: 22818; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3568ea59. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c54c497. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class TE2 extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_SHIP));
 
         setCategory((byte)1); // uid 20530, Guided
-        setSubCategory((byte)18); // uid 20561, 533-mm torpedo
+        setSubCategory((byte)18); // uid 20561, 533mm Torpedo
         setSpecific((byte)1); // uid 22818, TE-2
     }
     /** Create a new instance of this final (unmodifiable) class

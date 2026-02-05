@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: AA12Adder  = <code>12</code>; </li>
+ *     <li> SubCategory: RSAA12Adder  = <code>12</code>; </li>
  *     <li> Specific: R77SRK  = <code>7</code>; </li>
  *     <li> Entity type uid: 29083; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79d49790. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2570b316. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class R77SRK extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 20301, Guided
-        setSubCategory((byte)12); // uid 20333, AA-12 Adder
+        setSubCategory((byte)12); // uid 20333, RS-AA-12 Adder
         setSpecific((byte)7); // uid 29083, R-77-SRK
     }
     /** Create a new instance of this final (unmodifiable) class

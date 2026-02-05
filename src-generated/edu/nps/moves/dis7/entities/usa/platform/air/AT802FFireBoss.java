@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg) = <code>86</code>; </li>
  *     <li> SubCategory: SingleEngineTurboprop  = <code>21</code>; </li>
  *     <li> Specific: AirTractorAT802SEAT  = <code>2</code>; </li>
- *     <li> Entity type uid: 35988; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36050; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1ec88aa1. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@14d1737a. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,9 +45,9 @@ public final class AT802FFireBoss extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)86); // uid 23796, Civilian Fixed Wing Aircraft, Medium (up to 41,000 lbs / 18,597 kg)
-        setSubCategory((byte)21); // uid 35984, Single Engine Turboprop
-        setSpecific((byte)2); // uid 35985, Air Tractor AT-802 SEAT
-        setExtra((byte)3); // uid 35988, AT-802F Fire Boss
+        setSubCategory((byte)21); // uid 36046, Single Engine Turboprop
+        setSpecific((byte)2); // uid 36047, Air Tractor AT-802 SEAT
+        setExtra((byte)3); // uid 36050, AT-802F Fire Boss
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

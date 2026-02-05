@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: ToophanATGM  = <code>1</code>; </li>
  *     <li> Specific: QaemLaserGuidedAntiHelicopterCapable  = <code>9</code>; </li>
- *     <li> Entity type uid: 36350; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36390; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@45c423b3. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c011855. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -44,9 +44,9 @@ public final class QaemLaserGuidedAntiHelicopterCapable extends EntityType
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.ANTI_ARMOR));
 
-        setCategory((byte)1); // uid 36340, Guided
-        setSubCategory((byte)1); // uid 36341, Toophan ATGM
-        setSpecific((byte)9); // uid 36350, Qaem, Laser Guided, Anti-Helicopter Capable
+        setCategory((byte)1); // uid 36380, Guided
+        setSubCategory((byte)1); // uid 36381, Toophan ATGM
+        setSpecific((byte)9); // uid 36390, Qaem, Laser Guided, Anti-Helicopter Capable
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

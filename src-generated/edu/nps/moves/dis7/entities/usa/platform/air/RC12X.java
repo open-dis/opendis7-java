@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Reconnaissance = <code>7</code>; </li>
  *     <li> SubCategory: BeechcraftSuperKingAIR200B200  = <code>8</code>; </li>
  *     <li> Specific: RC12X  = <code>11</code>; </li>
- *     <li> Entity type uid: 36298; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36236; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1c3b6963. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1510b9a2. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class RC12X extends EntityType
 
         setCategory((byte)7); // uid 11003, Reconnaissance
         setSubCategory((byte)8); // uid 11026, Beechcraft Super King AIR 200/B200
-        setSpecific((byte)11); // uid 36298, RC-12X
+        setSpecific((byte)11); // uid 36236, RC-12X
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

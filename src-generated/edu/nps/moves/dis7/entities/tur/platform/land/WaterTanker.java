@@ -16,17 +16,17 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>WaterTanker</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>WaterTanker.createInstance()</code> or <code>new WaterTanker()</code>. </p>
  * <ul>
- *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Country: Turkiye (Republic of) (TUR) = <code>218</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: MercedesBenzActrosHeavyUtilityTruck  = <code>1</code>; </li>
  *     <li> Specific: WaterTanker  = <code>3</code>; </li>
  *     <li> Entity type uid: 34357; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c0e00a8. </p>
- * @see Country#TURKEY_TUR
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5dfe23e8. </p>
+ * @see Country#TURKIYE_REPUBLIC_OF_TUR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class WaterTanker extends EntityType
     /** Default constructor */
     public WaterTanker()
     {
-        setCountry(Country.TURKEY_TUR);
+        setCountry(Country.TURKIYE_REPUBLIC_OF_TUR);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 

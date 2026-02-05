@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
- *     <li> SubCategory: ZBD08IFV  = <code>28</code>; </li>
- *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 34546; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> SubCategory: Type04ZBD04IFV  = <code>23</code>; </li>
+ *     <li> Specific: ZBD08IFV  = <code>12</code>; </li>
+ *     <li> Entity type uid: 33933; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3b938003. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31206beb. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,8 @@ public final class ZBD08IFV extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)2); // uid 16876, Armored Fighting Vehicle
-        setSubCategory((byte)28); // uid 34546, ZBD-08 IFV
+        setSubCategory((byte)23); // uid 33923, Type 04 (ZBD-04) IFV
+        setSpecific((byte)12); // uid 33933, ZBD-08 IFV
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

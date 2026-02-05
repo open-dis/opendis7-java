@@ -16,17 +16,17 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>Type705Class</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>Type705Class.createInstance()</code> or <code>new Type705Class()</code>. </p>
  * <ul>
- *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Country: Turkiye (Republic of) (TUR) = <code>218</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Utility = <code>18</code>; </li>
  *     <li> SubCategory: Type705Class  = <code>1</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 27536; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@75023c53. </p>
- * @see Country#TURKEY_TUR
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4214ae8f. </p>
+ * @see Country#TURKIYE_REPUBLIC_OF_TUR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class Type705Class extends EntityType
     /** Default constructor */
     public Type705Class()
     {
-        setCountry(Country.TURKEY_TUR);
+        setCountry(Country.TURKIYE_REPUBLIC_OF_TUR);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

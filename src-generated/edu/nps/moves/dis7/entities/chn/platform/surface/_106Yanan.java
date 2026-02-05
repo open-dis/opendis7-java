@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided Missile Cruiser = <code>3</code>; </li>
  *     <li> SubCategory: RenhaiClassType055  = <code>1</code>; </li>
  *     <li> Specific: _106Yanan  = <code>6</code>; </li>
- *     <li> Entity type uid: 36488; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36356; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@618b19ad. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ae5aa72. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class _106Yanan extends EntityType
 
         setCategory((byte)3); // uid 34644, Guided Missile Cruiser
         setSubCategory((byte)1); // uid 34645, Renhai Class (Type 055)
-        setSpecific((byte)6); // uid 36488, 106 Yanan
+        setSpecific((byte)6); // uid 36356, 106 Yanan
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

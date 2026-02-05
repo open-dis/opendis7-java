@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Unmanned = <code>50</code>; </li>
  *     <li> SubCategory: PenguinCUAV  = <code>2</code>; </li>
  *     <li> Specific: PenguinCMk2UAV  = <code>1</code>; </li>
- *     <li> Entity type uid: 36289; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36227; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21f9277b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d176a31. </p>
  * @see Country#LATVIA_LVA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -44,9 +44,9 @@ public final class PenguinCMk2UAV extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
-        setCategory((byte)50); // uid 35968, Unmanned
-        setSubCategory((byte)2); // uid 36288, Penguin C UAV
-        setSpecific((byte)1); // uid 36289, Penguin C Mk2 UAV
+        setCategory((byte)50); // uid 36030, Unmanned
+        setSubCategory((byte)2); // uid 36226, Penguin C UAV
+        setSpecific((byte)1); // uid 36227, Penguin C Mk2 UAV
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

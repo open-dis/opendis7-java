@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: RF Active = <code>2</code>; </li>
  *     <li> SubCategory: TargetAcquisitionRadar  = <code>5</code>; </li>
  *     <li> Specific: NeboSVU1L119  = <code>7</code>; </li>
- *     <li> Entity type uid: 35953; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36015; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5f35370b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29ee8174. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain
@@ -46,7 +46,7 @@ public final class NeboSVU1L119 extends EntityType
 
         setCategory((byte)2); // uid 22411, RF Active
         setSubCategory((byte)5); // uid 22437, Target Acquisition Radar
-        setSpecific((byte)7); // uid 35953, Nebo-SVU 1L119
+        setSpecific((byte)7); // uid 36015, Nebo-SVU 1L119
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

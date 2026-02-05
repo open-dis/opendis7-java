@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: PolyanaD4MCP  = <code>29</code>; </li>
  *     <li> Specific: PolyanaD4MKSHM  = <code>2</code>; </li>
- *     <li> Entity type uid: 35957; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36019; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@383864d5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5d7ca698. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class PolyanaD4MKSHM extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
-        setSubCategory((byte)29); // uid 35955, Polyana D4M CP
-        setSpecific((byte)2); // uid 35957, Polyana D4M KSHM
+        setSubCategory((byte)29); // uid 36017, Polyana D4M CP
+        setSpecific((byte)2); // uid 36019, Polyana D4M KSHM
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

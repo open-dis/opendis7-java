@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Generator trailer = <code>16</code>; </li>
  *     <li> SubCategory: _0100kW  = <code>1</code>; </li>
  *     <li> Specific: MEP804B15KW  = <code>43</code>; </li>
- *     <li> Entity type uid: 36239; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36169; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7a04f730. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@75bd28d. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class MEP804B15KW extends EntityType
 
         setCategory((byte)16); // uid 10630, Generator trailer
         setSubCategory((byte)1); // uid 10631, 0 - 100 kW
-        setSpecific((byte)43); // uid 36239, MEP 804B, 15KW
+        setSpecific((byte)43); // uid 36169, MEP 804B, 15KW
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

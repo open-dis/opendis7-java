@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Mine Countermeasure Ship/Craft = <code>8</code>; </li>
  *     <li> SubCategory: KatanpaaClassCoastalMinehunterMHC  = <code>3</code>; </li>
  *     <li> Specific: _40Katanpaa  = <code>1</code>; </li>
- *     <li> Entity type uid: 36305; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36243; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4bff7da0. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@452e19ca. </p>
  * @see Country#FINLAND_FIN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class _40Katanpaa extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)8); // uid 23027, Mine Countermeasure Ship/Craft
-        setSubCategory((byte)3); // uid 36304, Katanpaa Class Coastal Minehunter (MHC)
-        setSpecific((byte)1); // uid 36305, 40 Katanpaa
+        setSubCategory((byte)3); // uid 36242, Katanpaa Class Coastal Minehunter (MHC)
+        setSpecific((byte)1); // uid 36243, 40 Katanpaa
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: SA22Greyhound9M335  = <code>43</code>; </li>
  *     <li> Specific: _57E6  = <code>1</code>; </li>
- *     <li> Entity type uid: 35971; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36033; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6cc8c13c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@9147ba2. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -46,7 +46,7 @@ public final class _57E6 extends EntityType
 
         setCategory((byte)1); // uid 20301, Guided
         setSubCategory((byte)43); // uid 23467, SA-22 Greyhound (9M335)
-        setSpecific((byte)1); // uid 35971, 57E6
+        setSpecific((byte)1); // uid 36033, 57E6
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

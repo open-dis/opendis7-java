@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: MIM104Patriot  = <code>16</code>; </li>
  *     <li> Specific: USMEADSPAC3MissileSegment  = <code>3</code>; </li>
- *     <li> Entity type uid: 36083; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35919; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e4d4d22. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@21d8da75. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -46,7 +46,7 @@ public final class USMEADSPAC3MissileSegment extends EntityType
 
         setCategory((byte)1); // uid 19406, Guided
         setSubCategory((byte)16); // uid 19460, MIM-104 Patriot
-        setSpecific((byte)3); // uid 36083, US MEADS PAC-3 Missile Segment
+        setSpecific((byte)3); // uid 35919, US MEADS PAC-3 Missile Segment
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

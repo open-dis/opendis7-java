@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Self-Propelled Artillery = <code>4</code>; </li>
- *     <li> SubCategory: IskanderSS26TEL  = <code>54</code>; </li>
+ *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
+ *     <li> SubCategory: MZKT79308x8Astrolog  = <code>45</code>; </li>
  *     <li> Specific: SS26IskanderMissileResupplyVehicle  = <code>1</code>; </li>
- *     <li> Entity type uid: 36278; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36218; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c6aed22. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@65c86db8. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see SelfPropelledArtillery
+ * @see LargeWheeledUtilityVehicle
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class SS26IskanderMissileResupplyVehicle extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
-        setCategory((byte)4); // uid 12745, Self-Propelled Artillery
-        setSubCategory((byte)54); // uid 25243, Iskander SS-26 TEL
-        setSpecific((byte)1); // uid 36278, SS-26 Iskander Missile Resupply Vehicle
+        setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
+        setSubCategory((byte)45); // uid 36217, MZKT-7930 8x8 Astrolog
+        setSpecific((byte)1); // uid 36218, SS-26 Iskander Missile Resupply Vehicle
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

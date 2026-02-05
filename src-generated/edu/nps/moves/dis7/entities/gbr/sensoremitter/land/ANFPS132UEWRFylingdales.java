@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: RF Active = <code>2</code>; </li>
  *     <li> SubCategory: EarlyWarningSurveillanceRadar  = <code>2</code>; </li>
  *     <li> Specific: ANFPS132UEWRFylingdales  = <code>2</code>; </li>
- *     <li> Entity type uid: 35977; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36039; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@44f23927. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c851821. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#SENSOR_EMITTER
  * @see Domain
@@ -46,7 +46,7 @@ public final class ANFPS132UEWRFylingdales extends EntityType
 
         setCategory((byte)2); // uid 22462, RF Active
         setSubCategory((byte)2); // uid 22466, Early Warning/Surveillance Radar
-        setSpecific((byte)2); // uid 35977, AN/FPS-132 UEWR Fylingdales
+        setSpecific((byte)2); // uid 36039, AN/FPS-132 UEWR Fylingdales
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: Fateh110SRBM  = <code>2</code>; </li>
  *     <li> Specific: FatehMobin  = <code>4</code>; </li>
- *     <li> Entity type uid: 36368; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36408; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3d798e76. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3b9c9b8b. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -44,9 +44,9 @@ public final class FatehMobin extends EntityType
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
-        setCategory((byte)1); // uid 36362, Guided
-        setSubCategory((byte)2); // uid 36364, Fateh-110 SRBM
-        setSpecific((byte)4); // uid 36368, Fateh Mobin
+        setCategory((byte)1); // uid 36402, Guided
+        setSubCategory((byte)2); // uid 36404, Fateh-110 SRBM
+        setSpecific((byte)4); // uid 36408, Fateh Mobin
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

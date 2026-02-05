@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: TyphoonMRAP  = <code>46</code>; </li>
  *     <li> Specific: Ural630956x6  = <code>4</code>; </li>
- *     <li> Entity type uid: 36414; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36279; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3ab6678b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7187bac9. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class Ural630956x6 extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)7); // uid 12867, Large Wheeled Utility Vehicle
-        setSubCategory((byte)46); // uid 36410, Typhoon MRAP
-        setSpecific((byte)4); // uid 36414, Ural-63095 (6x6)
+        setSubCategory((byte)46); // uid 36275, Typhoon MRAP
+        setSpecific((byte)4); // uid 36279, Ural-63095 (6x6)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

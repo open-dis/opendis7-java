@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Ballistic = <code>2</code>; </li>
  *     <li> SubCategory: M75Fajr5Rocket333mm  = <code>2</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 36403; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36268; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6c36051c. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5b1f5fcc. </p>
  * @see Country#PALESTINE_STATE_OF_PSE
  * @see EntityKind#MUNITION
  * @see Domain
@@ -44,8 +44,8 @@ public final class M75Fajr5Rocket333mm extends EntityType
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
-        setCategory((byte)2); // uid 36401, Ballistic
-        setSubCategory((byte)2); // uid 36403, M-75 (Fajr-5) Rocket, 333 mm
+        setCategory((byte)2); // uid 36266, Ballistic
+        setSubCategory((byte)2); // uid 36268, M-75 (Fajr-5) Rocket, 333 mm
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

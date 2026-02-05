@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_SUBMARINE</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: _330mmTorpedo  = <code>21</code>; </li>
+ *     <li> SubCategory: _324mmTorpedo  = <code>21</code>; </li>
  *     <li> Specific: PAKETNK  = <code>1</code>; </li>
  *     <li> Entity type uid: 35551; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@29c25bbc. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5599dc60. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class PAKETNK extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_SUBMARINE));
 
         setCategory((byte)1); // uid 20606, Guided
-        setSubCategory((byte)21); // uid 35550, 330-mm Torpedo
+        setSubCategory((byte)21); // uid 35550, 324-mm Torpedo
         setSpecific((byte)1); // uid 35551, PAKET-NK
     }
     /** Create a new instance of this final (unmodifiable) class

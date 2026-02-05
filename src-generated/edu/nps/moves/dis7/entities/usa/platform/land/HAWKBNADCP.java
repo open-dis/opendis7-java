@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: MIM23RaytheonHAWKLowtoMediumAltitudeSAMSystem  = <code>1</code>; </li>
- *     <li> Specific: Battallion  = <code>1</code>; </li>
+ *     <li> Specific: Battalion  = <code>1</code>; </li>
  *     <li> Entity type uid: 10682; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@2478b629. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@d25e878. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class HAWKBNADCP extends EntityType
 
         setCategory((byte)28); // uid 10679, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)1); // uid 10680, MIM-23 Raytheon HAWK Low-to-Medium Altitude SAM System
-        setSpecific((byte)1); // uid 10681, Battallion
+        setSpecific((byte)1); // uid 10681, Battalion
         setExtra((byte)1); // uid 10682, HAWK BN/ADCP
     }
     /** Create a new instance of this final (unmodifiable) class

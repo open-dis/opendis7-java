@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Mk831000lbLGB  = <code>18</code>; </li>
  *     <li> Specific: GBU16Mk83  = <code>1</code>; </li>
  *     <li> Entity type uid: 19936; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@117fb9ba. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a63d248. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -46,7 +46,7 @@ public final class GBU16Mk83 extends EntityType
 
         setCategory((byte)1); // uid 19887, Guided
         setSubCategory((byte)18); // uid 19935, Mk-83 1000-lb LGB
-        setSpecific((byte)1); // uid 19936, GBU - 16Mk 83
+        setSpecific((byte)1); // uid 19936, GBU-16 Mk-83
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

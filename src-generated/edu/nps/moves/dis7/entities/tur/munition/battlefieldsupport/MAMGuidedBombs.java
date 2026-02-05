@@ -16,17 +16,17 @@ import edu.nps.moves.dis7.enumerations.*;
  * <p> Entity class <b><code>MAMGuidedBombs</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
  * <p> <i>Usage:</i> create an instance of this class with <code>MAMGuidedBombs.createInstance()</code> or <code>new MAMGuidedBombs()</code>. </p>
  * <ul>
- *     <li> Country: Turkey (TUR) = <code>218</code>; </li>
+ *     <li> Country: Turkiye (Republic of) (TUR) = <code>218</code>; </li>
  *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
  *     <li> SubCategory: MAMGuidedBombs  = <code>1</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 35856; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@2b80497f. </p>
- * @see Country#TURKEY_TUR
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4e4bfd9c. </p>
+ * @see Country#TURKIYE_REPUBLIC_OF_TUR
  * @see EntityKind#MUNITION
  * @see Domain
  * @see MunitionDomain
@@ -40,7 +40,7 @@ public final class MAMGuidedBombs extends EntityType
     /** Default constructor */
     public MAMGuidedBombs()
     {
-        setCountry(Country.TURKEY_TUR);
+        setCountry(Country.TURKIYE_REPUBLIC_OF_TUR);
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 

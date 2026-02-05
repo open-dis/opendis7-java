@@ -19,7 +19,7 @@ import edu.nps.moves.dis7.pdus.*;
 /**
  * This <code>enum</code> type is generated from XML,
  *  UID 130, marshal size 8;
- * AnimalLifeformGroupSizeRangeEnumerationforallDomains has 14 enumerations total.
+ * AnimalLifeFormGroupSizeRangeEnumerationforallDomains has 14 enumerations total.
  * The gaps in enumeration values are intentional and are reserved for future additions.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum

@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: SA25Verba  = <code>50</code>; </li>
+ *     <li> SubCategory: SA29Gizmo9K333Verba  = <code>50</code>; </li>
  *     <li> Specific: _9M336  = <code>1</code>; </li>
  *     <li> Entity type uid: 31995; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1242d96b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43445fc6. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class _9M336 extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 20301, Guided
-        setSubCategory((byte)50); // uid 31994, SA-25 Verba
+        setSubCategory((byte)50); // uid 31994, SA-29 Gizmo (9K333 Verba)
         setSpecific((byte)1); // uid 31995, 9M336
     }
     /** Create a new instance of this final (unmodifiable) class

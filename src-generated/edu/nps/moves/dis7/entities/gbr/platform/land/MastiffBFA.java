@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: Mastiff  = <code>6</code>; </li>
  *     <li> Specific: MastiffBFA  = <code>8</code>; </li>
- *     <li> Entity type uid: 36446; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 35945; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79d3473e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4998e74b. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class MastiffBFA extends EntityType
 
         setCategory((byte)7); // uid 14935, Large Wheeled Utility Vehicle
         setSubCategory((byte)6); // uid 26190, Mastiff
-        setSpecific((byte)8); // uid 36446, Mastiff BFA
+        setSpecific((byte)8); // uid 35945, Mastiff BFA
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

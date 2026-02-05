@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Towed artillery = <code>5</code>; </li>
  *     <li> SubCategory: TyphonMediumRangeCapabilityMRCMissileSystem  = <code>18</code>; </li>
  *     <li> Specific: TyphonResupplyVehicle  = <code>2</code>; </li>
- *     <li> Entity type uid: 36048; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36137; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16ee9aa7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40d848f9. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class TyphonResupplyVehicle extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)5); // uid 10312, Towed artillery
-        setSubCategory((byte)18); // uid 36046, Typhon Medium Range Capability (MRC) Missile System
-        setSpecific((byte)2); // uid 36048, Typhon Resupply Vehicle
+        setSubCategory((byte)18); // uid 36135, Typhon Medium Range Capability (MRC) Missile System
+        setSpecific((byte)2); // uid 36137, Typhon Resupply Vehicle
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

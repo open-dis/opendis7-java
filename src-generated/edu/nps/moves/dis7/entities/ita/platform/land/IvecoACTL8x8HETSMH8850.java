@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Large Wheeled Utility Vehicle = <code>7</code>; </li>
  *     <li> SubCategory: IvecoACTL8x8  = <code>1</code>; </li>
  *     <li> Specific: IvecoACTL8x8HETSMH8850  = <code>2</code>; </li>
- *     <li> Entity type uid: 36269; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36199; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7646731d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51b01960. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -44,9 +44,9 @@ public final class IvecoACTL8x8HETSMH8850 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
-        setCategory((byte)7); // uid 36266, Large Wheeled Utility Vehicle
-        setSubCategory((byte)1); // uid 36267, Iveco ACTL (8x8)
-        setSpecific((byte)2); // uid 36269, Iveco ACTL (8x8) HET, SMH 88.50
+        setCategory((byte)7); // uid 36196, Large Wheeled Utility Vehicle
+        setSubCategory((byte)1); // uid 36197, Iveco ACTL (8x8)
+        setSpecific((byte)2); // uid 36199, Iveco ACTL (8x8) HET, SMH 88.50
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

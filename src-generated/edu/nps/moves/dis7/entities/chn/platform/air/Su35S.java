@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Attack/Strike = <code>2</code>; </li>
- *     <li> SubCategory: Su35FlankerE  = <code>7</code>; </li>
+ *     <li> SubCategory: Su35FlankerEM  = <code>7</code>; </li>
  *     <li> Specific: Su35S  = <code>1</code>; </li>
  *     <li> Entity type uid: 34589; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1817d444. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5dd6264. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class Su35S extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)2); // uid 16977, Attack/Strike
-        setSubCategory((byte)7); // uid 34588, Su-35 Flanker-E
+        setSubCategory((byte)7); // uid 34588, Su-35 Flanker E/M
         setSpecific((byte)1); // uid 34589, Su-35S
     }
     /** Create a new instance of this final (unmodifiable) class

@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: AGM154JointStandoffMunition  = <code>21</code>; </li>
+ *     <li> SubCategory: AGM154JointStandoffWeaponJSOW  = <code>21</code>; </li>
  *     <li> Specific: AGM154BwBLU108SFW  = <code>2</code>; </li>
  *     <li> Entity type uid: 19956; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7b2d58e6. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6c06b1bc. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class AGM154BwBLU108SFW extends EntityType
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
         setCategory((byte)1); // uid 19887, Guided
-        setSubCategory((byte)21); // uid 19954, AGM-154 Joint Standoff Munition
+        setSubCategory((byte)21); // uid 19954, AGM-154 Joint Standoff Weapon (JSOW)
         setSpecific((byte)2); // uid 19956, AGM-154B (w/BLU-108 SFW)
     }
     /** Create a new instance of this final (unmodifiable) class

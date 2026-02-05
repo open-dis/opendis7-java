@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: J - Racks, Adaptors, Pylons = <code>6</code>; </li>
  *     <li> SubCategory: AirtoGroundAGWeaponRack  = <code>1</code>; </li>
  *     <li> Specific: BRU55A  = <code>25</code>; </li>
- *     <li> Entity type uid: 36011; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36073; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4b99648a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@41ddec69. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
@@ -46,7 +46,7 @@ public final class BRU55A extends EntityType
 
         setCategory((byte)6); // uid 30698, J - Racks, Adaptors, Pylons
         setSubCategory((byte)1); // uid 30699, Air to Ground (A/G) Weapon Rack
-        setSpecific((byte)25); // uid 36011, BRU-55/A
+        setSpecific((byte)25); // uid 36073, BRU-55/A
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

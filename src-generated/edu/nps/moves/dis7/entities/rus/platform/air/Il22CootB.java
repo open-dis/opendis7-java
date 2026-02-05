@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Cargo/Tanker = <code>4</code>; </li>
- *     <li> SubCategory: Il2022Coot  = <code>4</code>; </li>
- *     <li> Specific: Il22CootB  = <code>2</code>; </li>
- *     <li> Entity type uid: 13363; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Category: Electronic Warfare (EW) = <code>6</code>; </li>
+ *     <li> SubCategory: Il22CootB  = <code>1</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 36862; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@25b52284. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@6d1dcdff. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see CargoTanker
+ * @see ElectronicWarfareEW
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Il22CootB extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
-        setCategory((byte)4); // uid 13350, Cargo/Tanker
-        setSubCategory((byte)4); // uid 13361, Il-20/22 Coot
-        setSpecific((byte)2); // uid 13363, Il-22 Coot B
+        setCategory((byte)6); // uid 36861, Electronic Warfare (EW)
+        setSubCategory((byte)1); // uid 36862, Il-22 (Coot-B)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

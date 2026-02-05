@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
  *     <li> SubCategory: MTLBtrackedvehicle  = <code>7</code>; </li>
  *     <li> Specific: _9S9321BarnaulTIntelligenceandControlModule  = <code>30</code>; </li>
- *     <li> Entity type uid: 35944; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36006; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4c48fe92. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@763cf5b9. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class _9S9321BarnaulTIntelligenceandControlModule extends EntityTyp
 
         setCategory((byte)2); // uid 12580, Armored Fighting Vehicle
         setSubCategory((byte)7); // uid 12623, MT-LB tracked vehicle
-        setSpecific((byte)30); // uid 35944, 9S932-1 Barnaul-T Intelligence and Control Module
+        setSpecific((byte)30); // uid 36006, 9S932-1 Barnaul-T Intelligence and Control Module
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

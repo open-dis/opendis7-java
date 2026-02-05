@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
- *     <li> SubCategory: HQ2CSA1SAMSystem  = <code>1</code>; </li>
+ *     <li> SubCategory: CSA1HQ2SAMSystem  = <code>1</code>; </li>
  *     <li> Specific: RumSlingFireControlRadar  = <code>5</code>; </li>
- *     <li> Entity type uid: 36272; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36202; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6193932a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53ca01a2. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class RumSlingFireControlRadar extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 16937, Air Defense/Missile Defense Unit Equipment
-        setSubCategory((byte)1); // uid 16938, HQ-2/CSA-1 SAM System
-        setSpecific((byte)5); // uid 36272, Rum Sling Fire Control Radar
+        setSubCategory((byte)1); // uid 16938, CSA-1 (HQ-2) SAM System
+        setSpecific((byte)5); // uid 36202, Rum Sling Fire Control Radar
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

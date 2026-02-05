@@ -22,10 +22,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Category: Ballistic = <code>2</code>; </li>
  *     <li> SubCategory: _30mm  = <code>6</code>; </li>
  *     <li> Specific: _2A38MHET  = <code>6</code>; </li>
- *     <li> Entity type uid: 35972; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Entity type uid: 36034; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@70c205bf. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@53ba25ff. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -46,7 +46,7 @@ public final class _2A38MHET extends EntityType
 
         setCategory((byte)2); // uid 20393, Ballistic
         setSubCategory((byte)6); // uid 20410, 30 mm
-        setSpecific((byte)6); // uid 35972, 2A38M HE-T
+        setSpecific((byte)6); // uid 36034, 2A38M HE-T
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

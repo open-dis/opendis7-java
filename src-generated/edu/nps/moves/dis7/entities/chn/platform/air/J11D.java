@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Fighter/Air Defense = <code>1</code>; </li>
- *     <li> SubCategory: ShenyangJ11FlankerBPLUS  = <code>6</code>; </li>
+ *     <li> SubCategory: ShenyangJ11FlankerL  = <code>6</code>; </li>
  *     <li> Specific: J11D  = <code>9</code>; </li>
  *     <li> Entity type uid: 29333; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v33-DRAFT-20231217-d10 (2023-12-17)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@19bb07ed. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6ce139a4. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class J11D extends EntityType
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)1); // uid 16966, Fighter/Air Defense
-        setSubCategory((byte)6); // uid 24365, Shenyang J-11 (Flanker B+)
+        setSubCategory((byte)6); // uid 24365, Shenyang J-11 (Flanker-L)
         setSpecific((byte)9); // uid 29333, J-11D
     }
     /** Create a new instance of this final (unmodifiable) class
