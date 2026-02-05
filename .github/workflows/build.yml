@@ -56,10 +56,25 @@ jobs:
           path: build/test/results/
           retention-days: 14
 
+  test-report:
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      checks: write
+
+    steps:
+      - name: Download test results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: test-results
+
       - name: Publish test report
-        if: always()
         uses: dorny/test-reporter@v1
         with:
           name: JUnit Test Results
-          path: build/test/results/TEST-*.xml
+          path: test-results/TEST-*.xml
           reporter: java-junit
