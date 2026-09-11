@@ -126,10 +126,16 @@ public class EulerConversionsTest
         double headingBack = EulerConversions.getOrientationFromEuler(NPS_LAT_RAD, NPS_LON_RAD, psi, theta);
         double pitchBack   = EulerConversions.getPitchFromEuler(NPS_LAT_RAD, NPS_LON_RAD, psi, theta);
         double rollBack    = EulerConversions.getRollFromEuler(NPS_LAT_RAD, NPS_LON_RAD, psi, theta, phi);
+        
+        double headingBackNormalized = headingBack;
+        while (headingBackNormalized < 0.0)
+               headingBackNormalized += 360.0;
+        while (headingBackNormalized >= 360.0)
+               headingBackNormalized -= 360.0;
 
-        assertEquals(yaw,   headingBack, ANGLE_TOLERANCE_DEG, "mismatched heading after round-trip (south)");
-        assertEquals(pitch, pitchBack,   ANGLE_TOLERANCE_DEG, "mismatched pitch after round-trip (south)");
-        assertEquals(roll,  rollBack,    ANGLE_TOLERANCE_DEG, "mismatched roll after round-trip (south)");
+        assertEquals(yaw,   headingBackNormalized, ANGLE_TOLERANCE_DEG, "mismatched heading after round-trip (south), yaw=" + yaw + " headingBackNormalized=" + headingBackNormalized);
+        assertEquals(pitch, pitchBack,             ANGLE_TOLERANCE_DEG, "mismatched pitch after round-trip (south), pitch=" + pitch + " pitchBack=" + pitchBack);
+        assertEquals(roll,  rollBack,              ANGLE_TOLERANCE_DEG, "mismatched roll after round-trip (south), roll=" + roll + " rollBack=" + rollBack);
     }
 
     /**
