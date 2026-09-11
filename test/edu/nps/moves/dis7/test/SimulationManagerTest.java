@@ -169,8 +169,9 @@ public class SimulationManagerTest
         if (verbose)
             System.out.println("*** SimulationManagerTest testGetPduFactory()");
 
-        SimulationManager sm = new SimulationManager();
-        assertNotNull(sm.getPduFactory(), "PduFactory should not be null");
+        SimulationManager simulationManager = new SimulationManager();
+        assertNotNull(simulationManager, "simulationManager should not be null");
+        assertNotNull(simulationManager.getPduFactory(), "PduFactory should not be null");
     }
 
     @Test
