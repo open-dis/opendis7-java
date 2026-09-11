@@ -123,8 +123,8 @@ public class Matrix3fTest
         m.getEulers(hpr);
 
         assertEquals(heading, hpr[0], TOLERANCE, "mismatched heading after Euler round-trip");
-        assertEquals(pitch, hpr[1], TOLERANCE, "mismatched pitch after Euler round-trip");
-        assertEquals(roll, hpr[2], TOLERANCE, "mismatched roll after Euler round-trip");
+        assertEquals(pitch,   hpr[1], TOLERANCE, "mismatched pitch after Euler round-trip");
+        assertEquals(roll,    hpr[2], TOLERANCE, "mismatched roll after Euler round-trip");
     }
 
     @Test
@@ -133,7 +133,7 @@ public class Matrix3fTest
         if (verbose)
             System.out.println("*** Matrix3fTest testSetEulersZero()");
 
-        Matrix3f m = new Matrix3f(0.0f, 0.0f, 0.0f);
+        Matrix3f m = new Matrix3f(0.0f, 0.0f, 0.0f); // heading, pitch, roll
         // with zero Eulers, matrix should be identity
         for (int r = 0; r < 3; r++)
             for (int c = 0; c < 3; c++)
