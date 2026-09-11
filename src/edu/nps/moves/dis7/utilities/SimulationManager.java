@@ -628,7 +628,7 @@ public class SimulationManager
         {
             if ( nextRecord.name.equalsIgnoreCase(newHost.trim()))
                  nameFound = true;
-            if (nextRecord.alias.equalsIgnoreCase(newHost.trim()))
+            if ((nextRecord.alias != null) && nextRecord.alias.equalsIgnoreCase(newHost.trim()))
                 aliasFound = true;
             if ((nameFound || aliasFound) && !nextRecord.isHostType)
                  nextRecord.isHostType = true; // make sure
