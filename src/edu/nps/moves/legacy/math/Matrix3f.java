@@ -82,8 +82,8 @@ public class Matrix3f
      * @param hpr initialization heading, pitch, roll */
   public Matrix3f(float hpr[])
     {
-    m = new float[3][3];
-    setEulers(hpr);
+        m = new float[3][3];
+        setEulers(hpr);
     }
 
   /** constructor
@@ -92,8 +92,8 @@ public class Matrix3f
      * @param roll initialization roll */
   public Matrix3f(float heading, float pitch, float roll)
     {
-    m = new float[3][3];
-    setEulers(heading, pitch, roll);
+        m = new float[3][3];
+        setEulers(heading, pitch, roll);
     }
 
     /**
@@ -225,6 +225,20 @@ public class Matrix3f
   public void setEulers(float h, float p, float r) // Vince p.26 - tested ok
     {
     float cosh, sinh, cosp, sinp, cosr, sinr;
+    
+    if ((h == 0.0) && (p == 0.0) && (r == 0.0)) // no rotation means identity matrix
+    {
+        m[0][0] = 1.0f;
+        m[0][1] = 0.0f;
+        m[0][2] = 0.0f;
+        m[1][0] = 0.0f;
+        m[1][1] = 1.0f;
+        m[1][2] = 0.0f;
+        m[2][0] = 0.0f;
+        m[2][1] = 0.0f;
+        m[2][2] = 1.0f;
+        return;
+    }
 
     cosh = (float)Math.cos(h);
     sinh = (float)Math.sin(h);
