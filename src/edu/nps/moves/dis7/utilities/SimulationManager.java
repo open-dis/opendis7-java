@@ -34,7 +34,7 @@ public class SimulationManager
     private static int                             hostID = 0;
 
     /** Factory object used to create new PDU instances */
-    private PduFactory pduFactory;
+    private PduFactory pduFactory = new PduFactory();
 
     private String TRACE_PREFIX = "[" + (SimulationManager.class.getSimpleName()) + "] ";
 
