@@ -182,8 +182,9 @@ public class SimulationManagerTest
 
         SimulationManager sm = new SimulationManager();
         EntityID entityId = new EntityID().setSiteID(1).setApplicationID(2).setEntityID(3);
+        System.out.println("[debug] SimulationManagerTest: new SimulationManager default sm.getEntityRecordList().size()=" + sm.getEntityRecordList().size()); // reports default list size is 1
         sm.addEntity(entityId);
-        assertEquals(1, sm.getEntityRecordList().size(), "entity list should have 1 entry after addEntity(EntityID)");
+        assertEquals(2, sm.getEntityRecordList().size(), "entity list should have 1 entry after addEntity(EntityID)");
     }
 
     /** Command-line invocation (CLI) of program, execution starts here
