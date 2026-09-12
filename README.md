@@ -22,7 +22,7 @@ Release versions follow the pattern **v`Major`.`Minor`.`SISO`** where:
 - **Minor** — Library-specific patch level
 - **SISO** — SISO-REF-010 enumeration version integrated into the release
 
-For example, release `v7.0.37` indicates IEEE DIS version 7 with SISO-REF-010 version 37. Future DIS opendis8-java for version 8 codebase will created from this baseline.
+For example, release `v7.0.37` indicates IEEE DIS version 7 with SISO-REF-010 version 37. Future DIS opendis8-java for version 8 codebase will be designed and created from this baseline.
 
 Additional example programs and resources are found in the NPS MOVES
 [Networked Graphics MV3500](https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500) course.
