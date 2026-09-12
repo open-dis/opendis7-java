@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Auxiliary = <code>16</code>; </li>
- *     <li> SubCategory: ServizioNavaleGuardiaDiFinanza  = <code>29</code>; </li>
- *     <li> Specific: GianMariaPaolini  = <code>1</code>; </li>
- *     <li> Entity type uid: 18572; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> SubCategory: TrainingShip  = <code>15</code>; </li>
+ *     <li> Specific: GianMariaPaolini  = <code>13</code>; </li>
+ *     <li> Entity type uid: 38478; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@15f193b8. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1adb7478. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class GianMariaPaolini extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)16); // uid 18374, Auxiliary
-        setSubCategory((byte)29); // uid 18571, Servizio Navale Guardia Di Finanza
-        setSpecific((byte)1); // uid 18572, Gian Maria Paolini
+        setSubCategory((byte)15); // uid 18454, Training Ship
+        setSpecific((byte)13); // uid 38478, Gian Maria Paolini
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -418,6 +418,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         pad = (short)dis.readUnsignedShort();
         uPosition += 2;
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
             VariableParameter anX = new VariableParameter();
@@ -504,6 +505,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute pad marked as not serialized
         pad = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute variableParameters marked as not serialized
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
         VariableParameter anX = new VariableParameter();
@@ -562,18 +564,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" sourceEntityID:").append(sourceEntityID); // writeOneToString
-    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString
-    sb.append(" explodingEntityID:").append(explodingEntityID); // writeOneToString
-    sb.append(" eventID:").append(eventID); // writeOneToString
-    sb.append(" velocity:").append(velocity); // writeOneToString
-    sb.append(" locationInWorldCoordinates:").append(locationInWorldCoordinates); // writeOneToString
-    sb.append(" descriptor:").append(descriptor); // writeOneToString
-    sb.append(" locationOfEntityCoordinates:").append(locationOfEntityCoordinates); // writeOneToString
-    sb.append(" detonationResult:").append(detonationResult); // writeOneToString
-    sb.append(" pad:").append(pad); // writeOneToString
+    sb.append(" sourceEntityID:").append(sourceEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" explodingEntityID:").append(explodingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventID:").append(eventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" velocity:").append(velocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" locationInWorldCoordinates:").append(locationInWorldCoordinates); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" descriptor:").append(descriptor); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" locationOfEntityCoordinates:").append(locationOfEntityCoordinates); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" detonationResult:").append(detonationResult); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" variableParameters: ");
-    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

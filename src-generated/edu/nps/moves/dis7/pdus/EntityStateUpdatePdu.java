@@ -325,6 +325,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += entityOrientation.unmarshal(dis);
         entityAppearance = dis.readInt();
         uPosition += 4;
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
             VariableParameter anX = new VariableParameter();
@@ -399,6 +400,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute entityAppearance marked as not serialized
         entityAppearance = byteBuffer.getInt();
         // attribute variableParameters marked as not serialized
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
         VariableParameter anX = new VariableParameter();
@@ -453,14 +455,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" entityID:").append(entityID); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString
-    sb.append(" entityLocation:").append(entityLocation); // writeOneToString
-    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString
-    sb.append(" entityAppearance:").append(entityAppearance); // writeOneToString
+    sb.append(" entityID:").append(entityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityLocation:").append(entityLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityAppearance:").append(String.valueOf(entityAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" variableParameters: ");
-    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

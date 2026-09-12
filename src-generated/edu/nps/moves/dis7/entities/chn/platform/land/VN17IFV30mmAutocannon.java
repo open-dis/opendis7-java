@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: VN17IFV  = <code>27</code>; </li>
  *     <li> Specific: VN17IFV30mmAutocannon  = <code>1</code>; </li>
  *     <li> Entity type uid: 33963; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6b67034. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@28c4711c. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain

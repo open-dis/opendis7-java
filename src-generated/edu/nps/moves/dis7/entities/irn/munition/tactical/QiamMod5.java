@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: QiamMod5  = <code>136</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 36434; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@7d126083. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3e01796a. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#MUNITION
  * @see Domain

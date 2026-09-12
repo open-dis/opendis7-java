@@ -616,6 +616,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding2 = (short)dis.readUnsignedShort();
         uPosition += 2;
+        modulationParametersList.clear();
         for (int idx = 0; idx < modulationParameterCount; idx++)
         {
             ModulationParameters anX = new ModulationParameters();
@@ -623,6 +624,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             modulationParametersList.add(anX);
         }
 
+        antennaPatternList.clear();
         for (int idx = 0; idx < antennaPatternCount; idx++)
         {
             VariableTransmitterParameters anX = new VariableTransmitterParameters();
@@ -737,6 +739,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute padding2 marked as not serialized
         padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute modulationParametersList marked as not serialized
+        modulationParametersList.clear();
         for (int idx = 0; idx < modulationParameterCount; idx++)
         {
         ModulationParameters anX = new ModulationParameters();
@@ -745,6 +748,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute antennaPatternList marked as not serialized
+        antennaPatternList.clear();
         for (int idx = 0; idx < antennaPatternCount; idx++)
         {
         VariableTransmitterParameters anX = new VariableTransmitterParameters();
@@ -810,29 +814,29 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" header:").append(header); // writeOneToString
-    sb.append(" radioEntityType:").append(radioEntityType); // writeOneToString
-    sb.append(" transmitState:").append(transmitState); // writeOneToString
-    sb.append(" inputSource:").append(inputSource); // writeOneToString
-    sb.append(" variableTransmitterParameterCount:").append(variableTransmitterParameterCount); // writeOneToString
-    sb.append(" antennaLocation:").append(antennaLocation); // writeOneToString
-    sb.append(" relativeAntennaLocation:").append(relativeAntennaLocation); // writeOneToString
-    sb.append(" antennaPatternType:").append(antennaPatternType); // writeOneToString
-    sb.append(" frequency:").append(frequency); // writeOneToString
-    sb.append(" transmitFrequencyBandwidth:").append(transmitFrequencyBandwidth); // writeOneToString
-    sb.append(" power:").append(power); // writeOneToString
-    sb.append(" modulationType:").append(modulationType); // writeOneToString
-    sb.append(" cryptoSystem:").append(cryptoSystem); // writeOneToString
-    sb.append(" cryptoKeyId:").append(cryptoKeyId); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" header:").append(header); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" radioEntityType:").append(radioEntityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" transmitState:").append(transmitState); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" inputSource:").append(inputSource); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" variableTransmitterParameterCount:").append(String.valueOf(variableTransmitterParameterCount)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" antennaLocation:").append(antennaLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" relativeAntennaLocation:").append(relativeAntennaLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" antennaPatternType:").append(antennaPatternType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" frequency:").append(String.valueOf(frequency)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" transmitFrequencyBandwidth:").append(String.valueOf(transmitFrequencyBandwidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" power:").append(String.valueOf(power)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" modulationType:").append(modulationType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" cryptoSystem:").append(cryptoSystem); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" cryptoKeyId:").append(String.valueOf(cryptoKeyId)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" modulationParametersList: ");
-    modulationParametersList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    modulationParametersList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" antennaPatternList: ");
-    antennaPatternList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    antennaPatternList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

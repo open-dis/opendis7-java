@@ -277,11 +277,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" beamAzimuthCenter:").append(beamAzimuthCenter); // writeOneToString
-    sb.append(" beamAzimuthSweep:").append(beamAzimuthSweep); // writeOneToString
-    sb.append(" beamElevationCenter:").append(beamElevationCenter); // writeOneToString
-    sb.append(" beamElevationSweep:").append(beamElevationSweep); // writeOneToString
-    sb.append(" beamSweepSync:").append(beamSweepSync); // writeOneToString
+    sb.append(" beamAzimuthCenter:").append(String.valueOf(beamAzimuthCenter)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamAzimuthSweep:").append(String.valueOf(beamAzimuthSweep)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamElevationCenter:").append(String.valueOf(beamElevationCenter)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamElevationSweep:").append(String.valueOf(beamElevationSweep)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamSweepSync:").append(String.valueOf(beamSweepSync)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: IslandClassWPB  = <code>5</code>; </li>
  *     <li> Specific: BaranofWPB1318  = <code>7</code>; </li>
  *     <li> Entity type uid: 12156; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@22686ddb. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@58182b96. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain

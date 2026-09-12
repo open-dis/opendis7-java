@@ -547,6 +547,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding2 = (short)dis.readUnsignedShort();
         uPosition += 2;
+        gridAxisDescriptors.clear();
         for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
             GridAxisDescriptor anX = new GridAxisDescriptor();
@@ -554,6 +555,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             gridAxisDescriptors.add(anX);
         }
 
+        gridDataRecords.clear();
         for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
             GridData anX = new GridData();
@@ -656,6 +658,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute padding2 marked as not serialized
         padding2 = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute gridAxisDescriptors marked as not serialized
+        gridAxisDescriptors.clear();
         for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
         GridAxisDescriptor anX = new GridAxisDescriptor();
@@ -664,6 +667,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute gridDataRecords marked as not serialized
+        gridDataRecords.clear();
         for (int idx = 0; idx < numberOfGridAxes; idx++)
         {
         GridData anX = new GridData();
@@ -726,26 +730,26 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" environmentalSimulationApplicationID:").append(environmentalSimulationApplicationID); // writeOneToString
-    sb.append(" fieldNumber:").append(fieldNumber); // writeOneToString
-    sb.append(" pduNumber:").append(pduNumber); // writeOneToString
-    sb.append(" pduTotal:").append(pduTotal); // writeOneToString
-    sb.append(" coordinateSystem:").append(coordinateSystem); // writeOneToString
-    sb.append(" constantGrid:").append(constantGrid); // writeOneToString
-    sb.append(" environmentType:").append(environmentType); // writeOneToString
-    sb.append(" orientation:").append(orientation); // writeOneToString
-    sb.append(" sampleTime:").append(sampleTime); // writeOneToString
-    sb.append(" totalValues:").append(totalValues); // writeOneToString
-    sb.append(" vectorDimension:").append(vectorDimension); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" environmentalSimulationApplicationID:").append(environmentalSimulationApplicationID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" fieldNumber:").append(String.valueOf(fieldNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pduNumber:").append(String.valueOf(pduNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pduTotal:").append(String.valueOf(pduTotal)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" coordinateSystem:").append(coordinateSystem); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" constantGrid:").append(constantGrid); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" environmentType:").append(environmentType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" orientation:").append(orientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" sampleTime:").append(sampleTime); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" totalValues:").append(String.valueOf(totalValues)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" vectorDimension:").append(String.valueOf(vectorDimension)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" gridAxisDescriptors: ");
-    gridAxisDescriptors.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    gridAxisDescriptors.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" gridDataRecords: ");
-    gridDataRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    gridDataRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

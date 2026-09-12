@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _125mm  = <code>11</code>; </li>
  *     <li> Specific: BM22APFSDS  = <code>8</code>; </li>
  *     <li> Entity type uid: 23958; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@77eb607e. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4213bc3e. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain

@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: HendijanClassAGtenders  = <code>2</code>; </li>
  *     <li> Specific: Geno  = <code>4</code>; </li>
  *     <li> Entity type uid: 18121; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16afbd92. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@51684e4a. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#PLATFORM
  * @see Domain

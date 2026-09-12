@@ -255,10 +255,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" systemType:").append(systemType); // writeOneToString
-    sb.append(" systemName:").append(systemName); // writeOneToString
-    sb.append(" systemMode:").append(systemMode); // writeOneToString
-    sb.append(" changeOptions:").append(changeOptions); // writeOneToString
+    sb.append(" systemType:").append(systemType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" systemName:").append(systemName); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" systemMode:").append(systemMode); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" changeOptions:").append(changeOptions); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

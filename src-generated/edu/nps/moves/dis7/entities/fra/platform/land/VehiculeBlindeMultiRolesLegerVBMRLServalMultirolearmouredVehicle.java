@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Armored Fighting Vehicle = <code>2</code>; </li>
- *     <li> SubCategory: VehiculeBlindeMultiRolesVBMRGriffonMultirolearmouredVehicle  = <code>18</code>; </li>
- *     <li> Specific: VehiculeBlindeMultiRolesLegerVBMRLServalMultirolearmouredVehicle  = <code>1</code>; </li>
- *     <li> Entity type uid: 34223; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> SubCategory: VehiculeBlindeMultiRolesLegerVBMRLServalMultirolearmouredVehicle  = <code>19</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38214; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1130520d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@a82c5f1. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,7 @@ public final class VehiculeBlindeMultiRolesLegerVBMRLServalMultirolearmouredVehi
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)2); // uid 15645, Armored Fighting Vehicle
-        setSubCategory((byte)18); // uid 34222, Vehicule Blinde Multi-Roles (VBMR) - Griffon Multi-role armoured Vehicle
-        setSpecific((byte)1); // uid 34223, Vehicule Blinde Multi-Roles Leger (VBMR-L) - Serval Multi-role armoured Vehicle
+        setSubCategory((byte)19); // uid 38214, Vehicule Blinde Multi-Roles Leger (VBMR-L) - Serval Multi-role armoured Vehicle
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

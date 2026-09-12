@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TwinJet  = <code>32</code>; </li>
  *     <li> Specific: EmbraerEMB190  = <code>2</code>; </li>
  *     <li> Entity type uid: 34274; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@27c20538. </p>
- * @see Country#BRAZIL_BRA
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@ff5b51f. </p>
+ * @see Country#UNDERWATER_ACOUSTIC
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class EmbraerERJ190400E195E2 extends EntityType
     /** Default constructor */
     public EmbraerERJ190400E195E2()
     {
-        setCountry(Country.BRAZIL_BRA);
+        setCountry(Country.UNDERWATER_ACOUSTIC);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 

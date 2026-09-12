@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: OceanSurveillancesatellite  = <code>6</code>; </li>
- *     <li> Specific: WhiteCloud  = <code>1</code>; </li>
- *     <li> Entity type uid: 12458; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Military = <code>20</code>; </li>
+ *     <li> SubCategory: ElectronicIntelligenceELINT  = <code>2</code>; </li>
+ *     <li> Specific: WhiteCloud  = <code>2</code>; </li>
+ *     <li> Entity type uid: 38604; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@74ebd159. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@150f41b9. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteMilitary
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class WhiteCloud extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 12431, Unmanned
-        setSubCategory((byte)6); // uid 12457, Ocean Surveillance satellite
-        setSpecific((byte)1); // uid 12458, White Cloud
+        setCategory((byte)20); // uid 38599, Satellite - Military
+        setSubCategory((byte)2); // uid 38602, Electronic Intelligence (ELINT)
+        setSpecific((byte)2); // uid 38604, White Cloud
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

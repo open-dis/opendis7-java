@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
- *     <li> SubCategory: HQ9SAMSystem  = <code>7</code>; </li>
+ *     <li> SubCategory: CSA9HQ9SAMSystem  = <code>7</code>; </li>
  *     <li> Specific: HQ9Type120LowAltitudeSearchRadarLLQ120  = <code>6</code>; </li>
  *     <li> Entity type uid: 25718; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@527e5409. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@79ad8b2f. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class HQ9Type120LowAltitudeSearchRadarLLQ120 extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 16937, Air Defense/Missile Defense Unit Equipment
-        setSubCategory((byte)7); // uid 24039, HQ-9 SAM System
+        setSubCategory((byte)7); // uid 24039, CSA-9 (HQ-9) SAM System
         setSpecific((byte)6); // uid 25718, HQ-9 Type 120 Low Altitude Search Radar (LLQ-120)
     }
     /** Create a new instance of this final (unmodifiable) class

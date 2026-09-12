@@ -503,6 +503,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
        }
 
        padTo32 = new byte[Align.to32bits(dos)];
+       Arrays.fill(padTo32, (byte) 0); // reset all bytes to zero
 
        for (int idx = 0; idx < silentAggregateSystemList.size(); idx++)
        {
@@ -569,6 +570,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfSilentEntityTypes = (short)dis.readUnsignedShort();
         uPosition += 2;
+        aggregateIDList.clear();
         for (int idx = 0; idx < numberOfDisAggregates; idx++)
         {
             AggregateIdentifier anX = new AggregateIdentifier();
@@ -576,6 +578,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             aggregateIDList.add(anX);
         }
 
+        entityIDList.clear();
         for (int idx = 0; idx < numberOfDisEntities; idx++)
         {
             EntityID anX = new EntityID();
@@ -585,6 +588,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
 
         padTo32 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32.length;
+        silentAggregateSystemList.clear();
         for (int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
         {
             EntityType anX = new EntityType();
@@ -592,6 +596,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             silentAggregateSystemList.add(anX);
         }
 
+        silentEntitySystemList.clear();
         for (int idx = 0; idx < numberOfSilentEntityTypes; idx++)
         {
             EntityType anX = new EntityType();
@@ -601,6 +606,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
 
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
+        variableDatumList.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
@@ -726,6 +732,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfSilentEntityTypes marked as not serialized
         numberOfSilentEntityTypes = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute aggregateIDList marked as not serialized
+        aggregateIDList.clear();
         for (int idx = 0; idx < numberOfDisAggregates; idx++)
         {
         AggregateIdentifier anX = new AggregateIdentifier();
@@ -734,6 +741,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute entityIDList marked as not serialized
+        entityIDList.clear();
         for (int idx = 0; idx < numberOfDisEntities; idx++)
         {
         EntityID anX = new EntityID();
@@ -744,6 +752,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute padTo32 marked as not serialized
         padTo32 = new byte[Align.from32bits(byteBuffer)];
         // attribute silentAggregateSystemList marked as not serialized
+        silentAggregateSystemList.clear();
         for (int idx = 0; idx < numberOfSilentAggregateTypes; idx++)
         {
         EntityType anX = new EntityType();
@@ -752,6 +761,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute silentEntitySystemList marked as not serialized
+        silentEntitySystemList.clear();
         for (int idx = 0; idx < numberOfSilentEntityTypes; idx++)
         {
         EntityType anX = new EntityType();
@@ -762,6 +772,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfVariableDatumRecords marked as not serialized
         numberOfVariableDatumRecords = byteBuffer.getInt();
         // attribute variableDatumList marked as not serialized
+        variableDatumList.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
         VariableDatum anX = new VariableDatum();
@@ -824,39 +835,39 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" aggregateID:").append(aggregateID); // writeOneToString
-    sb.append(" forceID:").append(forceID); // writeOneToString
-    sb.append(" aggregateState:").append(aggregateState); // writeOneToString
-    sb.append(" aggregateType:").append(aggregateType); // writeOneToString
-    sb.append(" formation:").append(formation); // writeOneToString
-    sb.append(" aggregateMarking:").append(aggregateMarking); // writeOneToString
-    sb.append(" dimensions:").append(dimensions); // writeOneToString
-    sb.append(" orientation:").append(orientation); // writeOneToString
-    sb.append(" centerOfMass:").append(centerOfMass); // writeOneToString
-    sb.append(" velocity:").append(velocity); // writeOneToString
-    sb.append(" padTo32:").append(padTo32); // writeOneToString
+    sb.append(" aggregateID:").append(aggregateID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" forceID:").append(forceID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" aggregateState:").append(aggregateState); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" aggregateType:").append(aggregateType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" formation:").append(formation); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" aggregateMarking:").append(aggregateMarking); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" dimensions:").append(dimensions); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" orientation:").append(orientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" centerOfMass:").append(centerOfMass); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" velocity:").append(velocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padTo32:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO32
     sb.append(" aggregateIDList: ");
-    aggregateIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    aggregateIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" entityIDList: ");
-    entityIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    entityIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" silentAggregateSystemList: ");
-    silentAggregateSystemList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    silentAggregateSystemList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" silentEntitySystemList: ");
-    silentEntitySystemList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    silentEntitySystemList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" variableDatumList: ");
-    variableDatumList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableDatumList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

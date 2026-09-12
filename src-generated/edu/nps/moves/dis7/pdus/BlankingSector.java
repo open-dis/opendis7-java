@@ -528,19 +528,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" emitterNumber:").append(emitterNumber); // writeOneToString
-    sb.append(" beamNumber:").append(beamNumber); // writeOneToString
-    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" leftAzimuth:").append(leftAzimuth); // writeOneToString
-    sb.append(" rightAzimuth:").append(rightAzimuth); // writeOneToString
-    sb.append(" lowerElevation:").append(lowerElevation); // writeOneToString
-    sb.append(" upperElevation:").append(upperElevation); // writeOneToString
-    sb.append(" residualPower:").append(residualPower); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" emitterNumber:").append(String.valueOf(emitterNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamNumber:").append(String.valueOf(beamNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" leftAzimuth:").append(String.valueOf(leftAzimuth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" rightAzimuth:").append(String.valueOf(rightAzimuth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" lowerElevation:").append(String.valueOf(lowerElevation)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" upperElevation:").append(String.valueOf(upperElevation)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" residualPower:").append(String.valueOf(residualPower)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

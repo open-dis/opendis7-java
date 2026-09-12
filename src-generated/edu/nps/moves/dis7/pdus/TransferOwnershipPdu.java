@@ -410,13 +410,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" originatingEntityID:").append(originatingEntityID); // writeOneToString
-    sb.append(" receivingEntityID:").append(receivingEntityID); // writeOneToString
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString
-    sb.append(" transferType:").append(transferType); // writeOneToString
-    sb.append(" transferEntityID:").append(transferEntityID); // writeOneToString
-    sb.append(" recordSets:").append(recordSets); // writeOneToString
+    sb.append(" originatingEntityID:").append(originatingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingEntityID:").append(receivingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" transferType:").append(transferType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" transferEntityID:").append(transferEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" recordSets:").append(recordSets); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

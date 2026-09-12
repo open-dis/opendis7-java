@@ -128,6 +128,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
            dos.writeByte(recordSpecificField[idx]);
 
        padding = new byte[Align.to32bits(dos)];
+       Arrays.fill(padding, (byte) 0); // reset all bytes to zero
     }
     catch(Exception e)
     {
@@ -247,9 +248,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(recordSpecificField[idx] == rhs.recordSpecificField[idx])) return false;
+         if (idx < recordSpecificField.length)
+             if(!(recordSpecificField[idx] == rhs.recordSpecificField[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -259,11 +261,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" recordSpecificField:");
-    sb.append(Arrays.toString(recordSpecificField)); // writePrimitiveList
-    sb.append(" padding:").append(padding); // writeOneToString
+    sb.append(" recordType:").append(recordType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordSpecificField:");    sb.append(Arrays.toString(recordSpecificField)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO32
 
    return sb.toString();
  }

@@ -354,15 +354,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(recordValues[idx] == rhs.recordValues[idx])) return false;
+         if (idx < recordValues.length)
+             if(!(recordValues[idx] == rhs.recordValues[idx]))
+                 return false;
      }
-
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(padTo64[idx] == rhs.padTo64[idx])) return false;
+         if (idx < padTo64.length)
+             if(!(padTo64[idx] == rhs.padTo64[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -372,15 +374,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordID:").append(recordID); // writeOneToString
-    sb.append(" recordSetSerialNumber:").append(recordSetSerialNumber); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" recordCount:").append(recordCount); // writeOneToString
-    sb.append(" recordValues:");
-    sb.append(Arrays.toString(recordValues)); // writePrimitiveList
-    sb.append(" padTo64:");
-    sb.append(Arrays.toString(padTo64)); // writePrimitiveList
+    sb.append(" recordID:").append(recordID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" recordSetSerialNumber:").append(String.valueOf(recordSetSerialNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordCount:").append(String.valueOf(recordCount)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordValues:");    sb.append(Arrays.toString(recordValues)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padTo64:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

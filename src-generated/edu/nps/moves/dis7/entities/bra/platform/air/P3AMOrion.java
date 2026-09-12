@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: P3Orion  = <code>3</code>; </li>
  *     <li> Specific: P3AMOrion  = <code>1</code>; </li>
  *     <li> Entity type uid: 32015; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@31ef45e3. </p>
- * @see Country#BRAZIL_BRA
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@402a079c. </p>
+ * @see Country#UNDERWATER_ACOUSTIC
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class P3AMOrion extends EntityType
     /** Default constructor */
     public P3AMOrion()
     {
-        setCountry(Country.BRAZIL_BRA);
+        setCountry(Country.UNDERWATER_ACOUSTIC);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 

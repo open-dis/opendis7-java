@@ -182,6 +182,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
            dos.writeByte(geometry[idx]);
 
        padding2 = new byte[Align.to64bits(dos)];
+       Arrays.fill(padding2, (byte) 0); // reset all bytes to zero
     }
     catch(Exception e)
     {
@@ -313,9 +314,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(geometry[idx] == rhs.geometry[idx])) return false;
+         if (idx < geometry.length)
+             if(!(geometry[idx] == rhs.geometry[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -325,13 +327,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" environmentType:").append(environmentType); // writeOneToString
-    sb.append(" length:").append(length); // writeOneToString
-    sb.append(" index:").append(index); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" geometry:");
-    sb.append(Arrays.toString(geometry)); // writePrimitiveList
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" environmentType:").append(environmentType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" length:").append(String.valueOf(length)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" index:").append(String.valueOf(index)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" geometry:");    sb.append(Arrays.toString(geometry)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO64
 
    return sb.toString();
  }

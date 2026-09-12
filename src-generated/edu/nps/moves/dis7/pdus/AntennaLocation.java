@@ -201,8 +201,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" antennaLocation:").append(antennaLocation); // writeOneToString
-    sb.append(" relativeAntennaLocation:").append(relativeAntennaLocation); // writeOneToString
+    sb.append(" antennaLocation:").append(antennaLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" relativeAntennaLocation:").append(relativeAntennaLocation); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

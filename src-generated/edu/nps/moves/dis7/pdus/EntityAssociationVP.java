@@ -396,15 +396,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" changeIndicator:").append(changeIndicator); // writeOneToString
-    sb.append(" associationStatus:").append(associationStatus); // writeOneToString
-    sb.append(" associationType:").append(associationType); // writeOneToString
-    sb.append(" entityID:").append(entityID); // writeOneToString
-    sb.append(" ownStationLocation:").append(ownStationLocation); // writeOneToString
-    sb.append(" physicalConnectionType:").append(physicalConnectionType); // writeOneToString
-    sb.append(" groupMemberType:").append(groupMemberType); // writeOneToString
-    sb.append(" groupNumber:").append(groupNumber); // writeOneToString
+    sb.append(" recordType:").append(recordType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" changeIndicator:").append(changeIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" associationStatus:").append(associationStatus); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" associationType:").append(associationType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" entityID:").append(entityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" ownStationLocation:").append(ownStationLocation); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" physicalConnectionType:").append(physicalConnectionType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" groupMemberType:").append(groupMemberType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" groupNumber:").append(String.valueOf(groupNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

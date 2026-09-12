@@ -202,6 +202,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
        }
 
        padding2 = new byte[Align.to64bits(dos)];
+       Arrays.fill(padding2, (byte) 0); // reset all bytes to zero
     }
     catch(Exception e)
     {
@@ -232,6 +233,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         directedEnergyTargetEnergyDepositionRecordCount = (short)dis.readUnsignedShort();
         uPosition += 2;
+        beamAntennaParameterList.clear();
         for (int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
         {
             BeamAntennaPattern anX = new BeamAntennaPattern();
@@ -239,6 +241,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             beamAntennaParameterList.add(anX);
         }
 
+        directedEnergyTargetEnergyDepositionRecordList.clear();
         for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
         {
             DirectedEnergyTargetEnergyDeposition anX = new DirectedEnergyTargetEnergyDeposition();
@@ -312,6 +315,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute directedEnergyTargetEnergyDepositionRecordCount marked as not serialized
         directedEnergyTargetEnergyDepositionRecordCount = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute beamAntennaParameterList marked as not serialized
+        beamAntennaParameterList.clear();
         for (int idx = 0; idx < beamAntennaPatternRecordCount; idx++)
         {
         BeamAntennaPattern anX = new BeamAntennaPattern();
@@ -320,6 +324,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute directedEnergyTargetEnergyDepositionRecordList marked as not serialized
+        directedEnergyTargetEnergyDepositionRecordList.clear();
         for (int idx = 0; idx < directedEnergyTargetEnergyDepositionRecordCount; idx++)
         {
         DirectedEnergyTargetEnergyDeposition anX = new DirectedEnergyTargetEnergyDeposition();
@@ -379,17 +384,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO64
     sb.append(" beamAntennaParameterList: ");
-    beamAntennaParameterList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    beamAntennaParameterList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" directedEnergyTargetEnergyDepositionRecordList: ");
-    directedEnergyTargetEnergyDepositionRecordList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    directedEnergyTargetEnergyDepositionRecordList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

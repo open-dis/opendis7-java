@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Opticalimagingsurveillancesatellite  = <code>8</code>; </li>
- *     <li> Specific: Generation  = <code>2</code>; </li>
- *     <li> Entity type uid: 14865; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Earth Observation = <code>16</code>; </li>
+ *     <li> SubCategory: Generation  = <code>4</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38583; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a4ab7f7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65a9ea3c. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteEarthObservation
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Generation extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 14850, Unmanned
-        setSubCategory((byte)8); // uid 14863, Optical imaging surveillance satellite
-        setSpecific((byte)2); // uid 14865, Generation
+        setCategory((byte)16); // uid 38579, Satellite - Earth Observation
+        setSubCategory((byte)4); // uid 38583, Generation
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

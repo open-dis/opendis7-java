@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Germany (DEU) = <code>78</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Booster = <code>3</code>; </li>
- *     <li> SubCategory: Maxus  = <code>2</code>; </li>
+ *     <li> Category: Satellite - Science/Experimental/Demonstration = <code>14</code>; </li>
+ *     <li> SubCategory: Maxus  = <code>16</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 16854; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Entity type uid: 38548; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@10fde30a. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@5cc126dc. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Booster
+ * @see SatelliteScienceExperimentalDemonstration
  * @see SubCategory
 
  */
@@ -44,8 +44,8 @@ public final class Maxus1 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)3); // uid 16852, Booster
-        setSubCategory((byte)2); // uid 16854, Maxus
+        setCategory((byte)14); // uid 38532, Satellite - Science/Experimental/Demonstration
+        setSubCategory((byte)16); // uid 38548, Maxus
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

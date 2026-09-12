@@ -301,6 +301,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfRecords = dis.readInt();
         uPosition += 4;
+        recordIDs.clear();
         for (int idx = 0; idx < numberOfRecords; idx++)
         {
             RecordQuerySpecification anX = new RecordQuerySpecification();
@@ -372,6 +373,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfRecords marked as not serialized
         numberOfRecords = byteBuffer.getInt();
         // attribute recordIDs marked as not serialized
+        recordIDs.clear();
         for (int idx = 0; idx < numberOfRecords; idx++)
         {
         RecordQuerySpecification anX = new RecordQuerySpecification();
@@ -425,13 +427,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString
-    sb.append(" pad1:").append(pad1); // writeOneToString
-    sb.append(" eventType:").append(eventType); // writeOneToString
-    sb.append(" time:").append(time); // writeOneToString
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" eventType:").append(eventType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" time:").append(String.valueOf(time)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" recordIDs: ");
-    recordIDs.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    recordIDs.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

@@ -23,9 +23,9 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: Shahed  = <code>8</code>; </li>
  *     <li> Specific: Shahed136  = <code>7</code>; </li>
  *     <li> Entity type uid: 36290; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@64f857e7. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@48f5bde6. </p>
  * @see Country#IRAN_ISLAMIC_REPUBLIC_OF_IRN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class Shahed136 extends EntityType
 
         setCategory((byte)50); // uid 29882, Unmanned
         setSubCategory((byte)8); // uid 36283, Shahed
-        setSpecific((byte)7); // uid 36290, Shahed 136
+        setSpecific((byte)7); // uid 36290, Shahed-136
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -587,21 +587,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" emitterNumber:").append(emitterNumber); // writeOneToString
-    sb.append(" beamNumber:").append(beamNumber); // writeOneToString
-    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
-    sb.append(" falseTargetCount:").append(falseTargetCount); // writeOneToString
-    sb.append(" walkSpeed:").append(walkSpeed); // writeOneToString
-    sb.append(" walkAcceleration:").append(walkAcceleration); // writeOneToString
-    sb.append(" maximumWalkDistance:").append(maximumWalkDistance); // writeOneToString
-    sb.append(" keepTime:").append(keepTime); // writeOneToString
-    sb.append(" echoSpacing:").append(echoSpacing); // writeOneToString
-    sb.append(" firstTargetOffset:").append(firstTargetOffset); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" emitterNumber:").append(String.valueOf(emitterNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamNumber:").append(String.valueOf(beamNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" falseTargetCount:").append(String.valueOf(falseTargetCount)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" walkSpeed:").append(String.valueOf(walkSpeed)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" walkAcceleration:").append(String.valueOf(walkAcceleration)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" maximumWalkDistance:").append(String.valueOf(maximumWalkDistance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" keepTime:").append(String.valueOf(keepTime)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" echoSpacing:").append(String.valueOf(echoSpacing)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" firstTargetOffset:").append(String.valueOf(firstTargetOffset)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

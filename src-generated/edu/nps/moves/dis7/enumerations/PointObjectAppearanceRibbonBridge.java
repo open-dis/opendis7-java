@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 234, marshal size 16,
+ *  UID 234, marshal size 32,
  * PointObjectAppearanceRibbonBridge
  */
 public class PointObjectAppearanceRibbonBridge extends DisBitSet 
@@ -50,7 +50,7 @@ public class PointObjectAppearanceRibbonBridge extends DisBitSet
   /** Default constructor */
   public PointObjectAppearanceRibbonBridge()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

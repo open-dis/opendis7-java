@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 231, marshal size 16,
+ *  UID 231, marshal size 32,
  * PointObjectAppearanceLogcribAbatisVehicledefiladeandInfantryfightingposition
  */
 public class PointObjectAppearanceLogCribAbatisEtAl extends DisBitSet 
@@ -50,7 +50,7 @@ public class PointObjectAppearanceLogCribAbatisEtAl extends DisBitSet
   /** Default constructor */
   public PointObjectAppearanceLogCribAbatisEtAl()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

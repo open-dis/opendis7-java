@@ -13,19 +13,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Abatis8tree</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>Abatis8tree.createInstance()</code> or <code>new Abatis8tree()</code>. </p>
+ * <p> Entity class <b><code>Abatis8Tree</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Abatis8Tree.createInstance()</code> or <code>new Abatis8Tree()</code>. </p>
  * <ul>
  *     <li> Country: Other = <code>0</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Cultural feature = <code>5</code>; </li>
  *     <li> Category: Obstacle = <code>5</code>; </li>
- *     <li> SubCategory: Abatis8tree  = <code>5</code>; </li>
- *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 21979; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> SubCategory: Abatis  = <code>5</code>; </li>
+ *     <li> Specific: Abatis8Tree  = <code>0</code>; </li>
+ *     <li> Entity type uid: 37932; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4cd90c36. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@72d0196d. </p>
  * @see Country#OTHER
  * @see EntityKind#CULTURAL_FEATURE
  * @see Domain
@@ -35,22 +35,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class Abatis8tree extends EntityType
+public final class Abatis8Tree extends EntityType
 {
     /** Default constructor */
-    public Abatis8tree()
+    public Abatis8Tree()
     {
         setCountry(Country.OTHER);
         setEntityKind(EntityKind.CULTURAL_FEATURE);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)5); // uid 21973, Obstacle
-        setSubCategory((byte)5); // uid 21979, Abatis, 8-tree
+        setSubCategory((byte)5); // uid 21979, Abatis
+        setSpecific((byte)0); // uid 37932, Abatis, 8 Tree
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static Abatis8tree createInstance()
+    public static Abatis8Tree createInstance()
     {
-            return new Abatis8tree();
+            return new Abatis8Tree();
     }
 }

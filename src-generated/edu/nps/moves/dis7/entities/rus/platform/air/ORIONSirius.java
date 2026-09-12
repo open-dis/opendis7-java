@@ -13,19 +13,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>ORIONSirius</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>ORIONSirius.createInstance()</code> or <code>new ORIONSirius()</code>. </p>
+ * <p> Entity class <b><code>OrionSirius</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>OrionSirius.createInstance()</code> or <code>new OrionSirius()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Unmanned = <code>50</code>; </li>
- *     <li> SubCategory: KRONSHTADORIONSeries  = <code>11</code>; </li>
- *     <li> Specific: ORIONSirius  = <code>4</code>; </li>
+ *     <li> SubCategory: KronshtadtOrionSeries  = <code>11</code>; </li>
+ *     <li> Specific: OrionSirius  = <code>4</code>; </li>
  *     <li> Entity type uid: 36060; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@54d8c20d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1e1e9ef3. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -35,23 +35,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class ORIONSirius extends EntityType
+public final class OrionSirius extends EntityType
 {
     /** Default constructor */
-    public ORIONSirius()
+    public OrionSirius()
     {
         setCountry(Country.RUSSIA_RUS);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 23446, Unmanned
-        setSubCategory((byte)11); // uid 36056, KRONSHTAD ORION Series
-        setSpecific((byte)4); // uid 36060, ORION Sirius
+        setSubCategory((byte)11); // uid 36056, Kronshtadt Orion Series
+        setSpecific((byte)4); // uid 36060, Orion Sirius
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static ORIONSirius createInstance()
+    public static OrionSirius createInstance()
     {
-            return new ORIONSirius();
+            return new OrionSirius();
     }
 }

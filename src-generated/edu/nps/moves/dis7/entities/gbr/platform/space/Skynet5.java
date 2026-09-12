@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: United Kingdom of Great Britain and Northern Ireland (GBR) = <code>224</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Communicationsatellite  = <code>1</code>; </li>
- *     <li> Specific: Skynet5  = <code>8</code>; </li>
- *     <li> Entity type uid: 36032; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Military = <code>20</code>; </li>
+ *     <li> SubCategory: Communication  = <code>5</code>; </li>
+ *     <li> Specific: Skynet5  = <code>5</code>; </li>
+ *     <li> Entity type uid: 38522; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1ef31f71. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@491f8831. </p>
  * @see Country#UNITED_KINGDOM_OF_GREAT_BRITAIN_AND_NORTHERN_IRELAND_GBR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteMilitary
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class Skynet5 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 15629, Unmanned
-        setSubCategory((byte)1); // uid 15630, Communication satellite
-        setSpecific((byte)8); // uid 36032, Skynet 5
+        setCategory((byte)20); // uid 38516, Satellite - Military
+        setSubCategory((byte)5); // uid 38517, Communication
+        setSpecific((byte)5); // uid 38522, Skynet 5
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

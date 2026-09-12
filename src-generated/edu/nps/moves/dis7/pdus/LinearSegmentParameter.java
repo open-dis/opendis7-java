@@ -442,17 +442,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" segmentNumber:").append(segmentNumber); // writeOneToString
-    sb.append(" segmentModification:").append(segmentModification); // writeOneToString
-    sb.append(" generalSegmentAppearance:").append(generalSegmentAppearance); // writeOneToString
-    sb.append(" specificSegmentAppearance:").append(specificSegmentAppearance); // writeOneToString
-    sb.append(" segmentLocation:").append(segmentLocation); // writeOneToString
-    sb.append(" segmentOrientation:").append(segmentOrientation); // writeOneToString
-    sb.append(" segmentLength:").append(segmentLength); // writeOneToString
-    sb.append(" segmentWidth:").append(segmentWidth); // writeOneToString
-    sb.append(" segmentHeight:").append(segmentHeight); // writeOneToString
-    sb.append(" segmentDepth:").append(segmentDepth); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
+    sb.append(" segmentNumber:").append(String.valueOf(segmentNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" segmentModification:").append(segmentModification); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" generalSegmentAppearance:").append(generalSegmentAppearance); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" specificSegmentAppearance:").append(String.valueOf(specificSegmentAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" segmentLocation:").append(segmentLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" segmentOrientation:").append(segmentOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" segmentLength:").append(String.valueOf(segmentLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" segmentWidth:").append(String.valueOf(segmentWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" segmentHeight:").append(String.valueOf(segmentHeight)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" segmentDepth:").append(String.valueOf(segmentDepth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

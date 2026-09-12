@@ -207,8 +207,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" liveSimulationAddress:").append(liveSimulationAddress); // writeOneToString
-    sb.append(" entityNumber:").append(entityNumber); // writeOneToString
+    sb.append(" liveSimulationAddress:").append(liveSimulationAddress); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityNumber:").append(String.valueOf(entityNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

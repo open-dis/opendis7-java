@@ -1,5 +1,5 @@
 /**
- China, People's Republic of (CHN) MUNITION ANTI_GUIDED_WEAPON typed classes for world entities defined by SISO-REF-010-v35 (2025-04-27) enumerations.
+ China, People's Republic of (CHN) MUNITION ANTI_GUIDED_WEAPON typed classes for world entities defined by SISO-REF-010-v37 (2026-05-25) enumerations.
 
  * <p> Online references: </p>
  * <ul>

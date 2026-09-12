@@ -332,12 +332,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" mode5InterrogatorStatus:").append(mode5InterrogatorStatus); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" mode5MessageFormatsPresent:").append(mode5MessageFormatsPresent); // writeOneToString
-    sb.append(" entityID:").append(entityID); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
+    sb.append(" mode5InterrogatorStatus:").append(String.valueOf(mode5InterrogatorStatus)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" mode5MessageFormatsPresent:").append(String.valueOf(mode5MessageFormatsPresent)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" entityID:").append(entityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

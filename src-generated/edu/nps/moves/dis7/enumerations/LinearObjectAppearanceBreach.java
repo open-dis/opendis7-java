@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 238, marshal size 16,
+ *  UID 238, marshal size 32,
  * LinearObjectAppearanceBreach
  */
 public class LinearObjectAppearanceBreach extends DisBitSet 
@@ -44,7 +44,7 @@ public class LinearObjectAppearanceBreach extends DisBitSet
   /** Default constructor */
   public LinearObjectAppearanceBreach()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

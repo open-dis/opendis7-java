@@ -173,7 +173,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" val:").append(val); // writeOneToString
+    sb.append(" val:").append(String.valueOf(val)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

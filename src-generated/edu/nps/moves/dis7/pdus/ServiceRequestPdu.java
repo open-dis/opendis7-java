@@ -280,6 +280,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         padding1 = (short)dis.readUnsignedShort();
         uPosition += 2;
+        supplies.clear();
         for (int idx = 0; idx < numberOfSupplyTypes; idx++)
         {
             SupplyQuantity anX = new SupplyQuantity();
@@ -348,6 +349,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute padding1 marked as not serialized
         padding1 = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute supplies marked as not serialized
+        supplies.clear();
         for (int idx = 0; idx < numberOfSupplyTypes; idx++)
         {
         SupplyQuantity anX = new SupplyQuantity();
@@ -400,12 +402,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString
-    sb.append(" servicingEntityID:").append(servicingEntityID); // writeOneToString
-    sb.append(" serviceTypeRequested:").append(serviceTypeRequested); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
+    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" servicingEntityID:").append(servicingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" serviceTypeRequested:").append(serviceTypeRequested); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" supplies: ");
-    supplies.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    supplies.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

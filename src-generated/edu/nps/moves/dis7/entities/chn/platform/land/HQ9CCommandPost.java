@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense/Missile Defense Unit Equipment = <code>28</code>; </li>
- *     <li> SubCategory: HQ9SAMSystem  = <code>7</code>; </li>
- *     <li> Specific: HQ9CommandPostTWS312  = <code>1</code>; </li>
+ *     <li> SubCategory: CSA9HQ9SAMSystem  = <code>7</code>; </li>
+ *     <li> Specific: CSA9ABHQ99ACommandPostTWS312  = <code>1</code>; </li>
  *     <li> Entity type uid: 34400; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@11dc3715. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@7ea37dbf. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,8 +45,8 @@ public final class HQ9CCommandPost extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)28); // uid 16937, Air Defense/Missile Defense Unit Equipment
-        setSubCategory((byte)7); // uid 24039, HQ-9 SAM System
-        setSpecific((byte)1); // uid 24040, HQ-9 Command Post (TWS-312)
+        setSubCategory((byte)7); // uid 24039, CSA-9 (HQ-9) SAM System
+        setSpecific((byte)1); // uid 24040, CSA-9A/B (HQ-9/9A) Command Post (TWS-312)
         setExtra((byte)2); // uid 34400, HQ-9C Command Post
     }
     /** Create a new instance of this final (unmodifiable) class

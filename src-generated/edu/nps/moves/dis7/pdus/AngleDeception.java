@@ -599,22 +599,22 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" emitterNumber:").append(emitterNumber); // writeOneToString
-    sb.append(" beamNumber:").append(beamNumber); // writeOneToString
-    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" azimuthOffset:").append(azimuthOffset); // writeOneToString
-    sb.append(" azimuthWidth:").append(azimuthWidth); // writeOneToString
-    sb.append(" azimuthPullRate:").append(azimuthPullRate); // writeOneToString
-    sb.append(" azimuthPullAcceleration:").append(azimuthPullAcceleration); // writeOneToString
-    sb.append(" elevationOffset:").append(elevationOffset); // writeOneToString
-    sb.append(" elevationWidth:").append(elevationWidth); // writeOneToString
-    sb.append(" elevationPullRate:").append(elevationPullRate); // writeOneToString
-    sb.append(" elevationPullAcceleration:").append(elevationPullAcceleration); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" emitterNumber:").append(String.valueOf(emitterNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamNumber:").append(String.valueOf(beamNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" stateIndicator:").append(stateIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" azimuthOffset:").append(String.valueOf(azimuthOffset)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" azimuthWidth:").append(String.valueOf(azimuthWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" azimuthPullRate:").append(String.valueOf(azimuthPullRate)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" azimuthPullAcceleration:").append(String.valueOf(azimuthPullAcceleration)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationOffset:").append(String.valueOf(elevationOffset)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationWidth:").append(String.valueOf(elevationWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationPullRate:").append(String.valueOf(elevationPullRate)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationPullAcceleration:").append(String.valueOf(elevationPullAcceleration)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

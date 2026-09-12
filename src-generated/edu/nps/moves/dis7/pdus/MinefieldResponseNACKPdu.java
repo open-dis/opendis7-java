@@ -347,9 +347,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx])) return false;
+         if (idx < missingPduSequenceNumbers.length)
+             if(!(missingPduSequenceNumbers[idx] == rhs.missingPduSequenceNumbers[idx]))
+                 return false;
      }
-
     return super.equalsImpl(rhs);
  }
 
@@ -359,11 +360,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" minefieldID:").append(minefieldID); // writeOneToString
-    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" missingPduSequenceNumbers:");
-    sb.append(Arrays.toString(missingPduSequenceNumbers)); // writePrimitiveList
+    sb.append(" minefieldID:").append(minefieldID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" missingPduSequenceNumbers:");    sb.append(Arrays.toString(missingPduSequenceNumbers)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

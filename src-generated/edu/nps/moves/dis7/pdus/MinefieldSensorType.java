@@ -180,7 +180,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" sensorType:").append(sensorType); // writeOneToString
+    sb.append(" sensorType:").append(String.valueOf(sensorType)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

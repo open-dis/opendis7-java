@@ -294,6 +294,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         longitude = dis.readDouble();
         uPosition += 4;
+        groupedEntityDescriptions.clear();
         for (int idx = 0; idx < numberOfGroupedEntities; idx++)
         {
             VariableDatum anX = new VariableDatum();
@@ -365,6 +366,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute longitude marked as not serialized
         longitude = byteBuffer.getDouble();
         // attribute groupedEntityDescriptions marked as not serialized
+        groupedEntityDescriptions.clear();
         for (int idx = 0; idx < numberOfGroupedEntities; idx++)
         {
         VariableDatum anX = new VariableDatum();
@@ -418,13 +420,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" groupEntityID:").append(groupEntityID); // writeOneToString
-    sb.append(" groupedEntityCategory:").append(groupedEntityCategory); // writeOneToString
-    sb.append(" pad:").append(pad); // writeOneToString
-    sb.append(" latitude:").append(latitude); // writeOneToString
-    sb.append(" longitude:").append(longitude); // writeOneToString
+    sb.append(" groupEntityID:").append(groupEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" groupedEntityCategory:").append(groupedEntityCategory); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" latitude:").append(String.valueOf(latitude)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" longitude:").append(String.valueOf(longitude)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" groupedEntityDescriptions: ");
-    groupedEntityDescriptions.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    groupedEntityDescriptions.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

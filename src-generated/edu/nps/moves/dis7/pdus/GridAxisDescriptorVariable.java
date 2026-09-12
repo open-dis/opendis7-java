@@ -176,6 +176,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
            dos.writeShort(xiValues[idx]);
 
        padding = new byte[Align.to64bits(dos)];
+       Arrays.fill(padding, (byte) 0); // reset all bytes to zero
     }
     catch(Exception e)
     {
@@ -307,9 +308,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(xiValues[idx] == rhs.xiValues[idx])) return false;
+         if (idx < xiValues.length)
+             if(!(xiValues[idx] == rhs.xiValues[idx]))
+                 return false;
      }
-
     return super.equalsImpl(rhs);
  }
 
@@ -319,13 +321,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" numberOfPointsOnXiAxis:").append(numberOfPointsOnXiAxis); // writeOneToString
-    sb.append(" initialIndex:").append(initialIndex); // writeOneToString
-    sb.append(" coordinateScaleXi:").append(coordinateScaleXi); // writeOneToString
-    sb.append(" coordinateOffsetXi:").append(coordinateOffsetXi); // writeOneToString
-    sb.append(" xiValues:");
-    sb.append(Arrays.toString(xiValues)); // writePrimitiveList
-    sb.append(" padding:").append(padding); // writeOneToString
+    sb.append(" numberOfPointsOnXiAxis:").append(String.valueOf(numberOfPointsOnXiAxis)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" initialIndex:").append(String.valueOf(initialIndex)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" coordinateScaleXi:").append(String.valueOf(coordinateScaleXi)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" coordinateOffsetXi:").append(String.valueOf(coordinateOffsetXi)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" xiValues:");    sb.append(Arrays.toString(xiValues)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO64
 
    return sb.toString();
  }

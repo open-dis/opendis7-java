@@ -349,6 +349,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += requesterID.unmarshal(dis);
         uPosition += receivingID.unmarshal(dis);
         uPosition += objectType.unmarshal(dis);
+        linearSegmentParameters.clear();
         for (int idx = 0; idx < numberOfLinearSegments; idx++)
         {
             LinearSegmentParameter anX = new LinearSegmentParameter();
@@ -426,6 +427,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute objectType marked as not serialized
         objectType.unmarshal(byteBuffer);
         // attribute linearSegmentParameters marked as not serialized
+        linearSegmentParameters.clear();
         for (int idx = 0; idx < numberOfLinearSegments; idx++)
         {
         LinearSegmentParameter anX = new LinearSegmentParameter();
@@ -481,15 +483,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" objectID:").append(objectID); // writeOneToString
-    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString
-    sb.append(" updateNumber:").append(updateNumber); // writeOneToString
-    sb.append(" forceID:").append(forceID); // writeOneToString
-    sb.append(" requesterID:").append(requesterID); // writeOneToString
-    sb.append(" receivingID:").append(receivingID); // writeOneToString
-    sb.append(" objectType:").append(objectType); // writeOneToString
+    sb.append(" objectID:").append(objectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" updateNumber:").append(String.valueOf(updateNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" forceID:").append(forceID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" requesterID:").append(requesterID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingID:").append(receivingID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" objectType:").append(objectType); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" linearSegmentParameters: ");
-    linearSegmentParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    linearSegmentParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

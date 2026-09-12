@@ -254,9 +254,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 15; idx++)
      {
-          if(!(parameters[idx] == rhs.parameters[idx])) return false;
+         if (idx < parameters.length)
+             if(!(parameters[idx] == rhs.parameters[idx]))
+                 return false;
      }
-
      if( ! Objects.equals(entityLinearAcceleration, rhs.entityLinearAcceleration) ) return false;
      if( ! Objects.equals(entityAngularVelocity, rhs.entityAngularVelocity) ) return false;
     return true;
@@ -268,11 +269,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString
-    sb.append(" parameters:");
-    sb.append(Arrays.toString(parameters)); // writePrimitiveList
-    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString
-    sb.append(" entityAngularVelocity:").append(entityAngularVelocity); // writeOneToString
+    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" parameters:");    sb.append(Arrays.toString(parameters)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityAngularVelocity:").append(entityAngularVelocity); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_RADAR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: AS11Kilter  = <code>4</code>; </li>
+ *     <li> SubCategory: AS11KilterKh58  = <code>4</code>; </li>
  *     <li> Specific: AS11BMod2Kilter  = <code>2</code>; </li>
  *     <li> Entity type uid: 20515; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1b28cff. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@420b55ed. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class AS11BMod2Kilter extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_RADAR));
 
         setCategory((byte)1); // uid 20509, Guided
-        setSubCategory((byte)4); // uid 20513, AS-11 Kilter
+        setSubCategory((byte)4); // uid 20513, AS-11 Kilter (Kh-58)
         setSpecific((byte)2); // uid 20515, AS-11B, Mod 2 Kilter
     }
     /** Create a new instance of this final (unmodifiable) class

@@ -443,14 +443,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" issuingEntityID:").append(issuingEntityID); // writeOneToString
-    sb.append(" collidingEntityID:").append(collidingEntityID); // writeOneToString
-    sb.append(" eventID:").append(eventID); // writeOneToString
-    sb.append(" collisionType:").append(collisionType); // writeOneToString
-    sb.append(" pad:").append(pad); // writeOneToString
-    sb.append(" velocity:").append(velocity); // writeOneToString
-    sb.append(" mass:").append(mass); // writeOneToString
-    sb.append(" location:").append(location); // writeOneToString
+    sb.append(" issuingEntityID:").append(issuingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" collidingEntityID:").append(collidingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventID:").append(eventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" collisionType:").append(collisionType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" velocity:").append(velocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" mass:").append(String.valueOf(mass)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" location:").append(location); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

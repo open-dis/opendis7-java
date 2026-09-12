@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Air Defense / Missile Defense Unit Equipment = <code>28</code>; </li>
  *     <li> SubCategory: SA10GrumbleSAMSystem  = <code>4</code>; </li>
- *     <li> Specific: FlapLidEngagementRadar36N6E  = <code>3</code>; </li>
+ *     <li> Specific: FlapLidEngagementRadar30N6E  = <code>3</code>; </li>
  *     <li> Entity type uid: 36012; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1702830d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@1ba359bd. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,7 @@ public final class TinShield36D6 extends EntityType
 
         setCategory((byte)28); // uid 13034, Air Defense / Missile Defense Unit Equipment
         setSubCategory((byte)4); // uid 13052, SA-10 Grumble SAM System
-        setSpecific((byte)3); // uid 13057, Flap Lid Engagement Radar (36N6E)
+        setSpecific((byte)3); // uid 13057, Flap Lid Engagement Radar (30N6E)
         setExtra((byte)4); // uid 36012, Tin Shield 36D6
     }
     /** Create a new instance of this final (unmodifiable) class

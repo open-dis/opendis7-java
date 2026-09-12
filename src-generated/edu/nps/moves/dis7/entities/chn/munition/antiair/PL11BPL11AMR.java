@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: PL11  = <code>18</code>; </li>
+ *     <li> SubCategory: CHAA6AdagioPL11AAM  = <code>18</code>; </li>
  *     <li> Specific: PL11BPL11AMR  = <code>2</code>; </li>
  *     <li> Entity type uid: 28977; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1846ad0f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1d3a03fe. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class PL11BPL11AMR extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 21308, Guided
-        setSubCategory((byte)18); // uid 21334, PL-11
+        setSubCategory((byte)18); // uid 21334, CH-AA-6 Adagio (PL-11) AAM
         setSpecific((byte)2); // uid 28977, PL-11B / PL-11 AMR
     }
     /** Create a new instance of this final (unmodifiable) class

@@ -354,13 +354,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" fireEventID:").append(fireEventID); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" firingEntityID:").append(firingEntityID); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
-    sb.append(" targetLocation:").append(targetLocation); // writeOneToString
+    sb.append(" fireEventID:").append(fireEventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" firingEntityID:").append(firingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" targetLocation:").append(targetLocation); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

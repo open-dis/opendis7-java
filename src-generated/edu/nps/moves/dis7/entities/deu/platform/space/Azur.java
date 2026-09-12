@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Germany (DEU) = <code>78</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Meteorologysatellite  = <code>5</code>; </li>
- *     <li> Specific: Azur  = <code>2</code>; </li>
- *     <li> Entity type uid: 16818; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Science/Experimental/Demonstration = <code>14</code>; </li>
+ *     <li> SubCategory: Azur  = <code>22</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38554; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c3dec30. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@55795845. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteScienceExperimentalDemonstration
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Azur extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16811, Unmanned
-        setSubCategory((byte)5); // uid 16816, Meteorology satellite
-        setSpecific((byte)2); // uid 16818, Azur
+        setCategory((byte)14); // uid 38532, Satellite - Science/Experimental/Demonstration
+        setSubCategory((byte)22); // uid 38554, Azur
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

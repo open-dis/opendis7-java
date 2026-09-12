@@ -554,6 +554,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfDERecords = (short)dis.readUnsignedShort();
         uPosition += 2;
+        dERecords.clear();
         for (int idx = 0; idx < numberOfDERecords; idx++)
         {
             StandardVariableSpecification anX = new StandardVariableSpecification();
@@ -658,6 +659,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfDERecords marked as not serialized
         numberOfDERecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute dERecords marked as not serialized
+        dERecords.clear();
         for (int idx = 0; idx < numberOfDERecords; idx++)
         {
         StandardVariableSpecification anX = new StandardVariableSpecification();
@@ -722,24 +724,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" firingEntityID:").append(firingEntityID); // writeOneToString
-    sb.append(" eventID:").append(eventID); // writeOneToString
-    sb.append(" munitionType:").append(munitionType); // writeOneToString
-    sb.append(" shotStartTime:").append(shotStartTime); // writeOneToString
-    sb.append(" commulativeShotTime:").append(commulativeShotTime); // writeOneToString
-    sb.append(" apertureEmitterLocation:").append(apertureEmitterLocation); // writeOneToString
-    sb.append(" apertureDiameter:").append(apertureDiameter); // writeOneToString
-    sb.append(" wavelength:").append(wavelength); // writeOneToString
-    sb.append(" pad1:").append(pad1); // writeOneToString
-    sb.append(" pulseRepititionFrequency:").append(pulseRepititionFrequency); // writeOneToString
-    sb.append(" pulseWidth:").append(pulseWidth); // writeOneToString
-    sb.append(" flags:").append(flags); // writeOneToString
-    sb.append(" pulseShape:").append(pulseShape); // writeOneToString
-    sb.append(" pad2:").append(pad2); // writeOneToString
-    sb.append(" pad3:").append(pad3); // writeOneToString
-    sb.append(" pad4:").append(pad4); // writeOneToString
+    sb.append(" firingEntityID:").append(firingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventID:").append(eventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" munitionType:").append(munitionType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" shotStartTime:").append(shotStartTime); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" commulativeShotTime:").append(String.valueOf(commulativeShotTime)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" apertureEmitterLocation:").append(apertureEmitterLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" apertureDiameter:").append(String.valueOf(apertureDiameter)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" wavelength:").append(String.valueOf(wavelength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pad1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pulseRepititionFrequency:").append(String.valueOf(pulseRepititionFrequency)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pulseWidth:").append(String.valueOf(pulseWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" flags:").append(flags); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" pulseShape:").append(pulseShape); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pad3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pad4:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" dERecords: ");
-    dERecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    dERecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

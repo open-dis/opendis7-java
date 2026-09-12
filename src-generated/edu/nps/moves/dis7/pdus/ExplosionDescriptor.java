@@ -260,10 +260,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" explodingObject:").append(explodingObject); // writeOneToString
-    sb.append(" explosiveMaterial:").append(explosiveMaterial); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" explosiveForce:").append(explosiveForce); // writeOneToString
+    sb.append(" explodingObject:").append(explodingObject); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" explosiveMaterial:").append(explosiveMaterial); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" explosiveForce:").append(String.valueOf(explosiveForce)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

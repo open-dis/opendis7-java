@@ -409,15 +409,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" modeSInterrogatorStatus:").append(modeSInterrogatorStatus); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" modeSLevelsPresent:").append(modeSLevelsPresent); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
-    sb.append(" padding4:").append(padding4); // writeOneToString
-    sb.append(" padding5:").append(padding5); // writeOneToString
-    sb.append(" padding6:").append(padding6); // writeOneToString
-    sb.append(" padding7:").append(padding7); // writeOneToString
+    sb.append(" modeSInterrogatorStatus:").append(String.valueOf(modeSInterrogatorStatus)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" modeSLevelsPresent:").append(String.valueOf(modeSLevelsPresent)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding4:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding5:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding6:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding7:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

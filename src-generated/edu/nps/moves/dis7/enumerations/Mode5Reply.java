@@ -19,7 +19,7 @@ import edu.nps.moves.dis7.pdus.*;
 /**
  * This <code>enum</code> type is generated from XML,
  *  UID 350,
- * marshal size 3;
+ * marshal size 4;
  * Mode5Reply has 4 enumerations total.
  * @see <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html">Java Tutorials: Enum Types</a>
  * @see java.lang.Enum
@@ -78,7 +78,7 @@ public enum Mode5Reply
      */
     public static int getEnumBitWidth()
     {
-      return 3;
+      return 4;
     }
 
     /** 

@@ -199,8 +199,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" horizontalDeflectionAngle:").append(horizontalDeflectionAngle); // writeOneToString
-    sb.append(" verticalDeflectionAngle:").append(verticalDeflectionAngle); // writeOneToString
+    sb.append(" horizontalDeflectionAngle:").append(String.valueOf(horizontalDeflectionAngle)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" verticalDeflectionAngle:").append(String.valueOf(verticalDeflectionAngle)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

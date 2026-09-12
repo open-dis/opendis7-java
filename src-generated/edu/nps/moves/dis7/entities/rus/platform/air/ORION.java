@@ -13,19 +13,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>ORION</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>ORION.createInstance()</code> or <code>new ORION()</code>. </p>
+ * <p> Entity class <b><code>Orion</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Orion.createInstance()</code> or <code>new Orion()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Unmanned = <code>50</code>; </li>
- *     <li> SubCategory: KRONSHTADORIONSeries  = <code>11</code>; </li>
- *     <li> Specific: ORION  = <code>1</code>; </li>
+ *     <li> SubCategory: KronshtadtOrionSeries  = <code>11</code>; </li>
+ *     <li> Specific: Orion  = <code>1</code>; </li>
  *     <li> Entity type uid: 36057; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5af8bb51. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@753aca85. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -35,23 +35,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class ORION extends EntityType
+public final class Orion extends EntityType
 {
     /** Default constructor */
-    public ORION()
+    public Orion()
     {
         setCountry(Country.RUSSIA_RUS);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 23446, Unmanned
-        setSubCategory((byte)11); // uid 36056, KRONSHTAD ORION Series
-        setSpecific((byte)1); // uid 36057, ORION
+        setSubCategory((byte)11); // uid 36056, Kronshtadt Orion Series
+        setSpecific((byte)1); // uid 36057, Orion
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static ORION createInstance()
+    public static Orion createInstance()
     {
-            return new ORION();
+            return new Orion();
     }
 }

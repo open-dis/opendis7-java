@@ -277,11 +277,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" frequency:").append(frequency); // writeOneToString
-    sb.append(" frequencyRange:").append(frequencyRange); // writeOneToString
-    sb.append(" effectiveRadiatedPower:").append(effectiveRadiatedPower); // writeOneToString
-    sb.append(" pulseRepetitionFrequency:").append(pulseRepetitionFrequency); // writeOneToString
-    sb.append(" pulseWidth:").append(pulseWidth); // writeOneToString
+    sb.append(" frequency:").append(String.valueOf(frequency)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" frequencyRange:").append(String.valueOf(frequencyRange)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" effectiveRadiatedPower:").append(String.valueOf(effectiveRadiatedPower)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pulseRepetitionFrequency:").append(String.valueOf(pulseRepetitionFrequency)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pulseWidth:").append(String.valueOf(pulseWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

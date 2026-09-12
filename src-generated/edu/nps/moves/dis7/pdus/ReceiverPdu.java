@@ -395,12 +395,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" header:").append(header); // writeOneToString
-    sb.append(" receiverState:").append(receiverState); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" receivedPower:").append(receivedPower); // writeOneToString
-    sb.append(" transmitterEntityId:").append(transmitterEntityId); // writeOneToString
-    sb.append(" transmitterRadioId:").append(transmitterRadioId); // writeOneToString
+    sb.append(" header:").append(header); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receiverState:").append(receiverState); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" receivedPower:").append(String.valueOf(receivedPower)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" transmitterEntityId:").append(transmitterEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" transmitterRadioId:").append(String.valueOf(transmitterRadioId)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

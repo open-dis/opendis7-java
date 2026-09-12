@@ -735,12 +735,12 @@ public synchronized java.nio.ByteBuffer marshal() throws Exception
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" protocolVersion:").append(protocolVersion); // writeOneToString
-    sb.append(" exerciseID:").append(exerciseID); // writeOneToString
-    sb.append(" pduType:").append(pduType); // writeOneToString
-    sb.append(" protocolFamily:").append(protocolFamily); // writeOneToString
-    sb.append(" timestamp:").append(timestamp); // writeOneToString
-    sb.append(" length:").append(length); // writeOneToString
+    sb.append(" protocolVersion:").append(protocolVersion); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" exerciseID:").append(String.valueOf(exerciseID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pduType:").append(pduType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" protocolFamily:").append(protocolFamily); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" timestamp:").append(String.valueOf(timestamp)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" length:").append(String.valueOf(length)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

@@ -330,6 +330,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfVectoringNozzleSystems = (short)dis.readUnsignedShort();
         uPosition += 2;
+        propulsionSystemData.clear();
         for (int idx = 0; idx < numberOfPropulsionSystems; idx++)
         {
             PropulsionSystemData anX = new PropulsionSystemData();
@@ -337,6 +338,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             propulsionSystemData.add(anX);
         }
 
+        vectoringSystemData.clear();
         for (int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
         {
             VectoringNozzleSystem anX = new VectoringNozzleSystem();
@@ -415,6 +417,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfVectoringNozzleSystems marked as not serialized
         numberOfVectoringNozzleSystems = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute propulsionSystemData marked as not serialized
+        propulsionSystemData.clear();
         for (int idx = 0; idx < numberOfPropulsionSystems; idx++)
         {
         PropulsionSystemData anX = new PropulsionSystemData();
@@ -423,6 +426,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute vectoringSystemData marked as not serialized
+        vectoringSystemData.clear();
         for (int idx = 0; idx < numberOfVectoringNozzleSystems; idx++)
         {
         VectoringNozzleSystem anX = new VectoringNozzleSystem();
@@ -476,17 +480,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" orginatingEntityID:").append(orginatingEntityID); // writeOneToString
-    sb.append(" infraredSignatureRepresentationIndex:").append(infraredSignatureRepresentationIndex); // writeOneToString
-    sb.append(" acousticSignatureRepresentationIndex:").append(acousticSignatureRepresentationIndex); // writeOneToString
-    sb.append(" radarCrossSectionSignatureRepresentationIndex:").append(radarCrossSectionSignatureRepresentationIndex); // writeOneToString
+    sb.append(" orginatingEntityID:").append(orginatingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" infraredSignatureRepresentationIndex:").append(String.valueOf(infraredSignatureRepresentationIndex)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" acousticSignatureRepresentationIndex:").append(String.valueOf(acousticSignatureRepresentationIndex)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" radarCrossSectionSignatureRepresentationIndex:").append(String.valueOf(radarCrossSectionSignatureRepresentationIndex)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" propulsionSystemData: ");
-    propulsionSystemData.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    propulsionSystemData.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" vectoringSystemData: ");
-    vectoringSystemData.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    vectoringSystemData.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

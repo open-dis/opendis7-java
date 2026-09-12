@@ -189,6 +189,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
+        variableDatumRecords.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
@@ -248,6 +249,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfVariableDatumRecords marked as not serialized
         numberOfVariableDatumRecords = byteBuffer.getInt();
         // attribute variableDatumRecords marked as not serialized
+        variableDatumRecords.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
         VariableDatum anX = new VariableDatum();
@@ -297,7 +299,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" variableDatumRecords: ");
-    variableDatumRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableDatumRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

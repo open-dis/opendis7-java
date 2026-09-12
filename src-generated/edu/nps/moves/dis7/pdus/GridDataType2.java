@@ -220,9 +220,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(dataValues[idx] == rhs.dataValues[idx])) return false;
+         if (idx < dataValues.length)
+             if(!(dataValues[idx] == rhs.dataValues[idx]))
+                 return false;
      }
-
     return super.equalsImpl(rhs);
  }
 
@@ -232,9 +233,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" dataValues:");
-    sb.append(Arrays.toString(dataValues)); // writePrimitiveList
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" dataValues:");    sb.append(Arrays.toString(dataValues)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

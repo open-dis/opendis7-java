@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Germany (DEU) = <code>78</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Sciencesatellite  = <code>13</code>; </li>
- *     <li> Specific: Sohoamp_Cluster  = <code>4</code>; </li>
- *     <li> Entity type uid: 16828; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Science/Experimental/Demonstration = <code>14</code>; </li>
+ *     <li> SubCategory: SohoampCluster  = <code>3</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38535; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7adf16aa. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@4c168660. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteScienceExperimentalDemonstration
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class SohoampCluster extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16811, Unmanned
-        setSubCategory((byte)13); // uid 16824, Science satellite
-        setSpecific((byte)4); // uid 16828, Soho &amp; Cluster
+        setCategory((byte)14); // uid 38532, Satellite - Science/Experimental/Demonstration
+        setSubCategory((byte)3); // uid 38535, Soho &amp; Cluster
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

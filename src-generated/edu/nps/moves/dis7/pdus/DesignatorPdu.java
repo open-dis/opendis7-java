@@ -556,18 +556,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" designatingEntityID:").append(designatingEntityID); // writeOneToString
-    sb.append(" codeName:").append(codeName); // writeOneToString
-    sb.append(" designatedEntityID:").append(designatedEntityID); // writeOneToString
-    sb.append(" designatorCode:").append(designatorCode); // writeOneToString
-    sb.append(" designatorPower:").append(designatorPower); // writeOneToString
-    sb.append(" designatorWavelength:").append(designatorWavelength); // writeOneToString
-    sb.append(" designatorSpotWrtDesignated:").append(designatorSpotWrtDesignated); // writeOneToString
-    sb.append(" designatorSpotLocation:").append(designatorSpotLocation); // writeOneToString
-    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString
+    sb.append(" designatingEntityID:").append(designatingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" codeName:").append(codeName); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" designatedEntityID:").append(designatedEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" designatorCode:").append(designatorCode); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" designatorPower:").append(String.valueOf(designatorPower)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" designatorWavelength:").append(String.valueOf(designatorWavelength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" designatorSpotWrtDesignated:").append(designatorSpotWrtDesignated); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" designatorSpotLocation:").append(designatorSpotLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

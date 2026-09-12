@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Minormilitarysatellite  = <code>10</code>; </li>
+ *     <li> Category: Satellite - Military = <code>20</code>; </li>
+ *     <li> SubCategory: Minormilitary  = <code>7</code>; </li>
  *     <li> Specific: C2059  = <code>3</code>; </li>
- *     <li> Entity type uid: 14869; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Entity type uid: 38572; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3a1706e1. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@4d84049a. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteMilitary
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class C2059 extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 14850, Unmanned
-        setSubCategory((byte)10); // uid 14866, Minor military satellite
-        setSpecific((byte)3); // uid 14869, C2059
+        setCategory((byte)20); // uid 38560, Satellite - Military
+        setSubCategory((byte)7); // uid 38569, Minor military
+        setSpecific((byte)3); // uid 38572, C2059
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

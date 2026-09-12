@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
  *     <li> Domain: Supply = <code>6</code>; </li>
  *     <li> Category: Targeting Pod = <code>25</code>; </li>
- *     <li> SubCategory: LiteningTargetingPod  = <code>3</code>; </li>
+ *     <li> SubCategory: ANAAQ28LiteningTargetingPod  = <code>3</code>; </li>
  *     <li> Specific: LiteningIIITargetingPod  = <code>1</code>; </li>
  *     <li> Entity type uid: 35408; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@6032622. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2c224096. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
@@ -45,7 +45,7 @@ public final class LiteningIIITargetingPod extends EntityType
         setDomain(Domain.inst(SupplyDomain.CLASS_7_MAJOR_ITEMS));
 
         setCategory((byte)25); // uid 30772, Targeting Pod
-        setSubCategory((byte)3); // uid 30775, Litening Targeting Pod
+        setSubCategory((byte)3); // uid 30775, AN-AAQ-28 Litening Targeting Pod
         setSpecific((byte)1); // uid 35408, Litening III Targeting Pod
     }
     /** Create a new instance of this final (unmodifiable) class

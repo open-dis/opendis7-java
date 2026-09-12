@@ -431,15 +431,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" mode5Status:").append(mode5Status); // writeOneToString
-    sb.append(" personalIdentificationNumber:").append(personalIdentificationNumber); // writeOneToString
-    sb.append(" mode5MessageFormatsPresent:").append(mode5MessageFormatsPresent); // writeOneToString
-    sb.append(" enhancedMode1:").append(enhancedMode1); // writeOneToString
-    sb.append(" nationalOrigin:").append(nationalOrigin); // writeOneToString
-    sb.append(" supplementalData:").append(supplementalData); // writeOneToString
-    sb.append(" navigationSource:").append(navigationSource); // writeOneToString
-    sb.append(" figureOfMerit:").append(figureOfMerit); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
+    sb.append(" mode5Status:").append(String.valueOf(mode5Status)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" personalIdentificationNumber:").append(String.valueOf(personalIdentificationNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" mode5MessageFormatsPresent:").append(String.valueOf(mode5MessageFormatsPresent)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" enhancedMode1:").append(String.valueOf(enhancedMode1)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" nationalOrigin:").append(String.valueOf(nationalOrigin)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" supplementalData:").append(String.valueOf(supplementalData)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" navigationSource:").append(navigationSource); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" figureOfMerit:").append(String.valueOf(figureOfMerit)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

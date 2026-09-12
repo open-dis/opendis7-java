@@ -433,6 +433,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += deadReckoningParameters.unmarshal(dis);
         uPosition += marking.unmarshal(dis);
         uPosition += capabilities.unmarshal(dis);
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
             VariableParameter anX = new VariableParameter();
@@ -522,6 +523,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute capabilities marked as not serialized
         capabilities.unmarshal(byteBuffer);
         // attribute variableParameters marked as not serialized
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfVariableParameters; idx++)
         {
         VariableParameter anX = new VariableParameter();
@@ -581,19 +583,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" entityID:").append(entityID); // writeOneToString
-    sb.append(" forceId:").append(forceId); // writeOneToString
-    sb.append(" entityType:").append(entityType); // writeOneToString
-    sb.append(" alternativeEntityType:").append(alternativeEntityType); // writeOneToString
-    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString
-    sb.append(" entityLocation:").append(entityLocation); // writeOneToString
-    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString
-    sb.append(" entityAppearance:").append(entityAppearance); // writeOneToString
-    sb.append(" deadReckoningParameters:").append(deadReckoningParameters); // writeOneToString
-    sb.append(" marking:").append(marking); // writeOneToString
-    sb.append(" capabilities:").append(capabilities); // writeOneToString
+    sb.append(" entityID:").append(entityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" forceId:").append(forceId); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" entityType:").append(entityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" alternativeEntityType:").append(alternativeEntityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityLocation:").append(entityLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityAppearance:").append(String.valueOf(entityAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" deadReckoningParameters:").append(deadReckoningParameters); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" marking:").append(marking); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" capabilities:").append(capabilities); // writeOneToString getAttributeKind()=SISO_BITFIELD
     sb.append(" variableParameters: ");
-    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

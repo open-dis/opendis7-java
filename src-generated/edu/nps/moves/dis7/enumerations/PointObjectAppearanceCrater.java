@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 233, marshal size 16,
+ *  UID 233, marshal size 32,
  * PointObjectAppearanceCrater
  */
 public class PointObjectAppearanceCrater extends DisBitSet 
@@ -71,7 +71,7 @@ public class PointObjectAppearanceCrater extends DisBitSet
   /** Default constructor */
   public PointObjectAppearanceCrater()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

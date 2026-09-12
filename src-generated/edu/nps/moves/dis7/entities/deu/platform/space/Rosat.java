@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Germany (DEU) = <code>78</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: ImagingRadarSurveillanceSatellite  = <code>7</code>; </li>
- *     <li> Specific: Rosat  = <code>1</code>; </li>
- *     <li> Entity type uid: 16823; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Space Surveillance = <code>17</code>; </li>
+ *     <li> SubCategory: Rosat  = <code>1</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38557; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@40258c2f. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@119f1f2a. </p>
  * @see Country#GERMANY_DEU
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteSpaceSurveillance
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Rosat extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16811, Unmanned
-        setSubCategory((byte)7); // uid 16822, Imaging Radar Surveillance Satellite
-        setSpecific((byte)1); // uid 16823, Rosat
+        setCategory((byte)17); // uid 38556, Satellite - Space Surveillance
+        setSubCategory((byte)1); // uid 38557, Rosat
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

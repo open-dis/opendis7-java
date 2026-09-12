@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: ContainerShip  = <code>3</code>; </li>
  *     <li> Specific: CornerBrook  = <code>1</code>; </li>
  *     <li> Entity type uid: 24500; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@18be83e4. </p>
- * @see Country#BERMUDA_BMU
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@d8355a8. </p>
+ * @see Country#DESIGNATOR
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class CornerBrook extends EntityType
     /** Default constructor */
     public CornerBrook()
     {
-        setCountry(Country.BERMUDA_BMU);
+        setCountry(Country.DESIGNATOR);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 

@@ -145,6 +145,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatums = dis.readInt();
         uPosition += 4;
+        fixedDatumIDList.clear();
         for (int idx = 0; idx < numberOfFixedDatums; idx++)
         {
             UnsignedDISInteger anX = new UnsignedDISInteger();
@@ -152,6 +153,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             fixedDatumIDList.add(anX);
         }
 
+        variableDatumIDList.clear();
         for (int idx = 0; idx < numberOfVariableDatums; idx++)
         {
             UnsignedDISInteger anX = new UnsignedDISInteger();
@@ -213,6 +215,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfVariableDatums marked as not serialized
         numberOfVariableDatums = byteBuffer.getInt();
         // attribute fixedDatumIDList marked as not serialized
+        fixedDatumIDList.clear();
         for (int idx = 0; idx < numberOfFixedDatums; idx++)
         {
         UnsignedDISInteger anX = new UnsignedDISInteger();
@@ -221,6 +224,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute variableDatumIDList marked as not serialized
+        variableDatumIDList.clear();
         for (int idx = 0; idx < numberOfVariableDatums; idx++)
         {
         UnsignedDISInteger anX = new UnsignedDISInteger();
@@ -276,12 +280,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" fixedDatumIDList: ");
-    fixedDatumIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    fixedDatumIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" variableDatumIDList: ");
-    variableDatumIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableDatumIDList.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

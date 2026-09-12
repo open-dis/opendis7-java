@@ -332,9 +332,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 3; idx++)
      {
-          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) return false;
+         if (idx < systemSpecificData.length)
+             if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -344,14 +345,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" erp:").append(erp); // writeOneToString
-    sb.append(" frequency:").append(frequency); // writeOneToString
-    sb.append(" pgrf:").append(pgrf); // writeOneToString
-    sb.append(" pulseWidth:").append(pulseWidth); // writeOneToString
-    sb.append(" burstLength:").append(burstLength); // writeOneToString
-    sb.append(" applicableModes:").append(applicableModes); // writeOneToString
-    sb.append(" systemSpecificData:");
-    sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList
+    sb.append(" erp:").append(String.valueOf(erp)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" frequency:").append(String.valueOf(frequency)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pgrf:").append(String.valueOf(pgrf)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pulseWidth:").append(String.valueOf(pulseWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" burstLength:").append(String.valueOf(burstLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" applicableModes:").append(applicableModes); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" systemSpecificData:");    sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

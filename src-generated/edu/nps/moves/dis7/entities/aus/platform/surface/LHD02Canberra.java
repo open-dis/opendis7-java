@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Amphibious Transport Dock = <code>56</code>; </li>
- *     <li> SubCategory: CanberraClassLandingHelicopterDock  = <code>1</code>; </li>
+ *     <li> SubCategory: CanberraClassLHD  = <code>1</code>; </li>
  *     <li> Specific: LHD02Canberra  = <code>1</code>; </li>
  *     <li> Entity type uid: 28652; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@180bc464. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@5315b42e. </p>
  * @see Country#AUSTRALIA_AUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -45,7 +45,7 @@ public final class LHD02Canberra extends EntityType
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
         setCategory((byte)56); // uid 28650, Amphibious Transport Dock
-        setSubCategory((byte)1); // uid 28651, Canberra Class (Landing Helicopter Dock)
+        setSubCategory((byte)1); // uid 28651, Canberra Class (LHD)
         setSpecific((byte)1); // uid 28652, LHD 02 Canberra
     }
     /** Create a new instance of this final (unmodifiable) class

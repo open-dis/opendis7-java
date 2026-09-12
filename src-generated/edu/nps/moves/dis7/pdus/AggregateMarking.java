@@ -202,9 +202,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 31; idx++)
      {
-          if(!(characters[idx] == rhs.characters[idx])) return false;
+         if (idx < characters.length)
+             if(!(characters[idx] == rhs.characters[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -214,9 +215,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" characterSet:").append(characterSet); // writeOneToString
-    sb.append(" characters:");
-    sb.append(Arrays.toString(characters)); // writePrimitiveList
+    sb.append(" characterSet:").append(characterSet); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" characters:");    sb.append(Arrays.toString(characters)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

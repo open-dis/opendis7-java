@@ -305,12 +305,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" activeEmissionParameterIndex:").append(activeEmissionParameterIndex); // writeOneToString
-    sb.append(" scanPattern:").append(scanPattern); // writeOneToString
-    sb.append(" beamCenterAzimuthHorizontal:").append(beamCenterAzimuthHorizontal); // writeOneToString
-    sb.append(" azimuthalBeamwidthHorizontal:").append(azimuthalBeamwidthHorizontal); // writeOneToString
-    sb.append(" beamCenterDepressionElevation:").append(beamCenterDepressionElevation); // writeOneToString
-    sb.append(" depressionElevationBeamWidth:").append(depressionElevationBeamWidth); // writeOneToString
+    sb.append(" activeEmissionParameterIndex:").append(activeEmissionParameterIndex); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" scanPattern:").append(scanPattern); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" beamCenterAzimuthHorizontal:").append(String.valueOf(beamCenterAzimuthHorizontal)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" azimuthalBeamwidthHorizontal:").append(String.valueOf(azimuthalBeamwidthHorizontal)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamCenterDepressionElevation:").append(String.valueOf(beamCenterDepressionElevation)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" depressionElevationBeamWidth:").append(String.valueOf(depressionElevationBeamWidth)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

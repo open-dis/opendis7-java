@@ -703,10 +703,10 @@ public class DisThreadedNetworkInterface
             ie.printStackTrace(System.err);
         }
 
-        String   threadAlive;
         if (threadToKill != null)
         {
-            threadAlive =   String.valueOf(threadToKill.isAlive());
+            // troubleshooting message can be disabled unless a serious problem exists
+            String threadAlive =   String.valueOf(threadToKill.isAlive());
             if (hasVerboseOutput())
                 System.out.println ("*** killThread() status: " + threadToKill.getName() + ".isAlive()=" + threadAlive +
                                     " " + threadToKill.getName() + ".isInterrupted()=" + threadToKill.isInterrupted());

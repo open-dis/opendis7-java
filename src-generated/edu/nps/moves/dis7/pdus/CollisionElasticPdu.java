@@ -625,21 +625,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" issuingEntityID:").append(issuingEntityID); // writeOneToString
-    sb.append(" collidingEntityID:").append(collidingEntityID); // writeOneToString
-    sb.append(" collisionEventID:").append(collisionEventID); // writeOneToString
-    sb.append(" pad:").append(pad); // writeOneToString
-    sb.append(" contactVelocity:").append(contactVelocity); // writeOneToString
-    sb.append(" mass:").append(mass); // writeOneToString
-    sb.append(" locationOfImpact:").append(locationOfImpact); // writeOneToString
-    sb.append(" collisionIntermediateResultXX:").append(collisionIntermediateResultXX); // writeOneToString
-    sb.append(" collisionIntermediateResultXY:").append(collisionIntermediateResultXY); // writeOneToString
-    sb.append(" collisionIntermediateResultXZ:").append(collisionIntermediateResultXZ); // writeOneToString
-    sb.append(" collisionIntermediateResultYY:").append(collisionIntermediateResultYY); // writeOneToString
-    sb.append(" collisionIntermediateResultYZ:").append(collisionIntermediateResultYZ); // writeOneToString
-    sb.append(" collisionIntermediateResultZZ:").append(collisionIntermediateResultZZ); // writeOneToString
-    sb.append(" unitSurfaceNormal:").append(unitSurfaceNormal); // writeOneToString
-    sb.append(" coefficientOfRestitution:").append(coefficientOfRestitution); // writeOneToString
+    sb.append(" issuingEntityID:").append(issuingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" collidingEntityID:").append(collidingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" collisionEventID:").append(collisionEventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" pad:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" contactVelocity:").append(contactVelocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" mass:").append(String.valueOf(mass)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" locationOfImpact:").append(locationOfImpact); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" collisionIntermediateResultXX:").append(String.valueOf(collisionIntermediateResultXX)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" collisionIntermediateResultXY:").append(String.valueOf(collisionIntermediateResultXY)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" collisionIntermediateResultXZ:").append(String.valueOf(collisionIntermediateResultXZ)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" collisionIntermediateResultYY:").append(String.valueOf(collisionIntermediateResultYY)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" collisionIntermediateResultYZ:").append(String.valueOf(collisionIntermediateResultYZ)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" collisionIntermediateResultZZ:").append(String.valueOf(collisionIntermediateResultZZ)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" unitSurfaceNormal:").append(unitSurfaceNormal); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" coefficientOfRestitution:").append(String.valueOf(coefficientOfRestitution)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

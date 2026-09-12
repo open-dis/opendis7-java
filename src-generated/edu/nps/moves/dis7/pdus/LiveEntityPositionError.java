@@ -213,8 +213,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" horizontalError:").append(horizontalError); // writeOneToString
-    sb.append(" verticalError:").append(verticalError); // writeOneToString
+    sb.append(" horizontalError:").append(String.valueOf(horizontalError)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" verticalError:").append(String.valueOf(verticalError)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

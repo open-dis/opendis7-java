@@ -370,6 +370,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         uPosition += dataFilter.unmarshal(dis);
         uPosition += requestedMineType.unmarshal(dis);
+        requestedPerimeterPoints.clear();
         for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
             Vector2Float anX = new Vector2Float();
@@ -377,6 +378,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             requestedPerimeterPoints.add(anX);
         }
 
+        sensorTypes.clear();
         for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
             MinefieldSensorType anX = new MinefieldSensorType();
@@ -461,6 +463,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute requestedMineType marked as not serialized
         requestedMineType.unmarshal(byteBuffer);
         // attribute requestedPerimeterPoints marked as not serialized
+        requestedPerimeterPoints.clear();
         for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
         Vector2Float anX = new Vector2Float();
@@ -469,6 +472,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute sensorTypes marked as not serialized
+        sensorTypes.clear();
         for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
         MinefieldSensorType anX = new MinefieldSensorType();
@@ -524,19 +528,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" minefieldID:").append(minefieldID); // writeOneToString
-    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" dataFilter:").append(dataFilter); // writeOneToString
-    sb.append(" requestedMineType:").append(requestedMineType); // writeOneToString
+    sb.append(" minefieldID:").append(minefieldID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" dataFilter:").append(dataFilter); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestedMineType:").append(requestedMineType); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" requestedPerimeterPoints: ");
-    requestedPerimeterPoints.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    requestedPerimeterPoints.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" sensorTypes: ");
-    sensorTypes.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    sensorTypes.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

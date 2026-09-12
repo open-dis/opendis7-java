@@ -471,6 +471,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         intercomParametersLength = dis.readInt();
         uPosition += 4;
+        intercomParameters.clear();
         for (int idx = 0; idx < intercomParametersLength; idx++)
         {
             IntercomCommunicationsParameters anX = new IntercomCommunicationsParameters();
@@ -560,6 +561,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute intercomParametersLength marked as not serialized
         intercomParametersLength = byteBuffer.getInt();
         // attribute intercomParameters marked as not serialized
+        intercomParameters.clear();
         for (int idx = 0; idx < intercomParametersLength; idx++)
         {
         IntercomCommunicationsParameters anX = new IntercomCommunicationsParameters();
@@ -619,19 +621,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" controlType:").append(controlType); // writeOneToString
-    sb.append(" communicationsChannelType:").append(communicationsChannelType); // writeOneToString
-    sb.append(" sourceEntityID:").append(sourceEntityID); // writeOneToString
-    sb.append(" sourceIntercomNumber:").append(sourceIntercomNumber); // writeOneToString
-    sb.append(" sourceLineID:").append(sourceLineID); // writeOneToString
-    sb.append(" transmitPriority:").append(transmitPriority); // writeOneToString
-    sb.append(" transmitLineState:").append(transmitLineState); // writeOneToString
-    sb.append(" command:").append(command); // writeOneToString
-    sb.append(" masterIntercomReferenceID:").append(masterIntercomReferenceID); // writeOneToString
-    sb.append(" masterIntercomNumber:").append(masterIntercomNumber); // writeOneToString
-    sb.append(" masterChannelID:").append(masterChannelID); // writeOneToString
+    sb.append(" controlType:").append(controlType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" communicationsChannelType:").append(String.valueOf(communicationsChannelType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" sourceEntityID:").append(sourceEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" sourceIntercomNumber:").append(String.valueOf(sourceIntercomNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" sourceLineID:").append(String.valueOf(sourceLineID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" transmitPriority:").append(String.valueOf(transmitPriority)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" transmitLineState:").append(transmitLineState); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" command:").append(command); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" masterIntercomReferenceID:").append(masterIntercomReferenceID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" masterIntercomNumber:").append(String.valueOf(masterIntercomNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" masterChannelID:").append(String.valueOf(masterChannelID)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" intercomParameters: ");
-    intercomParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    intercomParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

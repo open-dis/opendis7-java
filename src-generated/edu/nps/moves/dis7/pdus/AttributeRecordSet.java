@@ -130,6 +130,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += entityId.unmarshal(dis);
         numberOfAttributeRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
+        attributeRecords.clear();
         for (int idx = 0; idx < numberOfAttributeRecords; idx++)
         {
             Attribute anX = new Attribute();
@@ -184,6 +185,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfAttributeRecords marked as not serialized
         numberOfAttributeRecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute attributeRecords marked as not serialized
+        attributeRecords.clear();
         for (int idx = 0; idx < numberOfAttributeRecords; idx++)
         {
         Attribute anX = new Attribute();
@@ -238,9 +240,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" entityId:").append(entityId); // writeOneToString
+    sb.append(" entityId:").append(entityId); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" attributeRecords: ");
-    attributeRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    attributeRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

@@ -408,6 +408,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         numberOfUAEmitterSystems = (byte)dis.readUnsignedByte();
         uPosition += 1;
+        shaftRPMs.clear();
         for (int idx = 0; idx < numberOfShafts; idx++)
         {
             ShaftRPM anX = new ShaftRPM();
@@ -415,6 +416,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             shaftRPMs.add(anX);
         }
 
+        apaData.clear();
         for (int idx = 0; idx < numberOfAPAs; idx++)
         {
             APA anX = new APA();
@@ -422,6 +424,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             apaData.add(anX);
         }
 
+        emitterSystems.clear();
         for (int idx = 0; idx < numberOfUAEmitterSystems; idx++)
         {
             UAEmitter anX = new UAEmitter();
@@ -516,6 +519,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfUAEmitterSystems marked as not serialized
         numberOfUAEmitterSystems = (byte)(byteBuffer.get() & 0xFF);
         // attribute shaftRPMs marked as not serialized
+        shaftRPMs.clear();
         for (int idx = 0; idx < numberOfShafts; idx++)
         {
         ShaftRPM anX = new ShaftRPM();
@@ -524,6 +528,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute apaData marked as not serialized
+        apaData.clear();
         for (int idx = 0; idx < numberOfAPAs; idx++)
         {
         APA anX = new APA();
@@ -532,6 +537,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute emitterSystems marked as not serialized
+        emitterSystems.clear();
         for (int idx = 0; idx < numberOfUAEmitterSystems; idx++)
         {
         UAEmitter anX = new UAEmitter();
@@ -588,24 +594,24 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" emittingEntityID:").append(emittingEntityID); // writeOneToString
-    sb.append(" eventID:").append(eventID); // writeOneToString
-    sb.append(" stateChangeIndicator:").append(stateChangeIndicator); // writeOneToString
-    sb.append(" pad:").append(pad); // writeOneToString
-    sb.append(" passiveParameterIndex:").append(passiveParameterIndex); // writeOneToString
-    sb.append(" propulsionPlantConfiguration:").append(propulsionPlantConfiguration); // writeOneToString
+    sb.append(" emittingEntityID:").append(emittingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventID:").append(eventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" stateChangeIndicator:").append(stateChangeIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" passiveParameterIndex:").append(passiveParameterIndex); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" propulsionPlantConfiguration:").append(String.valueOf(propulsionPlantConfiguration)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" shaftRPMs: ");
-    shaftRPMs.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    shaftRPMs.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" apaData: ");
-    apaData.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    apaData.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" emitterSystems: ");
-    emitterSystems.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    emitterSystems.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

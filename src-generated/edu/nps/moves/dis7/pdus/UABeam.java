@@ -273,10 +273,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" beamDataLength:").append(beamDataLength); // writeOneToString
-    sb.append(" beamNumber:").append(beamNumber); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" fundamentalParameterData:").append(fundamentalParameterData); // writeOneToString
+    sb.append(" beamDataLength:").append(String.valueOf(beamDataLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamNumber:").append(String.valueOf(beamNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" fundamentalParameterData:").append(fundamentalParameterData); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

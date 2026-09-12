@@ -205,6 +205,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += liveEntityId.unmarshal(dis);
         numberOfParameterRecords = (byte)dis.readUnsignedByte();
         uPosition += 1;
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfParameterRecords; idx++)
         {
             VariableParameter anX = new VariableParameter();
@@ -264,6 +265,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfParameterRecords marked as not serialized
         numberOfParameterRecords = (byte)(byteBuffer.get() & 0xFF);
         // attribute variableParameters marked as not serialized
+        variableParameters.clear();
         for (int idx = 0; idx < numberOfParameterRecords; idx++)
         {
         VariableParameter anX = new VariableParameter();
@@ -313,9 +315,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString
+    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" variableParameters: ");
-    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableParameters.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: United States of America (USA) = <code>225</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Meteorologysatellite  = <code>5</code>; </li>
- *     <li> Specific: DefenseMeteorologicalSatelliteProgramDMSP  = <code>1</code>; </li>
- *     <li> Entity type uid: 12456; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Meteorology = <code>19</code>; </li>
+ *     <li> SubCategory: DefenseMeteorologicalSatelliteProgramDMSP  = <code>1</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38598; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@455cbf18. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@dae5e0. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteMeteorology
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class DefenseMeteorologicalSatelliteProgramDMSP extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 12431, Unmanned
-        setSubCategory((byte)5); // uid 12455, Meteorology satellite
-        setSpecific((byte)1); // uid 12456, Defense Meteorological Satellite Program (DMSP)
+        setCategory((byte)19); // uid 38597, Satellite - Meteorology
+        setSubCategory((byte)1); // uid 38598, Defense Meteorological Satellite Program (DMSP)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

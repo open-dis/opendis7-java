@@ -292,11 +292,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" domainInitialXi:").append(domainInitialXi); // writeOneToString
-    sb.append(" domainFinalXi:").append(domainFinalXi); // writeOneToString
-    sb.append(" domainPointsXi:").append(domainPointsXi); // writeOneToString
-    sb.append(" interleafFactor:").append(interleafFactor); // writeOneToString
-    sb.append(" axisType:").append(axisType); // writeOneToString
+    sb.append(" domainInitialXi:").append(String.valueOf(domainInitialXi)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" domainFinalXi:").append(String.valueOf(domainFinalXi)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" domainPointsXi:").append(String.valueOf(domainPointsXi)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" interleafFactor:").append(String.valueOf(interleafFactor)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" axisType:").append(axisType); // writeOneToString getAttributeKind()=SISO_ENUM
 
    return sb.toString();
  }

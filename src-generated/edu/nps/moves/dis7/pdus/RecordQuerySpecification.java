@@ -107,6 +107,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfRecords = dis.readInt();
         uPosition += 4;
+        recordIDs.clear();
         for (int idx = 0; idx < numberOfRecords; idx++)
         {
             VariableRecordType anX = VariableRecordType.unmarshalEnum(dis);
@@ -158,6 +159,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfRecords marked as not serialized
         numberOfRecords = byteBuffer.getInt();
         // attribute recordIDs marked as not serialized
+        recordIDs.clear();
         for (int idx = 0; idx < numberOfRecords; idx++)
         {
         VariableRecordType anX = VariableRecordType.unmarshalEnum(byteBuffer);
@@ -211,7 +213,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" recordIDs: ");
-    recordIDs.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    recordIDs.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

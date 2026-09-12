@@ -213,8 +213,8 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" originatingID:").append(originatingID); // writeOneToString
-    sb.append(" receivingID:").append(receivingID); // writeOneToString
+    sb.append(" originatingID:").append(originatingID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingID:").append(receivingID); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

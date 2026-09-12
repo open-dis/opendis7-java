@@ -267,10 +267,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" spreadSpectrum:").append(spreadSpectrum); // writeOneToString
-    sb.append(" majorModulation:").append(majorModulation); // writeOneToString
-    sb.append(" detail:").append(detail); // writeOneToString
-    sb.append(" radioSystem:").append(radioSystem); // writeOneToString
+    sb.append(" spreadSpectrum:").append(String.valueOf(spreadSpectrum)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" majorModulation:").append(majorModulation); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" detail:").append(String.valueOf(detail)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" radioSystem:").append(radioSystem); // writeOneToString getAttributeKind()=SISO_ENUM
 
    return sb.toString();
  }

@@ -13,19 +13,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>ORION2Helios</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>ORION2Helios.createInstance()</code> or <code>new ORION2Helios()</code>. </p>
+ * <p> Entity class <b><code>Orion2Helios</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>Orion2Helios.createInstance()</code> or <code>new Orion2Helios()</code>. </p>
  * <ul>
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>AIR</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Unmanned = <code>50</code>; </li>
- *     <li> SubCategory: KRONSHTADORIONSeries  = <code>11</code>; </li>
- *     <li> Specific: ORION2Helios  = <code>3</code>; </li>
+ *     <li> SubCategory: KronshtadtOrionSeries  = <code>11</code>; </li>
+ *     <li> Specific: Orion2Helios  = <code>3</code>; </li>
  *     <li> Entity type uid: 36059; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2e66bc32. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@574a89e2. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -35,23 +35,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class ORION2Helios extends EntityType
+public final class Orion2Helios extends EntityType
 {
     /** Default constructor */
-    public ORION2Helios()
+    public Orion2Helios()
     {
         setCountry(Country.RUSSIA_RUS);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 
         setCategory((byte)50); // uid 23446, Unmanned
-        setSubCategory((byte)11); // uid 36056, KRONSHTAD ORION Series
-        setSpecific((byte)3); // uid 36059, ORION-2 (Helios)
+        setSubCategory((byte)11); // uid 36056, Kronshtadt Orion Series
+        setSpecific((byte)3); // uid 36059, Orion-2 (Helios)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static ORION2Helios createInstance()
+    public static Orion2Helios createInstance()
     {
-            return new ORION2Helios();
+            return new Orion2Helios();
     }
 }

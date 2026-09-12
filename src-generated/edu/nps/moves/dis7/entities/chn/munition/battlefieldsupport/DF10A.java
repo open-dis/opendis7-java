@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: CJ10DH10  = <code>17</code>; </li>
+ *     <li> SubCategory: CHSSC9CJ10  = <code>17</code>; </li>
  *     <li> Specific: DF10A  = <code>2</code>; </li>
  *     <li> Entity type uid: 30572; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@312a738d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@16e07bae. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class DF10A extends EntityType
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
         setCategory((byte)1); // uid 21448, Guided
-        setSubCategory((byte)17); // uid 29142, CJ-10/DH-10
+        setSubCategory((byte)17); // uid 29142, CH-SSC-9 (CJ-10)
         setSpecific((byte)2); // uid 30572, DF-10A
     }
     /** Create a new instance of this final (unmodifiable) class

@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Sciencesatellite  = <code>13</code>; </li>
- *     <li> Specific: Hipparcos  = <code>1</code>; </li>
- *     <li> Entity type uid: 16230; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Science/Experimental/Demonstration = <code>14</code>; </li>
+ *     <li> SubCategory: Hipparcos  = <code>1</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38496; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@115667d. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@767e20cf. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteScienceExperimentalDemonstration
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Hipparcos extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16211, Unmanned
-        setSubCategory((byte)13); // uid 16229, Science satellite
-        setSpecific((byte)1); // uid 16230, Hipparcos
+        setCategory((byte)14); // uid 38495, Satellite - Science/Experimental/Demonstration
+        setSubCategory((byte)1); // uid 38496, Hipparcos
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -443,14 +443,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString
-    sb.append(" appearanceFlags:").append(appearanceFlags); // writeOneToString
-    sb.append(" forceId:").append(forceId); // writeOneToString
-    sb.append(" entityType:").append(entityType); // writeOneToString
-    sb.append(" alternateEntityType:").append(alternateEntityType); // writeOneToString
-    sb.append(" entityMarking:").append(entityMarking); // writeOneToString
-    sb.append(" capabilities:").append(capabilities); // writeOneToString
-    sb.append(" appearanceFields:").append(appearanceFields); // writeOneToString
+    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" appearanceFlags:").append(String.valueOf(appearanceFlags)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" forceId:").append(forceId); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" entityType:").append(entityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" alternateEntityType:").append(alternateEntityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityMarking:").append(entityMarking); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" capabilities:").append(capabilities); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" appearanceFields:").append(appearanceFields); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Communicationsatellite  = <code>1</code>; </li>
- *     <li> Specific: S80T  = <code>7</code>; </li>
- *     <li> Entity type uid: 16218; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Communication = <code>12</code>; </li>
+ *     <li> SubCategory: S80T  = <code>6</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38492; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@12c7a01b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@28e8dde3. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteCommunication
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class S80T extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16211, Unmanned
-        setSubCategory((byte)1); // uid 16212, Communication satellite
-        setSpecific((byte)7); // uid 16218, S80/T
+        setCategory((byte)12); // uid 38486, Satellite - Communication
+        setSubCategory((byte)6); // uid 38492, S80/T
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

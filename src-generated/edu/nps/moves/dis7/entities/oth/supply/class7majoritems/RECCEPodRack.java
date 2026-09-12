@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Other = <code>0</code>; </li>
  *     <li> Entity kind: SupplyDomain = <code>CLASS_7_MAJOR_ITEMS</code>; </li>
  *     <li> Domain: Supply = <code>6</code>; </li>
- *     <li> Category: ECM Pod = <code>23</code>; </li>
- *     <li> SubCategory: RECCEPodRack  = <code>5</code>; </li>
+ *     <li> Category: RECCE pod = <code>32</code>; </li>
+ *     <li> SubCategory: RECCEPodRack  = <code>2</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 30768; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Entity type uid: 38059; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@78a165db. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@79ee779c. </p>
  * @see Country#OTHER
  * @see EntityKind#SUPPLY
  * @see Domain
  * @see SupplyDomain
  * @see Category
- * @see ECMPod
+ * @see RECCEpod
  * @see SubCategory
 
  */
@@ -44,8 +44,8 @@ public final class RECCEPodRack extends EntityType
         setEntityKind(EntityKind.SUPPLY);
         setDomain(Domain.inst(SupplyDomain.CLASS_7_MAJOR_ITEMS));
 
-        setCategory((byte)23); // uid 30763, ECM Pod
-        setSubCategory((byte)5); // uid 30768, RECCE Pod Rack
+        setCategory((byte)32); // uid 35891, RECCE pod
+        setSubCategory((byte)2); // uid 38059, RECCE Pod Rack
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

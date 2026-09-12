@@ -601,20 +601,20 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" objectID:").append(objectID); // writeOneToString
-    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString
-    sb.append(" updateNumber:").append(updateNumber); // writeOneToString
-    sb.append(" forceID:").append(forceID); // writeOneToString
-    sb.append(" modifications:").append(modifications); // writeOneToString
-    sb.append(" objectType:").append(objectType); // writeOneToString
-    sb.append(" objectLocation:").append(objectLocation); // writeOneToString
-    sb.append(" objectOrientation:").append(objectOrientation); // writeOneToString
-    sb.append(" specificObjectAppearance:").append(specificObjectAppearance); // writeOneToString
-    sb.append(" generObjectAppearance:").append(generObjectAppearance); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" requesterID:").append(requesterID); // writeOneToString
-    sb.append(" receivingID:").append(receivingID); // writeOneToString
-    sb.append(" pad2:").append(pad2); // writeOneToString
+    sb.append(" objectID:").append(objectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" updateNumber:").append(String.valueOf(updateNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" forceID:").append(forceID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" modifications:").append(modifications); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" objectType:").append(objectType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" objectLocation:").append(objectLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" objectOrientation:").append(objectOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" specificObjectAppearance:").append(String.valueOf(specificObjectAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" generObjectAppearance:").append(generObjectAppearance); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requesterID:").append(requesterID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingID:").append(receivingID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" pad2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

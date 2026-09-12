@@ -384,12 +384,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" orginatingEntityID:").append(orginatingEntityID); // writeOneToString
-    sb.append(" receivingEntityID:").append(receivingEntityID); // writeOneToString
-    sb.append(" relationship:").append(relationship); // writeOneToString
-    sb.append(" partLocation:").append(partLocation); // writeOneToString
-    sb.append(" namedLocationID:").append(namedLocationID); // writeOneToString
-    sb.append(" partEntityType:").append(partEntityType); // writeOneToString
+    sb.append(" orginatingEntityID:").append(orginatingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingEntityID:").append(receivingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" relationship:").append(relationship); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" partLocation:").append(partLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" namedLocationID:").append(namedLocationID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" partEntityType:").append(partEntityType); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

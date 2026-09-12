@@ -354,13 +354,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" entityKind:").append(entityKind); // writeOneToString
-    sb.append(" domain:").append(domain); // writeOneToString
-    sb.append(" country:").append(country); // writeOneToString
-    sb.append(" category:").append(category); // writeOneToString
-    sb.append(" subcategory:").append(subcategory); // writeOneToString
-    sb.append(" specific:").append(specific); // writeOneToString
-    sb.append(" extra:").append(extra); // writeOneToString
+    sb.append(" entityKind:").append(entityKind); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" domain:").append(String.valueOf(domain)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" country:").append(country); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" category:").append(category); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" subcategory:").append(subcategory); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" specific:").append(String.valueOf(specific)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" extra:").append(String.valueOf(extra)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

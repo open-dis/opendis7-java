@@ -485,18 +485,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" damageLocation:").append(damageLocation); // writeOneToString
-    sb.append(" damageDiameter:").append(damageDiameter); // writeOneToString
-    sb.append(" temperature:").append(temperature); // writeOneToString
-    sb.append(" componentIdentification:").append(componentIdentification); // writeOneToString
-    sb.append(" componentDamageStatus:").append(componentDamageStatus); // writeOneToString
-    sb.append(" componentVisualDamageStatus:").append(componentVisualDamageStatus); // writeOneToString
-    sb.append(" componentVisualSmokeColor:").append(componentVisualSmokeColor); // writeOneToString
-    sb.append(" fireEventID:").append(fireEventID); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" damageLocation:").append(damageLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" damageDiameter:").append(String.valueOf(damageDiameter)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" temperature:").append(String.valueOf(temperature)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" componentIdentification:").append(componentIdentification); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" componentDamageStatus:").append(componentDamageStatus); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" componentVisualDamageStatus:").append(componentVisualDamageStatus); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" componentVisualSmokeColor:").append(componentVisualSmokeColor); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" fireEventID:").append(fireEventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

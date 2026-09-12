@@ -126,6 +126,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfStandardVariableRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
+        standardVariables.clear();
         for (int idx = 0; idx < numberOfStandardVariableRecords; idx++)
         {
             StandardVariableRecord anX = new StandardVariableRecord();
@@ -177,6 +178,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfStandardVariableRecords marked as not serialized
         numberOfStandardVariableRecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute standardVariables marked as not serialized
+        standardVariables.clear();
         for (int idx = 0; idx < numberOfStandardVariableRecords; idx++)
         {
         StandardVariableRecord anX = new StandardVariableRecord();
@@ -231,9 +233,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" numberOfStandardVariableRecords:").append(numberOfStandardVariableRecords); // writeOneToString
+    sb.append(" numberOfStandardVariableRecords:").append(String.valueOf(numberOfStandardVariableRecords)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" standardVariables: ");
-    standardVariables.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    standardVariables.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

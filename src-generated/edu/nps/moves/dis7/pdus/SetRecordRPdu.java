@@ -307,6 +307,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfRecordSets = dis.readInt();
         uPosition += 4;
+        recordSets.clear();
         for (int idx = 0; idx < numberOfRecordSets; idx++)
         {
             RecordSpecification anX = new RecordSpecification();
@@ -378,6 +379,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfRecordSets marked as not serialized
         numberOfRecordSets = byteBuffer.getInt();
         // attribute recordSets marked as not serialized
+        recordSets.clear();
         for (int idx = 0; idx < numberOfRecordSets; idx++)
         {
         RecordSpecification anX = new RecordSpecification();
@@ -431,13 +433,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString
-    sb.append(" pad1:").append(pad1); // writeOneToString
-    sb.append(" pad2:").append(pad2); // writeOneToString
-    sb.append(" pad3:").append(pad3); // writeOneToString
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requiredReliabilityService:").append(requiredReliabilityService); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" pad1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pad2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pad3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" recordSets: ");
-    recordSets.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    recordSets.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

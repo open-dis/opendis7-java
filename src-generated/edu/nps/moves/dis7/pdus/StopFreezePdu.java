@@ -361,11 +361,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" realWorldTime:").append(realWorldTime); // writeOneToString
-    sb.append(" reason:").append(reason); // writeOneToString
-    sb.append(" frozenBehavior:").append(frozenBehavior); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" requestID:").append(requestID); // writeOneToString
+    sb.append(" realWorldTime:").append(realWorldTime); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" reason:").append(reason); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" frozenBehavior:").append(frozenBehavior); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

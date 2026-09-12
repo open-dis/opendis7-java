@@ -302,6 +302,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         sequenceNumber = (short)dis.readUnsignedShort();
         uPosition += 2;
+        environmentRecords.clear();
         for (int idx = 0; idx < numberOfEnvironmentRecords; idx++)
         {
             Environment anX = new Environment();
@@ -373,6 +374,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute sequenceNumber marked as not serialized
         sequenceNumber = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute environmentRecords marked as not serialized
+        environmentRecords.clear();
         for (int idx = 0; idx < numberOfEnvironmentRecords; idx++)
         {
         Environment anX = new Environment();
@@ -426,13 +428,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" environementalProcessID:").append(environementalProcessID); // writeOneToString
-    sb.append(" environmentType:").append(environmentType); // writeOneToString
-    sb.append(" modelType:").append(modelType); // writeOneToString
-    sb.append(" environmentStatus:").append(environmentStatus); // writeOneToString
-    sb.append(" sequenceNumber:").append(sequenceNumber); // writeOneToString
+    sb.append(" environementalProcessID:").append(environementalProcessID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" environmentType:").append(environmentType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" modelType:").append(modelType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" environmentStatus:").append(environmentStatus); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" sequenceNumber:").append(String.valueOf(sequenceNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" environmentRecords: ");
-    environmentRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    environmentRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

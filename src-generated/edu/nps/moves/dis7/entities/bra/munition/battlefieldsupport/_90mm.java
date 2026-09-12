@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: _90mm  = <code>2</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 26957; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@491893f8. </p>
- * @see Country#BRAZIL_BRA
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@68a5aadd. </p>
+ * @see Country#UNDERWATER_ACOUSTIC
  * @see EntityKind#MUNITION
  * @see Domain
  * @see MunitionDomain
@@ -40,7 +40,7 @@ public final class _90mm extends EntityType
     /** Default constructor */
     public _90mm()
     {
-        setCountry(Country.BRAZIL_BRA);
+        setCountry(Country.UNDERWATER_ACOUSTIC);
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 

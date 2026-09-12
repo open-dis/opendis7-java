@@ -361,6 +361,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfIORecords = (short)dis.readUnsignedShort();
         uPosition += 2;
+        ioRecords.clear();
         for (int idx = 0; idx < numberOfIORecords; idx++)
         {
             IORecord anX = new IORecord();
@@ -438,6 +439,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfIORecords marked as not serialized
         numberOfIORecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute ioRecords marked as not serialized
+        ioRecords.clear();
         for (int idx = 0; idx < numberOfIORecords; idx++)
         {
         IORecord anX = new IORecord();
@@ -493,15 +495,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" ioSimSource:").append(ioSimSource); // writeOneToString
-    sb.append(" ioReportType:").append(ioReportType); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" ioAttackerID:").append(ioAttackerID); // writeOneToString
-    sb.append(" ioPrimaryTargetID:").append(ioPrimaryTargetID); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
+    sb.append(" ioSimSource:").append(ioSimSource); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" ioReportType:").append(ioReportType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" ioAttackerID:").append(ioAttackerID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" ioPrimaryTargetID:").append(ioPrimaryTargetID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" ioRecords: ");
-    ioRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    ioRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

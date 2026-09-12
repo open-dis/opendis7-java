@@ -485,17 +485,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" modeSTransponderStatus:").append(modeSTransponderStatus); // writeOneToString
-    sb.append(" modeSLevelsPresent:").append(modeSLevelsPresent); // writeOneToString
-    sb.append(" aircraftPresentDomain:").append(aircraftPresentDomain); // writeOneToString
-    sb.append(" aircraftIdentification:").append(aircraftIdentification); // writeOneToString
-    sb.append(" aircraftAddress:").append(aircraftAddress); // writeOneToString
-    sb.append(" aircraftIdentificationType:").append(aircraftIdentificationType); // writeOneToString
-    sb.append(" dapSource:").append(dapSource); // writeOneToString
-    sb.append(" modeSAltitude:").append(modeSAltitude); // writeOneToString
-    sb.append(" capabilityReport:").append(capabilityReport); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" modeSTransponderStatus:").append(String.valueOf(modeSTransponderStatus)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" modeSLevelsPresent:").append(String.valueOf(modeSLevelsPresent)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" aircraftPresentDomain:").append(aircraftPresentDomain); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" aircraftIdentification:").append(String.valueOf(aircraftIdentification)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" aircraftAddress:").append(String.valueOf(aircraftAddress)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" aircraftIdentificationType:").append(aircraftIdentificationType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" dapSource:").append(String.valueOf(dapSource)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" modeSAltitude:").append(String.valueOf(modeSAltitude)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" capabilityReport:").append(capabilityReport); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

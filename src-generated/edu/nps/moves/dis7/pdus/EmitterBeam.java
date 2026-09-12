@@ -332,6 +332,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += highDensityTrackJam.getMarshalledSize();
         uPosition += beamStatus.unmarshal(dis);
         uPosition += jammingTechnique.unmarshal(dis);
+        trackJamData.clear();
         for (int idx = 0; idx < numberOfTargets; idx++)
         {
             TrackJamData anX = new TrackJamData();
@@ -410,6 +411,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute jammingTechnique marked as not serialized
         jammingTechnique.unmarshal(byteBuffer);
         // attribute trackJamData marked as not serialized
+        trackJamData.clear();
         for (int idx = 0; idx < numberOfTargets; idx++)
         {
         TrackJamData anX = new TrackJamData();
@@ -472,17 +474,17 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" beamDataLength:").append(beamDataLength); // writeOneToString
-    sb.append(" beamNumber:").append(beamNumber); // writeOneToString
-    sb.append(" beamParameterIndex:").append(beamParameterIndex); // writeOneToString
-    sb.append(" fundamentalParameterData:").append(fundamentalParameterData); // writeOneToString
-    sb.append(" beamData:").append(beamData); // writeOneToString
-    sb.append(" beamFunction:").append(beamFunction); // writeOneToString
-    sb.append(" highDensityTrackJam:").append(highDensityTrackJam); // writeOneToString
-    sb.append(" beamStatus:").append(beamStatus); // writeOneToString
-    sb.append(" jammingTechnique:").append(jammingTechnique); // writeOneToString
+    sb.append(" beamDataLength:").append(String.valueOf(beamDataLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamNumber:").append(String.valueOf(beamNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamParameterIndex:").append(String.valueOf(beamParameterIndex)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" fundamentalParameterData:").append(fundamentalParameterData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" beamData:").append(beamData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" beamFunction:").append(beamFunction); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" highDensityTrackJam:").append(highDensityTrackJam); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" beamStatus:").append(beamStatus); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" jammingTechnique:").append(jammingTechnique); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" trackJamData: ");
-    trackJamData.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    trackJamData.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

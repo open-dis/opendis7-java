@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 235, marshal size 16,
+ *  UID 235, marshal size 32,
  * LinearObjectAppearanceTankDitchandConcertinaWire
  */
 public class LinearObjectAppearanceTankDitchAndConcertinaWire extends DisBitSet 
@@ -64,7 +64,7 @@ public class LinearObjectAppearanceTankDitchAndConcertinaWire extends DisBitSet
   /** Default constructor */
   public LinearObjectAppearanceTankDitchAndConcertinaWire()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

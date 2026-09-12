@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Algeria (DZA) = <code>3</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SURFACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Guided Missile Frigate (FFG) = <code>6</code>; </li>
- *     <li> SubCategory: MouradRaisClass  = <code>1</code>; </li>
+ *     <li> Category: Frigate (including Corvette) = <code>50</code>; </li>
+ *     <li> SubCategory: MouradRaisKoniclass  = <code>1</code>; </li>
  *     <li> Specific: _901MouradRais  = <code>1</code>; </li>
- *     <li> Entity type uid: 27732; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Entity type uid: 27041; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@7daf6ecc. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@2cdf8d8a. </p>
  * @see Country#ALGERIA_DZA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see GuidedMissileFrigateFFG
+ * @see FrigateincludingCorvette
  * @see SubCategory
 
  */
@@ -44,9 +44,9 @@ public final class _901MouradRais extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SURFACE));
 
-        setCategory((byte)6); // uid 27048, Guided Missile Frigate (FFG)
-        setSubCategory((byte)1); // uid 27731, Mourad Rais Class
-        setSpecific((byte)1); // uid 27732, 901 Mourad Rais
+        setCategory((byte)50); // uid 27039, Frigate (including Corvette)
+        setSubCategory((byte)1); // uid 27040, Mourad Rais (Koni) class
+        setSpecific((byte)1); // uid 27041, 901 Mourad Rais
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

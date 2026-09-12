@@ -185,6 +185,8 @@ public class VariableDatum extends Object implements Serializable {
             }
 
             padding = new byte[Align.to64bits(dos)];
+            Arrays.fill(padding, (byte) 0); // make sure
+            
         } catch (IOException e) {
             System.err.flush(); // ensure contiguous console outputs
             System.err.println(e);
@@ -216,6 +218,7 @@ public class VariableDatum extends Object implements Serializable {
             }
             uPosition += variableDatumLength;
             padding = new byte[Align.from64bits(uPosition, dis)];
+            Arrays.fill(padding, (byte) 0); // make sure
             //uPosition += padding.length;
         } catch (Exception e) {
             System.err.flush(); // ensure contiguous console outputs
@@ -246,6 +249,7 @@ public class VariableDatum extends Object implements Serializable {
             byteBuffer.put(variableDatumValue[idx]);
         }
         padding = new byte[Align.to64bits(byteBuffer)];
+        Arrays.fill(padding, (byte) 0); // make sure
     }
 
     /**
@@ -268,6 +272,7 @@ public class VariableDatum extends Object implements Serializable {
             variableDatumValue[idx] = byteBuffer.get();
         }
         padding = new byte[Align.from64bits(byteBuffer)];
+        Arrays.fill(padding, (byte) 0); // make sure
         return getMarshalledSize();
     }
 
@@ -344,7 +349,8 @@ public class VariableDatum extends Object implements Serializable {
         sb.append(" variableDatumLength: ").append(variableDatumLength).append("\n");
         sb.append(" variableDatumValue: ").append("\n");
         sb.append(Arrays.toString(variableDatumValue)).append("\n");
-        sb.append(" padding: ").append(padding).append("\n");
+        // padding handling might be problematic, but is not considered part of the PDU data structure
+//      sb.append(" padding: ").append(String.valueOf(padding)).append("\n"); // hide padding since results are inconsistent, avoid failing unit test
 
         return sb.toString();
     }

@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: ImagingRadarsurveillancesatellite  = <code>7</code>; </li>
- *     <li> Specific: OsirisSAR  = <code>2</code>; </li>
- *     <li> Entity type uid: 16226; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Space Surveillance = <code>17</code>; </li>
+ *     <li> SubCategory: OsirisSAR  = <code>1</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38505; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@687ef2e0. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@56113384. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteSpaceSurveillance
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class OsirisSAR extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16211, Unmanned
-        setSubCategory((byte)7); // uid 16224, Imaging Radar surveillance satellite
-        setSpecific((byte)2); // uid 16226, Osiris SAR
+        setCategory((byte)17); // uid 38504, Satellite - Space Surveillance
+        setSubCategory((byte)1); // uid 38505, Osiris SAR
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

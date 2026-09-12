@@ -246,9 +246,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" layerNumber:").append(layerNumber); // writeOneToString
-    sb.append(" layerSpecificInformation:").append(layerSpecificInformation); // writeOneToString
-    sb.append(" length:").append(length); // writeOneToString
+    sb.append(" layerNumber:").append(String.valueOf(layerNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" layerSpecificInformation:").append(String.valueOf(layerSpecificInformation)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" length:").append(String.valueOf(length)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

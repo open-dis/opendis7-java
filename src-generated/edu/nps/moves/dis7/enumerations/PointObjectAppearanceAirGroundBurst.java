@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 232, marshal size 16,
+ *  UID 232, marshal size 32,
  * PointObjectAppearanceAirGroundBurst
  */
 public class PointObjectAppearanceAirGroundBurst extends DisBitSet 
@@ -78,7 +78,7 @@ public class PointObjectAppearanceAirGroundBurst extends DisBitSet
   /** Default constructor */
   public PointObjectAppearanceAirGroundBurst()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

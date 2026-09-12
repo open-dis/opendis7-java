@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 230, marshal size 16,
+ *  UID 230, marshal size 32,
  * PointObjectAppearanceBuildingStructure
  */
 public class PointObjectAppearanceBuildingStructure extends DisBitSet 
@@ -64,7 +64,7 @@ public class PointObjectAppearanceBuildingStructure extends DisBitSet
   /** Default constructor */
   public PointObjectAppearanceBuildingStructure()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

@@ -515,9 +515,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx])) return false;
+         if (idx < systemSpecificData.length)
+             if(!(systemSpecificData[idx] == rhs.systemSpecificData[idx]))
+                 return false;
      }
-
     return super.equalsImpl(rhs);
  }
 
@@ -527,17 +528,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString
-    sb.append(" TSPIFlag:").append(TSPIFlag); // writeOneToString
-    sb.append(" entityLocation:").append(entityLocation); // writeOneToString
-    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString
-    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString
-    sb.append(" positionError:").append(positionError); // writeOneToString
-    sb.append(" orientationError:").append(orientationError); // writeOneToString
-    sb.append(" deadReckoningParameters:").append(deadReckoningParameters); // writeOneToString
-    sb.append(" measuredSpeed:").append(measuredSpeed); // writeOneToString
-    sb.append(" systemSpecificData:");
-    sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList
+    sb.append(" liveEntityId:").append(liveEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" TSPIFlag:").append(String.valueOf(TSPIFlag)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" entityLocation:").append(entityLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityLinearVelocity:").append(entityLinearVelocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityOrientation:").append(entityOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" positionError:").append(positionError); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" orientationError:").append(orientationError); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" deadReckoningParameters:").append(deadReckoningParameters); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" measuredSpeed:").append(String.valueOf(measuredSpeed)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" systemSpecificData:");    sb.append(Arrays.toString(systemSpecificData)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

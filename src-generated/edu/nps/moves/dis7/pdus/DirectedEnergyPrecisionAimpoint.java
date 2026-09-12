@@ -564,21 +564,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" recordLength:").append(recordLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" targetSpotLocation:").append(targetSpotLocation); // writeOneToString
-    sb.append(" targetSpotEntityLocation:").append(targetSpotEntityLocation); // writeOneToString
-    sb.append(" targetSpotVelocity:").append(targetSpotVelocity); // writeOneToString
-    sb.append(" targetSpotAcceleration:").append(targetSpotAcceleration); // writeOneToString
-    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString
-    sb.append(" targetComponentID:").append(targetComponentID); // writeOneToString
-    sb.append(" beamSpotType:").append(beamSpotType); // writeOneToString
-    sb.append(" beamSpotCrossSectionSemiMajorAxis:").append(beamSpotCrossSectionSemiMajorAxis); // writeOneToString
-    sb.append(" beamSpotCrossSectionSemiMinorAxis:").append(beamSpotCrossSectionSemiMinorAxis); // writeOneToString
-    sb.append(" beamSpotCrossSectionOrientationAngle:").append(beamSpotCrossSectionOrientationAngle); // writeOneToString
-    sb.append(" peakIrradiance:").append(peakIrradiance); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" recordType:").append(String.valueOf(recordType)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" recordLength:").append(String.valueOf(recordLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" targetSpotLocation:").append(targetSpotLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetSpotEntityLocation:").append(targetSpotEntityLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetSpotVelocity:").append(targetSpotVelocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetSpotAcceleration:").append(targetSpotAcceleration); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetEntityID:").append(targetEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" targetComponentID:").append(String.valueOf(targetComponentID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamSpotType:").append(beamSpotType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" beamSpotCrossSectionSemiMajorAxis:").append(String.valueOf(beamSpotCrossSectionSemiMajorAxis)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamSpotCrossSectionSemiMinorAxis:").append(String.valueOf(beamSpotCrossSectionSemiMinorAxis)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" beamSpotCrossSectionOrientationAngle:").append(String.valueOf(beamSpotCrossSectionOrientationAngle)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" peakIrradiance:").append(String.valueOf(peakIrradiance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

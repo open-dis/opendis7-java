@@ -245,9 +245,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(appearanceRecordList[idx] == rhs.appearanceRecordList[idx])) return false;
+         if (idx < appearanceRecordList.length)
+             if(!(appearanceRecordList[idx] == rhs.appearanceRecordList[idx]))
+                 return false;
      }
-
     return true;
  }
 
@@ -257,10 +258,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" numberOfEntities:").append(numberOfEntities); // writeOneToString
-    sb.append(" entityType:").append(entityType); // writeOneToString
-    sb.append(" appearanceRecordList:");
-    sb.append(Arrays.toString(appearanceRecordList)); // writePrimitiveList
+    sb.append(" numberOfEntities:").append(String.valueOf(numberOfEntities)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" entityType:").append(entityType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" appearanceRecordList:");    sb.append(Arrays.toString(appearanceRecordList)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
 
    return sb.toString();
  }

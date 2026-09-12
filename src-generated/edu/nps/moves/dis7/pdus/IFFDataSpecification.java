@@ -107,6 +107,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
     {
         numberOfIFFDataRecords = (short)dis.readUnsignedShort();
         uPosition += 2;
+        iffDataRecords.clear();
         for (int idx = 0; idx < numberOfIFFDataRecords; idx++)
         {
             IFFData anX = new IFFData();
@@ -158,6 +159,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfIFFDataRecords marked as not serialized
         numberOfIFFDataRecords = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute iffDataRecords marked as not serialized
+        iffDataRecords.clear();
         for (int idx = 0; idx < numberOfIFFDataRecords; idx++)
         {
         IFFData anX = new IFFData();
@@ -212,7 +214,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
     sb.append(" iffDataRecords: ");
-    iffDataRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    iffDataRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

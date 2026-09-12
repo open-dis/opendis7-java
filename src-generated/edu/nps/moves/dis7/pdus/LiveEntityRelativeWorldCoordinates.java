@@ -279,10 +279,10 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" referencePoint:").append(referencePoint); // writeOneToString
-    sb.append(" deltaX:").append(deltaX); // writeOneToString
-    sb.append(" deltaY:").append(deltaY); // writeOneToString
-    sb.append(" deltaZ:").append(deltaZ); // writeOneToString
+    sb.append(" referencePoint:").append(String.valueOf(referencePoint)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" deltaX:").append(String.valueOf(deltaX)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" deltaY:").append(String.valueOf(deltaY)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" deltaZ:").append(String.valueOf(deltaZ)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

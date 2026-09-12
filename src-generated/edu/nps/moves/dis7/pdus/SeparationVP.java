@@ -348,13 +348,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" recordType:").append(recordType); // writeOneToString
-    sb.append(" reasonForSeparation:").append(reasonForSeparation); // writeOneToString
-    sb.append(" preEntityIndicator:").append(preEntityIndicator); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" parentEntityID:").append(parentEntityID); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" stationLocation:").append(stationLocation); // writeOneToString
+    sb.append(" recordType:").append(recordType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" reasonForSeparation:").append(reasonForSeparation); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" preEntityIndicator:").append(preEntityIndicator); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parentEntityID:").append(parentEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" stationLocation:").append(stationLocation); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

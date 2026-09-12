@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: TwinEngineTurboprop  = <code>22</code>; </li>
  *     <li> Specific: null <code>(none)</code>; </li>
  *     <li> Entity type uid: 23888; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@3fee9989. </p>
- * @see Country#BRAZIL_BRA
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1e397ed7. </p>
+ * @see Country#UNDERWATER_ACOUSTIC
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
@@ -40,7 +40,7 @@ public final class TwinEngineTurboprop extends EntityType
     /** Default constructor */
     public TwinEngineTurboprop()
     {
-        setCountry(Country.BRAZIL_BRA);
+        setCountry(Country.UNDERWATER_ACOUSTIC);
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.AIR));
 

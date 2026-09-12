@@ -477,16 +477,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" systemStatus:").append(systemStatus); // writeOneToString
-    sb.append(" dataField1:").append(dataField1); // writeOneToString
-    sb.append(" informationLayers:").append(informationLayers); // writeOneToString
-    sb.append(" dataField2:").append(dataField2); // writeOneToString
-    sb.append(" parameter1:").append(parameter1); // writeOneToString
-    sb.append(" parameter2:").append(parameter2); // writeOneToString
-    sb.append(" parameter3:").append(parameter3); // writeOneToString
-    sb.append(" parameter4:").append(parameter4); // writeOneToString
-    sb.append(" parameter5:").append(parameter5); // writeOneToString
-    sb.append(" parameter6:").append(parameter6); // writeOneToString
+    sb.append(" systemStatus:").append(String.valueOf(systemStatus)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" dataField1:").append(String.valueOf(dataField1)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" informationLayers:").append(String.valueOf(informationLayers)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" dataField2:").append(String.valueOf(dataField2)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter1:").append(String.valueOf(parameter1)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter2:").append(String.valueOf(parameter2)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter3:").append(String.valueOf(parameter3)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter4:").append(String.valueOf(parameter4)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter5:").append(String.valueOf(parameter5)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" parameter6:").append(String.valueOf(parameter6)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

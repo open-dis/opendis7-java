@@ -622,19 +622,19 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" emittingEntityId:").append(emittingEntityId); // writeOneToString
-    sb.append(" eventID:").append(eventID); // writeOneToString
-    sb.append(" location:").append(location); // writeOneToString
-    sb.append(" systemID:").append(systemID); // writeOneToString
-    sb.append(" systemDesignator:").append(systemDesignator); // writeOneToString
-    sb.append(" systemSpecificData:").append(systemSpecificData); // writeOneToString
-    sb.append(" fundamentalParameters:").append(fundamentalParameters); // writeOneToString
-    sb.append(" iFFPduLayer2Data:").append(iFFPduLayer2Data); // writeOneToString
-    sb.append(" iFFPduLayer3TransponderFormatData:").append(iFFPduLayer3TransponderFormatData); // writeOneToString
-    sb.append(" iFFPduLayer3InterrogatorFormatData:").append(iFFPduLayer3InterrogatorFormatData); // writeOneToString
-    sb.append(" iFFPduLayer4InterrogatorFormatData:").append(iFFPduLayer4InterrogatorFormatData); // writeOneToString
-    sb.append(" iFFPduLayer4TransponderFormatData:").append(iFFPduLayer4TransponderFormatData); // writeOneToString
-    sb.append(" iFFPduLayer5Data:").append(iFFPduLayer5Data); // writeOneToString
+    sb.append(" emittingEntityId:").append(emittingEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventID:").append(eventID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" location:").append(location); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" systemID:").append(systemID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" systemDesignator:").append(String.valueOf(systemDesignator)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" systemSpecificData:").append(String.valueOf(systemSpecificData)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" fundamentalParameters:").append(fundamentalParameters); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer2Data:").append(iFFPduLayer2Data); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer3TransponderFormatData:").append(iFFPduLayer3TransponderFormatData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer3InterrogatorFormatData:").append(iFFPduLayer3InterrogatorFormatData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer4InterrogatorFormatData:").append(iFFPduLayer4InterrogatorFormatData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer4TransponderFormatData:").append(iFFPduLayer4TransponderFormatData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" iFFPduLayer5Data:").append(iFFPduLayer5Data); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

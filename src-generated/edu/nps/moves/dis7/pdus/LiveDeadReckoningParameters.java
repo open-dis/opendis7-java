@@ -228,9 +228,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString
-    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString
-    sb.append(" entityAngularVelocity:").append(entityAngularVelocity); // writeOneToString
+    sb.append(" deadReckoningAlgorithm:").append(deadReckoningAlgorithm); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" entityLinearAcceleration:").append(entityLinearAcceleration); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityAngularVelocity:").append(entityAngularVelocity); // writeOneToString getAttributeKind()=CLASSREF
 
    return sb.toString();
  }

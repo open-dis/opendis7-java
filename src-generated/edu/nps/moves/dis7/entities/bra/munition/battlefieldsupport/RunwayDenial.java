@@ -23,10 +23,10 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> SubCategory: RocketASTROS  = <code>1</code>; </li>
  *     <li> Specific: _180mmSS40  = <code>2</code>; </li>
  *     <li> Entity type uid: 21788; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@13e1e816. </p>
- * @see Country#BRAZIL_BRA
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@5368e981. </p>
+ * @see Country#UNDERWATER_ACOUSTIC
  * @see EntityKind#MUNITION
  * @see Domain
  * @see MunitionDomain
@@ -40,7 +40,7 @@ public final class RunwayDenial extends EntityType
     /** Default constructor */
     public RunwayDenial()
     {
-        setCountry(Country.BRAZIL_BRA);
+        setCountry(Country.UNDERWATER_ACOUSTIC);
         setEntityKind(EntityKind.MUNITION);
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 

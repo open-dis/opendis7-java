@@ -564,18 +564,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" firingLiveEntityId:").append(firingLiveEntityId); // writeOneToString
-    sb.append(" detonationFlag1:").append(detonationFlag1); // writeOneToString
-    sb.append(" detonationFlag2:").append(detonationFlag2); // writeOneToString
-    sb.append(" targetLiveEntityId:").append(targetLiveEntityId); // writeOneToString
-    sb.append(" munitionLiveEntityId:").append(munitionLiveEntityId); // writeOneToString
-    sb.append(" eventId:").append(eventId); // writeOneToString
-    sb.append(" worldLocation:").append(worldLocation); // writeOneToString
-    sb.append(" velocity:").append(velocity); // writeOneToString
-    sb.append(" munitionOrientation:").append(munitionOrientation); // writeOneToString
-    sb.append(" munitionDescriptor:").append(munitionDescriptor); // writeOneToString
-    sb.append(" entityLocation:").append(entityLocation); // writeOneToString
-    sb.append(" detonationResult:").append(detonationResult); // writeOneToString
+    sb.append(" firingLiveEntityId:").append(firingLiveEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" detonationFlag1:").append(String.valueOf(detonationFlag1)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" detonationFlag2:").append(String.valueOf(detonationFlag2)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" targetLiveEntityId:").append(targetLiveEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" munitionLiveEntityId:").append(munitionLiveEntityId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" eventId:").append(eventId); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" worldLocation:").append(worldLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" velocity:").append(velocity); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" munitionOrientation:").append(munitionOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" munitionDescriptor:").append(munitionDescriptor); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" entityLocation:").append(entityLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" detonationResult:").append(String.valueOf(detonationResult)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

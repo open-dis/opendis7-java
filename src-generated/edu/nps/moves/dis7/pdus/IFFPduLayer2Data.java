@@ -234,6 +234,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         numberOfIFFFundamentalParameterDataRecordsParameters = (short)dis.readUnsignedShort();
         uPosition += 2;
+        IFFFundamentalParameterDataRecord.clear();
         for (int idx = 0; idx < numberOfIFFFundamentalParameterDataRecordsParameters; idx++)
         {
             IFFFundamentalParameterData anX = new IFFFundamentalParameterData();
@@ -300,6 +301,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfIFFFundamentalParameterDataRecordsParameters marked as not serialized
         numberOfIFFFundamentalParameterDataRecordsParameters = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute IFFFundamentalParameterDataRecord marked as not serialized
+        IFFFundamentalParameterDataRecord.clear();
         for (int idx = 0; idx < numberOfIFFFundamentalParameterDataRecordsParameters; idx++)
         {
         IFFFundamentalParameterData anX = new IFFFundamentalParameterData();
@@ -353,13 +355,13 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" layerHeader:").append(layerHeader); // writeOneToString
-    sb.append(" beamData:").append(beamData); // writeOneToString
-    sb.append(" secondaryOpParameter1:").append(secondaryOpParameter1); // writeOneToString
-    sb.append(" secondaryOpParameter2:").append(secondaryOpParameter2); // writeOneToString
-    sb.append(" numberOfIFFFundamentalParameterDataRecordsParameters:").append(numberOfIFFFundamentalParameterDataRecordsParameters); // writeOneToString
+    sb.append(" layerHeader:").append(layerHeader); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" beamData:").append(beamData); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" secondaryOpParameter1:").append(String.valueOf(secondaryOpParameter1)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" secondaryOpParameter2:").append(String.valueOf(secondaryOpParameter2)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" numberOfIFFFundamentalParameterDataRecordsParameters:").append(String.valueOf(numberOfIFFFundamentalParameterDataRecordsParameters)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" IFFFundamentalParameterDataRecord: ");
-    IFFFundamentalParameterDataRecord.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    IFFFundamentalParameterDataRecord.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

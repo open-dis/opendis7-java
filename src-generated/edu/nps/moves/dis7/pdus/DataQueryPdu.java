@@ -264,6 +264,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 4;
         numberOfVariableDatumRecords = dis.readInt();
         uPosition += 4;
+        fixedDatums.clear();
         for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
         {
             FixedDatum anX = new FixedDatum();
@@ -271,6 +272,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             fixedDatums.add(anX);
         }
 
+        variableDatums.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
             VariableDatum anX = new VariableDatum();
@@ -343,6 +345,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfVariableDatumRecords marked as not serialized
         numberOfVariableDatumRecords = byteBuffer.getInt();
         // attribute fixedDatums marked as not serialized
+        fixedDatums.clear();
         for (int idx = 0; idx < numberOfFixedDatumRecords; idx++)
         {
         FixedDatum anX = new FixedDatum();
@@ -351,6 +354,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute variableDatums marked as not serialized
+        variableDatums.clear();
         for (int idx = 0; idx < numberOfVariableDatumRecords; idx++)
         {
         VariableDatum anX = new VariableDatum();
@@ -402,15 +406,15 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" timeInterval:").append(timeInterval); // writeOneToString
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" timeInterval:").append(String.valueOf(timeInterval)); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" fixedDatums: ");
-    fixedDatums.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    fixedDatums.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" variableDatums: ");
-    variableDatums.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    variableDatums.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

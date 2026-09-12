@@ -318,12 +318,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" expendable:").append(expendable); // writeOneToString
-    sb.append(" station:").append(station); // writeOneToString
-    sb.append(" standardQuantity:").append(standardQuantity); // writeOneToString
-    sb.append(" maximumQuantity:").append(maximumQuantity); // writeOneToString
-    sb.append(" standardQuantityReloadTime:").append(standardQuantityReloadTime); // writeOneToString
-    sb.append(" maximumQuantityReloadTime:").append(maximumQuantityReloadTime); // writeOneToString
+    sb.append(" expendable:").append(expendable); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" station:").append(String.valueOf(station)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" standardQuantity:").append(String.valueOf(standardQuantity)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" maximumQuantity:").append(String.valueOf(maximumQuantity)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" standardQuantityReloadTime:").append(String.valueOf(standardQuantityReloadTime)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" maximumQuantityReloadTime:").append(String.valueOf(maximumQuantityReloadTime)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

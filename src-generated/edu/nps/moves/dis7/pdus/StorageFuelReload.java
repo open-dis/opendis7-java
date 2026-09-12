@@ -365,14 +365,14 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" standardQuantity:").append(standardQuantity); // writeOneToString
-    sb.append(" maximumQuantity:").append(maximumQuantity); // writeOneToString
-    sb.append(" standardQuantityReloadTime:").append(standardQuantityReloadTime); // writeOneToString
-    sb.append(" maximumQuantityReloadTime:").append(maximumQuantityReloadTime); // writeOneToString
-    sb.append(" fuelMeasurementUnits:").append(fuelMeasurementUnits); // writeOneToString
-    sb.append(" fuelType:").append(fuelType); // writeOneToString
-    sb.append(" fuelLocation:").append(fuelLocation); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
+    sb.append(" standardQuantity:").append(String.valueOf(standardQuantity)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" maximumQuantity:").append(String.valueOf(maximumQuantity)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" standardQuantityReloadTime:").append(String.valueOf(standardQuantityReloadTime)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" maximumQuantityReloadTime:").append(String.valueOf(maximumQuantityReloadTime)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" fuelMeasurementUnits:").append(fuelMeasurementUnits); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" fuelType:").append(fuelType); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" fuelLocation:").append(fuelLocation); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

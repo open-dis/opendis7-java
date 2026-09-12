@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: France (FRA) = <code>71</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: ImagingRadarsurveillancesatellite  = <code>7</code>; </li>
- *     <li> Specific: Helios  = <code>1</code>; </li>
- *     <li> Entity type uid: 16225; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Earth Observation = <code>16</code>; </li>
+ *     <li> SubCategory: Helios  = <code>3</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38503; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@737a135b. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@52066604. </p>
  * @see Country#FRANCE_FRA
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteEarthObservation
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Helios extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 16211, Unmanned
-        setSubCategory((byte)7); // uid 16224, Imaging Radar surveillance satellite
-        setSpecific((byte)1); // uid 16225, Helios
+        setCategory((byte)16); // uid 38500, Satellite - Earth Observation
+        setSubCategory((byte)3); // uid 38503, Helios
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

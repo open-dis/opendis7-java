@@ -246,9 +246,9 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" azimuthError:").append(azimuthError); // writeOneToString
-    sb.append(" elevationError:").append(elevationError); // writeOneToString
-    sb.append(" rotationError:").append(rotationError); // writeOneToString
+    sb.append(" azimuthError:").append(String.valueOf(azimuthError)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationError:").append(String.valueOf(elevationError)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" rotationError:").append(String.valueOf(rotationError)); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

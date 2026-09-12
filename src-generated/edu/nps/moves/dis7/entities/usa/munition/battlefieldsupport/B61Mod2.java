@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>BATTLEFIELD_SUPPORT</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Ballistic = <code>2</code>; </li>
- *     <li> SubCategory: B61nuclearbomb  = <code>54</code>; </li>
+ *     <li> SubCategory: B61nuclearbombgravity  = <code>54</code>; </li>
  *     <li> Specific: B61Mod2  = <code>3</code>; </li>
  *     <li> Entity type uid: 20202; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@67ecf7ed. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@1dcad16f. </p>
  * @see Country#UNITED_STATES_OF_AMERICA_USA
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class B61Mod2 extends EntityType
         setDomain(Domain.inst(MunitionDomain.BATTLEFIELD_SUPPORT));
 
         setCategory((byte)2); // uid 19971, Ballistic
-        setSubCategory((byte)54); // uid 20199, B61 nuclear bomb
+        setSubCategory((byte)54); // uid 20199, B61 nuclear bomb gravity
         setSpecific((byte)3); // uid 20202, B61 Mod 2
     }
     /** Create a new instance of this final (unmodifiable) class

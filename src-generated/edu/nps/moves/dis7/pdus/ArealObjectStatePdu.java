@@ -422,6 +422,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         uPosition += requesterID.unmarshal(dis);
         uPosition += receivingID.unmarshal(dis);
+        objectLocation.clear();
         for (int idx = 0; idx < numberOfPoints; idx++)
         {
             Vector3Double anX = new Vector3Double();
@@ -508,6 +509,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute receivingID marked as not serialized
         receivingID.unmarshal(byteBuffer);
         // attribute objectLocation marked as not serialized
+        objectLocation.clear();
         for (int idx = 0; idx < numberOfPoints; idx++)
         {
         Vector3Double anX = new Vector3Double();
@@ -566,18 +568,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" objectID:").append(objectID); // writeOneToString
-    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString
-    sb.append(" updateNumber:").append(updateNumber); // writeOneToString
-    sb.append(" forceID:").append(forceID); // writeOneToString
-    sb.append(" modifications:").append(modifications); // writeOneToString
-    sb.append(" objectType:").append(objectType); // writeOneToString
-    sb.append(" specificObjectAppearance:").append(specificObjectAppearance); // writeOneToString
-    sb.append(" generalObjectAppearance:").append(generalObjectAppearance); // writeOneToString
-    sb.append(" requesterID:").append(requesterID); // writeOneToString
-    sb.append(" receivingID:").append(receivingID); // writeOneToString
+    sb.append(" objectID:").append(objectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" referencedObjectID:").append(referencedObjectID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" updateNumber:").append(String.valueOf(updateNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" forceID:").append(forceID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" modifications:").append(modifications); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" objectType:").append(objectType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" specificObjectAppearance:").append(String.valueOf(specificObjectAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" generalObjectAppearance:").append(String.valueOf(generalObjectAppearance)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requesterID:").append(requesterID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" receivingID:").append(receivingID); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" objectLocation: ");
-    objectLocation.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    objectLocation.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

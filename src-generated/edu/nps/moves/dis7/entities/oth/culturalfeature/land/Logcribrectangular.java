@@ -13,19 +13,19 @@ import edu.nps.moves.dis7.pdus.*;
 import edu.nps.moves.dis7.enumerations.*;
 
 /**
- * <p> Entity class <b><code>Logcribrectangular</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
- * <p> <i>Usage:</i> create an instance of this class with <code>Logcribrectangular.createInstance()</code> or <code>new Logcribrectangular()</code>. </p>
+ * <p> Entity class <b><code>LogCribRectangular</code></b> collects multiple enumeration values together to uniquely define this entity. </p>
+ * <p> <i>Usage:</i> create an instance of this class with <code>LogCribRectangular.createInstance()</code> or <code>new LogCribRectangular()</code>. </p>
  * <ul>
  *     <li> Country: Other = <code>0</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Cultural feature = <code>5</code>; </li>
  *     <li> Category: Obstacle = <code>5</code>; </li>
- *     <li> SubCategory: Logcribrectangular  = <code>7</code>; </li>
- *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 21981; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> SubCategory: LogCrib  = <code>7</code>; </li>
+ *     <li> Specific: LogCribRectangular  = <code>0</code>; </li>
+ *     <li> Entity type uid: 37936; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@65a80fdb. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@3c5e4aac. </p>
  * @see Country#OTHER
  * @see EntityKind#CULTURAL_FEATURE
  * @see Domain
@@ -35,22 +35,23 @@ import edu.nps.moves.dis7.enumerations.*;
  * @see SubCategory
 
  */
-public final class Logcribrectangular extends EntityType
+public final class LogCribRectangular extends EntityType
 {
     /** Default constructor */
-    public Logcribrectangular()
+    public LogCribRectangular()
     {
         setCountry(Country.OTHER);
         setEntityKind(EntityKind.CULTURAL_FEATURE);
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)5); // uid 21973, Obstacle
-        setSubCategory((byte)7); // uid 21981, Log crib, rectangular
+        setSubCategory((byte)7); // uid 21981, Log Crib
+        setSpecific((byte)0); // uid 37936, Log Crib, Rectangular
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */
-    public static Logcribrectangular createInstance()
+    public static LogCribRectangular createInstance()
     {
-            return new Logcribrectangular();
+            return new LogCribRectangular();
     }
 }

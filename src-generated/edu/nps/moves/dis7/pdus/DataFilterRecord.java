@@ -206,18 +206,18 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" bitFlags:").append(bitFlags); // writeOneToString
-    sb.append(" GROUND_BURIAL_DEPTH_OFFSET_BIT:").append(GROUND_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString
-    sb.append(" WATER_BURIAL_DEPTH_OFFSET_BIT:").append(WATER_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString
-    sb.append(" SNOW_BURIAL_DEPTH_OFFSET_BIT:").append(SNOW_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString
-    sb.append(" MINE_ORIENTATION_BIT:").append(MINE_ORIENTATION_BIT); // writeOneToString
-    sb.append(" THERMAL_CONSTRAST_BIT:").append(THERMAL_CONSTRAST_BIT); // writeOneToString
-    sb.append(" REFLECTANCE_BIT:").append(REFLECTANCE_BIT); // writeOneToString
-    sb.append(" MINE_EMPLACEMENT_TIME_BIT:").append(MINE_EMPLACEMENT_TIME_BIT); // writeOneToString
-    sb.append(" TRIP_DETONATION_WIRE_BIT:").append(TRIP_DETONATION_WIRE_BIT); // writeOneToString
-    sb.append(" FUSING_BIT:").append(FUSING_BIT); // writeOneToString
-    sb.append(" SCALAR_DETECTION_COEFFICIENT_BIT:").append(SCALAR_DETECTION_COEFFICIENT_BIT); // writeOneToString
-    sb.append(" PAINT_SCHEME_BIT:").append(PAINT_SCHEME_BIT); // writeOneToString
+    sb.append(" bitFlags:").append(String.valueOf(bitFlags)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" GROUND_BURIAL_DEPTH_OFFSET_BIT:").append(GROUND_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" WATER_BURIAL_DEPTH_OFFSET_BIT:").append(WATER_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" SNOW_BURIAL_DEPTH_OFFSET_BIT:").append(SNOW_BURIAL_DEPTH_OFFSET_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" MINE_ORIENTATION_BIT:").append(MINE_ORIENTATION_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" THERMAL_CONSTRAST_BIT:").append(THERMAL_CONSTRAST_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" REFLECTANCE_BIT:").append(REFLECTANCE_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" MINE_EMPLACEMENT_TIME_BIT:").append(MINE_EMPLACEMENT_TIME_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" TRIP_DETONATION_WIRE_BIT:").append(TRIP_DETONATION_WIRE_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" FUSING_BIT:").append(FUSING_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" SCALAR_DETECTION_COEFFICIENT_BIT:").append(SCALAR_DETECTION_COEFFICIENT_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
+    sb.append(" PAINT_SCHEME_BIT:").append(PAINT_SCHEME_BIT); // writeOneToString getAttributeKind()=STATIC_IVAR
 
    return sb.toString();
  }

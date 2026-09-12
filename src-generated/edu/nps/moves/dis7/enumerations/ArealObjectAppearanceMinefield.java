@@ -6,7 +6,7 @@ import edu.nps.moves.dis7.pdus.*;
 
 /**
  * Generated from XML,
- *  UID 239, marshal size 16,
+ *  UID 239, marshal size 32,
  * ArealObjectAppearanceMinefield
  */
 public class ArealObjectAppearanceMinefield extends DisBitSet 
@@ -57,7 +57,7 @@ public class ArealObjectAppearanceMinefield extends DisBitSet
   /** Default constructor */
   public ArealObjectAppearanceMinefield()
   {
-    super(16); // length from bitfield element
+    super(32); // length from bitfield element
   }
 
   /** Default constructor with parameters

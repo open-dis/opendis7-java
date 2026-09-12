@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: MunitionDomain = <code>ANTI_AIR</code>; </li>
  *     <li> Domain: Munition = <code>2</code>; </li>
  *     <li> Category: Guided = <code>1</code>; </li>
- *     <li> SubCategory: LY60  = <code>15</code>; </li>
+ *     <li> SubCategory: CSA6ABGrappleLY60SAM  = <code>15</code>; </li>
  *     <li> Specific: LY60N  = <code>1</code>; </li>
  *     <li> Entity type uid: 21331; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@606b53a3. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@dd20ebc. </p>
  * @see Country#CHINA_PEOPLES_REPUBLIC_OF_CHN
  * @see EntityKind#MUNITION
  * @see Domain
@@ -45,7 +45,7 @@ public final class LY60N extends EntityType
         setDomain(Domain.inst(MunitionDomain.ANTI_AIR));
 
         setCategory((byte)1); // uid 21308, Guided
-        setSubCategory((byte)15); // uid 21330, LY-60
+        setSubCategory((byte)15); // uid 21330, CSA-6A/B Grapple (LY-60) SAM
         setSpecific((byte)1); // uid 21331, LY-60N
     }
     /** Create a new instance of this final (unmodifiable) class

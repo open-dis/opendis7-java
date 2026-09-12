@@ -423,16 +423,16 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" beamDirection:").append(beamDirection); // writeOneToString
-    sb.append(" azimuthBeamwidth:").append(azimuthBeamwidth); // writeOneToString
-    sb.append(" elevationBeamwidth:").append(elevationBeamwidth); // writeOneToString
-    sb.append(" referenceSystem:").append(referenceSystem); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
-    sb.append(" ez:").append(ez); // writeOneToString
-    sb.append(" ex:").append(ex); // writeOneToString
-    sb.append(" phase:").append(phase); // writeOneToString
-    sb.append(" padding3:").append(padding3); // writeOneToString
+    sb.append(" beamDirection:").append(beamDirection); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" azimuthBeamwidth:").append(String.valueOf(azimuthBeamwidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" elevationBeamwidth:").append(String.valueOf(elevationBeamwidth)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" referenceSystem:").append(referenceSystem); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" ez:").append(String.valueOf(ez)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" ex:").append(String.valueOf(ex)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" phase:").append(String.valueOf(phase)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding3:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
 
    return sb.toString();
  }

@@ -20,12 +20,12 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Entity kind: PlatformDomain = <code>LAND</code>; </li>
  *     <li> Domain: Cultural feature = <code>5</code>; </li>
  *     <li> Category: Obstacle = <code>5</code>; </li>
- *     <li> SubCategory: JerseyBarrier  = <code>15</code>; </li>
- *     <li> Specific: null <code>(none)</code>; </li>
- *     <li> Entity type uid: 21989; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> SubCategory: Barrier  = <code>15</code>; </li>
+ *     <li> Specific: JerseyBarrier  = <code>0</code>; </li>
+ *     <li> Entity type uid: 37938; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@1ac25dbb. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@63f2d024. </p>
  * @see Country#OTHER
  * @see EntityKind#CULTURAL_FEATURE
  * @see Domain
@@ -45,7 +45,8 @@ public final class JerseyBarrier extends EntityType
         setDomain(Domain.inst(PlatformDomain.LAND));
 
         setCategory((byte)5); // uid 21973, Obstacle
-        setSubCategory((byte)15); // uid 21989, Jersey Barrier
+        setSubCategory((byte)15); // uid 21989, Barrier
+        setSpecific((byte)0); // uid 37938, Jersey Barrier
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

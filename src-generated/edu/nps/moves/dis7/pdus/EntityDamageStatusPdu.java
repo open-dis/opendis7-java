@@ -263,6 +263,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         numberOfDamageDescription = (short)dis.readUnsignedShort();
         uPosition += 2;
+        damageDescriptionRecords.clear();
         for (int idx = 0; idx < numberOfDamageDescription; idx++)
         {
             DirectedEnergyDamage anX = new DirectedEnergyDamage();
@@ -328,6 +329,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute numberOfDamageDescription marked as not serialized
         numberOfDamageDescription = (short)(byteBuffer.getShort() & 0xFFFF);
         // attribute damageDescriptionRecords marked as not serialized
+        damageDescriptionRecords.clear();
         for (int idx = 0; idx < numberOfDamageDescription; idx++)
         {
         DirectedEnergyDamage anX = new DirectedEnergyDamage();
@@ -379,11 +381,11 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" damagedEntityID:").append(damagedEntityID); // writeOneToString
-    sb.append(" padding1:").append(padding1); // writeOneToString
-    sb.append(" padding2:").append(padding2); // writeOneToString
+    sb.append(" damagedEntityID:").append(damagedEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padding1:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding2:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
     sb.append(" damageDescriptionRecords: ");
-    damageDescriptionRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    damageDescriptionRecords.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

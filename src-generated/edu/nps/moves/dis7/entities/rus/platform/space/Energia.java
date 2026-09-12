@@ -19,19 +19,19 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Country: Russia (RUS) = <code>222</code>; </li>
  *     <li> Entity kind: PlatformDomain = <code>SPACE</code>; </li>
  *     <li> Domain: Platform = <code>1</code>; </li>
- *     <li> Category: Unmanned = <code>2</code>; </li>
- *     <li> SubCategory: Illuminatingsatellite  = <code>11</code>; </li>
- *     <li> Specific: Energia  = <code>2</code>; </li>
- *     <li> Entity type uid: 14878; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Category: Satellite - Inert (Target/Reflector/Calibration) = <code>15</code>; </li>
+ *     <li> SubCategory: Energia  = <code>2</code>; </li>
+ *     <li> Specific: null <code>(none)</code>; </li>
+ *     <li> Entity type uid: 38586; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@43d3aba5. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SubCategoryElem@748ac6f3. </p>
  * @see Country#RUSSIA_RUS
  * @see EntityKind#PLATFORM
  * @see Domain
  * @see PlatformDomain
  * @see Category
- * @see Unmanned
+ * @see SatelliteInertTargetReflectorCalibration
  * @see SubCategory
 
  */
@@ -44,9 +44,8 @@ public final class Energia extends EntityType
         setEntityKind(EntityKind.PLATFORM);
         setDomain(Domain.inst(PlatformDomain.SPACE));
 
-        setCategory((byte)2); // uid 14850, Unmanned
-        setSubCategory((byte)11); // uid 14876, Illuminating satellite
-        setSpecific((byte)2); // uid 14878, Energia
+        setCategory((byte)15); // uid 38584, Satellite - Inert (Target/Reflector/Calibration)
+        setSubCategory((byte)2); // uid 38586, Energia
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

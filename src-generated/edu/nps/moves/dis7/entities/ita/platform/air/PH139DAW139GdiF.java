@@ -21,11 +21,11 @@ import edu.nps.moves.dis7.enumerations.*;
  *     <li> Domain: Platform = <code>1</code>; </li>
  *     <li> Category: Utility Helicopter = <code>21</code>; </li>
  *     <li> SubCategory: AgustaA139AW139  = <code>1</code>; </li>
- *     <li> Specific: PH139DAW139GdiF  = <code>7</code>; </li>
- *     <li> Entity type uid: 35712; </li>
- *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v35 (2025-04-27)</a>. </li>
+ *     <li> Specific: PH139  = <code>7</code>; </li>
+ *     <li> Entity type uid: 38455; </li>
+ *     <li> Online document reference: <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/specifications/README.md" target="_blank">SISO-REF-010-v37 (2026-05-25)</a>. </li>
  * </ul>
- * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$SpecificElem@315df4bb. </p>
+ * <p> Full name: edu.nps.moves.dis7.source.generator.entityTypes.GenerateEntityTypes$ExtraElem@3b0f7d9d. </p>
  * @see Country#ITALY_ITA
  * @see EntityKind#PLATFORM
  * @see Domain
@@ -46,7 +46,8 @@ public final class PH139DAW139GdiF extends EntityType
 
         setCategory((byte)21); // uid 18315, Utility Helicopter
         setSubCategory((byte)1); // uid 18316, Agusta A139 (AW139)
-        setSpecific((byte)7); // uid 35712, PH-139D (AW139GdiF)
+        setSpecific((byte)7); // uid 35712, PH-139
+        setExtra((byte)4); // uid 38455, PH-139D (AW139GdiF)
     }
     /** Create a new instance of this final (unmodifiable) class
       * @return copy of class for use as data */

@@ -409,6 +409,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += minefieldOrientation.unmarshal(dis);
         uPosition += appearance.unmarshal(dis);
         uPosition += protocolMode.unmarshal(dis);
+        perimeterPoints.clear();
         for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
             Vector2Float anX = new Vector2Float();
@@ -416,6 +417,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
             perimeterPoints.add(anX);
         }
 
+        mineType.clear();
         for (int idx = 0; idx < numberOfMineTypes; idx++)
         {
             EntityType anX = new EntityType();
@@ -506,6 +508,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute protocolMode marked as not serialized
         protocolMode.unmarshal(byteBuffer);
         // attribute perimeterPoints marked as not serialized
+        perimeterPoints.clear();
         for (int idx = 0; idx < numberOfPerimeterPoints; idx++)
         {
         Vector2Float anX = new Vector2Float();
@@ -514,6 +517,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         }
 
         // attribute mineType marked as not serialized
+        mineType.clear();
         for (int idx = 0; idx < numberOfMineTypes; idx++)
         {
         EntityType anX = new EntityType();
@@ -571,21 +575,21 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" minefieldID:").append(minefieldID); // writeOneToString
-    sb.append(" minefieldSequence:").append(minefieldSequence); // writeOneToString
-    sb.append(" forceID:").append(forceID); // writeOneToString
-    sb.append(" minefieldType:").append(minefieldType); // writeOneToString
-    sb.append(" minefieldLocation:").append(minefieldLocation); // writeOneToString
-    sb.append(" minefieldOrientation:").append(minefieldOrientation); // writeOneToString
-    sb.append(" appearance:").append(appearance); // writeOneToString
-    sb.append(" protocolMode:").append(protocolMode); // writeOneToString
+    sb.append(" minefieldID:").append(minefieldID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" minefieldSequence:").append(String.valueOf(minefieldSequence)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" forceID:").append(forceID); // writeOneToString getAttributeKind()=SISO_ENUM
+    sb.append(" minefieldType:").append(minefieldType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" minefieldLocation:").append(minefieldLocation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" minefieldOrientation:").append(minefieldOrientation); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" appearance:").append(appearance); // writeOneToString getAttributeKind()=SISO_BITFIELD
+    sb.append(" protocolMode:").append(protocolMode); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" perimeterPoints: ");
-    perimeterPoints.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    perimeterPoints.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" mineType: ");
-    mineType.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    mineType.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

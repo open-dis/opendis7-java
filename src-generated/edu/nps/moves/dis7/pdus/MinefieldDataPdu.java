@@ -704,6 +704,7 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
        }
 
        padTo32 = new byte[Align.to32bits(dos)];
+       Arrays.fill(padTo32, (byte) 0); // reset all bytes to zero
 
        for (int idx = 0; idx < mineLocation.size(); idx++)
        {
@@ -768,11 +769,13 @@ public synchronized void marshal(DataOutputStream dos) throws Exception
        }
 
        padTo32_2 = new byte[Align.to32bits(dos)];
+       Arrays.fill(padTo32_2, (byte) 0); // reset all bytes to zero
 
        for (int idx = 0; idx < numberOfTripDetonationWires.length; idx++)
            dos.writeByte(numberOfTripDetonationWires[idx]);
 
        padTo32_3 = new byte[Align.to32bits(dos)];
+       Arrays.fill(padTo32_3, (byte) 0); // reset all bytes to zero
 
        for (int idx = 0; idx < numberOfVertices.length; idx++)
            dos.writeByte(numberOfVertices[idx]);
@@ -818,6 +821,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 1;
         uPosition += dataFilter.unmarshal(dis);
         uPosition += mineType.unmarshal(dis);
+        sensorTypes.clear();
         for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
             MinefieldSensorType anX = new MinefieldSensorType();
@@ -827,6 +831,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
 
         padTo32 = new byte[Align.from32bits(uPosition,dis)];
         uPosition += padTo32.length;
+        mineLocation.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             Vector3Float anX = new Vector3Float();
@@ -843,6 +848,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
             snowBurialDepthOffset[idx] = dis.readFloat();
         uPosition += (snowBurialDepthOffset.length * 4);
+        mineOrientation.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             EulerAngles anX = new EulerAngles();
@@ -856,6 +862,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         for (int idx = 0; idx < reflectance.length; idx++)
             reflectance[idx] = dis.readFloat();
         uPosition += (reflectance.length * 4);
+        mineEmplacementTime.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MineEmplacementTime anX = new MineEmplacementTime();
@@ -866,6 +873,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         for (int idx = 0; idx < mineEntityNumber.length; idx++)
             mineEntityNumber[idx] = dis.readShort();
         uPosition += (mineEntityNumber.length * 2);
+        fusing.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataFusing anX = new MinefieldDataFusing();
@@ -876,6 +884,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
             scalarDetectionCoefficient[idx] = dis.readByte();
         uPosition += (scalarDetectionCoefficient.length * 1);
+        paintScheme.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
             MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
@@ -1046,6 +1055,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute mineType marked as not serialized
         mineType.unmarshal(byteBuffer);
         // attribute sensorTypes marked as not serialized
+        sensorTypes.clear();
         for (int idx = 0; idx < numberOfSensorTypes; idx++)
         {
         MinefieldSensorType anX = new MinefieldSensorType();
@@ -1056,6 +1066,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute padTo32 marked as not serialized
         padTo32 = new byte[Align.from32bits(byteBuffer)];
         // attribute mineLocation marked as not serialized
+        mineLocation.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
         Vector3Float anX = new Vector3Float();
@@ -1073,6 +1084,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         for (int idx = 0; idx < snowBurialDepthOffset.length; idx++)
             snowBurialDepthOffset[idx] = byteBuffer.getFloat();
         // attribute mineOrientation marked as not serialized
+        mineOrientation.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
         EulerAngles anX = new EulerAngles();
@@ -1087,6 +1099,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         for (int idx = 0; idx < reflectance.length; idx++)
             reflectance[idx] = byteBuffer.getFloat();
         // attribute mineEmplacementTime marked as not serialized
+        mineEmplacementTime.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
         MineEmplacementTime anX = new MineEmplacementTime();
@@ -1098,6 +1111,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         for (int idx = 0; idx < mineEntityNumber.length; idx++)
             mineEntityNumber[idx] = byteBuffer.getShort();
         // attribute fusing marked as not serialized
+        fusing.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
         MinefieldDataFusing anX = new MinefieldDataFusing();
@@ -1109,6 +1123,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         for (int idx = 0; idx < scalarDetectionCoefficient.length; idx++)
             scalarDetectionCoefficient[idx] = byteBuffer.get();
         // attribute paintScheme marked as not serialized
+        paintScheme.clear();
         for (int idx = 0; idx < numberOfMinesInThisPdu; idx++)
         {
         MinefieldDataPaintScheme anX = new MinefieldDataPaintScheme();
@@ -1171,61 +1186,70 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(groundBurialDepthOffset[idx] == rhs.groundBurialDepthOffset[idx])) return false;
+         if (idx < groundBurialDepthOffset.length)
+             if(!(groundBurialDepthOffset[idx] == rhs.groundBurialDepthOffset[idx]))
+                 return false;
      }
-
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(waterBurialDepthOffset[idx] == rhs.waterBurialDepthOffset[idx])) return false;
+         if (idx < waterBurialDepthOffset.length)
+             if(!(waterBurialDepthOffset[idx] == rhs.waterBurialDepthOffset[idx]))
+                 return false;
      }
-
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(snowBurialDepthOffset[idx] == rhs.snowBurialDepthOffset[idx])) return false;
+         if (idx < snowBurialDepthOffset.length)
+             if(!(snowBurialDepthOffset[idx] == rhs.snowBurialDepthOffset[idx]))
+                 return false;
      }
-
      if( ! Objects.equals(mineOrientation, rhs.mineOrientation) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(thermalContrast[idx] == rhs.thermalContrast[idx])) return false;
+         if (idx < thermalContrast.length)
+             if(!(thermalContrast[idx] == rhs.thermalContrast[idx]))
+                 return false;
      }
-
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(reflectance[idx] == rhs.reflectance[idx])) return false;
+         if (idx < reflectance.length)
+             if(!(reflectance[idx] == rhs.reflectance[idx]))
+                 return false;
      }
-
      if( ! Objects.equals(mineEmplacementTime, rhs.mineEmplacementTime) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(mineEntityNumber[idx] == rhs.mineEntityNumber[idx])) return false;
+         if (idx < mineEntityNumber.length)
+             if(!(mineEntityNumber[idx] == rhs.mineEntityNumber[idx]))
+                 return false;
      }
-
      if( ! Objects.equals(fusing, rhs.fusing) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(scalarDetectionCoefficient[idx] == rhs.scalarDetectionCoefficient[idx])) return false;
+         if (idx < scalarDetectionCoefficient.length)
+             if(!(scalarDetectionCoefficient[idx] == rhs.scalarDetectionCoefficient[idx]))
+                 return false;
      }
-
      if( ! Objects.equals(paintScheme, rhs.paintScheme) ) return false;
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(numberOfTripDetonationWires[idx] == rhs.numberOfTripDetonationWires[idx])) return false;
+         if (idx < numberOfTripDetonationWires.length)
+             if(!(numberOfTripDetonationWires[idx] == rhs.numberOfTripDetonationWires[idx]))
+                 return false;
      }
-
 
      for (int idx = 0; idx < 0; idx++)
      {
-          if(!(numberOfVertices[idx] == rhs.numberOfVertices[idx])) return false;
+         if (idx < numberOfVertices.length)
+             if(!(numberOfVertices[idx] == rhs.numberOfVertices[idx]))
+                 return false;
      }
-
     return super.equalsImpl(rhs);
  }
 
@@ -1235,63 +1259,54 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" minefieldID:").append(minefieldID); // writeOneToString
-    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString
-    sb.append(" minefieldSequenceNumbeer:").append(minefieldSequenceNumbeer); // writeOneToString
-    sb.append(" requestID:").append(requestID); // writeOneToString
-    sb.append(" pduSequenceNumber:").append(pduSequenceNumber); // writeOneToString
-    sb.append(" numberOfPdus:").append(numberOfPdus); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" dataFilter:").append(dataFilter); // writeOneToString
-    sb.append(" mineType:").append(mineType); // writeOneToString
-    sb.append(" padTo32:").append(padTo32); // writeOneToString
-    sb.append(" groundBurialDepthOffset:");
-    sb.append(Arrays.toString(groundBurialDepthOffset)); // writePrimitiveList
-    sb.append(" waterBurialDepthOffset:");
-    sb.append(Arrays.toString(waterBurialDepthOffset)); // writePrimitiveList
-    sb.append(" snowBurialDepthOffset:");
-    sb.append(Arrays.toString(snowBurialDepthOffset)); // writePrimitiveList
-    sb.append(" thermalContrast:");
-    sb.append(Arrays.toString(thermalContrast)); // writePrimitiveList
-    sb.append(" reflectance:");
-    sb.append(Arrays.toString(reflectance)); // writePrimitiveList
-    sb.append(" mineEntityNumber:");
-    sb.append(Arrays.toString(mineEntityNumber)); // writePrimitiveList
-    sb.append(" scalarDetectionCoefficient:");
-    sb.append(Arrays.toString(scalarDetectionCoefficient)); // writePrimitiveList
-    sb.append(" padTo32_2:").append(padTo32_2); // writeOneToString
-    sb.append(" numberOfTripDetonationWires:");
-    sb.append(Arrays.toString(numberOfTripDetonationWires)); // writePrimitiveList
-    sb.append(" padTo32_3:").append(padTo32_3); // writeOneToString
-    sb.append(" numberOfVertices:");
-    sb.append(Arrays.toString(numberOfVertices)); // writePrimitiveList
+    sb.append(" minefieldID:").append(minefieldID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" requestingEntityID:").append(requestingEntityID); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" minefieldSequenceNumbeer:").append(String.valueOf(minefieldSequenceNumbeer)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" requestID:").append(String.valueOf(requestID)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" pduSequenceNumber:").append(String.valueOf(pduSequenceNumber)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" numberOfPdus:").append(String.valueOf(numberOfPdus)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" dataFilter:").append(dataFilter); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" mineType:").append(mineType); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" padTo32:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO32
+    sb.append(" groundBurialDepthOffset:");    sb.append(Arrays.toString(groundBurialDepthOffset)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" waterBurialDepthOffset:");    sb.append(Arrays.toString(waterBurialDepthOffset)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" snowBurialDepthOffset:");    sb.append(Arrays.toString(snowBurialDepthOffset)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" thermalContrast:");    sb.append(Arrays.toString(thermalContrast)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" reflectance:");    sb.append(Arrays.toString(reflectance)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" mineEntityNumber:");    sb.append(Arrays.toString(mineEntityNumber)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" scalarDetectionCoefficient:");    sb.append(Arrays.toString(scalarDetectionCoefficient)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padTo32_2:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO32
+    sb.append(" numberOfTripDetonationWires:");    sb.append(Arrays.toString(numberOfTripDetonationWires)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
+    sb.append(" padTo32_3:").append("(unused)"); // writeOneToString getAttributeKind()=PADTO32
+    sb.append(" numberOfVertices:");    sb.append(Arrays.toString(numberOfVertices)); // writePrimitiveList getAttributeKind()=PRIMITIVE_LIST
     sb.append(" sensorTypes: ");
-    sensorTypes.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    sensorTypes.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" mineLocation: ");
-    mineLocation.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    mineLocation.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" mineOrientation: ");
-    mineOrientation.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    mineOrientation.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" mineEmplacementTime: ");
-    mineEmplacementTime.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    mineEmplacementTime.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" fusing: ");
-    fusing.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    fusing.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset
     sb.append(" paintScheme: ");
-    paintScheme.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    paintScheme.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

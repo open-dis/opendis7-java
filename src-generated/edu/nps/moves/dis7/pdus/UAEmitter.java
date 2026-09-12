@@ -211,6 +211,7 @@ public synchronized int unmarshal(DataInputStream dis) throws Exception
         uPosition += 2;
         uPosition += acousticEmitter.unmarshal(dis);
         uPosition += location.unmarshal(dis);
+        beams.clear();
         for (int idx = 0; idx < numberOfBeams; idx++)
         {
             UABeam anX = new UABeam();
@@ -274,6 +275,7 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
         // attribute location marked as not serialized
         location.unmarshal(byteBuffer);
         // attribute beams marked as not serialized
+        beams.clear();
         for (int idx = 0; idx < numberOfBeams; idx++)
         {
         UABeam anX = new UABeam();
@@ -331,12 +333,12 @@ public synchronized int unmarshal(java.nio.ByteBuffer byteBuffer) throws Excepti
     StringBuilder sb  = new StringBuilder();
     StringBuilder sb2 = new StringBuilder();
     sb.append(getClass().getSimpleName());
-    sb.append(" systemDataLength:").append(systemDataLength); // writeOneToString
-    sb.append(" padding:").append(padding); // writeOneToString
-    sb.append(" acousticEmitter:").append(acousticEmitter); // writeOneToString
-    sb.append(" location:").append(location); // writeOneToString
+    sb.append(" systemDataLength:").append(String.valueOf(systemDataLength)); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" padding:").append("(unused)"); // writeOneToString getAttributeKind()=PRIMITIVE
+    sb.append(" acousticEmitter:").append(acousticEmitter); // writeOneToString getAttributeKind()=CLASSREF
+    sb.append(" location:").append(location); // writeOneToString getAttributeKind()=CLASSREF
     sb.append(" beams: ");
-    beams.forEach(r->{ sb2.append(" ").append(r);}); // writeList
+    beams.forEach(r->{ sb2.append(" ").append(r);}); // writeList getAttributeKind()=OBJECT_LIST
     sb.append(sb2.toString().trim());
     // https://stackoverflow.com/questions/2242471/clearing-a-string-buffer-builder-after-loop
     sb2.setLength(0); // reset

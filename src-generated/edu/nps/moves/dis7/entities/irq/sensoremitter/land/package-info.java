@@ -1,5 +1,5 @@
 /**
- Iraq (IRQ) SENSOR_EMITTER LAND typed classes for world entities defined by SISO-REF-010-v35 (2025-04-27) enumerations.
+ Iraq (IRQ) SENSOR_EMITTER LAND typed classes for world entities defined by SISO-REF-010-v37 (2026-05-25) enumerations.
 
  * <p> Online references: </p>
  * <ul>
