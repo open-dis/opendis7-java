@@ -3,6 +3,11 @@ init:
 Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
 Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
+1 warning
 compile:
 compile-test:
 clean.pduLog:
@@ -43,6 +48,7 @@ Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog38.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog39.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog4.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog40.dislog
+Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog41.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog5.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog6.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog7.dislog
@@ -53,21 +59,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1969-26-12 12:26:16 = 2640543507 = -1654423789 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1969-26-12 12:26:23 = 2640550665 = -1654416631 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1969-26-12 12:26:23 = 2640550665
-DisTime.getCurrentDisRelativeTimestamp()          = 1969-26-12 12:26:24 = 2640551856
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-44-15 22:44:35 = 1320275928
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-45-24 20:45:47 = 2090747129 = 2090747129 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1970-45-24 20:45:51 = 2090751901 = 2090751901 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-45-24 20:45:51 = 2090753095
+DisTime.getCurrentDisRelativeTimestamp()          = 1970-45-24 20:45:54 = 2090754286
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-22-12 18:22:57 = 1045377143
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:53.369800200, 2026-02-04T22:36:53.372748100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:53.372748100, 2026-02-04T22:36:53.372748100Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:53.372748100, 2026-02-04T22:36:53.372748100Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.461228900, 2026-09-12T16:29:12.462228300Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.462228300, 2026-09-12T16:29:12.462228300Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.462228300, 2026-09-12T16:29:12.462228300Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:54.373777500, 2026-02-04T22:36:54.373777500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:54.373777500, 2026-02-04T22:36:54.373777500Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-02-04T14:36:54.373777500, 2026-02-04T22:36:54.373777500Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -75,9 +81,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-02-04T22:36:54.374801600Z, 2026-02-04T22:36:54.374801600Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T16:29:13.464231300Z, 2026-09-12T16:29:13.464231300Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-02-04T22:36:54.374801600Z, 2026-02-04T22:36:55.378878100Z, 1004 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T16:29:13.464231300Z, 2026-09-12T16:29:14.467808400Z, 1003 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -96,28 +102,8 @@ DisTime.convertToInstant(timeSeconds)        = 1970-01-01T01:23:00Z
 *** EventReportPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 21 EVENT_REPORT, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 21 EVENT_REPORT, size 64 bytes)
-String mismatch:
-================================================================
-     newEspdu=EventReportPdu eventType:EventReportEventType: 0 OTHER padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@e15b7e8
-================================================================
-receivedEspdu=EventReportPdu eventType:EventReportEventType: 0 OTHER padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@1b2abca6
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@6392827e
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 21 EVENT_REPORT, size 72 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 21 EVENT_REPORT, size 72 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -326,29 +312,9 @@ PduRecorder.stop() closing recorder log file:
 *** ActionRequestPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 16 ACTION_REQUEST, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 16 ACTION_REQUEST, size 64 bytes)
-String mismatch:
-================================================================
-     newEspdu=ActionRequestPdu requestID:6001 actionID:ActionRequestActionID: 0 OTHER fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@46cdf8bd
-================================================================
-receivedEspdu=ActionRequestPdu requestID:6001 actionID:ActionRequestActionID: 0 OTHER fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@f0c8a99
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@740cae06
-================================================================
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -369,7 +335,9 @@ PduRecorder.stop() closing recorder log file:
 *** LiveEntityDetonationPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -543,9 +511,9 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 33 AGGREGATE_STATE, size 136 bytes)
 String mismatch:
 ================================================================
-     newEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49] dimensions:Vector3Float x:100.0 y:200.0 z:50.0 orientation:Vector3Float x:0.0 y:0.0 z:0.0 centerOfMass:Vector3Double x:1000.0 y:2000.0 z:3000.0 velocity:Vector3Float x:10.0 y:5.0 z:0.0 padTo32:[B@7bba5817 aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
+     newEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49] dimensions:Vector3Float x:100.0 y:200.0 z:50.0 orientation:Vector3Float x:0.0 y:0.0 z:0.0 centerOfMass:Vector3Double x:1000.0 y:2000.0 z:3000.0 velocity:Vector3Float x:10.0 y:5.0 z:0.0 padTo32:(unused) aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
 ================================================================
-receivedEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49, 66, -56, 0, 0, 67, 72, 0, 0, 66, 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] dimensions:Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39 orientation:Vector3Float x:0.0 y:5.937537E-39 z:0.0 centerOfMass:Vector3Double x:1.90521949302079E-307 y:0.0 z:0.0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 padTo32:[B@742ff096 aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
+receivedEspdu=AggregateStatePdu aggregateID:AggregateIdentifier simulationAddress:SimulationAddress site:1 application:2 aggregateID:100 forceID:ForceID 1 FRIENDLY aggregateState:AggregateStateAggregateState 1 AGGREGATED aggregateType:AggregateType aggregateKind:AggregateStateAggregateKind 1 MILITARY_HIERARCHY domain:PlatformDomain 1 LAND country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subcategory:AggregateStateSubcategory 0 OTHER specificInfo:AggregateStateSpecific 0 NO_HEADQUARTERS extra:0 formation:AggregateStateFormation: 2 VEE aggregateMarking:AggregateMarking characterSet:EntityMarkingCharacterSet 0 UNUSED characters:[84, 101, 115, 116, 65, 103, 103, 49, 66, -56, 0, 0, 67, 72, 0, 0, 66, 72, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] dimensions:Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39 orientation:Vector3Float x:0.0 y:5.937537E-39 z:0.0 centerOfMass:Vector3Double x:1.90521949302079E-307 y:0.0 z:0.0 velocity:Vector3Float x:0.0 y:0.0 z:0.0 padTo32:(unused) aggregateIDList:  entityIDList:  silentAggregateSystemList:  silentEntitySystemList:  variableDatumList: 
 ================================================================
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
@@ -580,12 +548,8 @@ Name: edu.nps.moves.dis7.objectTypes.LinearObject.Culturalfeature.TracksTire.Tra
 *** MinefieldDataPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 39 MINEFIELD_DATA, size 44 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 39 MINEFIELD_DATA, size 44 bytes)
-String mismatch:
-================================================================
-     newEspdu=MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@72035809 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@909217e numberOfTripDetonationWires:[] padTo32_3:[B@18271936 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: 
-================================================================
-receivedEspdu=MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@606e4010 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@8458f04 numberOfTripDetonationWires:[] padTo32_3:[B@48075da3 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: 
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 39 MINEFIELD_DATA, size 44 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 39 MINEFIELD_DATA, size 44 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -607,6 +571,8 @@ PduRecorder.stop() closing recorder log file:
 *** LiveEntityFirePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 49 LIVE_ENTITY_FIRE, size 67 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 49 LIVE_ENTITY_FIRE, size 67 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 49 LIVE_ENTITY_FIRE, size 67 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 49 LIVE_ENTITY_FIRE, size 67 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -705,12 +671,8 @@ edu.nps.moves.dis7.test.FixedAndVariableDatumRoundTripTest tearDownClass()
 *** ResupplyReceivedPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 07 RESUPPLY_RECEIVED, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 07 RESUPPLY_RECEIVED, size 40 bytes)
-String mismatch:
-================================================================
-     newEspdu=ResupplyReceivedPdu receivingEntityID:EntityID siteID:1 applicationID:2 entityID:3 supplyingEntityID:EntityID siteID:4 applicationID:5 entityID:6 padding1:0 padding2:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0
-================================================================
-receivedEspdu=ResupplyReceivedPdu receivingEntityID:EntityID siteID:1 applicationID:2 entityID:3 supplyingEntityID:EntityID siteID:4 applicationID:5 entityID:6 padding1:0 padding2:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0 SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 07 RESUPPLY_RECEIVED, size 52 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 07 RESUPPLY_RECEIVED, size 52 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -902,28 +864,8 @@ PduRecorder.stop() closing recorder log file:
 *** ActionResponsePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 17 ACTION_RESPONSE, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 17 ACTION_RESPONSE, size 64 bytes)
-String mismatch:
-================================================================
-     newEspdu=ActionResponsePdu requestID:7001 requestStatus:ActionResponseRequestStatus: 0 OTHER fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[10, 20, 30, 40, 50, 60, 70, 80]
- padding: [B@37911f88
-================================================================
-receivedEspdu=ActionResponsePdu requestID:7001 requestStatus:ActionResponseRequestStatus: 0 OTHER fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[10, 20, 30, 40, 50, 60, 70, 80]
- padding: [B@6f1c29b7
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[10, 20, 30, 40, 50, 60, 70, 80]
- padding: [B@4d6025c5
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 17 ACTION_RESPONSE, size 64 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 17 ACTION_RESPONSE, size 64 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -947,7 +889,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 56 ACTION_REQUEST_RELIABLE, size 44 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 56 ACTION_REQUEST_RELIABLE, size 44 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 56 ACTION_REQUEST_RELIABLE, size 44 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1099,8 +1041,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 30] DisPduType 21 EVENT_REPORT, size 40 bytes)
@@ -1177,8 +1119,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 65] DisPduType 13 START_RESUME, size 44 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 66] DisPduType 53 START_RESUME_RELIABLE, size 48 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 66] DisPduType 53 START_RESUME_RELIABLE, size 48 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 68] DisPduType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 68] DisPduType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 69] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
@@ -1260,6 +1202,8 @@ PduRecorder.stop() closing recorder log file:
 *** ArticulatedPartsPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 48 ARTICULATED_PARTS, size 17 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 48 ARTICULATED_PARTS, size 17 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 48 ARTICULATED_PARTS, size 17 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 48 ARTICULATED_PARTS, size 17 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -1323,7 +1267,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1409,7 +1353,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1370331986
+Timestamp: -1910813056
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -1430,7 +1374,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1370331986
+Timestamp: -1910813056
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -1476,7 +1420,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1567,12 +1511,8 @@ PduRecorder.stop() closing recorder log file:
 *** ResupplyOfferPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 06 RESUPPLY_OFFER, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 06 RESUPPLY_OFFER, size 40 bytes)
-String mismatch:
-================================================================
-     newEspdu=ResupplyOfferPdu receivingEntityID:EntityID siteID:1 applicationID:2 entityID:3 supplyingEntityID:EntityID siteID:4 applicationID:5 entityID:6 padding1:0 padding2:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0
-================================================================
-receivedEspdu=ResupplyOfferPdu receivingEntityID:EntityID siteID:1 applicationID:2 entityID:3 supplyingEntityID:EntityID siteID:4 applicationID:5 entityID:6 padding1:0 padding2:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0 SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 06 RESUPPLY_OFFER, size 52 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 06 RESUPPLY_OFFER, size 52 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -1611,8 +1551,8 @@ Writing X3D LineSet
 *** PointObjectStatePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
-[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 43 POINT_OBJECT_STATE, size 91 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -1701,8 +1641,10 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
 [PduRecorder PduRecorder] listening to IP address 239.1.2.3 on port 3000
 *** IntercomSignalPduTest testMultiplePdus()
-[DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 31 INTERCOM_SIGNAL, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 31 INTERCOM_SIGNAL, size 40 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 31 INTERCOM_SIGNAL, size 40 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 31 INTERCOM_SIGNAL, size 40 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 31 INTERCOM_SIGNAL, size 40 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -1726,7 +1668,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1796,7 +1738,7 @@ No corresponding enumeration found for value 0 of enum AcknowledgeAcknowledgeFla
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 55 ACKNOWLEDGE_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 55 ACKNOWLEDGE_RELIABLE, size 32 bytes)
 No corresponding enumeration found for value 0 of enum AcknowledgeAcknowledgeFlag
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2179,28 +2121,8 @@ PduRecorder.stop() closing recorder log file:
 *** SetDataPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 19 SET_DATA, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 19 SET_DATA, size 64 bytes)
-String mismatch:
-================================================================
-     newEspdu=SetDataPdu requestID:10001 padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[11, 22, 33, 44, 55, 66, 77, 88]
- padding: [B@335b5620
-================================================================
-receivedEspdu=SetDataPdu requestID:10001 padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[11, 22, 33, 44, 55, 66, 77, 88]
- padding: [B@29a0cdb
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[11, 22, 33, 44, 55, 66, 77, 88]
- padding: [B@32a68f4f
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 19 SET_DATA, size 64 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 19 SET_DATA, size 64 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2220,8 +2142,8 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
 [PduRecorder PduRecorder] listening to IP address 239.1.2.3 on port 3000
 *** EntityStateUpdatePduTest testMultiplePdus()
-[DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -2350,6 +2272,8 @@ PduRecorder.stop() closing recorder log file:
 *** AppearancePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 47 APPEARANCE, size 67 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 47 APPEARANCE, size 67 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 47 APPEARANCE, size 67 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 47 APPEARANCE, size 67 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2390,6 +2314,7 @@ PduRecorder.stop() closing recorder log file:
 *** SimulationManagerTest testEntityListManagement()
 [SimulationManager] addEntity() unable to send CreateEntityPdu since no disThreadedNetworkInterface found
 *** SimulationManagerTest testAddEntityById()
+[debug] SimulationManagerTest: new SimulationManager default sm.getEntityRecordList().size()=1
 *** SimulationManagerTest testRecordTypeSetters()
 *** SimulationManagerTest testHostListManagement()
 *** SimulationManagerTest testClearAll()
@@ -2420,16 +2345,16 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass()
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
-[DisThreadedNetworkInterface] [sending  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [receipt  1] DisPduType 22 COMMENT, size 32 bytes)
+[DisThreadedNetworkInterface] [sending  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  4] DisPduType 22 COMMENT, size 128 bytes)
-[DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
@@ -2461,12 +2386,8 @@ edu.nps.moves.dis7.test.CommentPdusTest tearDownClass()
 *** ServiceRequestPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 05 SERVICE_REQUEST, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 05 SERVICE_REQUEST, size 40 bytes)
-String mismatch:
-================================================================
-     newEspdu=ServiceRequestPdu requestingEntityID:EntityID siteID:1 applicationID:2 entityID:3 servicingEntityID:EntityID siteID:4 applicationID:5 entityID:6 serviceTypeRequested:ServiceRequestServiceTypeRequested 1 RESUPPLY padding1:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0
-================================================================
-receivedEspdu=ServiceRequestPdu requestingEntityID:EntityID siteID:1 applicationID:2 entityID:3 servicingEntityID:EntityID siteID:4 applicationID:5 entityID:6 serviceTypeRequested:ServiceRequestServiceTypeRequested 1 RESUPPLY padding1:0 supplies: SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0 SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 05 SERVICE_REQUEST, size 40 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 05 SERVICE_REQUEST, size 40 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2494,29 +2415,9 @@ PduRecorder.stop() closing recorder log file:
 *** DataQueryPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 18 DATA_QUERY, size 56 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 18 DATA_QUERY, size 56 bytes)
-createLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalString mismatch:
-================================================================
-     newEspdu=DataQueryPdu requestID:9001 timeInterval:5000 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 0
- variableDatumValue: 
-[]
- padding: [B@2ea6e30c
-================================================================
-receivedEspdu=DataQueryPdu requestID:9001 timeInterval:5000 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 0
- variableDatumValue: 
-[]
- padding: [B@6138e79a
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 0
- variableDatumValue: 
-[]
- padding: [B@2dcd168a
-================================================================
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+createLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonal[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 18 DATA_QUERY, size 56 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 18 DATA_QUERY, size 56 bytes)
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2537,6 +2438,8 @@ PduRecorder.stop() closing recorder log file:
 *** TSPIPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2556,30 +2459,11 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
 [PduRecorder PduRecorder] listening to IP address 239.1.2.3 on port 3000
 *** DataPduTest testMultiplePdus()
+*** trace: dataPdu.getPadding() = '0'
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 20 DATA, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 20 DATA, size 64 bytes)
-String mismatch:
-================================================================
-     newEspdu=DataPdu requestID:8001 padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@531f4093
-================================================================
-receivedEspdu=DataPdu requestID:8001 padding1:0 fixedDatums: FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55 FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55 variableDatums: VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@62ef27a8
- VariableDatum:
- variableDatumID: VariableRecordType: 1 ENTITY_ID_LIST
- variableDatumLength: 64
- variableDatumValue: 
-[1, 2, 3, 4, 5, 6, 7, 8]
- padding: [B@6436a7db
-================================================================
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 20 DATA, size 64 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 20 DATA, size 64 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2721,8 +2605,8 @@ PduRecorder.stop() closing recorder log file:
 *** EntityStatePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 01 ENTITY_STATE EspduTest1 , size 144 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 01 ENTITY_STATE EspduTest1 , size 144 bytes)
-[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2735,7 +2619,7 @@ PduRecorder.stop() closing recorder log file:
 ?
 ?? JUnit Jupiter ?
 ?  ?? EventReportPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? InformationOperationsActionPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? Null Fields Entity Marshall Test ?
@@ -2792,9 +2676,9 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testEquality() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? ActionRequestPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? LiveEntityDetonationPduTest ?
-?  ?  ?? testMultiplePdus() ? class edu.nps.moves.dis7.pdus.LEDetonationPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.LEDetonationPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
+?  ?  ?? testMultiplePdus() ?
 ?  ?? EntityMarkingTest ?
 ?  ?  ?? testMarshalUnmarshalDataStream() ?
 ?  ?  ?? testSetCharacters() ?
@@ -2830,7 +2714,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testEquality() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? AggregateStatePduTest ?
-?  ?  ?? testMultiplePdus() ? Index 8 out of bounds for length 8
+?  ?  ?? testMultiplePdus() ? mismatched Dimensions ==> expected: <Vector3Float x:100.0 y:200.0 z:50.0> but was: <Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39>
 ?  ?? DeadReckoningParametersTest ?
 ?  ?  ?? testMarshalUnmarshalDataStream() ?
 ?  ?  ?? testSetAlgorithm() ?
@@ -2841,9 +2725,9 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testGoodMarshall() ?
 ?  ?  ?? testNoSubCategory() ?
 ?  ?? MinefieldDataPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched toString() ==> expected: <MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@72035809 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@909217e numberOfTripDetonationWires:[] padTo32_3:[B@18271936 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: > but was: <MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@606e4010 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@8458f04 numberOfTripDetonationWires:[] padTo32_3:[B@48075da3 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: >
+?  ?  ?? testMultiplePdus() ?
 ?  ?? LiveEntityFirePduTest ?
-?  ?  ?? testMultiplePdus() ? class edu.nps.moves.dis7.pdus.LEFirePdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.LEFirePdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
+?  ?  ?? testMultiplePdus() ?
 ?  ?? ReceiverPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? DataReliablePduTest ?
@@ -2858,7 +2742,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testMarshalUnmarshalByteBuffer() ? java.nio.BufferOverflowException
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? ResupplyReceivedPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? IFFPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? DataQueryReliablePduTest ?
@@ -2902,7 +2786,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? EventReportReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? ActionResponsePduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? ActionRequestReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? RepairCompletePduTest ?
@@ -2922,13 +2806,13 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? GriddedDataPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 16675 ms ?
+?  ?  ?? testRoundTripAllPdus() 16668 ms ?
 ?  ?? StartResumeReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? RecordQueryReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? ArticulatedPartsPduTest ?
-?  ?  ?? testMultiplePdus() ? class edu.nps.moves.dis7.pdus.ArticulatedPartsPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.ArticulatedPartsPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
+?  ?  ?? testMultiplePdus() ?
 ?  ?? QuaternionTest ?
 ?  ?  ?? testXform90DegreesAboutZ() ?
 ?  ?  ?? testDefaultConstructorIsIdentity() ?
@@ -3012,7 +2896,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? AttributePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? ResupplyOfferPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? X3dCreateLineSetTest ?
 ?  ?  ?? testInputBufferCloned() ?
 ?  ?  ?? testMakeX3dLineSetEmpty() ?
@@ -3030,7 +2914,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? IsGroupOfPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? IntercomSignalPduTest ?
-?  ?  ?? testMultiplePdus() ? createdPdu.equalsImpl(receivedPdu) built-in object comparison ==> expected: <true> but was: <false>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? MinefieldResponseNACKPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? EnvironmentalProcessPduTest ?
@@ -3073,7 +2957,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testRoundTripBankedTurn() ?
 ?  ?  ?? testRoundTripNorthLevel() ?
 ?  ?  ?? testRoundTripSouthernHemisphere() ?
-?  ?  ?? testRoundTripSouthHeading() ? mismatched heading after round-trip (south) ==> expected: <180.0> but was: <-179.9999999994152>
+?  ?  ?? testRoundTripSouthHeading() ?
 ?  ?  ?? testRoundTripEastHeading() ?
 ?  ?  ?? testRoundTripEquator() ?
 ?  ?  ?? testRoundTripPitchUp() ?
@@ -3105,7 +2989,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? DesignatorPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? SetDataPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? EntityStateUpdatePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? FirePduTest ?
@@ -3135,7 +3019,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testIdentityXformVec3f() ?
 ?  ?  ?? testArrayConstructor() ?
 ?  ?  ?? testIdentity() ?
-?  ?  ?? testSetEulersZero() ? zero Euler should give identity [1][1] ==> expected: <1.0> but was: <0.0>
+?  ?  ?? testSetEulersZero() ?
 ?  ?  ?? testSetMatValue() ?
 ?  ?  ?? testSetGetEulersRoundTrip() ?
 ?  ?  ?? testDefaultConstructor() ?
@@ -3147,19 +3031,19 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testMarshalUnmarshalByteBuffer() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? AppearancePduTest ?
-?  ?  ?? testMultiplePdus() ? class edu.nps.moves.dis7.pdus.AppearancePdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.AppearancePdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
+?  ?  ?? testMultiplePdus() ?
 ?  ?? IsPartOfPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? SimulationManagerTest ?
 ?  ?  ?? testClearDescriptor() ?
 ?  ?  ?? testDescriptorConstructor() ?
-?  ?  ?? testGetPduFactory() ? PduFactory should not be null ==> expected: not <null>
+?  ?  ?? testGetPduFactory() ?
 ?  ?  ?? testRecordType() ?
 ?  ?  ?? testEntityListManagement() ?
-?  ?  ?? testAddEntityById() ? entity list should have 1 entry after addEntity(EntityID) ==> expected: <1> but was: <2>
+?  ?  ?? testAddEntityById() ?
 ?  ?  ?? testRecordTypeSetters() ?
 ?  ?  ?? testHostListManagement() ?
-?  ?  ?? testClearAll() ? Cannot invoke "String.equalsIgnoreCase(String)" because "nextRecord.alias" is null
+?  ?  ?? testClearAll() ?
 ?  ?  ?? testSetDescriptor() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? Vec3fTest ?
@@ -3188,18 +3072,18 @@ PduRecorder.stop() closing recorder log file:
 ?  ?  ?? testEquality() ?
 ?  ?  ?? testDefaultConstructor() ?
 ?  ?? ServiceRequestPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? EntityBodyCoordinatesTest ?
 ?  ?  ?? testConstructionWithIdentityAxes() ?
 ?  ?  ?? testConstructionWithDifferentParentLocation() ?
 ?  ?  ?? testConstructionWithOffsetOrigin() ?
 ?  ?  ?? testConstructionWithRotatedAxes() ?
 ?  ?? DataQueryPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? TSPIPduTest ?
-?  ?  ?? testMultiplePdus() ? class edu.nps.moves.dis7.pdus.TSPIPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.TSPIPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
+?  ?  ?? testMultiplePdus() ?
 ?  ?? DataPduTest ?
-?  ?  ?? testMultiplePdus() ? mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55]>
+?  ?  ?? testMultiplePdus() ?
 ?  ?? LinearObjectStatePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? Pdu Factory Test ?
@@ -3217,90 +3101,20 @@ PduRecorder.stop() closing recorder log file:
 ?     ?? testMultiplePdus() ?
 ?? JUnit Vintage ?
 
-Failures (26):
-  JUnit Jupiter:EventReportPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.EventReportPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:88]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.EventReportPduTest.testOnePdu(EventReportPduTest.java:97)
-       edu.nps.moves.dis7.test.EventReportPduTest.testMultiplePdus(EventReportPduTest.java:80)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:ActionRequestPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ActionRequestPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:42]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.ActionRequestPduTest.testOnePdu(ActionRequestPduTest.java:99)
-       edu.nps.moves.dis7.test.ActionRequestPduTest.testMultiplePdus(ActionRequestPduTest.java:81)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:LiveEntityDetonationPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.LiveEntityDetonationPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ClassCastException: class edu.nps.moves.dis7.pdus.LEDetonationPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.LEDetonationPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
-       edu.nps.moves.dis7.test.PduTest.lambda$testPduSendReceiveHeaderMatch$0(PduTest.java:263)
-       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-       edu.nps.moves.dis7.test.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:254)
-       edu.nps.moves.dis7.test.LiveEntityDetonationPduTest.testOnePdu(LiveEntityDetonationPduTest.java:89)
-       edu.nps.moves.dis7.test.LiveEntityDetonationPduTest.testMultiplePdus(LiveEntityDetonationPduTest.java:79)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
+Failures (5):
   JUnit Jupiter:AggregateStatePduTest:testMultiplePdus()
     MethodSource [className = 'edu.nps.moves.dis7.test.AggregateStatePduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ArrayIndexOutOfBoundsException: Index 8 out of bounds for length 8
-       edu.nps.moves.dis7.pdus.AggregateMarking.equalsImpl(AggregateMarking.java:205)
-       edu.nps.moves.dis7.pdus.AggregateMarking.equals(AggregateMarking.java:188)
-       org.junit.jupiter.api.AssertionUtils.objectsAreEqual(AssertionUtils.java:189)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:181)
+    => org.opentest4j.AssertionFailedError: mismatched Dimensions ==> expected: <Vector3Float x:100.0 y:200.0 z:50.0> but was: <Vector3Float x:5.92886E-39 y:0.0 z:5.9346E-39>
+       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
+       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
        org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.AggregateStatePduTest.testOnePdu(AggregateStatePduTest.java:112)
+       edu.nps.moves.dis7.test.AggregateStatePduTest.testOnePdu(AggregateStatePduTest.java:114)
        edu.nps.moves.dis7.test.AggregateStatePduTest.testMultiplePdus(AggregateStatePduTest.java:92)
        java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
        java.base/java.lang.reflect.Method.invoke(Method.java:565)
        org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       [...]
-  JUnit Jupiter:MinefieldDataPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.MinefieldDataPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched toString() ==> expected: <MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@72035809 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@909217e numberOfTripDetonationWires:[] padTo32_3:[B@18271936 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: > but was: <MinefieldDataPdu minefieldID:MinefieldIdentifier simulationAddress:SimulationAddress site:1 application:2 minefieldNumber:100 requestingEntityID:SimulationIdentifier simulationAddress:SimulationAddress site:3 application:4 referenceNumber:0 minefieldSequenceNumbeer:1 requestID:1 pduSequenceNumber:1 numberOfPdus:1 padding:0 dataFilter:DataFilterRecord bitFlags:0 GROUND_BURIAL_DEPTH_OFFSET_BIT:0 WATER_BURIAL_DEPTH_OFFSET_BIT:1 SNOW_BURIAL_DEPTH_OFFSET_BIT:2 MINE_ORIENTATION_BIT:3 THERMAL_CONSTRAST_BIT:4 REFLECTANCE_BIT:5 MINE_EMPLACEMENT_TIME_BIT:6 TRIP_DETONATION_WIRE_BIT:7 FUSING_BIT:8 SCALAR_DETECTION_COEFFICIENT_BIT:9 PAINT_SCHEME_BIT:10 mineType:EntityType entityKind:EntityKind 1 PLATFORM domain:Land country:Country 225 UNITED_STATES_OF_AMERICA_USA category:0 subCategory:0 specific:0 extra:0 padTo32:[B@606e4010 groundBurialDepthOffset:[] waterBurialDepthOffset:[] snowBurialDepthOffset:[] thermalContrast:[] reflectance:[] mineEntityNumber:[] scalarDetectionCoefficient:[] padTo32_2:[B@8458f04 numberOfTripDetonationWires:[] padTo32_3:[B@48075da3 numberOfVertices:[] sensorTypes:  mineLocation:  mineOrientation:  mineEmplacementTime:  fusing:  paintScheme: >
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.PduTest.testPduCommonFields(PduTest.java:301)
-       edu.nps.moves.dis7.test.MinefieldDataPduTest.testOnePdu(MinefieldDataPduTest.java:112)
-       edu.nps.moves.dis7.test.MinefieldDataPduTest.testMultiplePdus(MinefieldDataPduTest.java:86)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       [...]
-  JUnit Jupiter:LiveEntityFirePduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.LiveEntityFirePduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ClassCastException: class edu.nps.moves.dis7.pdus.LEFirePdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.LEFirePdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
-       edu.nps.moves.dis7.test.PduTest.lambda$testPduSendReceiveHeaderMatch$0(PduTest.java:263)
-       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-       edu.nps.moves.dis7.test.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:254)
-       edu.nps.moves.dis7.test.LiveEntityFirePduTest.testOnePdu(LiveEntityFirePduTest.java:89)
-       edu.nps.moves.dis7.test.LiveEntityFirePduTest.testMultiplePdus(LiveEntityFirePduTest.java:79)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
        org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
        [...]
   JUnit Jupiter:VariableDatumTest:testMarshalUnmarshalByteBuffer()
     MethodSource [className = 'edu.nps.moves.dis7.test.VariableDatumTest', methodName = 'testMarshalUnmarshalByteBuffer', methodParameterTypes = '']
@@ -3311,52 +3125,10 @@ Failures (26):
        java.base/java.util.Spliterators$IntArraySpliterator.forEachRemaining(Spliterators.java:1124)
        java.base/java.util.stream.IntPipeline$Head.forEach(IntPipeline.java:619)
        edu.nps.moves.dis7.pdus.Align.to64bits(Align.java:77)
-       edu.nps.moves.dis7.pdus.VariableDatum.marshal(VariableDatum.java:248)
+       edu.nps.moves.dis7.pdus.VariableDatum.marshal(VariableDatum.java:251)
        edu.nps.moves.dis7.test.VariableDatumTest.testMarshalUnmarshalByteBuffer(VariableDatumTest.java:97)
        java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
        java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       [...]
-  JUnit Jupiter:ResupplyReceivedPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ResupplyReceivedPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:200.0]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.ResupplyReceivedPduTest.testOnePdu(ResupplyReceivedPduTest.java:92)
-       edu.nps.moves.dis7.test.ResupplyReceivedPduTest.testMultiplePdus(ResupplyReceivedPduTest.java:76)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:ActionResponsePduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ActionResponsePduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:99]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.ActionResponsePduTest.testOnePdu(ActionResponsePduTest.java:99)
-       edu.nps.moves.dis7.test.ActionResponsePduTest.testMultiplePdus(ActionResponsePduTest.java:81)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:ArticulatedPartsPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ArticulatedPartsPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ClassCastException: class edu.nps.moves.dis7.pdus.ArticulatedPartsPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.ArticulatedPartsPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
-       edu.nps.moves.dis7.test.PduTest.lambda$testPduSendReceiveHeaderMatch$0(PduTest.java:263)
-       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-       edu.nps.moves.dis7.test.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:254)
-       edu.nps.moves.dis7.test.ArticulatedPartsPduTest.testOnePdu(ArticulatedPartsPduTest.java:82)
-       edu.nps.moves.dis7.test.ArticulatedPartsPduTest.testMultiplePdus(ArticulatedPartsPduTest.java:73)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
        [...]
   JUnit Jupiter:QuaternionTest:testEulersRoundTrip()
     MethodSource [className = 'edu.nps.moves.dis7.test.QuaternionTest', methodName = 'testEulersRoundTrip', methodParameterTypes = '']
@@ -3400,190 +3172,8 @@ Failures (26):
        org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
        org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
        [...]
-  JUnit Jupiter:ResupplyOfferPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ResupplyOfferPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:50.0]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.ResupplyOfferPduTest.testOnePdu(ResupplyOfferPduTest.java:92)
-       edu.nps.moves.dis7.test.ResupplyOfferPduTest.testMultiplePdus(ResupplyOfferPduTest.java:76)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:IntercomSignalPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.IntercomSignalPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: createdPdu.equalsImpl(receivedPdu) built-in object comparison ==> expected: <true> but was: <false>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
-       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
-       edu.nps.moves.dis7.test.PduTest.testPduCommonFields(PduTest.java:304)
-       edu.nps.moves.dis7.test.IntercomSignalPduTest.testOnePdu(IntercomSignalPduTest.java:99)
-       edu.nps.moves.dis7.test.IntercomSignalPduTest.testMultiplePdus(IntercomSignalPduTest.java:76)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:EulerConversionsTest:testRoundTripSouthHeading()
-    MethodSource [className = 'edu.nps.moves.dis7.test.EulerConversionsTest', methodName = 'testRoundTripSouthHeading', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched heading after round-trip (south) ==> expected: <180.0> but was: <-179.9999999994152>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:86)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1003)
-       edu.nps.moves.dis7.test.EulerConversionsTest.testRoundTripSouthHeading(EulerConversionsTest.java:130)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:SetDataPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.SetDataPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:77]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.SetDataPduTest.testOnePdu(SetDataPduTest.java:98)
-       edu.nps.moves.dis7.test.SetDataPduTest.testMultiplePdus(SetDataPduTest.java:81)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:Matrix3fTest:testSetEulersZero()
-    MethodSource [className = 'edu.nps.moves.dis7.test.Matrix3fTest', methodName = 'testSetEulersZero', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: zero Euler should give identity [1][1] ==> expected: <1.0> but was: <0.0>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:118)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:849)
-       edu.nps.moves.dis7.test.Matrix3fTest.testSetEulersZero(Matrix3fTest.java:142)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:AppearancePduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.AppearancePduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ClassCastException: class edu.nps.moves.dis7.pdus.AppearancePdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.AppearancePdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
-       edu.nps.moves.dis7.test.PduTest.lambda$testPduSendReceiveHeaderMatch$0(PduTest.java:263)
-       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-       edu.nps.moves.dis7.test.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:254)
-       edu.nps.moves.dis7.test.AppearancePduTest.testOnePdu(AppearancePduTest.java:94)
-       edu.nps.moves.dis7.test.AppearancePduTest.testMultiplePdus(AppearancePduTest.java:84)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:SimulationManagerTest:testGetPduFactory()
-    MethodSource [className = 'edu.nps.moves.dis7.test.SimulationManagerTest', methodName = 'testGetPduFactory', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: PduFactory should not be null ==> expected: not <null>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
-       org.junit.jupiter.api.Assertions.fail(Assertions.java:117)
-       org.junit.jupiter.api.AssertNotNull.failNull(AssertNotNull.java:47)
-       org.junit.jupiter.api.AssertNotNull.assertNotNull(AssertNotNull.java:36)
-       org.junit.jupiter.api.Assertions.assertNotNull(Assertions.java:291)
-       edu.nps.moves.dis7.test.SimulationManagerTest.testGetPduFactory(SimulationManagerTest.java:173)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:SimulationManagerTest:testAddEntityById()
-    MethodSource [className = 'edu.nps.moves.dis7.test.SimulationManagerTest', methodName = 'testAddEntityById', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: entity list should have 1 entry after addEntity(EntityID) ==> expected: <1> but was: <2>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:542)
-       edu.nps.moves.dis7.test.SimulationManagerTest.testAddEntityById(SimulationManagerTest.java:185)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:SimulationManagerTest:testClearAll()
-    MethodSource [className = 'edu.nps.moves.dis7.test.SimulationManagerTest', methodName = 'testClearAll', methodParameterTypes = '']
-    => java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because "nextRecord.alias" is null
-       edu.nps.moves.dis7.utilities.SimulationManager.addHost(SimulationManager.java:631)
-       edu.nps.moves.dis7.test.SimulationManagerTest.testClearAll(SimulationManagerTest.java:159)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-       org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-       org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-       [...]
-  JUnit Jupiter:ServiceRequestPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.ServiceRequestPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched Supplies ==> expected: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0]> but was: <[SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0, SupplyQuantity supplyType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 quantity:100.0]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.ServiceRequestPduTest.testOnePdu(ServiceRequestPduTest.java:95)
-       edu.nps.moves.dis7.test.ServiceRequestPduTest.testMultiplePdus(ServiceRequestPduTest.java:78)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:DataQueryPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.DataQueryPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:0]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.DataQueryPduTest.testOnePdu(DataQueryPduTest.java:101)
-       edu.nps.moves.dis7.test.DataQueryPduTest.testMultiplePdus(DataQueryPduTest.java:82)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
-  JUnit Jupiter:TSPIPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.TSPIPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => java.lang.ClassCastException: class edu.nps.moves.dis7.pdus.TSPIPdu cannot be cast to class edu.nps.moves.dis7.pdus.PduBase (edu.nps.moves.dis7.pdus.TSPIPdu and edu.nps.moves.dis7.pdus.PduBase are in unnamed module of loader 'app')
-       edu.nps.moves.dis7.test.PduTest.lambda$testPduSendReceiveHeaderMatch$0(PduTest.java:263)
-       java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-       edu.nps.moves.dis7.test.PduTest.testPduSendReceiveHeaderMatch(PduTest.java:254)
-       edu.nps.moves.dis7.test.TSPIPduTest.testOnePdu(TSPIPduTest.java:84)
-       edu.nps.moves.dis7.test.TSPIPduTest.testMultiplePdus(TSPIPduTest.java:74)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-       [...]
-  JUnit Jupiter:DataPduTest:testMultiplePdus()
-    MethodSource [className = 'edu.nps.moves.dis7.test.DataPduTest', methodName = 'testMultiplePdus', methodParameterTypes = '']
-    => org.opentest4j.AssertionFailedError: mismatched FixedDatums ==> expected: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55]> but was: <[FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55, FixedDatum fixedDatumID:VariableRecordType: 1 ENTITY_ID_LIST fixedDatumValue:55]>
-       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-       org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-       org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-       org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1135)
-       edu.nps.moves.dis7.test.DataPduTest.testOnePdu(DataPduTest.java:98)
-       edu.nps.moves.dis7.test.DataPduTest.testMultiplePdus(DataPduTest.java:81)
-       java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-       java.base/java.lang.reflect.Method.invoke(Method.java:565)
-       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-       [...]
 
-Test run finished after 448511 ms
+Test run finished after 464357 ms
 [       117 containers found      ]
 [         0 containers skipped    ]
 [       117 containers started    ]
@@ -3594,13 +3184,13 @@ Test run finished after 448511 ms
 [         0 tests skipped         ]
 [       366 tests started         ]
 [         0 tests aborted         ]
-[       340 tests successful      ]
-[        26 tests failed          ]
+[       361 tests successful      ]
+[         5 tests failed          ]
 
 Java Result: 1
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null1471343299
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null289833623
 Loading stylesheet ile:/C:/apache-ant-1.10.15/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 181ms
-Deleting: C:\Users\donbr\AppData\Local\Temp\null1471343299
-BUILD SUCCESSFUL (total time: 7 minutes 35 seconds)
+Transform time: 32ms
+Deleting: C:\Users\donbr\AppData\Local\Temp\null289833623
+BUILD SUCCESSFUL (total time: 7 minutes 52 seconds)
