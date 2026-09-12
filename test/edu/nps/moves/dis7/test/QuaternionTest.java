@@ -104,8 +104,8 @@ public class QuaternionTest
             System.out.println("*** QuaternionTest testEulersRoundTrip()");
 
         float heading = 0.5f;
-        float pitch = 0.3f;
-        float roll = 0.1f;
+        float pitch   = 0.3f;
+        float roll    = 0.1f;
 
         Quaternion q = new Quaternion();
         q.setEulers(heading, pitch, roll);
@@ -114,8 +114,8 @@ public class QuaternionTest
         q.getEulers(hpr);
 
         assertEquals(heading, hpr[0], TOLERANCE, "heading round-trip");
-        assertEquals(pitch, hpr[1], TOLERANCE, "pitch round-trip");
-        assertEquals(roll, hpr[2], TOLERANCE, "roll round-trip");
+        assertEquals(pitch,   hpr[1], TOLERANCE, "pitch round-trip");
+        assertEquals(roll,    hpr[2], TOLERANCE, "roll round-trip");
     }
 
     @Test
