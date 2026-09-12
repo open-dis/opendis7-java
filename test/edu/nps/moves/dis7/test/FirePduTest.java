@@ -70,15 +70,15 @@ public class FirePduTest extends PduTest
      // TODO Munition/Expendable Entity ID (Site, App)
      // TODO Munition/Expendable Entity ID (Entity)
      assertEquals (createdFirePdu.getEventID(),                   receivedFirePdu.getEventID(),                   "mismatched EventID");
-     assertEquals (createdFirePdu.getLocationInWorldCoordinates(),receivedFirePdu.getLocationInWorldCoordinates(),"mismatched  LocationInWorldCoordinates");
-     assertEquals (createdFirePdu.getVelocity(),                  receivedFirePdu.getVelocity(),                  "mismatched  Velocity");
-     assertEquals (createdFirePdu.getFireMissionIndex(),          receivedFirePdu.getFireMissionIndex(),          "mismatched  FireMissionIndex");
-     assertEquals (createdFirePdu.getMunitionExpendibleID(),      receivedFirePdu.getMunitionExpendibleID(),      "mismatched  MunitionExpendibleID");
+     assertEquals (createdFirePdu.getLocationInWorldCoordinates(),receivedFirePdu.getLocationInWorldCoordinates(),"mismatched LocationInWorldCoordinates");
+     assertEquals (createdFirePdu.getVelocity(),                  receivedFirePdu.getVelocity(),                  "mismatched Velocity");
+     assertEquals (createdFirePdu.getFireMissionIndex(),          receivedFirePdu.getFireMissionIndex(),          "mismatched FireMissionIndex");
+     assertEquals (createdFirePdu.getMunitionExpendibleID(),      receivedFirePdu.getMunitionExpendibleID(),      "mismatched MunitionExpendibleID");
      // TODO Munition Descriptor
-     assertEquals (createdFirePdu.getPadding(),                   receivedFirePdu.getPadding(),                   "mismatched  Padding");
-     assertEquals (createdFirePdu.getRange(),                     receivedFirePdu.getRange(),                     "mismatched  Range");
+     assertEquals (createdFirePdu.getPadding(),                   receivedFirePdu.getPadding(),                   "mismatched Padding");
+     assertEquals (createdFirePdu.getRange(),                     receivedFirePdu.getRange(),                     "mismatched Range");
      // TODO Fire Type, Padding2, Num Variable Records
-     // TODO Variable Records
+     // TODO Variable Records"mismatched 
      
      testPduCommonFields(createdPdu); // shared tests in superclass
   }

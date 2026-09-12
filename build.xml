@@ -48,15 +48,17 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="manifest.name"          value="OpenDIS7 Protocol Data Units (PDUs)"/>
     <property name="Built-By"               value="https://github.com/open-dis/opendis7-java"/>
     <property name="Specification-Title"    value="IEEE Distributed Interactive Simulation (DIS) Protocol"/>
-    <property name="Specification-Version"  value="7"/>
-    <property name="Specification-Vendor"   value="Institute of Electrical and Electronics Engineers (IEEE)"/>
+    <property name="Specification-Version"  value="7.0.37"/><!-- IEEE DIS 1278.1, SISO-REF-010 -->
+    <property name="Specification-Vendor"   value="Simulation Interoperability Standards Organization (SISO)"/>
+<!--<property name="Specification-Vendor"   value="Institute of Electrical and Electronics Engineers (IEEE)"/>-->
     <property name="Implementation-Title"   value="edu.nps.moves.dis7"/>
     <property name="Implementation-Version" value="${timestamp}"/>
-    <property name="Implementation-Vendor"  value="Naval Postgraduate School (NPS)"/>
+    <property name="Implementation-Vendor"  value="Relative Motion Consulting (RMC)"/>
     
     <!-- ensure backwards compatibility of produced jar to specified version of Java, though project itself is JDK 17+ -->
-    <property name="java.source"                 value="17"/>
-    <property name="java.target"                 value="17"/>
+    <property name="java.release"                value="17"/>
+    <!-- LTS support also available for JDK 25: https://www.oracle.com/java/technologies/downloads -->
+
     <!-- https://ant.apache.org/manual/Tasks/zip.html#zip64 -->
     <property name="zip64Mode"                   value="as-needed" description="needed for large zip files - ant jar default mode"/>
     
@@ -64,12 +66,12 @@ POSSIBILITY OF SUCH DAMAGE.
     <property name="javadoc.author"          value="Don Brutzman brutzman@nps.edu"/>
     <property name="javadoc.dir"             value="${dist.javadoc.dir}"/>
     <property name="javadoc.encoding"        value="ISO-8859-1"/>
-    <property name="javadoc.copyright"       value="Copyright &#169;1995-2025 held by the authors, &lt;a href='https://www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:brutzman@nps.edu?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
+    <property name="javadoc.copyright"       value="Copyright &#169;1995-2026 held by the authors and &lt;a href='https://www.nps.edu'&gt;Naval Postgraduate School (NPS)&lt;/a&gt; under an &lt;a href='../license.html'&gt;open-source license&lt;/a&gt; and free for any use. &lt;a href='mailto:don.brutzman@gmail.com?subject=opendis7-java%20feedback'&gt;Feedback&lt;/a&gt; is welcome."/>
     <property name="javadoc.noindex"         value="false"/>
     <property name="javadoc.nonavbar"        value="false"/>
     <property name="javadoc.notree"          value="false"/>
     <property name="javadoc.private"         value="false"/>
-    <property name="javadoc.source"          value="${java.source}"/>
+    <property name="javadoc.release"         value="${java.release}"/>
     <property name="javadoc.splitindex"      value="true"/>
     <property name="javadoc.breakiterator"   value="true"/>
     <property name="javadoc.use"             value="true"/><!-- Create class and package usage pages -->
@@ -94,7 +96,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo> CLASSPATH=${env.CLASSPATH}</echo>
     <!--<echo>USER      =${env.USER}</echo> -->
         <!-- https://stackoverflow.com/questions/949678/ant-is-using-wrong-java-version -->
-        <!--echo>javac source/target      $java.source=${java.source}</ -->
+        <!--echo>javac source/target      $java.release=${java.release}</ -->
         <echo>Java/JVM version    $ant.java.version=${ant.java.version}</echo>
         <echo>Java/JVM detail version $java.version=${java.version}</echo>
         <echo>Ant version              $ant.version=${ant.version}</echo>
@@ -106,7 +108,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo message="==========================================="/>
     </target>
     
-    <target name="all" description="Build and test the whole project, create distribution jar files.">
+    <target name="all" description="Build and test the whole project, create distribution jar files." depends="clean">
         <!-- TODO current configuration is Java only; Python is next -->
         <echo message="timestamp ${timestamp}"/>
         <fail message="Please build using Ant 1.10.12 or higher.">
@@ -190,7 +192,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <target name="view.javadoc.local" description="view local package javadoc in web browser (NetBeans only)">
         <echo message="view local javadoc in ${dist.javadoc.dir} subdirectory"/>
         <!-- nbbrowse requires NetBeans IDE; commented out for headless/CI compatibility -->
-        <!--<nbbrowse file="${dist.javadoc.dir}/index.html" />-->
+        <nbbrowse file="${dist.javadoc.dir}/index.html" />
         <!-- nbbrowse file="${dist.javadoc.dir}/index.html" -->
         <!-- TODO implementation-independent approach if possible, but note that other Ant approaches usually have to be customized for each OS. -->
     </target>
@@ -227,6 +229,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <target name="javadoc.custom" description="Customized javadoc">
 
+        <!-- https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html -->
         <echo message="$javac.classpath=${javac.classpath}"/>
         <copy file="images/OpenDisSurferDude.png" todir="${javadoc.dir}"/>
         <javadoc     destdir="${javadoc.dir}"
@@ -243,7 +246,7 @@ POSSIBILITY OF SUCH DAMAGE.
                      notree="${javadoc.notree}"
                      Overview="src/overview.html"
                      Private="${javadoc.private}"
-                     source="${java.source}"
+                     source="${java.release}"
                      Splitindex="${javadoc.splitindex}"
                      Use="${javadoc.use}" 
                      useexternalfile="yes"

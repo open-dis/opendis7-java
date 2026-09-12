@@ -78,6 +78,7 @@ public class DataPduTest extends PduTest
         dataPdu.setRequestID(8001);
         dataPdu.getFixedDatums().add(new FixedDatum().setFixedDatumID(VariableRecordType.ENTITY_ID_LIST).setFixedDatumValue(55));
         dataPdu.getVariableDatums().add(new VariableDatum().setVariableDatumID(VariableRecordType.ENTITY_ID_LIST).setVariableDatumValue(new byte[]{1, 2, 3, 4, 5, 6, 7, 8}));
+        System.out.println("*** trace: dataPdu.getPadding() = '" + dataPdu.getPadding() + "'");
         testOnePdu(dataPdu);
 
         dataPdu.setRequestID(8002);

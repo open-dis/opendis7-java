@@ -110,6 +110,7 @@ public class AggregateStatePduTest extends PduTest
         assertEquals(createdCast.getAggregateType(),             receivedCast.getAggregateType(),             "mismatched AggregateType");
         assertEquals(createdCast.getFormation(),                 receivedCast.getFormation(),                 "mismatched Formation");
         assertEquals(createdCast.getAggregateMarking(),          receivedCast.getAggregateMarking(),          "mismatched AggregateMarking");
+        // TODO unit test failure retrieves incorrect receivedCast.getDimensions()
         assertEquals(createdCast.getDimensions(),                receivedCast.getDimensions(),                "mismatched Dimensions");
         assertEquals(createdCast.getOrientation(),               receivedCast.getOrientation(),               "mismatched Orientation");
         assertEquals(createdCast.getCenterOfMass(),              receivedCast.getCenterOfMass(),              "mismatched CenterOfMass");
