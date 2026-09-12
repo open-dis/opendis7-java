@@ -48,7 +48,6 @@ Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog38.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog39.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog4.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog40.dislog
-Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog41.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog5.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog6.dislog
 Deleting C:\x3d-github\opendis7-java\pduLog\PduCaptureLog7.dislog
@@ -59,21 +58,21 @@ test:
 === legacy java.util.Date, calendar methods ===
 DisTime.getTimestampStyle()                       = IEEE_ABSOLUTE
 patterns                                            yyyy-mm-dd HH:mm:ss
-DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-45-24 20:45:47 = 2090747129 = 2090747129 (unsigned vs signed output)
-DisTime.getCurrentDisTimestamp()                  = 1970-45-24 20:45:51 = 2090751901 = 2090751901 (unsigned vs signed output)
-DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-45-24 20:45:51 = 2090753095
-DisTime.getCurrentDisRelativeTimestamp()          = 1970-45-24 20:45:54 = 2090754286
-DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-22-12 18:22:57 = 1045377143
+DisTime.getCurrentDisTimestamp() initialTimestamp = 1970-39-17 13:39:19 = 1460359269 = 1460359269 (unsigned vs signed output)
+DisTime.getCurrentDisTimestamp()                  = 1970-39-17 13:39:26 = 1460366427 = 1460366427 (unsigned vs signed output)
+DisTime.getCurrentDisAbsoluteTimestamp()          = 1970-39-17 13:39:26 = 1460366427
+DisTime.getCurrentDisRelativeTimestamp()          = 1970-39-17 13:39:27 = 1460368814
+DisTime.getCurrentDisTimeUnitsSinceTopOfHour()    = 1970-49-09 02:49:44 = 730184407
 
 === modern java.time methods ===
 note that LocalDateTime is current time zone while default Instant is UTC with time zone Z appended
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.461228900, 2026-09-12T16:29:12.462228300Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.462228300, 2026-09-12T16:29:12.462228300Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:12.462228300, 2026-09-12T16:29:12.462228300Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:24.078069700, 2026-09-12T17:20:24.080068800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:24.080068800, 2026-09-12T17:20:24.080068800Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:24.080068800, 2026-09-12T17:20:24.080068800Z
 sleep for 1000 msec...
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
-java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T09:29:13.463232, 2026-09-12T16:29:13.463232Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:25.081331900, 2026-09-12T17:20:25.081331900Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:25.081331900, 2026-09-12T17:20:25.081331900Z
+java.time.LocalDateTime.now(), Instant.now()      = 2026-09-12T10:20:25.081331900, 2026-09-12T17:20:25.081331900Z
 DisTime.hasEpochLvc()                     default = false
 DisTime.setEpochLvc(Instant.now())...
 DisTime.hasEpochLvc(),                            = true
@@ -81,9 +80,9 @@ clearEpochLvc()...
 DisTime.hasEpochLvc()                             = false
 DisTime.setEpochLvcNow()...
 DisTime.hasEpochLvc(),                            = true
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T16:29:13.464231300Z, 2026-09-12T16:29:13.464231300Z, 0 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T17:20:25.082313200Z, 2026-09-12T17:20:25.082313200Z, 0 msec
 sleep for 1000 msec...
-DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T16:29:13.464231300Z, 2026-09-12T16:29:14.467808400Z, 1003 msec
+DisTime.getEpochLvc(), Instant.now(), duration    = 2026-09-12T17:20:25.082313200Z, 2026-09-12T17:20:26.085743200Z, 1003 msec
 time checks:
 timeSeconds (83 minutes * 60 seconds/minute) = 4980 seconds
 DisTIme.convertToLocalTime(timeSeconds)      = 01:23:00.0
@@ -314,7 +313,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 16 ACTION_REQUEST, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 16 ACTION_REQUEST, size 64 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -337,7 +336,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 50 LIVE_ENTITY_DETONATION, size 79 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1041,8 +1040,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 26] DisPduType 69 ENTITY_DAMAGE_STATUS, size 24 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 27] DisPduType 01 ENTITY_STATE            , size 144 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 28] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 29] DisPduType 41 ENVIRONMENTAL_PROCESS, size 32 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 30] DisPduType 21 EVENT_REPORT, size 40 bytes)
@@ -1119,8 +1118,8 @@ Recorder log at C:\x3d-github\opendis7-java\.\pduLog\PduCaptureLog.dislog
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 65] DisPduType 13 START_RESUME, size 44 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 66] DisPduType 53 START_RESUME_RELIABLE, size 48 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 66] DisPduType 53 START_RESUME_RELIABLE, size 48 bytes)
-[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
+[DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 67] DisPduType 14 STOP_FREEZE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 68] DisPduType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [receipt 68] DisPduType 54 STOP_FREEZE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface edu.nps.moves.dis7.test.AllPduRoundTripTest unit test] [sending 69] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
@@ -1267,7 +1266,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 38 MINEFIELD_QUERY, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1353,7 +1352,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1910813056
+Timestamp: 1753960846
 Variable Parameters: []
 
 Rcvd pdu: 
@@ -1374,7 +1373,7 @@ Pdu Status: PduStatus: 00101000
 Pdu Type: DisPduType 01 ENTITY_STATE
 Protocol Family: DISProtocolFamily 1 ENTITY_INFORMATION_INTERACTION
 Protocol Version: DISProtocolVersion 7 IEEE_12781_2012
-Timestamp: -1910813056
+Timestamp: 1753960846
 Variable Parameters: []
 
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -1420,7 +1419,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 57 ACTION_RESPONSE_RELIABLE, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1443,7 +1442,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 25 TRANSMITTER, size 104 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 25 TRANSMITTER, size 104 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 25 TRANSMITTER, size 104 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -1668,7 +1667,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 40 MINEFIELD_RESPONSE_NACK, size 26 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2034,7 +2033,7 @@ edu.nps.moves.dis7.test.DataQueryPduRoundTripTest tearDownClass()
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 35 TRANSFER_OWNERSHIP, size 40 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2121,8 +2120,8 @@ PduRecorder.stop() closing recorder log file:
 *** SetDataPduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 19 SET_DATA, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 19 SET_DATA, size 64 bytes)
-[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 19 SET_DATA, size 64 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 19 SET_DATA, size 64 bytes)
+[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 19 SET_DATA, size 64 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2142,8 +2141,8 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
 [PduRecorder PduRecorder] listening to IP address 239.1.2.3 on port 3000
 *** EntityStateUpdatePduTest testMultiplePdus()
-[DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 67 ENTITY_STATE_UPDATE, size 72 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
@@ -2345,16 +2344,16 @@ edu.nps.moves.dis7.test.CommentPdusTest setUpClass()
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
-[DisThreadedNetworkInterface] [receipt  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  1] DisPduType 22 COMMENT, size 32 bytes)
+[DisThreadedNetworkInterface] [receipt  1] DisPduType 22 COMMENT, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  2] DisPduType 22 COMMENT, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [receipt  3] DisPduType 22 COMMENT, size 72 bytes)
 [DisThreadedNetworkInterface] [sending  4] DisPduType 22 COMMENT, size 128 bytes)
 [DisThreadedNetworkInterface] [receipt  4] DisPduType 22 COMMENT, size 128 bytes)
-[DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
+[DisThreadedNetworkInterface] [receipt  5] DisPduType 62 COMMENT_RELIABLE, size 32 bytes)
 [DisThreadedNetworkInterface] [sending  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [receipt  6] DisPduType 62 COMMENT_RELIABLE, size 56 bytes)
 [DisThreadedNetworkInterface] [sending  7] DisPduType 62 COMMENT_RELIABLE, size 88 bytes)
@@ -2417,7 +2416,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 18 DATA_QUERY, size 56 bytes)
 createLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonalcreateLococentricEuclidean3DSRF: the input direction vectors are not orthogonal[DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 18 DATA_QUERY, size 56 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 18 DATA_QUERY, size 56 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2440,7 +2439,7 @@ PduRecorder.stop() closing recorder log file:
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 46 TIME_SPACE_POSITION_INFORMATION, size 54 bytes)
-*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=false receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
 *** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
@@ -2605,8 +2604,8 @@ PduRecorder.stop() closing recorder log file:
 *** EntityStatePduTest testMultiplePdus()
 [DisThreadedNetworkInterface PduRecorder] [sending  1] DisPduType 01 ENTITY_STATE EspduTest1 , size 144 bytes)
 [DisThreadedNetworkInterface PduRecorder] [receipt  1] DisPduType 01 ENTITY_STATE EspduTest1 , size 144 bytes)
-[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
 [DisThreadedNetworkInterface PduRecorder] [sending  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
+[DisThreadedNetworkInterface PduRecorder] [receipt  2] DisPduType 01 ENTITY_STATE EspduTest2 , size 144 bytes)
 *** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
 [DisThreadedNetworkInterface PduRecorder] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
 *** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
@@ -2806,7 +2805,7 @@ PduRecorder.stop() closing recorder log file:
 ?  ?? GriddedDataPduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? All Pdu Round Trip Test ?
-?  ?  ?? testRoundTripAllPdus() 16668 ms ?
+?  ?  ?? testRoundTripAllPdus() 16829 ms ?
 ?  ?? StartResumeReliablePduTest ?
 ?  ?  ?? testMultiplePdus() ?
 ?  ?? RecordQueryReliablePduTest ?
@@ -3173,7 +3172,7 @@ Failures (5):
        org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
        [...]
 
-Test run finished after 464357 ms
+Test run finished after 464687 ms
 [       117 containers found      ]
 [         0 containers skipped    ]
 [       117 containers started    ]
@@ -3189,8 +3188,8 @@ Test run finished after 464357 ms
 
 Java Result: 1
 Now produce junitreport:
-Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null289833623
+Processing C:\x3d-github\opendis7-java\build\test\results\TESTS-TestSuites.xml to C:\Users\donbr\AppData\Local\Temp\null1299023035
 Loading stylesheet ile:/C:/apache-ant-1.10.15/lib/ant-junit.jar!/org/apache/tools/ant/taskdefs/optional/junit/xsl/junit-frames.xsl
-Transform time: 32ms
-Deleting: C:\Users\donbr\AppData\Local\Temp\null289833623
-BUILD SUCCESSFUL (total time: 7 minutes 52 seconds)
+Transform time: 183ms
+Deleting: C:\Users\donbr\AppData\Local\Temp\null1299023035
+BUILD SUCCESSFUL (total time: 7 minutes 51 seconds)
