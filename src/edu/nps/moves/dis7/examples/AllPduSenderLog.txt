@@ -1,0 +1,91 @@
+ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/AllPduSender.java -Drun.class=OpenDis7Examples.AllPduSender run-single
+init:
+Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+compile-single:
+run-single:
+Usage:   AllPduSender <multicast group> <port>
+Default: AllPduSender  239.1.2.3   3000
+OpenDis7Examples.AllPduSender started...
+Generate list of all PDU types and note issues, if any...
+*** Note: DisPduType.OTHER=0 not supported
+Preparing CommentPDU:
+   "Hello CommentPDU"
+   "Here is a second line of text in this comment."
+Send the 72 PDUs we created...
+Sent packet # 1, DisPduType 01 ENTITY_STATE                       (packet.getLength()=144) of type EntityStatePdu
+Sent packet # 2, DisPduType 02 FIRE                               (packet.getLength()= 96) of type FirePdu
+Sent packet # 3, DisPduType 03 DETONATION                         (packet.getLength()=104) of type DetonationPdu
+Sent packet # 4, DisPduType 04 COLLISION                          (packet.getLength()= 60) of type CollisionPdu
+Sent packet # 5, DisPduType 05 SERVICE_REQUEST                    (packet.getLength()= 28) of type ServiceRequestPdu
+Sent packet # 6, DisPduType 06 RESUPPLY_OFFER                     (packet.getLength()= 28) of type ResupplyOfferPdu
+Sent packet # 7, DisPduType 07 RESUPPLY_RECEIVED                  (packet.getLength()= 28) of type ResupplyReceivedPdu
+Sent packet # 8, DisPduType 08 RESUPPLY_CANCEL                    (packet.getLength()= 24) of type ResupplyCancelPdu
+Sent packet # 9, DisPduType 09 REPAIR_COMPLETE                    (packet.getLength()= 28) of type RepairCompletePdu
+Sent packet #10, DisPduType 10 REPAIR_RESPONSE                    (packet.getLength()= 28) of type RepairResponsePdu
+Sent packet #11, DisPduType 11 CREATE_ENTITY                      (packet.getLength()= 28) of type CreateEntityPdu
+Sent packet #12, DisPduType 12 REMOVE_ENTITY                      (packet.getLength()= 28) of type RemoveEntityPdu
+Sent packet #13, DisPduType 13 START_RESUME                       (packet.getLength()= 44) of type StartResumePdu
+Sent packet #14, DisPduType 14 STOP_FREEZE                        (packet.getLength()= 40) of type StopFreezePdu
+Sent packet #15, DisPduType 15 ACKNOWLEDGE                        (packet.getLength()= 32) of type AcknowledgePdu
+Sent packet #16, DisPduType 16 ACTION_REQUEST                     (packet.getLength()= 40) of type ActionRequestPdu
+Sent packet #17, DisPduType 17 ACTION_RESPONSE                    (packet.getLength()= 40) of type ActionResponsePdu
+Sent packet #18, DisPduType 18 DATA_QUERY                         (packet.getLength()= 40) of type DataQueryPdu
+Sent packet #19, DisPduType 19 SET_DATA                           (packet.getLength()= 40) of type SetDataPdu
+Sent packet #20, DisPduType 20 DATA                               (packet.getLength()= 40) of type DataPdu
+Sent packet #21, DisPduType 21 EVENT_REPORT                       (packet.getLength()= 40) of type EventReportPdu
+Sent packet #22, DisPduType 22 COMMENT                            (packet.getLength()=112) of type CommentPdu
+Sent packet #23, DisPduType 23 ELECTROMAGNETIC_EMISSION           (packet.getLength()= 28) of type ElectromagneticEmissionPdu
+Sent packet #24, DisPduType 24 DESIGNATOR                         (packet.getLength()= 88) of type DesignatorPdu
+Sent packet #25, DisPduType 25 TRANSMITTER                        (packet.getLength()=104) of type TransmitterPdu
+Sent packet #26, DisPduType 26 SIGNAL                             (packet.getLength()= 36) of type SignalPdu
+Sent packet #27, DisPduType 27 RECEIVER                           (packet.getLength()= 36) of type ReceiverPdu
+Sent packet #28, DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE       (packet.getLength()= 60) of type IdentificationFriendOrFoePdu
+Sent packet #29, DisPduType 29 UNDERWATER_ACOUSTIC                (packet.getLength()= 32) of type UnderwaterAcousticPdu
+Sent packet #30, DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE (packet.getLength()= 28) of type SupplementalEmissionEntityStatePdu
+Sent packet #31, DisPduType 31 INTERCOM_SIGNAL                    (packet.getLength()= 36) of type IntercomSignalPdu
+Sent packet #32, DisPduType 32 INTERCOM_CONTROL                   (packet.getLength()= 40) of type IntercomControlPdu
+Sent packet #33, DisPduType 33 AGGREGATE_STATE                    (packet.getLength()=136) of type AggregateStatePdu
+Sent packet #34, DisPduType 34 ISGROUPOF                          (packet.getLength()= 40) of type IsGroupOfPdu
+Sent packet #35, DisPduType 35 TRANSFER_OWNERSHIP                 (packet.getLength()= 40) of type TransferOwnershipPdu
+Sent packet #36, DisPduType 36 ISPARTOF                           (packet.getLength()= 52) of type IsPartOfPdu
+Sent packet #37, DisPduType 37 MINEFIELD_STATE                    (packet.getLength()= 72) of type MinefieldStatePdu
+Sent packet #38, DisPduType 38 MINEFIELD_QUERY                    (packet.getLength()= 40) of type MinefieldQueryPdu
+Sent packet #39, DisPduType 39 MINEFIELD_DATA                     (packet.getLength()= 44) of type MinefieldDataPdu
+Sent packet #40, DisPduType 40 MINEFIELD_RESPONSE_NACK            (packet.getLength()= 26) of type MinefieldResponseNACKPdu
+Sent packet #41, DisPduType 41 ENVIRONMENTAL_PROCESS              (packet.getLength()= 32) of type EnvironmentalProcessPdu
+Sent packet #42, DisPduType 42 GRIDDED_DATA                       (packet.getLength()= 64) of type GriddedDataPdu
+Sent packet #43, DisPduType 43 POINT_OBJECT_STATE                 (packet.getLength()= 91) of type PointObjectStatePdu
+Sent packet #44, DisPduType 44 LINEAR_OBJECT_STATE                (packet.getLength()= 40) of type LinearObjectStatePdu
+Sent packet #45, DisPduType 45 AREAL_OBJECT_STATE                 (packet.getLength()= 49) of type ArealObjectStatePdu
+Sent packet #46, DisPduType 46 TIME_SPACE_POSITION_INFORMATION    (packet.getLength()= 54) of type TimeSpacePositionInformationPdu
+Sent packet #47, DisPduType 47 APPEARANCE                         (packet.getLength()= 67) of type AppearancePdu
+Sent packet #48, DisPduType 48 ARTICULATED_PARTS                  (packet.getLength()= 17) of type ArticulatedPartsPdu
+Sent packet #49, DisPduType 49 LIVE_ENTITY_FIRE                   (packet.getLength()= 67) of type LiveEntityFirePdu
+Sent packet #50, DisPduType 50 LIVE_ENTITY_DETONATION             (packet.getLength()= 79) of type LiveEntityDetonationPdu
+Sent packet #51, DisPduType 51 CREATE_ENTITY_RELIABLE             (packet.getLength()= 32) of type CreateEntityReliablePdu
+Sent packet #52, DisPduType 52 REMOVE_ENTITY_RELIABLE             (packet.getLength()= 32) of type RemoveEntityReliablePdu
+Sent packet #53, DisPduType 53 START_RESUME_RELIABLE              (packet.getLength()= 48) of type StartResumeReliablePdu
+Sent packet #54, DisPduType 54 STOP_FREEZE_RELIABLE               (packet.getLength()= 40) of type StopFreezeReliablePdu
+Sent packet #55, DisPduType 55 ACKNOWLEDGE_RELIABLE               (packet.getLength()= 32) of type AcknowledgeReliablePdu
+Sent packet #56, DisPduType 56 ACTION_REQUEST_RELIABLE            (packet.getLength()= 44) of type ActionRequestReliablePdu
+Sent packet #57, DisPduType 57 ACTION_RESPONSE_RELIABLE           (packet.getLength()= 40) of type ActionResponseReliablePdu
+Sent packet #58, DisPduType 58 DATA_QUERY_RELIABLE                (packet.getLength()= 44) of type DataQueryReliablePdu
+Sent packet #59, DisPduType 59 SET_DATA_RELIABLE                  (packet.getLength()= 40) of type SetDataReliablePdu
+Sent packet #60, DisPduType 60 DATA_RELIABLE                      (packet.getLength()= 40) of type DataReliablePdu
+Sent packet #61, DisPduType 61 EVENT_REPORT_RELIABLE              (packet.getLength()= 40) of type EventReportReliablePdu
+Sent packet #62, DisPduType 62 COMMENT_RELIABLE                   (packet.getLength()= 32) of type CommentReliablePdu
+Sent packet #63, DisPduType 63 RECORD_RELIABLE                    (packet.getLength()= 36) of type RecordReliablePdu
+Sent packet #64, DisPduType 64 SET_RECORD_RELIABLE                (packet.getLength()= 40) of type SetRecordReliablePdu
+Sent packet #65, DisPduType 65 RECORD_QUERY_RELIABLE              (packet.getLength()= 40) of type RecordQueryReliablePdu
+Sent packet #66, DisPduType 66 COLLISION_ELASTIC                  (packet.getLength()=100) of type CollisionElasticPdu
+Sent packet #67, DisPduType 67 ENTITY_STATE_UPDATE                (packet.getLength()= 72) of type EntityStateUpdatePdu
+Sent packet #68, DisPduType 68 DIRECTED_ENERGY_FIRE               (packet.getLength()= 88) of type DirectedEnergyFirePdu
+Sent packet #69, DisPduType 69 ENTITY_DAMAGE_STATUS               (packet.getLength()= 24) of type EntityDamageStatusPdu
+Sent packet #70, DisPduType 70 INFORMATION_OPERATIONS_ACTION      (packet.getLength()= 56) of type InformationOperationsActionPdu
+Sent packet #71, DisPduType 71 INFORMATION_OPERATIONS_REPORT      (packet.getLength()= 40) of type InformationOperationsReportPdu
+Sent packet #72, DisPduType 72 ATTRIBUTE                          (packet.getLength()= 32) of type AttributePdu
+OpenDis7Examples.AllPduSender complete, sent 72 PDUs total.
+BUILD SUCCESSFUL (total time: 3 seconds)
