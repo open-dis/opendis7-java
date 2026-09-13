@@ -48,6 +48,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 <include name="*.dislog"/>
                 <exclude name="PduCaptureLogExample.dislog"/><!-- version control default example -->
                 <exclude name="README.md"/>
+                <exclude name="build.xml"/>
             </fileset>
         </delete>
     </target>
