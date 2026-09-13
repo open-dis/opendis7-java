@@ -46,7 +46,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <delete verbose="true">
             <fileset dir=".">
                 <include name="*.dislog"/>
-                <exclude name="ExamplePduCaptureLog.dislog"/><!-- version control default example -->
+                <exclude name="PduCaptureLogExample.dislog"/><!-- version control default example -->
                 <exclude name="README.md"/>
             </fileset>
         </delete>

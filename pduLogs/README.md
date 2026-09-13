@@ -12,7 +12,7 @@ Each time you run a DIS simulation and a PduRecorder is listening, another
 log file is created.  File names are numbered sequentially and uniquely, so that 
 important PDU log captures can later be copied and saved to where they are needed.
 
-[ExamplePduCaptureLog.dislog](ExamplePduCaptureLog.dislog) shows an example log file.
+[PduCaptureLogExample.dislog](PduCaptureLogExample.dislog) shows an example log file.
 
 Note that the PDU log files are very tolerant of inline comments starting with
 a # character, so you can document success/failure and TODO issues there as well.
