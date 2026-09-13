@@ -8,7 +8,7 @@ All examples are tested, running and documented satisfactorily.
 
 This package presents course examples using the [Open-DIS-Java](https://github.com/open-dis/opendis7-java) library, with online [Javadoc](https://savage.nps.edu/opendis7-java/javadoc) showing complete coverage of 72 DIS PDUs and 22,000+ enumerations.
 
-See the [specifications](../../../specifications) directory for guidance on obtaining reference copies of DIS and RPRFOM standards.
+See the [MV3500 specifications](https://savage.nps.edu/opendis7-java/specifications) directory for guidance on obtaining reference copies of DIS and RPRFOM standards.
 
 |  AllPduSender packets in Wireshark   |EspduSender packets in Wireshark  |
 |--------------------------------------|----------------------------------|
