@@ -64,9 +64,9 @@ public class PduSenderNIO
       ByteBuffer data = ByteBuffer.allocate(144);
       DatagramPacket packet = new DatagramPacket(data.array(), data.capacity(), group);
 
-      while (true) // candidate breakpoint when debugging
+//    while (true) // candidate breakpoint when debugging
       {
-        for (int idx = 0; idx < 100; idx++)
+        for (int idx = 1; idx <= 100; idx++)
         {
           // The timestamp should be monotonically increasing. Many implementations
           // discard packets that have earlier timestamps (assumption is that it
@@ -99,9 +99,9 @@ public class PduSenderNIO
 
           // Almost any sender will overwhelm a receiver if not constrained. This
           // slows down the sendPDU rate so the receiver has enough time to process it.
-          Thread.sleep(1000);
+          Thread.sleep(50);
 
-          System.out.println("Sending " + espdu.getClass().getName());
+          System.out.println(idx + ". Sending " + espdu.getClass().getName());
         }
       }
     }

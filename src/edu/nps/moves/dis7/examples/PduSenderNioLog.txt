@@ -1,0 +1,114 @@
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/PduSenderNIO.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.PduSenderNIO -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
+init:
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
+1 warning
+compile-single:
+run-single:
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
+1. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+2. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+3. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+4. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+5. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+6. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+7. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+8. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+9. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+10. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+11. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+12. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+13. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+14. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+15. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+16. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+17. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+18. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+19. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+20. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+21. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+22. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+23. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+24. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+25. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+26. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+27. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+28. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+29. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+30. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+31. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+32. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+33. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+34. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+35. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+36. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+37. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+38. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+39. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+40. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+41. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+42. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+43. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+44. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+45. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+46. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+47. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+48. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+49. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+50. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+51. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+52. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+53. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+54. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+55. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+56. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+57. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+58. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+59. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+60. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+61. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+62. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+63. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+64. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+65. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+66. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+67. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+68. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+69. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+70. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+71. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+72. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+73. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+74. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+75. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+76. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+77. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+78. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+79. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+80. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+81. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+82. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+83. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+84. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+85. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+86. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+87. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+88. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+89. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+90. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+91. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+92. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+93. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+94. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+95. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+96. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+97. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+98. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+99. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+100. Sending edu.nps.moves.dis7.pdus.EntityStatePdu
+BUILD SUCCESSFUL (total time: 5 seconds)
