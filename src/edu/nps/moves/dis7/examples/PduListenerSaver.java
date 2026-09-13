@@ -22,18 +22,18 @@ public class PduListenerSaver
 {
     private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLogs";
     
-    /** Default multicast group address <code>229.1.2.3</code> for send and receive connections.
-     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address" target="_blank">https://en.wikipedia.org/wiki/Multicast_address</a>  */
+    /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
+     * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
     public static String DEFAULT_DIS_ADDRESS = DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS;
 
     /** Default socket port  <code>3000</code>, matches Wireshark DIS capture default
-     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)" target="_blank">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
+     * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
     public static int DEFAULT_DIS_PORT = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
 
     private enum mystate
     {
-        RUNNING,
-        PAUSED;
+      RUNNING,
+      PAUSED;
     }
     private String  disAddress; 
     private int     disPort;
@@ -45,7 +45,7 @@ public class PduListenerSaver
     {
         this(DEFAULT_DIS_ADDRESS, DEFAULT_DIS_PORT);
     }
-    
+
     /**
      * Object constructor using specified multicast address and port 
      * @param address the multicast group or unicast address to utilize
@@ -56,13 +56,13 @@ public class PduListenerSaver
         disAddress = address;
         disPort    = port;
     }
-    
+
     /**
      * Command-line invocation (CLI), execution starts here
-     * @param args command-line arguments
-     */
-    public static void main(String[] args)
-    {
+    * @param args command-line arguments
+    */
+  public static void main(String[] args)
+  {
         String  outputDirectory = DEFAULT_OUTPUT_DIRECTORY;
         String multicastAddress = DEFAULT_DIS_ADDRESS;
         int                port = DEFAULT_DIS_PORT;
@@ -71,67 +71,66 @@ public class PduListenerSaver
 
         switch (args.length)
         {
-            case 0:
-            // use default values
-                break;
-            case 1:
+      case 0:
+        // use default values
+        break;
+      case 1:
                 outputDirectory = args[0];
-                break;
-            case 3:
+        break;
+      case 3:
                  outputDirectory = args[0];
                 multicastAddress = args[1];
                             port = Integer.parseInt(args[2]);
-                break;
-            default:
+        break;
+      default:
                 // Common-sense practice is to print help message if invocation is problematic
                 System.err.println("Usage: PduListenerSaver() or PduListenerSaver(\"outputdir\") or PduListenerSaver(\"outputDirectory\",\"multicastAddress\", port");
-                System.exit(1);
-        }
-        System.out.println("Beginning PduListenerSaver (" + multicastAddress + ":" + port + ") to directory " + outputDirectory);
+        System.exit(1);
+    }
+    System.out.println("Beginning PduListenerSaver (" + multicastAddress + ":" + port + ") to directory " + outputDirectory);
 
-        mystate state = mystate.RUNNING;
-        Scanner terminalKeyboardScanner  = new Scanner(System.in);
-        PduRecorder pduRecorder = new PduRecorder(outputDirectory, multicastAddress, port); // assumes save
-        pduRecorder.setDescriptor("PduListenerSaver");
-        pduRecorder.setVerbose(true);
-        pduRecorder.start(); // begin running
-
-        while (true) // monitor user input via keyboard
-        {
-            System.out.println("Type p/enter to pause, r/enter to resume, q/enter to quit");
+    mystate state = mystate.RUNNING;
+    Scanner terminalKeyboardScanner  = new Scanner(System.in);
+    PduRecorder pduRecorder = new PduRecorder(outputDirectory, multicastAddress, port); // assumes save
+    pduRecorder.setDescriptor("PduListenerSaver");
+    pduRecorder.start(); // begin running
+    
+    while (true) // monitor user input via keyboard
+    {
+        System.out.println("Type p/enter to pause, r/enter to resume, q/enter to quit");
             String line = terminalKeyboardScanner.nextLine();
-            if (line.equalsIgnoreCase("p") && state == mystate.RUNNING) 
-            {
-                pduRecorder.pause();
-                state = mystate.PAUSED;
-                System.out.println("... state is now PAUSED");
-            }
-            else if (line.equalsIgnoreCase("p")) 
-            {
-                pduRecorder.pause();
-                state = mystate.PAUSED;
-                System.out.println("... state is still PAUSED");
-            }
-            else if (line.equalsIgnoreCase("r") && state == mystate.PAUSED) 
-            {
-                pduRecorder.resume();
-                state = mystate.RUNNING;
-                System.out.println("... state is now RUNNING");
-            }
-            else if (line.equalsIgnoreCase("r")) 
-            {
-                pduRecorder.resume();
-                state = mystate.RUNNING;
-                System.out.println("... state is still RUNNING");
-            }
-            else if (line.equalsIgnoreCase("q")) 
-            {
-                pduRecorder.stop();
-                System.out.println("... QUIT");
-                break;
-            }
+        if (line.equalsIgnoreCase("p") && state == mystate.RUNNING) 
+        {
+            pduRecorder.pause();
+            state = mystate.PAUSED;
+            System.out.println("... state is now PAUSED");
         }
+        else if (line.equalsIgnoreCase("p")) 
+        {
+            pduRecorder.pause();
+            state = mystate.PAUSED;
+            System.out.println("... state is still PAUSED");
+        }
+        else if (line.equalsIgnoreCase("r") && state == mystate.PAUSED) 
+        {
+            pduRecorder.resume();
+            state = mystate.RUNNING;
+            System.out.println("... state is now RUNNING");
+        }
+        else if (line.equalsIgnoreCase("r")) 
+        {
+            pduRecorder.resume();
+            state = mystate.RUNNING;
+            System.out.println("... state is still RUNNING");
+        }
+        else if (line.equalsIgnoreCase("q")) 
+        {
+            pduRecorder.stop();
+            System.out.println("... QUIT");
+            break;
+        }
+    }
         System.out.println("Finished PduListenerSaver pdu recording, saved to file:");
         System.out.println(pduRecorder.getLogFilePath());
-    }
+  }
 }
