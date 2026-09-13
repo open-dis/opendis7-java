@@ -1,0 +1,111 @@
+ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/ExampleSimulationProgram.java -Drun.class=OpenDis7Examples.ExampleSimulationProgram run-single
+init:
+Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+compile-single:
+run-single:
+Wireshark filter for listening to these PDUs: (udp.port == 3000) &amp;&amp; dis
+[DisChannel] thisHostName=IT162140-CSCLPP
+[DisChannel ExampleSimulationProgram] Beginning pdu save to directory ./pduLog
+[PduRecorder ExampleSimulationProgram] Recorder log file open: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
+[DisThreadedNetworkInterface] using network interface Intel(R) Wi-Fi 6E AX211 160MHz
+[DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
+[DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
+[DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
+[PduRecorder ExampleSimulationProgram] listening to IP address 239.1.2.3 on port 3000
+[DisChannel ExampleSimulationProgram] Network confirmation: address=239.1.2.3 port=3000
+[DisChannel ExampleSimulationProgram] just checking: disChannel.getNetworkAddress()=239.1.2.3, getNetworkPort()=3000
+[DisChannel ExampleSimulationProgram] just checking: hasVerboseSending()=true, hasVerboseReceipt()=true
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  1] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  2] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  1] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  3] DisPduType 22 COMMENT, size 80 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  2] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  3] DisPduType 22 COMMENT, size 80 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_TIMESTEP] [Simulation timestep duration 1.0 seconds]
+[DisChannel ExampleSimulationProgram] main() started...
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  4] DisPduType 22 COMMENT, size 104 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  4] DisPduType 22 COMMENT, size 104 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu TIME] [Simulation time 0.0 at LocalDateTime 2024-09-04T17:26:50.472502]
+... My simulation just did something, no really...
+... [Pausing for 1.0 seconds]
+... sending PDUs of interest for simulation step 1, monitor loopback to confirm sent
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  5] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  5] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  6] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  6] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  7] DisPduType 22 COMMENT, size 160 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  7] DisPduType 22 COMMENT, size 160 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_STATUS] [MV3500 ExampleSimulationProgram, runSimulation() loop 1, randomInt=74 randomDouble=33.50178281121777]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  8] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  8] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+... [PDUs of interest successfully sent for this loop]
+... My simulation just did something, no really...
+... [Pausing for 1.0 seconds]
+... sending PDUs of interest for simulation step 2, monitor loopback to confirm sent
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending  9] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt  9] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 10] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 10] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 11] DisPduType 22 COMMENT, size 160 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 11] DisPduType 22 COMMENT, size 160 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_STATUS] [MV3500 ExampleSimulationProgram, runSimulation() loop 2, randomInt=16 randomDouble=40.130522928043725]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 12] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 12] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+... [PDUs of interest successfully sent for this loop]
+... My simulation just did something, no really...
+... [Pausing for 1.0 seconds]
+... sending PDUs of interest for simulation step 3, monitor loopback to confirm sent
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 13] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 13] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 14] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 14] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 15] DisPduType 22 COMMENT, size 160 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 15] DisPduType 22 COMMENT, size 160 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_STATUS] [MV3500 ExampleSimulationProgram, runSimulation() loop 3, randomInt=50 randomDouble=84.78451008966688]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 16] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 16] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+... [PDUs of interest successfully sent for this loop]
+... My simulation just did something, no really...
+... [Pausing for 1.0 seconds]
+... sending PDUs of interest for simulation step 4, monitor loopback to confirm sent
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 17] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 17] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 18] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 18] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 19] DisPduType 22 COMMENT, size 160 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 19] DisPduType 22 COMMENT, size 160 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_STATUS] [MV3500 ExampleSimulationProgram, runSimulation() loop 4, randomInt=46 randomDouble=47.40264153569124]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 20] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 20] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+... [PDUs of interest successfully sent for this loop]
+... My simulation just did something, no really...
+... [Pausing for 1.0 seconds]
+... sending PDUs of interest for simulation step 5, monitor loopback to confirm sent
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 21] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 21] DisPduType 01 ENTITY_STATE  Entity #53, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 22] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 22] DisPduType 02 FIRE, size 96 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 23] DisPduType 22 COMMENT, size 160 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 23] DisPduType 22 COMMENT, size 160 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu APPLICATION_STATUS] [MV3500 ExampleSimulationProgram, runSimulation() loop 5, randomInt=38 randomDouble=30.883227412112014]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 24] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 24] DisPduType 01 ENTITY_STATE   Entity #2, size 144 bytes)
+... [PDUs of interest successfully sent for this loop]
+... [loop termination condition met, simulationComplete=true]
+[DisThreadedNetworkInterface ExampleSimulationProgram] [sending 25] DisPduType 22 COMMENT, size 176 bytes)
+[DisThreadedNetworkInterface ExampleSimulationProgram] [receipt 25] DisPduType 22 COMMENT, size 176 bytes)
+[DisChannel ExampleSimulationProgram] *** [CommentPdu COMPLETE_EVENT_REPORT] [MV3500 ExampleSimulationProgram, runSimulation() completed successfully, randomInt=38 randomDouble=30.883227412112014]
+... [final=completion CommentPdu successfully sent for simulation]
+*** setKillSentinelAndInterrupts() sentinel killed=true sendingThread.isInterrupted()=true receiveThread.isInterrupted()=true
+[DisThreadedNetworkInterface ExampleSimulationProgram] datagramSocket.leaveGroup address=239.1.2.3 port=3000 isClosed()=true close() complete.
+*** killThread() status: sendingThread.isAlive()=false sendingThread.isInterrupted()=true
+*** killThread() status: receiveThread.isAlive()=false receiveThread.isInterrupted()=true
+*** Thread close status: sendingThread.isAlive()=false receiveThread.isAlive()=false
+
+PduRecorder.stop() closing recorder log file:
+   C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
+[DisChannel ExampleSimulationProgram] complete.
+BUILD SUCCESSFUL (total time: 11 seconds)
