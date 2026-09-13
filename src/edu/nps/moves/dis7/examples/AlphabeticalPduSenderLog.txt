@@ -1,15 +1,25 @@
-ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/AlphabeticalPduSender.java -Drun.class=edu.nps.moves.dis7.examples.AlphabeticalPduSender run-single
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/AlphabeticalPduSender.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.AlphabeticalPduSender -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
 init:
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
-warning: [options] bootstrap class path not set in conjunction with -source 8
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
 1 warning
 compile-single:
 run-single:
 Usage:   AlphabeticalPduSender <port> <multicast group>
 Default: AlphabeticalPduSender  239.1.2.3   3000
 PDU of type DisPduType 00 OTHER not created or sent 
-[DisThreadedNetworkInterface] using network interface Intel(R) Centrino(R) Ultimate-N 6300 AGN
+PDU of type DisPduType 73 APPLICATION_CONTROL not created or sent 
+PDU of type DisPduType 74 IFF_INTERACTIVE not created or sent 
+PDU of type DisPduType 75 LOGICAL_OBJECT_STATE not created or sent 
+PDU of type DisPduType 76 LOGICAL_NETWORK_STATE not created or sent 
+PDU of type DisPduType 77 WEATHER not created or sent 
+PDU of type DisPduType 78 COMMUNICATIONS_NODE not created or sent 
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 1.  Sent PDU of type 15 AcknowledgePdu
 2.  Sent PDU of type 55 AcknowledgeReliablePdu
 3.  Sent PDU of type 16 ActionRequestPdu
@@ -82,4 +92,4 @@ PDU of type DisPduType 00 OTHER not created or sent
 70.  Sent PDU of type 35 TransferOwnershipPdu
 71.  Sent PDU of type 25 TransmitterPdu
 72.  Sent PDU of type 29 UnderwaterAcousticPdu
-BUILD SUCCESSFUL (total time: 2 seconds)
+BUILD SUCCESSFUL (total time: 0 seconds)
