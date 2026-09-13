@@ -1,5 +1,7 @@
 /**
- * Example classes using edu.nps.moves.dis7 library.
+ * Example programs and utility classes using edu.nps.moves.dis7 library.
+ * Many of these programs were originally developed as part of the 
+ * <a href="https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/tree/master/examples/src/OpenDis7Examples">NetworkedGraphicsMV3500 examples: OpenDis7Examples</a>.
  * 
  * @see java.lang.Package
  * @see <a href="https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful">https://stackoverflow.com/questions/22095487/why-is-package-info-java-useful</a>
