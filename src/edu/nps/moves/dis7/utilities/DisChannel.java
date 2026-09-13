@@ -43,7 +43,7 @@ public class DisChannel
     private static final String NETWORK_ADDRESS_DEFAULT = "239.1.2.3";
     private static final int       NETWORK_PORT_DEFAULT = 3000;
     /** default directory for PDULOG files */
-    protected static final String  DEFAULT_PDULOG_OUTPUT_DIRECTORY = "./pduLog";
+    protected static final String  DEFAULT_PDULOGS_OUTPUT_DIRECTORY = "./pduLogs";
 
     /** whether or not verbose comments are provided */
     private boolean verboseComments = true;
@@ -249,10 +249,10 @@ public class DisChannel
             return;
         }
         
-        String pduLogOutputDirectory = DEFAULT_PDULOG_OUTPUT_DIRECTORY;
-        printlnTRACE("Beginning pdu save to directory " + pduLogOutputDirectory);
-        pduRecorder = new PduRecorder(pduLogOutputDirectory, getNetworkAddress(), getNetworkPort()); // assumes save
-        pduRecorder.setEncodingPduLog(PduRecorder.ENCODING_PLAINTEXT);
+        String pduLogsOutputDirectory = DEFAULT_PDULOGS_OUTPUT_DIRECTORY;
+        printlnTRACE("Beginning pdu save to directory " + pduLogsOutputDirectory);
+        pduRecorder = new PduRecorder(pduLogsOutputDirectory, getNetworkAddress(), getNetworkPort()); // assumes save
+        pduRecorder.setEncodingPduLogs(PduRecorder.ENCODING_PLAINTEXT);
         pduRecorder.setDescriptor(descriptor); // also sets for the DisThreadedNetworkInterface
         pduRecorder.setVerbose(isVerboseDisNetworkInterface()); // either sending, receiving or both. Also sets for the DisThreadedNetworkInterface
         pduRecorder.start(); // begin running which also starts a DisThreadedNetworkInterface instance with the given network address and port
