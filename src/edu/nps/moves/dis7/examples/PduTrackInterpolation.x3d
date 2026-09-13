@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='PduTrackInterpolation.x3d' name='title'/>
+    <meta content='Conversion of ESPDU track into X3D animation interpolators and LineSet.' name='description'/>
+    <meta content='1 January 2022' name='created'/>
+    <meta content='30 May 2022' name='modified'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/examples/src/OpenDis7Examples/PduTrackInterpolation.x3d' name='identifier'/>
+    <meta content='PduTrack utility, opendis7-java Library https://github.com/open-dis/opendis7-java' name='generator'/>
+    <meta content='NPS MOVES MV3500 Networked Graphics https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500' name='reference'/>
+    <meta content='X3D Resources https://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='X3D Scene Authoring Hints https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html' name='reference'/>
+    <meta content='X3D Tooltips https://www.web3d.org/x3d/tooltips/X3dTooltips.html' name='reference'/>
+    <meta content='X3D Validator https://savage.nps.edu/X3dValidator' name='reference'/>
+    <meta content='Open source https://raw.githubusercontent.com/open-dis/opendis7-java/master/license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='PduTrackInterpolation.x3d'/>
+    <TimeSensor DEF='PduTrackSelfTestClock' cycleInterval='5.0' loop='true'/>
+    <PositionInterpolator DEF='PduTrackSelfTestPositions' key='0.0 1.0 2.0 3.0 4.0' keyValue='
+0.0 0.0 0.0,
+1.0 1.0 1.0,
+2.0 2.0 2.0,
+3.0 3.0 3.0,
+4.0 4.0 4.0'/>
+    <OrientationInterpolator DEF='PduTrackSelfTestOrientations' key='0.0 1.0 2.0 3.0 4.0' keyValue='
+0.0 1.0 0.0 0.7853982,
+0.0 1.0 0.0 0.7853982,
+0.0 1.0 0.0 0.7853982,
+0.0 1.0 0.0 0.7853982,
+0.0 1.0 0.0 0.7853982'/>
+    <ROUTE fromField='fraction_changed' fromNode='PduTrackSelfTestClock' toField='set_fraction' toNode='PduTrackSelfTestPositions'/>
+    <ROUTE fromField='fraction_changed' fromNode='PduTrackSelfTestClock' toField='set_fraction' toNode='PduTrackSelfTestOrientations'/>
+    <Shape>
+      <Appearance DEF='TrackAppearance'>
+        <Material emissiveColor='0.2 0.8 0.8'/>
+      </Appearance>
+      <LineSet vertexCount='5'>
+        <Coordinate point='
+0.0 0.0 0.0,
+1.0 1.0 1.0,
+2.0 2.0 2.0,
+3.0 3.0 3.0,
+4.0 4.0 4.0'/>
+      </LineSet>
+    </Shape>
+    <Transform DEF='AnimationTransform'>
+      <Transform rotation='0 0 1 1.57'>
+        <Shape>
+          <Appearance USE='TrackAppearance'/>
+          <Cone bottomRadius='0.5'/>
+        </Shape>
+      </Transform>
+    </Transform>
+    <ROUTE fromField='value_changed' fromNode='PduTrackSelfTestPositions' toField='translation' toNode='AnimationTransform'/>
+    <ROUTE fromField='value_changed' fromNode='PduTrackSelfTestOrientations' toField='rotation' toNode='AnimationTransform'/>
+  </Scene>
+</X3D>
