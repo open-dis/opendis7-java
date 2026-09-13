@@ -1,0 +1,59 @@
+# Start, ENCODING_PLAINTEXT, [PduRecorder PduListenerSaver] 20260913_124304, DIS capture file, .\pduLogs\PduCaptureLog01.dislog
+# Timestamp(8 bytes),ProtocolVersion,CompatibilityVersion,ExerciseID,PduType,PduStatus,HeaderLength,PduLength,then PDU-specific data
+# =============================================
+# DisPduType 15 ACKNOWLEDGE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,41,-92,25,13,-6,-83,7,0,15,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+# DisPduType 55 ACKNOWLEDGE_RELIABLE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,0,-58,111,56,7,0,55,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+# DisPduType 16 ACTION_REQUEST, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,0,-43,-77,108,7,0,16,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 56 ACTION_REQUEST_RELIABLE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,0,-43,-77,108,7,0,56,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 17 ACTION_RESPONSE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,0,-28,-17,108,7,0,17,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 57 ACTION_RESPONSE_RELIABLE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,0,-28,-17,108,7,0,57,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 33 AGGREGATE_STATE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,56,-22,64,7,0,33,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 47 APPEARANCE, Session time 12:43:04.7, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,-93,-50,80,7,0,47,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 45 AREAL_OBJECT_STATE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,-77,15,0,7,0,45,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 48 ARTICULATED_PARTS, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,-77,15,0,7,0,48,11,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 72 ATTRIBUTE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,-16,25,-112,7,0,72,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 66 COLLISION_ELASTIC, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,1,-1,90,-92,7,0,66,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 04 COLLISION, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,14,-98,116,7,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 22 COMMENT, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,14,-98,116,7,0,22,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 62 COMMENT_RELIABLE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,14,-98,116,7,0,62,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 11 CREATE_ENTITY, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,14,-98,116,7,0,11,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 51 CREATE_ENTITY_RELIABLE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,29,-33,36,7,0,51,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 20 DATA, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,29,-33,36,7,0,20,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 18 DATA_QUERY, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,29,-33,36,7,0,18,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 58 DATA_QUERY_RELIABLE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,29,-33,36,7,0,58,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 60 DATA_RELIABLE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,45,35,-68,7,0,60,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 24 DESIGNATOR, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,60,98,-36,7,0,24,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 03 DETONATION, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,90,-27,-52,7,0,3,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 68 DIRECTED_ENERGY_FIRE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,106,42,0,7,0,68,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 23 ELECTROMAGNETIC_EMISSION, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,121,105,-124,7,0,23,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 69 ENTITY_DAMAGE_STATUS, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,121,105,-124,7,0,69,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 01 ENTITY_STATE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0,2,-120,-77,48,7,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+# DisPduType 67 ENTITY_STATE_UPDATE, Session time 12:43:04.8, session duration 00:00:00.0, Pdu timestamp 0 00:00:00.0, simulation stream interval 0 00:00:00.0
+0,0,0,0
