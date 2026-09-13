@@ -1,12 +1,16 @@
-ant -f C:\\x3d-github\\open-dis7-java -Dnb.internal.action.name=run.single -Djavac.includes=edu/nps/moves/dis7/examples/EspduReceiverNIO.java -Drun.class=edu.nps.moves.dis7.examples.EspduReceiverNIO run-single
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/PduReceiverNIO.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.PduReceiverNIO -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
 init:
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Compiling 1 source file to C:\x3d-github\open-dis7-java\build\classes
-warning: [options] bootstrap class path not set in conjunction with -source 8
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
 1 warning
 compile-single:
 run-single:
-[DisThreadedNetworkInterface] using network interface Intel(R) Centrino(R) Ultimate-N 6300 AGN
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 1. got PDU of type: AcknowledgePdu
 2. got PDU of type: AcknowledgeReliablePdu
 3. got PDU of type: ActionRequestPdu
