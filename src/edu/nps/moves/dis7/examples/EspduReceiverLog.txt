@@ -1,13 +1,14 @@
-ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/EspduReceiver.java -Drun.class=OpenDis7Examples.EspduReceiver run-single
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/EspduReceiver.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.EspduReceiver -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
 init:
-Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
-Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+Ignoring source, target and bootclasspath as release has been set
 compile-single:
 run-single:
-[OpenDis7Examples.EspduReceiver] started...
-[OpenDis7Examples.EspduReceiver] listening for PDU packets on 239.1.2.3 port 3000
+[edu.nps.moves.dis7.examples.EspduReceiver] started...
+[edu.nps.moves.dis7.examples.EspduReceiver] listening for PDU packets on 239.1.2.3 port 3000
 To quit: stop or kill this process
 ===============
   1. received PDU type 1=ENTITY_STATE EntityStatePdu
@@ -18,15 +19,15 @@ To quit: stop or kill this process
 ===============
   3. received PDU type 1=ENTITY_STATE EntityStatePdu
      entityID triplet: [1, 2, 3] 
-     Location in DIS coordinates:        [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+     Location in DIS coordinates:        [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
   4. received PDU type 2=FIRE FirePdu
-     FirePdu locationInWorldCoordinates: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+     FirePdu locationInWorldCoordinates: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
 ===============
   5. received PDU type 1=ENTITY_STATE EntityStatePdu
      entityID triplet: [1, 2, 3] 
-     Location in DIS coordinates:        [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+     Location in DIS coordinates:        [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
   6. received PDU type 2=FIRE FirePdu
-     FirePdu locationInWorldCoordinates: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+     FirePdu locationInWorldCoordinates: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
 ===============
   7. received PDU type 1=ENTITY_STATE EntityStatePdu
      entityID triplet: [1, 2, 3] 
@@ -44,5 +45,29 @@ To quit: stop or kill this process
      entityID triplet: [1, 2, 3] 
      Location in DIS coordinates:        [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
  12. received PDU type 2=FIRE FirePdu
+     FirePdu locationInWorldCoordinates: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+===============
+ 13. received PDU type 1=ENTITY_STATE EntityStatePdu
+     entityID triplet: [1, 2, 3] 
+     Location in DIS coordinates:        [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+ 14. received PDU type 2=FIRE FirePdu
+     FirePdu locationInWorldCoordinates: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+===============
+ 15. received PDU type 1=ENTITY_STATE EntityStatePdu
+     entityID triplet: [1, 2, 3] 
+     Location in DIS coordinates:        [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+ 16. received PDU type 2=FIRE FirePdu
+     FirePdu locationInWorldCoordinates: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
+===============
+ 17. received PDU type 1=ENTITY_STATE EntityStatePdu
+     entityID triplet: [1, 2, 3] 
+     Location in DIS coordinates:        [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+ 18. received PDU type 2=FIRE FirePdu
+     FirePdu locationInWorldCoordinates: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+===============
+ 19. received PDU type 1=ENTITY_STATE EntityStatePdu
+     entityID triplet: [1, 2, 3] 
+     Location in DIS coordinates:        [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
+ 20. received PDU type 2=FIRE FirePdu
      FirePdu locationInWorldCoordinates: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
 ===============

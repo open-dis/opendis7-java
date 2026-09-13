@@ -1,13 +1,14 @@
-ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/EspduSender.java -Drun.class=OpenDis7Examples.EspduSender run-single
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/EspduSender.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.EspduSender -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
 init:
-Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
-Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+Ignoring source, target and bootclasspath as release has been set
 compile-single:
 run-single:
-[OpenDis7Examples.EspduSender]  started...
-[OpenDis7Examples.EspduSender]  sending multicast ESPDU packets to 239.1.2.3 port 3000
+[edu.nps.moves.dis7.examples.EspduSender]  started...
+[edu.nps.moves.dis7.examples.EspduSender]  sending multicast ESPDU packets to 239.1.2.3 port 3000
 ===============
 espdu entityType information:
   EntityKind =EntityKind 1 PLATFORM
@@ -16,67 +17,57 @@ espdu entityType information:
   Category   =1
   SubCategory=1
   Specific   =Country 225 UNITED_STATES_OF_AMERICA_USA
-[OpenDis7Examples.EspduSender] sending 5 sets of packets:
+[edu.nps.moves.dis7.examples.EspduSender] sending 5 sets of packets:
 ===============
 Create new PDUs
   latitude, longitude:   [36.595517, -121.87706]
   coordinate conversion: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
 Espdu #1 entityID=[1,2,3]
 FirePdu #1 firePdu=[FireMissionIndex=0, descriptor=MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0]
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
 ===============
 Create new PDUs
   latitude, longitude:   [36.595517, -121.877]
   coordinate conversion: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
 Espdu #2 entityID=[1,2,3]
 FirePdu #2 firePdu=[FireMissionIndex=0, descriptor=MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0]
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
 ===============
 Create new PDUs
   latitude, longitude:   [36.595517, -121.87706]
   coordinate conversion: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
 Espdu #3 entityID=[1,2,3]
 FirePdu #3 firePdu=[FireMissionIndex=0, descriptor=MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0]
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
 ===============
 Create new PDUs
   latitude, longitude:   [36.595517, -121.877]
   coordinate conversion: [-2707492.9269245286, -4353663.899966802, 3781450.3202754413]
 Espdu #4 entityID=[1,2,3]
 FirePdu #4 firePdu=[FireMissionIndex=0, descriptor=MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0]
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
 ===============
 Create new PDUs
   latitude, longitude:   [36.595517, -121.87706]
   coordinate conversion: [-2707497.4860692197, -4353661.0646844525, 3781450.3202754413]
 Espdu #5 entityID=[1,2,3]
 FirePdu #5 firePdu=[FireMissionIndex=0, descriptor=MunitionDescriptor munitionType:EntityType entityKind:EntityKind 0 OTHER domain:Other country:Country 0 OTHER category:0 subCategory:0 specific:0 extra:0 warhead:MunitionDescriptorWarhead 0 OTHER fuse:MunitionDescriptorFuse 0 OTHER quantity:0 rate:0]
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 172.20.209.62   port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
-[OpenDis7Examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 127.255.255.255 port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 01 ENTITY_STATE] packet.getLength()=144, to 10.0.0.255      port 3000
+[edu.nps.moves.dis7.examples.EspduSender] sending datagram packet [DisPduType 02 FIRE        ] packet.getLength()= 1500, to 10.0.0.255      port 3000
 ===============
-[OpenDis7Examples.EspduSender] complete.
-BUILD SUCCESSFUL (total time: 8 seconds)
+[edu.nps.moves.dis7.examples.EspduSender] complete.
+BUILD SUCCESSFUL (total time: 5 seconds)
