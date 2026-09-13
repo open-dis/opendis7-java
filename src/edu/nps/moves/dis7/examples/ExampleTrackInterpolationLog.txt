@@ -1,0 +1,295 @@
+ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/ExampleTrackInterpolation.java -Drun.class=OpenDis7Examples.ExampleTrackInterpolation run-single
+init:
+Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+compile-single:
+run-single:
+[DisChannel] thisHostName=IT160907-INFLPP
+[DisChannel ExampleTrackInterpolation] Beginning pdu save to directory ./pduLog
+[PduRecorder ExampleTrackInterpolation] Recorder log file open: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
+[DisThreadedNetworkInterface] using network interface PANGP Virtual Ethernet Adapter Secure #2
+[DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
+[DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
+[DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
+[PduRecorder ExampleTrackInterpolation] listening to IP address 239.1.2.3 on port 3000
+[DisChannel ExampleTrackInterpolation] Network confirmation: address=239.1.2.3 port=3000
+[DisChannel ExampleTrackInterpolation] just checking: disChannel.getNetworkAddress()=239.1.2.3, getNetworkPort()=3000
+[DisChannel ExampleTrackInterpolation] just checking: hasVerboseSending()=true, hasVerboseReceipt()=true
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [sending  1] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [sending  2] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [receipt  1] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [sending  3] DisPduType 22 COMMENT, size 80 bytes)
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [receipt  2] DisPduType 11 CREATE_ENTITY, size 28 bytes)
+[DisThreadedNetworkInterface ExampleTrackInterpolation] [receipt  3] DisPduType 22 COMMENT, size 80 bytes)
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [Simulation timestep duration 1.0 seconds]
+[DisChannel ExampleTrackInterpolation] main() started...
+ 0 Entity location=( 0.0,  0.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 1 at time 0.0]
+ 1 Entity location=( 0.0,  1.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 2 at time 1.0]
+ 2 Entity location=( 0.0,  2.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 3 at time 2.0]
+ 3 Entity location=( 0.0,  3.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 4 at time 3.0]
+ 4 Entity location=( 0.0,  4.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 5 at time 4.0]
+ 5 Entity location=( 0.0,  5.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 6 at time 5.0]
+ 6 Entity location=( 0.0,  6.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 7 at time 6.0]
+ 7 Entity location=( 0.0,  7.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 8 at time 7.0]
+ 8 Entity location=( 0.0,  8.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 9 at time 8.0]
+ 9 Entity location=( 0.0,  9.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 10 at time 9.0]
+10 Entity location=( 0.0, 10.0,  0.0) NORTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 11 at time 10.0]
+11 Entity location=( 1.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 12 at time 11.0]
+12 Entity location=( 2.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 13 at time 12.0]
+13 Entity location=( 3.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 14 at time 13.0]
+14 Entity location=( 4.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 15 at time 14.0]
+15 Entity location=( 5.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 16 at time 15.0]
+16 Entity location=( 6.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 17 at time 16.0]
+17 Entity location=( 7.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 18 at time 17.0]
+18 Entity location=( 8.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 19 at time 18.0]
+19 Entity location=( 9.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 20 at time 19.0]
+20 Entity location=(10.0, 10.0,  0.0) EAST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 21 at time 20.0]
+21 Entity location=(10.0,  9.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 22 at time 21.0]
+22 Entity location=(10.0,  8.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 23 at time 22.0]
+23 Entity location=(10.0,  7.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 24 at time 23.0]
+24 Entity location=(10.0,  6.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 25 at time 24.0]
+25 Entity location=(10.0,  5.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 26 at time 25.0]
+26 Entity location=(10.0,  4.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 27 at time 26.0]
+27 Entity location=(10.0,  3.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 28 at time 27.0]
+28 Entity location=(10.0,  2.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 29 at time 28.0]
+29 Entity location=(10.0,  1.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 30 at time 29.0]
+30 Entity location=(10.0,  0.0,  0.0) SOUTH
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 31 at time 30.0]
+31 Entity location=( 9.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 32 at time 31.0]
+32 Entity location=( 8.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 33 at time 32.0]
+33 Entity location=( 7.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 34 at time 33.0]
+34 Entity location=( 6.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 35 at time 34.0]
+35 Entity location=( 5.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 36 at time 35.0]
+36 Entity location=( 4.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 37 at time 36.0]
+37 Entity location=( 3.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 38 at time 37.0]
+38 Entity location=( 2.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 39 at time 38.0]
+39 Entity location=( 1.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 40 at time 39.0]
+40 Entity location=( 0.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu APPLICATION_TIMESTEP] [MV3500 TrackSimulationProgram, runSimulation() loop 41 at time 40.0]
+41 Entity location=(-1.0,  0.0,  0.0) WEST 
+[DisChannel ExampleTrackInterpolation] loop termination condition met, simulationComplete=true
+[DisChannel ExampleTrackInterpolation] all PDUs successfully sent for this loop (pduSentList.size()=42 total)
+[DisChannel ExampleTrackInterpolation] pduTrack_1 initialLocation=Vector3Double x:0.0 y:0.0 z:0.0, latestLocation=Vector3Double x:-1.0 y:0.0 z:0.0
+pduTrack_1 getEspduCount()=42
+pduTrack_1 duration = 42.0 seconds = 0 ticks
+=================================
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='ExampleTrackInterpolation.x3d' name='title'/>
+    <meta content='Conversion of ESPDU track into X3D animation interpolators and LineSet.' name='description'/>
+    <meta content='1 January 2022' name='created'/>
+    <meta content='18 August 2024' name='modified'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/examples/src/OpenDis7Examples/ExampleTrackInterpolation.x3d' name='identifier'/>
+    <meta content='PduTrack utility, opendis7-java Library https://github.com/open-dis/opendis7-java' name='generator'/>
+    <meta content='NPS MOVES MV3500 Networked Graphics https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500' name='reference'/>
+    <meta content='X3D Resources https://www.web3d.org/x3d/content/examples/X3dResources.html' name='reference'/>
+    <meta content='X3D Scene Authoring Hints https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html' name='reference'/>
+    <meta content='X3D Tooltips https://www.web3d.org/x3d/tooltips/X3dTooltips.html' name='reference'/>
+    <meta content='X3D Validator https://savage.nps.edu/X3dValidator' name='reference'/>
+    <meta content='Open source https://raw.githubusercontent.com/open-dis/opendis7-java/master/license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='PduTrackInterpolation.x3d'/>
+    <TimeSensor DEF='testing123Clock' cycleInterval='42.0' loop='true'/>
+    <PositionInterpolator DEF='testing123Positions' key='0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 33.0 34.0 35.0 36.0 37.0 38.0 39.0 40.0 41.0' keyValue='
+0.0 0.0 0.0,
+0.0 1.0 0.0,
+0.0 2.0 0.0,
+0.0 3.0 0.0,
+0.0 4.0 0.0,
+0.0 5.0 0.0,
+0.0 6.0 0.0,
+0.0 7.0 0.0,
+0.0 8.0 0.0,
+0.0 9.0 0.0,
+0.0 10.0 0.0,
+1.0 10.0 0.0,
+2.0 10.0 0.0,
+3.0 10.0 0.0,
+4.0 10.0 0.0,
+5.0 10.0 0.0,
+6.0 10.0 0.0,
+7.0 10.0 0.0,
+8.0 10.0 0.0,
+9.0 10.0 0.0,
+10.0 10.0 0.0,
+10.0 9.0 0.0,
+10.0 8.0 0.0,
+10.0 7.0 0.0,
+10.0 6.0 0.0,
+10.0 5.0 0.0,
+10.0 4.0 0.0,
+10.0 3.0 0.0,
+10.0 2.0 0.0,
+10.0 1.0 0.0,
+10.0 0.0 0.0,
+9.0 0.0 0.0,
+8.0 0.0 0.0,
+7.0 0.0 0.0,
+6.0 0.0 0.0,
+5.0 0.0 0.0,
+4.0 0.0 0.0,
+3.0 0.0 0.0,
+2.0 0.0 0.0,
+1.0 0.0 0.0,
+0.0 0.0 0.0,
+-1.0 0.0 0.0'/>
+    <OrientationInterpolator DEF='testing123Orientations' key='0.0 1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 33.0 34.0 35.0 36.0 37.0 38.0 39.0 40.0 41.0' keyValue='
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0,
+0.0 1.0 0.0 0.0'/>
+    <ROUTE fromField='fraction_changed' fromNode='testing123Clock' toField='set_fraction' toNode='testing123Positions'/>
+    <ROUTE fromField='fraction_changed' fromNode='testing123Clock' toField='set_fraction' toNode='testing123Orientations'/>
+    <Shape>
+      <Appearance DEF='TrackAppearance'>
+        <Material emissiveColor='0.2 0.8 0.8'/>
+      </Appearance>
+      <LineSet vertexCount='42'>
+        <Coordinate point='
+0.0 0.0 0.0,
+0.0 1.0 0.0,
+0.0 2.0 0.0,
+0.0 3.0 0.0,
+0.0 4.0 0.0,
+0.0 5.0 0.0,
+0.0 6.0 0.0,
+0.0 7.0 0.0,
+0.0 8.0 0.0,
+0.0 9.0 0.0,
+0.0 10.0 0.0,
+1.0 10.0 0.0,
+2.0 10.0 0.0,
+3.0 10.0 0.0,
+4.0 10.0 0.0,
+5.0 10.0 0.0,
+6.0 10.0 0.0,
+7.0 10.0 0.0,
+8.0 10.0 0.0,
+9.0 10.0 0.0,
+10.0 10.0 0.0,
+10.0 9.0 0.0,
+10.0 8.0 0.0,
+10.0 7.0 0.0,
+10.0 6.0 0.0,
+10.0 5.0 0.0,
+10.0 4.0 0.0,
+10.0 3.0 0.0,
+10.0 2.0 0.0,
+10.0 1.0 0.0,
+10.0 0.0 0.0,
+9.0 0.0 0.0,
+8.0 0.0 0.0,
+7.0 0.0 0.0,
+6.0 0.0 0.0,
+5.0 0.0 0.0,
+4.0 0.0 0.0,
+3.0 0.0 0.0,
+2.0 0.0 0.0,
+1.0 0.0 0.0,
+0.0 0.0 0.0,
+-1.0 0.0 0.0'/>
+      </LineSet>
+    </Shape>
+    <Transform DEF='AnimationTransform'>
+      <Transform rotation='0 0 1 1.57'>
+        <Shape>
+          <Appearance USE='TrackAppearance'/>
+          <Cone bottomRadius='0.5'/>
+        </Shape>
+      </Transform>
+    </Transform>
+    <ROUTE fromField='value_changed' fromNode='testing123Positions' toField='translation' toNode='AnimationTransform'/>
+    <ROUTE fromField='value_changed' fromNode='testing123Orientations' toField='rotation' toNode='AnimationTransform'/>
+  </Scene>
+</X3D>
+
+=================================
+[DisChannel ExampleTrackInterpolation] *** [CommentPdu COMPLETE_EVENT_REPORT] [MV3500 TrackSimulationProgram, runSimulation() completed successfully]
+
+PduRecorder.stop() closing recorder log file:
+   C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
+[DisChannel ExampleTrackInterpolation] complete.
+BUILD SUCCESSFUL (total time: 17 seconds)
