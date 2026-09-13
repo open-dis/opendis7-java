@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2023, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2026, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD-style open-source license, see project
  * <a href="https://savage.nps.edu/opendis7-java/license.html" target="_blank">license.html</a> and <a href="https://savage.nps.edu/opendis7-java/license.txt" target="_blank">license.txt</a>
  */
@@ -57,7 +57,7 @@ public class PduRecorder // implements PduReceiver
     /** Character sentinel indicating remainder of line is a comment */
     public static final String COMMENT_MARKER = "#";
 
-    static final String OUTPUT_DIRECTORY_DEFAULT = "./pduLog";
+    static final String OUTPUT_DIRECTORY_DEFAULT = "./pduLogs";
     static final String DEFAULT_FILE_PREFIX      = "PduCaptureLog";
     static final String DISLOG_FILE_EXTENSION    = ".dislog";
     
@@ -96,8 +96,8 @@ public class PduRecorder // implements PduReceiver
     public static final List<String> ENCODING_OPTIONS_TODO = new ArrayList<>();
 
     /** encoding used by log file */
-    protected String  encodingPduLog = ENCODING_PLAINTEXT; // default, TODO change to ENCODING_BINARY
-    private boolean includeHeaders = encodingPduLog.equals(ENCODING_PLAINTEXT);
+    protected String  encodingPduLogs = ENCODING_PLAINTEXT; // default, TODO some users will want to change to ENCODING_BINARY
+    private boolean   includeHeaders = encodingPduLogs.equals(ENCODING_PLAINTEXT);
 
     private String TRACE_PREFIX = ("[PduRecorder " + getDescriptor()).trim() + "] ";
     private String  descriptor;
@@ -205,36 +205,36 @@ public class PduRecorder // implements PduReceiver
       /**
        * TODO change this to enumeration type for strictness
        *
-       * @return the pduLogEncoding
+       * @return the encodingPduLogs
        */
-      public String getEncodingPduLog()
+      public String getEncodingPduLogs()
       {
-          return encodingPduLog;
+          return encodingPduLogs;
       }
 
       /**
        * Set encoding for PDU Log
-       * @param newEncodingPduLog the pduLogEncoding to set
+       * @param newEncodingPduLogs the encodingPduLogs to set
        * @return same object to permit progressive setters */
-      public PduRecorder setEncodingPduLog(String newEncodingPduLog)
+      public PduRecorder setEncodingPduLogs(String newEncodingPduLogs)
       {
-          newEncodingPduLog = newEncodingPduLog.trim();
-          String errorMessage = "*** setEncodingPduLog(" + newEncodingPduLog + ") ";
-          if (ENCODING_OPTIONS_LIST.contains(newEncodingPduLog))
+          newEncodingPduLogs = newEncodingPduLogs.trim();
+          String errorMessage = "*** setEncodingPduLogs(" + newEncodingPduLogs + ") ";
+          if (ENCODING_OPTIONS_LIST.contains(newEncodingPduLogs))
           {
-              encodingPduLog = newEncodingPduLog;
-              setIncludeHeaders(encodingPduLog.equals(ENCODING_PLAINTEXT));
+              encodingPduLogs = newEncodingPduLogs;
+              setIncludeHeaders(encodingPduLogs.equals(ENCODING_PLAINTEXT));
               return this;
           }
-          else if (ENCODING_OPTIONS_TODO.contains(newEncodingPduLog))
+          else if (ENCODING_OPTIONS_TODO.contains(newEncodingPduLogs))
           {
               errorMessage += " is not yet a supported encoding";
           }
           else
           {
-              errorMessage += " is not yet a recognizeded encoding";
+              errorMessage += " is not a recognizeded encoding";
           }
-          errorMessage += ", encodingPduLog=" + encodingPduLog + " is unchanged";
+          errorMessage += ", encodingPduLogs=" + encodingPduLogs + " is unchanged";
           System.err.println (errorMessage);
           System.err.flush(); // since network threads may be occurring
           return this;
@@ -389,7 +389,7 @@ public class PduRecorder // implements PduReceiver
         headerWritten = true;
       }
 
-      switch (encodingPduLog)
+      switch (encodingPduLogs)
       {
           case ENCODING_BINARY:
               // diagnostics can go here, TODO is any processing needed?
@@ -438,15 +438,15 @@ public class PduRecorder // implements PduReceiver
           // TODO ENCODING_XML
 
           default:
-              if (ENCODING_OPTIONS_LIST.contains(encodingPduLog))
-                 System.err.println ("Encoding " + encodingPduLog + " not supported");
+              if (ENCODING_OPTIONS_LIST.contains(encodingPduLogs))
+                 System.err.println ("Encoding " + encodingPduLogs + " not supported");
               else
-                 System.err.println ("Encoding " + encodingPduLog + " not recognized");
+                 System.err.println ("Encoding " + encodingPduLogs + " not recognized");
               break;
       }
       try
       {
-        if (encodingPduLog.equals(ENCODING_BINARY))
+        if (encodingPduLogs.equals(ENCODING_BINARY))
         {
             // https://stackoverflow.com/questions/4931854/converting-char-array-into-byte-array-and-back-again
             Charset    charset = Charset.forName("UTF-8");
@@ -461,7 +461,7 @@ public class PduRecorder // implements PduReceiver
       }
       catch (IOException ex)
       {    
-          throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLog=" + encodingPduLog + ": " + ex);
+          throw new RuntimeException("Fatal exception writing DIS log file in PduRecorder thread, encodingPduLogs=" + encodingPduLogs + ": " + ex);
       }
       pduCount = pduCount + 1;
 //      if (false) // debug
@@ -504,20 +504,20 @@ public class PduRecorder // implements PduReceiver
 
         try
         {
-            logFileWriter.write(START_COMMENT_MARKER + encodingPduLog + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
+            logFileWriter.write(START_COMMENT_MARKER + encodingPduLogs + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
             
-//            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
+//            if (encodingPduLogs.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
 //            {
 //                logFileWriter.write(COMMENT_MARKER + " DisPduType,ReceiptDate,ReceiptTime");
 //                ((PrintWriter) logFileWriter).println();
 //            }
-            if (encodingPduLog.equals(ENCODING_PLAINTEXT))
+            if (encodingPduLogs.equals(ENCODING_PLAINTEXT))
             {
                 logFileWriter.write(COMMENT_MARKER + " Timestamp(8 bytes),ProtocolVersion,CompatibilityVersion,ExerciseID,PduType,PduStatus,HeaderLength,PduLength,then PDU-specific data");
                 ((PrintWriter) logFileWriter).println();
             }
-            if (encodingPduLog.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
+            if (encodingPduLogs.equals(ENCODING_PLAINTEXT) && includesReadableTimeStamp())
             {
                 logFileWriter.write(COMMENT_MARKER + " " + "=============================================");
                 ((PrintWriter) logFileWriter).println();
@@ -536,7 +536,7 @@ public class PduRecorder // implements PduReceiver
 
         try
         {
-            logFileWriter.write(FINISH_COMMENT_MARKER + encodingPduLog + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
+            logFileWriter.write(FINISH_COMMENT_MARKER + encodingPduLogs + ", " + TRACE_PREFIX + timeStamp + ", DIS capture file, " + logFile.getPath());
             ((PrintWriter) logFileWriter).println();
         } 
         catch (IOException ex)
@@ -563,17 +563,18 @@ public class PduRecorder // implements PduReceiver
       String baseName  = FilenameUtils.getBaseName(filename);
       String extension = FilenameUtils.getExtension(filename);
 
-      Integer fileCounter = null;
+      Integer fileCounter = 1; // null;
       File    newFile;
       boolean fileExists;
       outputDir.toFile().mkdirs();
       do {
-        String nextFileName = baseName + (fileCounter == null ? "" : fileCounter) + "." + extension;
+//      String nextFileName = baseName + (fileCounter == null ? "" : String.format("%02d", fileCounter)) + "." + extension;
+        String nextFileName = baseName + String.format("%02d", fileCounter) + "." + extension;
         newFile = new File(outputDir.toFile(), nextFileName);
         fileExists = newFile.exists();
-        if (fileCounter == null)
-          fileCounter = 1;
-        else
+//        if (fileCounter == null)
+//          fileCounter = 1;
+//        else
           fileCounter++;
       } while (fileExists);
 
@@ -646,7 +647,7 @@ public class PduRecorder // implements PduReceiver
         }
         System.out.println("=================================================");
         System.out.println("Test PduRecorder encoding " + currentEncoding);
-        pduRecorder.setEncodingPduLog(currentEncoding);
+        pduRecorder.setEncodingPduLogs(currentEncoding);
         pduRecorder.setDescriptor("PduRecorder main() self test " + currentEncoding);
 //      pduRecorder.setPort(1); // option to avoid listening to other PDU streams during self test
         pduRecorder.setLogFileName("PduRecorderSelfTest" + currentEncoding + "_" + DEFAULT_FILE_PREFIX + DISLOG_FILE_EXTENSION);
@@ -661,14 +662,17 @@ public class PduRecorder // implements PduReceiver
           {
             try {
                 Pdu nextPdu = pduFactory.createPdu(allPDUTypesArray[index]);
-                nextPdu.setTimestamp(index * 10); // seconds
-                nextPdu.setLength(nextPdu.getMarshalledSize());
-//              nextPdu.getTimestamp(); // debug
-                disNetworkInterface.sendPDU(nextPdu);
+                if (nextPdu != null)
+                {
+                    nextPdu.setTimestamp(index * 10); // seconds
+                    nextPdu.setLength(nextPdu.getMarshalledSize());
+    //              nextPdu.getTimestamp(); // debug
+                    disNetworkInterface.sendPDU(nextPdu);
                 
-                // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
-                // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
-                wait (100L); // let send/receive threads and streams catch up // TODO consider wait() instead of sleep()
+                    // https://stackoverflow.com/questions/10663920/calling-thread-sleep-from-synchronized-context-in-java
+                    // https://stackoverflow.com/questions/1036754/difference-between-wait-vs-sleep-in-java
+                    wait (100L); // let send/receive threads and streams catch up // TODO consider wait() instead of sleep()
+                }
             }
             catch (InterruptedException ex) {
               System.err.println("Exception sending Pdu " + pduTypeValue + ": " + ex.getLocalizedMessage());
