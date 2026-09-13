@@ -4,7 +4,6 @@
  */
 package edu.nps.moves.dis7.examples;
 
-import edu.nps.moves.dis7.utilities.DisThreadedNetworkInterface;
 import edu.nps.moves.dis7.utilities.stream.PduPlayer;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -23,35 +22,34 @@ import java.util.Scanner;
 public class PduReaderPlayer
 {
   private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLogs";
-/** Default multicast group address we send on.
-  * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
-  public static final String  DEFAULT_MULTICAST_ADDRESS = DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS;
-  /** Default multicast port we send on.
-  * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
-  public static final int     DEFAULT_MULTICAST_PORT    = DisThreadedNetworkInterface.DEFAULT_DIS_PORT;
+  /** Default multicast group address we send on.
+    * @see <a href="https://en.wikipedia.org/wiki/Multicast_address" target="_blank">https://en.wikipedia.org/wiki/Multicast_address</a> */
+  public static final String  DEFAULT_MULTICAST_ADDRESS = AllPduSender.DEFAULT_MULTICAST_ADDRESS;
+  /** Default multicast port
+   * @see <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)" target="_blank">https://en.wikipedia.org/wiki/Port_(computer_networking)</a> */
+  public static final int     DEFAULT_MULTICAST_PORT    = AllPduSender.DEFAULT_MULTICAST_PORT;
 
   private enum mystate
   {
     RUNNING,
     PAUSED;
   }
-  
-  /** default constructor */
-  public PduReaderPlayer ()
+  /** Default constructor */
+  public PduReaderPlayer()
   {
-      // initialization code here
+      // default constructor, initialization code goes here
   }
 
   /** Command-line invocation (CLI) of program, execution starts here
-    * @param args command-line arguments
-    */
+     * @param args command-line arguments
+     */
   public static void main(String[] args)
   {
     String  outputDirectory = DEFAULT_OUTPUT_DIRECTORY;
     String multicastAddress = DEFAULT_MULTICAST_ADDRESS;
     int       multicastPort = DEFAULT_MULTICAST_PORT;
     boolean       sendToNet = true;
-
+    
     System.out.println("edu.nps.moves.dis7.examples.PduReaderPlayer started...");
 
     switch (args.length) {
@@ -59,13 +57,13 @@ public class PduReaderPlayer
         break;
       case 1:
         outputDirectory = args[0];
-        sendToNet = Boolean.parseBoolean(args[1]);
+        sendToNet = Boolean.valueOf(args[1]);
         break;
       case 3:
         outputDirectory = args[0];
         multicastAddress = args[1];
         multicastPort = Integer.parseInt(args[2]);
-        sendToNet = Boolean.parseBoolean(args[3]);
+        sendToNet = Boolean.valueOf(args[3]);
         break;
       default:
         System.err.println("Usage: PduReaderPlayer() or \n"
@@ -81,8 +79,8 @@ public class PduReaderPlayer
       mystate state = mystate.RUNNING;
       Scanner terminalKeyboardScanner = new Scanner(System.in);
       PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
-      pduPlayer.startResume();
-
+      pduPlayer.begin();
+      
       while (true) // monitor user input via keyboard
       {
         System.out.println("Type p/enter to pause, r/enter to resume, q/enter to quit");
