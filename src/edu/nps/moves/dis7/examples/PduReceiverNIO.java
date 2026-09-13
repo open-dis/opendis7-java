@@ -14,7 +14,7 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 
 /**
- * Receives PDUs from the network in IEEE format. Very similar to EspduReciver, but this
+ * Receives PDUs from the network in IEEE format. Very similar to EspduReceiver, but this
  * implementation uses Robert Harder's more memory-efficient NIO code.
  *
  * @author DMcG rharder
