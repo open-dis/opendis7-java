@@ -1,15 +1,16 @@
-ant -f C:\\x3d-nps-gitlab\\NetworkedGraphicsMV3500\\examples -Dnb.internal.action.name=run.single -Djavac.includes=OpenDis7Examples/ExampleTrackInterpolation.java -Drun.class=OpenDis7Examples.ExampleTrackInterpolation run-single
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/ExampleTrackInterpolation.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.ExampleTrackInterpolation -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
 init:
-Deleting: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
 deps-jar:
-Updating property file: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\built-jar.properties
-Compiling 1 source file to C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\build\classes
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+Ignoring source, target and bootclasspath as release has been set
 compile-single:
 run-single:
-[DisChannel] thisHostName=IT160907-INFLPP
-[DisChannel ExampleTrackInterpolation] Beginning pdu save to directory ./pduLog
-[PduRecorder ExampleTrackInterpolation] Recorder log file open: C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
-[DisThreadedNetworkInterface] using network interface PANGP Virtual Ethernet Adapter Secure #2
+[DisChannel] thisHostName=AlienwareLaptop
+[DisChannel ExampleTrackInterpolation] Beginning pdu save to directory ./pduLogs
+[PduRecorder ExampleTrackInterpolation] Recorder log file open: C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog74.dislog
+[DisThreadedNetworkInterface] using network interface Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)
 [DisThreadedNetworkInterface] datagramSocket.joinGroup  address=239.1.2.3 port=3000 isConnected()=false createDatagramSocket() complete.
 [DisThreadedNetworkInterface] createThreads() sendingThread.isAlive()=true
 [DisThreadedNetworkInterface] createThreads() receiveThread.isAlive()=true
@@ -121,7 +122,7 @@ pduTrack_1 duration = 42.0 seconds = 0 ticks
     <meta content='ExampleTrackInterpolation.x3d' name='title'/>
     <meta content='Conversion of ESPDU track into X3D animation interpolators and LineSet.' name='description'/>
     <meta content='1 January 2022' name='created'/>
-    <meta content='18 August 2024' name='modified'/>
+    <meta content='13 September 2026' name='modified'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='https://gitlab.nps.edu/Savage/NetworkedGraphicsMV3500/-/blob/master/examples/src/OpenDis7Examples/ExampleTrackInterpolation.x3d' name='identifier'/>
     <meta content='PduTrack utility, opendis7-java Library https://github.com/open-dis/opendis7-java' name='generator'/>
@@ -290,6 +291,6 @@ pduTrack_1 duration = 42.0 seconds = 0 ticks
 [DisChannel ExampleTrackInterpolation] *** [CommentPdu COMPLETE_EVENT_REPORT] [MV3500 TrackSimulationProgram, runSimulation() completed successfully]
 
 PduRecorder.stop() closing recorder log file:
-   C:\x3d-nps-gitlab\NetworkedGraphicsMV3500\examples\pduLog\PduCaptureLog.dislog
+   C:\x3d-github\opendis7-java\pduLogs\PduCaptureLog74.dislog
 [DisChannel ExampleTrackInterpolation] complete.
-BUILD SUCCESSFUL (total time: 17 seconds)
+BUILD SUCCESSFUL (total time: 11 seconds)
