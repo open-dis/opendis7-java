@@ -20,7 +20,7 @@ import java.util.Scanner;
  */
 public class PduListenerSaver
 {
-    private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLog";
+    private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLogs";
     
     /** Default multicast group address <code>239.1.2.3</code> for send and receive connections.
      * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a>  */
