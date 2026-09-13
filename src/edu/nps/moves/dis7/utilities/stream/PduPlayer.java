@@ -55,7 +55,7 @@ public class PduPlayer {
     static final String ENCODING_MAK_DATA_LOGGER       = "ENCODING_MAK_DATA_LOGGER";        // verbose pretty-print. perhaps output only (MAK format itself is binary)
     static final String ENCODING_WIRESHARK_DATA_LOGGER = "ENCODING_WIRESHARK_DATA_LOGGER"; // 
 
-    private static String pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT; // determined when reading file
+    private static String pduLogsEncoding = PduRecorder.ENCODING_PLAINTEXT; // determined when reading file
     
     private boolean hasBegun = false;
     private boolean playing  = false;
@@ -111,7 +111,7 @@ public class PduPlayer {
     public void begin() 
     {
         try {
-            System.out.println("PduPlayer begin() playing DIS logs found in ancestor pduLog directory.");
+            System.out.println("PduPlayer begin() playing DIS logs found in ancestor pduLogs directory.");
             
             InetAddress addr = null;
             DatagramPacket datagramPacket;
@@ -162,15 +162,15 @@ public class PduPlayer {
                     // https://stackoverflow.com/questions/462373/difference-between-break-and-continue-statement
                     continue; // current file is empty
                 else if (f.getName().contains("BASE64") || lines.get(0).startsWith("AAAAA")) // TODO include header??
-                     pduLogEncoding = PduRecorder.ENCODING_BASE64;
+                     pduLogsEncoding = PduRecorder.ENCODING_BASE64;
                 else if (f.getName().contains("PLAINTEXT") || lines.get(0).contains("PLAINTEXT"))
-                     pduLogEncoding = PduRecorder.ENCODING_PLAINTEXT;
-                else pduLogEncoding = PduRecorder.ENCODING_BINARY;
+                     pduLogsEncoding = PduRecorder.ENCODING_PLAINTEXT;
+                else pduLogsEncoding = PduRecorder.ENCODING_BINARY;
                 
                 sleep (100l); // let prior run finish
                 System.out.flush();
                 System.err.flush();
-                System.out.println("Replaying PDU log file with " + pduLogEncoding + ": " + f.getAbsolutePath());
+                System.out.println("Replaying PDU log file with " + pduLogsEncoding + ": " + f.getAbsolutePath());
                 System.out.flush();
                     
                 for (String line : lines)
@@ -190,7 +190,7 @@ public class PduPlayer {
                     } 
                     else
                     {
-                        switch (pduLogEncoding) 
+                        switch (pduLogsEncoding) 
                         {
                             case PduRecorder.ENCODING_BASE64:
                                 sa = new String[1]; // one big string per line per PDU
@@ -237,11 +237,11 @@ public class PduPlayer {
                                 break;
 
                             default:
-                                System.err.println("Encoding'" + pduLogEncoding + "' not recognized or supported");
+                                System.err.println("Encoding'" + pduLogsEncoding + "' not recognized or supported");
                         }
 
                         // timestamp is 8 bytes, size of smallest PDU?
-                        if (pduLogEncoding.equals(PduRecorder.ENCODING_PLAINTEXT) && 
+                        if (pduLogsEncoding.equals(PduRecorder.ENCODING_PLAINTEXT) && 
                             (sa != null) && (sa.length < 8) && (sa.length != 0))
                         {
                             System.err.println("Error: ENCODING_PLAINTEXT parsing error due to line too short, offending line follows:");
@@ -253,7 +253,7 @@ public class PduPlayer {
                             startNanoTime = System.nanoTime(); // initialize
                         }
                         // get timestamp pduTimeBytes, i.e. 8 bytes represented by a Java long
-                        switch (pduLogEncoding)
+                        switch (pduLogsEncoding)
                         {
                             case PduRecorder.ENCODING_BINARY:
                                 // TODO
@@ -299,7 +299,7 @@ public class PduPlayer {
                                 break;
 
                             default:
-                                System.err.println("Encoding'" + pduLogEncoding + " not recognized or supported");
+                                System.err.println("Encoding'" + pduLogsEncoding + " not recognized or supported");
                         }
 
                         pduTimeInterval = Longs.fromByteArray(pduTimeBytes);
@@ -317,7 +317,7 @@ public class PduPlayer {
 
                         // now get rest of buffer for PDU fields
                         byte[] byteBuffer, pduBuffer;
-                        switch (pduLogEncoding)
+                        switch (pduLogsEncoding)
                         {
                             case PduRecorder.ENCODING_BASE64:
                                 // TODO if string included prior comma, handle it
@@ -479,8 +479,8 @@ public class PduPlayer {
             
             //Read Encoding from FileHeader
             String[] sa = line.split(",", 3);
-            pduLogEncoding = sa[1].trim();
-            System.err.println(pduLogEncoding);
+            pduLogsEncoding = sa[1].trim();
+            System.err.println(pduLogsEncoding);
 //            line = line.substring(PduRecorder.START_COMMENT_MARKER.length());
 //            System.out.println(line + "  ");
             showPduCountsOneTime = true; // get the first one in there
@@ -561,7 +561,7 @@ public class PduPlayer {
      */
     public static void main(String[] args)
     {
-        String DEFAULT_OUTPUT_DIRECTORY  = "pduLog";
+        String DEFAULT_OUTPUT_DIRECTORY  = "pduLogs";
         /** Default multicast group address we send on.
           * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
         String  DEFAULT_MULTICAST_ADDRESS = "239.1.2.3";
@@ -578,7 +578,7 @@ public class PduPlayer {
             // create instance of class in this static block
             PduPlayer pduPlayer = new PduPlayer(multicastAddress, multicastPort, Path.of(outputDirectory), sendToNet);
             // thread automatically starts up when class is instantiated
-            pduPlayer.begin(); // default is self test through all logs in ancestor pduLog subdirectory
+            pduPlayer.begin(); // default is self test through all logs in ancestor pduLogs subdirectory
         }
         catch (IOException ioe)
         {
