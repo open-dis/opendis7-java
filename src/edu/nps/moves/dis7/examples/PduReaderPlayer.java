@@ -22,7 +22,7 @@ import java.util.Scanner;
  */
 public class PduReaderPlayer
 {
-  private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLog";
+  private final static String DEFAULT_OUTPUT_DIRECTORY = "./pduLogs";
 /** Default multicast group address we send on.
   * @see <a href="https://en.wikipedia.org/wiki/Multicast_address">https://en.wikipedia.org/wiki/Multicast_address</a> */
   public static final String  DEFAULT_MULTICAST_ADDRESS = DisThreadedNetworkInterface.DEFAULT_DIS_ADDRESS;

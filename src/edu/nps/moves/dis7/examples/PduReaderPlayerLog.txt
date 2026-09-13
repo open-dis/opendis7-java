@@ -1,1 +1,1569 @@
-
+ant -f C:\\x3d-github\\opendis7-java -Djavac.includes=edu/nps/moves/dis7/examples/PduReaderPlayer.java -Dnb.internal.action.name=run.single -Drun.class=edu.nps.moves.dis7.examples.PduReaderPlayer -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -Djdk.xml.totalEntitySizeLimit=50000000 run-single
+init:
+Deleting: C:\x3d-github\opendis7-java\build\built-jar.properties
+deps-jar:
+Updating property file: C:\x3d-github\opendis7-java\build\built-jar.properties
+Compiling 1 source file to C:\x3d-github\opendis7-java\build\classes
+warning: [options] location of system modules is not set in conjunction with -source 17
+  not setting the location of system modules may lead to class files that cannot run on JDK 17
+    --release 17 is recommended instead of -source 17 -target 17 because it sets the location of system modules automatically
+1 warning
+compile-single:
+run-single:
+edu.nps.moves.dis7.examples.PduReaderPlayer started...
+Beginning PduReaderPlayer (239.1.2.3:3000) to directory ./pduLogs
+*** PduPlayer startResume() received before start of operations, invoking begin()...
+PduPlayer begin() playing DIS logs found in ancestor pduLogs directory.
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog01.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43048436)
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 21 EVENT_REPORT
+Total PDUs: 2
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog01.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog02.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43054667)
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Total PDUs: 4 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog02.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog03.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43060884)
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Total PDUs: 6 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog03.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog04.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43067103)
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Total PDUs: 8 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog04.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog05.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43073321)
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Total PDUs: 10 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog05.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog06.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43079555)
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Total PDUs: 12 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog06.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog07.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43085777)
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 04 COLLISION
+Total PDUs: 14 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog07.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog08.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43091996)
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Total PDUs: 16 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog08.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog09.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43098213)
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Total PDUs: 18 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog09.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog10.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43104432)
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Total PDUs: 20 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog10.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43110648)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog11.dislog
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Total PDUs: 22 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog11.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog12.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43116862)
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Total PDUs: 24 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog12.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog13.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43123077)
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Total PDUs: 26 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog13.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog14.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43129295)
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Total PDUs: 28 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog14.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog15.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43135530)
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Total PDUs: 29 2...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog15.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog16.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43140748)
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Total PDUs: 31 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog16.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog17.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43146964)
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Total PDUs: 33 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog17.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43153180)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog18.dislog
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 27 RECEIVER
+Total PDUs: 35 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog18.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog19.dislog
+ENCODING_PLAINTEXT
+Sent PDU: DisPduType 60 DATA_RELIABLE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43159398)
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Total PDUs: 37 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog19.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog20.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43170033)
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Total PDUs: 39 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog20.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43176251)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog21.dislog
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Total PDUs: 40 2...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog21.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog22.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43181470)
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Total PDUs: 42 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog22.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog23.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43187730)
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Total PDUs: 44 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog23.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog24.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43193942)
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Total PDUs: 46 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog24.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog25.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43200157)
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Total PDUs: 48 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog25.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog26.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43206377)
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Total PDUs: 50 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog26.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog27.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43212590)
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Total PDUs: 52 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog27.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog28.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43218809)
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Total PDUs: 54 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog28.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog29.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43225025)
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Total PDUs: 56 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog29.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog30.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43231246)
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Total PDUs: 58 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog30.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog31.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43237464)
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Total PDUs: 60 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog31.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog32.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43243683)
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Total PDUs: 132 73...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog32.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog33.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43260365)
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Total PDUs: 134 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog33.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog34.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43266576)
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Total PDUs: 139 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog34.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog35.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43271789)
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Total PDUs: 144 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog35.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog36.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43277021)
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Total PDUs: 149 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog36.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog37.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43282259)
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 27 RECEIVER
+Total PDUs: 154 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog37.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog38.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43289681)
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Total PDUs: 159 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog38.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog39.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43294909)
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Total PDUs: 164 6...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog39.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43300125)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog40.dislog
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Total PDUs: 176 13...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog40.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog41.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43305342)
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Total PDUs: 188 13...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog41.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog42.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43310558)
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Total PDUs: 200 13...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog42.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog43.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43315783)
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Total PDUs: 223 24...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog43.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43321017)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog44.dislog
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Total PDUs: 296 74...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog44.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43326265)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog45.dislog
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Total PDUs: 298 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog45.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43332479)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog46.dislog
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 03 DETONATION
+Total PDUs: 300 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog46.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog47.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43338690)
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 34 ISGROUPOF
+Total PDUs: 302 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog47.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog48.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43344903)
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Total PDUs: 304 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog48.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog49.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43351114)
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Total PDUs: 306 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog49.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog50.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43357323)
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Total PDUs: 308 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog50.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog51.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43363537)
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Total PDUs: 310 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog51.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog52.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43369777)
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Total PDUs: 312 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog52.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog53.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43378210)
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Total PDUs: 314 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog53.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog54.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43384421)
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Total PDUs: 316 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog54.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog55.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43390634)
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 24 DESIGNATOR
+Total PDUs: 318 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog55.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog56.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43396849)
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 19 SET_DATA
+Total PDUs: 320 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog56.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog57.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43403060)
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Total PDUs: 322 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog57.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog58.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43409271)
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 02 FIRE
+Total PDUs: 324 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog58.dislog
+ENCODING_PLAINTEXT
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog59.dislog
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43415487)
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Total PDUs: 326 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog59.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog60.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43421707)
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Total PDUs: 328 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog60.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog61.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43427923)
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 47 APPEARANCE
+Total PDUs: 330 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog61.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog62.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43434139)
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 36 ISPARTOF
+Total PDUs: 332 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog62.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog63.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43443267)
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Total PDUs: 334 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog63.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog64.dislog
+Sent PDU: DisPduType 18 DATA_QUERY
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43449480)
+Sent PDU: DisPduType 18 DATA_QUERY
+Total PDUs: 336 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog64.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog65.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43455692)
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Total PDUs: 338 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog65.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog66.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43461908)
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 20 DATA
+Total PDUs: 340 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog66.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog67.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43468118)
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Total PDUs: 342 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog67.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog68.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43474332)
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Total PDUs: 344 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog68.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43480544)
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog69.dislog
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Total PDUs: 348 5...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog69.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog70.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43483154)
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Total PDUs: 350 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog70.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog71.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43489368)
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Total PDUs: 352 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog71.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog72.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=43495579)
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 01 ENTITY_STATE
+Total PDUs: 354 3...
+PduPlayer handleComment() found FINISH_COMMENT_MARKER, end of replay from log file PduCaptureLog72.dislog
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduCaptureLog73.dislog
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=44172997)
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=150683)
+Sent PDU: DisPduType 21 EVENT_REPORT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=151678)
+Sent PDU: DisPduType 21 EVENT_REPORT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=151781)
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=152783)
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=152887)
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=153888)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=153989)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=154995)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=155098)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=156099)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=156202)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=157204)
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=157305)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=158307)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=158408)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=159411)
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 04 COLLISION
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=159512)
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 16 ACTION_REQUEST
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=160515)
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=160617)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=161619)
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=161720)
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 11 CREATE_ENTITY
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=162721)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=162823)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=163825)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=163928)
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=164929)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=165031)
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=166034)
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=166136)
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=166237)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=167241)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=167343)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=168345)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=168446)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=169447)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=169548)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=170550)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=170651)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=171653)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=171758)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=171857)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=172861)
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=172963)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=173965)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=174067)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=175068)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=175170)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=176173)
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=176274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=177276)
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=177377)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=178379)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=178481)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=179484)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=179586)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=180588)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=180690)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=181692)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=181793)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=182794)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=182896)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=183097)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=183299)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=183499)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=183700)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=183900)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=184101)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=184301)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=184503)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=184706)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=184905)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=185105)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=185305)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=185508)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=185708)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=185909)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=186109)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=186310)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=186510)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=186710)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=186911)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=187112)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=187312)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=187512)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=187713)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=187913)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=188114)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=188314)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=188515)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=188715)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=188915)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=189117)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=189320)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=189520)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=189721)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=189923)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=190128)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=190329)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=190531)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=190732)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=190932)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=191133)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=191333)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=191534)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=191734)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=191935)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=192135)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=192335)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=192537)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=192739)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=192938)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=193140)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=193341)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=193541)
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=193743)
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=193943)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=194143)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=194343)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=194544)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=194744)
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=194944)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=195147)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=195347)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=195549)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=195750)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=195951)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=196151)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=196353)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=196555)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=196756)
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=196957)
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 21 EVENT_REPORT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=197158)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=197260)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=198261)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=198363)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=198577)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=198682)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=199683)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=199787)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=199889)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=200415)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=200516)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=201518)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=201620)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=201724)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=202537)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=202638)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=203640)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=203740)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=203843)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=203938)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=204039)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=205041)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=205142)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=205252)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=205754)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=205856)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=206859)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=206962)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=207064)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=207862)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=207964)
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=208966)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209069)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209170)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209170)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209273)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209475)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209678)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=209877)
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 72 ATTRIBUTE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=210077)
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=210276)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=210478)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=210680)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=210879)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211078)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211180)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211180)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211291)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211495)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211694)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=211894)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=212095)
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 13 START_RESUME
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=212297)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=212496)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=212696)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=212898)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213098)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213199)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213199)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213316)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213518)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213718)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=213919)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=214129)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=214323)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=214526)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=214724)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=214927)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215028)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215129)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215129)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215129)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215247)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215347)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215447)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215550)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215650)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215750)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215856)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=215954)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216053)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216152)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216253)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216355)
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 01 ENTITY_STATE
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216458)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216560)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216665)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216765)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216868)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=216967)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217069)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217170)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217272)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217272)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217273)
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 25 TRANSMITTER
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217273)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217274)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217275)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217276)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217276)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217276)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217276)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 72 ATTRIBUTE
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217277)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217278)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217279)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217280)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217280)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=217382)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=218384)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=218485)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=219487)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=219588)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=220590)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=220691)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=221693)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=221797)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=222796)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=222897)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=223899)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=223999)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=225001)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=225102)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=226102)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=226204)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=227205)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=227308)
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=227207)
+Replaying PDU log file with ENCODING_BASE64: C:\x3d-github\opendis7-java\.\pduLogs\PduRecorderSelfTestENCODING_BASE64_PduCaptureLog.dislog
+Sent PDU: DisPduType 01 ENTITY_STATE
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=42828246)
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Sent PDU: DisPduType 29 UNDERWATER_ACOUSTIC
+Sent PDU: DisPduType 30 SUPPLEMENTAL_EMISSION_ENTITY_STATE
+Sent PDU: DisPduType 31 INTERCOM_SIGNAL
+Sent PDU: DisPduType 32 INTERCOM_CONTROL
+Sent PDU: DisPduType 33 AGGREGATE_STATE
+Sent PDU: DisPduType 34 ISGROUPOF
+Sent PDU: DisPduType 35 TRANSFER_OWNERSHIP
+Sent PDU: DisPduType 36 ISPARTOF
+Sent PDU: DisPduType 37 MINEFIELD_STATE
+Sent PDU: DisPduType 38 MINEFIELD_QUERY
+Sent PDU: DisPduType 39 MINEFIELD_DATA
+Sent PDU: DisPduType 40 MINEFIELD_RESPONSE_NACK
+Sent PDU: DisPduType 41 ENVIRONMENTAL_PROCESS
+Sent PDU: DisPduType 42 GRIDDED_DATA
+Sent PDU: DisPduType 43 POINT_OBJECT_STATE
+Sent PDU: DisPduType 44 LINEAR_OBJECT_STATE
+Sent PDU: DisPduType 45 AREAL_OBJECT_STATE
+Sent PDU: DisPduType 46 TIME_SPACE_POSITION_INFORMATION
+Sent PDU: DisPduType 47 APPEARANCE
+Sent PDU: DisPduType 48 ARTICULATED_PARTS
+Sent PDU: DisPduType 49 LIVE_ENTITY_FIRE
+Sent PDU: DisPduType 50 LIVE_ENTITY_DETONATION
+Sent PDU: DisPduType 51 CREATE_ENTITY_RELIABLE
+Sent PDU: DisPduType 52 REMOVE_ENTITY_RELIABLE
+Sent PDU: DisPduType 53 START_RESUME_RELIABLE
+Sent PDU: DisPduType 54 STOP_FREEZE_RELIABLE
+Sent PDU: DisPduType 55 ACKNOWLEDGE_RELIABLE
+Sent PDU: DisPduType 56 ACTION_REQUEST_RELIABLE
+Sent PDU: DisPduType 57 ACTION_RESPONSE_RELIABLE
+Sent PDU: DisPduType 58 DATA_QUERY_RELIABLE
+Sent PDU: DisPduType 59 SET_DATA_RELIABLE
+Sent PDU: DisPduType 60 DATA_RELIABLE
+Sent PDU: DisPduType 61 EVENT_REPORT_RELIABLE
+Sent PDU: DisPduType 62 COMMENT_RELIABLE
+Sent PDU: DisPduType 63 RECORD_RELIABLE
+Sent PDU: DisPduType 64 SET_RECORD_RELIABLE
+Sent PDU: DisPduType 65 RECORD_QUERY_RELIABLE
+Sent PDU: DisPduType 66 COLLISION_ELASTIC
+Sent PDU: DisPduType 67 ENTITY_STATE_UPDATE
+Sent PDU: DisPduType 68 DIRECTED_ENERGY_FIRE
+Sent PDU: DisPduType 69 ENTITY_DAMAGE_STATUS
+Sent PDU: DisPduType 70 INFORMATION_OPERATIONS_ACTION
+Sent PDU: DisPduType 71 INFORMATION_OPERATIONS_REPORT
+Sent PDU: DisPduType 72 ATTRIBUTE
+Replaying PDU log file with ENCODING_BINARY: C:\x3d-github\opendis7-java\.\pduLogs\PduRecorderSelfTestENCODING_BINARY_PduCaptureLog.dislog
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Encoding'ENCODING_BINARY' not recognized or supported
+Replaying PDU log file with ENCODING_PLAINTEXT: C:\x3d-github\opendis7-java\.\pduLogs\PduRecorderSelfTestENCODING_PLAINTEXT_PduCaptureLog.dislog
+Sent PDU: DisPduType 01 ENTITY_STATE
+ENCODING_PLAINTEXT
+*** PduPlayer sleep duration > 10 seconds, ignored (ms=42567682)
+Sent PDU: DisPduType 02 FIRE
+Sent PDU: DisPduType 03 DETONATION
+Sent PDU: DisPduType 04 COLLISION
+Sent PDU: DisPduType 05 SERVICE_REQUEST
+Sent PDU: DisPduType 06 RESUPPLY_OFFER
+Sent PDU: DisPduType 07 RESUPPLY_RECEIVED
+Sent PDU: DisPduType 08 RESUPPLY_CANCEL
+Sent PDU: DisPduType 09 REPAIR_COMPLETE
+Sent PDU: DisPduType 10 REPAIR_RESPONSE
+Sent PDU: DisPduType 11 CREATE_ENTITY
+Sent PDU: DisPduType 12 REMOVE_ENTITY
+Sent PDU: DisPduType 13 START_RESUME
+Sent PDU: DisPduType 14 STOP_FREEZE
+Sent PDU: DisPduType 15 ACKNOWLEDGE
+Sent PDU: DisPduType 16 ACTION_REQUEST
+Sent PDU: DisPduType 17 ACTION_RESPONSE
+Sent PDU: DisPduType 18 DATA_QUERY
+Sent PDU: DisPduType 19 SET_DATA
+Sent PDU: DisPduType 20 DATA
+Sent PDU: DisPduType 21 EVENT_REPORT
+Sent PDU: DisPduType 22 COMMENT
+Sent PDU: DisPduType 23 ELECTROMAGNETIC_EMISSION
+Sent PDU: DisPduType 24 DESIGNATOR
+Sent PDU: DisPduType 25 TRANSMITTER
+Sent PDU: DisPduType 26 SIGNAL
+Sent PDU: DisPduType 27 RECEIVER
+Sent PDU: DisPduType 28 IDENTIFICATION_FRIEND_OR_FOE
+Type p/enter to pause, r/enter to resume, q/enter to quit
+q
+... QUIT
+Ending pdu files playback for directory ./pduLogs
+edu.nps.moves.dis7.examples.PduReaderPlayer complete.
+BUILD SUCCESSFUL (total time: 2 minutes 17 seconds)
