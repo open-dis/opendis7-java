@@ -315,7 +315,6 @@ public class PduRecorder // implements PduReceiver
           headerWritten = false; // reset for next run
       }
       try {
-          System.out.println();
           System.out.println("PduRecorder.stop() closing recorder log file:\n   " + logFile.getCanonicalPath());
           logFileWriter.close(); // a flush occurs first during a close
       } 
