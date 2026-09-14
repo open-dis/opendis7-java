@@ -100,7 +100,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <echo>Java/JVM version    $ant.java.version=${ant.java.version}</echo>
         <echo>Java/JVM detail version $java.version=${java.version}</echo>
         <echo>Ant version              $ant.version=${ant.version}</echo>
-        <echo>Configuration settings:  https://savage.nps.edu/Savage/developers.html</echo>
+        <echo>Configuration settings:  https://www.web3d.org/x3d/content/examples/X3dDevelopersGuide.html</echo>
         <!-- TODO NetBeans version -->
         <!-- TODO NetBeans project version -->
         <!-- DEBUG: to show all environment and local properties, add
