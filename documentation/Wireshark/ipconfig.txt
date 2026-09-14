@@ -2,19 +2,17 @@ Example "ipconfig" output:
 
 Windows IP Configuration
 
-Ethernet adapter Ethernet 7:
-
-   Connection-specific DNS Suffix  . :
-   IPv4 Address. . . . . . . . . . . : 172.20.223.70
-   Subnet Mask . . . . . . . . . . . : 255.255.255.255
-   Default Gateway . . . . . . . . . : 0.0.0.0
-
 Ethernet adapter Ethernet:
 
    Media State . . . . . . . . . . . : Media disconnected
-   Connection-specific DNS Suffix  . : ern.nps.edu
+   Connection-specific DNS Suffix  . : csat.com
 
-Wireless LAN adapter Local Area Connection* 4:
+Wireless LAN adapter Wi-Fi 4:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Wi-Fi 5:
 
    Media State . . . . . . . . . . . : Media disconnected
    Connection-specific DNS Suffix  . :
@@ -22,10 +20,14 @@ Wireless LAN adapter Local Area Connection* 4:
 Wireless LAN adapter Wi-Fi:
 
    Connection-specific DNS Suffix  . :
-   Link-local IPv6 Address . . . . . : fe80::6c31:f4d3:2fc3:8b37%17
-   IPv4 Address. . . . . . . . . . . : 10.0.0.9
+   IPv6 Address. . . . . . . . . . . : 2601:647:c200:f080::1667
+   IPv6 Address. . . . . . . . . . . : 2601:647:c200:f080:641c:d75e:d1d8:4c72
+   Temporary IPv6 Address. . . . . . : 2601:647:c200:f080:606c:6205:304f:9d2b
+   Link-local IPv6 Address . . . . . : fe80::13fa:8f2:7bf4:458d%4
+   IPv4 Address. . . . . . . . . . . : 10.0.0.196
    Subnet Mask . . . . . . . . . . . : 255.255.255.0
-   Default Gateway . . . . . . . . . : 10.0.0.1
+   Default Gateway . . . . . . . . . : fe80::ae4c:a5ff:feaa:bcc3%4
+                                       10.0.0.1
 
 Ethernet adapter Bluetooth Network Connection:
 
