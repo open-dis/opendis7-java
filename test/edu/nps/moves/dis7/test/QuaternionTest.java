@@ -29,14 +29,17 @@ public class QuaternionTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** QuaternionTest setUpClass()");
+            System.out.println("*** QuaternionTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** QuaternionTest tearDownClass()");
+        {
+            System.out.println("*** QuaternionTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

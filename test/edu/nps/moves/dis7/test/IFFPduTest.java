@@ -26,7 +26,7 @@ public class IFFPduTest extends PduTest{
     public static void setUpClass()
     {   
         if (isVerbose())
-            System.out.println("*** IFFPduTest setUpClass()");
+            System.out.println("*** IFFPduTest setUpClass(), test starting...");
     }
     
     @Test

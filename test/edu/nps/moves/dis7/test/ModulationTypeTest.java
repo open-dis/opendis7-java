@@ -28,14 +28,17 @@ public class ModulationTypeTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** ModulationTypeTest setUpClass()");
+            System.out.println("*** ModulationTypeTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** ModulationTypeTest tearDownClass()");
+        {
+            System.out.println("*** ModulationTypeTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

@@ -28,18 +28,21 @@ public class DisTimeTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** DisTimeTest setUpClass()");
+            System.out.println("*** DisTimeTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
-        if (verbose)
-            System.out.println("*** DisTimeTest tearDownClass()");
         // restore defaults
         DisTime.setTimestampStyle(TimestampStyle.IEEE_ABSOLUTE);
         DisTime.setHostClockSynchronized(true);
         DisTime.clearEpochLvc();
+        if (verbose)
+        {
+            System.out.println("*** DisTimeTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

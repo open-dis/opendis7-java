@@ -38,14 +38,17 @@ public class RangeCoordinatesTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** RangeCoordinatesTest setUpClass()");
+            System.out.println("*** RangeCoordinatesTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** RangeCoordinatesTest tearDownClass()");
+        {
+            System.out.println("*** RangeCoordinatesTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

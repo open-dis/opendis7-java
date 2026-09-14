@@ -38,7 +38,7 @@ public class CoordinateConversionsTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** CoordinateConversionsTest setUpClass()");
+            System.out.println("*** CoordinateConversionsTest setUpClass(), test starting...");
     }
 
     /** cleanup */
@@ -46,7 +46,10 @@ public class CoordinateConversionsTest
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** CoordinateConversionsTest tearDownClass()");
+        {
+            System.out.println("*** CoordinateConversionsTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     /**

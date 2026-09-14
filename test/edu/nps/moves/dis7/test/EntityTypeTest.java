@@ -28,14 +28,17 @@ public class EntityTypeTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EntityTypeTest setUpClass()");
+            System.out.println("*** EntityTypeTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EntityTypeTest tearDownClass()");
+        {
+            System.out.println("*** EntityTypeTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -158,6 +161,7 @@ public class EntityTypeTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception
     {

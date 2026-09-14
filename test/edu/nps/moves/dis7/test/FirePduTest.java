@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2026, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
@@ -26,7 +26,7 @@ public class FirePduTest extends PduTest
     public static void setUpClass()
     {   
         if (isVerbose())
-            System.out.println("*** FirePduTest setUpClass()");
+            System.out.println("*** FirePduTest setUpClass(), test starting...");
         
         // superclass automatically setUp(), which includes setupNetwork()
     }

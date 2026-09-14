@@ -59,7 +59,7 @@ public class InformationOperationsActionPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** InformationOperationsActionPduTest setUpClass()");
+            System.out.println("*** InformationOperationsActionPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

@@ -30,14 +30,17 @@ public class SimulationManagerTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** SimulationManagerTest setUpClass()");
+            System.out.println("*** SimulationManagerTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** SimulationManagerTest tearDownClass()");
+        {
+            System.out.println("*** SimulationManagerTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

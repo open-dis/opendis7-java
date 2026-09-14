@@ -26,14 +26,17 @@ public class SimulationAddressTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** SimulationAddressTest setUpClass()");
+            System.out.println("*** SimulationAddressTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** SimulationAddressTest tearDownClass()");
+        {
+            System.out.println("*** SimulationAddressTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

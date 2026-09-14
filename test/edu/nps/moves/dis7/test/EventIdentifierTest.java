@@ -27,14 +27,17 @@ public class EventIdentifierTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EventIdentifierTest setUpClass()");
+            System.out.println("*** EventIdentifierTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EventIdentifierTest tearDownClass()");
+        {
+            System.out.println("*** EventIdentifierTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -151,6 +154,7 @@ public class EventIdentifierTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception
     {

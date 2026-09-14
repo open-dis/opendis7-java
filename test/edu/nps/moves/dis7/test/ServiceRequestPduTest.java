@@ -58,7 +58,7 @@ public class ServiceRequestPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ServiceRequestPduTest setUpClass()");
+            System.out.println("*** ServiceRequestPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

@@ -58,7 +58,7 @@ public class MinefieldResponseNACKPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** MinefieldResponseNACKPduTest setUpClass()");
+            System.out.println("*** MinefieldResponseNACKPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

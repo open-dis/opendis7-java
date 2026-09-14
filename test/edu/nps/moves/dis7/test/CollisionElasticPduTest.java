@@ -57,7 +57,7 @@ public class CollisionElasticPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** CollisionElasticPduTest setUpClass()");
+            System.out.println("*** CollisionElasticPduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

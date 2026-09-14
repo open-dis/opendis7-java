@@ -56,7 +56,7 @@ public class SEESPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** SEESPduTest setUpClass()");
+            System.out.println("*** SEESPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

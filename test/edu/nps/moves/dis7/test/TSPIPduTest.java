@@ -56,7 +56,7 @@ public class TSPIPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** TSPIPduTest setUpClass()");
+            System.out.println("*** TSPIPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

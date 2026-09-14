@@ -57,7 +57,7 @@ public class ResupplyReceivedPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ResupplyReceivedPduTest setUpClass()");
+            System.out.println("*** ResupplyReceivedPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

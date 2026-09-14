@@ -59,7 +59,7 @@ public class RecordQueryReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** RecordQueryReliablePduTest setUpClass()");
+            System.out.println("*** RecordQueryReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

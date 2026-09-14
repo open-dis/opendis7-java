@@ -59,7 +59,7 @@ public class RecordReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** RecordReliablePduTest setUpClass()");
+            System.out.println("*** RecordReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

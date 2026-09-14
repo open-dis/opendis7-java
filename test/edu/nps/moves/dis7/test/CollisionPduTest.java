@@ -57,7 +57,7 @@ public class CollisionPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** CollisionPduTest setUpClass()");
+            System.out.println("*** CollisionPduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

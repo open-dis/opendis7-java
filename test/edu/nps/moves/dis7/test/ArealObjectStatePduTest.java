@@ -61,7 +61,7 @@ public class ArealObjectStatePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ArealObjectStatePduTest setUpClass()");
+            System.out.println("*** ArealObjectStatePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

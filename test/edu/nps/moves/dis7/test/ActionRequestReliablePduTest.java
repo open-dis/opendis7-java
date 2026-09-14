@@ -59,7 +59,7 @@ public class ActionRequestReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ActionRequestReliablePduTest setUpClass()");
+            System.out.println("*** ActionRequestReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

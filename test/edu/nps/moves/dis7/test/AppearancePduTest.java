@@ -63,7 +63,7 @@ public class AppearancePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** AppearancePduTest setUpClass()");
+            System.out.println("*** AppearancePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2026, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
@@ -38,14 +38,15 @@ public class BitFieldRoundTripTest
   @BeforeAll
   public static void setUpClass()
   {
-    System.out.println("BitFieldRoundTripTest setUpClass()");
+    System.out.println("BitFieldRoundTripTest setUpClass(), test starting...");
   }
 
   /** test method override */
   @AfterAll
   public static void tearDownClass()
   {
-    System.out.println("BitFieldRoundTripTest tearDownClass()");
+    System.out.println("BitFieldRoundTripTest tearDownClass(), test complete");
+    System.out.println(); // skip line between tests for console readability
   }
 
   /** setup disNetworkInterface and pduListener */

@@ -57,7 +57,7 @@ public class CreateEntityPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** CreateEntityPduTest setUpClass()");
+            System.out.println("*** CreateEntityPduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

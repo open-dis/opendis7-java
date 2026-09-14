@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2008-2022, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
+ * Copyright (c) 2008-2026, MOVES Institute, Naval Postgraduate School (NPS). All rights reserved.
  * This work is provided under a BSD open-source license, see project license.html and license.txt
  */
 package edu.nps.moves.dis7.test;
@@ -29,7 +29,7 @@ public class X3dInterpolatorsTest {
     
     @BeforeAll
     public static void setUpClass() throws IOException {
-        System.out.println("X3dInterpolatorsTest setUpClass()");
+        System.out.println("X3dInterpolatorsTest setUpClass(), test starting...");
     }
     
     @BeforeEach

@@ -58,7 +58,7 @@ public class DataQueryReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** DataQueryReliablePduTest setUpClass()");
+            System.out.println("*** DataQueryReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

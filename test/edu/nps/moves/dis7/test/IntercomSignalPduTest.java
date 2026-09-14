@@ -55,7 +55,7 @@ public class IntercomSignalPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** IntercomSignalPduTest setUpClass()");
+            System.out.println("*** IntercomSignalPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

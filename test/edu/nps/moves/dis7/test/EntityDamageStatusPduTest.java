@@ -56,7 +56,7 @@ public class EntityDamageStatusPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** EntityDamageStatusPduTest setUpClass()");
+            System.out.println("*** EntityDamageStatusPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

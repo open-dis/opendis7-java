@@ -28,14 +28,17 @@ public class X3dCreateLineSetTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** X3dCreateLineSetTest setUpClass()");
+            System.out.println("*** X3dCreateLineSetTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** X3dCreateLineSetTest tearDownClass()");
+        {
+            System.out.println("*** X3dCreateLineSetTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

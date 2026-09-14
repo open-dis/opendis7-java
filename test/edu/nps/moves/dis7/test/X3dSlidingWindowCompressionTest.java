@@ -28,14 +28,17 @@ public class X3dSlidingWindowCompressionTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** X3dSlidingWindowCompressionTest setUpClass()");
+            System.out.println("*** X3dSlidingWindowCompressionTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** X3dSlidingWindowCompressionTest tearDownClass()");
+        {
+            System.out.println("*** X3dSlidingWindowCompressionTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

@@ -58,7 +58,7 @@ public class LiveEntityDetonationPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** LiveEntityDetonationPduTest setUpClass()");
+            System.out.println("*** LiveEntityDetonationPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

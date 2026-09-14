@@ -27,14 +27,17 @@ public class Vector3FloatTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** Vector3FloatTest setUpClass()");
+            System.out.println("*** Vector3FloatTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** Vector3FloatTest tearDownClass()");
+        {
+            System.out.println("*** Vector3FloatTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

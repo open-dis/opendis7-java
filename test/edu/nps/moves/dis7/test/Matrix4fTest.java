@@ -26,14 +26,17 @@ public class Matrix4fTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** Matrix4fTest setUpClass()");
+            System.out.println("*** Matrix4fTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** Matrix4fTest tearDownClass()");
+        {
+            System.out.println("*** Matrix4fTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

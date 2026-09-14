@@ -25,14 +25,17 @@ public class PduRecorderTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** PduRecorderTest setUpClass()");
+            System.out.println("*** PduRecorderTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** PduRecorderTest tearDownClass()");
+        {
+            System.out.println("*** PduRecorderTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

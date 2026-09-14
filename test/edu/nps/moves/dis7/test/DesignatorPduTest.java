@@ -58,7 +58,7 @@ public class DesignatorPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** DesignatorPduTest setUpClass()");
+            System.out.println("*** DesignatorPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

@@ -31,14 +31,17 @@ public class PduFactoryExtendedTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** PduFactoryExtendedTest setUpClass()");
+            System.out.println("*** PduFactoryExtendedTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** PduFactoryExtendedTest tearDownClass()");
+        {
+            System.out.println("*** PduFactoryExtendedTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

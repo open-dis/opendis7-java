@@ -62,7 +62,7 @@ public class IsPartOfPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** IsPartOfPduTest setUpClass()");
+            System.out.println("*** IsPartOfPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

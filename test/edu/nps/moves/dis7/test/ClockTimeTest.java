@@ -26,14 +26,17 @@ public class ClockTimeTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** ClockTimeTest setUpClass()");
+            System.out.println("*** ClockTimeTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** ClockTimeTest tearDownClass()");
+        {
+            System.out.println("*** ClockTimeTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -136,6 +139,7 @@ public class ClockTimeTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws Exception
      */
     public static void main(String[] args) throws Exception
     {

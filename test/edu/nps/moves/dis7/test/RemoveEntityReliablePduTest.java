@@ -58,7 +58,7 @@ public class RemoveEntityReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** RemoveEntityReliablePduTest setUpClass()");
+            System.out.println("*** RemoveEntityReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

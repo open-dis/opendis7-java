@@ -61,7 +61,7 @@ public class LinearObjectStatePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** LinearObjectStatePduTest setUpClass()");
+            System.out.println("*** LinearObjectStatePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

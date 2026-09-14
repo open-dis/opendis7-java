@@ -26,14 +26,17 @@ public class VariableDatumTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** VariableDatumTest setUpClass()");
+            System.out.println("*** VariableDatumTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** VariableDatumTest tearDownClass()");
+        {
+            System.out.println("*** VariableDatumTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

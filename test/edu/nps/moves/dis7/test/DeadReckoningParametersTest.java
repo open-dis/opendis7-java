@@ -29,14 +29,17 @@ public class DeadReckoningParametersTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** DeadReckoningParametersTest setUpClass()");
+            System.out.println("*** DeadReckoningParametersTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** DeadReckoningParametersTest tearDownClass()");
+        {
+            System.out.println("*** DeadReckoningParametersTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -149,6 +152,7 @@ public class DeadReckoningParametersTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception
     {

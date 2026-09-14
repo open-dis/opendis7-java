@@ -59,7 +59,7 @@ public class EntityStateUpdatePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** EntityStateUpdatePduTest setUpClass()");
+            System.out.println("*** EntityStateUpdatePduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

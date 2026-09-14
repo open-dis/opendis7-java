@@ -27,14 +27,17 @@ public class EulerAnglesTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EulerAnglesTest setUpClass()");
+            System.out.println("*** EulerAnglesTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EulerAnglesTest tearDownClass()");
+        {
+            System.out.println("*** EulerAnglesTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -147,6 +150,7 @@ public class EulerAnglesTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception
     {

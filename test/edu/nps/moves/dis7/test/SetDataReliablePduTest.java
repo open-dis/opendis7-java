@@ -58,7 +58,7 @@ public class SetDataReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** SetDataReliablePduTest setUpClass()");
+            System.out.println("*** SetDataReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

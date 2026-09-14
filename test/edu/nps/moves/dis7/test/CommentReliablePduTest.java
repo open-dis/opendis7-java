@@ -57,7 +57,7 @@ public class CommentReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** CommentReliablePduTest setUpClass()");
+            System.out.println("*** CommentReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

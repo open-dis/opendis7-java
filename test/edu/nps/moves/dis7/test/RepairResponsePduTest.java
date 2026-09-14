@@ -57,7 +57,7 @@ public class RepairResponsePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** RepairResponsePduTest setUpClass()");
+            System.out.println("*** RepairResponsePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

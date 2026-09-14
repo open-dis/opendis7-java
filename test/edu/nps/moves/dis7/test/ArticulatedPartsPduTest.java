@@ -56,7 +56,7 @@ public class ArticulatedPartsPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ArticulatedPartsPduTest setUpClass()");
+            System.out.println("*** ArticulatedPartsPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

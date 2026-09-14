@@ -65,7 +65,7 @@ public class MinefieldStatePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** MinefieldStatePduTest setUpClass()");
+            System.out.println("*** MinefieldStatePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

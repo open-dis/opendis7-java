@@ -27,14 +27,17 @@ public class FixedDatumTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** FixedDatumTest setUpClass()");
+            System.out.println("*** FixedDatumTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** FixedDatumTest tearDownClass()");
+        {
+            System.out.println("*** FixedDatumTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

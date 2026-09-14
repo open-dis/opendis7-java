@@ -58,7 +58,7 @@ public class EventReportReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** EventReportReliablePduTest setUpClass()");
+            System.out.println("*** EventReportReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

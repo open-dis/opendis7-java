@@ -58,7 +58,7 @@ public class LiveEntityFirePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** LiveEntityFirePduTest setUpClass()");
+            System.out.println("*** LiveEntityFirePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

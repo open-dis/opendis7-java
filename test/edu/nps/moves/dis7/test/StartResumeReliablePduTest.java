@@ -59,7 +59,7 @@ public class StartResumeReliablePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** StartResumeReliablePduTest setUpClass()");
+            System.out.println("*** StartResumeReliablePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

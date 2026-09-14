@@ -67,7 +67,7 @@ public class AggregateStatePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** AggregateStatePduTest setUpClass()");
+            System.out.println("*** AggregateStatePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

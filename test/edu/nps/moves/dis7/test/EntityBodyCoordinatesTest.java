@@ -29,7 +29,7 @@ public class EntityBodyCoordinatesTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EntityBodyCoordinatesTest setUpClass()");
+            System.out.println("*** EntityBodyCoordinatesTest setUpClass(), test starting...");
 
         try
         {
@@ -52,7 +52,10 @@ public class EntityBodyCoordinatesTest
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EntityBodyCoordinatesTest tearDownClass()");
+        {
+            System.out.println("*** EntityBodyCoordinatesTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

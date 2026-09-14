@@ -57,7 +57,7 @@ public class RemoveEntityPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** RemoveEntityPduTest setUpClass()");
+            System.out.println("*** RemoveEntityPduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

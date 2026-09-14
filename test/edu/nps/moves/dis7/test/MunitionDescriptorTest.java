@@ -30,14 +30,17 @@ public class MunitionDescriptorTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** MunitionDescriptorTest setUpClass()");
+            System.out.println("*** MunitionDescriptorTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** MunitionDescriptorTest tearDownClass()");
+        {
+            System.out.println("*** MunitionDescriptorTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

@@ -57,7 +57,7 @@ public class DirectedEnergyFirePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** DirectedEnergyFirePduTest setUpClass()");
+            System.out.println("*** DirectedEnergyFirePduTest setUpClass(), test starting...");
 
         // superclass automatically setUp(), which includes setupNetwork()
     }

@@ -60,7 +60,7 @@ public class DataPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** DataPduTest setUpClass()");
+            System.out.println("*** DataPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

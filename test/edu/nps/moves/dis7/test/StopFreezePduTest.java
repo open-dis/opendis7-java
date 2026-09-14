@@ -59,7 +59,7 @@ public class StopFreezePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** StopFreezePduTest setUpClass()");
+            System.out.println("*** StopFreezePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

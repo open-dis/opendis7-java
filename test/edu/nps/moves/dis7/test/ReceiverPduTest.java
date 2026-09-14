@@ -57,7 +57,7 @@ public class ReceiverPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** ReceiverPduTest setUpClass()");
+            System.out.println("*** ReceiverPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

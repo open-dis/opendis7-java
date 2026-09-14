@@ -42,7 +42,7 @@ public class EulerConversionsTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EulerConversionsTest setUpClass()");
+            System.out.println("*** EulerConversionsTest setUpClass(), test starting...");
     }
 
     /** cleanup */
@@ -50,7 +50,10 @@ public class EulerConversionsTest
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EulerConversionsTest tearDownClass()");
+        {
+            System.out.println("*** EulerConversionsTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     /**

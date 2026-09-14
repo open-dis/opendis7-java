@@ -25,14 +25,17 @@ public class DisChannelTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** DisChannelTest setUpClass()");
+            System.out.println("*** DisChannelTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** DisChannelTest tearDownClass()");
+        {
+            System.out.println("*** DisChannelTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test

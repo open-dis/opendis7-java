@@ -57,7 +57,7 @@ public class IsGroupOfPduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** IsGroupOfPduTest setUpClass()");
+            System.out.println("*** IsGroupOfPduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */

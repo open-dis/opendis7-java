@@ -26,14 +26,17 @@ public class EntityIDTest
     public static void setUpClass()
     {
         if (verbose)
-            System.out.println("*** EntityIDTest setUpClass()");
+            System.out.println("*** EntityIDTest setUpClass(), test starting...");
     }
 
     @AfterAll
     public static void tearDownClass()
     {
         if (verbose)
-            System.out.println("*** EntityIDTest tearDownClass()");
+        {
+            System.out.println("*** EntityIDTest tearDownClass(), test complete");
+            System.out.println(); // skip line between tests for console readability
+        }
     }
 
     @Test
@@ -150,6 +153,7 @@ public class EntityIDTest
 
     /** Command-line invocation (CLI) of program, execution starts here
      * @param args command-line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception
     {

@@ -59,7 +59,7 @@ public class AcknowledgePduTest extends PduTest
     public static void setUpClass()
     {
         if (isVerbose())
-            System.out.println("*** AcknowledgePduTest setUpClass()");
+            System.out.println("*** AcknowledgePduTest setUpClass(), test starting...");
     }
 
     /** Test PDU sending, receiving, marshalling (serialization) and unmarshalling (deserialization) */
