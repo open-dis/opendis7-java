@@ -64,10 +64,9 @@ Always use the latest version so that operating-system security and feature sets
 
 ## Troubleshooting
 
-1. Check [firewall settings](Firewall_Configuration.pdf) on your local system.  (Again thanks to Tobias for another helpful reference.)
-2. Compare Wireshark results with/without your [Virtual Private Network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) active. 
-3. Compare Wireshark results when logged in as local administrator, if possible.
-4. [StackOverflow: wireshark](https://stackoverflow.com/search?q=wireshark) is an excellent resource for detailed technical questions, looking up error messages, etc.
+1. Compare Wireshark results with/without your [Virtual Private Network (VPN)](https://en.wikipedia.org/wiki/Virtual_private_network) active. 
+2. Compare Wireshark results when logged in as local administrator, if possible.
+3. [StackOverflow: wireshark](https://stackoverflow.com/search?q=wireshark) is an excellent resource for detailed technical questions, looking up error messages, etc.
 
 
 ## Videos
